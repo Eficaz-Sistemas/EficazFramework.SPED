@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="GNRE 1.00">
+    <Position X="3.604" Y="0.5" Height="0.458" Width="1.075" />
+  </Comment>
+  <Comment CommentText="GNRE 2.00">
+    <Position X="14.25" Y="0.5" Height="0.458" Width="1.075" />
+  </Comment>
+  <Comment CommentText="V1.00 x v2.00">
+    <Position X="7.229" Y="0.5" Height="11.823" Width="0.992" />
+  </Comment>
+  <Comment CommentText="Classe mãe -&gt;">
+    <Position X="14.875" Y="1.844" Height="0.458" Width="1.075" />
+  </Comment>
+  <Comment CommentText="&lt;- classe mãe">
+    <Position X="3.573" Y="3.656" Height="0.458" Width="1.075" />
+  </Comment>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V1.GuiaGNRE">
+    <Position X="0.5" Y="1" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="c03_idContribuinteEmitente" Type="EficazFramework.SPED.GNRE.Classes.V1.Emitente" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="3.561" />
+        <Point X="5.8" Y="3.561" />
+        <Point X="5.8" Y="3.074" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.123" Y="0.235" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="c35_idContribuinteDestinatario" Type="EficazFramework.SPED.GNRE.Classes.V1.Destinatario" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="6.938" />
+        <Point X="5.688" Y="6.938" />
+        <Point X="5.688" Y="6.324" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.05" Y="0.339" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>0gAKsbxeAVAACDdQIAgCGkYAku1MBaCECgEQDMAhAiQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="c03_idContribuinteEmitente" />
+      <Property Name="c35_idContribuinteDestinatario" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V1.Emitente">
+    <Position X="4.75" Y="1" Width="1.75" />
+    <Members>
+      <Property Name="Serializer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAAoAAAAAQAgIAAAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V1.Destinatario">
+    <Position X="4.75" Y="4.25" Width="1.75" />
+    <Members>
+      <Property Name="Serializer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAAoAAAAAQAgIAAAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V1.CampoExtra">
+    <Position X="3.75" Y="7.75" Width="1.75" />
+    <Members>
+      <Property Name="Serializer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAIAACAAIAAAAAAAgIAABAAIAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.GuiaGNRE">
+    <Position X="16" Y="0.5" Width="2.5" />
+    <Members>
+      <Property Name="c01_UfFavorecida" Hidden="true" />
+      <Property Name="c02_receita" Hidden="true" />
+      <Property Name="c03_idContribuinteEmitente" Hidden="true" />
+      <Property Name="c04_docOrigem" Hidden="true" />
+      <Property Name="c05_referencia" Hidden="true" />
+      <Property Name="c06_valorPrincipal" Hidden="true" />
+      <Property Name="c10_valorTotal" Hidden="true" />
+      <Property Name="c14_dataVencimento" Hidden="true" />
+      <Property Name="c14_dataVencimentoDate" Hidden="true" />
+      <Property Name="c15_convenio" Hidden="true" />
+      <Property Name="c16_razaoSocialEmitente" Hidden="true" />
+      <Property Name="c17_inscricaoEstadualEmitente" Hidden="true" />
+      <Property Name="c18_enderecoEmitente" Hidden="true" />
+      <Property Name="c19_municipioEmitente" Hidden="true" />
+      <Property Name="c20_ufEnderecoEmitente" Hidden="true" />
+      <Property Name="c21_cepEmitente" Hidden="true" />
+      <Property Name="c22_telefoneEmitente" Hidden="true" />
+      <Property Name="c25_detalhamentoReceita" Hidden="true" />
+      <Property Name="c26_produto" Hidden="true" />
+      <Property Name="c27_tipoIdentificacaoEmitente" Hidden="true" />
+      <Property Name="c28_tipoDocOrigem" Hidden="true" />
+      <Property Name="c33_dataPagamento" Hidden="true" />
+      <Property Name="c33_dataPagamentoDate" Hidden="true" />
+      <Property Name="c34_tipoIdentificacaoDestinatario" Hidden="true" />
+      <Property Name="c34_tipoIdentificacaoDestinatarioSpecified" Hidden="true" />
+      <Property Name="c35_idContribuinteDestinatario" Hidden="true" />
+      <Property Name="c36_inscricaoEstadualDestinatario" Hidden="true" />
+      <Property Name="c37_razaoSocialDestinatario" Hidden="true" />
+      <Property Name="c38_municipioDestinatario" Hidden="true" />
+      <Property Name="c39_camposExtras" Hidden="true" />
+      <Property Name="c42_identificadorGuia" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="contribuinteEmitente" Type="EficazFramework.SPED.GNRE.Classes.V2.Emitente" FixedFromPoint="true">
+      <Path>
+        <Point X="16" Y="1.375" />
+        <Point X="13.25" Y="1.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.256" Y="0.091" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>0gAKsbxeAVwISDdSIAgCmmYBku1MBbCECgEQDOAgIjQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="contribuinteEmitente" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.Emitente">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="identificacao" Type="EficazFramework.SPED.GNRE.Classes.V2.TIdentificacao" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.75" Y="3.049" />
+        <Point X="9.562" Y="3.049" />
+        <Point X="9.562" Y="2.766" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.096" Y="0.016" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAQAgAAACAIAIYAAQBAAAhAAADCAIAAAQAAEAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="identificacao" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.ItensGNRE" Collapsed="true">
+    <Position X="16" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAQAAAAAgAAAAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.DetalhamentoItemGNRE">
+    <Position X="16" Y="5.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="documentoOrigem" Type="EficazFramework.SPED.GNRE.Classes.V2.TipoDocumentoOrigem">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.652" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACSAAAAAAIIBAICABgAAAgQwABEBA6AAFAAMgAAg=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="contribuinteDestinatario" />
+      <Property Name="documentoOrigem" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.TIdentificacao">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAEAAAIAAAAACAgAAIAAQEAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.Destinatario">
+    <Position X="11.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="identificacao" Type="EficazFramework.SPED.GNRE.Enums.PersonalidadeJuridica" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.75" Y="4.625" />
+        <Point X="9.875" Y="4.625" />
+        <Point X="9.875" Y="4.296" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.825" Y="0.433" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgAAAAAAAAYAAQAAAAhAAAAAAIAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="identificacao" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.CampoExtra">
+    <Position X="14" Y="7.5" Width="1.75" />
+    <Members>
+      <Property Name="Serializer" Hidden="true" />
+      <Property Name="tipo" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAIAACAAIAAAAAAAgICABAAIAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.TipoDocumentoOrigem">
+    <Position X="8.75" Y="5.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAIAAAAAIAAAAAAAgAACAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EficazFramework.SPED.GNRE.Classes.V2.ItemValor">
+    <Position X="16" Y="9.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAIAAAAAIAAAAAAAgAACAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="EficazFramework.SPED.GNRE.Enums.PersonalidadeJuridica">
+    <Position X="9" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GNRE\Enums.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
