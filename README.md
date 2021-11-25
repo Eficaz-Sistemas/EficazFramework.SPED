@@ -1,5 +1,7 @@
 # EficazFramework.SPED
 
+![Azure DevOps tests](https://img.shields.io/azure-devops/tests/eficazcs/EficazFramework/21?compact_message)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/eficazcs/EficazFramework/21)
 ![Discord](https://img.shields.io/discord/846078359498653706)
 
    Bem vindo ao projeto Eficaz.SPED.
@@ -14,7 +16,7 @@
 #### Integração com projetos do SPED, com mapeamento de campos e consumo de Web-Services
    - CT-e e CT-eOS
    - DAPI
-   - e-CredAc portaria CAT 83/09 e 207/09
+   - e-CredAc, portarias CAT 83/09 e 207/09
    - e-Ressarcimento portaria CAT 42/18
    - ECD
    - ECF
