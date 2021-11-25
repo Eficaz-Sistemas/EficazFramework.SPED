@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.Extensions;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
 
     /// <summary>
@@ -30,31 +29,31 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
             writer.Append(SubTotal.ValueToString(2).ToFixedLenghtString(14, Escrituracao._builder, Alignment.Left, "0")); // 9
             writer.Append(DescontoSubTotal.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 10
             if (IndicadorDesconto == IndicadorValor.Valor)
-                writer.Append("V");
+                writer.Append('V');
             else
-                writer.Append("P"); // 11
+                writer.Append('P'); // 11
             writer.Append(AcrescimoSubTotal.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 12
             if (IndicadorAcrescimo == IndicadorValor.Valor)
-                writer.Append("V");
+                writer.Append('V');
             else
-                writer.Append("P"); // 13
+                writer.Append('P'); // 13
             writer.Append(ValorTotalLiquido.ValueToString(2).ToFixedLenghtString(14, Escrituracao._builder, Alignment.Left, "0")); // 14
             if (Cancelamento == true == true)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N"); // 15
+                writer.Append('N'); // 15
             writer.Append(CancelamentoAcrescimo.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 16
             if (OrdemDescontoAcrescimo.HasValue == false)
             {
-                writer.Append(" "); // 17
+                writer.Append(' '); // 17
             }
             else if ((int?)OrdemDescontoAcrescimo == (int?)MFD_ECF.OrdemDescontoAcrescimo.DescontoAcrescimo == true)
             {
-                writer.Append("D"); // 17
+                writer.Append('D'); // 17
             }
             else
             {
-                writer.Append("A");
+                writer.Append('A');
             } // 17
 
             writer.Append(NomeAdquirente.ToFixedLenghtString(40, Escrituracao._builder, Alignment.Right, " ")); // 18
@@ -103,9 +102,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
                 OrdemDescontoAcrescimo = MFD_ECF.OrdemDescontoAcrescimo.DescontoAcrescimo;
             NomeAdquirente = linha.Substring(137, 40).Trim();
             CNPJ_CPF = linha.Substring(177, 14).Trim();
-            if (CNPJ_CPF.IsValidCNPJ() == false & CNPJ_CPF.Substring(0, 3) == "000" & CNPJ_CPF.Substring(3).IsValidCPF())
+            if (CNPJ_CPF.IsValidCNPJ() == false & CNPJ_CPF[..3] == "000" & CNPJ_CPF[3..].IsValidCPF())
             {
-                CNPJ_CPF = CNPJ_CPF.Substring(3);
+                CNPJ_CPF = CNPJ_CPF[3..];
             }
         }
 

@@ -2,9 +2,9 @@
 // Não será preciso avaliar qual é a versão do arquivo para diferenciar a forma
 // de escrita/leitura.
 
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>

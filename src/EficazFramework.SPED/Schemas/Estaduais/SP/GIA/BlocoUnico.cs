@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
+namespace EficazFramework.SPED.Schemas.SP.GIA
 {
     public class BlocoUnico : Primitives.Bloco
     {

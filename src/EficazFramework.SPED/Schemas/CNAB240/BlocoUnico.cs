@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240
+namespace EficazFramework.SPED.Schemas.CNAB240
 {
 
     /// <summary>

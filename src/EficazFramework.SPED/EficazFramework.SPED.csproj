@@ -18,6 +18,7 @@
     <AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Configurations>Debug;Release</Configurations>
+	<NeutralLanguage>pt-BR</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -51,11 +52,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EficazFramework.Data\EficazFramework.Data.csproj" />
-    <ProjectReference Include="..\EficazFramework.Utilities\EficazFramework.Utilities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Resouces\Strings\Validation.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -78,9 +74,4 @@
     <Folder Include="Schemas\Estaduais\SP\eCredac\CAT83\" />
     <Folder Include="Schemas\NFSe\GINFES\WS Classes\" />
   </ItemGroup>
-
-  <!--<Target Name="MovePackage" AfterTargets="Pack">
-    <Move SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(SolutionDir)Publish\Packages" />
-  </Target>-->
-
 </Project>

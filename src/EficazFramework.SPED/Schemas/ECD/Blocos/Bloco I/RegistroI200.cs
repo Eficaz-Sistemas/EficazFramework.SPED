@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.ECD
+namespace EficazFramework.SPED.Schemas.ECD
 {
 
     /// <summary>

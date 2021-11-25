@@ -10,10 +10,10 @@ using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE.V1
+namespace EficazFramework.SPED.Schemas.GNRE.V1
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */

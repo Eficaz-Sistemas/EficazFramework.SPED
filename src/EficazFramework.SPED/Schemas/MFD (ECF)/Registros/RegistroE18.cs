@@ -1,7 +1,6 @@
-﻿using EficazFrameworkCore.Extensions;
-using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
 
     /// <summary>
@@ -56,9 +55,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
                 {
                     return NFe.FormaPagamento.Dinheiro;
                 }
-                else if ((DescricaoMeioPagto ?? "").ToLower().GetClearText().Contains("cartao"))
+                else if ((DescricaoMeioPagto ?? "").ToLower().RemoveAccents().Contains("cartao"))
                 {
-                    if ((DescricaoMeioPagto ?? "").ToLower().GetClearText().Contains("deb"))
+                    if ((DescricaoMeioPagto ?? "").ToLower().RemoveAccents().Contains("deb"))
                     {
                         return NFe.FormaPagamento.CartaoDebito;
                     }
@@ -81,15 +80,15 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
                 }
                 else if ((DescricaoMeioPagto ?? "").ToLower().Contains("vale"))
                 {
-                    if ((DescricaoMeioPagto ?? "").ToLower().GetClearText().Contains("alim"))
+                    if ((DescricaoMeioPagto ?? "").ToLower().RemoveAccents().Contains("alim"))
                     {
                         return NFe.FormaPagamento.ValeAlimentacao;
                     }
-                    else if ((DescricaoMeioPagto ?? "").ToLower().GetClearText().Contains("ref"))
+                    else if ((DescricaoMeioPagto ?? "").ToLower().RemoveAccents().Contains("ref"))
                     {
                         return NFe.FormaPagamento.ValeRefeicao;
                     }
-                    else if ((DescricaoMeioPagto ?? "").ToLower().GetClearText().Contains("comb"))
+                    else if ((DescricaoMeioPagto ?? "").ToLower().RemoveAccents().Contains("comb"))
                     {
                         return NFe.FormaPagamento.ValeCombustivel;
                     }

@@ -1,8 +1,8 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
-using EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI;
+﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -84,7 +84,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             writer.Append(string.Format("{0:0.##}", AliquotaICMSST) + "|"); // 17
             writer.Append(string.Format("{0:0.##}", VrICMSST) + "|"); // 18
             if (IndicadorApuracaoIPI.HasValue == false)
-                writer.Append("|");
+                writer.Append('|');
             else
             {
                 if ((int?)IndicadorApuracaoIPI == (int?)IndicadorPeriodoIPI.Decendial == true)
@@ -101,7 +101,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (CST_PIS != NFe.CST_PIS.NotValid)
                 writer.Append(string.Format("{0:#00}", (int)CST_PIS) + "|");
             else
-                writer.Append("|"); // 25
+                writer.Append('|'); // 25
             writer.Append(string.Format("{0:0.##}", VrBaseCalculoPIS) + "|"); // 26
             writer.Append(string.Format("{0:0.####}", AliquotaPIS) + "|"); // 27
             writer.Append(string.Format("{0:0.###}", QuantidadeBCPIS) + "|"); // 28
@@ -110,7 +110,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (CST_COFINS != NFe.CST_COFINS.NotValid)
                 writer.Append(string.Format("{0:#00}", (int)CST_COFINS) + "|");
             else
-                writer.Append("|"); // 31
+                writer.Append('|'); // 31
             writer.Append(string.Format("{0:0.##}", VrBaseCalculoCOFINS) + "|"); // 32
             writer.Append(string.Format("{0:0.####}", AliquotaCOFINS) + "|"); // 33
             writer.Append(string.Format("{0:0.###}", QuantidadeBCCOFINS) + "|"); // 34

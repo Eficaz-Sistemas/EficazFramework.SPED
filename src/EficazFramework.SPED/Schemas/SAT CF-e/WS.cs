@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace EficazFrameworkCore.SPED.Schemas.SAT_CFe
+namespace EficazFramework.SPED.Schemas.SAT_CFe
 {
 
 

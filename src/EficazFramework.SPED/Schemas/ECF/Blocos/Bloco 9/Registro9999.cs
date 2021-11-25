@@ -26,7 +26,6 @@ namespace EficazFramework.SPED.Schemas.ECF
             }
 
             string result = writer.ToString();
-            writer = null;
             return result;
         }
 

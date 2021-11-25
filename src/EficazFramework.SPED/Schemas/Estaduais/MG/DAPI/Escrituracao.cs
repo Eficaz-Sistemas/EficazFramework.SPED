@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.MG.DAPI
+namespace EficazFramework.SPED.Schemas.MG.DAPI
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -129,9 +129,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MG.DAPI
                 while (!reader.EndOfStream)
                 {
                     string linha = await reader.ReadLineAsync();
-                    if (linha.Substring(0, 2) == "00")
+                    if (linha[..2] == "00")
                     {
-                        cnpj = cnpj + linha.Substring(0, 0) + "|";
+                        cnpj = cnpj + linha[..0] + "|";
                     }
                 }
 

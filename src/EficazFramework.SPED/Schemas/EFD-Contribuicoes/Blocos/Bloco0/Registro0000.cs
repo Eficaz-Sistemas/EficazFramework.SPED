@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -52,7 +52,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (SituacaoEspecial != SituacaoEspecial.Vazio)
                 writer.Append(((int)SituacaoEspecial).ToString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             writer.Append(NumeroReciboAnterior + "|");
             writer.Append(DataInicial.ToSpedString() + "|");
             writer.Append(DataFinal.ToSpedString() + "|");

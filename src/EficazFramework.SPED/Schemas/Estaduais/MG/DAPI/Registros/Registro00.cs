@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.MG.DAPI
+namespace EficazFramework.SPED.Schemas.MG.DAPI
 {
 
     /// <summary>
@@ -26,31 +26,31 @@ namespace EficazFrameworkCore.SPED.Schemas.MG.DAPI
             writer.Append(DataInicial.ToSintegraString(Extensions.DateFormat.DD)); // 4 Competencia no Formato DD
             writer.Append("D1"); // 5 Front-End DAPI
             if (!DapiSubstituta)
-                writer.Append("N");
+                writer.Append('N');
             else
-                writer.Append("S");
+                writer.Append('S');
             writer.Append("0000000000"); // 7 CAE - Nao utilizar
             writer.Append(RegimeRecolhimento);
             if (!RegimeEspecialFiscalizacao)
-                writer.Append("N");
+                writer.Append('N');
             else
-                writer.Append("S");
+                writer.Append('S');
             if (!RegimeEspecialFiscalizacao)
                 writer.Append("00000000");
             else
                 writer.Append(DataFinal.ToSintegraString(Extensions.DateFormat.AAAAMMDD));
             if (OptanteFundese)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N");
+                writer.Append('N');
             if (DapiComMovimento)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N");
+                writer.Append('N');
             if (DapiComMovimentoCafe)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N");
+                writer.Append('N');
             writer.Append(CNAE.ToFixedLenghtString(7, Alignment.Left, "0"));
             writer.Append(CNAEDesmembramento.ToFixedLenghtString(2, Alignment.Left, "0"));
             writer.Append(TermoAceite);

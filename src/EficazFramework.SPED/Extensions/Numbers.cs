@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Extensions
+namespace EficazFramework.SPED.Extensions
 {
     public static class Number
     {

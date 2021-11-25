@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
+namespace EficazFramework.SPED.Schemas.SP.eCredAc.CAT207
 {
 
     /// <summary>
@@ -25,9 +25,9 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
             writer.Append("5335|");
             writer.Append(DeclaracaoExportacao + "|");
             if (OperacaoComprovada == true)
-                writer.Append("0");
+                writer.Append('0');
             else
-                writer.Append("1");
+                writer.Append('1');
             return writer.ToString();
         }
 

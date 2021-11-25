@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
     public enum IndicadorValor
     {

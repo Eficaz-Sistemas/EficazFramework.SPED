@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
     [Serializable()]

@@ -3,11 +3,11 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using EficazFrameworkCore.Extensions;
-using EficazFrameworkCore.SPED.Schemas.CTe;
-using EficazFrameworkCore.SPED.Utilities.XML;
+using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.CTe;
+using EficazFramework.SPED.Utilities.XML;
 
-namespace EficazFrameworkCore.SPED.Schemas.CTeOS
+namespace EficazFramework.SPED.Schemas.CTeOS
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
     [Serializable()]

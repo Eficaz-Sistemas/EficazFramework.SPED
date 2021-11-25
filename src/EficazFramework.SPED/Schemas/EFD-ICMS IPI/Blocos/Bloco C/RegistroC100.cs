@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -28,7 +28,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             if (DocumentoValido())
                 writer.Append(CodigoParticipante + "|");
             else
-                writer.Append("|"); // 4
+                writer.Append('|'); // 4
             writer.Append(EspecieDocumento + "|"); // 5
             writer.Append(string.Format("{0:00}", (int)SituacaoDocumento) + "|"); // 6
             writer.Append(Serie.ToFixedLenghtString(3, Alignment.Left, "0") + "|"); // 7
@@ -37,83 +37,83 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             if (DocumentoValido())
                 writer.Append(DataEmissao.ToSpedString() + "|");
             else
-                writer.Append("|"); // 10
+                writer.Append('|'); // 10
             if (DocumentoValido())
                 writer.Append(DataEntradaSaida.ToSpedString() + "|");
             else
-                writer.Append("|"); // 11
+                writer.Append('|'); // 11
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorTotalDocumento) + "|");
             else
-                writer.Append("|"); // 12
+                writer.Append('|'); // 12
             if (DocumentoValido())
                 writer.Append(((int)Pagamento).ToString() + "|");
             else
-                writer.Append("|"); // 13
+                writer.Append('|'); // 13
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorDesconto) + "|");
             else
-                writer.Append("|"); // 14
+                writer.Append('|'); // 14
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorAbatimento) + "|");
             else
-                writer.Append("|"); // 15
+                writer.Append('|'); // 15
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorTotalMercadorias) + "|");
             else
-                writer.Append("|"); // 16
+                writer.Append('|'); // 16
             if (DocumentoValido())
                 writer.Append(((int)TipoFrete).ToString() + "|");
             else
-                writer.Append("|"); // 17
+                writer.Append('|'); // 17
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorFrete) + "|");
             else
-                writer.Append("|"); // 18
+                writer.Append('|'); // 18
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorSeguro) + "|");
             else
-                writer.Append("|"); // 19
+                writer.Append('|'); // 19
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorOutrasDespesas) + "|");
             else
-                writer.Append("|"); // 20
+                writer.Append('|'); // 20
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorBaseCalculoICMS) + "|");
             else
-                writer.Append("|"); // 21
+                writer.Append('|'); // 21
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorICMS) + "|");
             else
-                writer.Append("|"); // 22
+                writer.Append('|'); // 22
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorBaseCalculoICMSST) + "|");
             else
-                writer.Append("|"); // 23
+                writer.Append('|'); // 23
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorICMSST) + "|");
             else
-                writer.Append("|"); // 24
+                writer.Append('|'); // 24
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorIPI) + "|");
             else
-                writer.Append("|"); // 25
+                writer.Append('|'); // 25
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorPIS) + "|");
             else
-                writer.Append("|"); // 26
+                writer.Append('|'); // 26
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorCofins) + "|");
             else
-                writer.Append("|"); // 27
+                writer.Append('|'); // 27
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorPISST) + "|");
             else
-                writer.Append("|"); // 28
+                writer.Append('|'); // 28
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorCofinsST) + "|");
             else
-                writer.Append("|"); // 29
+                writer.Append('|'); // 29
             return writer.ToString();
         }
 

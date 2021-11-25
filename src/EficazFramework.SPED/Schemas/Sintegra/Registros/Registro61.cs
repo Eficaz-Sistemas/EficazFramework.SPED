@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.Sintegra
+namespace EficazFramework.SPED.Schemas.Sintegra
 {
 
     // NFCe
@@ -33,7 +33,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
             writer.Append(Isentas.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 13
             writer.Append(Outras.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 14
             writer.Append(Aliquota.ValueToString(2).ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 15
-            writer.Append(" "); // 16
+            writer.Append(' '); // 16
             return writer.ToString();
         }
 

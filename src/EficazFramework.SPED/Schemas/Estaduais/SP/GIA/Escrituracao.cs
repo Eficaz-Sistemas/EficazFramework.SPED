@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
+namespace EficazFramework.SPED.Schemas.SP.GIA
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -25,7 +25,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
         public override void ProcessaLinha(string linha)
         {
             Primitives.Registro reg = null;
-            switch (linha.Substring(0, 2) ?? "")
+            switch (linha[..2] ?? "")
             {
                 case "01":
                     {
@@ -190,9 +190,9 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
                 while (!reader.EndOfStream)
                 {
                     string linha = await reader.ReadLineAsync();
-                    if (linha.Substring(0, 2) == "05")
+                    if (linha[..2] == "05")
                     {
-                        cnpj = cnpj + linha.Substring(0, 0) + "|";
+                        cnpj = cnpj + linha[..0] + "|";
                     }
                 }
 

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.Extensions;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -26,7 +25,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             var writer = new System.Text.StringBuilder();
             writer.Append("|0200|"); // 1
             writer.Append(ID + "|"); // 2
-            writer.Append(Descricao.GetClearText() + "|"); // 3
+            writer.Append(Descricao.RemoveAccents() + "|"); // 3
             writer.Append(CodigoBarras + "|"); // 4
             writer.Append(IDAnterior + "|"); // 5
             writer.Append(UnidadeMedida + "|"); // 6

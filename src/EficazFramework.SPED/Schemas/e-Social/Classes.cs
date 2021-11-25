@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace EficazFrameworkCore.SPED.Schemas.eSocial
+namespace EficazFramework.SPED.Schemas.eSocial
 {
 
     // REVISADO ATÉ NT 15/2019, após início da simplificação de layout.

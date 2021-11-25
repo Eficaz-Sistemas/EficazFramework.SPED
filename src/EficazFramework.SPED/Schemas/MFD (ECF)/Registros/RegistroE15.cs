@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
 
     /// <summary>
@@ -51,9 +51,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
             writer.Append(TotalLiquido.ValueToString(2).ToFixedLenghtString(14, Escrituracao._builder, Alignment.Left, "0")); // 16
             writer.Append(TotalizadorParcial.ToFixedLenghtString(7, Escrituracao._builder, Alignment.Right, " ")); // 17
             if (Cancelamento == true == true)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N"); // 18
+                writer.Append('N'); // 18
             if (CasasDecimaisQtdade.HasValue == true)
             {
                 writer.Append((QuantidadeCancelada * Math.Pow(10, (double)CasasDecimaisQtdade)).ValueToString().ToFixedLenghtString(7, Escrituracao._builder, Alignment.Left, "0")); // 19
@@ -66,9 +66,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
             writer.Append(ValorCancelado.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 20
             writer.Append(CancelamentoAcrescimo.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 21
             if (IAT_TotalLiquido == IndicadorArredTruncam.Arredondamento)
-                writer.Append("A");
+                writer.Append('A');
             else
-                writer.Append("T"); // 22
+                writer.Append('T'); // 22
             writer.Append(CasasDecimaisQtdade.ValueToString().ToFixedLenghtString(1, Escrituracao._builder, Alignment.Left, "0")); // 23
             writer.Append(CasasDecimaisUnitario.ValueToString().ToFixedLenghtString(1, Escrituracao._builder, Alignment.Left, "0")); // 24
             return writer.ToString();

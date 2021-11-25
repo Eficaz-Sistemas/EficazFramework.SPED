@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
+namespace EficazFramework.SPED.Schemas.SP.eCredAc.CAT207
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -553,30 +553,42 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
         public override Primitives.Registro[] SufixoBlocoEncerramento()
         {
             var regs = new List<Primitives.Registro>();
-            var reg9900_9001 = new Registro9900();
-            reg9900_9001.Registro = "9001";
-            reg9900_9001.TotalLinhas = 1;
+            var reg9900_9001 = new Registro9900
+            {
+                Registro = "9001",
+                TotalLinhas = 1
+            };
             regs.Add(reg9900_9001);
-            var reg9900_9900 = new Registro9900();
-            reg9900_9900.Registro = "9900";
-            reg9900_9900.TotalLinhas = (from reg in Blocos[BlocoTotalizador].Registros
-                                        where reg is Primitives.RegistroTotalizador
-                                        select reg).Count() + 4;
+            var reg9900_9900 = new Registro9900
+            {
+                Registro = "9900",
+                TotalLinhas = (from reg in Blocos[BlocoTotalizador].Registros
+                               where reg is Primitives.RegistroTotalizador
+                               select reg).Count() + 4
+            };
             regs.Add(reg9900_9900);
-            var reg9900_9990 = new Registro9900();
-            reg9900_9990.Registro = "9990";
-            reg9900_9990.TotalLinhas = 1;
+            var reg9900_9990 = new Registro9900
+            {
+                Registro = "9990",
+                TotalLinhas = 1
+            };
             regs.Add(reg9900_9990);
-            var reg9900_9999 = new Registro9900();
-            reg9900_9999.Registro = "9999";
-            reg9900_9999.TotalLinhas = 1;
+            var reg9900_9999 = new Registro9900
+            {
+                Registro = "9999",
+                TotalLinhas = 1
+            };
             regs.Add(reg9900_9999);
-            var reg9990 = new Registro9990();
-            reg9990.TotalLinhas = Blocos["9"].Registros.Count + 6;
+            var reg9990 = new Registro9990
+            {
+                TotalLinhas = Blocos["9"].Registros.Count + 6
+            };
             regs.Add(reg9990);
-            var reg9999 = new Registro9999();
-            reg9999.TotalLinhas = (from bl in Blocos.Values
-                                   select bl.Registros.Count).Sum() + 6;
+            var reg9999 = new Registro9999
+            {
+                TotalLinhas = (from bl in Blocos.Values
+                               select bl.Registros.Count).Sum() + 6
+            };
             regs.Add(reg9999);
             return regs.ToArray();
         }

@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Reinf
+namespace EficazFramework.SPED.Schemas.EFD_Reinf
 {
     public enum Ambiente
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Produção")]
+        [System.ComponentModel.Description("Produção")]
         Producao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Produção Restrita - Dados Reais")]
+        [System.ComponentModel.Description("Produção Restrita - Dados Reais")]
         ProducaoRestrita_DadosReais = 2
         // <System.Xml.Serialization.XmlEnumAttribute("3")>
         // <Attributes.DisplayName("Produção Restrita - Dados Fictícios")>
@@ -36,49 +36,49 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Reinf
     public enum ObrigatoriedadeECD
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Não entrega ECD")]
+        [System.ComponentModel.Description("Não entrega ECD")]
         NaoFaz = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Obrigada a entrega da ECD")]
+        [System.ComponentModel.Description("Obrigada a entrega da ECD")]
         EntregaECD = 1
     }
 
     public enum DesoneracaoCPRB
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Desonerada")]
+        [System.ComponentModel.Description("Desonerada")]
         Desonerada = 1
     }
 
     public enum AcordoInternacionalIsencaoMulta
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Sem Acordo")]
+        [System.ComponentModel.Description("Sem Acordo")]
         SemAcordo = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Com Acordo")]
+        [System.ComponentModel.Description("Com Acordo")]
         ComAcordo = 1
     }
 
     public enum SituacaoPessoaJuridica
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Normal")]
+        [System.ComponentModel.Description("Normal")]
         Normal = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Extinção")]
+        [System.ComponentModel.Description("Extinção")]
         Extincao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Fusão")]
+        [System.ComponentModel.Description("Fusão")]
         Fusao = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Cisão")]
+        [System.ComponentModel.Description("Cisão")]
         Cisao = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("Incorporação")]
+        [System.ComponentModel.Description("Incorporação")]
         Incorporacao = 4
     }
 

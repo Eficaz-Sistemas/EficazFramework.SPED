@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Schemas.CTe
+namespace EficazFramework.SPED.Schemas.CTe
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -9,10 +9,10 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum FormatoImpressao
     {
-        [Attributes.DisplayName("Enum_FormatoImpressao_Retrato")]
+        [System.ComponentModel.Description("Enum_FormatoImpressao_Retrato")]
         [System.Xml.Serialization.XmlEnum("1")]
         Retrato = 1,
-        [Attributes.DisplayName("Enum_FormatoImpressao_Paisagem")]
+        [System.ComponentModel.Description("Enum_FormatoImpressao_Paisagem")]
         [System.Xml.Serialization.XmlEnum("2")]
         Paisagem = 2
     }
@@ -22,19 +22,19 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum FormaEmissao
     {
-        [Attributes.DisplayName("Enum_CTe_FormaEmissao_Normal")]
+        [System.ComponentModel.Description("Enum_CTe_FormaEmissao_Normal")]
         [System.Xml.Serialization.XmlEnum("1")]
         Normal = 1,
-        [Attributes.DisplayName("Enum_CTe_FormaEmissao_EPEC")]
+        [System.ComponentModel.Description("Enum_CTe_FormaEmissao_EPEC")]
         [System.Xml.Serialization.XmlEnum("4")]
         EPEC_SVC = 4,
-        [Attributes.DisplayName("Enum_CTe_FormaEmissao_FSDA")]
+        [System.ComponentModel.Description("Enum_CTe_FormaEmissao_FSDA")]
         [System.Xml.Serialization.XmlEnum("5")]
         Contingencia_FSDA = 5,
-        [Attributes.DisplayName("Enum_CTe_FormaEmissao_SVCRS")]
+        [System.ComponentModel.Description("Enum_CTe_FormaEmissao_SVCRS")]
         [System.Xml.Serialization.XmlEnum("7")]
         Autorizacao_SVC_RS = 7,
-        [Attributes.DisplayName("Enum_CTe_FormaEmissao_SVCSP")]
+        [System.ComponentModel.Description("Enum_CTe_FormaEmissao_SVCSP")]
         [System.Xml.Serialization.XmlEnum("8")]
         Autorizacao_SVC_SP = 8
     }
@@ -44,16 +44,16 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum TipoCTe
     {
-        [Attributes.DisplayName("Enum_TipoCTe_Normal")]
+        [System.ComponentModel.Description("Enum_TipoCTe_Normal")]
         [System.Xml.Serialization.XmlEnum("0")]
         Normal = 0,
-        [Attributes.DisplayName("Enum_TipoCTe_Complemento")]
+        [System.ComponentModel.Description("Enum_TipoCTe_Complemento")]
         [System.Xml.Serialization.XmlEnum("1")]
         Complemento = 1,
-        [Attributes.DisplayName("Enum_TipoCTe_Anulacao")]
+        [System.ComponentModel.Description("Enum_TipoCTe_Anulacao")]
         [System.Xml.Serialization.XmlEnum("2")]
         Anulacao = 2,
-        [Attributes.DisplayName("Enum_TipoCTe_Substituto")]
+        [System.ComponentModel.Description("Enum_TipoCTe_Substituto")]
         [System.Xml.Serialization.XmlEnum("3")]
         Substituto = 3
     }
@@ -63,10 +63,10 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum Modelo
     {
-        [Attributes.DisplayName("57")]// , False)>
+        [System.ComponentModel.Description("57")]// , False)>
         [System.Xml.Serialization.XmlEnum("57")]
         CTe = 57,
-        [Attributes.DisplayName("67")]// , False)>
+        [System.ComponentModel.Description("67")]// , False)>
         [System.Xml.Serialization.XmlEnum("67")]
         CTeOS = 67
     }
@@ -76,16 +76,16 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum ProcessoEmissao
     {
-        [Attributes.DisplayName("Enum_EmissorCTe_AppContrib")]
+        [System.ComponentModel.Description("Enum_EmissorCTe_AppContrib")]
         [System.Xml.Serialization.XmlEnum("0")]
         AppContribuinte = 0,
-        [Attributes.DisplayName("Enum_EmissorCTe_Avulso")]
+        [System.ComponentModel.Description("Enum_EmissorCTe_Avulso")]
         [System.Xml.Serialization.XmlEnum("1")]
         Avulso_Fisco = 1,
-        [Attributes.DisplayName("Enum_EmissorCTe_AvulsoCertContrb")]
+        [System.ComponentModel.Description("Enum_EmissorCTe_AvulsoCertContrb")]
         [System.Xml.Serialization.XmlEnum("2")]
         Avulso_SiteFisco = 2,
-        [Attributes.DisplayName("Enum_EmissorCTe_AppFisco")]
+        [System.ComponentModel.Description("Enum_EmissorCTe_AppFisco")]
         [System.Xml.Serialization.XmlEnum("3")]
         AppFornecidoFisco = 3
     }
@@ -95,13 +95,13 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum FormaPagamento
     {
-        [Attributes.DisplayName("Enum_CTe_FormaPagto_Pago")]
+        [System.ComponentModel.Description("Enum_CTe_FormaPagto_Pago")]
         [System.Xml.Serialization.XmlEnum("0")]
         Pago = 0,
-        [Attributes.DisplayName("Enum_CTe_FormaPagto_APagar")]
+        [System.ComponentModel.Description("Enum_CTe_FormaPagto_APagar")]
         [System.Xml.Serialization.XmlEnum("1")]
         APagar = 1,
-        [Attributes.DisplayName("Enum_CTe_FormaPagto_Outros")]
+        [System.ComponentModel.Description("Enum_CTe_FormaPagto_Outros")]
         [System.Xml.Serialization.XmlEnum("2")]
         Outros = 2
     }
@@ -111,22 +111,22 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum ModalidadeTransporte
     {
-        [Attributes.DisplayName("Enum_CTe_Modalidade_Rodoviario")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_Rodoviario")]
         [System.Xml.Serialization.XmlEnum("01")]
         Rodoviario = 1,
-        [Attributes.DisplayName("Enum_CTe_Modalidade_Aereo")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_Aereo")]
         [System.Xml.Serialization.XmlEnum("02")]
         Aereo = 2,
-        [Attributes.DisplayName("Enum_CTe_Modalidade_Aquaviario")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_Aquaviario")]
         [System.Xml.Serialization.XmlEnum("03")]
         Aquaviario = 3,
-        [Attributes.DisplayName("Enum_CTe_Modalidade_Ferroviario")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_Ferroviario")]
         [System.Xml.Serialization.XmlEnum("04")]
         Ferroviario = 4,
-        [Attributes.DisplayName("Enum_CTe_Modalidade_Dutoviario")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_Dutoviario")]
         [System.Xml.Serialization.XmlEnum("05")]
         Dutoviario = 5,
-        [Attributes.DisplayName("Enum_CTe_Modalidade_MultiModal")]
+        [System.ComponentModel.Description("Enum_CTe_Modalidade_MultiModal")]
         [System.Xml.Serialization.XmlEnum("06")]
         Multimodal = 6
     }
@@ -136,22 +136,22 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum TiposServico
     {
-        [Attributes.DisplayName("Enum_CTe_TipoServico_Normal")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_Normal")]
         [System.Xml.Serialization.XmlEnum("0")]
         Normal = 0,
-        [Attributes.DisplayName("Enum_CTe_TipoServico_SubContratacao")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_SubContratacao")]
         [System.Xml.Serialization.XmlEnum("1")]
         SubContratacao = 1,
-        [Attributes.DisplayName("Enum_CTe_TipoServico_Redespacho")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_Redespacho")]
         [System.Xml.Serialization.XmlEnum("2")]
         ReDespacho = 2,
-        [Attributes.DisplayName("Enum_CTe_TipoServico_RedespachoInt")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_RedespachoInt")]
         [System.Xml.Serialization.XmlEnum("3")]
         Redespacho_Intermediario = 3,
-        [Attributes.DisplayName("Enum_CTe_TipoServico_ServVincMultiModal")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_ServVincMultiModal")]
         [System.Xml.Serialization.XmlEnum("4")]
         Servico_Vinculado_MultiModal = 4,
-        [Attributes.DisplayName("Enum_CTe_TipoServico_CTeOS")]
+        [System.ComponentModel.Description("Enum_CTe_TipoServico_CTeOS")]
         [System.Xml.Serialization.XmlEnum("6")]
         ServicoCTeOS = 6
     }
@@ -176,19 +176,19 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum TipoTomador
     {
-        [Attributes.DisplayName("Enum_CTe_TipoTomador_Remetente")]
+        [System.ComponentModel.Description("Enum_CTe_TipoTomador_Remetente")]
         [System.Xml.Serialization.XmlEnum("0")]
         Remetente = 0,
-        [Attributes.DisplayName("Enum_CTe_TipoTomador_Expedidor")]
+        [System.ComponentModel.Description("Enum_CTe_TipoTomador_Expedidor")]
         [System.Xml.Serialization.XmlEnum("1")]
         Expedidor = 1,
-        [Attributes.DisplayName("Enum_CTe_TipoTomador_Recebedor")]
+        [System.ComponentModel.Description("Enum_CTe_TipoTomador_Recebedor")]
         [System.Xml.Serialization.XmlEnum("2")]
         Recebedor = 2,
-        [Attributes.DisplayName("Enum_CTe_TipoTomador_Destinatario")]
+        [System.ComponentModel.Description("Enum_CTe_TipoTomador_Destinatario")]
         [System.Xml.Serialization.XmlEnum("3")]
         Destinatario = 3,
-        [Attributes.DisplayName("Enum_CTe_TipoTomador_Outros")]
+        [System.ComponentModel.Description("Enum_CTe_TipoTomador_Outros")]
         [System.Xml.Serialization.XmlEnum("4")]
         Outros = 4
     }
@@ -198,22 +198,22 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum ResponsavelSeguro
     {
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_Remetente")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_Remetente")]
         [System.Xml.Serialization.XmlEnum("0")]
         Remetente = 0,
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_Expedidor")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_Expedidor")]
         [System.Xml.Serialization.XmlEnum("1")]
         Expedidor = 1,
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_Recebedor")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_Recebedor")]
         [System.Xml.Serialization.XmlEnum("2")]
         Recebedor = 2,
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_Destinatário")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_Destinatário")]
         [System.Xml.Serialization.XmlEnum("3")]
         Destinatario = 3,
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_EmitenteCTe")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_EmitenteCTe")]
         [System.Xml.Serialization.XmlEnum("4")]
         Emitente = 4,
-        [Attributes.DisplayName("Enum_CTe_ResponsavelSeguro_Tomador")]
+        [System.ComponentModel.Description("Enum_CTe_ResponsavelSeguro_Tomador")]
         [System.Xml.Serialization.XmlEnum("5")]
         Tomador = 5
     }
@@ -257,10 +257,10 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     public enum rodoVeicTpProp
     {
         [System.Xml.Serialization.XmlEnum("P")]
-        [Attributes.DisplayName("Enum_CTeRodov_VeicTpProp_Proprio")]
+        [System.ComponentModel.Description("Enum_CTeRodov_VeicTpProp_Proprio")]
         Proprio = 0,
         [System.Xml.Serialization.XmlEnum("T")]
-        [Attributes.DisplayName("Enum_CTeRodov_VeicTpProp_Terceiro")]
+        [System.ComponentModel.Description("Enum_CTeRodov_VeicTpProp_Terceiro")]
         Terceiro = 1
     }
 
@@ -269,10 +269,10 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
     public enum rodoLota
     {
-        [Attributes.DisplayName("Enum_CTeRodov_Lotacao_Nao")]
+        [System.ComponentModel.Description("Enum_CTeRodov_Lotacao_Nao")]
         [System.Xml.Serialization.XmlEnum("0")]
         Nao = 0,
-        [Attributes.DisplayName("Enum_CTeRodov_Lotacao_Sim")]
+        [System.ComponentModel.Description("Enum_CTeRodov_Lotacao_Sim")]
         [System.Xml.Serialization.XmlEnum("1")]
         Sim = 1
     }
@@ -288,16 +288,16 @@ namespace EficazFrameworkCore.SPED.Schemas.CTe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VersaoServicoConsulta
     {
-        [Attributes.DisplayName("1.03")]
+        [System.ComponentModel.Description("1.03")]
         [System.Xml.Serialization.XmlEnum("1.03")]
         Versao_1_03,
-        [Attributes.DisplayName("1.04")]
+        [System.ComponentModel.Description("1.04")]
         [System.Xml.Serialization.XmlEnum("1.04")]
         Versao_1_04,
-        [Attributes.DisplayName("2.00")]
+        [System.ComponentModel.Description("2.00")]
         [System.Xml.Serialization.XmlEnum("2.00")]
         Versao_2_00,
-        [Attributes.DisplayName("3.00")]
+        [System.ComponentModel.Description("3.00")]
         [System.Xml.Serialization.XmlEnum("3.00")]
         Versao_3_00
     }

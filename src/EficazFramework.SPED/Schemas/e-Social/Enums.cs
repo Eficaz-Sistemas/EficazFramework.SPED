@@ -1,13 +1,13 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.eSocial
+namespace EficazFramework.SPED.Schemas.eSocial
 {
     public enum Ambiente
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Produção")]
+        [System.ComponentModel.Description("Produção")]
         Producao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Produção Restrita - Dados Reais")]
+        [System.ComponentModel.Description("Produção Restrita - Dados Reais")]
         ProducaoRestrita_DadosReais = 2
         // <System.Xml.Serialization.XmlEnumAttribute("3")>
         // <Attributes.DisplayName("Produção Restrita - Dados Fictícios")>
@@ -194,32 +194,32 @@ namespace EficazFrameworkCore.SPED.Schemas.eSocial
     public enum SituacaoPessoaJuridica
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Normal")]
+        [System.ComponentModel.Description("Normal")]
         Normal = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Extinção")]
+        [System.ComponentModel.Description("Extinção")]
         Extincao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Fusão")]
+        [System.ComponentModel.Description("Fusão")]
         Fusao = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Cisão")]
+        [System.ComponentModel.Description("Cisão")]
         Cisao = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("Incorporação")]
+        [System.ComponentModel.Description("Incorporação")]
         Incorporacao = 4
     }
 
     public enum SituacaoPessoaFisica
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Normal")]
+        [System.ComponentModel.Description("Normal")]
         Normal = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Encerramento de Espólio")]
+        [System.ComponentModel.Description("Encerramento de Espólio")]
         Espolio = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Saída do país em caráter permanente")]
+        [System.ComponentModel.Description("Saída do país em caráter permanente")]
         SaidaPais = 2
     }
 
@@ -419,343 +419,343 @@ namespace EficazFrameworkCore.SPED.Schemas.eSocial
     public enum Sexo
     {
         [System.Xml.Serialization.XmlEnum("M")]
-        [Attributes.DisplayName("Masculino")]
+        [System.ComponentModel.Description("Masculino")]
         Masculino = 1,
         [System.Xml.Serialization.XmlEnum("F")]
-        [Attributes.DisplayName("Feminino")]
+        [System.ComponentModel.Description("Feminino")]
         Feminino = 2
     }
 
     public enum RacaCor
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Branca")]
+        [System.ComponentModel.Description("Branca")]
         Branca = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Preta")]
+        [System.ComponentModel.Description("Preta")]
         Preta = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Parda")]
+        [System.ComponentModel.Description("Parda")]
         Parda = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("Amarela")]
+        [System.ComponentModel.Description("Amarela")]
         Amarela = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("Indígena")]
+        [System.ComponentModel.Description("Indígena")]
         Indigena = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("Não Informado")]
+        [System.ComponentModel.Description("Não Informado")]
         NaoInformado = 6
     }
 
     public enum EstadoCivil
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Solteiro")]
+        [System.ComponentModel.Description("Solteiro")]
         Solteiro = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Casado")]
+        [System.ComponentModel.Description("Casado")]
         Casado = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Divorciado")]
+        [System.ComponentModel.Description("Divorciado")]
         Divorciado = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("Separado")]
+        [System.ComponentModel.Description("Separado")]
         Separado = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("Viúvo")]
+        [System.ComponentModel.Description("Viúvo")]
         Viuvo = 5
     }
 
     public enum GrauInstrucao
     {
         [System.Xml.Serialization.XmlEnum("01")]
-        [Attributes.DisplayName("01 - Analfabeto, inclusive o que, embora tenha recebido instrução, não se alfabetizou")]
+        [System.ComponentModel.Description("01 - Analfabeto, inclusive o que, embora tenha recebido instrução, não se alfabetizou")]
         Analfabeto = 1,
         [System.Xml.Serialization.XmlEnum("02")]
-        [Attributes.DisplayName("02 - Até o 5º ano incompleto do Ensino Fundamental (antiga 4ª série) ou que se tenha alfabetizado sem ter frequentado escola regular")]
+        [System.ComponentModel.Description("02 - Até o 5º ano incompleto do Ensino Fundamental (antiga 4ª série) ou que se tenha alfabetizado sem ter frequentado escola regular")]
         FundamentalIncompletoAte5Ano = 2,
         [System.Xml.Serialization.XmlEnum("03")]
-        [Attributes.DisplayName("03 - 5º ano completo do Ensino Fundamental")]
+        [System.ComponentModel.Description("03 - 5º ano completo do Ensino Fundamental")]
         FundamentalCompletoAte5Ano = 3,
         [System.Xml.Serialization.XmlEnum("04")]
-        [Attributes.DisplayName("04 - Do 6º ao 9º ano do Ensino Fundamental incompleto (antiga 5ª a 8ª série)")]
+        [System.ComponentModel.Description("04 - Do 6º ao 9º ano do Ensino Fundamental incompleto (antiga 5ª a 8ª série)")]
         FundamentalIncompleto6a9Ano = 4,
         [System.Xml.Serialization.XmlEnum("05")]
-        [Attributes.DisplayName("05 - Ensino Fundamental Completo")]
+        [System.ComponentModel.Description("05 - Ensino Fundamental Completo")]
         FundamentalCompletoTotal = 5,
         [System.Xml.Serialization.XmlEnum("06")]
-        [Attributes.DisplayName("06 - Ensino Médio incompleto")]
+        [System.ComponentModel.Description("06 - Ensino Médio incompleto")]
         MedioIncompleto = 6,
         [System.Xml.Serialization.XmlEnum("07")]
-        [Attributes.DisplayName("07 - Ensino Médio completo")]
+        [System.ComponentModel.Description("07 - Ensino Médio completo")]
         MedioCompleto = 7,
         [System.Xml.Serialization.XmlEnum("08")]
-        [Attributes.DisplayName("08 - Educação Superior incompleta")]
+        [System.ComponentModel.Description("08 - Educação Superior incompleta")]
         SuperiorIncompleto = 8,
         [System.Xml.Serialization.XmlEnum("09")]
-        [Attributes.DisplayName("09 - Educação Superior completa")]
+        [System.ComponentModel.Description("09 - Educação Superior completa")]
         SuperiorCompleto = 9,
         [System.Xml.Serialization.XmlEnum("10")]
-        [Attributes.DisplayName("10 - Pós-Graduação completa")]
+        [System.ComponentModel.Description("10 - Pós-Graduação completa")]
         PosGraduacaoCompleta = 10,
         [System.Xml.Serialization.XmlEnum("11")]
-        [Attributes.DisplayName("11 - Mestrado completo")]
+        [System.ComponentModel.Description("11 - Mestrado completo")]
         Mestrado = 11,
         [System.Xml.Serialization.XmlEnum("12")]
-        [Attributes.DisplayName("12 - Doutorado completo")]
+        [System.ComponentModel.Description("12 - Doutorado completo")]
         Doutorado = 12
     }
 
     public enum ClasseTrabEstrangeiro
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Visto permanente")]
+        [System.ComponentModel.Description("1 - Visto permanente")]
         VistoPermanente = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Visto temporário")]
+        [System.ComponentModel.Description("2 - Visto temporário")]
         VistoTemporario = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Asilado")]
+        [System.ComponentModel.Description("3 - Asilado")]
         Asilado = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Refugiado")]
+        [System.ComponentModel.Description("4 - Refugiado")]
         Regufiado = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Solicitante de Refúgio")]
+        [System.ComponentModel.Description("5 - Solicitante de Refúgio")]
         SolictRefudio = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Residente fora do Brasil")]
+        [System.ComponentModel.Description("6 - Residente fora do Brasil")]
         ResForaBrasil = 6,
         [System.Xml.Serialization.XmlEnum("7")]
-        [Attributes.DisplayName("7 - Deficiente físico e com mais de 51 anos")]
+        [System.ComponentModel.Description("7 - Deficiente físico e com mais de 51 anos")]
         DeficienteFisiMaior51Anos = 7,
         [System.Xml.Serialization.XmlEnum("8")]
-        [Attributes.DisplayName("8 - Com residência provisória e anistiado, em situação irregular")]
+        [System.ComponentModel.Description("8 - Com residência provisória e anistiado, em situação irregular")]
         ResidProvisoria_Anistiado_Irregular = 8,
         [System.Xml.Serialization.XmlEnum("9")]
-        [Attributes.DisplayName("9 - Permanência no Brasil em razão de filhos ou cônjuge brasileiros")]
+        [System.ComponentModel.Description("9 - Permanência no Brasil em razão de filhos ou cônjuge brasileiros")]
         PermPorFilhosOuConjugeBR = 9,
         [System.Xml.Serialization.XmlEnum("10")]
-        [Attributes.DisplayName("10 - Beneficiado pelo acordo entre países do Mercosul")]
+        [System.ComponentModel.Description("10 - Beneficiado pelo acordo entre países do Mercosul")]
         BeneficMercosul = 10,
         [System.Xml.Serialization.XmlEnum("11")]
-        [Attributes.DisplayName("11 - Dependente de agente diplomático e/ou consular de países que mantém convênio de reciprocidade para o exercício de atividade remunerada no Brasil")]
+        [System.ComponentModel.Description("11 - Dependente de agente diplomático e/ou consular de países que mantém convênio de reciprocidade para o exercício de atividade remunerada no Brasil")]
         DepAgDiplomatico = 11,
         [System.Xml.Serialization.XmlEnum("12")]
-        [Attributes.DisplayName("12 - Beneficiado pelo Tratado de Amizade, Cooperação e Consulta entre a República Federativa do Brasil e a República Portuguesa")]
+        [System.ComponentModel.Description("12 - Beneficiado pelo Tratado de Amizade, Cooperação e Consulta entre a República Federativa do Brasil e a República Portuguesa")]
         TratAmizBR_PT = 12
     }
 
     public enum VinculoTrabalhista
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("CLT")]
+        [System.ComponentModel.Description("CLT")]
         CLT = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Estatutário")]
+        [System.ComponentModel.Description("Estatutário")]
         Estatutario = 2,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não Aplicável - Evento de Alteração")]
+        [System.ComponentModel.Description("Não Aplicável - Evento de Alteração")]
         NA = 9999
     }
 
     public enum RegimePrevidenciario
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Regime Gera da Previdência Social - RGPS")]
+        [System.ComponentModel.Description("1 - Regime Gera da Previdência Social - RGPS")]
         RGPS = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Regime Próprio de Previdência Social - RPPS")]
+        [System.ComponentModel.Description("2 - Regime Próprio de Previdência Social - RPPS")]
         RPPS = 2,
-        [Attributes.DisplayName("3 - Regime de Previdência Social no Exterior")]
+        [System.ComponentModel.Description("3 - Regime de Previdência Social no Exterior")]
         Exterior = 3
     }
 
     public enum TipoAdmissaoCLT
     {
-        [Attributes.DisplayName("1 - Admissão")]
+        [System.ComponentModel.Description("1 - Admissão")]
         Admissao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Transferência de empresa do mesmo grupo econômico")]
+        [System.ComponentModel.Description("2 - Transferência de empresa do mesmo grupo econômico")]
         TransfMesmoGrupoEcon = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Transferência de empresa consorciada ou de consórcio")]
+        [System.ComponentModel.Description("3 - Transferência de empresa consorciada ou de consórcio")]
         TransConsorciada = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Transferência por motivo de sucessão, incorporação, cisão ou fusão")]
+        [System.ComponentModel.Description("4 - Transferência por motivo de sucessão, incorporação, cisão ou fusão")]
         TransfSucessaoIncCisaoFusao = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Transferência do empregado doméstico para outro representante da mesma unidade familiar")]
+        [System.ComponentModel.Description("5 - Transferência do empregado doméstico para outro representante da mesma unidade familiar")]
         TransfDomesticoMesmaFamilia = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Mudança de CPF")]
+        [System.ComponentModel.Description("6 - Mudança de CPF")]
         MudancaCPF = 6,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não Aplicável - Evento de Alteração")]
+        [System.ComponentModel.Description("Não Aplicável - Evento de Alteração")]
         NA = 9999
     }
 
     public enum IndicadorAdmissao
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Normal")]
+        [System.ComponentModel.Description("1 - Normal")]
         Normal = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Decorrente de Ação Fiscal")]
+        [System.ComponentModel.Description("2 - Decorrente de Ação Fiscal")]
         AcaoFiscal = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Decorrente de Decisão Judicial")]
+        [System.ComponentModel.Description("3 - Decorrente de Decisão Judicial")]
         DecisaoJudicial = 3,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não Aplicável - Evento de Alteração")]
+        [System.ComponentModel.Description("Não Aplicável - Evento de Alteração")]
         NA = 9999
     }
 
     public enum VinculoRegimeJornada
     {
-        [Attributes.DisplayName("1 - Submetidos a Horário de Trabalho (Cap. II da CLT)")]
+        [System.ComponentModel.Description("1 - Submetidos a Horário de Trabalho (Cap. II da CLT)")]
         SubHorarioTrabalho = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Atividade Externa especificada no Inciso I do Art. 62 da CLT")]
+        [System.ComponentModel.Description("2 - Atividade Externa especificada no Inciso I do Art. 62 da CLT")]
         AtivExterna = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Funções especificadas no Inciso II do Art. 62 da CLT")]
+        [System.ComponentModel.Description("3 - Funções especificadas no Inciso II do Art. 62 da CLT")]
         FuncoesEspecificas = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Teletrabalho, previsto no Inciso III do Art. 62 da CLT")]
+        [System.ComponentModel.Description("4 - Teletrabalho, previsto no Inciso III do Art. 62 da CLT")]
         TeleTrabalho = 4
     }
 
     public enum NaturezaAtividade
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Trabalho Urbano")]
+        [System.ComponentModel.Description("1 - Trabalho Urbano")]
         Urbano = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Trabalho Rural")]
+        [System.ComponentModel.Description("2 - Trabalho Rural")]
         Rural = 2
     }
 
     public enum OpcaoFGTS
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Optante")]
+        [System.ComponentModel.Description("1 - Optante")]
         Optante = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Não Optante")]
+        [System.ComponentModel.Description("2 - Não Optante")]
         NaoOptante = 2
     }
 
     public enum TrabTemporarioHipotese
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Necessidade de substituição transitória de pessoal permanente")]
+        [System.ComponentModel.Description("1 - Necessidade de substituição transitória de pessoal permanente")]
         SubstTransitoriaPessoalPermn = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Demanda complementar de serviços")]
+        [System.ComponentModel.Description("2 - Demanda complementar de serviços")]
         DemandaComplementar = 2,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NA = 9999
     }
 
     public enum TrabTemporarioTpInclusao
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Locais sem filiais")]
+        [System.ComponentModel.Description("1 - Locais sem filiais")]
         SemFiliais = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Estudo de mercado")]
+        [System.ComponentModel.Description("2 - Estudo de mercado")]
         EstudoMercado = 2,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("3 - Contratação superior a 3 meses")]
+        [System.ComponentModel.Description("3 - Contratação superior a 3 meses")]
         Superior3Meses = 3,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NA = 9999
     }
 
     public enum IndicadorAdmissaoEstatutario
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Normal")]
+        [System.ComponentModel.Description("1 - Normal")]
         Normal = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Decorrente de Decisão Judicial")]
+        [System.ComponentModel.Description("2 - Decorrente de Decisão Judicial")]
         DecisaoJudicial = 2
     }
 
     public enum TipoProvimentoEstatutario
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Nomeação em cargo efetivo")]
+        [System.ComponentModel.Description("1 - Nomeação em cargo efetivo")]
         NomeacaoEfetivo = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Nomeação em cargo em comissão")]
+        [System.ComponentModel.Description("2 - Nomeação em cargo em comissão")]
         NomeacaoComissao = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Incorporação (militar)")]
+        [System.ComponentModel.Description("3 - Incorporação (militar)")]
         IncorporacaoMilitar = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Matrícula (militar)")]
+        [System.ComponentModel.Description("4 - Matrícula (militar)")]
         MatriculaMilitar = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Reinclusão (militar)")]
+        [System.ComponentModel.Description("5 - Reinclusão (militar)")]
         ReinclusaoMilitar = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Diplomação")]
+        [System.ComponentModel.Description("6 - Diplomação")]
         Diplomacao = 6,
         [System.Xml.Serialization.XmlEnum("99")]
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 7
     }
 
     public enum PlanoSegregacaoMassa
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Plano previdenciário ou único")]
+        [System.ComponentModel.Description("1 - Plano previdenciário ou único")]
         PrevUnico = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Plano financeiro")]
+        [System.ComponentModel.Description("2 - Plano financeiro")]
         Financeiro = 2
     }
 
     public enum UnidadeSalarial
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Por Hora")]
+        [System.ComponentModel.Description("1 - Por Hora")]
         Hora = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Por Dia")]
+        [System.ComponentModel.Description("2 - Por Dia")]
         Dia = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Por Semana")]
+        [System.ComponentModel.Description("3 - Por Semana")]
         Semana = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Por Quinzena")]
+        [System.ComponentModel.Description("4 - Por Quinzena")]
         Quinzena = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Por Mês")]
+        [System.ComponentModel.Description("5 - Por Mês")]
         Mes = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Por Tarefa")]
+        [System.ComponentModel.Description("6 - Por Tarefa")]
         Tarefa = 6,
         [System.Xml.Serialization.XmlEnum("7")]
-        [Attributes.DisplayName("7 - Não aplicável - salário exclusivamente variável")]
+        [System.ComponentModel.Description("7 - Não aplicável - salário exclusivamente variável")]
         Variavel = 7
     }
 
     public enum TipoContrato
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Prazo indeterminado")]
+        [System.ComponentModel.Description("1 - Prazo indeterminado")]
         Indeterminado = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Prazo determinado, definido em dias;")]
+        [System.ComponentModel.Description("2 - Prazo determinado, definido em dias;")]
         DeterminadoDias = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Prazo determinado, vinculado à ocorrência de um fato")]
+        [System.ComponentModel.Description("3 - Prazo determinado, vinculado à ocorrência de um fato")]
         DeterminadoFato = 3
     }
 
@@ -765,98 +765,98 @@ namespace EficazFrameworkCore.SPED.Schemas.eSocial
         // <Attributes.DisplayName("1 - Jornada com horário diário e folga fixos")>
         // HorarioFolgaFixo = 1
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Jornada 12 x 36 (12 horas de trabalho seguidas de 36 horas ininterruptas de descanso)")]
+        [System.ComponentModel.Description("2 - Jornada 12 x 36 (12 horas de trabalho seguidas de 36 horas ininterruptas de descanso)")]
         j12x36 = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Jornada com horário diário fixo e folga variável")]
+        [System.ComponentModel.Description("3 - Jornada com horário diário fixo e folga variável")]
         HorarioFixoFolgaVariavel = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Jornada com horário diário fixo e folga fixa (no domingo)")]
+        [System.ComponentModel.Description("4 - Jornada com horário diário fixo e folga fixa (no domingo)")]
         HorarioFixoFolgaFixa_Dom = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Jornada com horário diário fixo e folga fixa (exceto no domingo)")]
+        [System.ComponentModel.Description("5 - Jornada com horário diário fixo e folga fixa (exceto no domingo)")]
         HorarioFixoFolgaFixa_ExDom = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Jornada com horário diário fixo e folga fixa (em outro dia da semana)")]
+        [System.ComponentModel.Description("6 - Jornada com horário diário fixo e folga fixa (em outro dia da semana)")]
         HorarioFixoFolgaFixa_OutroDia = 6,
         [System.Xml.Serialization.XmlEnum("7")]
-        [Attributes.DisplayName("7 - Turno ininterrupto de revezamento")]
+        [System.ComponentModel.Description("7 - Turno ininterrupto de revezamento")]
         TurnoIniterruptoRevezamento = 7,
         [System.Xml.Serialization.XmlEnum("9")]
-        [Attributes.DisplayName("9 - Demais tipos de jornada")]
+        [System.ComponentModel.Description("9 - Demais tipos de jornada")]
         Outros = 9
     }
 
     public enum TempoParcial
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("0 - Não é contrato em tempo parcial")]
+        [System.ComponentModel.Description("0 - Não é contrato em tempo parcial")]
         NaoETempoParcial = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Limitado a 25 horas semnanais")]
+        [System.ComponentModel.Description("1 - Limitado a 25 horas semnanais")]
         Lim25Horas = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Limitado a 30 horas semnanais")]
+        [System.ComponentModel.Description("2 - Limitado a 30 horas semnanais")]
         Lim30Horas = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Limitado a 26 horas semnanais")]
+        [System.ComponentModel.Description("3 - Limitado a 26 horas semnanais")]
         Lim26Horas = 3
     }
 
     public enum VinculoSucecssaoAnteriorTipo
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("CNPJ")]
+        [System.ComponentModel.Description("CNPJ")]
         CNPJ = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("CPF")]
+        [System.ComponentModel.Description("CPF")]
         CPF = 2,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("CGC")]
+        [System.ComponentModel.Description("CGC")]
         CGC = 5,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("CEI")]
+        [System.ComponentModel.Description("CEI")]
         CEI = 6
     }
 
     public enum ImigranteTempoResidencia
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Prazo Indeterminado")]
+        [System.ComponentModel.Description("1 - Prazo Indeterminado")]
         Indeterminado = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Prazo Determinado")]
+        [System.ComponentModel.Description("2 - Prazo Determinado")]
         Determinado = 2,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não se Aplica")]
+        [System.ComponentModel.Description("Não se Aplica")]
         NA = 9999
     }
 
     public enum ImigranteCondicao
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("1 - Refugiado")]
+        [System.ComponentModel.Description("1 - Refugiado")]
         Refugidao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("2 - Solicitante Refúgio")]
+        [System.ComponentModel.Description("2 - Solicitante Refúgio")]
         SolicitanteRefugio = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("3 - Permanência no Brasil em razão de reunião familiar")]
+        [System.ComponentModel.Description("3 - Permanência no Brasil em razão de reunião familiar")]
         PermanenciaReuniaoFamiliar = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("4 - Beneficiado pelo acordo entre Países do Mercosul")]
+        [System.ComponentModel.Description("4 - Beneficiado pelo acordo entre Países do Mercosul")]
         Mercosul = 4,
         [System.Xml.Serialization.XmlEnum("5")]
-        [Attributes.DisplayName("5 - Dependente de ag. diplomático e/ou consular de países com acordo de reciproc. para exercício de ativ. rem. no Brasil")]
+        [System.ComponentModel.Description("5 - Dependente de ag. diplomático e/ou consular de países com acordo de reciproc. para exercício de ativ. rem. no Brasil")]
         DepAgenteDiplomatico = 6,
         [System.Xml.Serialization.XmlEnum("6")]
-        [Attributes.DisplayName("6 - Benef. pelo Tratado de Amizade, Coop. e Consulta entre a Rep. Fed. Brasil e a Rep. Portuguesa")]
+        [System.ComponentModel.Description("6 - Benef. pelo Tratado de Amizade, Coop. e Consulta entre a Rep. Fed. Brasil e a Rep. Portuguesa")]
         Tratado = 6,
         [System.Xml.Serialization.XmlEnum("7")]
-        [Attributes.DisplayName("7 - Outra Condição")]
+        [System.ComponentModel.Description("7 - Outra Condição")]
         Outra = 7,
         [System.Xml.Serialization.XmlEnum("9999")]
-        [Attributes.DisplayName("Não se Aplica")]
+        [System.ComponentModel.Description("Não se Aplica")]
         NA = 9999
     }
 

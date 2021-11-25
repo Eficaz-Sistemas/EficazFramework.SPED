@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE.V1
+namespace EficazFramework.SPED.Schemas.GNRE.V1
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.33440")]
     [Serializable()]

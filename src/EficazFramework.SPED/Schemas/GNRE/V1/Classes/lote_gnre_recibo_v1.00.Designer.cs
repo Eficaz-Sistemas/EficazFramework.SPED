@@ -9,7 +9,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE.V1
+namespace EficazFramework.SPED.Schemas.GNRE.V1
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.33440")]
     [Serializable()]

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using EficazFrameworkCore.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
+namespace EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42
 {
 
     /// <summary>
@@ -36,7 +36,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
             var writer = new System.Text.StringBuilder();
             writer.Append("0200|"); // 1
             writer.Append(ID + "|"); // 2
-            writer.Append(Descricao ?? "".ToString().GetClearText() + "|"); // 3
+            writer.Append(Descricao ?? "".ToString().RemoveAccents() + "|"); // 3
             writer.Append(CodigoBarras + "|"); // 4
             writer.Append(UnidadeInventariada + "|"); // 5
             writer.Append(NCM + "|"); // 6

@@ -11,10 +11,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE.V2
+namespace EficazFramework.SPED.Schemas.GNRE.V2
 {
     [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
     [Serializable()]

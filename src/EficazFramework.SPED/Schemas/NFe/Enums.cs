@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
 
     // ############
@@ -14,10 +14,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum Ambiente
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Enum_Ambiente_Producao")]
+        [System.ComponentModel.Description("Enum_Ambiente_Producao")]
         Producao = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Enum_Ambiente_Homologacao")]
+        [System.ComponentModel.Description("Enum_Ambiente_Homologacao")]
         Homologacao = 2
     }
 
@@ -32,7 +32,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// </summary>
         /// <remarks></remarks>
         [System.Xml.Serialization.XmlEnum("CONSULTAR NFE DEST")]
-        [Attributes.DisplayName("Enum_ServicoSolicitado_ConsultaNFeDest")]
+        [System.ComponentModel.Description("Enum_ServicoSolicitado_ConsultaNFeDest")]
         CONSULTARNFEDEST
     }
 
@@ -44,17 +44,17 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
 
         /// <remarks/>
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Enum_IndicadorTipoNFe_Todas")]
+        [System.ComponentModel.Description("Enum_IndicadorTipoNFe_Todas")]
         Todas = 0,
 
         /// <remarks/>
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Enum_IndicadorTipoNFe_NaoManifestadas")]
+        [System.ComponentModel.Description("Enum_IndicadorTipoNFe_NaoManifestadas")]
         NaoManifestadasDesconhecidas = 1,
 
         /// <remarks/>
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Enum_IndicadorTipoNFe_NaoCientes")]
+        [System.ComponentModel.Description("Enum_IndicadorTipoNFe_NaoCientes")]
         NaoManifestasNaoCientes = 2
     }
 
@@ -69,7 +69,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// </summary>
         /// <remarks></remarks>
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Enum_IndicadorEmissorNFe_Todos")]
+        [System.ComponentModel.Description("Enum_IndicadorEmissorNFe_Todos")]
         Todos = 0,
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// </summary>
         /// <remarks></remarks>
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Enum_IndicadorEmissorNFe_NaoFilial")]
+        [System.ComponentModel.Description("Enum_IndicadorEmissorNFe_NaoFilial")]
         NaoFinalMatrizCNPJ = 1
     }
 
@@ -87,10 +87,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum OperacaoNFe
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Entrada")]
+        [System.ComponentModel.Description("Entrada")]
         Entrada = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Saída")]
+        [System.ComponentModel.Description("Saída")]
         Saida = 1
     }
 
@@ -119,13 +119,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum SituacaoNFe
     {
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Autorizada")]
+        [System.ComponentModel.Description("Autorizada")]
         Autorizada = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Denegada")]
+        [System.ComponentModel.Description("Denegada")]
         Denegada = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Cancelada")]
+        [System.ComponentModel.Description("Cancelada")]
         Cancelada = 3
     }
 
@@ -135,19 +135,19 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum SituacaoManifestacaoDestinatario
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Enum_SituacaoManifestacaoDestinatario_SemManifesto")]
+        [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_SemManifesto")]
         SemManifestacao = 0,
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Enum_SituacaoManifestacaoDestinatario_Confirmada")]
+        [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Confirmada")]
         Confirmada = 1,
         [System.Xml.Serialization.XmlEnum("2")]
-        [Attributes.DisplayName("Enum_SituacaoManifestacaoDestinatario_Desconhecida")]
+        [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Desconhecida")]
         Desconhecida = 2,
         [System.Xml.Serialization.XmlEnum("3")]
-        [Attributes.DisplayName("Enum_SituacaoManifestacaoDestinatario_NaoRealizada")]
+        [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_NaoRealizada")]
         NaoRealizada = 3,
         [System.Xml.Serialization.XmlEnum("4")]
-        [Attributes.DisplayName("Enum_SituacaoManifestacaoDestinatario_Ciencia")]
+        [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Ciencia")]
         Ciencia = 4
     }
 
@@ -156,100 +156,100 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(TypeName = "TCOrgaoIBGE", Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum OrgaoIBGE
     {
-        [Attributes.DisplayName("Rondônia")] // , False)>
+        [System.ComponentModel.Description("Rondônia")] // , False)>
         [System.Xml.Serialization.XmlEnum("11")]
         RO = 11,
-        [Attributes.DisplayName("Acre")] // , False)>
+        [System.ComponentModel.Description("Acre")] // , False)>
         [System.Xml.Serialization.XmlEnum("12")]
         AC = 12,
-        [Attributes.DisplayName("Amazonas")] // , False)>
+        [System.ComponentModel.Description("Amazonas")] // , False)>
         [System.Xml.Serialization.XmlEnum("13")]
         AM = 13,
-        [Attributes.DisplayName("Roraima")] // , False)>
+        [System.ComponentModel.Description("Roraima")] // , False)>
         [System.Xml.Serialization.XmlEnum("14")]
         RR = 14,
-        [Attributes.DisplayName("Pará")] // , False)>
+        [System.ComponentModel.Description("Pará")] // , False)>
         [System.Xml.Serialization.XmlEnum("15")]
         PA = 15,
-        [Attributes.DisplayName("Amapá")] // , False)>
+        [System.ComponentModel.Description("Amapá")] // , False)>
         [System.Xml.Serialization.XmlEnum("16")]
         AP = 16,
-        [Attributes.DisplayName("Tocantins")] // , False)>
+        [System.ComponentModel.Description("Tocantins")] // , False)>
         [System.Xml.Serialization.XmlEnum("17")]
         TO = 17,
-        [Attributes.DisplayName("Maranhão")] // , False)>
+        [System.ComponentModel.Description("Maranhão")] // , False)>
         [System.Xml.Serialization.XmlEnum("21")]
         MA = 21,
-        [Attributes.DisplayName("Piauí")] // , False)>
+        [System.ComponentModel.Description("Piauí")] // , False)>
         [System.Xml.Serialization.XmlEnum("22")]
         PI = 22,
-        [Attributes.DisplayName("Ceará")] // , False)>
+        [System.ComponentModel.Description("Ceará")] // , False)>
         [System.Xml.Serialization.XmlEnum("23")]
         CE = 23,
-        [Attributes.DisplayName("Rio Grande do Norte")] // , False)>
+        [System.ComponentModel.Description("Rio Grande do Norte")] // , False)>
         [System.Xml.Serialization.XmlEnum("24")]
         RN = 24,
-        [Attributes.DisplayName("Paraíba")] // , False)>
+        [System.ComponentModel.Description("Paraíba")] // , False)>
         [System.Xml.Serialization.XmlEnum("25")]
         PB = 25,
-        [Attributes.DisplayName("Pernambuco")] // , False)>
+        [System.ComponentModel.Description("Pernambuco")] // , False)>
         [System.Xml.Serialization.XmlEnum("26")]
         PE = 26,
-        [Attributes.DisplayName("Alagoas")] // , False)>
+        [System.ComponentModel.Description("Alagoas")] // , False)>
         [System.Xml.Serialization.XmlEnum("27")]
         AL = 27,
-        [Attributes.DisplayName("Sergipe")] // , False)>
+        [System.ComponentModel.Description("Sergipe")] // , False)>
         [System.Xml.Serialization.XmlEnum("28")]
         SE = 28,
-        [Attributes.DisplayName("Bahia")] // , False)>
+        [System.ComponentModel.Description("Bahia")] // , False)>
         [System.Xml.Serialization.XmlEnum("29")]
         BA = 29,
-        [Attributes.DisplayName("Minas Gerais")] // , False)>
+        [System.ComponentModel.Description("Minas Gerais")] // , False)>
         [System.Xml.Serialization.XmlEnum("31")]
         MG = 31,
-        [Attributes.DisplayName("Espírito Santo")] // , False)>
+        [System.ComponentModel.Description("Espírito Santo")] // , False)>
         [System.Xml.Serialization.XmlEnum("32")]
         ES = 32,
-        [Attributes.DisplayName("Rio de Janeiro")] // , False)>
+        [System.ComponentModel.Description("Rio de Janeiro")] // , False)>
         [System.Xml.Serialization.XmlEnum("33")]
         RJ = 33,
-        [Attributes.DisplayName("São Paulo")] // , False)>
+        [System.ComponentModel.Description("São Paulo")] // , False)>
         [System.Xml.Serialization.XmlEnum("35")]
         SP = 35,
-        [Attributes.DisplayName("Paraná")] // , False)>
+        [System.ComponentModel.Description("Paraná")] // , False)>
         [System.Xml.Serialization.XmlEnum("41")]
         PR = 41,
-        [Attributes.DisplayName("Santa Catarina")] // , False)>
+        [System.ComponentModel.Description("Santa Catarina")] // , False)>
         [System.Xml.Serialization.XmlEnum("42")]
         SC = 42,
-        [Attributes.DisplayName("Rio Grande do Sul")] // , False)>
+        [System.ComponentModel.Description("Rio Grande do Sul")] // , False)>
         [System.Xml.Serialization.XmlEnum("43")]
         RS = 43,
-        [Attributes.DisplayName("Mato Grosso do Sul")] // , False)>
+        [System.ComponentModel.Description("Mato Grosso do Sul")] // , False)>
         [System.Xml.Serialization.XmlEnum("50")]
         MS = 50,
-        [Attributes.DisplayName("Mato Grosso")] // , False)>
+        [System.ComponentModel.Description("Mato Grosso")] // , False)>
         [System.Xml.Serialization.XmlEnum("51")]
         MT = 51,
-        [Attributes.DisplayName("Goiás")] // , False)>
+        [System.ComponentModel.Description("Goiás")] // , False)>
         [System.Xml.Serialization.XmlEnum("52")]
         GO = 52,
-        [Attributes.DisplayName("Distrito Federal")]
+        [System.ComponentModel.Description("Distrito Federal")]
         [System.Xml.Serialization.XmlEnum("53")]
         DF = 53,
-        [Attributes.DisplayName("Distrito Federal")] // , False)>
+        [System.ComponentModel.Description("Distrito Federal")] // , False)>
         [System.Xml.Serialization.XmlEnum("")]
         NN = 0,
-        [Attributes.DisplayName("Enum_OrgaoIBGE_SCAN")]
+        [System.ComponentModel.Description("Enum_OrgaoIBGE_SCAN")]
         [System.Xml.Serialization.XmlEnum("90")]
         SefazNacional_SVCAN = 90,
-        [Attributes.DisplayName("Enum_OrgaoIBGE_SVAN")]
+        [System.ComponentModel.Description("Enum_OrgaoIBGE_SVAN")]
         [System.Xml.Serialization.XmlEnum("91")]
         SefazNacional_SVCRS = 91,
-        [Attributes.DisplayName("Enum_OrgaoIBGE_AN")]
+        [System.ComponentModel.Description("Enum_OrgaoIBGE_AN")]
         [System.Xml.Serialization.XmlEnum("92")]
         SefazNacional_AN = 92,
-        [Attributes.DisplayName("Exporacao")] // , False)>
+        [System.ComponentModel.Description("Exporacao")] // , False)>
         [System.Xml.Serialization.XmlEnum("99")]
         EX = 99
     }
@@ -259,61 +259,61 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum Estado
     {
-        [Attributes.DisplayName("Acre")] // , False)>
+        [System.ComponentModel.Description("Acre")] // , False)>
         AC,
-        [Attributes.DisplayName("Alagoas")] // , False)>
+        [System.ComponentModel.Description("Alagoas")] // , False)>
         AL,
-        [Attributes.DisplayName("Amazonas")] // , False)>
+        [System.ComponentModel.Description("Amazonas")] // , False)>
         AM,
-        [Attributes.DisplayName("Amapá")] // , False)>
+        [System.ComponentModel.Description("Amapá")] // , False)>
         AP,
-        [Attributes.DisplayName("Bahia")] // , False)>
+        [System.ComponentModel.Description("Bahia")] // , False)>
         BA,
-        [Attributes.DisplayName("Ceará")] // , False)>
+        [System.ComponentModel.Description("Ceará")] // , False)>
         CE,
-        [Attributes.DisplayName("Distrito Federal")] // , False)>
+        [System.ComponentModel.Description("Distrito Federal")] // , False)>
         DF,
-        [Attributes.DisplayName("Espírito Santo")] // , False)>
+        [System.ComponentModel.Description("Espírito Santo")] // , False)>
         ES,
-        [Attributes.DisplayName("Goiás")] // , False)>
+        [System.ComponentModel.Description("Goiás")] // , False)>
         GO,
-        [Attributes.DisplayName("Maranhão")] // , False)>
+        [System.ComponentModel.Description("Maranhão")] // , False)>
         MA,
-        [Attributes.DisplayName("Minas Gerais")] // , False)>
+        [System.ComponentModel.Description("Minas Gerais")] // , False)>
         MG,
-        [Attributes.DisplayName("Mato Grosso do Sul")] // , False)>
+        [System.ComponentModel.Description("Mato Grosso do Sul")] // , False)>
         MS,
-        [Attributes.DisplayName("Mato Grosso")] // , False)>
+        [System.ComponentModel.Description("Mato Grosso")] // , False)>
         MT,
-        [Attributes.DisplayName("Pará")] // , False)>
+        [System.ComponentModel.Description("Pará")] // , False)>
         PA,
-        [Attributes.DisplayName("Paraíba")] // , False)>
+        [System.ComponentModel.Description("Paraíba")] // , False)>
         PB,
-        [Attributes.DisplayName("Pernambuco")] // , False)>
+        [System.ComponentModel.Description("Pernambuco")] // , False)>
         PE,
-        [Attributes.DisplayName("Piauí")] // , False)>
+        [System.ComponentModel.Description("Piauí")] // , False)>
         PI,
-        [Attributes.DisplayName("Paraná")] // , False)>
+        [System.ComponentModel.Description("Paraná")] // , False)>
         PR,
-        [Attributes.DisplayName("Rio de Janeiro")] // , False)>
+        [System.ComponentModel.Description("Rio de Janeiro")] // , False)>
         RJ,
-        [Attributes.DisplayName("Rio Grande do Norte")] // , False)>
+        [System.ComponentModel.Description("Rio Grande do Norte")] // , False)>
         RN,
-        [Attributes.DisplayName("Rondônia")] // , False)>
+        [System.ComponentModel.Description("Rondônia")] // , False)>
         RO,
-        [Attributes.DisplayName("Roraima")] // , False)>
+        [System.ComponentModel.Description("Roraima")] // , False)>
         RR,
-        [Attributes.DisplayName("Rio Grande do Sul")] // , False)>
+        [System.ComponentModel.Description("Rio Grande do Sul")] // , False)>
         RS,
-        [Attributes.DisplayName("Santa Catarina")] // , False)>
+        [System.ComponentModel.Description("Santa Catarina")] // , False)>
         SC,
-        [Attributes.DisplayName("Sergipe")] // , False)>
+        [System.ComponentModel.Description("Sergipe")] // , False)>
         SE,
-        [Attributes.DisplayName("São Paulo")] // , False)>
+        [System.ComponentModel.Description("São Paulo")] // , False)>
         SP,
-        [Attributes.DisplayName("Tocantins")] // , False)>
+        [System.ComponentModel.Description("Tocantins")] // , False)>
         TO,
-        [Attributes.DisplayName("Enum_Estado_EX")]
+        [System.ComponentModel.Description("Enum_Estado_EX")]
         EX
     }
 
@@ -323,15 +323,15 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum FormaDePagamento
     {
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Enum_FormaDePagamento_AVista")]
+        [System.ComponentModel.Description("Enum_FormaDePagamento_AVista")]
         Vista = 0,
-        [Attributes.DisplayName("Enum_FormaDePagamento_APrazo")]
+        [System.ComponentModel.Description("Enum_FormaDePagamento_APrazo")]
         [System.Xml.Serialization.XmlEnum("1")]
         Prazo = 1,
-        [Attributes.DisplayName("Enum_FormaDePagamento_Outros")]
+        [System.ComponentModel.Description("Enum_FormaDePagamento_Outros")]
         [System.Xml.Serialization.XmlEnum("2")]
         Outros = 2,
-        [Attributes.DisplayName("Sem Pagamento")]
+        [System.ComponentModel.Description("Sem Pagamento")]
         [System.Xml.Serialization.XmlEnum("9")]
         SemPagto = 9
     }
@@ -341,10 +341,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ModeloDocumento
     {
-        [Attributes.DisplayName("Enum_ModeloDocumento_55")]
+        [System.ComponentModel.Description("Enum_ModeloDocumento_55")]
         [System.Xml.Serialization.XmlEnum("55")]
         NFe = 55,
-        [Attributes.DisplayName("Enum_ModeloDocumento_65")]
+        [System.ComponentModel.Description("Enum_ModeloDocumento_65")]
         [System.Xml.Serialization.XmlEnum("65")]
         NFeAv = 65
     }
@@ -383,28 +383,28 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum FormaEmissao
     {
-        [Attributes.DisplayName("Enum_FormaEmissao_Normal")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_Normal")]
         [System.Xml.Serialization.XmlEnum("1")]
         Normal = 1,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaFS")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaFS")]
         [System.Xml.Serialization.XmlEnum("2")]
         ContingenciaFS = 2,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaSCAN")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaSCAN")]
         [System.Xml.Serialization.XmlEnum("3")]
         ContingenciaSCAN = 3,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaDPEC")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaDPEC")]
         [System.Xml.Serialization.XmlEnum("4")]
         ContingenciaDPEC = 4,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaFS_DA")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaFS_DA")]
         [System.Xml.Serialization.XmlEnum("5")]
         ContingenciaFS_DA = 5,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaSVAN")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaSVAN")]
         [System.Xml.Serialization.XmlEnum("6")]
         ContingenciaSVC_AN = 6,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaSefaz_RS")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaSefaz_RS")]
         [System.Xml.Serialization.XmlEnum("7")]
         ContingenciaSVC_RS = 7,
-        [Attributes.DisplayName("Enum_FormaEmissao_ContingenciaOffLine_NFCe")]
+        [System.ComponentModel.Description("Enum_FormaEmissao_ContingenciaOffLine_NFCe")]
         [System.Xml.Serialization.XmlEnum("9")]
         ContingenciaOffLine_NFCe = 9
     }
@@ -414,16 +414,16 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum FinalidadeEmissao
     {
-        [Attributes.DisplayName("Enum_FinalidadeEmissao_Normal")]
+        [System.ComponentModel.Description("Enum_FinalidadeEmissao_Normal")]
         [System.Xml.Serialization.XmlEnum("1")]
         Normal = 1,
-        [Attributes.DisplayName("Enum_FinalidadeEmissao_Complementar")]
+        [System.ComponentModel.Description("Enum_FinalidadeEmissao_Complementar")]
         [System.Xml.Serialization.XmlEnum("2")]
         Complementar = 2,
-        [Attributes.DisplayName("Enum_FinalidadeEmissao_Ajuste")]
+        [System.ComponentModel.Description("Enum_FinalidadeEmissao_Ajuste")]
         [System.Xml.Serialization.XmlEnum("3")]
         Ajuste = 3,
-        [Attributes.DisplayName("Enum_FinalidadeEmissao_Devolucao")]
+        [System.ComponentModel.Description("Enum_FinalidadeEmissao_Devolucao")]
         [System.Xml.Serialization.XmlEnum("4")]
         Devolucao = 4
     }
@@ -433,16 +433,16 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ProcessoEmissao
     {
-        [Attributes.DisplayName("Enum_ProcessoEmissao_AppContrib")]
+        [System.ComponentModel.Description("Enum_ProcessoEmissao_AppContrib")]
         [System.Xml.Serialization.XmlEnum("0")]
         AplicativoContribuinte = 0,
-        [Attributes.DisplayName("Enum_ProcessoEmissao_AvulsaFisco")]
+        [System.ComponentModel.Description("Enum_ProcessoEmissao_AvulsaFisco")]
         [System.Xml.Serialization.XmlEnum("1")]
         Avulsa_Fisco = 1,
-        [Attributes.DisplayName("Enum_ProcessoEmissao_AvulsaContrib")]
+        [System.ComponentModel.Description("Enum_ProcessoEmissao_AvulsaContrib")]
         [System.Xml.Serialization.XmlEnum("2")]
         Avulsa_Contribuinte = 2,
-        [Attributes.DisplayName("Enum_ProcessoEmissao_AppFisco")]
+        [System.ComponentModel.Description("Enum_ProcessoEmissao_AppFisco")]
         [System.Xml.Serialization.XmlEnum("3")]
         AplicativoFisco = 3
     }
@@ -452,13 +452,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum RegimeTributario
     {
-        [Attributes.DisplayName("Enum_RegimeTributario_SN")]
+        [System.ComponentModel.Description("Enum_RegimeTributario_SN")]
         [System.Xml.Serialization.XmlEnum("1")]
         SimplesNacional = 1,
-        [Attributes.DisplayName("Enum_RegimeTributario_SNExcesso")]
+        [System.ComponentModel.Description("Enum_RegimeTributario_SNExcesso")]
         [System.Xml.Serialization.XmlEnum("2")]
         SimplesNacionalExcesso = 2,
-        [Attributes.DisplayName("Enum_RegimeTributario_Normal")]
+        [System.ComponentModel.Description("Enum_RegimeTributario_Normal")]
         [System.Xml.Serialization.XmlEnum("3")]
         RegimeNormal = 3
     }
@@ -470,27 +470,27 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_IndicadorProcessoReferenciado_SEFAZ")]
+        [System.ComponentModel.Description("Enum_IndicadorProcessoReferenciado_SEFAZ")]
         [System.Xml.Serialization.XmlEnum("0")]
         SEFAZ = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_IndicadorProcessoReferenciado_JustFederal")]
+        [System.ComponentModel.Description("Enum_IndicadorProcessoReferenciado_JustFederal")]
         [System.Xml.Serialization.XmlEnum("1")]
         JusticaFederal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_IndicadorProcessoReferenciado_JustEstadual")]
+        [System.ComponentModel.Description("Enum_IndicadorProcessoReferenciado_JustEstadual")]
         [System.Xml.Serialization.XmlEnum("2")]
         JusticaEstadual = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_IndicadorProcessoReferenciado_Secex_RFB")]
+        [System.ComponentModel.Description("Enum_IndicadorProcessoReferenciado_Secex_RFB")]
         [System.Xml.Serialization.XmlEnum("3")]
         SecexRFB = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_IndicadorProcessoReferenciado_Outros")]
+        [System.ComponentModel.Description("Enum_IndicadorProcessoReferenciado_Outros")]
         [System.Xml.Serialization.XmlEnum("9")]
         Outros = 9
     }
@@ -500,19 +500,19 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
     public enum TipoDocumentoReferencia
     {
-        [Attributes.DisplayName("Conhecimento de Transporte Eletrônico")] // , False)>
+        [System.ComponentModel.Description("Conhecimento de Transporte Eletrônico")] // , False)>
         [System.Xml.Serialization.XmlEnum("refCTe")]
         CTe,
-        [Attributes.DisplayName("ECF - Cupom Fiscal")] // , False)>
+        [System.ComponentModel.Description("ECF - Cupom Fiscal")] // , False)>
         [System.Xml.Serialization.XmlEnum("refECF")]
         ECF,
-        [Attributes.DisplayName("Nota Fiscal")] // , False)>
+        [System.ComponentModel.Description("Nota Fiscal")] // , False)>
         [System.Xml.Serialization.XmlEnum("refNF")]
         NF,
-        [Attributes.DisplayName("Nota Fiscal de Produtor Rural")] // , False)>
+        [System.ComponentModel.Description("Nota Fiscal de Produtor Rural")] // , False)>
         [System.Xml.Serialization.XmlEnum("refNFP")]
         NFP,
-        [Attributes.DisplayName("Nota Fiscal Eletrônica")] // , False)>
+        [System.ComponentModel.Description("Nota Fiscal Eletrônica")] // , False)>
         [System.Xml.Serialization.XmlEnum("refNFe")]
         NFe
     }
@@ -522,13 +522,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ModeloECF
     {
-        [Attributes.DisplayName("2B")] // , False)>
+        [System.ComponentModel.Description("2B")] // , False)>
         [System.Xml.Serialization.XmlEnum("2B")]
         Modelo2B = 0,
-        [Attributes.DisplayName("2C")] // , False)>
+        [System.ComponentModel.Description("2C")] // , False)>
         [System.Xml.Serialization.XmlEnum("2C")]
         Modelo2C = 1,
-        [Attributes.DisplayName("2D")] // , False)>
+        [System.ComponentModel.Description("2D")] // , False)>
         [System.Xml.Serialization.XmlEnum("2D")]
         Modelo2D = 2
     }
@@ -538,7 +538,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ModeloNF
     {
-        [Attributes.DisplayName("Enum_ModeloDocumento_01")]
+        [System.ComponentModel.Description("Enum_ModeloDocumento_01")]
         [System.Xml.Serialization.XmlEnum("01")]
         Modelo_1 = 1
     }
@@ -548,10 +548,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ModeloNFProdutor
     {
-        [Attributes.DisplayName("Enum_ModeloDocumento_01")]
+        [System.ComponentModel.Description("Enum_ModeloDocumento_01")]
         [System.Xml.Serialization.XmlEnum("01")]
         Modelo_1 = 1,
-        [Attributes.DisplayName("Enum_ModeloDocumento_04")]
+        [System.ComponentModel.Description("Enum_ModeloDocumento_04")]
         [System.Xml.Serialization.XmlEnum("04")]
         Modelo_4 = 4
     }
@@ -561,13 +561,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
     public enum FormaTransporte
     {
-        [Attributes.DisplayName("Enum_FormaTransporte_Balsa")]
+        [System.ComponentModel.Description("Enum_FormaTransporte_Balsa")]
         balsa,
-        [Attributes.DisplayName("Enum_FormaTransporte_Reboque")]
+        [System.ComponentModel.Description("Enum_FormaTransporte_Reboque")]
         reboque,
-        [Attributes.DisplayName("Enum_FormaTransporte_Vagao")]
+        [System.ComponentModel.Description("Enum_FormaTransporte_Vagao")]
         vagao,
-        [Attributes.DisplayName("Enum_FormaTransporte_Veiculo")]
+        [System.ComponentModel.Description("Enum_FormaTransporte_Veiculo")]
         veicTransp
     }
 
@@ -576,22 +576,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum ModalidadeFrete
     {
-        [Attributes.DisplayName("Enum_ModalidadeFrete_Emitente")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_Emitente")]
         [System.Xml.Serialization.XmlEnum("0")]
         Emitente = 0,
-        [Attributes.DisplayName("Enum_ModalidadeFrete_Destinatario")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_Destinatario")]
         [System.Xml.Serialization.XmlEnum("1")]
         Destinatario = 1,
-        [Attributes.DisplayName("Enum_ModalidadeFrete_Outros")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_Outros")]
         [System.Xml.Serialization.XmlEnum("2")]
         Outros = 2,
-        [Attributes.DisplayName("Enum_ModalidadeFrete_ProprioRemetente")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_ProprioRemetente")]
         [System.Xml.Serialization.XmlEnum("3")]
         ProprioRemetente = 3,
-        [Attributes.DisplayName("Enum_ModalidadeFrete_ProprioDestinatario")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_ProprioDestinatario")]
         [System.Xml.Serialization.XmlEnum("4")]
         ProprioDestinatario = 4,
-        [Attributes.DisplayName("Enum_ModalidadeFrete_SemFrete")]
+        [System.ComponentModel.Description("Enum_ModalidadeFrete_SemFrete")]
         [System.Xml.Serialization.XmlEnum("9")]
         SemFrete = 9
     }
@@ -601,25 +601,25 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum TipoAtendimento
     {
-        [Attributes.DisplayName("Enum_TipoAtendimento_NaoSeAplica")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_NaoSeAplica")]
         [System.Xml.Serialization.XmlEnum("0")]
         NaoSeAplica = 0,
-        [Attributes.DisplayName("Enum_TipoAtendimento_Presencial")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_Presencial")]
         [System.Xml.Serialization.XmlEnum("1")]
         Presencial = 1,
-        [Attributes.DisplayName("Enum_TipoAtendimento_NaoPresencial_Internet")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_NaoPresencial_Internet")]
         [System.Xml.Serialization.XmlEnum("2")]
         NaoPresencial_Internet = 2,
-        [Attributes.DisplayName("Enum_TipoAtendimento_NaoPresencial_Tele")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_NaoPresencial_Tele")]
         [System.Xml.Serialization.XmlEnum("3")]
         NaoPresencial_Tele = 3,
-        [Attributes.DisplayName("Enum_TipoAtendimento_NFCeDomicilio")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_NFCeDomicilio")]
         [System.Xml.Serialization.XmlEnum("4")]
         NFCeEntregaDomicicio = 4,
-        [Attributes.DisplayName("Enum_TipoAtendimento_PresencialForaEstab")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_PresencialForaEstab")]
         [System.Xml.Serialization.XmlEnum("5")]
         Presencial_ForaEstabelecimento = 5,
-        [Attributes.DisplayName("Enum_TipoAtendimento_NaoPresencial_Outros")]
+        [System.ComponentModel.Description("Enum_TipoAtendimento_NaoPresencial_Outros")]
         [System.Xml.Serialization.XmlEnum("9")]
         NaoPresencial_Outros = 9
     }
@@ -629,13 +629,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum DestinoOperacao
     {
-        [Attributes.DisplayName("Enum_DestinoOperacao_Interna")]
+        [System.ComponentModel.Description("Enum_DestinoOperacao_Interna")]
         [System.Xml.Serialization.XmlEnum("1")]
         Interna = 1,
-        [Attributes.DisplayName("Enum_DestinoOperacao_Interestadual")]
+        [System.ComponentModel.Description("Enum_DestinoOperacao_Interestadual")]
         [System.Xml.Serialization.XmlEnum("2")]
         Interestadual = 2,
-        [Attributes.DisplayName("Enum_DestinoOperacao_Exterior")]
+        [System.ComponentModel.Description("Enum_DestinoOperacao_Exterior")]
         [System.Xml.Serialization.XmlEnum("3")]
         Exterior = 3
     }
@@ -645,40 +645,40 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum TipoViaTransporteDI
     {
-        [Attributes.DisplayName("Marítima")]
+        [System.ComponentModel.Description("Marítima")]
         [System.Xml.Serialization.XmlEnum("1")]
         Maritima = 1,
-        [Attributes.DisplayName("Fluvial")]
+        [System.ComponentModel.Description("Fluvial")]
         [System.Xml.Serialization.XmlEnum("2")]
         Fluvial = 2,
-        [Attributes.DisplayName("Lacustre")]
+        [System.ComponentModel.Description("Lacustre")]
         [System.Xml.Serialization.XmlEnum("3")]
         Lacustre = 3,
-        [Attributes.DisplayName("Aérea")]
+        [System.ComponentModel.Description("Aérea")]
         [System.Xml.Serialization.XmlEnum("4")]
         Aerea = 4,
-        [Attributes.DisplayName("Postal")]
+        [System.ComponentModel.Description("Postal")]
         [System.Xml.Serialization.XmlEnum("5")]
         Postal = 5,
-        [Attributes.DisplayName("Ferroviária")]
+        [System.ComponentModel.Description("Ferroviária")]
         [System.Xml.Serialization.XmlEnum("6")]
         Ferroviaria = 6,
-        [Attributes.DisplayName("Rodoviária")]
+        [System.ComponentModel.Description("Rodoviária")]
         [System.Xml.Serialization.XmlEnum("7")]
         Rodoviaria = 7,
-        [Attributes.DisplayName("Conduto")]
+        [System.ComponentModel.Description("Conduto")]
         [System.Xml.Serialization.XmlEnum("8")]
         Conduto = 8,
-        [Attributes.DisplayName("Meios Próprios")]
+        [System.ComponentModel.Description("Meios Próprios")]
         [System.Xml.Serialization.XmlEnum("9")]
         MeiosProprios = 9,
-        [Attributes.DisplayName("Entrada / Saída Fictícia")]
+        [System.ComponentModel.Description("Entrada / Saída Fictícia")]
         [System.Xml.Serialization.XmlEnum("10")]
         EntradaSaidaFicticia = 10,
-        [Attributes.DisplayName("Desconhecido")]
+        [System.ComponentModel.Description("Desconhecido")]
         [System.Xml.Serialization.XmlEnum("11")]
         NA11 = 11,
-        [Attributes.DisplayName("Desconhecido")]
+        [System.ComponentModel.Description("Desconhecido")]
         [System.Xml.Serialization.XmlEnum("12")]
         NA12 = 12
     }
@@ -688,13 +688,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum TipoIntermedioDI
     {
-        [Attributes.DisplayName("Por Conta Própria")]
+        [System.ComponentModel.Description("Por Conta Própria")]
         [System.Xml.Serialization.XmlEnum("1")]
         ContaPropria = 1,
-        [Attributes.DisplayName("Por Conta e Ordem")]
+        [System.ComponentModel.Description("Por Conta e Ordem")]
         [System.Xml.Serialization.XmlEnum("2")]
         ContaOrdem = 2,
-        [Attributes.DisplayName("Encomendda")]
+        [System.ComponentModel.Description("Encomendda")]
         [System.Xml.Serialization.XmlEnum("3")]
         Encomenda = 3
     }
@@ -709,10 +709,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum IndicadorTotal
     {
-        [Attributes.DisplayName("Enum_IndicadorTotal_NaoCompoeTotal")]
+        [System.ComponentModel.Description("Enum_IndicadorTotal_NaoCompoeTotal")]
         [System.Xml.Serialization.XmlEnum("0")]
         NaoCompoeTotal = 0,
-        [Attributes.DisplayName("Enum_IndicadorTotal_CompoeTotal")]
+        [System.ComponentModel.Description("Enum_IndicadorTotal_CompoeTotal")]
         [System.Xml.Serialization.XmlEnum("1")]
         CompoeTotal = 1
     }
@@ -724,31 +724,31 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_OrigemMercadoria_Nacional")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_Nacional")]
         [System.Xml.Serialization.XmlEnum("0")]
         Nacional = 0,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_EstrImpIndireta")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_EstrImpIndireta")]
         [System.Xml.Serialization.XmlEnum("1")]
         EstrangeiraImpdireta = 1,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_EstrAdqMercIntEx7")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_EstrAdqMercIntEx7")]
         [System.Xml.Serialization.XmlEnum("2")]
         EstrangeiraAdqmercinterno = 2,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_NacContImp40a70")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_NacContImp40a70")]
         [System.Xml.Serialization.XmlEnum("3")]
         NAcionalConteudoImportSup40Inf70 = 3,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_NacProdAjustes")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_NacProdAjustes")]
         [System.Xml.Serialization.XmlEnum("4")]
         NaiconalProducaoAjustes = 4,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_NacContImpAte40")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_NacContImpAte40")]
         [System.Xml.Serialization.XmlEnum("5")]
         NacionalConteudoImportInf40 = 5,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_EstrImpDiretaSemSimilar")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_EstrImpDiretaSemSimilar")]
         [System.Xml.Serialization.XmlEnum("6")]
         EstrangeiraImpDiretaSemSimilar = 6,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_EstrAdqMercIntSemSimilar")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_EstrAdqMercIntSemSimilar")]
         [System.Xml.Serialization.XmlEnum("7")]
         EstrangeiraAdqMercInternoSemSimilar = 7,
-        [Attributes.DisplayName("Enum_OrigemMercadoria_NacContImpSup70")]
+        [System.ComponentModel.Description("Enum_OrigemMercadoria_NacContImpSup70")]
         [System.Xml.Serialization.XmlEnum("8")]
         NacionalConteudoImpSup70 = 8
     }
@@ -760,15 +760,15 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_TipoArma_UsoPermitido")]
+        [System.ComponentModel.Description("Enum_TipoArma_UsoPermitido")]
         [System.Xml.Serialization.XmlEnum("0")]
         UsoPermitido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_TipoArma_UsoRestrito")]
+        [System.ComponentModel.Description("Enum_TipoArma_UsoRestrito")]
         [System.Xml.Serialization.XmlEnum("1")]
         UsoRestrito = 1,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
@@ -780,22 +780,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoTipoOperacao_VendaConc")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoOperacao_VendaConc")]
         [System.Xml.Serialization.XmlEnum("1")]
         VendaConcessionaria = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoTipoOperacao_FatConsFinal")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoOperacao_FatConsFinal")]
         [System.Xml.Serialization.XmlEnum("2")]
         FatConsFinal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoTipoOperacao_VendaDirGrandesCons")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoOperacao_VendaDirGrandesCons")]
         [System.Xml.Serialization.XmlEnum("3")]
         GrandesConsumidores = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoTipoOperacao_Outros")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoOperacao_Outros")]
         [System.Xml.Serialization.XmlEnum("0")]
         Outros = 0
     }
@@ -805,61 +805,61 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VeiculoTipoCombustivel
     {
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Alcool")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Alcool")]
         [System.Xml.Serialization.XmlEnum("01")]
         Alcool = 1,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Alcool")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Alcool")]
         [System.Xml.Serialization.XmlEnum("1")]
         Alcool_v3 = 1,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Gasolina")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Gasolina")]
         [System.Xml.Serialization.XmlEnum("02")]
         Gasolina = 2,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Gasolina")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Gasolina")]
         [System.Xml.Serialization.XmlEnum("2")]
         Gasolina_v3 = 2,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Diesel")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Diesel")]
         [System.Xml.Serialization.XmlEnum("03")]
         Diesel = 3,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Diesel")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Diesel")]
         [System.Xml.Serialization.XmlEnum("3")]
         Diesel_v3 = 3,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_Gasogenio")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_Gasogenio")]
         [System.Xml.Serialization.XmlEnum("04")]
         Gasogenio = 4,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_GasMetano")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_GasMetano")]
         [System.Xml.Serialization.XmlEnum("05")]
         GasMetano = 5,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_ElfontIN")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_ElfontIN")]
         [System.Xml.Serialization.XmlEnum("06")]
         ElfontIN = 6,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_ElfontEX")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_ElfontEX")]
         [System.Xml.Serialization.XmlEnum("07")]
         ElfontEX = 7,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_GasolinaGNC")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_GasolinaGNC")]
         [System.Xml.Serialization.XmlEnum("08")]
         Gasolina_GNV = 8,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_AlcoolGNC")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_AlcoolGNC")]
         [System.Xml.Serialization.XmlEnum("09")]
         Alcool_GNC = 9,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_DieselGNC")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_DieselGNC")]
         [System.Xml.Serialization.XmlEnum("10")]
         Diesel_GNC = 10,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_AlcoolGasolina")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_AlcoolGasolina")]
         [System.Xml.Serialization.XmlEnum("12")]
         Alcool_Gasolina = 12,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_AlcoolGasolinaGNV")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_AlcoolGasolinaGNV")]
         [System.Xml.Serialization.XmlEnum("13")]
         Alcool_Gasolina_GNV = 13,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_AlcoolGasolina")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_AlcoolGasolina")]
         [System.Xml.Serialization.XmlEnum("16")]
         Alcool_Gasolina_v3 = 16,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_AlcoolGasolinaGNV")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_AlcoolGasolinaGNV")]
         [System.Xml.Serialization.XmlEnum("17")]
         Alcool_Gasolina_GNV_v3 = 17,
-        [Attributes.DisplayName("Enum_VeiculoTipoCombustivel_GasolinaEletrico")]
+        [System.ComponentModel.Description("Enum_VeiculoTipoCombustivel_GasolinaEletrico")]
         [System.Xml.Serialization.XmlEnum("18")]
         GasolinaEletrico = 18,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
@@ -869,10 +869,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VeiculoCondicaoChassi
     {
-        [Attributes.DisplayName("Enum_VeiculoCondicaoChassi_Remarcado")]
+        [System.ComponentModel.Description("Enum_VeiculoCondicaoChassi_Remarcado")]
         [System.Xml.Serialization.XmlEnum("R")]
         R,
-        [Attributes.DisplayName("Enum_VeiculoCondicaoChassi_Normal")]
+        [System.ComponentModel.Description("Enum_VeiculoCondicaoChassi_Normal")]
         [System.Xml.Serialization.XmlEnum("N")]
         N
     }
@@ -884,17 +884,17 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoCondicao_Acabado")]
+        [System.ComponentModel.Description("Enum_VeiculoCondicao_Acabado")]
         [System.Xml.Serialization.XmlEnum("1")]
         Acabad0 = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoCondicao_Inacabado")]
+        [System.ComponentModel.Description("Enum_VeiculoCondicao_Inacabado")]
         [System.Xml.Serialization.XmlEnum("2")]
         Inacabado = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoCondicao_SemiAcabado")]
+        [System.ComponentModel.Description("Enum_VeiculoCondicao_SemiAcabado")]
         [System.Xml.Serialization.XmlEnum("3")]
         SemiAcabado = 3
     }
@@ -906,32 +906,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_None")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_None")]
         [System.Xml.Serialization.XmlEnum("0")]
         NaoHa = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_AlienacaoFiduciaria")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_AlienacaoFiduciaria")]
         [System.Xml.Serialization.XmlEnum("1")]
         AlienacaoFiduciaria = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_ArrendMercantil")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_ArrendMercantil")]
         [System.Xml.Serialization.XmlEnum("2")]
         ArrendamentoMercantil = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_ReservaDominio")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_ReservaDominio")]
         [System.Xml.Serialization.XmlEnum("3")]
         ReservaDominio = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_Penhor")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_Penhor")]
         [System.Xml.Serialization.XmlEnum("4")]
         PenhorVeiculos = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_VeiculoRestricao_Outras")]
+        [System.ComponentModel.Description("Enum_VeiculoRestricao_Outras")]
         [System.Xml.Serialization.XmlEnum("9")]
         Outras = 9
     }
@@ -941,97 +941,97 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VeiculoTipo
     {
-        [Attributes.DisplayName("Enum_VeiculoTipo_Bicicleta")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Bicicleta")]
         [System.Xml.Serialization.XmlEnum("1")]
         Bicicleta = 1,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Bicicleta")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Bicicleta")]
         [System.Xml.Serialization.XmlEnum("01")]
         Bicicleta_v3 = 1,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Ciclomoto")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Ciclomoto")]
         [System.Xml.Serialization.XmlEnum("2")]
         Ciclomoto = 2,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Motoneta")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Motoneta")]
         [System.Xml.Serialization.XmlEnum("3")]
         Motoneta = 3,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Motociclo")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Motociclo")]
         [System.Xml.Serialization.XmlEnum("4")]
         Motociclo = 4,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Motociclo")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Motociclo")]
         [System.Xml.Serialization.XmlEnum("04")]
         Motociclo_v3 = 4,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Triciclo")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Triciclo")]
         [System.Xml.Serialization.XmlEnum("5")]
         Triciclo = 5,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Automovel")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Automovel")]
         [System.Xml.Serialization.XmlEnum("6")]
         Automovel = 6,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Automovel")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Automovel")]
         [System.Xml.Serialization.XmlEnum("06")]
         Automovel_v3 = 6,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Microonibus")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Microonibus")]
         [System.Xml.Serialization.XmlEnum("7")]
         Microonibus = 7,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Microonibus")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Microonibus")]
         [System.Xml.Serialization.XmlEnum("07")]
         Microonibus_v3 = 7,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Onibus")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Onibus")]
         [System.Xml.Serialization.XmlEnum("8")]
         Onibus = 8,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Bonde")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Bonde")]
         [System.Xml.Serialization.XmlEnum("9")]
         Bonde = 9,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Reboque")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Reboque")]
         [System.Xml.Serialization.XmlEnum("10")]
         Reboque = 10,
-        [Attributes.DisplayName("Enum_VeiculoTipo_SemiReboque")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_SemiReboque")]
         [System.Xml.Serialization.XmlEnum("11")]
         SemiReboque = 11,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Charrete")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Charrete")]
         [System.Xml.Serialization.XmlEnum("12")]
         Charrete = 12,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Caminhoneta")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Caminhoneta")]
         [System.Xml.Serialization.XmlEnum("13")]
         Caminhoneta = 13,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Caminhao")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Caminhao")]
         [System.Xml.Serialization.XmlEnum("14")]
         Caminhao = 14,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Carroca")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Carroca")]
         [System.Xml.Serialization.XmlEnum("15")]
         Carroça = 15,
-        [Attributes.DisplayName("Enum_VeiculoTipo_CarroDeMao")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_CarroDeMao")]
         [System.Xml.Serialization.XmlEnum("16")]
         CarrodeMao = 16,
-        [Attributes.DisplayName("Enum_VeiculoTipo_CTrator")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_CTrator")]
         [System.Xml.Serialization.XmlEnum("17")]
         CTrator = 17,
-        [Attributes.DisplayName("Enum_VeiculoTipo_TratorRodas")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_TratorRodas")]
         [System.Xml.Serialization.XmlEnum("18")]
         TratordeRodas = 18,
-        [Attributes.DisplayName("Enum_VeiculoTipo_TratorMisto")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_TratorMisto")]
         [System.Xml.Serialization.XmlEnum("19")]
         TratorMisto = 19,
-        [Attributes.DisplayName("Enum_VeiculoTipo_TratorEsteira")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_TratorEsteira")]
         [System.Xml.Serialization.XmlEnum("20")]
         TratordeEsteiras = 20,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Quadriciclo")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Quadriciclo")]
         [System.Xml.Serialization.XmlEnum("21")]
         Quadriciclo = 21,
-        [Attributes.DisplayName("Enum_VeiculoTipo_EspOnibus")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_EspOnibus")]
         [System.Xml.Serialization.XmlEnum("22")]
         EspOnibus = 22,
-        [Attributes.DisplayName("Enum_VeiculoTipo_MistoCAM")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_MistoCAM")]
         [System.Xml.Serialization.XmlEnum("23")]
         MistoCAM = 23,
-        [Attributes.DisplayName("Enum_VeiculoTipo_CargaCAM")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_CargaCAM")]
         [System.Xml.Serialization.XmlEnum("24")]
         CargaCAM = 24,
-        [Attributes.DisplayName("Enum_VeiculoTipo_Utilitario")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_Utilitario")]
         [System.Xml.Serialization.XmlEnum("25")]
         Utilitario = 25,
-        [Attributes.DisplayName("Enum_VeiculoTipo_MotorCasa")]
+        [System.ComponentModel.Description("Enum_VeiculoTipo_MotorCasa")]
         [System.Xml.Serialization.XmlEnum("26")]
         MotorCasa = 26,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
@@ -1041,28 +1041,28 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VeiculoEspecie
     {
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Desconhecido")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Desconhecido")]
         [System.Xml.Serialization.XmlEnum("0")]
         Desconhecido = 0,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Passageiro")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Passageiro")]
         [System.Xml.Serialization.XmlEnum("1")]
         Passageiro = 1,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Carga")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Carga")]
         [System.Xml.Serialization.XmlEnum("2")]
         Carga = 2,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Misto")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Misto")]
         [System.Xml.Serialization.XmlEnum("3")]
         Misto = 3,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Corrida")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Corrida")]
         [System.Xml.Serialization.XmlEnum("4")]
         Corrida = 4,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Tracao")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Tracao")]
         [System.Xml.Serialization.XmlEnum("5")]
         Tracao = 5,
-        [Attributes.DisplayName("Enum_VeciculoEspecie_Especial")]
+        [System.ComponentModel.Description("Enum_VeciculoEspecie_Especial")]
         [System.Xml.Serialization.XmlEnum("6")]
         Especial = 6,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
@@ -1072,79 +1072,79 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VeiculoCorDENATRAN
     {
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Amarelo")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Amarelo")]
         [System.Xml.Serialization.XmlEnum("1")]
         Amarelo = 1,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Amarelo")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Amarelo")]
         [System.Xml.Serialization.XmlEnum("01")]
         Amarelo_V4 = 1,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Azul")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Azul")]
         [System.Xml.Serialization.XmlEnum("2")]
         Azul = 2,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Azul")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Azul")]
         [System.Xml.Serialization.XmlEnum("02")]
         Azul_V4 = 2,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Bege")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Bege")]
         [System.Xml.Serialization.XmlEnum("3")]
         Bege = 3,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Bege")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Bege")]
         [System.Xml.Serialization.XmlEnum("03")]
         Bege_V4 = 3,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Branca")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Branca")]
         [System.Xml.Serialization.XmlEnum("4")]
         Branca = 4,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Branca")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Branca")]
         [System.Xml.Serialization.XmlEnum("04")]
         Branca_v3 = 4,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Cinza")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Cinza")]
         [System.Xml.Serialization.XmlEnum("5")]
         Cinza = 5,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Cinza")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Cinza")]
         [System.Xml.Serialization.XmlEnum("05")]
         Cinza_V4 = 5,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Dourada")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Dourada")]
         [System.Xml.Serialization.XmlEnum("6")]
         Dourada = 6,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Dourada")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Dourada")]
         [System.Xml.Serialization.XmlEnum("06")]
         Dourada_V4 = 6,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Grena")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Grena")]
         [System.Xml.Serialization.XmlEnum("7")]
         Grena = 7,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Grena")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Grena")]
         [System.Xml.Serialization.XmlEnum("07")]
         Grena_V4 = 7,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Laranja")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Laranja")]
         [System.Xml.Serialization.XmlEnum("8")]
         Laranja = 8,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Laranja")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Laranja")]
         [System.Xml.Serialization.XmlEnum("08")]
         Laranja_V4 = 8,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Marrom")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Marrom")]
         [System.Xml.Serialization.XmlEnum("9")]
         Marrom = 9,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Marrom")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Marrom")]
         [System.Xml.Serialization.XmlEnum("09")]
         Marrom_V4 = 9,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Prata")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Prata")]
         [System.Xml.Serialization.XmlEnum("10")]
         Prata = 10,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Preta")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Preta")]
         [System.Xml.Serialization.XmlEnum("11")]
         Preta = 11,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Rosa")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Rosa")]
         [System.Xml.Serialization.XmlEnum("12")]
         Rosa = 12,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Roxa")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Roxa")]
         [System.Xml.Serialization.XmlEnum("13")]
         Roxa = 13,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Verde")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Verde")]
         [System.Xml.Serialization.XmlEnum("14")]
         Verde = 14,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Vermelha")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Vermelha")]
         [System.Xml.Serialization.XmlEnum("15")]
         Vermelha = 15,
-        [Attributes.DisplayName("Enum_VeiculoCorDenatran_Fantasia")]
+        [System.ComponentModel.Description("Enum_VeiculoCorDenatran_Fantasia")]
         [System.Xml.Serialization.XmlEnum("16")]
         Fantasia = 16
     }
@@ -1156,39 +1156,39 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum CST_ICMS
     {
         [System.Xml.Serialization.XmlEnum("00")]
-        [Attributes.DisplayName("00")]
+        [System.ComponentModel.Description("00")]
         CST_00 = 0,
-        [Attributes.DisplayName("10")]
+        [System.ComponentModel.Description("10")]
         [System.Xml.Serialization.XmlEnum("10")]
         CST_10 = 10,
-        [Attributes.DisplayName("20")]
+        [System.ComponentModel.Description("20")]
         [System.Xml.Serialization.XmlEnum("20")]
         CST_20 = 20,
-        [Attributes.DisplayName("30")]
+        [System.ComponentModel.Description("30")]
         [System.Xml.Serialization.XmlEnum("30")]
         CST_30 = 30,
-        [Attributes.DisplayName("40")]
+        [System.ComponentModel.Description("40")]
         [System.Xml.Serialization.XmlEnum("40")]
         CST_40 = 40,
-        [Attributes.DisplayName("41")]
+        [System.ComponentModel.Description("41")]
         [System.Xml.Serialization.XmlEnum("41")]
         CST_41 = 41,
-        [Attributes.DisplayName("50")]
+        [System.ComponentModel.Description("50")]
         [System.Xml.Serialization.XmlEnum("50")]
         CST_50 = 50,
-        [Attributes.DisplayName("51")]
+        [System.ComponentModel.Description("51")]
         [System.Xml.Serialization.XmlEnum("51")]
         CST_51 = 51,
-        [Attributes.DisplayName("60")]
+        [System.ComponentModel.Description("60")]
         [System.Xml.Serialization.XmlEnum("60")]
         CST_60 = 60,
-        [Attributes.DisplayName("70")]
+        [System.ComponentModel.Description("70")]
         [System.Xml.Serialization.XmlEnum("70")]
         CST_70 = 70,
-        [Attributes.DisplayName("90")]
+        [System.ComponentModel.Description("90")]
         [System.Xml.Serialization.XmlEnum("90")]
         CST_90 = 90,
-        [Attributes.DisplayName("999")]
+        [System.ComponentModel.Description("999")]
         [System.Xml.Serialization.XmlEnum("999")]
         CST_NA = 999
     }
@@ -1198,37 +1198,37 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum CSOSN_ICMS
     {
-        [Attributes.DisplayName("101")]
+        [System.ComponentModel.Description("101")]
         [System.Xml.Serialization.XmlEnum("101")]
         CST101 = 101,
-        [Attributes.DisplayName("102")]
+        [System.ComponentModel.Description("102")]
         [System.Xml.Serialization.XmlEnum("102")]
         CST102 = 102,
-        [Attributes.DisplayName("103")]
+        [System.ComponentModel.Description("103")]
         [System.Xml.Serialization.XmlEnum("103")]
         CST103 = 103,
-        [Attributes.DisplayName("201")]
+        [System.ComponentModel.Description("201")]
         [System.Xml.Serialization.XmlEnum("201")]
         CST201 = 201,
-        [Attributes.DisplayName("202")]
+        [System.ComponentModel.Description("202")]
         [System.Xml.Serialization.XmlEnum("202")]
         CST202 = 202,
-        [Attributes.DisplayName("203")]
+        [System.ComponentModel.Description("203")]
         [System.Xml.Serialization.XmlEnum("203")]
         CST203 = 203,
-        [Attributes.DisplayName("300")]
+        [System.ComponentModel.Description("300")]
         [System.Xml.Serialization.XmlEnum("300")]
         CST300 = 300,
-        [Attributes.DisplayName("400")]
+        [System.ComponentModel.Description("400")]
         [System.Xml.Serialization.XmlEnum("400")]
         CST400 = 400,
-        [Attributes.DisplayName("500")]
+        [System.ComponentModel.Description("500")]
         [System.Xml.Serialization.XmlEnum("500")]
         CST500 = 500,
-        [Attributes.DisplayName("900")]
+        [System.ComponentModel.Description("900")]
         [System.Xml.Serialization.XmlEnum("900")]
         CST900 = 900,
-        [Attributes.DisplayName("999")]
+        [System.ComponentModel.Description("999")]
         [System.Xml.Serialization.XmlEnum("999")]
         CSTNA = 999
     }
@@ -1264,20 +1264,20 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1289,22 +1289,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1316,32 +1316,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1352,22 +1352,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     public enum DetalhamentoICMS_CST20_ModBC
     {
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1379,32 +1379,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1416,47 +1416,47 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_Taxi")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_Taxi")]
         [System.Xml.Serialization.XmlEnum("1")]
         Taxi = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_DefFisico")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_DefFisico")]
         [System.Xml.Serialization.XmlEnum("2")]
         DeficienteFisico = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_ProdAgrop")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_ProdAgrop")]
         [System.Xml.Serialization.XmlEnum("3")]
         ProdutorAgropecuario = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_FrotistaLocadora")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_FrotistaLocadora")]
         [System.Xml.Serialization.XmlEnum("4")]
         FrotistaLocadora = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_DiploConsular")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_DiploConsular")]
         [System.Xml.Serialization.XmlEnum("5")]
         DiplomáticoConsular = 5,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_AmazoniaALC")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_AmazoniaALC")]
         [System.Xml.Serialization.XmlEnum("6")]
         UtilMotocAmOcidALC = 6,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_Suframa")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_Suframa")]
         [System.Xml.Serialization.XmlEnum("7")]
         SUFRAMA = 7,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_VendaOrgPublico")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_VendaOrgPublico")]
         [System.Xml.Serialization.XmlEnum("8")]
         VendaOrgaosPublicos = 8,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_MotivoDesoneracao_Outros")]
+        [System.ComponentModel.Description("Enum_ICMS_MotivoDesoneracao_Outros")]
         [System.Xml.Serialization.XmlEnum("9")]
         Outros = 9
     }
@@ -1468,22 +1468,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1495,22 +1495,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1522,32 +1522,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1559,22 +1559,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1586,32 +1586,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1623,32 +1623,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1660,32 +1660,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1697,22 +1697,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1724,32 +1724,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1761,22 +1761,22 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("0")]
         MargeValorAgregado = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         PautaValor = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_TabeladoMaxValor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_TabeladoMaxValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         PrecoTabeladoMaxVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMS_ModBC_Valor")]
+        [System.ComponentModel.Description("Enum_ICMS_ModBC_Valor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ValorOperacao = 3
     }
@@ -1788,32 +1788,32 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_TabeladoMaxSugerido")]
         [System.Xml.Serialization.XmlEnum("0")]
         PrecoTabMaxSugerido = 0,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNegativaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNegativaValor")]
         [System.Xml.Serialization.XmlEnum("1")]
         ListaNegativaVal = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaPositivaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaPositivaValor")]
         [System.Xml.Serialization.XmlEnum("2")]
         ListaPositivaVal = 2,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_ListaNeutraValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_ListaNeutraValor")]
         [System.Xml.Serialization.XmlEnum("3")]
         ListaNeutraVal = 3,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_MVA")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_MVA")]
         [System.Xml.Serialization.XmlEnum("4")]
         MVA = 4,
 
         /// <remarks/>
-        [Attributes.DisplayName("Enum_ICMSST_ModBC_PautaValor")]
+        [System.ComponentModel.Description("Enum_ICMSST_ModBC_PautaValor")]
         [System.Xml.Serialization.XmlEnum("5")]
         PautaVal = 5
     }
@@ -1825,46 +1825,46 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum CST_IPI
     {
-        [Attributes.DisplayName("Enum_IPI_CST_EntrRecupCredito")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrRecupCredito")]
         [System.Xml.Serialization.XmlEnum("00")]
         EntradaCredito = 0,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrTribAliqZero")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrTribAliqZero")]
         [System.Xml.Serialization.XmlEnum("01")]
         EntAliqZero = 1,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrIsenta")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrIsenta")]
         [System.Xml.Serialization.XmlEnum("02")]
         EntIsenta = 2,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrNaoTrib")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrNaoTrib")]
         [System.Xml.Serialization.XmlEnum("03")]
         EntNTributada = 3,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrImune")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrImune")]
         [System.Xml.Serialization.XmlEnum("04")]
         EntImune = 4,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrSuspensao")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrSuspensao")]
         [System.Xml.Serialization.XmlEnum("05")]
         EntSuspensao = 5,
-        [Attributes.DisplayName("Enum_IPI_CST_EntrOutras")]
+        [System.ComponentModel.Description("Enum_IPI_CST_EntrOutras")]
         [System.Xml.Serialization.XmlEnum("49")]
         OutrasEntradas = 49,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaTrib")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaTrib")]
         [System.Xml.Serialization.XmlEnum("50")]
         SaidaTributada = 50,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaTribAliqZero")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaTribAliqZero")]
         [System.Xml.Serialization.XmlEnum("51")]
         SaiAliqZero = 51,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaIsenta")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaIsenta")]
         [System.Xml.Serialization.XmlEnum("52")]
         SaiIsenta = 52,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaNaoTrib")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaNaoTrib")]
         [System.Xml.Serialization.XmlEnum("53")]
         SaiNTributada = 53,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaImune")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaImune")]
         [System.Xml.Serialization.XmlEnum("54")]
         SaiImune = 54,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaSuspensao")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaSuspensao")]
         [System.Xml.Serialization.XmlEnum("55")]
         SaiSuspensao = 55,
-        [Attributes.DisplayName("Enum_IPI_CST_SaidaOutras")]
+        [System.ComponentModel.Description("Enum_IPI_CST_SaidaOutras")]
         [System.Xml.Serialization.XmlEnum("99")]
         OutrasSaidas = 99
     }
@@ -1934,106 +1934,106 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum CST_PIS
     {
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqNormal")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqNormal")]
         [System.Xml.Serialization.XmlEnum("01")]
         AliquotaNormal = 1,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqDif")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqDif")]
         [System.Xml.Serialization.XmlEnum("02")]
         AliquotaDiferenciada = 2,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqUnProd")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqUnProd")]
         [System.Xml.Serialization.XmlEnum("03")]
         TributavelQuant = 3,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribMonoAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribMonoAliqZero")]
         [System.Xml.Serialization.XmlEnum("04")]
         TribMonofasica = 4,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribST")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribST")]
         [System.Xml.Serialization.XmlEnum("05")]
         SubstituicaoTributaria = 5,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqZero")]
         [System.Xml.Serialization.XmlEnum("06")]
         AliqZero = 6,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpIsenta")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpIsenta")]
         [System.Xml.Serialization.XmlEnum("07")]
         Isenta = 7,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpSemIncidencia")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpSemIncidencia")]
         [System.Xml.Serialization.XmlEnum("08")]
         SemIncidencia = 8,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpSuspensao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpSuspensao")]
         [System.Xml.Serialization.XmlEnum("09")]
         Suspensao = 9,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_SaidasOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_SaidasOutras")]
         [System.Xml.Serialization.XmlEnum("49")]
         OutrasOpSaidas = 49,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoMercInterno")]
         [System.Xml.Serialization.XmlEnum("50")]
         CreditoTribMercadoInterno = 50,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("51")]
         CreditoNaoTribMercadoInterno = 51,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoExp")]
         [System.Xml.Serialization.XmlEnum("52")]
         CreditoTribExportacao = 52,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoTribNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoTribNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("53")]
         CreditoTribNaoTribMercadoInterno = 53,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoMercIntExp")]
         [System.Xml.Serialization.XmlEnum("54")]
         CreditoTribMercadoInternoExportacao = 54,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("55")]
         CreditoNaoTribMercadoInternoExportacao = 55,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoTribNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoTribNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("56")]
         CreditoTribNaoTribMercadoInternoExportacao = 56,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresMercInterno")]
         [System.Xml.Serialization.XmlEnum("60")]
         CredPresumidoTribMercadoInterno = 60,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("61")]
         CredPresumidoNaoTribMercadoInterno = 61,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresExportacao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresExportacao")]
         [System.Xml.Serialization.XmlEnum("62")]
         CredPresumidoTribExportacao = 62,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribNTMercInt")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribNTMercInt")]
         [System.Xml.Serialization.XmlEnum("63")]
         CredPresumidoTribNaoTribMercadoInterno = 63,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribMercIntExp")]
         [System.Xml.Serialization.XmlEnum("64")]
         CredPresumidoMercadoInternoExportacao = 64,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresNTTribMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresNTTribMercIntExp")]
         [System.Xml.Serialization.XmlEnum("65")]
         CredPresumidoNaoTribMercadoInternoExportacao = 65,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("66")]
         CredPresumidoTribNaoTribMercadoInternoExportacao = 66,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresOutras")]
         [System.Xml.Serialization.XmlEnum("67")]
         CredPresumidoOutrasOp = 67,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSemCredito")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSemCredito")]
         [System.Xml.Serialization.XmlEnum("70")]
         AquisSemDireitoCredito = 70,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisIsencao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisIsencao")]
         [System.Xml.Serialization.XmlEnum("71")]
         AquisIsencao = 71,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSuspensao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSuspensao")]
         [System.Xml.Serialization.XmlEnum("72")]
         AquisSuspensao = 72,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisAliqZero")]
         [System.Xml.Serialization.XmlEnum("73")]
         AquisAliqZero = 73,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSemIncidencia")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSemIncidencia")]
         [System.Xml.Serialization.XmlEnum("74")]
         AquisSemIncidencia = 74,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisST")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisST")]
         [System.Xml.Serialization.XmlEnum("75")]
         AquisST = 75,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisOutras")]
         [System.Xml.Serialization.XmlEnum("98")]
         OutrasOpEntradas = 98,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OutrasOperacoes")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OutrasOperacoes")]
         [System.Xml.Serialization.XmlEnum("99")]
         OutrasOp = 99,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_NotValid")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_NotValid")]
         [System.Xml.Serialization.XmlEnum("999")]
         NotValid = 999
     }
@@ -2076,106 +2076,106 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum CST_COFINS
     {
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqNormal")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqNormal")]
         [System.Xml.Serialization.XmlEnum("01")]
         AliquotaNormal = 1,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqDif")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqDif")]
         [System.Xml.Serialization.XmlEnum("02")]
         AliquotaDiferenciada = 2,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqUnProd")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqUnProd")]
         [System.Xml.Serialization.XmlEnum("03")]
         TributavelQuant = 3,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribMonoAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribMonoAliqZero")]
         [System.Xml.Serialization.XmlEnum("04")]
         TribMonofasica = 4,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribST")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribST")]
         [System.Xml.Serialization.XmlEnum("05")]
         SubstituicaoTributaria = 5,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpTribAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpTribAliqZero")]
         [System.Xml.Serialization.XmlEnum("06")]
         AliqZero = 6,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpIsenta")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpIsenta")]
         [System.Xml.Serialization.XmlEnum("07")]
         Isenta = 7,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpSemIncidencia")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpSemIncidencia")]
         [System.Xml.Serialization.XmlEnum("08")]
         SemIncidencia = 8,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpSuspensao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpSuspensao")]
         [System.Xml.Serialization.XmlEnum("09")]
         Suspensao = 9,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_SaidasOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_SaidasOutras")]
         [System.Xml.Serialization.XmlEnum("49")]
         OutrasOpSaidas = 49,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoMercInterno")]
         [System.Xml.Serialization.XmlEnum("50")]
         CreditoTribMercadoInterno = 50,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("51")]
         CreditoNaoTribMercadoInterno = 51,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoExp")]
         [System.Xml.Serialization.XmlEnum("52")]
         CreditoTribExportacao = 52,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoTribNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoTribNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("53")]
         CreditoTribNaoTribMercadoInterno = 53,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoMercIntExp")]
         [System.Xml.Serialization.XmlEnum("54")]
         CreditoTribMercadoInternoExportacao = 54,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("55")]
         CreditoNaoTribMercadoInternoExportacao = 55,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpCreditoTribNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpCreditoTribNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("56")]
         CreditoTribNaoTribMercadoInternoExportacao = 56,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresMercInterno")]
         [System.Xml.Serialization.XmlEnum("60")]
         CredPresumidoTribMercadoInterno = 60,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresNTMercInterno")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresNTMercInterno")]
         [System.Xml.Serialization.XmlEnum("61")]
         CredPresumidoNaoTribMercadoInterno = 61,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresExportacao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresExportacao")]
         [System.Xml.Serialization.XmlEnum("62")]
         CredPresumidoTribExportacao = 62,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribNTMercInt")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribNTMercInt")]
         [System.Xml.Serialization.XmlEnum("63")]
         CredPresumidoTribNaoTribMercadoInterno = 63,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribMercIntExp")]
         [System.Xml.Serialization.XmlEnum("64")]
         CredPresumidoMercadoInternoExportacao = 64,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresNTTribMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresNTTribMercIntExp")]
         [System.Xml.Serialization.XmlEnum("65")]
         CredPresumidoNaoTribMercadoInternoExportacao = 65,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresTribNTMercIntExp")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresTribNTMercIntExp")]
         [System.Xml.Serialization.XmlEnum("66")]
         CredPresumidoTribNaoTribMercadoInternoExportacao = 66,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_CreditoPresOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_CreditoPresOutras")]
         [System.Xml.Serialization.XmlEnum("67")]
         CredPresumidoOutrasOp = 67,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSemCredito")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSemCredito")]
         [System.Xml.Serialization.XmlEnum("70")]
         AquisSemDireitoCredito = 70,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisIsencao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisIsencao")]
         [System.Xml.Serialization.XmlEnum("71")]
         AquisIsencao = 71,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSuspensao")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSuspensao")]
         [System.Xml.Serialization.XmlEnum("72")]
         AquisSuspensao = 72,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisAliqZero")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisAliqZero")]
         [System.Xml.Serialization.XmlEnum("73")]
         AquisAliqZero = 73,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisSemIncidencia")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisSemIncidencia")]
         [System.Xml.Serialization.XmlEnum("74")]
         AquisSemIncidencia = 74,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisST")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisST")]
         [System.Xml.Serialization.XmlEnum("75")]
         AquisST = 75,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OpAquisOutras")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OpAquisOutras")]
         [System.Xml.Serialization.XmlEnum("98")]
         OutrasOpEntradas = 98,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_OutrasOperacoes")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_OutrasOperacoes")]
         [System.Xml.Serialization.XmlEnum("99")]
         OutrasOp = 99,
-        [Attributes.DisplayName("Enum_PISCOFINS_CST_NotValid")]
+        [System.ComponentModel.Description("Enum_PISCOFINS_CST_NotValid")]
         [System.Xml.Serialization.XmlEnum("999")]
         NotValid = 999
     }
@@ -2222,55 +2222,55 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum FormaPagamento
     {
-        [Attributes.DisplayName("Dinheiro")]
+        [System.ComponentModel.Description("Dinheiro")]
         [System.Xml.Serialization.XmlEnum("01")]
         Dinheiro = 1,
-        [Attributes.DisplayName("Cheque")]
+        [System.ComponentModel.Description("Cheque")]
         [System.Xml.Serialization.XmlEnum("02")]
         Cheque = 2,
-        [Attributes.DisplayName("Cartão de Crédito")]
+        [System.ComponentModel.Description("Cartão de Crédito")]
         [System.Xml.Serialization.XmlEnum("03")]
         CartaoCredito = 3,
-        [Attributes.DisplayName("Cartão de Débito")]
+        [System.ComponentModel.Description("Cartão de Débito")]
         [System.Xml.Serialization.XmlEnum("04")]
         CartaoDebito = 4,
-        [Attributes.DisplayName("Crédito Loja")]
+        [System.ComponentModel.Description("Crédito Loja")]
         [System.Xml.Serialization.XmlEnum("05")]
         CreditoLoja = 5,
-        [Attributes.DisplayName("Vale Alimentação")]
+        [System.ComponentModel.Description("Vale Alimentação")]
         [System.Xml.Serialization.XmlEnum("10")]
         ValeAlimentacao = 10,
-        [Attributes.DisplayName("Vale Refeição")]
+        [System.ComponentModel.Description("Vale Refeição")]
         [System.Xml.Serialization.XmlEnum("11")]
         ValeRefeicao = 11,
-        [Attributes.DisplayName("Vale Presente")]
+        [System.ComponentModel.Description("Vale Presente")]
         [System.Xml.Serialization.XmlEnum("12")]
         ValePresente = 12,
-        [Attributes.DisplayName("Vale Combustível")]
+        [System.ComponentModel.Description("Vale Combustível")]
         [System.Xml.Serialization.XmlEnum("13")]
         ValeCombustivel = 13,
-        [Attributes.DisplayName("Duplicata Mercantil")]
+        [System.ComponentModel.Description("Duplicata Mercantil")]
         [System.Xml.Serialization.XmlEnum("14")]
         DuplicataMercantil = 14,
-        [Attributes.DisplayName("Boleto Bancário")]
+        [System.ComponentModel.Description("Boleto Bancário")]
         [System.Xml.Serialization.XmlEnum("15")]
         BoletoBancario = 15,
-        [Attributes.DisplayName("Depósito Bancário")]
+        [System.ComponentModel.Description("Depósito Bancário")]
         [System.Xml.Serialization.XmlEnum("16")]
         DepositoBancario = 16,
-        [Attributes.DisplayName("Pagamento Instantâneo (PIX)")]
+        [System.ComponentModel.Description("Pagamento Instantâneo (PIX)")]
         [System.Xml.Serialization.XmlEnum("17")]
         PIX = 17,
-        [Attributes.DisplayName("Transferência bancária, Carteira Digital")]
+        [System.ComponentModel.Description("Transferência bancária, Carteira Digital")]
         [System.Xml.Serialization.XmlEnum("18")]
         CarteiraDigital = 18,
-        [Attributes.DisplayName("Programa de fidelidade, Cashback, Crédito Virtual")]
+        [System.ComponentModel.Description("Programa de fidelidade, Cashback, Crédito Virtual")]
         [System.Xml.Serialization.XmlEnum("19")]
         Fidelidade_Cashback_CredVirtual = 19,
-        [Attributes.DisplayName("Sem Pagamento")]
+        [System.ComponentModel.Description("Sem Pagamento")]
         [System.Xml.Serialization.XmlEnum("90")]
         SemPagto = 90,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         [System.Xml.Serialization.XmlEnum("99")]
         Outros = 99
     }
@@ -2280,10 +2280,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum TipoIntegracaoPgCartao
     {
-        [Attributes.DisplayName("Integrado (TEF / e-Commerce)")]
+        [System.ComponentModel.Description("Integrado (TEF / e-Commerce)")]
         [System.Xml.Serialization.XmlEnum("1")]
         TEF_eCommerce = 1,
-        [Attributes.DisplayName("Não Integrado (POS)")]
+        [System.ComponentModel.Description("Não Integrado (POS)")]
         [System.Xml.Serialization.XmlEnum("2")]
         POS = 2
     }
@@ -2293,34 +2293,34 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum BandeiraCartaoCredito
     {
-        [Attributes.DisplayName("Visa")]
+        [System.ComponentModel.Description("Visa")]
         [System.Xml.Serialization.XmlEnum("01")]
         Visa = 1,
-        [Attributes.DisplayName("Mastercard")]
+        [System.ComponentModel.Description("Mastercard")]
         [System.Xml.Serialization.XmlEnum("02")]
         Mastercard = 2,
-        [Attributes.DisplayName("American Express")]
+        [System.ComponentModel.Description("American Express")]
         [System.Xml.Serialization.XmlEnum("03")]
         AmericanExpress = 3,
-        [Attributes.DisplayName("Sorocred")]
+        [System.ComponentModel.Description("Sorocred")]
         [System.Xml.Serialization.XmlEnum("04")]
         Sorocred = 4,
-        [Attributes.DisplayName("Diners Club")]
+        [System.ComponentModel.Description("Diners Club")]
         [System.Xml.Serialization.XmlEnum("05")]
         DinersClub = 5,
-        [Attributes.DisplayName("Elo")]
+        [System.ComponentModel.Description("Elo")]
         [System.Xml.Serialization.XmlEnum("06")]
         Elo = 6,
-        [Attributes.DisplayName("Hipercard")]
+        [System.ComponentModel.Description("Hipercard")]
         [System.Xml.Serialization.XmlEnum("07")]
         Hipercard = 7,
-        [Attributes.DisplayName("Aura")]
+        [System.ComponentModel.Description("Aura")]
         [System.Xml.Serialization.XmlEnum("08")]
         Aura = 8,
-        [Attributes.DisplayName("Cabal")]
+        [System.ComponentModel.Description("Cabal")]
         [System.Xml.Serialization.XmlEnum("09")]
         Cabal = 9,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         [System.Xml.Serialization.XmlEnum("99")]
         Outros = 99
     }
@@ -2340,10 +2340,10 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 1.00
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("1.00")] // , False)>
+        [System.ComponentModel.Description("1.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("1.00")]
         Versao_1_00,
-        [Attributes.DisplayName("3.00")] // , False)>
+        [System.ComponentModel.Description("3.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("3.00")]
         Versao_3_00
     }
@@ -2353,67 +2353,67 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(TypeName = "TEventoInfEventoTpEvento", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum CodigoEvento
     {
-        [Attributes.DisplayName("Carta de Correção")] // , False)>
+        [System.ComponentModel.Description("Carta de Correção")] // , False)>
         [System.Xml.Serialization.XmlEnum("110110")]
         Correcao = 110110,
-        [Attributes.DisplayName("Cancelamento")] // , False)>
+        [System.ComponentModel.Description("Cancelamento")] // , False)>
         [System.Xml.Serialization.XmlEnum("110111")]
         Cancelamento = 110111,
-        [Attributes.DisplayName("Confirmação da Operação")] // , False)>
+        [System.ComponentModel.Description("Confirmação da Operação")] // , False)>
         [System.Xml.Serialization.XmlEnum("210200")]
         Confirmacao = 210200,
-        [Attributes.DisplayName("Ciência da Operação")] // , False)>
+        [System.ComponentModel.Description("Ciência da Operação")] // , False)>
         [System.Xml.Serialization.XmlEnum("210210")]
         Ciencia = 210210,
-        [Attributes.DisplayName("Desconhecimento da Operação")] // , False)>
+        [System.ComponentModel.Description("Desconhecimento da Operação")] // , False)>
         [System.Xml.Serialization.XmlEnum("210220")]
         Desconhecimento = 210220,
-        [Attributes.DisplayName("Operação não Realizada")] // , False)>
+        [System.ComponentModel.Description("Operação não Realizada")] // , False)>
         [System.Xml.Serialization.XmlEnum("210240")]
         NaoRealizada = 210240,
-        [Attributes.DisplayName("Registro Passagem NF-e")] // , False)>
+        [System.ComponentModel.Description("Registro Passagem NF-e")] // , False)>
         [System.Xml.Serialization.XmlEnum("610500")]
         PassagemNFe = 610500,
-        [Attributes.DisplayName("Registro Passagem NF-e Cancelado")] // , False)>
+        [System.ComponentModel.Description("Registro Passagem NF-e Cancelado")] // , False)>
         [System.Xml.Serialization.XmlEnum("610501")]
         PassagemNFeCancelado = 610501,
-        [Attributes.DisplayName("Registro de Passagem de NFe propagado pelo MDFe")] // , False)>
+        [System.ComponentModel.Description("Registro de Passagem de NFe propagado pelo MDFe")] // , False)>
         [System.Xml.Serialization.XmlEnum("610510")]
         PassagemNFePropgMDFe = 610510,
-        [Attributes.DisplayName("Registro de Passagem de NFe propagado pelo MDFe/CTe")] // , False)>
+        [System.ComponentModel.Description("Registro de Passagem de NFe propagado pelo MDFe/CTe")] // , False)>
         [System.Xml.Serialization.XmlEnum("610514")]
         PassagemNFePropgMDFeCTe = 610514,
-        [Attributes.DisplayName("Registro Passagem NF-e RFID")] // , False)>
+        [System.ComponentModel.Description("Registro Passagem NF-e RFID")] // , False)>
         [System.Xml.Serialization.XmlEnum("610550")]
         PassagemNFeRFID = 610550,
-        [Attributes.DisplayName("Registro de Passagem Automatico MDF-e")] // , False)>
+        [System.ComponentModel.Description("Registro de Passagem Automatico MDF-e")] // , False)>
         [System.Xml.Serialization.XmlEnum("610552")]
         PassagemAutoMDFe = 610552,
-        [Attributes.DisplayName("Registro de Passagem Automatico MDF-e com CT-e")] // , False)>
+        [System.ComponentModel.Description("Registro de Passagem Automatico MDF-e com CT-e")] // , False)>
         [System.Xml.Serialization.XmlEnum("610554")]
         PassagemAutoMDFecomCTe = 610554,
-        [Attributes.DisplayName("CT-e Autorizado")] // , False)>
+        [System.ComponentModel.Description("CT-e Autorizado")] // , False)>
         [System.Xml.Serialization.XmlEnum("610600")]
         CTeAutorizado = 610600,
-        [Attributes.DisplayName("CT-e Cancelado")] // , False)>
+        [System.ComponentModel.Description("CT-e Cancelado")] // , False)>
         [System.Xml.Serialization.XmlEnum("610601")]
         CTeCancelado = 610601,
-        [Attributes.DisplayName("MDF-e Autorizado")] // , False)>
+        [System.ComponentModel.Description("MDF-e Autorizado")] // , False)>
         [System.Xml.Serialization.XmlEnum("610610")]
         MDFeAutorizado = 610610,
-        [Attributes.DisplayName("MDF-e Cancelado")] // , False)>
+        [System.ComponentModel.Description("MDF-e Cancelado")] // , False)>
         [System.Xml.Serialization.XmlEnum("610611")]
         MDFeCancelado = 610611,
-        [Attributes.DisplayName("MDF-e Autorizado com CT-e")] // , False)>
+        [System.ComponentModel.Description("MDF-e Autorizado com CT-e")] // , False)>
         [System.Xml.Serialization.XmlEnum("610614")]
         MDFeAutorizadoComCTe = 610614,
-        [Attributes.DisplayName("Cancelamento de MDF-e Autorizado com CT-e")] // , False)>
+        [System.ComponentModel.Description("Cancelamento de MDF-e Autorizado com CT-e")] // , False)>
         [System.Xml.Serialization.XmlEnum("610615")]
         MDFeCanceladoComCTe = 610615,
-        [Attributes.DisplayName("Vistoria Suframa")] // , False)>
+        [System.ComponentModel.Description("Vistoria Suframa")] // , False)>
         [System.Xml.Serialization.XmlEnum("990900")]
         VistoriaSuframa = 990900,
-        [Attributes.DisplayName("Internalização Suframa")] // , False)>
+        [System.ComponentModel.Description("Internalização Suframa")] // , False)>
         [System.Xml.Serialization.XmlEnum("990910")]
         IntarnalizacaoSuframa = 990910
     }
@@ -2423,28 +2423,28 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VersaoServicoConsSitNFe
     {
-        [Attributes.DisplayName("1.07")] // , False)>
+        [System.ComponentModel.Description("1.07")] // , False)>
         [System.Xml.Serialization.XmlEnum("1.07")]
         Versao_1_07,
-        [Attributes.DisplayName("1.10")] // , False)>
+        [System.ComponentModel.Description("1.10")] // , False)>
         [System.Xml.Serialization.XmlEnum("1.10")]
         Versao_1_10,
-        [Attributes.DisplayName("2.00")] // , False)>
+        [System.ComponentModel.Description("2.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("2.00")]
         Versao_2_00,
-        [Attributes.DisplayName("2.01")] // , False)>
+        [System.ComponentModel.Description("2.01")] // , False)>
         [System.Xml.Serialization.XmlEnum("2.01")]
         Versao_2_01,
-        [Attributes.DisplayName("3.00")] // , False)>
+        [System.ComponentModel.Description("3.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("3.00")]
         Versao_3_00,
-        [Attributes.DisplayName("3.10")] // , False)>
+        [System.ComponentModel.Description("3.10")] // , False)>
         [System.Xml.Serialization.XmlEnum("3.10")]
         Versao_3_10,
-        [Attributes.DisplayName("4.00")] // , False)>
+        [System.ComponentModel.Description("4.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("4.00")]
         Versao_4_00,
-        [Attributes.DisplayName("5.00")] // , False)>
+        [System.ComponentModel.Description("5.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("5.00")]
         Versao_5_00
     }
@@ -2454,16 +2454,16 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
     public enum VersaoCancelamento
     {
-        [Attributes.DisplayName("3.10")] // , False)>
+        [System.ComponentModel.Description("3.10")] // , False)>
         [System.Xml.Serialization.XmlEnum("3.10")]
         Versao_3_10,
-        [Attributes.DisplayName("2.00")] // , False)>
+        [System.ComponentModel.Description("2.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("2.00")]
         Versao_2_00,
-        [Attributes.DisplayName("1.07")] // , False)>
+        [System.ComponentModel.Description("1.07")] // , False)>
         [System.Xml.Serialization.XmlEnum("1.07")]
         Versao_1_07,
-        [Attributes.DisplayName("1.00")] // , False)>
+        [System.ComponentModel.Description("1.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("1.00")]
         Versao_1_00
     }
@@ -2478,13 +2478,13 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 1.01
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("2.00")] // , False)>
+        [System.ComponentModel.Description("2.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("2.00")]
         Versao_2_00,
-        [Attributes.DisplayName("3.10")] // , False)>
+        [System.ComponentModel.Description("3.10")] // , False)>
         [System.Xml.Serialization.XmlEnum("3.10")]
         Versao_3_10,
-        [Attributes.DisplayName("4.00")] // , False)>
+        [System.ComponentModel.Description("4.00")] // , False)>
         [System.Xml.Serialization.XmlEnum("4.00")]
         Versao_4_00
     }
@@ -2499,7 +2499,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 1.01
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("1.01")]
+        [System.ComponentModel.Description("1.01")]
         [System.Xml.Serialization.XmlEnum("1.01")]
         Versao_1_01
     }
@@ -2512,12 +2512,12 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
 
         /// <remarks/>
         [System.Xml.Serialization.XmlEnum("0")]
-        [Attributes.DisplayName("Enum_ConsultaDestinatario_IndCont_Fim")]
+        [System.ComponentModel.Description("Enum_ConsultaDestinatario_IndCont_Fim")]
         NaoPossuiMaisDocuments = 0,
 
         /// <remarks/>
         [System.Xml.Serialization.XmlEnum("1")]
-        [Attributes.DisplayName("Enum_ConsultaDestinatario_IndCont_Desc")]
+        [System.ComponentModel.Description("Enum_ConsultaDestinatario_IndCont_Desc")]
         Desconhecido = 1
     }
 
@@ -2531,7 +2531,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 1.00
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("1.00")]
+        [System.ComponentModel.Description("1.00")]
         [System.Xml.Serialization.XmlEnum("1.00")]
         Versao_1_00,
 
@@ -2539,7 +2539,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 2.00
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("2.00")]
+        [System.ComponentModel.Description("2.00")]
         [System.Xml.Serialization.XmlEnum("2.00")]
         Versao_2_00,
 
@@ -2547,7 +2547,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         /// Versao 3.10
         /// </summary>
         /// <remarks></remarks>
-        [Attributes.DisplayName("3.10")]
+        [System.ComponentModel.Description("3.10")]
         [System.Xml.Serialization.XmlEnum("3.10")]
         Versao_3_10
     }

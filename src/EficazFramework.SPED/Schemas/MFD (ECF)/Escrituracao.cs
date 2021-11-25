@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -23,7 +23,7 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
         public override void ProcessaLinha(string linha)
         {
             Primitives.Registro reg = null;
-            switch (linha.Substring(0, 3) ?? "")
+            switch (linha[..3] ?? "")
             {
                 case "E01":
                     {
@@ -85,14 +85,14 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
                     reg.LeParametros(linha.Split("|"));
 
                     // vinculando E15 aos E14 pais:
-                    if (reg is RegistroE15)
+                    if (reg is RegistroE15 e)
                     {
                         var it14 = (from i14 in ((BlocoUnico)Blocos.First().Value).RegistrosE14
-                                    where i14.COO == ((RegistroE15)reg).COO
+                                    where i14.COO == e.COO
                                     select i14).FirstOrDefault();
                         if (it14 != null)
                         {
-                            it14.RegistrosE15.Add((RegistroE15)reg);
+                            it14.RegistrosE15.Add(e);
                         }
                     }
                 }

@@ -1,7 +1,7 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
-using EficazFrameworkCore.SPED.Schemas.Primitives;
+﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.Primitives;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>

@@ -4,12 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Extensions;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
-using DateFormat = EficazFrameworkCore.SPED.Extensions.DateFormat;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
 
     /// <summary>
@@ -136,7 +133,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     var icms = Imposto.DemaisImpostos[0];
                     var trib = icms.GetType().GetRuntimeProperty("Tributacao").GetValue(icms, null);
-                    ST = Conversions.ToDouble(trib.GetType().GetRuntimeProperty("vICMSST").GetValue(trib));
+                    ST = Convert.ToDouble(trib.GetType().GetRuntimeProperty("vICMSST").GetValue(trib));
                 }
                 catch (Exception)
                 {
@@ -493,11 +490,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vProdField = Conversions.ToDouble(value) / 100d;
+                            vProdField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -1588,11 +1585,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vBCField = Conversions.ToDouble(value) / 100d;
+                            vBCField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -1683,11 +1680,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vICMSField = Conversions.ToDouble(value) / 100d;
+                            vICMSField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -1824,7 +1821,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 }
                 else
                 {
-                    return (DetalhamentoICMS_CST51_ModBC)Conversions.ToInteger(default);
+                    return DetalhamentoICMS_CST51_ModBC.ValorOperacao;
                 }
             }
 
@@ -1887,11 +1884,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vBCSTRetField = Conversions.ToDouble(value) / 100d;
+                            vBCSTRetField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -1960,11 +1957,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vICMSSTRetField = Conversions.ToDouble(value) / 100d;
+                            vICMSSTRetField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2159,11 +2156,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vBCSTField = Conversions.ToDouble(value) / 100d;
+                            vBCSTField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2254,11 +2251,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vICMSSTField = Conversions.ToDouble(value) / 100d;
+                            vICMSSTField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2311,11 +2308,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vBCFCPSTField = Conversions.ToDouble(value) / 100d;
+                            vBCFCPSTField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2424,11 +2421,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vFCPSTField = Conversions.ToDouble(value) / 100d;
+                            vFCPSTField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2582,11 +2579,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vCredICMSSNField = Conversions.ToDouble(value) / 100d;
+                            vCredICMSSNField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2823,11 +2820,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vBCSTDestField = Conversions.ToDouble(value) / 100d;
+                            vBCSTDestField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -2896,11 +2893,11 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                 {
                     if (value != null)
                     {
-                        if (Information.IsNumeric(value))
+                        if (double.TryParse(value, out double noresult))
                         {
                             if (!value.Contains(".") & !value.Contains(","))
                                 value = value + "00"; // fix for 0 decimal values
-                            vICMSSTDestField = Conversions.ToDouble(value) / 100d;
+                            vICMSSTDestField = Convert.ToDouble(value) / 100d;
                         }
                         else
                         {
@@ -5105,7 +5102,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
         {
             get
             {
-                return Conversions.ToString(qBCProdField);
+                return Convert.ToString(qBCProdField);
             }
 
             set
@@ -5365,7 +5362,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                     if (value != null)
                     {
                         var dt = value.Split("-");
-                        dFabField = new DateTime(Conversions.ToInteger(dt[0]), Conversions.ToInteger(dt[1]), Conversions.ToInteger(dt[2].Substring(0, 2)));
+                        dFabField = new DateTime(Convert.ToInt32(dt[0]), Convert.ToInt32(dt[1]), Convert.ToInt32(dt[2].Substring(0, 2)));
                     }
                     else
                     {
@@ -5389,7 +5386,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
             {
                 if (dValField is null || dValField.Equals(value) != true)
                 {
-                    dValField = Conversions.ToString(value);
+                    dValField = Convert.ToString(value);
                     OnPropertyChanged("DataValidade");
                 }
             }
@@ -5423,7 +5420,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                     if (value != null)
                     {
                         var dt = value.Split("-");
-                        dValField = Conversions.ToString(new DateTime(Conversions.ToInteger(dt[0]), Conversions.ToInteger(dt[1]), Conversions.ToInteger(dt[2].Substring(0, 2))));
+                        dValField = Convert.ToString(new DateTime(Convert.ToInt32(dt[0]), Convert.ToInt32(dt[1]), Convert.ToInt32(dt[2].Substring(0, 2))));
                     }
                     else
                     {
@@ -5573,7 +5570,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                     if (value != null)
                     {
                         var dt = value.Split("-");
-                        dFabField = new DateTime(Conversions.ToInteger(dt[0]), Conversions.ToInteger(dt[1]), Conversions.ToInteger(dt[2].Substring(0, 2)));
+                        dFabField = new DateTime(Convert.ToInt32(dt[0]), Convert.ToInt32(dt[1]), Convert.ToInt32(dt[2].Substring(0, 2)));
                     }
                     else
                     {
@@ -5597,7 +5594,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
             {
                 if (dValField is null || dValField.Equals(value) != true)
                 {
-                    dValField = Conversions.ToString(value);
+                    dValField = Convert.ToString(value);
                     OnPropertyChanged("DataValidade");
                 }
             }
@@ -5631,7 +5628,7 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
                     if (value != null)
                     {
                         var dt = value.Split("-");
-                        dValField = Conversions.ToString(new DateTime(Conversions.ToInteger(dt[0]), Conversions.ToInteger(dt[1]), Conversions.ToInteger(dt[2].Substring(0, 2))));
+                        dValField = Convert.ToString(new DateTime(Convert.ToInt32(dt[0]), Convert.ToInt32(dt[1]), Convert.ToInt32(dt[2].Substring(0, 2))));
                     }
                     else
                     {

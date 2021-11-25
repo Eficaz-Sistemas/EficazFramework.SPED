@@ -10,10 +10,10 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Utilities.XML;
+using EficazFramework.SPED.Utilities.XML;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.CTe
+namespace EficazFramework.SPED.Schemas.CTe
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
     [Serializable()]

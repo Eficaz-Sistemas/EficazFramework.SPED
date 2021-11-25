@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.VisualBasic;
 
-namespace EficazFrameworkCore.SPED.Utilities.XML
+namespace EficazFramework.SPED.Utilities.XML
 {
     public class Operations
     {
@@ -256,8 +256,10 @@ namespace EficazFrameworkCore.SPED.Utilities.XML
         {
             if (!xmlDocument.HasElements)
             {
-                var xElement = new XElement(xmlDocument.Name.LocalName);
-                xElement.Value = xmlDocument.Value;
+                var xElement = new XElement(xmlDocument.Name.LocalName)
+                {
+                    Value = xmlDocument.Value
+                };
                 foreach (XAttribute attribute in xmlDocument.Attributes())
                     xElement.Add(attribute);
                 return xElement;

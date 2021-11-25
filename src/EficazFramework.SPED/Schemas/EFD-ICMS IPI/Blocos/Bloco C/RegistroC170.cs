@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -44,7 +44,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             writer.Append(string.Format("{0:0.##}", AliquotaST_ICMS) + "|"); // 17
             writer.Append(string.Format("{0:0.##}", ValorST_ICMS) + "|"); // 18
             if (IndicadorApuracaoIPI.HasValue == false)
-                writer.Append("|");
+                writer.Append('|');
             else
             {
                 if ((int?)IndicadorApuracaoIPI == (int?)IndicadorPeriodoIPI.Decendial == true)
@@ -91,7 +91,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
                 IndicadorMovimento = false;
 
             // ## ICMS:
-            Origem = (NFe.OrigemMercadoria)data[10].Substring(0, 1).ToEnum<NFe.OrigemMercadoria>(NFe.OrigemMercadoria.Nacional);
+            Origem = (NFe.OrigemMercadoria)data[10][..1].ToEnum<NFe.OrigemMercadoria>(NFe.OrigemMercadoria.Nacional);
             CST_ICMS = (NFe.CST_ICMS)data[10].Substring(1, 2).ToEnum<NFe.CST_ICMS>(NFe.CST_ICMS.CST_00);
             CFOP = data[11];
             NaturezaOperacao = data[12];

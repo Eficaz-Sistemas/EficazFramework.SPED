@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.Sintegra
+namespace EficazFramework.SPED.Schemas.Sintegra
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -28,7 +28,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
         public override void ProcessaLinha(string linha)
         {
             Primitives.Registro reg = null;
-            switch (linha.Substring(0, 2) ?? "")
+            switch (linha[..2] ?? "")
             {
                 case "10":
                     {

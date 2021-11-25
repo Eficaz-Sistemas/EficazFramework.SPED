@@ -4,14 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.Primitives
+namespace EficazFramework.SPED.Schemas.Primitives
 {
     public abstract class Escrituracao : INotifyPropertyChanged
     {
-        public Escrituracao()
-        {
-            _RegistroTotalizadorStringFormat = "|" + RegistroTotalizadorCodigo + "|{0}|{1}|";
-        }
 
         /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
@@ -29,8 +25,6 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             Name = name;
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private readonly string Name = null;
         private bool _isWorking = false;
         internal bool _mustStop = false;
@@ -39,9 +33,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
         private string _RegistroTotalizadorStringFormat;
         private System.Text.Encoding _encoding = System.Text.Encoding.UTF8;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
-        public Collections.ObservableDictionary<string, Bloco> Blocos { get; } = new Collections.ObservableDictionary<string, Bloco>();
+        public Dictionary<string, Bloco> Blocos { get; } = new();
 
         public string Versao { get; set; } = "001";
 
@@ -59,7 +51,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             set
             {
                 _isWorking = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsLoading"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsLoading)));
             }
         }
 
@@ -77,7 +69,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             set
             {
                 _blocoTotalizador = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BlocoTotalizador"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BlocoTotalizador)));
             }
         }
 
@@ -91,7 +83,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             set
             {
                 _codigoRegTotalizador = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegistroTotalizadorCodigo"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegistroTotalizadorCodigo)));
             }
         }
 
@@ -105,7 +97,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             set
             {
                 _RegistroTotalizadorStringFormat = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegistroTotalizadorStringFormat"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegistroTotalizadorStringFormat)));
             }
         }
 
@@ -119,7 +111,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
             set
             {
                 _encoding = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Encoding"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Encoding)));
             }
         }
 
@@ -168,13 +160,13 @@ namespace EficazFrameworkCore.SPED.Schemas.Primitives
         private void SetPercent(int percent)
         {
             Progresso = percent;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Progresso"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Progresso)));
         }
 
         private void SetCurrent(string reg)
         {
             RegistroAtual = reg;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegistroAtual"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegistroAtual)));
         }
 
         public async Task EscreveArquivo(System.IO.Stream stream) // As String

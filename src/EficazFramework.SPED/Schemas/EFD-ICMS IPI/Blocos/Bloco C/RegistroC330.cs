@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
     public class RegistroC330
     {

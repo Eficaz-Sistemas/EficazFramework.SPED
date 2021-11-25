@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EficazFrameworkCore.SPED.Schemas.eSocial.CachedData
+namespace EficazFramework.SPED.Schemas.eSocial.CachedData
 {
     public class IndicadoresPrevidenciaSocial : Dictionary<string, string>
     {

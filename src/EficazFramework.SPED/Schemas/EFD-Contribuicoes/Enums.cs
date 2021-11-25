@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -11,49 +11,49 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
 
     public enum SituacaoEspecial
     {
-        [Attributes.DisplayName("Abertura")]
+        [System.ComponentModel.Description("Abertura")]
         Abertura = 0,
-        [Attributes.DisplayName("Cisão")]
+        [System.ComponentModel.Description("Cisão")]
         Cisao = 1,
-        [Attributes.DisplayName("Fusão")]
+        [System.ComponentModel.Description("Fusão")]
         Fusao = 2,
-        [Attributes.DisplayName("Incorporação")]
+        [System.ComponentModel.Description("Incorporação")]
         Incorporacao = 3,
-        [Attributes.DisplayName("Encerramento")]
+        [System.ComponentModel.Description("Encerramento")]
         Encerramento = 4,
-        [Attributes.DisplayName("")]
+        [System.ComponentModel.Description("")]
         Vazio = 99
     }
 
     public enum IndicadorNaturezaPJ
     {
-        [Attributes.DisplayName("Pessoa Jurídica em Geral")]
+        [System.ComponentModel.Description("Pessoa Jurídica em Geral")]
         PessoaJuridicaGeral = 0,
-        [Attributes.DisplayName("Sociedade Cooperativa")]
+        [System.ComponentModel.Description("Sociedade Cooperativa")]
         SociedadeJuridicaCooperativa = 1,
-        [Attributes.DisplayName("Entidade Sujeita ao PIS/Pasep Exclusivamente pela Folha de Salários")]
+        [System.ComponentModel.Description("Entidade Sujeita ao PIS/Pasep Exclusivamente pela Folha de Salários")]
         EntidadeSujeitaPISPasepExclusivamenteFolhaSalários = 2,
-        [Attributes.DisplayName("Pessoa Jurídica em Geral - SCP")]
+        [System.ComponentModel.Description("Pessoa Jurídica em Geral - SCP")]
         PessoaJuridicaGeralParticipanteSCP = 3,
-        [Attributes.DisplayName("Sociedade Cooperativa - SCP")]
+        [System.ComponentModel.Description("Sociedade Cooperativa - SCP")]
         SociedadeJuridicaCooperativaSCP = 4,
-        [Attributes.DisplayName("Sociedade em Conta Participação")]
+        [System.ComponentModel.Description("Sociedade em Conta Participação")]
         SociedadeContaParticipacao = 5
     }
 
     public enum IndicadorTipoAtividadePreponderante
     {
-        [Attributes.DisplayName("0 - Industrial ou Equiparado")]
+        [System.ComponentModel.Description("0 - Industrial ou Equiparado")]
         IndustrialEquiparadoIndustrial = 0,
-        [Attributes.DisplayName("1 - Prestador de Serviços")]
+        [System.ComponentModel.Description("1 - Prestador de Serviços")]
         PrestadorServicos = 1,
-        [Attributes.DisplayName("2 - Atividade de Comércio")]
+        [System.ComponentModel.Description("2 - Atividade de Comércio")]
         AtividadeComercio = 2,
-        [Attributes.DisplayName("3 - Pessoas Jurídicas conf. Lei 9.718")]
+        [System.ComponentModel.Description("3 - Pessoas Jurídicas conf. Lei 9.718")]
         PessoasJuridicasLei9718 = 3,
-        [Attributes.DisplayName("4 - Atividade Imobiliária")]
+        [System.ComponentModel.Description("4 - Atividade Imobiliária")]
         AtividadeImobiliaria = 4,
-        [Attributes.DisplayName("9 - Outros")]
+        [System.ComponentModel.Description("9 - Outros")]
         Outros = 9
     }
 
@@ -396,73 +396,73 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum NaturezaBaseCalculo
     {
-        [Attributes.DisplayName("01 - Aquisição de bens para revenda")]
+        [System.ComponentModel.Description("01 - Aquisição de bens para revenda")]
         AquisBensRevenda = 1,
-        [Attributes.DisplayName("02 - Aquisição de bens utilizados como insumo")]
+        [System.ComponentModel.Description("02 - Aquisição de bens utilizados como insumo")]
         AquisBensInsumo = 2,
-        [Attributes.DisplayName("03 - Aquisição de serviços utilizados como insumo")]
+        [System.ComponentModel.Description("03 - Aquisição de serviços utilizados como insumo")]
         AquisServicosInsumo = 3,
-        [Attributes.DisplayName("04 - Energia elétrica e térmica, inclusive sob a forma de vapor")]
+        [System.ComponentModel.Description("04 - Energia elétrica e térmica, inclusive sob a forma de vapor")]
         EnEletrica = 4,
-        [Attributes.DisplayName("05 - Aluguéis de prédios")]
+        [System.ComponentModel.Description("05 - Aluguéis de prédios")]
         AlugueisPredios = 5,
-        [Attributes.DisplayName("06 - Aluguéis de máquinas e equipamentos")]
+        [System.ComponentModel.Description("06 - Aluguéis de máquinas e equipamentos")]
         AlugueisMaqEquip = 6,
-        [Attributes.DisplayName("07 - Armazenagem de mercadoria e frete na operação de venda")]
+        [System.ComponentModel.Description("07 - Armazenagem de mercadoria e frete na operação de venda")]
         ArmFreteOpVenda = 7,
-        [Attributes.DisplayName("08 - Contraprestações de arrendamento mercantil")]
+        [System.ComponentModel.Description("08 - Contraprestações de arrendamento mercantil")]
         ContrPrestArrendMercantil = 8,
-        [Attributes.DisplayName("09 - Máquinas, equipamentos e outros bens incorporados ao ativo imobilizado (crédito sobre encargos de depreciação)")]
+        [System.ComponentModel.Description("09 - Máquinas, equipamentos e outros bens incorporados ao ativo imobilizado (crédito sobre encargos de depreciação)")]
         MaqEquipImob_CreditoDepreciacao = 9,
-        [Attributes.DisplayName("10 -Máquinas, equipamentos e outros bens incorporados ao ativo imobilizado (crédito com base no valor de aquisição)")]
+        [System.ComponentModel.Description("10 -Máquinas, equipamentos e outros bens incorporados ao ativo imobilizado (crédito com base no valor de aquisição)")]
         MaqEquipImob_CreditoAquisicao = 10,
-        [Attributes.DisplayName("11 - Amortização e Depreciação de edificações e benfeitorias em imóveis")]
+        [System.ComponentModel.Description("11 - Amortização e Depreciação de edificações e benfeitorias em imóveis")]
         AmortDeprecEdificacoesBenfImoveis = 11,
-        [Attributes.DisplayName("12 - Devolução de Vendas Sujeitas à Incidência Não-Cumulativa")]
+        [System.ComponentModel.Description("12 - Devolução de Vendas Sujeitas à Incidência Não-Cumulativa")]
         DevVendasNaoCumulativas = 12,
-        [Attributes.DisplayName("13 - Outras Operações com Direito a Crédito (inclusive os créditos presumidos sobre receitas)")]
+        [System.ComponentModel.Description("13 - Outras Operações com Direito a Crédito (inclusive os créditos presumidos sobre receitas)")]
         OutOpDireitoCredito = 13,
-        [Attributes.DisplayName("14 - Atividade de Transporte de Cargas – Subcontratação")]
+        [System.ComponentModel.Description("14 - Atividade de Transporte de Cargas – Subcontratação")]
         OpTransporteCargas = 14,
-        [Attributes.DisplayName("15 - Atividade Imobiliária – Custo Incorrido de Unidade Imobiliária")]
+        [System.ComponentModel.Description("15 - Atividade Imobiliária – Custo Incorrido de Unidade Imobiliária")]
         Imobiliaria_CustoIncorrido = 15,
-        [Attributes.DisplayName("16 - Atividade Imobiliária – Custo Orçado de unidade não concluída")]
+        [System.ComponentModel.Description("16 - Atividade Imobiliária – Custo Orçado de unidade não concluída")]
         Imobiliaria_CustoOrcao = 16,
-        [Attributes.DisplayName("17 - Atividade de Prestação de Serviços de Limpeza, Conservação e Manutenção – vale-transporte, vale-refeição ou vale-alimentação, fardamento ou uniforme.")]
+        [System.ComponentModel.Description("17 - Atividade de Prestação de Serviços de Limpeza, Conservação e Manutenção – vale-transporte, vale-refeição ou vale-alimentação, fardamento ou uniforme.")]
         LimpezaConservacao = 17,
-        [Attributes.DisplayName("18 - Estoque de abertura de bensW")]
+        [System.ComponentModel.Description("18 - Estoque de abertura de bensW")]
         EstoqueAbertura = 18
     }
 
     public enum ContribuicaoSocialApurada
     {
-        [Attributes.DisplayName("01 - Contribuição não-cumulativa apurada a alíquota básica")]
+        [System.ComponentModel.Description("01 - Contribuição não-cumulativa apurada a alíquota básica")]
         NCumulativaAliqBasica = 1,
-        [Attributes.DisplayName("02 - Contribuição não-cumulativa apurada a alíquotas diferenciadas")]
+        [System.ComponentModel.Description("02 - Contribuição não-cumulativa apurada a alíquotas diferenciadas")]
         NCumulativaAliqDiferenciada = 2,
-        [Attributes.DisplayName("03 - Contribuição não-cumulativa apurada a alíquota por unidade de medida de produto")]
+        [System.ComponentModel.Description("03 - Contribuição não-cumulativa apurada a alíquota por unidade de medida de produto")]
         NCumulativaAliqUnidade = 3,
-        [Attributes.DisplayName("04 - Contribuição não-cumulativa apurada a alíquota básica - Atividade Imobiliária")]
+        [System.ComponentModel.Description("04 - Contribuição não-cumulativa apurada a alíquota básica - Atividade Imobiliária")]
         NCumulativaAliqBasicaImobiliaria = 4,
-        [Attributes.DisplayName("31 - Contribuição apurada por substituição tributária")]
+        [System.ComponentModel.Description("31 - Contribuição apurada por substituição tributária")]
         SubstituicaoTributaria = 31,
-        [Attributes.DisplayName("32 - Contribuição apurada por substituição tributária - Vendas à Zona Franca de Manaus")]
+        [System.ComponentModel.Description("32 - Contribuição apurada por substituição tributária - Vendas à Zona Franca de Manaus")]
         SubstTributZonaFranca = 32,
-        [Attributes.DisplayName("51 - Contribuição cumulativa apurada a alíquota básica")]
+        [System.ComponentModel.Description("51 - Contribuição cumulativa apurada a alíquota básica")]
         CumulativaAliqBasica = 51,
-        [Attributes.DisplayName("52 - Contribuição cumulativa apurada a alíquotas diferenciadas")]
+        [System.ComponentModel.Description("52 - Contribuição cumulativa apurada a alíquotas diferenciadas")]
         CumulativaAliqDiferenciada = 52,
-        [Attributes.DisplayName("53 - Contribuição cumulativa apurada a alíquota por unidade de medida de produto")]
+        [System.ComponentModel.Description("53 - Contribuição cumulativa apurada a alíquota por unidade de medida de produto")]
         CumulativaAliqUnidade = 53,
-        [Attributes.DisplayName("54 - Contribuição cumulativa apurada a alíquota básica - Atividade Imobiliária")]
+        [System.ComponentModel.Description("54 - Contribuição cumulativa apurada a alíquota básica - Atividade Imobiliária")]
         CumulativaAliqBasicaImobiliaria = 54,
-        [Attributes.DisplayName("70 - Contribuição apurada da Atividade Imobiliária - RET")]
+        [System.ComponentModel.Description("70 - Contribuição apurada da Atividade Imobiliária - RET")]
         CumulativaAliqBasicaImobiliariaRET = 70,
-        [Attributes.DisplayName("71 - Contribuição apurada de SCP - Incidência Não Cumulativa")]
+        [System.ComponentModel.Description("71 - Contribuição apurada de SCP - Incidência Não Cumulativa")]
         SCPNaoCumulativa = 71,
-        [Attributes.DisplayName("72 - Contribuição apurada de SCP - Incidência Cumulativa")]
+        [System.ComponentModel.Description("72 - Contribuição apurada de SCP - Incidência Cumulativa")]
         SCPCumulativa = 72,
-        [Attributes.DisplayName("99  - Contribuição para o PIS/Pasep - Folha de Salários")]
+        [System.ComponentModel.Description("99  - Contribuição para o PIS/Pasep - Folha de Salários")]
         FolhaSalarios = 99
     }
 

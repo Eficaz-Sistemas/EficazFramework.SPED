@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.Sintegra
+namespace EficazFramework.SPED.Schemas.Sintegra
 {
     public class Registro70 : Primitives.Registro
     {
@@ -40,7 +40,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
                 case EFD_ICMS_IPI.SituacaoDocumento.Regular:
                 case EFD_ICMS_IPI.SituacaoDocumento.RegularExtemporaneo:
                     {
-                        writer.Append("N");
+                        writer.Append('N');
                         break;
                     }
 
@@ -50,13 +50,13 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
                 case EFD_ICMS_IPI.SituacaoDocumento.CanceladoExtemporaneo:
                 case EFD_ICMS_IPI.SituacaoDocumento.Cancelado:
                     {
-                        writer.Append("S");
+                        writer.Append('S');
                         break;
                     }
 
                 default:
                     {
-                        writer.Append("S");
+                        writer.Append('S');
                         break;
                     }
             }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>

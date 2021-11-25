@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -63,8 +63,8 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             }
             else if (Conversions.ToInteger(Versao) >= 3)
             {
-                writer.Append("|"); // 26
-                writer.Append("|"); // 27
+                writer.Append('|'); // 26
+                writer.Append('|'); // 27
             }
 
             if (Conversions.ToInteger(Versao) >= 14)
@@ -73,7 +73,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
                 if (EspecieDocumento == "66")
                     writer.Append(((int)FinDocE).ToString() + "|");
                 else
-                    writer.Append("|"); // 29
+                    writer.Append('|'); // 29
                 writer.Append(ChaveDocE_Referenciado + "|"); // 30
                 writer.Append(((int)DestinatarioIndicador).ToString() + "|"); // 31
                 writer.Append(DestinatarioCodMunicipio + "|"); // 32

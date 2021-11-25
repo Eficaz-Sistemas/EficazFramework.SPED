@@ -11,10 +11,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Schemas.NFSe.Common;
-using EficazFrameworkCore.SPED.Utilities.XML;
+using EficazFramework.SPED.Schemas.NFSe.Common;
+using EficazFramework.SPED.Utilities.XML;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFSe.ABRASF
+namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */

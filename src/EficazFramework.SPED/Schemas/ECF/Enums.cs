@@ -5,147 +5,147 @@ namespace EficazFramework.SPED.Schemas.ECF
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum SituacaoInicioPeriodo
     {
-        [Attributes.DisplayName("Regular (Início no primeiro dia do ano)")]
+        [System.ComponentModel.Description("Regular (Início no primeiro dia do ano)")]
         Regular = 0,
-        [Attributes.DisplayName("Abertura (Início de atividades no ano-calendário)")]
+        [System.ComponentModel.Description("Abertura (Início de atividades no ano-calendário)")]
         Abertura = 1,
-        [Attributes.DisplayName("Resultante de cisão/fusão ou remanescente de cisão, ou realizou incorporação")]
+        [System.ComponentModel.Description("Resultante de cisão/fusão ou remanescente de cisão, ou realizou incorporação")]
         Resultante_Cisao_Fusao_Incoporacao = 2,
-        [Attributes.DisplayName("– Início de obrigatoriedade da entrega no curso do ano calendário")]
+        [System.ComponentModel.Description("– Início de obrigatoriedade da entrega no curso do ano calendário")]
         InicioObrigatoriedadeCursoAnoCalendario = 4
     }
 
     public enum SituacaoEspecial
     {
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 0,
-        [Attributes.DisplayName("Extinção")]
+        [System.ComponentModel.Description("Extinção")]
         Extincao = 1,
-        [Attributes.DisplayName("Fusão")]
+        [System.ComponentModel.Description("Fusão")]
         Fusao = 2,
-        [Attributes.DisplayName("Incorporação / Incorporada")]
+        [System.ComponentModel.Description("Incorporação / Incorporada")]
         Incorporacao_Incorporada = 3,
-        [Attributes.DisplayName("Incorporação / Incorporadora")]
+        [System.ComponentModel.Description("Incorporação / Incorporadora")]
         Incorporacao_Incorporadora = 4,
-        [Attributes.DisplayName("Cisão Total")]
+        [System.ComponentModel.Description("Cisão Total")]
         CisaoTotal = 5,
-        [Attributes.DisplayName("Cisão Parcial")]
+        [System.ComponentModel.Description("Cisão Parcial")]
         CisaoParcial = 6,
-        [Attributes.DisplayName("Desenquadramento de Imune / Isenta")]
+        [System.ComponentModel.Description("Desenquadramento de Imune / Isenta")]
         DesenquadramentoImuneIsenta = 8,
-        [Attributes.DisplayName("Inclusao no Simples Nacional")]
+        [System.ComponentModel.Description("Inclusao no Simples Nacional")]
         InclusaoSimplesNacional = 9
     }
 
     public enum TipoECF
     {
-        [Attributes.DisplayName("ECF de empresa não participante de SCP como sócio ostensivo")]
+        [System.ComponentModel.Description("ECF de empresa não participante de SCP como sócio ostensivo")]
         NaoSCP = 0,
-        [Attributes.DisplayName("ECF de empresa participante de SCP como sócio ostensivo")]
+        [System.ComponentModel.Description("ECF de empresa participante de SCP como sócio ostensivo")]
         ParticpanteSCP = 1,
-        [Attributes.DisplayName("ECF da SCP")]
+        [System.ComponentModel.Description("ECF da SCP")]
         SCP = 2
     }
 
     public enum FormaTributacao
     {
-        [Attributes.DisplayName("Lucro Real")]
+        [System.ComponentModel.Description("Lucro Real")]
         LucroReal = 1,
-        [Attributes.DisplayName("Lucro Real / Arbitrado")]
+        [System.ComponentModel.Description("Lucro Real / Arbitrado")]
         LucroRealArbitrado = 2,
-        [Attributes.DisplayName("Lucro Presumido / Real")]
+        [System.ComponentModel.Description("Lucro Presumido / Real")]
         LucroPresumidoReal = 3,
-        [Attributes.DisplayName("Lucro Presumido / Real / Arbitrado")]
+        [System.ComponentModel.Description("Lucro Presumido / Real / Arbitrado")]
         LucroPresumidoRealArbitrado = 4,
-        [Attributes.DisplayName("Lucro Presumido")]
+        [System.ComponentModel.Description("Lucro Presumido")]
         LucroPresumido = 5,
-        [Attributes.DisplayName("Lucro Arbitrado")]
+        [System.ComponentModel.Description("Lucro Arbitrado")]
         LucroArbitrado = 6,
-        [Attributes.DisplayName("Lucro Presumido / Arbitrado")]
+        [System.ComponentModel.Description("Lucro Presumido / Arbitrado")]
         LucroPresumidoArbitrado = 7,
-        [Attributes.DisplayName("Imune do IRPJ")]
+        [System.ComponentModel.Description("Imune do IRPJ")]
         ImuneIRPJ = 8,
-        [Attributes.DisplayName("Isenta do IRPJ")]
+        [System.ComponentModel.Description("Isenta do IRPJ")]
         IsentoIRPJ = 9
     }
 
     public enum FormaApuracao
     {
-        [Attributes.DisplayName("Trimestral")]
+        [System.ComponentModel.Description("Trimestral")]
         Trimestral = 0,
-        [Attributes.DisplayName("Anual")]
+        [System.ComponentModel.Description("Anual")]
         Anual = 1,
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NA = 99
     }
 
     public enum QualificacaoPJ
     {
-        [Attributes.DisplayName("PJ em Geral")]
+        [System.ComponentModel.Description("PJ em Geral")]
         PjemGeral = 1,
-        [Attributes.DisplayName("PJ Componente do Sistema Financeiro")]
+        [System.ComponentModel.Description("PJ Componente do Sistema Financeiro")]
         PJCompSistFinanceiro = 2,
-        [Attributes.DisplayName("Soc. Seguradoras, de Capitalizaão ou Ent. Aberta de Prev. Compl.")]
+        [System.ComponentModel.Description("Soc. Seguradoras, de Capitalizaão ou Ent. Aberta de Prev. Compl.")]
         SocSegCapAbPrevCompl = 3,
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 999
     }
 
     public enum TipoPJImuneOuIsenta
     {
-        [Attributes.DisplayName("Assistência Social")]
+        [System.ComponentModel.Description("Assistência Social")]
         AssistenciaSocial = 1,
-        [Attributes.DisplayName("Educacional")]
+        [System.ComponentModel.Description("Educacional")]
         Educacional = 2,
-        [Attributes.DisplayName("Sindicato de Trabalhadores")]
+        [System.ComponentModel.Description("Sindicato de Trabalhadores")]
         SindicatoTrabalhadores = 3,
-        [Attributes.DisplayName("Associação Civil")]
+        [System.ComponentModel.Description("Associação Civil")]
         AssociacaoCivil = 4,
-        [Attributes.DisplayName("Cultural")]
+        [System.ComponentModel.Description("Cultural")]
         Cultural = 5,
-        [Attributes.DisplayName("Entidade Privada de Previdência Complementar")]
+        [System.ComponentModel.Description("Entidade Privada de Previdência Complementar")]
         EntFechadaPrevCompleentar = 6,
-        [Attributes.DisplayName("Filantrópica")]
+        [System.ComponentModel.Description("Filantrópica")]
         Filantropica = 7,
-        [Attributes.DisplayName("Sindicato")]
+        [System.ComponentModel.Description("Sindicato")]
         Sindicato = 8,
-        [Attributes.DisplayName("Recreativa")]
+        [System.ComponentModel.Description("Recreativa")]
         Recreativa = 9,
-        [Attributes.DisplayName("Científica")]
+        [System.ComponentModel.Description("Científica")]
         Cientifica = 10,
-        [Attributes.DisplayName("Associação de Poupança e Empréstimo")]
+        [System.ComponentModel.Description("Associação de Poupança e Empréstimo")]
         AssocPoupancaEmprestimo = 11,
-        [Attributes.DisplayName("Entidade Aberta de Previdência Complementar")]
+        [System.ComponentModel.Description("Entidade Aberta de Previdência Complementar")]
         EntAbertaPrevComplementar = 12,
-        [Attributes.DisplayName("FIFA e Entidades Relacionadas")]
+        [System.ComponentModel.Description("FIFA e Entidades Relacionadas")]
         Fifa = 13,
-        [Attributes.DisplayName("CIO e Entidades Relacionadas")]
+        [System.ComponentModel.Description("CIO e Entidades Relacionadas")]
         CIO = 14,
-        [Attributes.DisplayName("Partios Políticos")]
+        [System.ComponentModel.Description("Partios Políticos")]
         PartidosPoliticos = 15,
-        [Attributes.DisplayName("Outras")]
+        [System.ComponentModel.Description("Outras")]
         Outras = 99,
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 999
     }
 
     public enum IndicadorReceita
     {
-        [Attributes.DisplayName("Regime de Caixa")]
+        [System.ComponentModel.Description("Regime de Caixa")]
         Caixa = 1,
-        [Attributes.DisplayName("Regime de Competência")]
+        [System.ComponentModel.Description("Regime de Competência")]
         Competencia = 2
     }
 
     public enum IndicadorAliquotaCSLL2015
     {
-        [Attributes.DisplayName("9%")]
+        [System.ComponentModel.Description("9%")]
         NovePorcento = 1,
-        [Attributes.DisplayName("17%")]
+        [System.ComponentModel.Description("17%")]
         DezessetePorcento = 2,
-        [Attributes.DisplayName("20%")]
+        [System.ComponentModel.Description("20%")]
         VintePorcento = 3,
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NA = 99
     }
 
@@ -153,21 +153,21 @@ namespace EficazFramework.SPED.Schemas.ECF
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum MetodoAvEstoque
     {
-        [Attributes.DisplayName("1 – Custo Médio Ponderado")]
+        [System.ComponentModel.Description("1 – Custo Médio Ponderado")]
         CustoMedioPonderado = 1,
-        [Attributes.DisplayName("2 – PEPS (Primeiro que entra, primeiro que sai)")]
+        [System.ComponentModel.Description("2 – PEPS (Primeiro que entra, primeiro que sai)")]
         PEPS = 2,
-        [Attributes.DisplayName("3 – Arbitramento - art. 296, Inc. I e II, do RIR/99")]
+        [System.ComponentModel.Description("3 – Arbitramento - art. 296, Inc. I e II, do RIR/99")]
         Arbitramento = 3,
-        [Attributes.DisplayName("4 – Custo Específico")]
+        [System.ComponentModel.Description("4 – Custo Específico")]
         CustoEspecifico = 4,
-        [Attributes.DisplayName("5 – Valor Realizável Líquido")]
+        [System.ComponentModel.Description("5 – Valor Realizável Líquido")]
         ValorRealizavelLiquido = 5,
-        [Attributes.DisplayName("6 - Inventário Períodico")]
+        [System.ComponentModel.Description("6 - Inventário Períodico")]
         InventarioPeriodico = 6,
-        [Attributes.DisplayName("7 – Outros")]
+        [System.ComponentModel.Description("7 – Outros")]
         Outros = 7,
-        [Attributes.DisplayName("8 – Não há (Exemplo: Empresas Prestadoras de Serviços)")]
+        [System.ComponentModel.Description("8 – Não há (Exemplo: Empresas Prestadoras de Serviços)")]
         NaoHa = 8
     }
 
@@ -175,9 +175,9 @@ namespace EficazFramework.SPED.Schemas.ECF
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum TipoProcessoLancto
     {
-        [Attributes.DisplayName("1 – Judicial")]
+        [System.ComponentModel.Description("1 – Judicial")]
         Judicial = 1,
-        [Attributes.DisplayName("2 – Administrativo")]
+        [System.ComponentModel.Description("2 – Administrativo")]
         Administrativo = 2
     }
 

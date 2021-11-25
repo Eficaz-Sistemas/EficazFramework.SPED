@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Extensions.NFe
+namespace EficazFramework.SPED.Extensions.NFe
 {
     public class NFe
     {

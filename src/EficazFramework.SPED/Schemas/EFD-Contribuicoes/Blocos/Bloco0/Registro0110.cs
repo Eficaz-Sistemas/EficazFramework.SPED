@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -30,15 +30,15 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             writer.Append("|0110|");
             writer.Append(((int)CodigoIndicador).ToString() + "|");
             if (MetodoApropriacao.HasValue == false)
-                writer.Append("|");
+                writer.Append('|');
             else
                 writer.Append(MetodoApropriacao + "|");
             if (TipoContribuicao.HasValue == false)
-                writer.Append("|");
+                writer.Append('|');
             else
                 writer.Append(TipoContribuicao + "|");
             if (CriterioEscrituracaoApuracao.HasValue == false)
-                writer.Append("|");
+                writer.Append('|');
             else
                 writer.Append(CriterioEscrituracaoApuracao + "|");
             return writer.ToString();

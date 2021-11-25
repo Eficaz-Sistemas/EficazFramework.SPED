@@ -22,10 +22,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using EficazFrameworkCore.SPED.Utilities.XML;
+using EficazFramework.SPED.Utilities.XML;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
 
     // /// MAPEAMENTO

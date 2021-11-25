@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.LCDPR
+namespace EficazFramework.SPED.Schemas.LCDPR
 {
 
     /// <summary>
