@@ -69,9 +69,4 @@ public class Registro1300 : Primitives.Registro
 
     // Registros Filhos
     public List<Registro1310> Registros1310 { get; set; } = new List<Registro1310>();
-    // Property RegistrosC114 As New List(Of RegistroC114)
-    // Property RegistrosC120 As New List(Of RegistroC120)
-    // Property RegistrosC190 As New List(Of RegistroC190)
-    // Property RegistrosC195 As New List(Of RegistroC195)
-
 }
