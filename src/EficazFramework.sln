@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64E9A101-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{72380FF4-05A9-40F5-8ABD-46B2A572F453}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EficazFramework.SPED", "EficazFramework.SPED\EficazFramework.SPED.csproj", "{18E9921C-EF67-421D-A8C4-808FED5810B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EficazFramework.SPED", "Core\EficazFramework.SPED\EficazFramework.SPED.csproj", "{18E9921C-EF67-421D-A8C4-808FED5810B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EficazFramework.Tests", "Tests\EficazFramework.Tests\EficazFramework.Tests.csproj", "{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +24,17 @@ Global
 		{18E9921C-EF67-421D-A8C4-808FED5810B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E9921C-EF67-421D-A8C4-808FED5810B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18E9921C-EF67-421D-A8C4-808FED5810B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{18E9921C-EF67-421D-A8C4-808FED5810B0} = {64E9A101-EA8E-41FB-9022-DDD601ACB847}
+		{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2} = {72380FF4-05A9-40F5-8ABD-46B2A572F453}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {727FB557-A5D6-456A-81CB-C45F2F95FCEB}
