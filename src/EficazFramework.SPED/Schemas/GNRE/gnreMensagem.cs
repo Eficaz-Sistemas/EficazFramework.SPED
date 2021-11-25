@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE
+namespace EficazFramework.SPED.Schemas.GNRE
 {
     public interface ICabecalhoMensagem
     {

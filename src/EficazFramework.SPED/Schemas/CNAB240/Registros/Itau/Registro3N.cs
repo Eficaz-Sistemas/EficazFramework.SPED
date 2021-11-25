@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240.Itau
+namespace EficazFramework.SPED.Schemas.CNAB240.Itau
 {
 
     /// <summary>
@@ -21,9 +21,9 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240.Itau
             var writer = new System.Text.StringBuilder();
             writer.Append(CodigoBanco.ToFixedLenghtString(3, Escrituracao._builder, Alignment.Left, "0")); // 1
             writer.Append(LoteDeServico.ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 2
-            writer.Append("3"); // 3
+            writer.Append('3'); // 3
             writer.Append(string.Format("{0:00000}", NumeroSequencial)); // 4
-            writer.Append("N"); // 5
+            writer.Append('N'); // 5
             writer.Append(TipoMovimento.ToFixedLenghtString(3, Escrituracao._builder, Alignment.Left, "0")); // 6
             if (DadosTributo != null)
                 writer.Append(DadosTributo.EscreveLinha()); // 7
@@ -36,7 +36,7 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240.Itau
         public override void LeParametros(string[] data)
         {
             string linha = data[0];
-            CodigoBanco = linha.Substring(0, 3).Trim();
+            CodigoBanco = linha[..3].Trim();
             LoteDeServico = linha.Substring(3, 4).Trim();
             NumeroSequencial = linha.Substring(8, 5).Trim().ToNullableInteger();
             TipoMovimento = linha.Substring(14, 3).Trim();

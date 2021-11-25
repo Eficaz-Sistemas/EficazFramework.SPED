@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.Sintegra
+namespace EficazFramework.SPED.Schemas.Sintegra
 {
     public class Registro50 : Primitives.Registro
     {
@@ -26,9 +26,9 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
             writer.Append(Numero.ToFixedLenghtString(6, Escrituracao._builder, Alignment.Left, "0")); // 8
             writer.Append(CFOP.ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 9
             if (Emitente == EFD_ICMS_IPI.IndicadorEmitente.Propria)
-                writer.Append("P");
+                writer.Append('P');
             else
-                writer.Append("T"); // 10
+                writer.Append('T'); // 10
             writer.Append(ValorTotal.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 11
             writer.Append(BaseCalculo.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 12
             writer.Append(ICMS.ValueToString(2).ToFixedLenghtString(13, Escrituracao._builder, Alignment.Left, "0")); // 12
@@ -43,7 +43,7 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
                 case EFD_ICMS_IPI.SituacaoDocumento.Regular:
                 case EFD_ICMS_IPI.SituacaoDocumento.RegularExtemporaneo:
                     {
-                        writer.Append("N");
+                        writer.Append('N');
                         break;
                     }
 
@@ -53,13 +53,13 @@ namespace EficazFrameworkCore.SPED.Schemas.Sintegra
                 case EFD_ICMS_IPI.SituacaoDocumento.CanceladoExtemporaneo:
                 case EFD_ICMS_IPI.SituacaoDocumento.Cancelado:
                     {
-                        writer.Append("S");
+                        writer.Append('S');
                         break;
                     }
 
                 default:
                     {
-                        writer.Append("S");
+                        writer.Append('S');
                         break;
                     }
             }

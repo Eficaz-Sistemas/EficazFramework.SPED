@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace EficazFrameworkCore.SPED.Schemas.eSocial
+namespace EficazFramework.SPED.Schemas.eSocial
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */

@@ -57,7 +57,7 @@ namespace EficazFramework.SPED.Schemas.ECF
             if (FormaTributacao != IndicadorAliquotaCSLL2015.NA)
                 writer.Append((int)FormaTributacao + "|");
             else
-                writer.Append("|"); // 2
+                writer.Append('|'); // 2
             writer.Append(QuantidadeSCP + "|"); // 3
             if (AdminFundoClubeInvest)
                 writer.Append("S|");

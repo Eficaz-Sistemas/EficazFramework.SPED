@@ -1,7 +1,7 @@
 ﻿
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.ECD
+namespace EficazFramework.SPED.Schemas.ECD
 {
 
     /// <summary>

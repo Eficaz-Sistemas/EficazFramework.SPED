@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
+namespace EficazFramework.SPED.Schemas.SP.GIA
 {
 
     /// <summary>
@@ -27,8 +27,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
         public override void LeParametros(string[] data)
         {
             string linha = data[0];
-            long argresult = RE;
-            long.TryParse(linha.Substring(2, 15).Trim(), out argresult);
+            _ = long.TryParse(linha.Substring(2, 15).Trim(), out long argresult);
             RE = argresult;
         }
 

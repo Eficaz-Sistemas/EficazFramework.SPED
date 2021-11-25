@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Extensions
+namespace EficazFramework.SPED.Extensions
 {
     public static class String
     {
@@ -9,7 +10,7 @@ namespace EficazFrameworkCore.SPED.Extensions
         {
             if (SPED_String.Length == 8)
             {
-                return new DateTime(Conversions.ToInteger(SPED_String.Substring(4, 4)), Conversions.ToInteger(SPED_String.Substring(2, 2)), Conversions.ToInteger(SPED_String.Substring(0, 2)));
+                return new DateTime(Conversions.ToInteger(SPED_String.Substring(4, 4)), Conversions.ToInteger(SPED_String.Substring(2, 2)), Conversions.ToInteger(SPED_String[..2]));
             }
             else
             {
@@ -27,14 +28,11 @@ namespace EficazFrameworkCore.SPED.Extensions
             {
                 case 10:
                     {
-                        switch (format)
+                        return format switch
                         {
-                            case DateFormat.XML_AAAAMMDD:
-                                return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(0, 4)), Conversions.ToInteger(Sintegra_String.Substring(8, 2)), Conversions.ToInteger(Sintegra_String.Substring(5, 2)));
-
-                            default:
-                                return default;
-                        }
+                            DateFormat.XML_AAAAMMDD => new DateTime(Conversions.ToInteger(Sintegra_String[..4]), Conversions.ToInteger(Sintegra_String.Substring(8, 2)), Conversions.ToInteger(Sintegra_String.Substring(5, 2))),
+                            _ => default,
+                        };
                     }
                 case 8:
                     {
@@ -42,22 +40,22 @@ namespace EficazFrameworkCore.SPED.Extensions
                         {
                             case DateFormat.AAAADDMM:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(0, 4)), Conversions.ToInteger(Sintegra_String.Substring(6, 2)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)));
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String[..4]), Conversions.ToInteger(Sintegra_String.Substring(6, 2)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)));
                                 }
 
                             case DateFormat.AAAAMMDD:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(0, 4)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)), Conversions.ToInteger(Sintegra_String.Substring(6, 2)));
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String[..4]), Conversions.ToInteger(Sintegra_String.Substring(4, 2)), Conversions.ToInteger(Sintegra_String.Substring(6, 2)));
                                 }
 
                             case DateFormat.DDMMAAAA:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(4, 4)), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), Conversions.ToInteger(Sintegra_String.Substring(0, 2)));
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(4, 4)), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), Conversions.ToInteger(Sintegra_String[..2]));
                                 }
 
                             case DateFormat.MMDDAAAA:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(4, 4)), Conversions.ToInteger(Sintegra_String.Substring(0, 2)), Conversions.ToInteger(Sintegra_String.Substring(2, 2)));
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(4, 4)), Conversions.ToInteger(Sintegra_String[..2]), Conversions.ToInteger(Sintegra_String.Substring(2, 2)));
                                 }
 
                             default:
@@ -73,12 +71,12 @@ namespace EficazFrameworkCore.SPED.Extensions
                         {
                             case DateFormat.AAAAMM:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(0, 4)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)), 1);
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String[..4]), Conversions.ToInteger(Sintegra_String.Substring(4, 2)), 1);
                                 }
 
                             case DateFormat.MMAAAA:
                                 {
-                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(2, 4)), Conversions.ToInteger(Sintegra_String.Substring(0, 2)), 1);
+                                    return new DateTime(Conversions.ToInteger(Sintegra_String.Substring(2, 4)), Conversions.ToInteger(Sintegra_String[..2]), 1);
                                 }
 
                             default:
@@ -109,7 +107,7 @@ namespace EficazFrameworkCore.SPED.Extensions
                         {
                             case TimeFormat.HHMMSS:
                                 {
-                                    return new TimeSpan(Conversions.ToInteger(Sintegra_String.Substring(0, 2)), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)));
+                                    return new TimeSpan(Conversions.ToInteger(Sintegra_String[..2]), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), Conversions.ToInteger(Sintegra_String.Substring(4, 2)));
                                 }
 
                             default:
@@ -125,7 +123,7 @@ namespace EficazFrameworkCore.SPED.Extensions
                         {
                             case TimeFormat.HHMM:
                                 {
-                                    return new TimeSpan(Conversions.ToInteger(Sintegra_String.Substring(0, 2)), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), 0);
+                                    return new TimeSpan(Conversions.ToInteger(Sintegra_String[..2]), Conversions.ToInteger(Sintegra_String.Substring(2, 2)), 0);
                                 }
 
                             default:
@@ -252,7 +250,7 @@ namespace EficazFrameworkCore.SPED.Extensions
                     builder.Append(chr);
                 if ((str ?? "").Length > lenght)
                 {
-                    builder.Append(str.Substring(0, lenght));
+                    builder.Append(str[..lenght]);
                 }
                 else
                 {
@@ -263,7 +261,7 @@ namespace EficazFrameworkCore.SPED.Extensions
             {
                 if ((str ?? "").Length > lenght)
                 {
-                    builder.Append(str.Substring(0, lenght));
+                    builder.Append(str[..lenght]);
                 }
                 else
                 {
@@ -301,7 +299,7 @@ namespace EficazFrameworkCore.SPED.Extensions
                     builder.Append(chr);
                 if ((str ?? "").Length > lenght)
                 {
-                    builder.Append(str.Substring(0, lenght));
+                    builder.Append(str[..lenght]);
                 }
                 else
                 {
@@ -312,7 +310,7 @@ namespace EficazFrameworkCore.SPED.Extensions
             {
                 if ((str ?? "").Length > lenght)
                 {
-                    builder.Append(str.Substring(0, lenght));
+                    builder.Append(str[..lenght]);
                 }
                 else
                 {
@@ -344,6 +342,559 @@ namespace EficazFrameworkCore.SPED.Extensions
 
             return base_string;
         }
+
+        public static string RemoveAccents(this string texto)
+        {
+            texto = Regex.Replace(texto, "[á|à|ä|â|ã]", "a", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[é|è|ë|ê]", "e", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[í|ì|ï|î]", "i", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[ó|ò|ö|ô|õ]", "o", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[ú|ù|ü|û]", "u", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[Á|À|Ä|Â|Ã]", "A", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[É|È|Ë|Ê]", "E", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[Í|Ì|Ï|Î]", "I", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[Ó|Ò|Ö|Ô|Õ]", "O", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[Ú|Ù|Ü|Û]", "U", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            texto = Regex.Replace(texto, "[Ç]", "C", RegexOptions.IgnoreCase & RegexOptions.CultureInvariant);
+            return texto;
+        }
+
+        /// <summary>
+        /// Insere a máscara de formatação em um CNPJ ou CPF.
+        /// </summary>
+        /// <param name="documento">O documento a ser formatado.</param>
+        /// <returns>String</returns>
+        /// <remarks></remarks>
+        public static string FormatRFBDocument(this string documento)
+        {
+            if (documento is null)
+            {
+                return documento;
+            }
+
+            switch (documento.Trim().Length)
+            {
+                case 14:
+                    {
+                        if (documento.Contains('.') | documento.Contains('-'))
+                            return documento;
+                        else
+                            return FormataCNPJ(documento);
+                    }
+
+                case 11:
+                    {
+                        return FormataCPF(documento);
+                    }
+
+                default:
+                    {
+                        return documento;
+                    }
+            }
+        }
+
+        private static string FormataCNPJ(this string documento)
+        {
+            return documento[..2] + "." + documento.Substring(2, 3) + "." + documento.Substring(5, 3) + "/" + documento.Substring(8, 4) + "-" + documento.Substring(12, 2);
+        }
+
+        private static string FormataCPF(this string documento)
+        {
+            return documento[..3] + "." + documento.Substring(3, 3) + "." + documento.Substring(6, 3) + "-" + documento.Substring(9, 2);
+        }
+
+        /// <summary>
+        /// Insere a máscara de formatação a um CEP.
+        /// </summary>
+        /// <param name="base">O CEP a ser formatado.</param>
+        /// <returns>String</returns>
+        /// <remarks></remarks>
+        public static string FormatCEP(this string @base)
+        {
+            @base = @base.Replace("-", string.Empty).Replace(".", string.Empty).Replace(",", string.Empty).Replace("_", string.Empty);
+            switch (@base.Length)
+            {
+                case 4:
+                    {
+                        return @base[..1] + "-" + @base.Substring(1, 3);
+                    }
+
+                case 5:
+                    {
+                        return @base[..2] + "-" + @base.Substring(2, 3);
+                    }
+
+                case 6:
+                    {
+                        return @base[..3] + "-" + @base.Substring(3, 3);
+                    }
+
+                case 7:
+                    {
+                        return @base[..1] + "." + @base.Substring(1, 3) + "-" + @base.Substring(4, 3);
+                    }
+
+                case 8:
+                    {
+                        return @base[..2] + "." + @base.Substring(2, 3) + "-" + @base.Substring(5, 3);
+                    }
+
+                case 9:
+                    {
+                        return @base[..3] + "." + @base.Substring(3, 3) + "-" + @base.Substring(6, 3);
+                    }
+
+                case 10:
+                    {
+                        return @base[..1] + "." + @base.Substring(1, 3) + "." + @base.Substring(4, 3) + "-" + @base.Substring(7, 3);
+                    }
+
+                case 11:
+                    {
+                        return @base[..2] + "." + @base.Substring(2, 3) + "." + @base.Substring(5, 3) + "-" + @base.Substring(8, 3);
+                    }
+
+                case 12:
+                    {
+                        return @base[..3] + "." + @base.Substring(3, 3) + "." + @base.Substring(6, 3) + "-" + @base.Substring(9, 3);
+                    }
+
+                default:
+                    {
+                        return @base;
+                    }
+            }
+        }
+
+
+        /// <summary>
+        /// Insere a máscara de formatação em uma Inscrição Estadual
+        /// </summary>
+        /// <param name="vIE">O documento a ser formatado.</param>
+        /// <returns>String</returns>
+        /// <remarks></remarks>
+        public static string FormatIE(this string vIE, string vUF)
+        {
+            if (vIE.ToLower() == "isento" | vIE.ToLower() == "isenta")
+                return vIE;
+            if (string.IsNullOrEmpty(vIE) | string.IsNullOrWhiteSpace(vIE) | string.IsNullOrEmpty(vUF) | string.IsNullOrWhiteSpace(vUF))
+                return vIE;
+            if (long.TryParse(vIE, out _) == false)
+                return vIE;
+            return FormataIE(vIE, vUF);
+        }
+
+        private static string FormataIE(this string IE, string UF)
+        {
+            switch (UF ?? "")
+            {
+                case "AC":
+                    {
+                        return string.Format(@"{0:00\.000\.000\/000\-00}", Conversions.ToLong(IE)); // (IE, "@@.@@@.@@@/@@@-@@")
+                    }
+
+                case "AL":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "AP":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "AM":
+                    {
+                        return string.Format(@"{0:00\.000\.000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@@@.@@@-@")
+
+                case "BA":
+                    {
+                        return string.Format(@"{0:000000\-00}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@-@@")
+
+                case "CE":
+                    {
+                        return string.Format(@"{0:00000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@-@")
+
+                case "DF":
+                    {
+                        return string.Format(@"{0:00000000000\-00}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@@@-@@")
+
+                case "ES":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "GO":
+                    {
+                        return string.Format(@"{0:00\.000\.000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@@@.@@@-@")
+
+                case "MA":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "MT":
+                    {
+                        return string.Format(@"{0:0000000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@@-@")
+
+                case "MS":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "MG":
+                    {
+                        return string.Format(@"{0:000\.000000\.00\-00}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@.@@@@@@.@@-@@")
+
+                case "PA":
+                    {
+                        return string.Format(@"{0:00\.000000\.0\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@@@@@@.@-@")
+
+                case "PB":
+                    {
+                        return string.Format(@"{0:00000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@-@")
+
+                case "PR":
+                    {
+                        return string.Format(@"{0:00000000\-00}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@-@@")
+
+                case "PE":
+                    {
+                        return string.Format(@"{0:00\.0\.000\.0000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@.@@@.@@@@@@@-@")
+
+                case "PI":
+                    {
+                        return string.Format("{0:000000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@")
+
+                case "RJ":
+                    {
+                        return string.Format(@"{0:00\.000\.00\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@@@.@@-@")
+
+                case "RN":
+                    {
+                        return string.Format(@"{0:00\.000\.000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@.@@@.@@@-@")
+
+                case "RS":
+                    {
+                        return string.Format(@"{0:000\/0000000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@/@@@@@@@")
+
+                case "RO":
+                    {
+                        return string.Format(@"{0:000\.00000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@.@@@@@-@")
+
+                case "RR":
+                    {
+                        return string.Format(@"{0:00000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@-@")
+
+                case "SC":
+                    {
+                        return string.Format(@"{0:000\.000\.000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@.@@@.@@@")
+
+                case "SP":
+                    {
+                        return string.Format(@"{0:000\.000\.000\.000}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@.@@@.@@@.@@@")
+
+                case "SE":
+                    {
+                        return string.Format(@"{0:000000000\-0}", Conversions.ToLong(IE));
+                    }
+                // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@-@")
+
+                case "TO":
+                    {
+                        // txtIE.Text = Format(txtIE.Text, "@@@@@@@@@@@")
+
+                        return string.Format("{0:00000000000}", Conversions.ToLong(IE));
+                    }
+
+                default:
+                    {
+                        return IE; // "ISENTO"
+                    }
+            }
+        }
+
+        /// <summary>
+        /// Verifica a veracidade do número de CNPJ informado.
+        /// </summary>
+        /// <param name="CNPJ">O CNPJ a ser analisado.</param>
+        /// <returns>Boolean</returns>
+        /// <remarks>Antes de utilizar este método, faz-se necessário remover a máscara do número.</remarks>
+        public static bool IsValidCNPJ(this string CNPJ)
+        {
+            try
+            {
+                // Declara as variáveis
+                var digit = new int[13];
+                var verify = new int[13];
+                int st_value, nd_value;
+                int[] calc = new int[13];
+                int calc_t, resto;
+
+                // CÁLCULO DO PRIMEIRO DÍGITO VERIFICADOR:
+                // define os valores fixos para cálculo do 1º dígito verificador
+                verify[0] = 5;
+                verify[1] = 4;
+                verify[2] = 3;
+                verify[3] = 2;
+                verify[4] = 9;
+                verify[5] = 8;
+                verify[6] = 7;
+                verify[7] = 6;
+                verify[8] = 5;
+                verify[9] = 4;
+                verify[10] = 3;
+                verify[11] = 2;
+
+                // obtém os valores de cada dígito do cnpj informado pelo usuário
+                for (int ic = 0; ic <= 11; ic++)
+                    digit[ic] = Conversions.ToInteger(CNPJ.Substring(ic, 1));
+
+                // calcula a multiplicação das colunas da matriz e faz o somatório dos resultados
+                int i;
+                calc_t = 0;
+                for (i = 0; i <= 11; i++)
+                {
+                    calc[i] = verify[i] * digit[i];
+                    calc_t += calc[i];
+                }
+
+                if (calc_t == 0)
+                {
+                    return false;
+                }
+
+                // realiza a divisão do somatório por 11 e captura o resto da divisão
+                resto = calc_t % 11;
+
+                // analisa o resto da divisão e apura o valor do primeiro dígito verificador
+                if (resto < 2)
+                {
+                    st_value = 0;
+                }
+                else
+                {
+                    st_value = 11 - resto;
+                }
+
+                // CÁLCULO DO SEGUNDO DÍGITO VERIFICADOR:
+                // nessa etapa os numeros da tabela "verify" foram modificados, além da 
+                // adição de mais um algarismo, para ser multiplicado com o valor do primeiro
+                // dígito verificador encontrado
+                // define os valores fixos para cálculo do 2º dígito verificador
+                verify[0] = 6;
+                verify[1] = 5;
+                verify[2] = 4;
+                verify[3] = 3;
+                verify[4] = 2;
+                verify[5] = 9;
+                verify[6] = 8;
+                verify[7] = 7;
+                verify[8] = 6;
+                verify[9] = 5;
+                verify[10] = 4;
+                verify[11] = 3;
+                verify[12] = 2;
+                digit[12] = st_value;
+
+                // calcula a multiplicação das colunas da matriz e faz o somatório dos resultados
+                int j;
+                calc_t = 0;
+                for (j = 0; j <= 12; j++)
+                {
+                    calc[j] = verify[j] * digit[j];
+                    calc_t += calc[j];
+                }
+
+                // realiza a divisão do somatório por 11 e captura o resto da divisão
+                resto = calc_t % 11;
+
+                // analisa o resto da divisão e apura o valor do segundo dígito verificador
+                if (resto < 2)
+                {
+                    nd_value = 0;
+                }
+                else
+                {
+                    nd_value = 11 - resto;
+                }
+
+                // compara os dígitos apurados com os informados pelo usuário
+                if (st_value == Conversions.ToInteger(CNPJ.Substring(12, 1)) & nd_value == Conversions.ToInteger(CNPJ.Substring(13, 1)))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Verifica a veracidade do número de CPF informado.
+        /// </summary>
+        /// <param name="CPF">O CPF a ser analisado.</param>
+        /// <returns>Boolean</returns>
+        /// <remarks>Antes de utilizar este método, faz-se necessário remover a máscara do número.</remarks>
+        public static bool IsValidCPF(this string CPF)
+        {
+            try
+            {
+                // Declara as variáveis
+                var digit = new int[10];
+                var verify = new int[10];
+                int st_value, nd_value;
+                int[] calc = new int[10];
+                int calc_t, resto;
+
+                // CÁLCULO DO PRIMEIRO DÍGITO VERIFICADOR:
+                // define os valores fixos para cálculo do 1º dígito verificador
+                verify[0] = 10;
+                verify[1] = 9;
+                verify[2] = 8;
+                verify[3] = 7;
+                verify[4] = 6;
+                verify[5] = 5;
+                verify[6] = 4;
+                verify[7] = 3;
+                verify[8] = 2;
+
+                // obtém os valores de cada dígito do cnpj informado pelo usuário
+                for (int ic = 0; ic <= 8; ic++)
+                    digit[ic] = Conversions.ToInteger(CPF.Substring(ic, 1));
+
+                // calcula a multiplicação das colunas da matriz e faz o somatório dos resultados
+                int i;
+                calc_t = 0;
+                for (i = 0; i <= 8; i++)
+                {
+                    calc[i] = verify[i] * digit[i];
+                    calc_t += calc[i];
+                }
+
+                if (calc_t == 0)
+                {
+                    return false;
+                }
+
+                // realiza a divisão do somatório por 11 e captura o resto da divisão
+                resto = calc_t % 11;
+
+                // analisa o resto da divisão e apura o valor do primeiro dígito verificador
+                if (resto < 2)
+                {
+                    st_value = 0;
+                }
+                else
+                {
+                    st_value = 11 - resto;
+                }
+
+                // CÁLCULO DO SEGUNDO DÍGITO VERIFICADOR:
+                // nessa etapa os numeros da tabela "verify" foram modificados, além da 
+                // adição de mais um algarismo, para ser multiplicado com o valor do primeiro
+                // dígito verificador encontrado
+                // define os valores fixos para cálculo do 2º dígito verificador
+                verify[0] = 11;
+                verify[1] = 10;
+                verify[2] = 9;
+                verify[3] = 8;
+                verify[4] = 7;
+                verify[5] = 6;
+                verify[6] = 5;
+                verify[7] = 4;
+                verify[8] = 3;
+                verify[9] = 2;
+                digit[9] = st_value;
+
+                // calcula a multiplicação das colunas da matriz e faz o somatório dos resultados
+                int j;
+                calc_t = 0;
+                for (j = 0; j <= 9; j++)
+                {
+                    calc[j] = verify[j] * digit[j];
+                    calc_t += calc[j];
+                }
+
+                // realiza a divisão do somatório por 11 e captura o resto da divisão
+                resto = calc_t % 11;
+
+                // analisa o resto da divisão e apura o valor do segundo dígito verificador
+                if (resto < 2)
+                {
+                    nd_value = 0;
+                }
+                else
+                {
+                    nd_value = 11 - resto;
+                }
+
+                // compara os dígitos apurados com os informados pelo usuário
+                if (st_value == Conversions.ToInteger(CPF.Substring(9, 1)) & nd_value == Conversions.ToInteger(CPF.Substring(10, 1)))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
     }
 
     public enum DateFormat

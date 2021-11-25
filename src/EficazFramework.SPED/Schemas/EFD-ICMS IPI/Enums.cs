@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     #region Bloco0
 
     public enum Perfil
     {
-        [Attributes.DisplayName("Perfil A")]
+        [System.ComponentModel.Description("Perfil A")]
         A = 0,
-        [Attributes.DisplayName("Perfil B")]
+        [System.ComponentModel.Description("Perfil B")]
         B = 1,
-        [Attributes.DisplayName("Perfil C")]
+        [System.ComponentModel.Description("Perfil C")]
         C = 2
     }
 
@@ -32,29 +32,29 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum TipoItem
     {
-        [Attributes.DisplayName("00 - Mercadoria para Revenda")]
+        [System.ComponentModel.Description("00 - Mercadoria para Revenda")]
         MercadoriaRevenda = 0,
-        [Attributes.DisplayName("01 - Matéria-Prima")]
+        [System.ComponentModel.Description("01 - Matéria-Prima")]
         MateriaPrima = 1,
-        [Attributes.DisplayName("02 - Embalagem")]
+        [System.ComponentModel.Description("02 - Embalagem")]
         Embalagem = 2,
-        [Attributes.DisplayName("03 - Produto em Processo")]
+        [System.ComponentModel.Description("03 - Produto em Processo")]
         ProdutoEmProcesso = 3,
-        [Attributes.DisplayName("04 - Produto Acabado")]
+        [System.ComponentModel.Description("04 - Produto Acabado")]
         ProdutoAcabado = 4,
-        [Attributes.DisplayName("05 - Subproduto")]
+        [System.ComponentModel.Description("05 - Subproduto")]
         Subproduto = 5,
-        [Attributes.DisplayName("06 - Produto Intermediário")]
+        [System.ComponentModel.Description("06 - Produto Intermediário")]
         ProdutoIntermediario = 6,
-        [Attributes.DisplayName("07 - Material de Uso e Consumo")]
+        [System.ComponentModel.Description("07 - Material de Uso e Consumo")]
         UsoConsumo = 7,
-        [Attributes.DisplayName("08 - Ativo Imobilizado")]
+        [System.ComponentModel.Description("08 - Ativo Imobilizado")]
         AtivoImobilizado = 8,
-        [Attributes.DisplayName("09 - Serviços")]
+        [System.ComponentModel.Description("09 - Serviços")]
         Servicos = 9,
-        [Attributes.DisplayName("10 - Outros Insumos")]
+        [System.ComponentModel.Description("10 - Outros Insumos")]
         OutrosInsumos = 10,
-        [Attributes.DisplayName("99 - Outras")]
+        [System.ComponentModel.Description("99 - Outras")]
         Outras = 99
     }
 
@@ -62,49 +62,49 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
     {
         Bem = 1,
         Componente = 2,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
 
     public enum CentroDeCusto
     {
-        [Attributes.DisplayName("Área Operacional")]
+        [System.ComponentModel.Description("Área Operacional")]
         Com_AreaOperacional = 1,
-        [Attributes.DisplayName("Área Administrativa")]
+        [System.ComponentModel.Description("Área Administrativa")]
         Com_AreaAdmin = 2,
-        [Attributes.DisplayName("Área Produtiva")]
+        [System.ComponentModel.Description("Área Produtiva")]
         Ind_AreaProdutiva = 3,
-        [Attributes.DisplayName("Área de Apoio à Produção")]
+        [System.ComponentModel.Description("Área de Apoio à Produção")]
         Ind_AreaApoioProd = 4,
-        [Attributes.DisplayName("Área Administrativa")]
+        [System.ComponentModel.Description("Área Administrativa")]
         Ind_AreaAdmin = 5,
-        [Attributes.DisplayName("Enum_NotAnOption")]
+        [System.ComponentModel.Description("Enum_NotAnOption")]
         [System.Xml.Serialization.XmlIgnore()]
         NA = 999
     }
 
     public enum TipoDeAtividade
     {
-        [Attributes.DisplayName("00 - Industrial - Transformação")]
+        [System.ComponentModel.Description("00 - Industrial - Transformação")]
         Industrial_Transformacao = 0,
-        [Attributes.DisplayName("01 - Industrial - Beneficiamento")]
+        [System.ComponentModel.Description("01 - Industrial - Beneficiamento")]
         Industrial_Beneficiamento = 1,
-        [Attributes.DisplayName("02 - Industrial - Montagem")]
+        [System.ComponentModel.Description("02 - Industrial - Montagem")]
         Industrial_Montagem = 2,
-        [Attributes.DisplayName("03 - Industrial - Acondicionamento ou Reacondicionamento")]
+        [System.ComponentModel.Description("03 - Industrial - Acondicionamento ou Reacondicionamento")]
         Industrial_Acond_Reacond = 3,
-        [Attributes.DisplayName("04 - Industrial - Renovação ou Recondicionamento")]
+        [System.ComponentModel.Description("04 - Industrial - Renovação ou Recondicionamento")]
         Industrial_Renovacao_Recond = 4,
-        [Attributes.DisplayName("05 - Equiparado a industrial - Por opção")]
+        [System.ComponentModel.Description("05 - Equiparado a industrial - Por opção")]
         Equiparado_Industrial = 5,
-        [Attributes.DisplayName("06 - Equiparado a industrial - Importação Direta")]
+        [System.ComponentModel.Description("06 - Equiparado a industrial - Importação Direta")]
         Equiparado_Industrial_ImportacaoDireta = 6,
-        [Attributes.DisplayName("07 - Equiparado a industrial - Por lei específica")]
+        [System.ComponentModel.Description("07 - Equiparado a industrial - Por lei específica")]
         Equiparado_Industrial_PorLei = 7,
-        [Attributes.DisplayName("08 - Equiparado a industrial - Não enquadrado nos códigos 05, 06 ou 07")]
+        [System.ComponentModel.Description("08 - Equiparado a industrial - Não enquadrado nos códigos 05, 06 ou 07")]
         Equiparado_Industrial_DifAnteriores = 8,
-        [Attributes.DisplayName("09 - Outros")]
+        [System.ComponentModel.Description("09 - Outros")]
         Outros = 9
     }
 
@@ -154,127 +154,127 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum IndicadorOperacao
     {
-        [Attributes.DisplayName("Entrada")]
+        [System.ComponentModel.Description("Entrada")]
         Entrada = 0,
-        [Attributes.DisplayName("Saída")]
+        [System.ComponentModel.Description("Saída")]
         Saida = 1
     }
 
     public enum IndicadorEmitente
     {
-        [Attributes.DisplayName("Emissão Própria")]
+        [System.ComponentModel.Description("Emissão Própria")]
         Propria = 0,
-        [Attributes.DisplayName("Emissão por Terceiros")]
+        [System.ComponentModel.Description("Emissão por Terceiros")]
         Terceiros = 1,
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 99
     }
 
     public enum SituacaoDocumento
     {
-        [Attributes.DisplayName("00 - Documento Regular")]
+        [System.ComponentModel.Description("00 - Documento Regular")]
         Regular = 0,
-        [Attributes.DisplayName("01 - Escrituração extemporânea de documento regular")]
+        [System.ComponentModel.Description("01 - Escrituração extemporânea de documento regular")]
         RegularExtemporaneo = 1,
-        [Attributes.DisplayName("02 - Documento Cancelado")]
+        [System.ComponentModel.Description("02 - Documento Cancelado")]
         Cancelado = 2,
-        [Attributes.DisplayName("03 - Escrituração extemporânea de documento cancelado")]
+        [System.ComponentModel.Description("03 - Escrituração extemporânea de documento cancelado")]
         CanceladoExtemporaneo = 3,
-        [Attributes.DisplayName("04 - NF-e, NFC-e ou CT-e - denegado")]
+        [System.ComponentModel.Description("04 - NF-e, NFC-e ou CT-e - denegado")]
         Denegado = 4,
-        [Attributes.DisplayName("05 - NF-e, NFC-e ou CT-e - Numeração inutilizada")]
+        [System.ComponentModel.Description("05 - NF-e, NFC-e ou CT-e - Numeração inutilizada")]
         Inutilizado = 5,
-        [Attributes.DisplayName("06 - Documento Fiscal Complementar")]
+        [System.ComponentModel.Description("06 - Documento Fiscal Complementar")]
         Complementar = 6,
-        [Attributes.DisplayName("07 - Escrituração extemporânea de documento complementar")]
+        [System.ComponentModel.Description("07 - Escrituração extemporânea de documento complementar")]
         ComplementarExtemporaneo = 7,
-        [Attributes.DisplayName("08 - Documento Fiscal emitido com base em Regime Especial ou Norma Específica")]
+        [System.ComponentModel.Description("08 - Documento Fiscal emitido com base em Regime Especial ou Norma Específica")]
         RegimeEspecial = 8,
-        [Attributes.DisplayName("99 - Pendente")]
+        [System.ComponentModel.Description("99 - Pendente")]
         Pendente = 99
     }
 
     public enum IndicadorPagamento
     {
-        [Attributes.DisplayName("À Vista")]
+        [System.ComponentModel.Description("À Vista")]
         Vista = 0,
-        [Attributes.DisplayName("À Prazo")]
+        [System.ComponentModel.Description("À Prazo")]
         Prazo = 1,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 2
     }
 
     public enum IndicadorFrete
     {
-        [Attributes.DisplayName("Por conta do Emitente")]
+        [System.ComponentModel.Description("Por conta do Emitente")]
         Emitente = 0,
-        [Attributes.DisplayName("Por conta do Destinatário / Remetente")]
+        [System.ComponentModel.Description("Por conta do Destinatário / Remetente")]
         Destinatario_Remetente = 1,
-        [Attributes.DisplayName("Por conta de Terceiros")]
+        [System.ComponentModel.Description("Por conta de Terceiros")]
         Terceiros = 2,
-        [Attributes.DisplayName("Sem cobrança de frete")]
+        [System.ComponentModel.Description("Sem cobrança de frete")]
         SemFrete = 9
     }
 
     public enum CodigoConsumoEnEletricaOuGas
     {
-        [Attributes.DisplayName("Comercial")]
+        [System.ComponentModel.Description("Comercial")]
         Comercial = 1,
-        [Attributes.DisplayName("Consumo Próprio")]
+        [System.ComponentModel.Description("Consumo Próprio")]
         ConsumoProprio = 2,
-        [Attributes.DisplayName("Iluminação Pública")]
+        [System.ComponentModel.Description("Iluminação Pública")]
         IluminacaoPublica = 3,
-        [Attributes.DisplayName("Industrial")]
+        [System.ComponentModel.Description("Industrial")]
         Industrial = 4,
-        [Attributes.DisplayName("Poder Público")]
+        [System.ComponentModel.Description("Poder Público")]
         PoderPublico = 5,
-        [Attributes.DisplayName("Residencial")]
+        [System.ComponentModel.Description("Residencial")]
         Residencial = 6,
-        [Attributes.DisplayName("Rural")]
+        [System.ComponentModel.Description("Rural")]
         Rural = 7,
-        [Attributes.DisplayName("Serviço Público")]
+        [System.ComponentModel.Description("Serviço Público")]
         ServicoPublico = 8
     }
 
     public enum TipoLigacaoEnEletrica
     {
-        [Attributes.DisplayName("Monifásico")]
+        [System.ComponentModel.Description("Monifásico")]
         Monifasico = 1,
-        [Attributes.DisplayName("Bifásico")]
+        [System.ComponentModel.Description("Bifásico")]
         Bifasico = 2,
-        [Attributes.DisplayName("Trifásico")]
+        [System.ComponentModel.Description("Trifásico")]
         Trifasico = 3
     }
 
     public enum GrupoTensao
     {
-        [Attributes.DisplayName("A1 - Alta Tensão (230kV ou mais)")]
+        [System.ComponentModel.Description("A1 - Alta Tensão (230kV ou mais)")]
         A1 = 1,
-        [Attributes.DisplayName("A2 - Alta Tensão (88kV a 138kV)")]
+        [System.ComponentModel.Description("A2 - Alta Tensão (88kV a 138kV)")]
         A2 = 2,
-        [Attributes.DisplayName("A3 - Alta Tensão (69kV)")]
+        [System.ComponentModel.Description("A3 - Alta Tensão (69kV)")]
         A3 = 3,
-        [Attributes.DisplayName("A3a - Alta Tensão (30kV a 44kV)")]
+        [System.ComponentModel.Description("A3a - Alta Tensão (30kV a 44kV)")]
         A3a = 4,
-        [Attributes.DisplayName("A4 - Alta Tensão (2,3kV a 25kV)")]
+        [System.ComponentModel.Description("A4 - Alta Tensão (2,3kV a 25kV)")]
         A4 = 5,
-        [Attributes.DisplayName("AS - Alta Tensão Subterrâneo")]
+        [System.ComponentModel.Description("AS - Alta Tensão Subterrâneo")]
         AS = 6,
-        [Attributes.DisplayName("B1 - Residencial")]
+        [System.ComponentModel.Description("B1 - Residencial")]
         B1 = 7,
-        [Attributes.DisplayName("B1 - Residencial (Baixa Renda)")]
+        [System.ComponentModel.Description("B1 - Residencial (Baixa Renda)")]
         B1_BaixaRenda = 8,
-        [Attributes.DisplayName("B2 - Rural")]
+        [System.ComponentModel.Description("B2 - Rural")]
         B2 = 9,
-        [Attributes.DisplayName("B2 - Cooperativa de Eletrificação Rural")]
+        [System.ComponentModel.Description("B2 - Cooperativa de Eletrificação Rural")]
         B2_CoopEletrif = 10,
-        [Attributes.DisplayName("B2 - Serviço Público de Irrigação")]
+        [System.ComponentModel.Description("B2 - Serviço Público de Irrigação")]
         B2_ServicoPublico = 11,
-        [Attributes.DisplayName("B3 - Demais Classes")]
+        [System.ComponentModel.Description("B3 - Demais Classes")]
         B3 = 12,
-        [Attributes.DisplayName("B4 - Iluminação Pública (Rede de Distribuição)")]
+        [System.ComponentModel.Description("B4 - Iluminação Pública (Rede de Distribuição)")]
         B4a = 13,
-        [Attributes.DisplayName("B4 - Iluminação Pública (Bulbp de Lâmpada)")]
+        [System.ComponentModel.Description("B4 - Iluminação Pública (Bulbp de Lâmpada)")]
         B4b = 14
     }
 
@@ -286,49 +286,49 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum IndicadorTipoOperacao
     {
-        [Attributes.DisplayName("CombustiveleLubrificantes")]
+        [System.ComponentModel.Description("CombustiveleLubrificantes")]
         CombustiveleLubrificantes = 0,
-        [Attributes.DisplayName("LeasingVeiculosFaturamentoDireto")]
+        [System.ComponentModel.Description("LeasingVeiculosFaturamentoDireto")]
         LeasingVeiculosFaturamentoDireto = 1
     }
 
     public enum IndicadorOrigemProcesso
     {
-        [Attributes.DisplayName("0 - SEFAZ")]
+        [System.ComponentModel.Description("0 - SEFAZ")]
         SEFAZ = 0,
-        [Attributes.DisplayName("1 - Justiça Federal")]
+        [System.ComponentModel.Description("1 - Justiça Federal")]
         JusticaFederal = 1,
-        [Attributes.DisplayName("2 - Justiça Estadual")]
+        [System.ComponentModel.Description("2 - Justiça Estadual")]
         JusticaEstadua = 2,
-        [Attributes.DisplayName("3 - SECEX/SRF")]
+        [System.ComponentModel.Description("3 - SECEX/SRF")]
         SECEX_SRF = 3,
-        [Attributes.DisplayName("9 - Outros")]
+        [System.ComponentModel.Description("9 - Outros")]
         Outros = 4
     }
 
     public enum CodigoModeloDocArrec
     {
-        [Attributes.DisplayName("0 - Documento estadual de arrecadação")]
+        [System.ComponentModel.Description("0 - Documento estadual de arrecadação")]
         DAE = 0,
-        [Attributes.DisplayName("1 - GNRE")]
+        [System.ComponentModel.Description("1 - GNRE")]
         GNRE = 1
     }
 
     public enum IndicadorTipoTransporte
     {
-        [Attributes.DisplayName("0 - Rodoviário")]
+        [System.ComponentModel.Description("0 - Rodoviário")]
         Rodoviario = 0,
-        [Attributes.DisplayName("1 - Ferroviário")]
+        [System.ComponentModel.Description("1 - Ferroviário")]
         Ferroviario = 1,
-        [Attributes.DisplayName("2 - Rodo-Ferroviário")]
+        [System.ComponentModel.Description("2 - Rodo-Ferroviário")]
         Rodo_Ferroviario = 2,
-        [Attributes.DisplayName("3 - Aquaviário")]
+        [System.ComponentModel.Description("3 - Aquaviário")]
         Aquaviario = 3,
-        [Attributes.DisplayName("4 - Dutoviário")]
+        [System.ComponentModel.Description("4 - Dutoviário")]
         Dutoviario = 4,
-        [Attributes.DisplayName("5 - Aéreo")]
+        [System.ComponentModel.Description("5 - Aéreo")]
         Aereo = 5,
-        [Attributes.DisplayName("9 - Outros")]
+        [System.ComponentModel.Description("9 - Outros")]
         Outros = 9
     }
 
@@ -348,23 +348,23 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum DocumentoImportacao
     {
-        [Attributes.DisplayName("0 - Declaração de Importação")]
+        [System.ComponentModel.Description("0 - Declaração de Importação")]
         Declaracao_Importacao = 0,
-        [Attributes.DisplayName("1 - Declaração Simplificada de Importação")]
+        [System.ComponentModel.Description("1 - Declaração Simplificada de Importação")]
         Declar_Simp_Importacao = 1
     }
 
     public enum IndicadorTituloCredito
     {
-        [Attributes.DisplayName("00 - Duplicata")]
+        [System.ComponentModel.Description("00 - Duplicata")]
         Duplicata = 0,
-        [Attributes.DisplayName("01 - Cheque")]
+        [System.ComponentModel.Description("01 - Cheque")]
         Cheque = 1,
-        [Attributes.DisplayName("02 - Promissória")]
+        [System.ComponentModel.Description("02 - Promissória")]
         Promissoria = 2,
-        [Attributes.DisplayName("03 - Recibo")]
+        [System.ComponentModel.Description("03 - Recibo")]
         Recibo = 3,
-        [Attributes.DisplayName("99 - Outros (Descrever)")]
+        [System.ComponentModel.Description("99 - Outros (Descrever)")]
         Outros_Descrever = 99
     }
 
@@ -393,10 +393,10 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
     public enum TipoC420
     {
         TributadoICMS = 0,
-        [Obsolete]
+        [Obsolete("Esta opção entrou em desuso com o fim dos ECF / MDF.")]
         TributadoICMS_X_Totalizadores = 1,
         TributadoISSQN = 2,
-        [Obsolete]
+        [Obsolete("Esta opção entrou em desuso com o fim dos ECF / MDF.")]
         TributadoISSQN_X_Totalizadores = 3,
         ST = 4,
         Isento = 5,
@@ -468,25 +468,25 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum IndicadorOperacaoTransporte
     {
-        [Attributes.DisplayName("Aquisição")]
+        [System.ComponentModel.Description("Aquisição")]
         Aquisicao = 0,
-        [Attributes.DisplayName("Prestação")]
+        [System.ComponentModel.Description("Prestação")]
         Prestacao = 1
     }
 
     public enum TipoAssinanteComunincacao
     {
-        [Attributes.DisplayName("Comercial / Industrial")]
+        [System.ComponentModel.Description("Comercial / Industrial")]
         Comercial_Industrial = 1,
-        [Attributes.DisplayName("Poder Público")]
+        [System.ComponentModel.Description("Poder Público")]
         PoderPublico = 2,
-        [Attributes.DisplayName("Residencial / Pessoa Física")]
+        [System.ComponentModel.Description("Residencial / Pessoa Física")]
         Residencial_PessoaFisica = 3,
-        [Attributes.DisplayName("Público")]
+        [System.ComponentModel.Description("Público")]
         Publico = 4,
-        [Attributes.DisplayName("Semi-Público")]
+        [System.ComponentModel.Description("Semi-Público")]
         SemiPublico = 5,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 6
     }
 
@@ -496,9 +496,9 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum IndicadorMovimentoST_Difal
     {
-        [Attributes.DisplayName("Sem Operações")]
+        [System.ComponentModel.Description("Sem Operações")]
         SemOperacoes = 0,
-        [Attributes.DisplayName("Com Operações")]
+        [System.ComponentModel.Description("Com Operações")]
         ComOperacoes = 1
     }
 
@@ -552,27 +552,27 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
     public enum MotivoInventario
     {
-        [Attributes.DisplayName("No final do período")]
+        [System.ComponentModel.Description("No final do período")]
         FinalPeriodo = 1,
-        [Attributes.DisplayName("Na mudança de forma de tributação da mercadoria (ICMS)")]
+        [System.ComponentModel.Description("Na mudança de forma de tributação da mercadoria (ICMS)")]
         MudancaICMSItem = 2,
-        [Attributes.DisplayName("Na soliticação da baixa cadastral, paralisação temporária e outras situações")]
+        [System.ComponentModel.Description("Na soliticação da baixa cadastral, paralisação temporária e outras situações")]
         Baixa_Paralisacao_Outras = 3,
-        [Attributes.DisplayName("Na alteração de regime de pagamento - condição do contribuinte")]
+        [System.ComponentModel.Description("Na alteração de regime de pagamento - condição do contribuinte")]
         AlteracaoRegimePagto = 4,
-        [Attributes.DisplayName("Por determinação do fisco")]
+        [System.ComponentModel.Description("Por determinação do fisco")]
         DeterminacaoFisco = 5
     }
 
     public enum IndicadorPropriedade
     {
-        [Attributes.DisplayName("Item de propriedade do informante e em seu poder")]
+        [System.ComponentModel.Description("Item de propriedade do informante e em seu poder")]
         InformanteEmPoder = 0,
-        [Attributes.DisplayName("Item de propriedade do informante em posse de terceiros")]
+        [System.ComponentModel.Description("Item de propriedade do informante em posse de terceiros")]
         InformanteEmTerceiros = 1,
-        [Attributes.DisplayName("Item de propriedade de terceiros em posse do informante")]
+        [System.ComponentModel.Description("Item de propriedade de terceiros em posse do informante")]
         TerceirosEmPoder = 2,
-        [Attributes.DisplayName("Item de propriedade do informante, em seu poder ou em posse de terceiros")]
+        [System.ComponentModel.Description("Item de propriedade do informante, em seu poder ou em posse de terceiros")]
         InformanteGeral = 99
     }
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Serialization;
-using EficazFrameworkCore.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
     [Serializable()]

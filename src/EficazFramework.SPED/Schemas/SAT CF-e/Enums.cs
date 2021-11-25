@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Schemas.SAT_CFe
+namespace EficazFramework.SPED.Schemas.SAT_CFe
 {
     [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
     [Serializable()]
     [System.Xml.Serialization.XmlType(IncludeInSchema = false)]
     public enum PersonalidadJuridica
     {
-        [Attributes.DisplayName("CNPJ")]
+        [System.ComponentModel.Description("CNPJ")]
         CNPJ,
-        [Attributes.DisplayName("CPF")]
+        [System.ComponentModel.Description("CPF")]
         CPF
     }
 
@@ -117,22 +117,22 @@ namespace EficazFrameworkCore.SPED.Schemas.SAT_CFe
     public enum FormaPagto
     {
         [System.Xml.Serialization.XmlEnum("01")]
-        [Attributes.DisplayName("Dinheiro")]
+        [System.ComponentModel.Description("Dinheiro")]
         Dinheiro = 1,
         [System.Xml.Serialization.XmlEnum("02")]
-        [Attributes.DisplayName("Dinheiro")]
+        [System.ComponentModel.Description("Dinheiro")]
         Cheque = 2,
         [System.Xml.Serialization.XmlEnum("03")]
-        [Attributes.DisplayName("Cartão de Crédito")]
+        [System.ComponentModel.Description("Cartão de Crédito")]
         CartaoCredito = 3,
         [System.Xml.Serialization.XmlEnum("04")]
-        [Attributes.DisplayName("Cartão de Débito")]
+        [System.ComponentModel.Description("Cartão de Débito")]
         CartaoDebito = 4,
         [System.Xml.Serialization.XmlEnum("05")]
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 5,
         [System.Xml.Serialization.XmlEnum("99")]
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         OutrosNA = 99
     }
 }

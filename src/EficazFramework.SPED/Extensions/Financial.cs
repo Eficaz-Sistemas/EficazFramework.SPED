@@ -1,24 +1,24 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Extensions
+namespace EficazFramework.SPED.Extensions
 {
     public static class FinancialExtensions
     {
 
         /* TODO ERROR: Skipped RegionDirectiveTrivia */
-        public enum eReturnType
+        public enum ReturnType
         {
             Juros = 0,
             Montante = 1
         }
 
-        public enum eCapitalizacao
+        public enum Capitalizacao
         {
             JurosSimples = 0,
             JurosCompostos = 1
         }
 
-        public enum ePeriodoCapitalizacao
+        public enum PeriodoCapitalizacao
         {
             Diario = 0,
             Semanal = 1,
@@ -40,22 +40,22 @@ namespace EficazFrameworkCore.SPED.Extensions
         /// <param name="rounding">Número de casas decimais para arredondamento. Use -1 para não usar arredondamento.</param>
         /// <returns>Double</returns>
         /// <remarks></remarks>
-        public static double CalculaJuros(this double capital, double taxa, int periodo, eReturnType retorno = eReturnType.Montante, eCapitalizacao tipo = eCapitalizacao.JurosSimples, int rounding = -1)
+        public static double CalculaJuros(this double capital, double taxa, int periodo, ReturnType retorno = ReturnType.Montante, Capitalizacao tipo = Capitalizacao.JurosSimples, int rounding = -1)
         {
             double resultado = 0d;
             switch (tipo)
             {
-                case eCapitalizacao.JurosSimples:
+                case Capitalizacao.JurosSimples:
                     {
                         switch (retorno)
                         {
-                            case eReturnType.Montante:
+                            case ReturnType.Montante:
                                 {
                                     resultado = capital * (1d + taxa / 100d) * periodo;
                                     break;
                                 }
 
-                            case eReturnType.Juros:
+                            case ReturnType.Juros:
                                 {
                                     resultado = capital * (taxa / 100d * periodo);
                                     break;
@@ -65,17 +65,17 @@ namespace EficazFrameworkCore.SPED.Extensions
                         break;
                     }
 
-                case eCapitalizacao.JurosCompostos:
+                case Capitalizacao.JurosCompostos:
                     {
                         switch (retorno)
                         {
-                            case eReturnType.Montante:
+                            case ReturnType.Montante:
                                 {
                                     resultado = Math.Pow(capital * (1d + taxa / 100d), periodo);
                                     break;
                                 }
 
-                            case eReturnType.Juros:
+                            case ReturnType.Juros:
                                 {
                                     resultado = Math.Pow(capital * (taxa / 100d), periodo);
                                     break;
@@ -109,23 +109,23 @@ namespace EficazFrameworkCore.SPED.Extensions
         /// <param name="rounding">Número de casas decimais para arredondamento. Use -1 para não usar arredondamento.</param>
         /// <returns>Double</returns>
         /// <remarks></remarks>
-        public static double CalculaJuros(this double? capital, double taxa, int periodo, eReturnType retorno = eReturnType.Montante, eCapitalizacao tipo = eCapitalizacao.JurosSimples, int rounding = -1)
+        public static double CalculaJuros(this double? capital, double taxa, int periodo, ReturnType retorno = ReturnType.Montante, Capitalizacao tipo = Capitalizacao.JurosSimples, int rounding = -1)
         {
             double resultado = 0d;
             double cap = capital.Value;
             switch (tipo)
             {
-                case eCapitalizacao.JurosSimples:
+                case Capitalizacao.JurosSimples:
                     {
                         switch (retorno)
                         {
-                            case eReturnType.Montante:
+                            case ReturnType.Montante:
                                 {
                                     resultado = cap * (1d + taxa / 100d) * periodo;
                                     break;
                                 }
 
-                            case eReturnType.Juros:
+                            case ReturnType.Juros:
                                 {
                                     resultado = cap * (taxa / 100d * periodo);
                                     break;
@@ -135,17 +135,17 @@ namespace EficazFrameworkCore.SPED.Extensions
                         break;
                     }
 
-                case eCapitalizacao.JurosCompostos:
+                case Capitalizacao.JurosCompostos:
                     {
                         switch (retorno)
                         {
-                            case eReturnType.Montante:
+                            case ReturnType.Montante:
                                 {
                                     resultado = Math.Pow(cap * (1d + taxa / 100d), periodo);
                                     break;
                                 }
 
-                            case eReturnType.Juros:
+                            case ReturnType.Juros:
                                 {
                                     resultado = Math.Pow(cap * (taxa / 100d), periodo);
                                     break;
@@ -178,18 +178,18 @@ namespace EficazFrameworkCore.SPED.Extensions
         /// <param name="rounding">Número de casas decimais para arredondamento. Use -1 para não usar arredondamento.</param>
         /// <returns>Double</returns>
         /// <remarks></remarks>
-        public static double CalculaTaxa(this double capital, double montante, int periodo, eCapitalizacao tipo = eCapitalizacao.JurosSimples, int rounding = -1)
+        public static double CalculaTaxa(this double capital, double montante, int periodo, Capitalizacao tipo = Capitalizacao.JurosSimples, int rounding = -1)
         {
             double resultado = 0d;
             switch (tipo)
             {
-                case eCapitalizacao.JurosSimples:
+                case Capitalizacao.JurosSimples:
                     {
                         resultado = capital * periodo / (montante - capital) / 100d;
                         break;
                     }
 
-                case eCapitalizacao.JurosCompostos:
+                case Capitalizacao.JurosCompostos:
                     {
                         break;
                     }
@@ -219,19 +219,19 @@ namespace EficazFrameworkCore.SPED.Extensions
         /// <param name="rounding">Número de casas decimais para arredondamento. Use -1 para não usar arredondamento.</param>
         /// <returns>Double</returns>
         /// <remarks></remarks>
-        public static double CalculaTaxa(this double? capital, double montante, int periodo, eCapitalizacao tipo = eCapitalizacao.JurosSimples, int rounding = -1)
+        public static double CalculaTaxa(this double? capital, double montante, int periodo, Capitalizacao tipo = Capitalizacao.JurosSimples, int rounding = -1)
         {
             double resultado = 0d;
             double cap = capital.Value;
             switch (tipo)
             {
-                case eCapitalizacao.JurosSimples:
+                case Capitalizacao.JurosSimples:
                     {
                         resultado = cap * periodo / (montante - cap) / 100d;
                         break;
                     }
 
-                case eCapitalizacao.JurosCompostos:
+                case Capitalizacao.JurosCompostos:
                     {
                         break;
                     }

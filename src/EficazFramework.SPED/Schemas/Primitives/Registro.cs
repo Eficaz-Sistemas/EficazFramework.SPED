@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.Primitives
+namespace EficazFramework.SPED.Schemas.Primitives
 {
     public abstract class Registro
     {

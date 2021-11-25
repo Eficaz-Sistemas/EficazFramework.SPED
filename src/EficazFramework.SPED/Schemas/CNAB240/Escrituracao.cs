@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240
+namespace EficazFramework.SPED.Schemas.CNAB240
 {
     public class Escrituracao : Primitives.Escrituracao
     {
@@ -54,7 +54,7 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240
 
                             case "N":
                                 {
-                                    switch (linha.Substring(0, 3) ?? "")
+                                    switch (linha[..3] ?? "")
                                     {
                                         // Case "001"
                                         // reg = New Febraban.Registro3N(linha, Me.Versao)

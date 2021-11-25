@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.GIA
+namespace EficazFramework.SPED.Schemas.SP.GIA
 {
 
     /// <summary>

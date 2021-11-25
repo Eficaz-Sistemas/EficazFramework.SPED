@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240
+namespace EficazFramework.SPED.Schemas.CNAB240
 {
 
     /// <summary>
@@ -23,7 +23,7 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240
             // writer.Append("10") '1
             writer.Append(CodigoBanco.ToFixedLenghtString(3, Escrituracao._builder, Alignment.Left, "0")); // 1
             writer.Append(LoteDeServico.ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 2
-            writer.Append("0"); // 3
+            writer.Append('0'); // 3
             writer.Append("      "); // 4
             if (CodigoBanco == "341") // ITAU (unico ate agora que discrimimna a versao
             {
@@ -67,7 +67,7 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240
         public override void LeParametros(string[] data)
         {
             string linha = data[0];
-            CodigoBanco = linha.Substring(0, 3).Trim();
+            CodigoBanco = linha[..3].Trim();
             LoteDeServico = linha.Substring(3, 4).Trim();
             VersaoLayoutArquivo = linha.Substring(14, 3).Trim();
             TipoInscricao = linha.Substring(17, 1).Trim();

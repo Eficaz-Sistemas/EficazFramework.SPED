@@ -1,65 +1,65 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.LCDPR
+namespace EficazFramework.SPED.Schemas.LCDPR
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum SituacaoInicioPeriodo
     {
-        [Attributes.DisplayName("Regular (Início no primeiro dia do ano)")]
+        [System.ComponentModel.Description("Regular (Início no primeiro dia do ano)")]
         Regular = 0,
-        [Attributes.DisplayName("Abertura (Início de atividades no ano-calendário)")]
+        [System.ComponentModel.Description("Abertura (Início de atividades no ano-calendário)")]
         Abertura = 1,
-        [Attributes.DisplayName("– Início de obrigatoriedade da entrega no curso do ano calendário")]
+        [System.ComponentModel.Description("– Início de obrigatoriedade da entrega no curso do ano calendário")]
         InicioObrigatoriedadeCursoAnoCalendario = 2
     }
 
     public enum SituacaoEspecial
     {
-        [Attributes.DisplayName("Normal")]
+        [System.ComponentModel.Description("Normal")]
         Normal = 0,
-        [Attributes.DisplayName("Falecimento")]
+        [System.ComponentModel.Description("Falecimento")]
         Falecimento = 1,
-        [Attributes.DisplayName("Espólio")]
+        [System.ComponentModel.Description("Espólio")]
         Espolio = 2,
-        [Attributes.DisplayName("Saída Definitiva do País")]
+        [System.ComponentModel.Description("Saída Definitiva do País")]
         SaidaPais = 3
     }
 
     public enum FormaApuracao
     {
-        [Attributes.DisplayName("Livro Caixa")]
+        [System.ComponentModel.Description("Livro Caixa")]
         LivroCaixa = 1,
-        [Attributes.DisplayName("Ap. do Lucro conf. Art. 5, Lei 8.023/1990")]
+        [System.ComponentModel.Description("Ap. do Lucro conf. Art. 5, Lei 8.023/1990")]
         ApLucroArt5Lei8023_90 = 2
     }
 
     public enum TipoExploracao
     {
-        [Attributes.DisplayName("Exploração Individual")]
+        [System.ComponentModel.Description("Exploração Individual")]
         Individual = 1,
-        [Attributes.DisplayName("Condomínio")]
+        [System.ComponentModel.Description("Condomínio")]
         Condominio = 2,
-        [Attributes.DisplayName("Imóvel Arrendado")]
+        [System.ComponentModel.Description("Imóvel Arrendado")]
         Arrendamento = 3,
-        [Attributes.DisplayName("Parceria")]
+        [System.ComponentModel.Description("Parceria")]
         Parceria = 4,
-        [Attributes.DisplayName("Comodato")]
+        [System.ComponentModel.Description("Comodato")]
         Comodato = 5,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 6
     }
 
     public enum TipoExploracaoTerceiro
     {
-        [Attributes.DisplayName("Condômino")]
+        [System.ComponentModel.Description("Condômino")]
         Condomino = 1,
-        [Attributes.DisplayName("Arrendador")]
+        [System.ComponentModel.Description("Arrendador")]
         Arrendador = 2,
-        [Attributes.DisplayName("Parceiro")]
+        [System.ComponentModel.Description("Parceiro")]
         Parceiro = 3,
-        [Attributes.DisplayName("Comodante")]
+        [System.ComponentModel.Description("Comodante")]
         Comodante = 4,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 5
     }
 
@@ -68,27 +68,27 @@ namespace EficazFrameworkCore.SPED.Schemas.LCDPR
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum TipoDocumento
     {
-        [Attributes.DisplayName("Nota Fiscal")]
+        [System.ComponentModel.Description("Nota Fiscal")]
         NF = 1,
-        [Attributes.DisplayName("Fatura")]
+        [System.ComponentModel.Description("Fatura")]
         Fatura = 2,
-        [Attributes.DisplayName("Recibo")]
+        [System.ComponentModel.Description("Recibo")]
         Recibo = 3,
-        [Attributes.DisplayName("Contrato")]
+        [System.ComponentModel.Description("Contrato")]
         Contrato = 4,
-        [Attributes.DisplayName("Folha de Pagamento")]
+        [System.ComponentModel.Description("Folha de Pagamento")]
         FolhaPagto = 5,
-        [Attributes.DisplayName("Outros")]
+        [System.ComponentModel.Description("Outros")]
         Outros = 4
     }
 
     public enum TipoLancamento
     {
-        [Attributes.DisplayName("Receita")]
+        [System.ComponentModel.Description("Receita")]
         Receita = 1,
-        [Attributes.DisplayName("Despesa")]
+        [System.ComponentModel.Description("Despesa")]
         Despesa = 2,
-        [Attributes.DisplayName("Produtos entregues no ano referente a adiantamento de recursos financeiros")]
+        [System.ComponentModel.Description("Produtos entregues no ano referente a adiantamento de recursos financeiros")]
         ProdEntrAdiantRecursosFin = 3
     }
 

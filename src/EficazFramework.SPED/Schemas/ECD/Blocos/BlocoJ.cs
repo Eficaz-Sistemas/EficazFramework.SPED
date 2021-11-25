@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.ECD
+namespace EficazFramework.SPED.Schemas.ECD
 {
 
     /// <summary>

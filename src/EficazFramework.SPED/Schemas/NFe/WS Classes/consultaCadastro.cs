@@ -11,11 +11,11 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using EficazFrameworkCore.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 // Imports EficazFramework.SPED.Attributes.Localization
 
-namespace EficazFrameworkCore.SPED.Schemas.NFe
+namespace EficazFramework.SPED.Schemas.NFe
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -37,15 +37,15 @@ namespace EficazFrameworkCore.SPED.Schemas.NFe
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("CNPJ")] // , False)>
+        [System.ComponentModel.Description("CNPJ")] // , False)>
         CNPJ,
 
         /// <remarks/>
-        [Attributes.DisplayName("CPF")] // , False)>
+        [System.ComponentModel.Description("CPF")] // , False)>
         CPF,
 
         /// <remarks/>
-        [Attributes.DisplayName("Inscrição Estadual")] // , False)>
+        [System.ComponentModel.Description("Inscrição Estadual")] // , False)>
         IE
     }
 

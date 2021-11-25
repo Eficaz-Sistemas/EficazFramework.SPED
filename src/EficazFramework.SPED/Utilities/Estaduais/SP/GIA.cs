@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Utilities.SP.GIA
+namespace EficazFramework.SPED.Utilities.SP.GIA
 {
     public class Helpers
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
+namespace EficazFramework.SPED.Schemas.SP.eCredAc.CAT207
 {
 
     /// <summary>

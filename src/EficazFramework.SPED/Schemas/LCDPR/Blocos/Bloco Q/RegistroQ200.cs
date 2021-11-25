@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.LCDPR
+namespace EficazFramework.SPED.Schemas.LCDPR
 {
 
     /// <summary>

@@ -10,9 +10,9 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Microsoft.VisualBasic.CompilerServices;
-// Imports EficazFrameworkCore.SPED.Schemas.NFe
+// Imports EficazFramework.SPED.Schemas.NFe
 
-namespace EficazFrameworkCore.SPED.Schemas.CTe
+namespace EficazFramework.SPED.Schemas.CTe
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.33440")]
     [Serializable()]

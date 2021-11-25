@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             if (OrigemProcesso.HasValue == true)
                 writer.Append((int)OrigemProcesso + "|");
             else
-                writer.Append("|"); // 07
+                writer.Append('|'); // 07
             writer.Append(DescricaoProcesso + "|"); // 08
             writer.Append(TextoComplementar + "|"); // 09
             writer.Append(MesReferencia.ToSintegraString(Extensions.DateFormat.MMAAAA) + "|"); // 10

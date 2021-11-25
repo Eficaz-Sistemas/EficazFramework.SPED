@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.CTe
+namespace EficazFramework.SPED.Schemas.CTe
 {
     public interface ICabecalhoMensagem
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -28,7 +28,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             writer.Append(Bairro + "|"); // 7
             writer.Append(Fone + "|"); // 8
             writer.Append(Fax + "|"); // 9
-            writer.Append(eMail + "|"); // 10
+            writer.Append(EMail + "|"); // 10
             return writer.ToString();
         }
 
@@ -42,7 +42,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             Bairro = data[7];
             Fone = data[8];
             Fax = data[9];
-            eMail = data[10];
+            EMail = data[10];
         }
 
         public string NomeFantasia { get; set; } = null;
@@ -53,6 +53,6 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
         public string Bairro { get; set; } = null;
         public string Fone { get; set; } = null;
         public string Fax { get; set; } = null;
-        public string eMail { get; set; } = null;
+        public string EMail { get; set; } = null;
     }
 }

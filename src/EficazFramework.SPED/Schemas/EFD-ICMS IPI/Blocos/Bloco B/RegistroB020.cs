@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -34,47 +34,47 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             if (DocumentoValido())
                 writer.Append(DataDoc.ToSpedString() + "|");
             else
-                writer.Append("|"); // 10
+                writer.Append('|'); // 10
             if (DocumentoValido())
                 writer.Append(CodigoMunicipio.ToString() + "|");
             else
-                writer.Append("|"); // 11
+                writer.Append('|'); // 11
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorContabil) + "|");
             else
-                writer.Append("|"); // 12
+                writer.Append('|'); // 12
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorMaterialTerceiro) + "|");
             else
-                writer.Append("|"); // 13
+                writer.Append('|'); // 13
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorSubempreitada) + "|");
             else
-                writer.Append("|"); // 14
+                writer.Append('|'); // 14
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorISSIsentoNTrib) + "|");
             else
-                writer.Append("|"); // 16
+                writer.Append('|'); // 16
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorDedBC) + "|");
             else
-                writer.Append("|"); // 17
+                writer.Append('|'); // 17
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorBCISS) + "|");
             else
-                writer.Append("|"); // 18
+                writer.Append('|'); // 18
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorISSRetTomador) + "|");
             else
-                writer.Append("|"); // 19
+                writer.Append('|'); // 19
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorISSDestacado) + "|");
             else
-                writer.Append("|"); // 20
+                writer.Append('|'); // 20
             if (DocumentoValido())
                 writer.Append(CodigoObsLactoFiscal.ToString() + "|");
             else
-                writer.Append("|"); // 21
+                writer.Append('|'); // 21
             return writer.ToString();
         }
 

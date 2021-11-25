@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.Sintegra
+namespace EficazFramework.SPED.Schemas.Sintegra
 {
 
     /// <summary>

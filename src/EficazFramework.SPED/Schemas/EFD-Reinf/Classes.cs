@@ -14,7 +14,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Reinf
+namespace EficazFramework.SPED.Schemas.EFD_Reinf
 {
 
     #region IEfdReinfEvt Abstraction for API Usage

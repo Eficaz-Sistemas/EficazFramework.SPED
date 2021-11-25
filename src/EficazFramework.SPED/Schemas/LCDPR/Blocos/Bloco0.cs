@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace EficazFrameworkCore.SPED.Schemas.LCDPR
+namespace EficazFramework.SPED.Schemas.LCDPR
 {
 
     /// <summary>

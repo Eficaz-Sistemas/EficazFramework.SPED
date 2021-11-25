@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -40,63 +40,63 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
                 if (DocumentoValido())
                     writer.Append(((int)TipoCTe).ToString() + "|");
                 else
-                    writer.Append("|");  // 13
+                    writer.Append('|');  // 13
             }
             else
             {
-                writer.Append("|");
+                writer.Append('|');
             } // 13
 
             if (DocumentoValido())
                 writer.Append(ChaveCTeReferenciado + "|");
             else
-                writer.Append("|");  // 14
+                writer.Append('|');  // 14
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorTotalDocumento) + "|");
             else
-                writer.Append("|"); // 15
+                writer.Append('|'); // 15
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorDesconto) + "|");
             else
-                writer.Append("|");  // 16
+                writer.Append('|');  // 16
             if (DocumentoValido())
                 writer.Append(((int)TipoFrete).ToString() + "|");
             else
-                writer.Append("|"); // 17
+                writer.Append('|'); // 17
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorPrestacaoServico) + "|");
             else
-                writer.Append("|"); // 18
+                writer.Append('|'); // 18
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorBaseCalculoICMS) + "|");
             else
-                writer.Append("|"); // 19
+                writer.Append('|'); // 19
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorICMS) + "|");
             else
-                writer.Append("|"); // 20
+                writer.Append('|'); // 20
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", ValorNaoTributado) + "|");
             else
-                writer.Append("|"); // 21
+                writer.Append('|'); // 21
             if (DocumentoValido())
                 writer.Append(CodigoComplementar0450 + "|");
             else
-                writer.Append("|"); // 22
+                writer.Append('|'); // 22
             if (DocumentoValido())
                 writer.Append(CodigoContaContabil + "|");
             else
-                writer.Append("|"); // 23
+                writer.Append('|'); // 23
             if (Conversions.ToInteger(Versao) > 11)
             {
                 if (DocumentoValido())
                     writer.Append(IBGE_Municipio_Origem + "|");
                 else
-                    writer.Append("|"); // 24
+                    writer.Append('|'); // 24
                 if (DocumentoValido())
                     writer.Append(IBGE_Municipio_destino + "|");
                 else
-                    writer.Append("|"); // 25
+                    writer.Append('|'); // 25
             }
 
             return writer.ToString();

@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
+namespace EficazFramework.SPED.Schemas.SP.eCredAc.CAT207
 {
 
     /// <summary>
@@ -8,9 +8,9 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
     /// <remarks></remarks>
     public enum VersaoLayout
     {
-        [Attributes.DisplayName("1.0.0.1")]
+        [System.ComponentModel.Description("1.0.0.1")]
         versao_1001 = 1,
-        [Attributes.DisplayName("Não Utilizar esta opção")]
+        [System.ComponentModel.Description("Não Utilizar esta opção")]
         nao_aplicavel = 99
     }
 
@@ -20,21 +20,21 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eCredAc.CAT207
     /// <remarks></remarks>
     public enum Finalidade
     {
-        [Attributes.DisplayName("Remessa regular de arquivo")]
+        [System.ComponentModel.Description("Remessa regular de arquivo")]
         RemessaRegular = 1,
-        [Attributes.DisplayName("Remessa de arquivo requerido por intimação específica")]
+        [System.ComponentModel.Description("Remessa de arquivo requerido por intimação específica")]
         RemessaIntimacao = 2,
-        [Attributes.DisplayName("Remessa de arquivo para substituição de arquivo remetido anteriormente")]
+        [System.ComponentModel.Description("Remessa de arquivo para substituição de arquivo remetido anteriormente")]
         RemessaSubstituicao = 3,
-        [Attributes.DisplayName("Remessa de arquivo com informações complementares relativas à comprovação de operações de exportação-Siscomex e ou ingresso da mercadoria - Suframa")]
+        [System.ComponentModel.Description("Remessa de arquivo com informações complementares relativas à comprovação de operações de exportação-Siscomex e ou ingresso da mercadoria - Suframa")]
         RemessaComplementar_Siscomex_Suframa = 4
     }
 
     public enum IndicadorMovimento
     {
-        [Attributes.DisplayName("Bloco com dados informados")]
+        [System.ComponentModel.Description("Bloco com dados informados")]
         ComMovimento = 0,
-        [Attributes.DisplayName("Bloco sem dados informados")]
+        [System.ComponentModel.Description("Bloco sem dados informados")]
         SemMovimento = 1
     }
 }

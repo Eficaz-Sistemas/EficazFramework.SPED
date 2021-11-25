@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
             if ((Fabricante ?? "").Length <= 60)
                 writer.Append(Fabricante + "|");
             else
-                writer.Append(Fabricante.Substring(0, 60) + "|");  // 3
+                writer.Append(Fabricante[..60] + "|");  // 3
             writer.Append(Modelo + "|"); // 4
             writer.Append(TipoMedicao + "|"); // 5
             return writer.ToString();

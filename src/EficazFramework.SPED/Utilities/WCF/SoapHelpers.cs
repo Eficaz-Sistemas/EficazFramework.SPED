@@ -1,14 +1,16 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.Channels;
 
-namespace EficazFrameworkCore.SPED.Utilities.WCF
+namespace EficazFramework.SPED.Utilities.WCF
 {
     internal class SoapHelpers
     {
         internal static BasicHttpBinding CreateDefaultBinding(string name, long? maxSize = default)
         {
-            var b = new BasicHttpBinding();
-            b.Name = name;
+            var b = new BasicHttpBinding
+            {
+                Name = name
+            };
             b.Security.Mode = BasicHttpSecurityMode.Transport;
             b.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;
             if (maxSize.HasValue == true)
@@ -18,8 +20,10 @@ namespace EficazFrameworkCore.SPED.Utilities.WCF
 
         internal static CustomBinding CreateCustomBinding(string name, long? maxSize = default)
         {
-            var b = new CustomBinding();
-            b.Name = name;
+            var b = new CustomBinding
+            {
+                Name = name
+            };
             b.Elements.Add(new TextMessageEncodingBindingElement() { MessageVersion = MessageVersion.Soap12WSAddressing10 });
             // b.Elements.Add(SecurityBindingElement.CreateMutualCertificateBindingElement())
             var httptranspelement = new HttpsTransportBindingElement() { RequireClientCertificate = true };

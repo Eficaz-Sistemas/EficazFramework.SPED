@@ -1,48 +1,48 @@
 ﻿using System.Collections.Generic;
 
-namespace EficazFrameworkCore.SPED.Schemas.ECD
+namespace EficazFramework.SPED.Schemas.ECD
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public enum SituacaoInicioPeriodo
     {
-        [Attributes.DisplayName("Normal (Início no primeiro dia do ano)")]
+        [System.ComponentModel.Description("Normal (Início no primeiro dia do ano)")]
         Normal = 0,
-        [Attributes.DisplayName("Abertura (Início de atividades no ano-calendário)")]
+        [System.ComponentModel.Description("Abertura (Início de atividades no ano-calendário)")]
         Abertura = 1,
-        [Attributes.DisplayName("Resultante de cisão/fusão ou remanescente de cisão, ou realizou incorporação")]
+        [System.ComponentModel.Description("Resultante de cisão/fusão ou remanescente de cisão, ou realizou incorporação")]
         Resultante_Cisao_Fusao_Incoporacao = 2,
-        [Attributes.DisplayName("Início de obrigatoriedade da entrega no curso do ano calendário")]
+        [System.ComponentModel.Description("Início de obrigatoriedade da entrega no curso do ano calendário")]
         InicioObrigatoriedadeCursoAnoCalendario = 3
     }
 
     public enum SituacaoEspecial
     {
-        [Attributes.DisplayName("Não Aplicável")]
+        [System.ComponentModel.Description("Não Aplicável")]
         NaoAplicavel = 0,
-        [Attributes.DisplayName("Cisão")]
+        [System.ComponentModel.Description("Cisão")]
         Cisao = 1,
-        [Attributes.DisplayName("Fusão")]
+        [System.ComponentModel.Description("Fusão")]
         Fusao = 2,
-        [Attributes.DisplayName("Incorporação")]
+        [System.ComponentModel.Description("Incorporação")]
         Incorporacao = 3,
-        [Attributes.DisplayName("Extinção")]
+        [System.ComponentModel.Description("Extinção")]
         Extincao = 4
     }
 
     public enum TipoConta
     {
-        [Attributes.DisplayName("Contas de Ativo")]
+        [System.ComponentModel.Description("Contas de Ativo")]
         Ativo = 1,
-        [Attributes.DisplayName("Contas de Passivo")]
+        [System.ComponentModel.Description("Contas de Passivo")]
         Passivo = 2,
-        [Attributes.DisplayName("Patrimônio Líquido")]
+        [System.ComponentModel.Description("Patrimônio Líquido")]
         PatrimonioLiquido = 3,
-        [Attributes.DisplayName("Contas de Resultado")]
+        [System.ComponentModel.Description("Contas de Resultado")]
         Resultado = 4,
-        [Attributes.DisplayName("Contas de Compensação")]
+        [System.ComponentModel.Description("Contas de Compensação")]
         Compensacao = 5,
-        [Attributes.DisplayName("Outras")]
+        [System.ComponentModel.Description("Outras")]
         Outras = 9
     }
 

@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
+namespace EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42
 {
 
     /// <summary>
@@ -75,7 +75,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
                 if (IsDevolucao == true)
                     writer.Append(string.Format("{0:0.00}", ICMSTotal) + "|");
                 else
-                    writer.Append("|");
+                    writer.Append('|');
             }
             else
             {
@@ -89,11 +89,11 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
                     if ((int)CodigoLegal > 0)
                         writer.Append(string.Format("{0:0.00}", ValorConfronto) + "|");
                     else
-                        writer.Append("|");
+                        writer.Append('|');
                 }
                 else
                 {
-                    writer.Append("|");
+                    writer.Append('|');
                 }
             }
             else if (IsDevolucao == true)
@@ -101,11 +101,11 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
                 if ((int)CodigoLegal > 0)
                     writer.Append(string.Format("{0:0.00}", ValorConfronto) + "|");
                 else
-                    writer.Append("|");
+                    writer.Append('|');
             }
             else
             {
-                writer.Append("|");
+                writer.Append('|');
             }
             // Codigo Legal 15
             if (Operacao == EFD_ICMS_IPI.IndicadorOperacao.Saida)

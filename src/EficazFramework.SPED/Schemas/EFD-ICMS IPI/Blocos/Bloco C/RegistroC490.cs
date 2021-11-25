@@ -1,7 +1,7 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI
 {
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI
 
         public override void LeParametros(string[] data)
         {
-            Origem = (NFe.OrigemMercadoria)data[2].Substring(0, 1).ToEnum<NFe.OrigemMercadoria>(NFe.OrigemMercadoria.Nacional);
+            Origem = (NFe.OrigemMercadoria)data[2][..1].ToEnum<NFe.OrigemMercadoria>(NFe.OrigemMercadoria.Nacional);
             CST_ICMS = (NFe.CST_ICMS)data[2].Substring(1, 2).ToEnum<NFe.CST_ICMS>(NFe.CST_ICMS.CST_00);
             CFOP = data[3];
             AliquotaICMS = data[4].ToNullableDouble();

@@ -86,25 +86,25 @@ namespace EficazFramework.SPED.Schemas.ECF
                 if (FormaApuracao == FormaApuracao.Anual)
                     writer.Append("A" + "|");
                 else
-                    writer.Append("|");
+                    writer.Append('|');
             }  // 6
 
             if (QualificacaoPJ != QualificacaoPJ.NaoAplicavel)
                 writer.Append(string.Format("{0:00}", (int)QualificacaoPJ) + "|");
             else
-                writer.Append("|"); // 7
+                writer.Append('|'); // 7
             writer.Append(FormaTributacaoTrimestre + "|"); // 8
             writer.Append(FormaTributacaoMes + "|"); // 9
             writer.Append(ObrigatoriedadeECD + "|"); // 10
             if (TipoPJImuneIsenta != TipoPJImuneOuIsenta.NaoAplicavel)
                 writer.Append(string.Format("{0:00}", (int)TipoPJImuneIsenta) + "|");
             else
-                writer.Append("|"); // 11
+                writer.Append('|'); // 11
             writer.Append(FormaApuracaoImuneIsenta_IRPJ + "|"); // 12
             writer.Append(FormaApuracaoImuneIsenta_CSLL + "|"); // 13
             if (FormaTributacao == FormaTributacao.LucroReal | FormaTributacao == FormaTributacao.LucroRealArbitrado | FormaTributacao == FormaTributacao.LucroArbitrado | FormaTributacao == FormaTributacao.ImuneIRPJ | FormaTributacao == FormaTributacao.IsentoIRPJ)
             {
-                writer.Append("|");  // 14
+                writer.Append('|');  // 14
             }
             else
             {

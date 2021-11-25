@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.Primitives
+namespace EficazFramework.SPED.Schemas.Primitives
 {
     public abstract class Bloco
     {

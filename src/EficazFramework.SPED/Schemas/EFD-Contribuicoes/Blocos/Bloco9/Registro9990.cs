@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -26,7 +26,6 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             }
 
             string result = writer.ToString();
-            writer = null;
             return result;
         }
 

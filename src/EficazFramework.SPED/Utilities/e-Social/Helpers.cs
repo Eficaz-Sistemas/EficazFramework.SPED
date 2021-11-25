@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Utilities.eSocial
+namespace EficazFramework.SPED.Utilities.eSocial
 {
     public class Converters
     {

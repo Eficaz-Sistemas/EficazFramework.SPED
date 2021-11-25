@@ -1,6 +1,6 @@
-﻿using EficazFrameworkCore.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
+namespace EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42
 {
 
     /// <summary>
@@ -44,7 +44,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
             var writer = new System.Text.StringBuilder();
             writer.Append("0150|"); // texto fixo
             writer.Append(ID + "|");
-            writer.Append(Nome.GetClearText() + "|");
+            writer.Append(Nome.RemoveAccents() + "|");
             writer.Append(string.Format("{0:0000}", CodigoPais) + "|"); // 05 dígitos
             writer.Append(CNPJ + "|");
             writer.Append(CPF + "|");

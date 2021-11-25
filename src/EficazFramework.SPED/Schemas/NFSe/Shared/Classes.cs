@@ -9,11 +9,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using EficazFrameworkCore.Extensions;
-using EficazFrameworkCore.SPED.Utilities.XML;
+using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Utilities.XML;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.NFSe.Common
+namespace EficazFramework.SPED.Schemas.NFSe.Common
 {
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3208,12 +3208,12 @@ namespace EficazFrameworkCore.SPED.Schemas.NFSe.Common
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("CNPJ")]
+        [System.ComponentModel.Description("CNPJ")]
         [XmlEnum("Cnpj")]
         Cnpj,
 
         /// <remarks/>
-        [Attributes.DisplayName("CPF")]
+        [System.ComponentModel.Description("CPF")]
         [XmlEnum("Cpf")]
         Cpf
     }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240
+namespace EficazFramework.SPED.Schemas.CNAB240
 {
 
     /// <summary>
@@ -23,12 +23,12 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240
             var writer = new System.Text.StringBuilder();
             writer.Append(CodigoBanco.ToFixedLenghtString(3, Escrituracao._builder, Alignment.Left, "0")); // 1
             writer.Append(LoteDeServico.ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 2
-            writer.Append("1"); // 3
+            writer.Append('1'); // 3
             writer.Append(TipoOperacao.ToFixedLenghtString(1, Escrituracao._builder, Alignment.Right, " ")); // 4
             writer.Append(string.Format("{0:00}", (int)TipoDePagamento)); // 5
             writer.Append(string.Format("{0:00}", (int)FormaDePagamento)); // 6
             writer.Append(LayoutLote.ToFixedLenghtString(3, Escrituracao._builder, Alignment.Left, "0")); // 7
-            writer.Append(" "); // 8
+            writer.Append(' '); // 8
             writer.Append(TipoInscricao.ToFixedLenghtString(1, Escrituracao._builder, Alignment.Right, " ")); // 9
             writer.Append(CNPJ.ToFixedLenghtString(14, Escrituracao._builder, Alignment.Right, " ")); // 10
             writer.Append(Convenio.ToFixedLenghtString(20, Escrituracao._builder, Alignment.Right, " ")); // 11
@@ -75,7 +75,7 @@ namespace EficazFrameworkCore.SPED.Schemas.CNAB240
         public override void LeParametros(string[] data)
         {
             string linha = data[0];
-            CodigoBanco = linha.Substring(0, 3).Trim();
+            CodigoBanco = linha[..3].Trim();
             LoteDeServico = linha.Substring(3, 4).Trim();
             TipoOperacao = linha.Substring(8, 1).Trim();
             TipoDePagamento = (TipoDePagamento)linha.Substring(123, 2).Trim().ToEnum<TipoDePagamento>(TipoDePagamento.Tributos);

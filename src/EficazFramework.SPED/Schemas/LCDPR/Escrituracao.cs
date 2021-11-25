@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace EficazFrameworkCore.SPED.Schemas.LCDPR
+namespace EficazFramework.SPED.Schemas.LCDPR
 {
     public class Escrituracao : Primitives.Escrituracao
     {

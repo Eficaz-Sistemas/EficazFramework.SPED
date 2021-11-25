@@ -1,7 +1,7 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (IndicadorTipoOperacao == IndicadorTipoOperacao.ServicoContratadoEstabelecimento)
                 writer.Append(string.Format("{0:00}", (int)NaturezaBCCalculo) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (IndicadorTipoOperacao == IndicadorTipoOperacao.ServicoContratadoEstabelecimento)
                 writer.Append(((int)IndicadorOrigemCredito).ToString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             writer.Append(CSTPis + "|");
             writer.Append(VrBaseCalculoPis + "|");
             writer.Append(AliquotaPis + "|");

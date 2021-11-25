@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EficazFrameworkCore.SPED.Resources.Strings {
+namespace EficazFramework.SPED.Resources.Strings {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace EficazFrameworkCore.SPED.Resources.Strings {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Validation {
@@ -39,7 +39,7 @@ namespace EficazFrameworkCore.SPED.Resources.Strings {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EficazFrameworkCore.SPED.Resouces.Strings.Validation", typeof(Validation).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EficazFramework.SPED.Resouces.Strings.Validation", typeof(Validation).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

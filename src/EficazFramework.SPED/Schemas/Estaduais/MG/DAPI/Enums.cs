@@ -1,5 +1,5 @@
 ﻿
-namespace EficazFrameworkCore.SPED.Schemas.MG.DAPI
+namespace EficazFramework.SPED.Schemas.MG.DAPI
 {
     public enum Registro_22_Motivos
     {

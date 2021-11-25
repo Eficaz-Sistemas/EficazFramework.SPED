@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
-using EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI;
+using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -71,83 +71,83 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (DocumentoValido())
                 writer.Append(DataEmissaoDocFiscal.ToSpedString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(DataEntradaSaida.ToSpedString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrTotalDocFiscal) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(((int)IndicadorTipoPagamento).ToString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrTotalDesconto) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrAbatimentoNT) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrTotalMercadorias) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(((int)IndicadorTipoFrete).ToString() + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrFrete) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrSeguro) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrOutrasDespesas) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrBaseCalculoICMS) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrICMS) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrBaseCalculoICMSST) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrICMSST) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrIPI) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrPIS) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrCOFINS) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrPISST) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             if (DocumentoValido())
                 writer.Append(string.Format("{0:0.##}", VrCOFINSST) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             return writer.ToString();
         }
 

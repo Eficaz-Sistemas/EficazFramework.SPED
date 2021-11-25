@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace EficazFrameworkCore.SPED.Utilities.NFe
+namespace EficazFramework.SPED.Utilities.NFe
 {
     public class DownloadNF
     {

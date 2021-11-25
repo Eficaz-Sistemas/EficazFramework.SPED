@@ -1,7 +1,7 @@
-﻿using EficazFrameworkCore.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
+namespace EficazFramework.SPED.Schemas.EFD_Contribuicoes
 {
 
     /// <summary>
@@ -35,7 +35,7 @@ namespace EficazFrameworkCore.SPED.Schemas.EFD_Contribuicoes
             if (Conversions.ToDouble(CstCofins) != (double)NFe.CST_COFINS.NotValid)
                 writer.Append(string.Format("{0:#00}", Conversions.ToInteger(CstCofins)) + "|");
             else
-                writer.Append("|");
+                writer.Append('|');
             writer.Append(string.Format("{0:0.##}", VrTotalItens) + "|");
             writer.Append(string.Format("{0:00}", Conversions.ToInteger(NatBaseCalculo)) + "|");
             writer.Append(string.Format("{0:0.##}", VrBaseCalculoCofins) + "|");

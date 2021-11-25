@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
+namespace EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42
 {
 
     /// <summary>
@@ -31,7 +31,7 @@ namespace EficazFrameworkCore.SPED.Schemas.SP.eRessarcimento.CAT42
             var writer = new System.Text.StringBuilder();
             writer.Append("0000|");
             writer.Append(string.Format("{0:MMyyyy}", Periodo) + "|");
-            writer.Append(RazaoSocial.GetClearText() + "|");
+            writer.Append(RazaoSocial.RemoveAccents() + "|");
             writer.Append(CNPJ + "|");
             writer.Append(InscricaoEstadual + "|");
             writer.Append(CodigoMunicipio + "|");

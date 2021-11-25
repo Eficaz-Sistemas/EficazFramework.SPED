@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EficazFrameworkCore.SPED.Schemas.GNRE
+namespace EficazFramework.SPED.Schemas.GNRE
 {
     [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.33440")]
     [Serializable()]
@@ -9,12 +9,12 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("Produção")]
+        [System.ComponentModel.Description("Produção")]
         [System.Xml.Serialization.XmlEnum("1")]
         Producao = 1,
 
         /// <remarks/>
-        [Attributes.DisplayName("Homologação")]
+        [System.ComponentModel.Description("Homologação")]
         [System.Xml.Serialization.XmlEnum("2")]
         Homologacao = 2
     }
@@ -24,10 +24,10 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     [System.Xml.Serialization.XmlType(Namespace = "http://www.gnre.pe.gov.br")]
     public enum Identificacao
     {
-        [Attributes.DisplayName("CNPJ")]
+        [System.ComponentModel.Description("CNPJ")]
         [System.Xml.Serialization.XmlEnum("1")]
         CNPJ = 1,
-        [Attributes.DisplayName("CPF")]
+        [System.ComponentModel.Description("CPF")]
         [System.Xml.Serialization.XmlEnum("2")]
         CPF = 2
     }
@@ -39,11 +39,11 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     {
 
         /// <remarks/>
-        [Attributes.DisplayName("CNPJ")]
+        [System.ComponentModel.Description("CNPJ")]
         CNPJ,
 
         /// <remarks/>
-        [Attributes.DisplayName("CPF")]
+        [System.ComponentModel.Description("CPF")]
         CPF
     }
 
@@ -52,40 +52,40 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     [System.Xml.Serialization.XmlType(Namespace = "http://www.gnre.pe.gov.br")]
     public enum Mes
     {
-        [Attributes.DisplayName("Janeiro")]
+        [System.ComponentModel.Description("Janeiro")]
         [System.Xml.Serialization.XmlEnum("01")]
         Janeiro = 1,
-        [Attributes.DisplayName("Fevereiro")]
+        [System.ComponentModel.Description("Fevereiro")]
         [System.Xml.Serialization.XmlEnum("02")]
         Fevereiro = 2,
-        [Attributes.DisplayName("Março")]
+        [System.ComponentModel.Description("Março")]
         [System.Xml.Serialization.XmlEnum("03")]
         marco = 3,
-        [Attributes.DisplayName("Abril")]
+        [System.ComponentModel.Description("Abril")]
         [System.Xml.Serialization.XmlEnum("04")]
         Abril = 4,
-        [Attributes.DisplayName("Maio")]
+        [System.ComponentModel.Description("Maio")]
         [System.Xml.Serialization.XmlEnum("05")]
         Maio = 5,
-        [Attributes.DisplayName("Junho")]
+        [System.ComponentModel.Description("Junho")]
         [System.Xml.Serialization.XmlEnum("06")]
         Junho = 6,
-        [Attributes.DisplayName("Julho")]
+        [System.ComponentModel.Description("Julho")]
         [System.Xml.Serialization.XmlEnum("07")]
         Julho = 7,
-        [Attributes.DisplayName("Agosto")]
+        [System.ComponentModel.Description("Agosto")]
         [System.Xml.Serialization.XmlEnum("08")]
         Agosto = 8,
-        [Attributes.DisplayName("Setembro")]
+        [System.ComponentModel.Description("Setembro")]
         [System.Xml.Serialization.XmlEnum("09")]
         Setembro = 9,
-        [Attributes.DisplayName("Outubro")]
+        [System.ComponentModel.Description("Outubro")]
         [System.Xml.Serialization.XmlEnum("10")]
         Outubro = 10,
-        [Attributes.DisplayName("Novembro")]
+        [System.ComponentModel.Description("Novembro")]
         [System.Xml.Serialization.XmlEnum("11")]
         Novembro = 11,
-        [Attributes.DisplayName("Dezembro")]
+        [System.ComponentModel.Description("Dezembro")]
         [System.Xml.Serialization.XmlEnum("12")]
         Dezembro = 12
     }
@@ -95,22 +95,22 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.gnre.pe.gov.br")]
     public enum ReferenciaPeriodo
     {
-        [Attributes.DisplayName("Mensal")]
+        [System.ComponentModel.Description("Mensal")]
         [System.Xml.Serialization.XmlEnum("0")]
         Mensal = 0,
-        [Attributes.DisplayName("1ª Quinzena")]
+        [System.ComponentModel.Description("1ª Quinzena")]
         [System.Xml.Serialization.XmlEnum("1")]
         Quinzena1 = 1,
-        [Attributes.DisplayName("2ª Quinzena")]
+        [System.ComponentModel.Description("2ª Quinzena")]
         [System.Xml.Serialization.XmlEnum("2")]
         Quinzena2 = 2,
-        [Attributes.DisplayName("1º Decêndio")]
+        [System.ComponentModel.Description("1º Decêndio")]
         [System.Xml.Serialization.XmlEnum("3")]
         Decendio1 = 3,
-        [Attributes.DisplayName("2º Decêndio")]
+        [System.ComponentModel.Description("2º Decêndio")]
         [System.Xml.Serialization.XmlEnum("4")]
         Decendio2 = 4,
-        [Attributes.DisplayName("3º Decêndio")]
+        [System.ComponentModel.Description("3º Decêndio")]
         [System.Xml.Serialization.XmlEnum("5")]
         Decendio3 = 5
     }
@@ -120,11 +120,11 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
     [System.Xml.Serialization.XmlType(Namespace = "http://www.gnre.pe.gov.br")]
     public enum TipoCampoExtra
     {
-        [Attributes.DisplayName("Texto")]
+        [System.ComponentModel.Description("Texto")]
         T,
-        [Attributes.DisplayName("Numérico")]
+        [System.ComponentModel.Description("Numérico")]
         N,
-        [Attributes.DisplayName("Data")]
+        [System.ComponentModel.Description("Data")]
         D
     }
 
@@ -231,37 +231,37 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
 
     public enum CodigoReceita
     {
-        [Attributes.DisplayName("100013 - ICMS Comunicação")]
+        [System.ComponentModel.Description("100013 - ICMS Comunicação")]
         ICMS_Comunicacao = 100013,
-        [Attributes.DisplayName("100021 - ICMS Energia Elétrica")]
+        [System.ComponentModel.Description("100021 - ICMS Energia Elétrica")]
         ICMS_EEletrica = 100021,
-        [Attributes.DisplayName("100030 - ICMS Transporte")]
+        [System.ComponentModel.Description("100030 - ICMS Transporte")]
         ICMS_Transporte = 100030,
-        [Attributes.DisplayName("100048 - ICMS ST por Apuração")]
+        [System.ComponentModel.Description("100048 - ICMS ST por Apuração")]
         ICMS_ST_Apuracao = 100048,
-        [Attributes.DisplayName("100056 - ICMS Importação")]
+        [System.ComponentModel.Description("100056 - ICMS Importação")]
         ICMS_Importacao = 100056,
-        [Attributes.DisplayName("100064 - ICMS Autuação Fiscal")]
+        [System.ComponentModel.Description("100064 - ICMS Autuação Fiscal")]
         ICMS_AutuacaoFiscal = 100064,
-        [Attributes.DisplayName("100072 - ICMS Parcelamento")]
+        [System.ComponentModel.Description("100072 - ICMS Parcelamento")]
         ICMS_Parcelamento = 100072,
-        [Attributes.DisplayName("100080 - ICMS Recolhimentos Especiais")]
+        [System.ComponentModel.Description("100080 - ICMS Recolhimentos Especiais")]
         ICMS_RecolhimentosEspeciais = 100080,
-        [Attributes.DisplayName("100099 - ICMS ST por Operação")]
+        [System.ComponentModel.Description("100099 - ICMS ST por Operação")]
         ICMS_ST_Operacao = 100099,
-        [Attributes.DisplayName("100102 - ICMS Consumidor Final Não Contribuinte Outra UF por Operação")]
+        [System.ComponentModel.Description("100102 - ICMS Consumidor Final Não Contribuinte Outra UF por Operação")]
         ICMS_ConsFinalOutraUFOperacao = 100102,
-        [Attributes.DisplayName("100110 - ICMS Consumidor Final Não Contribuinte Outra UF por Apuração")]
+        [System.ComponentModel.Description("100110 - ICMS Consumidor Final Não Contribuinte Outra UF por Apuração")]
         ICMS_ConsFinalOutraUFApuracao = 100110,
-        [Attributes.DisplayName("100129 – ICMS Fundo Estadual de Combate à Pobreza por Operação")]
+        [System.ComponentModel.Description("100129 – ICMS Fundo Estadual de Combate à Pobreza por Operação")]
         ICMS_FundoCombPobrezaOperacao = 100129,
-        [Attributes.DisplayName("100137 - ICMS Fundo Estadual de Combate à Pobreza por Apuração")]
+        [System.ComponentModel.Description("100137 - ICMS Fundo Estadual de Combate à Pobreza por Apuração")]
         ICMS_FundoCombPobrezaApuracao = 100137,
-        [Attributes.DisplayName("150010 - ICMS Dívida Ativa")]
+        [System.ComponentModel.Description("150010 - ICMS Dívida Ativa")]
         ICMS_DividaAtiva = 150010,
-        [Attributes.DisplayName("500011 - Multa p/ Infração")]
+        [System.ComponentModel.Description("500011 - Multa p/ Infração")]
         Multa_Infracao = 500011,
-        [Attributes.DisplayName("600016 - Tava")]
+        [System.ComponentModel.Description("600016 - Tava")]
         Taxa = 600016
     }
 
@@ -286,9 +286,9 @@ namespace EficazFrameworkCore.SPED.Schemas.GNRE
 
     public enum Contingencia
     {
-        [Attributes.DisplayName("0 - Guia gerada pela UF")]
+        [System.ComponentModel.Description("0 - Guia gerada pela UF")]
         UF = 0,
-        [Attributes.DisplayName("1 - Guia gerada em contingência")]
+        [System.ComponentModel.Description("1 - Guia gerada em contingência")]
         Contingencia
     }
 

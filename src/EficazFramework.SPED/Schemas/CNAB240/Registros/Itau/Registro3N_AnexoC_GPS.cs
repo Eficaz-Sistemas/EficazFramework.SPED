@@ -1,7 +1,7 @@
 ﻿using System;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.CNAB240.Itau
+namespace EficazFramework.SPED.Schemas.CNAB240.Itau
 {
     public class Registro3N_AnexoC_GPS : Registro3N_AnexoC
     {

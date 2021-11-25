@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using EficazFrameworkCore.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
-namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
+namespace EficazFramework.SPED.Schemas.MFD_ECF
 {
 
     /// <summary>
@@ -31,9 +31,9 @@ namespace EficazFrameworkCore.SPED.Schemas.MFD_ECF
             writer.Append("000000"); // 11
             writer.Append(VendaBrutaDiaria.ValueToString(2).ToFixedLenghtString(14, Escrituracao._builder, Alignment.Left, "0")); // 12
             if (IncidenciaDesconto == true == true)
-                writer.Append("S");
+                writer.Append('S');
             else
-                writer.Append("N"); // 13
+                writer.Append('N'); // 13
             return writer.ToString();
         }
 
