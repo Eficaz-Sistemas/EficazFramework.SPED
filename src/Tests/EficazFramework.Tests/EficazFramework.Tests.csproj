@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <Version>6.0.0-preview010</Version>
+
+    <Description>Biblioteca de testes da Eficaz Framework Core.</Description>
+
+    <RootNamespace>EficazFramework</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.1.0" />
+    <PackageReference Include="SolutionScripts" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\EficazFramework.SPED\EficazFramework.SPED.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SPED\Schemas\Sources\EFD-ICMS IPI.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFD-ICMS IPI.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SPED\Schemas\Sources\EFD-Reinf.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFD-Reinf.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SPED\Schemas\Sources\XML.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>XML.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="SPED\Schemas\Sources\EFD-ICMS IPI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
+      <LastGenOutput>EFD-ICMS IPI.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SPED\Schemas\Sources\EFD-Reinf.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EFD-Reinf.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SPED\Schemas\Sources\XML.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XML.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
