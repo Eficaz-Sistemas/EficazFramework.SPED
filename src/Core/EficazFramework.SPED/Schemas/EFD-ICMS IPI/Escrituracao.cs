@@ -8,7 +8,6 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 public class Escrituracao : Primitives.Escrituracao
 {
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Escrituracao() : base("Escrituração Fiscal Digital do ICMS e IPI")
     {
         Blocos.Add("0", new Bloco0());
@@ -23,11 +22,9 @@ public class Escrituracao : Primitives.Escrituracao
         Blocos.Add("9", new Bloco9());
         BlocoTotalizador = "9";
         RegistroTotalizadorCodigo = "9900";
-        RegistroTotalizadorStringFormat = "|" + RegistroTotalizadorCodigo + "|{0}|{1}|";
+        RegistroTotalizadorStringFormat = $"|{RegistroTotalizadorCodigo}" + "|{0}|{1}|";
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public override void ProcessaLinha(string linha)
     {
         Registro reg = null;
@@ -215,6 +212,20 @@ public class Escrituracao : Primitives.Escrituracao
                     reg = new Registro0990(linha, Versao);
                     Blocos["0"].Registros.Add(reg);
                     ((Bloco0)Blocos["0"]).Registro0000.Registro0990 = (Registro0990)reg;
+                    break;
+                }
+
+            case "B001":
+                {
+                    reg = new RegistroB001(linha, Versao);
+                    Blocos["B"].Registros.Add(reg);
+                    break;
+                }
+
+            case "B990":
+                {
+                    reg = new RegistroB990(linha, Versao);
+                    Blocos["B"].Registros.Add(reg);
                     break;
                 }
 
@@ -563,6 +574,13 @@ public class Escrituracao : Primitives.Escrituracao
                     break;
                 }
 
+            case "D001":
+                {
+                    reg = new RegistroD001(linha, Versao);
+                    Blocos["D"].Registros.Add(reg);
+                    break;
+                }
+
             case "D100":
                 {
                     reg = new RegistroD100(linha, Versao);
@@ -602,7 +620,6 @@ public class Escrituracao : Primitives.Escrituracao
                     Blocos["D"].Registros.Add(reg);
                     break;
                 }
-            // DirectCast(Me.Blocos("D"), BlocoD).RegistrosD500.Add(reg)
 
             case "D590":
                 {
@@ -611,6 +628,13 @@ public class Escrituracao : Primitives.Escrituracao
                     var regD500 = ((BlocoD)Blocos["D"]).RegistrosD500.LastOrDefault();
                     if (regD500 != null)
                         regD500.RegistrosD590.Add((RegistroD590)reg);
+                    break;
+                }
+
+            case "D990":
+                {
+                    reg = new RegistroD990(linha, Versao);
+                    Blocos["D"].Registros.Add(reg);
                     break;
                 }
 
@@ -802,6 +826,13 @@ public class Escrituracao : Primitives.Escrituracao
                     break;
                 }
 
+            case "E990":
+                {
+                    reg = new RegistroE990(linha, Versao);
+                    Blocos["E"].Registros.Add(reg);
+                    break;
+                }
+
             case "G001":
                 {
                     reg = new RegistroG001(linha, Versao);
@@ -853,6 +884,13 @@ public class Escrituracao : Primitives.Escrituracao
                     var regg130 = ((BlocoG)Blocos["G"]).RegistrosG130.FirstOrDefault();
                     if (regg130 != null)
                         regg130.RegistrosG140.Add((RegistroG140)reg);
+                    break;
+                }
+
+            case "G990":
+                {
+                    reg = new RegistroG990(linha, Versao);
+                    Blocos["G"].Registros.Add(reg);
                     break;
                 }
 
@@ -928,6 +966,81 @@ public class Escrituracao : Primitives.Escrituracao
                 {
                     reg = new RegistroK990(linha, Versao);
                     Blocos["K"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1001":
+                {
+                    reg = new Registro1001(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1010":
+                {
+                    reg = new Registro1010(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1300":
+                {
+                    reg = new Registro1300(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1310":
+                {
+                    reg = new Registro1310(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    var reg1300 = ((Bloco1)Blocos["1"]).Registros1300.LastOrDefault();
+                    if (reg1300 != null)
+                    {
+                        reg1300.Registros1310.Add((Registro1310)reg);
+                    }
+
+                    break;
+                }
+
+            case "1320":
+                {
+                    reg = new Registro1320(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    var reg1300 = ((Bloco1)Blocos["1"]).Registros1310.LastOrDefault();
+                    if (reg1300 != null)
+                    {
+                        reg1300.Registros1320.Add((Registro1320)reg);
+                    }
+
+                    break;
+                }
+
+            case "1350":
+                {
+                    reg = new Registro1350(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1360":
+                {
+                    reg = new Registro1360(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1370":
+                {
+                    reg = new Registro1370(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
+                    break;
+                }
+
+            case "1990":
+                {
+                    reg = new Registro1990(linha, Versao);
+                    Blocos["1"].Registros.Add(reg);
                     break;
                 }
 
@@ -1028,7 +1141,4 @@ public class Escrituracao : Primitives.Escrituracao
         regs.Add(reg9999);
         return regs.ToArray();
     }
-
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
