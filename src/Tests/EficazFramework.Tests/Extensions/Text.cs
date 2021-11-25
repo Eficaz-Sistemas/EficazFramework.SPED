@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace EficazFramework.Extensions;
+namespace EficazFramework.SPED.Extensions;
 
 public class Text
 {
