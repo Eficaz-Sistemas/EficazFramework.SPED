@@ -577,8 +577,6 @@ public enum IndicadorPropriedade
 
 #endregion
 
-#region Bloco I
-
 public enum IndicadorMedicao1350
 {
     Analogico = 0,

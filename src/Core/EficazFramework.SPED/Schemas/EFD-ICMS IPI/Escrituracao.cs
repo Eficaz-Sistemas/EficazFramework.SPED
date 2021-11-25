@@ -218,6 +218,13 @@ public class Escrituracao : Primitives.Escrituracao
                     break;
                 }
 
+            case "C001":
+                {
+                    reg = new RegistroC001(linha, Versao);
+                    Blocos["C"].Registros.Add(reg);
+                    break;
+                }
+
             case "C100":
                 {
                     reg = new RegistroC100(linha, Versao);
@@ -546,6 +553,13 @@ public class Escrituracao : Primitives.Escrituracao
                         regC500.RegistrosC590.Add((RegistroC590)reg);
                     }
 
+                    break;
+                }
+
+            case "C990":
+                {
+                    reg = new Registro0990(linha, Versao);
+                    Blocos["C"].Registros.Add(reg);
                     break;
                 }
 

@@ -31,6 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Schemas\EFD_ICMS_IPI.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFD_ICMS_IPI.resx</DependentUpon>
+    </Compile>
     <Compile Update="SPED\Schemas\Sources\EFD-ICMS IPI.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -49,6 +54,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Schemas\EFD_ICMS_IPI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EFD_ICMS_IPI.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFrameworkCore.SPED.Resources.Schemas</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Update="SPED\Schemas\Sources\EFD-ICMS IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
