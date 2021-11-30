@@ -3,6 +3,75 @@ namespace EficazFramework.SPED.Extensions;
 
 public static class Number
 {
+
+    /// <summary>
+    /// Retorna o número formatado na quantidade de algarismos significativos desejada.
+    /// </summary>
+    public static string ToSignificantDigits(this double d, int SignificantDigits, int MinDecimals = 0)
+    {
+        // Use G format to get significant digits.
+        // Then convert to double and use F format.
+        var decimalDigit = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+        var gFormatted = String.Format(string.Join("", "{0:", $"G{SignificantDigits}", "}"), d);
+        string result = Convert.ToDecimal(gFormatted).ToString("F99");
+
+        // Remove trailing 0s.
+        result = result.TrimEnd('0');
+
+        // Rmove the decimal point and leading 0s,
+        // leaving just the digits.
+        string test = result.Replace(decimalDigit, "").TrimStart('0');
+
+        // See if we have enough significant digits.
+        if (SignificantDigits > test.Length)
+        {
+            // Add trailing 0s.
+            result += new string('0', SignificantDigits - test.Length);
+        }
+        else
+        {
+            // See if we should remove the trailing decimal point.
+            if ((SignificantDigits < test.Length) &&
+                result.EndsWith("."))
+                result = result[0..^1];
+        }
+        if (result.EndsWith(decimalDigit) && MinDecimals == 0)
+            result = result.Replace(decimalDigit, "");
+
+        if (MinDecimals > 0)
+        {
+            var parts = result.Split(decimalDigit);
+            if (parts.Length == 1 || parts[1].Length < MinDecimals)
+                return double.Parse(result).ToString($"F{MinDecimals}");
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Retorna o número formatado na quantidade de algarismos significativos desejada.
+    /// </summary>
+    public static string ToSignificantDigits(this double? d, int SignificantDigits, int MinDecimals = 0)
+    {
+        return ToSignificantDigits(d ?? 0.0D, SignificantDigits, MinDecimals);
+    }
+
+    /// <summary>
+    /// Retorna o número formatado na quantidade de algarismos significativos desejada.
+    /// </summary>
+    public static string ToSignificantDigits(this decimal d, int SignificantDigits, int MinDecimals = 0)
+    {
+        return ToSignificantDigits((double)d, SignificantDigits, MinDecimals);
+    }
+
+    /// <summary>
+    /// Retorna o número formatado na quantidade de algarismos significativos desejada.
+    /// </summary>
+    public static string ToSignificantDigits(this decimal? d, int SignificantDigits, int MinDecimals = 0)
+    {
+        return ToSignificantDigits((double)(d ?? 0.0M), SignificantDigits, MinDecimals);
+    }
+
     public static string ValueToString(this short? field, bool removeSeparators = true)
     {
         if (field.HasValue == true)
