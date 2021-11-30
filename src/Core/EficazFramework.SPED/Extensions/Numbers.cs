@@ -10,6 +10,9 @@ public static class Number
     /// </summary>
     public static string ToSignificantDigits(this double d, int SignificantDigits, int MinDecimals = 0)
     {
+        if (d.ToString("F0").Length > SignificantDigits)
+            return d.ToString($"F{MinDecimals}");
+
         // Use G format to get significant digits.
         // Then convert to double and use F format.
         var decimalDigit = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
