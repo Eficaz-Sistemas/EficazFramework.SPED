@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace EficazFramework.SPED.Extensions;
 
 public static class Number
@@ -12,7 +13,7 @@ public static class Number
         // Use G format to get significant digits.
         // Then convert to double and use F format.
         var decimalDigit = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-        var gFormatted = String.Format(string.Join("", "{0:", $"G{SignificantDigits}", "}"), d);
+        var gFormatted = string.Format(string.Join("", "{0:", $"G{SignificantDigits}", "}"), d);
         string result = Convert.ToDecimal(gFormatted).ToString("F99");
 
         // Remove trailing 0s.
