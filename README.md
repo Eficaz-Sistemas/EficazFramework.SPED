@@ -1,8 +1,8 @@
 # ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![Azure DevOps tests](https://efshields.azurewebsites.net:/azure-devops/tests/eficazcs/EficazFramework/21?compact_message)
-![Azure DevOps coverage](https://efshields.azurewebsites.net:/azure-devops/coverage/eficazcs/EficazFramework/21)
+![Azure DevOps tests](http://efshields.brazilsouth.azurecontainer.io:/azure-devops/tests/eficazcs/EficazFramework/21?compact_message)
+![Azure DevOps coverage](http://efshields.brazilsouth.azurecontainer.io:/azure-devops/coverage/eficazcs/EficazFramework/21)
 ![Discord](https://img.shields.io/discord/846078359498653706)
 
    Bem vindo ao projeto Eficaz.SPED.
