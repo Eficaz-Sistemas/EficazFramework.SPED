@@ -5,7 +5,7 @@
 ![Azure DevOps tests (compact)](http://efshields.brazilsouth.azurecontainer.io:/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white)
 ![Azure DevOps coverage](http://efshields.brazilsouth.azurecontainer.io:/azure-devops/coverage/eficazcs/EficazFramework/21?&logo=codecov&logoColor=white)
 ![Discord](http://efshields.brazilsouth.azurecontainer.io:/discord/846078359498653706?color=purple&logo=discord&logoColor=white)
-![Twitter Follow](http://efshields.brazilsouth.azurecontainer.io:/twitter/follow/EficazCS?color=blue&label=Twitter&logo=twitter&logoColor=white&style=plastic)
+![Twitter Follow](http://efshields.brazilsouth.azurecontainer.io:/twitter/follow/EficazCS?color=blue&label=twitter&logo=twitter&logoColor=white&style=flat-square)
 
    Bem vindo ao projeto Eficaz.SPED.
    
