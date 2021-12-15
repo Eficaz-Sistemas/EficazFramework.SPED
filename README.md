@@ -27,6 +27,7 @@
    - EFD ICMS / IPI
    - EFD Contribuições
    - e-Social (em desenvolvimento)
+   - GIA (SP)
    - GNRE
    - NF-e, a partir da versão 2.00
-   - NFS-e (Ginfes)
+   - NFS-e
