@@ -1,4 +1,4 @@
-# ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
+# <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
 ![Azure DevOps builds (branch)](https://efshieldsio.azurewebsites.net:/azure-devops/build/eficazcs/EficazFramework/21/master?label=tests&logo=azuredevops&logoColor=white&style=flat-square)
