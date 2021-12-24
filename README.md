@@ -1,16 +1,15 @@
 # <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![EFD ICMS/IPI](https://efshieldsio.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v015-red?style=flat-square)
-![EFD Contribuições](https://efshieldsio.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
-![ECD](https://efshieldsio.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square)
-![ECF](https://efshieldsio.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square)
 ![Azure DevOps builds (branch)](https://efshieldsio.azurewebsites.net:/azure-devops/build/eficazcs/EficazFramework/21/master?label=tests&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://efshieldsio.azurewebsites.net:/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps coverage](https://efshieldsio.azurewebsites.net:/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
 [![Discord](https://efshieldsio.azurewebsites.net:/discord/846078359498653706?color=purple&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/ePvZEGBgaf)
 [![Twitter Follow](https://efshieldsio.azurewebsites.net:/twitter/follow/EficazCS?color=blue&label=twitter&logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
-<!---![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/eficazsistemasdegestoeintelignciatributrialtda.efcorev4?label=SDK&logo=Eficaz%20Sistemas)-->
+![EFD ICMS/IPI](https://efshieldsio.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v015-red?style=flat-square)
+![EFD Contribuições](https://efshieldsio.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
+![ECD](https://efshieldsio.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square)
+![ECF](https://efshieldsio.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square)
 
    Bem vindo ao projeto EficazFramework.SPED.
    
