@@ -1,5 +1,5 @@
 ## Informações e Diretrizes para Contribuidores   
-   Agradecemos pelo interesse em ajudar para que este projeto seja ainda melhor e seja útil para todos que precisam, de alguma forma, gerar ou obter informações acerca dos arquivos eletrônicos envolvidos pelos projetos SPED, NF-e, CT-e, e-Social e afins.   
+   Agradecemos pelo interesse em ajudar para que este projeto seja ainda melhor e seja útil para todos que precisam de alguma forma, gerar ou obter informações acerca dos arquivos eletrônicos envolvidos pelos projetos SPED, NF-e, CT-e, e-Social e afins.   
 
 ## Requisitos Mínimos para Compilar o Código-Fonte
  - [.NET 6.0 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) (Pode ser atualizado visando acompanhar a evolução do .NET)
