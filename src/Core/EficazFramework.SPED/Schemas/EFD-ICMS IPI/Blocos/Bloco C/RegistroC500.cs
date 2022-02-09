@@ -74,11 +74,20 @@ public class RegistroC500 : Primitives.Registro
             else
                 writer.Append('|'); // 29
             writer.Append(ChaveDocE_Referenciado + "|"); // 30
-            writer.Append(((int)DestinatarioIndicador).ToString() + "|"); // 31
+            writer.Append((DestinatarioIndicador != null ? (int)DestinatarioIndicador : "") + "|"); // 31
             writer.Append(DestinatarioCodMunicipio + "|"); // 32
             writer.Append(CodigoContaAnaliticaCtb + "|"); // 33
         }
-
+        if (Conversions.ToInteger(Versao) > 15)
+        {
+            writer.Append(this.EspecieDocumentoReferenciado + "|"); // 34
+            writer.Append(this.HashDocumentoReferenciado + "|"); // 35
+            writer.Append(this.SerieDocumentoReferenciado + "|"); // 36
+            writer.Append(this.NumeroDocumentoReferenciado + "|"); // 37
+            writer.Append(string.Format("{0:MMyyyy}", this.CompetenciaDocumentoReferenciado) + "|"); // 38
+            writer.Append(string.Format("{0:0.##}", this.EnergiaInjetada) + "|"); // 39
+            writer.Append(string.Format("{0:0.##}", this.OutrasDeducoes) + "|"); // 40
+        }
         return writer.ToString();
     }
 
@@ -127,9 +136,19 @@ public class RegistroC500 : Primitives.Registro
             ChaveDocE = data[28];
             FinDocE = (FinalidadeEmissaoDoc)data[29].ToEnum<FinalidadeEmissaoDoc>(FinalidadeEmissaoDoc.Normal);
             ChaveDocE_Referenciado = data[30];
-            DestinatarioIndicador = (IndicadorDestinatario)data[31].ToEnum<IndicadorDestinatario>(IndicadorDestinatario.NaoContribuinte);
+            DestinatarioIndicador = (IndicadorDestinatario)data[31].ToEnum<IndicadorDestinatario?>(null);
             DestinatarioCodMunicipio = data[32];
             CodigoContaAnaliticaCtb = data[33];
+        }
+        if (Conversions.ToInteger(Versao) > 15)
+        {
+            EspecieDocumentoReferenciado = data[34];
+            HashDocumentoReferenciado = data[35];
+            SerieDocumentoReferenciado = data[36];
+            NumeroDocumentoReferenciado = data[37].ToNullableInteger();
+            CompetenciaDocumentoReferenciado = data[38].ToDate(DateFormat.MMAAAA);
+            EnergiaInjetada = data[39].ToNullableDouble();
+            OutrasDeducoes = data[40].ToNullableDouble();
         }
     }
 
@@ -164,9 +183,18 @@ public class RegistroC500 : Primitives.Registro
     public string ChaveDocE { get; set; } = null; // 28
     public FinalidadeEmissaoDoc FinDocE { get; set; } = FinalidadeEmissaoDoc.Normal; // 29
     public string ChaveDocE_Referenciado { get; set; } = null; // 30
-    public IndicadorDestinatario DestinatarioIndicador { get; set; } = IndicadorDestinatario.ContribuinteICMS; // 31
+    public IndicadorDestinatario? DestinatarioIndicador { get; set; } = null; //IndicadorDestinatario.ContribuinteICMS; // 31
     public string DestinatarioCodMunicipio { get; set; } = null; // 32
     public string CodigoContaAnaliticaCtb { get; set; } = null; // 33
+
+    // Versão 16
+    public string EspecieDocumentoReferenciado { get; set; } = null; // 34
+    public string HashDocumentoReferenciado { get; set; } = null; // 35
+    public string SerieDocumentoReferenciado { get; set; } = null; // 36
+    public int? NumeroDocumentoReferenciado { get; set; } // 37
+    public DateTime? CompetenciaDocumentoReferenciado { get; set; } // 38
+    public double? EnergiaInjetada { get; set; } = default(Double?); // 39
+    public double? OutrasDeducoes { get; set; } = default(Double?); // 40
 
     // Registros Filhos
     public List<RegistroC590> RegistrosC590 { get; set; } = new List<RegistroC590>();
