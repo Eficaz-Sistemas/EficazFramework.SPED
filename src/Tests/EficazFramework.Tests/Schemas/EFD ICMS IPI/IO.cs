@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using System.Linq;
 using FluentAssertions;
 
-namespace EficazFrameworkCore.SPED.Schemas;
+namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI;
 
-internal class EFD_ICMS_IPI
+internal class IO
 {
     private static async Task<EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao> ReadInternal()
     {
