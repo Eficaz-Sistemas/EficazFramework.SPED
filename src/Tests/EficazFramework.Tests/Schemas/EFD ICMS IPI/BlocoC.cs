@@ -7,7 +7,7 @@ internal class BlocoC
 {
 
     [Test]
-    public void RegistroC500()
+    public void RegistroC500_Escrita()
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500("", "002")
         {
@@ -43,11 +43,19 @@ internal class BlocoC
 
         reg.OverrideVersao("015");
         reg.ToString().Should().Be("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||");
-
+        
         reg.OverrideVersao("016");
         reg.ToString().Should().Be("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||||||122021|||");
 
         reg.DestinatarioIndicador = EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorDestinatario.ContribIsentoICMS;
         reg.ToString().Should().Be("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||");
     }
+
+    [TestCase("|C500|0|1|2378|06|00|||01|52005264|03062020|01072020|473,38|0|726|0|0|0|0|0|0|0||7,61|35,06|3|||||1|3556701|206|", "014")]
+    public void RegistroC500_Leitura(string linha, string versao = "016")
+    {
+        var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500(linha, versao);
+
+    }
+
 }
