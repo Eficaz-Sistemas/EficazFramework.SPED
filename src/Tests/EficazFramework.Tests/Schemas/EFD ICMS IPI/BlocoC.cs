@@ -55,7 +55,7 @@ internal class BlocoC
     public void RegistroC500_Leitura(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500(linha, versao);
-
+        reg.LeParametros(linha.Split('|'));
     }
 
 }

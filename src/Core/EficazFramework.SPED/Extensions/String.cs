@@ -224,7 +224,7 @@ public static class String
 
     public static object ToEnum<T>(this string SPED_String, object defaultValue)
     {
-        if (SPED_String.Length > 0)
+        if (!string.IsNullOrEmpty(SPED_String))
         {
             return Enum.Parse(typeof(T), Conversions.ToInteger(SPED_String).ToString());
         }
