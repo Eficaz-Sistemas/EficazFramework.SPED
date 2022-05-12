@@ -136,7 +136,7 @@ public class RegistroC500 : Primitives.Registro
             ChaveDocE = data[28];
             FinDocE = (FinalidadeEmissaoDoc)data[29].ToEnum<FinalidadeEmissaoDoc>(FinalidadeEmissaoDoc.Normal);
             ChaveDocE_Referenciado = data[30];
-            DestinatarioIndicador = (IndicadorDestinatario)data[31].ToEnum<IndicadorDestinatario?>(null);
+            DestinatarioIndicador = (IndicadorDestinatario)data[31].ToEnum<IndicadorDestinatario>(null);
             DestinatarioCodMunicipio = data[32];
             CodigoContaAnaliticaCtb = data[33];
         }
