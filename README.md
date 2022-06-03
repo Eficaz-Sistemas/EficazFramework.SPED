@@ -1,7 +1,7 @@
 # <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![Azure DevOps builds (branch)](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21/master?label=tests&logo=azuredevops&logoColor=white&style=flat-square)
+![Azure DevOps builds](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21?&logo=azurepipelines&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps coverage](https://eficazshields.azurewebsites.net/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
 ![Licence](https://img.shields.io/static/v1?label=licence&message=MIT&color=blue&style=flat-square&logo=github&logoColor=white)
