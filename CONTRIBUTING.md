@@ -13,10 +13,13 @@
  - Para grandes mudanças, por gentileza inicie uma Issue antes, para um debate prévio acerca do assunto.
  - Caso inicie a Pull Request antes de concluir o trabalho, solicitamos convertê-la em Rascunho (Convert to Draft) até que a mesma seja concluída. Desta forma saberemos que não devemos mesclá-la antes do tempo.
 
-## Estrutura do Projeto
+[//]: # (## Estrutura do Projeto)
 
 
-## Recomendações para evitar erros comuns
+[//]: # (## Recomendações para evitar erros comuns)
 
 
 ## Testes de Unidade e Cobertura de Código
+ - Este projeto visa alcançar 90% de cobertura de código, mas também gostaríamos de assegurar uma boa qualidade dos testes;
+ - Temos plena consciência do grau de dificuldade para se alcançar tal percentual com tantos Registros e Campos por layout, desta forma pretendemos flexibilizar o objetivo quanto ao conteúdo já criado;
+ - Solicitamos que cada nova Pull Request criada, contenha testes específicos para a feature adicionada ou modificada.
