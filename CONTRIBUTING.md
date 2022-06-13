@@ -11,7 +11,8 @@
  - Deve ser feita em uma branch específica para o trabalho, e seu nome deve ser sugestivo ao trabalho feito.
  - Pull Requests com longo tempo de vida, devem ser atualizadas com a branch master, utilizando git rebase ([Guia para efetuar Rebase](https://docs.github.com/pt/get-started/using-git/about-git-rebase)).
  - Para grandes mudanças, por gentileza inicie uma Issue antes, para um debate prévio acerca do assunto.
- - Caso inicie a Pull Request antes de concluir o trabalho, solicitamos convertê-la em Rascunho (Convert to Draft) até que a mesma seja concluída. Desta forma saberemos que não devemos mesclá-la antes do tempo.
+ - Caso inicie a Pull Request antes de concluir o trabalho, solicitamos convertê-la em Rascunho (Convert to Draft) até que a mesma seja concluída. Desta forma saberemos que não devemos mesclá-la antes do tempo;
+ - Em caso de campos com uma lista de valores númericos, solicitamos criar um Enum contendo os valores válidos para tal.
 
 [//]: # (## Estrutura do Projeto)
 
@@ -23,3 +24,38 @@
  - Este projeto visa alcançar 90% de cobertura de código, mas também gostaríamos de assegurar uma boa qualidade dos testes;
  - Temos plena consciência do grau de dificuldade para se alcançar tal percentual com tantos Registros e Campos por layout, desta forma pretendemos flexibilizar o objetivo quanto ao conteúdo já criado;
  - Solicitamos que cada nova Pull Request criada, contenha testes específicos para a feature adicionada ou modificada.
+ 
+ ## Documentação
+  - Iremos utilizar a biblioteca [DefaultDocumentation](https://github.com/Doraku/DefaultDocumentation) para gerar a Documentação em padrão Markdown, à partir do que for documentado nas classes, métodos e campos;
+  - Toda colaboração na documentação do código será muito bem vinda;
+  - Solicitamos por gentileza documentar as classes conforme a descrição de seus layouts, por exemplo, na EFD ICMS / IPI:
+```csharp
+/// <summary>
+/// Documentos Fiscais (01, 1B, 04, 55 e 65)
+/// </summary>
+public class RegistroC100
+{ 
+    /// <summary>
+    /// Indicador do tipo de operação: <br/>
+    /// 0 - Entrada <br/>
+    /// 1 - Saída <br/>
+    /// CAMPO: 02 - IND_OPER  <br/>
+    /// </summary>
+    public IndicadorOperacao Operacao { get; set; } = IndicadorOperacao.Entrada;
+   
+    /// <summary>
+    /// Indicador do emitente do documento fiscal: <br/>
+    /// 0 - Emissão Própria <br/>
+    /// 1 - Terceiros <br/>
+    /// CAMPO: 03 - IND_EMIT  <br/>
+    /// </summary>
+    public IndicadorEmitente Emissao { get; set; } = IndicadorEmitente.Propria;
+    
+    /// <summary>
+    /// Código do participante (campo 02 do Registro 0150) <br/>
+    /// CAMPO: 04 - COD_PART  <br/>
+    /// </summary>
+    public string CodigoParticipante { get; set; } = null;
+
+}
+```
