@@ -22,7 +22,7 @@ public class Registro0220 : Primitives.Registro
         var writer = new System.Text.StringBuilder();
         writer.Append("|0220|"); // 1
         writer.Append(UnidadeComercialConvertida + "|"); // 2
-        writer.Append(string.Format("{0:0.##}", FatorConversao) + "|"); // 3
+        writer.Append(string.Format("{0:0.######}", FatorConversao) + "|"); // 3
         if (int.Parse(Versao) > 15)
         {
             writer.Append(CodigoBarras + "|"); //4

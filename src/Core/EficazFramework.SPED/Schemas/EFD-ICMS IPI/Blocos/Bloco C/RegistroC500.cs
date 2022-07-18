@@ -134,7 +134,7 @@ public class RegistroC500 : Primitives.Registro
         if (Conversions.ToInteger(Versao) >= 14)
         {
             ChaveDocE = data[28];
-            FinDocE = (FinalidadeEmissaoDoc)data[29].ToEnum<FinalidadeEmissaoDoc>(FinalidadeEmissaoDoc.Normal);
+            FinDocE = (FinalidadeEmissaoDocE)data[29].ToEnum<FinalidadeEmissaoDocE>(FinalidadeEmissaoDocE.Normal);
             ChaveDocE_Referenciado = data[30];
             DestinatarioIndicador = (IndicadorDestinatario)data[31].ToEnum<IndicadorDestinatario>(null);
             DestinatarioCodMunicipio = data[32];
@@ -181,7 +181,7 @@ public class RegistroC500 : Primitives.Registro
     public GrupoTensao CodigoGrupoTensao { get; set; } = GrupoTensao.A1; // 27
                                                                          // Versão 14
     public string ChaveDocE { get; set; } = null; // 28
-    public FinalidadeEmissaoDoc FinDocE { get; set; } = FinalidadeEmissaoDoc.Normal; // 29
+    public FinalidadeEmissaoDocE FinDocE { get; set; } = FinalidadeEmissaoDocE.Normal; // 29
     public string ChaveDocE_Referenciado { get; set; } = null; // 30
     public IndicadorDestinatario? DestinatarioIndicador { get; set; } = null; //IndicadorDestinatario.ContribuinteICMS; // 31
     public string DestinatarioCodMunicipio { get; set; } = null; // 32
