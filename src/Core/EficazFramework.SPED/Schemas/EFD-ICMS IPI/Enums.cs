@@ -331,7 +331,7 @@ public enum IndicadorTipoTransporte
     Outros = 9
 }
 
-public enum FinalidadeEmissaoDoc
+public enum FinalidadeEmissaoDocE
 {
     Normal = 1,
     Substituicao = 2,
@@ -489,6 +489,25 @@ public enum TipoAssinanteComunincacao
     Outros = 6
 }
 
+public enum TipoFaturaDocE
+{
+    [System.ComponentModel.Description("Faturamento Normal")]
+    Normal = 0,
+    [System.ComponentModel.Description("Faturamento centralizado")]
+    Centralizado = 1,
+    [System.ComponentModel.Description("Cofaturamento")]
+    Cofaturamento = 2
+}
+
+public enum IndicadorPrePago
+{
+    [System.ComponentModel.Description("Pré-Pago")]
+    PrePago = 0,
+    [System.ComponentModel.Description("Pós-Pago")]
+    PosPago = 1
+}
+
+
 #endregion
 
 #region Bloco E
@@ -577,8 +596,26 @@ public enum IndicadorPropriedade
 
 #endregion
 
+#region Bloco I
+
 public enum IndicadorMedicao1350
 {
     Analogico = 0,
     Digital = 1
 }
+
+#endregion
+
+#region Bloco K
+
+public enum IndicadorLayoutBlocoK
+{
+    [System.ComponentModel.Description("Layout simplificado")]
+    Simplificado = 0,
+    [System.ComponentModel.Description("Layout Completo")]
+    Completo = 1,
+    [System.ComponentModel.Description("Layout restrito aos saldos de estoque")]
+    RestritoSaldosEstoque = 2
+}
+
+#endregion
