@@ -499,6 +499,15 @@ public enum TipoFaturaDocE
     Cofaturamento = 2
 }
 
+public enum IndicadorPrePago
+{
+    [System.ComponentModel.Description("Pré-Pago")]
+    PrePago = 0,
+    [System.ComponentModel.Description("Pós-Pago")]
+    PosPago = 1
+}
+
+
 #endregion
 
 #region Bloco E
