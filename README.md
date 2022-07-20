@@ -44,7 +44,7 @@
        - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
    
    
-##Pré-Requisitos
+## Pré-Requisitos
 .NET 6.0, para versão mais recente da biblioteca (pode sofrer alterações sem aviso prévio). Pretende-se acompanhar a versão em produção recente do .NET.
 
    
