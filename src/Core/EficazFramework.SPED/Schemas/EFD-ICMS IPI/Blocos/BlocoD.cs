@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Documentos Fiscais I - Mercadorias (ICMS / IPI)
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class BlocoD : Primitives.Bloco
 {
 

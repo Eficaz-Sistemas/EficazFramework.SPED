@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Outras Informações
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class Bloco1 : Primitives.Bloco
 {
     public Registro1010 Registro1010

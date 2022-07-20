@@ -1,0 +1,13 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf')
+
+## R1000_InfoCadastro_SoftwareHouse Class
+### Properties
+
+| # | Name | |
+| ---: | :--- | :--- |
+| 02 | cnpjSoftHouse |  |
+| 03 | nmRazao |  |
+| 04 | nmCont |  |
+| 05 | telefone |  |
+| 06 | email |  |

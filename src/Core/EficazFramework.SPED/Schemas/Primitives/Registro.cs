@@ -4,7 +4,6 @@ namespace EficazFramework.SPED.Schemas.Primitives;
 public abstract class Registro
 {
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Registro(string linha, string versao)
     {
         if (linha != null)
@@ -30,13 +29,15 @@ public abstract class Registro
         _codigo = codigo;
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private string _codigo;
     private string _versao = "011";
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Código do Registro representado pela instância.
+    /// </summary>
+    /// <example>
+    /// "C100"
+    /// </example>
     public string Codigo
     {
         get
@@ -45,6 +46,9 @@ public abstract class Registro
         }
     }
 
+    /// <summary>
+    /// Versão do layout para correta leitura (desserialização) / escrita (serialização)
+    /// </summary>
     public string Versao
     {
         get
@@ -53,25 +57,28 @@ public abstract class Registro
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     internal void OverrideVersao(string novaVersao)
     {
         _versao = novaVersao;
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Efetua a leitura (desserialização) da linha especificada em <paramref name="data"/>
+    /// </summary>
+    /// <param name="data">Array de string contendo os valores obtidos da linha obtida no stream.</param>
     public abstract void LeParametros(string[] data);
+
+    /// <summary>
+    /// Realiza a escrita (serialização) da instância em uma linha do arquivo.
+    /// </summary>
+    /// <returns></returns>
     public abstract string EscreveLinha();
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Retorna o resultado do método <see cref="EscreveLinha"/>
+    /// </summary>
     public override string ToString()
     {
-        // Return MyBase.ToString()
         return EscreveLinha();
     }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }

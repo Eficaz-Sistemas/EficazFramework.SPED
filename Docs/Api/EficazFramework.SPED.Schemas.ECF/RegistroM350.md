@@ -1,0 +1,24 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.ECF](EficazFramework.SPED.Schemas.ECF.md 'EficazFramework.SPED.Schemas.ECF')
+
+## RegistroM350 Class
+
+Demonstração da Base de Cálculo da CSLL
+
+### Remarks
+### Properties
+
+| # | Name | |
+| ---: | :--- | :--- |
+| 02 | CodigoReferencial |  |
+| 03 | Descricao |  |
+| 04 | TipoConta | A- Adição            E - Exclusão            P - Compensação de Prejuízo            L - Lucro |
+| 05 | IndicadorRelacao | 1 - Com Conta da Parte B            2 - Com Conta Contábil            3 – Com Conta da parte B e Conta Contábil            4 - Sem Relacionamento |
+| 06 | Valor |  |
+| 07 | Historico |  |
+### Methods
+
+| Name | |
+| :--- | :--- |
+| EscreveLinha() |  |
+| LeParametros(string[]) |  |

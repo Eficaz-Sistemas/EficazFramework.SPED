@@ -11,13 +11,18 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Abertura do Arquivo Digital e Identificação da entidade
 /// </summary>
-/// <remarks></remarks>
+/// <remarks>
+/// Nível hierárquico - 0 <br/>
+/// Ocorrência - um por arquivo.
+/// </remarks>
 public class Registro0000 : Registro
 {
+    /// <exclude />
     public Registro0000() : base("0000")
     {
     }
 
+    /// <exclude />
     public Registro0000(string linha, string versao) : base(linha, versao)
     {
     }
@@ -104,20 +109,64 @@ public class Registro0000 : Registro
         Atividade = (TipoAtividade)data[15].ToEnum<TipoAtividade>(TipoAtividade.Outros); // CType(CInt(data(15)), TipoAtividade)
     }
 
+    /// <summary>
+    /// Código da finalidade do arquivo: <br/>
+    /// 0 - Remessa do arquivo original <br/>
+    /// 1 - Remessa do arquivo substituto <br/>
+    /// </summary>
     public Finalidade Finalidade { get; set; } = Finalidade.Original;
+    /// <summary>
+    /// Data inicial das informações contidas no arquivo
+    /// </summary>
     public DateTime? DataInicial { get; set; } = default;
+    /// <summary>
+    /// Data final das informações contidas no arquivo
+    /// </summary>
     public DateTime? DataFinal { get; set; } = default;
+    /// <summary>
+    /// Nome empresarial da entidade
+    /// </summary>
     public string RazaoSocial { get; set; } = null;
+    /// <summary>
+    /// Número de inscrição da entidade no CNPJ
+    /// </summary>
     public string CNPJ { get; set; } = null;
+    /// <summary>
+    /// Número de inscrição da entidade no CPF
+    /// </summary>
     public string CPF { get; set; } = null;
+    /// <summary>
+    /// Sigla da unidade da federação da entidade
+    /// </summary>
     public string UF { get; set; } = null;
-
-    // <CustomValidation(GetType(Registro0000()), "ValidaIE")>
+    /// <summary>
+    /// Inscrição Estadual da entidade
+    /// </summary>
     public string InscricaoEstadual { get; set; } = null;
+    /// <summary>
+    /// Código do município do domicílio fiscal da entidade, conforme a tabela IBGE
+    /// </summary>
     public string MunicipioCodigo { get; set; } = null;
+    /// <summary>
+    /// Inscrição Municipal da entidade
+    /// </summary>
     public string InscricaoMunicipal { get; set; } = null;
+    /// <summary>
+    /// Inscrição da entidade no Suframa
+    /// </summary>
     public string InscricaoSuframa { get; set; } = null;
+    /// <summary>
+    /// Perfil de apresentação do arquivo fiscal:  <br/>
+    /// A – Perfil A <br/>
+    /// B – Perfil B <br/>
+    /// C – Perfil C <br/>
+    /// </summary>
     public Perfil Perfil { get; set; } = Perfil.A;
+    /// <summary>
+    /// Indicador de tipo de atividade: <br/>
+    /// 0 – Industrial ou equiparado a industrial  <br/>
+    /// 1 – Outros  <br/>
+    /// </summary>
     public TipoAtividade Atividade { get; set; } = TipoAtividade.Outros;
 
 

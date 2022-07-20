@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Apuração do ICMS e do IPI
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class BlocoE : Primitives.Bloco
 {
 

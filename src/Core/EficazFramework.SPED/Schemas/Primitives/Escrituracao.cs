@@ -9,11 +9,10 @@ namespace EficazFramework.SPED.Schemas.Primitives;
 public abstract class Escrituracao : INotifyPropertyChanged
 {
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     /// <summary>
     /// Cria uma nova instância de Escrituração Digital
     /// </summary>
-    /// <param name="name"></param>
+    /// <param name="name">Nome da Escrituração a ser implementada</param>
     /// <remarks></remarks>
     public Escrituracao(string name)
     {
@@ -33,14 +32,36 @@ public abstract class Escrituracao : INotifyPropertyChanged
     private string _RegistroTotalizadorStringFormat;
     private System.Text.Encoding _encoding = System.Text.Encoding.UTF8;
 
+    /// <summary>
+    /// Dicionário contendo o par de Chave / Valor de Todos os Blocos da Escrituração Implementada. <br/>
+    /// Permite o acesso aos registros desejados durante etapas de leitura (desserialização) e escrita (serialização).
+    /// </summary>
+    /// <example>
+    /// ```csharp
+    /// escrituracao.Blocos["0"].Registros
+    /// escrituracao.Blocos["C"].Registros
+    /// ```
+    /// </example>
     public Dictionary<string, Bloco> Blocos { get; } = new();
 
+    /// <summary>
+    /// Versão para leitura (desserialização) / escrita (serialização) da escrituração.
+    /// </summary>
     public string Versao { get; set; } = "001";
 
+    /// <summary>
+    /// Progresso em percentual da leitura (desserialização).
+    /// </summary>
     public int Progresso { get; private set; } = 0;
 
+    /// <summary>
+    /// Listagem de regitros que devem ser desconsiderados durante a leitura (desserialização) da escrituração
+    /// </summary>
     public List<string> RegistrosIgnorados { get; } = new List<string>();
 
+    /// <summary>
+    /// Obtém ou define se a instância está em estado de trabalho de leitura (desserialização) / escrita (serialização).
+    /// </summary>
     public bool IsLoading
     {
         get
@@ -55,10 +76,21 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Obtém o registro que está em análise no momento da leitura (desserialização).
+    /// </summary>
     public string RegistroAtual { get; private set; } = null;
 
     internal HeaderPosition HeaderPosition { get; } = new HeaderPosition();
 
+    /// <summary>
+    /// Obtém ou define o código do Bloco Totalizador da Escrituração implementada, para cálculo automatizado dos registros de totalização.
+    /// </summary>
+    /// <example>
+    /// ```csharp
+    /// escrituracao.BlocoTotalizador = "9";
+    /// ```
+    /// </example>
     public string BlocoTotalizador
     {
         get
@@ -73,6 +105,14 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Obtém ou define o código do Registro Totalizador da Escrituração implementada, para cálculo automatizado de totalização.
+    /// </summary>
+    /// <example>
+    /// ```csharp
+    /// escrituracao.RegistroTotalizadorCodigo = "9990";
+    /// ```
+    /// </example>
     public string RegistroTotalizadorCodigo
     {
         get
@@ -87,6 +127,14 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Obtém ou define o formato do registro totalizador da escrituração.
+    /// </summary>
+    /// <example>
+    /// ```csharp
+    /// escrituracao.RegistroTotalizadorStringFormat = $"|{this.RegistroTotalizadorCodigo}|{0}|{1}|";
+    /// ```
+    /// </example>
     public string RegistroTotalizadorStringFormat
     {
         get
@@ -101,6 +149,9 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Obtém ou define a codificação utilizada na escrituração. Por padrão, é UTF8.
+    /// </summary>
     public System.Text.Encoding Encoding
     {
         get
@@ -115,8 +166,10 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Método principal para leitura (desserialização) da escrituração.
+    /// </summary>
+    /// <param name="stream">Origem para leitura dos dados.</param>
     public async Task LeArquivo(System.IO.Stream stream)
     {
         // Try
@@ -169,6 +222,12 @@ public abstract class Escrituracao : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegistroAtual)));
     }
 
+    /// <summary>
+    /// Método principal para escrita (serialização) da escrituração.
+    /// </summary>
+    /// <param name="stream">Stream destino para gravação dos dados.</param>
+    /// <exception cref="ArgumentException">Uma <see cref="ArgumentException"/> pode ser disparada quando a propriedade 
+    /// <see cref="BlocoTotalizador"/> se referir a algum bloco não mapeado na escrituração.</exception>
     public async Task EscreveArquivo(System.IO.Stream stream) // As String
     {
         SetPercent(0);
@@ -236,24 +295,24 @@ public abstract class Escrituracao : INotifyPropertyChanged
         await Task.Delay(1);
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     /// <summary>
-    /// Método executado durante a LEITURA do arquivo digital
+    /// Método executado durante a leitura (desserialização) do arquivo digital. 
+    /// É executado a cada linha.
     /// </summary>
-    /// <param name="linha"></param>
-    /// <remarks></remarks>
-
+    /// <param name="linha">Conteúdo da linha atualmente lida.</param>
     public abstract void ProcessaLinha(string linha);
 
     /// <summary>
     /// Retorna o CNPJ do informante do arquivo.
     /// </summary>
-    /// <param name="stream"></param>
+    /// <param name="stream">Origem para leitura dos dados.</param>
     public abstract Task<string> LeEmpresaArquivo(System.IO.Stream stream);
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Por padrão, este override do método .ToString() irá retornar a representação escrita (serializada) 
+    /// do conteúdo da escrituração por completo.
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         var writer = new System.Text.StringBuilder();
@@ -262,12 +321,8 @@ public abstract class Escrituracao : INotifyPropertyChanged
         return writer.ToString();
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
     public event ContagemRegistroEventHandler ContagemRegistroConcluida;
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
 public class HeaderPosition

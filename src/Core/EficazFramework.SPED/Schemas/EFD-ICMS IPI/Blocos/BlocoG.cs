@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Controle do Crédito de ICMS do Ativo Permanente - CIAP
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class BlocoG : Primitives.Bloco
 {
 

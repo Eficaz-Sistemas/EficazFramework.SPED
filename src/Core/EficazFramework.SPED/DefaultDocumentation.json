@@ -1,0 +1,17 @@
+{
+  "Sections": [
+    "Header",
+    "Default"
+  ],
+  "ClassDocItem": {
+    "Sections": [
+      "Header",
+      "Title",
+      "summary",
+      "remarks",
+      "PropertiesTable",
+      "example"
+    ],
+    "Markdown.TableOfContentsModes": "Grouped,IncludeSummary"
+  }
+}
