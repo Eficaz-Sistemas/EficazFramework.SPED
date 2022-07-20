@@ -4,12 +4,12 @@
 ## eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | serie |  |
-| 03 | nrDocto |  |
-| 04 | dtEmisNF |  |
-| 05 | vlrBruto |  |
-| 06 | vrCPDescPR |  |
-| 07 | vrRatDescPR |  |
-| 08 | vrSenarDesc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | serie | `String` |  |
+| 03 | nrDocto | `String` |  |
+| 04 | dtEmisNF | `DateTime` |  |
+| 05 | vlrBruto | `Decimal` |  |
+| 06 | vrCPDescPR | `Decimal` |  |
+| 07 | vrRatDescPR | `Decimal` |  |
+| 08 | vrSenarDesc | `Decimal` |  |

@@ -6,20 +6,20 @@
 Obrigações do ICMS Recolhido ou a Recolher - Difal
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoObrigacao |  |
-| 03 | ValorObrigacao |  |
-| 04 | DataVencimento |  |
-| 05 | CodigoReceita |  |
-| 06 | NumeroProcessoOuAuto |  |
-| 07 | OrigemProcesso |  |
-| 08 | DescricaoProcesso |  |
-| 09 | TextoComplementar |  |
-| 10 | MesReferencia |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoObrigacao | `String` |  |
+| 03 | ValorObrigacao | `Nullable<Double>` |  |
+| 04 | DataVencimento | `Nullable<DateTime>` |  |
+| 05 | CodigoReceita | `String` |  |
+| 06 | NumeroProcessoOuAuto | `String` |  |
+| 07 | OrigemProcesso | `Nullable<IndicadorOrigemProcesso>` |  |
+| 08 | DescricaoProcesso | `String` |  |
+| 09 | TextoComplementar | `String` |  |
+| 10 | MesReferencia | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

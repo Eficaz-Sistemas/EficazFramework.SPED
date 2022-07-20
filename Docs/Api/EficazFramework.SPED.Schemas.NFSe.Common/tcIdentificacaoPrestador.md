@@ -4,13 +4,13 @@
 ## tcIdentificacaoPrestador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Cnpj |  |
-| 03 | CpfCnpj |  |
-| 04 | InscricaoMunicipal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Cnpj | `String` |  |
+| 03 | CpfCnpj | `tcCpfCnpj` |  |
+| 04 | InscricaoMunicipal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

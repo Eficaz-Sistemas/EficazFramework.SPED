@@ -6,27 +6,27 @@
 Identificação e Remuneração de Sócios, Titulares, Dirigentes e Conselheiros
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataAlteracao |  |
-| 03 | DataSaida |  |
-| 04 | Pais |  |
-| 05 | IndicadorQualificacao | PF = Pessoa Física            PJ = Pessoa Jurídica            FI = FUndo de Investimento |
-| 06 | CNPJ_CPF |  |
-| 07 | Nome |  |
-| 08 | Qualificacao |  |
-| 09 | PercentualCapitalTotal |  |
-| 10 | PercentualCapitalVotante |  |
-| 11 | CPF_ResponsavelLegal |  |
-| 12 | QualificacaoResponsavelLegal | 01 - Procurador            02 - Curador            03 - Mãe            04 - Pai            05 - Tutor            06 - Outro |
-| 13 | ValorRemuneracao |  |
-| 14 | ValorLucrosDividendos |  |
-| 15 | ValorJurosCapitalProprio |  |
-| 16 | ValorDemaisRendimentos |  |
-| 17 | ValorIR_Retido |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataAlteracao | `Nullable<DateTime>` |  |
+| 03 | DataSaida | `Nullable<DateTime>` |  |
+| 04 | Pais | `String` |  |
+| 05 | IndicadorQualificacao | `String` | PF = Pessoa Física            PJ = Pessoa Jurídica            FI = FUndo de Investimento |
+| 06 | CNPJ_CPF | `String` |  |
+| 07 | Nome | `String` |  |
+| 08 | Qualificacao | `String` |  |
+| 09 | PercentualCapitalTotal | `Nullable<Double>` |  |
+| 10 | PercentualCapitalVotante | `Nullable<Double>` |  |
+| 11 | CPF_ResponsavelLegal | `String` |  |
+| 12 | QualificacaoResponsavelLegal | `String` | 01 - Procurador            02 - Curador            03 - Mãe            04 - Pai            05 - Tutor            06 - Outro |
+| 13 | ValorRemuneracao | `Nullable<Double>` |  |
+| 14 | ValorLucrosDividendos | `Nullable<Double>` |  |
+| 15 | ValorJurosCapitalProprio | `Nullable<Double>` |  |
+| 16 | ValorDemaisRendimentos | `Nullable<Double>` |  |
+| 17 | ValorIR_Retido | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

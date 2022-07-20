@@ -4,11 +4,11 @@
 ## TCTeInfCteInfCTeNormInfCteSubTomaNaoICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | refCteAnu |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | refCteAnu | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

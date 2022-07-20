@@ -4,8 +4,8 @@
 ## ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ufVara |  |
-| 03 | codMunic |  |
-| 04 | idVara |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ufVara | `String` |  |
+| 03 | codMunic | `String` |  |
+| 04 | idVara | `String` |  |

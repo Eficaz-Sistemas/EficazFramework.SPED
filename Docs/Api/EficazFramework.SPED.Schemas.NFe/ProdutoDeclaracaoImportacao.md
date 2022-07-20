@@ -4,14 +4,14 @@
 ## ProdutoDeclaracaoImportacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nAdicao |  |
-| 03 | nSeqAdic |  |
-| 04 | cFabricante |  |
-| 05 | vDescDI |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nAdicao | `String` |  |
+| 03 | nSeqAdic | `String` |  |
+| 04 | cFabricante | `String` |  |
+| 05 | vDescDI | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

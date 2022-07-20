@@ -4,8 +4,8 @@
 ## ReinfEvtServPrestInfoServPrestIdeEstabPrest Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscEstabPrest |  |
-| 03 | nrInscEstabPrest |  |
-| 04 | ideTomador |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscEstabPrest | `PersonalidadeJuridica` |  |
+| 03 | nrInscEstabPrest | `String` |  |
+| 04 | ideTomador | `ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador` |  |

@@ -4,20 +4,20 @@
 ## InformacoesCteNormal Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infCarga |  |
-| 03 | infDoc |  |
-| 04 | docAnt |  |
-| 05 | seg |  |
-| 06 | infModal |  |
-| 07 | peri |  |
-| 08 | veicNovos |  |
-| 09 | cobr |  |
-| 10 | infCteSub |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infCarga | `TCTeInfCteInfCTeNormInfCarga` |  |
+| 03 | infDoc | `TCTeInfCteInfCTeNormInfDoc` |  |
+| 04 | docAnt | `ObservableCollection<CTeNormalEmitenteDocumentonterior>` |  |
+| 05 | seg | `ObservableCollection<TCTeInfCteInfCTeNormSeg>` |  |
+| 06 | infModal | `TCTeInfCteInfCTeNormInfModal` |  |
+| 07 | peri | `ObservableCollection<TCTeInfCteInfCTeNormPeri>` |  |
+| 08 | veicNovos | `ObservableCollection<TCTeInfCteInfCTeNormVeicNovos>` |  |
+| 09 | cobr | `TCTeInfCteInfCTeNormCobr` |  |
+| 10 | infCteSub | `TCTeInfCteInfCTeNormInfCteSub` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializedocAnt() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializedocAnt() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

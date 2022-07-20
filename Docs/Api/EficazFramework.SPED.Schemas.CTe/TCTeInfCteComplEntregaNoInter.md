@@ -4,13 +4,13 @@
 ## TCTeInfCteComplEntregaNoInter Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpHor |  |
-| 03 | hIni |  |
-| 04 | hFim |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpHor | `TCTeInfCteComplEntregaNoInterTpHor` |  |
+| 03 | hIni | `String` |  |
+| 04 | hFim | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

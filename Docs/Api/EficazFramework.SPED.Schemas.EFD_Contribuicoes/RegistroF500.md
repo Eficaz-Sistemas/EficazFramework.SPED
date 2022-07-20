@@ -8,26 +8,26 @@ Consolidação das operações da pessoa jurídica submetida ao regime de tribut
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalRecRecebCSTAliquota |  |
-| 03 | CSTPis |  |
-| 04 | VrDescontoBcPis |  |
-| 05 | VrBcPis |  |
-| 06 | AliqPis |  |
-| 07 | VrPis |  |
-| 08 | CSTCofins |  |
-| 09 | VrDescontoBcCofins |  |
-| 10 | VrBcCofins |  |
-| 11 | AliqCofins |  |
-| 12 | VrCofins |  |
-| 13 | CodigoModeloDocFiscal |  |
-| 14 | CFOP |  |
-| 15 | CodigoContaContabil |  |
-| 16 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalRecRecebCSTAliquota | `Nullable<Double>` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | VrDescontoBcPis | `Nullable<Double>` |  |
+| 05 | VrBcPis | `Nullable<Double>` |  |
+| 06 | AliqPis | `Nullable<Double>` |  |
+| 07 | VrPis | `Nullable<Double>` |  |
+| 08 | CSTCofins | `String` |  |
+| 09 | VrDescontoBcCofins | `Nullable<Double>` |  |
+| 10 | VrBcCofins | `Nullable<Double>` |  |
+| 11 | AliqCofins | `Nullable<Double>` |  |
+| 12 | VrCofins | `Nullable<Double>` |  |
+| 13 | CodigoModeloDocFiscal | `String` |  |
+| 14 | CFOP | `String` |  |
+| 15 | CodigoContaContabil | `String` |  |
+| 16 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

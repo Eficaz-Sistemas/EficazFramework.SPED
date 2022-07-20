@@ -6,23 +6,23 @@
 Detalhamento de Créditos Recebidos no Campo 66
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | DataFinal |  |
-| 04 | DataInicial |  |
-| 05 | ProdutorRural | Informar SEMPRE "N" a partir da versao 8.02.00 |
-| 06 | UF_Remetente |  |
-| 07 | IE_Rementete |  |
-| 08 | NotaFiscal_Numero |  |
-| 09 | NotaFiscal_Serie |  |
-| 10 | NotaFiscal_Data |  |
-| 11 | NotaFiscal_DataVisto |  |
-| 12 | ValorDeclarado |  |
-| 13 | Motivo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | DataInicial | `Nullable<DateTime>` |  |
+| 05 | ProdutorRural | `String` | Informar SEMPRE "N" a partir da versao 8.02.00 |
+| 06 | UF_Remetente | `String` |  |
+| 07 | IE_Rementete | `String` |  |
+| 08 | NotaFiscal_Numero | `String` |  |
+| 09 | NotaFiscal_Serie | `String` |  |
+| 10 | NotaFiscal_Data | `Nullable<DateTime>` |  |
+| 11 | NotaFiscal_DataVisto | `Nullable<DateTime>` |  |
+| 12 | ValorDeclarado | `Nullable<Double>` |  |
+| 13 | Motivo | `Int16` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

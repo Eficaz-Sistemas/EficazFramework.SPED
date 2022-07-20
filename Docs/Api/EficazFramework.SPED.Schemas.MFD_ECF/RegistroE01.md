@@ -8,27 +8,27 @@ Identificação do ECF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroFabricacaoECF |  |
-| 03 | MFAdicional |  |
-| 04 | TipoECF |  |
-| 05 | Marca |  |
-| 06 | Modelo |  |
-| 07 | VersaoSoftwareBasico |  |
-| 08 | DataSoftwareBasico |  |
-| 09 | HoraSoftwareBasico |  |
-| 10 | NumeroSequencialECF |  |
-| 11 | CNPJ |  |
-| 12 | ComandoGeracao |  |
-| 13 | CRZ_Inicial |  |
-| 14 | CRZ_Final |  |
-| 15 | DataInicial |  |
-| 16 | DataFInal |  |
-| 17 | VersaoDLL |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroFabricacaoECF | `String` |  |
+| 03 | MFAdicional | `String` |  |
+| 04 | TipoECF | `String` |  |
+| 05 | Marca | `String` |  |
+| 06 | Modelo | `String` |  |
+| 07 | VersaoSoftwareBasico | `String` |  |
+| 08 | DataSoftwareBasico | `Nullable<DateTime>` |  |
+| 09 | HoraSoftwareBasico | `Nullable<TimeSpan>` |  |
+| 10 | NumeroSequencialECF | `Nullable<Int32>` |  |
+| 11 | CNPJ | `String` |  |
+| 12 | ComandoGeracao | `String` |  |
+| 13 | CRZ_Inicial | `Nullable<Int32>` |  |
+| 14 | CRZ_Final | `Nullable<Int32>` |  |
+| 15 | DataInicial | `Nullable<DateTime>` |  |
+| 16 | DataFInal | `Nullable<DateTime>` |  |
+| 17 | VersaoDLL | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

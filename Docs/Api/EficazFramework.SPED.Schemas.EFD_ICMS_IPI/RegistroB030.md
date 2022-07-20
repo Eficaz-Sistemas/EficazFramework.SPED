@@ -8,22 +8,22 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocFiscal |  |
-| 03 | SerieDocFiscal |  |
-| 04 | NumeroDocInicialDia |  |
-| 05 | NumeroDocFinalDia |  |
-| 06 | DataEmissaoDocFiscal |  |
-| 07 | QuantDocCanc |  |
-| 08 | ValorContabilTotalDocs |  |
-| 09 | ValorAcumOpIsentasNTribISS |  |
-| 10 | ValorAcumBCISS |  |
-| 11 | ValorISSDestacado |  |
-| 12 | CodigoObsLctoFiscal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocFiscal | `String` |  |
+| 03 | SerieDocFiscal | `String` |  |
+| 04 | NumeroDocInicialDia | `Nullable<Int32>` |  |
+| 05 | NumeroDocFinalDia | `Nullable<Int32>` |  |
+| 06 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| 07 | QuantDocCanc | `Nullable<Int32>` |  |
+| 08 | ValorContabilTotalDocs | `Nullable<Double>` |  |
+| 09 | ValorAcumOpIsentasNTribISS | `Nullable<Double>` |  |
+| 10 | ValorAcumBCISS | `Nullable<Double>` |  |
+| 11 | ValorISSDestacado | `Nullable<Double>` |  |
+| 12 | CodigoObsLctoFiscal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

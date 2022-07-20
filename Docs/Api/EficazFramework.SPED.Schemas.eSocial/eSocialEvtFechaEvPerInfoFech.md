@@ -4,12 +4,12 @@
 ## eSocialEvtFechaEvPerInfoFech Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | evtRemun |  |
-| 03 | evtPgtos |  |
-| 04 | evtAqProd |  |
-| 05 | evtComProd |  |
-| 06 | evtContratAvNP |  |
-| 07 | evtInfoComplPer |  |
-| 08 | compSemMovto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | evtRemun | `SimNaoString` |  |
+| 03 | evtPgtos | `SimNaoString` |  |
+| 04 | evtAqProd | `SimNaoString` |  |
+| 05 | evtComProd | `SimNaoString` |  |
+| 06 | evtContratAvNP | `SimNaoString` |  |
+| 07 | evtInfoComplPer | `SimNaoString` |  |
+| 08 | compSemMovto | `String` |  |

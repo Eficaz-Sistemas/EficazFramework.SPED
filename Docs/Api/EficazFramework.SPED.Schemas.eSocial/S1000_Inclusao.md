@@ -4,7 +4,7 @@
 ## S1000_Inclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | idePeriodo |  |
-| 03 | infoCadastro |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | idePeriodo | `TIdePeriodo` |  |
+| 03 | infoCadastro | `TInfoEmpregador` |  |

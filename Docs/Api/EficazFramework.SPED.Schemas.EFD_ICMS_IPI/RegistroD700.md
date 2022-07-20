@@ -8,42 +8,42 @@ Nota Fiscal Fatura Eletrônica de Serviços de Comunicação – NFCom(Código 6
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Operacao |  |
-| 03 | Emissao |  |
-| 04 | CodigoParticipante |  |
-| 05 | EspecieDocumento |  |
-| 06 | SituacaoDocumento |  |
-| 07 | Serie |  |
-| 08 | Numero |  |
-| 09 | DataEmissao |  |
-| 10 | DataPrestacaoAquisicao |  |
-| 11 | ValorTotalDocumento |  |
-| 12 | ValorDesconto |  |
-| 13 | ValorServicos |  |
-| 14 | ValorServicosICMSNaoTributato |  |
-| 15 | ValorCobradoTerceiros |  |
-| 16 | ValorDespesasAcessorias |  |
-| 17 | ValorBaseCalculoICMS |  |
-| 18 | ValorICMS |  |
-| 19 | CodigoInformacaoComplementar0450 |  |
-| 20 | ValorPIS |  |
-| 21 | ValorCofins |  |
-| 22 | ChaveDocEletronico |  |
-| 23 | FinalidadeEmissao |  |
-| 24 | TipoFaturamento |  |
-| 25 | EspecieDocReferenciado |  |
-| 26 | ChaveDocReferenciado |  |
-| 27 | HashDocReferenciado |  |
-| 28 | SerieDocReferenciado |  |
-| 29 | NumeroDocReferenciado |  |
-| 30 | CompetenciaDocReferenciado | Mês e Ano do Documento Fiscal Referenciado |
-| 31 | CodigoIbgeDestinatario |  |
-| 32 | RegistrosD730 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Operacao | `IndicadorOperacao` |  |
+| 03 | Emissao | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | EspecieDocumento | `String` |  |
+| 06 | SituacaoDocumento | `SituacaoDocumento` |  |
+| 07 | Serie | `String` |  |
+| 08 | Numero | `Nullable<Int32>` |  |
+| 09 | DataEmissao | `Nullable<DateTime>` |  |
+| 10 | DataPrestacaoAquisicao | `Nullable<DateTime>` |  |
+| 11 | ValorTotalDocumento | `Nullable<Double>` |  |
+| 12 | ValorDesconto | `Nullable<Double>` |  |
+| 13 | ValorServicos | `Nullable<Double>` |  |
+| 14 | ValorServicosICMSNaoTributato | `Nullable<Double>` |  |
+| 15 | ValorCobradoTerceiros | `Nullable<Double>` |  |
+| 16 | ValorDespesasAcessorias | `Nullable<Double>` |  |
+| 17 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| 18 | ValorICMS | `Nullable<Double>` |  |
+| 19 | CodigoInformacaoComplementar0450 | `String` |  |
+| 20 | ValorPIS | `Nullable<Double>` |  |
+| 21 | ValorCofins | `Nullable<Double>` |  |
+| 22 | ChaveDocEletronico | `String` |  |
+| 23 | FinalidadeEmissao | `FinalidadeEmissaoDocE` |  |
+| 24 | TipoFaturamento | `TipoFaturaDocE` |  |
+| 25 | EspecieDocReferenciado | `String` |  |
+| 26 | ChaveDocReferenciado | `String` |  |
+| 27 | HashDocReferenciado | `String` |  |
+| 28 | SerieDocReferenciado | `String` |  |
+| 29 | NumeroDocReferenciado | `Nullable<Int32>` |  |
+| 30 | CompetenciaDocReferenciado | `Nullable<DateTime>` | Mês e Ano do Documento Fiscal Referenciado |
+| 31 | CodigoIbgeDestinatario | `String` |  |
+| 32 | RegistrosD730 | `List<RegistroD730>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,14 +4,14 @@
 ## SignatureType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | SignedInfo |  |
-| 03 | SignatureValue |  |
-| 04 | KeyInfo |  |
-| 05 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | SignedInfo | `SignedInfoType` |  |
+| 03 | SignatureValue | `SignatureValueType` |  |
+| 04 | KeyInfo | `KeyInfoType` |  |
+| 05 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

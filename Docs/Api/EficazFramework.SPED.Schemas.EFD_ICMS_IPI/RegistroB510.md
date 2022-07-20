@@ -8,16 +8,16 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorHabilitacao |  |
-| 03 | IndicadorEscolaridade |  |
-| 04 | IndicadorParticipacaoSocietaria |  |
-| 05 | NumeroCPFProfissional |  |
-| 06 | NomeProfissional |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorHabilitacao | `IndicadorHabilitacao` |  |
+| 03 | IndicadorEscolaridade | `IndicadorEscolaridade` |  |
+| 04 | IndicadorParticipacaoSocietaria | `IndicadorParticipacaoSocietaria` |  |
+| 05 | NumeroCPFProfissional | `String` |  |
+| 06 | NomeProfissional | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

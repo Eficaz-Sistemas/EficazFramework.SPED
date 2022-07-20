@@ -8,17 +8,17 @@ Complemento da Consolidação Diária
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CstPis |  |
-| 03 | VrTotaItens |  |
-| 04 | VrBaseCalculoPis |  |
-| 05 | AliquotaPis |  |
-| 06 | VrPis |  |
-| 07 | CodContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CstPis | `String` |  |
+| 03 | VrTotaItens | `Nullable<Double>` |  |
+| 04 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 05 | AliquotaPis | `Nullable<Double>` |  |
+| 06 | VrPis | `Nullable<Double>` |  |
+| 07 | CodContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

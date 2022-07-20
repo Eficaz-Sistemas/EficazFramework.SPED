@@ -6,9 +6,9 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CRRecEspetDesp |  |
-| 03 | vlrReceitaTotal |  |
-| 04 | vlrCRRecEspetDesp |  |
-| 05 | vlrCRRecEspetDespSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CRRecEspetDesp | `String` |  |
+| 03 | vlrReceitaTotal | `String` |  |
+| 04 | vlrCRRecEspetDesp | `String` |  |
+| 05 | vlrCRRecEspetDespSusp | `String` |  |

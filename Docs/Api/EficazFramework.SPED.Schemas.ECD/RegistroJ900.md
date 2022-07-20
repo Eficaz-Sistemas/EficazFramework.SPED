@@ -8,17 +8,17 @@ Termo de Encerramento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroOrdemLivro |  |
-| 03 | NaturezaLivro |  |
-| 04 | NomeEmpresarial |  |
-| 05 | QtdeLinhasArquivoTotal |  |
-| 06 | DataInicioEscrituracao |  |
-| 07 | DataTerminoEscrituracao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroOrdemLivro | `String` |  |
+| 03 | NaturezaLivro | `String` |  |
+| 04 | NomeEmpresarial | `String` |  |
+| 05 | QtdeLinhasArquivoTotal | `Nullable<Int64>` |  |
+| 06 | DataInicioEscrituracao | `Nullable<DateTime>` |  |
+| 07 | DataTerminoEscrituracao | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

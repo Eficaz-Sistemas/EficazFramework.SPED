@@ -6,15 +6,15 @@
 Período da Apuração do ICMS ST
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | UF |  |
-| 03 | DataInicial |  |
-| 04 | DataFinal |  |
-| 05 | RegistroE210 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | UF | `String` |  |
+| 03 | DataInicial | `Nullable<DateTime>` |  |
+| 04 | DataFinal | `Nullable<DateTime>` |  |
+| 05 | RegistroE210 | `RegistroE210` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

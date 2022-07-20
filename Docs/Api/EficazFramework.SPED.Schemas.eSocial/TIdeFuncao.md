@@ -4,8 +4,8 @@
 ## TIdeFuncao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codFuncao |  |
-| 03 | iniValid |  |
-| 04 | fimValid |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codFuncao | `String` |  |
+| 03 | iniValid | `String` |  |
+| 04 | fimValid | `String` |  |

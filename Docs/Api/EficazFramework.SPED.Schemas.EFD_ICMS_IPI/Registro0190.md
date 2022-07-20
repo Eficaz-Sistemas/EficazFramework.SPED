@@ -8,13 +8,13 @@ Identificação das Unidades de Medida
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Unidade |  |
-| 03 | Descricao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Unidade | `String` |  |
+| 03 | Descricao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

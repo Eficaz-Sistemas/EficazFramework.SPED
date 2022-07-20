@@ -8,17 +8,17 @@ Informações da Base de Cálculo dos Incentivos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | BaseCalculoIncentivosFiscais |  |
-| 03 | PercentualIncentivoFINOR |  |
-| 04 | ValorLiquidoFINOR |  |
-| 05 | PercentualFINAM |  |
-| 06 | ValorLiquidoFINAM |  |
-| 07 | TotalIncentivos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | BaseCalculoIncentivosFiscais | `Nullable<Double>` |  |
+| 03 | PercentualIncentivoFINOR | `Nullable<Double>` |  |
+| 04 | ValorLiquidoFINOR | `Double` |  |
+| 05 | PercentualFINAM | `Nullable<Double>` |  |
+| 06 | ValorLiquidoFINAM | `Nullable<Double>` |  |
+| 07 | TotalIncentivos | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,16 +8,16 @@ Campos Adicionais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoRegistroRecepCampoAdicional |  |
-| 03 | NumSeqCampoAdicional |  |
-| 04 | NomeCampoAdicional |  |
-| 05 | DescricaoCampoAdicional |  |
-| 06 | IndicacaoTipoData |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoRegistroRecepCampoAdicional | `String` |  |
+| 03 | NumSeqCampoAdicional | `Nullable<Int16>` |  |
+| 04 | NomeCampoAdicional | `String` |  |
+| 05 | DescricaoCampoAdicional | `String` |  |
+| 06 | IndicacaoTipoData | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

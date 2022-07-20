@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Any |  |
-| 03 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Any | `XElement` |  |
+| 03 | id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Result() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Result() | `TotalEventos` |  |

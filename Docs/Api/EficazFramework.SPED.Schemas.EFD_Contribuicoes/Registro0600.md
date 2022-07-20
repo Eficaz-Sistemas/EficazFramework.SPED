@@ -8,14 +8,14 @@ Centro de Custos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInclusaoAlteracao |  |
-| 03 | CodigoCentroCusto |  |
-| 04 | NomeCentroCusto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| 03 | CodigoCentroCusto | `String` |  |
+| 04 | NomeCentroCusto | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

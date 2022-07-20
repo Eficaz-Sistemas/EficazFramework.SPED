@@ -4,22 +4,22 @@
 ## rodoVeic Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cInt |  |
-| 03 | RENAVAM |  |
-| 04 | placa |  |
-| 05 | tara |  |
-| 06 | capKG |  |
-| 07 | capM3 |  |
-| 08 | tpProp |  |
-| 09 | tpVeic |  |
-| 10 | tpRod |  |
-| 11 | tpCar |  |
-| 12 | UF |  |
-| 13 | prop |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cInt | `String` |  |
+| 03 | RENAVAM | `String` |  |
+| 04 | placa | `String` |  |
+| 05 | tara | `String` |  |
+| 06 | capKG | `String` |  |
+| 07 | capM3 | `String` |  |
+| 08 | tpProp | `rodoVeicTpProp` |  |
+| 09 | tpVeic | `rodoVeicTpVeic` |  |
+| 10 | tpRod | `rodoVeicTpRod` |  |
+| 11 | tpCar | `rodoVeicTpCar` |  |
+| 12 | UF | `Estado` |  |
+| 13 | prop | `rodoVeicProp` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

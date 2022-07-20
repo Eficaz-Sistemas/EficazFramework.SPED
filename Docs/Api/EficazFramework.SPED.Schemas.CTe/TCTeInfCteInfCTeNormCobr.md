@@ -4,12 +4,12 @@
 ## TCTeInfCteInfCTeNormCobr Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | fat |  |
-| 03 | dup |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | fat | `TCTeInfCteInfCTeNormCobrFat` |  |
+| 03 | dup | `ObservableCollection<TCTeInfCteInfCTeNormCobrDup>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

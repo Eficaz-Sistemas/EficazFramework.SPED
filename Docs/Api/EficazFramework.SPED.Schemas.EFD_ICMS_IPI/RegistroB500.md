@@ -8,14 +8,14 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrMensalReceitasSocUniprofissional |  |
-| 03 | QuantProfissionaisHabilitados |  |
-| 04 | VrISSDevido |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrMensalReceitasSocUniprofissional | `Nullable<Double>` |  |
+| 03 | QuantProfissionaisHabilitados | `Nullable<Int32>` |  |
+| 04 | VrISSDevido | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

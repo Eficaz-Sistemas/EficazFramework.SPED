@@ -8,12 +8,12 @@ Assinatura Digital dos Arquivos que Contêm as Fichas de Lançamento Utilizadas 
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | HashFichasLanctos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | HashFichasLanctos | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

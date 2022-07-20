@@ -4,31 +4,31 @@
 ## RetornoConsultaSituacaoCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | verAplic |  |
-| 04 | RetornoCodigo |  |
-| 05 | RetornoDescricao |  |
-| 06 | UF |  |
-| 07 | Item |  |
-| 08 | procEventoCTe |  |
-| 09 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | verAplic | `String` |  |
+| 04 | RetornoCodigo | `String` |  |
+| 05 | RetornoDescricao | `String` |  |
+| 06 | UF | `OrgaoIBGE` |  |
+| 07 | Item | `Object` |  |
+| 08 | procEventoCTe | `ObservableCollection<ProcessoEvento>` |  |
+| 09 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, RetornoConsultaSituacaoCTe, Exception) | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, RetornoConsultaSituacaoCTe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveTo(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, RetornoConsultaSituacaoCTe, Exception) | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, RetornoConsultaSituacaoCTe) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
+| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
+| CanDeserialize(string, RetornoConsultaSituacaoCTe, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
+| CanDeserialize(string, RetornoConsultaSituacaoCTe) | `Boolean` |  |
+| Deserialize(string) | `RetornoConsultaSituacaoCTe` |  |
+| Deserialize(Stream) | `RetornoConsultaSituacaoCTe` |  |
+| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, RetornoConsultaSituacaoCTe, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
+| CanLoadFrom(Stream, RetornoConsultaSituacaoCTe) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `RetornoConsultaSituacaoCTe` |  |
+| LoadFromAsync(Stream, bool) | `Task<RetornoConsultaSituacaoCTe>` |  |

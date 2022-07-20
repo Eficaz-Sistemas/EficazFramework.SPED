@@ -4,24 +4,24 @@
 ## Registro61 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | Data |  |
-| 04 | Modelo |  |
-| 05 | Serie |  |
-| 06 | SubSerie |  |
-| 07 | NumeroInicial |  |
-| 08 | NumeroFinal |  |
-| 09 | ValorTotal |  |
-| 10 | BaseCalculo |  |
-| 11 | ICMS |  |
-| 12 | Isentas |  |
-| 13 | Outras |  |
-| 14 | Aliquota |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | Data | `Nullable<DateTime>` |  |
+| 04 | Modelo | `String` |  |
+| 05 | Serie | `String` |  |
+| 06 | SubSerie | `String` |  |
+| 07 | NumeroInicial | `String` |  |
+| 08 | NumeroFinal | `String` |  |
+| 09 | ValorTotal | `Nullable<Double>` |  |
+| 10 | BaseCalculo | `Nullable<Double>` |  |
+| 11 | ICMS | `Nullable<Double>` |  |
+| 12 | Isentas | `Nullable<Double>` |  |
+| 13 | Outras | `Nullable<Double>` |  |
+| 14 | Aliquota | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

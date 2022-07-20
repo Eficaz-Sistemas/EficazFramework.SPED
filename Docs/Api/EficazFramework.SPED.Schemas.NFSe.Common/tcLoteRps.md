@@ -4,28 +4,28 @@
 ## tcLoteRps Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroLote |  |
-| 03 | Cnpj |  |
-| 04 | InscricaoMunicipal |  |
-| 05 | QuantidadeRps |  |
-| 06 | ListaRps |  |
-| 07 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroLote | `String` |  |
+| 03 | Cnpj | `String` |  |
+| 04 | InscricaoMunicipal | `String` |  |
+| 05 | QuantidadeRps | `Int32` |  |
+| 06 | ListaRps | `List<tcRps>` |  |
+| 07 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcLoteRps, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcLoteRps) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcLoteRps, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcLoteRps) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcLoteRps, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcLoteRps) | `Boolean` |  |
+| Deserialize(string) | `tcLoteRps` |  |
+| Deserialize(Stream) | `tcLoteRps` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcLoteRps, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcLoteRps) | `Boolean` |  |
+| LoadFrom(Stream) | `tcLoteRps` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcLoteRps>` |  |

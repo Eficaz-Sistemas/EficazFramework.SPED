@@ -8,18 +8,18 @@ Complemento da operação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CstCofins |  |
-| 03 | VrTotalItens |  |
-| 04 | NatBaseCalculo |  |
-| 05 | VrBaseCalculoCofins |  |
-| 06 | AliquotaCofins |  |
-| 07 | VrCofins |  |
-| 08 | CodContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CstCofins | `String` |  |
+| 03 | VrTotalItens | `Nullable<Double>` |  |
+| 04 | NatBaseCalculo | `String` |  |
+| 05 | VrBaseCalculoCofins | `Double` |  |
+| 06 | AliquotaCofins | `Nullable<Double>` |  |
+| 07 | VrCofins | `Nullable<Double>` |  |
+| 08 | CodContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

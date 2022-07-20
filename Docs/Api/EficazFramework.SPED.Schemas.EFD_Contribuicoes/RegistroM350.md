@@ -8,16 +8,16 @@ Pis Folha de Salários
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalFolhaSalarios |  |
-| 03 | VrTotalExclusoesBC |  |
-| 04 | VrTotalBC |  |
-| 05 | AliqPisFolhaSalarios |  |
-| 06 | VrTotalContribFolhaSalarios |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalFolhaSalarios | `Nullable<Double>` |  |
+| 03 | VrTotalExclusoesBC | `Nullable<Double>` |  |
+| 04 | VrTotalBC | `Nullable<Double>` |  |
+| 05 | AliqPisFolhaSalarios | `Nullable<Double>` |  |
+| 06 | VrTotalContribFolhaSalarios | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

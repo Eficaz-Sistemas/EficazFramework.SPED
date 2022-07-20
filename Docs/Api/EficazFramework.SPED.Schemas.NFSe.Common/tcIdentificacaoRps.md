@@ -4,13 +4,13 @@
 ## tcIdentificacaoRps Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | Serie |  |
-| 04 | Tipo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | Serie | `String` |  |
+| 04 | Tipo | `Int32` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

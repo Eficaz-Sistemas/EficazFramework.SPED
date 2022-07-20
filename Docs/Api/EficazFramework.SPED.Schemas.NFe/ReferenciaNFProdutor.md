@@ -4,18 +4,18 @@
 ## ReferenciaNFProdutor Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoUF |  |
-| 03 | EmissaoAAMM |  |
-| 04 | CNPJ_CPF |  |
-| 05 | ProdutorPersonalidadeJuridica |  |
-| 06 | InscricaoEstadual |  |
-| 07 | Modelo |  |
-| 08 | Serie |  |
-| 09 | Numero |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoUF | `OrgaoIBGE` |  |
+| 03 | EmissaoAAMM | `String` |  |
+| 04 | CNPJ_CPF | `String` |  |
+| 05 | ProdutorPersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| 06 | InscricaoEstadual | `String` |  |
+| 07 | Modelo | `ModeloNFProdutor` |  |
+| 08 | Serie | `String` |  |
+| 09 | Numero | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

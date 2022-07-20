@@ -4,23 +4,23 @@
 ## Endereco Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Logradouro |  |
-| 03 | Numero |  |
-| 04 | Complemento |  |
-| 05 | Bairro |  |
-| 06 | MunicipioCodigo |  |
-| 07 | MunicipioNome |  |
-| 08 | UF |  |
-| 09 | CEP |  |
-| 10 | CEPFormatado |  |
-| 11 | PaisCodigo |  |
-| 12 | PaisNome |  |
-| 13 | Fone |  |
-| 14 | FoneFormatado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Logradouro | `String` |  |
+| 03 | Numero | `String` |  |
+| 04 | Complemento | `String` |  |
+| 05 | Bairro | `String` |  |
+| 06 | MunicipioCodigo | `String` |  |
+| 07 | MunicipioNome | `String` |  |
+| 08 | UF | `Estado` |  |
+| 09 | CEP | `String` |  |
+| 10 | CEPFormatado | `String` |  |
+| 11 | PaisCodigo | `String` |  |
+| 12 | PaisNome | `String` |  |
+| 13 | Fone | `String` |  |
+| 14 | FoneFormatado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

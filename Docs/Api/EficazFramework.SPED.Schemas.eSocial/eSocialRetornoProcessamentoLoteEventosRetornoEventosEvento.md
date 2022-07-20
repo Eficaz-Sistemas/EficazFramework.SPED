@@ -4,15 +4,15 @@
 ## eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | retornoEvento |  |
-| 03 | tot |  |
-| 04 | Id |  |
-| 05 | evtDupl |  |
-| 06 | evtDuplSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | retornoEvento | `XElement` |  |
+| 03 | tot | `eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot[]` |  |
+| 04 | Id | `String` |  |
+| 05 | evtDupl | `Boolean` |  |
+| 06 | evtDuplSpecified | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Result() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Result() | `eSocialRetornoEvento` |  |

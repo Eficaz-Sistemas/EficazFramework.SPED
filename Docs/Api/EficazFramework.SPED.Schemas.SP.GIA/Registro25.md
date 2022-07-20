@@ -6,13 +6,13 @@
 IE's
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

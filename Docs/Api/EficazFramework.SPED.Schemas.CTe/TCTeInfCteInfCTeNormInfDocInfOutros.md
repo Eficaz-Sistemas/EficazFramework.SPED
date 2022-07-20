@@ -4,18 +4,18 @@
 ## TCTeInfCteInfCTeNormInfDocInfOutros Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpDoc |  |
-| 03 | descOutros |  |
-| 04 | nDoc |  |
-| 05 | dEmi |  |
-| 06 | vDocFisc |  |
-| 07 | dPrev |  |
-| 08 | Items |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpDoc | `TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc` |  |
+| 03 | descOutros | `String` |  |
+| 04 | nDoc | `String` |  |
+| 05 | dEmi | `String` |  |
+| 06 | vDocFisc | `String` |  |
+| 07 | dPrev | `String` |  |
+| 08 | Items | `ObservableCollection<Object>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

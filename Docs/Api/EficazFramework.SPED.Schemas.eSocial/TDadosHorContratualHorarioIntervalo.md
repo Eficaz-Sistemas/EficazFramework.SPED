@@ -4,9 +4,9 @@
 ## TDadosHorContratualHorarioIntervalo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInterv |  |
-| 03 | durInterv |  |
-| 04 | iniInterv |  |
-| 05 | termInterv |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInterv | `Int32` |  |
+| 03 | durInterv | `String` |  |
+| 04 | iniInterv | `String` |  |
+| 05 | termInterv | `String` |  |

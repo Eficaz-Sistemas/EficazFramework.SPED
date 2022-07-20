@@ -4,13 +4,13 @@
 ## Totais Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ICMS |  |
-| 03 | ISSQN |  |
-| 04 | Retencoes |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ICMS | `TotalICMS` |  |
+| 03 | ISSQN | `TotalISSQN` |  |
+| 04 | Retencoes | `TotalRetencaoTributos` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,11 +4,11 @@
 ## eSocialRetornoProcessamentoLoteEventos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEmpregador |  |
-| 03 | ideTransmissor |  |
-| 04 | status |  |
-| 05 | dadosRecepcaoLote |  |
-| 06 | dadosProcessamentoLote |  |
-| 07 | retornoEventos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEmpregador | `TEmpregador` |  |
+| 03 | ideTransmissor | `TIdeTransmissor` |  |
+| 04 | status | `TStatusConsulta` |  |
+| 05 | dadosRecepcaoLote | `TDadosRecepcao` |  |
+| 06 | dadosProcessamentoLote | `TDadosProcessamento` |  |
+| 07 | retornoEventos | `eSocialRetornoProcessamentoLoteEventosRetornoEventos` |  |

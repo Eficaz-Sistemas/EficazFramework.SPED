@@ -8,17 +8,17 @@ Cadastro das Contas Bancárias do Produtor Rural
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaBanco |  |
-| 03 | Pais |  |
-| 04 | NumeroInstBancaria |  |
-| 05 | Nome |  |
-| 06 | Agencia |  |
-| 07 | NumeroCC |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaBanco | `Nullable<Int32>` |  |
+| 03 | Pais | `String` |  |
+| 04 | NumeroInstBancaria | `String` |  |
+| 05 | Nome | `String` |  |
+| 06 | Agencia | `String` |  |
+| 07 | NumeroCC | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

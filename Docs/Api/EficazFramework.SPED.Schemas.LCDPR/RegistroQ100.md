@@ -8,23 +8,23 @@ Demonstração da Atividade Rural
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataMov |  |
-| 03 | CodImovel |  |
-| 04 | CodigoContaBanco |  |
-| 05 | NumeroDoc |  |
-| 06 | TipoDocumento |  |
-| 07 | Historico |  |
-| 08 | TerceiroID | CPF ou CNPJ do Terceiro. Caso TipoDocumento = FolhaPagto utilizar o CPF do próprio declarante. |
-| 09 | TipoLancamento |  |
-| 10 | ValorEntrada |  |
-| 11 | ValorSaida |  |
-| 12 | SaldoFinal |  |
-| 13 | SaldoFinal_Natureza | [N/P] |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataMov | `Nullable<DateTime>` |  |
+| 03 | CodImovel | `Nullable<Int32>` |  |
+| 04 | CodigoContaBanco | `String` |  |
+| 05 | NumeroDoc | `String` |  |
+| 06 | TipoDocumento | `TipoDocumento` |  |
+| 07 | Historico | `String` |  |
+| 08 | TerceiroID | `String` | CPF ou CNPJ do Terceiro. Caso TipoDocumento = FolhaPagto utilizar o CPF do próprio declarante. |
+| 09 | TipoLancamento | `TipoLancamento` |  |
+| 10 | ValorEntrada | `Nullable<Double>` |  |
+| 11 | ValorSaida | `Nullable<Double>` |  |
+| 12 | SaldoFinal | `Nullable<Double>` |  |
+| 13 | SaldoFinal_Natureza | `String` | [N/P] |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

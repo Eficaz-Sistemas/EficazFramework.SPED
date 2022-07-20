@@ -4,9 +4,9 @@
 ## TRne Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRne |  |
-| 03 | orgaoEmissor |  |
-| 04 | dtExped |  |
-| 05 | dtExpedSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRne | `String` |  |
+| 03 | orgaoEmissor | `String` |  |
+| 04 | dtExped | `DateTime` |  |
+| 05 | dtExpedSpecified | `Boolean` |  |

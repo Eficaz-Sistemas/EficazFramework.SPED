@@ -4,15 +4,15 @@
 ## tcDadosPrestador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoPrestador |  |
-| 03 | RazaoSocial |  |
-| 04 | NomeFantasia |  |
-| 05 | Endereco |  |
-| 06 | Contato |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoPrestador | `tcIdentificacaoPrestador` |  |
+| 03 | RazaoSocial | `String` |  |
+| 04 | NomeFantasia | `String` |  |
+| 05 | Endereco | `tcEndereco` |  |
+| 06 | Contato | `tcContato` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

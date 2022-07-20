@@ -8,24 +8,24 @@ Balanço Patrimonial
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoReferencial |  |
-| 03 | Descricao |  |
-| 04 | TipoConta | S - Sintética            A - Analitica |
-| 05 | Nivel |  |
-| 06 | Natureza |  |
-| 07 | ContaSuperior |  |
-| 08 | SaldoInicial |  |
-| 09 | NaturezaSaldoInicial | D - Devedor            C - Credor |
-| 10 | Debitos |  |
-| 11 | Creditos |  |
-| 12 | SaldoFinal |  |
-| 13 | NaturezaSaldoFinal | D - Devedor            C - Credor |
-| 14 | SubContas | Apenas para possibilitar a totalização na montagem do BP |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoReferencial | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | TipoConta | `String` | S - Sintética            A - Analitica |
+| 05 | Nivel | `Int32` |  |
+| 06 | Natureza | `TipoConta` |  |
+| 07 | ContaSuperior | `String` |  |
+| 08 | SaldoInicial | `Nullable<Double>` |  |
+| 09 | NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
+| 10 | Debitos | `Nullable<Double>` |  |
+| 11 | Creditos | `Nullable<Double>` |  |
+| 12 | SaldoFinal | `Nullable<Double>` |  |
+| 13 | NaturezaSaldoFinal | `String` | D - Devedor            C - Credor |
+| 14 | SubContas | `List<RegistroL100>` | Apenas para possibilitar a totalização na montagem do BP |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

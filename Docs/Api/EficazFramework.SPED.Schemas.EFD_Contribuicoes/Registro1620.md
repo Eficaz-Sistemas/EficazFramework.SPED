@@ -8,15 +8,15 @@ Demonstração do crédito a descontar da contribuição extemporânea - Cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PeriodoApuracaoCredito |  |
-| 03 | IndicadorOrigemCredito |  |
-| 04 | CodigoTipoCredito |  |
-| 05 | VrCredDescontar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PeriodoApuracaoCredito | `Nullable<DateTime>` |  |
+| 03 | IndicadorOrigemCredito | `IndicadorOrigemCreditoBloco1` |  |
+| 04 | CodigoTipoCredito | `String` |  |
+| 05 | VrCredDescontar | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

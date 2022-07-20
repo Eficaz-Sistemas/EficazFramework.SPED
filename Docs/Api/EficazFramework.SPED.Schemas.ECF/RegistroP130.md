@@ -8,14 +8,14 @@ Demonstração das Receitas Incentivadas do Lucro Presumido
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoReferencial |  |
-| 03 | Descricao |  |
-| 04 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoReferencial | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

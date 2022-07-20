@@ -27,6 +27,9 @@ public class Registro0000 : Registro
     {
     }
 
+    /// <summary>
+    /// Herdado de Primitives.Registro.EscreveLinha()
+    /// </summary>
     public override string EscreveLinha()
     {
 
@@ -60,6 +63,9 @@ public class Registro0000 : Registro
         return writer.ToString();
     }
 
+    /// <summary>
+    /// Herdado de Primitives.Registro.LeParametros(string[] data)
+    /// </summary>
     public override void LeParametros(string[] data)
     {
 
@@ -177,6 +183,16 @@ public class Registro0000 : Registro
 
     // Registros Filhos
 
+    /// <summary>
+    /// Propriedade de navegação para acesso ao Registro0001. <br/>
+    /// Setada automaticamente na leitura de arquivos.
+    /// Deve ser setada manualmente na construção do arquivo a ser escrito.
+    /// </summary>
     public Registro0001 Registro0001 { get; set; } = null;
+    /// <summary>
+    /// Propriedade de navegação para acesso ao Registro0001. <br/>
+    /// Setada automaticamente na leitura de arquivos.
+    /// Deve ser setada manualmente na construção do arquivo a ser escrito.
+    /// </summary>
     public Registro0990 Registro0990 { get; set; } = null;
 }

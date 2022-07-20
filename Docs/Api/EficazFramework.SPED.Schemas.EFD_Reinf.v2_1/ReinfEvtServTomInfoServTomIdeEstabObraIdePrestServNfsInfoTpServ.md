@@ -4,15 +4,15 @@
 ## ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpServico |  |
-| 03 | vlrBaseRet |  |
-| 04 | vlrRetencao |  |
-| 05 | vlrRetSub |  |
-| 06 | vlrNRetPrinc |  |
-| 07 | vlrServicos15 |  |
-| 08 | vlrServicos20 |  |
-| 09 | vlrServicos25 |  |
-| 10 | vlrAdicional |  |
-| 11 | vlrNRetAdic |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpServico | `String` |  |
+| 03 | vlrBaseRet | `String` |  |
+| 04 | vlrRetencao | `String` |  |
+| 05 | vlrRetSub | `String` |  |
+| 06 | vlrNRetPrinc | `String` |  |
+| 07 | vlrServicos15 | `String` |  |
+| 08 | vlrServicos20 | `String` |  |
+| 09 | vlrServicos25 | `String` |  |
+| 10 | vlrAdicional | `String` |  |
+| 11 | vlrNRetAdic | `String` |  |

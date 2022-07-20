@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EficazFramework.SPED.Schemas.Primitives;
 
+/// <summary>
+/// Classe abstrata que representa uma escrituração do SPED ou de qualquer outra obrigação assessória.
+/// Contém a instrumentação básica para leitura (desserialização) e escrita (serialização) da escrituração. 
+/// </summary>
 public abstract class Escrituracao : INotifyPropertyChanged
 {
 

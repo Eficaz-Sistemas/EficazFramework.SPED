@@ -8,16 +8,16 @@ REGISTRO C116: CUPOM FISCAL ELETRÔNICO REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Cod_Modelo |  |
-| 03 | Num_Serie_SAT |  |
-| 04 | Chave_Cupom_Eletronico |  |
-| 05 | Num_CFE |  |
-| 06 | DataDoc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Cod_Modelo | `String` |  |
+| 03 | Num_Serie_SAT | `String` |  |
+| 04 | Chave_Cupom_Eletronico | `String` |  |
+| 05 | Num_CFE | `String` |  |
+| 06 | DataDoc | `DateTime` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

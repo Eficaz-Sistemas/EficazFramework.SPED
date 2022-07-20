@@ -4,12 +4,12 @@
 ## ICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Tributacao |  |
-| 03 | TributacaoIndentifier |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Tributacao | `DetalhamentoICMS` |  |
+| 03 | TributacaoIndentifier | `Tributacao_ICMS_Identifier` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

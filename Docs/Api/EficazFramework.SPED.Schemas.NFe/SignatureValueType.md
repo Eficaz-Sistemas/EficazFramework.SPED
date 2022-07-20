@@ -4,12 +4,12 @@
 ## SignatureValueType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Id |  |
-| 03 | Value |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Id | `String` |  |
+| 03 | Value | `Byte[]` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

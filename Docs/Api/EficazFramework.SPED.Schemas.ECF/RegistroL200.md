@@ -8,12 +8,12 @@ Método de Avaliação do Estoque Final
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Metodo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Metodo | `MetodoAvEstoque` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

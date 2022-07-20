@@ -4,9 +4,9 @@
 ## ReinfAqProd Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideContri |  |
-| 04 | infoAquisProd |  |
-| 05 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `ReinfEvtAqProdIdeEvento` |  |
+| 03 | ideContri | `ReinfEvtAqProdIdeContri` |  |
+| 04 | infoAquisProd | `ReinfEvtAqProdInfoAqProd` |  |
+| 05 | id | `String` |  |

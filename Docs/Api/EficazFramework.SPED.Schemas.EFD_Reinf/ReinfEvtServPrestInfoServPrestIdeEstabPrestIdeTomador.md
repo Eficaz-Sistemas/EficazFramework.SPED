@@ -4,18 +4,18 @@
 ## ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscTomador |  |
-| 03 | nrInscTomador |  |
-| 04 | indObra |  |
-| 05 | indObra_Str |  |
-| 06 | vlrTotalBruto |  |
-| 07 | vlrTotalBaseRet |  |
-| 08 | vlrTotalRetPrinc |  |
-| 09 | vlrTotalRetAdic |  |
-| 10 | vlrTotalNRetPrinc |  |
-| 11 | vlrTotalNRetAdic |  |
-| 12 | nfs |  |
-| 13 | infoProcRetPr |  |
-| 14 | infoProcRetAd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscTomador | `PersonalidadeJuridica` |  |
+| 03 | nrInscTomador | `String` |  |
+| 04 | indObra | `IndicadorObra` |  |
+| 05 | indObra_Str | `String` |  |
+| 06 | vlrTotalBruto | `String` |  |
+| 07 | vlrTotalBaseRet | `String` |  |
+| 08 | vlrTotalRetPrinc | `String` |  |
+| 09 | vlrTotalRetAdic | `String` |  |
+| 10 | vlrTotalNRetPrinc | `String` |  |
+| 11 | vlrTotalNRetAdic | `String` |  |
+| 12 | nfs | `List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs>` |  |
+| 13 | infoProcRetPr | `List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr>` |  |
+| 14 | infoProcRetAd | `List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd>` |  |

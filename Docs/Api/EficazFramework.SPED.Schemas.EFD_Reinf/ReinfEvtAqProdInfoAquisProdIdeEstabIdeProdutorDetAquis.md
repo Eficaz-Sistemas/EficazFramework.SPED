@@ -4,11 +4,11 @@
 ## ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indAquis |  |
-| 03 | vlrBruto |  |
-| 04 | vlrCPDescPR |  |
-| 05 | vlrRatDescPR |  |
-| 06 | vlrSenarDesc |  |
-| 07 | infoProcJud |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indAquis | `IndicadorAquisProd` |  |
+| 03 | vlrBruto | `String` |  |
+| 04 | vlrCPDescPR | `String` |  |
+| 05 | vlrRatDescPR | `String` |  |
+| 06 | vlrSenarDesc | `String` |  |
+| 07 | infoProcJud | `ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc[]` |  |

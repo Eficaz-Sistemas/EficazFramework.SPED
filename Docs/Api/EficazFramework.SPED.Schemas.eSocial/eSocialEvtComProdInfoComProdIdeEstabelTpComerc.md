@@ -4,17 +4,17 @@
 ## eSocialEvtComProdInfoComProdIdeEstabelTpComerc Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indComerc |  |
-| 03 | vrTotCom |  |
-| 04 | vrCPDesc |  |
-| 05 | vrRatDescPR |  |
-| 06 | vrSenarDesc |  |
-| 07 | ideAdquir |  |
-| 08 | infoProcJud |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indComerc | `IndicadorComercializacaoS1260` |  |
+| 03 | vrTotCom | `Decimal` |  |
+| 04 | vrCPDesc | `Decimal` |  |
+| 05 | vrRatDescPR | `Decimal` |  |
+| 06 | vrSenarDesc | `Decimal` |  |
+| 07 | ideAdquir | `ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir>` |  |
+| 08 | infoProcJud | `eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[]` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| RaisePropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| RaisePropertyChanged(string) | `Void` |  |

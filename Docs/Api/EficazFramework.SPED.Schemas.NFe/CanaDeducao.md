@@ -4,12 +4,12 @@
 ## CanaDeducao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xDed |  |
-| 03 | vDed |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xDed | `String` |  |
+| 03 | vDed | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

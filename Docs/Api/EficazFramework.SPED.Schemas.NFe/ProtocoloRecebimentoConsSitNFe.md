@@ -4,13 +4,13 @@
 ## ProtocoloRecebimentoConsSitNFe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InformacoesProtocolo |  |
-| 03 | Signature |  |
-| 04 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InformacoesProtocolo | `InformacoesProtocoloConsSitNFe` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,12 +4,12 @@
 ## NFeGrupoZip Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ZipData |  |
-| 03 | ProtocoloAutorizacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ZipData | `Byte[]` |  |
+| 03 | ProtocoloAutorizacao | `Byte[]` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

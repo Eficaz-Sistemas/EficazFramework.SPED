@@ -4,14 +4,14 @@
 ## TCTeInfCteInfCTeNormCobrFat Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nFat |  |
-| 03 | vOrig |  |
-| 04 | vDesc |  |
-| 05 | vLiq |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nFat | `String` |  |
+| 03 | vOrig | `String` |  |
+| 04 | vDesc | `String` |  |
+| 05 | vLiq | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

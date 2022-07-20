@@ -4,12 +4,12 @@
 ## TDependente Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpDep |  |
-| 03 | nmDep |  |
-| 04 | dtNascto |  |
-| 05 | cpfDep |  |
-| 06 | depIRRF |  |
-| 07 | depSF |  |
-| 08 | incTrab |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpDep | `String` |  |
+| 03 | nmDep | `String` |  |
+| 04 | dtNascto | `DateTime` |  |
+| 05 | cpfDep | `String` |  |
+| 06 | depIRRF | `SimNaoString` |  |
+| 07 | depSF | `SimNaoString` |  |
+| 08 | incTrab | `SimNaoString` |  |

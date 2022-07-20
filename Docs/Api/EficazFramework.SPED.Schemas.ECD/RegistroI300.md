@@ -8,12 +8,12 @@ Balancetes Diários - Identificação da Data
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataBalancete |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataBalancete | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

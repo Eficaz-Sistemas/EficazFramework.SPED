@@ -8,30 +8,30 @@ Cupom Fiscal, Nota Fiscal de Venda a Consumidor e Bilhete de Passagem
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroFabricacaoECF |  |
-| 03 | MFAdicional |  |
-| 04 | Modelo |  |
-| 05 | NumeroUsuario |  |
-| 06 | CCF_CVC_CBP |  |
-| 07 | COO |  |
-| 08 | DataEmissao |  |
-| 09 | SubTotal |  |
-| 10 | DescontoSubTotal |  |
-| 11 | IndicadorDesconto |  |
-| 12 | AcrescimoSubTotal |  |
-| 13 | IndicadorAcrescimo |  |
-| 14 | ValorTotalLiquido |  |
-| 15 | Cancelamento |  |
-| 16 | CancelamentoAcrescimo |  |
-| 17 | OrdemDescontoAcrescimo |  |
-| 18 | NomeAdquirente |  |
-| 19 | CNPJ_CPF |  |
-| 20 | RegistrosE15 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroFabricacaoECF | `String` |  |
+| 03 | MFAdicional | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | NumeroUsuario | `Nullable<Int32>` |  |
+| 06 | CCF_CVC_CBP | `Nullable<Int32>` |  |
+| 07 | COO | `Nullable<Int32>` |  |
+| 08 | DataEmissao | `Nullable<DateTime>` |  |
+| 09 | SubTotal | `Nullable<Double>` |  |
+| 10 | DescontoSubTotal | `Nullable<Double>` |  |
+| 11 | IndicadorDesconto | `IndicadorValor` |  |
+| 12 | AcrescimoSubTotal | `Nullable<Double>` |  |
+| 13 | IndicadorAcrescimo | `IndicadorValor` |  |
+| 14 | ValorTotalLiquido | `Nullable<Double>` |  |
+| 15 | Cancelamento | `Nullable<Boolean>` |  |
+| 16 | CancelamentoAcrescimo | `Nullable<Double>` |  |
+| 17 | OrdemDescontoAcrescimo | `Nullable<OrdemDescontoAcrescimo>` |  |
+| 18 | NomeAdquirente | `String` |  |
+| 19 | CNPJ_CPF | `String` |  |
+| 20 | RegistrosE15 | `List<RegistroE15>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

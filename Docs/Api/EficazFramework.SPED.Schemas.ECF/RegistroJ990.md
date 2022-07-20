@@ -8,12 +8,12 @@ Encerramento do Bloco J
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | QuantidadeLinhasBlocoJ |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | QuantidadeLinhasBlocoJ | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

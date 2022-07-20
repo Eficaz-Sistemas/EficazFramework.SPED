@@ -8,12 +8,12 @@ Parâmetros de Tributação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | FormaApuracao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | FormaApuracao | `FormaApuracao` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

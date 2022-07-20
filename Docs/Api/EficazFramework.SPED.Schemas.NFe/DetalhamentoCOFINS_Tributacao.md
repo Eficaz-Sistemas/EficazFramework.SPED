@@ -8,21 +8,21 @@ Clase genérica para tratamento das tributações de COFINS (sem ST).
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | vBC |  |
-| 04 | pCOFINS |  |
-| 05 | vCOFINS |  |
-| 06 | qBCProd |  |
-| 07 | vAliqProd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `CST_COFINS` |  |
+| 03 | vBC | `Nullable<Double>` |  |
+| 04 | pCOFINS | `Nullable<Double>` |  |
+| 05 | vCOFINS | `Nullable<Double>` |  |
+| 06 | qBCProd | `Nullable<Double>` |  |
+| 07 | vAliqProd | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevBC() |  |
-| ShouldSerializepCOFINS() |  |
-| ShouldSerializevCOFINS() |  |
-| ShouldSerializeqBCProd() |  |
-| ShouldSerializevAliqProd() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevBC() | `Boolean` |  |
+| ShouldSerializepCOFINS() | `Boolean` |  |
+| ShouldSerializevCOFINS() | `Boolean` |  |
+| ShouldSerializeqBCProd() | `Boolean` |  |
+| ShouldSerializevAliqProd() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

@@ -8,15 +8,15 @@ Demonstrações Contábeis
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicialDC |  |
-| 03 | DataFinalDC |  |
-| 04 | IdentificacaoDemonstracoes |  |
-| 05 | CabecalhoDemonstracoes |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicialDC | `Nullable<DateTime>` |  |
+| 03 | DataFinalDC | `Nullable<DateTime>` |  |
+| 04 | IdentificacaoDemonstracoes | `String` |  |
+| 05 | CabecalhoDemonstracoes | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

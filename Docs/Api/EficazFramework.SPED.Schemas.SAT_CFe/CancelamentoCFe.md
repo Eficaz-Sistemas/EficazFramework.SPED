@@ -6,32 +6,32 @@
 Classe Principal contendo lote de CF-e's cancelados
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | idLote |  |
-| 04 | LoteCFeCanc |  |
-| 05 | cUF |  |
-| 06 | nSeg |  |
-| 07 | dhEnvio |  |
-| 08 | nserieSAT |  |
-| 09 | versao |  |
-| 10 | DocumentType |  |
-| 11 | DataEmissao |  |
-| 12 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `String` |  |
+| 03 | idLote | `String` |  |
+| 04 | LoteCFeCanc | `CFeCancelado[]` |  |
+| 05 | cUF | `String` |  |
+| 06 | nSeg | `String` |  |
+| 07 | dhEnvio | `String` |  |
+| 08 | nserieSAT | `String` |  |
+| 09 | versao | `String` |  |
+| 10 | DocumentType | `XMLDocumentType` |  |
+| 11 | DataEmissao | `Nullable<DateTime>` |  |
+| 12 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, CancelamentoCFe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, CancelamentoCFe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, CancelamentoCFe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, CancelamentoCFe) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, CancelamentoCFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, CancelamentoCFe) | `Boolean` |  |
+| Deserialize(string) | `CancelamentoCFe` |  |
+| Deserialize(Stream) | `CancelamentoCFe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, CancelamentoCFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, CancelamentoCFe) | `Boolean` |  |
+| LoadFrom(Stream) | `CancelamentoCFe` |  |
+| LoadFromAsync(Stream, bool) | `Task<CancelamentoCFe>` |  |

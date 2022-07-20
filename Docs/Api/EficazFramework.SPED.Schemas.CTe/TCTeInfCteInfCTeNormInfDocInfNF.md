@@ -4,28 +4,28 @@
 ## TCTeInfCteInfCTeNormInfDocInfNF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nRoma |  |
-| 03 | nPed |  |
-| 04 | mod |  |
-| 05 | serie |  |
-| 06 | nDoc |  |
-| 07 | dEmi |  |
-| 08 | vBC |  |
-| 09 | vICMS |  |
-| 10 | vBCST |  |
-| 11 | vST |  |
-| 12 | vProd |  |
-| 13 | vNF |  |
-| 14 | nCFOP |  |
-| 15 | nPeso |  |
-| 16 | PIN |  |
-| 17 | dPrev |  |
-| 18 | Items |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nRoma | `String` |  |
+| 03 | nPed | `String` |  |
+| 04 | mod | `TModNF` |  |
+| 05 | serie | `String` |  |
+| 06 | nDoc | `String` |  |
+| 07 | dEmi | `String` |  |
+| 08 | vBC | `String` |  |
+| 09 | vICMS | `String` |  |
+| 10 | vBCST | `String` |  |
+| 11 | vST | `String` |  |
+| 12 | vProd | `String` |  |
+| 13 | vNF | `String` |  |
+| 14 | nCFOP | `String` |  |
+| 15 | nPeso | `String` |  |
+| 16 | PIN | `String` |  |
+| 17 | dPrev | `String` |  |
+| 18 | Items | `ObservableCollection<Object>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

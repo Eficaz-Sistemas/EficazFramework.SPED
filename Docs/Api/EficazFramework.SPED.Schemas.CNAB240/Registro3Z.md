@@ -6,17 +6,17 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | NumeroSequencial |  |
-| 05 | Autenticacao |  |
-| 06 | SeuNumero |  |
-| 07 | NossoNumero |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | NumeroSequencial | `Nullable<Int32>` |  |
+| 05 | Autenticacao | `String` |  |
+| 06 | SeuNumero | `String` |  |
+| 07 | NossoNumero | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

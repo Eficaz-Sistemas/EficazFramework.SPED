@@ -8,18 +8,18 @@ REGISTRO C140: FATURA (CÓDIGO 01)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Indicador_emitente_titulo |  |
-| 03 | Indicador_Tipo_titulo |  |
-| 04 | Descricao_Compl_titulo |  |
-| 05 | Num_tituto |  |
-| 06 | Qtd_Parcelas |  |
-| 07 | Vr_titulototal |  |
-| 08 | RegistrosC141 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Indicador_emitente_titulo | `IndicadorEmitente` |  |
+| 03 | Indicador_Tipo_titulo | `IndicadorTituloCredito` |  |
+| 04 | Descricao_Compl_titulo | `String` |  |
+| 05 | Num_tituto | `String` |  |
+| 06 | Qtd_Parcelas | `Nullable<Int32>` |  |
+| 07 | Vr_titulototal | `Nullable<Double>` |  |
+| 08 | RegistrosC141 | `List<RegistroC141>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

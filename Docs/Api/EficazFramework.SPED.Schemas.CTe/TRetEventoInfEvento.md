@@ -4,22 +4,22 @@
 ## TRetEventoInfEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | verAplic |  |
-| 04 | cOrgao |  |
-| 05 | cStat |  |
-| 06 | xMotivo |  |
-| 07 | chCTe |  |
-| 08 | tpEvento |  |
-| 09 | xEvento |  |
-| 10 | nSeqEvento |  |
-| 11 | dhRegEvento |  |
-| 12 | nProt |  |
-| 13 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | verAplic | `String` |  |
+| 04 | cOrgao | `OrgaoIBGE` |  |
+| 05 | cStat | `String` |  |
+| 06 | xMotivo | `String` |  |
+| 07 | chCTe | `String` |  |
+| 08 | tpEvento | `String` |  |
+| 09 | xEvento | `String` |  |
+| 10 | nSeqEvento | `String` |  |
+| 11 | dhRegEvento | `String` |  |
+| 12 | nProt | `String` |  |
+| 13 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

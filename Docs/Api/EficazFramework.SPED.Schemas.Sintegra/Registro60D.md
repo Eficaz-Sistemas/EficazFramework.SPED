@@ -8,20 +8,20 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEmissao |  |
-| 03 | NumeroSerieFabEquip |  |
-| 04 | CodigoProduto |  |
-| 05 | Quantidade |  |
-| 06 | ValorLiquido |  |
-| 07 | BaseCalculo |  |
-| 08 | SituacaoTributariaAliquota |  |
-| 09 | ICMS |  |
-| 10 | Brancos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEmissao | `Nullable<DateTime>` |  |
+| 03 | NumeroSerieFabEquip | `String` |  |
+| 04 | CodigoProduto | `String` |  |
+| 05 | Quantidade | `Nullable<Decimal>` |  |
+| 06 | ValorLiquido | `Nullable<Double>` |  |
+| 07 | BaseCalculo | `Nullable<Double>` |  |
+| 08 | SituacaoTributariaAliquota | `String` |  |
+| 09 | ICMS | `Nullable<Double>` |  |
+| 10 | Brancos | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

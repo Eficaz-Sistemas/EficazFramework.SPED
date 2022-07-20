@@ -4,37 +4,37 @@
 ## DetalhamentoICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | vBC |  |
-| 04 | pRedBC |  |
-| 05 | pICMS |  |
-| 06 | vICMS |  |
-| 07 | vBCSTRet |  |
-| 08 | vICMSSTRet |  |
-| 09 | pICMSSTRet |  |
-| 10 | vCred |  |
-| 11 | pRedBCOutraUF |  |
-| 12 | vBCOutraUF |  |
-| 13 | pICMSOutraUF |  |
-| 14 | vICMSOutraUF |  |
-| 15 | indSN |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `CST_ICMS` |  |
+| 03 | vBC | `Nullable<Double>` |  |
+| 04 | pRedBC | `Nullable<Double>` |  |
+| 05 | pICMS | `Nullable<Double>` |  |
+| 06 | vICMS | `Nullable<Double>` |  |
+| 07 | vBCSTRet | `Nullable<Double>` |  |
+| 08 | vICMSSTRet | `Nullable<Double>` |  |
+| 09 | pICMSSTRet | `Nullable<Double>` |  |
+| 10 | vCred | `Nullable<Double>` |  |
+| 11 | pRedBCOutraUF | `Nullable<Double>` |  |
+| 12 | vBCOutraUF | `String` |  |
+| 13 | pICMSOutraUF | `String` |  |
+| 14 | vICMSOutraUF | `String` |  |
+| 15 | indSN | `DetalhamentoICMSIndicadorSN` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevBC() |  |
-| ShouldSerializepRedBC() |  |
-| ShouldSerializepICMS() |  |
-| ShouldSerializevICMS() |  |
-| ShouldSerializevBCSTRet() |  |
-| ShouldSerializevICMSSTRet() |  |
-| ShouldSerializepICMSSTRet() |  |
-| ShouldSerializevCred() |  |
-| ShouldSerializepRedBCOutraUF() |  |
-| ShouldSerializevBCOutraUF() |  |
-| ShouldSerializepICMSOutraUF() |  |
-| ShouldSerializevICMSOutraUF() |  |
-| ShouldSerializeindSN() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevBC() | `Boolean` |  |
+| ShouldSerializepRedBC() | `Boolean` |  |
+| ShouldSerializepICMS() | `Boolean` |  |
+| ShouldSerializevICMS() | `Boolean` |  |
+| ShouldSerializevBCSTRet() | `Boolean` |  |
+| ShouldSerializevICMSSTRet() | `Boolean` |  |
+| ShouldSerializepICMSSTRet() | `Boolean` |  |
+| ShouldSerializevCred() | `Boolean` |  |
+| ShouldSerializepRedBCOutraUF() | `Boolean` |  |
+| ShouldSerializevBCOutraUF() | `Boolean` |  |
+| ShouldSerializepICMSOutraUF() | `Boolean` |  |
+| ShouldSerializevICMSOutraUF() | `Boolean` |  |
+| ShouldSerializeindSN() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

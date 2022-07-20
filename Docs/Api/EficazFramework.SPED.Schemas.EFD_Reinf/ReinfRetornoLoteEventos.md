@@ -6,9 +6,9 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideTransmissor |  |
-| 03 | status |  |
-| 04 | retornoEventos |  |
-| 05 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideTransmissor | `TIdeTransmissor` |  |
+| 03 | status | `TStatus` |  |
+| 04 | retornoEventos | `ReinfRetornoLoteEventosRetornoEventos` |  |
+| 05 | id | `String` |  |

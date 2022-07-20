@@ -4,16 +4,16 @@
 ## TransporteRetencaoICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorServico |  |
-| 03 | BaseDeCalculo |  |
-| 04 | Aliquota |  |
-| 05 | ValorICMS |  |
-| 06 | CFOP |  |
-| 07 | CodigoMunicipioFatoGerador |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorServico | `Nullable<Double>` |  |
+| 03 | BaseDeCalculo | `Nullable<Double>` |  |
+| 04 | Aliquota | `Nullable<Double>` |  |
+| 05 | ValorICMS | `Nullable<Double>` |  |
+| 06 | CFOP | `String` |  |
+| 07 | CodigoMunicipioFatoGerador | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

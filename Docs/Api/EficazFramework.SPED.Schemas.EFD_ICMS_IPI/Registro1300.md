@@ -8,22 +8,22 @@ Movimentação Diária de Combustíveis
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoCombustivel0200 |  |
-| 03 | DataFechamento |  |
-| 04 | EstoqueAbertura |  |
-| 05 | VolumeEntradas |  |
-| 06 | VolumeDisponivel | Estoque Abertura + Volume Entradas |
-| 07 | VolumeSaidas |  |
-| 08 | EstoqueEscritural | Volume Disponível - Volume Saídas |
-| 09 | AjustesPerda |  |
-| 10 | AjustesGanho |  |
-| 11 | EstoqueFechamento |  |
-| 12 | Registros1310 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoCombustivel0200 | `String` |  |
+| 03 | DataFechamento | `Nullable<DateTime>` |  |
+| 04 | EstoqueAbertura | `Nullable<Double>` |  |
+| 05 | VolumeEntradas | `Nullable<Double>` |  |
+| 06 | VolumeDisponivel | `Nullable<Double>` | Estoque Abertura + Volume Entradas |
+| 07 | VolumeSaidas | `Nullable<Double>` |  |
+| 08 | EstoqueEscritural | `Nullable<Double>` | Volume Disponível - Volume Saídas |
+| 09 | AjustesPerda | `Nullable<Double>` |  |
+| 10 | AjustesGanho | `Nullable<Double>` |  |
+| 11 | EstoqueFechamento | `Nullable<Double>` |  |
+| 12 | Registros1310 | `List<Registro1310>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,13 +8,13 @@ Complemento do Documento - Informação Complementar da Nota Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoInformacaoComplementas |  |
-| 03 | DescricaoComplementarCodRef |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoInformacaoComplementas | `String` |  |
+| 03 | DescricaoComplementarCodRef | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,9 +6,9 @@
 Dados da recepção do serviço solicitado informado em RetornoEvento
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | dhRecepcao |  |
-| 04 | versaoAppRecepcao |  |
-| 05 | protocoloEnvioLote |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | dhRecepcao | `DateTime` |  |
+| 04 | versaoAppRecepcao | `String` |  |
+| 05 | protocoloEnvioLote | `String` |  |

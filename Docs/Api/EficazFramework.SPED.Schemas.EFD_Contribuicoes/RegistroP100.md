@@ -8,22 +8,22 @@ Contribuição Previdenciária Sobre a Receita Bruta
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicialApuracao |  |
-| 03 | DataFinalApuracao |  |
-| 04 | VrRecBrutaTotalPeriodo |  |
-| 05 | CodigoAtividadeSujIncidencia |  |
-| 06 | VrRecBrutaAtividade |  |
-| 07 | VrExclusoesRecBruta |  |
-| 08 | VrBCContribPrev |  |
-| 09 | AliqContribPrev |  |
-| 10 | VrContribPrev |  |
-| 11 | CodigoContaContabil |  |
-| 12 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicialApuracao | `Nullable<DateTime>` |  |
+| 03 | DataFinalApuracao | `Nullable<DateTime>` |  |
+| 04 | VrRecBrutaTotalPeriodo | `Nullable<Double>` |  |
+| 05 | CodigoAtividadeSujIncidencia | `String` |  |
+| 06 | VrRecBrutaAtividade | `Nullable<Double>` |  |
+| 07 | VrExclusoesRecBruta | `Nullable<Double>` |  |
+| 08 | VrBCContribPrev | `Nullable<Double>` |  |
+| 09 | AliqContribPrev | `Nullable<Double>` |  |
+| 10 | VrContribPrev | `Nullable<Double>` |  |
+| 11 | CodigoContaContabil | `String` |  |
+| 12 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

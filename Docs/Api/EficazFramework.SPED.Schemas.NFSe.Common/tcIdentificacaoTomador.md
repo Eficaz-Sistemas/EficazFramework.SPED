@@ -4,12 +4,12 @@
 ## tcIdentificacaoTomador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CpfCnpj |  |
-| 03 | InscricaoMunicipal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CpfCnpj | `tcCpfCnpj` |  |
+| 03 | InscricaoMunicipal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

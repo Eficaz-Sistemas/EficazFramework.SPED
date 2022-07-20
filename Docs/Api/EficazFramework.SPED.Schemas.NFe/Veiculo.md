@@ -4,13 +4,13 @@
 ## Veiculo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Placa |  |
-| 03 | UF |  |
-| 04 | RNTC |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Placa | `String` |  |
+| 03 | UF | `Estado` |  |
+| 04 | RNTC | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

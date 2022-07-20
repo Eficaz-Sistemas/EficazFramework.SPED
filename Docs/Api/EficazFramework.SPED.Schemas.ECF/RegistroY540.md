@@ -8,14 +8,14 @@ Discriminação da Receita de Vendas dos Estabelecimentos por Atividade Econômi
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJEstabelecimento |  |
-| 03 | ValorReceitas |  |
-| 04 | CNAE |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJEstabelecimento | `String` |  |
+| 03 | ValorReceitas | `Nullable<Double>` |  |
+| 04 | CNAE | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

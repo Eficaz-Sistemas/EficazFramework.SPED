@@ -8,21 +8,21 @@ Operaçãoes da Atividade imobiliária - custo orçado da unidade imobiliária v
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalCustoOrcadoConcUnidVendida |  |
-| 03 | VrExcl |  |
-| 04 | VrBcCredCustoOrcadoAjustado |  |
-| 05 | VrBcCredCustoOrcadoPeriodoEscr |  |
-| 06 | CSTPis |  |
-| 07 | AliqPis |  |
-| 08 | VrCreditoCustoOrcadoPeriodoEscrPis |  |
-| 09 | CSTCofins |  |
-| 10 | AliqCofins |  |
-| 11 | VrCreditoCustoOrcadoPeriodoEscrCofins |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalCustoOrcadoConcUnidVendida | `Nullable<Double>` |  |
+| 03 | VrExcl | `Nullable<Double>` |  |
+| 04 | VrBcCredCustoOrcadoAjustado | `Nullable<Double>` |  |
+| 05 | VrBcCredCustoOrcadoPeriodoEscr | `Nullable<Double>` |  |
+| 06 | CSTPis | `String` |  |
+| 07 | AliqPis | `Nullable<Double>` |  |
+| 08 | VrCreditoCustoOrcadoPeriodoEscrPis | `Nullable<Double>` |  |
+| 09 | CSTCofins | `String` |  |
+| 10 | AliqCofins | `Nullable<Double>` |  |
+| 11 | VrCreditoCustoOrcadoPeriodoEscrCofins | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

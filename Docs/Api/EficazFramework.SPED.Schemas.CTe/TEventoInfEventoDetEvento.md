@@ -4,12 +4,12 @@
 ## TEventoInfEventoDetEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Any |  |
-| 03 | versaoEvento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Any | `XElement` |  |
+| 03 | versaoEvento | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

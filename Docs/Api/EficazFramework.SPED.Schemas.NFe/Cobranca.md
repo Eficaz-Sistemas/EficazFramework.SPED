@@ -4,13 +4,13 @@
 ## Cobranca Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | fat |  |
-| 03 | dup |  |
-| 04 | MostraFatura |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | fat | `CobrancaFatura` |  |
+| 03 | dup | `List<CobrancaDuplicata>` |  |
+| 04 | MostraFatura | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,6 +4,6 @@
 ## eSocialEnvioLoteEventosEventos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | evento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | evento | `List<TArquivoEsocial>` |  |

@@ -6,22 +6,22 @@
 Envio dos eventos R-1000 ao R-2098
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | loteEventos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | loteEventos | `ReinfLoteEventos` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, EnvioLoteEventos, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, EnvioLoteEventos) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, EnvioLoteEventos, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, EnvioLoteEventos) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, EnvioLoteEventos, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, EnvioLoteEventos) | `Boolean` |  |
+| Deserialize(string) | `EnvioLoteEventos` |  |
+| Deserialize(Stream) | `EnvioLoteEventos` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, EnvioLoteEventos, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, EnvioLoteEventos) | `Boolean` |  |
+| LoadFrom(Stream) | `EnvioLoteEventos` |  |
+| LoadFromAsync(Stream) | `Task<EnvioLoteEventos>` |  |

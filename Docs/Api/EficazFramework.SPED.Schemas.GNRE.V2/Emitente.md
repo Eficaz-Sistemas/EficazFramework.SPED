@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | identificacao |  |
-| 03 | razaoSocial |  |
-| 04 | endereco |  |
-| 05 | municipio |  |
-| 06 | uf |  |
-| 07 | ufSpecified |  |
-| 08 | cep |  |
-| 09 | telefone |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | identificacao | `TIdentificacao` |  |
+| 03 | razaoSocial | `String` |  |
+| 04 | endereco | `String` |  |
+| 05 | municipio | `String` |  |
+| 06 | uf | `UF` |  |
+| 07 | ufSpecified | `Boolean` |  |
+| 08 | cep | `String` |  |
+| 09 | telefone | `String` |  |

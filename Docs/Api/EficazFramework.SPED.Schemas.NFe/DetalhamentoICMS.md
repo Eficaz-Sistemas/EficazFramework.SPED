@@ -4,14 +4,14 @@
 ## DetalhamentoICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Tributacao |  |
-| 03 | TributacaoIndentifier |  |
-| 04 | isST |  |
-| 05 | CST_Formatado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Tributacao | `DetalhamentoICMS_Tributacao` |  |
+| 03 | TributacaoIndentifier | `Tributacao_ICMS_Identifier` |  |
+| 04 | isST | `Boolean` |  |
+| 05 | CST_Formatado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

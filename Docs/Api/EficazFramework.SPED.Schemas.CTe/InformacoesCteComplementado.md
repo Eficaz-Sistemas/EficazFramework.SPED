@@ -4,11 +4,11 @@
 ## InformacoesCteComplementado Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

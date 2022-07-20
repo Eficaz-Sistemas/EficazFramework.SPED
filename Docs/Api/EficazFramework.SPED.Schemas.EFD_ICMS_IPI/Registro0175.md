@@ -8,15 +8,15 @@ Alteração da Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataAlteracao |  |
-| 03 | CampoAlterado |  |
-| 04 | ConteudoAnterior |  |
-| 05 | IDAnterior | Válido apenas à partir da versao 003 (2010) |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataAlteracao | `Nullable<DateTime>` |  |
+| 03 | CampoAlterado | `CampoAlterado` |  |
+| 04 | ConteudoAnterior | `String` |  |
+| 05 | IDAnterior | `String` | Válido apenas à partir da versao 003 (2010) |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

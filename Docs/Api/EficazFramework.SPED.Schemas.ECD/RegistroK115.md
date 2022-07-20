@@ -8,14 +8,14 @@ Empresas Participantes do Evento Societário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoEmpresaEnvolvidaOperacao |  |
-| 03 | CondicaoEmpresaRelacionada |  |
-| 04 | PercentualEmpPartEnvolvidaOper |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoEmpresaEnvolvidaOperacao | `String` |  |
+| 03 | CondicaoEmpresaRelacionada | `CondicaoEmpresaRelacionada` |  |
+| 04 | PercentualEmpPartEnvolvidaOper | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

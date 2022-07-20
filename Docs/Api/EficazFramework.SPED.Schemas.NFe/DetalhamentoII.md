@@ -4,18 +4,18 @@
 ## DetalhamentoII Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vBC |  |
-| 03 | vDespAdu |  |
-| 04 | vII |  |
-| 05 | vIOF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vBC | `Nullable<Double>` |  |
+| 03 | vDespAdu | `Nullable<Double>` |  |
+| 04 | vII | `Nullable<Double>` |  |
+| 05 | vIOF | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevBC() |  |
-| ShouldSerializevDespAdu() |  |
-| ShouldSerializevII() |  |
-| ShouldSerializevIOF() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevBC() | `Boolean` |  |
+| ShouldSerializevDespAdu() | `Boolean` |  |
+| ShouldSerializevII() | `Boolean` |  |
+| ShouldSerializevIOF() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,27 +4,27 @@
 ## Registro70 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | InscricaoEstadual |  |
-| 04 | Data |  |
-| 05 | UF |  |
-| 06 | Modelo |  |
-| 07 | Serie |  |
-| 08 | SubSerie |  |
-| 09 | Numero |  |
-| 10 | CFOP |  |
-| 11 | ValorTotal |  |
-| 12 | BaseCalculo |  |
-| 13 | ICMS |  |
-| 14 | Isentas |  |
-| 15 | Outras |  |
-| 16 | Modalidade |  |
-| 17 | Situacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | InscricaoEstadual | `String` |  |
+| 04 | Data | `Nullable<DateTime>` |  |
+| 05 | UF | `String` |  |
+| 06 | Modelo | `String` |  |
+| 07 | Serie | `String` |  |
+| 08 | SubSerie | `String` |  |
+| 09 | Numero | `String` |  |
+| 10 | CFOP | `String` |  |
+| 11 | ValorTotal | `Nullable<Double>` |  |
+| 12 | BaseCalculo | `Nullable<Double>` |  |
+| 13 | ICMS | `Nullable<Double>` |  |
+| 14 | Isentas | `Nullable<Double>` |  |
+| 15 | Outras | `Nullable<Double>` |  |
+| 16 | Modalidade | `String` |  |
+| 17 | Situacao | `SituacaoDocumento` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

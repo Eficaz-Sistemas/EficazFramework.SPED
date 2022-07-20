@@ -8,16 +8,16 @@ Operações Geradoras de Crédito Acumulado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | EnquadramentoLegal |  |
-| 03 | IVA |  |
-| 04 | PMC |  |
-| 05 | CreditoEstimado |  |
-| 06 | CreditoAcumulado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | EnquadramentoLegal | `Nullable<Int32>` |  |
+| 03 | IVA | `Nullable<Double>` |  |
+| 04 | PMC | `Nullable<Double>` |  |
+| 05 | CreditoEstimado | `Nullable<Double>` |  |
+| 06 | CreditoAcumulado | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

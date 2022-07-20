@@ -4,12 +4,12 @@
 ## tcInfSubstituicaoNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NfseSubstituidora |  |
-| 03 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NfseSubstituidora | `String` |  |
+| 03 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,40 +4,40 @@
 ## DetalhamentoItemVeiculo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpOp |  |
-| 03 | chassi |  |
-| 04 | cCor |  |
-| 05 | xCor |  |
-| 06 | pot |  |
-| 07 | Potencia |  |
-| 08 | cilin |  |
-| 09 | Cilindradas |  |
-| 10 | pesoL |  |
-| 11 | PesoLiquido |  |
-| 12 | pesoB |  |
-| 13 | PesoBruto |  |
-| 14 | nSerie |  |
-| 15 | tpComb |  |
-| 16 | nMotor |  |
-| 17 | CMT |  |
-| 18 | CMT_Formatado |  |
-| 19 | dist |  |
-| 20 | Dist_Formatado |  |
-| 21 | anoMod |  |
-| 22 | anoFab |  |
-| 23 | tpPint |  |
-| 24 | tpVeic |  |
-| 25 | espVeic |  |
-| 26 | VIN |  |
-| 27 | condVeic |  |
-| 28 | cMod |  |
-| 29 | cCorDENATRAN |  |
-| 30 | lota |  |
-| 31 | tpRest |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpOp | `VeiculoTipoOperacao` |  |
+| 03 | chassi | `String` |  |
+| 04 | cCor | `String` |  |
+| 05 | xCor | `String` |  |
+| 06 | pot | `String` |  |
+| 07 | Potencia | `Nullable<Double>` |  |
+| 08 | cilin | `String` |  |
+| 09 | Cilindradas | `Nullable<Double>` |  |
+| 10 | pesoL | `String` |  |
+| 11 | PesoLiquido | `Nullable<Double>` |  |
+| 12 | pesoB | `String` |  |
+| 13 | PesoBruto | `Nullable<Double>` |  |
+| 14 | nSerie | `String` |  |
+| 15 | tpComb | `VeiculoTipoCombustivel` |  |
+| 16 | nMotor | `String` |  |
+| 17 | CMT | `String` |  |
+| 18 | CMT_Formatado | `Nullable<Double>` |  |
+| 19 | dist | `String` |  |
+| 20 | Dist_Formatado | `Nullable<Double>` |  |
+| 21 | anoMod | `Nullable<Int32>` |  |
+| 22 | anoFab | `Nullable<Int32>` |  |
+| 23 | tpPint | `String` |  |
+| 24 | tpVeic | `VeiculoTipo` |  |
+| 25 | espVeic | `VeiculoEspecie` |  |
+| 26 | VIN | `VeiculoCondicaoChassi` |  |
+| 27 | condVeic | `VeiculoCondicao` |  |
+| 28 | cMod | `String` |  |
+| 29 | cCorDENATRAN | `VeiculoCorDENATRAN` |  |
+| 30 | lota | `Nullable<Int32>` |  |
+| 31 | tpRest | `VeiculoRestricao` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

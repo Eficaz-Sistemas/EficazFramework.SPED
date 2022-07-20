@@ -8,19 +8,19 @@ Detalhamento dos ajustes do crédito de pis apurado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DetVrCredRedAcresc |  |
-| 03 | CSTPis |  |
-| 04 | DetBcGeradorCredAj |  |
-| 05 | DetAliqAjCredito |  |
-| 06 | DataOperacaoAjRegistro |  |
-| 07 | DescricaoOperacoesAjuste |  |
-| 08 | CodigoContaContabil |  |
-| 09 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DetVrCredRedAcresc | `Nullable<Double>` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | DetBcGeradorCredAj | `Nullable<Double>` |  |
+| 05 | DetAliqAjCredito | `Nullable<Double>` |  |
+| 06 | DataOperacaoAjRegistro | `Nullable<DateTime>` |  |
+| 07 | DescricaoOperacoesAjuste | `String` |  |
+| 08 | CodigoContaContabil | `String` |  |
+| 09 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

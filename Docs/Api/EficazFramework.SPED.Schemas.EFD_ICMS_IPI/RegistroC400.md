@@ -8,16 +8,16 @@ Equipamento ECF (Código 02, 2D e 60)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModelo |  |
-| 03 | Especie |  |
-| 04 | NumeroSerie |  |
-| 05 | NumeroCaixa |  |
-| 06 | RegistrosC405 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModelo | `String` |  |
+| 03 | Especie | `String` |  |
+| 04 | NumeroSerie | `String` |  |
+| 05 | NumeroCaixa | `Nullable<Int32>` |  |
+| 06 | RegistrosC405 | `List<RegistroC405>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,17 +8,17 @@ Ajustes da contribuição para o pis apurada
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoAjuste |  |
-| 03 | VrAjuste |  |
-| 04 | CodigoAjuste |  |
-| 05 | NumeroProcesso |  |
-| 06 | DescResumAjuste |  |
-| 07 | DataAjuste |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
+| 03 | VrAjuste | `Nullable<Double>` |  |
+| 04 | CodigoAjuste | `String` |  |
+| 05 | NumeroProcesso | `String` |  |
+| 06 | DescResumAjuste | `String` |  |
+| 07 | DataAjuste | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

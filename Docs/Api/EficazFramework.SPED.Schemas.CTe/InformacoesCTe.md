@@ -4,37 +4,37 @@
 ## InformacoesCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoOperacao |  |
-| 03 | Complemento |  |
-| 04 | Emitente |  |
-| 05 | Tomador |  |
-| 06 | Remetente |  |
-| 07 | Expedidor | Tomador do Serviço? |
-| 08 | Recebedor |  |
-| 09 | Destinatario |  |
-| 10 | Valores |  |
-| 11 | Impostos |  |
-| 12 | DocumentosReferenciados |  |
-| 13 | InformacaoCTePorTipo |  |
-| 14 | AutorizadosDownloadXML |  |
-| 15 | Versao |  |
-| 16 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoOperacao | `IdentificacaoOperacao` |  |
+| 03 | Complemento | `ComplementoCTe` |  |
+| 04 | Emitente | `Emitente` |  |
+| 05 | Tomador | `Object` |  |
+| 06 | Remetente | `Remetente` |  |
+| 07 | Expedidor | `Expedidor` | Tomador do Serviço? |
+| 08 | Recebedor | `Recebedor` |  |
+| 09 | Destinatario | `Destinatario` |  |
+| 10 | Valores | `ValoresPrestacaoServico` |  |
+| 11 | Impostos | `Impostos` |  |
+| 12 | DocumentosReferenciados | `ICollection` |  |
+| 13 | InformacaoCTePorTipo | `Object` |  |
+| 14 | AutorizadosDownloadXML | `ObservableCollection<AutorizadoXML>` |  |
+| 15 | Versao | `String` |  |
+| 16 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, InformacoesCTe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, InformacoesCTe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, InformacoesCTe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, InformacoesCTe) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, InformacoesCTe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, InformacoesCTe) | `Boolean` |  |
+| Deserialize(string) | `InformacoesCTe` |  |
+| Deserialize(Stream) | `InformacoesCTe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, InformacoesCTe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, InformacoesCTe) | `Boolean` |  |
+| LoadFrom(Stream) | `InformacoesCTe` |  |
+| LoadFromAsync(Stream) | `Task<InformacoesCTe>` |  |

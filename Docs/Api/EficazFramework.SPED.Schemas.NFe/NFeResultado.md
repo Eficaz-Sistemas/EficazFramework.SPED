@@ -9,6 +9,6 @@ Está listado na Propriedade 'Resultados' da clsse RetornoConsulta.
 ### Remarks
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

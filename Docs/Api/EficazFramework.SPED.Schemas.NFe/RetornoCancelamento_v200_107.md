@@ -9,13 +9,13 @@ ANTES da implantação de cancelamento por Evento de NF-e.
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InformacoesCancelamento |  |
-| 03 | Signature |  |
-| 04 | Versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InformacoesCancelamento | `RetornoCancelamentoInformacoes_v200_107` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | Versao | `VersaoCancelamento` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

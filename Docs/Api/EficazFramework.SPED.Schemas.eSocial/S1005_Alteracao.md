@@ -4,8 +4,8 @@
 ## S1005_Alteracao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEstab |  |
-| 03 | dadosEstab |  |
-| 04 | novaValidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEstab | `TIdeEstab` |  |
+| 03 | dadosEstab | `TDadosEstab` |  |
+| 04 | novaValidade | `TIdePeriodo` |  |

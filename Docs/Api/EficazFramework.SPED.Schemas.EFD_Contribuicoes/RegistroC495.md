@@ -8,21 +8,21 @@ Detalhamento da Consolidação de Documentos Emitidos por ECF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoItem |  |
-| 03 | CSTCofins |  |
-| 04 | CFOP |  |
-| 05 | ValorTotalItens |  |
-| 06 | ValorBCCofins |  |
-| 07 | AliquotaCofins |  |
-| 08 | QtdeBCCofins |  |
-| 09 | AliquotaCofinsQtde |  |
-| 10 | ValorCofins |  |
-| 11 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoItem | `String` |  |
+| 03 | CSTCofins | `String` |  |
+| 04 | CFOP | `String` |  |
+| 05 | ValorTotalItens | `Nullable<Double>` |  |
+| 06 | ValorBCCofins | `Nullable<Double>` |  |
+| 07 | AliquotaCofins | `Nullable<Double>` |  |
+| 08 | QtdeBCCofins | `Nullable<Double>` |  |
+| 09 | AliquotaCofinsQtde | `Nullable<Double>` |  |
+| 10 | ValorCofins | `Nullable<Double>` |  |
+| 11 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

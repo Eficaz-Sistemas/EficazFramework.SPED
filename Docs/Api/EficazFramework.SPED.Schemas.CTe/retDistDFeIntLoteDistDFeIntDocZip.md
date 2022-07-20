@@ -6,18 +6,18 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NSU |  |
-| 03 | schema |  |
-| 04 | Value |  |
-| 05 | DocumentType |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NSU | `String` |  |
+| 03 | schema | `String` |  |
+| 04 | Value | `Byte[]` |  |
+| 05 | DocumentType | `XMLDocumentType` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| DescompactaAsync() |  |
-| DecodedValueAsync() |  |
-| GetInstanceAsync() |  |
-| SaveAsync(Stream) |  |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| DescompactaAsync() | `Task<Byte[]>` |  |
+| DecodedValueAsync() | `Task<String>` |  |
+| GetInstanceAsync() | `Task<IXmlSpedDocument>` |  |
+| SaveAsync(Stream) | `Task` |  |
+| ToString() | `String` |  |

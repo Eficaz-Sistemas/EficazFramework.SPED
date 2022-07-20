@@ -9,14 +9,14 @@ Provenientes de Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoObs0460 |  |
-| 03 | Descricao |  |
-| 04 | RegistrosD197 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoObs0460 | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | RegistrosD197 | `List<RegistroD197>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,24 +4,24 @@
 ## tcPedidoCancelamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InfPedidoCancelamento |  |
-| 03 | Signature |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InfPedidoCancelamento | `tcInfPedidoCancelamento` |  |
+| 03 | Signature | `SignatureType` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcPedidoCancelamento, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcPedidoCancelamento) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcPedidoCancelamento, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcPedidoCancelamento) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcPedidoCancelamento, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcPedidoCancelamento) | `Boolean` |  |
+| Deserialize(string) | `tcPedidoCancelamento` |  |
+| Deserialize(Stream) | `tcPedidoCancelamento` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcPedidoCancelamento, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcPedidoCancelamento) | `Boolean` |  |
+| LoadFrom(Stream) | `tcPedidoCancelamento` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcPedidoCancelamento>` |  |

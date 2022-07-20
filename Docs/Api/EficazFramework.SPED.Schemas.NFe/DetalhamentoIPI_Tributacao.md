@@ -4,21 +4,21 @@
 ## DetalhamentoIPI_Tributacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST | Valores válidos: 00, 49, 50 e 99 |
-| 03 | Aliquota | Informar apenas para IPI calculado por alíquota. |
-| 04 | Quantidade | Informar apenas para IPI calculado por unidade. |
-| 05 | BaseDeCalculo | Informar apenas para IPI calculado por alíquota. |
-| 06 | ValorPorUnidade | Informar apenas para IPI calculado por unidade. |
-| 07 | ValorIPI |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `CST_IPI` | Valores válidos: 00, 49, 50 e 99 |
+| 03 | Aliquota | `Nullable<Double>` | Informar apenas para IPI calculado por alíquota. |
+| 04 | Quantidade | `Nullable<Double>` | Informar apenas para IPI calculado por unidade. |
+| 05 | BaseDeCalculo | `Nullable<Double>` | Informar apenas para IPI calculado por alíquota. |
+| 06 | ValorPorUnidade | `Nullable<Double>` | Informar apenas para IPI calculado por unidade. |
+| 07 | ValorIPI | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeAliquota() |  |
-| ShouldSerializeQuantidade() |  |
-| ShouldSerializeBaseDeCalculo() |  |
-| ShouldSerializeValorPorUnidade() |  |
-| ShouldSerializeValorIPI() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeAliquota() | `Boolean` |  |
+| ShouldSerializeQuantidade() | `Boolean` |  |
+| ShouldSerializeBaseDeCalculo() | `Boolean` |  |
+| ShouldSerializeValorPorUnidade() | `Boolean` |  |
+| ShouldSerializeValorIPI() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

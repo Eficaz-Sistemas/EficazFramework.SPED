@@ -8,22 +8,22 @@ Balanço Patrimonial
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodAglutinacao |  |
-| 03 | IndicadorCodAglutinacao |  |
-| 04 | NivelCodAglut |  |
-| 05 | CodAglutinacaoSuperior |  |
-| 06 | IndicadorGrupoBalanco |  |
-| 07 | DescrCodAglut |  |
-| 08 | VrTotalCodAglut |  |
-| 09 | IndicadorSitSaldo |  |
-| 10 | VrInicialCodAglut |  |
-| 11 | IndicadorSitSaldoInicial |  |
-| 12 | NotaExplicativa |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodAglutinacao | `String` |  |
+| 03 | IndicadorCodAglutinacao | `String` |  |
+| 04 | NivelCodAglut | `String` |  |
+| 05 | CodAglutinacaoSuperior | `String` |  |
+| 06 | IndicadorGrupoBalanco | `IndicadorGrupoBalanço` |  |
+| 07 | DescrCodAglut | `String` |  |
+| 08 | VrTotalCodAglut | `Nullable<Double>` |  |
+| 09 | IndicadorSitSaldo | `String` |  |
+| 10 | VrInicialCodAglut | `Nullable<Double>` |  |
+| 11 | IndicadorSitSaldoInicial | `String` |  |
+| 12 | NotaExplicativa | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

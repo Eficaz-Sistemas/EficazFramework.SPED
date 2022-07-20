@@ -4,24 +4,24 @@
 ## TProtCTeInfProt Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | verAplic |  |
-| 04 | chCTe |  |
-| 05 | ChaveCTeCodificada |  |
-| 06 | ChaveCTeCodificadaByte |  |
-| 07 | ChaveCTeFormatada |  |
-| 08 | Logo |  |
-| 09 | dhRecbto |  |
-| 10 | nProt |  |
-| 11 | digVal |  |
-| 12 | cStat |  |
-| 13 | xMotivo |  |
-| 14 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | verAplic | `String` |  |
+| 04 | chCTe | `String` |  |
+| 05 | ChaveCTeCodificada | `String` |  |
+| 06 | ChaveCTeCodificadaByte | `Byte[]` |  |
+| 07 | ChaveCTeFormatada | `String` |  |
+| 08 | Logo | `Byte[]` |  |
+| 09 | dhRecbto | `DateTime` |  |
+| 10 | nProt | `String` |  |
+| 11 | digVal | `Byte[]` |  |
+| 12 | cStat | `String` |  |
+| 13 | xMotivo | `String` |  |
+| 14 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| SetCodeBarRaw(string, byte[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| SetCodeBarRaw(string, byte[]) | `Void` |  |

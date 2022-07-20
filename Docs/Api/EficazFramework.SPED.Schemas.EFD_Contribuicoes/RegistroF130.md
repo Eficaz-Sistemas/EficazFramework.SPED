@@ -8,31 +8,31 @@ Bens incorporados ao ativo imobilizado - operações geradoras de créditos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NatBcCalculo |  |
-| 03 | IdentificacaoBensGrupoAtivo |  |
-| 04 | IndicadorOrigemBemAtivoImob |  |
-| 05 | IndicadorUtilizacaoBensAtivoImob |  |
-| 06 | MesAquisicaoBemAtivoImobilizado |  |
-| 07 | VrOperacaoAquisicao |  |
-| 08 | ParcelaExcluirBcCreditoAquisicao |  |
-| 09 | VrBcCrédito |  |
-| 10 | IndicadorNumParcelas |  |
-| 11 | CSTPis |  |
-| 12 | VrBcPis |  |
-| 13 | AliqPis |  |
-| 14 | VrPis |  |
-| 15 | CSTCofins |  |
-| 16 | VrBcCofins |  |
-| 17 | AliqCofins |  |
-| 18 | VrCofins |  |
-| 19 | CodigoContaContabil |  |
-| 20 | CodigoCentroCusto |  |
-| 21 | DescricaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NatBcCalculo | `String` |  |
+| 03 | IdentificacaoBensGrupoAtivo | `IdentificacaoBensGrupoAtivoImobilizado` |  |
+| 04 | IndicadorOrigemBemAtivoImob | `IndicadorOrigemCreditoAtivoImobilizado` |  |
+| 05 | IndicadorUtilizacaoBensAtivoImob | `IndicadorUtilizacaoBensAtivoImobilizado` |  |
+| 06 | MesAquisicaoBemAtivoImobilizado | `Nullable<DateTime>` |  |
+| 07 | VrOperacaoAquisicao | `Nullable<Double>` |  |
+| 08 | ParcelaExcluirBcCreditoAquisicao | `Nullable<Double>` |  |
+| 09 | VrBcCrédito | `Nullable<Double>` |  |
+| 10 | IndicadorNumParcelas | `IndicadorNumeroParcelas` |  |
+| 11 | CSTPis | `String` |  |
+| 12 | VrBcPis | `Nullable<Double>` |  |
+| 13 | AliqPis | `Nullable<Double>` |  |
+| 14 | VrPis | `Nullable<Double>` |  |
+| 15 | CSTCofins | `String` |  |
+| 16 | VrBcCofins | `Nullable<Double>` |  |
+| 17 | AliqCofins | `Nullable<Double>` |  |
+| 18 | VrCofins | `Nullable<Double>` |  |
+| 19 | CodigoContaContabil | `String` |  |
+| 20 | CodigoCentroCusto | `String` |  |
+| 21 | DescricaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

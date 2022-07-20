@@ -4,10 +4,10 @@
 ## TDadosEstab Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cnaePrep |  |
-| 03 | aliqGilrat |  |
-| 04 | infoCaepf |  |
-| 05 | infoObra |  |
-| 06 | infoTrab |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cnaePrep | `String` |  |
+| 03 | aliqGilrat | `TDadosEstabAliqGilrat` |  |
+| 04 | infoCaepf | `TDadosEstabInfoCaepf` |  |
+| 05 | infoObra | `TDadosEstabInfoObra` |  |
+| 06 | infoTrab | `TDadosEstabInfoTrab` |  |

@@ -6,22 +6,22 @@
 Retorno á consulta de lote de eventos
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | retornoProcessamentoLoteEventos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | retornoProcessamentoLoteEventos | `eSocialRetornoProcessamentoLoteEventos` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, RetornoConsultaLoteEventos, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, RetornoConsultaLoteEventos) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, RetornoConsultaLoteEventos, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, RetornoConsultaLoteEventos) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, RetornoConsultaLoteEventos, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, RetornoConsultaLoteEventos) | `Boolean` |  |
+| Deserialize(string) | `RetornoConsultaLoteEventos` |  |
+| Deserialize(Stream) | `RetornoConsultaLoteEventos` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, RetornoConsultaLoteEventos, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, RetornoConsultaLoteEventos) | `Boolean` |  |
+| LoadFrom(Stream) | `RetornoConsultaLoteEventos` |  |
+| LoadFromAsync(Stream) | `Task<RetornoConsultaLoteEventos>` |  |

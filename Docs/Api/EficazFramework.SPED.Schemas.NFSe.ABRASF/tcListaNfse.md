@@ -4,11 +4,11 @@
 ## tcListaNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Items |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Items | `List<tcCompNfse>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,9 +4,9 @@
 ## ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProcRetPrinc |  |
-| 03 | nrProcRetPrinc |  |
-| 04 | codSuspPrinc |  |
-| 05 | valorPrinc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProcRetPrinc | `TipoProcesso` |  |
+| 03 | nrProcRetPrinc | `String` |  |
+| 04 | codSuspPrinc | `String` |  |
+| 05 | valorPrinc | `String` |  |

@@ -4,13 +4,13 @@
 ## TCTeInfCteComplEntregaNoPeriodo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpPer |  |
-| 03 | dIni |  |
-| 04 | dFim |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpPer | `TCTeInfCteComplEntregaNoPeriodoTpPer` |  |
+| 03 | dIni | `String` |  |
+| 04 | dFim | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

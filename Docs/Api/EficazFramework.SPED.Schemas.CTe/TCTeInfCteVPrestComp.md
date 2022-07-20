@@ -4,12 +4,12 @@
 ## TCTeInfCteVPrestComp Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xNome |  |
-| 03 | vComp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xNome | `String` |  |
+| 03 | vComp | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,6 +4,6 @@
 ## eSocialEvtTabRubricaInfoRubrica Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Item |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Item | `Object` |  |

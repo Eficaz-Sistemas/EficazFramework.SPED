@@ -8,20 +8,20 @@ Documento Fiscal Referenciado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Operacao |  |
-| 03 | Emissao |  |
-| 04 | CodigoParticipante |  |
-| 05 | EspecieDocumento |  |
-| 06 | Serie |  |
-| 07 | SubSerie |  |
-| 08 | Numero |  |
-| 09 | Data |  |
-| 10 | ChaveDoce |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Operacao | `IndicadorOperacao` |  |
+| 03 | Emissao | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | EspecieDocumento | `String` |  |
+| 06 | Serie | `String` |  |
+| 07 | SubSerie | `Nullable<Int32>` |  |
+| 08 | Numero | `Nullable<Int32>` |  |
+| 09 | Data | `Nullable<DateTime>` |  |
+| 10 | ChaveDoce | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

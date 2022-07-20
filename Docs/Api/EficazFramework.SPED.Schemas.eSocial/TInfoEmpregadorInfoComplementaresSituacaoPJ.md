@@ -4,6 +4,6 @@
 ## TInfoEmpregadorInfoComplementaresSituacaoPJ Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indSitPJ |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indSitPJ | `SituacaoPessoaJuridica` |  |

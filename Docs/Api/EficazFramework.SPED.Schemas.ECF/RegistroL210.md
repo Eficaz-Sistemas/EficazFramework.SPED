@@ -8,15 +8,15 @@ Informativo da Composição de Custos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoReferencial |  |
-| 03 | Descricao |  |
-| 04 | Valor |  |
-| 05 | Analitica |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoReferencial | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | Valor | `Nullable<Double>` |  |
+| 05 | Analitica | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

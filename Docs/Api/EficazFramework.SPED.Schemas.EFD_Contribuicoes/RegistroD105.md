@@ -8,19 +8,19 @@ Complemento do Documento de Transporte
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorNaturezaFrete |  |
-| 03 | VrTotalItens |  |
-| 04 | CSTCofins |  |
-| 05 | NatBcCredito |  |
-| 06 | VrBcCofins |  |
-| 07 | AliquotaCofins |  |
-| 08 | VrCofins |  |
-| 09 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorNaturezaFrete | `IndicadorNaturezaFrete` |  |
+| 03 | VrTotalItens | `Nullable<Double>` |  |
+| 04 | CSTCofins | `String` |  |
+| 05 | NatBcCredito | `String` |  |
+| 06 | VrBcCofins | `Nullable<Double>` |  |
+| 07 | AliquotaCofins | `Nullable<Double>` |  |
+| 08 | VrCofins | `Nullable<Double>` |  |
+| 09 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

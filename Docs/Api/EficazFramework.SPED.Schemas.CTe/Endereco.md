@@ -4,23 +4,23 @@
 ## Endereco Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xLgr |  |
-| 03 | nro |  |
-| 04 | xCpl |  |
-| 05 | xBairro |  |
-| 06 | cMun |  |
-| 07 | xMun |  |
-| 08 | CEP |  |
-| 09 | CEPFormatado |  |
-| 10 | UF |  |
-| 11 | cPais |  |
-| 12 | xPais |  |
-| 13 | fone |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xLgr | `String` |  |
+| 03 | nro | `String` |  |
+| 04 | xCpl | `String` |  |
+| 05 | xBairro | `String` |  |
+| 06 | cMun | `String` |  |
+| 07 | xMun | `String` |  |
+| 08 | CEP | `String` |  |
+| 09 | CEPFormatado | `String` |  |
+| 10 | UF | `Estado` |  |
+| 11 | cPais | `String` |  |
+| 12 | xPais | `String` |  |
+| 13 | fone | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| CloneToEnderecoNFe() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| CloneToEnderecoNFe() | `Endereco` |  |

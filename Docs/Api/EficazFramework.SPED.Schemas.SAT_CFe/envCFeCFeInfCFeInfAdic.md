@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infCpl |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infCpl | `String` |  |

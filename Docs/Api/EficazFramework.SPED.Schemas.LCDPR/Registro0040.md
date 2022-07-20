@@ -8,27 +8,27 @@ Cadastro dos Imóveis Rurais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IDImovel |  |
-| 03 | Pais |  |
-| 04 | Moeda |  |
-| 05 | NIRF | NOTA: Informar DV |
-| 06 | CAEPF |  |
-| 07 | InscricaoEstadual |  |
-| 08 | NomeImovel |  |
-| 09 | Endereco |  |
-| 10 | Numero |  |
-| 11 | Complemento |  |
-| 12 | Bairro |  |
-| 13 | UF |  |
-| 14 | CodigoMunicipio |  |
-| 15 | CEP |  |
-| 16 | TipoExploracao |  |
-| 17 | Percentual |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IDImovel | `Nullable<Int32>` |  |
+| 03 | Pais | `String` |  |
+| 04 | Moeda | `String` |  |
+| 05 | NIRF | `String` | NOTA: Informar DV |
+| 06 | CAEPF | `String` |  |
+| 07 | InscricaoEstadual | `String` |  |
+| 08 | NomeImovel | `String` |  |
+| 09 | Endereco | `String` |  |
+| 10 | Numero | `String` |  |
+| 11 | Complemento | `String` |  |
+| 12 | Bairro | `String` |  |
+| 13 | UF | `String` |  |
+| 14 | CodigoMunicipio | `String` |  |
+| 15 | CEP | `String` |  |
+| 16 | TipoExploracao | `TipoExploracao` |  |
+| 17 | Percentual | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

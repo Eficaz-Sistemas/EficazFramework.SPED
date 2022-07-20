@@ -4,9 +4,9 @@
 ## ReinfEvtComProd Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideContri |  |
-| 04 | infoComProd |  |
-| 05 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `ReinfEvtComProdIdeEvento` |  |
+| 03 | ideContri | `ReinfEvtComProdIdeContri` |  |
+| 04 | infoComProd | `ReinfEvtComProdInfoComProd` |  |
+| 05 | id | `String` |  |

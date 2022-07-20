@@ -8,20 +8,20 @@ Detalhamento da Consolidação - PIS/PASEP
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTPis |  |
-| 03 | CodigoItem |  |
-| 04 | VrTotalItens |  |
-| 05 | VrBaseCalculoPis |  |
-| 06 | AliquotaPIS |  |
-| 07 | BCQuantidadePis |  |
-| 08 | AliquotaPisReais |  |
-| 09 | VrPIS |  |
-| 10 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTPis | `String` |  |
+| 03 | CodigoItem | `String` |  |
+| 04 | VrTotalItens | `Nullable<Double>` |  |
+| 05 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 06 | AliquotaPIS | `Nullable<Double>` |  |
+| 07 | BCQuantidadePis | `Nullable<Double>` |  |
+| 08 | AliquotaPisReais | `Nullable<Double>` |  |
+| 09 | VrPIS | `Nullable<Double>` |  |
+| 10 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

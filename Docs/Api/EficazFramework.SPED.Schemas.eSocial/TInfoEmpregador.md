@@ -4,27 +4,27 @@
 ## TInfoEmpregador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nmRazao |  |
-| 03 | classTrib |  |
-| 04 | natJurid |  |
-| 05 | indCoop |  |
-| 06 | indCoopSpecified |  |
-| 07 | indConstr |  |
-| 08 | indConstrSpecified |  |
-| 09 | indDesFolha |  |
-| 10 | indOpcCP |  |
-| 11 | indOpcCPSpecified |  |
-| 12 | indOptRegEletron |  |
-| 13 | indPorte |  |
-| 14 | indEntEd |  |
-| 15 | indEntEdSpecified |  |
-| 16 | indEtt |  |
-| 17 | nrRegEtt |  |
-| 18 | dadosIsencao |  |
-| 19 | contato |  |
-| 20 | infoOP |  |
-| 21 | infoOrgInternacional |  |
-| 22 | softwareHouse |  |
-| 23 | infoComplementares |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nmRazao | `String` |  |
+| 03 | classTrib | `String` |  |
+| 04 | natJurid | `String` |  |
+| 05 | indCoop | `IndicadorCooperativa` |  |
+| 06 | indCoopSpecified | `Boolean` |  |
+| 07 | indConstr | `SimNaoByte` |  |
+| 08 | indConstrSpecified | `Boolean` |  |
+| 09 | indDesFolha | `SimNaoByte` |  |
+| 10 | indOpcCP | `OpcaoTributacaoPrevidenciaria` |  |
+| 11 | indOpcCPSpecified | `Boolean` |  |
+| 12 | indOptRegEletron | `SimNaoByte` |  |
+| 13 | indPorte | `String` |  |
+| 14 | indEntEd | `SimNaoString` |  |
+| 15 | indEntEdSpecified | `Boolean` |  |
+| 16 | indEtt | `SimNaoString` |  |
+| 17 | nrRegEtt | `String` |  |
+| 18 | dadosIsencao | `TInfoEmpregadorDadosIsencao` |  |
+| 19 | contato | `TInfoEmpregadorContato` |  |
+| 20 | infoOP | `TInfoEmpregadorInfoOP` |  |
+| 21 | infoOrgInternacional | `TInfoEmpregadorInfoOrgInternacional` |  |
+| 22 | softwareHouse | `TInfoEmpregadorSoftwareHouse` |  |
+| 23 | infoComplementares | `TInfoEmpregadorInfoComplementares` |  |

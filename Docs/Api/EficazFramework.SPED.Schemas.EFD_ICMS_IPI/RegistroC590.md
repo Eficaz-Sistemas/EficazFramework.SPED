@@ -8,22 +8,22 @@ Analíticos (Energia Elétrica / Gás)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Origem |  |
-| 03 | CST_ICMS |  |
-| 04 | CFOP |  |
-| 05 | AliquotaICMS |  |
-| 06 | ValorOperacao |  |
-| 07 | ValorBaseCalculoICMS |  |
-| 08 | ValorICMS |  |
-| 09 | ValorBaseCalculoICMSST |  |
-| 10 | ValorICMSST |  |
-| 11 | ValorReducaoBC |  |
-| 12 | CodigoObservacao0460 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Origem | `OrigemMercadoria` |  |
+| 03 | CST_ICMS | `CST_ICMS` |  |
+| 04 | CFOP | `String` |  |
+| 05 | AliquotaICMS | `Nullable<Double>` |  |
+| 06 | ValorOperacao | `Nullable<Double>` |  |
+| 07 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| 08 | ValorICMS | `Nullable<Double>` |  |
+| 09 | ValorBaseCalculoICMSST | `Nullable<Double>` |  |
+| 10 | ValorICMSST | `Nullable<Double>` |  |
+| 11 | ValorReducaoBC | `Nullable<Double>` |  |
+| 12 | CodigoObservacao0460 | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

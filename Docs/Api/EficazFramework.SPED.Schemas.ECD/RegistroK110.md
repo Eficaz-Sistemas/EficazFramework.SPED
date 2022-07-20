@@ -8,13 +8,13 @@ Relação dos Eventos Societários
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | EventoSocietario |  |
-| 03 | DataEventoSocietario |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | EventoSocietario | `EventoSocietario` |  |
+| 03 | DataEventoSocietario | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

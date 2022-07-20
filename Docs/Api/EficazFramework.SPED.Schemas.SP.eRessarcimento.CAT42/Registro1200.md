@@ -8,26 +8,26 @@ REGISTRO DE DOCUMENTO FISCAL NÃO-ELETRÔNICO PARA FINS DE RESSARCIMENTO DE SUBS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | CodigoModelo |  |
-| 04 | ECF_NnumeroSerie |  |
-| 05 | SerieDocumento |  |
-| 06 | NumeroDocumento |  |
-| 07 | NumeroItemOrdem |  |
-| 08 | Operacao |  |
-| 09 | DataEscrituracao |  |
-| 10 | CFOP |  |
-| 11 | CodigoProduto |  |
-| 12 | Quantidade |  |
-| 13 | ICMSTotal | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
-| 14 | ValorConfronto | Valor de confronto nas operações de saída |
-| 15 | CodigoLegal |  |
-| 16 | IsDevolucao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | CodigoModelo | `String` |  |
+| 04 | ECF_NnumeroSerie | `String` |  |
+| 05 | SerieDocumento | `String` |  |
+| 06 | NumeroDocumento | `Nullable<Int32>` |  |
+| 07 | NumeroItemOrdem | `Nullable<Int32>` |  |
+| 08 | Operacao | `IndicadorOperacao` |  |
+| 09 | DataEscrituracao | `Nullable<DateTime>` |  |
+| 10 | CFOP | `String` |  |
+| 11 | CodigoProduto | `String` |  |
+| 12 | Quantidade | `Nullable<Double>` |  |
+| 13 | ICMSTotal | `Nullable<Double>` | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
+| 14 | ValorConfronto | `Nullable<Double>` | Valor de confronto nas operações de saída |
+| 15 | CodigoLegal | `EnquadramentLegal` |  |
+| 16 | IsDevolucao | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

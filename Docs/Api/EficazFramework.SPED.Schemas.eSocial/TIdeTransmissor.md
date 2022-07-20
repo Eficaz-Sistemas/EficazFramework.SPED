@@ -6,7 +6,7 @@
 Identificação do Transmissor
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInsc |  |
-| 03 | nrInsc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInsc | `PersonalidadeJuridica` |  |
+| 03 | nrInsc | `String` |  |

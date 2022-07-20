@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cMP |  |
-| 03 | vMP |  |
-| 04 | cAdmC |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cMP | `FormaPagto` |  |
+| 03 | vMP | `String` |  |
+| 04 | cAdmC | `String` |  |

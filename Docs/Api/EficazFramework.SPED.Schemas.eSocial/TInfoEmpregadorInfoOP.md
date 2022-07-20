@@ -4,8 +4,8 @@
 ## TInfoEmpregadorInfoOP Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrSiafi |  |
-| 03 | infoEFR |  |
-| 04 | infoEnte |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrSiafi | `String` |  |
+| 03 | infoEFR | `TInfoEmpregadorInfoOPInfoEFR` |  |
+| 04 | infoEnte | `TInfoEmpregadorInfoOPInfoEnte` |  |

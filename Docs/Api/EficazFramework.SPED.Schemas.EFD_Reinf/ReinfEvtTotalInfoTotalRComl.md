@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CRComl |  |
-| 03 | vlrCRComl |  |
-| 04 | vlrCRComlSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CRComl | `String` |  |
+| 03 | vlrCRComl | `String` |  |
+| 04 | vlrCRComlSusp | `String` |  |

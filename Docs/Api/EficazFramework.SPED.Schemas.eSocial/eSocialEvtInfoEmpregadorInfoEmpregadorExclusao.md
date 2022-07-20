@@ -4,6 +4,6 @@
 ## eSocialEvtInfoEmpregadorInfoEmpregadorExclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | idePeriodo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | idePeriodo | `TIdePeriodo` |  |

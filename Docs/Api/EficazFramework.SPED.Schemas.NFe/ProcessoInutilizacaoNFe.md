@@ -6,28 +6,28 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Inutilizacao |  |
-| 03 | RetornoInutilizacao |  |
-| 04 | versao |  |
-| 05 | DocumentType |  |
-| 06 | DataEmissao |  |
-| 07 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Inutilizacao | `InutilizacaoNFe` |  |
+| 03 | RetornoInutilizacao | `InutilizacaoRetorno` |  |
+| 04 | versao | `String` |  |
+| 05 | DocumentType | `XMLDocumentType` |  |
+| 06 | DataEmissao | `Nullable<DateTime>` |  |
+| 07 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ProcessoInutilizacaoNFe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ProcessoInutilizacaoNFe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ProcessoInutilizacaoNFe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ProcessoInutilizacaoNFe) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ProcessoInutilizacaoNFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ProcessoInutilizacaoNFe) | `Boolean` |  |
+| Deserialize(string) | `ProcessoInutilizacaoNFe` |  |
+| Deserialize(Stream) | `ProcessoInutilizacaoNFe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ProcessoInutilizacaoNFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ProcessoInutilizacaoNFe) | `Boolean` |  |
+| LoadFrom(Stream) | `ProcessoInutilizacaoNFe` |  |
+| LoadFromAsync(Stream) | `Task<ProcessoInutilizacaoNFe>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ProcessoInutilizacaoNFe>` |  |

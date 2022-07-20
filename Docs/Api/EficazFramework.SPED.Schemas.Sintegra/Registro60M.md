@@ -8,25 +8,25 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEmissao |  |
-| 03 | NumeroSerieFabEquip |  |
-| 04 | NumeroSequencialEquip |  |
-| 05 | ModeloDocFiscal |  |
-| 06 | COO_Inicial |  |
-| 07 | COO_Final |  |
-| 08 | CRZ |  |
-| 09 | CRO |  |
-| 10 | VendaBrutaAcumulada |  |
-| 11 | TotalGeralAcumulado |  |
-| 12 | Brancos |  |
-| 13 | Registros60A |  |
-| 14 | Registros60D |  |
-| 15 | Registros60I |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEmissao | `Nullable<DateTime>` |  |
+| 03 | NumeroSerieFabEquip | `String` |  |
+| 04 | NumeroSequencialEquip | `Nullable<Int32>` |  |
+| 05 | ModeloDocFiscal | `String` |  |
+| 06 | COO_Inicial | `Nullable<Int32>` |  |
+| 07 | COO_Final | `Nullable<Int32>` |  |
+| 08 | CRZ | `Nullable<Int32>` |  |
+| 09 | CRO | `Nullable<Int32>` |  |
+| 10 | VendaBrutaAcumulada | `Nullable<Double>` |  |
+| 11 | TotalGeralAcumulado | `Nullable<Double>` |  |
+| 12 | Brancos | `String` |  |
+| 13 | Registros60A | `List<Registro60A>` |  |
+| 14 | Registros60D | `List<Registro60D>` |  |
+| 15 | Registros60I | `List<Registro60I>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

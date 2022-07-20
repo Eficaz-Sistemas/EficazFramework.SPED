@@ -4,7 +4,7 @@
 ## CFeCancelado Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infCFe |  |
-| 03 | Any |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infCFe | `CFeCanceladoInformacoes` |  |
+| 03 | Any | `XElement` |  |

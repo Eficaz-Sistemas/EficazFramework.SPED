@@ -4,12 +4,12 @@
 ## DetalhamentoCOFINS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Tributacao |  |
-| 03 | TributacaoIndentifier |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Tributacao | `DetalhamentoCOFINS_Tributacao` |  |
+| 03 | TributacaoIndentifier | `Tributacao_COFINS_Identifier` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

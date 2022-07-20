@@ -4,25 +4,25 @@
 ## ConsultaLoteGNRE Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ambiente |  |
-| 03 | numeroRecibo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ambiente | `Ambiente` |  |
+| 03 | numeroRecibo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ConsultaLoteGNRE, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ConsultaLoteGNRE) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ConsultaLoteGNRE, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ConsultaLoteGNRE) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ConsultaLoteGNRE, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ConsultaLoteGNRE) | `Boolean` |  |
+| Deserialize(string) | `ConsultaLoteGNRE` |  |
+| Deserialize(Stream) | `ConsultaLoteGNRE` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ConsultaLoteGNRE, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ConsultaLoteGNRE) | `Boolean` |  |
+| LoadFrom(Stream) | `ConsultaLoteGNRE` |  |
+| LoadFromAsync(Stream) | `Task<ConsultaLoteGNRE>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ConsultaLoteGNRE>` |  |

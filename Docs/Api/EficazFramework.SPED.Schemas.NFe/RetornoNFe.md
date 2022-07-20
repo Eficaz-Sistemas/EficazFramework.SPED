@@ -4,15 +4,15 @@
 ## RetornoNFe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ChaveNFe |  |
-| 03 | ResultadoCodigo |  |
-| 04 | ResultadoDescricao |  |
-| 05 | ResultadoXML |  |
-| 06 | Resultado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ChaveNFe | `String` |  |
+| 03 | ResultadoCodigo | `String` |  |
+| 04 | ResultadoDescricao | `String` |  |
+| 05 | ResultadoXML | `Object` |  |
+| 06 | Resultado | `Object` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

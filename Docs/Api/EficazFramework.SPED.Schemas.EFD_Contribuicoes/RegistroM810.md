@@ -8,15 +8,15 @@ Detalhamento das receitas isentas, não alcançadas pela incidência da contribu
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NaturezaReceitaCST |  |
-| 03 | VrReceitaBrutaPeriodo |  |
-| 04 | CodigoContaContabil |  |
-| 05 | DescricaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NaturezaReceitaCST | `String` |  |
+| 03 | VrReceitaBrutaPeriodo | `Nullable<Double>` |  |
+| 04 | CodigoContaContabil | `String` |  |
+| 05 | DescricaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

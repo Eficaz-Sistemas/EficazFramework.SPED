@@ -8,17 +8,17 @@ Plano de Contas Consolidado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoNaturezaContas |  |
-| 03 | IndicadorTipoConta |  |
-| 04 | NivelConta |  |
-| 05 | CodigoConta |  |
-| 06 | CodigoContaSuperior |  |
-| 07 | NomeConta |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoNaturezaContas | `String` |  |
+| 03 | IndicadorTipoConta | `String` |  |
+| 04 | NivelConta | `String` |  |
+| 05 | CodigoConta | `String` |  |
+| 06 | CodigoContaSuperior | `String` |  |
+| 07 | NomeConta | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

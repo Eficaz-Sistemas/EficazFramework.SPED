@@ -9,16 +9,16 @@ IMPORTAÇÃO (CÓDIGOS 01 e 55).
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Documento_Importacao |  |
-| 03 | Numero_Doc_Imp |  |
-| 04 | ValorPIS |  |
-| 05 | ValorCOFINS |  |
-| 06 | Numero_Acdraw |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Documento_Importacao | `DocumentoImportacao` |  |
+| 03 | Numero_Doc_Imp | `String` |  |
+| 04 | ValorPIS | `Nullable<Double>` |  |
+| 05 | ValorCOFINS | `Nullable<Double>` |  |
+| 06 | Numero_Acdraw | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,17 +8,17 @@ Consolidação da contribuição previdenciária sobre a receita bruta
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PeriodoRefEscrit |  |
-| 03 | VrTotalApurContribPrevRecBruta |  |
-| 04 | VrTotalAjusteReducao |  |
-| 05 | VrTotalAjusteAcrescimo |  |
-| 06 | VrTotalContribPrevRecolher |  |
-| 07 | CodigoReceitaContribPrevDCTF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PeriodoRefEscrit | `Nullable<DateTime>` |  |
+| 03 | VrTotalApurContribPrevRecBruta | `Nullable<Double>` |  |
+| 04 | VrTotalAjusteReducao | `Nullable<Double>` |  |
+| 05 | VrTotalAjusteAcrescimo | `Nullable<Double>` |  |
+| 06 | VrTotalContribPrevRecolher | `Nullable<Double>` |  |
+| 07 | CodigoReceitaContribPrevDCTF | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

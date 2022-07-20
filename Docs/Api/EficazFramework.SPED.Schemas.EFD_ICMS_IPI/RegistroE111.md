@@ -8,16 +8,16 @@ Ajustes da Apuração do ICMS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoAjuste |  |
-| 03 | DescricaoComplementar |  |
-| 04 | ValorAjuste |  |
-| 05 | RegistrosE112 |  |
-| 06 | RegistrosE113 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoAjuste | `String` |  |
+| 03 | DescricaoComplementar | `String` |  |
+| 04 | ValorAjuste | `Nullable<Double>` |  |
+| 05 | RegistrosE112 | `List<RegistroE112>` |  |
+| 06 | RegistrosE113 | `List<RegistroE113>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

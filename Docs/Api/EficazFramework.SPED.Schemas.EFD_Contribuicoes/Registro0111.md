@@ -8,16 +8,16 @@ Tabela de Receita Bruta Mensal para Fins de Rateio de Créditos Comuns
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ReceitaBrutaNaoCumulativaMercadoInt |  |
-| 03 | ReceitaBrutaNaoCumulativaNaoTribMercInt |  |
-| 04 | ReceitaBrutaNaoCumulativaExport |  |
-| 05 | ReceitaBrutaCumulativa |  |
-| 06 | ReceitaBrutaTotal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ReceitaBrutaNaoCumulativaMercadoInt | `Nullable<Double>` |  |
+| 03 | ReceitaBrutaNaoCumulativaNaoTribMercInt | `Nullable<Double>` |  |
+| 04 | ReceitaBrutaNaoCumulativaExport | `Nullable<Double>` |  |
+| 05 | ReceitaBrutaCumulativa | `Nullable<Double>` |  |
+| 06 | ReceitaBrutaTotal | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

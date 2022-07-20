@@ -6,12 +6,12 @@
 Abertura do Bloco 9
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorMovimento | Indicador de Movimento no Bloco 9 |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorMovimento | `IndicadorMovimento` | Indicador de Movimento no Bloco 9 |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

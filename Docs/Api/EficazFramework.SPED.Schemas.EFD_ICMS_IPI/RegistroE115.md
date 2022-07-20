@@ -8,14 +8,14 @@ Valores Declaratórios (por UF)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoInformacao |  |
-| 03 | Valor |  |
-| 04 | DescricaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoInformacao | `String` |  |
+| 03 | Valor | `Nullable<Double>` |  |
+| 04 | DescricaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,9 +6,9 @@
 Detalhamento da ocorrência do Status
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codigo |  |
-| 03 | descricao |  |
-| 04 | tipo |  |
-| 05 | localizacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codigo | `Int32` |  |
+| 03 | descricao | `String` |  |
+| 04 | tipo | `Byte` |  |
+| 05 | localizacao | `String` |  |

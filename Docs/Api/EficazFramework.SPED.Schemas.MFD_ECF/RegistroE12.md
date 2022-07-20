@@ -8,27 +8,27 @@ Relação de Reduções Z
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroFabricacaoECF |  |
-| 03 | MFAdicional |  |
-| 04 | Modelo |  |
-| 05 | NumeroUsuario |  |
-| 06 | CRZ |  |
-| 07 | COO |  |
-| 08 | CRO |  |
-| 09 | DataMovimento |  |
-| 10 | DataEmissao |  |
-| 11 | HoraEmissao |  |
-| 12 | VendaBrutaDiaria |  |
-| 13 | IncidenciaDesconto |  |
-| 14 | RegistrosE13 |  |
-| 15 | RegistrosE14 |  |
-| 16 | RegistrosE15 |  |
-| 17 | RegistrosE18 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroFabricacaoECF | `String` |  |
+| 03 | MFAdicional | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | NumeroUsuario | `Nullable<Int32>` |  |
+| 06 | CRZ | `Nullable<Int32>` |  |
+| 07 | COO | `Nullable<Int32>` |  |
+| 08 | CRO | `Nullable<Int32>` |  |
+| 09 | DataMovimento | `Nullable<DateTime>` |  |
+| 10 | DataEmissao | `Nullable<DateTime>` |  |
+| 11 | HoraEmissao | `Nullable<TimeSpan>` |  |
+| 12 | VendaBrutaDiaria | `Nullable<Double>` |  |
+| 13 | IncidenciaDesconto | `Nullable<Boolean>` |  |
+| 14 | RegistrosE13 | `List<RegistroE13>` |  |
+| 15 | RegistrosE14 | `List<RegistroE14>` |  |
+| 16 | RegistrosE15 | `List<RegistroE15>` |  |
+| 17 | RegistrosE18 | `List<RegistroE18>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

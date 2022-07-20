@@ -8,14 +8,14 @@ Identificação de Sociedade em Conta de Participação - SCP
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoSCP |  |
-| 03 | DescricaoSCP |  |
-| 04 | InformacaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoSCP | `String` |  |
+| 03 | DescricaoSCP | `String` |  |
+| 04 | InformacaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

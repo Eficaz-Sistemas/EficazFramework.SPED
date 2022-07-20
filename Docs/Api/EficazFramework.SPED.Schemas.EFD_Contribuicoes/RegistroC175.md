@@ -8,28 +8,28 @@ Registro Anaítico do Documento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CFOP |  |
-| 03 | VrOperacaoCombinacaoCFOPCSTeAliquotas |  |
-| 04 | VrDescontoComercialExclusao |  |
-| 05 | CSTPIS |  |
-| 06 | VrBaseCalculoPis |  |
-| 07 | AliquotaPis |  |
-| 08 | BCPISquantidade |  |
-| 09 | AliquotaPISReais |  |
-| 10 | VrPIS |  |
-| 11 | CSTCOFINS |  |
-| 12 | VrBaseCalculoCofins |  |
-| 13 | AliquotaCofins |  |
-| 14 | BCCOFINSquantidade |  |
-| 15 | AliquotaCOFINSReais |  |
-| 16 | VrCOFINS |  |
-| 17 | CodigoContaContabil |  |
-| 18 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CFOP | `String` |  |
+| 03 | VrOperacaoCombinacaoCFOPCSTeAliquotas | `Nullable<Double>` |  |
+| 04 | VrDescontoComercialExclusao | `Nullable<Double>` |  |
+| 05 | CSTPIS | `String` |  |
+| 06 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 07 | AliquotaPis | `Nullable<Double>` |  |
+| 08 | BCPISquantidade | `Nullable<Double>` |  |
+| 09 | AliquotaPISReais | `Nullable<Double>` |  |
+| 10 | VrPIS | `Nullable<Double>` |  |
+| 11 | CSTCOFINS | `String` |  |
+| 12 | VrBaseCalculoCofins | `Nullable<Double>` |  |
+| 13 | AliquotaCofins | `Nullable<Double>` |  |
+| 14 | BCCOFINSquantidade | `Nullable<Double>` |  |
+| 15 | AliquotaCOFINSReais | `Nullable<Double>` |  |
+| 16 | VrCOFINS | `Nullable<Double>` |  |
+| 17 | CodigoContaContabil | `String` |  |
+| 18 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

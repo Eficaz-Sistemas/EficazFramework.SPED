@@ -8,19 +8,19 @@ créditos decorrentes de eventos de incorporação, fusão e cisão
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorNaturezaEventoSucessao |  |
-| 03 | DataEvento |  |
-| 04 | CNPJSucedida |  |
-| 05 | PeriodoApCredito |  |
-| 06 | CodigoCreditoTransferido |  |
-| 07 | VrCredTransfPis |  |
-| 08 | VrCredTransfCofins |  |
-| 09 | PercentualCredOriginalTransf |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorNaturezaEventoSucessao | `IndicadorNaturezaEventoSucessao` |  |
+| 03 | DataEvento | `Nullable<DateTime>` |  |
+| 04 | CNPJSucedida | `String` |  |
+| 05 | PeriodoApCredito | `Nullable<DateTime>` |  |
+| 06 | CodigoCreditoTransferido | `String` |  |
+| 07 | VrCredTransfPis | `Nullable<Double>` |  |
+| 08 | VrCredTransfCofins | `Nullable<Double>` |  |
+| 09 | PercentualCredOriginalTransf | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

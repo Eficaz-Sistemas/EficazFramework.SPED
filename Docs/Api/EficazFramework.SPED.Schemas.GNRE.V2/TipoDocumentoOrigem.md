@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tipo |  |
-| 03 | Value |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tipo | `String` |  |
+| 03 | Value | `String` |  |

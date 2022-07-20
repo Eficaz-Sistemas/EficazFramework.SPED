@@ -4,25 +4,25 @@
 ## ConsultarRpsResposta Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Documentos |  |
-| 03 | DocumentType |  |
-| 04 | DataEmissao |  |
-| 05 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Documentos | `tcListaNfse` |  |
+| 03 | DocumentType | `XMLDocumentType` |  |
+| 04 | DataEmissao | `Nullable<DateTime>` |  |
+| 05 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ConsultarRpsResposta, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ConsultarRpsResposta) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ConsultarRpsResposta, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ConsultarRpsResposta) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ConsultarRpsResposta, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ConsultarRpsResposta) | `Boolean` |  |
+| Deserialize(string) | `ConsultarRpsResposta` |  |
+| Deserialize(Stream) | `ConsultarRpsResposta` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ConsultarRpsResposta, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ConsultarRpsResposta) | `Boolean` |  |
+| LoadFrom(Stream) | `ConsultarRpsResposta` |  |
+| LoadFromAsync(Stream, bool) | `Task<ConsultarRpsResposta>` |  |

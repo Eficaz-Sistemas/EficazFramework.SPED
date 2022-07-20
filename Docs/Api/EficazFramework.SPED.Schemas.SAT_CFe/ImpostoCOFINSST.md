@@ -6,11 +6,11 @@
 COFINS ST
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | pCOFINS |  |
-| 03 | qBCProd |  |
-| 04 | vAliqProd |  |
-| 05 | vBC |  |
-| 06 | vCOFINS |  |
-| 07 | vCOFINS_Double |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | pCOFINS | `String` |  |
+| 03 | qBCProd | `String` |  |
+| 04 | vAliqProd | `String` |  |
+| 05 | vBC | `String` |  |
+| 06 | vCOFINS | `String` |  |
+| 07 | vCOFINS_Double | `Nullable<Double>` |  |

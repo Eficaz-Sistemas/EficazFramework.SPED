@@ -8,15 +8,15 @@ Complemento das operações - detalhamento das receitas, deduções ou exclusõe
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoComplementar |  |
-| 03 | DetValor |  |
-| 04 | CodigoContaContabil |  |
-| 05 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoComplementar | `String` |  |
+| 03 | DetValor | `Nullable<Double>` |  |
+| 04 | CodigoContaContabil | `String` |  |
+| 05 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

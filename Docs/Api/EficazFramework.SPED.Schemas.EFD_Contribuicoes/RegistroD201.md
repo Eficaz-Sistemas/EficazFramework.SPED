@@ -8,17 +8,17 @@ Totalização Resumo Diário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTPis |  |
-| 03 | VrTotalItens |  |
-| 04 | VrBcPis |  |
-| 05 | AliquotaPis |  |
-| 06 | VrPis |  |
-| 07 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTPis | `String` |  |
+| 03 | VrTotalItens | `Nullable<Double>` |  |
+| 04 | VrBcPis | `Nullable<Double>` |  |
+| 05 | AliquotaPis | `Nullable<Double>` |  |
+| 06 | VrPis | `Nullable<Double>` |  |
+| 07 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

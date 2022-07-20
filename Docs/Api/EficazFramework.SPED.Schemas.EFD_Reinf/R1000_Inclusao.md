@@ -4,7 +4,7 @@
 ## R1000_Inclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | idePeriodo |  |
-| 03 | infoCadastro |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | idePeriodo | `ReinfEvtIdePeriodo` |  |
+| 03 | infoCadastro | `R1000_InfoCadastro` |  |

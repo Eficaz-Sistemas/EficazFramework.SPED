@@ -4,9 +4,9 @@
 ## eSocialEvtAqProd Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideEmpregador |  |
-| 04 | infoAquisProd |  |
-| 05 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `TIdeEveFopagMensal` |  |
+| 03 | ideEmpregador | `TEmpregador` |  |
+| 04 | infoAquisProd | `eSocialEvtAqProdInfoAquisProd` |  |
+| 05 | Id | `String` |  |

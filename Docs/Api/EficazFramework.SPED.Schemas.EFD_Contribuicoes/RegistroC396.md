@@ -8,24 +8,24 @@ Itens do Documento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoItem |  |
-| 03 | ValorItem |  |
-| 04 | ValorDesconto |  |
-| 05 | NaturezaBCCredito |  |
-| 06 | CSTPis |  |
-| 07 | ValorBCPis |  |
-| 08 | AliquotaPIS |  |
-| 09 | ValorPis |  |
-| 10 | CSTCofins |  |
-| 11 | ValorBCCofins |  |
-| 12 | AliquotaCofins |  |
-| 13 | ValorCofins |  |
-| 14 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoItem | `String` |  |
+| 03 | ValorItem | `Nullable<Double>` |  |
+| 04 | ValorDesconto | `Nullable<Double>` |  |
+| 05 | NaturezaBCCredito | `String` |  |
+| 06 | CSTPis | `String` |  |
+| 07 | ValorBCPis | `Nullable<Double>` |  |
+| 08 | AliquotaPIS | `Nullable<Double>` |  |
+| 09 | ValorPis | `Nullable<Double>` |  |
+| 10 | CSTCofins | `String` |  |
+| 11 | ValorBCCofins | `Nullable<Double>` |  |
+| 12 | AliquotaCofins | `Nullable<Double>` |  |
+| 13 | ValorCofins | `Nullable<Double>` |  |
+| 14 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

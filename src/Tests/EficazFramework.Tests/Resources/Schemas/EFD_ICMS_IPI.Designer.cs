@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EficazFrameworkCore.SPED.Resources.Schemas {
+namespace EficazFramework.SPED.Resources.Schemas {
     using System;
     
     
@@ -61,12 +61,12 @@ namespace EficazFrameworkCore.SPED.Resources.Schemas {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a |0000|014|0|01092020|30092020|A. Silva &amp; Cia Ltda.|20855151000139||MG|2971461400013|3129707|||B|1|
+        ///   Consulta uma cadeia de caracteres localizada semelhante a |0000|014|0|01092020|30092020|Exemplo EFD|20999111000139||MG|2970899900091|3129707|||B|1|
         ///|0001|0|
         ///|0005|Posto Santo Antônio|37990000|Rua Barao Do Rio Branco|203||Centro|3535441470|||
-        ///|0100|Caly Alves da Cunha|21332207634|012419/O-MG|10608025000126|37990000|Rua Sete de Setembro|93||Centro|3535441511||contato@eficazctb.com.br|3129707|
+        ///|0100|Contador|00088866634|012345/O-MG|99444555000911|37990000|Rua Dezoito de Novembro|93||Centro|3535441511||contato@eficazctb.com.br|3129707|
         ///|0150|ID9IE14|Sergio Augusto Monteiro|1058||74243900825|0012147200042|3129707||Rua Faz Santa Luzia|0||Rural|
-        ///|0150|ID37IE31|Angelo Vilhena|1058||23828676634|00119 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///|0150|ID37IE31|Angelo Vilhena|1058||23828676634|0011970770260|3129707| [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string layout2020 {
             get {

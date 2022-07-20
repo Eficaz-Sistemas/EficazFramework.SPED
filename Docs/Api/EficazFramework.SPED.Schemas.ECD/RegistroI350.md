@@ -8,12 +8,12 @@ Saldo das Contas de Resultado Antes do Encerramento - Identificação da Data
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataApuracaoResultado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataApuracaoResultado | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

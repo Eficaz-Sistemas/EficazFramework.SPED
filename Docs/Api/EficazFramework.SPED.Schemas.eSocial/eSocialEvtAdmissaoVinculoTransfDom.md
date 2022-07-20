@@ -4,8 +4,8 @@
 ## eSocialEvtAdmissaoVinculoTransfDom Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cpfSubstituido |  |
-| 03 | matricAnt |  |
-| 04 | dtTransf |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cpfSubstituido | `String` |  |
+| 03 | matricAnt | `String` |  |
+| 04 | dtTransf | `DateTime` |  |

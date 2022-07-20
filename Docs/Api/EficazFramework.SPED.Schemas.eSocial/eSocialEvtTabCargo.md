@@ -4,9 +4,9 @@
 ## eSocialEvtTabCargo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideEmpregador |  |
-| 04 | infoCargo |  |
-| 05 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `TIdeCadastro` |  |
+| 03 | ideEmpregador | `TEmpregador` |  |
+| 04 | infoCargo | `eSocialEvtTabCargoInfoCargo` |  |
+| 05 | Id | `String` |  |

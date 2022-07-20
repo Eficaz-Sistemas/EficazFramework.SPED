@@ -4,13 +4,13 @@
 ## TRetCancCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infCanc |  |
-| 03 | Signature |  |
-| 04 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infCanc | `TRetCancCTeInfCanc` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

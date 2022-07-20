@@ -8,15 +8,15 @@ Abertura do Bloco 0
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DescrAnteriorItem |  |
-| 03 | DataInicialUtilizacaoItem |  |
-| 04 | DataFinalUtilizacaoItem |  |
-| 05 | CodAnteriorItem |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DescrAnteriorItem | `String` |  |
+| 03 | DataInicialUtilizacaoItem | `Nullable<DateTime>` |  |
+| 04 | DataFinalUtilizacaoItem | `Nullable<DateTime>` |  |
+| 05 | CodAnteriorItem | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

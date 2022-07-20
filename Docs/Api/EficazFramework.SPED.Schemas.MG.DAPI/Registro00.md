@@ -6,23 +6,23 @@
 Identificação da DAPI
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | DataFinal |  |
-| 04 | DataInicial |  |
-| 05 | DapiSubstituta |  |
-| 06 | RegimeRecolhimento | Valor padrao: 1 - Debito e Credito            2 - Isento e Imune (nao aplicável) |
-| 07 | RegimeEspecialFiscalizacao |  |
-| 08 | OptanteFundese |  |
-| 09 | DapiComMovimento |  |
-| 10 | DapiComMovimentoCafe |  |
-| 11 | CNAE |  |
-| 12 | CNAEDesmembramento |  |
-| 13 | TermoAceite |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | DataInicial | `Nullable<DateTime>` |  |
+| 05 | DapiSubstituta | `Boolean` |  |
+| 06 | RegimeRecolhimento | `Int32` | Valor padrao: 1 - Debito e Credito            2 - Isento e Imune (nao aplicável) |
+| 07 | RegimeEspecialFiscalizacao | `Boolean` |  |
+| 08 | OptanteFundese | `Boolean` |  |
+| 09 | DapiComMovimento | `Boolean` |  |
+| 10 | DapiComMovimentoCafe | `Boolean` |  |
+| 11 | CNAE | `String` |  |
+| 12 | CNAEDesmembramento | `String` |  |
+| 13 | TermoAceite | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using FluentAssertions;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI;
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
 internal class IO
 {

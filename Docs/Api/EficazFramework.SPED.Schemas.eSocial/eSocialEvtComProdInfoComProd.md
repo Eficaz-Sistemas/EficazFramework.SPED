@@ -4,6 +4,6 @@
 ## eSocialEvtComProdInfoComProd Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEstabel |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEstabel | `eSocialEvtComProdInfoComProdIdeEstabel` |  |

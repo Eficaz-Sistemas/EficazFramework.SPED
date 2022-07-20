@@ -8,19 +8,19 @@ Detalhamento dos ajustes da contribuição para o pis apurada
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DetVrContRedAcrescM220 |  |
-| 03 | CSTPis |  |
-| 04 | DetBcGeradoraAjCont |  |
-| 05 | DetAliqAjusteCont |  |
-| 06 | DataOperacaoAjuste |  |
-| 07 | DescAjuste |  |
-| 08 | CodigoContaContabil |  |
-| 09 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DetVrContRedAcrescM220 | `Nullable<Double>` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | DetBcGeradoraAjCont | `Nullable<Double>` |  |
+| 05 | DetAliqAjusteCont | `Nullable<Double>` |  |
+| 06 | DataOperacaoAjuste | `Nullable<DateTime>` |  |
+| 07 | DescAjuste | `String` |  |
+| 08 | CodigoContaContabil | `String` |  |
+| 09 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,27 +8,27 @@ Parâmetros de Identificação dos Tipos de Programa ¬¬
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | REPES |  |
-| 03 | RECAP |  |
-| 04 | PADIS |  |
-| 05 | PATVD |  |
-| 06 | REIDI |  |
-| 07 | REPENEC |  |
-| 08 | REICOMP |  |
-| 09 | RETAERO |  |
-| 10 | RECINE |  |
-| 11 | ResiduosSolidos |  |
-| 12 | RECOPA |  |
-| 13 | CopaDoMundo |  |
-| 14 | RETID |  |
-| 15 | REPNBL_REDES |  |
-| 16 | REIF |  |
-| 17 | Olimpiadas |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | REPES | `Boolean` |  |
+| 03 | RECAP | `Boolean` |  |
+| 04 | PADIS | `Boolean` |  |
+| 05 | PATVD | `Boolean` |  |
+| 06 | REIDI | `Boolean` |  |
+| 07 | REPENEC | `Boolean` |  |
+| 08 | REICOMP | `Boolean` |  |
+| 09 | RETAERO | `Boolean` |  |
+| 10 | RECINE | `Boolean` |  |
+| 11 | ResiduosSolidos | `Boolean` |  |
+| 12 | RECOPA | `Boolean` |  |
+| 13 | CopaDoMundo | `Boolean` |  |
+| 14 | RETID | `Boolean` |  |
+| 15 | REPNBL_REDES | `Boolean` |  |
+| 16 | REIF | `Boolean` |  |
+| 17 | Olimpiadas | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

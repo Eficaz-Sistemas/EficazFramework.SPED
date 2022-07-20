@@ -1,9 +1,19 @@
 ﻿
 namespace EficazFramework.SPED.Schemas.Primitives;
 
+/// <summary>
+/// Classe abstrata que representa um registro do SPED ou qualquer outra obrigação assessória.
+/// </summary>
 public abstract class Registro
 {
 
+    /// <summary>
+    /// Inicia uma nova instância de <see cref="Registro"/> à partir de uma linha obtida pela leitura 
+    /// da escrituração, executando o método <see cref="LeParametros(string[])"/> e alimentando os campos
+    /// do registro, conforme versão de layout especificada no argumento <paramref name="versao"/>.
+    /// </summary>
+    /// <param name="linha">string obtida pela leitura de linha da <see cref="Escrituracao"/>.</param>
+    /// <param name="versao">versão do layout para preenchimento dos campos obtidos de <paramref name="linha"/>.</param>
     public Registro(string linha, string versao)
     {
         if (linha != null)
@@ -15,6 +25,7 @@ public abstract class Registro
                 if (data.Length > 1)
                 {
                     _codigo = data[1];
+                    LeParametros(data);
                 }
                 else
                 {
@@ -24,10 +35,12 @@ public abstract class Registro
         }
     }
 
-    public Registro(string codigo)
-    {
+    /// <summary>
+    /// Inicia uma nova instância de <see cref="Registro"/>
+    /// </summary>
+    /// <param name="codigo">Código do Registro a ser criado. Ex: C100</param>
+    public Registro(string codigo) =>
         _codigo = codigo;
-    }
 
     private string _codigo;
     private string _versao = "011";
@@ -57,6 +70,9 @@ public abstract class Registro
         }
     }
 
+    /// <summary>
+    /// Método utilizado para alteração da versão já inicializada pelo construtor, quando necessário.
+    /// </summary>
     internal void OverrideVersao(string novaVersao)
     {
         _versao = novaVersao;

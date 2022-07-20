@@ -4,13 +4,13 @@
 ## eSocialEvtAdmissaoTrabalhadorInfoDeficiencia Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | defFisica |  |
-| 03 | defVisual |  |
-| 04 | defAuditiva |  |
-| 05 | defMental |  |
-| 06 | defIntelectual |  |
-| 07 | reabReadap |  |
-| 08 | infoCota |  |
-| 09 | observacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | defFisica | `SimNaoString` |  |
+| 03 | defVisual | `SimNaoString` |  |
+| 04 | defAuditiva | `SimNaoString` |  |
+| 05 | defMental | `SimNaoString` |  |
+| 06 | defIntelectual | `SimNaoString` |  |
+| 07 | reabReadap | `SimNaoString` |  |
+| 08 | infoCota | `SimNaoString` |  |
+| 09 | observacao | `String` |  |

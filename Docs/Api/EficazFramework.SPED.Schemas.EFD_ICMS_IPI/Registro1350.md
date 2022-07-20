@@ -8,17 +8,17 @@ Bombas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroSerie |  |
-| 03 | Fabricante |  |
-| 04 | Modelo |  |
-| 05 | TipoMedicao |  |
-| 06 | Registros1360 |  |
-| 07 | Registros1370 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroSerie | `String` |  |
+| 03 | Fabricante | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | TipoMedicao | `Int32` |  |
+| 06 | Registros1360 | `List<Registro1360>` |  |
+| 07 | Registros1370 | `List<Registro1370>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

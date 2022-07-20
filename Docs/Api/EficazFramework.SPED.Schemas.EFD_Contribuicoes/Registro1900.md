@@ -8,23 +8,23 @@ Consolidação dos documentos emitidos no período por pessoa jurídica submetid
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJEstabPJEmitenteDocsGeradoresReceita |  |
-| 03 | CodModDocFiscal |  |
-| 04 | SerieDocFiscal |  |
-| 05 | SubSerieDocFiscal |  |
-| 06 | CodigoSitDocFiscal |  |
-| 07 | VrTotalRecConfDocsEmitidosPer |  |
-| 08 | QtdeDocsEmitidosPeriodo |  |
-| 09 | CSTPis |  |
-| 10 | CSTCofins |  |
-| 11 | CFOP |  |
-| 12 | InfoComplementar |  |
-| 13 | CodigoConta |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJEstabPJEmitenteDocsGeradoresReceita | `String` |  |
+| 03 | CodModDocFiscal | `String` |  |
+| 04 | SerieDocFiscal | `String` |  |
+| 05 | SubSerieDocFiscal | `String` |  |
+| 06 | CodigoSitDocFiscal | `SituacaoDocumento` |  |
+| 07 | VrTotalRecConfDocsEmitidosPer | `Nullable<Double>` |  |
+| 08 | QtdeDocsEmitidosPeriodo | `Nullable<Int32>` |  |
+| 09 | CSTPis | `String` |  |
+| 10 | CSTCofins | `String` |  |
+| 11 | CFOP | `String` |  |
+| 12 | InfoComplementar | `String` |  |
+| 13 | CodigoConta | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

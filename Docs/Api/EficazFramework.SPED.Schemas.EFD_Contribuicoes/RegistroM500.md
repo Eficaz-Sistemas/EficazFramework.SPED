@@ -8,25 +8,25 @@ Crédito de Cofins relativo ao período
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CoditoTipoCreditoPeriodo |  |
-| 03 | IndicadorCreditoOriundo |  |
-| 04 | VrBcCredito |  |
-| 05 | AliqCofins |  |
-| 06 | QtdeBcCofins |  |
-| 07 | AliqCofinsQtde |  |
-| 08 | VrCreditoCofinsPeriodo |  |
-| 09 | VrTotalAjusteAcrescimo |  |
-| 10 | VrTotalAjusteReducao |  |
-| 11 | VrTotalCredDiferido |  |
-| 12 | VrTotalCredDispPerido |  |
-| 13 | IndicadorUtilCredDisp |  |
-| 14 | VrCredDispDescContApPeriodo |  |
-| 15 | SaldoCreditosUtilFuturo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CoditoTipoCreditoPeriodo | `String` |  |
+| 03 | IndicadorCreditoOriundo | `IndicadorCreditoOriundo` |  |
+| 04 | VrBcCredito | `Nullable<Double>` |  |
+| 05 | AliqCofins | `Nullable<Double>` |  |
+| 06 | QtdeBcCofins | `Nullable<Double>` |  |
+| 07 | AliqCofinsQtde | `Nullable<Double>` |  |
+| 08 | VrCreditoCofinsPeriodo | `Nullable<Double>` |  |
+| 09 | VrTotalAjusteAcrescimo | `Nullable<Double>` |  |
+| 10 | VrTotalAjusteReducao | `Nullable<Double>` |  |
+| 11 | VrTotalCredDiferido | `Nullable<Double>` |  |
+| 12 | VrTotalCredDispPerido | `Nullable<Double>` |  |
+| 13 | IndicadorUtilCredDisp | `IndicadorCredDispPeriodo` |  |
+| 14 | VrCredDispDescContApPeriodo | `Nullable<Double>` |  |
+| 15 | SaldoCreditosUtilFuturo | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

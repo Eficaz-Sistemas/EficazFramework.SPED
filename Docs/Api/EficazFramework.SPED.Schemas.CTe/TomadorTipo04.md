@@ -4,20 +4,20 @@
 ## TomadorTipo04 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | toma |  |
-| 03 | ItemElementName |  |
-| 04 | CNPJ_CPF |  |
-| 05 | CNPJ_CPFFormatado |  |
-| 06 | IE |  |
-| 07 | xNome |  |
-| 08 | xFant |  |
-| 09 | fone |  |
-| 10 | Endereco |  |
-| 11 | email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | toma | `TipoTomador` |  |
+| 03 | ItemElementName | `PersonalidadeJuridica7` |  |
+| 04 | CNPJ_CPF | `String` |  |
+| 05 | CNPJ_CPFFormatado | `String` |  |
+| 06 | IE | `String` |  |
+| 07 | xNome | `String` |  |
+| 08 | xFant | `String` |  |
+| 09 | fone | `String` |  |
+| 10 | Endereco | `Endereco` |  |
+| 11 | email | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

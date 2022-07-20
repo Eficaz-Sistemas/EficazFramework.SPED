@@ -8,23 +8,23 @@ Objeto de retorno do tipo Cancelamento de Nota Fiscal Eletrônica.
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ChaveNFe |  |
-| 03 | EmitenteCNPJ_CPF |  |
-| 04 | EmitentePersonalidadeJuridica |  |
-| 05 | EmitenteRazaoSocial |  |
-| 06 | EmitenteIE |  |
-| 07 | DataEmissao |  |
-| 08 | Operacao |  |
-| 09 | ValorTotal |  |
-| 10 | DigestValue |  |
-| 11 | DataCancelamento |  |
-| 12 | Situacao |  |
-| 13 | SituacaoManifestacao |  |
-| 14 | NSU |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ChaveNFe | `String` |  |
+| 03 | EmitenteCNPJ_CPF | `String` |  |
+| 04 | EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| 05 | EmitenteRazaoSocial | `String` |  |
+| 06 | EmitenteIE | `String` |  |
+| 07 | DataEmissao | `Nullable<DateTime>` |  |
+| 08 | Operacao | `OperacaoNFe` |  |
+| 09 | ValorTotal | `Nullable<Double>` |  |
+| 10 | DigestValue | `String` |  |
+| 11 | DataCancelamento | `Nullable<DateTime>` |  |
+| 12 | Situacao | `SituacaoNFe` |  |
+| 13 | SituacaoManifestacao | `SituacaoManifestacaoDestinatario` |  |
+| 14 | NSU | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |

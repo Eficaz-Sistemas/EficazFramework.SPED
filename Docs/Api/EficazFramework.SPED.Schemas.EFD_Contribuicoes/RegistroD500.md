@@ -8,32 +8,32 @@ Nota Fiscal Serviços de Comunicação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoOperacao |  |
-| 03 | IndicadorEmitenteDocFiscal |  |
-| 04 | CodigoParticipante |  |
-| 05 | CodigoModeloDocFiscal |  |
-| 06 | CodigoSituacaoDocFiscal |  |
-| 07 | SerieDocFiscal |  |
-| 08 | SubSerieDocFiscal |  |
-| 09 | NumeroDocFiscal |  |
-| 10 | DataEmissaoDocFiscal |  |
-| 11 | DataEntrada |  |
-| 12 | VrTotalDocFiscal |  |
-| 13 | VrTotalDesconto |  |
-| 14 | VrPrestacaoServico |  |
-| 15 | VrTotalServicosNaoTribICMS |  |
-| 16 | VrCobradoNomeTerceiro |  |
-| 17 | VrOutrasDespesas |  |
-| 18 | VrBcICMS |  |
-| 19 | VrICMS |  |
-| 20 | CodigoInfoComplementar |  |
-| 21 | VrPis |  |
-| 22 | VrCofins |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoOperacao | `IndicadorTipoOperacaoBlocoD` |  |
+| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | CodigoModeloDocFiscal | `String` |  |
+| 06 | CodigoSituacaoDocFiscal | `String` |  |
+| 07 | SerieDocFiscal | `String` |  |
+| 08 | SubSerieDocFiscal | `String` |  |
+| 09 | NumeroDocFiscal | `Nullable<Int64>` |  |
+| 10 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| 11 | DataEntrada | `Nullable<DateTime>` |  |
+| 12 | VrTotalDocFiscal | `Nullable<Double>` |  |
+| 13 | VrTotalDesconto | `Nullable<Double>` |  |
+| 14 | VrPrestacaoServico | `Nullable<Double>` |  |
+| 15 | VrTotalServicosNaoTribICMS | `Nullable<Double>` |  |
+| 16 | VrCobradoNomeTerceiro | `Nullable<Double>` |  |
+| 17 | VrOutrasDespesas | `Nullable<Double>` |  |
+| 18 | VrBcICMS | `Nullable<Double>` |  |
+| 19 | VrICMS | `Nullable<Double>` |  |
+| 20 | CodigoInfoComplementar | `String` |  |
+| 21 | VrPis | `Nullable<Double>` |  |
+| 22 | VrCofins | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,22 +8,22 @@ Consolidação das Operações do Período
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalFatBrutoPeriodo |  |
-| 03 | CSTPisCofinsReceitaPeriodo |  |
-| 04 | VrTotalDedExclusoesCaraterGeral |  |
-| 05 | VrTotalDedExclusoesCaraterEspecif |  |
-| 06 | VrBcPis |  |
-| 07 | AliqPis |  |
-| 08 | VrPis |  |
-| 09 | VrBcCofins |  |
-| 10 | AliqCofins |  |
-| 11 | VrCofins |  |
-| 12 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalFatBrutoPeriodo | `Nullable<Double>` |  |
+| 03 | CSTPisCofinsReceitaPeriodo | `String` |  |
+| 04 | VrTotalDedExclusoesCaraterGeral | `Nullable<Double>` |  |
+| 05 | VrTotalDedExclusoesCaraterEspecif | `Nullable<Double>` |  |
+| 06 | VrBcPis | `Nullable<Double>` |  |
+| 07 | AliqPis | `Nullable<Double>` |  |
+| 08 | VrPis | `Nullable<Double>` |  |
+| 09 | VrBcCofins | `Nullable<Double>` |  |
+| 10 | AliqCofins | `Nullable<Double>` |  |
+| 11 | VrCofins | `Nullable<Double>` |  |
+| 12 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

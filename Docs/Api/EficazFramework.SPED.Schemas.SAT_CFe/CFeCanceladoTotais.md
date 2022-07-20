@@ -4,6 +4,6 @@
 ## CFeCanceladoTotais Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vCFe |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vCFe | `String` |  |

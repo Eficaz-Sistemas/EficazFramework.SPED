@@ -8,19 +8,19 @@ Demonstração do Resultado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoReferencial |  |
-| 03 | Descricao |  |
-| 04 | TipoConta | S - Sintética            A - Analitica |
-| 05 | Nivel |  |
-| 06 | Natureza |  |
-| 07 | ContaSuperior |  |
-| 08 | Valor |  |
-| 09 | NaturezaSaldoInicial | D - Devedor            C - Credor |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoReferencial | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | TipoConta | `String` | S - Sintética            A - Analitica |
+| 05 | Nivel | `Int32` |  |
+| 06 | Natureza | `TipoConta` |  |
+| 07 | ContaSuperior | `String` |  |
+| 08 | Valor | `Nullable<Double>` |  |
+| 09 | NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,14 +4,14 @@
 ## tcDadosTomador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoTomador |  |
-| 03 | RazaoSocial |  |
-| 04 | Endereco |  |
-| 05 | Contato |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoTomador | `tcIdentificacaoTomador` |  |
+| 03 | RazaoSocial | `String` |  |
+| 04 | Endereco | `tcEndereco` |  |
+| 05 | Contato | `tcContato` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

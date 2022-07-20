@@ -6,9 +6,9 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | prod |  |
-| 03 | imposto |  |
-| 04 | infAdProd |  |
-| 05 | nItem |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | prod | `Produto` |  |
+| 03 | imposto | `Imposto` |  |
+| 04 | infAdProd | `String` |  |
+| 05 | nItem | `String` |  |

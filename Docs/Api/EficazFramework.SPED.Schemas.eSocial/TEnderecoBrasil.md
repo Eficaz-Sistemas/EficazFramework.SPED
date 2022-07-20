@@ -6,13 +6,13 @@
 Endereço no Brasil
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpLograd |  |
-| 03 | dscLograd |  |
-| 04 | nrLograd |  |
-| 05 | complemento |  |
-| 06 | bairro |  |
-| 07 | cep |  |
-| 08 | codMunic |  |
-| 09 | uf |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpLograd | `String` |  |
+| 03 | dscLograd | `String` |  |
+| 04 | nrLograd | `String` |  |
+| 05 | complemento | `String` |  |
+| 06 | bairro | `String` |  |
+| 07 | cep | `String` |  |
+| 08 | codMunic | `String` |  |
+| 09 | uf | `UFCadastro` |  |

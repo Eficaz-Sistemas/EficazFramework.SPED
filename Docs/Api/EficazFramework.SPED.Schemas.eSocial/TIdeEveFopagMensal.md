@@ -6,12 +6,12 @@
 Identificação do Evento Períodico
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indRetif |  |
-| 03 | nrRecibo |  |
-| 04 | indApuracao |  |
-| 05 | perApur |  |
-| 06 | tpAmb |  |
-| 07 | procEmi |  |
-| 08 | verProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indRetif | `IndicadorRetificacao` |  |
+| 03 | nrRecibo | `String` |  |
+| 04 | indApuracao | `IndicadorApuracao` |  |
+| 05 | perApur | `String` |  |
+| 06 | tpAmb | `Ambiente` |  |
+| 07 | procEmi | `EmissorEvento` |  |
+| 08 | verProc | `String` |  |

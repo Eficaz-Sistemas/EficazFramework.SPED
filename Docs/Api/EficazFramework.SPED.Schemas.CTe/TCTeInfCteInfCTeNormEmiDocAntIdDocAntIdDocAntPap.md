@@ -4,15 +4,15 @@
 ## TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpDoc |  |
-| 03 | serie |  |
-| 04 | subser |  |
-| 05 | nDoc |  |
-| 06 | dEmi |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpDoc | `TDocAssoc` |  |
+| 03 | serie | `String` |  |
+| 04 | subser | `String` |  |
+| 05 | nDoc | `String` |  |
+| 06 | dEmi | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoDesligamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dtDeslig |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dtDeslig | `DateTime` |  |

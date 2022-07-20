@@ -4,16 +4,16 @@
 ## ReferenciaNF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoUF |  |
-| 03 | EmissaoAAMM |  |
-| 04 | CNPJ |  |
-| 05 | Modelo |  |
-| 06 | Serie |  |
-| 07 | Numero |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoUF | `OrgaoIBGE` |  |
+| 03 | EmissaoAAMM | `String` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | Modelo | `ModeloNF` |  |
+| 06 | Serie | `String` |  |
+| 07 | Numero | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,7 +4,7 @@
 ## ResultadoGuiaGNRE Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Identificador |  |
-| 03 | NumeroSequencial |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Identificador | `Nullable<Int32>` |  |
+| 03 | NumeroSequencial | `Nullable<Int32>` |  |

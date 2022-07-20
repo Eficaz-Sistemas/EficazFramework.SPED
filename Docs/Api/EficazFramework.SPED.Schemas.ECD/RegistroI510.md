@@ -8,17 +8,17 @@ Definição de Campos do Livro Razão Auxiliar com Leiaute Parametrizável
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NomeCampo |  |
-| 03 | DescricaoCampo |  |
-| 04 | TipoCampo |  |
-| 05 | TamanhoCampo |  |
-| 06 | QtdeCasasDecimais |  |
-| 07 | LarguraColunaRelatorio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NomeCampo | `String` |  |
+| 03 | DescricaoCampo | `String` |  |
+| 04 | TipoCampo | `String` |  |
+| 05 | TamanhoCampo | `Nullable<Int16>` |  |
+| 06 | QtdeCasasDecimais | `Nullable<Int16>` |  |
+| 07 | LarguraColunaRelatorio | `Nullable<Int16>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

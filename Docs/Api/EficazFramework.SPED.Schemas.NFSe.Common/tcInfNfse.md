@@ -4,37 +4,37 @@
 ## tcInfNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | CodigoVerificacao |  |
-| 04 | DataEmissao |  |
-| 05 | IdentificacaoRps |  |
-| 06 | IdentificacaoNfse |  |
-| 07 | DataEmissaoRpsString |  |
-| 08 | DataEmissaoRps |  |
-| 09 | DataEmissaoRpsSpecified |  |
-| 10 | NaturezaOperacao |  |
-| 11 | RegimeEspecialTributacao |  |
-| 12 | RegimeEspecialTributacaoSpecified |  |
-| 13 | OptanteSimplesNacional |  |
-| 14 | IncentivadorCultural |  |
-| 15 | Competencia |  |
-| 16 | NfseSubstituida |  |
-| 17 | OutrasInformacoes |  |
-| 18 | Servico |  |
-| 19 | ValorCredito |  |
-| 20 | ValorCreditoSpecified |  |
-| 21 | PrestadorServico |  |
-| 22 | Prestador | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
-| 23 | TomadorServico |  |
-| 24 | Tomador | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
-| 25 | IntermediarioServico |  |
-| 26 | OrgaoGerador |  |
-| 27 | ConstrucaoCivil |  |
-| 28 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | CodigoVerificacao | `String` |  |
+| 04 | DataEmissao | `DateTime` |  |
+| 05 | IdentificacaoRps | `tcIdentificacaoRps` |  |
+| 06 | IdentificacaoNfse | `tcIdentificacaoNfse` |  |
+| 07 | DataEmissaoRpsString | `String` |  |
+| 08 | DataEmissaoRps | `Nullable<DateTime>` |  |
+| 09 | DataEmissaoRpsSpecified | `Boolean` |  |
+| 10 | NaturezaOperacao | `Int32` |  |
+| 11 | RegimeEspecialTributacao | `Int32` |  |
+| 12 | RegimeEspecialTributacaoSpecified | `Boolean` |  |
+| 13 | OptanteSimplesNacional | `Int32` |  |
+| 14 | IncentivadorCultural | `Int32` |  |
+| 15 | Competencia | `String` |  |
+| 16 | NfseSubstituida | `NfseSubstituida` |  |
+| 17 | OutrasInformacoes | `String` |  |
+| 18 | Servico | `tcDadosServico` |  |
+| 19 | ValorCredito | `Decimal` |  |
+| 20 | ValorCreditoSpecified | `Boolean` |  |
+| 21 | PrestadorServico | `tcDadosPrestador` |  |
+| 22 | Prestador | `tcDadosPrestador` | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
+| 23 | TomadorServico | `tcDadosTomador` |  |
+| 24 | Tomador | `tcDadosTomador` | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
+| 25 | IntermediarioServico | `tcIdentificacaoIntermediarioServico` |  |
+| 26 | OrgaoGerador | `tcIdentificacaoOrgaoGerador` |  |
+| 27 | ConstrucaoCivil | `tcDadosConstrucaoCivil` |  |
+| 28 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

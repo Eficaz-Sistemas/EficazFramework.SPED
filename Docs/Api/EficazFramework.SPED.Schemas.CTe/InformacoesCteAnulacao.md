@@ -4,12 +4,12 @@
 ## InformacoesCteAnulacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Chave |  |
-| 03 | dEmi |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Chave | `String` |  |
+| 03 | dEmi | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

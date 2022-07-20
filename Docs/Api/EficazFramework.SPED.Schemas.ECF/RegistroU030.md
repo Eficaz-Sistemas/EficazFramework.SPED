@@ -8,14 +8,14 @@ Identificação dos Períodos e Formas de Apuração do IRPJ e da CSLL das Empre
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicial |  |
-| 03 | DataFinal |  |
-| 04 | Periodo | T01 – 1º Trimestre            T02 – 2º Trimestre            T03 – 3º Trimestre            T04 – 4º Trimestre |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicial | `Nullable<DateTime>` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | Periodo | `String` | T01 – 1º Trimestre            T02 – 2º Trimestre            T03 – 3º Trimestre            T04 – 4º Trimestre |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

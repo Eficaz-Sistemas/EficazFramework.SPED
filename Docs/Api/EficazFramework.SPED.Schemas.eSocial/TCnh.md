@@ -4,13 +4,13 @@
 ## TCnh Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRegCnh |  |
-| 03 | dtExped |  |
-| 04 | dtExpedSpecified |  |
-| 05 | ufCnh |  |
-| 06 | dtValid |  |
-| 07 | dtPriHab |  |
-| 08 | dtPriHabSpecified |  |
-| 09 | categoriaCnh |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRegCnh | `String` |  |
+| 03 | dtExped | `DateTime` |  |
+| 04 | dtExpedSpecified | `Boolean` |  |
+| 05 | ufCnh | `UFCadastro` |  |
+| 06 | dtValid | `DateTime` |  |
+| 07 | dtPriHab | `DateTime` |  |
+| 08 | dtPriHabSpecified | `Boolean` |  |
+| 09 | categoriaCnh | `String` |  |

@@ -6,23 +6,23 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | NumeroSequencial |  |
-| 05 | TipoMovimento |  |
-| 06 | TipoTributo |  |
-| 07 | SeuNumero |  |
-| 08 | NossoNumero |  |
-| 09 | ContribuinteNome |  |
-| 10 | ValorArrecadado |  |
-| 11 | DataArrecadacao |  |
-| 12 | DadosTributo |  |
-| 13 | Ocorrencias |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | NumeroSequencial | `Nullable<Int32>` |  |
+| 05 | TipoMovimento | `String` |  |
+| 06 | TipoTributo | `String` |  |
+| 07 | SeuNumero | `String` |  |
+| 08 | NossoNumero | `String` |  |
+| 09 | ContribuinteNome | `String` |  |
+| 10 | ValorArrecadado | `Nullable<Double>` |  |
+| 11 | DataArrecadacao | `Nullable<DateTime>` |  |
+| 12 | DadosTributo | `Registro3N_AnexoC` |  |
+| 13 | Ocorrencias | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

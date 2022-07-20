@@ -4,24 +4,24 @@
 ## NFSe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InfNfse |  |
-| 03 | Signature |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InfNfse | `abInfNfse` |  |
+| 03 | Signature | `List<SignatureType>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, NFSe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, NFSe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, NFSe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, NFSe) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, NFSe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, NFSe) | `Boolean` |  |
+| Deserialize(string) | `NFSe` |  |
+| Deserialize(Stream) | `NFSe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, NFSe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, NFSe) | `Boolean` |  |
+| LoadFrom(Stream) | `NFSe` |  |
+| LoadFromAsync(Stream, bool) | `Task<NFSe>` |  |

@@ -8,21 +8,21 @@ Documento Fiscal emitido por ECF (Código 02, 2D e 60)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModelo |  |
-| 03 | Situacao |  |
-| 04 | Numero |  |
-| 05 | Data |  |
-| 06 | ValorTotal |  |
-| 07 | ValorPIS |  |
-| 08 | ValorCofins |  |
-| 09 | CNPJ_CPF |  |
-| 10 | NomeAdquirente |  |
-| 11 | RegistrosC470 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModelo | `String` |  |
+| 03 | Situacao | `SituacaoDocumento` |  |
+| 04 | Numero | `Nullable<Int64>` |  |
+| 05 | Data | `Nullable<DateTime>` |  |
+| 06 | ValorTotal | `Nullable<Double>` |  |
+| 07 | ValorPIS | `Nullable<Double>` |  |
+| 08 | ValorCofins | `Nullable<Double>` |  |
+| 09 | CNPJ_CPF | `String` |  |
+| 10 | NomeAdquirente | `String` |  |
+| 11 | RegistrosC470 | `List<RegistroC470>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

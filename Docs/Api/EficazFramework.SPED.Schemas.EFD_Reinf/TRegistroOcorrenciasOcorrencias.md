@@ -6,9 +6,9 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tipo |  |
-| 03 | localizacaoErroAviso |  |
-| 04 | codigo |  |
-| 05 | descricao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tipo | `String` |  |
+| 03 | localizacaoErroAviso | `String` |  |
+| 04 | codigo | `String` |  |
+| 05 | descricao | `String` |  |

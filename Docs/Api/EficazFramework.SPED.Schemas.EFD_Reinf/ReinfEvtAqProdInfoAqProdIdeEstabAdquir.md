@@ -4,9 +4,9 @@
 ## ReinfEvtAqProdInfoAqProdIdeEstabAdquir Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscAdq |  |
-| 03 | nrInscAdq |  |
-| 04 | ideProdutor |  |
-| 05 | detAquis |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscAdq | `PersonalidadeJuridica` |  |
+| 03 | nrInscAdq | `String` |  |
+| 04 | ideProdutor | `ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor` |  |
+| 05 | detAquis | `List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis>` |  |

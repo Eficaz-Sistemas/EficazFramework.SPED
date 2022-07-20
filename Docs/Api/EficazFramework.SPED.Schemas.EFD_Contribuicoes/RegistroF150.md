@@ -8,24 +8,24 @@ Crédito presumido sobre estoques de abertura
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NatBcCredito |  |
-| 03 | VrTotalEstoqueAbertura |  |
-| 04 | ParcelaEstoqueSemCred |  |
-| 05 | VrBcEstoqueAbertura |  |
-| 06 | VrBcMensalCredEstoqueAbert |  |
-| 07 | CSTPis |  |
-| 08 | AliqPis |  |
-| 09 | VrMensalCredPresApPeriodoPis |  |
-| 10 | CSTCofins |  |
-| 11 | AliqCofins |  |
-| 12 | VrMensalCredPresApPeriodoCofins |  |
-| 13 | DescricaoEstoque |  |
-| 14 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NatBcCredito | `String` |  |
+| 03 | VrTotalEstoqueAbertura | `Nullable<Double>` |  |
+| 04 | ParcelaEstoqueSemCred | `Nullable<Double>` |  |
+| 05 | VrBcEstoqueAbertura | `Nullable<Double>` |  |
+| 06 | VrBcMensalCredEstoqueAbert | `Nullable<Double>` |  |
+| 07 | CSTPis | `String` |  |
+| 08 | AliqPis | `Nullable<Double>` |  |
+| 09 | VrMensalCredPresApPeriodoPis | `Nullable<Double>` |  |
+| 10 | CSTCofins | `String` |  |
+| 11 | AliqCofins | `Nullable<Double>` |  |
+| 12 | VrMensalCredPresApPeriodoCofins | `Nullable<Double>` |  |
+| 13 | DescricaoEstoque | `String` |  |
+| 14 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

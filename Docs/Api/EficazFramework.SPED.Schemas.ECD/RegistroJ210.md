@@ -8,19 +8,19 @@ DLPA - Demonstração de Lucros ou Prejuízos Acumulados/DMPL - Demonstração d
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoDemonst |  |
-| 03 | CodAglutinacao |  |
-| 04 | DescCodAglutinacao |  |
-| 05 | SaldoFinalCodAglutinacao |  |
-| 06 | IndicadorSitSaldoInformado |  |
-| 07 | SaldoInicialCodAglutinacao |  |
-| 08 | IndicadorSitSaldoInformadoInicial |  |
-| 09 | NotasExplicativas |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoDemonst | `IndicadorTipoDemonst` |  |
+| 03 | CodAglutinacao | `String` |  |
+| 04 | DescCodAglutinacao | `String` |  |
+| 05 | SaldoFinalCodAglutinacao | `Nullable<Double>` |  |
+| 06 | IndicadorSitSaldoInformado | `String` |  |
+| 07 | SaldoInicialCodAglutinacao | `Nullable<Double>` |  |
+| 08 | IndicadorSitSaldoInformadoInicial | `String` |  |
+| 09 | NotasExplicativas | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

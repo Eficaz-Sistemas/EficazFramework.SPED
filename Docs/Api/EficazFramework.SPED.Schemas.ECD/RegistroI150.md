@@ -8,13 +8,13 @@ Saldos Periódicos - Identificação do Período
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicioPeriodo |  |
-| 03 | DataFinalPeriodo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicioPeriodo | `Nullable<DateTime>` |  |
+| 03 | DataFinalPeriodo | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

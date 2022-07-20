@@ -8,15 +8,15 @@ Contas Contábeis Relacionadas ao Lançamento da Parte A do e-Lacs
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaContabil |  |
-| 03 | CentroDeCusto |  |
-| 04 | Valor |  |
-| 05 | Natureza | D – Devedor            C – Credor |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaContabil | `String` |  |
+| 03 | CentroDeCusto | `String` |  |
+| 04 | Valor | `Nullable<Double>` |  |
+| 05 | Natureza | `String` | D – Devedor            C – Credor |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

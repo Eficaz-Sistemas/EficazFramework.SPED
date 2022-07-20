@@ -8,32 +8,32 @@ Apuração de Crédito Extemporâneo - Documentos e Operações de Períodos Ant
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | CodigoItem |  |
-| 04 | CodigoModDocFiscal |  |
-| 05 | SerieDocFiscal |  |
-| 06 | SubSerieDocFiscal |  |
-| 07 | NumeroDocFiscal |  |
-| 08 | DataOperacao |  |
-| 09 | ChaveNFe |  |
-| 10 | VrOperacao |  |
-| 11 | CFOP |  |
-| 12 | CodigoBCCredito |  |
-| 13 | IndicadorOrigemCredito |  |
-| 14 | CSTPis |  |
-| 15 | VrBCPis |  |
-| 16 | AliqPis |  |
-| 17 | VrCredPis |  |
-| 18 | CodigoContaContabil |  |
-| 19 | CodigoCentroCusto |  |
-| 20 | DescricaoComplementar |  |
-| 21 | MesAnoEscrituracao |  |
-| 22 | CNPJEstabelecimentoCredito |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | CodigoItem | `String` |  |
+| 04 | CodigoModDocFiscal | `String` |  |
+| 05 | SerieDocFiscal | `String` |  |
+| 06 | SubSerieDocFiscal | `String` |  |
+| 07 | NumeroDocFiscal | `String` |  |
+| 08 | DataOperacao | `Nullable<DateTime>` |  |
+| 09 | ChaveNFe | `String` |  |
+| 10 | VrOperacao | `Nullable<Double>` |  |
+| 11 | CFOP | `String` |  |
+| 12 | CodigoBCCredito | `String` |  |
+| 13 | IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
+| 14 | CSTPis | `String` |  |
+| 15 | VrBCPis | `Nullable<Double>` |  |
+| 16 | AliqPis | `Nullable<Double>` |  |
+| 17 | VrCredPis | `Nullable<Double>` |  |
+| 18 | CodigoContaContabil | `String` |  |
+| 19 | CodigoCentroCusto | `String` |  |
+| 20 | DescricaoComplementar | `String` |  |
+| 21 | MesAnoEscrituracao | `Nullable<DateTime>` |  |
+| 22 | CNPJEstabelecimentoCredito | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

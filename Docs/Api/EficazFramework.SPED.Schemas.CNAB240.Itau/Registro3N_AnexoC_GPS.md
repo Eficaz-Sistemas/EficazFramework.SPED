@@ -4,21 +4,21 @@
 ## Registro3N_AnexoC_GPS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoRecolhimento |  |
-| 03 | Competencia |  |
-| 04 | CNPJ |  |
-| 05 | ValorTributo |  |
-| 06 | ValorOutrasEntidades |  |
-| 07 | ValorAtualizacaoMonetaria |  |
-| 08 | ValorArrecadado |  |
-| 09 | DataArrecadacao |  |
-| 10 | UsoDaEmpresa |  |
-| 11 | ContribuinteNome |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoRecolhimento | `String` |  |
+| 03 | Competencia | `Nullable<DateTime>` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | ValorTributo | `Nullable<Double>` |  |
+| 06 | ValorOutrasEntidades | `Nullable<Double>` |  |
+| 07 | ValorAtualizacaoMonetaria | `Nullable<Double>` |  |
+| 08 | ValorArrecadado | `Nullable<Double>` |  |
+| 09 | DataArrecadacao | `Nullable<DateTime>` |  |
+| 10 | UsoDaEmpresa | `String` |  |
+| 11 | ContribuinteNome | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

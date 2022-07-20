@@ -4,12 +4,12 @@
 ## TCTeInfCteComplEntregaComData Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpPer |  |
-| 03 | dProg |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpPer | `TCTeInfCteComplEntregaComDataTpPer` |  |
+| 03 | dProg | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

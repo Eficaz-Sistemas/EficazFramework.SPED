@@ -8,15 +8,15 @@ Saldos Finais das Contas de Resultado Antes do Encerramento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodContaAnaliticaResultado |  |
-| 03 | CodCentroCusto |  |
-| 04 | VrSaldoFinalAntesEncerramento |  |
-| 05 | IndicadorSituacaoSaldoFinal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodContaAnaliticaResultado | `String` |  |
+| 03 | CodCentroCusto | `String` |  |
+| 04 | VrSaldoFinalAntesEncerramento | `Nullable<Double>` |  |
+| 05 | IndicadorSituacaoSaldoFinal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

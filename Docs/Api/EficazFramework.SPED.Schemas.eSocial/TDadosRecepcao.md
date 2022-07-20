@@ -6,8 +6,8 @@
 Dados da recepção do serviço solicitado
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dhRecepcao |  |
-| 03 | versaoAplicativoRecepcao |  |
-| 04 | protocoloEnvio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dhRecepcao | `DateTime` |  |
+| 03 | versaoAplicativoRecepcao | `String` |  |
+| 04 | protocoloEnvio | `String` |  |

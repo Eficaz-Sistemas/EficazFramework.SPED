@@ -4,12 +4,12 @@
 ## InformacoesAdicionaisObsFisco Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xTexto |  |
-| 03 | xCampo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xTexto | `String` |  |
+| 03 | xCampo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

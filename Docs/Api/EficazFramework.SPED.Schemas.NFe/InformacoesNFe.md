@@ -4,39 +4,39 @@
 ## InformacoesNFe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoOperacao |  |
-| 03 | Emitente |  |
-| 04 | Avulsa |  |
-| 05 | Destinatario |  |
-| 06 | LocalRetirada |  |
-| 07 | LocalEntrega |  |
-| 08 | Items |  |
-| 09 | Totais |  |
-| 10 | Transporte |  |
-| 11 | Cobranca |  |
-| 12 | Pagamento |  |
-| 13 | InformacoesAdicionais |  |
-| 14 | Exportacao |  |
-| 15 | InformacaoAdicionalCompra |  |
-| 16 | Cana |  |
-| 17 | Versao |  |
-| 18 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoOperacao | `IdentificacaoNFe` |  |
+| 03 | Emitente | `Emitente` |  |
+| 04 | Avulsa | `Fisco` |  |
+| 05 | Destinatario | `Destinatario` |  |
+| 06 | LocalRetirada | `Local` |  |
+| 07 | LocalEntrega | `Local` |  |
+| 08 | Items | `List<Item>` |  |
+| 09 | Totais | `Totais` |  |
+| 10 | Transporte | `InformacoesTransporte` |  |
+| 11 | Cobranca | `Cobranca` |  |
+| 12 | Pagamento | `Pagamento` |  |
+| 13 | InformacoesAdicionais | `InformacoesAdicionais` |  |
+| 14 | Exportacao | `Exportacao` |  |
+| 15 | InformacaoAdicionalCompra | `Compra` |  |
+| 16 | Cana | `Cana` |  |
+| 17 | Versao | `String` |  |
+| 18 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, InformacoesNFe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, InformacoesNFe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, InformacoesNFe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, InformacoesNFe) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, InformacoesNFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, InformacoesNFe) | `Boolean` |  |
+| Deserialize(string) | `InformacoesNFe` |  |
+| Deserialize(Stream) | `InformacoesNFe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, InformacoesNFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, InformacoesNFe) | `Boolean` |  |
+| LoadFrom(Stream) | `InformacoesNFe` |  |
+| LoadFromAsync(Stream) | `Task<InformacoesNFe>` |  |

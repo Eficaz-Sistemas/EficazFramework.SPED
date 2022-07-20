@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CRCPRB |  |
-| 03 | vlrCRCPRB |  |
-| 04 | vlrCRCPRBSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CRCPRB | `String` |  |
+| 03 | vlrCRCPRB | `String` |  |
+| 04 | vlrCRCPRBSusp | `String` |  |

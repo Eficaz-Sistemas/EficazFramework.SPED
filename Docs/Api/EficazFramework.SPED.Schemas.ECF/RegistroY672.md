@@ -6,30 +6,30 @@
 Outras Informações (Lucro Real)
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CapitalSocial_Anterior |  |
-| 03 | CapitalSocial |  |
-| 04 | Estoque_Anterior |  |
-| 05 | Estoque |  |
-| 06 | CaixaBancos_Anterior |  |
-| 07 | CaixaBancos |  |
-| 08 | AplicacoesFinanceiras_Anterior |  |
-| 09 | AplicacoesFinanceiras |  |
-| 10 | ContasReceber_Anterior |  |
-| 11 | ContasReceber |  |
-| 12 | ContasPagar_Anterior |  |
-| 13 | ContasPagar |  |
-| 14 | CompraMercadorias |  |
-| 15 | CompraAtivo |  |
-| 16 | ReceitasNaoTributaveisOuExclusivFonte |  |
-| 17 | TotalAtivo |  |
-| 18 | ValorFolhaPagtoAliqReduzica |  |
-| 19 | AliquotaReduzidaFolhaPagto |  |
-| 20 | AvaliacaoEstoque |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CapitalSocial_Anterior | `Nullable<Double>` |  |
+| 03 | CapitalSocial | `Nullable<Double>` |  |
+| 04 | Estoque_Anterior | `Nullable<Double>` |  |
+| 05 | Estoque | `Nullable<Double>` |  |
+| 06 | CaixaBancos_Anterior | `Nullable<Double>` |  |
+| 07 | CaixaBancos | `Nullable<Double>` |  |
+| 08 | AplicacoesFinanceiras_Anterior | `Nullable<Double>` |  |
+| 09 | AplicacoesFinanceiras | `Nullable<Double>` |  |
+| 10 | ContasReceber_Anterior | `Nullable<Double>` |  |
+| 11 | ContasReceber | `Nullable<Double>` |  |
+| 12 | ContasPagar_Anterior | `Nullable<Double>` |  |
+| 13 | ContasPagar | `Nullable<Double>` |  |
+| 14 | CompraMercadorias | `Nullable<Double>` |  |
+| 15 | CompraAtivo | `Nullable<Double>` |  |
+| 16 | ReceitasNaoTributaveisOuExclusivFonte | `Nullable<Double>` |  |
+| 17 | TotalAtivo | `Nullable<Double>` |  |
+| 18 | ValorFolhaPagtoAliqReduzica | `Nullable<Double>` |  |
+| 19 | AliquotaReduzidaFolhaPagto | `Nullable<Double>` |  |
+| 20 | AvaliacaoEstoque | `MetodoAvEstoque` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

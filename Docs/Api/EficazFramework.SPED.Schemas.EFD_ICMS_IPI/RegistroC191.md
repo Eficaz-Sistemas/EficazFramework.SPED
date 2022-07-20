@@ -9,14 +9,14 @@ Provenientes de Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorFCP |  |
-| 03 | ValorFCP_ST |  |
-| 04 | ValorFCP_Ret |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorFCP | `Nullable<Double>` |  |
+| 03 | ValorFCP_ST | `Nullable<Double>` |  |
+| 04 | ValorFCP_Ret | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

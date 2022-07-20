@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | perApur |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | perApur | `String` |  |

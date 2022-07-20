@@ -4,8 +4,8 @@
 ## Escrituracao Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ProcessaLinha(string) |  |
-| LeEmpresaArquivo(Stream) |  |
-| EncerraArquivo(StreamWriter) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ProcessaLinha(string) | `Void` |  |
+| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| EncerraArquivo(StreamWriter) | `Task` |  |

@@ -4,10 +4,10 @@
 ## ReinfEvtServTomInfoServTomIdeEstabObra Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscEstab |  |
-| 03 | nrInscEstab |  |
-| 04 | indObra |  |
-| 05 | indObra_Str |  |
-| 06 | idePrestServ |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscEstab | `PersonalidadeJuridica` |  |
+| 03 | nrInscEstab | `String` |  |
+| 04 | indObra | `IndicadorObra` |  |
+| 05 | indObra_Str | `String` |  |
+| 06 | idePrestServ | `ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ` |  |

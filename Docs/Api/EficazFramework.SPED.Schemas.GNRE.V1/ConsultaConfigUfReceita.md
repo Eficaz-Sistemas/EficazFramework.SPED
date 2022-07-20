@@ -4,26 +4,26 @@
 ## ConsultaConfigUfReceita Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | courier |  |
-| 03 | courierSpecified |  |
-| 04 | Value |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | courier | `PTBrBoolean` |  |
+| 03 | courierSpecified | `Boolean` |  |
+| 04 | Value | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ConsultaConfigUfReceita, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ConsultaConfigUfReceita) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ConsultaConfigUfReceita, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ConsultaConfigUfReceita) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ConsultaConfigUfReceita, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ConsultaConfigUfReceita) | `Boolean` |  |
+| Deserialize(string) | `ConsultaConfigUfReceita` |  |
+| Deserialize(Stream) | `ConsultaConfigUfReceita` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ConsultaConfigUfReceita, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ConsultaConfigUfReceita) | `Boolean` |  |
+| LoadFrom(Stream) | `ConsultaConfigUfReceita` |  |
+| LoadFromAsync(Stream) | `Task<ConsultaConfigUfReceita>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ConsultaConfigUfReceita>` |  |

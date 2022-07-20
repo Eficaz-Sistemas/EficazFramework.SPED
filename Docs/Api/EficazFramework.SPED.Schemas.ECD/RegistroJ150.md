@@ -8,25 +8,25 @@ Demonstração do Resultado do Exercício
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroOrdem |  |
-| 03 | CodAglutinacao |  |
-| 04 | IndicadorCodAglutinacao |  |
-| 05 | NivelCodAglutinacao |  |
-| 06 | CodAglutinacaoSuperior |  |
-| 07 | DescCodAglutinacao |  |
-| 08 | VrTotalPerAnteriorCodAglutinacao |  |
-| 09 | IndicadorSitVrPerAnteriorInformado |  |
-| 10 | VrTotalCodAglutinacao | Entenda esta campo como saldo final, a partir do Layout 7.00 considerado antes do encerramento |
-| 11 | IndicadorSitVrInformado |  |
-| 12 | IndicadorGrupoDRE |  |
-| 13 | VrSaldoFinalAntesEncerr | Utilizado apenas até o layout 6.00 |
-| 14 | IndicadorSitVrInformadoSaldo | Utilizado apenas até o layout 6.00 |
-| 15 | NotaExplicativa |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroOrdem | `Int32` |  |
+| 03 | CodAglutinacao | `String` |  |
+| 04 | IndicadorCodAglutinacao | `String` |  |
+| 05 | NivelCodAglutinacao | `String` |  |
+| 06 | CodAglutinacaoSuperior | `String` |  |
+| 07 | DescCodAglutinacao | `String` |  |
+| 08 | VrTotalPerAnteriorCodAglutinacao | `Nullable<Double>` |  |
+| 09 | IndicadorSitVrPerAnteriorInformado | `String` |  |
+| 10 | VrTotalCodAglutinacao | `Nullable<Double>` | Entenda esta campo como saldo final, a partir do Layout 7.00 considerado antes do encerramento |
+| 11 | IndicadorSitVrInformado | `String` |  |
+| 12 | IndicadorGrupoDRE | `String` |  |
+| 13 | VrSaldoFinalAntesEncerr | `Nullable<Double>` | Utilizado apenas até o layout 6.00 |
+| 14 | IndicadorSitVrInformadoSaldo | `String` | Utilizado apenas até o layout 6.00 |
+| 15 | NotaExplicativa | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

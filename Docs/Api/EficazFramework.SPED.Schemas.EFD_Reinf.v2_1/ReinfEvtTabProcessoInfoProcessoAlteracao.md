@@ -4,7 +4,7 @@
 ## ReinfEvtTabProcessoInfoProcessoAlteracao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideProcesso |  |
-| 03 | novaValidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideProcesso | `ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso` |  |
+| 03 | novaValidade | `ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade` |  |

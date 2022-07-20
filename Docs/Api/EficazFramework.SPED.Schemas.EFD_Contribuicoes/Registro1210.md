@@ -8,21 +8,21 @@ Detalhamento da Contribuição Social Extemporânea
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroCNPJCampoRegistro0140 |  |
-| 03 | CSTPis |  |
-| 04 | CodParticipante |  |
-| 05 | DataOperacao |  |
-| 06 | ValorOperacao |  |
-| 07 | ValorBCPis |  |
-| 08 | AliqPis |  |
-| 09 | VrPis |  |
-| 10 | CodigoContaContabil |  |
-| 11 | DescComplementarDoc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroCNPJCampoRegistro0140 | `String` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | CodParticipante | `String` |  |
+| 05 | DataOperacao | `Nullable<DateTime>` |  |
+| 06 | ValorOperacao | `Nullable<Double>` |  |
+| 07 | ValorBCPis | `Nullable<Double>` |  |
+| 08 | AliqPis | `Nullable<Double>` |  |
+| 09 | VrPis | `Nullable<Double>` |  |
+| 10 | CodigoContaContabil | `String` |  |
+| 11 | DescComplementarDoc | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

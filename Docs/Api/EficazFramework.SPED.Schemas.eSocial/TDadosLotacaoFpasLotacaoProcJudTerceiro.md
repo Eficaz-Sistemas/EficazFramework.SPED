@@ -4,8 +4,8 @@
 ## TDadosLotacaoFpasLotacaoProcJudTerceiro Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codTerc |  |
-| 03 | nrProcJud |  |
-| 04 | codSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codTerc | `String` |  |
+| 03 | nrProcJud | `String` |  |
+| 04 | codSusp | `String` |  |

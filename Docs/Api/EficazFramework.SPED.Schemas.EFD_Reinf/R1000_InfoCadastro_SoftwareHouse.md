@@ -4,10 +4,10 @@
 ## R1000_InfoCadastro_SoftwareHouse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cnpjSoftHouse |  |
-| 03 | nmRazao |  |
-| 04 | nmCont |  |
-| 05 | telefone |  |
-| 06 | email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cnpjSoftHouse | `String` |  |
+| 03 | nmRazao | `String` |  |
+| 04 | nmCont | `String` |  |
+| 05 | telefone | `String` |  |
+| 06 | email | `String` |  |

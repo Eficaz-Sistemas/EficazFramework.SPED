@@ -4,12 +4,12 @@
 ## NfseSubstituida Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | CodigoVerificacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | CodigoVerificacao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

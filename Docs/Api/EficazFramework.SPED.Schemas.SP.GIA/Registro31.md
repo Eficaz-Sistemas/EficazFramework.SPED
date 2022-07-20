@@ -6,12 +6,12 @@
 Exportação
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | RE |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | RE | `Int64` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

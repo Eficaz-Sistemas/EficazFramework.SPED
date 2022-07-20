@@ -8,15 +8,15 @@ Termo de Verificação para Fins de Substituição da ECD
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | TipoDoc |  |
-| 03 | DescricaoArquivoRTF |  |
-| 04 | HashArquivoRTF |  |
-| 05 | SequenciaBytesArquitoRTF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | TipoDoc | `String` |  |
+| 03 | DescricaoArquivoRTF | `String` |  |
+| 04 | HashArquivoRTF | `String` |  |
+| 05 | SequenciaBytesArquitoRTF | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

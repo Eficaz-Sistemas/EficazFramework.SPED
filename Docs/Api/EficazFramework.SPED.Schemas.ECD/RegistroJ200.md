@@ -8,13 +8,13 @@ Tabela de Histório de Fatos Contábeis que Modificam a Conta Lucros Acumulados 
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodHistoricoFatoContabil |  |
-| 03 | DescFatoContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodHistoricoFatoContabil | `String` |  |
+| 03 | DescFatoContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

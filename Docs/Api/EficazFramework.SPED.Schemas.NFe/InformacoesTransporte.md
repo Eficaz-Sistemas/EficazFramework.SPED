@@ -4,20 +4,20 @@
 ## InformacoesTransporte Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Modalidade |  |
-| 03 | Transportadora |  |
-| 04 | RetancaoICMS |  |
-| 05 | Veiculo |  |
-| 06 | Reboques |  |
-| 07 | Vagao |  |
-| 08 | Balsa |  |
-| 09 | Volumes |  |
-| 10 | Placa |  |
-| 11 | PlacaUF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Modalidade | `ModalidadeFrete` |  |
+| 03 | Transportadora | `Transportadora` |  |
+| 04 | RetancaoICMS | `TransporteRetencaoICMS` |  |
+| 05 | Veiculo | `Veiculo` |  |
+| 06 | Reboques | `List<Veiculo>` |  |
+| 07 | Vagao | `String` |  |
+| 08 | Balsa | `String` |  |
+| 09 | Volumes | `List<VolumeTransportado>` |  |
+| 10 | Placa | `String` |  |
+| 11 | PlacaUF | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -6,22 +6,22 @@
 Detalhes CFOP's
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CFOP |  |
-| 03 | ValorContabil |  |
-| 04 | BaseCalculo |  |
-| 05 | Imposto |  |
-| 06 | IsentasNaoTributadas |  |
-| 07 | Outras |  |
-| 08 | ImpostoRetidoST |  |
-| 09 | ImpostoRetidoSubstitutoST |  |
-| 10 | ImpostoRetidoSubstituido |  |
-| 11 | OutrosImpostos |  |
-| 12 | Registros14 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CFOP | `String` |  |
+| 03 | ValorContabil | `Nullable<Double>` |  |
+| 04 | BaseCalculo | `Nullable<Double>` |  |
+| 05 | Imposto | `Nullable<Double>` |  |
+| 06 | IsentasNaoTributadas | `Nullable<Double>` |  |
+| 07 | Outras | `Nullable<Double>` |  |
+| 08 | ImpostoRetidoST | `Nullable<Double>` |  |
+| 09 | ImpostoRetidoSubstitutoST | `Nullable<Double>` |  |
+| 10 | ImpostoRetidoSubstituido | `Nullable<Double>` |  |
+| 11 | OutrosImpostos | `Nullable<Double>` |  |
+| 12 | Registros14 | `List<Registro14>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

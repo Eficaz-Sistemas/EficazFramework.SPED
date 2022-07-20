@@ -8,20 +8,20 @@ Relação das Empresas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodPais |  |
-| 03 | CodigoIdentifEmpresaPart |  |
-| 04 | CNPJ |  |
-| 05 | NomeEmpresarial |  |
-| 06 | PercentualPartConglomerado |  |
-| 07 | EventoSocietarioOcorrido |  |
-| 08 | PercentualConsolidacaoEmpresa |  |
-| 09 | DataInicialEscrituracaoEmpresaConsolidada |  |
-| 10 | DataFinalEscrituracaoEmpresaConsolidada |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodPais | `String` |  |
+| 03 | CodigoIdentifEmpresaPart | `String` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | NomeEmpresarial | `String` |  |
+| 06 | PercentualPartConglomerado | `Nullable<Double>` |  |
+| 07 | EventoSocietarioOcorrido | `String` |  |
+| 08 | PercentualConsolidacaoEmpresa | `Nullable<Double>` |  |
+| 09 | DataInicialEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
+| 10 | DataFinalEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

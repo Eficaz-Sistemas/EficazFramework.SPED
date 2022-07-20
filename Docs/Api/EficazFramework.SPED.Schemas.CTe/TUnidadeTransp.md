@@ -4,15 +4,15 @@
 ## TUnidadeTransp Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpUnidTransp |  |
-| 03 | idUnidTransp |  |
-| 04 | lacUnidTransp |  |
-| 05 | infUnidCarga |  |
-| 06 | qtdRat |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpUnidTransp | `TtipoUnidTransp` |  |
+| 03 | idUnidTransp | `String` |  |
+| 04 | lacUnidTransp | `ObservableCollection<TUnidadeTranspLacUnidTransp>` |  |
+| 05 | infUnidCarga | `ObservableCollection<TUnidCarga>` |  |
+| 06 | qtdRat | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

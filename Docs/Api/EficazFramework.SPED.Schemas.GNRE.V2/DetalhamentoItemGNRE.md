@@ -6,24 +6,24 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | receita |  |
-| 03 | detalhamentoReceita |  |
-| 04 | documentoOrigem |  |
-| 05 | produto |  |
-| 06 | referencia |  |
-| 07 | dataVencimentoDate |  |
-| 08 | dataVencimento |  |
-| 09 | valor |  |
-| 10 | convenio |  |
-| 11 | contribuinteDestinatario |  |
-| 12 | camposExtras |  |
-| 13 | ForcarCamposExtras |  |
-| 14 | numeroControle |  |
-| 15 | numeroControleFecp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | receita | `String` |  |
+| 03 | detalhamentoReceita | `String` |  |
+| 04 | documentoOrigem | `TipoDocumentoOrigem` |  |
+| 05 | produto | `String` |  |
+| 06 | referencia | `Referencia` |  |
+| 07 | dataVencimentoDate | `Nullable<DateTime>` |  |
+| 08 | dataVencimento | `String` |  |
+| 09 | valor | `ObservableCollection<ItemValor>` |  |
+| 10 | convenio | `String` |  |
+| 11 | contribuinteDestinatario | `Destinatario` |  |
+| 12 | camposExtras | `ObservableCollection<CampoExtra>` |  |
+| 13 | ForcarCamposExtras | `Boolean` |  |
+| 14 | numeroControle | `String` |  |
+| 15 | numeroControleFecp | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializecamposExtras() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializecamposExtras() | `Boolean` |  |

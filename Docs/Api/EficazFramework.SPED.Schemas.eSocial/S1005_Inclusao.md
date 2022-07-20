@@ -4,7 +4,7 @@
 ## S1005_Inclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEstab |  |
-| 03 | dadosEstab |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEstab | `TIdeEstab` |  |
+| 03 | dadosEstab | `TDadosEstab` |  |

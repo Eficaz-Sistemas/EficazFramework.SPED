@@ -4,17 +4,17 @@
 ## Recebedor Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PersonalidadeJuridica7 |  |
-| 03 | CNPJ_CPF |  |
-| 04 | IE |  |
-| 05 | xNome |  |
-| 06 | fone |  |
-| 07 | enderReceb |  |
-| 08 | email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| 03 | CNPJ_CPF | `String` |  |
+| 04 | IE | `String` |  |
+| 05 | xNome | `String` |  |
+| 06 | fone | `String` |  |
+| 07 | enderReceb | `Endereco` |  |
+| 08 | email | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

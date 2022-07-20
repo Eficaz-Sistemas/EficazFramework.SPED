@@ -4,28 +4,28 @@
 ## tcComplNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Nfse |  |
-| 03 | NfseCancelamento |  |
-| 04 | NfseSubstituicao |  |
-| 05 | DocumentType |  |
-| 06 | DataEmissao |  |
-| 07 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Nfse | `NFSe` |  |
+| 03 | NfseCancelamento | `tcCancelamentoNfse` |  |
+| 04 | NfseSubstituicao | `tcSubstituicaoNfse` |  |
+| 05 | DocumentType | `XMLDocumentType` |  |
+| 06 | DataEmissao | `Nullable<DateTime>` |  |
+| 07 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcComplNfse, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcComplNfse) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcComplNfse, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcComplNfse) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcComplNfse, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcComplNfse) | `Boolean` |  |
+| Deserialize(string) | `tcComplNfse` |  |
+| Deserialize(Stream) | `tcComplNfse` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcComplNfse, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcComplNfse) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `tcComplNfse` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcComplNfse>` |  |

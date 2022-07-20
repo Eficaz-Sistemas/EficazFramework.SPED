@@ -4,13 +4,13 @@
 ## GuiaResultadoMotivo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codigo |  |
-| 03 | descricao |  |
-| 04 | campo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codigo | `String` |  |
+| 03 | descricao | `String` |  |
+| 04 | campo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |

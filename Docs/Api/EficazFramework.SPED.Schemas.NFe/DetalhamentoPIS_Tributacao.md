@@ -8,21 +8,21 @@ Clase genérica para tratamento das tributações de PIS (sem ST).
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | vBC |  |
-| 04 | pPIS |  |
-| 05 | vPIS |  |
-| 06 | qBCProd |  |
-| 07 | vAliqProd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `CST_PIS` |  |
+| 03 | vBC | `Nullable<Double>` |  |
+| 04 | pPIS | `Nullable<Double>` |  |
+| 05 | vPIS | `Nullable<Double>` |  |
+| 06 | qBCProd | `Nullable<Double>` |  |
+| 07 | vAliqProd | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevBC() |  |
-| ShouldSerializepPIS() |  |
-| ShouldSerializevPIS() |  |
-| ShouldSerializeqBCProd() |  |
-| ShouldSerializevAliqProd() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevBC() | `Boolean` |  |
+| ShouldSerializepPIS() | `Boolean` |  |
+| ShouldSerializevPIS() | `Boolean` |  |
+| ShouldSerializeqBCProd() | `Boolean` |  |
+| ShouldSerializevAliqProd() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

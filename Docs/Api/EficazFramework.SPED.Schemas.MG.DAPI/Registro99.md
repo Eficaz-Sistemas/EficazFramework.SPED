@@ -6,15 +6,15 @@
 Total de Linhas do Arquivo
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | DataFinal |  |
-| 04 | DataInicial |  |
-| 05 | TotalLinhas |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | DataInicial | `Nullable<DateTime>` |  |
+| 05 | TotalLinhas | `Int64` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

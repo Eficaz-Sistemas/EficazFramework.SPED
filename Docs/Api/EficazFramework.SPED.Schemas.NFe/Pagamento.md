@@ -6,11 +6,11 @@
 NF-e 4.00
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DetalhamentoPagamentos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DetalhamentoPagamentos | `List<DetalhamentoPagamento>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

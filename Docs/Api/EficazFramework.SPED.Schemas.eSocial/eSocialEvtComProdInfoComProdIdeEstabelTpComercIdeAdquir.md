@@ -4,12 +4,12 @@
 ## eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInsc |  |
-| 03 | nrInsc |  |
-| 04 | vrComerc |  |
-| 05 | vrCPDesc |  |
-| 06 | vrRatDescPR |  |
-| 07 | vrSenarDesc |  |
-| 08 | nfs |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInsc | `PersonalidadeJuridica` |  |
+| 03 | nrInsc | `String` |  |
+| 04 | vrComerc | `Decimal` |  |
+| 05 | vrCPDesc | `Decimal` |  |
+| 06 | vrRatDescPR | `Decimal` |  |
+| 07 | vrSenarDesc | `Decimal` |  |
+| 08 | nfs | `ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs>` |  |

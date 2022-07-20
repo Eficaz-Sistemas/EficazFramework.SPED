@@ -8,19 +8,19 @@ Outros Créditos CIAP
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicial |  |
-| 03 | DataFinal |  |
-| 04 | NumeroParcela |  |
-| 05 | ValorParcela |  |
-| 06 | SaidasTributadasOuExportacao |  |
-| 07 | TotalSaidas |  |
-| 08 | IndiceParticipacao |  |
-| 09 | ICMSApropriado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicial | `Nullable<DateTime>` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | NumeroParcela | `Nullable<Double>` |  |
+| 05 | ValorParcela | `Nullable<Double>` |  |
+| 06 | SaidasTributadasOuExportacao | `Nullable<Double>` |  |
+| 07 | TotalSaidas | `Nullable<Double>` |  |
+| 08 | IndiceParticipacao | `Nullable<Double>` |  |
+| 09 | ICMSApropriado | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

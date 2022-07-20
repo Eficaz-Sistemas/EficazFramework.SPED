@@ -4,26 +4,26 @@
 ## TProtCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infProt |  |
-| 03 | Signature |  |
-| 04 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infProt | `TProtCTeInfProt` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, TProtCTe, Exception) | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, TProtCTe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveTo(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, TProtCTe, Exception) | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, TProtCTe) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
+| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
+| CanDeserialize(string, TProtCTe, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
+| CanDeserialize(string, TProtCTe) | `Boolean` |  |
+| Deserialize(string) | `TProtCTe` |  |
+| Deserialize(Stream) | `TProtCTe` |  |
+| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, TProtCTe, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
+| CanLoadFrom(Stream, TProtCTe) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `TProtCTe` |  |
+| LoadFromAsync(Stream, bool) | `Task<TProtCTe>` |  |

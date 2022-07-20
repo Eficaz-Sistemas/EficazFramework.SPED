@@ -8,15 +8,15 @@ REGISTRO D110: ITEMS DO DOCUMENTO FISCAL
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroSequencialItem |  |
-| 03 | CodigoProduto |  |
-| 04 | ValorServico |  |
-| 05 | OutrosValores |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroSequencialItem | `Nullable<Int32>` |  |
+| 03 | CodigoProduto | `String` |  |
+| 04 | ValorServico | `Nullable<Double>` |  |
+| 05 | OutrosValores | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

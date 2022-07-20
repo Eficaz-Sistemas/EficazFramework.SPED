@@ -4,22 +4,22 @@
 ## Registro10 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | InscricaoEstadual |  |
-| 04 | NomeComercial |  |
-| 05 | Municipio |  |
-| 06 | UF |  |
-| 07 | NumeroFax |  |
-| 08 | DataInicio |  |
-| 09 | DataFinal |  |
-| 10 | CodigoIndentificacaoArquivoEntregue |  |
-| 11 | CodigoIdentificacaoNatOp |  |
-| 12 | CodigoFinalidadeApresentacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | InscricaoEstadual | `String` |  |
+| 04 | NomeComercial | `String` |  |
+| 05 | Municipio | `String` |  |
+| 06 | UF | `String` |  |
+| 07 | NumeroFax | `String` |  |
+| 08 | DataInicio | `Nullable<DateTime>` |  |
+| 09 | DataFinal | `Nullable<DateTime>` |  |
+| 10 | CodigoIndentificacaoArquivoEntregue | `CodigoIDArquivo` |  |
+| 11 | CodigoIdentificacaoNatOp | `NaturezaOperacoes` |  |
+| 12 | CodigoFinalidadeApresentacao | `FinalidadeApresentacao` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

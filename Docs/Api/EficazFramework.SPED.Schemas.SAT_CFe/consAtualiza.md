@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | verSoft |  |
-| 04 | cUF |  |
-| 05 | xServ |  |
-| 06 | nSeg |  |
-| 07 | dhEnvio |  |
-| 08 | nserieSAT |  |
-| 09 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | verSoft | `String` |  |
+| 04 | cUF | `String` |  |
+| 05 | xServ | `String` |  |
+| 06 | nSeg | `String` |  |
+| 07 | dhEnvio | `String` |  |
+| 08 | nserieSAT | `String` |  |
+| 09 | versao | `String` |  |

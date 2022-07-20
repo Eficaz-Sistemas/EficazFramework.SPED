@@ -8,32 +8,32 @@ Consolidação Diária de Notas fiscais/contas emitidas de energia elétrica
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodModDocFiscal |  |
-| 03 | CodMunicipioIBGE |  |
-| 04 | SerieDocFiscal |  |
-| 05 | SubSerieDocFiscal |  |
-| 06 | CodClasseConsEnergia |  |
-| 07 | QtdeDocsConsolidadosRegistro |  |
-| 08 | QtdeDocsCancelados |  |
-| 09 | DataDocConsolidados |  |
-| 10 | VrTotalDocs |  |
-| 11 | VrAcumDescontos |  |
-| 12 | ConsumoTotalAcum |  |
-| 13 | VrAcumFornecimento |  |
-| 14 | VrAcumServNaoTributICMS |  |
-| 15 | VrCobradosNomeTerceiros |  |
-| 16 | VrAcumDespAcessorias |  |
-| 17 | VrAcumBCICMS |  |
-| 18 | VrAcumICMS |  |
-| 19 | VrAcumBCICMSST |  |
-| 20 | VrAcumICMSretidoST |  |
-| 21 | VrAcumPIS |  |
-| 22 | VrAcumCofins |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodModDocFiscal | `String` |  |
+| 03 | CodMunicipioIBGE | `String` |  |
+| 04 | SerieDocFiscal | `String` |  |
+| 05 | SubSerieDocFiscal | `String` |  |
+| 06 | CodClasseConsEnergia | `String` |  |
+| 07 | QtdeDocsConsolidadosRegistro | `Nullable<Int32>` |  |
+| 08 | QtdeDocsCancelados | `Nullable<Int32>` |  |
+| 09 | DataDocConsolidados | `Nullable<DateTime>` |  |
+| 10 | VrTotalDocs | `Nullable<Double>` |  |
+| 11 | VrAcumDescontos | `Nullable<Double>` |  |
+| 12 | ConsumoTotalAcum | `Nullable<Double>` |  |
+| 13 | VrAcumFornecimento | `Nullable<Double>` |  |
+| 14 | VrAcumServNaoTributICMS | `Nullable<Double>` |  |
+| 15 | VrCobradosNomeTerceiros | `Nullable<Double>` |  |
+| 16 | VrAcumDespAcessorias | `Nullable<Double>` |  |
+| 17 | VrAcumBCICMS | `Nullable<Double>` |  |
+| 18 | VrAcumICMS | `Nullable<Double>` |  |
+| 19 | VrAcumBCICMSST | `Nullable<Double>` |  |
+| 20 | VrAcumICMSretidoST | `Nullable<Double>` |  |
+| 21 | VrAcumPIS | `Nullable<Double>` |  |
+| 22 | VrAcumCofins | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

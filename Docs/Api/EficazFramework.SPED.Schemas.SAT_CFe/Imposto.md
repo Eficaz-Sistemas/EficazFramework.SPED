@@ -6,13 +6,13 @@
 Tag Principal de acesso aos tributos do item
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vItem12741 |  |
-| 03 | ICMS_ISSQN_generico |  |
-| 04 | ICMS |  |
-| 05 | ISSQN |  |
-| 06 | PIS |  |
-| 07 | PISST |  |
-| 08 | COFINS |  |
-| 09 | COFINSST |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vItem12741 | `String` |  |
+| 03 | ICMS_ISSQN_generico | `Object` |  |
+| 04 | ICMS | `ImpostoICMS` |  |
+| 05 | ISSQN | `ImpostoISSQN` |  |
+| 06 | PIS | `ImpostoPIS` |  |
+| 07 | PISST | `ImpostoPISST` |  |
+| 08 | COFINS | `ImpostoCOFINS` |  |
+| 09 | COFINSST | `ImpostoCOFINSST` |  |

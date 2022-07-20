@@ -4,6 +4,6 @@
 ## TDadosProcessamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | versaoAplicativoProcessamentoLote |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | versaoAplicativoProcessamentoLote | `String` |  |

@@ -8,16 +8,16 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoDeducao |  |
-| 03 | ValorDeducao |  |
-| 04 | NumeroProcesso |  |
-| 05 | IndicadorOrigemProcesso |  |
-| 06 | DescricaoProcessoLcto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoDeducao | `IndicadorTipoDeducao` |  |
+| 03 | ValorDeducao | `Nullable<Double>` |  |
+| 04 | NumeroProcesso | `String` |  |
+| 05 | IndicadorOrigemProcesso | `IndicadorOrigemProcessoServico` |  |
+| 06 | DescricaoProcessoLcto | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

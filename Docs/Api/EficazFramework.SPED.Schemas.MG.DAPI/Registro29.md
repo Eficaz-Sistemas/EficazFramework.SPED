@@ -6,20 +6,20 @@
 Detalhamento de Estorno de Débitos no Campo 95
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | DataFinal |  |
-| 04 | DataInicial |  |
-| 05 | Motivo |  |
-| 06 | AutoInfracao |  |
-| 07 | ValorDeclarado |  |
-| 08 | NotaFiscal_Numero |  |
-| 09 | NotaFiscal_Serie |  |
-| 10 | NotaFiscal_Data |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | DataInicial | `Nullable<DateTime>` |  |
+| 05 | Motivo | `Registro_29_Motivos` |  |
+| 06 | AutoInfracao | `String` |  |
+| 07 | ValorDeclarado | `Nullable<Double>` |  |
+| 08 | NotaFiscal_Numero | `String` |  |
+| 09 | NotaFiscal_Serie | `String` |  |
+| 10 | NotaFiscal_Data | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

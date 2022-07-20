@@ -8,18 +8,18 @@ REGISTRO C173: OPERAÇÕES COM MEDICAMENTOS (CÓDIGO 01 E 55)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumLoteFabricMedic |  |
-| 03 | QtdeItemLote |  |
-| 04 | DataFabricMedic |  |
-| 05 | DataExpValidMedic |  |
-| 06 | IndicadorTipoCalculoST |  |
-| 07 | TipoProduto |  |
-| 08 | VrPrecoTabPrecoMaximo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumLoteFabricMedic | `String` |  |
+| 03 | QtdeItemLote | `Nullable<Double>` |  |
+| 04 | DataFabricMedic | `Nullable<DateTime>` |  |
+| 05 | DataExpValidMedic | `Nullable<DateTime>` |  |
+| 06 | IndicadorTipoCalculoST | `IndicadorTipoCalculoST` |  |
+| 07 | TipoProduto | `TipoProduto` |  |
+| 08 | VrPrecoTabPrecoMaximo | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

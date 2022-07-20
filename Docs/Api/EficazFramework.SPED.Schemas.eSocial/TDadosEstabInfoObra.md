@@ -4,6 +4,6 @@
 ## TDadosEstabInfoObra Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indSubstPatrObra |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indSubstPatrObra | `IndicadorSubstPatronalObra` |  |

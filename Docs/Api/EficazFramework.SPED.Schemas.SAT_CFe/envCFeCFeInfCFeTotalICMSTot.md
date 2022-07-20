@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vICMS |  |
-| 03 | vProd |  |
-| 04 | vDesc |  |
-| 05 | vPIS |  |
-| 06 | vCOFINS |  |
-| 07 | vPISST |  |
-| 08 | vCOFINSST |  |
-| 09 | vOutro |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vICMS | `String` |  |
+| 03 | vProd | `String` |  |
+| 04 | vDesc | `String` |  |
+| 05 | vPIS | `String` |  |
+| 06 | vCOFINS | `String` |  |
+| 07 | vPISST | `String` |  |
+| 08 | vCOFINSST | `String` |  |
+| 09 | vOutro | `String` |  |

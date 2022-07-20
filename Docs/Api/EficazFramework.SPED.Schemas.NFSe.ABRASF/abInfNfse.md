@@ -4,19 +4,19 @@
 ## abInfNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | CodigoVerificacao |  |
-| 04 | DataEmissao |  |
-| 05 | PrestadorServico |  |
-| 06 | TomadorServico |  |
-| 07 | OrgaoGerador |  |
-| 08 | ValoresNfse |  |
-| 09 | Id |  |
-| 10 | Declaracao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | CodigoVerificacao | `String` |  |
+| 04 | DataEmissao | `DateTime` |  |
+| 05 | PrestadorServico | `tcDadosPrestador` |  |
+| 06 | TomadorServico | `tcDadosTomador` |  |
+| 07 | OrgaoGerador | `tcIdentificacaoOrgaoGerador` |  |
+| 08 | ValoresNfse | `tcValores` |  |
+| 09 | Id | `String` |  |
+| 10 | Declaracao | `DeclaracaoPrestacaoServico` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

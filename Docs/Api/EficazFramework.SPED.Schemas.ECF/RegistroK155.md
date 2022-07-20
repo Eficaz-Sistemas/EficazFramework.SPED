@@ -8,19 +8,19 @@ Detalhe dos Saldos Periódicos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoConta |  |
-| 03 | CodigoCentroCusto |  |
-| 04 | VrSaldoInicialPeriodo |  |
-| 05 | IndicadorSituacaoSaldoInicial |  |
-| 06 | VrTotalDebitosPeriodo |  |
-| 07 | VrTotalCreditosPeriodo |  |
-| 08 | VrSaldoFinalPeriodo |  |
-| 09 | IndicadorSituacaoSaldoFinal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoConta | `String` |  |
+| 03 | CodigoCentroCusto | `String` |  |
+| 04 | VrSaldoInicialPeriodo | `Nullable<Double>` |  |
+| 05 | IndicadorSituacaoSaldoInicial | `String` |  |
+| 06 | VrTotalDebitosPeriodo | `Nullable<Double>` |  |
+| 07 | VrTotalCreditosPeriodo | `Nullable<Double>` |  |
+| 08 | VrSaldoFinalPeriodo | `Nullable<Double>` |  |
+| 09 | IndicadorSituacaoSaldoFinal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

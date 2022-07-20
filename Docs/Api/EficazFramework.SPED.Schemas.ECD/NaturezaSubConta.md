@@ -4,14 +4,14 @@
 ## NaturezaSubConta Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | Descricao |  |
-| 04 | FundamentoLegal |  |
-| 05 | ContaPrincipal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | FundamentoLegal | `String` |  |
+| 05 | ContaPrincipal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |

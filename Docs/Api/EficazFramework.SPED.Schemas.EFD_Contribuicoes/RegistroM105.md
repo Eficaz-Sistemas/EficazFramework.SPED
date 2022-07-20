@@ -8,20 +8,20 @@ Detalhamento da base de calculo do crédito apurado no período Pis
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NatBcCredito |  |
-| 03 | CSTPis |  |
-| 04 | VrTotalBc |  |
-| 05 | VrTotalBcCumulativa |  |
-| 06 | VrTotalBCNcumulativa |  |
-| 07 | VrBcPis |  |
-| 08 | QtdeBcPisTotal |  |
-| 09 | QtdeBcPis |  |
-| 10 | DescCredito |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NatBcCredito | `String` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | VrTotalBc | `Nullable<Double>` |  |
+| 05 | VrTotalBcCumulativa | `Nullable<Double>` |  |
+| 06 | VrTotalBCNcumulativa | `Nullable<Double>` |  |
+| 07 | VrBcPis | `Nullable<Double>` |  |
+| 08 | QtdeBcPisTotal | `Nullable<Double>` |  |
+| 09 | QtdeBcPis | `Nullable<Double>` |  |
+| 10 | DescCredito | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,17 +4,17 @@
 ## VolumeTransportado Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | qVol |  |
-| 03 | esp |  |
-| 04 | marca |  |
-| 05 | nVol |  |
-| 06 | pesoL |  |
-| 07 | pesoB |  |
-| 08 | lacres |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | qVol | `Nullable<Double>` |  |
+| 03 | esp | `String` |  |
+| 04 | marca | `String` |  |
+| 05 | nVol | `String` |  |
+| 06 | pesoL | `Nullable<Double>` |  |
+| 07 | pesoB | `Nullable<Double>` |  |
+| 08 | lacres | `List<VolumeLacres>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

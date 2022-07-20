@@ -4,11 +4,11 @@
 ## rodoLacRodo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nLacre |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nLacre | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

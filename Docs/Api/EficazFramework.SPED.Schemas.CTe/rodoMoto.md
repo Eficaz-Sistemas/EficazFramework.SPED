@@ -4,12 +4,12 @@
 ## rodoMoto Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xNome |  |
-| 03 | CPF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xNome | `String` |  |
+| 03 | CPF | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

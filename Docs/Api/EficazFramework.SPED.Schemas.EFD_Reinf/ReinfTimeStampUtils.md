@@ -4,11 +4,11 @@
 ## ReinfTimeStampUtils Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | TimestampDict |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | TimestampDict | `Dictionary<String,Int32>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| GetTimeStampIDForEvent() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| GetTimeStampIDForEvent() | `String` |  |

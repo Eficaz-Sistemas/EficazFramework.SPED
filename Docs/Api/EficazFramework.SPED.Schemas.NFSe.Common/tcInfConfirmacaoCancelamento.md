@@ -4,12 +4,12 @@
 ## tcInfConfirmacaoCancelamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Sucesso |  |
-| 03 | DataHora |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Sucesso | `Boolean` |  |
+| 03 | DataHora | `DateTime` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

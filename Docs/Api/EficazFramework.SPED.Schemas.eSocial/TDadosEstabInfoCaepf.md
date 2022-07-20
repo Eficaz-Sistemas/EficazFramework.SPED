@@ -4,6 +4,6 @@
 ## TDadosEstabInfoCaepf Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpCaepf |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpCaepf | `TipoCAEPF` |  |

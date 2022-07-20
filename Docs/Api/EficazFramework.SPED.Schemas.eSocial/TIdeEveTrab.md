@@ -6,10 +6,10 @@
 Identificação do Evento Não Períodico
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indRetif |  |
-| 03 | nrRecibo |  |
-| 04 | tpAmb |  |
-| 05 | procEmi |  |
-| 06 | verProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indRetif | `IndicadorRetificacao` |  |
+| 03 | nrRecibo | `String` |  |
+| 04 | tpAmb | `Ambiente` |  |
+| 05 | procEmi | `EmissorEvento` |  |
+| 06 | verProc | `String` |  |

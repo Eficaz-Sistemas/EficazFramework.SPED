@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cdRetorno |  |
-| 03 | descRetorno |  |
-| 04 | regOcorrs |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cdRetorno | `String` |  |
+| 03 | descRetorno | `String` |  |
+| 04 | regOcorrs | `TRegistroOcorrencias2[]` |  |

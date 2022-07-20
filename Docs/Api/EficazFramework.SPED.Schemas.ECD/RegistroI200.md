@@ -8,17 +8,17 @@ Lançamento Contábil
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodIdentUnicaLcto |  |
-| 03 | DataLcto |  |
-| 04 | VrLcto |  |
-| 05 | IndicadorTipoLancamento |  |
-| 06 | DataLctoExtemporaneo |  |
-| 07 | RegistrosI250 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodIdentUnicaLcto | `String` |  |
+| 03 | DataLcto | `Nullable<DateTime>` |  |
+| 04 | VrLcto | `Nullable<Double>` |  |
+| 05 | IndicadorTipoLancamento | `String` |  |
+| 06 | DataLctoExtemporaneo | `Nullable<DateTime>` |  |
+| 07 | RegistrosI250 | `List<RegistroI250>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

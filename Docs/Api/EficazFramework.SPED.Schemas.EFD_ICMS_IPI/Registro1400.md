@@ -8,14 +8,14 @@ Informações Sobre Valores Agregados
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ItemIPM |  |
-| 03 | MunicipioIBGE |  |
-| 04 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ItemIPM | `String` |  |
+| 03 | MunicipioIBGE | `String` |  |
+| 04 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

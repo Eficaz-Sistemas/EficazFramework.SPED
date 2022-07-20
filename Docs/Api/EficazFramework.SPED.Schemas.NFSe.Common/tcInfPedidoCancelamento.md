@@ -4,13 +4,13 @@
 ## tcInfPedidoCancelamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoNfse |  |
-| 03 | CodigoCancelamento |  |
-| 04 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoNfse | `List<tcIdentificacaoNfse>` |  |
+| 03 | CodigoCancelamento | `String` |  |
+| 04 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -6,18 +6,18 @@
 Demonstrativo do Imposto de Renda e CSLL Retidos na Fonte
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ_FontePagadora |  |
-| 03 | NomeEmpresarial |  |
-| 04 | IndicadorOrgaoPublico |  |
-| 05 | CodigoRecolhimento |  |
-| 06 | RendimentoBruto |  |
-| 07 | IR_Retido |  |
-| 08 | CSLL_Retida |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ_FontePagadora | `String` |  |
+| 03 | NomeEmpresarial | `String` |  |
+| 04 | IndicadorOrgaoPublico | `Boolean` |  |
+| 05 | CodigoRecolhimento | `String` |  |
+| 06 | RendimentoBruto | `Nullable<Double>` |  |
+| 07 | IR_Retido | `Nullable<Double>` |  |
+| 08 | CSLL_Retida | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

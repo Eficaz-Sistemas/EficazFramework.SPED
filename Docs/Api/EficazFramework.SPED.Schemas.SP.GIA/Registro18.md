@@ -6,16 +6,16 @@
 ZFM/ALC
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroNF |  |
-| 03 | Data |  |
-| 04 | Valor |  |
-| 05 | CNPJDestinatario |  |
-| 06 | MunicipioDestinatario |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroNF | `Nullable<Int32>` |  |
+| 03 | Data | `Nullable<DateTime>` |  |
+| 04 | Valor | `Nullable<Double>` |  |
+| 05 | CNPJDestinatario | `String` |  |
+| 06 | MunicipioDestinatario | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

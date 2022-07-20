@@ -8,13 +8,13 @@ Indicação dos Códigos de Aglutinação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodCentroCusto |  |
-| 03 | CodAglutinacaoUtilzBalanco |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodCentroCusto | `String` |  |
+| 03 | CodAglutinacaoUtilzBalanco | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

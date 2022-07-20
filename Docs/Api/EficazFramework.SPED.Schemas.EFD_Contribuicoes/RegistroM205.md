@@ -8,14 +8,14 @@ Contribuição para o pis a recolher - detalhamento por código de receita
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroCampoRegistroM200 |  |
-| 03 | CodigoReceita |  |
-| 04 | VrDebitoDCTF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroCampoRegistroM200 | `String` |  |
+| 03 | CodigoReceita | `String` |  |
+| 04 | VrDebitoDCTF | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

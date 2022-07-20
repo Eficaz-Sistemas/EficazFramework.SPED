@@ -4,10 +4,10 @@
 ## DownloadNF Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| NFeToXmlDocument(object) |  |
-| NFeToXmlDocument(byte[]) |  |
-| NFeToXmlString(byte[]) |  |
-| NFeToXmlString(object, Encoding) |  |
-| NFeObject(object) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| NFeToXmlDocument(object) | `XmlDocument` |  |
+| NFeToXmlDocument(byte[]) | `XmlDocument` |  |
+| NFeToXmlString(byte[]) | `String` |  |
+| NFeToXmlString(object, Encoding) | `String` |  |
+| NFeObject(object) | `ProcessoNFe` |  |

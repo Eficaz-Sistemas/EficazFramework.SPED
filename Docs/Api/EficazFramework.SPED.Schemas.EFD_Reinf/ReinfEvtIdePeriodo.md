@@ -6,7 +6,7 @@
 Identificação de Período (iniValid e fimValid)
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | iniValid | AAAA-MM |
-| 03 | fimValid | AAAA-MM |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | iniValid | `String` | AAAA-MM |
+| 03 | fimValid | `String` | AAAA-MM |

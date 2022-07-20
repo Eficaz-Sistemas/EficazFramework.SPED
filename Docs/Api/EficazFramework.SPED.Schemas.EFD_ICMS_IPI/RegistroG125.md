@@ -8,22 +8,22 @@ Movimentação de BEM ou Componente do Ativo Imobilizado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBem |  |
-| 03 | DataMovimento |  |
-| 04 | TipoMovimento |  |
-| 05 | ICMS_OpPropria_Entrada |  |
-| 06 | ICMS_ST_Entrada |  |
-| 07 | ICMS_Frete_Entrada |  |
-| 08 | ICMS_Difal_Entrada |  |
-| 09 | NumeroParcela |  |
-| 10 | ValorParcelaAprop | Valor da Parcela de ICMS passível de Apropriação            (antes da aplicação da participação percentual do valor            das saídas tributadas / exportação sobre as saídas totais) |
-| 11 | RegistrosG126 |  |
-| 12 | RegistrosG130 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBem | `String` |  |
+| 03 | DataMovimento | `Nullable<DateTime>` |  |
+| 04 | TipoMovimento | `Nullable<TipoMovimentoCIAP>` |  |
+| 05 | ICMS_OpPropria_Entrada | `Nullable<Double>` |  |
+| 06 | ICMS_ST_Entrada | `Nullable<Double>` |  |
+| 07 | ICMS_Frete_Entrada | `Nullable<Double>` |  |
+| 08 | ICMS_Difal_Entrada | `Nullable<Double>` |  |
+| 09 | NumeroParcela | `Nullable<Double>` |  |
+| 10 | ValorParcelaAprop | `Nullable<Double>` | Valor da Parcela de ICMS passível de Apropriação            (antes da aplicação da participação percentual do valor            das saídas tributadas / exportação sobre as saídas totais) |
+| 11 | RegistrosG126 | `List<RegistroG126>` |  |
+| 12 | RegistrosG130 | `List<RegistroG130>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

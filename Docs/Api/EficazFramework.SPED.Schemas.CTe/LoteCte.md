@@ -4,28 +4,28 @@
 ## LoteCte Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CTe |  |
-| 03 | IdLote |  |
-| 04 | Versao |  |
-| 05 | DocumentType |  |
-| 06 | DataEmissao |  |
-| 07 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CTe | `CTe` |  |
+| 03 | IdLote | `String` |  |
+| 04 | Versao | `String` |  |
+| 05 | DocumentType | `XMLDocumentType` |  |
+| 06 | DataEmissao | `Nullable<DateTime>` |  |
+| 07 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, LoteCte, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, LoteCte) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, LoteCte, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, LoteCte) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, LoteCte, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, LoteCte) | `Boolean` |  |
+| Deserialize(string) | `LoteCte` |  |
+| Deserialize(Stream) | `LoteCte` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, LoteCte, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, LoteCte) | `Boolean` |  |
+| LoadFrom(Stream) | `LoteCte` |  |
+| LoadFromAsync(Stream, bool) | `Task<LoteCte>` |  |

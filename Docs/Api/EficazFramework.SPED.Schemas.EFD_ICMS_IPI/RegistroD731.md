@@ -8,12 +8,12 @@ Informações do fundo de combate à pobreza – FCP – (Código 62)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorFCP |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorFCP | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

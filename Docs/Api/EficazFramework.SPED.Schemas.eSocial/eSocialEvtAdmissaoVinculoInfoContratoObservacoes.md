@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoObservacoes Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | observacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | observacao | `String` |  |

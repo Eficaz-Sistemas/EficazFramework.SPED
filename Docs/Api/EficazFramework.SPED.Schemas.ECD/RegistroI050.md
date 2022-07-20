@@ -8,18 +8,18 @@ Plano de Contas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInclusaoAlteracao |  |
-| 03 | CodNaturezaContaGrupo |  |
-| 04 | IndicadorTipoConta |  |
-| 05 | NivelContaAnaliticaGrupo |  |
-| 06 | CodContaAnaliticaGrupo |  |
-| 07 | CodContaSuperior |  |
-| 08 | NomeContaAnaliticaGrupo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| 03 | CodNaturezaContaGrupo | `String` |  |
+| 04 | IndicadorTipoConta | `IndicadorConta` |  |
+| 05 | NivelContaAnaliticaGrupo | `Nullable<Int16>` |  |
+| 06 | CodContaAnaliticaGrupo | `String` |  |
+| 07 | CodContaSuperior | `String` |  |
+| 08 | NomeContaAnaliticaGrupo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

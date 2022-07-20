@@ -6,9 +6,9 @@
 Identificação do Evento (Período Apuracao, Ambiente, Emissor e Versao)
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | perApur |  |
-| 03 | tpAmb |  |
-| 04 | procEmi |  |
-| 05 | verProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | perApur | `String` |  |
+| 03 | tpAmb | `Ambiente` |  |
+| 04 | procEmi | `EmissorEvento` |  |
+| 05 | verProc | `String` |  |

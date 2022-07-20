@@ -9,22 +9,22 @@ e operações de devolução de compras e vendas - cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJParticipanteOperConsolidadas |  |
-| 03 | CSTCofins |  |
-| 04 | CFOP |  |
-| 05 | VrItem |  |
-| 06 | VrDescontoExclusao |  |
-| 07 | VrBaseCalculoCofins |  |
-| 08 | AliquotaCofins |  |
-| 09 | BCCofinsQuantidade |  |
-| 10 | AliquotaCofinsReais |  |
-| 11 | VrCofins |  |
-| 12 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJParticipanteOperConsolidadas | `String` |  |
+| 03 | CSTCofins | `String` |  |
+| 04 | CFOP | `String` |  |
+| 05 | VrItem | `Nullable<Double>` |  |
+| 06 | VrDescontoExclusao | `Nullable<Double>` |  |
+| 07 | VrBaseCalculoCofins | `Nullable<Double>` |  |
+| 08 | AliquotaCofins | `Nullable<Double>` |  |
+| 09 | BCCofinsQuantidade | `Nullable<Double>` |  |
+| 10 | AliquotaCofinsReais | `Nullable<Double>` |  |
+| 11 | VrCofins | `Double` |  |
+| 12 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,7 +6,7 @@
 ICMS
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Tributacao |  |
-| 03 | TributacaoIndentifier |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Tributacao | `DetalhamentoICMS` |  |
+| 03 | TributacaoIndentifier | `Tributacao_ICMS_Identifier` |  |

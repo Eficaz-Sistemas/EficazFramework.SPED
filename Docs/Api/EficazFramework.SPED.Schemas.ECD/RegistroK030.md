@@ -8,13 +8,13 @@ Período da Escrituração Contábil Consolidada
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicialPeriodoConsolidado |  |
-| 03 | DataFinalPeriodoConsolidado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicialPeriodoConsolidado | `Nullable<DateTime>` |  |
+| 03 | DataFinalPeriodoConsolidado | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

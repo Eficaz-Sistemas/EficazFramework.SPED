@@ -4,15 +4,15 @@
 ## DetalhamentoItemCombustivelEncerrante Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nBico |  |
-| 03 | nBomba |  |
-| 04 | nTanque |  |
-| 05 | vEncIni |  |
-| 06 | vEncFin |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nBico | `String` |  |
+| 03 | nBomba | `String` |  |
+| 04 | nTanque | `String` |  |
+| 05 | vEncIni | `Nullable<Double>` |  |
+| 06 | vEncFin | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

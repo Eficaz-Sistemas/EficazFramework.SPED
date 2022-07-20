@@ -8,6 +8,6 @@ Abertura, Identificação e Referências
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Registro0000 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Registro0000 | `Registro0000` |  |

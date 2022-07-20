@@ -4,24 +4,24 @@
 ## tcRps Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InfRps |  |
-| 03 | Signature |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InfRps | `tcInfRps` |  |
+| 03 | Signature | `SignatureType` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcRps, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcRps) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcRps, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcRps) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcRps, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcRps) | `Boolean` |  |
+| Deserialize(string) | `tcRps` |  |
+| Deserialize(Stream) | `tcRps` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcRps, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcRps) | `Boolean` |  |
+| LoadFrom(Stream) | `tcRps` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcRps>` |  |

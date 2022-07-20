@@ -4,9 +4,9 @@
 ## eSocialEnvioLoteEventos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEmpregador |  |
-| 03 | ideTransmissor |  |
-| 04 | eventos |  |
-| 05 | grupo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEmpregador | `TEmpregador` |  |
+| 03 | ideTransmissor | `TIdeTransmissor` |  |
+| 04 | eventos | `eSocialEnvioLoteEventosEventos` |  |
+| 05 | grupo | `Int32` |  |

@@ -8,19 +8,19 @@ Analíticos do CF-e SAT
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Origem |  |
-| 03 | CST_ICMS |  |
-| 04 | CFOP |  |
-| 05 | AliquotaICMS |  |
-| 06 | ValorOperacao |  |
-| 07 | ValorBaseCalculoICMS |  |
-| 08 | ValorICMS |  |
-| 09 | CodigoObservavao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Origem | `OrigemMercadoria` |  |
+| 03 | CST_ICMS | `CST_ICMS` |  |
+| 04 | CFOP | `String` |  |
+| 05 | AliquotaICMS | `Nullable<Double>` |  |
+| 06 | ValorOperacao | `Nullable<Double>` |  |
+| 07 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| 08 | ValorICMS | `Nullable<Double>` |  |
+| 09 | CodigoObservavao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

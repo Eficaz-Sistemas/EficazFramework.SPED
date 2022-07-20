@@ -8,16 +8,16 @@ REGISTRO DE SALDOS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoProduto |  |
-| 03 | QuantidadeInicial |  |
-| 04 | ICMS_TotalInicial |  |
-| 05 | QuantidadeFinal |  |
-| 06 | ICMS_TotalFinal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoProduto | `String` |  |
+| 03 | QuantidadeInicial | `Nullable<Double>` |  |
+| 04 | ICMS_TotalInicial | `Nullable<Double>` |  |
+| 05 | QuantidadeFinal | `Nullable<Double>` |  |
+| 06 | ICMS_TotalFinal | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

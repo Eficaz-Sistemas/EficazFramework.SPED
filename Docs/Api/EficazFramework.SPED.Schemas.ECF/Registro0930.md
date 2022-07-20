@@ -8,17 +8,17 @@ Identificação dos Signatários da ECF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Nome |  |
-| 03 | CNPJ_CPF |  |
-| 04 | Qualificacao |  |
-| 05 | CRC_Contador |  |
-| 06 | EMail |  |
-| 07 | Telefone |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Nome | `String` |  |
+| 03 | CNPJ_CPF | `String` |  |
+| 04 | Qualificacao | `String` |  |
+| 05 | CRC_Contador | `String` |  |
+| 06 | EMail | `String` |  |
+| 07 | Telefone | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

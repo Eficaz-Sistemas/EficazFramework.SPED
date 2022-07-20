@@ -8,14 +8,14 @@ Identificação do relacionamento com o Participante
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodRelacionamentoTabelaSped |  |
-| 03 | DataInicioRelacionamento |  |
-| 04 | DataTerminoRelacionamento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodRelacionamentoTabelaSped | `String` |  |
+| 03 | DataInicioRelacionamento | `DateTime` |  |
+| 04 | DataTerminoRelacionamento | `DateTime` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

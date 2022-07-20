@@ -8,16 +8,16 @@ REGISTRO 1600: OPERAÇÕES COM INSTRUMENTOS DE PAGAMENTOS ELETRÔNICOS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | CodigoParticipanteIntermediador |  |
-| 04 | TotalBrutoIncIcms | Valor total bruto das vendas e/ou prestações de serviços no campo de incidência Do ICMS,             incluindo operações com imunidade Do imposto |
-| 05 | TotalBrutoIncIss | Valor total bruto das prestações de serviços no campo de incidência Do ISS |
-| 06 | TotalOutros | Valor total de operações deduzido dos valores dos campos TotalBrutoIncIcms e TotalBrutoIncIss |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | CodigoParticipanteIntermediador | `String` |  |
+| 04 | TotalBrutoIncIcms | `Nullable<Double>` | Valor total bruto das vendas e/ou prestações de serviços no campo de incidência Do ICMS,             incluindo operações com imunidade Do imposto |
+| 05 | TotalBrutoIncIss | `Nullable<Double>` | Valor total bruto das prestações de serviços no campo de incidência Do ISS |
+| 06 | TotalOutros | `Nullable<Double>` | Valor total de operações deduzido dos valores dos campos TotalBrutoIncIcms e TotalBrutoIncIss |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

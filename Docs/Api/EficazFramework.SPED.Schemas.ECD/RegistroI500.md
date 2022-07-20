@@ -8,12 +8,12 @@ Parâmetros de Impressão e Visualização do Livro Razão Auxiliar com Leiaute 
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | TamanhoFonte |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | TamanhoFonte | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

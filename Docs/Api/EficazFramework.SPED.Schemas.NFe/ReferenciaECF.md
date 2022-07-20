@@ -4,13 +4,13 @@
 ## ReferenciaECF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Modelo |  |
-| 03 | NumeroECF |  |
-| 04 | ContadorOperacoesCOO |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Modelo | `ModeloECF` |  |
+| 03 | NumeroECF | `String` |  |
+| 04 | ContadorOperacoesCOO | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -8,18 +8,18 @@ Deduções diversas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorOrigemDedDiversas |  |
-| 03 | IndicadorNatDeducao |  |
-| 04 | VrDeduzirPis |  |
-| 05 | VrDeduzirCofins |  |
-| 06 | VrBcOperacao |  |
-| 07 | CNPJPJ |  |
-| 08 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorOrigemDedDiversas | `IndicadorOrigemDeducoesDiversas` |  |
+| 03 | IndicadorNatDeducao | `IndicadorNatDeducao` |  |
+| 04 | VrDeduzirPis | `Nullable<Double>` |  |
+| 05 | VrDeduzirCofins | `Nullable<Double>` |  |
+| 06 | VrBcOperacao | `Nullable<Double>` |  |
+| 07 | CNPJPJ | `String` |  |
+| 08 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

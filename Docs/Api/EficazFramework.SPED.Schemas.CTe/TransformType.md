@@ -4,12 +4,12 @@
 ## TransformType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | XPath |  |
-| 03 | Algorithm |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | XPath | `ObservableCollection<String>` |  |
+| 03 | Algorithm | `TTransformURI` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -6,16 +6,16 @@
 IE Substituto
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadual |  |
-| 03 | NumeroNF |  |
-| 04 | DataInicio |  |
-| 05 | DataFim |  |
-| 06 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadual | `String` |  |
+| 03 | NumeroNF | `Nullable<Int32>` |  |
+| 04 | DataInicio | `Nullable<DateTime>` |  |
+| 05 | DataFim | `Nullable<DateTime>` |  |
+| 06 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

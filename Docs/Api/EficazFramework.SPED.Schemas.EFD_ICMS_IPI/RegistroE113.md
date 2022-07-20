@@ -8,20 +8,20 @@ Identificação dos Documentos do Ajuste da Apuração do ICMS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | Modelo |  |
-| 04 | Serie |  |
-| 05 | SubSerie |  |
-| 06 | Numero |  |
-| 07 | DataEmissao |  |
-| 08 | CodigoItem0200 |  |
-| 09 | ValorAjusteItem |  |
-| 10 | ChaveDocEletronico |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | Modelo | `String` |  |
+| 04 | Serie | `String` |  |
+| 05 | SubSerie | `String` |  |
+| 06 | Numero | `Nullable<Int32>` |  |
+| 07 | DataEmissao | `Nullable<DateTime>` |  |
+| 08 | CodigoItem0200 | `String` |  |
+| 09 | ValorAjusteItem | `Nullable<Double>` |  |
+| 10 | ChaveDocEletronico | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

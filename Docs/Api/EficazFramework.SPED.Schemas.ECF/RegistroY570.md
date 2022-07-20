@@ -8,14 +8,14 @@ Vendas a Comercial Exportadora com Fim Específico de Exportação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ_Exportadora |  |
-| 03 | NCM |  |
-| 04 | ValorVenda |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ_Exportadora | `String` |  |
+| 03 | NCM | `String` |  |
+| 04 | ValorVenda | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

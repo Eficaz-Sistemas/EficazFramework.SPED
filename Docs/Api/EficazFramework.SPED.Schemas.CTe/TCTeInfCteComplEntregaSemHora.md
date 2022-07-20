@@ -4,11 +4,11 @@
 ## TCTeInfCteComplEntregaSemHora Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpHor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpHor | `TCTeInfCteComplEntregaSemHoraTpHor` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

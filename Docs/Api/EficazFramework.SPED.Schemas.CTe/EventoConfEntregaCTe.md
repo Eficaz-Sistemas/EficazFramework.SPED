@@ -6,24 +6,24 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | descEvento |  |
-| 03 | nProt |  |
-| 04 | dhEntrega |  |
-| 05 | nDoc |  |
-| 06 | xNome |  |
-| 07 | latitude |  |
-| 08 | longitude |  |
-| 09 | hashEntrega |  |
-| 10 | dhHashEntrega |  |
-| 11 | infEntrega |  |
-| 12 | DocumentType |  |
-| 13 | DataEmissao |  |
-| 14 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | descEvento | `String` |  |
+| 03 | nProt | `String` |  |
+| 04 | dhEntrega | `DateTime` |  |
+| 05 | nDoc | `String` |  |
+| 06 | xNome | `String` |  |
+| 07 | latitude | `Nullable<Double>` |  |
+| 08 | longitude | `Nullable<Double>` |  |
+| 09 | hashEntrega | `Byte[]` |  |
+| 10 | dhHashEntrega | `DateTime` |  |
+| 11 | infEntrega | `List<evCECTeInfEntrega>` |  |
+| 12 | DocumentType | `XMLDocumentType` |  |
+| 13 | DataEmissao | `Nullable<DateTime>` |  |
+| 14 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializelatitude() |  |
-| ShouldSerializelongitude() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializelatitude() | `Boolean` |  |
+| ShouldSerializelongitude() | `Boolean` |  |

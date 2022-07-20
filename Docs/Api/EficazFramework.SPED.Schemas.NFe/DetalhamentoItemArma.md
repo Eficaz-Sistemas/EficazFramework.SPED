@@ -4,14 +4,14 @@
 ## DetalhamentoItemArma Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpArma |  |
-| 03 | nSerie |  |
-| 04 | nCano |  |
-| 05 | descr |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpArma | `TipoArma` |  |
+| 03 | nSerie | `String` |  |
+| 04 | nCano | `String` |  |
+| 05 | descr | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

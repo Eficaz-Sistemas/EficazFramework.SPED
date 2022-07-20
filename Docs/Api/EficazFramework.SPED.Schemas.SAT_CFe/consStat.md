@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | cUF |  |
-| 04 | xServ |  |
-| 05 | nSeg |  |
-| 06 | dhEnvio |  |
-| 07 | nserieSAT |  |
-| 08 | status |  |
-| 09 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `String` |  |
+| 03 | cUF | `String` |  |
+| 04 | xServ | `String` |  |
+| 05 | nSeg | `String` |  |
+| 06 | dhEnvio | `String` |  |
+| 07 | nserieSAT | `String` |  |
+| 08 | status | `consStatStatus` |  |
+| 09 | versao | `String` |  |

@@ -8,18 +8,18 @@ Mapeamento Referencial do Saldo Final
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaReferencial |  |
-| 03 | VrSaldoInicialPeriodo |  |
-| 04 | IndicadorSituacaoSaldoInicial |  |
-| 05 | VrTotalDebitosPeriodo |  |
-| 06 | VrTotalCreditosPeriodo |  |
-| 07 | VrSaldoFinalPeriodo |  |
-| 08 | IndicadorSituacaoSaldoFinal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaReferencial | `String` |  |
+| 03 | VrSaldoInicialPeriodo | `Nullable<Double>` |  |
+| 04 | IndicadorSituacaoSaldoInicial | `String` |  |
+| 05 | VrTotalDebitosPeriodo | `Nullable<Double>` |  |
+| 06 | VrTotalCreditosPeriodo | `Nullable<Double>` |  |
+| 07 | VrSaldoFinalPeriodo | `Nullable<Double>` |  |
+| 08 | IndicadorSituacaoSaldoFinal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

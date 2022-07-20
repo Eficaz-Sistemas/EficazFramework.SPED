@@ -4,16 +4,16 @@
 ## TCTeInfCteInfCTeNormVeicNovos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | chassi |  |
-| 03 | cCor |  |
-| 04 | xCor |  |
-| 05 | cMod |  |
-| 06 | vUnit |  |
-| 07 | vFrete |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | chassi | `String` |  |
+| 03 | cCor | `String` |  |
+| 04 | xCor | `String` |  |
+| 05 | cMod | `String` |  |
+| 06 | vUnit | `String` |  |
+| 07 | vFrete | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

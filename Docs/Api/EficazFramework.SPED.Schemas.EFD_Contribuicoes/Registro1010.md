@@ -8,17 +8,17 @@ Processo Referenciado - Ação judicial
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentNumProcessoJudicial |  |
-| 03 | IdentSecaoJudiciaria |  |
-| 04 | IndVara |  |
-| 05 | IndicadorNaturezaAcaoJudicialJF |  |
-| 06 | DescricaoResumidaEfeitosTributario |  |
-| 07 | DataSetencaDecisaoJudicial |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentNumProcessoJudicial | `String` |  |
+| 03 | IdentSecaoJudiciaria | `String` |  |
+| 04 | IndVara | `String` |  |
+| 05 | IndicadorNaturezaAcaoJudicialJF | `IndicadorNaturezaAcaoJudicialJF` |  |
+| 06 | DescricaoResumidaEfeitosTributario | `String` |  |
+| 07 | DataSetencaDecisaoJudicial | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

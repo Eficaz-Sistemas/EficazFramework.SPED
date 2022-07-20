@@ -8,16 +8,16 @@ REGISTRO C114: CUPOM FISCAL REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Cod_Modelo |  |
-| 03 | ECF_FAB |  |
-| 04 | ECF_CX |  |
-| 05 | Num_Doc |  |
-| 06 | DataDoc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Cod_Modelo | `String` |  |
+| 03 | ECF_FAB | `String` |  |
+| 04 | ECF_CX | `String` |  |
+| 05 | Num_Doc | `String` |  |
+| 06 | DataDoc | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

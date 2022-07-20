@@ -4,13 +4,13 @@
 ## TCTeInfCteInfCTeNormInfModal Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Any |  |
-| 03 | versaoModal |  |
-| 04 | ItemModal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Any | `XElement` |  |
+| 03 | versaoModal | `String` |  |
+| 04 | ItemModal | `Object` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

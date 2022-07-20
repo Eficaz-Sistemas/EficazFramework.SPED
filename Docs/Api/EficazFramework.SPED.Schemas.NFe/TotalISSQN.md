@@ -4,15 +4,15 @@
 ## TotalISSQN Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vServ |  |
-| 03 | vBC |  |
-| 04 | vISS |  |
-| 05 | vPIS |  |
-| 06 | vCOFINS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vServ | `Nullable<Double>` |  |
+| 03 | vBC | `Nullable<Double>` |  |
+| 04 | vISS | `Nullable<Double>` |  |
+| 05 | vPIS | `Nullable<Double>` |  |
+| 06 | vCOFINS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

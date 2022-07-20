@@ -4,7 +4,7 @@
 ## eSocialEvtComProdInfoComProdIdeEstabel Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrInscEstabRural | CAEPF (substituiu o CEI) |
-| 03 | tpComerc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrInscEstabRural | `String` | CAEPF (substituiu o CEI) |
+| 03 | tpComerc | `ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc>` |  |

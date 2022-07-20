@@ -4,19 +4,19 @@
 ## Local Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ_CPF |  |
-| 03 | PersonalidadeJuridica |  |
-| 04 | Logradouro |  |
-| 05 | Numero |  |
-| 06 | Complemento |  |
-| 07 | Bairro |  |
-| 08 | MunicipioCodigo |  |
-| 09 | MunicipioNome |  |
-| 10 | UF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ_CPF | `String` |  |
+| 03 | PersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| 04 | Logradouro | `String` |  |
+| 05 | Numero | `String` |  |
+| 06 | Complemento | `String` |  |
+| 07 | Bairro | `String` |  |
+| 08 | MunicipioCodigo | `String` |  |
+| 09 | MunicipioNome | `String` |  |
+| 10 | UF | `Estado` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
