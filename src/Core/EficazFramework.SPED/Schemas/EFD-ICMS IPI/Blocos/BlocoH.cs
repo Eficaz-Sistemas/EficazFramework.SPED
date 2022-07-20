@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Inventário Físico
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class BlocoH : Primitives.Bloco
 {
     public RegistroH001 RegistroH001

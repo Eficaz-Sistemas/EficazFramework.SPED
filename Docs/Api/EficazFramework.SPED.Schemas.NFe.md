@@ -1,0 +1,247 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+
+## EficazFramework.SPED.Schemas.NFe Namespace
+
+| Classes | |
+| :--- | :--- |
+| [CabecalhoMensagem](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem') | |
+| [CabecalhoMensagem_ConsultaDestinatario](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_ConsultaDestinatario.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_ConsultaDestinatario') | |
+| [CabecalhoMensagem_DownloadNF](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_DownloadNF.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_DownloadNF') | |
+| [CabecalhoMensagem_RecepcaoEvento](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_RecepcaoEvento.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_RecepcaoEvento') | |
+| [Cana](EficazFramework.SPED.Schemas.NFe/Cana.md 'EficazFramework.SPED.Schemas.NFe.Cana') | |
+| [CanaDeducao](EficazFramework.SPED.Schemas.NFe/CanaDeducao.md 'EficazFramework.SPED.Schemas.NFe.CanaDeducao') | |
+| [CanaDiario](EficazFramework.SPED.Schemas.NFe/CanaDiario.md 'EficazFramework.SPED.Schemas.NFe.CanaDiario') | |
+| [Cobranca](EficazFramework.SPED.Schemas.NFe/Cobranca.md 'EficazFramework.SPED.Schemas.NFe.Cobranca') | |
+| [CobrancaDuplicata](EficazFramework.SPED.Schemas.NFe/CobrancaDuplicata.md 'EficazFramework.SPED.Schemas.NFe.CobrancaDuplicata') | |
+| [CobrancaFatura](EficazFramework.SPED.Schemas.NFe/CobrancaFatura.md 'EficazFramework.SPED.Schemas.NFe.CobrancaFatura') | |
+| [Compra](EficazFramework.SPED.Schemas.NFe/Compra.md 'EficazFramework.SPED.Schemas.NFe.Compra') | |
+| [DeclaracaoImportacao](EficazFramework.SPED.Schemas.NFe/DeclaracaoImportacao.md 'EficazFramework.SPED.Schemas.NFe.DeclaracaoImportacao') | |
+| [Destinatario](EficazFramework.SPED.Schemas.NFe/Destinatario.md 'EficazFramework.SPED.Schemas.NFe.Destinatario') | |
+| [DetalhamentoCOFINS](EficazFramework.SPED.Schemas.NFe/DetalhamentoCOFINS.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoCOFINS') | |
+| [DetalhamentoCOFINS_Tributacao](EficazFramework.SPED.Schemas.NFe/DetalhamentoCOFINS_Tributacao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoCOFINS_Tributacao') | Clase genérica para tratamento das tributações de COFINS (sem ST). |
+| [DetalhamentoCOFINSST](EficazFramework.SPED.Schemas.NFe/DetalhamentoCOFINSST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoCOFINSST') | |
+| [DetalhamentoICMS](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS') | |
+| [DetalhamentoICMS_Tributacao](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao') | Clase genérica para tratamento das tributações de ICMS. |
+| [DetalhamentoICMS_UF_Destinataria](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_UF_Destinataria.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_UF_Destinataria') | Campos referente EC 87/2015 |
+| [DetalhamentoII](EficazFramework.SPED.Schemas.NFe/DetalhamentoII.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII') | |
+| [DetalhamentoIPI](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI') | |
+| [DetalhamentoIPI_Tributacao](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI_Tributacao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI_Tributacao') | |
+| [DetalhamentoISSQN](EficazFramework.SPED.Schemas.NFe/DetalhamentoISSQN.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoISSQN') | |
+| [DetalhamentoItemArma](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemArma.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemArma') | |
+| [DetalhamentoItemCombustivel](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivel.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivel') | |
+| [DetalhamentoItemCombustivelCIDE](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivelCIDE.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivelCIDE') | |
+| [DetalhamentoItemCombustivelEncerrante](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivelEncerrante.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivelEncerrante') | |
+| [DetalhamentoItemMedicamento](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemMedicamento.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemMedicamento') | |
+| [DetalhamentoItemMedicamento_Rastro](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemMedicamento_Rastro.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemMedicamento_Rastro') | |
+| [DetalhamentoItemVeiculo](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemVeiculo.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemVeiculo') | |
+| [DetalhamentoPagamento](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento') | |
+| [DetalhamentoPagamentoCartao](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamentoCartao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamentoCartao') | |
+| [DetalhamentoPIS](EficazFramework.SPED.Schemas.NFe/DetalhamentoPIS.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPIS') | |
+| [DetalhamentoPIS_Tributacao](EficazFramework.SPED.Schemas.NFe/DetalhamentoPIS_Tributacao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPIS_Tributacao') | Clase genérica para tratamento das tributações de PIS (sem ST). |
+| [DetalhamentoPISST](EficazFramework.SPED.Schemas.NFe/DetalhamentoPISST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPISST') | |
+| [DetalheEvento](EficazFramework.SPED.Schemas.NFe/DetalheEvento.md 'EficazFramework.SPED.Schemas.NFe.DetalheEvento') | |
+| [distDFeIntconsChNFe](EficazFramework.SPED.Schemas.NFe/distDFeIntconsChNFe.md 'EficazFramework.SPED.Schemas.NFe.distDFeIntconsChNFe') | |
+| [distDFeIntConsNSU](EficazFramework.SPED.Schemas.NFe/distDFeIntConsNSU.md 'EficazFramework.SPED.Schemas.NFe.distDFeIntConsNSU') | |
+| [distDFeIntDistNSU](EficazFramework.SPED.Schemas.NFe/distDFeIntDistNSU.md 'EficazFramework.SPED.Schemas.NFe.distDFeIntDistNSU') | |
+| [Emitente](EficazFramework.SPED.Schemas.NFe/Emitente.md 'EficazFramework.SPED.Schemas.NFe.Emitente') | |
+| [Endereco](EficazFramework.SPED.Schemas.NFe/Endereco.md 'EficazFramework.SPED.Schemas.NFe.Endereco') | |
+| [Evento](EficazFramework.SPED.Schemas.NFe/Evento.md 'EficazFramework.SPED.Schemas.NFe.Evento') | |
+| [EventoRetorno](EficazFramework.SPED.Schemas.NFe/EventoRetorno.md 'EficazFramework.SPED.Schemas.NFe.EventoRetorno') | |
+| [Exportacao](EficazFramework.SPED.Schemas.NFe/Exportacao.md 'EficazFramework.SPED.Schemas.NFe.Exportacao') | |
+| [Fisco](EficazFramework.SPED.Schemas.NFe/Fisco.md 'EficazFramework.SPED.Schemas.NFe.Fisco') | Informações do fisco emitente, grupo de uso exclusivo do fisco. |
+| [IdentificacaoNFe](EficazFramework.SPED.Schemas.NFe/IdentificacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.IdentificacaoNFe') | |
+| [InformacaoEvento](EficazFramework.SPED.Schemas.NFe/InformacaoEvento.md 'EficazFramework.SPED.Schemas.NFe.InformacaoEvento') | |
+| [InformacaoEventoRetorno](EficazFramework.SPED.Schemas.NFe/InformacaoEventoRetorno.md 'EficazFramework.SPED.Schemas.NFe.InformacaoEventoRetorno') | |
+| [InformacoesAdicionais](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionais.md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionais') | |
+| [InformacoesAdicionaisObsContribuite](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionaisObsContribuite.md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionaisObsContribuite') | |
+| [InformacoesAdicionaisObsFisco](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionaisObsFisco.md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionaisObsFisco') | |
+| [InformacoesAdicionaisProcRef](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionaisProcRef.md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionaisProcRef') | |
+| [InformacoesInutilizacaoNFe](EficazFramework.SPED.Schemas.NFe/InformacoesInutilizacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.InformacoesInutilizacaoNFe') | |
+| [InformacoesNFe](EficazFramework.SPED.Schemas.NFe/InformacoesNFe.md 'EficazFramework.SPED.Schemas.NFe.InformacoesNFe') | |
+| [InformacoesProtocolo](EficazFramework.SPED.Schemas.NFe/InformacoesProtocolo.md 'EficazFramework.SPED.Schemas.NFe.InformacoesProtocolo') | |
+| [InformacoesProtocoloConsSitNFe](EficazFramework.SPED.Schemas.NFe/InformacoesProtocoloConsSitNFe.md 'EficazFramework.SPED.Schemas.NFe.InformacoesProtocoloConsSitNFe') | |
+| [InformacoesTransporte](EficazFramework.SPED.Schemas.NFe/InformacoesTransporte.md 'EficazFramework.SPED.Schemas.NFe.InformacoesTransporte') | |
+| [InutilizacaoNFe](EficazFramework.SPED.Schemas.NFe/InutilizacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoNFe') | |
+| [InutilizacaoRetorno](EficazFramework.SPED.Schemas.NFe/InutilizacaoRetorno.md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoRetorno') | |
+| [Item](EficazFramework.SPED.Schemas.NFe/Item.md 'EficazFramework.SPED.Schemas.NFe.Item') | Grupo de detalhamento de Produtos e Serviços da NF-e |
+| [KeyInfoType](EficazFramework.SPED.Schemas.NFe/KeyInfoType.md 'EficazFramework.SPED.Schemas.NFe.KeyInfoType') | |
+| [Local](EficazFramework.SPED.Schemas.NFe/Local.md 'EficazFramework.SPED.Schemas.NFe.Local') | |
+| [NFe](EficazFramework.SPED.Schemas.NFe/NFe.md 'EficazFramework.SPED.Schemas.NFe.NFe') | |
+| [NFeGrupoZip](EficazFramework.SPED.Schemas.NFe/NFeGrupoZip.md 'EficazFramework.SPED.Schemas.NFe.NFeGrupoZip') | |
+| [NFeResultado](EficazFramework.SPED.Schemas.NFe/NFeResultado.md 'EficazFramework.SPED.Schemas.NFe.NFeResultado') | Objeto genérico que contém informações por NF-e, Cancelamento ou Carta de Correção.<br/>Está listado na Propriedade 'Resultados' da clsse RetornoConsulta. |
+| [Pagamento](EficazFramework.SPED.Schemas.NFe/Pagamento.md 'EficazFramework.SPED.Schemas.NFe.Pagamento') | NF-e 4.00 |
+| [PedidoConsulta](EficazFramework.SPED.Schemas.NFe/PedidoConsulta.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsulta') | Objeto que contém as informação a serem enviadas no formato XML para requerer o serviço. |
+| [PedidoConsultaSituacaoNFe](EficazFramework.SPED.Schemas.NFe/PedidoConsultaSituacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsultaSituacaoNFe') | |
+| [PedidoDistribuicaoDFe](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe.md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe') | |
+| [PedidoDownloadNF](EficazFramework.SPED.Schemas.NFe/PedidoDownloadNF.md 'EficazFramework.SPED.Schemas.NFe.PedidoDownloadNF') | |
+| [PedidoEnvioEvento](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento.md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento') | |
+| [ProcessoEvento](EficazFramework.SPED.Schemas.NFe/ProcessoEvento.md 'EficazFramework.SPED.Schemas.NFe.ProcessoEvento') | Esta classe representa o retorno de Cancelamento da NF-e por meio de Evento. |
+| [ProcessoInutilizacaoNFe](EficazFramework.SPED.Schemas.NFe/ProcessoInutilizacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.ProcessoInutilizacaoNFe') | |
+| [ProcessoNFe](EficazFramework.SPED.Schemas.NFe/ProcessoNFe.md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe') | |
+| [ProcessoNFeBase](EficazFramework.SPED.Schemas.NFe/ProcessoNFeBase.md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFeBase') | |
+| [Produto](EficazFramework.SPED.Schemas.NFe/Produto.md 'EficazFramework.SPED.Schemas.NFe.Produto') | |
+| [ProdutoDeclaracaoImportacao](EficazFramework.SPED.Schemas.NFe/ProdutoDeclaracaoImportacao.md 'EficazFramework.SPED.Schemas.NFe.ProdutoDeclaracaoImportacao') | |
+| [ProtocoloRecebimento](EficazFramework.SPED.Schemas.NFe/ProtocoloRecebimento.md 'EficazFramework.SPED.Schemas.NFe.ProtocoloRecebimento') | |
+| [ProtocoloRecebimentoConsSitNFe](EficazFramework.SPED.Schemas.NFe/ProtocoloRecebimentoConsSitNFe.md 'EficazFramework.SPED.Schemas.NFe.ProtocoloRecebimentoConsSitNFe') | |
+| [ReferenceType](EficazFramework.SPED.Schemas.NFe/ReferenceType.md 'EficazFramework.SPED.Schemas.NFe.ReferenceType') | |
+| [ReferenceTypeDigestMethod](EficazFramework.SPED.Schemas.NFe/ReferenceTypeDigestMethod.md 'EficazFramework.SPED.Schemas.NFe.ReferenceTypeDigestMethod') | |
+| [ReferenciaDocFiscal](EficazFramework.SPED.Schemas.NFe/ReferenciaDocFiscal.md 'EficazFramework.SPED.Schemas.NFe.ReferenciaDocFiscal') | |
+| [ReferenciaECF](EficazFramework.SPED.Schemas.NFe/ReferenciaECF.md 'EficazFramework.SPED.Schemas.NFe.ReferenciaECF') | |
+| [ReferenciaNF](EficazFramework.SPED.Schemas.NFe/ReferenciaNF.md 'EficazFramework.SPED.Schemas.NFe.ReferenciaNF') | |
+| [ReferenciaNFProdutor](EficazFramework.SPED.Schemas.NFe/ReferenciaNFProdutor.md 'EficazFramework.SPED.Schemas.NFe.ReferenciaNFProdutor') | |
+| [ResumoEvento](EficazFramework.SPED.Schemas.NFe/ResumoEvento.md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento') | |
+| [retDistDFeIntLoteDistDFeInt](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeInt.md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeInt') | |
+| [retDistDFeIntLoteDistDFeIntDocZip](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip.md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip') | |
+| [RetornoCancelamento_v200_107](EficazFramework.SPED.Schemas.NFe/RetornoCancelamento_v200_107.md 'EficazFramework.SPED.Schemas.NFe.RetornoCancelamento_v200_107') | Esta classe representa o retorno de Cancelamento da NF-e das versões 1.07 a 2.00,<br/>ANTES da implantação de cancelamento por Evento de NF-e. |
+| [RetornoCancelamentoInformacoes_v200_107](EficazFramework.SPED.Schemas.NFe/RetornoCancelamentoInformacoes_v200_107.md 'EficazFramework.SPED.Schemas.NFe.RetornoCancelamentoInformacoes_v200_107') | |
+| [RetornoCartaCorrecaoEletronica](EficazFramework.SPED.Schemas.NFe/RetornoCartaCorrecaoEletronica.md 'EficazFramework.SPED.Schemas.NFe.RetornoCartaCorrecaoEletronica') | Objeto de retorno do tipo Carta de Correção Eletrônica. |
+| [RetornoConsulta](EficazFramework.SPED.Schemas.NFe/RetornoConsulta.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsulta') | Objeto retornado pelo serviço, no formato XML.<br/>Limite: 50 NF-e |
+| [RetornoConsultaCadastro](EficazFramework.SPED.Schemas.NFe/RetornoConsultaCadastro.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaCadastro') | |
+| [RetornoConsultaSituacaoNFe](EficazFramework.SPED.Schemas.NFe/RetornoConsultaSituacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaSituacaoNFe') | |
+| [RetornoDistribuicaoDFe](EficazFramework.SPED.Schemas.NFe/RetornoDistribuicaoDFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoDistribuicaoDFe') | |
+| [RetornoDownloadNF](EficazFramework.SPED.Schemas.NFe/RetornoDownloadNF.md 'EficazFramework.SPED.Schemas.NFe.RetornoDownloadNF') | |
+| [RetornoEnvioEvento](EficazFramework.SPED.Schemas.NFe/RetornoEnvioEvento.md 'EficazFramework.SPED.Schemas.NFe.RetornoEnvioEvento') | |
+| [RetornoNFe](EficazFramework.SPED.Schemas.NFe/RetornoNFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoNFe') | |
+| [RetornoNFeCancelada](EficazFramework.SPED.Schemas.NFe/RetornoNFeCancelada.md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeCancelada') | Objeto de retorno do tipo Cancelamento de Nota Fiscal Eletrônica. |
+| [RetornoNFeNormal](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal.md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal') | Objeto de retorno do tipo Cancelamento de Nota Fiscal (Autorizada ou Denegada). |
+| [SignatureType](EficazFramework.SPED.Schemas.NFe/SignatureType.md 'EficazFramework.SPED.Schemas.NFe.SignatureType') | |
+| [SignatureValueType](EficazFramework.SPED.Schemas.NFe/SignatureValueType.md 'EficazFramework.SPED.Schemas.NFe.SignatureValueType') | |
+| [SignedInfoType](EficazFramework.SPED.Schemas.NFe/SignedInfoType.md 'EficazFramework.SPED.Schemas.NFe.SignedInfoType') | |
+| [SignedInfoTypeCanonicalizationMethod](EficazFramework.SPED.Schemas.NFe/SignedInfoTypeCanonicalizationMethod.md 'EficazFramework.SPED.Schemas.NFe.SignedInfoTypeCanonicalizationMethod') | |
+| [SignedInfoTypeSignatureMethod](EficazFramework.SPED.Schemas.NFe/SignedInfoTypeSignatureMethod.md 'EficazFramework.SPED.Schemas.NFe.SignedInfoTypeSignatureMethod') | |
+| [TConsCad](EficazFramework.SPED.Schemas.NFe/TConsCad.md 'EficazFramework.SPED.Schemas.NFe.TConsCad') | |
+| [TConsCadInfCons](EficazFramework.SPED.Schemas.NFe/TConsCadInfCons.md 'EficazFramework.SPED.Schemas.NFe.TConsCadInfCons') | |
+| [TEndereco](EficazFramework.SPED.Schemas.NFe/TEndereco.md 'EficazFramework.SPED.Schemas.NFe.TEndereco') | |
+| [Totais](EficazFramework.SPED.Schemas.NFe/Totais.md 'EficazFramework.SPED.Schemas.NFe.Totais') | |
+| [TotalICMS](EficazFramework.SPED.Schemas.NFe/TotalICMS.md 'EficazFramework.SPED.Schemas.NFe.TotalICMS') | |
+| [TotalISSQN](EficazFramework.SPED.Schemas.NFe/TotalISSQN.md 'EficazFramework.SPED.Schemas.NFe.TotalISSQN') | |
+| [TotalRetencaoTributos](EficazFramework.SPED.Schemas.NFe/TotalRetencaoTributos.md 'EficazFramework.SPED.Schemas.NFe.TotalRetencaoTributos') | |
+| [TransformType](EficazFramework.SPED.Schemas.NFe/TransformType.md 'EficazFramework.SPED.Schemas.NFe.TransformType') | |
+| [Transportadora](EficazFramework.SPED.Schemas.NFe/Transportadora.md 'EficazFramework.SPED.Schemas.NFe.Transportadora') | |
+| [TransporteRetencaoICMS](EficazFramework.SPED.Schemas.NFe/TransporteRetencaoICMS.md 'EficazFramework.SPED.Schemas.NFe.TransporteRetencaoICMS') | |
+| [TRetConsCadInfCons](EficazFramework.SPED.Schemas.NFe/TRetConsCadInfCons.md 'EficazFramework.SPED.Schemas.NFe.TRetConsCadInfCons') | |
+| [TRetConsCadInfConsInfCad](EficazFramework.SPED.Schemas.NFe/TRetConsCadInfConsInfCad.md 'EficazFramework.SPED.Schemas.NFe.TRetConsCadInfConsInfCad') | |
+| [TRetInutNFeInfInut](EficazFramework.SPED.Schemas.NFe/TRetInutNFeInfInut.md 'EficazFramework.SPED.Schemas.NFe.TRetInutNFeInfInut') | |
+| [Tributacao](EficazFramework.SPED.Schemas.NFe/Tributacao.md 'EficazFramework.SPED.Schemas.NFe.Tributacao') | |
+| [Veiculo](EficazFramework.SPED.Schemas.NFe/Veiculo.md 'EficazFramework.SPED.Schemas.NFe.Veiculo') | |
+| [VolumeLacres](EficazFramework.SPED.Schemas.NFe/VolumeLacres.md 'EficazFramework.SPED.Schemas.NFe.VolumeLacres') | |
+| [VolumeTransportado](EficazFramework.SPED.Schemas.NFe/VolumeTransportado.md 'EficazFramework.SPED.Schemas.NFe.VolumeTransportado') | |
+| [X509DataType](EficazFramework.SPED.Schemas.NFe/X509DataType.md 'EficazFramework.SPED.Schemas.NFe.X509DataType') | |
+### Interfaces
+
+<a name='EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem'></a>
+
+## ICabecalhoMensagem Interface
+
+```csharp
+public interface ICabecalhoMensagem
+```
+
+Derived  
+&#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem')  
+&#8627; [CabecalhoMensagem_ConsultaDestinatario](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_ConsultaDestinatario.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_ConsultaDestinatario')  
+&#8627; [CabecalhoMensagem_DownloadNF](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_DownloadNF.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_DownloadNF')  
+&#8627; [CabecalhoMensagem_RecepcaoEvento](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_RecepcaoEvento.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_RecepcaoEvento')
+### Methods
+
+<a name='EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem.Serialize()'></a>
+
+## ICabecalhoMensagem.Serialize() Method
+
+```csharp
+string Serialize();
+```
+
+#### Returns
+[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+
+| Enums | |
+| :--- | :--- |
+| [Ambiente](EficazFramework.SPED.Schemas.NFe/Ambiente.md 'EficazFramework.SPED.Schemas.NFe.Ambiente') | |
+| [BandeiraCartaoCredito](EficazFramework.SPED.Schemas.NFe/BandeiraCartaoCredito.md 'EficazFramework.SPED.Schemas.NFe.BandeiraCartaoCredito') | |
+| [CodigoEvento](EficazFramework.SPED.Schemas.NFe/CodigoEvento.md 'EficazFramework.SPED.Schemas.NFe.CodigoEvento') | |
+| [CredenciamentoCte](EficazFramework.SPED.Schemas.NFe/CredenciamentoCte.md 'EficazFramework.SPED.Schemas.NFe.CredenciamentoCte') | |
+| [CredenciamentoNFe](EficazFramework.SPED.Schemas.NFe/CredenciamentoNFe.md 'EficazFramework.SPED.Schemas.NFe.CredenciamentoNFe') | |
+| [CSOSN_ICMS](EficazFramework.SPED.Schemas.NFe/CSOSN_ICMS.md 'EficazFramework.SPED.Schemas.NFe.CSOSN_ICMS') | |
+| [CST_COFINS](EficazFramework.SPED.Schemas.NFe/CST_COFINS.md 'EficazFramework.SPED.Schemas.NFe.CST_COFINS') | |
+| [CST_ICMS](EficazFramework.SPED.Schemas.NFe/CST_ICMS.md 'EficazFramework.SPED.Schemas.NFe.CST_ICMS') | |
+| [CST_IPI](EficazFramework.SPED.Schemas.NFe/CST_IPI.md 'EficazFramework.SPED.Schemas.NFe.CST_IPI') | |
+| [CST_ISSQN](EficazFramework.SPED.Schemas.NFe/CST_ISSQN.md 'EficazFramework.SPED.Schemas.NFe.CST_ISSQN') | |
+| [CST_PIS](EficazFramework.SPED.Schemas.NFe/CST_PIS.md 'EficazFramework.SPED.Schemas.NFe.CST_PIS') | |
+| [DestinoOperacao](EficazFramework.SPED.Schemas.NFe/DestinoOperacao.md 'EficazFramework.SPED.Schemas.NFe.DestinoOperacao') | |
+| [DetalhamentoCOFINSST_ModoCalculo](EficazFramework.SPED.Schemas.NFe/DetalhamentoCOFINSST_ModoCalculo.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoCOFINSST_ModoCalculo') | |
+| [DetalhamentoICMS_CST00_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST00_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST00_ModBC') | |
+| [DetalhamentoICMS_CST10_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST10_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST10_ModBC') | |
+| [DetalhamentoICMS_CST10_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST10_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST10_ModBCST') | |
+| [DetalhamentoICMS_CST20_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST20_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST20_ModBC') | |
+| [DetalhamentoICMS_CST30_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST30_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST30_ModBCST') | |
+| [DetalhamentoICMS_CST40_MotivoDesoneracao](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST40_MotivoDesoneracao.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST40_MotivoDesoneracao') | |
+| [DetalhamentoICMS_CST51_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST51_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST51_ModBC') | |
+| [DetalhamentoICMS_CST70_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST70_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST70_ModBC') | |
+| [DetalhamentoICMS_CST70_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST70_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST70_ModBCST') | |
+| [DetalhamentoICMS_CST90_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST90_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST90_ModBC') | |
+| [DetalhamentoICMS_CST90_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_CST90_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_CST90_ModBCST') | |
+| [DetalhamentoICMS_Part_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Part_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Part_ModBC') | |
+| [DetalhamentoICMS_Part_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Part_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Part_ModBCST') | |
+| [DetalhamentoICMSSN_CSOSN201_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMSSN_CSOSN201_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMSSN_CSOSN201_ModBCST') | |
+| [DetalhamentoICMSSN_CSOSN202_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMSSN_CSOSN202_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMSSN_CSOSN202_ModBCST') | |
+| [DetalhamentoICMSSN_CSOSN900_ModBC](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMSSN_CSOSN900_ModBC.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMSSN_CSOSN900_ModBC') | |
+| [DetalhamentoICMSSN_CSOSN900_ModBCST](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMSSN_CSOSN900_ModBCST.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMSSN_CSOSN900_ModBCST') | |
+| [DetalhamentoIPI_Tributado_ModoCalculo](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI_Tributado_ModoCalculo.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI_Tributado_ModoCalculo') | |
+| [DetalhamentoPISST_ModoCalculo](EficazFramework.SPED.Schemas.NFe/DetalhamentoPISST_ModoCalculo.md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPISST_ModoCalculo') | |
+| [Estado](EficazFramework.SPED.Schemas.NFe/Estado.md 'EficazFramework.SPED.Schemas.NFe.Estado') | |
+| [FinalidadeEmissao](EficazFramework.SPED.Schemas.NFe/FinalidadeEmissao.md 'EficazFramework.SPED.Schemas.NFe.FinalidadeEmissao') | |
+| [FormaDePagamento](EficazFramework.SPED.Schemas.NFe/FormaDePagamento.md 'EficazFramework.SPED.Schemas.NFe.FormaDePagamento') | |
+| [FormaEmissao](EficazFramework.SPED.Schemas.NFe/FormaEmissao.md 'EficazFramework.SPED.Schemas.NFe.FormaEmissao') | |
+| [FormaPagamento](EficazFramework.SPED.Schemas.NFe/FormaPagamento.md 'EficazFramework.SPED.Schemas.NFe.FormaPagamento') | |
+| [FormaTransporte](EficazFramework.SPED.Schemas.NFe/FormaTransporte.md 'EficazFramework.SPED.Schemas.NFe.FormaTransporte') | |
+| [IndicadorContinuacao](EficazFramework.SPED.Schemas.NFe/IndicadorContinuacao.md 'EficazFramework.SPED.Schemas.NFe.IndicadorContinuacao') | |
+| [IndicadorEmissorNFe](EficazFramework.SPED.Schemas.NFe/IndicadorEmissorNFe.md 'EficazFramework.SPED.Schemas.NFe.IndicadorEmissorNFe') | |
+| [IndicadorProcessoReferenciado](EficazFramework.SPED.Schemas.NFe/IndicadorProcessoReferenciado.md 'EficazFramework.SPED.Schemas.NFe.IndicadorProcessoReferenciado') | |
+| [IndicadorTipoNFe](EficazFramework.SPED.Schemas.NFe/IndicadorTipoNFe.md 'EficazFramework.SPED.Schemas.NFe.IndicadorTipoNFe') | |
+| [IndicadorTotal](EficazFramework.SPED.Schemas.NFe/IndicadorTotal.md 'EficazFramework.SPED.Schemas.NFe.IndicadorTotal') | |
+| [ModalidadeFrete](EficazFramework.SPED.Schemas.NFe/ModalidadeFrete.md 'EficazFramework.SPED.Schemas.NFe.ModalidadeFrete') | |
+| [ModeloDocumento](EficazFramework.SPED.Schemas.NFe/ModeloDocumento.md 'EficazFramework.SPED.Schemas.NFe.ModeloDocumento') | |
+| [ModeloECF](EficazFramework.SPED.Schemas.NFe/ModeloECF.md 'EficazFramework.SPED.Schemas.NFe.ModeloECF') | |
+| [ModeloNF](EficazFramework.SPED.Schemas.NFe/ModeloNF.md 'EficazFramework.SPED.Schemas.NFe.ModeloNF') | |
+| [ModeloNFProdutor](EficazFramework.SPED.Schemas.NFe/ModeloNFProdutor.md 'EficazFramework.SPED.Schemas.NFe.ModeloNFProdutor') | |
+| [OperacaoNFe](EficazFramework.SPED.Schemas.NFe/OperacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.OperacaoNFe') | |
+| [OrgaoIBGE](EficazFramework.SPED.Schemas.NFe/OrgaoIBGE.md 'EficazFramework.SPED.Schemas.NFe.OrgaoIBGE') | |
+| [OrigemMercadoria](EficazFramework.SPED.Schemas.NFe/OrigemMercadoria.md 'EficazFramework.SPED.Schemas.NFe.OrigemMercadoria') | |
+| [PersonalidadeJuridica](EficazFramework.SPED.Schemas.NFe/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.NFe.PersonalidadeJuridica') | |
+| [ProcessoEmissao](EficazFramework.SPED.Schemas.NFe/ProcessoEmissao.md 'EficazFramework.SPED.Schemas.NFe.ProcessoEmissao') | |
+| [RegimeTributario](EficazFramework.SPED.Schemas.NFe/RegimeTributario.md 'EficazFramework.SPED.Schemas.NFe.RegimeTributario') | |
+| [ServicoSolicitado](EficazFramework.SPED.Schemas.NFe/ServicoSolicitado.md 'EficazFramework.SPED.Schemas.NFe.ServicoSolicitado') | |
+| [Situacao](EficazFramework.SPED.Schemas.NFe/Situacao.md 'EficazFramework.SPED.Schemas.NFe.Situacao') | |
+| [SituacaoManifestacaoDestinatario](EficazFramework.SPED.Schemas.NFe/SituacaoManifestacaoDestinatario.md 'EficazFramework.SPED.Schemas.NFe.SituacaoManifestacaoDestinatario') | |
+| [SituacaoNFe](EficazFramework.SPED.Schemas.NFe/SituacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.SituacaoNFe') | |
+| [TConsCadInfConsXServ](EficazFramework.SPED.Schemas.NFe/TConsCadInfConsXServ.md 'EficazFramework.SPED.Schemas.NFe.TConsCadInfConsXServ') | |
+| [TipoArma](EficazFramework.SPED.Schemas.NFe/TipoArma.md 'EficazFramework.SPED.Schemas.NFe.TipoArma') | |
+| [TipoAtendimento](EficazFramework.SPED.Schemas.NFe/TipoAtendimento.md 'EficazFramework.SPED.Schemas.NFe.TipoAtendimento') | |
+| [TipoDocumentoReferencia](EficazFramework.SPED.Schemas.NFe/TipoDocumentoReferencia.md 'EficazFramework.SPED.Schemas.NFe.TipoDocumentoReferencia') | |
+| [TipoImpressao](EficazFramework.SPED.Schemas.NFe/TipoImpressao.md 'EficazFramework.SPED.Schemas.NFe.TipoImpressao') | |
+| [TipoIntegracaoPgCartao](EficazFramework.SPED.Schemas.NFe/TipoIntegracaoPgCartao.md 'EficazFramework.SPED.Schemas.NFe.TipoIntegracaoPgCartao') | |
+| [TipoIntermedioDI](EficazFramework.SPED.Schemas.NFe/TipoIntermedioDI.md 'EficazFramework.SPED.Schemas.NFe.TipoIntermedioDI') | |
+| [TipoResultado](EficazFramework.SPED.Schemas.NFe/TipoResultado.md 'EficazFramework.SPED.Schemas.NFe.TipoResultado') | |
+| [TipoViaTransporteDI](EficazFramework.SPED.Schemas.NFe/TipoViaTransporteDI.md 'EficazFramework.SPED.Schemas.NFe.TipoViaTransporteDI') | |
+| [Tributacao_COFINS_Identifier](EficazFramework.SPED.Schemas.NFe/Tributacao_COFINS_Identifier.md 'EficazFramework.SPED.Schemas.NFe.Tributacao_COFINS_Identifier') | |
+| [Tributacao_ICMS_Identifier](EficazFramework.SPED.Schemas.NFe/Tributacao_ICMS_Identifier.md 'EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier') | |
+| [Tributacao_IPI_Identifier](EficazFramework.SPED.Schemas.NFe/Tributacao_IPI_Identifier.md 'EficazFramework.SPED.Schemas.NFe.Tributacao_IPI_Identifier') | |
+| [Tributacao_IPI_ST_Identifier](EficazFramework.SPED.Schemas.NFe/Tributacao_IPI_ST_Identifier.md 'EficazFramework.SPED.Schemas.NFe.Tributacao_IPI_ST_Identifier') | |
+| [Tributacao_PIS_Identifier](EficazFramework.SPED.Schemas.NFe/Tributacao_PIS_Identifier.md 'EficazFramework.SPED.Schemas.NFe.Tributacao_PIS_Identifier') | |
+| [TTransformURI](EficazFramework.SPED.Schemas.NFe/TTransformURI.md 'EficazFramework.SPED.Schemas.NFe.TTransformURI') | |
+| [VeiculoCondicao](EficazFramework.SPED.Schemas.NFe/VeiculoCondicao.md 'EficazFramework.SPED.Schemas.NFe.VeiculoCondicao') | |
+| [VeiculoCondicaoChassi](EficazFramework.SPED.Schemas.NFe/VeiculoCondicaoChassi.md 'EficazFramework.SPED.Schemas.NFe.VeiculoCondicaoChassi') | |
+| [VeiculoCorDENATRAN](EficazFramework.SPED.Schemas.NFe/VeiculoCorDENATRAN.md 'EficazFramework.SPED.Schemas.NFe.VeiculoCorDENATRAN') | |
+| [VeiculoEspecie](EficazFramework.SPED.Schemas.NFe/VeiculoEspecie.md 'EficazFramework.SPED.Schemas.NFe.VeiculoEspecie') | |
+| [VeiculoRestricao](EficazFramework.SPED.Schemas.NFe/VeiculoRestricao.md 'EficazFramework.SPED.Schemas.NFe.VeiculoRestricao') | |
+| [VeiculoTipo](EficazFramework.SPED.Schemas.NFe/VeiculoTipo.md 'EficazFramework.SPED.Schemas.NFe.VeiculoTipo') | |
+| [VeiculoTipoCombustivel](EficazFramework.SPED.Schemas.NFe/VeiculoTipoCombustivel.md 'EficazFramework.SPED.Schemas.NFe.VeiculoTipoCombustivel') | |
+| [VeiculoTipoOperacao](EficazFramework.SPED.Schemas.NFe/VeiculoTipoOperacao.md 'EficazFramework.SPED.Schemas.NFe.VeiculoTipoOperacao') | |
+| [VersaoCancelamento](EficazFramework.SPED.Schemas.NFe/VersaoCancelamento.md 'EficazFramework.SPED.Schemas.NFe.VersaoCancelamento') | |
+| [VersaoServicoConsCadastro](EficazFramework.SPED.Schemas.NFe/VersaoServicoConsCadastro.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoConsCadastro') | |
+| [VersaoServicoConsDestinatario](EficazFramework.SPED.Schemas.NFe/VersaoServicoConsDestinatario.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoConsDestinatario') | |
+| [VersaoServicoConsSitNFe](EficazFramework.SPED.Schemas.NFe/VersaoServicoConsSitNFe.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoConsSitNFe') | |
+| [VersaoServicoDistribuicaoDF](EficazFramework.SPED.Schemas.NFe/VersaoServicoDistribuicaoDF.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoDistribuicaoDF') | |
+| [VersaoServicoDownload](EficazFramework.SPED.Schemas.NFe/VersaoServicoDownload.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoDownload') | |
+| [VersaoServicoEvento](EficazFramework.SPED.Schemas.NFe/VersaoServicoEvento.md 'EficazFramework.SPED.Schemas.NFe.VersaoServicoEvento') | |

@@ -1,0 +1,17 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.NFSe.Common](EficazFramework.SPED.Schemas.NFSe.Common.md 'EficazFramework.SPED.Schemas.NFSe.Common')
+
+## SignedInfoType Class
+### Properties
+
+| # | Name | |
+| ---: | :--- | :--- |
+| 02 | CanonicalizationMethod |  |
+| 03 | SignatureMethod |  |
+| 04 | Reference |  |
+| 05 | Id |  |
+### Methods
+
+| Name | |
+| :--- | :--- |
+| OnPropertyChanged(string) |  |

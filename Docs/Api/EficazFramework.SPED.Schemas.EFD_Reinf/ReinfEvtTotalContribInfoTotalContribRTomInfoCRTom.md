@@ -1,0 +1,13 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf')
+
+## ReinfEvtTotalContribInfoTotalContribRTomInfoCRTom Class
+
+### Remarks
+### Properties
+
+| # | Name | |
+| ---: | :--- | :--- |
+| 02 | CRTom |  |
+| 03 | VlrCRTom |  |
+| 04 | VlrCRTomSusp |  |

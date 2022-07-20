@@ -1,0 +1,15 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.SAT_CFe](EficazFramework.SPED.Schemas.SAT_CFe.md 'EficazFramework.SPED.Schemas.SAT_CFe')
+
+## envCFeCFeInfCFeTotal Class
+
+Registros Finais
+### Properties
+
+| # | Name | |
+| ---: | :--- | :--- |
+| 02 | ICMSTot |  |
+| 03 | vCFe |  |
+| 04 | ISSQNtot |  |
+| 05 | DescAcrEntr |  |
+| 06 | vCFeLei12741 |  |

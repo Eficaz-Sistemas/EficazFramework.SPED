@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Controle da Produção e do Estoque
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class BlocoK : Primitives.Bloco
 {
     public RegistroK001 Registrok001

@@ -4,7 +4,9 @@ using EficazFramework.SPED.Extensions;
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
 /// <summary>
-/// <b>Correlação entre códigos de itens comercializados</b> <br/><br/>
+/// Correlação entre códigos de itens comercializados
+/// </summary>
+/// <remarks>
 /// O registro deverá ser informado apenas se o campo TIPO_ITEM do registro 0200 Pai for informado com valor “00 –
 /// Mercadoria para Revenda”. <br/><br/>
 /// A obrigatoriedade, que só poderá ser estabelecida a partir de 2024, e a forma de escrituração deste registro serão
@@ -26,8 +28,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// Exemplo 3: se o item 0200 Pai é uma caixa com 12 latas de refrigerante X com 350ml, então, esse 0200 terá apenas
 /// um registro 0221 filho com COD_ITEM_ATOMICO igual ao COD_ITEM do 0200 do exemplo 2 e QTD_CONTIDA igual a 
 /// “12”.
-/// </summary>
-/// <remarks></remarks>
+/// </remarks>
 public class Registro0221 : Primitives.Registro
 {
     public Registro0221() : base("0221")

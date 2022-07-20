@@ -4,7 +4,7 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Controle e Encerramento do Arquivo Digital
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class Bloco9 : Primitives.Bloco
 {
 

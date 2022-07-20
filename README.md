@@ -21,21 +21,29 @@
    Esta versão conta atualmente com uma quantidade maior de instruções sem plataforma específica, e foi estruturada para utilização dos recursos de Implantação e Entrega Contínua de aplicações (Azure DevOps).
 
 
-#### Integração com projetos do SPED, com mapeamento de campos e consumo de Web-Services
-   - CT-e e CT-eOS
-   - DAPI
-   - e-CredAc, portarias CAT 83/09 e 207/09
-   - e-Ressarcimento portaria CAT 42/18
-   - ECD
-   - ECF
-   - EFD ICMS / IPI
-   - EFD Contribuições
-   - e-Social (em desenvolvimento)
-   - GIA (SP)
-   - GNRE
-   - NF-e, a partir da versão 2.00
-   - NFS-e
+### Documentação
+![docs](https://eficazshields.azurewebsites.net/badge/docs-em%20construção-orange?style=flat-square)
 
- #### Contribuições
+   - [Sumário](/Docs/Api/EficazFrameworkSPED.md) 
+     - Schemas
+       - CT-e e CT-eOS
+       - DAPI
+       - e-CredAc, portarias CAT 83/09 e 207/09
+       - e-Ressarcimento portaria CAT 42/18
+       - ECD
+       - ECF
+       - [EFD ICMS / IPI](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)
+       - EFD Contribuições
+       - e-Social (em desenvolvimento)
+       - GIA (SP)
+       - GNRE
+       - NF-e, a partir da versão 2.00
+       - NFS-e   
+     - Classes complementares
+       - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
+       - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
+
+
+ ### Contribuições
    - Ficaremos felizes por receber contribuições visando enriquecer a qualidade do projeto, além de manter os schemas das escriturações sempre atualizado com os layouts definidos pelos agentes reguladores.
    - Por gentileza solicitamos a leitura das [Diretrizes de Contribuição](/CONTRIBUTING.md) antes de iniciar.

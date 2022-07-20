@@ -5,6 +5,9 @@ using EficazFramework.SPED.Schemas.Primitives;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
+/// <summary>
+/// Classe principal de configuração, leitura e escrita da EFD ICMS / IPI.
+/// </summary>
 public class Escrituracao : Primitives.Escrituracao
 {
 
