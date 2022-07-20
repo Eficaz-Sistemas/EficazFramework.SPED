@@ -5,6 +5,33 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
 public class BlocoC : Tests.BaseTest
 {
+    [Test]
+    public void RegistroC500_Construtor()
+    {
+        var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500();
+        reg.Codigo.Should().Be("C500");
+    }
+
+    [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||", "015")]
+    [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||", "016", true)]
+    public void RegistroC500_Construtor(string linha, string versao = "016", bool indicadorContribIcms = false)
+    {
+        var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500(linha, versao);
+        reg.Codigo.Should().Be("C500");
+        reg.Versao.Should().Be(versao);
+        reg.Operacao.Should().Be(IndicadorOperacao.Entrada);
+        reg.Emissao.Should().Be(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEmitente.Terceiros);
+        reg.CodigoParticipante.Should().Be("123");
+        reg.EspecieDocumento.Should().Be("06");
+        reg.SituacaoDocumento.Should().Be(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.SituacaoDocumento.Regular);
+        reg.Numero.Should().Be(12345678);
+        reg.Serie.Should().Be("U1");
+        reg.DataEmissao.Should().Be(new System.DateTime(2021, 6, 18));
+        reg.ValorTotalDocumento.Should().Be(539.8d);
+        
+        if (indicadorContribIcms)
+            reg.DestinatarioIndicador.Should().Be(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorDestinatario.ContribIsentoICMS);
+    }
 
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|", "002")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|", "003")]
