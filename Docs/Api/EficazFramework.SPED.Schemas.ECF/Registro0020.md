@@ -8,43 +8,43 @@ Parâmetros de Tributação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | FormaTributacao |  |
-| 03 | QuantidadeSCP |  |
-| 04 | AdminFundoClubeInvest |  |
-| 05 | ParticipacoesConsorcios |  |
-| 06 | OperacoesExterior |  |
-| 07 | OperacoesVinculadas |  |
-| 08 | EnquadramentoArts48ou49_IN_1312_12 |  |
-| 09 | ParticipacoesExterior |  |
-| 10 | AtividadeRural |  |
-| 11 | LucroExploracao |  |
-| 12 | IsencaoReducaoLucroPresumido |  |
-| 13 | Finor_Finam |  |
-| 14 | DoacaoEleitoral |  |
-| 15 | ParticipAvMetodoEquivPatrim |  |
-| 16 | VendasExportacao |  |
-| 17 | RecebimExterior |  |
-| 18 | AtivosNoExterior |  |
-| 19 | PJExportadora |  |
-| 20 | PagtosExterior |  |
-| 21 | ComEletronicoTI |  |
-| 22 | RoyaltiesRecebidos |  |
-| 23 | RoyaltiesPagos |  |
-| 24 | RendServicosJurosDivRecebidos |  |
-| 25 | PgRemessasTitServicosJurosDiv |  |
-| 26 | InovacaoTenologica |  |
-| 27 | CapacitacaoInformaticaInclDigital |  |
-| 28 | RecapRepesPadisPatvdReidiOlimpEDemaisDiachos |  |
-| 29 | PoloIndManausAmazonaOcidencal |  |
-| 30 | ZonaExportacao |  |
-| 31 | AreaLivreComercio |  |
-| 32 | IntegranteMultinacional |  |
-| 33 | DEREX |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | FormaTributacao | `IndicadorAliquotaCSLL2015` |  |
+| 03 | QuantidadeSCP | `Nullable<Int32>` |  |
+| 04 | AdminFundoClubeInvest | `Boolean` |  |
+| 05 | ParticipacoesConsorcios | `Boolean` |  |
+| 06 | OperacoesExterior | `Boolean` |  |
+| 07 | OperacoesVinculadas | `Boolean` |  |
+| 08 | EnquadramentoArts48ou49_IN_1312_12 | `Boolean` |  |
+| 09 | ParticipacoesExterior | `Boolean` |  |
+| 10 | AtividadeRural | `Boolean` |  |
+| 11 | LucroExploracao | `Boolean` |  |
+| 12 | IsencaoReducaoLucroPresumido | `Boolean` |  |
+| 13 | Finor_Finam | `Boolean` |  |
+| 14 | DoacaoEleitoral | `Boolean` |  |
+| 15 | ParticipAvMetodoEquivPatrim | `Boolean` |  |
+| 16 | VendasExportacao | `Boolean` |  |
+| 17 | RecebimExterior | `Boolean` |  |
+| 18 | AtivosNoExterior | `Boolean` |  |
+| 19 | PJExportadora | `Boolean` |  |
+| 20 | PagtosExterior | `Boolean` |  |
+| 21 | ComEletronicoTI | `Boolean` |  |
+| 22 | RoyaltiesRecebidos | `Boolean` |  |
+| 23 | RoyaltiesPagos | `Boolean` |  |
+| 24 | RendServicosJurosDivRecebidos | `Boolean` |  |
+| 25 | PgRemessasTitServicosJurosDiv | `Boolean` |  |
+| 26 | InovacaoTenologica | `Boolean` |  |
+| 27 | CapacitacaoInformaticaInclDigital | `Boolean` |  |
+| 28 | RecapRepesPadisPatvdReidiOlimpEDemaisDiachos | `Boolean` |  |
+| 29 | PoloIndManausAmazonaOcidencal | `Boolean` |  |
+| 30 | ZonaExportacao | `Boolean` |  |
+| 31 | AreaLivreComercio | `Boolean` |  |
+| 32 | IntegranteMultinacional | `Boolean` |  |
+| 33 | DEREX | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,7 +4,7 @@
 ## NFe Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToSituacaoManifesto(CodigoEvento) |  |
-| ToAcaoManifesto(SituacaoManifestacaoDestinatario) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToSituacaoManifesto(CodigoEvento) | `SituacaoManifestacaoDestinatario` |  |
+| ToAcaoManifesto(SituacaoManifestacaoDestinatario) | `CodigoEvento` |  |

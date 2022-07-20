@@ -4,9 +4,9 @@
 ## ReinfEvtCPRB Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideContri |  |
-| 04 | infoCPRB |  |
-| 05 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `ReinfEvtIdeEvento_R20xx` |  |
+| 03 | ideContri | `ReinfEvtIdeContri` |  |
+| 04 | infoCPRB | `ReinfEvtCPRBInfoCPRB` |  |
+| 05 | id | `String` |  |

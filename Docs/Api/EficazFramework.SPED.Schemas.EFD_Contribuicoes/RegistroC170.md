@@ -8,48 +8,48 @@ Complemento do Documento - itens do documento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroSequenciaItem |  |
-| 03 | CodigoItem |  |
-| 04 | DescricaoItem |  |
-| 05 | QuantidadeItem |  |
-| 06 | UnidadeItem |  |
-| 07 | VrItem |  |
-| 08 | VrDesconto |  |
-| 09 | MovimentacaoFisica |  |
-| 10 | Origem |  |
-| 11 | CST_ICMS |  |
-| 12 | CFOP |  |
-| 13 | CodNaturezaOperacao |  |
-| 14 | VrBaseCalculoICMS |  |
-| 15 | AliquotaICMS |  |
-| 16 | VrICMS |  |
-| 17 | VrBaseCalculoICMSST |  |
-| 18 | AliquotaICMSST |  |
-| 19 | VrICMSST |  |
-| 20 | IndicadorApuracaoIPI |  |
-| 21 | CST_IPI |  |
-| 22 | CodEnquadramentoIPI |  |
-| 23 | VrBaseCalculoIPI |  |
-| 24 | AliquotaIPI |  |
-| 25 | VrIPI |  |
-| 26 | CST_PIS |  |
-| 27 | VrBaseCalculoPIS |  |
-| 28 | AliquotaPIS |  |
-| 29 | QuantidadeBCPIS |  |
-| 30 | AliquotaPISQuantidade |  |
-| 31 | VrPIS |  |
-| 32 | CST_COFINS |  |
-| 33 | VrBaseCalculoCOFINS |  |
-| 34 | AliquotaCOFINS |  |
-| 35 | QuantidadeBCCOFINS |  |
-| 36 | AliquotaCOFINSQuantidade |  |
-| 37 | VrCOFINS |  |
-| 38 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroSequenciaItem | `Nullable<Int16>` |  |
+| 03 | CodigoItem | `String` |  |
+| 04 | DescricaoItem | `String` |  |
+| 05 | QuantidadeItem | `Nullable<Double>` |  |
+| 06 | UnidadeItem | `String` |  |
+| 07 | VrItem | `Nullable<Double>` |  |
+| 08 | VrDesconto | `Nullable<Double>` |  |
+| 09 | MovimentacaoFisica | `Nullable<Boolean>` |  |
+| 10 | Origem | `OrigemMercadoria` |  |
+| 11 | CST_ICMS | `CST_ICMS` |  |
+| 12 | CFOP | `String` |  |
+| 13 | CodNaturezaOperacao | `String` |  |
+| 14 | VrBaseCalculoICMS | `Nullable<Double>` |  |
+| 15 | AliquotaICMS | `Nullable<Double>` |  |
+| 16 | VrICMS | `Nullable<Double>` |  |
+| 17 | VrBaseCalculoICMSST | `Nullable<Double>` |  |
+| 18 | AliquotaICMSST | `Nullable<Double>` |  |
+| 19 | VrICMSST | `Nullable<Double>` |  |
+| 20 | IndicadorApuracaoIPI | `Nullable<IndicadorPeriodoIPI>` |  |
+| 21 | CST_IPI | `CST_IPI` |  |
+| 22 | CodEnquadramentoIPI | `String` |  |
+| 23 | VrBaseCalculoIPI | `Nullable<Double>` |  |
+| 24 | AliquotaIPI | `Nullable<Double>` |  |
+| 25 | VrIPI | `Nullable<Double>` |  |
+| 26 | CST_PIS | `CST_PIS` |  |
+| 27 | VrBaseCalculoPIS | `Nullable<Double>` |  |
+| 28 | AliquotaPIS | `Nullable<Double>` |  |
+| 29 | QuantidadeBCPIS | `Nullable<Double>` |  |
+| 30 | AliquotaPISQuantidade | `Nullable<Double>` |  |
+| 31 | VrPIS | `Nullable<Double>` |  |
+| 32 | CST_COFINS | `CST_COFINS` |  |
+| 33 | VrBaseCalculoCOFINS | `Nullable<Double>` |  |
+| 34 | AliquotaCOFINS | `Nullable<Double>` |  |
+| 35 | QuantidadeBCCOFINS | `Nullable<Double>` |  |
+| 36 | AliquotaCOFINSQuantidade | `Nullable<Double>` |  |
+| 37 | VrCOFINS | `Nullable<Double>` |  |
+| 38 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

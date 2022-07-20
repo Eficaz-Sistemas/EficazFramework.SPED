@@ -4,13 +4,13 @@
 ## Escrituracao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Registro00 |  |
-| 03 | Registros10 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Registro00 | `Registro00` |  |
+| 03 | Registros10 | `IEnumerable<Registro10>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ProcessaLinha(string) |  |
-| LeEmpresaArquivo(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ProcessaLinha(string) | `Void` |  |
+| LeEmpresaArquivo(Stream) | `Task<String>` |  |

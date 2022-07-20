@@ -8,14 +8,14 @@ Identificação da pessoa jurídica estabelecimento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | IndicadorOperacoesPeriodo |  |
-| 04 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | IndicadorOperacoesPeriodo | `IdentificaoOperacaoPeriodo` |  |
+| 04 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

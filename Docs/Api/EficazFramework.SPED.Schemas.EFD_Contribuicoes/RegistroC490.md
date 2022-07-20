@@ -8,17 +8,17 @@ Consolidação de Documentos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEmissaoInicialDocs |  |
-| 03 | DataEmissaoFinalDocs |  |
-| 04 | CodigoModeloDocFiscal |  |
-| 05 | RegistrosC491 |  |
-| 06 | RegistrosC495 |  |
-| 07 | RegistrosC499 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
+| 03 | DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
+| 04 | CodigoModeloDocFiscal | `String` |  |
+| 05 | RegistrosC491 | `List<RegistroC491>` |  |
+| 06 | RegistrosC495 | `List<RegistroC495>` |  |
+| 07 | RegistrosC499 | `List<RegistroC499>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,24 +8,24 @@ Nota Fiscal Energia Elétrica
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | CodigoModeloDocFiscal |  |
-| 04 | CodigoSitDocFiscal |  |
-| 05 | SerieDocFiscal |  |
-| 06 | SubSerieDocFiscal |  |
-| 07 | NumeroDocFiscal |  |
-| 08 | DataDocFiscal |  |
-| 09 | DataEntrada |  |
-| 10 | VrTotalDocFiscal |  |
-| 11 | VrAcumICMS |  |
-| 12 | CodigoInfoComplementar |  |
-| 13 | VrPis |  |
-| 14 | VrCofins |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | CodigoModeloDocFiscal | `String` |  |
+| 04 | CodigoSitDocFiscal | `String` |  |
+| 05 | SerieDocFiscal | `String` |  |
+| 06 | SubSerieDocFiscal | `String` |  |
+| 07 | NumeroDocFiscal | `String` |  |
+| 08 | DataDocFiscal | `Nullable<DateTime>` |  |
+| 09 | DataEntrada | `Nullable<DateTime>` |  |
+| 10 | VrTotalDocFiscal | `Nullable<Double>` |  |
+| 11 | VrAcumICMS | `Nullable<Double>` |  |
+| 12 | CodigoInfoComplementar | `String` |  |
+| 13 | VrPis | `Nullable<Double>` |  |
+| 14 | VrCofins | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

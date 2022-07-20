@@ -8,15 +8,15 @@ Empresas Contrapartes das Parcelas do Valor Eliminado Total
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoEmpresaContrapartida |  |
-| 03 | CodigoContaConsolidadaContrapartida |  |
-| 04 | ParcelaContrapartidaVrEliminado |  |
-| 05 | IndicadorSitVrEliminado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoEmpresaContrapartida | `String` |  |
+| 03 | CodigoContaConsolidadaContrapartida | `String` |  |
+| 04 | ParcelaContrapartidaVrEliminado | `Nullable<Double>` |  |
+| 05 | IndicadorSitVrEliminado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

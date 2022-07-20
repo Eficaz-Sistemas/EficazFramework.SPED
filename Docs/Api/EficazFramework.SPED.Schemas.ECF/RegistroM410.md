@@ -6,18 +6,18 @@
 Lançamento na Conta da Parte B do e-Lalur e do e-Lacs sem Reflexo na Parte A
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaParteB |  |
-| 03 | CodigoTributo | I = IRPJ            C = CSLL |
-| 04 | Valor |  |
-| 05 | IndicadorRelacao | CR = Crédito            DB = Débito            PR = Prejuízo do Exerício            BC = Base de Cálculo Negativa da CSLL |
-| 06 | CodigoContaParteB_Destino | Caso seja necessária a transferência de saldo de uma conta na parte B para outra conta na parte B |
-| 07 | Historico |  |
-| 08 | LanctoExerciciosAnteriores |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaParteB | `String` |  |
+| 03 | CodigoTributo | `String` | I = IRPJ            C = CSLL |
+| 04 | Valor | `Nullable<Double>` |  |
+| 05 | IndicadorRelacao | `String` | CR = Crédito            DB = Débito            PR = Prejuízo do Exerício            BC = Base de Cálculo Negativa da CSLL |
+| 06 | CodigoContaParteB_Destino | `String` | Caso seja necessária a transferência de saldo de uma conta na parte B para outra conta na parte B |
+| 07 | Historico | `String` |  |
+| 08 | LanctoExerciciosAnteriores | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

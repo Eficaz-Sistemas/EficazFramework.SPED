@@ -4,18 +4,18 @@
 ## TDadosRubrica Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dscRubr |  |
-| 03 | natRubr |  |
-| 04 | tpRubr |  |
-| 05 | codIncCP |  |
-| 06 | codIncIRRF |  |
-| 07 | codIncFGTS |  |
-| 08 | codIncCPRP |  |
-| 09 | tetoRemun |  |
-| 10 | observacao |  |
-| 11 | ideProcessoCP |  |
-| 12 | ideProcessoIRRF |  |
-| 13 | ideProcessoFGTS |  |
-| 14 | ideProcessoSIND |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dscRubr | `String` |  |
+| 03 | natRubr | `String` |  |
+| 04 | tpRubr | `NaturezaRubrica` |  |
+| 05 | codIncCP | `String` |  |
+| 06 | codIncIRRF | `String` |  |
+| 07 | codIncFGTS | `String` |  |
+| 08 | codIncCPRP | `String` |  |
+| 09 | tetoRemun | `SimNaoString` |  |
+| 10 | observacao | `String` |  |
+| 11 | ideProcessoCP | `TDadosRubricaIdeProcessoCP[]` |  |
+| 12 | ideProcessoIRRF | `TDadosRubricaIdeProcessoIRRF[]` |  |
+| 13 | ideProcessoFGTS | `TDadosRubricaIdeProcessoFGTS[]` |  |
+| 14 | ideProcessoSIND | `TDadosRubricaIdeProcessoSIND[]` |  |

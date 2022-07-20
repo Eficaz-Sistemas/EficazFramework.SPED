@@ -4,12 +4,12 @@
 ## tcContato Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Telefone |  |
-| 03 | Email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Telefone | `String` |  |
+| 03 | Email | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

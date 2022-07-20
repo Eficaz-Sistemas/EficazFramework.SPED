@@ -4,14 +4,14 @@
 ## rodoOcc Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | serie |  |
-| 03 | nOcc |  |
-| 04 | dEmi |  |
-| 05 | emiOcc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | serie | `String` |  |
+| 03 | nOcc | `String` |  |
+| 04 | dEmi | `String` |  |
+| 05 | emiOcc | `rodoOccEmiOcc` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

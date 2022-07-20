@@ -4,8 +4,8 @@
 ## Helpers Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| UF_ToGiaString(OrgaoIBGE) |  |
-| UF_ToGiaString(Estado) |  |
-| UF_FromGiaString(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| UF_ToGiaString(OrgaoIBGE) | `String` |  |
+| UF_ToGiaString(Estado) | `String` |  |
+| UF_FromGiaString(string) | `OrgaoIBGE` |  |

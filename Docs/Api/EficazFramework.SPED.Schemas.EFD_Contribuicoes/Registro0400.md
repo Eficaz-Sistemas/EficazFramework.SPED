@@ -8,13 +8,13 @@ Tabela de Natureza da Operação/Prestação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoNaturezaOperacao |  |
-| 03 | DescricaoNaturezaOperacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoNaturezaOperacao | `String` |  |
+| 03 | DescricaoNaturezaOperacao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,12 +4,12 @@
 ## ReferenciaDocFiscal Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Item |  |
-| 03 | TipoReferencia |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Item | `Object` |  |
+| 03 | TipoReferencia | `TipoDocumentoReferencia` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

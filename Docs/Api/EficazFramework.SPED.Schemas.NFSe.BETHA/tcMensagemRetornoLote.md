@@ -4,25 +4,25 @@
 ## tcMensagemRetornoLote Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoRps |  |
-| 03 | Codigo |  |
-| 04 | Mensagem |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoRps | `tcIdentificacaoRps` |  |
+| 03 | Codigo | `String` |  |
+| 04 | Mensagem | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcMensagemRetornoLote, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcMensagemRetornoLote) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcMensagemRetornoLote, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcMensagemRetornoLote) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcMensagemRetornoLote, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcMensagemRetornoLote) | `Boolean` |  |
+| Deserialize(string) | `tcMensagemRetornoLote` |  |
+| Deserialize(Stream) | `tcMensagemRetornoLote` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcMensagemRetornoLote, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcMensagemRetornoLote) | `Boolean` |  |
+| LoadFrom(Stream) | `tcMensagemRetornoLote` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcMensagemRetornoLote>` |  |

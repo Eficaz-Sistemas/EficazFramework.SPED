@@ -8,45 +8,45 @@ Documento - Nota Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoOperacao |  |
-| 03 | IndicadorEmitenteDocFiscal |  |
-| 04 | CodigoParticipante |  |
-| 05 | CodigoModeloDocFiscal |  |
-| 06 | CodigoSituacaoDocFiscal |  |
-| 07 | SerieDocFiscal |  |
-| 08 | NumeroDocFiscal |  |
-| 09 | ChaveNFeDocFiscal |  |
-| 10 | DataEmissaoDocFiscal |  |
-| 11 | DataEntradaSaida |  |
-| 12 | VrTotalDocFiscal |  |
-| 13 | IndicadorTipoPagamento |  |
-| 14 | VrTotalDesconto |  |
-| 15 | VrAbatimentoNT |  |
-| 16 | VrTotalMercadorias |  |
-| 17 | IndicadorTipoFrete |  |
-| 18 | VrFrete |  |
-| 19 | VrSeguro |  |
-| 20 | VrOutrasDespesas |  |
-| 21 | VrBaseCalculoICMS |  |
-| 22 | VrICMS |  |
-| 23 | VrBaseCalculoICMSST |  |
-| 24 | VrICMSST |  |
-| 25 | VrIPI |  |
-| 26 | VrPIS |  |
-| 27 | VrCOFINS |  |
-| 28 | VrPISST |  |
-| 29 | VrCOFINSST |  |
-| 30 | RegistrosC110 |  |
-| 31 | RegistrosC111 |  |
-| 32 | RegistrosC120 |  |
-| 33 | RegistrosC170 |  |
-| 34 | RegistrosC175 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoOperacao | `OperacaoNFe` |  |
+| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | CodigoModeloDocFiscal | `String` |  |
+| 06 | CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
+| 07 | SerieDocFiscal | `String` |  |
+| 08 | NumeroDocFiscal | `String` |  |
+| 09 | ChaveNFeDocFiscal | `String` |  |
+| 10 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| 11 | DataEntradaSaida | `Nullable<DateTime>` |  |
+| 12 | VrTotalDocFiscal | `Nullable<Double>` |  |
+| 13 | IndicadorTipoPagamento | `IndicadorPagamento` |  |
+| 14 | VrTotalDesconto | `Nullable<Double>` |  |
+| 15 | VrAbatimentoNT | `Nullable<Double>` |  |
+| 16 | VrTotalMercadorias | `Nullable<Double>` |  |
+| 17 | IndicadorTipoFrete | `IndicadorFrete` |  |
+| 18 | VrFrete | `Nullable<Double>` |  |
+| 19 | VrSeguro | `Nullable<Double>` |  |
+| 20 | VrOutrasDespesas | `Nullable<Double>` |  |
+| 21 | VrBaseCalculoICMS | `Nullable<Double>` |  |
+| 22 | VrICMS | `Nullable<Double>` |  |
+| 23 | VrBaseCalculoICMSST | `Nullable<Double>` |  |
+| 24 | VrICMSST | `Nullable<Double>` |  |
+| 25 | VrIPI | `Nullable<Double>` |  |
+| 26 | VrPIS | `Nullable<Double>` |  |
+| 27 | VrCOFINS | `Nullable<Double>` |  |
+| 28 | VrPISST | `Nullable<Double>` |  |
+| 29 | VrCOFINSST | `Nullable<Double>` |  |
+| 30 | RegistrosC110 | `List<RegistroC110>` |  |
+| 31 | RegistrosC111 | `List<RegistroC111>` |  |
+| 32 | RegistrosC120 | `List<RegistroC120>` |  |
+| 33 | RegistrosC170 | `List<RegistroC170>` |  |
+| 34 | RegistrosC175 | `List<RegistroC175>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
-| DocumentoValido() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |
+| DocumentoValido() | `Boolean` |  |

@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InformacoesInutilizacao |  |
-| 03 | Signature |  |
-| 04 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InformacoesInutilizacao | `InformacoesInutilizacaoNFe` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | versao | `String` |  |

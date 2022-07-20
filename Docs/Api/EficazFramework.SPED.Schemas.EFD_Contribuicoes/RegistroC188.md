@@ -8,13 +8,13 @@ Detalhamento da Consolidação - Operações de Vendas - Cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroProcesso |  |
-| 03 | IndicadorOrigemProcesso |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroProcesso | `String` |  |
+| 03 | IndicadorOrigemProcesso | `IndicadorOrigemProcesso` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

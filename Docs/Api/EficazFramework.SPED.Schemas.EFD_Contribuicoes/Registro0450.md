@@ -8,13 +8,13 @@ Tabela de Informação Complementar do Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoComplementarDocumentoFiscal |  |
-| 03 | TextoComplementarDocFiscal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoComplementarDocumentoFiscal | `String` |  |
+| 03 | TextoComplementarDocFiscal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,6 +4,6 @@
 ## TDadosEstabInfoTrabInfoAprInfoEntEduc Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrInsc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrInsc | `String` |  |

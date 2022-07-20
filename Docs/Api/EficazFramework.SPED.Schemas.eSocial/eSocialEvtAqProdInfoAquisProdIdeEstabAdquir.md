@@ -4,8 +4,8 @@
 ## eSocialEvtAqProdInfoAquisProdIdeEstabAdquir Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscAdq |  |
-| 03 | nrInscAdq |  |
-| 04 | tpAquis |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscAdq | `PersonalidadeJuridica` |  |
+| 03 | nrInscAdq | `String` |  |
+| 04 | tpAquis | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquis[]` |  |

@@ -4,24 +4,24 @@
 ## InformacaoEventoRetorno Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Ambiente |  |
-| 03 | VersaoAplicativo |  |
-| 04 | Orgao |  |
-| 05 | RespostaCodigo |  |
-| 06 | RespostaDescricao |  |
-| 07 | ChaveNFe |  |
-| 08 | EventoCodigo |  |
-| 09 | EventoNumeroSequencial |  |
-| 10 | EventoDataRegistro |  |
-| 11 | EventoDataRegistro_XML |  |
-| 12 | Protocolo |  |
-| 13 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Ambiente | `Ambiente` |  |
+| 03 | VersaoAplicativo | `String` |  |
+| 04 | Orgao | `OrgaoIBGE` |  |
+| 05 | RespostaCodigo | `String` |  |
+| 06 | RespostaDescricao | `String` |  |
+| 07 | ChaveNFe | `String` |  |
+| 08 | EventoCodigo | `CodigoEvento` |  |
+| 09 | EventoNumeroSequencial | `String` |  |
+| 10 | EventoDataRegistro | `Nullable<DateTime>` |  |
+| 11 | EventoDataRegistro_XML | `String` |  |
+| 12 | Protocolo | `String` |  |
+| 13 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
-| Regenerate_ID() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |
+| Regenerate_ID() | `Void` |  |

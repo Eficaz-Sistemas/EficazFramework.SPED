@@ -6,12 +6,12 @@
 Encerramento do Arquivo Eletrônico
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | TotalLinhas | Total de Linhas do Arquivo |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | TotalLinhas | `Nullable<Int32>` | Total de Linhas do Arquivo |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

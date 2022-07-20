@@ -6,19 +6,19 @@
 Registro Trailer de Lote de Serviço: Pagamentos de Tributos sem Código de Barras e FGTS/GRRF
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | QuantidadeRegistros |  |
-| 05 | TotalValorPrincipal |  |
-| 06 | TotalOutrasEntidades |  |
-| 07 | TotalAcrescimos |  |
-| 08 | TotalValorArrecadado |  |
-| 09 | Ocorrencias |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | QuantidadeRegistros | `Nullable<Int32>` |  |
+| 05 | TotalValorPrincipal | `Nullable<Double>` |  |
+| 06 | TotalOutrasEntidades | `Nullable<Double>` |  |
+| 07 | TotalAcrescimos | `Nullable<Double>` |  |
+| 08 | TotalValorArrecadado | `Nullable<Double>` |  |
+| 09 | Ocorrencias | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,15 +8,15 @@ Detalhes do Balancete Diário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodContaAnalitica |  |
-| 03 | CodCentroCusto |  |
-| 04 | TotalDebitos |  |
-| 05 | TotalCreditos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodContaAnalitica | `String` |  |
+| 03 | CodCentroCusto | `String` |  |
+| 04 | TotalDebitos | `Nullable<Double>` |  |
+| 05 | TotalCreditos | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

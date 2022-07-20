@@ -8,13 +8,13 @@ REGISTRO C111: PROCESSO REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Ident_Proc_AtoConcessorio |  |
-| 03 | Ind_Origem_Processo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Ident_Proc_AtoConcessorio | `String` |  |
+| 03 | Ind_Origem_Processo | `IndicadorOrigemProcesso` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

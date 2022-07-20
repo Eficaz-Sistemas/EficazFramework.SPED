@@ -4,18 +4,18 @@
 ## tcDadosServico Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Valores |  |
-| 03 | IssRetido | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
-| 04 | ItemListaServico |  |
-| 05 | CodigoCnae |  |
-| 06 | CodigoCnaeSpecified |  |
-| 07 | CodigoTributacaoMunicipio |  |
-| 08 | Discriminacao |  |
-| 09 | CodigoMunicipio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Valores | `tcValores` |  |
+| 03 | IssRetido | `Int32` | ATENÇÃO: Disponível apenas no padrão ABRASF. Outros layoutes retornarão NULL |
+| 04 | ItemListaServico | `String` |  |
+| 05 | CodigoCnae | `Int32` |  |
+| 06 | CodigoCnaeSpecified | `Boolean` |  |
+| 07 | CodigoTributacaoMunicipio | `String` |  |
+| 08 | Discriminacao | `String` |  |
+| 09 | CodigoMunicipio | `Int32` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,23 +4,23 @@
 ## Emitente Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Logo |  |
-| 03 | CNPJ_CPF |  |
-| 04 | EmitentePersonalidadeJuridica |  |
-| 05 | RazaoSocial |  |
-| 06 | CNPJ_CPFFormatado |  |
-| 07 | NomeFantasia |  |
-| 08 | Endereco |  |
-| 09 | InscricaoEstadual |  |
-| 10 | IEFormatado |  |
-| 11 | InscricaoEstadualST |  |
-| 12 | InscricaoMunicipal |  |
-| 13 | CNAE |  |
-| 14 | RegimeTributario |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Logo | `Byte[]` |  |
+| 03 | CNPJ_CPF | `String` |  |
+| 04 | EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| 05 | RazaoSocial | `String` |  |
+| 06 | CNPJ_CPFFormatado | `String` |  |
+| 07 | NomeFantasia | `String` |  |
+| 08 | Endereco | `Endereco` |  |
+| 09 | InscricaoEstadual | `String` |  |
+| 10 | IEFormatado | `String` |  |
+| 11 | InscricaoEstadualST | `String` |  |
+| 12 | InscricaoMunicipal | `String` |  |
+| 13 | CNAE | `String` |  |
+| 14 | RegimeTributario | `RegimeTributario` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

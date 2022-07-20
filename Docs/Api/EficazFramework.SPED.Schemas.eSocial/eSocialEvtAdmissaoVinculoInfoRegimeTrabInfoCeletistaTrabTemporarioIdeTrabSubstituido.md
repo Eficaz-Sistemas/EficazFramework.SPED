@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cpfTrabSubst |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cpfTrabSubst | `String` |  |

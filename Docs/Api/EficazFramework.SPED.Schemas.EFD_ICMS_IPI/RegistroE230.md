@@ -8,16 +8,16 @@ Informações Adicionais do Ajuste da Apuração do ICMS ST
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroDocArrecadacao |  |
-| 03 | NumeroProcessoRef | Número do Processo Referenciado. 15 dígitos |
-| 04 | OrigemProcessoRef |  |
-| 05 | DescricaoProcessoRef |  |
-| 06 | DescricaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroDocArrecadacao | `String` |  |
+| 03 | NumeroProcessoRef | `String` | Número do Processo Referenciado. 15 dígitos |
+| 04 | OrigemProcessoRef | `IndicadorOrigemProcesso` |  |
+| 05 | DescricaoProcessoRef | `String` |  |
+| 06 | DescricaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

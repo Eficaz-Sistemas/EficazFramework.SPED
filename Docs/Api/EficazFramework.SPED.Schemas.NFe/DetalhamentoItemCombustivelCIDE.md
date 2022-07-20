@@ -4,13 +4,13 @@
 ## DetalhamentoItemCombustivelCIDE Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | qBCProd |  |
-| 03 | vAliqProd |  |
-| 04 | vCIDE |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | qBCProd | `String` |  |
+| 03 | vAliqProd | `Nullable<Double>` |  |
+| 04 | vCIDE | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

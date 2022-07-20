@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Item |  |
-| 03 | ItemElementName |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Item | `String` |  |
+| 03 | ItemElementName | `DescontoAcredimo` |  |

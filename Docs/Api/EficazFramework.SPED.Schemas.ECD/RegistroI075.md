@@ -8,13 +8,13 @@ Tabela de Histórico Padronizado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodHistPadronizado |  |
-| 03 | DescHistPadronizado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodHistPadronizado | `String` |  |
+| 03 | DescHistPadronizado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

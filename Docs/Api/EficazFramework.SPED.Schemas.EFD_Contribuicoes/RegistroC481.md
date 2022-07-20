@@ -8,20 +8,20 @@ Resumo Diário de Documentos Emitidos Por ECF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTPis |  |
-| 03 | ValorTotalItens |  |
-| 04 | ValorBCPis |  |
-| 05 | AliquotaPis |  |
-| 06 | QtdeBCPis |  |
-| 07 | AliquotaPISQtde |  |
-| 08 | ValorPIS |  |
-| 09 | CodigoItem |  |
-| 10 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTPis | `String` |  |
+| 03 | ValorTotalItens | `Nullable<Double>` |  |
+| 04 | ValorBCPis | `Nullable<Double>` |  |
+| 05 | AliquotaPis | `Nullable<Double>` |  |
+| 06 | QtdeBCPis | `Nullable<Double>` |  |
+| 07 | AliquotaPISQtde | `Nullable<Double>` |  |
+| 08 | ValorPIS | `Nullable<Double>` |  |
+| 09 | CodigoItem | `String` |  |
+| 10 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

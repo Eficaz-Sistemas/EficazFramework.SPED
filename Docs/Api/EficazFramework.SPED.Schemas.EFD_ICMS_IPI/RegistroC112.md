@@ -8,18 +8,18 @@ REGISTRO C112: DOCUMENTO DE ARRECADAÇÃO REFERENCIADO.
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Codigo_Modelo_Doc_Arrec |  |
-| 03 | UF |  |
-| 04 | Numero |  |
-| 05 | Cod_Autent_Bancaria |  |
-| 06 | Vr_Doc_Arrec |  |
-| 07 | Data_Vecto |  |
-| 08 | Data_Pgto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Codigo_Modelo_Doc_Arrec | `CodigoModeloDocArrec` |  |
+| 03 | UF | `String` |  |
+| 04 | Numero | `String` |  |
+| 05 | Cod_Autent_Bancaria | `String` |  |
+| 06 | Vr_Doc_Arrec | `Nullable<Double>` |  |
+| 07 | Data_Vecto | `Nullable<DateTime>` |  |
+| 08 | Data_Pgto | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

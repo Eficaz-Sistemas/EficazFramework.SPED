@@ -8,12 +8,12 @@ Identificação do Estabelecimento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroInscricaoEstabelecimentoCNPJ |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroInscricaoEstabelecimentoCNPJ | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

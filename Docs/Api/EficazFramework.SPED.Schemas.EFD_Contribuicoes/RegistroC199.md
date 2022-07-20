@@ -8,16 +8,16 @@ Complemento do Documento - Operações de Importação (Código 55)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DocumentoImportacao |  |
-| 03 | NumeroDocumentoImportacao |  |
-| 04 | VrPagoPisImportacao |  |
-| 05 | VrPagoCofinsImportacao |  |
-| 06 | NumeroAtoConcessorioDrawBack |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DocumentoImportacao | `DocumentoImportacao` |  |
+| 03 | NumeroDocumentoImportacao | `String` |  |
+| 04 | VrPagoPisImportacao | `Nullable<Double>` |  |
+| 05 | VrPagoCofinsImportacao | `Nullable<Double>` |  |
+| 06 | NumeroAtoConcessorioDrawBack | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

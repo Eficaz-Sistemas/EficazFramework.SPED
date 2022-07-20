@@ -4,13 +4,13 @@
 ## tcCpfCnpj Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Identificador |  |
-| 03 | IdentificadorFormatado |  |
-| 04 | ItemElementName |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Identificador | `String` |  |
+| 03 | IdentificadorFormatado | `String` |  |
+| 04 | ItemElementName | `PersonalidadeJuridica` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

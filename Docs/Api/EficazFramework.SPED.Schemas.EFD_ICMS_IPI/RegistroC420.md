@@ -8,19 +8,19 @@ Registro Totalizador Parcial da Redução Z
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoTotalizador |  |
-| 03 | ValorAcumulado |  |
-| 04 | Numero | Número do totalizador quando ocorrer mais de uma situação com a mesma carga tributária efetiva. |
-| 05 | Descricao |  |
-| 06 | TipoRegistro |  |
-| 07 | CompoeValorContabil |  |
-| 08 | AliquotaEfetiva |  |
-| 09 | RegistrosC425 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoTotalizador | `String` |  |
+| 03 | ValorAcumulado | `Nullable<Double>` |  |
+| 04 | Numero | `Nullable<Int32>` | Número do totalizador quando ocorrer mais de uma situação com a mesma carga tributária efetiva. |
+| 05 | Descricao | `String` |  |
+| 06 | TipoRegistro | `TipoC420` |  |
+| 07 | CompoeValorContabil | `Boolean` |  |
+| 08 | AliquotaEfetiva | `Double` |  |
+| 09 | RegistrosC425 | `List<RegistroC425>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

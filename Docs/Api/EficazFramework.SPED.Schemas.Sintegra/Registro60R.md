@@ -8,18 +8,18 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Competencia |  |
-| 03 | CodigoProduto |  |
-| 04 | Quantidade |  |
-| 05 | ValorLiquido |  |
-| 06 | BaseCalculo |  |
-| 07 | SituacaoTributariaAliquota |  |
-| 08 | Brancos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Competencia | `Nullable<DateTime>` |  |
+| 03 | CodigoProduto | `String` |  |
+| 04 | Quantidade | `Nullable<Double>` |  |
+| 05 | ValorLiquido | `Nullable<Double>` |  |
+| 06 | BaseCalculo | `Nullable<Double>` |  |
+| 07 | SituacaoTributariaAliquota | `String` |  |
+| 08 | Brancos | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

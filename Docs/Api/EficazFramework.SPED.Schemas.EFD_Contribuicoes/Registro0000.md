@@ -8,25 +8,25 @@ Abertura do Arquivo Digital e Identificação da entidade
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | TipoEscrit |  |
-| 03 | SituacaoEspecial |  |
-| 04 | NumeroReciboAnterior |  |
-| 05 | DataInicial |  |
-| 06 | DataFinal |  |
-| 07 | NomeEmpresarial |  |
-| 08 | NumeroCnpj |  |
-| 09 | UF |  |
-| 10 | CodigoMunicipio |  |
-| 11 | Suframa |  |
-| 12 | IndicadorNaturezaPJ |  |
-| 13 | IndicadorTipoAtividadePreponderante |  |
-| 14 | Registro0001 |  |
-| 15 | Registro0990 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | TipoEscrit | `TipoEscritur` |  |
+| 03 | SituacaoEspecial | `SituacaoEspecial` |  |
+| 04 | NumeroReciboAnterior | `String` |  |
+| 05 | DataInicial | `Nullable<DateTime>` |  |
+| 06 | DataFinal | `Nullable<DateTime>` |  |
+| 07 | NomeEmpresarial | `String` |  |
+| 08 | NumeroCnpj | `String` |  |
+| 09 | UF | `String` |  |
+| 10 | CodigoMunicipio | `String` |  |
+| 11 | Suframa | `String` |  |
+| 12 | IndicadorNaturezaPJ | `IndicadorNaturezaPJ` |  |
+| 13 | IndicadorTipoAtividadePreponderante | `IndicadorTipoAtividadePreponderante` |  |
+| 14 | Registro0001 | `Registro0001` |  |
+| 15 | Registro0990 | `Registro0990` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

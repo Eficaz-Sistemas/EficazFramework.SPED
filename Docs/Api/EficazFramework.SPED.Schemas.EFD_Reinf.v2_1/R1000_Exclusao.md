@@ -4,6 +4,6 @@
 ## R1000_Exclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | idePeriodo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | idePeriodo | `ReinfEvtIdePeriodo` |  |

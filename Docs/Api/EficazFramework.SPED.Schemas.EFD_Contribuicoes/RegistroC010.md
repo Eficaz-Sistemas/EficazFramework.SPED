@@ -8,21 +8,21 @@ Identificação do Estabelecimento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroInscricaoEstabelecimentoCNPJ |  |
-| 03 | IndicadorApuracaoContribuicoes |  |
-| 04 | RegistrosC100 |  |
-| 05 | RegistrosC180 |  |
-| 06 | RegistrosC190 |  |
-| 07 | RegistrosC380 |  |
-| 08 | RegistrosC395 |  |
-| 09 | RegistrosC400 |  |
-| 10 | RegistrosC490 |  |
-| 11 | RegistrosC500 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroInscricaoEstabelecimentoCNPJ | `String` |  |
+| 03 | IndicadorApuracaoContribuicoes | `IndicadorApuracaoContribuicoes` |  |
+| 04 | RegistrosC100 | `List<RegistroC100>` |  |
+| 05 | RegistrosC180 | `List<RegistroC180>` |  |
+| 06 | RegistrosC190 | `List<RegistroC190>` |  |
+| 07 | RegistrosC380 | `List<RegistroC380>` |  |
+| 08 | RegistrosC395 | `List<RegistroC395>` |  |
+| 09 | RegistrosC400 | `List<RegistroC400>` |  |
+| 10 | RegistrosC490 | `List<RegistroC490>` |  |
+| 11 | RegistrosC500 | `List<RegistroC500>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

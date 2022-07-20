@@ -8,17 +8,17 @@ Código EAN/GTIN do produto
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Modo |  |
-| 03 | CodigoProduto |  |
-| 04 | Descricao |  |
-| 05 | UnidadeMedida |  |
-| 06 | EAN |  |
-| 07 | Brancos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Modo | `String` |  |
+| 03 | CodigoProduto | `String` |  |
+| 04 | Descricao | `String` |  |
+| 05 | UnidadeMedida | `String` |  |
+| 06 | EAN | `String` |  |
+| 07 | Brancos | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

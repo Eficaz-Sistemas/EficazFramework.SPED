@@ -4,15 +4,15 @@
 ## tcIdentificacaoNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero |  |
-| 03 | CodigoVerificacao |  |
-| 04 | Cnpj |  |
-| 05 | InscricaoMunicipal |  |
-| 06 | CodigoMunicipio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero | `String` |  |
+| 03 | CodigoVerificacao | `String` |  |
+| 04 | Cnpj | `String` |  |
+| 05 | InscricaoMunicipal | `String` |  |
+| 06 | CodigoMunicipio | `Int32` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

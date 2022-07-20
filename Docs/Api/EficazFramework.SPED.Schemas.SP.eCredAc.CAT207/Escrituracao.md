@@ -4,9 +4,9 @@
 ## Escrituracao Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ProcessaLinha(string) |  |
-| LeEmpresaArquivo(Stream) |  |
-| PrefixoBlocoEncerramento() |  |
-| SufixoBlocoEncerramento() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ProcessaLinha(string) | `Void` |  |
+| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| PrefixoBlocoEncerramento() | `Registro[]` |  |
+| SufixoBlocoEncerramento() | `Registro[]` |  |

@@ -6,17 +6,17 @@
 Registro Trailer de Lote de Serviço: Pagamentos de Contas de Concessionárias e Tributos com Código de Barras
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | QuantidadeRegistros |  |
-| 05 | ValorPagamentos |  |
-| 06 | ValorQuantidadeMoeda |  |
-| 07 | Ocorrencias |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | QuantidadeRegistros | `Nullable<Int32>` |  |
+| 05 | ValorPagamentos | `Nullable<Double>` |  |
+| 06 | ValorQuantidadeMoeda | `Nullable<Double>` |  |
+| 07 | Ocorrencias | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

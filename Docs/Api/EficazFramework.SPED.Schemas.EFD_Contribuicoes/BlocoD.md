@@ -8,7 +8,7 @@ Documentos Fiscais II - Serviços (ICMS)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | RegistroD001 |  |
-| 03 | RegistroD010 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | RegistroD001 | `RegistroD001` |  |
+| 03 | RegistroD010 | `RegistroD010` |  |

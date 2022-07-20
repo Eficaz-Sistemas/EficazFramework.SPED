@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace EficazFrameworkCore.SPED.Schemas.EFD_ICMS_IPI;
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
-internal class Bloco0
+public class Bloco0 : Tests.BaseTest
 {
 
     [Test]

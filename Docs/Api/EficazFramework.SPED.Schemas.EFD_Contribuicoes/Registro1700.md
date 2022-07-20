@@ -8,18 +8,18 @@ Controle dos valores retidos da fonte - Cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorNaturezaRetFonte |  |
-| 03 | PeriodoRecebRetencao |  |
-| 04 | VrTotalRetencao |  |
-| 05 | VrRetencaoDedContrDevidaPerEscPerAnteriores |  |
-| 06 | VrRetencaoUtilPedRestituicao |  |
-| 07 | VrRetencaoUtilDeclaracaoComp |  |
-| 08 | SaldoRetencaoPerApFuturos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorNaturezaRetFonte | `IndicadorNatRetFonte` |  |
+| 03 | PeriodoRecebRetencao | `Nullable<DateTime>` |  |
+| 04 | VrTotalRetencao | `Nullable<Double>` |  |
+| 05 | VrRetencaoDedContrDevidaPerEscPerAnteriores | `Nullable<Double>` |  |
+| 06 | VrRetencaoUtilPedRestituicao | `Nullable<Double>` |  |
+| 07 | VrRetencaoUtilDeclaracaoComp | `Nullable<Double>` |  |
+| 08 | SaldoRetencaoPerApFuturos | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

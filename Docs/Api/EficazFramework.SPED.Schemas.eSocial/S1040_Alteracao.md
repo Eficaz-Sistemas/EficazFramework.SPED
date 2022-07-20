@@ -4,8 +4,8 @@
 ## S1040_Alteracao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideFuncao |  |
-| 03 | dadosFuncao |  |
-| 04 | novaValidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideFuncao | `TIdeFuncao` |  |
+| 03 | dadosFuncao | `TDadosFuncao` |  |
+| 04 | novaValidade | `TIdePeriodo` |  |

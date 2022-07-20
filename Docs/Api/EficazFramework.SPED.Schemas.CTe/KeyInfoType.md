@@ -4,12 +4,12 @@
 ## KeyInfoType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | X509Data |  |
-| 03 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | X509Data | `X509DataType` |  |
+| 03 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

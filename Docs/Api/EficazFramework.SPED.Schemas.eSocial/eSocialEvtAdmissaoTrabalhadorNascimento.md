@@ -4,13 +4,13 @@
 ## eSocialEvtAdmissaoTrabalhadorNascimento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dtNascto |  |
-| 03 | codMunic |  |
-| 04 | uf |  |
-| 05 | ufSpecified |  |
-| 06 | paisNascto |  |
-| 07 | paisNac |  |
-| 08 | nmMae |  |
-| 09 | nmPai |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dtNascto | `DateTime` |  |
+| 03 | codMunic | `String` |  |
+| 04 | uf | `UFCadastro` |  |
+| 05 | ufSpecified | `Boolean` |  |
+| 06 | paisNascto | `String` |  |
+| 07 | paisNac | `String` |  |
+| 08 | nmMae | `String` |  |
+| 09 | nmPai | `String` |  |

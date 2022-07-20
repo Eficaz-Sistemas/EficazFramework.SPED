@@ -8,13 +8,13 @@ Operações Geradoras de Crédito Acumulado nas Fichas 6C ou 6D
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DeclaracaoExportacao |  |
-| 03 | OperacaoComprovada |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DeclaracaoExportacao | `String` |  |
+| 03 | OperacaoComprovada | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

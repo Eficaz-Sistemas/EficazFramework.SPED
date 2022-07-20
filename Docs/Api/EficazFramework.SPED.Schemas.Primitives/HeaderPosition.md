@@ -4,7 +4,7 @@
 ## HeaderPosition Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Index |  |
-| 03 | Lenght |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Index | `Int32` |  |
+| 03 | Lenght | `Int32` |  |

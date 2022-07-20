@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrProcJud |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrProcJud | `String` |  |

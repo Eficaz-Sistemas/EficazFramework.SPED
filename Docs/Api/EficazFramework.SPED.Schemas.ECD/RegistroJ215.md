@@ -8,15 +8,15 @@ Fato Contábil que Altera a Conta Lucros Acumulados ou a Conta Prejuízos Acumul
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoHistFatoContabil |  |
-| 03 | DescricaoFatoContabil |  |
-| 04 | VrFatoContabil |  |
-| 05 | IndicadorSitSaldoFatoContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoHistFatoContabil | `String` |  |
+| 03 | DescricaoFatoContabil | `String` |  |
+| 04 | VrFatoContabil | `Nullable<Double>` |  |
+| 05 | IndicadorSitSaldoFatoContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

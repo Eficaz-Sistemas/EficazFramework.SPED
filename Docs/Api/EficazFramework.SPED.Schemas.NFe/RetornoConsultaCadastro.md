@@ -4,25 +4,25 @@
 ## RetornoConsultaCadastro Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Informacoes |  |
-| 03 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Informacoes | `TRetConsCadInfCons` |  |
+| 03 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, RetornoConsultaCadastro, Exception) | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, RetornoConsultaCadastro) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveTo(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, RetornoConsultaCadastro, Exception) | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, RetornoConsultaCadastro) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
+| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
+| CanDeserialize(string, RetornoConsultaCadastro, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
+| CanDeserialize(string, RetornoConsultaCadastro) | `Boolean` |  |
+| Deserialize(string) | `RetornoConsultaCadastro` |  |
+| Deserialize(Stream) | `RetornoConsultaCadastro` |  |
+| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, RetornoConsultaCadastro, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
+| CanLoadFrom(Stream, RetornoConsultaCadastro) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `RetornoConsultaCadastro` |  |
+| LoadFromAsync(Stream, bool) | `Task<RetornoConsultaCadastro>` |  |

@@ -8,15 +8,15 @@ Transferência de Saldos de Plano de Contas Anterior
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodConta |  |
-| 03 | CodCentroCusto |  |
-| 04 | VrSaldoInicialPeriodo |  |
-| 05 | IndicadorSituacaoSaldoInicial |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodConta | `String` |  |
+| 03 | CodCentroCusto | `String` |  |
+| 04 | VrSaldoInicialPeriodo | `Nullable<Double>` |  |
+| 05 | IndicadorSituacaoSaldoInicial | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

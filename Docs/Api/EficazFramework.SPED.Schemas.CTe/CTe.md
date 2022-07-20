@@ -4,28 +4,28 @@
 ## CTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Informacoes |  |
-| 03 | Signature |  |
-| 04 | DocumentType |  |
-| 05 | DataEmissao |  |
-| 06 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Informacoes | `InformacoesCTe` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | DocumentType | `XMLDocumentType` |  |
+| 05 | DataEmissao | `Nullable<DateTime>` |  |
+| 06 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, CTe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, CTe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, CTe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, CTe) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, CTe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, CTe) | `Boolean` |  |
+| Deserialize(string) | `CTe` |  |
+| Deserialize(Stream) | `CTe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, CTe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, CTe) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `CTe` |  |
+| LoadFromAsync(Stream) | `Task<CTe>` |  |
+| LoadFromAsync(Stream, bool) | `Task<CTe>` |  |

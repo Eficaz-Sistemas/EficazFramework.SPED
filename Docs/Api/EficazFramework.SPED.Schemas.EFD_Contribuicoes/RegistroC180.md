@@ -8,21 +8,21 @@ Consolidação de Notas Fiscais Eletrônicas Emitidas Pela Pessoa Jurídica - C�
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocumento |  |
-| 03 | DataEmissaoInicialDocs |  |
-| 04 | DataEmissaoFinalDocs |  |
-| 05 | CodigoItem |  |
-| 06 | CodigoNCM |  |
-| 07 | CodigoEXTipi |  |
-| 08 | VrTotalItem |  |
-| 09 | RegistrosC181 |  |
-| 10 | RegistrosC185 |  |
-| 11 | RegistrosC188 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocumento | `String` |  |
+| 03 | DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
+| 04 | DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
+| 05 | CodigoItem | `String` |  |
+| 06 | CodigoNCM | `String` |  |
+| 07 | CodigoEXTipi | `String` |  |
+| 08 | VrTotalItem | `Nullable<Double>` |  |
+| 09 | RegistrosC181 | `List<RegistroC181>` |  |
+| 10 | RegistrosC185 | `List<RegistroC185>` |  |
+| 11 | RegistrosC188 | `List<RegistroC188>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

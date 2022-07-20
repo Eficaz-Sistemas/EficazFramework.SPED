@@ -8,24 +8,24 @@ Dados do Contabilista
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Nome |  |
-| 03 | CPF |  |
-| 04 | CRC |  |
-| 05 | CNPJ |  |
-| 06 | CEP |  |
-| 07 | Endereco |  |
-| 08 | Numero |  |
-| 09 | Complemento |  |
-| 10 | Bairro |  |
-| 11 | Fone |  |
-| 12 | Fax |  |
-| 13 | eMail |  |
-| 14 | CodigoMunicipio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Nome | `String` |  |
+| 03 | CPF | `String` |  |
+| 04 | CRC | `String` |  |
+| 05 | CNPJ | `String` |  |
+| 06 | CEP | `String` |  |
+| 07 | Endereco | `String` |  |
+| 08 | Numero | `String` |  |
+| 09 | Complemento | `String` |  |
+| 10 | Bairro | `String` |  |
+| 11 | Fone | `String` |  |
+| 12 | Fax | `String` |  |
+| 13 | eMail | `String` |  |
+| 14 | CodigoMunicipio | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

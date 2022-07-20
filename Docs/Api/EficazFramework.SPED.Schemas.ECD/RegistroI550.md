@@ -8,16 +8,16 @@ Detalhes do Livro Razão Auxiliar com Leiaute Parametrizável
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodProduto |  |
-| 03 | DescricaoProduto |  |
-| 04 | QtdeProduto |  |
-| 05 | VrUnitario |  |
-| 06 | VrTotal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodProduto | `String` |  |
+| 03 | DescricaoProduto | `String` |  |
+| 04 | QtdeProduto | `Nullable<Double>` |  |
+| 05 | VrUnitario | `Nullable<Double>` |  |
+| 06 | VrTotal | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

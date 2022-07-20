@@ -4,16 +4,16 @@
 ## DetalhamentoISSQN Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vBC |  |
-| 03 | vAliq |  |
-| 04 | vISSQN |  |
-| 05 | cMunFG |  |
-| 06 | cListServ |  |
-| 07 | cSitTrib |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vBC | `Nullable<Double>` |  |
+| 03 | vAliq | `Nullable<Double>` |  |
+| 04 | vISSQN | `Nullable<Double>` |  |
+| 05 | cMunFG | `String` |  |
+| 06 | cListServ | `String` |  |
+| 07 | cSitTrib | `CST_ISSQN` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

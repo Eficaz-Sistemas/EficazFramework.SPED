@@ -4,11 +4,11 @@
 ## IeSocialEvt Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| DefineSerializer() |  |
-| GeraEventoID() |  |
-| GetEventoID() |  |
-| ContribuinteCNPJ() |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| SaveToAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| DefineSerializer() | `XmlSerializer` |  |
+| GeraEventoID() | `Void` |  |
+| GetEventoID() | `Object` |  |
+| ContribuinteCNPJ() | `String` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| SaveToAsync(Stream) | `Task` |  |

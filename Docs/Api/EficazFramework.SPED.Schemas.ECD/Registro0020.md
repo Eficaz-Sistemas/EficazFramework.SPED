@@ -8,18 +8,18 @@ Escrituração Contábil Descentralizada
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorDescentralizacao |  |
-| 03 | CNPJ |  |
-| 04 | UF |  |
-| 05 | InscEstadual |  |
-| 06 | CodigoMunicipal |  |
-| 07 | InscMunicipal |  |
-| 08 | Nire |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorDescentralizacao | `IndicadorDescentralizacao` |  |
+| 03 | CNPJ | `String` |  |
+| 04 | UF | `String` |  |
+| 05 | InscEstadual | `String` |  |
+| 06 | CodigoMunicipal | `String` |  |
+| 07 | InscMunicipal | `String` |  |
+| 08 | Nire | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

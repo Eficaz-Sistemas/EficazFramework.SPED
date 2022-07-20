@@ -29,13 +29,13 @@ um registro 0221 filho com COD_ITEM_ATOMICO igual ao COD_ITEM do 0200 do exemplo
 “12”.
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoItemAtomico |  |
-| 03 | QuantidadeContida |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoItemAtomico | `String` |  |
+| 03 | QuantidadeContida | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

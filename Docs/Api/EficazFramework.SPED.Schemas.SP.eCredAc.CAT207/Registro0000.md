@@ -8,20 +8,20 @@ Abertura do Arquivo Digital e Identificação do Contribuinte
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VersaoLayout |  |
-| 03 | Finalidade |  |
-| 04 | Periodo |  |
-| 05 | RazaoSocial |  |
-| 06 | CNPJ |  |
-| 07 | InscricaoEstadual |  |
-| 08 | CNAE |  |
-| 09 | CodigoMunicipio |  |
-| 10 | IE_SP_GeradorCredito_Notificado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VersaoLayout | `VersaoLayout` |  |
+| 03 | Finalidade | `Finalidade` |  |
+| 04 | Periodo | `Nullable<DateTime>` |  |
+| 05 | RazaoSocial | `String` |  |
+| 06 | CNPJ | `String` |  |
+| 07 | InscricaoEstadual | `String` |  |
+| 08 | CNAE | `String` |  |
+| 09 | CodigoMunicipio | `String` |  |
+| 10 | IE_SP_GeradorCredito_Notificado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

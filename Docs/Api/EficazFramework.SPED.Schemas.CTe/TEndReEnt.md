@@ -4,20 +4,20 @@
 ## TEndReEnt Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PersonalidadeJuridica7 |  |
-| 03 | CNPJ_CPF |  |
-| 04 | xNome |  |
-| 05 | xLgr |  |
-| 06 | nro |  |
-| 07 | xCpl |  |
-| 08 | xBairro |  |
-| 09 | cMun |  |
-| 10 | xMun |  |
-| 11 | UF |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| 03 | CNPJ_CPF | `String` |  |
+| 04 | xNome | `String` |  |
+| 05 | xLgr | `String` |  |
+| 06 | nro | `String` |  |
+| 07 | xCpl | `String` |  |
+| 08 | xBairro | `String` |  |
+| 09 | cMun | `String` |  |
+| 10 | xMun | `String` |  |
+| 11 | UF | `Estado` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

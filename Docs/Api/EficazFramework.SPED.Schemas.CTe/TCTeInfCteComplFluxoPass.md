@@ -4,11 +4,11 @@
 ## TCTeInfCteComplFluxoPass Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xPass |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xPass | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

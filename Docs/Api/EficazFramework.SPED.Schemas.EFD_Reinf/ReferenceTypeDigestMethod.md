@@ -4,11 +4,11 @@
 ## ReferenceTypeDigestMethod Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Algorithm |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Algorithm | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

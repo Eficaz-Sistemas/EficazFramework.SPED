@@ -8,21 +8,21 @@ Signatários do Termo de Verificação para Fins de Substituição da ECD
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NomeSignatario |  |
-| 03 | CPFOuCNPJ |  |
-| 04 | QualificacaoAssinante |  |
-| 05 | CodigodeQualificacaoAssinante |  |
-| 06 | NumeroInscCRC |  |
-| 07 | EmailSignatario |  |
-| 08 | Fone |  |
-| 09 | UFCRC |  |
-| 10 | NumSequencialCRC |  |
-| 11 | DataValidCRC |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NomeSignatario | `String` |  |
+| 03 | CPFOuCNPJ | `String` |  |
+| 04 | QualificacaoAssinante | `String` |  |
+| 05 | CodigodeQualificacaoAssinante | `String` |  |
+| 06 | NumeroInscCRC | `String` |  |
+| 07 | EmailSignatario | `String` |  |
+| 08 | Fone | `String` |  |
+| 09 | UFCRC | `String` |  |
+| 10 | NumSequencialCRC | `String` |  |
+| 11 | DataValidCRC | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

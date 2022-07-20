@@ -8,28 +8,28 @@ Operações da atividade imobiliária - custo incorrido da unidade imobiliária
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrCustoIncorridoAcumAnt |  |
-| 03 | VrCustoIncorridoPeriodoEscrituracao |  |
-| 04 | VrCustoIncorridoAcum |  |
-| 05 | VrExcluidoBcCustoAcumPeriodo |  |
-| 06 | VrBcCustoIncorridoAcumPeriodo |  |
-| 07 | CSTPis |  |
-| 08 | AliqPis |  |
-| 09 | VrCredPisAcum |  |
-| 10 | VrCredPisDescAnterior |  |
-| 11 | VrCredPisDescPeriodoEscrit |  |
-| 12 | VrCredPisDescPeriodosFuturos |  |
-| 13 | CSTCofins |  |
-| 14 | AliqCofins |  |
-| 15 | VrCredCofinsAcum |  |
-| 16 | VrCredCofinsDescAnterior |  |
-| 17 | VrCredCofinsDescPeriodoEscrit |  |
-| 18 | VrCredCofinsDescPeriodosFuturos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrCustoIncorridoAcumAnt | `Nullable<Double>` |  |
+| 03 | VrCustoIncorridoPeriodoEscrituracao | `Nullable<Double>` |  |
+| 04 | VrCustoIncorridoAcum | `Nullable<Double>` |  |
+| 05 | VrExcluidoBcCustoAcumPeriodo | `Nullable<Double>` |  |
+| 06 | VrBcCustoIncorridoAcumPeriodo | `Nullable<Double>` |  |
+| 07 | CSTPis | `String` |  |
+| 08 | AliqPis | `Nullable<Double>` |  |
+| 09 | VrCredPisAcum | `Nullable<Double>` |  |
+| 10 | VrCredPisDescAnterior | `Nullable<Double>` |  |
+| 11 | VrCredPisDescPeriodoEscrit | `Nullable<Double>` |  |
+| 12 | VrCredPisDescPeriodosFuturos | `Nullable<Double>` |  |
+| 13 | CSTCofins | `String` |  |
+| 14 | AliqCofins | `Nullable<Double>` |  |
+| 15 | VrCredCofinsAcum | `Nullable<Double>` |  |
+| 16 | VrCredCofinsDescAnterior | `Nullable<Double>` |  |
+| 17 | VrCredCofinsDescPeriodoEscrit | `Nullable<Double>` |  |
+| 18 | VrCredCofinsDescPeriodosFuturos | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

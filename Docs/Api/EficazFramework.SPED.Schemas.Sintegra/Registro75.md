@@ -8,21 +8,21 @@ Dados do produto ou serviço
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicial |  |
-| 03 | DataFinal |  |
-| 04 | CodigoProduto |  |
-| 05 | CodigoNCM |  |
-| 06 | Descricao |  |
-| 07 | UnidadeMedida |  |
-| 08 | AliquotaIPI |  |
-| 09 | AliquotaICMS |  |
-| 10 | ReducaoBaseCalculoPercentual |  |
-| 11 | BaseCalculoICMSST |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicial | `Nullable<DateTime>` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | CodigoProduto | `String` |  |
+| 05 | CodigoNCM | `String` |  |
+| 06 | Descricao | `String` |  |
+| 07 | UnidadeMedida | `String` |  |
+| 08 | AliquotaIPI | `Nullable<Double>` |  |
+| 09 | AliquotaICMS | `Nullable<Double>` |  |
+| 10 | ReducaoBaseCalculoPercentual | `Nullable<Double>` |  |
+| 11 | BaseCalculoICMSST | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

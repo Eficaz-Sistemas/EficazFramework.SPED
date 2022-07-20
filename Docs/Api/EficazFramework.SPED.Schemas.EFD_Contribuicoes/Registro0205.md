@@ -8,15 +8,15 @@ Alteração do Item
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DescricaoItemAnterior |  |
-| 03 | DataInicial |  |
-| 04 | Datafinal |  |
-| 05 | CodigoItemAnterior |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DescricaoItemAnterior | `String` |  |
+| 03 | DataInicial | `Nullable<DateTime>` |  |
+| 04 | Datafinal | `Nullable<DateTime>` |  |
+| 05 | CodigoItemAnterior | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

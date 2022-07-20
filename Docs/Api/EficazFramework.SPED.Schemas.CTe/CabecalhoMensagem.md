@@ -4,24 +4,24 @@
 ## CabecalhoMensagem Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cUF |  |
-| 03 | versaoDados |  |
-| 04 | RootNamespace |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cUF | `String` |  |
+| 03 | versaoDados | `String` |  |
+| 04 | RootNamespace | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, CabecalhoMensagem, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, CabecalhoMensagem) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, CabecalhoMensagem, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, CabecalhoMensagem) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, CabecalhoMensagem, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, CabecalhoMensagem) | `Boolean` |  |
+| Deserialize(string) | `CabecalhoMensagem` |  |
+| Deserialize(Stream) | `CabecalhoMensagem` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, CabecalhoMensagem, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, CabecalhoMensagem) | `Boolean` |  |
+| LoadFrom(Stream) | `CabecalhoMensagem` |  |
+| LoadFromAsync(Stream) | `Task<CabecalhoMensagem>` |  |

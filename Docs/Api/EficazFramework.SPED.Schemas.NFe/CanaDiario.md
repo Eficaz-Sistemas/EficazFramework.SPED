@@ -4,12 +4,12 @@
 ## CanaDiario Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | qtde |  |
-| 03 | dia |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | qtde | `String` |  |
+| 03 | dia | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,40 +4,40 @@
 ## tcValores Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorServicos |  |
-| 03 | ValorDeducoes |  |
-| 04 | ValorDeducoesSpecified |  |
-| 05 | ValorPis |  |
-| 06 | ValorPisSpecified |  |
-| 07 | ValorCofins |  |
-| 08 | ValorCofinsSpecified |  |
-| 09 | ValorInss |  |
-| 10 | ValorInssSpecified |  |
-| 11 | ValorIr |  |
-| 12 | ValorIrSpecified |  |
-| 13 | ValorCsll |  |
-| 14 | ValorCsllSpecified |  |
-| 15 | IssRetido |  |
-| 16 | ValorIss |  |
-| 17 | ValorIssSpecified |  |
-| 18 | ValorIssRetido |  |
-| 19 | ValorIssRetidoSpecified |  |
-| 20 | OutrasRetencoes |  |
-| 21 | OutrasRetencoesSpecified |  |
-| 22 | BaseCalculo |  |
-| 23 | BaseCalculoSpecified |  |
-| 24 | Aliquota |  |
-| 25 | AliquotaSpecified |  |
-| 26 | ValorLiquidoNfse |  |
-| 27 | ValorLiquidoNfseSpecified |  |
-| 28 | DescontoIncondicionado |  |
-| 29 | DescontoIncondicionadoSpecified |  |
-| 30 | DescontoCondicionado |  |
-| 31 | DescontoCondicionadoSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorServicos | `Decimal` |  |
+| 03 | ValorDeducoes | `Decimal` |  |
+| 04 | ValorDeducoesSpecified | `Boolean` |  |
+| 05 | ValorPis | `Decimal` |  |
+| 06 | ValorPisSpecified | `Boolean` |  |
+| 07 | ValorCofins | `Decimal` |  |
+| 08 | ValorCofinsSpecified | `Boolean` |  |
+| 09 | ValorInss | `Decimal` |  |
+| 10 | ValorInssSpecified | `Boolean` |  |
+| 11 | ValorIr | `Decimal` |  |
+| 12 | ValorIrSpecified | `Boolean` |  |
+| 13 | ValorCsll | `Decimal` |  |
+| 14 | ValorCsllSpecified | `Boolean` |  |
+| 15 | IssRetido | `Int32` |  |
+| 16 | ValorIss | `Decimal` |  |
+| 17 | ValorIssSpecified | `Boolean` |  |
+| 18 | ValorIssRetido | `Decimal` |  |
+| 19 | ValorIssRetidoSpecified | `Boolean` |  |
+| 20 | OutrasRetencoes | `Decimal` |  |
+| 21 | OutrasRetencoesSpecified | `Boolean` |  |
+| 22 | BaseCalculo | `Decimal` |  |
+| 23 | BaseCalculoSpecified | `Boolean` |  |
+| 24 | Aliquota | `Decimal` |  |
+| 25 | AliquotaSpecified | `Boolean` |  |
+| 26 | ValorLiquidoNfse | `Decimal` |  |
+| 27 | ValorLiquidoNfseSpecified | `Boolean` |  |
+| 28 | DescontoIncondicionado | `Decimal` |  |
+| 29 | DescontoIncondicionadoSpecified | `Boolean` |  |
+| 30 | DescontoCondicionado | `Decimal` |  |
+| 31 | DescontoCondicionadoSpecified | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

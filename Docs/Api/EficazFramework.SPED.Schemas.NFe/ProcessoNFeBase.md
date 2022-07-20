@@ -4,28 +4,28 @@
 ## ProcessoNFeBase Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Processo |  |
-| 03 | Schema |  |
-| 04 | DocumentType |  |
-| 05 | DataEmissao |  |
-| 06 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Processo | `ProcessoNFe` |  |
+| 03 | Schema | `String` |  |
+| 04 | DocumentType | `XMLDocumentType` |  |
+| 05 | DataEmissao | `Nullable<DateTime>` |  |
+| 06 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| ToString() |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ProcessoNFeBase, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ProcessoNFeBase) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ProcessoNFeBase, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ProcessoNFeBase) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| ToString() | `String` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ProcessoNFeBase, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ProcessoNFeBase) | `Boolean` |  |
+| Deserialize(string) | `ProcessoNFeBase` |  |
+| Deserialize(Stream) | `ProcessoNFeBase` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ProcessoNFeBase, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ProcessoNFeBase) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `ProcessoNFeBase` |  |
+| LoadFromAsync(Stream, bool) | `Task<ProcessoNFeBase>` |  |

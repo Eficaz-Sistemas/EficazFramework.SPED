@@ -4,11 +4,11 @@
 ## TomadorTipo03 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | toma |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | toma | `TipoTomador` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

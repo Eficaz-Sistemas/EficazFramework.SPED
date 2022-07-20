@@ -4,9 +4,9 @@
 ## TDadosRubricaIdeProcessoCP Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProc |  |
-| 03 | nrProc |  |
-| 04 | extDecisao |  |
-| 05 | codSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProc | `TipoProcesso` |  |
+| 03 | nrProc | `String` |  |
+| 04 | extDecisao | `DescisaoSentenca` |  |
+| 05 | codSusp | `String` |  |

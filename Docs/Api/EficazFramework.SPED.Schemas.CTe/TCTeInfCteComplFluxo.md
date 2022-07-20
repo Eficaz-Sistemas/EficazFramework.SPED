@@ -4,14 +4,14 @@
 ## TCTeInfCteComplFluxo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xOrig |  |
-| 03 | pass |  |
-| 04 | xDest |  |
-| 05 | xRota |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xOrig | `String` |  |
+| 03 | pass | `ObservableCollection<TCTeInfCteComplFluxoPass>` |  |
+| 04 | xDest | `String` |  |
+| 05 | xRota | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

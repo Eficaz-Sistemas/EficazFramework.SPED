@@ -4,14 +4,14 @@
 ## DetalhamentoPagamentoCartao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpIntegra |  |
-| 03 | CNPJ |  |
-| 04 | tBand |  |
-| 05 | cAut |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpIntegra | `TipoIntegracaoPgCartao` |  |
+| 03 | CNPJ | `String` |  |
+| 04 | tBand | `BandeiraCartaoCredito` |  |
+| 05 | cAut | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

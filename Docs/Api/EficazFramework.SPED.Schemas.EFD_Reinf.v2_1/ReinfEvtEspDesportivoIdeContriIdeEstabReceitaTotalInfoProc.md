@@ -4,9 +4,9 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProc |  |
-| 03 | nrProc |  |
-| 04 | codSusp |  |
-| 05 | vlrCPSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProc | `TipoProcesso` |  |
+| 03 | nrProc | `String` |  |
+| 04 | codSusp | `String` |  |
+| 05 | vlrCPSusp | `String` |  |

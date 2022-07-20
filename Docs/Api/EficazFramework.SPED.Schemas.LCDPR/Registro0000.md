@@ -8,18 +8,18 @@ Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CPF |  |
-| 03 | Nome |  |
-| 04 | IndicadorSitInicioPeriodo |  |
-| 05 | SituacaoEspecial |  |
-| 06 | DataSituacaoEspecial |  |
-| 07 | DataInicial |  |
-| 08 | DataFinal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CPF | `String` |  |
+| 03 | Nome | `String` |  |
+| 04 | IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
+| 05 | SituacaoEspecial | `SituacaoEspecial` |  |
+| 06 | DataSituacaoEspecial | `Nullable<DateTime>` |  |
+| 07 | DataInicial | `Nullable<DateTime>` |  |
+| 08 | DataFinal | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

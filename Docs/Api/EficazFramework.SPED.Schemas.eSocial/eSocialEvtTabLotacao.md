@@ -4,9 +4,9 @@
 ## eSocialEvtTabLotacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideEmpregador |  |
-| 04 | infoLotacao |  |
-| 05 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `TIdeCadastro` |  |
+| 03 | ideEmpregador | `TEmpregador` |  |
+| 04 | infoLotacao | `eSocialEvtTabLotacaoInfoLotacao` |  |
+| 05 | Id | `String` |  |

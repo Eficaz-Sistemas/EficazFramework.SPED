@@ -4,9 +4,9 @@
 ## TDadosCargoCargoPublico Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | acumCargo |  |
-| 03 | contagemEsp |  |
-| 04 | dedicExcl |  |
-| 05 | leiCargo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | acumCargo | `AcumuladorCargo` |  |
+| 03 | contagemEsp | `ContagemEspecialCargo` |  |
+| 04 | dedicExcl | `String` |  |
+| 05 | leiCargo | `TDadosCargoCargoPublicoLeiCargo` |  |

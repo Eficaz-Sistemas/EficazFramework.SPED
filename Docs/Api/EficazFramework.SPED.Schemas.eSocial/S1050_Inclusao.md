@@ -4,7 +4,7 @@
 ## S1050_Inclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideHorContratual |  |
-| 03 | dadosHorContratual |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideHorContratual | `TIdeHorContratual` |  |
+| 03 | dadosHorContratual | `TDadosHorContratual` |  |

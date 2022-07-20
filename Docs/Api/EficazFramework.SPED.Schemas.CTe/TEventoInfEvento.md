@@ -4,19 +4,19 @@
 ## TEventoInfEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cOrgao |  |
-| 03 | tpAmb |  |
-| 04 | CNPJ |  |
-| 05 | chCTe |  |
-| 06 | dhEvento |  |
-| 07 | tpEvento |  |
-| 08 | nSeqEvento |  |
-| 09 | detEvento |  |
-| 10 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cOrgao | `OrgaoIBGE` |  |
+| 03 | tpAmb | `Ambiente` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | chCTe | `String` |  |
+| 06 | dhEvento | `Nullable<DateTime>` |  |
+| 07 | tpEvento | `String` |  |
+| 08 | nSeqEvento | `String` |  |
+| 09 | detEvento | `TEventoInfEventoDetEvento` |  |
+| 10 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,12 +4,12 @@
 ## TCTeInfCteComplEntregaComHora Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpHor |  |
-| 03 | hProg |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpHor | `TCTeInfCteComplEntregaComHoraTpHor` |  |
+| 03 | hProg | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

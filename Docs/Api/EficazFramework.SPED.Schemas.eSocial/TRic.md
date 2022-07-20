@@ -4,9 +4,9 @@
 ## TRic Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRic |  |
-| 03 | orgaoEmissor |  |
-| 04 | dtExped |  |
-| 05 | dtExpedSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRic | `String` |  |
+| 03 | orgaoEmissor | `String` |  |
+| 04 | dtExped | `DateTime` |  |
+| 05 | dtExpedSpecified | `Boolean` |  |

@@ -4,9 +4,9 @@
 ## IEfdReinfEvt Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| DefineSerializer() |  |
-| GeraEventoID() |  |
-| ContribuinteCNPJ() |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| DefineSerializer() | `XmlSerializer` |  |
+| GeraEventoID() | `Void` |  |
+| ContribuinteCNPJ() | `String` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |

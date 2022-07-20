@@ -4,35 +4,35 @@
 ## RetornoEnvioEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Lote |  |
-| 03 | Ambiente |  |
-| 04 | VersaoAplicativo |  |
-| 05 | Orgao |  |
-| 06 | RespostaCodigo |  |
-| 07 | RespostaDescricao |  |
-| 08 | ResultadoEventos |  |
-| 09 | Versao |  |
-| 10 | DocumentType |  |
-| 11 | DataEmissao |  |
-| 12 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Lote | `String` |  |
+| 03 | Ambiente | `Ambiente` |  |
+| 04 | VersaoAplicativo | `String` |  |
+| 05 | Orgao | `OrgaoIBGE` |  |
+| 06 | RespostaCodigo | `String` |  |
+| 07 | RespostaDescricao | `String` |  |
+| 08 | ResultadoEventos | `List<EventoRetorno>` |  |
+| 09 | Versao | `String` |  |
+| 10 | DocumentType | `XMLDocumentType` |  |
+| 11 | DataEmissao | `Nullable<DateTime>` |  |
+| 12 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, RetornoEnvioEvento, Exception) | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, RetornoEnvioEvento) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveTo(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, RetornoEnvioEvento, Exception) | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, RetornoEnvioEvento) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
+| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
+| CanDeserialize(string, RetornoEnvioEvento, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
+| CanDeserialize(string, RetornoEnvioEvento) | `Boolean` |  |
+| Deserialize(string) | `RetornoEnvioEvento` |  |
+| Deserialize(Stream) | `RetornoEnvioEvento` |  |
+| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, RetornoEnvioEvento, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
+| CanLoadFrom(Stream, RetornoEnvioEvento) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `RetornoEnvioEvento` |  |
+| LoadFromAsync(Stream, bool) | `Task<RetornoEnvioEvento>` |  |

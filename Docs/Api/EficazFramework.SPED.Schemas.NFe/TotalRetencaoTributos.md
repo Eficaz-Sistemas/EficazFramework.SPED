@@ -4,17 +4,17 @@
 ## TotalRetencaoTributos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vRetPIS |  |
-| 03 | vRetCOFINS |  |
-| 04 | vRetCSLL |  |
-| 05 | vBCIRRF |  |
-| 06 | vIRRF |  |
-| 07 | vBCRetPrev |  |
-| 08 | vRetPrev |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vRetPIS | `String` |  |
+| 03 | vRetCOFINS | `String` |  |
+| 04 | vRetCSLL | `String` |  |
+| 05 | vBCIRRF | `String` |  |
+| 06 | vIRRF | `String` |  |
+| 07 | vBCRetPrev | `String` |  |
+| 08 | vRetPrev | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,20 +4,20 @@
 ## DetalhamentoICMS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Orig |  |
-| 03 | CST |  |
-| 04 | pICMS |  |
-| 05 | pICMS_Double |  |
-| 06 | vICMS |  |
-| 07 | vICMS_Double |  |
-| 08 | CSOSN |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Orig | `String` |  |
+| 03 | CST | `String` |  |
+| 04 | pICMS | `String` |  |
+| 05 | pICMS_Double | `Nullable<Double>` |  |
+| 06 | vICMS | `String` |  |
+| 07 | vICMS_Double | `Nullable<Double>` |  |
+| 08 | CSOSN | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeCST() |  |
-| ShouldSerializepICMS() |  |
-| ShouldSerializevICMS() |  |
-| ShouldSerializeCSOSN() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeCST() | `Boolean` |  |
+| ShouldSerializepICMS() | `Boolean` |  |
+| ShouldSerializevICMS() | `Boolean` |  |
+| ShouldSerializeCSOSN() | `Boolean` |  |

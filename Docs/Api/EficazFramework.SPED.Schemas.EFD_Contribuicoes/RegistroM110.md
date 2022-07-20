@@ -8,17 +8,17 @@ Ajustes do crédito de pis apurado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoAjuste |  |
-| 03 | VrAjuste |  |
-| 04 | CodigoAjuste |  |
-| 05 | NumeroProcessoVincAjuste |  |
-| 06 | DescResumAjuste |  |
-| 07 | DataRefAjuste |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
+| 03 | VrAjuste | `Nullable<Double>` |  |
+| 04 | CodigoAjuste | `String` |  |
+| 05 | NumeroProcessoVincAjuste | `String` |  |
+| 06 | DescResumAjuste | `String` |  |
+| 07 | DataRefAjuste | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

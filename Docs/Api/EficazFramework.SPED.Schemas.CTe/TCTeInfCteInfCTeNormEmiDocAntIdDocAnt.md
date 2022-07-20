@@ -4,11 +4,11 @@
 ## TCTeInfCteInfCTeNormEmiDocAntIdDocAnt Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Items |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Items | `ObservableCollection<Object>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

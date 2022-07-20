@@ -6,15 +6,15 @@
 ISSQN
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vDeducISSQN |  |
-| 03 | vBC |  |
-| 04 | vAliq |  |
-| 05 | vISSQN |  |
-| 06 | vISSQN_Double |  |
-| 07 | cMunFG |  |
-| 08 | cListServ |  |
-| 09 | cServTribMun |  |
-| 10 | cNatOp |  |
-| 11 | indIncFisc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vDeducISSQN | `String` |  |
+| 03 | vBC | `String` |  |
+| 04 | vAliq | `String` |  |
+| 05 | vISSQN | `String` |  |
+| 06 | vISSQN_Double | `Nullable<Double>` |  |
+| 07 | cMunFG | `String` |  |
+| 08 | cListServ | `String` |  |
+| 09 | cServTribMun | `String` |  |
+| 10 | cNatOp | `String` |  |
+| 11 | indIncFisc | `String` |  |

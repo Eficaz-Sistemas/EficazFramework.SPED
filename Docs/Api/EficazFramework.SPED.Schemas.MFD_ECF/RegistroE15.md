@@ -8,34 +8,34 @@ Detalhe do Cupom Fiscal, da Nota Fiscal de Venda a Consumidor ou do Bilhete de P
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroFabricacaoECF |  |
-| 03 | MFAdicional |  |
-| 04 | Modelo |  |
-| 05 | NumeroUsuario |  |
-| 06 | CCF_CVC_CBP |  |
-| 07 | COO |  |
-| 08 | NumeroItem |  |
-| 09 | CodigoProduto |  |
-| 10 | Descricao |  |
-| 11 | Quantidade |  |
-| 12 | UnidadeMedida |  |
-| 13 | ValorUnitario |  |
-| 14 | Desconto |  |
-| 15 | Acrescimo |  |
-| 16 | TotalLiquido |  |
-| 17 | TotalizadorParcial |  |
-| 18 | Cancelamento |  |
-| 19 | QuantidadeCancelada |  |
-| 20 | ValorCancelado |  |
-| 21 | CancelamentoAcrescimo |  |
-| 22 | IAT_TotalLiquido |  |
-| 23 | CasasDecimaisQtdade |  |
-| 24 | CasasDecimaisUnitario |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroFabricacaoECF | `String` |  |
+| 03 | MFAdicional | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | NumeroUsuario | `Nullable<Int32>` |  |
+| 06 | CCF_CVC_CBP | `Nullable<Int32>` |  |
+| 07 | COO | `Nullable<Int32>` |  |
+| 08 | NumeroItem | `Nullable<Int32>` |  |
+| 09 | CodigoProduto | `String` |  |
+| 10 | Descricao | `String` |  |
+| 11 | Quantidade | `Nullable<Double>` |  |
+| 12 | UnidadeMedida | `String` |  |
+| 13 | ValorUnitario | `Nullable<Double>` |  |
+| 14 | Desconto | `Nullable<Double>` |  |
+| 15 | Acrescimo | `Nullable<Double>` |  |
+| 16 | TotalLiquido | `Nullable<Double>` |  |
+| 17 | TotalizadorParcial | `String` |  |
+| 18 | Cancelamento | `Nullable<Boolean>` |  |
+| 19 | QuantidadeCancelada | `Nullable<Double>` |  |
+| 20 | ValorCancelado | `Nullable<Double>` |  |
+| 21 | CancelamentoAcrescimo | `Nullable<Double>` |  |
+| 22 | IAT_TotalLiquido | `IndicadorArredTruncam` |  |
+| 23 | CasasDecimaisQtdade | `Nullable<Int32>` |  |
+| 24 | CasasDecimaisUnitario | `Nullable<Int32>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

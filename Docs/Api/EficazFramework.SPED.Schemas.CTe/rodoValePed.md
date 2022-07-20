@@ -4,14 +4,14 @@
 ## rodoValePed Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJForn |  |
-| 03 | nCompra |  |
-| 04 | CNPJPg |  |
-| 05 | vValePed |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJForn | `String` |  |
+| 03 | nCompra | `String` |  |
+| 04 | CNPJPg | `String` |  |
+| 05 | vValePed | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

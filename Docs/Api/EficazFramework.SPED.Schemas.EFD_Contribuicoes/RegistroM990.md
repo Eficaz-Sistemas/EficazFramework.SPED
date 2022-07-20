@@ -8,12 +8,12 @@ Encerramento do BlocoM
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | QuantidadeLinhasBlocoM |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | QuantidadeLinhasBlocoM | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

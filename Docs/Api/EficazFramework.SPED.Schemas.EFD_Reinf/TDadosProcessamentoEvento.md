@@ -6,10 +6,10 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrProtEntr |  |
-| 03 | dhProcess |  |
-| 04 | tpEv |  |
-| 05 | idEv |  |
-| 06 | hash |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrProtEntr | `String` |  |
+| 03 | dhProcess | `DateTime` |  |
+| 04 | tpEv | `String` |  |
+| 05 | idEv | `String` |  |
+| 06 | hash | `String` |  |

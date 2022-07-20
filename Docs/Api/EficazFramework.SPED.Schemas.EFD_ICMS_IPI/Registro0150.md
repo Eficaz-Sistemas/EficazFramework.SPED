@@ -8,24 +8,24 @@ Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ID |  |
-| 03 | Nome |  |
-| 04 | CodigoPais |  |
-| 05 | CNPJ |  |
-| 06 | CPF |  |
-| 07 | InscricaoEstadual |  |
-| 08 | CodigoMunicipio |  |
-| 09 | Suframa |  |
-| 10 | Endereco |  |
-| 11 | Numero |  |
-| 12 | Complemento |  |
-| 13 | Bairro |  |
-| 14 | Registros0175 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ID | `String` |  |
+| 03 | Nome | `String` |  |
+| 04 | CodigoPais | `String` |  |
+| 05 | CNPJ | `String` |  |
+| 06 | CPF | `String` |  |
+| 07 | InscricaoEstadual | `String` |  |
+| 08 | CodigoMunicipio | `String` |  |
+| 09 | Suframa | `String` |  |
+| 10 | Endereco | `String` |  |
+| 11 | Numero | `String` |  |
+| 12 | Complemento | `String` |  |
+| 13 | Bairro | `String` |  |
+| 14 | Registros0175 | `List<Registro0175>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

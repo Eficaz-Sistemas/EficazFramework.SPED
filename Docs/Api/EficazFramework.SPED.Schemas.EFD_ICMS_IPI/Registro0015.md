@@ -8,13 +8,13 @@ Dados do Contribuinte Substituto
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | UF |  |
-| 03 | InscricaoEstadual |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | UF | `String` |  |
+| 03 | InscricaoEstadual | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

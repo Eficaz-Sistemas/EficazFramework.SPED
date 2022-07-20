@@ -6,14 +6,14 @@
 DIPAM-B
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoDipamB |  |
-| 03 | CodigoMunicipioSP |  |
-| 04 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoDipamB | `String` |  |
+| 03 | CodigoMunicipioSP | `String` |  |
+| 04 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,19 +6,19 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cUF |  |
-| 03 | cNF |  |
-| 04 | mod |  |
-| 05 | nserieSAT |  |
-| 06 | nCFe |  |
-| 07 | dEmi |  |
-| 08 | hEmi |  |
-| 09 | Emissao |  |
-| 10 | cDV |  |
-| 11 | tpAmb |  |
-| 12 | CNPJ |  |
-| 13 | signAC |  |
-| 14 | assinaturaQRCODE |  |
-| 15 | numeroCaixa |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cUF | `String` |  |
+| 03 | cNF | `String` |  |
+| 04 | mod | `String` |  |
+| 05 | nserieSAT | `String` |  |
+| 06 | nCFe | `String` |  |
+| 07 | dEmi | `String` |  |
+| 08 | hEmi | `String` |  |
+| 09 | Emissao | `Nullable<DateTime>` |  |
+| 10 | cDV | `String` |  |
+| 11 | tpAmb | `Ambiente` |  |
+| 12 | CNPJ | `String` |  |
+| 13 | signAC | `String` |  |
+| 14 | assinaturaQRCODE | `String` |  |
+| 15 | numeroCaixa | `String` |  |

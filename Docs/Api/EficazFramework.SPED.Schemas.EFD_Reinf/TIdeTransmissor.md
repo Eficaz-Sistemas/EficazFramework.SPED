@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdTransmissor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdTransmissor | `String` |  |

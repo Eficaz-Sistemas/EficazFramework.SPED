@@ -8,15 +8,15 @@ Devolução de Saídas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataSaidaDocPrincipal |  |
-| 03 | EspecieSaidaDocPrincipal |  |
-| 04 | SerieSaidaDocPrincipal |  |
-| 05 | NumeroSaidaDocPrincipal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataSaidaDocPrincipal | `Nullable<DateTime>` |  |
+| 03 | EspecieSaidaDocPrincipal | `Nullable<Int32>` |  |
+| 04 | SerieSaidaDocPrincipal | `String` |  |
+| 05 | NumeroSaidaDocPrincipal | `Nullable<Int32>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,26 +4,26 @@
 ## tcListaNfse Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Items |  |
-| 03 | DocumentType |  |
-| 04 | DataEmissao |  |
-| 05 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Items | `List<tcCompNfse>` |  |
+| 03 | DocumentType | `XMLDocumentType` |  |
+| 04 | DataEmissao | `Nullable<DateTime>` |  |
+| 05 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, tcListaNfse, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, tcListaNfse) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, tcListaNfse, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, tcListaNfse) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, tcListaNfse, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, tcListaNfse) | `Boolean` |  |
+| Deserialize(string) | `tcListaNfse` |  |
+| Deserialize(Stream) | `tcListaNfse` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, tcListaNfse, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, tcListaNfse) | `Boolean` |  |
+| LoadFrom(Stream) | `tcListaNfse` |  |
+| LoadFromAsync(Stream, bool) | `Task<tcListaNfse>` |  |

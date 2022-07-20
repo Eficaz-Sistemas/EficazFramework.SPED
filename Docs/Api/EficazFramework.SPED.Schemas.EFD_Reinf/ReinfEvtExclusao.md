@@ -4,9 +4,9 @@
 ## ReinfEvtExclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideContri |  |
-| 04 | infoExclusao |  |
-| 05 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `ReinfEvtExclusaoIdeEvento` |  |
+| 03 | ideContri | `ReinfEvtExclusaoIdeContri` |  |
+| 04 | infoExclusao | `ReinfEvtExclusaoInfoExclusao` |  |
+| 05 | id | `String` |  |

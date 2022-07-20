@@ -4,29 +4,29 @@
 ## ProcessoCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CTe |  |
-| 03 | ProtocoloAutorizacao |  |
-| 04 | Versao |  |
-| 05 | DocumentType |  |
-| 06 | DataEmissao |  |
-| 07 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CTe | `CTe` |  |
+| 03 | ProtocoloAutorizacao | `ProtocoloAutorizacao` |  |
+| 04 | Versao | `String` |  |
+| 05 | DocumentType | `XMLDocumentType` |  |
+| 06 | DataEmissao | `Nullable<DateTime>` |  |
+| 07 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ProcessoCTe, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ProcessoCTe) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ProcessoCTe, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ProcessoCTe) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ProcessoCTe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ProcessoCTe) | `Boolean` |  |
+| Deserialize(string) | `ProcessoCTe` |  |
+| Deserialize(Stream) | `ProcessoCTe` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ProcessoCTe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ProcessoCTe) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `ProcessoCTe` |  |
+| LoadFromAsync(Stream) | `Task<ProcessoCTe>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ProcessoCTe>` |  |

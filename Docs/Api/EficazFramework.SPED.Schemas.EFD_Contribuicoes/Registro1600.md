@@ -8,21 +8,21 @@ Contribuição social extemporânea - Cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PeriodoApContExtemporanea |  |
-| 03 | NaturezaContRecolher |  |
-| 04 | VrContribuicaoApurada |  |
-| 05 | VrCreditoCofinsDescontarContSocialExtemporanea |  |
-| 06 | VrContSocialDevida |  |
-| 07 | VrOutrasDeducoes |  |
-| 08 | VrContSocialExtemporaneaPg |  |
-| 09 | VrMulta |  |
-| 10 | VrJuros |  |
-| 11 | DataRecolhimento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PeriodoApContExtemporanea | `Nullable<DateTime>` |  |
+| 03 | NaturezaContRecolher | `String` |  |
+| 04 | VrContribuicaoApurada | `Nullable<Double>` |  |
+| 05 | VrCreditoCofinsDescontarContSocialExtemporanea | `Nullable<Double>` |  |
+| 06 | VrContSocialDevida | `Nullable<Double>` |  |
+| 07 | VrOutrasDeducoes | `Nullable<Double>` |  |
+| 08 | VrContSocialExtemporaneaPg | `Nullable<Double>` |  |
+| 09 | VrMulta | `Nullable<Double>` |  |
+| 10 | VrJuros | `Nullable<Double>` |  |
+| 11 | DataRecolhimento | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

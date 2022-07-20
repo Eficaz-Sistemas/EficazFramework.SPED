@@ -4,7 +4,7 @@
 ## S1030_Inclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideCargo |  |
-| 03 | dadosCargo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideCargo | `TideCargo` |  |
+| 03 | dadosCargo | `TDadosCargo` |  |

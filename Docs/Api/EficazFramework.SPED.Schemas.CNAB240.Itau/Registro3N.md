@@ -6,20 +6,20 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | NumeroSequencial |  |
-| 05 | TipoMovimento |  |
-| 06 | TipoTributo |  |
-| 07 | DadosTributo |  |
-| 08 | SeuNumero |  |
-| 09 | NossoNumero |  |
-| 10 | Ocorrencias |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | NumeroSequencial | `Nullable<Int32>` |  |
+| 05 | TipoMovimento | `String` |  |
+| 06 | TipoTributo | `String` |  |
+| 07 | DadosTributo | `Registro3N_AnexoC` |  |
+| 08 | SeuNumero | `String` |  |
+| 09 | NossoNumero | `String` |  |
+| 10 | Ocorrencias | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,14 +4,14 @@
 ## TConsCadInfCons Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xServ |  |
-| 03 | UF |  |
-| 04 | Item |  |
-| 05 | ItemElementName |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xServ | `TConsCadInfConsXServ` |  |
+| 03 | UF | `Estado` |  |
+| 04 | Item | `String` |  |
+| 05 | ItemElementName | `TipoResultado` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

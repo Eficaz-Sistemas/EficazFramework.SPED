@@ -8,18 +8,18 @@ Contribuição de PIS diferida em períodos anteriores - valores a pagar no per�
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContribDiferidaPerAnter |  |
-| 03 | VrContribApuradaDiferidaPerAnter |  |
-| 04 | NatCreditoDiferidoVincRecMerInterno |  |
-| 05 | VrCreditoDescontarVincContribDiferida |  |
-| 06 | VrContribRecolherDiferidaPerAnteriores |  |
-| 07 | PeriodoApuracaoContribCredDiferidos |  |
-| 08 | DataRecebReceitaDiferimento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContribDiferidaPerAnter | `String` |  |
+| 03 | VrContribApuradaDiferidaPerAnter | `Nullable<Double>` |  |
+| 04 | NatCreditoDiferidoVincRecMerInterno | `NaturezaCreditoDiferido` |  |
+| 05 | VrCreditoDescontarVincContribDiferida | `Nullable<Double>` |  |
+| 06 | VrContribRecolherDiferidaPerAnteriores | `Nullable<Double>` |  |
+| 07 | PeriodoApuracaoContribCredDiferidos | `Nullable<DateTime>` |  |
+| 08 | DataRecebReceitaDiferimento | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

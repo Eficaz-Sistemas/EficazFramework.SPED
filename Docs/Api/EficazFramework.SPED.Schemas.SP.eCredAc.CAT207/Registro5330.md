@@ -8,13 +8,13 @@ Operações Geradoras de Crédito Acumulado nas Fichas 6A ou 6B
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | BaseCalculo |  |
-| 03 | ICMSDebitado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | BaseCalculo | `Nullable<Double>` |  |
+| 03 | ICMSDebitado | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

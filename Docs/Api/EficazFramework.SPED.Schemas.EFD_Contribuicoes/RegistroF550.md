@@ -8,26 +8,26 @@ Consolidação das operações da pj submetida ao retime de tributação com bas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalRecAufCSTAliq |  |
-| 03 | CSTPis |  |
-| 04 | VrDescontoExclBcCalculoPis |  |
-| 05 | VrBcPis |  |
-| 06 | AliqPis |  |
-| 07 | VrPis |  |
-| 08 | CSTCofins |  |
-| 09 | VrDescontoExclBcCalculoCofins |  |
-| 10 | VrBcCofins |  |
-| 11 | AliqCofins |  |
-| 12 | VrCofins |  |
-| 13 | CodigoModDocFiscal |  |
-| 14 | CFOP |  |
-| 15 | CodigoContaContabil |  |
-| 16 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalRecAufCSTAliq | `Nullable<Double>` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | VrDescontoExclBcCalculoPis | `Nullable<Double>` |  |
+| 05 | VrBcPis | `Nullable<Double>` |  |
+| 06 | AliqPis | `Nullable<Double>` |  |
+| 07 | VrPis | `Nullable<Double>` |  |
+| 08 | CSTCofins | `String` |  |
+| 09 | VrDescontoExclBcCalculoCofins | `Nullable<Double>` |  |
+| 10 | VrBcCofins | `Nullable<Double>` |  |
+| 11 | AliqCofins | `Nullable<Double>` |  |
+| 12 | VrCofins | `Nullable<Double>` |  |
+| 13 | CodigoModDocFiscal | `String` |  |
+| 14 | CFOP | `String` |  |
+| 15 | CodigoContaContabil | `String` |  |
+| 16 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

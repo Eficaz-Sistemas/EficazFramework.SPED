@@ -8,14 +8,14 @@ Bico da Bomca
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroBico |  |
-| 03 | CodigoCombustivel0200 |  |
-| 04 | NumeroTanque |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroBico | `String` |  |
+| 03 | CodigoCombustivel0200 | `String` |  |
+| 04 | NumeroTanque | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

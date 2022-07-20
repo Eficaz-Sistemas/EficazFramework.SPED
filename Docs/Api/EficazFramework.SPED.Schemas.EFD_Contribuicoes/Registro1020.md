@@ -8,14 +8,14 @@ Processo Referenciado - Processo administrativo
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentifProcessoAdmOuDecisaoAdm |  |
-| 03 | IndicadorNaturezaAcaoProcAdmSRFB |  |
-| 04 | DataDespachoDescisaoAdm |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentifProcessoAdmOuDecisaoAdm | `String` |  |
+| 03 | IndicadorNaturezaAcaoProcAdmSRFB | `IndicadorNaturezaAcaoProcAdmSRFB` |  |
+| 04 | DataDespachoDescisaoAdm | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

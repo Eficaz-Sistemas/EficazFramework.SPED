@@ -8,19 +8,19 @@ Informacao Complementar - Operações de Importação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | VrTotalServicoPFouPJExterior |  |
-| 03 | VrBaseCalculoPis |  |
-| 04 | VrPisImportacao |  |
-| 05 | DataPgtoPisImportacao |  |
-| 06 | VrBaseCalculoCofins |  |
-| 07 | VrCofinsImportacao |  |
-| 08 | DataPgtoCofinsImportacao |  |
-| 09 | LocalExecucaoServico |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | VrTotalServicoPFouPJExterior | `Nullable<Double>` |  |
+| 03 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 04 | VrPisImportacao | `Nullable<Double>` |  |
+| 05 | DataPgtoPisImportacao | `Nullable<DateTime>` |  |
+| 06 | VrBaseCalculoCofins | `Nullable<Double>` |  |
+| 07 | VrCofinsImportacao | `Nullable<Double>` |  |
+| 08 | DataPgtoCofinsImportacao | `Nullable<DateTime>` |  |
+| 09 | LocalExecucaoServico | `LocalExecucaoServico` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

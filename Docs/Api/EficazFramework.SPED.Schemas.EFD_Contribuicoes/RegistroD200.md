@@ -8,21 +8,21 @@ Resumo Escrituração Diária Transportes
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocFiscal |  |
-| 03 | CodigoSituacaoDocFisca |  |
-| 04 | SerieDocFiscal |  |
-| 05 | SubSerieDocFiscal |  |
-| 06 | NumeroDocFiscalInicial |  |
-| 07 | NumeroDocFiscalFinal |  |
-| 08 | CFOP |  |
-| 09 | DataReferenciaResumoDiario |  |
-| 10 | VrTotalDocsFiscais |  |
-| 11 | VrTotalDescontos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocFiscal | `String` |  |
+| 03 | CodigoSituacaoDocFisca | `String` |  |
+| 04 | SerieDocFiscal | `String` |  |
+| 05 | SubSerieDocFiscal | `String` |  |
+| 06 | NumeroDocFiscalInicial | `Nullable<Int64>` |  |
+| 07 | NumeroDocFiscalFinal | `Nullable<Int64>` |  |
+| 08 | CFOP | `String` |  |
+| 09 | DataReferenciaResumoDiario | `Nullable<DateTime>` |  |
+| 10 | VrTotalDocsFiscais | `Nullable<Double>` |  |
+| 11 | VrTotalDescontos | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

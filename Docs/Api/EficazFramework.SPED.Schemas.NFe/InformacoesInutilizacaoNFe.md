@@ -6,16 +6,16 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Ambiente |  |
-| 03 | xServ |  |
-| 04 | cUF |  |
-| 05 | ano |  |
-| 06 | CNPJ |  |
-| 07 | Modelo |  |
-| 08 | serie |  |
-| 09 | NumeroNFInicial |  |
-| 10 | NumeroNFFinal |  |
-| 11 | Justificativa |  |
-| 12 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Ambiente | `Ambiente` |  |
+| 03 | xServ | `String` |  |
+| 04 | cUF | `OrgaoIBGE` |  |
+| 05 | ano | `String` |  |
+| 06 | CNPJ | `String` |  |
+| 07 | Modelo | `ModeloDocumento` |  |
+| 08 | serie | `String` |  |
+| 09 | NumeroNFInicial | `String` |  |
+| 10 | NumeroNFFinal | `String` |  |
+| 11 | Justificativa | `String` |  |
+| 12 | Id | `String` |  |

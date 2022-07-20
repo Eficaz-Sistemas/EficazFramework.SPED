@@ -8,21 +8,21 @@ Controle de Saldos das Contas da Parte B do e-Lalur e do e-Lacs
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaB |  |
-| 03 | CodigoTributo | I = IRPJ            C = CSLL |
-| 04 | SaldoInicial |  |
-| 05 | NaturezaSaldoInicial | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 06 | ValorLanctoParteA |  |
-| 07 | NaturezaLanctoParteA | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 08 | ValorLanctoParteB |  |
-| 09 | NaturezaLanctoParteB | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 10 | SaldoFinal |  |
-| 11 | NaturezaSaldoFinal | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaB | `String` |  |
+| 03 | CodigoTributo | `String` | I = IRPJ            C = CSLL |
+| 04 | SaldoInicial | `Nullable<Double>` |  |
+| 05 | NaturezaSaldoInicial | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| 06 | ValorLanctoParteA | `Nullable<Double>` |  |
+| 07 | NaturezaLanctoParteA | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| 08 | ValorLanctoParteB | `Nullable<Double>` |  |
+| 09 | NaturezaLanctoParteB | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| 10 | SaldoFinal | `Nullable<Double>` |  |
+| 11 | NaturezaSaldoFinal | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,15 +8,15 @@ Dados da Exportação Indireta Comprovada - Ficha 5H
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Exportador_DataEmissao |  |
-| 03 | Exportador_Numero |  |
-| 04 | Exportador_Serie |  |
-| 05 | DeclaracaoExportacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Exportador_DataEmissao | `Nullable<DateTime>` |  |
+| 03 | Exportador_Numero | `Nullable<Int32>` |  |
+| 04 | Exportador_Serie | `String` |  |
+| 05 | DeclaracaoExportacao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

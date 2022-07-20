@@ -4,16 +4,16 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletista Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dtAdm |  |
-| 03 | tpAdmissao |  |
-| 04 | indAdmissao |  |
-| 05 | tpRegJor |  |
-| 06 | natAtividade |  |
-| 07 | dtBase |  |
-| 08 | dtBaseSpecified |  |
-| 09 | cnpjSindCategProf |  |
-| 10 | FGTS |  |
-| 11 | trabTemporario |  |
-| 12 | aprend |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dtAdm | `DateTime` |  |
+| 03 | tpAdmissao | `TipoAdmissaoCLT` |  |
+| 04 | indAdmissao | `IndicadorAdmissao` |  |
+| 05 | tpRegJor | `VinculoRegimeJornada` |  |
+| 06 | natAtividade | `NaturezaAtividade` |  |
+| 07 | dtBase | `SByte` |  |
+| 08 | dtBaseSpecified | `Boolean` |  |
+| 09 | cnpjSindCategProf | `String` |  |
+| 10 | FGTS | `TFgts` |  |
+| 11 | trabTemporario | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario` |  |
+| 12 | aprend | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend` |  |

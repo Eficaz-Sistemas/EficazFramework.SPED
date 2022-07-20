@@ -8,13 +8,13 @@ REGISTRO C171: ARMAZENAMENTO DE COMBUSTÍVEIS (CODIGO 01,55)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumTanque |  |
-| 03 | QuantidadeVolumeArmazenado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumTanque | `String` |  |
+| 03 | QuantidadeVolumeArmazenado | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

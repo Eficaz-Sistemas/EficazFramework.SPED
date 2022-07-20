@@ -8,16 +8,16 @@ Sociedades cooperativas - composição da base de calculo Cofins
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoSociedadeCooperativa |  |
-| 03 | VrBcContribuicao |  |
-| 04 | VrExclusaoEspecCooperativasSobrasFATES |  |
-| 05 | VrExclusaoEspecCooperativasTipo |  |
-| 06 | VrBcAposExclusoes |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoSociedadeCooperativa | `IndicadorTipoSociedadeCooperativa` |  |
+| 03 | VrBcContribuicao | `Nullable<Double>` |  |
+| 04 | VrExclusaoEspecCooperativasSobrasFATES | `Nullable<Double>` |  |
+| 05 | VrExclusaoEspecCooperativasTipo | `Nullable<Double>` |  |
+| 06 | VrBcAposExclusoes | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

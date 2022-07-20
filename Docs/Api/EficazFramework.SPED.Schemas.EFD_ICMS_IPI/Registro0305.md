@@ -8,14 +8,14 @@ Informação sobre a utilização do Bem
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CentroDeCusto |  |
-| 03 | DescricaoFuncaoBem |  |
-| 04 | VidaUtil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CentroDeCusto | `String` |  |
+| 03 | DescricaoFuncaoBem | `String` |  |
+| 04 | VidaUtil | `Nullable<Int32>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

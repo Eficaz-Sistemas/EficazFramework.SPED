@@ -4,11 +4,11 @@
 ## TInfoEmpregadorInfoOPInfoEnte Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nmEnte |  |
-| 03 | uf |  |
-| 04 | codMunic |  |
-| 05 | indRPPS |  |
-| 06 | subteto |  |
-| 07 | vrSubteto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nmEnte | `String` |  |
+| 03 | uf | `UFCadastro` |  |
+| 04 | codMunic | `String` |  |
+| 05 | indRPPS | `String` |  |
+| 06 | subteto | `SByte` |  |
+| 07 | vrSubteto | `Decimal` |  |

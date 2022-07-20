@@ -8,12 +8,12 @@ Abertura do Bloco 0
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ClassificacaoEstabelecimento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ClassificacaoEstabelecimento | `TipoAtividade` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

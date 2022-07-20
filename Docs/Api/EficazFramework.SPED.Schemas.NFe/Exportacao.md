@@ -4,12 +4,12 @@
 ## Exportacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | UFEmbarq |  |
-| 03 | xLocEmbarq |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | UFEmbarq | `Estado` |  |
+| 03 | xLocEmbarq | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

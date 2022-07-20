@@ -4,8 +4,8 @@
 ## S1010_Alteracao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideRubrica |  |
-| 03 | dadosRubrica |  |
-| 04 | novaValidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideRubrica | `TIdeRubrica` |  |
+| 03 | dadosRubrica | `TDadosRubrica` |  |
+| 04 | novaValidade | `TIdePeriodo` |  |

@@ -8,14 +8,14 @@ REGISTRO C141: VENCIMENTO DA FATURA (CÓDIGO 01)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Numero_Parcela |  |
-| 03 | Data_vecto_parcela |  |
-| 04 | Valor_parcela |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Numero_Parcela | `Nullable<Int32>` |  |
+| 03 | Data_vecto_parcela | `Nullable<DateTime>` |  |
+| 04 | Valor_parcela | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

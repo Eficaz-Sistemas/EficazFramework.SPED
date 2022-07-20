@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DocZip |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DocZip | `retDistDFeIntLoteDistDFeIntDocZip[]` |  |

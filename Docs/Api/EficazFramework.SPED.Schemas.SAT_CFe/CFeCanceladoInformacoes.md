@@ -4,16 +4,16 @@
 ## CFeCanceladoInformacoes Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dEmi |  |
-| 03 | hEmi |  |
-| 04 | Emissao |  |
-| 05 | ide |  |
-| 06 | emit |  |
-| 07 | dest |  |
-| 08 | total |  |
-| 09 | infAdic |  |
-| 10 | versao |  |
-| 11 | Id |  |
-| 12 | chCanc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dEmi | `String` |  |
+| 03 | hEmi | `String` |  |
+| 04 | Emissao | `Nullable<DateTime>` |  |
+| 05 | ide | `IdentificacaoCFe` |  |
+| 06 | emit | `Emitente` |  |
+| 07 | dest | `Destinatario` |  |
+| 08 | total | `CFeCanceladoTotais` |  |
+| 09 | infAdic | `InformacoesAdicionaisObsFiscal[]` |  |
+| 10 | versao | `String` |  |
+| 11 | Id | `String` |  |
+| 12 | chCanc | `String` |  |

@@ -4,14 +4,14 @@
 ## DetalheEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | EventoDescricao |  |
-| 03 | Justificativa | Utilizar este campo apenas quando o evento for "Operação não Realizada". |
-| 04 | Correcao |  |
-| 05 | Versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | EventoDescricao | `String` |  |
+| 03 | Justificativa | `String` | Utilizar este campo apenas quando o evento for "Operação não Realizada". |
+| 04 | Correcao | `String` |  |
+| 05 | Versao | `VersaoServicoEvento` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

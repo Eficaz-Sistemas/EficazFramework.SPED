@@ -4,10 +4,10 @@
 ## R1000_InfoCadastro_Contato Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nmCtt |  |
-| 03 | cpfCtt |  |
-| 04 | foneFixo |  |
-| 05 | foneCel |  |
-| 06 | email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nmCtt | `String` |  |
+| 03 | cpfCtt | `String` |  |
+| 04 | foneFixo | `String` |  |
+| 05 | foneCel | `String` |  |
+| 06 | email | `String` |  |

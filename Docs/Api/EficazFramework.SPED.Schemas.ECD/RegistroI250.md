@@ -8,19 +8,19 @@ Partidas do Lançamento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodContaAnalitica |  |
-| 03 | CodCentroCusto |  |
-| 04 | VrPartida |  |
-| 05 | IndNaturezaPartida |  |
-| 06 | NumeroCodigoCaminhoLocalizacaoArquivo |  |
-| 07 | CodHistoricoPadronizado |  |
-| 08 | HistoricoCompleto |  |
-| 09 | CodParticipante |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodContaAnalitica | `String` |  |
+| 03 | CodCentroCusto | `String` |  |
+| 04 | VrPartida | `Nullable<Double>` |  |
+| 05 | IndNaturezaPartida | `String` |  |
+| 06 | NumeroCodigoCaminhoLocalizacaoArquivo | `String` |  |
+| 07 | CodHistoricoPadronizado | `String` |  |
+| 08 | HistoricoCompleto | `String` |  |
+| 09 | CodParticipante | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

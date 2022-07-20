@@ -4,13 +4,13 @@
 ## Compra Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xNEmp |  |
-| 03 | xPed |  |
-| 04 | xCont |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xNEmp | `String` |  |
+| 03 | xPed | `String` |  |
+| 04 | xCont | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

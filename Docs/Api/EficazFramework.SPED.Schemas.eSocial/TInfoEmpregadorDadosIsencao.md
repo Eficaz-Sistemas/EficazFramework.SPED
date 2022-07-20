@@ -4,15 +4,15 @@
 ## TInfoEmpregadorDadosIsencao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideMinLei |  |
-| 03 | nrCertif |  |
-| 04 | dtEmisCertif |  |
-| 05 | dtVencCertif |  |
-| 06 | nrProtRenov |  |
-| 07 | dtProtRenov |  |
-| 08 | dtProtRenovSpecified |  |
-| 09 | dtDou |  |
-| 10 | dtDouSpecified |  |
-| 11 | pagDou |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideMinLei | `String` |  |
+| 03 | nrCertif | `String` |  |
+| 04 | dtEmisCertif | `DateTime` |  |
+| 05 | dtVencCertif | `DateTime` |  |
+| 06 | nrProtRenov | `String` |  |
+| 07 | dtProtRenov | `DateTime` |  |
+| 08 | dtProtRenovSpecified | `Boolean` |  |
+| 09 | dtDou | `DateTime` |  |
+| 10 | dtDouSpecified | `Boolean` |  |
+| 11 | pagDou | `String` |  |

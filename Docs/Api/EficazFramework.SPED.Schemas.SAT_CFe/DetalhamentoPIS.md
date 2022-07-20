@@ -4,12 +4,12 @@
 ## DetalhamentoPIS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | vBC |  |
-| 04 | pPIS |  |
-| 05 | vPIS |  |
-| 06 | vPIS_Double |  |
-| 07 | qBCProd |  |
-| 08 | vAliqProd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `String` |  |
+| 03 | vBC | `String` |  |
+| 04 | pPIS | `String` |  |
+| 05 | vPIS | `String` |  |
+| 06 | vPIS_Double | `Nullable<Double>` |  |
+| 07 | qBCProd | `String` |  |
+| 08 | vAliqProd | `String` |  |

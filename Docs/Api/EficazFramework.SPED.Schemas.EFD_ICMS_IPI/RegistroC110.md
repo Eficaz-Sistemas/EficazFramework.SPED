@@ -9,13 +9,13 @@ REGISTRO C110: INFORMAÇÃO COMPLEMENTAR DA NOTA FISCAL (CÓDIGO
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Cod_Inf |  |
-| 03 | TXT_Complementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Cod_Inf | `String` |  |
+| 03 | TXT_Complementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

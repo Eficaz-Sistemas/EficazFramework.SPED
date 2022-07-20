@@ -4,15 +4,15 @@
 ## CobrancaFatura Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nFat |  |
-| 03 | vOrig |  |
-| 04 | vDesc |  |
-| 05 | vLiq |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nFat | `String` |  |
+| 03 | vOrig | `Nullable<Double>` |  |
+| 04 | vDesc | `Nullable<Double>` |  |
+| 05 | vLiq | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| ToString() | `String` |  |

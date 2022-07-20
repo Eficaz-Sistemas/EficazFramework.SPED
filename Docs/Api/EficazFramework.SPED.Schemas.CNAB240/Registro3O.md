@@ -6,30 +6,30 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | NumeroSequencial |  |
-| 05 | TipoMovimento |  |
-| 06 | TipoTributo |  |
-| 07 | CodigoBarras |  |
-| 08 | ContribuinteNome |  |
-| 09 | DataVencimento |  |
-| 10 | Moeda |  |
-| 11 | QuantidadeMoeda |  |
-| 12 | ValorPrincipal |  |
-| 13 | DataPagamento |  |
-| 14 | ValorPago |  |
-| 15 | NotaFiscal |  |
-| 16 | SeuNumero |  |
-| 17 | NossoNumero |  |
-| 18 | Ocorrencias |  |
-| 19 | Detalhamento_Z |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | NumeroSequencial | `Nullable<Int32>` |  |
+| 05 | TipoMovimento | `String` |  |
+| 06 | TipoTributo | `String` |  |
+| 07 | CodigoBarras | `String` |  |
+| 08 | ContribuinteNome | `String` |  |
+| 09 | DataVencimento | `Nullable<DateTime>` |  |
+| 10 | Moeda | `String` |  |
+| 11 | QuantidadeMoeda | `Nullable<Double>` |  |
+| 12 | ValorPrincipal | `Nullable<Double>` |  |
+| 13 | DataPagamento | `Nullable<DateTime>` |  |
+| 14 | ValorPago | `Nullable<Double>` |  |
+| 15 | NotaFiscal | `String` |  |
+| 16 | SeuNumero | `String` |  |
+| 17 | NossoNumero | `String` |  |
+| 18 | Ocorrencias | `String` |  |
+| 19 | Detalhamento_Z | `Registro3Z` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
-| CodigoDeBarrasSemDv() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |
+| CodigoDeBarrasSemDv() | `String` |  |

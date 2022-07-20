@@ -8,13 +8,13 @@ Outras Inscrições Cadastrais da Pessoa Jurídica
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoInstRespAdmCadastro |  |
-| 03 | CodigoCadastralPJInst |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoInstRespAdmCadastro | `String` |  |
+| 03 | CodigoCadastralPJInst | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

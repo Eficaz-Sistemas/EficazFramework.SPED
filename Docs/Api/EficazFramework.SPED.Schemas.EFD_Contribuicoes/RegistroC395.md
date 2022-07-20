@@ -8,19 +8,19 @@ Notas Fiscais de Venda a Consumidor
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocFiscal |  |
-| 03 | CodigoParticipante |  |
-| 04 | SerieDocFiscal |  |
-| 05 | SubSerieDocFiscal |  |
-| 06 | NumeroDocFiscal |  |
-| 07 | DataEmissaoDocFiscal |  |
-| 08 | ValorDocFiscal |  |
-| 09 | RegistrosC396 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocFiscal | `String` |  |
+| 03 | CodigoParticipante | `String` |  |
+| 04 | SerieDocFiscal | `String` |  |
+| 05 | SubSerieDocFiscal | `String` |  |
+| 06 | NumeroDocFiscal | `Nullable<Int32>` |  |
+| 07 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| 08 | ValorDocFiscal | `Nullable<Double>` |  |
+| 09 | RegistrosC396 | `List<RegistroC396>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

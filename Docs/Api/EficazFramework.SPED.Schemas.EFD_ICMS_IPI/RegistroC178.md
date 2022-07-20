@@ -8,14 +8,14 @@ REGISTRO C178: OPERAÇÕES COM PRODUTOS SUJEITOS À TRIBUTAÇÃO DE IPI POR UNID
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodClasseEnquadIPI |  |
-| 03 | VrUnidPadraoTrib |  |
-| 04 | QtdeTotalProd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodClasseEnquadIPI | `String` |  |
+| 03 | VrUnidPadraoTrib | `Nullable<Double>` |  |
+| 04 | QtdeTotalProd | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

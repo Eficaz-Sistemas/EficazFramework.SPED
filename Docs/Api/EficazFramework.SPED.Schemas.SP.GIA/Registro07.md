@@ -6,14 +6,14 @@
 Detalhes Pagamentos
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Operacao |  |
-| 03 | Imposto |  |
-| 04 | DataVencimento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Operacao | `Operacao` |  |
+| 03 | Imposto | `Nullable<Double>` |  |
+| 04 | DataVencimento | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

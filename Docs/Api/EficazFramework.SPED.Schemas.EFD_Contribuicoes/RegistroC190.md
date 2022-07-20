@@ -10,22 +10,22 @@ Compras e Vendas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocs |  |
-| 03 | DataInicialRefConsolidacao |  |
-| 04 | DataFinalRefConsolidacao |  |
-| 05 | CodigoItem |  |
-| 06 | CodigoNCM |  |
-| 07 | CodigoEXTIPI |  |
-| 08 | VrTotalItem |  |
-| 09 | RegistrosC191 |  |
-| 10 | RegistrosC195 |  |
-| 11 | RegistrosC198 |  |
-| 12 | RegistrosC199 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocs | `String` |  |
+| 03 | DataInicialRefConsolidacao | `Nullable<DateTime>` |  |
+| 04 | DataFinalRefConsolidacao | `Nullable<DateTime>` |  |
+| 05 | CodigoItem | `String` |  |
+| 06 | CodigoNCM | `String` |  |
+| 07 | CodigoEXTIPI | `String` |  |
+| 08 | VrTotalItem | `Nullable<Double>` |  |
+| 09 | RegistrosC191 | `List<RegistroC191>` |  |
+| 10 | RegistrosC195 | `List<RegistroC195>` |  |
+| 11 | RegistrosC198 | `List<RegistroC198>` |  |
+| 12 | RegistrosC199 | `List<RegistroC199>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

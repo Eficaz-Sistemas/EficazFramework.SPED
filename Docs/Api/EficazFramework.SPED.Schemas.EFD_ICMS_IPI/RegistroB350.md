@@ -8,21 +8,21 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodContaPlano |  |
-| 03 | DescContaPlano |  |
-| 04 | CodCosifInstFin |  |
-| 05 | QuantOcorrConta |  |
-| 06 | CodServico |  |
-| 07 | ValorContabil |  |
-| 08 | ValorBCISS |  |
-| 09 | AliquotaISS |  |
-| 10 | ValorISS |  |
-| 11 | CodObsLacto |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodContaPlano | `String` |  |
+| 03 | DescContaPlano | `String` |  |
+| 04 | CodCosifInstFin | `String` |  |
+| 05 | QuantOcorrConta | `Nullable<Int32>` |  |
+| 06 | CodServico | `String` |  |
+| 07 | ValorContabil | `Nullable<Double>` |  |
+| 08 | ValorBCISS | `Nullable<Double>` |  |
+| 09 | AliquotaISS | `Nullable<Double>` |  |
+| 10 | ValorISS | `Nullable<Double>` |  |
+| 11 | CodObsLacto | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

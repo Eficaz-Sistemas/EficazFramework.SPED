@@ -8,21 +8,21 @@ Enquadramento Legal da Operação / Prestação Geradora de Crédito Acumulado d
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ID |  |
-| 03 | Descricao | Código Relativo à Hipotese de Geração, conforme Artigo 71 do RICMS/00. De 1 a 13 |
-| 04 | Anexo |  |
-| 05 | Artigo |  |
-| 06 | Inciso |  |
-| 07 | Alinea |  |
-| 08 | Paragrafo |  |
-| 09 | Item |  |
-| 10 | Letra |  |
-| 11 | Observacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ID | `Int32` |  |
+| 03 | Descricao | `Int32` | Código Relativo à Hipotese de Geração, conforme Artigo 71 do RICMS/00. De 1 a 13 |
+| 04 | Anexo | `String` |  |
+| 05 | Artigo | `String` |  |
+| 06 | Inciso | `String` |  |
+| 07 | Alinea | `String` |  |
+| 08 | Paragrafo | `String` |  |
+| 09 | Item | `String` |  |
+| 10 | Letra | `String` |  |
+| 11 | Observacao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

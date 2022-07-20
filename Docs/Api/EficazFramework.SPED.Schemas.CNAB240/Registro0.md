@@ -6,30 +6,30 @@
 Registro de Header de Arquivo
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | VersaoLayoutArquivo |  |
-| 05 | TipoInscricao | 1 = CPF            2 = CNPJ [Default] |
-| 06 | CNPJ |  |
-| 07 | Convenio |  |
-| 08 | Agencia |  |
-| 09 | AgenciaDV |  |
-| 10 | Conta |  |
-| 11 | ContaDV |  |
-| 12 | DAC |  |
-| 13 | NomeEmpresa |  |
-| 14 | NomeBanco |  |
-| 15 | ArquivoCodigo | 1 = Remessa [Default]            2 = Retorno |
-| 16 | DataGeracaoArquivo |  |
-| 17 | HoraGeracaoArquivo |  |
-| 18 | NumeroSequencialArquivo |  |
-| 19 | VersaoCNAB |  |
-| 20 | UnidadeDensidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | VersaoLayoutArquivo | `String` |  |
+| 05 | TipoInscricao | `String` | 1 = CPF            2 = CNPJ [Default] |
+| 06 | CNPJ | `String` |  |
+| 07 | Convenio | `String` |  |
+| 08 | Agencia | `String` |  |
+| 09 | AgenciaDV | `String` |  |
+| 10 | Conta | `String` |  |
+| 11 | ContaDV | `String` |  |
+| 12 | DAC | `String` |  |
+| 13 | NomeEmpresa | `String` |  |
+| 14 | NomeBanco | `String` |  |
+| 15 | ArquivoCodigo | `String` | 1 = Remessa [Default]            2 = Retorno |
+| 16 | DataGeracaoArquivo | `Nullable<DateTime>` |  |
+| 17 | HoraGeracaoArquivo | `Nullable<TimeSpan>` |  |
+| 18 | NumeroSequencialArquivo | `String` |  |
+| 19 | VersaoCNAB | `String` |  |
+| 20 | UnidadeDensidade | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

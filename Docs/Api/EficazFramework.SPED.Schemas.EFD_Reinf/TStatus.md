@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cdStatus |  |
-| 03 | descRetorno |  |
-| 04 | dadosRegistroOcorrenciaLote |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cdStatus | `String` |  |
+| 03 | descRetorno | `String` |  |
+| 04 | dadosRegistroOcorrenciaLote | `TRegistroOcorrenciasOcorrencias[]` |  |

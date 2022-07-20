@@ -4,6 +4,6 @@
 ## TInfoEmpregadorInfoOrgInternacional Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | indAcordoIsenMulta |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | indAcordoIsenMulta | `SByte` |  |

@@ -8,13 +8,13 @@ Mapeamento para Planos de Contas das Empresas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoIdentEmpresaParticipante |  |
-| 03 | CodigoContaEmpresaParticipante |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoIdentEmpresaParticipante | `String` |  |
+| 03 | CodigoContaEmpresaParticipante | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,21 +8,21 @@ Items dos Documentos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodRespRetencao |  |
-| 03 | QuantidadeItem |  |
-| 04 | Unidade |  |
-| 05 | VrUnitario |  |
-| 06 | VrUnitarioOpPropria |  |
-| 07 | VrUnitarioBcICMSSt |  |
-| 08 | VrUnitarioICMSSt |  |
-| 09 | VrUnitarioFCPStAgregado |  |
-| 10 | CodigoDocArrecad |  |
-| 11 | NumeroDocArrecad |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodRespRetencao | `CodRespRetStC180` |  |
+| 03 | QuantidadeItem | `Nullable<Double>` |  |
+| 04 | Unidade | `String` |  |
+| 05 | VrUnitario | `Nullable<Double>` |  |
+| 06 | VrUnitarioOpPropria | `Nullable<Double>` |  |
+| 07 | VrUnitarioBcICMSSt | `Nullable<Double>` |  |
+| 08 | VrUnitarioICMSSt | `Nullable<Double>` |  |
+| 09 | VrUnitarioFCPStAgregado | `Nullable<Double>` |  |
+| 10 | CodigoDocArrecad | `CodigoDocArrecadC180` |  |
+| 11 | NumeroDocArrecad | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

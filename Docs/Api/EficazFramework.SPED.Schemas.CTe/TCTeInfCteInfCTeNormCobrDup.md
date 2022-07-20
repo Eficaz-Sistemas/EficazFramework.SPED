@@ -4,13 +4,13 @@
 ## TCTeInfCteInfCTeNormCobrDup Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nDup |  |
-| 03 | dVenc |  |
-| 04 | vDup |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nDup | `String` |  |
+| 03 | dVenc | `String` |  |
+| 04 | vDup | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

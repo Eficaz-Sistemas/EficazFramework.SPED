@@ -4,14 +4,14 @@
 ## TCTeInfCteInfCTeNormInfCargaInfQ Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cUnid |  |
-| 03 | tpMed |  |
-| 04 | qCarga |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cUnid | `TCTeInfCteInfCTeNormInfCargaInfQCUnid` |  |
+| 03 | tpMed | `String` |  |
+| 04 | qCarga | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

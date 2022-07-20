@@ -4,11 +4,11 @@
 ## InftributosFederais Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vINSS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vINSS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

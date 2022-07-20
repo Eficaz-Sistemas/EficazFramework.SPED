@@ -9,22 +9,22 @@ e operações de devolução de compras e vendas - pis pasep
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJParticipanteOperConsolidadas |  |
-| 03 | CSTPis |  |
-| 04 | CFOP |  |
-| 05 | VrItem |  |
-| 06 | VrDescontoExclusao |  |
-| 07 | VrBaseCalculoPis |  |
-| 08 | AliquotaPis |  |
-| 09 | BCPISQuantidade |  |
-| 10 | AliquotaPISReais |  |
-| 11 | VrPIS |  |
-| 12 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJParticipanteOperConsolidadas | `String` |  |
+| 03 | CSTPis | `String` |  |
+| 04 | CFOP | `String` |  |
+| 05 | VrItem | `Nullable<Double>` |  |
+| 06 | VrDescontoExclusao | `Nullable<Double>` |  |
+| 07 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 08 | AliquotaPis | `Nullable<Double>` |  |
+| 09 | BCPISQuantidade | `Nullable<Double>` |  |
+| 10 | AliquotaPISReais | `Nullable<Double>` |  |
+| 11 | VrPIS | `Double` |  |
+| 12 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

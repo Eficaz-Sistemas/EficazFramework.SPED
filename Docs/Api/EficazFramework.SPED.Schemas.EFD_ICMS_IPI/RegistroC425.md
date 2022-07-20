@@ -8,17 +8,17 @@ Resumo de Itens do Movimento Diário (Código 02, 2D)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Produto |  |
-| 03 | Quantidade |  |
-| 04 | Unidade |  |
-| 05 | ValorItem |  |
-| 06 | PIS |  |
-| 07 | COFINS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Produto | `String` |  |
+| 03 | Quantidade | `Double` |  |
+| 04 | Unidade | `String` |  |
+| 05 | ValorItem | `Nullable<Double>` |  |
+| 06 | PIS | `Nullable<Double>` |  |
+| 07 | COFINS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

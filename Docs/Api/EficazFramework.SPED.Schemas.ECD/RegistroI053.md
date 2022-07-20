@@ -8,14 +8,14 @@ Subcontas Correlatas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodIdentGrupoContaSubconta |  |
-| 03 | CodSubcontaCorrelata |  |
-| 04 | NaturezaSubcontaCorrelata |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodIdentGrupoContaSubconta | `String` |  |
+| 03 | CodSubcontaCorrelata | `String` |  |
+| 04 | NaturezaSubcontaCorrelata | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

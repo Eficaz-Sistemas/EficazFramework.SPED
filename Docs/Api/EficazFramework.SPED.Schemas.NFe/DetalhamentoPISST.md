@@ -4,15 +4,15 @@
 ## DetalhamentoPISST Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Aliquota | Alíquota do PIS, em percentual (%). |
-| 03 | QuantidadeVendida |  |
-| 04 | AliquotaMoeda | Alíquota do PIS, em moeda (R$). |
-| 05 | BaseDeCalculo |  |
-| 06 | ValorPISST |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Aliquota | `Nullable<Double>` | Alíquota do PIS, em percentual (%). |
+| 03 | QuantidadeVendida | `Nullable<Double>` |  |
+| 04 | AliquotaMoeda | `Nullable<Double>` | Alíquota do PIS, em moeda (R$). |
+| 05 | BaseDeCalculo | `Nullable<Double>` |  |
+| 06 | ValorPISST | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

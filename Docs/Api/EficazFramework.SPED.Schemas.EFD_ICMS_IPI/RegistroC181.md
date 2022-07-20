@@ -9,31 +9,31 @@ substituição tributária(código 01, 1B, 04 e 55).
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodMotivoRestituicao |  |
-| 03 | QuantidadeItem |  |
-| 04 | Unidade |  |
-| 05 | EspecieDocSaida |  |
-| 06 | SerieDocSaida |  |
-| 07 | ECFNumSerieSaida |  |
-| 08 | NumeroDocSaida |  |
-| 09 | ChaveDocSaida |  |
-| 10 | DataDocSaida |  |
-| 11 | NumeroItemDocSaida |  |
-| 12 | VrUnitarioSaida |  |
-| 13 | VrUnitarioOpPropriaEstoqueSaida |  |
-| 14 | VrUnitarioSTSaida |  |
-| 15 | VrUnitarioFCP_STSaida |  |
-| 16 | VrUnitarioICMSSaida |  |
-| 17 | VrUnitarioOpPropriaSaida |  |
-| 18 | VrUnitarioST_TotalRestituir |  |
-| 19 | VrUnitarioST_FCPRestituir |  |
-| 20 | VrUnitarioST_TotalComplementar |  |
-| 21 | VrUnitarioST_FCPComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodMotivoRestituicao | `String` |  |
+| 03 | QuantidadeItem | `Nullable<Double>` |  |
+| 04 | Unidade | `String` |  |
+| 05 | EspecieDocSaida | `String` |  |
+| 06 | SerieDocSaida | `String` |  |
+| 07 | ECFNumSerieSaida | `String` |  |
+| 08 | NumeroDocSaida | `Nullable<Int64>` |  |
+| 09 | ChaveDocSaida | `String` |  |
+| 10 | DataDocSaida | `Nullable<DateTime>` |  |
+| 11 | NumeroItemDocSaida | `Nullable<Int16>` |  |
+| 12 | VrUnitarioSaida | `Nullable<Double>` |  |
+| 13 | VrUnitarioOpPropriaEstoqueSaida | `Nullable<Double>` |  |
+| 14 | VrUnitarioSTSaida | `Nullable<Double>` |  |
+| 15 | VrUnitarioFCP_STSaida | `Nullable<Double>` |  |
+| 16 | VrUnitarioICMSSaida | `Nullable<Double>` |  |
+| 17 | VrUnitarioOpPropriaSaida | `Nullable<Double>` |  |
+| 18 | VrUnitarioST_TotalRestituir | `Nullable<Double>` |  |
+| 19 | VrUnitarioST_FCPRestituir | `Nullable<Double>` |  |
+| 20 | VrUnitarioST_TotalComplementar | `Nullable<Double>` |  |
+| 21 | VrUnitarioST_FCPComplementar | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

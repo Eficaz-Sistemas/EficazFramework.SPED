@@ -8,22 +8,22 @@ REGISTRO DE DOCUMENTO FISCAL ELETRÔNICO PARA FINS DE RESSARCIMENTO DE SUBSTITUI
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ChaveNFe |  |
-| 03 | DataEscrituracao |  |
-| 04 | NumeroItemOrdem |  |
-| 05 | Operacao |  |
-| 06 | CodigoProduto |  |
-| 07 | CFOP |  |
-| 08 | Quantidade |  |
-| 09 | ICMSTotal | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
-| 10 | ValorConfronto | Valor de confronto nas operações de saída |
-| 11 | CodigoLegal |  |
-| 12 | IsDevolucao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ChaveNFe | `String` |  |
+| 03 | DataEscrituracao | `Nullable<DateTime>` |  |
+| 04 | NumeroItemOrdem | `Nullable<Int32>` |  |
+| 05 | Operacao | `IndicadorOperacao` |  |
+| 06 | CodigoProduto | `String` |  |
+| 07 | CFOP | `String` |  |
+| 08 | Quantidade | `Nullable<Double>` |  |
+| 09 | ICMSTotal | `Nullable<Double>` | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
+| 10 | ValorConfronto | `Nullable<Double>` | Valor de confronto nas operações de saída |
+| 11 | CodigoLegal | `EnquadramentLegal` |  |
+| 12 | IsDevolucao | `Boolean` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

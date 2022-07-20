@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | status |  |
-| 03 | idCmd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | status | `String[]` |  |
+| 03 | idCmd | `String` |  |

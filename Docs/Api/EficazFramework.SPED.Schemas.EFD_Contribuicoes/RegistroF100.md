@@ -8,29 +8,29 @@ Demais documentos e operações geradoras de contribuições e créditos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoOperacaoF |  |
-| 03 | CodigoParticipante |  |
-| 04 | CodigoItem |  |
-| 05 | DataOperacao |  |
-| 06 | ValorOperacaoItem |  |
-| 07 | CSTPis |  |
-| 08 | VrBcPis |  |
-| 09 | AliqPis |  |
-| 10 | VrPis |  |
-| 11 | CSTCofins |  |
-| 12 | VrBcCofins |  |
-| 13 | AliqCofins |  |
-| 14 | VrCofins |  |
-| 15 | NatBcCredito |  |
-| 16 | IndicadorOrigemCredito |  |
-| 17 | CodigoContaContabil |  |
-| 18 | CodigoCentroCustos |  |
-| 19 | DescricaoDocOperacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoOperacaoF | `IndicadorTipoOperacaoF` |  |
+| 03 | CodigoParticipante | `String` |  |
+| 04 | CodigoItem | `String` |  |
+| 05 | DataOperacao | `Nullable<DateTime>` |  |
+| 06 | ValorOperacaoItem | `Nullable<Double>` |  |
+| 07 | CSTPis | `String` |  |
+| 08 | VrBcPis | `Nullable<Double>` |  |
+| 09 | AliqPis | `Nullable<Double>` |  |
+| 10 | VrPis | `Nullable<Double>` |  |
+| 11 | CSTCofins | `String` |  |
+| 12 | VrBcCofins | `Nullable<Double>` |  |
+| 13 | AliqCofins | `Nullable<Double>` |  |
+| 14 | VrCofins | `Nullable<Double>` |  |
+| 15 | NatBcCredito | `String` |  |
+| 16 | IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
+| 17 | CodigoContaContabil | `String` |  |
+| 18 | CodigoCentroCustos | `String` |  |
+| 19 | DescricaoDocOperacao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

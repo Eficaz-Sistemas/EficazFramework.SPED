@@ -8,21 +8,21 @@ Contribuição Retida na fonte
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorNatRetFonte |  |
-| 03 | DataRetencao |  |
-| 04 | VrBcRetencao |  |
-| 05 | VrTotalRetidoFonte |  |
-| 06 | CodigoReceita |  |
-| 07 | IndicadorNatRec |  |
-| 08 | CNPJFontePagadora |  |
-| 09 | VrRetidoFontePis |  |
-| 10 | VrRetidoFonteCofins |  |
-| 11 | IndicadorCondDeclarante |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorNatRetFonte | `IndicadorNatRetFonte` |  |
+| 03 | DataRetencao | `Nullable<DateTime>` |  |
+| 04 | VrBcRetencao | `Nullable<Double>` |  |
+| 05 | VrTotalRetidoFonte | `Nullable<Double>` |  |
+| 06 | CodigoReceita | `String` |  |
+| 07 | IndicadorNatRec | `IndicadorNaturezaReceita` |  |
+| 08 | CNPJFontePagadora | `String` |  |
+| 09 | VrRetidoFontePis | `Nullable<Double>` |  |
+| 10 | VrRetidoFonteCofins | `Nullable<Double>` |  |
+| 11 | IndicadorCondDeclarante | `IndicadorCondicaoPJDeclarante` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

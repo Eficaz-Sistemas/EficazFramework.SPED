@@ -4,12 +4,12 @@
 ## DetalhamentoCOFINS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | vBC |  |
-| 04 | pCOFINS |  |
-| 05 | vCOFINS |  |
-| 06 | vCOFINS_Double |  |
-| 07 | qBCProd |  |
-| 08 | vAliqProd |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `String` |  |
+| 03 | vBC | `String` |  |
+| 04 | pCOFINS | `String` |  |
+| 05 | vCOFINS | `String` |  |
+| 06 | vCOFINS_Double | `Nullable<Double>` |  |
+| 07 | qBCProd | `String` |  |
+| 08 | vAliqProd | `String` |  |

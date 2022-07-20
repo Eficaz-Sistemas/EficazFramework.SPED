@@ -4,7 +4,7 @@
 ## THorario Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | dia |  |
-| 03 | codHorContrat |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | dia | `SByte` |  |
+| 03 | codHorContrat | `String` |  |

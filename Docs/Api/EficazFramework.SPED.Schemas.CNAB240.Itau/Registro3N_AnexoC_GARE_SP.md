@@ -4,26 +4,26 @@
 ## Registro3N_AnexoC_GARE_SP Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoRecolhimento |  |
-| 03 | TipoInscricao | 1 = CNPJ [Default]            2 = CEI |
-| 04 | CNPJ_CPF |  |
-| 05 | InscricaoEstadual |  |
-| 06 | DividaAtiva_Etiqueta |  |
-| 07 | Parcela_Notificacao |  |
-| 08 | Competencia |  |
-| 09 | ParcelaNotificacao |  |
-| 10 | ValorPrincipal |  |
-| 11 | ValorMulta |  |
-| 12 | ValorJurosEncargos |  |
-| 13 | ValorTotal |  |
-| 14 | DataVencimento |  |
-| 15 | DataArrecadacao |  |
-| 16 | ContribuinteNome |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoRecolhimento | `String` |  |
+| 03 | TipoInscricao | `String` | 1 = CNPJ [Default]            2 = CEI |
+| 04 | CNPJ_CPF | `String` |  |
+| 05 | InscricaoEstadual | `String` |  |
+| 06 | DividaAtiva_Etiqueta | `String` |  |
+| 07 | Parcela_Notificacao | `String` |  |
+| 08 | Competencia | `Nullable<DateTime>` |  |
+| 09 | ParcelaNotificacao | `String` |  |
+| 10 | ValorPrincipal | `Nullable<Double>` |  |
+| 11 | ValorMulta | `Nullable<Double>` |  |
+| 12 | ValorJurosEncargos | `Nullable<Double>` |  |
+| 13 | ValorTotal | `Nullable<Double>` |  |
+| 14 | DataVencimento | `Nullable<DateTime>` |  |
+| 15 | DataArrecadacao | `Nullable<DateTime>` |  |
+| 16 | ContribuinteNome | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

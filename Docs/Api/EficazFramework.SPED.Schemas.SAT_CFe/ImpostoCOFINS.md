@@ -6,7 +6,7 @@
 COFINS
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Tributacao |  |
-| 03 | TributacaoIndentifier |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Tributacao | `DetalhamentoCOFINS` |  |
+| 03 | TributacaoIndentifier | `Tributacao_COFINS_Identifier` |  |

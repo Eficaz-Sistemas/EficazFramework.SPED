@@ -8,26 +8,26 @@ Tabela de Identificação do Item (Produtos e Serviços)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ID |  |
-| 03 | Descricao |  |
-| 04 | CodigoBarras |  |
-| 05 | IDAnterior |  |
-| 06 | UnidadeMedida |  |
-| 07 | TipoItem |  |
-| 08 | NCM |  |
-| 09 | EX_IPI |  |
-| 10 | Genero |  |
-| 11 | ID_Servico |  |
-| 12 | AliquotaICMS |  |
-| 13 | CEST |  |
-| 14 | Registros0205 |  |
-| 15 | Registros0206 |  |
-| 16 | Registros0220 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ID | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | CodigoBarras | `String` |  |
+| 05 | IDAnterior | `String` |  |
+| 06 | UnidadeMedida | `String` |  |
+| 07 | TipoItem | `TipoItem` |  |
+| 08 | NCM | `String` |  |
+| 09 | EX_IPI | `String` |  |
+| 10 | Genero | `Nullable<Int64>` |  |
+| 11 | ID_Servico | `Nullable<Int64>` |  |
+| 12 | AliquotaICMS | `Nullable<Double>` |  |
+| 13 | CEST | `String` |  |
+| 14 | Registros0205 | `List<Registro0205>` |  |
+| 15 | Registros0206 | `Registro0206` |  |
+| 16 | Registros0220 | `List<Registro0220>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

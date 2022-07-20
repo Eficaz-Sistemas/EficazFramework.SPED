@@ -8,33 +8,33 @@ Aquisição de Serviços de Transporte
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorOperacao |  |
-| 03 | IndicadorEmitenteDocFiscal |  |
-| 04 | CodigoParticipante |  |
-| 05 | CodigoModeloDocFiscal |  |
-| 06 | CodigoSituacaoDocFiscal |  |
-| 07 | SerieDocFiscal |  |
-| 08 | SubSerieDocFiscal |  |
-| 09 | NumeroDocFiscal |  |
-| 10 | ChaveCte |  |
-| 11 | DataEmissaoDocFiscal |  |
-| 12 | DataAquisicaoPrestServico |  |
-| 13 | TipoCte |  |
-| 14 | ChaveCteReferencia |  |
-| 15 | VrTotalDocFiscal |  |
-| 16 | VrTotalDesconto |  |
-| 17 | IndicadorTipoFrete |  |
-| 18 | VrTotalPrestacaoServ |  |
-| 19 | VrBcICMS |  |
-| 20 | VrICMS |  |
-| 21 | VrNãoTributadoICMS |  |
-| 22 | CodigoInfoComplementarDocFiscal |  |
-| 23 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorOperacao | `IndicadorTipoOperacaoBlocoD` |  |
+| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | CodigoModeloDocFiscal | `String` |  |
+| 06 | CodigoSituacaoDocFiscal | `String` |  |
+| 07 | SerieDocFiscal | `String` |  |
+| 08 | SubSerieDocFiscal | `String` |  |
+| 09 | NumeroDocFiscal | `Nullable<Int64>` |  |
+| 10 | ChaveCte | `String` |  |
+| 11 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| 12 | DataAquisicaoPrestServico | `Nullable<DateTime>` |  |
+| 13 | TipoCte | `String` |  |
+| 14 | ChaveCteReferencia | `String` |  |
+| 15 | VrTotalDocFiscal | `Nullable<Double>` |  |
+| 16 | VrTotalDesconto | `Nullable<Double>` |  |
+| 17 | IndicadorTipoFrete | `IndicadorFrete` |  |
+| 18 | VrTotalPrestacaoServ | `Nullable<Double>` |  |
+| 19 | VrBcICMS | `Nullable<Double>` |  |
+| 20 | VrICMS | `Nullable<Double>` |  |
+| 21 | VrNãoTributadoICMS | `Nullable<Double>` |  |
+| 22 | CodigoInfoComplementarDocFiscal | `String` |  |
+| 23 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

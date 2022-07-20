@@ -8,20 +8,20 @@ Dados Complementares da entidade
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NomeFantasia |  |
-| 03 | CEP |  |
-| 04 | Endereco |  |
-| 05 | Numero |  |
-| 06 | Complemento |  |
-| 07 | Bairro |  |
-| 08 | Fone |  |
-| 09 | Fax |  |
-| 10 | EMail |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NomeFantasia | `String` |  |
+| 03 | CEP | `String` |  |
+| 04 | Endereco | `String` |  |
+| 05 | Numero | `String` |  |
+| 06 | Complemento | `String` |  |
+| 07 | Bairro | `String` |  |
+| 08 | Fone | `String` |  |
+| 09 | Fax | `String` |  |
+| 10 | EMail | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,6 +4,6 @@
 ## S1050_Exclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideHorContratual |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideHorContratual | `TIdeHorContratual` |  |

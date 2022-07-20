@@ -4,18 +4,18 @@
 ## eSocialEvtAdmissaoVinculoInfoContrato Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codCargo |  |
-| 03 | codFuncao |  |
-| 04 | codCateg |  |
-| 05 | codCarreira |  |
-| 06 | dtIngrCarr |  |
-| 07 | dtIngrCarrSpecified |  |
-| 08 | remuneracao |  |
-| 09 | duracao |  |
-| 10 | localTrabalho |  |
-| 11 | horContratual |  |
-| 12 | filiacaoSindical |  |
-| 13 | alvaraJudicial |  |
-| 14 | observacoes |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codCargo | `String` |  |
+| 03 | codFuncao | `String` |  |
+| 04 | codCateg | `String` |  |
+| 05 | codCarreira | `String` |  |
+| 06 | dtIngrCarr | `DateTime` |  |
+| 07 | dtIngrCarrSpecified | `Boolean` |  |
+| 08 | remuneracao | `TRemun` |  |
+| 09 | duracao | `eSocialEvtAdmissaoVinculoInfoContratoDuracao` |  |
+| 10 | localTrabalho | `eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho` |  |
+| 11 | horContratual | `eSocialEvtAdmissaoVinculoInfoContratoHorContratual` |  |
+| 12 | filiacaoSindical | `eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical[]` |  |
+| 13 | alvaraJudicial | `eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial` |  |
+| 14 | observacoes | `eSocialEvtAdmissaoVinculoInfoContratoObservacoes[]` |  |

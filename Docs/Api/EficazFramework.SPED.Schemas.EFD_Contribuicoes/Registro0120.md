@@ -8,13 +8,13 @@ Identificação de Períodos Dispensados da Escrituração Fiscal Digital das Co
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | MesReferencia |  |
-| 03 | InformacaoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | MesReferencia | `Nullable<DateTime>` |  |
+| 03 | InformacaoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

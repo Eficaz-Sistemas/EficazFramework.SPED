@@ -8,17 +8,17 @@ Estoque Escriturado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEscrituracao |  |
-| 03 | CodigoProduto |  |
-| 04 | UnidadeInventariada |  |
-| 05 | Quantidade |  |
-| 06 | IndicadorPosse |  |
-| 07 | CodigoParticipante |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEscrituracao | `Nullable<DateTime>` |  |
+| 03 | CodigoProduto | `String` |  |
+| 04 | UnidadeInventariada | `String` |  |
+| 05 | Quantidade | `Nullable<Double>` |  |
+| 06 | IndicadorPosse | `IndicadorPropriedade` |  |
+| 07 | CodigoParticipante | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

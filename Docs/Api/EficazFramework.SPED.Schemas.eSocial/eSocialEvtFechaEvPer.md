@@ -4,10 +4,10 @@
 ## eSocialEvtFechaEvPer Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEvento |  |
-| 03 | ideEmpregador |  |
-| 04 | ideRespInf |  |
-| 05 | infoFech |  |
-| 06 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEvento | `eSocialEvtFechaEvPerIdeEvento` |  |
+| 03 | ideEmpregador | `TEmpregador` |  |
+| 04 | ideRespInf | `eSocialEvtFechaEvPerIdeRespInf` |  |
+| 05 | infoFech | `eSocialEvtFechaEvPerInfoFech` |  |
+| 06 | Id | `String` |  |

@@ -4,25 +4,25 @@
 ## tcInfRps Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IdentificacaoRps |  |
-| 03 | DataEmissao |  |
-| 04 | NaturezaOperacao |  |
-| 05 | RegimeEspecialTributacao |  |
-| 06 | RegimeEspecialTributacaoSpecified |  |
-| 07 | OptanteSimplesNacional |  |
-| 08 | IncentivadorCultural |  |
-| 09 | Status |  |
-| 10 | RpsSubstituido |  |
-| 11 | Servico |  |
-| 12 | Prestador |  |
-| 13 | Tomador |  |
-| 14 | IntermediarioServico |  |
-| 15 | ConstrucaoCivil |  |
-| 16 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IdentificacaoRps | `tcIdentificacaoRps` |  |
+| 03 | DataEmissao | `DateTime` |  |
+| 04 | NaturezaOperacao | `Int32` |  |
+| 05 | RegimeEspecialTributacao | `Int32` |  |
+| 06 | RegimeEspecialTributacaoSpecified | `Boolean` |  |
+| 07 | OptanteSimplesNacional | `Int32` |  |
+| 08 | IncentivadorCultural | `Int32` |  |
+| 09 | Status | `Int32` |  |
+| 10 | RpsSubstituido | `tcIdentificacaoRps` |  |
+| 11 | Servico | `tcDadosServico` |  |
+| 12 | Prestador | `tcIdentificacaoPrestador` |  |
+| 13 | Tomador | `tcDadosTomador` |  |
+| 14 | IntermediarioServico | `tcIdentificacaoIntermediarioServico` |  |
+| 15 | ConstrucaoCivil | `tcDadosConstrucaoCivil` |  |
+| 16 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

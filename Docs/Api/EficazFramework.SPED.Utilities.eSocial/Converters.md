@@ -4,9 +4,9 @@
 ## Converters Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EnumSimNaoToBoolean(SimNaoString) |  |
-| EnumSimNaoToBoolean(SimNaoByte) |  |
-| BooleanToEnumSimNaoString(bool) |  |
-| BooleanToEnumSimNaoByte(bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EnumSimNaoToBoolean(SimNaoString) | `Boolean` |  |
+| EnumSimNaoToBoolean(SimNaoByte) | `Boolean` |  |
+| BooleanToEnumSimNaoString(bool) | `SimNaoString` |  |
+| BooleanToEnumSimNaoByte(bool) | `SimNaoByte` |  |

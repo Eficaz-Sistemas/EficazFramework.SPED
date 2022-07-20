@@ -4,9 +4,9 @@
 ## TDadosEstabInfoTrabInfoApr Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | contApr |  |
-| 03 | nrProcJud |  |
-| 04 | contEntEd |  |
-| 05 | infoEntEduc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | contApr | `IndicadorContratAprendiz` |  |
+| 03 | nrProcJud | `String` |  |
+| 04 | contEntEd | `String` |  |
+| 05 | infoEntEduc | `TDadosEstabInfoTrabInfoAprInfoEntEduc[]` |  |

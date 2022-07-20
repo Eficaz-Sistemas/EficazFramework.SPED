@@ -8,15 +8,15 @@ REGISTRO C175: OPERAÇÕES COM VEÍCULOS NOVOS (CÓDIGO 01 E 55)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoOperacaoVeiculo |  |
-| 03 | CNPJ |  |
-| 04 | UFConcessionaria |  |
-| 05 | ChassiVeiculo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoOperacaoVeiculo | `IndicadorTipoOperacaoVeiculo` |  |
+| 03 | CNPJ | `String` |  |
+| 04 | UFConcessionaria | `String` |  |
+| 05 | ChassiVeiculo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,9 +6,9 @@
 Classe principal de configuração, leitura e escrita da EFD ICMS / IPI.
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ProcessaLinha(string) |  |
-| LeEmpresaArquivo(Stream) |  |
-| PrefixoBlocoEncerramento() |  |
-| SufixoBlocoEncerramento() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ProcessaLinha(string) | `Void` |  |
+| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| PrefixoBlocoEncerramento() | `Registro[]` |  |
+| SufixoBlocoEncerramento() | `Registro[]` |  |

@@ -6,15 +6,15 @@
 Registro Mestre
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataGeracao |  |
-| 03 | HoraGeracao |  |
-| 04 | VersaoSistemaGIA |  |
-| 05 | TotalRegistros05 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataGeracao | `Nullable<DateTime>` |  |
+| 03 | HoraGeracao | `Nullable<TimeSpan>` |  |
+| 04 | VersaoSistemaGIA | `String` |  |
+| 05 | TotalRegistros05 | `Nullable<Int32>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

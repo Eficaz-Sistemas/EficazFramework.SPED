@@ -4,26 +4,26 @@
 ## eSocialRetornoEvento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Id |  |
-| 03 | ideEmpregador |  |
-| 04 | recepcao |  |
-| 05 | processamento |  |
-| 06 | recibo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Id | `String` |  |
+| 03 | ideEmpregador | `TEmpregador` |  |
+| 04 | recepcao | `TDadosRecepcaoRetornoEvento` |  |
+| 05 | processamento | `TProcessamentoRetornoEvento` |  |
+| 06 | recibo | `eSocialRetornoEventoRecibo` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, eSocialRetornoEvento, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, eSocialRetornoEvento) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, eSocialRetornoEvento, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, eSocialRetornoEvento) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, eSocialRetornoEvento, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, eSocialRetornoEvento) | `Boolean` |  |
+| Deserialize(string) | `eSocialRetornoEvento` |  |
+| Deserialize(Stream) | `eSocialRetornoEvento` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, eSocialRetornoEvento, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, eSocialRetornoEvento) | `Boolean` |  |
+| LoadFrom(Stream) | `eSocialRetornoEvento` |  |
+| LoadFromAsync(Stream) | `Task<eSocialRetornoEvento>` |  |

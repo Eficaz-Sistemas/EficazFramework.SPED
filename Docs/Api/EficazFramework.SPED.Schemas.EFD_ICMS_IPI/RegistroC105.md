@@ -9,13 +9,13 @@ DO DESTINATÁRIO DO DOCUMENTO FISCAL (CÓDIGO 55).
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Operacao |  |
-| 03 | SiglaUFdestino_IcmsST |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Operacao | `IndicadorTipoOperacao` |  |
+| 03 | SiglaUFdestino_IcmsST | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

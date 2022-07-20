@@ -4,9 +4,9 @@
 ## TRg Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRg |  |
-| 03 | orgaoEmissor |  |
-| 04 | dtExped |  |
-| 05 | dtExpedSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRg | `String` |  |
+| 03 | orgaoEmissor | `String` |  |
+| 04 | dtExped | `DateTime` |  |
+| 05 | dtExpedSpecified | `Boolean` |  |

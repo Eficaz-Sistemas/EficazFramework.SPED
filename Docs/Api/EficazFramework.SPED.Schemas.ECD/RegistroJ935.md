@@ -8,14 +8,14 @@ Identificação dos Auditores Independentes
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJCPFAuditor |  |
-| 03 | NomeAuditor |  |
-| 04 | RegistroAuditorCVM |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJCPFAuditor | `String` |  |
+| 03 | NomeAuditor | `String` |  |
+| 04 | RegistroAuditorCVM | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

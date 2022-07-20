@@ -8,14 +8,14 @@ Código de Grupos por Marca Comercial - Refri (Bebidas Frias)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoTabelaIncidencia |  |
-| 03 | CodigoGrupoAnexoIII |  |
-| 04 | MarcaComercial |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoTabelaIncidencia | `CodigoTabelaIncidencia` |  |
+| 03 | CodigoGrupoAnexoIII | `String` |  |
+| 04 | MarcaComercial | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

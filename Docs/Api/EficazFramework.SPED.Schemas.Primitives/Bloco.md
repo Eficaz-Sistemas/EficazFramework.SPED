@@ -4,15 +4,15 @@
 ## Bloco Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Registros | Obtém a listagem de registros da instância de bloco. |
-| 03 | TotaisRegistros | Obtém a contagem de um determinado registro da instância de bloco. |
-| 04 | RegistrosGroupBy | Obtém uma listagem dos tipos de registros informados na escrituração |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Registros | `ObservableCollection<Registro>` | Obtém a listagem de registros da instância de bloco. |
+| 03 | TotaisRegistros | `Dictionary<String,Int64>` | Obtém a contagem de um determinado registro da instância de bloco. |
+| 04 | RegistrosGroupBy | `Dictionary<String,Int64>` | Obtém uma listagem dos tipos de registros informados na escrituração |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ContagemRegistro(string) | Obtém a contagem de um determinado registro da instância de bloco. |
-| EscreveLinha() |  |
-| GeraRegistrosTotalizadores(string, string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ContagemRegistro(string) | `Int64` | Obtém a contagem de um determinado registro da instância de bloco. |
+| EscreveLinha() | `String` |  |
+| GeraRegistrosTotalizadores(string, string) | `RegistroTotalizador[]` |  |

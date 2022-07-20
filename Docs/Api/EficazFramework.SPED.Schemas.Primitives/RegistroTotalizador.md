@@ -4,14 +4,14 @@
 ## RegistroTotalizador Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | StringFormat |  |
-| 03 | RegistroTotalizado |  |
-| 04 | TotalRegistros |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | StringFormat | `String` |  |
+| 03 | RegistroTotalizado | `String` |  |
+| 04 | TotalRegistros | `Int32` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

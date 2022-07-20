@@ -8,16 +8,16 @@ Complemento do Documento - Operações de Importação
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DocumentoDeImportacao |  |
-| 03 | NumeroDocImportacao |  |
-| 04 | VrPagoPisImportacao |  |
-| 05 | VrPagoCofinsImportacao |  |
-| 06 | NumeroAtoConcessorioRegimeDrawBack |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DocumentoDeImportacao | `DocumentoImportacao` |  |
+| 03 | NumeroDocImportacao | `String` |  |
+| 04 | VrPagoPisImportacao | `Nullable<Double>` |  |
+| 05 | VrPagoCofinsImportacao | `Nullable<Double>` |  |
+| 06 | NumeroAtoConcessorioRegimeDrawBack | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

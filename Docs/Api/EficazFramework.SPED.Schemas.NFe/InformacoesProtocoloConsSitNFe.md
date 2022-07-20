@@ -4,19 +4,19 @@
 ## InformacoesProtocoloConsSitNFe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Ambiente |  |
-| 03 | VersaoAplicativo |  |
-| 04 | ChaveNFe |  |
-| 05 | DataHoraRecebimento |  |
-| 06 | Protocolo |  |
-| 07 | DigestValue |  |
-| 08 | StatusNFeCodigo |  |
-| 09 | StatusNfeMotivo |  |
-| 10 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Ambiente | `Ambiente` |  |
+| 03 | VersaoAplicativo | `String` |  |
+| 04 | ChaveNFe | `String` |  |
+| 05 | DataHoraRecebimento | `DateTime` |  |
+| 06 | Protocolo | `String` |  |
+| 07 | DigestValue | `Byte[]` |  |
+| 08 | StatusNFeCodigo | `String` |  |
+| 09 | StatusNfeMotivo | `String` |  |
+| 10 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

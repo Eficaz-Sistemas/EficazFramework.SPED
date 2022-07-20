@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | identificacao |  |
-| 03 | razaoSocial |  |
-| 04 | municipio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | identificacao | `TIdentificacao` |  |
+| 03 | razaoSocial | `String` |  |
+| 04 | municipio | `String` |  |

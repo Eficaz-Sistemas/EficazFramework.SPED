@@ -8,17 +8,17 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorContabil |  |
-| 03 | ValorBcISS |  |
-| 04 | AliquotaISS |  |
-| 05 | TotalValorOpIsentas |  |
-| 06 | TotalCombAliqISS |  |
-| 07 | CodServico |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorContabil | `Nullable<Double>` |  |
+| 03 | ValorBcISS | `Nullable<Double>` |  |
+| 04 | AliquotaISS | `Nullable<Double>` |  |
+| 05 | TotalValorOpIsentas | `Nullable<Double>` |  |
+| 06 | TotalCombAliqISS | `Nullable<Double>` |  |
+| 07 | CodServico | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

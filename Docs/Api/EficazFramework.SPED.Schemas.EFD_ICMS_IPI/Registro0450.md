@@ -8,13 +8,13 @@ Tabela de Informação Complementar do documento fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoInfComplementar | Código da Informação Complementar - 06 dígitos. |
-| 03 | TextoInfComplementar | Texto Livre da Informação Complementar. |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoInfComplementar | `String` | Código da Informação Complementar - 06 dígitos. |
+| 03 | TextoInfComplementar | `String` | Texto Livre da Informação Complementar. |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

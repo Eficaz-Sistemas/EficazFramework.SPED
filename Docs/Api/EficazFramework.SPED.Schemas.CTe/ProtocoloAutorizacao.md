@@ -4,25 +4,25 @@
 ## ProtocoloAutorizacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | infProt |  |
-| 03 | Signature |  |
-| 04 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | infProt | `TProtCTeInfProt` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | versao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ProtocoloAutorizacao, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ProtocoloAutorizacao) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ProtocoloAutorizacao, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ProtocoloAutorizacao) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ProtocoloAutorizacao, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ProtocoloAutorizacao) | `Boolean` |  |
+| Deserialize(string) | `ProtocoloAutorizacao` |  |
+| Deserialize(Stream) | `ProtocoloAutorizacao` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ProtocoloAutorizacao, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ProtocoloAutorizacao) | `Boolean` |  |
+| LoadFrom(Stream) | `ProtocoloAutorizacao` |  |
+| LoadFromAsync(Stream) | `Task<ProtocoloAutorizacao>` |  |

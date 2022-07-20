@@ -4,24 +4,24 @@
 ## Remetente Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PersonalidadeJuridica7 |  |
-| 03 | CNPJ_CPF |  |
-| 04 | CNPJ_CPFFormatado |  |
-| 05 | IE |  |
-| 06 | xNome |  |
-| 07 | xFant |  |
-| 08 | fone |  |
-| 09 | Endereco |  |
-| 10 | email |  |
-| 11 | InfNF |  |
-| 12 | InfNFe |  |
-| 13 | DocumentosReferenciados |  |
-| 14 | infOutros |  |
-| 15 | locColeta |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| 03 | CNPJ_CPF | `String` |  |
+| 04 | CNPJ_CPFFormatado | `String` |  |
+| 05 | IE | `String` |  |
+| 06 | xNome | `String` |  |
+| 07 | xFant | `String` |  |
+| 08 | fone | `String` |  |
+| 09 | Endereco | `Endereco` |  |
+| 10 | email | `String` |  |
+| 11 | InfNF | `ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNF>` |  |
+| 12 | InfNFe | `ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNFe>` |  |
+| 13 | DocumentosReferenciados | `ICollection` |  |
+| 14 | infOutros | `ObservableCollection<TCTeInfCteInfCTeNormInfDocInfOutros>` |  |
+| 15 | locColeta | `TEndReEnt` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

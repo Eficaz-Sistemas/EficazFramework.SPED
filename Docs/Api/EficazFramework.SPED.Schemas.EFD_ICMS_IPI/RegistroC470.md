@@ -8,22 +8,22 @@ Itens do Documento Fiscal 2D
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Produto |  |
-| 03 | QuantidadeBruto |  |
-| 04 | QuantidadeCancelada |  |
-| 05 | Unidade |  |
-| 06 | ValorLiquidoItem |  |
-| 07 | Origem |  |
-| 08 | CST_ICMS |  |
-| 09 | CFOP |  |
-| 10 | Aliquota_ICMS |  |
-| 11 | PIS |  |
-| 12 | COFINS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Produto | `String` |  |
+| 03 | QuantidadeBruto | `Nullable<Double>` |  |
+| 04 | QuantidadeCancelada | `Nullable<Double>` |  |
+| 05 | Unidade | `String` |  |
+| 06 | ValorLiquidoItem | `Nullable<Double>` |  |
+| 07 | Origem | `OrigemMercadoria` |  |
+| 08 | CST_ICMS | `CST_ICMS` |  |
+| 09 | CFOP | `String` |  |
+| 10 | Aliquota_ICMS | `Nullable<Double>` |  |
+| 11 | PIS | `Nullable<Double>` |  |
+| 12 | COFINS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

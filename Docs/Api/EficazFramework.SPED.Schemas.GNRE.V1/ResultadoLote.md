@@ -4,29 +4,29 @@
 ## ResultadoLote Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ambiente |  |
-| 03 | numeroRecibo |  |
-| 04 | situacaoProcess |  |
-| 05 | resultado |  |
-| 06 | ResultadoFormatado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ambiente | `Ambiente` |  |
+| 03 | numeroRecibo | `String` |  |
+| 04 | situacaoProcess | `ResultadoLoteProcessamento` |  |
+| 05 | resultado | `String` |  |
+| 06 | ResultadoFormatado | `List<ResultadoGuiaGNRE>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| FormataResultado() |  |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ResultadoLote, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ResultadoLote) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ResultadoLote, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ResultadoLote) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| FormataResultado() | `Void` |  |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ResultadoLote, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ResultadoLote) | `Boolean` |  |
+| Deserialize(string) | `ResultadoLote` |  |
+| Deserialize(Stream) | `ResultadoLote` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ResultadoLote, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ResultadoLote) | `Boolean` |  |
+| LoadFrom(Stream) | `ResultadoLote` |  |
+| LoadFromAsync(Stream) | `Task<ResultadoLote>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ResultadoLote>` |  |

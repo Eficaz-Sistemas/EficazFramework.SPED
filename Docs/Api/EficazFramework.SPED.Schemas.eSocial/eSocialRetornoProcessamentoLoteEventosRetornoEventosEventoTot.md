@@ -4,7 +4,7 @@
 ## eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Any |  |
-| 03 | tipo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Any | `XElement` |  |
+| 03 | tipo | `String` |  |

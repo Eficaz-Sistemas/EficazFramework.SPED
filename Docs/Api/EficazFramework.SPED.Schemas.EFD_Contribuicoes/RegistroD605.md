@@ -8,19 +8,19 @@ Complemento da Consolidação da Prestação de Serviços
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoClassifItemServComun |  |
-| 03 | VrAcumItem |  |
-| 04 | VrAcumDesconto |  |
-| 05 | CstCofins |  |
-| 06 | VrBcCofins |  |
-| 07 | AliquotaCofins |  |
-| 08 | VrCofins |  |
-| 09 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoClassifItemServComun | `String` |  |
+| 03 | VrAcumItem | `Nullable<Double>` |  |
+| 04 | VrAcumDesconto | `Nullable<Double>` |  |
+| 05 | CstCofins | `String` |  |
+| 06 | VrBcCofins | `Nullable<Double>` |  |
+| 07 | AliquotaCofins | `Nullable<Double>` |  |
+| 08 | VrCofins | `Nullable<Double>` |  |
+| 09 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

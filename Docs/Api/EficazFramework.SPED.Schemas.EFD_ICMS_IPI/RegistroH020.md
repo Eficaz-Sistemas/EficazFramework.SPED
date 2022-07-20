@@ -8,14 +8,14 @@ Inventário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CST |  |
-| 03 | BaseCalculoICMS |  |
-| 04 | ValorICMS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CST | `String` |  |
+| 03 | BaseCalculoICMS | `Nullable<Double>` |  |
+| 04 | ValorICMS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

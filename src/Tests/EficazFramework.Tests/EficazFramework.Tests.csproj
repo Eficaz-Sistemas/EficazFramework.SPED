@@ -61,7 +61,7 @@
     <EmbeddedResource Update="Resources\Schemas\EFD_ICMS_IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EFD_ICMS_IPI.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>EficazFrameworkCore.SPED.Resources.Schemas</CustomToolNamespace>
+      <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="SPED\Schemas\Sources\EFD-ICMS IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>

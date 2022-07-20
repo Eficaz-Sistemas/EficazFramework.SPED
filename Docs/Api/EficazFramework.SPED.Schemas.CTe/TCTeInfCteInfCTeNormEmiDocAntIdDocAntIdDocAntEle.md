@@ -4,11 +4,11 @@
 ## TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,6 +4,6 @@
 ## ReinfEvtServPrestInfoServPrest Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEstabPrest |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEstabPrest | `ReinfEvtServPrestInfoServPrestIdeEstabPrest` |  |

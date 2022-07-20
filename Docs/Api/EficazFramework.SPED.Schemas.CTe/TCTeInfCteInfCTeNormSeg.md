@@ -4,15 +4,15 @@
 ## TCTeInfCteInfCTeNormSeg Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | respSeg |  |
-| 03 | xSeg |  |
-| 04 | nApol |  |
-| 05 | nAver |  |
-| 06 | vCarga |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | respSeg | `ResponsavelSeguro` |  |
+| 03 | xSeg | `String` |  |
+| 04 | nApol | `String` |  |
+| 05 | nAver | `String` |  |
+| 06 | vCarga | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

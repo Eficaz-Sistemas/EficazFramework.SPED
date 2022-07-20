@@ -8,17 +8,17 @@ Informações adicionais de diferimento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | VrTotalVendasPeriodo |  |
-| 04 | VrTotalNaoRecebPeriodo |  |
-| 05 | VrContribDiferidaPeriodo |  |
-| 06 | VrCreditoDiferidoPeriodo |  |
-| 07 | CodigoTipoCredDiferido |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | VrTotalVendasPeriodo | `Nullable<Double>` |  |
+| 04 | VrTotalNaoRecebPeriodo | `Nullable<Double>` |  |
+| 05 | VrContribDiferidaPeriodo | `Nullable<Double>` |  |
+| 06 | VrCreditoDiferidoPeriodo | `Nullable<Double>` |  |
+| 07 | CodigoTipoCredDiferido | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

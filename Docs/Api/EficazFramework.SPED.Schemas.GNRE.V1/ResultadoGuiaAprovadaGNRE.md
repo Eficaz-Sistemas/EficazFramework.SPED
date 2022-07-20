@@ -4,46 +4,46 @@
 ## ResultadoGuiaAprovadaGNRE Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | SituacaoGuia |  |
-| 03 | UFFavorecida |  |
-| 04 | CodigoReceita |  |
-| 05 | EmitenteTipoDocmento |  |
-| 06 | EmitenteDocumento |  |
-| 07 | EmitenteRazaoSocial |  |
-| 08 | EmitenteEndereco |  |
-| 09 | EmitenteMunicipio |  |
-| 10 | EmitenteUF |  |
-| 11 | EmitenteCEP |  |
-| 12 | EmitenteTelefone |  |
-| 13 | DestinatarioTipoDocumento |  |
-| 14 | DestinatarioDocumento |  |
-| 15 | DestinatarioMunicipio |  |
-| 16 | Produto |  |
-| 17 | NumeroDocumento |  |
-| 18 | Convenio |  |
-| 19 | InformacoesComplementares |  |
-| 20 | DataVencimento |  |
-| 21 | DataLimitePagamento |  |
-| 22 | PeriodoReferencia |  |
-| 23 | MesAnoReferencia |  |
-| 24 | Parcela |  |
-| 25 | ValorPrincipal |  |
-| 26 | AtualizacaoMonetaria |  |
-| 27 | Juros |  |
-| 28 | Multa |  |
-| 29 | RepresentacaoNumerica |  |
-| 30 | CodigoDeBarras |  |
-| 31 | QuantidadeVias |  |
-| 32 | NumeroControle |  |
-| 33 | IdentificadorGuia |  |
-| 34 | SituacaoContingencia |  |
-| 35 | Reservado |  |
-| 36 | ValorRecolher |  |
-| 37 | CodigoBarrasFormatado |  |
-| 38 | CodigoBarrasCodificado |  |
-| 39 | CodigoBarrasByte |  |
-| 40 | AutenticacaoBancaria |  |
-| 41 | DataPagamento |  |
-| 42 | ValorPago |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | SituacaoGuia | `SituacaoGuia` |  |
+| 03 | UFFavorecida | `String` |  |
+| 04 | CodigoReceita | `String` |  |
+| 05 | EmitenteTipoDocmento | `PersonalidadeJuridicaRetorno` |  |
+| 06 | EmitenteDocumento | `String` |  |
+| 07 | EmitenteRazaoSocial | `String` |  |
+| 08 | EmitenteEndereco | `String` |  |
+| 09 | EmitenteMunicipio | `String` |  |
+| 10 | EmitenteUF | `String` |  |
+| 11 | EmitenteCEP | `String` |  |
+| 12 | EmitenteTelefone | `String` |  |
+| 13 | DestinatarioTipoDocumento | `PersonalidadeJuridicaRetorno` |  |
+| 14 | DestinatarioDocumento | `Object` |  |
+| 15 | DestinatarioMunicipio | `String` |  |
+| 16 | Produto | `String` |  |
+| 17 | NumeroDocumento | `Nullable<Int32>` |  |
+| 18 | Convenio | `String` |  |
+| 19 | InformacoesComplementares | `String` |  |
+| 20 | DataVencimento | `Nullable<DateTime>` |  |
+| 21 | DataLimitePagamento | `Nullable<DateTime>` |  |
+| 22 | PeriodoReferencia | `ReferenciaPeriodo` |  |
+| 23 | MesAnoReferencia | `Nullable<DateTime>` |  |
+| 24 | Parcela | `Nullable<Int16>` |  |
+| 25 | ValorPrincipal | `Nullable<Double>` |  |
+| 26 | AtualizacaoMonetaria | `Nullable<Double>` |  |
+| 27 | Juros | `Nullable<Double>` |  |
+| 28 | Multa | `Nullable<Double>` |  |
+| 29 | RepresentacaoNumerica | `String` |  |
+| 30 | CodigoDeBarras | `String` |  |
+| 31 | QuantidadeVias | `Nullable<Int32>` |  |
+| 32 | NumeroControle | `String` |  |
+| 33 | IdentificadorGuia | `String` |  |
+| 34 | SituacaoContingencia | `Contingencia` |  |
+| 35 | Reservado | `String` |  |
+| 36 | ValorRecolher | `Nullable<Double>` |  |
+| 37 | CodigoBarrasFormatado | `String` |  |
+| 38 | CodigoBarrasCodificado | `String` |  |
+| 39 | CodigoBarrasByte | `Object` |  |
+| 40 | AutenticacaoBancaria | `String` |  |
+| 41 | DataPagamento | `Nullable<DateTime>` |  |
+| 42 | ValorPago | `Nullable<Double>` |  |

@@ -8,18 +8,18 @@ Cadastro de Bens ou Componentes do Ativo Imobilizado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoProduto |  |
-| 03 | IdentificacaoTipo |  |
-| 04 | Descricao |  |
-| 05 | CodigoBemPrincipal |  |
-| 06 | CodigoContaContabil |  |
-| 07 | NumeroParcelas |  |
-| 08 | Registro0305 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoProduto | `String` |  |
+| 03 | IdentificacaoTipo | `TipoMercadoriaImobilizado` |  |
+| 04 | Descricao | `String` |  |
+| 05 | CodigoBemPrincipal | `String` |  |
+| 06 | CodigoContaContabil | `String` |  |
+| 07 | NumeroParcelas | `Nullable<Int32>` |  |
+| 08 | Registro0305 | `Registro0305` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

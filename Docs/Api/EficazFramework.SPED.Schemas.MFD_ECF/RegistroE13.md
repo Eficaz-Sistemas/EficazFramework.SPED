@@ -8,18 +8,18 @@ Detalhe da Redução Z - Totalizadores Parciais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroFabricacaoECF |  |
-| 03 | MFAdicional |  |
-| 04 | Modelo |  |
-| 05 | NumeroUsuario |  |
-| 06 | CRZ |  |
-| 07 | TotalizadorParcial |  |
-| 08 | ValorAcumulado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroFabricacaoECF | `String` |  |
+| 03 | MFAdicional | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | NumeroUsuario | `Nullable<Int32>` |  |
+| 06 | CRZ | `Nullable<Int32>` |  |
+| 07 | TotalizadorParcial | `String` |  |
+| 08 | ValorAcumulado | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,11 +4,11 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoHorContratual Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | qtdHrsSem |  |
-| 03 | qtdHrsSemSpecified |  |
-| 04 | tpJornada |  |
-| 05 | dscTpJorn |  |
-| 06 | tmpParc |  |
-| 07 | horario |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | qtdHrsSem | `Decimal` |  |
+| 03 | qtdHrsSemSpecified | `Boolean` |  |
+| 04 | tpJornada | `TipoJornada` |  |
+| 05 | dscTpJorn | `String` |  |
+| 06 | tmpParc | `SByte` |  |
+| 07 | horario | `THorario[]` |  |

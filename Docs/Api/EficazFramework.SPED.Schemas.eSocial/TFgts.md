@@ -4,8 +4,8 @@
 ## TFgts Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | opcFGTS |  |
-| 03 | dtOpcFGTS |  |
-| 04 | dtOpcFGTSSpecified |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | opcFGTS | `OpcaoFGTS` |  |
+| 03 | dtOpcFGTS | `DateTime` |  |
+| 04 | dtOpcFGTSSpecified | `Boolean` |  |

@@ -4,17 +4,17 @@
 ## eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquis Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideProdutor |  |
-| 03 | infoProcJ |  |
-| 04 | indAquis |  |
-| 05 | vlrTotAquis |  |
-| 06 | vrCPDesc |  |
-| 07 | vrRatDescPR |  |
-| 08 | vrSenarDesc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideProdutor | `List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor>` |  |
+| 03 | infoProcJ | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisInfoProcJ[]` |  |
+| 04 | indAquis | `IndicadorAquisicaoS1250` |  |
+| 05 | vlrTotAquis | `Decimal` |  |
+| 06 | vrCPDesc | `Decimal` |  |
+| 07 | vrRatDescPR | `Decimal` |  |
+| 08 | vrSenarDesc | `Decimal` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| InvokePropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| InvokePropertyChanged(string) | `Void` |  |

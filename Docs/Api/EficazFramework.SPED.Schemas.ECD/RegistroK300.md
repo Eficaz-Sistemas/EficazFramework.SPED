@@ -8,18 +8,18 @@ Saldo das Contas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContaConsolidada |  |
-| 03 | VrAbsolutoAglutinado |  |
-| 04 | IndicadorSitVrAglutinado |  |
-| 05 | VrAbsolutoEliminacoes |  |
-| 06 | IndicadorSitVrAglutinadoEliminado |  |
-| 07 | VrAbsolutoConsolidado |  |
-| 08 | IndicadorSitVrConsolidado |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContaConsolidada | `String` |  |
+| 03 | VrAbsolutoAglutinado | `Nullable<Double>` |  |
+| 04 | IndicadorSitVrAglutinado | `String` |  |
+| 05 | VrAbsolutoEliminacoes | `Nullable<Double>` |  |
+| 06 | IndicadorSitVrAglutinadoEliminado | `String` |  |
+| 07 | VrAbsolutoConsolidado | `Nullable<Double>` |  |
+| 08 | IndicadorSitVrConsolidado | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

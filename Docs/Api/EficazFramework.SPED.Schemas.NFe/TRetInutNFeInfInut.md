@@ -6,25 +6,25 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | verAplic |  |
-| 04 | cStat |  |
-| 05 | xMotivo |  |
-| 06 | cUF |  |
-| 07 | ano |  |
-| 08 | CNPJ |  |
-| 09 | mod |  |
-| 10 | modSpecified |  |
-| 11 | serie |  |
-| 12 | nNFIni |  |
-| 13 | nNFFin |  |
-| 14 | DataRecebimento |  |
-| 15 | nProt |  |
-| 16 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | verAplic | `String` |  |
+| 04 | cStat | `String` |  |
+| 05 | xMotivo | `String` |  |
+| 06 | cUF | `OrgaoIBGE` |  |
+| 07 | ano | `String` |  |
+| 08 | CNPJ | `String` |  |
+| 09 | mod | `ModeloDocumento` |  |
+| 10 | modSpecified | `Boolean` |  |
+| 11 | serie | `String` |  |
+| 12 | nNFIni | `String` |  |
+| 13 | nNFFin | `String` |  |
+| 14 | DataRecebimento | `Nullable<DateTime>` |  |
+| 15 | nProt | `String` |  |
+| 16 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeDataEmissaoXML() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeDataEmissaoXML() | `Boolean` |  |

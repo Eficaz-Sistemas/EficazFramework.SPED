@@ -4,9 +4,9 @@
 ## ReinfEvtFechaEvPerIdeRespInf Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nmResp |  |
-| 03 | cpfResp |  |
-| 04 | telefone |  |
-| 05 | email |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nmResp | `String` |  |
+| 03 | cpfResp | `String` |  |
+| 04 | telefone | `String` |  |
+| 05 | email | `String` |  |

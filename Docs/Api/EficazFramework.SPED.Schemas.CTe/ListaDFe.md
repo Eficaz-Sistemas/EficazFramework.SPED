@@ -6,6 +6,6 @@
 Frankson Fix
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DocZip |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DocZip | `List<retDistDFeIntLoteDistDFeIntDocZip>` |  |

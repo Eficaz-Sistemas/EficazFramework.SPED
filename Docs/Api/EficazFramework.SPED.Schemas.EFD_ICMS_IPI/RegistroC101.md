@@ -10,14 +10,14 @@ EC 87/15 (CÓDIGO 55)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Vr_FCP_Uf_Destino |  |
-| 03 | Vr_ICMS_UF_Destino |  |
-| 04 | Vr_ICMS_UF_Remetente |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Vr_FCP_Uf_Destino | `Nullable<Double>` |  |
+| 03 | Vr_ICMS_UF_Destino | `Nullable<Double>` |  |
+| 04 | Vr_ICMS_UF_Remetente | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

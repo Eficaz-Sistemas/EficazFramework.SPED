@@ -8,19 +8,19 @@ Detalhamento dos ajustes da contribuição para o Cofins apurada
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DetVrContRedAcrescM620 |  |
-| 03 | CSTCofins |  |
-| 04 | DetBcGeradoraAjCont |  |
-| 05 | DetAliqAjusteCont |  |
-| 06 | DataOperacaoAjuste |  |
-| 07 | DescAjuste |  |
-| 08 | CodigoContaContabil |  |
-| 09 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DetVrContRedAcrescM620 | `Nullable<Double>` |  |
+| 03 | CSTCofins | `String` |  |
+| 04 | DetBcGeradoraAjCont | `Nullable<Double>` |  |
+| 05 | DetAliqAjusteCont | `Nullable<Double>` |  |
+| 06 | DataOperacaoAjuste | `Nullable<DateTime>` |  |
+| 07 | DescAjuste | `String` |  |
+| 08 | CodigoContaContabil | `String` |  |
+| 09 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

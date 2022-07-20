@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscTomador |  |
-| 03 | nrInscTomador |  |
-| 04 | vlrTotalBaseRet |  |
-| 05 | vlrTotalRetPrinc |  |
-| 06 | vlrTotalRetAdic |  |
-| 07 | vlrTotalNRetPrinc |  |
-| 08 | vlrTotalNRetAdic |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscTomador | `Byte` |  |
+| 03 | nrInscTomador | `String` |  |
+| 04 | vlrTotalBaseRet | `String` |  |
+| 05 | vlrTotalRetPrinc | `String` |  |
+| 06 | vlrTotalRetAdic | `String` |  |
+| 07 | vlrTotalNRetPrinc | `String` |  |
+| 08 | vlrTotalNRetAdic | `String` |  |

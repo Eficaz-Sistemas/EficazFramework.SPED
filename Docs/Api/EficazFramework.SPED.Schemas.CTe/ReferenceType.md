@@ -4,16 +4,16 @@
 ## ReferenceType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Transforms |  |
-| 03 | DigestMethod |  |
-| 04 | DigestValue |  |
-| 05 | Id |  |
-| 06 | URI |  |
-| 07 | Type |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Transforms | `ObservableCollection<TransformType>` |  |
+| 03 | DigestMethod | `ReferenceTypeDigestMethod` |  |
+| 04 | DigestValue | `Byte[]` |  |
+| 05 | Id | `String` |  |
+| 06 | URI | `String` |  |
+| 07 | Type | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

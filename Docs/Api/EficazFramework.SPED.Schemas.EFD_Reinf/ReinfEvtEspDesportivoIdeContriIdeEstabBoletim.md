@@ -4,21 +4,21 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabBoletim Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrBoletim |  |
-| 03 | tpCompeticao |  |
-| 04 | categEvento |  |
-| 05 | modDesportiva |  |
-| 06 | nomeCompeticao |  |
-| 07 | cnpjMandante |  |
-| 08 | cnpjVisitante |  |
-| 09 | nomeVisitante |  |
-| 10 | pracaDesportiva |  |
-| 11 | codMunic |  |
-| 12 | codMunicSpecified |  |
-| 13 | uf |  |
-| 14 | qtdePagantes |  |
-| 15 | qtdeNaoPagantes |  |
-| 16 | receitaIngressos |  |
-| 17 | outrasReceitas |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrBoletim | `String` |  |
+| 03 | tpCompeticao | `TipoCompeticao` |  |
+| 04 | categEvento | `CategoriaEvento` |  |
+| 05 | modDesportiva | `String` |  |
+| 06 | nomeCompeticao | `String` |  |
+| 07 | cnpjMandante | `String` |  |
+| 08 | cnpjVisitante | `String` |  |
+| 09 | nomeVisitante | `String` |  |
+| 10 | pracaDesportiva | `String` |  |
+| 11 | codMunic | `UInt32` |  |
+| 12 | codMunicSpecified | `Boolean` |  |
+| 13 | uf | `String` |  |
+| 14 | qtdePagantes | `UInt32` |  |
+| 15 | qtdeNaoPagantes | `UInt32` |  |
+| 16 | receitaIngressos | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[]` |  |
+| 17 | outrasReceitas | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[]` |  |

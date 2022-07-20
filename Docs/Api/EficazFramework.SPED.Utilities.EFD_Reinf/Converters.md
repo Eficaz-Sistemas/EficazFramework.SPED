@@ -4,7 +4,7 @@
 ## Converters Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EnumSimNaoToBoolean(SimNao) |  |
-| BooleanToEnumSimNao(bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EnumSimNaoToBoolean(SimNao) | `Boolean` |  |
+| BooleanToEnumSimNao(bool) | `SimNao` |  |

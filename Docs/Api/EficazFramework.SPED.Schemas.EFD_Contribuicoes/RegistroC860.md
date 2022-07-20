@@ -8,18 +8,18 @@ Identificação do Equipamento SAT CF-e
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | EspecieDocumento |  |
-| 03 | NumeroSerieSAT |  |
-| 04 | DataEmissao |  |
-| 05 | DocInicial |  |
-| 06 | DocFinal |  |
-| 07 | RegistrosC870 |  |
-| 08 | RegistrosC880 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | EspecieDocumento | `String` |  |
+| 03 | NumeroSerieSAT | `Nullable<Int32>` |  |
+| 04 | DataEmissao | `Nullable<DateTime>` |  |
+| 05 | DocInicial | `Nullable<Int32>` |  |
+| 06 | DocFinal | `Nullable<Int32>` |  |
+| 07 | RegistrosC870 | `List<RegistroC870>` |  |
+| 08 | RegistrosC880 | `List<RegistroC880>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

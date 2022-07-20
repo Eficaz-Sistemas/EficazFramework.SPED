@@ -8,25 +8,25 @@ Tabela de Cadastro de Estabelecimento
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoEstabelecimento |  |
-| 03 | NomeEmpresarial |  |
-| 04 | CNPJ |  |
-| 05 | UF |  |
-| 06 | IE |  |
-| 07 | CodicoMunicipioIBGE |  |
-| 08 | InscricaoMunicipal |  |
-| 09 | SUFRAMA |  |
-| 10 | Registro0145 |  |
-| 11 | Registros0150 |  |
-| 12 | Registros0190 |  |
-| 13 | Registros0200 |  |
-| 14 | Registros0400 |  |
-| 15 | Registros0450 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoEstabelecimento | `String` |  |
+| 03 | NomeEmpresarial | `String` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | UF | `String` |  |
+| 06 | IE | `String` |  |
+| 07 | CodicoMunicipioIBGE | `String` |  |
+| 08 | InscricaoMunicipal | `String` |  |
+| 09 | SUFRAMA | `String` |  |
+| 10 | Registro0145 | `Registro0145` |  |
+| 11 | Registros0150 | `List<Registro0150>` |  |
+| 12 | Registros0190 | `List<Registro0190>` |  |
+| 13 | Registros0200 | `List<Registro0200>` |  |
+| 14 | Registros0400 | `List<Registro0400>` |  |
+| 15 | Registros0450 | `List<Registro0450>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

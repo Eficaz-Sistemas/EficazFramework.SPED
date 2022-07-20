@@ -4,9 +4,9 @@
 ## eSocialEvtAdmissaoVinculoMudancaCPF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cpfAnt |  |
-| 03 | matricAnt |  |
-| 04 | dtAltCPF |  |
-| 05 | observacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cpfAnt | `String` |  |
+| 03 | matricAnt | `String` |  |
+| 04 | dtAltCPF | `DateTime` |  |
+| 05 | observacao | `String` |  |

@@ -8,14 +8,14 @@ Empresas Detentoras das Parcelas do Valor Eliminado Total
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoEmpresaDetVrAglutinadoEliminado |  |
-| 03 | ParcelaVrEliminadoTotal |  |
-| 04 | IndicadorSitVrEliminada |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoEmpresaDetVrAglutinadoEliminado | `String` |  |
+| 03 | ParcelaVrEliminadoTotal | `Nullable<Double>` |  |
+| 04 | IndicadorSitVrEliminada | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

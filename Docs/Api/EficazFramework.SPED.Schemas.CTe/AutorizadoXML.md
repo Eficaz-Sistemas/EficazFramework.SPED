@@ -4,12 +4,12 @@
 ## AutorizadoXML Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Item |  |
-| 03 | ItemElementName |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Item | `String` |  |
+| 03 | ItemElementName | `PersonalidadeJuridica79` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,14 +4,14 @@
 ## SignedInfoType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CanonicalizationMethod |  |
-| 03 | SignatureMethod |  |
-| 04 | Reference |  |
-| 05 | Id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CanonicalizationMethod | `SignedInfoTypeCanonicalizationMethod` |  |
+| 03 | SignatureMethod | `SignedInfoTypeSignatureMethod` |  |
+| 04 | Reference | `ReferenceType` |  |
+| 05 | Id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

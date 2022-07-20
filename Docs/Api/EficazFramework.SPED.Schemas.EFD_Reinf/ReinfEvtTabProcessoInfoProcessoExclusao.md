@@ -4,6 +4,6 @@
 ## ReinfEvtTabProcessoInfoProcessoExclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideProcesso |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideProcesso | `ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso` |  |

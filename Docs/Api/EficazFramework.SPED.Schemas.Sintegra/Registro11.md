@@ -4,18 +4,18 @@
 ## Registro11 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Logradouro |  |
-| 03 | Numero |  |
-| 04 | Complemento |  |
-| 05 | Bairro |  |
-| 06 | CEP |  |
-| 07 | NomeContato |  |
-| 08 | Telefone |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Logradouro | `String` |  |
+| 03 | Numero | `String` |  |
+| 04 | Complemento | `String` |  |
+| 05 | Bairro | `String` |  |
+| 06 | CEP | `String` |  |
+| 07 | NomeContato | `String` |  |
+| 08 | Telefone | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

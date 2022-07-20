@@ -8,16 +8,16 @@ Totalização dos Valores Retidos
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorOperacaoServicos |  |
-| 03 | CodParticipante |  |
-| 04 | VrContabilPrestacoesAquisicoes |  |
-| 05 | VrBCISSPrestacoesAquisicoes |  |
-| 06 | VrISSRetido |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorOperacaoServicos | `IndicadorOperacaoServicos` |  |
+| 03 | CodParticipante | `String` |  |
+| 04 | VrContabilPrestacoesAquisicoes | `Nullable<Double>` |  |
+| 05 | VrBCISSPrestacoesAquisicoes | `Nullable<Double>` |  |
+| 06 | VrISSRetido | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

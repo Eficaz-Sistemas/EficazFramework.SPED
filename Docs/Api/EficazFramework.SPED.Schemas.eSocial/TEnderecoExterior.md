@@ -4,12 +4,12 @@
 ## TEnderecoExterior Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | paisResid |  |
-| 03 | dscLograd |  |
-| 04 | nrLograd |  |
-| 05 | complemento |  |
-| 06 | bairro |  |
-| 07 | nmCid |  |
-| 08 | codPostal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | paisResid | `String` |  |
+| 03 | dscLograd | `String` |  |
+| 04 | nrLograd | `String` |  |
+| 05 | complemento | `String` |  |
+| 06 | bairro | `String` |  |
+| 07 | nmCid | `String` |  |
+| 08 | codPostal | `String` |  |

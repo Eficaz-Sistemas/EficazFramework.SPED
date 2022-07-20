@@ -4,19 +4,19 @@
 ## Registro3N_AnexoC_GPS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoRecolhimento |  |
-| 03 | TipoInscricao | 1 = CNPJ [Default]            2 = CPF            3 = NIT/PIS/PASEP            4 = CEI            6 = NB            7 = Núm. Título            8 = DEBCAD            9 = Referencia |
-| 04 | CNPJ |  |
-| 05 | IdentificacaoTributo |  |
-| 06 | Competencia |  |
-| 07 | ValorTributo |  |
-| 08 | ValorOutrasEntidades |  |
-| 09 | ValorAtualizacaoMonetaria |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoRecolhimento | `String` |  |
+| 03 | TipoInscricao | `String` | 1 = CNPJ [Default]            2 = CPF            3 = NIT/PIS/PASEP            4 = CEI            6 = NB            7 = Núm. Título            8 = DEBCAD            9 = Referencia |
+| 04 | CNPJ | `String` |  |
+| 05 | IdentificacaoTributo | `String` |  |
+| 06 | Competencia | `Nullable<DateTime>` |  |
+| 07 | ValorTributo | `Nullable<Double>` |  |
+| 08 | ValorOutrasEntidades | `Nullable<Double>` |  |
+| 09 | ValorAtualizacaoMonetaria | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,28 +4,28 @@
 ## CTeOS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Informacoes |  |
-| 03 | Signature |  |
-| 04 | DocumentType |  |
-| 05 | DataEmissao |  |
-| 06 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Informacoes | `InformacoesCTe` |  |
+| 03 | Signature | `SignatureType` |  |
+| 04 | DocumentType | `XMLDocumentType` |  |
+| 05 | DataEmissao | `Nullable<DateTime>` |  |
+| 06 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, CTeOS, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, CTeOS) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, CTeOS, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, CTeOS) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, CTeOS, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, CTeOS) | `Boolean` |  |
+| Deserialize(string) | `CTeOS` |  |
+| Deserialize(Stream) | `CTeOS` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, CTeOS, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, CTeOS) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `CTeOS` |  |
+| LoadFromAsync(Stream) | `Task<CTeOS>` |  |
+| LoadFromAsync(Stream, bool) | `Task<CTeOS>` |  |

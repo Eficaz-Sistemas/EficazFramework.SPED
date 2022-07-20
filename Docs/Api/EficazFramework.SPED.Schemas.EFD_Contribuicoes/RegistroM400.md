@@ -8,16 +8,16 @@ Receitas Isentas, não alcançadas pela incidência da contribuição, sujeitas 
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTPis |  |
-| 03 | VrTotalRecBrutaPeriodo |  |
-| 04 | CodigoContaContabil |  |
-| 05 | DescricaoComplementarNatReceita |  |
-| 06 | NotMapped_NaturezaReceita |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTPis | `String` |  |
+| 03 | VrTotalRecBrutaPeriodo | `Nullable<Double>` |  |
+| 04 | CodigoContaContabil | `String` |  |
+| 05 | DescricaoComplementarNatReceita | `String` |  |
+| 06 | NotMapped_NaturezaReceita | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

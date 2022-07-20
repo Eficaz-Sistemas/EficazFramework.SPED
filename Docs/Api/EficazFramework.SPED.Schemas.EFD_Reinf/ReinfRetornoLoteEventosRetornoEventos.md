@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | evento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | evento | `TArquivoReinf[]` |  |

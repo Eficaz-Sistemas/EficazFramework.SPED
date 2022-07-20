@@ -8,23 +8,23 @@ REGISTRO C165: OPERAÇÕES COM COMBUSTÍVEIS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodParticipante |  |
-| 03 | PlacaIdentificacaoVeiculo |  |
-| 04 | CodAutorizacaoSefaz |  |
-| 05 | NumPasseFiscal |  |
-| 06 | HoraSaideMercadorias |  |
-| 07 | TemperaturaVolumeCombustivel |  |
-| 08 | QuantVolumesTransportados |  |
-| 09 | PesoBrutoVolumes |  |
-| 10 | PesoLiquidoVolumes |  |
-| 11 | NomeMotorista |  |
-| 12 | CPFMotorista |  |
-| 13 | UFPlacaVeiculo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodParticipante | `String` |  |
+| 03 | PlacaIdentificacaoVeiculo | `String` |  |
+| 04 | CodAutorizacaoSefaz | `String` |  |
+| 05 | NumPasseFiscal | `String` |  |
+| 06 | HoraSaideMercadorias | `Nullable<TimeSpan>` |  |
+| 07 | TemperaturaVolumeCombustivel | `Nullable<Double>` |  |
+| 08 | QuantVolumesTransportados | `String` |  |
+| 09 | PesoBrutoVolumes | `Nullable<Double>` |  |
+| 10 | PesoLiquidoVolumes | `Nullable<Double>` |  |
+| 11 | NomeMotorista | `String` |  |
+| 12 | CPFMotorista | `String` |  |
+| 13 | UFPlacaVeiculo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

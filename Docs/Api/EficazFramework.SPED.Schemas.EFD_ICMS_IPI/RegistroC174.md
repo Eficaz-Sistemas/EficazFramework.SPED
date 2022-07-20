@@ -8,14 +8,14 @@ REGISTRO C174: OPERAÇÕES COM ARMAS DE FOGO (CÓDIGO 01)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoArmaFogo |  |
-| 03 | NumSerieFabricacao |  |
-| 04 | DescricaoArma |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoArmaFogo | `IndicadorTipoArmaFogo` |  |
+| 03 | NumSerieFabricacao | `String` |  |
+| 04 | DescricaoArma | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

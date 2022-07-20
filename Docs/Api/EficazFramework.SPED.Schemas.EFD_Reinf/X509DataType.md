@@ -4,11 +4,11 @@
 ## X509DataType Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | X509Certificate |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | X509Certificate | `Byte[]` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

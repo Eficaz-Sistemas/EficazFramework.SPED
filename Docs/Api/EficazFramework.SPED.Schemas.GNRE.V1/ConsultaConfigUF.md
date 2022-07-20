@@ -4,26 +4,26 @@
 ## ConsultaConfigUF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ambiente |  |
-| 03 | uf |  |
-| 04 | receita |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ambiente | `Ambiente` |  |
+| 03 | uf | `UF` |  |
+| 04 | receita | `ConsultaConfigUfReceita` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ConsultaConfigUF, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ConsultaConfigUF) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ConsultaConfigUF, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ConsultaConfigUF) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ConsultaConfigUF, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ConsultaConfigUF) | `Boolean` |  |
+| Deserialize(string) | `ConsultaConfigUF` |  |
+| Deserialize(Stream) | `ConsultaConfigUF` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ConsultaConfigUF, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ConsultaConfigUF) | `Boolean` |  |
+| LoadFrom(Stream) | `ConsultaConfigUF` |  |
+| LoadFromAsync(Stream) | `Task<ConsultaConfigUF>` |  |
+| LoadFromAsync(Stream, bool) | `Task<ConsultaConfigUF>` |  |

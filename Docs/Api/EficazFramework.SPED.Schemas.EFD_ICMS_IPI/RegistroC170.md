@@ -8,51 +8,51 @@ Items dos Documentos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroSequencialItem |  |
-| 03 | CodigoProduto |  |
-| 04 | DescricaoComplementarItem |  |
-| 05 | Quantidade |  |
-| 06 | UnidadeMedida |  |
-| 07 | TotalItem |  |
-| 08 | Desconto |  |
-| 09 | IndicadorMovimento |  |
-| 10 | Origem |  |
-| 11 | CST_ICMS |  |
-| 12 | CFOP |  |
-| 13 | NaturezaOperacao |  |
-| 14 | BaseCalculo_ICMS |  |
-| 15 | Aliquota_ICMS |  |
-| 16 | Valor_ICMS |  |
-| 17 | BaseCalculoST_ICMS |  |
-| 18 | AliquotaST_ICMS |  |
-| 19 | ValorST_ICMS |  |
-| 20 | IndicadorApuracaoIPI |  |
-| 21 | CST_IPI |  |
-| 22 | Enquadramento_IPI |  |
-| 23 | BaseCalculo_IPI |  |
-| 24 | Aliquota_IPI |  |
-| 25 | Valor_IPI |  |
-| 26 | CST_PIS |  |
-| 27 | BaseCalculo_PIS |  |
-| 28 | BaseCalculoQuantidade_PIS |  |
-| 29 | AliquotaPercentual_PIS |  |
-| 30 | AliquotaReais_PIS |  |
-| 31 | Valor_PIS |  |
-| 32 | CST_COFINS |  |
-| 33 | BaseCalculo_COFINS |  |
-| 34 | BaseCalculoQuantidade_COFINS |  |
-| 35 | AliquotaPercentual_COFINS |  |
-| 36 | AliquotaReais_COFINS |  |
-| 37 | Valor_COFINS |  |
-| 38 | CodigoContaContabil |  |
-| 39 | AbatimentosNT |  |
-| 40 | RegistroC172 |  |
-| 41 | RegistrosC176 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroSequencialItem | `Nullable<Int32>` |  |
+| 03 | CodigoProduto | `String` |  |
+| 04 | DescricaoComplementarItem | `String` |  |
+| 05 | Quantidade | `Nullable<Double>` |  |
+| 06 | UnidadeMedida | `String` |  |
+| 07 | TotalItem | `Nullable<Double>` |  |
+| 08 | Desconto | `Nullable<Double>` |  |
+| 09 | IndicadorMovimento | `Nullable<Boolean>` |  |
+| 10 | Origem | `OrigemMercadoria` |  |
+| 11 | CST_ICMS | `CST_ICMS` |  |
+| 12 | CFOP | `String` |  |
+| 13 | NaturezaOperacao | `String` |  |
+| 14 | BaseCalculo_ICMS | `Nullable<Double>` |  |
+| 15 | Aliquota_ICMS | `Nullable<Double>` |  |
+| 16 | Valor_ICMS | `Nullable<Double>` |  |
+| 17 | BaseCalculoST_ICMS | `Nullable<Double>` |  |
+| 18 | AliquotaST_ICMS | `Nullable<Double>` |  |
+| 19 | ValorST_ICMS | `Nullable<Double>` |  |
+| 20 | IndicadorApuracaoIPI | `Nullable<IndicadorPeriodoIPI>` |  |
+| 21 | CST_IPI | `String` |  |
+| 22 | Enquadramento_IPI | `String` |  |
+| 23 | BaseCalculo_IPI | `Nullable<Double>` |  |
+| 24 | Aliquota_IPI | `Nullable<Double>` |  |
+| 25 | Valor_IPI | `Nullable<Double>` |  |
+| 26 | CST_PIS | `CST_PIS` |  |
+| 27 | BaseCalculo_PIS | `Nullable<Double>` |  |
+| 28 | BaseCalculoQuantidade_PIS | `Nullable<Double>` |  |
+| 29 | AliquotaPercentual_PIS | `Nullable<Double>` |  |
+| 30 | AliquotaReais_PIS | `Nullable<Double>` |  |
+| 31 | Valor_PIS | `Nullable<Double>` |  |
+| 32 | CST_COFINS | `CST_COFINS` |  |
+| 33 | BaseCalculo_COFINS | `Nullable<Double>` |  |
+| 34 | BaseCalculoQuantidade_COFINS | `Nullable<Double>` |  |
+| 35 | AliquotaPercentual_COFINS | `Nullable<Double>` |  |
+| 36 | AliquotaReais_COFINS | `Nullable<Double>` |  |
+| 37 | Valor_COFINS | `Nullable<Double>` |  |
+| 38 | CodigoContaContabil | `String` |  |
+| 39 | AbatimentosNT | `Nullable<Double>` |  |
+| 40 | RegistroC172 | `RegistroC172` |  |
+| 41 | RegistrosC176 | `List<RegistroC176>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

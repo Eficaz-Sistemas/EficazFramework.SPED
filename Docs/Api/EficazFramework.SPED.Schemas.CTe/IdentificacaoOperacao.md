@@ -4,45 +4,45 @@
 ## IdentificacaoOperacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoIBGE |  |
-| 03 | Chave |  |
-| 04 | CFOP |  |
-| 05 | NaturezaOperacao |  |
-| 06 | FormaPagamento |  |
-| 07 | Modelo |  |
-| 08 | Serie |  |
-| 09 | Numero |  |
-| 10 | DataEmissao |  |
-| 11 | TipoImpressao |  |
-| 12 | FormaEmissao |  |
-| 13 | DigitoVerificador |  |
-| 14 | Ambiente |  |
-| 15 | Finalidade |  |
-| 16 | ProcessoEmissao |  |
-| 17 | VersaoAplicativoEmissor |  |
-| 18 | ChaveCteReferenciado |  |
-| 19 | MunicipioEnvioCodigo |  |
-| 20 | MunicipioEnvioNome |  |
-| 21 | UFEnvio |  |
-| 22 | Modalidade |  |
-| 23 | TipoServico |  |
-| 24 | MunicipioInicioCodigo |  |
-| 25 | MunicipioInicioNome |  |
-| 26 | UFInicio |  |
-| 27 | MunicipioFimCodigo |  |
-| 28 | MunicipioFimNome |  |
-| 29 | UFFim |  |
-| 30 | retira |  |
-| 31 | xDetRetira |  |
-| 32 | Tomador |  |
-| 33 | DataHoraContingencia |  |
-| 34 | JustificativaContingencia |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoIBGE | `OrgaoIBGE` |  |
+| 03 | Chave | `String` |  |
+| 04 | CFOP | `String` |  |
+| 05 | NaturezaOperacao | `String` |  |
+| 06 | FormaPagamento | `FormaPagamento` |  |
+| 07 | Modelo | `Modelo` |  |
+| 08 | Serie | `String` |  |
+| 09 | Numero | `Nullable<Int64>` |  |
+| 10 | DataEmissao | `Nullable<DateTime>` |  |
+| 11 | TipoImpressao | `FormatoImpressao` |  |
+| 12 | FormaEmissao | `FormaEmissao` |  |
+| 13 | DigitoVerificador | `String` |  |
+| 14 | Ambiente | `Ambiente` |  |
+| 15 | Finalidade | `TipoCTe` |  |
+| 16 | ProcessoEmissao | `ProcessoEmissao` |  |
+| 17 | VersaoAplicativoEmissor | `String` |  |
+| 18 | ChaveCteReferenciado | `String` |  |
+| 19 | MunicipioEnvioCodigo | `String` |  |
+| 20 | MunicipioEnvioNome | `String` |  |
+| 21 | UFEnvio | `Estado` |  |
+| 22 | Modalidade | `ModalidadeTransporte` |  |
+| 23 | TipoServico | `TiposServico` |  |
+| 24 | MunicipioInicioCodigo | `String` |  |
+| 25 | MunicipioInicioNome | `String` |  |
+| 26 | UFInicio | `Estado` |  |
+| 27 | MunicipioFimCodigo | `String` |  |
+| 28 | MunicipioFimNome | `String` |  |
+| 29 | UFFim | `Estado` |  |
+| 30 | retira | `Retira` |  |
+| 31 | xDetRetira | `String` |  |
+| 32 | Tomador | `Object` |  |
+| 33 | DataHoraContingencia | `Nullable<DateTime>` |  |
+| 34 | JustificativaContingencia | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeDataEmissao() |  |
-| ShouldSerializeDataHoraContingencia() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeDataEmissao() | `Boolean` |  |
+| ShouldSerializeDataHoraContingencia() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

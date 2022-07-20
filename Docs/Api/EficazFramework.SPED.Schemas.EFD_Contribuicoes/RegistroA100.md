@@ -8,35 +8,35 @@ Documento Nota Fiscal de Serviço
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoOperacao |  |
-| 03 | IndicadorEmitenteDocFiscal |  |
-| 04 | CodigoParticipante |  |
-| 05 | CodigoSituacaoDocFiscal |  |
-| 06 | SerieDocFiscal |  |
-| 07 | SubserieDocFiscal |  |
-| 08 | NumeroDocFiscal |  |
-| 09 | ChaveCodigoVerificacaoNFSe |  |
-| 10 | Datadocfiscal |  |
-| 11 | DataExecucaoConclusao |  |
-| 12 | VrTotalDoc |  |
-| 13 | TipoPagamento |  |
-| 14 | VrTotalDesconto |  |
-| 15 | VrBaseCalculoPis |  |
-| 16 | VrPis |  |
-| 17 | VrBaseCalculoCofins |  |
-| 18 | VrCofins |  |
-| 19 | VrPisRetidoFonte |  |
-| 20 | VrCofinsRetidoFonte |  |
-| 21 | VrISS |  |
-| 22 | RegistrosA110 |  |
-| 23 | RegistrosA111 |  |
-| 24 | RegistrosA120 |  |
-| 25 | RegistrosA170 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoOperacao | `IndicadorTipoOperacao` |  |
+| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| 04 | CodigoParticipante | `String` |  |
+| 05 | CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
+| 06 | SerieDocFiscal | `String` |  |
+| 07 | SubserieDocFiscal | `String` |  |
+| 08 | NumeroDocFiscal | `String` |  |
+| 09 | ChaveCodigoVerificacaoNFSe | `String` |  |
+| 10 | Datadocfiscal | `Nullable<DateTime>` |  |
+| 11 | DataExecucaoConclusao | `Nullable<DateTime>` |  |
+| 12 | VrTotalDoc | `Nullable<Double>` |  |
+| 13 | TipoPagamento | `FormaDePagamento` |  |
+| 14 | VrTotalDesconto | `Nullable<Double>` |  |
+| 15 | VrBaseCalculoPis | `Nullable<Double>` |  |
+| 16 | VrPis | `Nullable<Double>` |  |
+| 17 | VrBaseCalculoCofins | `Nullable<Double>` |  |
+| 18 | VrCofins | `Nullable<Double>` |  |
+| 19 | VrPisRetidoFonte | `Nullable<Double>` |  |
+| 20 | VrCofinsRetidoFonte | `Nullable<Double>` |  |
+| 21 | VrISS | `Nullable<Double>` |  |
+| 22 | RegistrosA110 | `List<RegistroA110>` |  |
+| 23 | RegistrosA111 | `List<RegistroA111>` |  |
+| 24 | RegistrosA120 | `List<RegistroA120>` |  |
+| 25 | RegistrosA170 | `List<RegistroA170>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

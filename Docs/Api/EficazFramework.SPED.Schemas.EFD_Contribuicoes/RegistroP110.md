@@ -8,15 +8,15 @@ Complemento da escrituração - detalhamento da apuração da contribuição
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroCampoP100 |  |
-| 03 | CodigoDetalhamento |  |
-| 04 | VrDetalhado |  |
-| 05 | InfoComplementarDet |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroCampoP100 | `Nullable<Int16>` |  |
+| 03 | CodigoDetalhamento | `String` |  |
+| 04 | VrDetalhado | `Nullable<Double>` |  |
+| 05 | InfoComplementarDet | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

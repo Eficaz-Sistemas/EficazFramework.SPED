@@ -6,24 +6,24 @@
 Envio do evento R-5011
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tipoInscricaoContribuinte |  |
-| 03 | numeroInscricaoContribuinte |  |
-| 04 | numeroProtocoloFechamento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tipoInscricaoContribuinte | `PersonalidadeJuridica` |  |
+| 03 | numeroInscricaoContribuinte | `String` |  |
+| 04 | numeroProtocoloFechamento | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ConsultaInformacoesConsolidadas, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ConsultaInformacoesConsolidadas) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, ConsultaInformacoesConsolidadas, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ConsultaInformacoesConsolidadas) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, ConsultaInformacoesConsolidadas, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, ConsultaInformacoesConsolidadas) | `Boolean` |  |
+| Deserialize(string) | `ConsultaInformacoesConsolidadas` |  |
+| Deserialize(Stream) | `ConsultaInformacoesConsolidadas` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, ConsultaInformacoesConsolidadas, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, ConsultaInformacoesConsolidadas) | `Boolean` |  |
+| LoadFrom(Stream) | `ConsultaInformacoesConsolidadas` |  |
+| LoadFromAsync(Stream) | `Task<ConsultaInformacoesConsolidadas>` |  |

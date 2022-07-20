@@ -8,13 +8,13 @@ Processo Referenciado
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroProcessoConcessorio |  |
-| 03 | IndicadorOrigemProcesso |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroProcessoConcessorio | `String` |  |
+| 03 | IndicadorOrigemProcesso | `IndicadorOrigemProcesso` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

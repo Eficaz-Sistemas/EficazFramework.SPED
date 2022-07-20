@@ -4,14 +4,14 @@
 ## Registro0210 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoItem |  |
-| 03 | QuantidadeItem |  |
-| 04 | Perda |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoItem | `String` |  |
+| 03 | QuantidadeItem | `Nullable<Double>` |  |
+| 04 | Perda | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

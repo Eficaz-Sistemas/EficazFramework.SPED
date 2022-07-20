@@ -8,15 +8,15 @@ Livros Auxiliares ao Diário ou Livro Principal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroOrdemInstAssociado |  |
-| 03 | NaturezaLivroAssociado |  |
-| 04 | TipoEscrituracao |  |
-| 05 | CodigoHASHLivroAuxiliar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroOrdemInstAssociado | `Nullable<Int16>` |  |
+| 03 | NaturezaLivroAssociado | `String` |  |
+| 04 | TipoEscrituracao | `TipoEscrituracao` |  |
+| 05 | CodigoHASHLivroAuxiliar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

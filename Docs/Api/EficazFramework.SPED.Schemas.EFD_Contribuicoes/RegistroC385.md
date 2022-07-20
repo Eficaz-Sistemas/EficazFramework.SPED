@@ -8,20 +8,20 @@ Detalhamento da Consolidação - COFINS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTCofins |  |
-| 03 | CodigoItem |  |
-| 04 | VrTotalItens |  |
-| 05 | VrBaseCalculoCofins |  |
-| 06 | AliquotaCofins |  |
-| 07 | BCQuantidadeCofins |  |
-| 08 | AliquotaCofinsReais |  |
-| 09 | VrCofins |  |
-| 10 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTCofins | `String` |  |
+| 03 | CodigoItem | `String` |  |
+| 04 | VrTotalItens | `Nullable<Double>` |  |
+| 05 | VrBaseCalculoCofins | `Nullable<Double>` |  |
+| 06 | AliquotaCofins | `Nullable<Double>` |  |
+| 07 | BCQuantidadeCofins | `Nullable<Double>` |  |
+| 08 | AliquotaCofinsReais | `Nullable<Double>` |  |
+| 09 | VrCofins | `Nullable<Double>` |  |
+| 10 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

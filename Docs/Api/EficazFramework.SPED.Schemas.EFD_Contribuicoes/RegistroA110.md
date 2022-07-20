@@ -8,13 +8,13 @@ Complemento do Documento - Informação complementar da NF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoInfoComplemDocFiscal |  |
-| 03 | InformacaoComplemDocFiscal |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoInfoComplemDocFiscal | `String` |  |
+| 03 | InformacaoComplemDocFiscal | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

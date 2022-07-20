@@ -8,20 +8,20 @@ Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ID |  |
-| 03 | ID_CAE |  |
-| 04 | PK_TXT |  |
-| 05 | Nome |  |
-| 06 | CodigoPais |  |
-| 07 | CNPJ |  |
-| 08 | CPF |  |
-| 09 | InscricaoEstadual |  |
-| 10 | CodigoMunicipio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ID | `String` |  |
+| 03 | ID_CAE | `String` |  |
+| 04 | PK_TXT | `String` |  |
+| 05 | Nome | `String` |  |
+| 06 | CodigoPais | `Int32` |  |
+| 07 | CNPJ | `String` |  |
+| 08 | CPF | `String` |  |
+| 09 | InscricaoEstadual | `String` |  |
+| 10 | CodigoMunicipio | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

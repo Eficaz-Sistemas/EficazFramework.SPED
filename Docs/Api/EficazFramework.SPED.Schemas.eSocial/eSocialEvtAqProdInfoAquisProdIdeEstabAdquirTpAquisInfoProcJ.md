@@ -4,10 +4,10 @@
 ## eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisInfoProcJ Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrProcJud |  |
-| 03 | codSusp |  |
-| 04 | vrCPNRet |  |
-| 05 | vrRatNRet |  |
-| 06 | vrSenarNRet |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrProcJud | `String` |  |
+| 03 | codSusp | `String` |  |
+| 04 | vrCPNRet | `Decimal` |  |
+| 05 | vrRatNRet | `Decimal` |  |
+| 06 | vrSenarNRet | `Decimal` |  |

@@ -6,23 +6,23 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Any |  |
-| 03 | id |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Any | `XElement` |  |
+| 03 | id | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, TArquivoeReinf, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, TArquivoeReinf) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, TArquivoeReinf, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, TArquivoeReinf) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, TArquivoeReinf, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, TArquivoeReinf) | `Boolean` |  |
+| Deserialize(string) | `TArquivoeReinf` |  |
+| Deserialize(Stream) | `TArquivoeReinf` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, TArquivoeReinf, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, TArquivoeReinf) | `Boolean` |  |
+| LoadFrom(Stream) | `TArquivoeReinf` |  |
+| LoadFromAsync(Stream) | `Task<TArquivoeReinf>` |  |

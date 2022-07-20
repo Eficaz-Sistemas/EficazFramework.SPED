@@ -6,14 +6,14 @@
 IE Substituído
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | InscricaoEstadualSubstituido |  |
-| 03 | NumeroNF |  |
-| 04 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | InscricaoEstadualSubstituido | `String` |  |
+| 03 | NumeroNF | `Nullable<Int32>` |  |
+| 04 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -8,19 +8,19 @@ Plano de Contas Contábeis
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInclusaoAlteracao |  |
-| 03 | CodigoNaturezaConta |  |
-| 04 | IndicadorConta |  |
-| 05 | NivelConta |  |
-| 06 | CodigoConta |  |
-| 07 | NomeConta |  |
-| 08 | CodigoContaReferencial |  |
-| 09 | CNPJEstabelecimento |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| 03 | CodigoNaturezaConta | `String` |  |
+| 04 | IndicadorConta | `String` |  |
+| 05 | NivelConta | `String` |  |
+| 06 | CodigoConta | `String` |  |
+| 07 | NomeConta | `String` |  |
+| 08 | CodigoContaReferencial | `String` |  |
+| 09 | CNPJEstabelecimento | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

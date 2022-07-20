@@ -8,16 +8,16 @@ Demonstração da Atividade Rural
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Competencia |  |
-| 03 | ValorEntrada |  |
-| 04 | ValorSaida |  |
-| 05 | SaldoFinal |  |
-| 06 | SaldoFinal_Natureza | [N/P] |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Competencia | `Nullable<DateTime>` |  |
+| 03 | ValorEntrada | `Nullable<Double>` |  |
+| 04 | ValorSaida | `Nullable<Double>` |  |
+| 05 | SaldoFinal | `Nullable<Double>` |  |
+| 06 | SaldoFinal_Natureza | `String` | [N/P] |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

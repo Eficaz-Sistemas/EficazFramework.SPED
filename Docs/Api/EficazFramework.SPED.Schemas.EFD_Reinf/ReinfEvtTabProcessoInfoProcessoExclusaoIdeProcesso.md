@@ -4,9 +4,9 @@
 ## ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProc |  |
-| 03 | nrProc |  |
-| 04 | iniValid | AAAA-MM |
-| 05 | fimValid | AAAA-MM |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProc | `TipoProcesso` |  |
+| 03 | nrProc | `String` |  |
+| 04 | iniValid | `String` | AAAA-MM |
+| 05 | fimValid | `String` | AAAA-MM |

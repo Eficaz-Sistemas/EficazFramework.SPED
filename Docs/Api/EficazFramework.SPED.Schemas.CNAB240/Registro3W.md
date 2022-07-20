@@ -6,19 +6,19 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoBanco |  |
-| 03 | LoteDeServico |  |
-| 04 | NumeroSequencial |  |
-| 05 | UsoInfoComplementar |  |
-| 06 | Informacao1 |  |
-| 07 | Informacao2 |  |
-| 08 | Informacao3 |  |
-| 09 | Informacao4 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoBanco | `String` |  |
+| 03 | LoteDeServico | `String` |  |
+| 04 | NumeroSequencial | `Nullable<Int32>` |  |
+| 05 | UsoInfoComplementar | `String` |  |
+| 06 | Informacao1 | `String` |  |
+| 07 | Informacao2 | `String` |  |
+| 08 | Informacao3 | `String` |  |
+| 09 | Informacao4 | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

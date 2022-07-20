@@ -8,16 +8,16 @@ Cadastro de Terceiros
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Imovel |  |
-| 03 | TipoContratante |  |
-| 04 | CPF |  |
-| 05 | Nome |  |
-| 06 | Percentual |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Imovel | `Nullable<Int32>` |  |
+| 03 | TipoContratante | `TipoExploracaoTerceiro` |  |
+| 04 | CPF | `String` |  |
+| 05 | Nome | `String` |  |
+| 06 | Percentual | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

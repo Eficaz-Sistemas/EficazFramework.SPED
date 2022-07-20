@@ -8,14 +8,14 @@ Operações com ISSQN
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorBaseCalculo |  |
-| 03 | Aliquota |  |
-| 04 | Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorBaseCalculo | `Nullable<Double>` |  |
+| 03 | Aliquota | `Nullable<Double>` |  |
+| 04 | Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,23 +4,23 @@
 ## DeclaracaoImportacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nDI |  |
-| 03 | dDI |  |
-| 04 | xLocDesemb |  |
-| 05 | UFDesemb |  |
-| 06 | dDesemb |  |
-| 07 | tpViaTransp |  |
-| 08 | ValorAFRMM |  |
-| 09 | tpIntermedio |  |
-| 10 | cExportador |  |
-| 11 | adi |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nDI | `String` |  |
+| 03 | dDI | `Nullable<DateTime>` |  |
+| 04 | xLocDesemb | `String` |  |
+| 05 | UFDesemb | `Estado` |  |
+| 06 | dDesemb | `Nullable<DateTime>` |  |
+| 07 | tpViaTransp | `TipoViaTransporteDI` |  |
+| 08 | ValorAFRMM | `Nullable<Double>` |  |
+| 09 | tpIntermedio | `TipoIntermedioDI` |  |
+| 10 | cExportador | `String` |  |
+| 11 | adi | `List<ProdutoDeclaracaoImportacao>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializedDI() |  |
-| ShouldSerializedDesemb() |  |
-| ShouldSerializedValorAFRMM() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializedDI() | `Boolean` |  |
+| ShouldSerializedDesemb() | `Boolean` |  |
+| ShouldSerializedValorAFRMM() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

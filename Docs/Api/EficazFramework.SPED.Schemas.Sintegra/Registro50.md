@@ -4,27 +4,27 @@
 ## Registro50 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | InscricaoEstadual |  |
-| 04 | Data |  |
-| 05 | UF |  |
-| 06 | Modelo |  |
-| 07 | Serie |  |
-| 08 | Numero |  |
-| 09 | CFOP |  |
-| 10 | Emitente |  |
-| 11 | ValorTotal |  |
-| 12 | BaseCalculo |  |
-| 13 | ICMS |  |
-| 14 | Isentas |  |
-| 15 | Outras |  |
-| 16 | Aliquota |  |
-| 17 | Situacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | InscricaoEstadual | `String` |  |
+| 04 | Data | `Nullable<DateTime>` |  |
+| 05 | UF | `String` |  |
+| 06 | Modelo | `String` |  |
+| 07 | Serie | `String` |  |
+| 08 | Numero | `String` |  |
+| 09 | CFOP | `String` |  |
+| 10 | Emitente | `IndicadorEmitente` |  |
+| 11 | ValorTotal | `Nullable<Double>` |  |
+| 12 | BaseCalculo | `Nullable<Double>` |  |
+| 13 | ICMS | `Nullable<Double>` |  |
+| 14 | Isentas | `Nullable<Double>` |  |
+| 15 | Outras | `Nullable<Double>` |  |
+| 16 | Aliquota | `Nullable<Double>` |  |
+| 17 | Situacao | `SituacaoDocumento` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

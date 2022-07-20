@@ -8,14 +8,14 @@ Observações do lançamento fiscal (Código 62)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoObs0460 |  |
-| 03 | Descricao |  |
-| 04 | RegistrosD737 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoObs0460 | `String` |  |
+| 03 | Descricao | `String` |  |
+| 04 | RegistrosD737 | `List<RegistroD737>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

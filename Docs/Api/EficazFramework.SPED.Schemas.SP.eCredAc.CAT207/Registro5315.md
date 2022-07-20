@@ -8,19 +8,19 @@ Operações de Saídas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEmissao |  |
-| 03 | EspecieDocumento |  |
-| 04 | Serie |  |
-| 05 | Numero |  |
-| 06 | CodigoParticipante |  |
-| 07 | ValorDocumento |  |
-| 08 | CreditoOuturgado_Percentual |  |
-| 09 | CreditoOuturgado_Valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEmissao | `Nullable<DateTime>` |  |
+| 03 | EspecieDocumento | `Nullable<Int32>` |  |
+| 04 | Serie | `String` |  |
+| 05 | Numero | `Nullable<Int32>` |  |
+| 06 | CodigoParticipante | `String` |  |
+| 07 | ValorDocumento | `Nullable<Double>` |  |
+| 08 | CreditoOuturgado_Percentual | `Nullable<Double>` |  |
+| 09 | CreditoOuturgado_Valor | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

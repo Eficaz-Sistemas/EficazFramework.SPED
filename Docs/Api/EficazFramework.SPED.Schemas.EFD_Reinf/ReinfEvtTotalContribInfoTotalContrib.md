@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRecArqBase |  |
-| 03 | indExistInfo |  |
-| 04 | RTom |  |
-| 05 | RPrest |  |
-| 06 | RRecRepAD |  |
-| 07 | RComl |  |
-| 08 | RCPRB |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRecArqBase | `String` |  |
+| 03 | indExistInfo | `UInt32` |  |
+| 04 | RTom | `ReinfEvtTotalContribInfoTotalContribRTom[]` |  |
+| 05 | RPrest | `ReinfEvtTotalContribInfoTotalContribRPrest[]` |  |
+| 06 | RRecRepAD | `ReinfEvtTotalContribInfoTotalContribRRecRepAD[]` |  |
+| 07 | RComl | `ReinfEvtTotalContribInfoTotalContribRComl[]` |  |
+| 08 | RCPRB | `ReinfEvtTotalContribInfoTotalContribRCPRB[]` |  |

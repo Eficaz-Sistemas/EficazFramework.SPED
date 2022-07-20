@@ -8,16 +8,16 @@ Informações Adicionais do Ajuste da Apuração do ICMS ST
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoAjuste |  |
-| 03 | DescricaoComplementar |  |
-| 04 | ValorAjuste |  |
-| 05 | RegistrosE230 |  |
-| 06 | RegistrosE240 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoAjuste | `String` |  |
+| 03 | DescricaoComplementar | `String` |  |
+| 04 | ValorAjuste | `Nullable<Double>` |  |
+| 05 | RegistrosE230 | `List<RegistroE230>` |  |
+| 06 | RegistrosE240 | `List<RegistroE240>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

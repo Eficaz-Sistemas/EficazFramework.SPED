@@ -8,17 +8,17 @@ Totalização Resumo Diário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CSTCofins |  |
-| 03 | VrTotalItens |  |
-| 04 | VrBcCofins |  |
-| 05 | AliquotaCofins |  |
-| 06 | VrCofins |  |
-| 07 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CSTCofins | `String` |  |
+| 03 | VrTotalItens | `Nullable<Double>` |  |
+| 04 | VrBcCofins | `Nullable<Double>` |  |
+| 05 | AliquotaCofins | `Nullable<Double>` |  |
+| 06 | VrCofins | `Nullable<Double>` |  |
+| 07 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

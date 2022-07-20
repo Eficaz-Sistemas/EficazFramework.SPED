@@ -4,6 +4,6 @@
 ## eSocialConsultaLoteEventos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | protocoloEnvio |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | protocoloEnvio | `String` |  |

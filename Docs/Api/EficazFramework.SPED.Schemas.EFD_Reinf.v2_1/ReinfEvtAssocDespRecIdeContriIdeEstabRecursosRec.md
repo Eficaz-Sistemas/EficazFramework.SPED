@@ -4,11 +4,11 @@
 ## ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cnpjOrigRecurso |  |
-| 03 | vlrTotalRec |  |
-| 04 | vlrTotalRet |  |
-| 05 | vlrTotalNRet |  |
-| 06 | infoRecurso |  |
-| 07 | infoProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cnpjOrigRecurso | `String` |  |
+| 03 | vlrTotalRec | `String` |  |
+| 04 | vlrTotalRet | `String` |  |
+| 05 | vlrTotalNRet | `String` |  |
+| 06 | infoRecurso | `ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso[]` |  |
+| 07 | infoProc | `ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc[]` |  |

@@ -8,16 +8,16 @@ Regimes de Apuração da Contribuição Social e de Apropriação de Crédito
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoIndicador |  |
-| 03 | MetodoApropriacao |  |
-| 04 | TipoContribuicao |  |
-| 05 | CriterioEscrituracaoApuracao |  |
-| 06 | Registro0111 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoIndicador | `CodigoIncidenciaTributaria` |  |
+| 03 | MetodoApropriacao | `Nullable<MetodoApropriacaoEnum>` |  |
+| 04 | TipoContribuicao | `Nullable<TipoContribuicaoEnum>` |  |
+| 05 | CriterioEscrituracaoApuracao | `Nullable<Int32>` |  |
+| 06 | Registro0111 | `Registro0111` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

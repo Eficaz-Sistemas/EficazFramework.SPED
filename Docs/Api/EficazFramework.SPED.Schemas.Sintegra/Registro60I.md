@@ -8,23 +8,23 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataEmissao |  |
-| 03 | NumeroSerieFabEquip |  |
-| 04 | ModeloDocFiscal |  |
-| 05 | CCO |  |
-| 06 | OrdemItem |  |
-| 07 | CodigoProduto |  |
-| 08 | Quantidade |  |
-| 09 | ValorLiquido |  |
-| 10 | BaseCalculo |  |
-| 11 | SituacaoTributariaAliquota |  |
-| 12 | ICMS |  |
-| 13 | Brancos |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataEmissao | `Nullable<DateTime>` |  |
+| 03 | NumeroSerieFabEquip | `String` |  |
+| 04 | ModeloDocFiscal | `String` |  |
+| 05 | CCO | `Nullable<Int64>` |  |
+| 06 | OrdemItem | `Nullable<Int16>` |  |
+| 07 | CodigoProduto | `String` |  |
+| 08 | Quantidade | `Nullable<Double>` |  |
+| 09 | ValorLiquido | `Nullable<Double>` |  |
+| 10 | BaseCalculo | `Nullable<Double>` |  |
+| 11 | SituacaoTributariaAliquota | `String` |  |
+| 12 | ICMS | `Nullable<Double>` |  |
+| 13 | Brancos | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

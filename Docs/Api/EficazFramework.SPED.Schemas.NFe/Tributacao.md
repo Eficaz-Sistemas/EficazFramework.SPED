@@ -4,22 +4,22 @@
 ## Tributacao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ValorTotalTributos |  |
-| 03 | DemaisImpostos |  |
-| 04 | PIS |  |
-| 05 | PISST |  |
-| 06 | COFINS |  |
-| 07 | COFINSST |  |
-| 08 | ICMS |  |
-| 09 | ICMSUFDestino |  |
-| 10 | IPI |  |
-| 11 | ISSQN |  |
-| 12 | II | Imposto de Importação |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ValorTotalTributos | `Nullable<Double>` |  |
+| 03 | DemaisImpostos | `List<Object>` |  |
+| 04 | PIS | `DetalhamentoPIS` |  |
+| 05 | PISST | `DetalhamentoPISST` |  |
+| 06 | COFINS | `DetalhamentoCOFINS` |  |
+| 07 | COFINSST | `DetalhamentoCOFINSST` |  |
+| 08 | ICMS | `DetalhamentoICMS` |  |
+| 09 | ICMSUFDestino | `DetalhamentoICMS_UF_Destinataria` |  |
+| 10 | IPI | `DetalhamentoIPI` |  |
+| 11 | ISSQN | `DetalhamentoISSQN` |  |
+| 12 | II | `DetalhamentoII` | Imposto de Importação |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeValorTotalTributos() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeValorTotalTributos() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

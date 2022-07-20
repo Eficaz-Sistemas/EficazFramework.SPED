@@ -8,17 +8,17 @@ REGISTRO C160: VOLUMES TRANSPORTADOS (CÓDIGO 01 E 04) - EXCETO COMBUSTÍVEIS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodParticipante |  |
-| 03 | PlacaVeiculoIdent |  |
-| 04 | QuantVolumeTransp |  |
-| 05 | PesoBrutoTransp |  |
-| 06 | PesoLiquidoTransp |  |
-| 07 | UFPlacaVeiculo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodParticipante | `String` |  |
+| 03 | PlacaVeiculoIdent | `String` |  |
+| 04 | QuantVolumeTransp | `String` |  |
+| 05 | PesoBrutoTransp | `Nullable<Double>` |  |
+| 06 | PesoLiquidoTransp | `Nullable<Double>` |  |
+| 07 | UFPlacaVeiculo | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

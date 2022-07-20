@@ -8,16 +8,16 @@ Composição das receitas, deduções ou exclusões do período
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroCampoRegistroI100 |  |
-| 03 | CodigoTipoDetalhamento |  |
-| 04 | VrDetalhado |  |
-| 05 | CodigoContaContabil |  |
-| 06 | InfoComplementar |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroCampoRegistroI100 | `Nullable<Int16>` |  |
+| 03 | CodigoTipoDetalhamento | `String` |  |
+| 04 | VrDetalhado | `Nullable<Double>` |  |
+| 05 | CodigoContaContabil | `String` |  |
+| 06 | InfoComplementar | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

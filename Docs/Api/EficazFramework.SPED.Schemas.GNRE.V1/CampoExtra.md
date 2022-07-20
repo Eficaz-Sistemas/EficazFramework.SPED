@@ -4,13 +4,13 @@
 ## CampoExtra Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codigo |  |
-| 03 | tipo |  |
-| 04 | valor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codigo | `Int32` |  |
+| 03 | tipo | `TipoCampoExtra` |  |
+| 04 | valor | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

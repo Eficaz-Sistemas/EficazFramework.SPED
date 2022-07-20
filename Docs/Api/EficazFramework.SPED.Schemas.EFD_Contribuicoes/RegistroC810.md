@@ -8,23 +8,23 @@ Detalhamento do Cupom Fiscal Eletrônico
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CFOP |  |
-| 03 | ValorTotal |  |
-| 04 | CodigoProduto |  |
-| 05 | PIS_CST |  |
-| 06 | PIS_BaseCalculo |  |
-| 07 | PIS_Aliquota |  |
-| 08 | PIS_Valor |  |
-| 09 | COFINS_CST |  |
-| 10 | COFINS_BaseCalculo |  |
-| 11 | COFINS_Aliquota |  |
-| 12 | COFINS_Valor |  |
-| 13 | CodContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CFOP | `String` |  |
+| 03 | ValorTotal | `Nullable<Double>` |  |
+| 04 | CodigoProduto | `String` |  |
+| 05 | PIS_CST | `String` |  |
+| 06 | PIS_BaseCalculo | `Nullable<Double>` |  |
+| 07 | PIS_Aliquota | `Nullable<Double>` |  |
+| 08 | PIS_Valor | `Nullable<Double>` |  |
+| 09 | COFINS_CST | `String` |  |
+| 10 | COFINS_BaseCalculo | `Nullable<Double>` |  |
+| 11 | COFINS_Aliquota | `Nullable<Double>` |  |
+| 12 | COFINS_Valor | `Nullable<Double>` |  |
+| 13 | CodContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

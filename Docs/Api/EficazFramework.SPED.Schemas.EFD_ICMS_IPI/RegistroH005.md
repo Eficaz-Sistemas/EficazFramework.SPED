@@ -8,14 +8,14 @@ Totais do Inventário
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInventario |  |
-| 03 | ValorEstoque |  |
-| 04 | Motivo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInventario | `Nullable<DateTime>` |  |
+| 03 | ValorEstoque | `Nullable<Double>` |  |
+| 04 | Motivo | `MotivoInventario` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

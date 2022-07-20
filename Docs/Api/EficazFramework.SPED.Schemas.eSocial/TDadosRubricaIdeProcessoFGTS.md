@@ -4,6 +4,6 @@
 ## TDadosRubricaIdeProcessoFGTS Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrProc | `String` |  |

@@ -8,20 +8,20 @@ Identificação do Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorEmissao |  |
-| 03 | CodigoParticipante |  |
-| 04 | Modelo |  |
-| 05 | Serie |  |
-| 06 | Numero |  |
-| 07 | Chave_NFeCTe |  |
-| 08 | DataEmissao |  |
-| 09 | NumeroDocArrecadacao |  |
-| 10 | RegistrosG140 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorEmissao | `IndicadorEmitente` |  |
+| 03 | CodigoParticipante | `String` |  |
+| 04 | Modelo | `String` |  |
+| 05 | Serie | `String` |  |
+| 06 | Numero | `Nullable<Int32>` |  |
+| 07 | Chave_NFeCTe | `String` |  |
+| 08 | DataEmissao | `Nullable<DateTime>` |  |
+| 09 | NumeroDocArrecadacao | `String` |  |
+| 10 | RegistrosG140 | `List<RegistroG140>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

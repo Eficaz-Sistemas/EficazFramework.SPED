@@ -8,19 +8,19 @@ Redução Z
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataMovimentoReducaoZ |  |
-| 03 | PosicaoContadorReinicioOperacao |  |
-| 04 | PosicaoContadorReducaoZ |  |
-| 05 | NumeroContadorOrdemOperacaoUltimoDocEmitDia |  |
-| 06 | ValorGrandeTotalFinal |  |
-| 07 | ValorVendaBruta |  |
-| 08 | RegistrosC481 |  |
-| 09 | RegistrosC485 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataMovimentoReducaoZ | `Nullable<DateTime>` |  |
+| 03 | PosicaoContadorReinicioOperacao | `Nullable<Int32>` |  |
+| 04 | PosicaoContadorReducaoZ | `Nullable<Int32>` |  |
+| 05 | NumeroContadorOrdemOperacaoUltimoDocEmitDia | `Nullable<Int32>` |  |
+| 06 | ValorGrandeTotalFinal | `Nullable<Double>` |  |
+| 07 | ValorVendaBruta | `Nullable<Double>` |  |
+| 08 | RegistrosC481 | `List<RegistroC481>` |  |
+| 09 | RegistrosC485 | `List<RegistroC485>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

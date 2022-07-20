@@ -4,15 +4,15 @@
 ## Impostos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ICMS |  |
-| 03 | infTribFed |  |
-| 04 | vTotTrib |  |
-| 05 | infAdFisco |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ICMS | `ICMS` |  |
+| 03 | infTribFed | `InftributosFederais` |  |
+| 04 | vTotTrib | `Nullable<Double>` |  |
+| 05 | infAdFisco | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevTotTrib() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevTotTrib() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

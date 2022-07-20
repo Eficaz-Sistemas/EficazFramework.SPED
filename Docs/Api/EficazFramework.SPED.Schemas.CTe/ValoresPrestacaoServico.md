@@ -4,13 +4,13 @@
 ## ValoresPrestacaoServico Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | vTPrest |  |
-| 03 | vRec |  |
-| 04 | Comp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | vTPrest | `Nullable<Double>` |  |
+| 03 | vRec | `Nullable<Double>` |  |
+| 04 | Comp | `ObservableCollection<TCTeInfCteVPrestComp>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

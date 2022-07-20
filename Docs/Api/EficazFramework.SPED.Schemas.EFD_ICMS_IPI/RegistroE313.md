@@ -8,20 +8,20 @@ Identificação dos Documentos do Ajuste da Apuração do ICMS Difal
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoParticipante |  |
-| 03 | Modelo |  |
-| 04 | Serie |  |
-| 05 | SubSerie |  |
-| 06 | Numero |  |
-| 07 | Chave |  |
-| 08 | DataEmissao |  |
-| 09 | CodigoItem0200 |  |
-| 10 | ValorAjusteItem |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoParticipante | `String` |  |
+| 03 | Modelo | `String` |  |
+| 04 | Serie | `String` |  |
+| 05 | SubSerie | `String` |  |
+| 06 | Numero | `Nullable<Int32>` |  |
+| 07 | Chave | `String` |  |
+| 08 | DataEmissao | `Nullable<DateTime>` |  |
+| 09 | CodigoItem0200 | `String` |  |
+| 10 | ValorAjusteItem | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

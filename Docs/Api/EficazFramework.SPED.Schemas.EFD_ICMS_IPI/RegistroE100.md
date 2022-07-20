@@ -8,14 +8,14 @@ Período da Apuração do ICMS
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | DataInicial |  |
-| 03 | DataFinal |  |
-| 04 | RegistroE110 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | DataInicial | `Nullable<DateTime>` |  |
+| 03 | DataFinal | `Nullable<DateTime>` |  |
+| 04 | RegistroE110 | `RegistroE110` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

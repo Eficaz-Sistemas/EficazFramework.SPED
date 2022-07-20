@@ -8,20 +8,20 @@ Dados Cadastrais
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Endereco |  |
-| 03 | Numero |  |
-| 04 | Complemento |  |
-| 05 | Bairro |  |
-| 06 | UF |  |
-| 07 | CodigoMunicipio |  |
-| 08 | CEP |  |
-| 09 | Telefone |  |
-| 10 | EMail |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Endereco | `String` |  |
+| 03 | Numero | `String` |  |
+| 04 | Complemento | `String` |  |
+| 05 | Bairro | `String` |  |
+| 06 | UF | `String` |  |
+| 07 | CodigoMunicipio | `String` |  |
+| 08 | CEP | `String` |  |
+| 09 | Telefone | `String` |  |
+| 10 | EMail | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

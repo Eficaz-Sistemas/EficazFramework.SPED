@@ -8,14 +8,14 @@ Fatores de Conversão de Unidades
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | UnidadeComercialConvertida |  |
-| 03 | FatorConversao |  |
-| 04 | CodigoBarras |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | UnidadeComercialConvertida | `String` |  |
+| 03 | FatorConversao | `Nullable<Double>` |  |
+| 04 | CodigoBarras | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

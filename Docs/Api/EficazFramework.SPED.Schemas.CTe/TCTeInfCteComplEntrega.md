@@ -4,12 +4,12 @@
 ## TCTeInfCteComplEntrega Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Item |  |
-| 03 | Item1 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Item | `Object` |  |
+| 03 | Item1 | `Object` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

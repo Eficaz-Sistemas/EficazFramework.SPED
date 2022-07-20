@@ -4,18 +4,18 @@
 ## DetalhamentoItemMedicamento_Rastro Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nLote |  |
-| 03 | qLote |  |
-| 04 | DataFabricacao |  |
-| 05 | dFab | Formato AAAA-MM-DD |
-| 06 | DataValidade |  |
-| 07 | dVal | Formato AAAA-MM-DD |
-| 08 | cProdANVISA |  |
-| 09 | vPMC |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nLote | `String` |  |
+| 03 | qLote | `String` |  |
+| 04 | DataFabricacao | `Nullable<DateTime>` |  |
+| 05 | dFab | `String` | Formato AAAA-MM-DD |
+| 06 | DataValidade | `Nullable<DateTime>` |  |
+| 07 | dVal | `String` | Formato AAAA-MM-DD |
+| 08 | cProdANVISA | `String` |  |
+| 09 | vPMC | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -8,25 +8,25 @@ Detalhamento da contribuição para o Cofins pasep período
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoContSocialApPeriodo |  |
-| 03 | VrRecBruta |  |
-| 04 | VrBcContribuicao |  |
-| 05 | VrAjBCAcresc |  |
-| 06 | VrAjBCRed |  |
-| 07 | AliqCofins |  |
-| 08 | QtdeBcCofins |  |
-| 09 | AliqCofinsQtde |  |
-| 10 | VrContSocialApurada |  |
-| 11 | VrTotalAjAcresc |  |
-| 12 | VrTotalAjRed |  |
-| 13 | VrContDiferirPeriodo |  |
-| 14 | VrContDiferidaPerAnter |  |
-| 15 | VrTotalContPeriodo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoContSocialApPeriodo | `String` |  |
+| 03 | VrRecBruta | `Nullable<Double>` |  |
+| 04 | VrBcContribuicao | `Nullable<Double>` |  |
+| 05 | VrAjBCAcresc | `Nullable<Double>` |  |
+| 06 | VrAjBCRed | `Nullable<Double>` |  |
+| 07 | AliqCofins | `Nullable<Double>` |  |
+| 08 | QtdeBcCofins | `Nullable<Double>` |  |
+| 09 | AliqCofinsQtde | `Nullable<Double>` |  |
+| 10 | VrContSocialApurada | `Nullable<Double>` |  |
+| 11 | VrTotalAjAcresc | `Nullable<Double>` |  |
+| 12 | VrTotalAjRed | `Nullable<Double>` |  |
+| 13 | VrContDiferirPeriodo | `Nullable<Double>` |  |
+| 14 | VrContDiferidaPerAnter | `Nullable<Double>` |  |
+| 15 | VrTotalContPeriodo | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,23 +4,23 @@
 ## Registro3N_AnexoC_DARF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoRecolhimento |  |
-| 03 | TipoInscricao | 1 = CPF            2 = CNPJ [Default] |
-| 04 | CNPJ_CPF |  |
-| 05 | Competencia |  |
-| 06 | Referencia |  |
-| 07 | ValorPrincipal |  |
-| 08 | ValorMulta |  |
-| 09 | ValorJurosEncargos |  |
-| 10 | ValorTotal |  |
-| 11 | DataVencimento |  |
-| 12 | DataArrecadacao |  |
-| 13 | ContribuinteNome |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoRecolhimento | `String` |  |
+| 03 | TipoInscricao | `String` | 1 = CPF            2 = CNPJ [Default] |
+| 04 | CNPJ_CPF | `String` |  |
+| 05 | Competencia | `Nullable<DateTime>` |  |
+| 06 | Referencia | `String` |  |
+| 07 | ValorPrincipal | `Nullable<Double>` |  |
+| 08 | ValorMulta | `Nullable<Double>` |  |
+| 09 | ValorJurosEncargos | `Nullable<Double>` |  |
+| 10 | ValorTotal | `Nullable<Double>` |  |
+| 11 | DataVencimento | `Nullable<DateTime>` |  |
+| 12 | DataArrecadacao | `Nullable<DateTime>` |  |
+| 13 | ContribuinteNome | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

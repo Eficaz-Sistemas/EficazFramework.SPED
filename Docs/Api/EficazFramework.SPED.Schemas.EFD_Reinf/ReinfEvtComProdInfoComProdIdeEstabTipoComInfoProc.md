@@ -4,11 +4,11 @@
 ## ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProc |  |
-| 03 | nrProc |  |
-| 04 | codSusp |  |
-| 05 | vlrCPSusp |  |
-| 06 | vlrRatSusp |  |
-| 07 | vlrSenarSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProc | `TipoProcesso` |  |
+| 03 | nrProc | `String` |  |
+| 04 | codSusp | `String` |  |
+| 05 | vlrCPSusp | `String` |  |
+| 06 | vlrRatSusp | `String` |  |
+| 07 | vlrSenarSusp | `String` |  |

@@ -4,11 +4,11 @@
 ## eSocialEvtAdmissaoTrabalhadorDocumentos Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CTPS |  |
-| 03 | RIC |  |
-| 04 | RG |  |
-| 05 | RNE |  |
-| 06 | OC |  |
-| 07 | CNH |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CTPS | `TCtps` |  |
+| 03 | RIC | `TRic` |  |
+| 04 | RG | `TRg` |  |
+| 05 | RNE | `TRne` |  |
+| 06 | OC | `TOc` |  |
+| 07 | CNH | `TCnh` |  |

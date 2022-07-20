@@ -4,20 +4,20 @@
 ## ComplementoCTe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | xCaracAd |  |
-| 03 | xCaracSer |  |
-| 04 | xEmi |  |
-| 05 | fluxo |  |
-| 06 | Entrega |  |
-| 07 | origCalc |  |
-| 08 | destCalc |  |
-| 09 | xObs |  |
-| 10 | ObsCont |  |
-| 11 | ObsFisco |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | xCaracAd | `String` |  |
+| 03 | xCaracSer | `String` |  |
+| 04 | xEmi | `String` |  |
+| 05 | fluxo | `TCTeInfCteComplFluxo` |  |
+| 06 | Entrega | `TCTeInfCteComplEntrega` |  |
+| 07 | origCalc | `String` |  |
+| 08 | destCalc | `String` |  |
+| 09 | xObs | `String` |  |
+| 10 | ObsCont | `ObservableCollection<TCTeInfCteComplObsCont>` |  |
+| 11 | ObsFisco | `ObservableCollection<TCTeInfCteComplObsFisco>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

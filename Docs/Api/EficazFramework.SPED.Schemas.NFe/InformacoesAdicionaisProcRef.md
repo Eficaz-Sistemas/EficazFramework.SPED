@@ -4,12 +4,12 @@
 ## InformacoesAdicionaisProcRef Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nProc |  |
-| 03 | indProc |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nProc | `String` |  |
+| 03 | indProc | `IndicadorProcessoReferenciado` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

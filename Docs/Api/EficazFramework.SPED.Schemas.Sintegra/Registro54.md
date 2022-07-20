@@ -4,26 +4,26 @@
 ## Registro54 Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | Modelo |  |
-| 04 | Serie |  |
-| 05 | Numero |  |
-| 06 | CFOP |  |
-| 07 | CST |  |
-| 08 | NumeroItem |  |
-| 09 | CodigoProduto |  |
-| 10 | Quantidade |  |
-| 11 | ValorProduto |  |
-| 12 | Desconto |  |
-| 13 | BaseCalculo |  |
-| 14 | BaseCalculoST |  |
-| 15 | IPI |  |
-| 16 | ICMS_Aliquota |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | Modelo | `String` |  |
+| 04 | Serie | `String` |  |
+| 05 | Numero | `String` |  |
+| 06 | CFOP | `String` |  |
+| 07 | CST | `String` |  |
+| 08 | NumeroItem | `Nullable<Int32>` |  |
+| 09 | CodigoProduto | `String` |  |
+| 10 | Quantidade | `Nullable<Double>` |  |
+| 11 | ValorProduto | `Nullable<Double>` |  |
+| 12 | Desconto | `Nullable<Double>` |  |
+| 13 | BaseCalculo | `Nullable<Double>` |  |
+| 14 | BaseCalculoST | `Nullable<Double>` |  |
+| 15 | IPI | `Nullable<Double>` |  |
+| 16 | ICMS_Aliquota | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

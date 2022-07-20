@@ -8,23 +8,23 @@ Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ |  |
-| 03 | NomeEmpresarial |  |
-| 04 | IndicadorSitInicioPeriodo |  |
-| 05 | SituacaoEspecial |  |
-| 06 | PatrimonioRemanescente |  |
-| 07 | DataSituacaoEspecial |  |
-| 08 | DataInicial |  |
-| 09 | DataFinal |  |
-| 10 | Retificadora | Valores válidos:            S - ECF Retificadora            N - ECF Original            F - ECF Original com mudança de forma de tributação |
-| 11 | ReciboRetificacao |  |
-| 12 | TipoECF |  |
-| 13 | CodigoSCP |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ | `String` |  |
+| 03 | NomeEmpresarial | `String` |  |
+| 04 | IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
+| 05 | SituacaoEspecial | `SituacaoEspecial` |  |
+| 06 | PatrimonioRemanescente | `Nullable<Double>` |  |
+| 07 | DataSituacaoEspecial | `Nullable<DateTime>` |  |
+| 08 | DataInicial | `Nullable<DateTime>` |  |
+| 09 | DataFinal | `Nullable<DateTime>` |  |
+| 10 | Retificadora | `Boolean` | Valores válidos:            S - ECF Retificadora            N - ECF Original            F - ECF Original com mudança de forma de tributação |
+| 11 | ReciboRetificacao | `String` |  |
+| 12 | TipoECF | `TipoECF` |  |
+| 13 | CodigoSCP | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

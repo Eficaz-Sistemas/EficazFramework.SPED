@@ -8,29 +8,29 @@ Cupom Fiscal Eletrônico - código 59
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | EspecieDocumento |  |
-| 03 | SituacaoDocumento |  |
-| 04 | Numero |  |
-| 05 | DataEmissao |  |
-| 06 | ValorTotalDocumento |  |
-| 07 | ValorPIS |  |
-| 08 | ValorCofins |  |
-| 09 | CNPJ_CPF |  |
-| 10 | NumeroSerieSAT |  |
-| 11 | ChaveCFe |  |
-| 12 | ValorDesconto |  |
-| 13 | ValorTotalMercadorias |  |
-| 14 | ValorOutrasDespesas |  |
-| 15 | ValorICMS |  |
-| 16 | ValorPISST |  |
-| 17 | ValorCofinsST |  |
-| 18 | RegistrosC810 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | EspecieDocumento | `String` |  |
+| 03 | SituacaoDocumento | `SituacaoDocumento` |  |
+| 04 | Numero | `Nullable<Int32>` |  |
+| 05 | DataEmissao | `Nullable<DateTime>` |  |
+| 06 | ValorTotalDocumento | `Nullable<Double>` |  |
+| 07 | ValorPIS | `Nullable<Double>` |  |
+| 08 | ValorCofins | `Nullable<Double>` |  |
+| 09 | CNPJ_CPF | `String` |  |
+| 10 | NumeroSerieSAT | `Nullable<Int32>` |  |
+| 11 | ChaveCFe | `String` |  |
+| 12 | ValorDesconto | `Nullable<Double>` |  |
+| 13 | ValorTotalMercadorias | `Nullable<Double>` |  |
+| 14 | ValorOutrasDespesas | `Nullable<Double>` |  |
+| 15 | ValorICMS | `Nullable<Double>` |  |
+| 16 | ValorPISST | `Nullable<Double>` |  |
+| 17 | ValorCofinsST | `Nullable<Double>` |  |
+| 18 | RegistrosC810 | `List<RegistroC810>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
-| DocumentoValido() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |
+| DocumentoValido() | `Boolean` |  |

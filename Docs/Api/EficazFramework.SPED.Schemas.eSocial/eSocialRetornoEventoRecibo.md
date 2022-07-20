@@ -4,7 +4,7 @@
 ## eSocialRetornoEventoRecibo Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrRecibo |  |
-| 03 | hash |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrRecibo | `String` |  |
+| 03 | hash | `String` |  |

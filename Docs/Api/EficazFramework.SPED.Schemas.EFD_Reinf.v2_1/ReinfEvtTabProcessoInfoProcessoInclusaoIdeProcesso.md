@@ -4,12 +4,12 @@
 ## ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpProc |  |
-| 03 | nrProc |  |
-| 04 | iniValid | AAAA-MM |
-| 05 | fimValid | AAAA-MM |
-| 06 | indAutoria |  |
-| 07 | infoSusp |  |
-| 08 | dadosProcJud |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpProc | `TipoProcesso` |  |
+| 03 | nrProc | `String` |  |
+| 04 | iniValid | `String` | AAAA-MM |
+| 05 | fimValid | `String` | AAAA-MM |
+| 06 | indAutoria | `IndicadorAuditoria` |  |
+| 07 | infoSusp | `ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp[]` |  |
+| 08 | dadosProcJud | `ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud` |  |

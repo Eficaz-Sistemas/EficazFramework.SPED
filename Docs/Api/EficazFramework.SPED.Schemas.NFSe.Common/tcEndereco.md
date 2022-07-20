@@ -4,20 +4,20 @@
 ## tcEndereco Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Endereco |  |
-| 03 | Numero |  |
-| 04 | Complemento |  |
-| 05 | Bairro |  |
-| 06 | CodigoMunicipio |  |
-| 07 | Cidade |  |
-| 08 | CodigoMunicipioSpecified |  |
-| 09 | Uf |  |
-| 10 | Estado |  |
-| 11 | Cep |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Endereco | `String` |  |
+| 03 | Numero | `String` |  |
+| 04 | Complemento | `String` |  |
+| 05 | Bairro | `String` |  |
+| 06 | CodigoMunicipio | `Int32` |  |
+| 07 | Cidade | `Int32` |  |
+| 08 | CodigoMunicipioSpecified | `Boolean` |  |
+| 09 | Uf | `String` |  |
+| 10 | Estado | `String` |  |
+| 11 | Cep | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

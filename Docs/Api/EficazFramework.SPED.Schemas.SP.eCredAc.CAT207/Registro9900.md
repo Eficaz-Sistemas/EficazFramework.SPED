@@ -6,13 +6,13 @@
 Encerramento do Bloco 9
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Registro | Registro Totalizado |
-| 03 | TotalLinhas | Total de Linhas do Bloco |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Registro | `String` | Registro Totalizado |
+| 03 | TotalLinhas | `Nullable<Int32>` | Total de Linhas do Bloco |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | cUF |  |
-| 04 | xServ |  |
-| 05 | comando |  |
-| 06 | nSeg |  |
-| 07 | dhEnvio |  |
-| 08 | nserieSAT |  |
-| 09 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `Ambiente` |  |
+| 03 | cUF | `String` |  |
+| 04 | xServ | `String` |  |
+| 05 | comando | `consCmdComando` |  |
+| 06 | nSeg | `String` |  |
+| 07 | dhEnvio | `String` |  |
+| 08 | nserieSAT | `String` |  |
+| 09 | versao | `Decimal` |  |

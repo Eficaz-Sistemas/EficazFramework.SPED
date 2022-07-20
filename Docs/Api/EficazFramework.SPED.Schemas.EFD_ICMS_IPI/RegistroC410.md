@@ -8,13 +8,13 @@ PIS e COFINS Totalizados no dia (Código 02, 2D e 60)
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | PIS |  |
-| 03 | COFINS |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | PIS | `Nullable<Double>` |  |
+| 03 | COFINS | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

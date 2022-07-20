@@ -4,17 +4,17 @@
 ## Referencia Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | periodo |  |
-| 03 | periodoSpecified |  |
-| 04 | mes |  |
-| 05 | mesSpecified |  |
-| 06 | ano |  |
-| 07 | parcela |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | periodo | `ReferenciaPeriodo` |  |
+| 03 | periodoSpecified | `Boolean` |  |
+| 04 | mes | `Mes` |  |
+| 05 | mesSpecified | `Boolean` |  |
+| 06 | ano | `Nullable<Int32>` |  |
+| 07 | parcela | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeano() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeano() | `Boolean` |  |
+| OnPropertyChanged(string) | `Void` |  |

@@ -8,17 +8,17 @@ Ajuste da contribuição previdenciária apurada sobre a receita bruta
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | IndicadorTipoAjuste |  |
-| 03 | VrAjuste |  |
-| 04 | CodigoAjuste |  |
-| 05 | NumeroProcesso |  |
-| 06 | DescricaoResumidaAjuste |  |
-| 07 | DataRefAjuste |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | IndicadorTipoAjuste | `IndicadorTipoAjusteBlocoP` |  |
+| 03 | VrAjuste | `Nullable<Double>` |  |
+| 04 | CodigoAjuste | `String` |  |
+| 05 | NumeroProcesso | `String` |  |
+| 06 | DescricaoResumidaAjuste | `String` |  |
+| 07 | DataRefAjuste | `Nullable<DateTime>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

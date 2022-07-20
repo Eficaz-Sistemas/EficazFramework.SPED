@@ -4,14 +4,14 @@
 ## TUnidCarga Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpUnidCarga |  |
-| 03 | idUnidCarga |  |
-| 04 | lacUnidCarga |  |
-| 05 | qtdRat |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpUnidCarga | `TtipoUnidCarga` |  |
+| 03 | idUnidCarga | `String` |  |
+| 04 | lacUnidCarga | `ObservableCollection<TUnidCargaLacUnidCarga>` |  |
+| 05 | qtdRat | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,8 +4,8 @@
 ## Operations Class
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Open(Stream) |  |
-| OpenAsync(Stream) |  |
-| RemoveAllNamespaces(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Open(Stream) | `IXmlSpedDocument` |  |
+| OpenAsync(Stream) | `Task<IXmlSpedDocument>` |  |
+| RemoveAllNamespaces(string) | `String` |  |

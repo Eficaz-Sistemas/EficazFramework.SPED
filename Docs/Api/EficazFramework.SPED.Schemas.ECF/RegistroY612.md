@@ -6,17 +6,17 @@
 Identificação e Remuneração de Sócios, Titulares, Dirigentes e Conselheiros
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CPF |  |
-| 03 | Nome |  |
-| 04 | Qualificacao |  |
-| 05 | ValorRemuneracao |  |
-| 06 | ValorDemaisRendimentos |  |
-| 07 | ValorIR_Retido |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CPF | `String` |  |
+| 03 | Nome | `String` |  |
+| 04 | Qualificacao | `String` |  |
+| 05 | ValorRemuneracao | `Nullable<Double>` |  |
+| 06 | ValorDemaisRendimentos | `Nullable<Double>` |  |
+| 07 | ValorIR_Retido | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

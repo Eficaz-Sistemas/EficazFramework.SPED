@@ -8,18 +8,18 @@ Abertura do Arquivo Digital e Identificação do Contribuinte
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Periodo |  |
-| 03 | RazaoSocial |  |
-| 04 | CNPJ |  |
-| 05 | InscricaoEstadual |  |
-| 06 | CodigoMunicipio |  |
-| 07 | VersaoLayout |  |
-| 08 | Finalidade |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Periodo | `Nullable<DateTime>` |  |
+| 03 | RazaoSocial | `String` |  |
+| 04 | CNPJ | `String` |  |
+| 05 | InscricaoEstadual | `String` |  |
+| 06 | CodigoMunicipio | `String` |  |
+| 07 | VersaoLayout | `VersaoLayout` |  |
+| 08 | Finalidade | `Finalidade` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

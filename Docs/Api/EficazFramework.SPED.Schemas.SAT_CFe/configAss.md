@@ -6,13 +6,13 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpAmb |  |
-| 03 | cUF |  |
-| 04 | CNPJvalue |  |
-| 05 | signAC |  |
-| 06 | nSeg |  |
-| 07 | dhEnvio |  |
-| 08 | nserieSAT |  |
-| 09 | versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpAmb | `String` |  |
+| 03 | cUF | `String` |  |
+| 04 | CNPJvalue | `String` |  |
+| 05 | signAC | `String` |  |
+| 06 | nSeg | `String` |  |
+| 07 | dhEnvio | `String` |  |
+| 08 | nserieSAT | `String` |  |
+| 09 | versao | `String` |  |

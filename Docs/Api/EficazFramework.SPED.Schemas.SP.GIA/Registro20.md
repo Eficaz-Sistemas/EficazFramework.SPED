@@ -6,20 +6,20 @@
 Ocorrências (Ajustes de Apuração)
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoOcorrencia |  |
-| 03 | Valor |  |
-| 04 | Operacao |  |
-| 05 | FundamentacaoLegal |  |
-| 06 | DescricaoOcorrencia |  |
-| 07 | Registros25 |  |
-| 08 | Registros26 |  |
-| 09 | Registros27 |  |
-| 10 | Registros28 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoOcorrencia | `String` |  |
+| 03 | Valor | `Nullable<Double>` |  |
+| 04 | Operacao | `Operacao` |  |
+| 05 | FundamentacaoLegal | `String` |  |
+| 06 | DescricaoOcorrencia | `String` |  |
+| 07 | Registros25 | `List<Registro25>` |  |
+| 08 | Registros26 | `List<Registro26>` |  |
+| 09 | Registros27 | `List<Registro27>` |  |
+| 10 | Registros28 | `List<Registro28>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

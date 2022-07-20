@@ -8,13 +8,13 @@ Plano de Contas Referencial
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodCentroCusto |  |
-| 03 | CodContaReferencial |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodCentroCusto | `String` |  |
+| 03 | CodContaReferencial | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

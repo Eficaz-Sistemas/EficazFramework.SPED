@@ -4,16 +4,16 @@
 ## CobrancaDuplicata Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nDup |  |
-| 03 | dVenc |  |
-| 04 | dVencXML | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'dVenc' (Date?) para trabalho. Ambos estarão            automaticamente em sincronia |
-| 05 | vDup |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nDup | `String` |  |
+| 03 | dVenc | `Nullable<DateTime>` |  |
+| 04 | dVencXML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'dVenc' (Date?) para trabalho. Ambos estarão            automaticamente em sincronia |
+| 05 | vDup | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializevDup() |  |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializevDup() | `Boolean` |  |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

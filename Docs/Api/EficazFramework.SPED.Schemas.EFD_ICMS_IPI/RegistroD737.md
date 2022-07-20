@@ -9,18 +9,18 @@ valores provenientes de documento fiscal.
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoAjusteBeneficio |  |
-| 03 | DescricaoAjusteBeneficio |  |
-| 04 | CodigoItem |  |
-| 05 | ValorBaseCalculoICMS |  |
-| 06 | AliquotaICMS |  |
-| 07 | ValorICMS |  |
-| 08 | ValorOutros |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoAjusteBeneficio | `String` |  |
+| 03 | DescricaoAjusteBeneficio | `String` |  |
+| 04 | CodigoItem | `String` |  |
+| 05 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| 06 | AliquotaICMS | `Nullable<Double>` |  |
+| 07 | ValorICMS | `Nullable<Double>` |  |
+| 08 | ValorOutros | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

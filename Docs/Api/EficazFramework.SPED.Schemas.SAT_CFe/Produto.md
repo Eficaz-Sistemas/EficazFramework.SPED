@@ -6,22 +6,22 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | cProd |  |
-| 03 | cEAN |  |
-| 04 | xProd |  |
-| 05 | NCM |  |
-| 06 | CEST |  |
-| 07 | CFOP |  |
-| 08 | uCom |  |
-| 09 | qCom |  |
-| 10 | vUnCom |  |
-| 11 | vProd |  |
-| 12 | indRegra |  |
-| 13 | vDesc |  |
-| 14 | vOutro |  |
-| 15 | vItem |  |
-| 16 | vRatDesc |  |
-| 17 | vRatAcr |  |
-| 18 | obsFiscoDet |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | cProd | `String` |  |
+| 03 | cEAN | `String` |  |
+| 04 | xProd | `String` |  |
+| 05 | NCM | `String` |  |
+| 06 | CEST | `String` |  |
+| 07 | CFOP | `String` |  |
+| 08 | uCom | `String` |  |
+| 09 | qCom | `String` |  |
+| 10 | vUnCom | `String` |  |
+| 11 | vProd | `String` |  |
+| 12 | indRegra | `String` |  |
+| 13 | vDesc | `String` |  |
+| 14 | vOutro | `String` |  |
+| 15 | vItem | `String` |  |
+| 16 | vRatDesc | `String` |  |
+| 17 | vRatAcr | `String` |  |
+| 18 | obsFiscoDet | `ProdutoObsFisco[]` |  |

@@ -8,29 +8,29 @@ Resumo da Escrituração Diária - Bilhetes Consolidados
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocFiscal |  |
-| 03 | SerieDocFiscal |  |
-| 04 | SubSerieDocFiscal |  |
-| 05 | NumeroDocFiscalInicial |  |
-| 06 | NumeroDocFiscalFinal |  |
-| 07 | CFOP |  |
-| 08 | DataReferenciaResumoDiario |  |
-| 09 | VrTotalDocsFiscais |  |
-| 10 | VrTotalDescontos |  |
-| 11 | CSTPis |  |
-| 12 | VrBcPis |  |
-| 13 | AliquotaPis |  |
-| 14 | VrPis |  |
-| 15 | CSTCofins |  |
-| 16 | VrBcCofins |  |
-| 17 | AliquotaCofins |  |
-| 18 | VrCofins |  |
-| 19 | CodigoContaContabil |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocFiscal | `String` |  |
+| 03 | SerieDocFiscal | `String` |  |
+| 04 | SubSerieDocFiscal | `String` |  |
+| 05 | NumeroDocFiscalInicial | `Nullable<Int64>` |  |
+| 06 | NumeroDocFiscalFinal | `Nullable<Int64>` |  |
+| 07 | CFOP | `String` |  |
+| 08 | DataReferenciaResumoDiario | `Nullable<DateTime>` |  |
+| 09 | VrTotalDocsFiscais | `Nullable<Double>` |  |
+| 10 | VrTotalDescontos | `Nullable<Double>` |  |
+| 11 | CSTPis | `String` |  |
+| 12 | VrBcPis | `Nullable<Double>` |  |
+| 13 | AliquotaPis | `Nullable<Double>` |  |
+| 14 | VrPis | `Nullable<Double>` |  |
+| 15 | CSTCofins | `String` |  |
+| 16 | VrBcCofins | `Nullable<Double>` |  |
+| 17 | AliquotaCofins | `Nullable<Double>` |  |
+| 18 | VrCofins | `Nullable<Double>` |  |
+| 19 | CodigoContaContabil | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

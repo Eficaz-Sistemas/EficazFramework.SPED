@@ -6,23 +6,23 @@
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | evtTotal |  |
-| 03 | Signature |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | evtTotal | `ReinfEvtTotal` |  |
+| 03 | Signature | `SignatureType` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, TotalEventos, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, TotalEventos) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, TotalEventos, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, TotalEventos) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, TotalEventos, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, TotalEventos) | `Boolean` |  |
+| Deserialize(string) | `TotalEventos` |  |
+| Deserialize(Stream) | `TotalEventos` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, TotalEventos, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, TotalEventos) | `Boolean` |  |
+| LoadFrom(Stream) | `TotalEventos` |  |
+| LoadFromAsync(Stream) | `Task<TotalEventos>` |  |

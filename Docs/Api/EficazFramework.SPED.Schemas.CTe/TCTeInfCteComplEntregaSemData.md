@@ -4,11 +4,11 @@
 ## TCTeInfCteComplEntregaSemData Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpPer |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpPer | `TCTeInfCteComplEntregaSemDataTpPer` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

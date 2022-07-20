@@ -8,19 +8,19 @@ Objeto de retorno do tipo Carta de Correção Eletrônica.
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ChaveNFe |  |
-| 03 | EventoData |  |
-| 04 | EventoCodigo |  |
-| 05 | EventoNumeroSequencial |  |
-| 06 | EventoDescricao |  |
-| 07 | Correcao |  |
-| 08 | Operacao |  |
-| 09 | DataAutorizacaoCorrecao |  |
-| 10 | NSU |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ChaveNFe | `String` |  |
+| 03 | EventoData | `Nullable<DateTime>` |  |
+| 04 | EventoCodigo | `String` |  |
+| 05 | EventoNumeroSequencial | `String` |  |
+| 06 | EventoDescricao | `String` |  |
+| 07 | Correcao | `String` |  |
+| 08 | Operacao | `OperacaoNFe` |  |
+| 09 | DataAutorizacaoCorrecao | `Nullable<DateTime>` |  |
+| 10 | NSU | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |

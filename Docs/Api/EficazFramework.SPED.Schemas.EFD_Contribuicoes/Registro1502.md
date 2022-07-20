@@ -8,14 +8,14 @@ Detalhamento do Crédito Extemporâneo Vinculado a mais de um tipo de receita - 
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ParcelaCreditoCofinsReceitaMercInterno |  |
-| 03 | ParcelaCreditoCofinsReceitaNãoTribMercInterno |  |
-| 04 | ParcelaCreditoVincExportacao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ParcelaCreditoCofinsReceitaMercInterno | `Nullable<Double>` |  |
+| 03 | ParcelaCreditoCofinsReceitaNãoTribMercInterno | `Nullable<Double>` |  |
+| 04 | ParcelaCreditoVincExportacao | `Nullable<Double>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

@@ -4,15 +4,15 @@
 ## ReinfEvtComProdInfoComProdIdeEstab Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscEstab |  |
-| 03 | nrInscEstab |  |
-| 04 | vlrRecBrutaTotal |  |
-| 05 | vlrCPApur |  |
-| 06 | vlrRatApur |  |
-| 07 | vlrSenarApur |  |
-| 08 | vlrCPSuspTotal |  |
-| 09 | vlrRatSuspTotal |  |
-| 10 | vlrSenarSuspTotal |  |
-| 11 | tipoCom |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscEstab | `PersonalidadeJuridica` |  |
+| 03 | nrInscEstab | `String` |  |
+| 04 | vlrRecBrutaTotal | `String` |  |
+| 05 | vlrCPApur | `String` |  |
+| 06 | vlrRatApur | `String` |  |
+| 07 | vlrSenarApur | `String` |  |
+| 08 | vlrCPSuspTotal | `String` |  |
+| 09 | vlrRatSuspTotal | `String` |  |
+| 10 | vlrSenarSuspTotal | `String` |  |
+| 11 | tipoCom | `ReinfEvtComProdInfoComProdIdeEstabTipoCom[]` |  |

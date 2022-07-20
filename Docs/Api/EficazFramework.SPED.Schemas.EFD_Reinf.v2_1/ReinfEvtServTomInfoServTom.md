@@ -4,6 +4,6 @@
 ## ReinfEvtServTomInfoServTom Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideEstabObra |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideEstabObra | `ReinfEvtServTomInfoServTomIdeEstabObra` |  |

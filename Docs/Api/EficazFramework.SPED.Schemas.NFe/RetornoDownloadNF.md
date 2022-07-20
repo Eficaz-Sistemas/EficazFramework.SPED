@@ -4,30 +4,30 @@
 ## RetornoDownloadNF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Ambiente |  |
-| 03 | VersaoAplicativo |  |
-| 04 | RetornoCodigo |  |
-| 05 | RetornoDescricao |  |
-| 06 | RetornoDataHora |  |
-| 07 | Retorno |  |
-| 08 | Versao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Ambiente | `Ambiente` |  |
+| 03 | VersaoAplicativo | `String` |  |
+| 04 | RetornoCodigo | `String` |  |
+| 05 | RetornoDescricao | `String` |  |
+| 06 | RetornoDataHora | `DateTime` |  |
+| 07 | Retorno | `List<RetornoNFe>` |  |
+| 08 | Versao | `VersaoServicoDownload` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
-| Serialize() | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, RetornoDownloadNF, Exception) | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, RetornoDownloadNF) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveTo(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, RetornoDownloadNF, Exception) | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, RetornoDownloadNF) |  |
-| LoadFrom(Stream, bool) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |
+| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
+| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
+| CanDeserialize(string, RetornoDownloadNF, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
+| CanDeserialize(string, RetornoDownloadNF) | `Boolean` |  |
+| Deserialize(string) | `RetornoDownloadNF` |  |
+| Deserialize(Stream) | `RetornoDownloadNF` |  |
+| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, RetornoDownloadNF, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
+| CanLoadFrom(Stream, RetornoDownloadNF) | `Boolean` |  |
+| LoadFrom(Stream, bool) | `RetornoDownloadNF` |  |
+| LoadFromAsync(Stream, bool) | `Task<RetornoDownloadNF>` |  |

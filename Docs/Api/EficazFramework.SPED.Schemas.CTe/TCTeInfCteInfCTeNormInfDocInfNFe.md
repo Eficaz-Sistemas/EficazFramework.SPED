@@ -4,15 +4,15 @@
 ## TCTeInfCteInfCTeNormInfDocInfNFe Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Chave |  |
-| 03 | PIN |  |
-| 04 | dPrev |  |
-| 05 | Items |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Chave | `String` |  |
+| 03 | PIN | `String` |  |
+| 04 | dPrev | `String` |  |
+| 05 | Items | `ObservableCollection<Object>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

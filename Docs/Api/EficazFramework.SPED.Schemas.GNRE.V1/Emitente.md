@@ -4,12 +4,12 @@
 ## Emitente Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CNPJ_CPF |  |
-| 03 | PersonalidadeJuridica |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CNPJ_CPF | `String` |  |
+| 03 | PersonalidadeJuridica | `PersonalidadeJuridica` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

@@ -4,20 +4,20 @@
 ## Cana Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | safra |  |
-| 03 | @ref |  |
-| 04 | forDia |  |
-| 05 | qTotMes |  |
-| 06 | qTotAnt |  |
-| 07 | qTotGer |  |
-| 08 | deduc |  |
-| 09 | vFor |  |
-| 10 | vTotDed |  |
-| 11 | vLiqFor |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | safra | `String` |  |
+| 03 | @ref | `String` |  |
+| 04 | forDia | `List<CanaDiario>` |  |
+| 05 | qTotMes | `String` |  |
+| 06 | qTotAnt | `String` |  |
+| 07 | qTotGer | `String` |  |
+| 08 | deduc | `List<CanaDeducao>` |  |
+| 09 | vFor | `String` |  |
+| 10 | vTotDed | `String` |  |
+| 11 | vLiqFor | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

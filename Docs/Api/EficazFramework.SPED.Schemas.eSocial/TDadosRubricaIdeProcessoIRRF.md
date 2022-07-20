@@ -4,7 +4,7 @@
 ## TDadosRubricaIdeProcessoIRRF Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | nrProc |  |
-| 03 | codSusp |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | nrProc | `String` |  |
+| 03 | codSusp | `String` |  |

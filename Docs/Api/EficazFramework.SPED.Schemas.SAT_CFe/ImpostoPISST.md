@@ -6,11 +6,11 @@
 PIS ST
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | pPIS |  |
-| 03 | qBCProd |  |
-| 04 | vAliqProd |  |
-| 05 | vBC |  |
-| 06 | vPIS |  |
-| 07 | vPIS_Double |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | pPIS | `String` |  |
+| 03 | qBCProd | `String` |  |
+| 04 | vAliqProd | `String` |  |
+| 05 | vBC | `String` |  |
+| 06 | vPIS | `String` |  |
+| 07 | vPIS_Double | `Nullable<Double>` |  |

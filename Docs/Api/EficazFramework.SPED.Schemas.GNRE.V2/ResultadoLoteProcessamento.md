@@ -4,13 +4,13 @@
 ## ResultadoLoteProcessamento Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | codigo |  |
-| 03 | descricao |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | codigo | `String` |  |
+| 03 | descricao | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ToString() |  |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ToString() | `String` |  |
+| OnPropertyChanged(string) | `Void` |  |

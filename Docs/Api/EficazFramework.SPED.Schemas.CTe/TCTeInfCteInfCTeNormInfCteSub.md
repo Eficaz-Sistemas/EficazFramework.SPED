@@ -4,12 +4,12 @@
 ## TCTeInfCteInfCTeNormInfCteSub Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | chCte |  |
-| 03 | Item |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | chCte | `String` |  |
+| 03 | Item | `Object` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| OnPropertyChanged(string) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| OnPropertyChanged(string) | `Void` |  |

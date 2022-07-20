@@ -8,22 +8,22 @@ Volume de Vendas
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroBico |  |
-| 03 | NumeroIntervencao |  |
-| 04 | MotivoIntervencao |  |
-| 05 | NomeInterventor |  |
-| 06 | CNPJEmpresaIntervencao |  |
-| 07 | CPFTecnicoIntervencao |  |
-| 08 | ValorFechamento |  |
-| 09 | ValorAbertura |  |
-| 10 | VolumeAfericoes |  |
-| 11 | VolumeVendas |  |
-| 12 | Registros1310 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroBico | `Nullable<Int32>` |  |
+| 03 | NumeroIntervencao | `String` |  |
+| 04 | MotivoIntervencao | `Nullable<Double>` |  |
+| 05 | NomeInterventor | `String` |  |
+| 06 | CNPJEmpresaIntervencao | `String` |  |
+| 07 | CPFTecnicoIntervencao | `String` |  |
+| 08 | ValorFechamento | `Nullable<Double>` |  |
+| 09 | ValorAbertura | `Nullable<Double>` |  |
+| 10 | VolumeAfericoes | `Nullable<Double>` |  |
+| 11 | VolumeVendas | `Nullable<Double>` |  |
+| 12 | Registros1310 | `List<Registro1310>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

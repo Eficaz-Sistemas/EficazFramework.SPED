@@ -8,21 +8,21 @@ Movimentação Diária de Combustíveis por Tanque
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | NumeroTanque |  |
-| 03 | EstoqueAbertura |  |
-| 04 | VolumeEntradas |  |
-| 05 | VolumeDisponivel | Estoque Abertura + Volume Entradas |
-| 06 | VolumeSaidas |  |
-| 07 | EstoqueEscritural | Volume Disponível - Volume Saídas |
-| 08 | AjustesPerda |  |
-| 09 | AjustesGanho |  |
-| 10 | EstoqueFechamento |  |
-| 11 | Registros1320 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | NumeroTanque | `String` |  |
+| 03 | EstoqueAbertura | `Nullable<Double>` |  |
+| 04 | VolumeEntradas | `Nullable<Double>` |  |
+| 05 | VolumeDisponivel | `Nullable<Double>` | Estoque Abertura + Volume Entradas |
+| 06 | VolumeSaidas | `Nullable<Double>` |  |
+| 07 | EstoqueEscritural | `Nullable<Double>` | Volume Disponível - Volume Saídas |
+| 08 | AjustesPerda | `Nullable<Double>` |  |
+| 09 | AjustesGanho | `Nullable<Double>` |  |
+| 10 | EstoqueFechamento | `Nullable<Double>` |  |
+| 11 | Registros1320 | `List<Registro1320>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

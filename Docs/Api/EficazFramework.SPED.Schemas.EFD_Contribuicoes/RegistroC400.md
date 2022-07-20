@@ -8,17 +8,17 @@ Equipamento ECF
 ### Remarks
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | CodigoModeloDocFiscal |  |
-| 03 | ModeloEquipamento |  |
-| 04 | NumeroSerieFabricacaoECF |  |
-| 05 | NumeroCaixaAtribuidoECF |  |
-| 06 | RegistrosC405 |  |
-| 07 | RegistrosC489 |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | CodigoModeloDocFiscal | `String` |  |
+| 03 | ModeloEquipamento | `String` |  |
+| 04 | NumeroSerieFabricacaoECF | `String` |  |
+| 05 | NumeroCaixaAtribuidoECF | `String` |  |
+| 06 | RegistrosC405 | `List<RegistroC405>` |  |
+| 07 | RegistrosC489 | `List<RegistroC489>` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| EscreveLinha() |  |
-| LeParametros(string[]) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| EscreveLinha() | `String` |  |
+| LeParametros(string[]) | `Void` |  |

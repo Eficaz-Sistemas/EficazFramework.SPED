@@ -4,13 +4,13 @@
 ## ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | tpInscProd |  |
-| 03 | nrInscProd |  |
-| 04 | indOpcCP |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | tpInscProd | `PersonalidadeJuridica` |  |
+| 03 | nrInscProd | `String` |  |
+| 04 | indOpcCP | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| ShouldSerializeindOpcCP() |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| ShouldSerializeindOpcCP() | `Boolean` |  |

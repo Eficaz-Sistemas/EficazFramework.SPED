@@ -4,25 +4,25 @@
 ## EnviarLoteRpsEnvio Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | Lote |  |
-| 03 | DocumentType |  |
-| 04 | DataEmissao |  |
-| 05 | Chave |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | Lote | `tcLoteRps` |  |
+| 03 | DocumentType | `XMLDocumentType` |  |
+| 04 | DataEmissao | `Nullable<DateTime>` |  |
+| 05 | Chave | `String` |  |
 ### Methods
 
-| Name | |
-| :--- | :--- |
-| Serialize() | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, EnviarLoteRpsEnvio, Exception) | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, EnviarLoteRpsEnvio) |  |
-| Deserialize(string) |  |
-| Deserialize(Stream) |  |
-| CanSaveToFile(Stream, Exception) | Serializes current TNfeProc object into file |
-| SaveTo(Stream) |  |
-| SaveToAsync(Stream) |  |
-| CanLoadFrom(Stream, EnviarLoteRpsEnvio, Exception) | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, EnviarLoteRpsEnvio) |  |
-| LoadFrom(Stream) |  |
-| LoadFromAsync(Stream, bool) |  |
+| Name | Return Type | |
+| :--- | :---: | :--- |
+| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
+| CanDeserialize(string, EnviarLoteRpsEnvio, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
+| CanDeserialize(string, EnviarLoteRpsEnvio) | `Boolean` |  |
+| Deserialize(string) | `EnviarLoteRpsEnvio` |  |
+| Deserialize(Stream) | `EnviarLoteRpsEnvio` |  |
+| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
+| SaveTo(Stream) | `Void` |  |
+| SaveToAsync(Stream) | `Void` |  |
+| CanLoadFrom(Stream, EnviarLoteRpsEnvio, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
+| CanLoadFrom(Stream, EnviarLoteRpsEnvio) | `Boolean` |  |
+| LoadFrom(Stream) | `EnviarLoteRpsEnvio` |  |
+| LoadFromAsync(Stream, bool) | `Task<EnviarLoteRpsEnvio>` |  |

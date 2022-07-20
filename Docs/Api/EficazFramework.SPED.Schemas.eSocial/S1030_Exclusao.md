@@ -4,6 +4,6 @@
 ## S1030_Exclusao Class
 ### Properties
 
-| # | Name | |
-| ---: | :--- | :--- |
-| 02 | ideCargo |  |
+| # | Name | Type | |
+| ---: | :--- | :---: | :--- |
+| 02 | ideCargo | `TideCargo` |  |
