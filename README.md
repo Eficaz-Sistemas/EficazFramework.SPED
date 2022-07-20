@@ -21,7 +21,7 @@
    Esta versão conta atualmente com uma quantidade maior de instruções sem plataforma específica, e foi estruturada para utilização dos recursos de Implantação e Entrega Contínua de aplicações (Azure DevOps).
 
 
-### Documentação
+## Documentação
 ![docs](https://eficazshields.azurewebsites.net/badge/docs-em%20construção-orange?style=flat-square)
 
    - [Sumário](/Docs/Api/EficazFrameworkSPED.md) 
@@ -42,8 +42,12 @@
      - Classes complementares
        - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
        - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
+   
+   
+## Pré-Requisitos
+.NET 6.0, para versão mais recente da biblioteca (pode sofrer alterações sem aviso prévio). Pretende-se acompanhar a versão em produção recente do .NET.
 
-
- ### Contribuições
+   
+ ## Contribuições
    - Ficaremos felizes por receber contribuições visando enriquecer a qualidade do projeto, além de manter os schemas das escriturações sempre atualizado com os layouts definidos pelos agentes reguladores.
    - Por gentileza solicitamos a leitura das [Diretrizes de Contribuição](/CONTRIBUTING.md) antes de iniciar.
