@@ -32,6 +32,10 @@ public abstract class Registro
                     _codigo = GetType().Name.Replace("Registro", string.Empty);
                 }
             }
+            else
+            {
+                _codigo = GetType().Name.Replace("Registro", string.Empty);
+            }
         }
     }
 
