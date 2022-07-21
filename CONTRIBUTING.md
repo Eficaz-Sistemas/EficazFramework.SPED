@@ -39,7 +39,6 @@ public class RegistroC100
     /// Indicador do tipo de operação: <br/>
     /// 0 - Entrada <br/>
     /// 1 - Saída <br/>
-    /// CAMPO: 02 - IND_OPER  <br/>
     /// </summary>
     public IndicadorOperacao Operacao { get; set; } = IndicadorOperacao.Entrada;
    
@@ -47,13 +46,11 @@ public class RegistroC100
     /// Indicador do emitente do documento fiscal: <br/>
     /// 0 - Emissão Própria <br/>
     /// 1 - Terceiros <br/>
-    /// CAMPO: 03 - IND_EMIT  <br/>
     /// </summary>
     public IndicadorEmitente Emissao { get; set; } = IndicadorEmitente.Propria;
     
     /// <summary>
     /// Código do participante (campo 02 do Registro 0150) <br/>
-    /// CAMPO: 04 - COD_PART  <br/>
     /// </summary>
     public string CodigoParticipante { get; set; } = null;
 
