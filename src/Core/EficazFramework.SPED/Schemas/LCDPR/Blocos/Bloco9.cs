@@ -2,8 +2,8 @@
 namespace EficazFramework.SPED.Schemas.LCDPR;
 
 /// <summary>
+/// Encerramento do Arquivo Digital
 /// </summary>
-/// <remarks></remarks>
 public class Bloco9 : Primitives.Bloco
 {
 }
