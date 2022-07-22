@@ -5,38 +5,131 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// <summary>
 /// Cadastro dos Imóveis Rurais
 /// </summary>
-/// <remarks></remarks>
+/// <remarks>
+/// Nível hierárquico - 2 <br/>
+/// Ocorrência - 1:N
+/// </remarks>
+/// <example>
+/// ```csharp
+/// string _versao = "0013";
+/// var reg0040 = new Registro0040(null, _versao)
+/// {
+///     IDImovel = 1,
+///     Pais = "BR",
+///     Moeda = "BRL",
+///     NIRF = "12345678",
+///     CAEPF = "12345678901234",
+///     InscricaoEstadual = "12345678901234",
+///     NomeImovel = "Fazenda Eficaz",
+///     Endereco = "Rodovia BR 999, Km 3000",
+///     Bairro = "Zona Rural",
+///     UF = "MG",
+///     CodigoMunicipio = "3129707",
+///     CEP = "37990000",
+///     TipoExploracao = TipoExploracao.Individual,
+///     Percentual = 100000
+/// };
+/// ```
+/// </example>
 public class Registro0040 : Primitives.Registro
 {
+    /// <exclude />
     public Registro0040() : base("0040")
     {
     }
 
+    /// <exclude />
     public Registro0040(string linha, string versao) : base(linha, versao)
     {
     }
 
-    // Campos
-    public int? IDImovel { get; set; } = default;
-    public string Pais { get; set; } = "BR";
-    public string Moeda { get; set; } = "BRL";
     /// <summary>
-    /// NOTA: Informar DV
+    /// Identificador único (código) do Imóvel no LCDPR
+    /// </summary>
+    public int? IDImovel { get; set; } = default;
+
+    /// <summary>
+    /// País (Brasil - BR)
+    /// </summary>
+    public string Pais { get; set; } = "BR";
+
+    /// <summary>
+    /// Moeda (Padrão: Real Brasileiro 0 BRL)
+    /// </summary>
+    public string Moeda { get; set; } = "BRL";
+    
+    /// <summary>
+    /// CAFIR (Informar DV)
     /// </summary>
     public string NIRF { get; set; } = null;
+
+    /// <summary>
+    /// Cadastro de Atividade Econômica da Pessoa Física (IN RFB nº 1.828/2018)
+    /// </summary>
     public string CAEPF { get; set; } = null;
+
+    /// <summary>
+    /// Inscrição Estadual
+    /// </summary>
     public string InscricaoEstadual { get; set; } = null;
+
+    /// <summary>
+    /// Nome do Imóvel
+    /// </summary>
     public string NomeImovel { get; set; } = null;
+
+    /// <summary>
+    /// Endereço do Imóvel
+    /// </summary>
     public string Endereco { get; set; } = null;
+
+    /// <summary>
+    /// Número
+    /// </summary>
     public string Numero { get; set; } = null;
+
+    /// <summary>
+    /// Complemento
+    /// </summary>
     public string Complemento { get; set; } = null;
+
+    /// <summary>
+    /// Bairro
+    /// </summary>
     public string Bairro { get; set; } = null;
+
+    /// <summary>
+    /// Unidade Federativa (http://sped.rfb.gov.br/pasta/show/1932)
+    /// </summary>
     public string UF { get; set; } = null;
+
+    /// <summary>
+    /// Código do Município (http://sped.rfb.gov.br/pasta/show/1932)
+    /// </summary>
     public string CodigoMunicipio { get; set; } = null;
+
+    /// <summary>
+    /// Código de Endereçamento Postal
+    /// </summary>
     public string CEP { get; set; } = null;
+
+    /// <summary>
+    /// Tipo de Exploração do Imóvel: <br/>
+    /// 1 – Exploração individual(Imóvel próprio) <br/>
+    /// 2 - Condomínio <br/>
+    /// 3 - Imóvel arrendado <br/>
+    /// 4 - Parceria <br/>
+    /// 5 - Comodato <br/>
+    /// 6- Outros 
+    /// </summary>
     public TipoExploracao TipoExploracao { get; set; } = TipoExploracao.Individual;
+
+    /// <summary>
+    /// Participação em percentual na exploração do Imóvel
+    /// </summary>
     public double? Percentual { get; set; } = default;
 
+    /// <inheritdoc/>
     public override string EscreveLinha()
     {
         var writer = new System.Text.StringBuilder();
@@ -60,33 +153,24 @@ public class Registro0040 : Primitives.Registro
         return writer.ToString();
     }
 
+    /// <inheritdoc/>
     public override void LeParametros(string[] data)
     {
-        // Me.DataInicial = data(3).ToDate
-        // Me.DataFinal = data(4).ToDate
-        // Me.NomeEmpresarialPJ = data(5)
-        // Me.CNPJ = data(6)
-        // Me.UF = data(7)
-        // Me.IEPj = data(8)
-        // Me.CodMunicipio = data(9)
-        // Me.InscMunicipal = data(10)
-        // Me.IndicadorSitEspecial = data(11)
-        // Me.IndicadorSitInicioPeriodo = data(12)
-        // Me.IndicadorExistNire = data(13).ToEnum(Of IndicadorExistNire)(IndicadorExistNire.EmpresaPossuiRegistroJunta)
-        // Me.IndicadorFinalidadeEscrit = data(14).ToEnum(Of IndicadorFinalidadeEscrit)(IndicadorFinalidadeEscrit.Original)
-        // Me.CodigoHash = data(15)
-        // Me.IndicadorGrandePorte = data(16).ToEnum(Of IndicadorGrandePorte)(IndicadorGrandePorte.EmpresaNaoSujeitaAuditoria)
-        // Me.IndicadorTipoECD = data(17).ToEnum(Of IndicadorTipoECD)(IndicadorTipoECD.ECDempresaNaoParticipanteSCP)
-        // Me.IdentificacaoSCP = data(18)
-        // If data(19) = "S" Then
-        // Me.IdentificacaoMoedaFuncional = True
-        // Else
-        // Me.IdentificacaoMoedaFuncional = False
-        // End If
-        // If data(20) = "S" Then
-        // Me.EscritContConsolidades = True
-        // Else
-        // Me.EscritContConsolidades = False
-        // End If
+        IDImovel = data[1].ToNullableInteger();
+        Pais = data[2];
+        Moeda = data[3];
+        NIRF = data[4];
+        CAEPF = data[5];
+        InscricaoEstadual = data[6];
+        NomeImovel = data[7];
+        Endereco = data[8];
+        Numero = data[9];
+        Complemento = data[10];
+        Bairro = data[11];
+        UF = data[12];
+        CodigoMunicipio = data[13];
+        CEP = data[14];
+        TipoExploracao = (TipoExploracao)data[15].ToEnum<TipoExploracao>(TipoExploracao.Individual);
+        Percentual = data[16].ToNullableDouble();
     }
 }

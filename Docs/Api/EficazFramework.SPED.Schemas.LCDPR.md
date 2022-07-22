@@ -8,7 +8,7 @@
 | [Bloco9](EficazFramework.SPED.Schemas.LCDPR/Bloco9.md 'EficazFramework.SPED.Schemas.LCDPR.Bloco9') | |
 | [BlocoQ](EficazFramework.SPED.Schemas.LCDPR/BlocoQ.md 'EficazFramework.SPED.Schemas.LCDPR.BlocoQ') | |
 | [Escrituracao](EficazFramework.SPED.Schemas.LCDPR/Escrituracao.md 'EficazFramework.SPED.Schemas.LCDPR.Escrituracao') | |
-| [Registro0000](EficazFramework.SPED.Schemas.LCDPR/Registro0000.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000') | Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade |
+| [Registro0000](EficazFramework.SPED.Schemas.LCDPR/Registro0000.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000') | Abertura do Arquivo Digital e Identificação da Pessoa Física |
 | [Registro0010](EficazFramework.SPED.Schemas.LCDPR/Registro0010.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0010') | Parâmetros de Tributação |
 | [Registro0030](EficazFramework.SPED.Schemas.LCDPR/Registro0030.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0030') | Dados Cadastrais |
 | [Registro0040](EficazFramework.SPED.Schemas.LCDPR/Registro0040.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0040') | Cadastro dos Imóveis Rurais |

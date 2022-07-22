@@ -3,6 +3,8 @@
 
 ## Registro0050.EscreveLinha() Method
 
+Realiza a escrita (serialização) da instância em uma linha do arquivo.
+
 ```csharp
 public override string EscreveLinha();
 ```

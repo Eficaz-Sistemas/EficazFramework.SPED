@@ -39,6 +39,7 @@
        - GNRE
        - NF-e, a partir da versão 2.00
        - NFS-e   
+       - [Livro Caixa Digital do Produtor Rural](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)
      - Classes complementares
        - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
        - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
