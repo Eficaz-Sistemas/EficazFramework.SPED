@@ -14,6 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EficazFramework.SPED", "Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EficazFramework.Tests", "Tests\EficazFramework.Tests\EficazFramework.Tests.csproj", "{1201477B-6BD7-4B26-905B-4DFCCDF3CCE2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionScripts", "SolutionScripts", "{53069109-23DF-43BC-9E79-61ADBBB98472}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionScripts\Tests.psm1 = SolutionScripts\Tests.psm1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

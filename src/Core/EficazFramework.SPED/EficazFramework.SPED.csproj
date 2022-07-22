@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Version>6.0.0-preview001</Version>
-	<AssemblyVersion>6.0.0.0</AssemblyVersion>
-	<FileVersion>6.0.0.0</FileVersion>
+	<AssemblyVersion>6.0.0.1</AssemblyVersion>
+	<FileVersion>6.0.0.1</FileVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>

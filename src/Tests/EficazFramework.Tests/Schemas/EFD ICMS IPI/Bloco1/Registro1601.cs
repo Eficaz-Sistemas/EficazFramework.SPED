@@ -1,13 +1,13 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Bloco1;
 
-public class Bloco1 : Tests.BaseTest
+public class Registro1601 : Tests.BaseTest
 {
 
     [Test]
-    public void Registro1601()
+    public void Escrita()
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1601("", "016")
         {

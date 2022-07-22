@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
+namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI.BlocoC;
 
-public class BlocoC : Tests.BaseTest
+public class RegistroC500 : Tests.BaseTest
 {
     [Test]
-    public void RegistroC500_Construtor()
+    public void Construtor()
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500();
         reg.Codigo.Should().Be("C500");
@@ -15,10 +15,10 @@ public class BlocoC : Tests.BaseTest
     
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||", "015")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||", "016", true)]
-    public void RegistroC500_Construtor(string linha, string versao = "016", bool indicadorContribIcms = false)
+    public void Construtor(string linha, string versao = "016", bool indicadorContribIcms = false)
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500(linha, versao);
-        RegistroC500_InternalRead(reg, versao, indicadorContribIcms);
+        InternalRead(reg, versao, indicadorContribIcms);
     }
 
     
@@ -28,7 +28,7 @@ public class BlocoC : Tests.BaseTest
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||", "015")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||||||122021|||", "016")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||", "016", true)]
-    public void RegistroC500_Escrita(string result, string versao = "016", bool indicadorContribIcms = false)
+    public void Escrita(string result, string versao = "016", bool indicadorContribIcms = false)
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500("", versao)
         {
@@ -65,18 +65,18 @@ public class BlocoC : Tests.BaseTest
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|", "003")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||", "014")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||", "016", true)]
-    public void RegistroC500_Leitura(string linha, string versao = "016", bool indicadorContribIcms = false)
+    public void Leitura(string linha, string versao = "016", bool indicadorContribIcms = false)
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500("", versao);
         reg.CodigoParticipante.Should().Be(null);
         reg.ValorTotalDocumento.HasValue.Should().Be(false);
 
         reg.LeParametros(linha.Split('|'));
-        RegistroC500_InternalRead(reg, versao, indicadorContribIcms);
+        InternalRead(reg, versao, indicadorContribIcms);
     }
 
     
-    private void RegistroC500_InternalRead(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500 reg, string versao = "016", bool indicadorContribIcms = false)
+    private void InternalRead(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500 reg, string versao = "016", bool indicadorContribIcms = false)
     {
         reg.Codigo.Should().Be("C500");
         reg.Versao.Should().Be(versao);
