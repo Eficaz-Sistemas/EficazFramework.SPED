@@ -3,4 +3,4 @@
 
 ## Bloco9 Class
 
-### Remarks
+Encerramento do Arquivo Digital

@@ -1,7 +1,5 @@
-﻿
-namespace EficazFramework.SPED.Schemas.LCDPR;
+﻿namespace EficazFramework.SPED.Schemas.LCDPR;
 
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
 public enum SituacaoInicioPeriodo
 {
     [System.ComponentModel.Description("Regular (Início no primeiro dia do ano)")]
@@ -63,8 +61,6 @@ public enum TipoExploracaoTerceiro
 }
 
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
 public enum TipoDocumento
 {
     [System.ComponentModel.Description("Nota Fiscal")]

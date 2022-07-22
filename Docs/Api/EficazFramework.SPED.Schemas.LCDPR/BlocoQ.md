@@ -3,4 +3,4 @@
 
 ## BlocoQ Class
 
-### Remarks
+Demonstrativo do Resultado da Atividade Rural

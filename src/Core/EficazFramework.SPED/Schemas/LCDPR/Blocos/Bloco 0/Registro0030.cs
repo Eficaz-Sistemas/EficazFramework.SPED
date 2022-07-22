@@ -4,28 +4,86 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// <summary>
 /// Dados Cadastrais
 /// </summary>
-/// <remarks></remarks>
+/// <remarks>
+/// Nível hierárquico - 2 <br/>
+/// Ocorrência - 1:1
+/// </remarks>
+/// <registrosped/>
+/// <example>
+/// ```csharp
+/// string _versao = "0013";
+/// var reg0030 = new Registro0030(null, _versao)
+/// {
+///     Endereco = "Rua Teste",
+///     Numero = 1234,
+///     Complemento = "Bloco Z",
+///     Bairro = "Centro",
+///     UF = "MG",
+///     CodigoMunicipio = "3129707",
+///     CEP = "37990000",
+///     Telefone = "3535441234",
+///     EMail = "teste@eficazcs.com.br"
+/// };
+/// ```
+/// </example>
 public class Registro0030 : Primitives.Registro
 {
+    /// <exclude />
     public Registro0030() : base("0030")
     {
     }
 
+    /// <exclude />
     public Registro0030(string linha, string versao) : base(linha, versao)
     {
     }
 
-    // Campos
+    /// <summary>
+    /// Endereço da Pessoa Física
+    /// </summary>
     public string Endereco { get; set; } = null;
+
+    /// <summary>
+    /// Número
+    /// </summary>
     public string Numero { get; set; } = null;
+    
+    /// <summary>
+    /// Complemento
+    /// </summary>
     public string Complemento { get; set; } = null;
+
+    /// <summary>
+    /// Bairro / Distrito
+    /// </summary>
     public string Bairro { get; set; } = null;
+
+    /// <summary>
+    /// Unidade Federativa (http://sped.rfb.gov.br/pasta/show/1932)
+    /// </summary>
     public string UF { get; set; } = null;
+
+    /// <summary>
+    /// Código do Município (http://sped.rfb.gov.br/pasta/show/1932)
+    /// </summary>
     public string CodigoMunicipio { get; set; } = null;
+
+    /// <summary>
+    /// Código de Endereçamento Postal
+    /// </summary>
     public string CEP { get; set; } = null;
+
+    /// <summary>
+    /// DDD + Número de Telefone
+    /// </summary>
     public string Telefone { get; set; } = null;
+
+    /// <summary>
+    /// Correio eletrônico
+    /// </summary>
     public string EMail { get; set; } = null;
 
+    /// <inheritdoc/>
     public override string EscreveLinha()
     {
         var writer = new System.Text.StringBuilder();
@@ -42,33 +100,17 @@ public class Registro0030 : Primitives.Registro
         return writer.ToString();
     }
 
+    /// <inheritdoc/>
     public override void LeParametros(string[] data)
     {
-        // Me.DataInicial = data(3).ToDate
-        // Me.DataFinal = data(4).ToDate
-        // Me.NomeEmpresarialPJ = data(5)
-        // Me.CNPJ = data(6)
-        // Me.UF = data(7)
-        // Me.IEPj = data(8)
-        // Me.CodMunicipio = data(9)
-        // Me.InscMunicipal = data(10)
-        // Me.IndicadorSitEspecial = data(11)
-        // Me.IndicadorSitInicioPeriodo = data(12)
-        // Me.IndicadorExistNire = data(13).ToEnum(Of IndicadorExistNire)(IndicadorExistNire.EmpresaPossuiRegistroJunta)
-        // Me.IndicadorFinalidadeEscrit = data(14).ToEnum(Of IndicadorFinalidadeEscrit)(IndicadorFinalidadeEscrit.Original)
-        // Me.CodigoHash = data(15)
-        // Me.IndicadorGrandePorte = data(16).ToEnum(Of IndicadorGrandePorte)(IndicadorGrandePorte.EmpresaNaoSujeitaAuditoria)
-        // Me.IndicadorTipoECD = data(17).ToEnum(Of IndicadorTipoECD)(IndicadorTipoECD.ECDempresaNaoParticipanteSCP)
-        // Me.IdentificacaoSCP = data(18)
-        // If data(19) = "S" Then
-        // Me.IdentificacaoMoedaFuncional = True
-        // Else
-        // Me.IdentificacaoMoedaFuncional = False
-        // End If
-        // If data(20) = "S" Then
-        // Me.EscritContConsolidades = True
-        // Else
-        // Me.EscritContConsolidades = False
-        // End If
+        Endereco = data[1];
+        Numero = data[2];
+        Complemento = data[3];
+        Bairro = data[4];
+        UF = data[5];
+        CodigoMunicipio = data[6];
+        CEP = data[7];
+        Telefone = data[8];
+        EMail = data[9];
     }
 }
