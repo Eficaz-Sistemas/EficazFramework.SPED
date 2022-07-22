@@ -45,14 +45,14 @@
        - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
        - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
        
-## Exemplos
+## Exemplos de Uso
 
 ### Layouts baseados em arquivos de Texto (txt):
 
 #### Leitura  
 ```csharp  
 System.IO.Stream stream = System.IO.File.OpenRead(@"C:\SPED\SPED-EFD-ICMS-IPI.txt");  
-var escrituracao = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao();  
+EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao escrituracao = new();  
 escrituracao.Encoding = System.Text.Encoding.Default; //opcional  
 await escrituracao.LeArquivo(stream);  
 ```  
