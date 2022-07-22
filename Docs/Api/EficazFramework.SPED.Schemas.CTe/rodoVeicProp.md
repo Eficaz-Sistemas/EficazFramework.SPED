@@ -4,17 +4,16 @@
 ## rodoVeicProp Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `String` |  |
-| 03 | ItemElementName | `PersonalidadeJuridica7` |  |
-| 04 | RNTRC | `String` |  |
-| 05 | xNome | `String` |  |
-| 06 | IE | `String` |  |
-| 07 | UF | `Estado` |  |
-| 08 | tpProp | `rodoVeicPropTpProp` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Item | `String` |  |
+| ItemElementName | `PersonalidadeJuridica7` |  |
+| RNTRC | `String` |  |
+| xNome | `String` |  |
+| IE | `String` |  |
+| UF | `Estado` |  |
+| tpProp | `rodoVeicPropTpProp` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoVeicProp/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoVeicProp.OnPropertyChanged(string)') | |

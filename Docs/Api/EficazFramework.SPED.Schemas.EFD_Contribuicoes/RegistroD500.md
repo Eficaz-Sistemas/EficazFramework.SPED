@@ -8,32 +8,31 @@ Nota Fiscal Serviços de Comunicação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoOperacao | `IndicadorTipoOperacaoBlocoD` |  |
-| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | CodigoModeloDocFiscal | `String` |  |
-| 06 | CodigoSituacaoDocFiscal | `String` |  |
-| 07 | SerieDocFiscal | `String` |  |
-| 08 | SubSerieDocFiscal | `String` |  |
-| 09 | NumeroDocFiscal | `Nullable<Int64>` |  |
-| 10 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
-| 11 | DataEntrada | `Nullable<DateTime>` |  |
-| 12 | VrTotalDocFiscal | `Nullable<Double>` |  |
-| 13 | VrTotalDesconto | `Nullable<Double>` |  |
-| 14 | VrPrestacaoServico | `Nullable<Double>` |  |
-| 15 | VrTotalServicosNaoTribICMS | `Nullable<Double>` |  |
-| 16 | VrCobradoNomeTerceiro | `Nullable<Double>` |  |
-| 17 | VrOutrasDespesas | `Nullable<Double>` |  |
-| 18 | VrBcICMS | `Nullable<Double>` |  |
-| 19 | VrICMS | `Nullable<Double>` |  |
-| 20 | CodigoInfoComplementar | `String` |  |
-| 21 | VrPis | `Nullable<Double>` |  |
-| 22 | VrCofins | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoOperacao | `IndicadorTipoOperacaoBlocoD` |  |
+| IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| CodigoSituacaoDocFiscal | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| NumeroDocFiscal | `Nullable<Int64>` |  |
+| DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| DataEntrada | `Nullable<DateTime>` |  |
+| VrTotalDocFiscal | `Nullable<Double>` |  |
+| VrTotalDesconto | `Nullable<Double>` |  |
+| VrPrestacaoServico | `Nullable<Double>` |  |
+| VrTotalServicosNaoTribICMS | `Nullable<Double>` |  |
+| VrCobradoNomeTerceiro | `Nullable<Double>` |  |
+| VrOutrasDespesas | `Nullable<Double>` |  |
+| VrBcICMS | `Nullable<Double>` |  |
+| VrICMS | `Nullable<Double>` |  |
+| CodigoInfoComplementar | `String` |  |
+| VrPis | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD500/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD500.LeParametros(string[])') | |

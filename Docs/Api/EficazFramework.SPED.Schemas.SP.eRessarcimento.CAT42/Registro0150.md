@@ -8,20 +8,19 @@ Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ID | `String` |  |
-| 03 | ID_CAE | `String` |  |
-| 04 | PK_TXT | `String` |  |
-| 05 | Nome | `String` |  |
-| 06 | CodigoPais | `Int32` |  |
-| 07 | CNPJ | `String` |  |
-| 08 | CPF | `String` |  |
-| 09 | InscricaoEstadual | `String` |  |
-| 10 | CodigoMunicipio | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ID | `String` |  |
+| ID_CAE | `String` |  |
+| PK_TXT | `String` |  |
+| Nome | `String` |  |
+| CodigoPais | `Int32` |  |
+| CNPJ | `String` |  |
+| CPF | `String` |  |
+| InscricaoEstadual | `String` |  |
+| CodigoMunicipio | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0150/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0150.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0150/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0150.LeParametros(string[])') | |

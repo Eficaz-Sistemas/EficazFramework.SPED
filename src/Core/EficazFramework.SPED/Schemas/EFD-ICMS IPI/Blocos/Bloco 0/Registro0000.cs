@@ -15,6 +15,25 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// Nível hierárquico - 0 <br/>
 /// Ocorrência - um por arquivo.
 /// </remarks>
+/// <registrosped/>
+/// <example>
+/// ```csharp
+/// string _versao = "017";
+/// var reg0000 = new Registro0000(null, _versao)
+/// {
+///     Finalidade = Primitives.Finalidade.Original,
+///     DataInicial = new System.DateTime(2022, 7, 1),
+///     DataFinal = new System.DateTime(2022, 7, 31),
+///     RazaoSocial = "Empresa Exemplo S/A",
+///     CNPJ = "00123456000100",
+///     UF = "MG",
+///     InscricaoEstadual = "00112345600001",
+///     MunicipioCodigo = "3129707",
+///     Perfil = Perfil.B,
+///     Atividade = Primitives.TipoAtividade.Outros
+/// };
+/// ```
+/// </example>
 public class Registro0000 : Registro
 {
     /// <exclude />
@@ -27,9 +46,7 @@ public class Registro0000 : Registro
     {
     }
 
-    /// <summary>
-    /// Herdado de Primitives.Registro.EscreveLinha()
-    /// </summary>
+    /// <inheritdoc/>
     public override string EscreveLinha()
     {
 
@@ -63,9 +80,7 @@ public class Registro0000 : Registro
         return writer.ToString();
     }
 
-    /// <summary>
-    /// Herdado de Primitives.Registro.LeParametros(string[] data)
-    /// </summary>
+    /// <inheritdoc/>
     public override void LeParametros(string[] data)
     {
 

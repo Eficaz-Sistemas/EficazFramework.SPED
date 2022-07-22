@@ -8,18 +8,17 @@ REGISTRO C130: ISSQN, IRRF E PREVIDÊNCIA SOCIAL
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Vr_Serv_NaoIncidenciaICMS | `Nullable<Double>` |  |
-| 03 | Vr_Base_ISSQN | `Nullable<Double>` |  |
-| 04 | Vr_ISSQN | `Nullable<Double>` |  |
-| 05 | Vr_BC_IRRF | `Nullable<Double>` |  |
-| 06 | Vr_IRRF | `Nullable<Double>` |  |
-| 07 | Vr_BC_Prev | `Nullable<Double>` |  |
-| 08 | Vr_Previdencia | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Vr_Serv_NaoIncidenciaICMS | `Nullable<Double>` |  |
+| Vr_Base_ISSQN | `Nullable<Double>` |  |
+| Vr_ISSQN | `Nullable<Double>` |  |
+| Vr_BC_IRRF | `Nullable<Double>` |  |
+| Vr_IRRF | `Nullable<Double>` |  |
+| Vr_BC_Prev | `Nullable<Double>` |  |
+| Vr_Previdencia | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC130/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC130.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC130/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC130.LeParametros(string[])') | |

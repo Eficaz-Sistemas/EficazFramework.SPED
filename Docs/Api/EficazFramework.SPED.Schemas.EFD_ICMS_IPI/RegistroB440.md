@@ -8,16 +8,15 @@ Totalização dos Valores Retidos
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorOperacaoServicos | `IndicadorOperacaoServicos` |  |
-| 03 | CodParticipante | `String` |  |
-| 04 | VrContabilPrestacoesAquisicoes | `Nullable<Double>` |  |
-| 05 | VrBCISSPrestacoesAquisicoes | `Nullable<Double>` |  |
-| 06 | VrISSRetido | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorOperacaoServicos | `IndicadorOperacaoServicos` |  |
+| CodParticipante | `String` |  |
+| VrContabilPrestacoesAquisicoes | `Nullable<Double>` |  |
+| VrBCISSPrestacoesAquisicoes | `Nullable<Double>` |  |
+| VrISSRetido | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB440/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB440.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB440/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB440.LeParametros(string[])') | |

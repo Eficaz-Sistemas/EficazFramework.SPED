@@ -8,14 +8,13 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrMensalReceitasSocUniprofissional | `Nullable<Double>` |  |
-| 03 | QuantProfissionaisHabilitados | `Nullable<Int32>` |  |
-| 04 | VrISSDevido | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrMensalReceitasSocUniprofissional | `Nullable<Double>` |  |
+| QuantProfissionaisHabilitados | `Nullable<Int32>` |  |
+| VrISSDevido | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB500/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB500.LeParametros(string[])') | |

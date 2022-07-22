@@ -4,11 +4,10 @@
 ## TCTeInfCteComplEntregaSemData Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpPer | `TCTeInfCteComplEntregaSemDataTpPer` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpPer | `TCTeInfCteComplEntregaSemDataTpPer` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaSemData/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaSemData.OnPropertyChanged(string)') | |

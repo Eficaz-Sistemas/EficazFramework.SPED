@@ -8,18 +8,17 @@ Escrituração Contábil Descentralizada
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorDescentralizacao | `IndicadorDescentralizacao` |  |
-| 03 | CNPJ | `String` |  |
-| 04 | UF | `String` |  |
-| 05 | InscEstadual | `String` |  |
-| 06 | CodigoMunicipal | `String` |  |
-| 07 | InscMunicipal | `String` |  |
-| 08 | Nire | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorDescentralizacao | `IndicadorDescentralizacao` |  |
+| CNPJ | `String` |  |
+| UF | `String` |  |
+| InscEstadual | `String` |  |
+| CodigoMunicipal | `String` |  |
+| InscMunicipal | `String` |  |
+| Nire | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0020/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0020.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0020/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0020.LeParametros(string[])') | |

@@ -8,23 +8,22 @@ Detalhamento do Cupom Fiscal Eletrônico
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CFOP | `String` |  |
-| 03 | VrTotalItens | `Nullable<Double>` |  |
-| 04 | CodigoItem | `String` |  |
-| 05 | CstPis | `String` |  |
-| 06 | BCPisQuantidade | `Nullable<Double>` |  |
-| 07 | AliquotaPisQtde | `Nullable<Double>` |  |
-| 08 | VrPis | `Nullable<Double>` |  |
-| 09 | CstCofins | `String` |  |
-| 10 | BCCofinsQuantidade | `Nullable<Double>` |  |
-| 11 | AliquotaCofinsQtde | `Nullable<Double>` |  |
-| 12 | VrCofins | `Nullable<Double>` |  |
-| 13 | CodContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CFOP | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| CodigoItem | `String` |  |
+| CstPis | `String` |  |
+| BCPisQuantidade | `Nullable<Double>` |  |
+| AliquotaPisQtde | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CstCofins | `String` |  |
+| BCCofinsQuantidade | `Nullable<Double>` |  |
+| AliquotaCofinsQtde | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC820/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC820.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC820/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC820.LeParametros(string[])') | |

@@ -4,9 +4,9 @@
 ## TIdeRubrica Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codRubr | `String` |  |
-| 03 | ideTabRubr | `String` |  |
-| 04 | iniValid | `String` |  |
-| 05 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| codRubr | `String` |  |
+| ideTabRubr | `String` |  |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

@@ -4,12 +4,11 @@
 ## tcIdentificacaoTomador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CpfCnpj | `tcCpfCnpj` |  |
-| 03 | InscricaoMunicipal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CpfCnpj | `tcCpfCnpj` |  |
+| InscricaoMunicipal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcIdentificacaoTomador/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcIdentificacaoTomador.OnPropertyChanged(string)') | |

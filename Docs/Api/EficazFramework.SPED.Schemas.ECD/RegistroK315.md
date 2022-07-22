@@ -8,15 +8,14 @@ Empresas Contrapartes das Parcelas do Valor Eliminado Total
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoEmpresaContrapartida | `String` |  |
-| 03 | CodigoContaConsolidadaContrapartida | `String` |  |
-| 04 | ParcelaContrapartidaVrEliminado | `Nullable<Double>` |  |
-| 05 | IndicadorSitVrEliminado | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoEmpresaContrapartida | `String` |  |
+| CodigoContaConsolidadaContrapartida | `String` |  |
+| ParcelaContrapartidaVrEliminado | `Nullable<Double>` |  |
+| IndicadorSitVrEliminado | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK315/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK315.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK315/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK315.LeParametros(string[])') | |

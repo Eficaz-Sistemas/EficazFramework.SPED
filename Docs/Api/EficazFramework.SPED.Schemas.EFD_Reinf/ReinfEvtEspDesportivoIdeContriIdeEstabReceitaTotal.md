@@ -4,11 +4,11 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vlrReceitaTotal | `String` |  |
-| 03 | vlrCP | `String` |  |
-| 04 | vlrCPSuspTotal | `String` |  |
-| 05 | vlrReceitaClubes | `String` |  |
-| 06 | vlrRetParc | `String` |  |
-| 07 | infoProc | `ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| vlrReceitaTotal | `String` |  |
+| vlrCP | `String` |  |
+| vlrCPSuspTotal | `String` |  |
+| vlrReceitaClubes | `String` |  |
+| vlrRetParc | `String` |  |
+| infoProc | `ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc[]` |  |

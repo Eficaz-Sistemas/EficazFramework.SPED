@@ -8,17 +8,16 @@ Lançamento Contábil
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodIdentUnicaLcto | `String` |  |
-| 03 | DataLcto | `Nullable<DateTime>` |  |
-| 04 | VrLcto | `Nullable<Double>` |  |
-| 05 | IndicadorTipoLancamento | `String` |  |
-| 06 | DataLctoExtemporaneo | `Nullable<DateTime>` |  |
-| 07 | RegistrosI250 | `List<RegistroI250>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodIdentUnicaLcto | `String` |  |
+| DataLcto | `Nullable<DateTime>` |  |
+| VrLcto | `Nullable<Double>` |  |
+| IndicadorTipoLancamento | `String` |  |
+| DataLctoExtemporaneo | `Nullable<DateTime>` |  |
+| RegistrosI250 | `List<RegistroI250>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI200/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI200.LeParametros(string[])') | |

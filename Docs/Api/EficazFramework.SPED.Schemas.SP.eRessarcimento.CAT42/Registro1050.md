@@ -8,16 +8,15 @@ REGISTRO DE SALDOS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoProduto | `String` |  |
-| 03 | QuantidadeInicial | `Nullable<Double>` |  |
-| 04 | ICMS_TotalInicial | `Nullable<Double>` |  |
-| 05 | QuantidadeFinal | `Nullable<Double>` |  |
-| 06 | ICMS_TotalFinal | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoProduto | `String` |  |
+| QuantidadeInicial | `Nullable<Double>` |  |
+| ICMS_TotalInicial | `Nullable<Double>` |  |
+| QuantidadeFinal | `Nullable<Double>` |  |
+| ICMS_TotalFinal | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro1050/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro1050.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro1050/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro1050.LeParametros(string[])') | |

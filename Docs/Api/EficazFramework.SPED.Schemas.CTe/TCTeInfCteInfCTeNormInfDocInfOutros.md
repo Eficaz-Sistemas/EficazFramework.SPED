@@ -4,18 +4,17 @@
 ## TCTeInfCteInfCTeNormInfDocInfOutros Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpDoc | `TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc` |  |
-| 03 | descOutros | `String` |  |
-| 04 | nDoc | `String` |  |
-| 05 | dEmi | `String` |  |
-| 06 | vDocFisc | `String` |  |
-| 07 | dPrev | `String` |  |
-| 08 | Items | `ObservableCollection<Object>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| tpDoc | `TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc` |  |
+| descOutros | `String` |  |
+| nDoc | `String` |  |
+| dEmi | `String` |  |
+| vDocFisc | `String` |  |
+| dPrev | `String` |  |
+| Items | `ObservableCollection<Object>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfOutros/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfOutros.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfOutros/ToString().md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfOutros.ToString()') | |

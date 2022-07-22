@@ -4,13 +4,12 @@
 ## TCTeInfCteComplEntregaNoInter Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpHor | `TCTeInfCteComplEntregaNoInterTpHor` |  |
-| 03 | hIni | `String` |  |
-| 04 | hFim | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpHor | `TCTeInfCteComplEntregaNoInterTpHor` |  |
+| hIni | `String` |  |
+| hFim | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaNoInter/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaNoInter.OnPropertyChanged(string)') | |

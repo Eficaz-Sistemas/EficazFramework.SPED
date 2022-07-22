@@ -4,11 +4,10 @@
 ## InftributosFederais Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vINSS | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vINSS | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/InftributosFederais/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.InftributosFederais.OnPropertyChanged(string)') | |

@@ -4,18 +4,17 @@
 ## ReferenciaNFProdutor Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoUF | `OrgaoIBGE` |  |
-| 03 | EmissaoAAMM | `String` |  |
-| 04 | CNPJ_CPF | `String` |  |
-| 05 | ProdutorPersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 06 | InscricaoEstadual | `String` |  |
-| 07 | Modelo | `ModeloNFProdutor` |  |
-| 08 | Serie | `String` |  |
-| 09 | Numero | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CodigoUF | `OrgaoIBGE` |  |
+| EmissaoAAMM | `String` |  |
+| CNPJ_CPF | `String` |  |
+| ProdutorPersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| InscricaoEstadual | `String` |  |
+| Modelo | `ModeloNFProdutor` |  |
+| Serie | `String` |  |
+| Numero | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ReferenciaNFProdutor/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ReferenciaNFProdutor.OnPropertyChanged(string)') | |

@@ -6,12 +6,11 @@
 Identificação do Empregador, titular do Evento
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| NumeroInscricaoTag() | `String` |  |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [NumeroInscricaoTag()](EficazFramework.SPED.Schemas.eSocial/TEmpregador/NumeroInscricaoTag().md 'EficazFramework.SPED.Schemas.eSocial.TEmpregador.NumeroInscricaoTag()') | |

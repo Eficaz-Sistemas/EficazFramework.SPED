@@ -8,17 +8,16 @@ Consolidação da contribuição previdenciária sobre a receita bruta
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PeriodoRefEscrit | `Nullable<DateTime>` |  |
-| 03 | VrTotalApurContribPrevRecBruta | `Nullable<Double>` |  |
-| 04 | VrTotalAjusteReducao | `Nullable<Double>` |  |
-| 05 | VrTotalAjusteAcrescimo | `Nullable<Double>` |  |
-| 06 | VrTotalContribPrevRecolher | `Nullable<Double>` |  |
-| 07 | CodigoReceitaContribPrevDCTF | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| PeriodoRefEscrit | `Nullable<DateTime>` |  |
+| VrTotalApurContribPrevRecBruta | `Nullable<Double>` |  |
+| VrTotalAjusteReducao | `Nullable<Double>` |  |
+| VrTotalAjusteAcrescimo | `Nullable<Double>` |  |
+| VrTotalContribPrevRecolher | `Nullable<Double>` |  |
+| CodigoReceitaContribPrevDCTF | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP200.LeParametros(string[])') | |

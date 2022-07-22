@@ -8,12 +8,11 @@ Balancetes Diários - Identificação da Data
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataBalancete | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataBalancete | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI300/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI300.LeParametros(string[])') | |

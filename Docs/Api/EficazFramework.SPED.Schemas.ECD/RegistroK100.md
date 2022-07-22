@@ -8,20 +8,19 @@ Relação das Empresas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodPais | `String` |  |
-| 03 | CodigoIdentifEmpresaPart | `String` |  |
-| 04 | CNPJ | `String` |  |
-| 05 | NomeEmpresarial | `String` |  |
-| 06 | PercentualPartConglomerado | `Nullable<Double>` |  |
-| 07 | EventoSocietarioOcorrido | `String` |  |
-| 08 | PercentualConsolidacaoEmpresa | `Nullable<Double>` |  |
-| 09 | DataInicialEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
-| 10 | DataFinalEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodPais | `String` |  |
+| CodigoIdentifEmpresaPart | `String` |  |
+| CNPJ | `String` |  |
+| NomeEmpresarial | `String` |  |
+| PercentualPartConglomerado | `Nullable<Double>` |  |
+| EventoSocietarioOcorrido | `String` |  |
+| PercentualConsolidacaoEmpresa | `Nullable<Double>` |  |
+| DataInicialEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
+| DataFinalEscrituracaoEmpresaConsolidada | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK100/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK100.LeParametros(string[])') | |

@@ -4,19 +4,18 @@
 ## InformacoesProtocoloConsSitNFe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Ambiente | `Ambiente` |  |
-| 03 | VersaoAplicativo | `String` |  |
-| 04 | ChaveNFe | `String` |  |
-| 05 | DataHoraRecebimento | `DateTime` |  |
-| 06 | Protocolo | `String` |  |
-| 07 | DigestValue | `Byte[]` |  |
-| 08 | StatusNFeCodigo | `String` |  |
-| 09 | StatusNfeMotivo | `String` |  |
-| 10 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Ambiente | `Ambiente` |  |
+| VersaoAplicativo | `String` |  |
+| ChaveNFe | `String` |  |
+| DataHoraRecebimento | `DateTime` |  |
+| Protocolo | `String` |  |
+| DigestValue | `Byte[]` |  |
+| StatusNFeCodigo | `String` |  |
+| StatusNfeMotivo | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacoesProtocoloConsSitNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacoesProtocoloConsSitNFe.OnPropertyChanged(string)') | |

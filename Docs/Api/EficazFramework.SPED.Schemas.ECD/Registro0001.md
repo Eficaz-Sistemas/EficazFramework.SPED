@@ -8,13 +8,12 @@ Abertura do Bloco 0
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimento | `IndicadorMovimento` |  |
-| 03 | Registros0150 | `List<Registro0150>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimento | `IndicadorMovimento` |  |
+| Registros0150 | `List<Registro0150>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0001/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0001.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0001/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0001.LeParametros(string[])') | |

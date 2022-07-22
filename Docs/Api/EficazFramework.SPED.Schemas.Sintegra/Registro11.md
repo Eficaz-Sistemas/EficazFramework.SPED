@@ -4,18 +4,17 @@
 ## Registro11 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Logradouro | `String` |  |
-| 03 | Numero | `String` |  |
-| 04 | Complemento | `String` |  |
-| 05 | Bairro | `String` |  |
-| 06 | CEP | `String` |  |
-| 07 | NomeContato | `String` |  |
-| 08 | Telefone | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Logradouro | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| CEP | `String` |  |
+| NomeContato | `String` |  |
+| Telefone | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro11/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro11.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro11/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro11.LeParametros(string[])') | |

@@ -4,17 +4,16 @@
 ## VolumeTransportado Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | qVol | `Nullable<Double>` |  |
-| 03 | esp | `String` |  |
-| 04 | marca | `String` |  |
-| 05 | nVol | `String` |  |
-| 06 | pesoL | `Nullable<Double>` |  |
-| 07 | pesoB | `Nullable<Double>` |  |
-| 08 | lacres | `List<VolumeLacres>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| qVol | `Nullable<Double>` |  |
+| esp | `String` |  |
+| marca | `String` |  |
+| nVol | `String` |  |
+| pesoL | `Nullable<Double>` |  |
+| pesoB | `Nullable<Double>` |  |
+| lacres | `List<VolumeLacres>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/VolumeTransportado/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.VolumeTransportado.OnPropertyChanged(string)') | |

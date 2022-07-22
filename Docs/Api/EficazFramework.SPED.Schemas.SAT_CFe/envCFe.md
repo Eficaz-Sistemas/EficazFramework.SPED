@@ -6,32 +6,31 @@
 Classe de Envio de lote de CF-e'ss
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `String` |  |
-| 03 | idLote | `String` |  |
-| 04 | cUF | `String` |  |
-| 05 | LoteCFe | `CFe[]` |  |
-| 06 | nSeg | `String` |  |
-| 07 | dhEnvio | `String` |  |
-| 08 | nserieSAT | `String` |  |
-| 09 | versao | `String` |  |
-| 10 | DocumentType | `XMLDocumentType` |  |
-| 11 | DataEmissao | `Nullable<DateTime>` |  |
-| 12 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, envCFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, envCFe) | `Boolean` |  |
-| Deserialize(string) | `envCFe` |  |
-| Deserialize(Stream) | `envCFe` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, envCFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, envCFe) | `Boolean` |  |
-| LoadFrom(Stream) | `envCFe` |  |
-| LoadFromAsync(Stream, bool) | `Task<envCFe>` |  |
+| tpAmb | `String` |  |
+| idLote | `String` |  |
+| cUF | `String` |  |
+| LoteCFe | `CFe[]` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| versao | `String` |  |
+| DocumentType | `XMLDocumentType` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, envCFe)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/CanDeserialize(string,envCFe).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.CanDeserialize(string, EficazFramework.SPED.Schemas.SAT_CFe.envCFe)') | |
+| [CanDeserialize(string, envCFe, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/CanDeserialize(string,envCFe,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.CanDeserialize(string, EficazFramework.SPED.Schemas.SAT_CFe.envCFe, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, envCFe)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/CanLoadFrom(Stream,envCFe).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.SAT_CFe.envCFe)') | |
+| [CanLoadFrom(Stream, envCFe, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/CanLoadFrom(Stream,envCFe,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.SAT_CFe.envCFe, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/Deserialize(string).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.LoadFromAsync(System.IO.Stream, bool)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.SAT_CFe/envCFe/Serialize().md 'EficazFramework.SPED.Schemas.SAT_CFe.envCFe.Serialize()') | Serializes current TNfeProc object into an XML document |

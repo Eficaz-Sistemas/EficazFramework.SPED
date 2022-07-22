@@ -4,25 +4,24 @@
 ## EnviarLoteRpsEnvio Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Lote | `tcLoteRps` |  |
-| 03 | DocumentType | `XMLDocumentType` |  |
-| 04 | DataEmissao | `Nullable<DateTime>` |  |
-| 05 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, EnviarLoteRpsEnvio, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, EnviarLoteRpsEnvio) | `Boolean` |  |
-| Deserialize(string) | `EnviarLoteRpsEnvio` |  |
-| Deserialize(Stream) | `EnviarLoteRpsEnvio` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, EnviarLoteRpsEnvio, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, EnviarLoteRpsEnvio) | `Boolean` |  |
-| LoadFrom(Stream) | `EnviarLoteRpsEnvio` |  |
-| LoadFromAsync(Stream, bool) | `Task<EnviarLoteRpsEnvio>` |  |
+| Lote | `tcLoteRps` |  |
+| DocumentType | `XMLDocumentType` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, EnviarLoteRpsEnvio)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/CanDeserialize(string,EnviarLoteRpsEnvio).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.CanDeserialize(string, EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio)') | |
+| [CanDeserialize(string, EnviarLoteRpsEnvio, Exception)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/CanDeserialize(string,EnviarLoteRpsEnvio,Exception).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.CanDeserialize(string, EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, EnviarLoteRpsEnvio)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/CanLoadFrom(Stream,EnviarLoteRpsEnvio).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio)') | |
+| [CanLoadFrom(Stream, EnviarLoteRpsEnvio, Exception)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/CanLoadFrom(Stream,EnviarLoteRpsEnvio,Exception).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFromAsync(System.IO.Stream, bool)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.NFSe.GINFES/EnviarLoteRpsEnvio/Serialize().md 'EficazFramework.SPED.Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.Serialize()') | Serializes current TNfeProc object into an XML document |

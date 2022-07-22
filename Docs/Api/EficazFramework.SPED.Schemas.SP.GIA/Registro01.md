@@ -6,15 +6,14 @@
 Registro Mestre
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataGeracao | `Nullable<DateTime>` |  |
-| 03 | HoraGeracao | `Nullable<TimeSpan>` |  |
-| 04 | VersaoSistemaGIA | `String` |  |
-| 05 | TotalRegistros05 | `Nullable<Int32>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataGeracao | `Nullable<DateTime>` |  |
+| HoraGeracao | `Nullable<TimeSpan>` |  |
+| VersaoSistemaGIA | `String` |  |
+| TotalRegistros05 | `Nullable<Int32>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro01/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro01.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro01/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro01.LeParametros(string[])') | |

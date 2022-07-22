@@ -6,19 +6,18 @@
 Registro Trailer de Lote de Serviço: Pagamentos de Tributos sem Código de Barras e FGTS/GRRF
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | QuantidadeRegistros | `Nullable<Int32>` |  |
-| 05 | TotalValorPrincipal | `Nullable<Double>` |  |
-| 06 | TotalOutrasEntidades | `Nullable<Double>` |  |
-| 07 | TotalAcrescimos | `Nullable<Double>` |  |
-| 08 | TotalValorArrecadado | `Nullable<Double>` |  |
-| 09 | Ocorrencias | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| QuantidadeRegistros | `Nullable<Int32>` |  |
+| TotalValorPrincipal | `Nullable<Double>` |  |
+| TotalOutrasEntidades | `Nullable<Double>` |  |
+| TotalAcrescimos | `Nullable<Double>` |  |
+| TotalValorArrecadado | `Nullable<Double>` |  |
+| Ocorrencias | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro5N/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro5N.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro5N/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro5N.LeParametros(string[])') | |

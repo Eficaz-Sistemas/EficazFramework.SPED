@@ -4,12 +4,11 @@
 ## TCTeInfCteInfCTeNormInfCteSubTomaICMS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `Object` |  |
-| 03 | ItemElementName | `PersonalidadeJuridica78` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Item | `Object` |  |
+| ItemElementName | `PersonalidadeJuridica78` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCteSubTomaICMS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCteSubTomaICMS.OnPropertyChanged(string)') | |

@@ -4,11 +4,11 @@
 ## ReinfEvtAqProdIdeEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indRetif | `IndicadorRetificacao` |  |
-| 03 | nrRecibo | `String` |  |
-| 04 | perApur | `String` |  |
-| 05 | tpAmb | `Ambiente` |  |
-| 06 | procEmi | `EmissorEvento` |  |
-| 07 | verProc | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indRetif | `IndicadorRetificacao` |  |
+| nrRecibo | `String` |  |
+| perApur | `String` |  |
+| tpAmb | `Ambiente` |  |
+| procEmi | `EmissorEvento` |  |
+| verProc | `String` |  |

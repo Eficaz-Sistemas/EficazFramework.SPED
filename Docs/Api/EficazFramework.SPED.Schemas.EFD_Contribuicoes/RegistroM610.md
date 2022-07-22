@@ -8,25 +8,24 @@ Detalhamento da contribuição para o Cofins pasep período
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContSocialApPeriodo | `String` |  |
-| 03 | VrRecBruta | `Nullable<Double>` |  |
-| 04 | VrBcContribuicao | `Nullable<Double>` |  |
-| 05 | VrAjBCAcresc | `Nullable<Double>` |  |
-| 06 | VrAjBCRed | `Nullable<Double>` |  |
-| 07 | AliqCofins | `Nullable<Double>` |  |
-| 08 | QtdeBcCofins | `Nullable<Double>` |  |
-| 09 | AliqCofinsQtde | `Nullable<Double>` |  |
-| 10 | VrContSocialApurada | `Nullable<Double>` |  |
-| 11 | VrTotalAjAcresc | `Nullable<Double>` |  |
-| 12 | VrTotalAjRed | `Nullable<Double>` |  |
-| 13 | VrContDiferirPeriodo | `Nullable<Double>` |  |
-| 14 | VrContDiferidaPerAnter | `Nullable<Double>` |  |
-| 15 | VrTotalContPeriodo | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContSocialApPeriodo | `String` |  |
+| VrRecBruta | `Nullable<Double>` |  |
+| VrBcContribuicao | `Nullable<Double>` |  |
+| VrAjBCAcresc | `Nullable<Double>` |  |
+| VrAjBCRed | `Nullable<Double>` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| QtdeBcCofins | `Nullable<Double>` |  |
+| AliqCofinsQtde | `Nullable<Double>` |  |
+| VrContSocialApurada | `Nullable<Double>` |  |
+| VrTotalAjAcresc | `Nullable<Double>` |  |
+| VrTotalAjRed | `Nullable<Double>` |  |
+| VrContDiferirPeriodo | `Nullable<Double>` |  |
+| VrContDiferidaPerAnter | `Nullable<Double>` |  |
+| VrTotalContPeriodo | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM610/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM610.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM610/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM610.LeParametros(string[])') | |

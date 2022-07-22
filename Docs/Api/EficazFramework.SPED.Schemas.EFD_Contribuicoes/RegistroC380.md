@@ -8,20 +8,19 @@ Nota Fiscal de Venda a Consumidor (Código 02) - Consolidação de Documentos Em
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocumento | `String` |  |
-| 03 | DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
-| 04 | DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
-| 05 | NumeroDocFiscalInicial | `String` |  |
-| 06 | NumeroDocFiscalFinal | `String` |  |
-| 07 | VrTotalDocsEmitidos | `Nullable<Double>` |  |
-| 08 | VrTotalDocsCancelados | `Nullable<Double>` |  |
-| 09 | RegistrosC381 | `List<RegistroC381>` |  |
-| 10 | RegistrosC385 | `List<RegistroC385>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocumento | `String` |  |
+| DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
+| DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
+| NumeroDocFiscalInicial | `String` |  |
+| NumeroDocFiscalFinal | `String` |  |
+| VrTotalDocsEmitidos | `Nullable<Double>` |  |
+| VrTotalDocsCancelados | `Nullable<Double>` |  |
+| RegistrosC381 | `List<RegistroC381>` |  |
+| RegistrosC385 | `List<RegistroC385>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC380/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC380.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC380/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC380.LeParametros(string[])') | |

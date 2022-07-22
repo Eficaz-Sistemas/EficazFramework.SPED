@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `Byte` |  |
-| 03 | nrInsc | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `Byte` |  |
+| nrInsc | `String` |  |

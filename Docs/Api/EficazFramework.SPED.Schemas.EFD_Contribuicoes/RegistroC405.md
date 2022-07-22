@@ -8,19 +8,18 @@ Redução Z
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataMovimentoReducaoZ | `Nullable<DateTime>` |  |
-| 03 | PosicaoContadorReinicioOperacao | `Nullable<Int32>` |  |
-| 04 | PosicaoContadorReducaoZ | `Nullable<Int32>` |  |
-| 05 | NumeroContadorOrdemOperacaoUltimoDocEmitDia | `Nullable<Int32>` |  |
-| 06 | ValorGrandeTotalFinal | `Nullable<Double>` |  |
-| 07 | ValorVendaBruta | `Nullable<Double>` |  |
-| 08 | RegistrosC481 | `List<RegistroC481>` |  |
-| 09 | RegistrosC485 | `List<RegistroC485>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataMovimentoReducaoZ | `Nullable<DateTime>` |  |
+| PosicaoContadorReinicioOperacao | `Nullable<Int32>` |  |
+| PosicaoContadorReducaoZ | `Nullable<Int32>` |  |
+| NumeroContadorOrdemOperacaoUltimoDocEmitDia | `Nullable<Int32>` |  |
+| ValorGrandeTotalFinal | `Nullable<Double>` |  |
+| ValorVendaBruta | `Nullable<Double>` |  |
+| RegistrosC481 | `List<RegistroC481>` |  |
+| RegistrosC485 | `List<RegistroC485>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC405/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC405.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC405/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC405.LeParametros(string[])') | |

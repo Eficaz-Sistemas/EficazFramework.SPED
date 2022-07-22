@@ -6,11 +6,11 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vBC | `String` |  |
-| 03 | vISS | `String` |  |
-| 04 | vPIS | `String` |  |
-| 05 | vCOFINS | `String` |  |
-| 06 | vPISST | `String` |  |
-| 07 | vCOFINSST | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| vBC | `String` |  |
+| vISS | `String` |  |
+| vPIS | `String` |  |
+| vCOFINS | `String` |  |
+| vPISST | `String` |  |
+| vCOFINSST | `String` |  |

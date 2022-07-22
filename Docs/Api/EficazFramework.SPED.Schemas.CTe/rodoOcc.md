@@ -4,14 +4,13 @@
 ## rodoOcc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | serie | `String` |  |
-| 03 | nOcc | `String` |  |
-| 04 | dEmi | `String` |  |
-| 05 | emiOcc | `rodoOccEmiOcc` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| serie | `String` |  |
+| nOcc | `String` |  |
+| dEmi | `String` |  |
+| emiOcc | `rodoOccEmiOcc` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoOcc/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoOcc.OnPropertyChanged(string)') | |

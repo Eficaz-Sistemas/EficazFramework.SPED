@@ -8,21 +8,20 @@ Enquadramento Legal da Operação / Prestação Geradora de Crédito Acumulado d
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ID | `Int32` |  |
-| 03 | Descricao | `Int32` | Código Relativo à Hipotese de Geração, conforme Artigo 71 do RICMS/00. De 1 a 13 |
-| 04 | Anexo | `String` |  |
-| 05 | Artigo | `String` |  |
-| 06 | Inciso | `String` |  |
-| 07 | Alinea | `String` |  |
-| 08 | Paragrafo | `String` |  |
-| 09 | Item | `String` |  |
-| 10 | Letra | `String` |  |
-| 11 | Observacao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ID | `Int32` |  |
+| Descricao | `Int32` | Código Relativo à Hipotese de Geração, conforme Artigo 71 do RICMS/00. De 1 a 13 |
+| Anexo | `String` |  |
+| Artigo | `String` |  |
+| Inciso | `String` |  |
+| Alinea | `String` |  |
+| Paragrafo | `String` |  |
+| Item | `String` |  |
+| Letra | `String` |  |
+| Observacao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro0300/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro0300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro0300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro0300.LeParametros(string[])') | |

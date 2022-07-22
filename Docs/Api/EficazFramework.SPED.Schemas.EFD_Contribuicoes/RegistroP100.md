@@ -8,22 +8,21 @@ Contribuição Previdenciária Sobre a Receita Bruta
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicialApuracao | `Nullable<DateTime>` |  |
-| 03 | DataFinalApuracao | `Nullable<DateTime>` |  |
-| 04 | VrRecBrutaTotalPeriodo | `Nullable<Double>` |  |
-| 05 | CodigoAtividadeSujIncidencia | `String` |  |
-| 06 | VrRecBrutaAtividade | `Nullable<Double>` |  |
-| 07 | VrExclusoesRecBruta | `Nullable<Double>` |  |
-| 08 | VrBCContribPrev | `Nullable<Double>` |  |
-| 09 | AliqContribPrev | `Nullable<Double>` |  |
-| 10 | VrContribPrev | `Nullable<Double>` |  |
-| 11 | CodigoContaContabil | `String` |  |
-| 12 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicialApuracao | `Nullable<DateTime>` |  |
+| DataFinalApuracao | `Nullable<DateTime>` |  |
+| VrRecBrutaTotalPeriodo | `Nullable<Double>` |  |
+| CodigoAtividadeSujIncidencia | `String` |  |
+| VrRecBrutaAtividade | `Nullable<Double>` |  |
+| VrExclusoesRecBruta | `Nullable<Double>` |  |
+| VrBCContribPrev | `Nullable<Double>` |  |
+| AliqContribPrev | `Nullable<Double>` |  |
+| VrContribPrev | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP100.LeParametros(string[])') | |

@@ -8,17 +8,16 @@ Plano de contas contábeis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataAlteracao | `Nullable<DateTime>` |  |
-| 03 | CodigoNatureza | `TipoConta` |  |
-| 04 | IndicadorConta | `String` |  |
-| 05 | Nivel | `Nullable<Int16>` |  |
-| 06 | CodigoConta | `String` |  |
-| 07 | NomeConta | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataAlteracao | `Nullable<DateTime>` |  |
+| CodigoNatureza | `TipoConta` |  |
+| IndicadorConta | `String` |  |
+| Nivel | `Nullable<Int16>` |  |
+| CodigoConta | `String` |  |
+| NomeConta | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0500/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0500.LeParametros(string[])') | |

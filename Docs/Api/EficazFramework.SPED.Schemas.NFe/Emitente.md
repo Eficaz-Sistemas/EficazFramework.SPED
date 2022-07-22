@@ -4,23 +4,22 @@
 ## Emitente Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Logo | `Byte[]` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 05 | RazaoSocial | `String` |  |
-| 06 | CNPJ_CPFFormatado | `String` |  |
-| 07 | NomeFantasia | `String` |  |
-| 08 | Endereco | `Endereco` |  |
-| 09 | InscricaoEstadual | `String` |  |
-| 10 | IEFormatado | `String` |  |
-| 11 | InscricaoEstadualST | `String` |  |
-| 12 | InscricaoMunicipal | `String` |  |
-| 13 | CNAE | `String` |  |
-| 14 | RegimeTributario | `RegimeTributario` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Logo | `Byte[]` |  |
+| CNPJ_CPF | `String` |  |
+| EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| RazaoSocial | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| NomeFantasia | `String` |  |
+| Endereco | `Endereco` |  |
+| InscricaoEstadual | `String` |  |
+| IEFormatado | `String` |  |
+| InscricaoEstadualST | `String` |  |
+| InscricaoMunicipal | `String` |  |
+| CNAE | `String` |  |
+| RegimeTributario | `RegimeTributario` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Emitente/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Emitente.OnPropertyChanged(string)') | |

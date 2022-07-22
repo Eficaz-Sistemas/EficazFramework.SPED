@@ -8,16 +8,15 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoDeducao | `IndicadorTipoDeducao` |  |
-| 03 | ValorDeducao | `Nullable<Double>` |  |
-| 04 | NumeroProcesso | `String` |  |
-| 05 | IndicadorOrigemProcesso | `IndicadorOrigemProcessoServico` |  |
-| 06 | DescricaoProcessoLcto | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoDeducao | `IndicadorTipoDeducao` |  |
+| ValorDeducao | `Nullable<Double>` |  |
+| NumeroProcesso | `String` |  |
+| IndicadorOrigemProcesso | `IndicadorOrigemProcessoServico` |  |
+| DescricaoProcessoLcto | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB460/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB460.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB460/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB460.LeParametros(string[])') | |

@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | MP | `envCFeCFeInfCFePgtoMP[]` |  |
-| 03 | vTroco | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| MP | `envCFeCFeInfCFePgtoMP[]` |  |
+| vTroco | `String` |  |

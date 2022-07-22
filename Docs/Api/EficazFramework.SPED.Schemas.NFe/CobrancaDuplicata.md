@@ -4,16 +4,15 @@
 ## CobrancaDuplicata Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nDup | `String` |  |
-| 03 | dVenc | `Nullable<DateTime>` |  |
-| 04 | dVencXML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'dVenc' (Date?) para trabalho. Ambos estarão            automaticamente em sincronia |
-| 05 | vDup | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializevDup() | `Boolean` |  |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| nDup | `String` |  |
+| dVenc | `Nullable<DateTime>` |  |
+| dVencXML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'dVenc' (Date?) para trabalho. Ambos estarão            automaticamente em sincronia |
+| vDup | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/CobrancaDuplicata/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.CobrancaDuplicata.OnPropertyChanged(string)') | |
+| [ShouldSerializevDup()](EficazFramework.SPED.Schemas.NFe/CobrancaDuplicata/ShouldSerializevDup().md 'EficazFramework.SPED.Schemas.NFe.CobrancaDuplicata.ShouldSerializevDup()') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/CobrancaDuplicata/ToString().md 'EficazFramework.SPED.Schemas.NFe.CobrancaDuplicata.ToString()') | |

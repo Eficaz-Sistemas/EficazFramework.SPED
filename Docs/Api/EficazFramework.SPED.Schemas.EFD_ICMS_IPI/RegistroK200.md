@@ -8,17 +8,16 @@ Estoque Escriturado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataEscrituracao | `Nullable<DateTime>` |  |
-| 03 | CodigoProduto | `String` |  |
-| 04 | UnidadeInventariada | `String` |  |
-| 05 | Quantidade | `Nullable<Double>` |  |
-| 06 | IndicadorPosse | `IndicadorPropriedade` |  |
-| 07 | CodigoParticipante | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataEscrituracao | `Nullable<DateTime>` |  |
+| CodigoProduto | `String` |  |
+| UnidadeInventariada | `String` |  |
+| Quantidade | `Nullable<Double>` |  |
+| IndicadorPosse | `IndicadorPropriedade` |  |
+| CodigoParticipante | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroK200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroK200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroK200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroK200.LeParametros(string[])') | |

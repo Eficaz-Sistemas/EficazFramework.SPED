@@ -6,12 +6,11 @@
 Encerramento do Bloco 9
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TotalLinhas | `Nullable<Int32>` | Total de Linhas do Bloco |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TotalLinhas | `Nullable<Int32>` | Total de Linhas do Bloco |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro9990/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro9990.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro9990/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro9990.LeParametros(string[])') | |

@@ -8,14 +8,13 @@ Discriminação da Receita de Vendas dos Estabelecimentos por Atividade Econômi
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJEstabelecimento | `String` |  |
-| 03 | ValorReceitas | `Nullable<Double>` |  |
-| 04 | CNAE | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJEstabelecimento | `String` |  |
+| ValorReceitas | `Nullable<Double>` |  |
+| CNAE | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroY540/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroY540.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroY540/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroY540.LeParametros(string[])') | |

@@ -8,24 +8,23 @@ Dados do Contabilista
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Nome | `String` |  |
-| 03 | CPF | `String` |  |
-| 04 | CRC | `String` |  |
-| 05 | CNPJ | `String` |  |
-| 06 | CEP | `String` |  |
-| 07 | Endereco | `String` |  |
-| 08 | Numero | `String` |  |
-| 09 | Complemento | `String` |  |
-| 10 | Bairro | `String` |  |
-| 11 | Fone | `String` |  |
-| 12 | Fax | `String` |  |
-| 13 | eMail | `String` |  |
-| 14 | CodigoMunicipio | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Nome | `String` |  |
+| CPF | `String` |  |
+| CRC | `String` |  |
+| CNPJ | `String` |  |
+| CEP | `String` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| Fone | `String` |  |
+| Fax | `String` |  |
+| eMail | `String` |  |
+| CodigoMunicipio | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0100.LeParametros(string[])') | |

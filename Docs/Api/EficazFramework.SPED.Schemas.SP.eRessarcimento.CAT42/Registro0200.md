@@ -8,21 +8,20 @@ Tabela de Identificação do Item (Produtos e Serviços)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ID | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | CodigoBarras | `String` |  |
-| 05 | UnidadeInventariada | `String` |  |
-| 06 | NCM | `String` |  |
-| 07 | AliquotaICMS | `Nullable<Double>` |  |
-| 08 | CEST | `String` |  |
-| 09 | MVA | `Nullable<Double>` |  |
-| 10 | PautaBC | `Nullable<Double>` |  |
-| 11 | Registros0205 | `List<Registro0205>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ID | `String` |  |
+| Descricao | `String` |  |
+| CodigoBarras | `String` |  |
+| UnidadeInventariada | `String` |  |
+| NCM | `String` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| CEST | `String` |  |
+| MVA | `Nullable<Double>` |  |
+| PautaBC | `Nullable<Double>` |  |
+| Registros0205 | `List<Registro0205>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0200/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0200.LeParametros(string[])') | |

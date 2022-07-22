@@ -4,15 +4,14 @@
 ## Bloco Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Registros | `ObservableCollection<Registro>` | Obtém a listagem de registros da instância de bloco. |
-| 03 | TotaisRegistros | `Dictionary<String,Int64>` | Obtém a contagem de um determinado registro da instância de bloco. |
-| 04 | RegistrosGroupBy | `Dictionary<String,Int64>` | Obtém uma listagem dos tipos de registros informados na escrituração |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ContagemRegistro(string) | `Int64` | Obtém a contagem de um determinado registro da instância de bloco. |
-| EscreveLinha() | `String` |  |
-| GeraRegistrosTotalizadores(string, string) | `RegistroTotalizador[]` |  |
+| Registros | `ObservableCollection<Registro>` | Obtém a listagem de registros da instância de bloco. |
+| TotaisRegistros | `Dictionary<String,Int64>` | Obtém a contagem de um determinado registro da instância de bloco. |
+| RegistrosGroupBy | `Dictionary<String,Int64>` | Obtém uma listagem dos tipos de registros informados na escrituração |
+
+| Methods | |
+| :--- | :--- |
+| [ContagemRegistro(string)](EficazFramework.SPED.Schemas.Primitives/Bloco/ContagemRegistro(string).md 'EficazFramework.SPED.Schemas.Primitives.Bloco.ContagemRegistro(string)') | Obtém a contagem de um determinado registro da instância de bloco. |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Primitives/Bloco/EscreveLinha().md 'EficazFramework.SPED.Schemas.Primitives.Bloco.EscreveLinha()') | |
+| [GeraRegistrosTotalizadores(string, string)](EficazFramework.SPED.Schemas.Primitives/Bloco/GeraRegistrosTotalizadores(string,string).md 'EficazFramework.SPED.Schemas.Primitives.Bloco.GeraRegistrosTotalizadores(string, string)') | |

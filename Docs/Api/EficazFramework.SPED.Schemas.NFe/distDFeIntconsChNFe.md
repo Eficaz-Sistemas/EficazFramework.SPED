@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | chNFe | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| chNFe | `String` |  |

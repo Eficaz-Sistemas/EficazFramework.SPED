@@ -6,9 +6,9 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpOcorr | `String` |  |
-| 03 | localErroAviso | `String` |  |
-| 04 | codResp | `String` |  |
-| 05 | dscResp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpOcorr | `String` |  |
+| localErroAviso | `String` |  |
+| codResp | `String` |  |
+| dscResp | `String` |  |

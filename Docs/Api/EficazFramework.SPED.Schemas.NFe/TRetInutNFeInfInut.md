@@ -6,25 +6,24 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | verAplic | `String` |  |
-| 04 | cStat | `String` |  |
-| 05 | xMotivo | `String` |  |
-| 06 | cUF | `OrgaoIBGE` |  |
-| 07 | ano | `String` |  |
-| 08 | CNPJ | `String` |  |
-| 09 | mod | `ModeloDocumento` |  |
-| 10 | modSpecified | `Boolean` |  |
-| 11 | serie | `String` |  |
-| 12 | nNFIni | `String` |  |
-| 13 | nNFFin | `String` |  |
-| 14 | DataRecebimento | `Nullable<DateTime>` |  |
-| 15 | nProt | `String` |  |
-| 16 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeDataEmissaoXML() | `Boolean` |  |
+| tpAmb | `Ambiente` |  |
+| verAplic | `String` |  |
+| cStat | `String` |  |
+| xMotivo | `String` |  |
+| cUF | `OrgaoIBGE` |  |
+| ano | `String` |  |
+| CNPJ | `String` |  |
+| mod | `ModeloDocumento` |  |
+| modSpecified | `Boolean` |  |
+| serie | `String` |  |
+| nNFIni | `String` |  |
+| nNFFin | `String` |  |
+| DataRecebimento | `Nullable<DateTime>` |  |
+| nProt | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ShouldSerializeDataEmissaoXML()](EficazFramework.SPED.Schemas.NFe/TRetInutNFeInfInut/ShouldSerializeDataEmissaoXML().md 'EficazFramework.SPED.Schemas.NFe.TRetInutNFeInfInut.ShouldSerializeDataEmissaoXML()') | |

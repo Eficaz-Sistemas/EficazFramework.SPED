@@ -6,24 +6,23 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | receita | `String` |  |
-| 03 | detalhamentoReceita | `String` |  |
-| 04 | documentoOrigem | `TipoDocumentoOrigem` |  |
-| 05 | produto | `String` |  |
-| 06 | referencia | `Referencia` |  |
-| 07 | dataVencimentoDate | `Nullable<DateTime>` |  |
-| 08 | dataVencimento | `String` |  |
-| 09 | valor | `ObservableCollection<ItemValor>` |  |
-| 10 | convenio | `String` |  |
-| 11 | contribuinteDestinatario | `Destinatario` |  |
-| 12 | camposExtras | `ObservableCollection<CampoExtra>` |  |
-| 13 | ForcarCamposExtras | `Boolean` |  |
-| 14 | numeroControle | `String` |  |
-| 15 | numeroControleFecp | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializecamposExtras() | `Boolean` |  |
+| receita | `String` |  |
+| detalhamentoReceita | `String` |  |
+| documentoOrigem | `TipoDocumentoOrigem` |  |
+| produto | `String` |  |
+| referencia | `Referencia` |  |
+| dataVencimentoDate | `Nullable<DateTime>` |  |
+| dataVencimento | `String` |  |
+| valor | `ObservableCollection<ItemValor>` |  |
+| convenio | `String` |  |
+| contribuinteDestinatario | `Destinatario` |  |
+| camposExtras | `ObservableCollection<CampoExtra>` |  |
+| ForcarCamposExtras | `Boolean` |  |
+| numeroControle | `String` |  |
+| numeroControleFecp | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ShouldSerializecamposExtras()](EficazFramework.SPED.Schemas.GNRE.V2/DetalhamentoItemGNRE/ShouldSerializecamposExtras().md 'EficazFramework.SPED.Schemas.GNRE.V2.DetalhamentoItemGNRE.ShouldSerializecamposExtras()') | |

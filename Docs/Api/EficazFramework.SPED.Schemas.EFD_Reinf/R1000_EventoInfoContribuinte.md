@@ -4,9 +4,9 @@
 ## R1000_EventoInfoContribuinte Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtIdeEvento` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | infoContri | `R1000_InfoContri` |  |
-| 05 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtIdeEvento` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| infoContri | `R1000_InfoContri` |  |
+| id | `String` |  |

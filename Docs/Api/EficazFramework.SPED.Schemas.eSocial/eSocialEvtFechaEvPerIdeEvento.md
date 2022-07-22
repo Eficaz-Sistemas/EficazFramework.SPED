@@ -4,10 +4,10 @@
 ## eSocialEvtFechaEvPerIdeEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indApuracao | `IndicadorApuracao` |  |
-| 03 | perApur | `String` |  |
-| 04 | tpAmb | `Ambiente` |  |
-| 05 | procEmi | `EmissorEvento` |  |
-| 06 | verProc | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indApuracao | `IndicadorApuracao` |  |
+| perApur | `String` |  |
+| tpAmb | `Ambiente` |  |
+| procEmi | `EmissorEvento` |  |
+| verProc | `String` |  |

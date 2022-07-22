@@ -284,16 +284,27 @@ public abstract class Escrituracao : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Quando implementado, executa custom actions para geração de registros totalizadores no cabeçalho do bloco de encerramento do arquivo.
+    /// </summary>
     public virtual Registro[] PrefixoBlocoEncerramento()
     {
         return null;
     }
 
+    /// <summary>
+    /// Quando implementado, executa custom actions para geração de registros totalizadores no rodapé do bloco de encerramento do arquivo.
+    /// </summary>
+    /// <returns><see cref="IEnumerable{Registro}"/></returns>
     public virtual Registro[] SufixoBlocoEncerramento()
     {
         return null;
     }
 
+    /// <summary>
+    /// Quando implementado, é chamado pelo método <see cref="EscreveArquivo"/> para escrita personalizada do final do arquivo.
+    /// </summary>
+    /// <returns><see cref="IEnumerable{Registro}"/></returns>
     public virtual async Task EncerraArquivo(System.IO.StreamWriter writer)
     {
         await Task.Delay(1);
@@ -301,7 +312,9 @@ public abstract class Escrituracao : INotifyPropertyChanged
 
     /// <summary>
     /// Método executado durante a leitura (desserialização) do arquivo digital. 
-    /// É executado a cada linha.
+    /// É executado a cada linha e permite a criação de instâncias de Registros, 
+    /// e monstagem da estrutura
+    /// hierárquica de Blocos e Registros.
     /// </summary>
     /// <param name="linha">Conteúdo da linha atualmente lida.</param>
     public abstract void ProcessaLinha(string linha);

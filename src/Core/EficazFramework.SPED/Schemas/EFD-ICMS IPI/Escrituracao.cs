@@ -8,6 +8,42 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// <summary>
 /// Classe principal de configuração, leitura e escrita da EFD ICMS / IPI.
 /// </summary>
+/// <remarks>
+/// Blocos disponíveis: 0, B, C, D, E, H, K, 1, 9. <br/>
+/// Bloco Totalizador: 9 <br/>
+/// Registro Totalizador: 9900 <br/>
+/// </remarks>
+/// <example>
+/// #### Leitura
+/// ```csharp
+/// System.IO.Stream stream = System.IO.File.OpenRead(@"C:\SPED\SPED-EFD-ICMS-IPI.txt");
+/// var escrituracao = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao();
+/// escrituracao.Encoding = System.Text.Encoding.Default; //opcional
+/// await escrituracao.LeArquivo(stream);
+/// ```
+/// #### Escrita
+/// ```csharp
+/// EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao escrituracao = new();
+/// escrituracao.Encoding = System.Text.Encoding.Default; //opcional
+/// escrituracao.Versao = "017"; //opcional
+/// var reg0000 = new Registro0000(null, escrituracao.Versao)
+/// {
+///     Finalidade = Primitives.Finalidade.Original,
+///     DataInicial = new System.DateTime(2022, 7, 1),
+///     DataFinal = new System.DateTime(2022, 7, 31),
+///     RazaoSocial = "Empresa Exemplo S/A",
+///     CNPJ = "00123456000100",
+///     UF = "MG",
+///     InscricaoEstadual = "00112345600001",
+///     MunicipioCodigo = "3129707",
+///     Perfil = Perfil.B,
+///     Atividade = Primitives.TipoAtividade.Outros
+/// };
+/// escrituracao.Blocos["0"].Registros.Add(reg0000);
+/// // TODO: Adicionar demais registros em seus respectivos blocos...
+/// await escrituracao.EscreveArquivo(System.IO.File.Create(@"C:\SPED\SPED-EFD-ICMS-IPI.txt"));
+/// ```
+/// </example>
 public class Escrituracao : Primitives.Escrituracao
 {
 
@@ -1063,6 +1099,9 @@ public class Escrituracao : Primitives.Escrituracao
         }
     }
 
+    /// <summary>
+    /// Obtém o CNPJ do <see cref="Registro0000"/> do escrituração fornecida no parâmetro <paramref name="stream"/>
+    /// </summary>
     public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
     {
         string cnpj = null;
@@ -1085,6 +1124,9 @@ public class Escrituracao : Primitives.Escrituracao
         return cnpj;
     }
 
+    /// <summary>
+    /// Gera o <see cref="Registro9001"/> da Escrituração, analisando os blocos C, D, E e H para preencher corretamente o campo <see cref="Registro9001.IndicadorMovimento"/> <br/>
+    /// </summary>
     public override Registro[] PrefixoBlocoEncerramento()
     {
         var regs = new List<Registro>();
@@ -1102,6 +1144,9 @@ public class Escrituracao : Primitives.Escrituracao
         return regs.ToArray();
     }
 
+    /// <summary>
+    /// Gera uma lista de <see cref="Registro9900"/> totalizando todos os registros do arquivo.
+    /// </summary>
     public override Registro[] SufixoBlocoEncerramento()
     {
         var regs = new List<Registro>();

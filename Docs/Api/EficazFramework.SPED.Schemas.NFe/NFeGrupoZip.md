@@ -4,12 +4,11 @@
 ## NFeGrupoZip Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ZipData | `Byte[]` |  |
-| 03 | ProtocoloAutorizacao | `Byte[]` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| ZipData | `Byte[]` |  |
+| ProtocoloAutorizacao | `Byte[]` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/NFeGrupoZip/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.NFeGrupoZip.OnPropertyChanged(string)') | |

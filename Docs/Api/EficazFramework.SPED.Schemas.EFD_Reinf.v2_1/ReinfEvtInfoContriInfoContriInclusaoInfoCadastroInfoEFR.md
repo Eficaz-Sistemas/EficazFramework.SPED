@@ -4,7 +4,7 @@
 ## ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEFR | `String` |  |
-| 03 | cnpjEFR | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEFR | `String` |  |
+| cnpjEFR | `String` |  |

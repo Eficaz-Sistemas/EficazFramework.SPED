@@ -8,15 +8,14 @@ Alteração da Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataAlteracao | `Nullable<DateTime>` |  |
-| 03 | CampoAlterado | `CampoAlterado` |  |
-| 04 | ConteudoAnterior | `String` |  |
-| 05 | IDAnterior | `String` | Válido apenas à partir da versao 003 (2010) |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataAlteracao | `Nullable<DateTime>` |  |
+| CampoAlterado | `CampoAlterado` |  |
+| ConteudoAnterior | `String` |  |
+| IDAnterior | `String` | Válido apenas à partir da versao 003 (2010) |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0175/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0175.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0175/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0175.LeParametros(string[])') | |

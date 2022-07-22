@@ -8,22 +8,21 @@ REGISTRO DE DOCUMENTO FISCAL ELETRÔNICO PARA FINS DE RESSARCIMENTO DE SUBSTITUI
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ChaveNFe | `String` |  |
-| 03 | DataEscrituracao | `Nullable<DateTime>` |  |
-| 04 | NumeroItemOrdem | `Nullable<Int32>` |  |
-| 05 | Operacao | `IndicadorOperacao` |  |
-| 06 | CodigoProduto | `String` |  |
-| 07 | CFOP | `String` |  |
-| 08 | Quantidade | `Nullable<Double>` |  |
-| 09 | ICMSTotal | `Nullable<Double>` | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
-| 10 | ValorConfronto | `Nullable<Double>` | Valor de confronto nas operações de saída |
-| 11 | CodigoLegal | `EnquadramentLegal` |  |
-| 12 | IsDevolucao | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ChaveNFe | `String` |  |
+| DataEscrituracao | `Nullable<DateTime>` |  |
+| NumeroItemOrdem | `Nullable<Int32>` |  |
+| Operacao | `IndicadorOperacao` |  |
+| CodigoProduto | `String` |  |
+| CFOP | `String` |  |
+| Quantidade | `Nullable<Double>` |  |
+| ICMSTotal | `Nullable<Double>` | Valor total do ICMS suportado pelo contribuinte nas operações de entrada. |
+| ValorConfronto | `Nullable<Double>` | Valor de confronto nas operações de saída |
+| CodigoLegal | `EnquadramentLegal` |  |
+| IsDevolucao | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro1100/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro1100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro1100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro1100.LeParametros(string[])') | |

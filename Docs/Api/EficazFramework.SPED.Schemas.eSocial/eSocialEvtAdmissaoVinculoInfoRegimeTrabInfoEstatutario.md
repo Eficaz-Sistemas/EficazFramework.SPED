@@ -4,13 +4,13 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutario Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indProvim | `IndicadorAdmissaoEstatutario` |  |
-| 03 | tpProv | `TipoProvimentoEstatutario` |  |
-| 04 | dtNomeacao | `DateTime` |  |
-| 05 | dtPosse | `DateTime` |  |
-| 06 | dtExercicio | `DateTime` |  |
-| 07 | tpPlanRP | `PlanoSegregacaoMassa` |  |
-| 08 | tpPlanRPSpecified | `Boolean` |  |
-| 09 | infoDecJud | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indProvim | `IndicadorAdmissaoEstatutario` |  |
+| tpProv | `TipoProvimentoEstatutario` |  |
+| dtNomeacao | `DateTime` |  |
+| dtPosse | `DateTime` |  |
+| dtExercicio | `DateTime` |  |
+| tpPlanRP | `PlanoSegregacaoMassa` |  |
+| tpPlanRPSpecified | `Boolean` |  |
+| infoDecJud | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud` |  |

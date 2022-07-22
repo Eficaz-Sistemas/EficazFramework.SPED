@@ -6,17 +6,16 @@
 Identificação e Remuneração de Sócios, Titulares, Dirigentes e Conselheiros
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CPF | `String` |  |
-| 03 | Nome | `String` |  |
-| 04 | Qualificacao | `String` |  |
-| 05 | ValorRemuneracao | `Nullable<Double>` |  |
-| 06 | ValorDemaisRendimentos | `Nullable<Double>` |  |
-| 07 | ValorIR_Retido | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CPF | `String` |  |
+| Nome | `String` |  |
+| Qualificacao | `String` |  |
+| ValorRemuneracao | `Nullable<Double>` |  |
+| ValorDemaisRendimentos | `Nullable<Double>` |  |
+| ValorIR_Retido | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroY612/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroY612.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroY612/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroY612.LeParametros(string[])') | |

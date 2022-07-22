@@ -4,9 +4,8 @@
 ## Registro3N_AnexoC Class
 
 Registro Detalhe: Tipo de Movimento
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro3N_AnexoC/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro3N_AnexoC.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro3N_AnexoC/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro3N_AnexoC.LeParametros(string[])') | |

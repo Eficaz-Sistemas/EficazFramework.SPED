@@ -8,13 +8,12 @@ Identificação de Períodos Dispensados da Escrituração Fiscal Digital das Co
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | MesReferencia | `Nullable<DateTime>` |  |
-| 03 | InformacaoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| MesReferencia | `Nullable<DateTime>` |  |
+| InformacaoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0120/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0120.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0120/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0120.LeParametros(string[])') | |

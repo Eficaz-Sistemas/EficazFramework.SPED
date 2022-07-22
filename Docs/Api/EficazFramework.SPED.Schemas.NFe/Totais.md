@@ -4,13 +4,12 @@
 ## Totais Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ICMS | `TotalICMS` |  |
-| 03 | ISSQN | `TotalISSQN` |  |
-| 04 | Retencoes | `TotalRetencaoTributos` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| ICMS | `TotalICMS` |  |
+| ISSQN | `TotalISSQN` |  |
+| Retencoes | `TotalRetencaoTributos` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Totais/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Totais.OnPropertyChanged(string)') | |

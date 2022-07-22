@@ -4,12 +4,11 @@
 ## Exportacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | UFEmbarq | `Estado` |  |
-| 03 | xLocEmbarq | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| UFEmbarq | `Estado` |  |
+| xLocEmbarq | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Exportacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Exportacao.OnPropertyChanged(string)') | |

@@ -8,20 +8,19 @@ Dados Complementares da entidade
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NomeFantasia | `String` |  |
-| 03 | CEP | `String` |  |
-| 04 | Endereco | `String` |  |
-| 05 | Numero | `String` |  |
-| 06 | Complemento | `String` |  |
-| 07 | Bairro | `String` |  |
-| 08 | Fone | `String` |  |
-| 09 | Fax | `String` |  |
-| 10 | EMail | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NomeFantasia | `String` |  |
+| CEP | `String` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| Fone | `String` |  |
+| Fax | `String` |  |
+| EMail | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0005/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0005.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0005/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0005.LeParametros(string[])') | |

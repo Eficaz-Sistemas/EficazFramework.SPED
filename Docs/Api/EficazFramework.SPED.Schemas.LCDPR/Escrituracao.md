@@ -2,9 +2,8 @@
 ### [EficazFramework.SPED.Schemas.LCDPR](EficazFramework.SPED.Schemas.LCDPR.md 'EficazFramework.SPED.Schemas.LCDPR')
 
 ## Escrituracao Class
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| ProcessaLinha(string) | `Void` |  |
-| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| Methods | |
+| :--- | :--- |
+| [LeEmpresaArquivo(Stream)](EficazFramework.SPED.Schemas.LCDPR/Escrituracao/LeEmpresaArquivo(Stream).md 'EficazFramework.SPED.Schemas.LCDPR.Escrituracao.LeEmpresaArquivo(System.IO.Stream)') | |
+| [ProcessaLinha(string)](EficazFramework.SPED.Schemas.LCDPR/Escrituracao/ProcessaLinha(string).md 'EficazFramework.SPED.Schemas.LCDPR.Escrituracao.ProcessaLinha(string)') | |

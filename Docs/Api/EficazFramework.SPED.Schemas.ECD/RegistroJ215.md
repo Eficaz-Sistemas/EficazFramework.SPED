@@ -8,15 +8,14 @@ Fato Contábil que Altera a Conta Lucros Acumulados ou a Conta Prejuízos Acumul
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoHistFatoContabil | `String` |  |
-| 03 | DescricaoFatoContabil | `String` |  |
-| 04 | VrFatoContabil | `Nullable<Double>` |  |
-| 05 | IndicadorSitSaldoFatoContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoHistFatoContabil | `String` |  |
+| DescricaoFatoContabil | `String` |  |
+| VrFatoContabil | `Nullable<Double>` |  |
+| IndicadorSitSaldoFatoContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ215/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ215.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ215/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ215.LeParametros(string[])') | |

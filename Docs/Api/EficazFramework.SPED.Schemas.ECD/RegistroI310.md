@@ -8,15 +8,14 @@ Detalhes do Balancete Diário
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodContaAnalitica | `String` |  |
-| 03 | CodCentroCusto | `String` |  |
-| 04 | TotalDebitos | `Nullable<Double>` |  |
-| 05 | TotalCreditos | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodContaAnalitica | `String` |  |
+| CodCentroCusto | `String` |  |
+| TotalDebitos | `Nullable<Double>` |  |
+| TotalCreditos | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI310/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI310.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI310/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI310.LeParametros(string[])') | |

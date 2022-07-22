@@ -8,20 +8,19 @@ REGISTRO C115: LOCAL DA COLETA E/OU ENTREGA (CÓDIGO 01, 1B E 04)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoTransporte | `IndicadorTipoTransporte` |  |
-| 03 | CNPJ_Coleta | `String` |  |
-| 04 | IE_coleta | `String` |  |
-| 05 | CPF_Coleta | `String` |  |
-| 06 | Codigo_Municipio_Coleta | `String` |  |
-| 07 | CNPJ_Entrega | `String` |  |
-| 08 | IE_Entrega | `String` |  |
-| 09 | CPF_Entrega | `String` |  |
-| 10 | Codigo_Municipio_Entrega | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoTransporte | `IndicadorTipoTransporte` |  |
+| CNPJ_Coleta | `String` |  |
+| IE_coleta | `String` |  |
+| CPF_Coleta | `String` |  |
+| Codigo_Municipio_Coleta | `String` |  |
+| CNPJ_Entrega | `String` |  |
+| IE_Entrega | `String` |  |
+| CPF_Entrega | `String` |  |
+| Codigo_Municipio_Entrega | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC115/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC115.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC115/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC115.LeParametros(string[])') | |

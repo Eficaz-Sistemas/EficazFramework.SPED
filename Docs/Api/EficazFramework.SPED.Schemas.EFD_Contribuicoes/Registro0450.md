@@ -8,13 +8,12 @@ Tabela de Informação Complementar do Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoComplementarDocumentoFiscal | `String` |  |
-| 03 | TextoComplementarDocFiscal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoComplementarDocumentoFiscal | `String` |  |
+| TextoComplementarDocFiscal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0450/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0450.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0450/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0450.LeParametros(string[])') | |

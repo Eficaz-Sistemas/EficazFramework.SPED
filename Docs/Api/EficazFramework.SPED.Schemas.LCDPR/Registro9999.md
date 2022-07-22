@@ -8,17 +8,16 @@ Dados do Contabilista
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Nome | `String` |  |
-| 03 | CPF | `String` |  |
-| 04 | CRC | `String` |  |
-| 05 | eMail | `String` |  |
-| 06 | Fone | `String` |  |
-| 07 | QuantidadeLinhas | `Int32` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Nome | `String` |  |
+| CPF | `String` |  |
+| CRC | `String` |  |
+| eMail | `String` |  |
+| Fone | `String` |  |
+| QuantidadeLinhas | `Int32` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/Registro9999/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.Registro9999.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/Registro9999/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.Registro9999.LeParametros(string[])') | |

@@ -6,10 +6,10 @@
 Registros Finais
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ICMSTot | `envCFeCFeInfCFeTotalICMSTot` |  |
-| 03 | vCFe | `String` |  |
-| 04 | ISSQNtot | `envCFeCFeInfCFeTotalISSQNtot` |  |
-| 05 | DescAcrEntr | `envCFeCFeInfCFeTotalDescAcrEntr` |  |
-| 06 | vCFeLei12741 | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ICMSTot | `envCFeCFeInfCFeTotalICMSTot` |  |
+| vCFe | `String` |  |
+| ISSQNtot | `envCFeCFeInfCFeTotalISSQNtot` |  |
+| DescAcrEntr | `envCFeCFeInfCFeTotalDescAcrEntr` |  |
+| vCFeLei12741 | `String` |  |

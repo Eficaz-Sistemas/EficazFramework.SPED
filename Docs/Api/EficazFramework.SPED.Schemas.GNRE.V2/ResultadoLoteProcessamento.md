@@ -4,13 +4,12 @@
 ## ResultadoLoteProcessamento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codigo | `String` |  |
-| 03 | descricao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| codigo | `String` |  |
+| descricao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLoteProcessamento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLoteProcessamento.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLoteProcessamento/ToString().md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLoteProcessamento.ToString()') | |

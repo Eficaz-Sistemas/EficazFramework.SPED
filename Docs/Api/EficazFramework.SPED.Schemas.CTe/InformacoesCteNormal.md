@@ -4,20 +4,19 @@
 ## InformacoesCteNormal Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | infCarga | `TCTeInfCteInfCTeNormInfCarga` |  |
-| 03 | infDoc | `TCTeInfCteInfCTeNormInfDoc` |  |
-| 04 | docAnt | `ObservableCollection<CTeNormalEmitenteDocumentonterior>` |  |
-| 05 | seg | `ObservableCollection<TCTeInfCteInfCTeNormSeg>` |  |
-| 06 | infModal | `TCTeInfCteInfCTeNormInfModal` |  |
-| 07 | peri | `ObservableCollection<TCTeInfCteInfCTeNormPeri>` |  |
-| 08 | veicNovos | `ObservableCollection<TCTeInfCteInfCTeNormVeicNovos>` |  |
-| 09 | cobr | `TCTeInfCteInfCTeNormCobr` |  |
-| 10 | infCteSub | `TCTeInfCteInfCTeNormInfCteSub` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializedocAnt() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| infCarga | `TCTeInfCteInfCTeNormInfCarga` |  |
+| infDoc | `TCTeInfCteInfCTeNormInfDoc` |  |
+| docAnt | `ObservableCollection<CTeNormalEmitenteDocumentonterior>` |  |
+| seg | `ObservableCollection<TCTeInfCteInfCTeNormSeg>` |  |
+| infModal | `TCTeInfCteInfCTeNormInfModal` |  |
+| peri | `ObservableCollection<TCTeInfCteInfCTeNormPeri>` |  |
+| veicNovos | `ObservableCollection<TCTeInfCteInfCTeNormVeicNovos>` |  |
+| cobr | `TCTeInfCteInfCTeNormCobr` |  |
+| infCteSub | `TCTeInfCteInfCTeNormInfCteSub` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/InformacoesCteNormal/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCteNormal.OnPropertyChanged(string)') | |
+| [ShouldSerializedocAnt()](EficazFramework.SPED.Schemas.CTe/InformacoesCteNormal/ShouldSerializedocAnt().md 'EficazFramework.SPED.Schemas.CTe.InformacoesCteNormal.ShouldSerializedocAnt()') | |

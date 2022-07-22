@@ -4,12 +4,11 @@
 ## TCTeInfCteInfCTeNormInfCteSub Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | chCte | `String` |  |
-| 03 | Item | `Object` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| chCte | `String` |  |
+| Item | `Object` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCteSub/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCteSub.OnPropertyChanged(string)') | |

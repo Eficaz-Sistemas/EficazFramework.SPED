@@ -8,21 +8,20 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodContaPlano | `String` |  |
-| 03 | DescContaPlano | `String` |  |
-| 04 | CodCosifInstFin | `String` |  |
-| 05 | QuantOcorrConta | `Nullable<Int32>` |  |
-| 06 | CodServico | `String` |  |
-| 07 | ValorContabil | `Nullable<Double>` |  |
-| 08 | ValorBCISS | `Nullable<Double>` |  |
-| 09 | AliquotaISS | `Nullable<Double>` |  |
-| 10 | ValorISS | `Nullable<Double>` |  |
-| 11 | CodObsLacto | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodContaPlano | `String` |  |
+| DescContaPlano | `String` |  |
+| CodCosifInstFin | `String` |  |
+| QuantOcorrConta | `Nullable<Int32>` |  |
+| CodServico | `String` |  |
+| ValorContabil | `Nullable<Double>` |  |
+| ValorBCISS | `Nullable<Double>` |  |
+| AliquotaISS | `Nullable<Double>` |  |
+| ValorISS | `Nullable<Double>` |  |
+| CodObsLacto | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB350/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB350.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB350/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB350.LeParametros(string[])') | |

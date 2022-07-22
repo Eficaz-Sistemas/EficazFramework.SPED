@@ -8,18 +8,17 @@ Mapeamento Referencial do Saldo Final
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaReferencial | `String` |  |
-| 03 | VrSaldoInicialPeriodo | `Nullable<Double>` |  |
-| 04 | IndicadorSituacaoSaldoInicial | `String` |  |
-| 05 | VrTotalDebitosPeriodo | `Nullable<Double>` |  |
-| 06 | VrTotalCreditosPeriodo | `Nullable<Double>` |  |
-| 07 | VrSaldoFinalPeriodo | `Nullable<Double>` |  |
-| 08 | IndicadorSituacaoSaldoFinal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaReferencial | `String` |  |
+| VrSaldoInicialPeriodo | `Nullable<Double>` |  |
+| IndicadorSituacaoSaldoInicial | `String` |  |
+| VrTotalDebitosPeriodo | `Nullable<Double>` |  |
+| VrTotalCreditosPeriodo | `Nullable<Double>` |  |
+| VrSaldoFinalPeriodo | `Nullable<Double>` |  |
+| IndicadorSituacaoSaldoFinal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroK156/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroK156.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroK156/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroK156.LeParametros(string[])') | |

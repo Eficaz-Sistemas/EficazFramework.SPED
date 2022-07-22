@@ -4,6 +4,6 @@
 ## S1005_Exclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEstab | `TIdeEstab` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEstab | `TIdeEstab` |  |

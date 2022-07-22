@@ -8,17 +8,16 @@ Termo de Encerramento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroOrdemLivro | `String` |  |
-| 03 | NaturezaLivro | `String` |  |
-| 04 | NomeEmpresarial | `String` |  |
-| 05 | QtdeLinhasArquivoTotal | `Nullable<Int64>` |  |
-| 06 | DataInicioEscrituracao | `Nullable<DateTime>` |  |
-| 07 | DataTerminoEscrituracao | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroOrdemLivro | `String` |  |
+| NaturezaLivro | `String` |  |
+| NomeEmpresarial | `String` |  |
+| QtdeLinhasArquivoTotal | `Nullable<Int64>` |  |
+| DataInicioEscrituracao | `Nullable<DateTime>` |  |
+| DataTerminoEscrituracao | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ900/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ900.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ900/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ900.LeParametros(string[])') | |

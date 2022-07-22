@@ -4,8 +4,8 @@
 ## S1050_Alteracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideHorContratual | `TIdeHorContratual` |  |
-| 03 | dadosHorContratual | `TDadosHorContratual` |  |
-| 04 | novaValidade | `TIdePeriodo` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideHorContratual | `TIdeHorContratual` |  |
+| dadosHorContratual | `TDadosHorContratual` |  |
+| novaValidade | `TIdePeriodo` |  |

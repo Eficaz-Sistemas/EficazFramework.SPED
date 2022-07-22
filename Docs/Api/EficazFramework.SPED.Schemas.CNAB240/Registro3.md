@@ -4,9 +4,8 @@
 ## Registro3 Class
 
 Registro Detalhe
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro3/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro3.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro3/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro3.LeParametros(string[])') | |

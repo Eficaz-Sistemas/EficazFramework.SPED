@@ -8,16 +8,15 @@ Receitas Isentas, não alcançadas pela incidência da contribuição, sujeitas 
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CSTPis | `String` |  |
-| 03 | VrTotalRecBrutaPeriodo | `Nullable<Double>` |  |
-| 04 | CodigoContaContabil | `String` |  |
-| 05 | DescricaoComplementarNatReceita | `String` |  |
-| 06 | NotMapped_NaturezaReceita | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CSTPis | `String` |  |
+| VrTotalRecBrutaPeriodo | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| DescricaoComplementarNatReceita | `String` |  |
+| NotMapped_NaturezaReceita | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM400/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM400.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM400/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM400.LeParametros(string[])') | |

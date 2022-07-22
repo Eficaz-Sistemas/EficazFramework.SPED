@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | evento | `List<TArquivoeReinf>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| evento | `List<TArquivoeReinf>` |  |

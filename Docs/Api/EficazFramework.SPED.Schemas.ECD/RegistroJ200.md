@@ -8,13 +8,12 @@ Tabela de Histório de Fatos Contábeis que Modificam a Conta Lucros Acumulados 
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodHistoricoFatoContabil | `String` |  |
-| 03 | DescFatoContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodHistoricoFatoContabil | `String` |  |
+| DescFatoContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ200/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ200.LeParametros(string[])') | |

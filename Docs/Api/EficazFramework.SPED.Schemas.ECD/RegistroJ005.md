@@ -8,15 +8,14 @@ Demonstrações Contábeis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicialDC | `Nullable<DateTime>` |  |
-| 03 | DataFinalDC | `Nullable<DateTime>` |  |
-| 04 | IdentificacaoDemonstracoes | `String` |  |
-| 05 | CabecalhoDemonstracoes | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicialDC | `Nullable<DateTime>` |  |
+| DataFinalDC | `Nullable<DateTime>` |  |
+| IdentificacaoDemonstracoes | `String` |  |
+| CabecalhoDemonstracoes | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ005/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ005.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ005/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ005.LeParametros(string[])') | |

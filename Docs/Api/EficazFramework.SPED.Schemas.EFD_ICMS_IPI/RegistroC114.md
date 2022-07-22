@@ -8,16 +8,15 @@ REGISTRO C114: CUPOM FISCAL REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Cod_Modelo | `String` |  |
-| 03 | ECF_FAB | `String` |  |
-| 04 | ECF_CX | `String` |  |
-| 05 | Num_Doc | `String` |  |
-| 06 | DataDoc | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Cod_Modelo | `String` |  |
+| ECF_FAB | `String` |  |
+| ECF_CX | `String` |  |
+| Num_Doc | `String` |  |
+| DataDoc | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC114/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC114.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC114/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC114.LeParametros(string[])') | |

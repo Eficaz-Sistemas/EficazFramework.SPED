@@ -6,17 +6,16 @@
 Registro Trailer de Lote de Serviço: Pagamentos de Contas de Concessionárias e Tributos com Código de Barras
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | QuantidadeRegistros | `Nullable<Int32>` |  |
-| 05 | ValorPagamentos | `Nullable<Double>` |  |
-| 06 | ValorQuantidadeMoeda | `Nullable<Double>` |  |
-| 07 | Ocorrencias | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| QuantidadeRegistros | `Nullable<Int32>` |  |
+| ValorPagamentos | `Nullable<Double>` |  |
+| ValorQuantidadeMoeda | `Nullable<Double>` |  |
+| Ocorrencias | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro5O/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro5O.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro5O/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro5O.LeParametros(string[])') | |

@@ -4,20 +4,19 @@
 ## Destinatario Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | CNPJ_CPFFormatado | `String` |  |
-| 05 | IE | `String` |  |
-| 06 | xNome | `String` |  |
-| 07 | fone | `String` |  |
-| 08 | ISUF | `String` |  |
-| 09 | Endereco | `Endereco` |  |
-| 10 | email | `String` |  |
-| 11 | locEnt | `TEndReEnt` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| fone | `String` |  |
+| ISUF | `String` |  |
+| Endereco | `Endereco` |  |
+| email | `String` |  |
+| locEnt | `TEndReEnt` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Destinatario/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Destinatario.OnPropertyChanged(string)') | |

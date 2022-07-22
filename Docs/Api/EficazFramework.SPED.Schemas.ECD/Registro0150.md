@@ -8,23 +8,22 @@ Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoParticipante | `String` |  |
-| 03 | NomeEmpresarial | `String` |  |
-| 04 | CodigoPais | `String` |  |
-| 05 | CNPJParticipante | `String` |  |
-| 06 | CPFParticipante | `String` |  |
-| 07 | NitPisPasepSus | `String` |  |
-| 08 | UFParticipante | `String` |  |
-| 09 | IEParticipante | `String` |  |
-| 10 | IESTParticipante | `String` |  |
-| 11 | CodMunicipio | `String` |  |
-| 12 | InscMunicipal | `String` |  |
-| 13 | InscSuframa | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoParticipante | `String` |  |
+| NomeEmpresarial | `String` |  |
+| CodigoPais | `String` |  |
+| CNPJParticipante | `String` |  |
+| CPFParticipante | `String` |  |
+| NitPisPasepSus | `String` |  |
+| UFParticipante | `String` |  |
+| IEParticipante | `String` |  |
+| IESTParticipante | `String` |  |
+| CodMunicipio | `String` |  |
+| InscMunicipal | `String` |  |
+| InscSuframa | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0150/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0150.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0150/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0150.LeParametros(string[])') | |

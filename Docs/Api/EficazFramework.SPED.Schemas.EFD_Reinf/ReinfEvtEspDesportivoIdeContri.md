@@ -4,8 +4,8 @@
 ## ReinfEvtEspDesportivoIdeContri Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | ideEstab | `ReinfEvtEspDesportivoIdeContriIdeEstab[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+| ideEstab | `ReinfEvtEspDesportivoIdeContriIdeEstab[]` |  |

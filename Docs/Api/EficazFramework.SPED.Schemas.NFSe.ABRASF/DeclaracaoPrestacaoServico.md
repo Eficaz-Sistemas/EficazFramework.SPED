@@ -4,6 +4,6 @@
 ## DeclaracaoPrestacaoServico Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InfNfse | `tcInfNfse` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| InfNfse | `tcInfNfse` |  |

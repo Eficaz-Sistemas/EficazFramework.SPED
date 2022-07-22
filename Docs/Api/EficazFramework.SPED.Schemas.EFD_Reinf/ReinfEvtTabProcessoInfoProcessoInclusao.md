@@ -4,6 +4,6 @@
 ## ReinfEvtTabProcessoInfoProcessoInclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideProcesso | `ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideProcesso | `ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso` |  |

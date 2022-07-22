@@ -4,8 +4,8 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | ideEstabVinc | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+| ideEstabVinc | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc` |  |

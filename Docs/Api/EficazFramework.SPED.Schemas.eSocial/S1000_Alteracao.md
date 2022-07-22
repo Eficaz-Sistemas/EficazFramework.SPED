@@ -4,8 +4,8 @@
 ## S1000_Alteracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | idePeriodo | `TIdePeriodo` |  |
-| 03 | infoCadastro | `TInfoEmpregador` |  |
-| 04 | novaValidade | `TIdePeriodo` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| idePeriodo | `TIdePeriodo` |  |
+| infoCadastro | `TInfoEmpregador` |  |
+| novaValidade | `TIdePeriodo` |  |

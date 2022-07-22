@@ -8,21 +8,20 @@ Termo de Abertura do Livro
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroOrdemEscrituracao | `Nullable<Int16>` |  |
-| 03 | NaturezaLivro | `String` |  |
-| 04 | QtdeLinhasArquivo | `Nullable<Int64>` |  |
-| 05 | NomeEmpresarial | `String` |  |
-| 06 | Nire | `String` |  |
-| 07 | CNPJ | `String` |  |
-| 08 | DataArquivamentoAtos | `Nullable<DateTime>` |  |
-| 09 | DataArquivAtoConversao | `Nullable<DateTime>` |  |
-| 10 | Municipio | `String` |  |
-| 11 | DataEncerrExSocial | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroOrdemEscrituracao | `Nullable<Int16>` |  |
+| NaturezaLivro | `String` |  |
+| QtdeLinhasArquivo | `Nullable<Int64>` |  |
+| NomeEmpresarial | `String` |  |
+| Nire | `String` |  |
+| CNPJ | `String` |  |
+| DataArquivamentoAtos | `Nullable<DateTime>` |  |
+| DataArquivAtoConversao | `Nullable<DateTime>` |  |
+| Municipio | `String` |  |
+| DataEncerrExSocial | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI030/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI030.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI030/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI030.LeParametros(string[])') | |

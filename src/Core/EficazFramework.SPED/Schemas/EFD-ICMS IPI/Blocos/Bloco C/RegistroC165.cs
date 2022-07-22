@@ -4,9 +4,8 @@ using EficazFramework.SPED.Extensions;
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
 /// <summary>
-/// REGISTRO C165: OPERAÇÕES COM COMBUSTÍVEIS
+/// Operações com combustíveis
 /// </summary>
-/// <remarks></remarks>
 public class RegistroC165 : Primitives.Registro
 {
     public RegistroC165() : base("C165")

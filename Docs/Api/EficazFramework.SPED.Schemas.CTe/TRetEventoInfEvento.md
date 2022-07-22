@@ -4,22 +4,21 @@
 ## TRetEventoInfEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | verAplic | `String` |  |
-| 04 | cOrgao | `OrgaoIBGE` |  |
-| 05 | cStat | `String` |  |
-| 06 | xMotivo | `String` |  |
-| 07 | chCTe | `String` |  |
-| 08 | tpEvento | `String` |  |
-| 09 | xEvento | `String` |  |
-| 10 | nSeqEvento | `String` |  |
-| 11 | dhRegEvento | `String` |  |
-| 12 | nProt | `String` |  |
-| 13 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpAmb | `Ambiente` |  |
+| verAplic | `String` |  |
+| cOrgao | `OrgaoIBGE` |  |
+| cStat | `String` |  |
+| xMotivo | `String` |  |
+| chCTe | `String` |  |
+| tpEvento | `String` |  |
+| xEvento | `String` |  |
+| nSeqEvento | `String` |  |
+| dhRegEvento | `String` |  |
+| nProt | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TRetEventoInfEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TRetEventoInfEvento.OnPropertyChanged(string)') | |

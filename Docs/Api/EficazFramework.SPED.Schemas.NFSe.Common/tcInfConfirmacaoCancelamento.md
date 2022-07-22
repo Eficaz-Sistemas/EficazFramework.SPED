@@ -4,12 +4,11 @@
 ## tcInfConfirmacaoCancelamento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Sucesso | `Boolean` |  |
-| 03 | DataHora | `DateTime` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Sucesso | `Boolean` |  |
+| DataHora | `DateTime` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcInfConfirmacaoCancelamento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcInfConfirmacaoCancelamento.OnPropertyChanged(string)') | |

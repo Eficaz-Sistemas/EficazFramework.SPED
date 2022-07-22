@@ -6,8 +6,8 @@
 Identificação do Evento, com Ambiente, Processo Emissor e Versão
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | procEmi | `EmissorEvento` |  |
-| 04 | verProc | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAmb | `Ambiente` |  |
+| procEmi | `EmissorEvento` |  |
+| verProc | `String` |  |

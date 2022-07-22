@@ -4,14 +4,13 @@
 ## TCTeInfCteInfCTeNormInfCarga Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vCarga | `Nullable<Double>` |  |
-| 03 | proPred | `String` |  |
-| 04 | xOutCat | `String` |  |
-| 05 | infQ | `ObservableCollection<TCTeInfCteInfCTeNormInfCargaInfQ>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vCarga | `Nullable<Double>` |  |
+| proPred | `String` |  |
+| xOutCat | `String` |  |
+| infQ | `ObservableCollection<TCTeInfCteInfCTeNormInfCargaInfQ>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCarga/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCarga.OnPropertyChanged(string)') | |

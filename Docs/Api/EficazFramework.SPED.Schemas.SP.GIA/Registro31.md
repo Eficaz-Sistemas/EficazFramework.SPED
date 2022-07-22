@@ -6,12 +6,11 @@
 Exportação
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | RE | `Int64` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| RE | `Int64` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro31/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro31.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro31/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro31.LeParametros(string[])') | |

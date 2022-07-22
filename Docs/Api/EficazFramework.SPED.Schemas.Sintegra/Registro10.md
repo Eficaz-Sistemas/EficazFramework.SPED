@@ -4,22 +4,21 @@
 ## Registro10 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | InscricaoEstadual | `String` |  |
-| 04 | NomeComercial | `String` |  |
-| 05 | Municipio | `String` |  |
-| 06 | UF | `String` |  |
-| 07 | NumeroFax | `String` |  |
-| 08 | DataInicio | `Nullable<DateTime>` |  |
-| 09 | DataFinal | `Nullable<DateTime>` |  |
-| 10 | CodigoIndentificacaoArquivoEntregue | `CodigoIDArquivo` |  |
-| 11 | CodigoIdentificacaoNatOp | `NaturezaOperacoes` |  |
-| 12 | CodigoFinalidadeApresentacao | `FinalidadeApresentacao` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ | `String` |  |
+| InscricaoEstadual | `String` |  |
+| NomeComercial | `String` |  |
+| Municipio | `String` |  |
+| UF | `String` |  |
+| NumeroFax | `String` |  |
+| DataInicio | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| CodigoIndentificacaoArquivoEntregue | `CodigoIDArquivo` |  |
+| CodigoIdentificacaoNatOp | `NaturezaOperacoes` |  |
+| CodigoFinalidadeApresentacao | `FinalidadeApresentacao` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro10/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro10.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro10/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro10.LeParametros(string[])') | |

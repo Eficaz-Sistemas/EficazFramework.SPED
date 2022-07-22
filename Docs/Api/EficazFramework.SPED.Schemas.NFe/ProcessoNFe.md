@@ -4,30 +4,29 @@
 ## ProcessoNFe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NFe | `NFe` |  |
-| 03 | ProtocoloAutorizacao | `ProtocoloRecebimento` |  |
-| 04 | Versao | `String` |  |
-| 05 | DocumentType | `XMLDocumentType` |  |
-| 06 | DataEmissao | `Nullable<DateTime>` |  |
-| 07 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| RefreshSerializer() | `Void` |  |
-| OnPropertyChanged(string) | `Void` |  |
-| ToString() | `String` |  |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ProcessoNFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ProcessoNFe) | `Boolean` |  |
-| Deserialize(string) | `ProcessoNFe` |  |
-| Deserialize(Stream) | `ProcessoNFe` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, ProcessoNFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ProcessoNFe) | `Boolean` |  |
-| LoadFrom(Stream, bool) | `ProcessoNFe` |  |
-| LoadFromAsync(Stream, bool) | `Task<ProcessoNFe>` |  |
+| NFe | `NFe` |  |
+| ProtocoloAutorizacao | `ProtocoloRecebimento` |  |
+| Versao | `String` |  |
+| DocumentType | `XMLDocumentType` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, ProcessoNFe)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/CanDeserialize(string,ProcessoNFe).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.CanDeserialize(string, EficazFramework.SPED.Schemas.NFe.ProcessoNFe)') | |
+| [CanDeserialize(string, ProcessoNFe, Exception)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/CanDeserialize(string,ProcessoNFe,Exception).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.CanDeserialize(string, EficazFramework.SPED.Schemas.NFe.ProcessoNFe, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, ProcessoNFe)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/CanLoadFrom(Stream,ProcessoNFe).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFe.ProcessoNFe)') | |
+| [CanLoadFrom(Stream, ProcessoNFe, Exception)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/CanLoadFrom(Stream,ProcessoNFe,Exception).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFe.ProcessoNFe, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.LoadFrom(System.IO.Stream, bool)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.LoadFromAsync(System.IO.Stream, bool)') | |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.OnPropertyChanged(string)') | |
+| [RefreshSerializer()](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/RefreshSerializer().md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.RefreshSerializer()') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/Serialize().md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.Serialize()') | Serializes current TNfeProc object into an XML document |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/ProcessoNFe/ToString().md 'EficazFramework.SPED.Schemas.NFe.ProcessoNFe.ToString()') | |

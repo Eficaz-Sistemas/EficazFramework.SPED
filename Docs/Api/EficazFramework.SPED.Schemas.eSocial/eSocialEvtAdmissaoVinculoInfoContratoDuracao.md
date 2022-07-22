@@ -4,11 +4,11 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoDuracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpContr | `SByte` |  |
-| 03 | dtTerm | `DateTime` |  |
-| 04 | dtTermSpecified | `Boolean` |  |
-| 05 | clauAssec | `SimNaoString` |  |
-| 06 | clauAssecSpecified | `Boolean` |  |
-| 07 | objDet | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpContr | `SByte` |  |
+| dtTerm | `DateTime` |  |
+| dtTermSpecified | `Boolean` |  |
+| clauAssec | `SimNaoString` |  |
+| clauAssecSpecified | `Boolean` |  |
+| objDet | `String` |  |

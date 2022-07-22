@@ -4,18 +4,18 @@
 ## TDadosRubrica Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | dscRubr | `String` |  |
-| 03 | natRubr | `String` |  |
-| 04 | tpRubr | `NaturezaRubrica` |  |
-| 05 | codIncCP | `String` |  |
-| 06 | codIncIRRF | `String` |  |
-| 07 | codIncFGTS | `String` |  |
-| 08 | codIncCPRP | `String` |  |
-| 09 | tetoRemun | `SimNaoString` |  |
-| 10 | observacao | `String` |  |
-| 11 | ideProcessoCP | `TDadosRubricaIdeProcessoCP[]` |  |
-| 12 | ideProcessoIRRF | `TDadosRubricaIdeProcessoIRRF[]` |  |
-| 13 | ideProcessoFGTS | `TDadosRubricaIdeProcessoFGTS[]` |  |
-| 14 | ideProcessoSIND | `TDadosRubricaIdeProcessoSIND[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| dscRubr | `String` |  |
+| natRubr | `String` |  |
+| tpRubr | `NaturezaRubrica` |  |
+| codIncCP | `String` |  |
+| codIncIRRF | `String` |  |
+| codIncFGTS | `String` |  |
+| codIncCPRP | `String` |  |
+| tetoRemun | `SimNaoString` |  |
+| observacao | `String` |  |
+| ideProcessoCP | `TDadosRubricaIdeProcessoCP[]` |  |
+| ideProcessoIRRF | `TDadosRubricaIdeProcessoIRRF[]` |  |
+| ideProcessoFGTS | `TDadosRubricaIdeProcessoFGTS[]` |  |
+| ideProcessoSIND | `TDadosRubricaIdeProcessoSIND[]` |  |

@@ -8,16 +8,15 @@ Complemento do Documento - Operações de Importação (Código 55)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DocumentoImportacao | `DocumentoImportacao` |  |
-| 03 | NumeroDocumentoImportacao | `String` |  |
-| 04 | VrPagoPisImportacao | `Nullable<Double>` |  |
-| 05 | VrPagoCofinsImportacao | `Nullable<Double>` |  |
-| 06 | NumeroAtoConcessorioDrawBack | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DocumentoImportacao | `DocumentoImportacao` |  |
+| NumeroDocumentoImportacao | `String` |  |
+| VrPagoPisImportacao | `Nullable<Double>` |  |
+| VrPagoCofinsImportacao | `Nullable<Double>` |  |
+| NumeroAtoConcessorioDrawBack | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC199/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC199.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC199/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC199.LeParametros(string[])') | |

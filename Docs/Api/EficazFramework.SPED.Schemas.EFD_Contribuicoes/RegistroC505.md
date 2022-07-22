@@ -8,18 +8,17 @@ Complemento da operação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CstCofins | `String` |  |
-| 03 | VrTotalItens | `Nullable<Double>` |  |
-| 04 | NatBaseCalculo | `String` |  |
-| 05 | VrBaseCalculoCofins | `Double` |  |
-| 06 | AliquotaCofins | `Nullable<Double>` |  |
-| 07 | VrCofins | `Nullable<Double>` |  |
-| 08 | CodContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CstCofins | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| NatBaseCalculo | `String` |  |
+| VrBaseCalculoCofins | `Double` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC505/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC505.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC505/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC505.LeParametros(string[])') | |

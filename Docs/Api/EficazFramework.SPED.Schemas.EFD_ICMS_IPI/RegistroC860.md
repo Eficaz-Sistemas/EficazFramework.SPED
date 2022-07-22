@@ -8,17 +8,16 @@ Identificação do Equipamento SAT CF-e (59)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | EspecieDocumento | `String` |  |
-| 03 | NumeroSerieSAT | `Nullable<Int32>` |  |
-| 04 | DataEmissao | `Nullable<DateTime>` |  |
-| 05 | DocInicial | `Nullable<Int32>` |  |
-| 06 | DocFinal | `Nullable<Int32>` |  |
-| 07 | RegistrosC890 | `List<RegistroC890>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| EspecieDocumento | `String` |  |
+| NumeroSerieSAT | `Nullable<Int32>` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| DocInicial | `Nullable<Int32>` |  |
+| DocFinal | `Nullable<Int32>` |  |
+| RegistrosC890 | `List<RegistroC890>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC860/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC860.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC860/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC860.LeParametros(string[])') | |

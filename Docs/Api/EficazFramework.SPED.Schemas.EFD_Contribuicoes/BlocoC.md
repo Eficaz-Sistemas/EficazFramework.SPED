@@ -8,7 +8,7 @@ Documentos Fiscais I - Mercadorias (ICMS / IPI)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | RegistroC001 | `RegistroC001` |  |
-| 03 | RegistroC010 | `RegistroC010` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| RegistroC001 | `RegistroC001` |  |
+| RegistroC010 | `RegistroC010` |  |

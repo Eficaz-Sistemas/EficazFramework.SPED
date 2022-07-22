@@ -4,6 +4,6 @@
 ## S1040_Exclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideFuncao | `TIdeFuncao` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideFuncao | `TIdeFuncao` |  |

@@ -8,16 +8,15 @@ Ajustes da Apuração do ICMS Difal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoAjuste | `String` |  |
-| 03 | DescricaoComplementar | `String` |  |
-| 04 | ValorAjuste | `Nullable<Double>` |  |
-| 05 | RegistrosE312 | `List<RegistroE312>` |  |
-| 06 | RegistrosE313 | `List<RegistroE313>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoAjuste | `String` |  |
+| DescricaoComplementar | `String` |  |
+| ValorAjuste | `Nullable<Double>` |  |
+| RegistrosE312 | `List<RegistroE312>` |  |
+| RegistrosE313 | `List<RegistroE313>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE311/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE311.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE311/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE311.LeParametros(string[])') | |

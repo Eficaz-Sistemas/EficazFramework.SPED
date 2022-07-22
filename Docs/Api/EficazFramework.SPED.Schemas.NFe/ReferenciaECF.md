@@ -4,13 +4,12 @@
 ## ReferenciaECF Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Modelo | `ModeloECF` |  |
-| 03 | NumeroECF | `String` |  |
-| 04 | ContadorOperacoesCOO | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Modelo | `ModeloECF` |  |
+| NumeroECF | `String` |  |
+| ContadorOperacoesCOO | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ReferenciaECF/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ReferenciaECF.OnPropertyChanged(string)') | |

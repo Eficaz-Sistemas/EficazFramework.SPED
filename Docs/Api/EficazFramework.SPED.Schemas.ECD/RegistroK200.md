@@ -8,17 +8,16 @@ Plano de Contas Consolidado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoNaturezaContas | `String` |  |
-| 03 | IndicadorTipoConta | `String` |  |
-| 04 | NivelConta | `String` |  |
-| 05 | CodigoConta | `String` |  |
-| 06 | CodigoContaSuperior | `String` |  |
-| 07 | NomeConta | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoNaturezaContas | `String` |  |
+| IndicadorTipoConta | `String` |  |
+| NivelConta | `String` |  |
+| CodigoConta | `String` |  |
+| CodigoContaSuperior | `String` |  |
+| NomeConta | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK200/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK200.LeParametros(string[])') | |

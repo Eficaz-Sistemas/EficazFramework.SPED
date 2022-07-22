@@ -4,15 +4,14 @@
 ## TUnidadeTransp Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpUnidTransp | `TtipoUnidTransp` |  |
-| 03 | idUnidTransp | `String` |  |
-| 04 | lacUnidTransp | `ObservableCollection<TUnidadeTranspLacUnidTransp>` |  |
-| 05 | infUnidCarga | `ObservableCollection<TUnidCarga>` |  |
-| 06 | qtdRat | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpUnidTransp | `TtipoUnidTransp` |  |
+| idUnidTransp | `String` |  |
+| lacUnidTransp | `ObservableCollection<TUnidadeTranspLacUnidTransp>` |  |
+| infUnidCarga | `ObservableCollection<TUnidCarga>` |  |
+| qtdRat | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TUnidadeTransp/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TUnidadeTransp.OnPropertyChanged(string)') | |

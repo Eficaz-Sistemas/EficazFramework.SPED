@@ -4,8 +4,8 @@
 ## TCtps Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrCtps | `String` |  |
-| 03 | serieCtps | `String` |  |
-| 04 | ufCtps | `UFCadastro` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrCtps | `String` |  |
+| serieCtps | `String` |  |
+| ufCtps | `UFCadastro` |  |

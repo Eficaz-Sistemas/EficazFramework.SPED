@@ -4,8 +4,8 @@
 ## TIdeHorContratual Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codHorContrat | `String` |  |
-| 03 | iniValid | `String` |  |
-| 04 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| codHorContrat | `String` |  |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

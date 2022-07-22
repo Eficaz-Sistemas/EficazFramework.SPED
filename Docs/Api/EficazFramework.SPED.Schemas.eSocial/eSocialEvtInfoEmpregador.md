@@ -4,9 +4,9 @@
 ## eSocialEvtInfoEmpregador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeCadastro` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoEmpregador | `eSocialEvtInfoEmpregadorInfoEmpregador` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeCadastro` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoEmpregador | `eSocialEvtInfoEmpregadorInfoEmpregador` |  |
+| Id | `String` |  |

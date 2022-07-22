@@ -8,16 +8,15 @@ Complemento do Documento - Operações de Importação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DocumentoDeImportacao | `DocumentoImportacao` |  |
-| 03 | NumeroDocImportacao | `String` |  |
-| 04 | VrPagoPisImportacao | `Nullable<Double>` |  |
-| 05 | VrPagoCofinsImportacao | `Nullable<Double>` |  |
-| 06 | NumeroAtoConcessorioRegimeDrawBack | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DocumentoDeImportacao | `DocumentoImportacao` |  |
+| NumeroDocImportacao | `String` |  |
+| VrPagoPisImportacao | `Nullable<Double>` |  |
+| VrPagoCofinsImportacao | `Nullable<Double>` |  |
+| NumeroAtoConcessorioRegimeDrawBack | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC120/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC120.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC120/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC120.LeParametros(string[])') | |

@@ -4,28 +4,27 @@
 ## ResultadoLote Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ambiente | `Ambiente` |  |
-| 03 | numeroRecibo | `String` |  |
-| 04 | situacaoProcess | `ResultadoLoteProcessamento` |  |
-| 05 | resultado | `List<ResultadoGuiaGNRE>` |  |
-| 06 | ResultadoProcessamento | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, ResultadoLote, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, ResultadoLote) | `Boolean` |  |
-| Deserialize(string) | `ResultadoLote` |  |
-| Deserialize(Stream) | `ResultadoLote` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, ResultadoLote, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, ResultadoLote) | `Boolean` |  |
-| LoadFrom(Stream) | `ResultadoLote` |  |
-| LoadFromAsync(Stream) | `Task<ResultadoLote>` |  |
-| LoadFromAsync(Stream, bool) | `Task<ResultadoLote>` |  |
+| ambiente | `Ambiente` |  |
+| numeroRecibo | `String` |  |
+| situacaoProcess | `ResultadoLoteProcessamento` |  |
+| resultado | `List<ResultadoGuiaGNRE>` |  |
+| ResultadoProcessamento | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, ResultadoLote)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/CanDeserialize(string,ResultadoLote).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.CanDeserialize(string, EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote)') | |
+| [CanDeserialize(string, ResultadoLote, Exception)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/CanDeserialize(string,ResultadoLote,Exception).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.CanDeserialize(string, EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, ResultadoLote)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/CanLoadFrom(Stream,ResultadoLote).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote)') | |
+| [CanLoadFrom(Stream, ResultadoLote, Exception)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/CanLoadFrom(Stream,ResultadoLote,Exception).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/Deserialize(string).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/LoadFromAsync(Stream).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.LoadFromAsync(System.IO.Stream)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.LoadFromAsync(System.IO.Stream, bool)') | |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.OnPropertyChanged(string)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.GNRE.V2/ResultadoLote/Serialize().md 'EficazFramework.SPED.Schemas.GNRE.V2.ResultadoLote.Serialize()') | Serializes current TNfeProc object into an XML document |

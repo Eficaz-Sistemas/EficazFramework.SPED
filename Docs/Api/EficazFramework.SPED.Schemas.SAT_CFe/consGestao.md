@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | cUF | `String` |  |
-| 04 | parametroGestao | `consGestaoParametroGestao` |  |
-| 05 | nSeg | `String` |  |
-| 06 | dhEnvio | `String` |  |
-| 07 | nserieSAT | `String` |  |
-| 08 | Versao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAmb | `Ambiente` |  |
+| cUF | `String` |  |
+| parametroGestao | `consGestaoParametroGestao` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| Versao | `String` |  |

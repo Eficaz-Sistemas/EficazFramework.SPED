@@ -4,26 +4,25 @@
 ## Registro3N_AnexoC_GARE_SP Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoRecolhimento | `String` |  |
-| 03 | TipoInscricao | `String` | 1 = CNPJ [Default]            2 = CEI |
-| 04 | CNPJ_CPF | `String` |  |
-| 05 | InscricaoEstadual | `String` |  |
-| 06 | DividaAtiva_Etiqueta | `String` |  |
-| 07 | Parcela_Notificacao | `String` |  |
-| 08 | Competencia | `Nullable<DateTime>` |  |
-| 09 | ParcelaNotificacao | `String` |  |
-| 10 | ValorPrincipal | `Nullable<Double>` |  |
-| 11 | ValorMulta | `Nullable<Double>` |  |
-| 12 | ValorJurosEncargos | `Nullable<Double>` |  |
-| 13 | ValorTotal | `Nullable<Double>` |  |
-| 14 | DataVencimento | `Nullable<DateTime>` |  |
-| 15 | DataArrecadacao | `Nullable<DateTime>` |  |
-| 16 | ContribuinteNome | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoRecolhimento | `String` |  |
+| TipoInscricao | `String` | 1 = CNPJ [Default]            2 = CEI |
+| CNPJ_CPF | `String` |  |
+| InscricaoEstadual | `String` |  |
+| DividaAtiva_Etiqueta | `String` |  |
+| Parcela_Notificacao | `String` |  |
+| Competencia | `Nullable<DateTime>` |  |
+| ParcelaNotificacao | `String` |  |
+| ValorPrincipal | `Nullable<Double>` |  |
+| ValorMulta | `Nullable<Double>` |  |
+| ValorJurosEncargos | `Nullable<Double>` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| DataVencimento | `Nullable<DateTime>` |  |
+| DataArrecadacao | `Nullable<DateTime>` |  |
+| ContribuinteNome | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N_AnexoC_GARE_SP/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N_AnexoC_GARE_SP.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N_AnexoC_GARE_SP/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N_AnexoC_GARE_SP.LeParametros(string[])') | |

@@ -4,6 +4,6 @@
 ## eSocialEvtAqProdInfoAquisProd Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEstabAdquir | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquir` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEstabAdquir | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquir` |  |

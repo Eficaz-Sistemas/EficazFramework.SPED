@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tipo | `TipoValor` |  |
-| 03 | Value | `String` |  |
-| 04 | NumericValue | `Nullable<Double>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tipo | `TipoValor` |  |
+| Value | `String` |  |
+| NumericValue | `Nullable<Double>` |  |

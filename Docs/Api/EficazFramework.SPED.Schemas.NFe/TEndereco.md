@@ -4,17 +4,16 @@
 ## TEndereco Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xLgr | `String` |  |
-| 03 | nro | `String` |  |
-| 04 | xCpl | `String` |  |
-| 05 | xBairro | `String` |  |
-| 06 | cMun | `String` |  |
-| 07 | xMun | `String` |  |
-| 08 | CEP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xLgr | `String` |  |
+| nro | `String` |  |
+| xCpl | `String` |  |
+| xBairro | `String` |  |
+| cMun | `String` |  |
+| xMun | `String` |  |
+| CEP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TEndereco/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TEndereco.OnPropertyChanged(string)') | |

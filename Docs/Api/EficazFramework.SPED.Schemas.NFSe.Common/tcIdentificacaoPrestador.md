@@ -4,13 +4,12 @@
 ## tcIdentificacaoPrestador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Cnpj | `String` |  |
-| 03 | CpfCnpj | `tcCpfCnpj` |  |
-| 04 | InscricaoMunicipal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Cnpj | `String` |  |
+| CpfCnpj | `tcCpfCnpj` |  |
+| InscricaoMunicipal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcIdentificacaoPrestador/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcIdentificacaoPrestador.OnPropertyChanged(string)') | |

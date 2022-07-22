@@ -4,13 +4,12 @@
 ## ReinfEvtAssocDespRepIdeContri Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | ideEstab | `ReinfEvtAssocDespRepIdeContriIdeEstab` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| NumeroInscricaoTag() | `String` |  |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+| ideEstab | `ReinfEvtAssocDespRepIdeContriIdeEstab` |  |
+
+| Methods | |
+| :--- | :--- |
+| [NumeroInscricaoTag()](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAssocDespRepIdeContri/NumeroInscricaoTag().md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAssocDespRepIdeContri.NumeroInscricaoTag()') | |

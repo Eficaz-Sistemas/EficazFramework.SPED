@@ -8,21 +8,20 @@ Signatários do Termo de Verificação para Fins de Substituição da ECD
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NomeSignatario | `String` |  |
-| 03 | CPFOuCNPJ | `String` |  |
-| 04 | QualificacaoAssinante | `String` |  |
-| 05 | CodigodeQualificacaoAssinante | `String` |  |
-| 06 | NumeroInscCRC | `String` |  |
-| 07 | EmailSignatario | `String` |  |
-| 08 | Fone | `String` |  |
-| 09 | UFCRC | `String` |  |
-| 10 | NumSequencialCRC | `String` |  |
-| 11 | DataValidCRC | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NomeSignatario | `String` |  |
+| CPFOuCNPJ | `String` |  |
+| QualificacaoAssinante | `String` |  |
+| CodigodeQualificacaoAssinante | `String` |  |
+| NumeroInscCRC | `String` |  |
+| EmailSignatario | `String` |  |
+| Fone | `String` |  |
+| UFCRC | `String` |  |
+| NumSequencialCRC | `String` |  |
+| DataValidCRC | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ932/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ932.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ932/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ932.LeParametros(string[])') | |

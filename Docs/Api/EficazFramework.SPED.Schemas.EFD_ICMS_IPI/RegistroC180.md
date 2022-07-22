@@ -8,21 +8,20 @@ Items dos Documentos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodRespRetencao | `CodRespRetStC180` |  |
-| 03 | QuantidadeItem | `Nullable<Double>` |  |
-| 04 | Unidade | `String` |  |
-| 05 | VrUnitario | `Nullable<Double>` |  |
-| 06 | VrUnitarioOpPropria | `Nullable<Double>` |  |
-| 07 | VrUnitarioBcICMSSt | `Nullable<Double>` |  |
-| 08 | VrUnitarioICMSSt | `Nullable<Double>` |  |
-| 09 | VrUnitarioFCPStAgregado | `Nullable<Double>` |  |
-| 10 | CodigoDocArrecad | `CodigoDocArrecadC180` |  |
-| 11 | NumeroDocArrecad | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodRespRetencao | `CodRespRetStC180` |  |
+| QuantidadeItem | `Nullable<Double>` |  |
+| Unidade | `String` |  |
+| VrUnitario | `Nullable<Double>` |  |
+| VrUnitarioOpPropria | `Nullable<Double>` |  |
+| VrUnitarioBcICMSSt | `Nullable<Double>` |  |
+| VrUnitarioICMSSt | `Nullable<Double>` |  |
+| VrUnitarioFCPStAgregado | `Nullable<Double>` |  |
+| CodigoDocArrecad | `CodigoDocArrecadC180` |  |
+| NumeroDocArrecad | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC180/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC180.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC180/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC180.LeParametros(string[])') | |

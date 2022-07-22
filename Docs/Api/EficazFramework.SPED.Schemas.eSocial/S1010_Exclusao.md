@@ -4,6 +4,6 @@
 ## S1010_Exclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideRubrica | `TIdeRubrica` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideRubrica | `TIdeRubrica` |  |

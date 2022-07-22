@@ -8,20 +8,19 @@ Dados Cadastrais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Endereco | `String` |  |
-| 03 | Numero | `String` |  |
-| 04 | Complemento | `String` |  |
-| 05 | Bairro | `String` |  |
-| 06 | UF | `String` |  |
-| 07 | CodigoMunicipio | `String` |  |
-| 08 | CEP | `String` |  |
-| 09 | Telefone | `String` |  |
-| 10 | EMail | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| UF | `String` |  |
+| CodigoMunicipio | `String` |  |
+| CEP | `String` |  |
+| Telefone | `String` |  |
+| EMail | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/Registro0030/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.Registro0030.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/Registro0030/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.Registro0030.LeParametros(string[])') | |

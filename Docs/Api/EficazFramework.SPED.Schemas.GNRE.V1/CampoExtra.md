@@ -4,13 +4,12 @@
 ## CampoExtra Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codigo | `Int32` |  |
-| 03 | tipo | `TipoCampoExtra` |  |
-| 04 | valor | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| codigo | `Int32` |  |
+| tipo | `TipoCampoExtra` |  |
+| valor | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V1/CampoExtra/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V1.CampoExtra.OnPropertyChanged(string)') | |

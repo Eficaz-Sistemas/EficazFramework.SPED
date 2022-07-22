@@ -4,11 +4,11 @@
 ## ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | serie | `String` |  |
-| 03 | numDocto | `String` |  |
-| 04 | dtEmissaoNF | `DateTime` |  |
-| 05 | vlrBruto | `String` |  |
-| 06 | obs | `String` |  |
-| 07 | infoTpServ | `List<ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| serie | `String` |  |
+| numDocto | `String` |  |
+| dtEmissaoNF | `DateTime` |  |
+| vlrBruto | `String` |  |
+| obs | `String` |  |
+| infoTpServ | `List<ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ>` |  |

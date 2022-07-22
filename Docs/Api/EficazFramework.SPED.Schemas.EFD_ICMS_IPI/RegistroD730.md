@@ -8,20 +8,19 @@ Registro analítico Nota Fiscal Fatura Eletrônica de Serviços de Comunicação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Origem | `OrigemMercadoria` |  |
-| 03 | CST_ICMS | `CST_ICMS` |  |
-| 04 | CFOP | `String` |  |
-| 05 | AliquotaICMS | `Nullable<Double>` |  |
-| 06 | ValorOperacao | `Nullable<Double>` |  |
-| 07 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
-| 08 | ValorICMS | `Nullable<Double>` |  |
-| 09 | ValorReducaoBC | `Nullable<Double>` |  |
-| 10 | CodigoObservacao0460 | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Origem | `OrigemMercadoria` |  |
+| CST_ICMS | `CST_ICMS` |  |
+| CFOP | `String` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| ValorOperacao | `Nullable<Double>` |  |
+| ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| ValorReducaoBC | `Nullable<Double>` |  |
+| CodigoObservacao0460 | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD730/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD730.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD730/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD730.LeParametros(string[])') | |

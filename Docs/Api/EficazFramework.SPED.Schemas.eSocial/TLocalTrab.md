@@ -4,8 +4,8 @@
 ## TLocalTrab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `SByte` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | descComp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `SByte` |  |
+| nrInsc | `String` |  |
+| descComp | `String` |  |

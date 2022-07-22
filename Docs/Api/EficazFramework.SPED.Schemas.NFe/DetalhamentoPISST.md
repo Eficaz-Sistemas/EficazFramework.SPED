@@ -4,15 +4,14 @@
 ## DetalhamentoPISST Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Aliquota | `Nullable<Double>` | Alíquota do PIS, em percentual (%). |
-| 03 | QuantidadeVendida | `Nullable<Double>` |  |
-| 04 | AliquotaMoeda | `Nullable<Double>` | Alíquota do PIS, em moeda (R$). |
-| 05 | BaseDeCalculo | `Nullable<Double>` |  |
-| 06 | ValorPISST | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Aliquota | `Nullable<Double>` | Alíquota do PIS, em percentual (%). |
+| QuantidadeVendida | `Nullable<Double>` |  |
+| AliquotaMoeda | `Nullable<Double>` | Alíquota do PIS, em moeda (R$). |
+| BaseDeCalculo | `Nullable<Double>` |  |
+| ValorPISST | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoPISST/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPISST.OnPropertyChanged(string)') | |

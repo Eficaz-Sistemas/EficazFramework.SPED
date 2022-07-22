@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xTextoDet | `String` |  |
-| 03 | xCampoDet | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| xTextoDet | `String` |  |
+| xCampoDet | `String` |  |

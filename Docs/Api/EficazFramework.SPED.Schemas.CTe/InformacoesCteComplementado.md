@@ -4,11 +4,10 @@
 ## InformacoesCteComplementado Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/InformacoesCteComplementado/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCteComplementado.OnPropertyChanged(string)') | |

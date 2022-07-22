@@ -4,12 +4,11 @@
 ## ReferenciaDocFiscal Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `Object` |  |
-| 03 | TipoReferencia | `TipoDocumentoReferencia` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Item | `Object` |  |
+| TipoReferencia | `TipoDocumentoReferencia` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ReferenciaDocFiscal/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ReferenciaDocFiscal.OnPropertyChanged(string)') | |

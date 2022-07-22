@@ -4,12 +4,11 @@
 ## DetalhamentoCOFINS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Tributacao | `DetalhamentoCOFINS_Tributacao` |  |
-| 03 | TributacaoIndentifier | `Tributacao_COFINS_Identifier` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Tributacao | `DetalhamentoCOFINS_Tributacao` |  |
+| TributacaoIndentifier | `Tributacao_COFINS_Identifier` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoCOFINS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoCOFINS.OnPropertyChanged(string)') | |

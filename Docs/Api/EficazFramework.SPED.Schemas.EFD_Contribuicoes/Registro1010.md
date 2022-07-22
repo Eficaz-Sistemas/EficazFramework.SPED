@@ -8,17 +8,16 @@ Processo Referenciado - Ação judicial
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentNumProcessoJudicial | `String` |  |
-| 03 | IdentSecaoJudiciaria | `String` |  |
-| 04 | IndVara | `String` |  |
-| 05 | IndicadorNaturezaAcaoJudicialJF | `IndicadorNaturezaAcaoJudicialJF` |  |
-| 06 | DescricaoResumidaEfeitosTributario | `String` |  |
-| 07 | DataSetencaDecisaoJudicial | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IdentNumProcessoJudicial | `String` |  |
+| IdentSecaoJudiciaria | `String` |  |
+| IndVara | `String` |  |
+| IndicadorNaturezaAcaoJudicialJF | `IndicadorNaturezaAcaoJudicialJF` |  |
+| DescricaoResumidaEfeitosTributario | `String` |  |
+| DataSetencaDecisaoJudicial | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1010/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1010.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1010/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1010.LeParametros(string[])') | |

@@ -8,25 +8,24 @@ Abertura do Arquivo Digital e Identificação da entidade
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TipoEscrit | `TipoEscritur` |  |
-| 03 | SituacaoEspecial | `SituacaoEspecial` |  |
-| 04 | NumeroReciboAnterior | `String` |  |
-| 05 | DataInicial | `Nullable<DateTime>` |  |
-| 06 | DataFinal | `Nullable<DateTime>` |  |
-| 07 | NomeEmpresarial | `String` |  |
-| 08 | NumeroCnpj | `String` |  |
-| 09 | UF | `String` |  |
-| 10 | CodigoMunicipio | `String` |  |
-| 11 | Suframa | `String` |  |
-| 12 | IndicadorNaturezaPJ | `IndicadorNaturezaPJ` |  |
-| 13 | IndicadorTipoAtividadePreponderante | `IndicadorTipoAtividadePreponderante` |  |
-| 14 | Registro0001 | `Registro0001` |  |
-| 15 | Registro0990 | `Registro0990` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TipoEscrit | `TipoEscritur` |  |
+| SituacaoEspecial | `SituacaoEspecial` |  |
+| NumeroReciboAnterior | `String` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| NomeEmpresarial | `String` |  |
+| NumeroCnpj | `String` |  |
+| UF | `String` |  |
+| CodigoMunicipio | `String` |  |
+| Suframa | `String` |  |
+| IndicadorNaturezaPJ | `IndicadorNaturezaPJ` |  |
+| IndicadorTipoAtividadePreponderante | `IndicadorTipoAtividadePreponderante` |  |
+| Registro0001 | `Registro0001` |  |
+| Registro0990 | `Registro0990` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0000/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0000.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0000/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0000.LeParametros(string[])') | |

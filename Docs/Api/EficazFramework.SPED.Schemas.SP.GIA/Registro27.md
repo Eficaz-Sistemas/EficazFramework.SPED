@@ -6,14 +6,13 @@
 IE Substituído
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadualSubstituido | `String` |  |
-| 03 | NumeroNF | `Nullable<Int32>` |  |
-| 04 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadualSubstituido | `String` |  |
+| NumeroNF | `Nullable<Int32>` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro27/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro27.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro27/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro27.LeParametros(string[])') | |

@@ -8,14 +8,13 @@ Totais do Inventário
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInventario | `Nullable<DateTime>` |  |
-| 03 | ValorEstoque | `Nullable<Double>` |  |
-| 04 | Motivo | `MotivoInventario` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInventario | `Nullable<DateTime>` |  |
+| ValorEstoque | `Nullable<Double>` |  |
+| Motivo | `MotivoInventario` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroH005/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroH005.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroH005/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroH005.LeParametros(string[])') | |

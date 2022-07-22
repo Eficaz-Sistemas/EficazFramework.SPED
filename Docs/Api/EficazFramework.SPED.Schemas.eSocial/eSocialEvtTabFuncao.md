@@ -4,9 +4,9 @@
 ## eSocialEvtTabFuncao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeCadastro` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoFuncao | `eSocialEvtTabFuncaoInfoFuncao` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeCadastro` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoFuncao | `eSocialEvtTabFuncaoInfoFuncao` |  |
+| Id | `String` |  |

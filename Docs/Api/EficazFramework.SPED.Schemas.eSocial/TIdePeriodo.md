@@ -6,7 +6,7 @@
 Informação do Período (inicial e final, formato AAAA-MM)
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | iniValid | `String` |  |
-| 03 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

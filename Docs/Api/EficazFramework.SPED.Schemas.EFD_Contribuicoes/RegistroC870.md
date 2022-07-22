@@ -8,24 +8,23 @@ Resumo Diário de Documentos Emitidos por Equipamento SAT
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoItem | `String` |  |
-| 03 | CFOP | `String` |  |
-| 04 | VrTotalItens | `Nullable<Double>` |  |
-| 05 | VrExclusaoDescontoItens | `Nullable<Double>` |  |
-| 06 | CSTPis | `String` |  |
-| 07 | VrBcPis | `Nullable<Double>` |  |
-| 08 | AliquotaPis | `Nullable<Double>` |  |
-| 09 | VrPis | `Nullable<Double>` |  |
-| 10 | CSTCofins | `String` |  |
-| 11 | VrBcCofins | `Nullable<Double>` |  |
-| 12 | AliquotaCofins | `Nullable<Double>` |  |
-| 13 | VrCofins | `Nullable<Double>` |  |
-| 14 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoItem | `String` |  |
+| CFOP | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| VrExclusaoDescontoItens | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC870/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC870.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC870/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC870.LeParametros(string[])') | |

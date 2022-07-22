@@ -8,19 +8,18 @@ Demonstração do Resultado Líquido no Período Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoReferencial | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | TipoConta | `String` | S - Sintética            A - Analitica |
-| 05 | Nivel | `Int32` |  |
-| 06 | Natureza | `TipoConta` |  |
-| 07 | ContaSuperior | `String` |  |
-| 08 | Valor | `Nullable<Double>` |  |
-| 09 | NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoReferencial | `String` |  |
+| Descricao | `String` |  |
+| TipoConta | `String` | S - Sintética            A - Analitica |
+| Nivel | `Int32` |  |
+| Natureza | `TipoConta` |  |
+| ContaSuperior | `String` |  |
+| Valor | `Nullable<Double>` |  |
+| NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroL300/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroL300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroL300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroL300.LeParametros(string[])') | |

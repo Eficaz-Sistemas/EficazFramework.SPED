@@ -8,17 +8,16 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ValorContabilParcela | `Nullable<Double>` |  |
-| 03 | ValorBcISSParcela | `Nullable<Double>` |  |
-| 04 | AliquotaISS | `Nullable<Double>` |  |
-| 05 | ValorISSParcela | `Nullable<Double>` |  |
-| 06 | ValorOpIsentasNtribISS | `Nullable<Double>` |  |
-| 07 | CodigoServico | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ValorContabilParcela | `Nullable<Double>` |  |
+| ValorBcISSParcela | `Nullable<Double>` |  |
+| AliquotaISS | `Nullable<Double>` |  |
+| ValorISSParcela | `Nullable<Double>` |  |
+| ValorOpIsentasNtribISS | `Nullable<Double>` |  |
+| CodigoServico | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB035/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB035.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB035/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB035.LeParametros(string[])') | |

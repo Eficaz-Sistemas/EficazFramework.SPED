@@ -8,8 +8,8 @@ DOCUMENTOS FISCAIS - SERVIÇOS (NÃO SUJEITOS AO ICMS)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | RegistroA001 | `RegistroA001` |  |
-| 03 | RegistrosA010 | `IEnumerable<RegistroA010>` |  |
-| 04 | RegistrosA100 | `IEnumerable<RegistroA100>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| RegistroA001 | `RegistroA001` |  |
+| RegistrosA010 | `IEnumerable<RegistroA010>` |  |
+| RegistrosA100 | `IEnumerable<RegistroA100>` |  |

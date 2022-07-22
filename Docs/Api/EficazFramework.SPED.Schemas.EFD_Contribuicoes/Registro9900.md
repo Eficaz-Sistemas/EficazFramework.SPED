@@ -6,13 +6,12 @@
 Encerramento do Bloco 9
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Registro | `String` | Registro Totalizado |
-| 03 | TotalLinhas | `Nullable<Int32>` | Total de Linhas do Bloco |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Registro | `String` | Registro Totalizado |
+| TotalLinhas | `Nullable<Int32>` | Total de Linhas do Bloco |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro9900/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro9900.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro9900/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro9900.LeParametros(string[])') | |

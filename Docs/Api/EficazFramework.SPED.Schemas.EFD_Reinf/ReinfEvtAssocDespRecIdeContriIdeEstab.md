@@ -4,8 +4,8 @@
 ## ReinfEvtAssocDespRecIdeContriIdeEstab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscEstab | `PersonalidadeJuridica` |  |
-| 03 | nrInscEstab | `String` |  |
-| 04 | recursosRec | `ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInscEstab | `PersonalidadeJuridica` |  |
+| nrInscEstab | `String` |  |
+| recursosRec | `ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec[]` |  |

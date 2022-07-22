@@ -4,12 +4,11 @@
 ## NfseSubstituida Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Numero | `String` |  |
-| 03 | CodigoVerificacao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Numero | `String` |  |
+| CodigoVerificacao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/NfseSubstituida/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.NfseSubstituida.OnPropertyChanged(string)') | |

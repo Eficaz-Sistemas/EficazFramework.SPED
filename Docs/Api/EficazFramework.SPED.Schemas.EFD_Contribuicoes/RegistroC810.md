@@ -8,23 +8,22 @@ Detalhamento do Cupom Fiscal Eletrônico
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CFOP | `String` |  |
-| 03 | ValorTotal | `Nullable<Double>` |  |
-| 04 | CodigoProduto | `String` |  |
-| 05 | PIS_CST | `String` |  |
-| 06 | PIS_BaseCalculo | `Nullable<Double>` |  |
-| 07 | PIS_Aliquota | `Nullable<Double>` |  |
-| 08 | PIS_Valor | `Nullable<Double>` |  |
-| 09 | COFINS_CST | `String` |  |
-| 10 | COFINS_BaseCalculo | `Nullable<Double>` |  |
-| 11 | COFINS_Aliquota | `Nullable<Double>` |  |
-| 12 | COFINS_Valor | `Nullable<Double>` |  |
-| 13 | CodContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CFOP | `String` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| CodigoProduto | `String` |  |
+| PIS_CST | `String` |  |
+| PIS_BaseCalculo | `Nullable<Double>` |  |
+| PIS_Aliquota | `Nullable<Double>` |  |
+| PIS_Valor | `Nullable<Double>` |  |
+| COFINS_CST | `String` |  |
+| COFINS_BaseCalculo | `Nullable<Double>` |  |
+| COFINS_Aliquota | `Nullable<Double>` |  |
+| COFINS_Valor | `Nullable<Double>` |  |
+| CodContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC810/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC810.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC810/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC810.LeParametros(string[])') | |

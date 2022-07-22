@@ -10,22 +10,21 @@ Compras e Vendas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocs | `String` |  |
-| 03 | DataInicialRefConsolidacao | `Nullable<DateTime>` |  |
-| 04 | DataFinalRefConsolidacao | `Nullable<DateTime>` |  |
-| 05 | CodigoItem | `String` |  |
-| 06 | CodigoNCM | `String` |  |
-| 07 | CodigoEXTIPI | `String` |  |
-| 08 | VrTotalItem | `Nullable<Double>` |  |
-| 09 | RegistrosC191 | `List<RegistroC191>` |  |
-| 10 | RegistrosC195 | `List<RegistroC195>` |  |
-| 11 | RegistrosC198 | `List<RegistroC198>` |  |
-| 12 | RegistrosC199 | `List<RegistroC199>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocs | `String` |  |
+| DataInicialRefConsolidacao | `Nullable<DateTime>` |  |
+| DataFinalRefConsolidacao | `Nullable<DateTime>` |  |
+| CodigoItem | `String` |  |
+| CodigoNCM | `String` |  |
+| CodigoEXTIPI | `String` |  |
+| VrTotalItem | `Nullable<Double>` |  |
+| RegistrosC191 | `List<RegistroC191>` |  |
+| RegistrosC195 | `List<RegistroC195>` |  |
+| RegistrosC198 | `List<RegistroC198>` |  |
+| RegistrosC199 | `List<RegistroC199>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC190/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC190.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC190/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC190.LeParametros(string[])') | |

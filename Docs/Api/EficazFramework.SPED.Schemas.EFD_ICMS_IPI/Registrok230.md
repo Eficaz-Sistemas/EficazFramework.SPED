@@ -8,22 +8,21 @@ Itens Produzidos
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicio | `Nullable<DateTime>` |  |
-| 03 | DataFim | `Nullable<DateTime>` |  |
-| 04 | CodigoRelatorio | `String` |  |
-| 05 | CodigoProduto | `String` |  |
-| 06 | Quantidade | `Nullable<Double>` |  |
-| 07 | RegistrosK235 | `List<RegistroK235>` |  |
-| 08 | Custo | `Nullable<Double>` |  |
-| 09 | ICMS | `Nullable<Double>` |  |
-| 10 | IPI | `Nullable<Double>` |  |
-| 11 | PIS | `Nullable<Double>` |  |
-| 12 | COFINS | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicio | `Nullable<DateTime>` |  |
+| DataFim | `Nullable<DateTime>` |  |
+| CodigoRelatorio | `String` |  |
+| CodigoProduto | `String` |  |
+| Quantidade | `Nullable<Double>` |  |
+| RegistrosK235 | `List<RegistroK235>` |  |
+| Custo | `Nullable<Double>` |  |
+| ICMS | `Nullable<Double>` |  |
+| IPI | `Nullable<Double>` |  |
+| PIS | `Nullable<Double>` |  |
+| COFINS | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registrok230/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registrok230.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registrok230/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registrok230.LeParametros(string[])') | |

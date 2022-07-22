@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ultNSU | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ultNSU | `String` |  |

@@ -4,6 +4,6 @@
 ## ContagemRegistroEventArgs Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TotalRegistro | `Int64` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| TotalRegistro | `Int64` |  |

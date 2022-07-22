@@ -8,17 +8,16 @@ Bombas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroSerie | `String` |  |
-| 03 | Fabricante | `String` |  |
-| 04 | Modelo | `String` |  |
-| 05 | TipoMedicao | `Int32` |  |
-| 06 | Registros1360 | `List<Registro1360>` |  |
-| 07 | Registros1370 | `List<Registro1370>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroSerie | `String` |  |
+| Fabricante | `String` |  |
+| Modelo | `String` |  |
+| TipoMedicao | `Int32` |  |
+| Registros1360 | `List<Registro1360>` |  |
+| Registros1370 | `List<Registro1370>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1350/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1350.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1350/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1350.LeParametros(string[])') | |

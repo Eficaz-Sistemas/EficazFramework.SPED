@@ -4,18 +4,17 @@
 ## Expedidor Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | CNPJ_CPFFormatado | `String` |  |
-| 05 | IE | `String` |  |
-| 06 | xNome | `String` |  |
-| 07 | fone | `String` |  |
-| 08 | Endereco | `Endereco` |  |
-| 09 | email | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| fone | `String` |  |
+| Endereco | `Endereco` |  |
+| email | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Expedidor/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Expedidor.OnPropertyChanged(string)') | |

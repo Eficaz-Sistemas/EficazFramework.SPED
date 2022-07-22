@@ -4,20 +4,19 @@
 ## Destinatario Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ_CPF | `String` |  |
-| 03 | CNPJ_CPFFormatado | `String` |  |
-| 04 | DestinatarioPersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 05 | idEstrangeiro | `String` |  |
-| 06 | RazaoSocial | `String` |  |
-| 07 | Endereco | `Endereco` |  |
-| 08 | InscricaoEstadual | `String` |  |
-| 09 | IEFormatado | `String` |  |
-| 10 | InscricaoSuframa | `String` |  |
-| 11 | eMail | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| DestinatarioPersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| idEstrangeiro | `String` |  |
+| RazaoSocial | `String` |  |
+| Endereco | `Endereco` |  |
+| InscricaoEstadual | `String` |  |
+| IEFormatado | `String` |  |
+| InscricaoSuframa | `String` |  |
+| eMail | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Destinatario/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Destinatario.OnPropertyChanged(string)') | |

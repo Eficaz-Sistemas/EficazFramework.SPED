@@ -8,15 +8,14 @@ REGISTRO D110: ITEMS DO DOCUMENTO FISCAL
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroSequencialItem | `Nullable<Int32>` |  |
-| 03 | CodigoProduto | `String` |  |
-| 04 | ValorServico | `Nullable<Double>` |  |
-| 05 | OutrosValores | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroSequencialItem | `Nullable<Int32>` |  |
+| CodigoProduto | `String` |  |
+| ValorServico | `Nullable<Double>` |  |
+| OutrosValores | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD110/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD110.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD110/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD110.LeParametros(string[])') | |

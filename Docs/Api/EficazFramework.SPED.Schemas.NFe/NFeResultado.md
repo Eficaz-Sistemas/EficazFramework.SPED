@@ -7,8 +7,7 @@ Objeto genérico que contém informações por NF-e, Cancelamento ou Carta de Co
 Está listado na Propriedade 'Resultados' da clsse RetornoConsulta.
 
 ### Remarks
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/NFeResultado/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.NFeResultado.OnPropertyChanged(string)') | |

@@ -6,11 +6,11 @@
 Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060)
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indRetif | `IndicadorRetificacao` |  |
-| 03 | nrRecibo | `String` |  |
-| 04 | perApur | `String` |  |
-| 05 | tpAmb | `Ambiente` |  |
-| 06 | procEmi | `EmissorEvento` |  |
-| 07 | verProc | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indRetif | `IndicadorRetificacao` |  |
+| nrRecibo | `String` |  |
+| perApur | `String` |  |
+| tpAmb | `Ambiente` |  |
+| procEmi | `EmissorEvento` |  |
+| verProc | `String` |  |

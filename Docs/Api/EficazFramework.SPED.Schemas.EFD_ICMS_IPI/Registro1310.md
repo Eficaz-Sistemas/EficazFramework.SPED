@@ -8,21 +8,20 @@ Movimentação Diária de Combustíveis por Tanque
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroTanque | `String` |  |
-| 03 | EstoqueAbertura | `Nullable<Double>` |  |
-| 04 | VolumeEntradas | `Nullable<Double>` |  |
-| 05 | VolumeDisponivel | `Nullable<Double>` | Estoque Abertura + Volume Entradas |
-| 06 | VolumeSaidas | `Nullable<Double>` |  |
-| 07 | EstoqueEscritural | `Nullable<Double>` | Volume Disponível - Volume Saídas |
-| 08 | AjustesPerda | `Nullable<Double>` |  |
-| 09 | AjustesGanho | `Nullable<Double>` |  |
-| 10 | EstoqueFechamento | `Nullable<Double>` |  |
-| 11 | Registros1320 | `List<Registro1320>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroTanque | `String` |  |
+| EstoqueAbertura | `Nullable<Double>` |  |
+| VolumeEntradas | `Nullable<Double>` |  |
+| VolumeDisponivel | `Nullable<Double>` | Estoque Abertura + Volume Entradas |
+| VolumeSaidas | `Nullable<Double>` |  |
+| EstoqueEscritural | `Nullable<Double>` | Volume Disponível - Volume Saídas |
+| AjustesPerda | `Nullable<Double>` |  |
+| AjustesGanho | `Nullable<Double>` |  |
+| EstoqueFechamento | `Nullable<Double>` |  |
+| Registros1320 | `List<Registro1320>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1310/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1310.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1310/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1310.LeParametros(string[])') | |

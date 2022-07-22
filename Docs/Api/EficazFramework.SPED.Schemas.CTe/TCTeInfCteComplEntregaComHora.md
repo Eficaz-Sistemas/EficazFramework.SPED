@@ -4,12 +4,11 @@
 ## TCTeInfCteComplEntregaComHora Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpHor | `TCTeInfCteComplEntregaComHoraTpHor` |  |
-| 03 | hProg | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpHor | `TCTeInfCteComplEntregaComHoraTpHor` |  |
+| hProg | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaComHora/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaComHora.OnPropertyChanged(string)') | |

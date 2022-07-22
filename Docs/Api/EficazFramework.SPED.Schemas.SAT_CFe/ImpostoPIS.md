@@ -6,7 +6,7 @@
 PIS
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Tributacao | `DetalhamentoPIS` |  |
-| 03 | TributacaoIndentifier | `Tributacao_PIS_Identifier` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| Tributacao | `DetalhamentoPIS` |  |
+| TributacaoIndentifier | `Tributacao_PIS_Identifier` |  |

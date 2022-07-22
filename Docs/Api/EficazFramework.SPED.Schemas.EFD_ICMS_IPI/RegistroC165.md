@@ -3,28 +3,25 @@
 
 ## RegistroC165 Class
 
-REGISTRO C165: OPERAÇÕES COM COMBUSTÍVEIS
-
-### Remarks
+Operações com combustíveis
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodParticipante | `String` |  |
-| 03 | PlacaIdentificacaoVeiculo | `String` |  |
-| 04 | CodAutorizacaoSefaz | `String` |  |
-| 05 | NumPasseFiscal | `String` |  |
-| 06 | HoraSaideMercadorias | `Nullable<TimeSpan>` |  |
-| 07 | TemperaturaVolumeCombustivel | `Nullable<Double>` |  |
-| 08 | QuantVolumesTransportados | `String` |  |
-| 09 | PesoBrutoVolumes | `Nullable<Double>` |  |
-| 10 | PesoLiquidoVolumes | `Nullable<Double>` |  |
-| 11 | NomeMotorista | `String` |  |
-| 12 | CPFMotorista | `String` |  |
-| 13 | UFPlacaVeiculo | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodParticipante | `String` |  |
+| PlacaIdentificacaoVeiculo | `String` |  |
+| CodAutorizacaoSefaz | `String` |  |
+| NumPasseFiscal | `String` |  |
+| HoraSaideMercadorias | `Nullable<TimeSpan>` |  |
+| TemperaturaVolumeCombustivel | `Nullable<Double>` |  |
+| QuantVolumesTransportados | `String` |  |
+| PesoBrutoVolumes | `Nullable<Double>` |  |
+| PesoLiquidoVolumes | `Nullable<Double>` |  |
+| NomeMotorista | `String` |  |
+| CPFMotorista | `String` |  |
+| UFPlacaVeiculo | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC165/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC165.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC165/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC165.LeParametros(string[])') | |

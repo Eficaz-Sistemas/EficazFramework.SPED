@@ -4,8 +4,8 @@
 ## TDadosEstabInfoTrab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | regPt | `RegistroPonto` |  |
-| 03 | infoApr | `TDadosEstabInfoTrabInfoApr` |  |
-| 04 | infoPCD | `TDadosEstabInfoTrabInfoPCD` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| regPt | `RegistroPonto` |  |
+| infoApr | `TDadosEstabInfoTrabInfoApr` |  |
+| infoPCD | `TDadosEstabInfoTrabInfoPCD` |  |

@@ -8,19 +8,18 @@ Detalhamento dos ajustes da contribuição para o pis apurada
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DetVrContRedAcrescM220 | `Nullable<Double>` |  |
-| 03 | CSTPis | `String` |  |
-| 04 | DetBcGeradoraAjCont | `Nullable<Double>` |  |
-| 05 | DetAliqAjusteCont | `Nullable<Double>` |  |
-| 06 | DataOperacaoAjuste | `Nullable<DateTime>` |  |
-| 07 | DescAjuste | `String` |  |
-| 08 | CodigoContaContabil | `String` |  |
-| 09 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DetVrContRedAcrescM220 | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| DetBcGeradoraAjCont | `Nullable<Double>` |  |
+| DetAliqAjusteCont | `Nullable<Double>` |  |
+| DataOperacaoAjuste | `Nullable<DateTime>` |  |
+| DescAjuste | `String` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM225/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM225.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM225/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM225.LeParametros(string[])') | |

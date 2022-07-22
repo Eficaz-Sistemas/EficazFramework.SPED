@@ -4,11 +4,11 @@
 ## TOc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrOc | `String` |  |
-| 03 | orgaoEmissor | `String` |  |
-| 04 | dtExped | `DateTime` |  |
-| 05 | dtExpedSpecified | `Boolean` |  |
-| 06 | dtValid | `DateTime` |  |
-| 07 | dtValidSpecified | `Boolean` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrOc | `String` |  |
+| orgaoEmissor | `String` |  |
+| dtExped | `DateTime` |  |
+| dtExpedSpecified | `Boolean` |  |
+| dtValid | `DateTime` |  |
+| dtValidSpecified | `Boolean` |  |

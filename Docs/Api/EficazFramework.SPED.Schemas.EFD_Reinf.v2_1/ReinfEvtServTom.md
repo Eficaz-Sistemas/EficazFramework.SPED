@@ -4,9 +4,9 @@
 ## ReinfEvtServTom Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtIdeEvento_R20xx` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | infoServTom | `ReinfEvtServTomInfoServTom` |  |
-| 05 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtIdeEvento_R20xx` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| infoServTom | `ReinfEvtServTomInfoServTom` |  |
+| id | `String` |  |

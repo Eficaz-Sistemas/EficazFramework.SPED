@@ -4,13 +4,12 @@
 ## TCTeInfCteInfCTeNormInfModal Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Any | `XElement` |  |
-| 03 | versaoModal | `String` |  |
-| 04 | ItemModal | `Object` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Any | `XElement` |  |
+| versaoModal | `String` |  |
+| ItemModal | `Object` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfModal/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfModal.OnPropertyChanged(string)') | |

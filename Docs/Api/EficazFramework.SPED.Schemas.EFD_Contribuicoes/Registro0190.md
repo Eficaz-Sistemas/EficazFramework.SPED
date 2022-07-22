@@ -8,13 +8,12 @@ Identificação das Unidades de Medida
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoUnidadeMedida | `String` |  |
-| 03 | DescricaoUnidadeMedida | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoUnidadeMedida | `String` |  |
+| DescricaoUnidadeMedida | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0190/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0190.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0190/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0190.LeParametros(string[])') | |

@@ -8,14 +8,13 @@ Operações Geradoras de Crédito Acumulado nas Fichas 6A ou 6B
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | BaseCalculo | `Nullable<Double>` |  |
-| 03 | ICMSDebitado | `Nullable<Double>` |  |
-| 04 | DeclaracaoExportacao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| BaseCalculo | `Nullable<Double>` |  |
+| ICMSDebitado | `Nullable<Double>` |  |
+| DeclaracaoExportacao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5350/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5350.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5350/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5350.LeParametros(string[])') | |

@@ -4,9 +4,9 @@
 ## eSocialEvtTabHorTur Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeCadastro` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoHorContratual | `eSocialEvtTabHorTurInfoHorContratual` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeCadastro` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoHorContratual | `eSocialEvtTabHorTurInfoHorContratual` |  |
+| Id | `String` |  |

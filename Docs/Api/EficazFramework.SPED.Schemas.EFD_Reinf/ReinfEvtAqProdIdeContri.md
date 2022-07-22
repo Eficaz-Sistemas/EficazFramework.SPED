@@ -4,12 +4,11 @@
 ## ReinfEvtAqProdIdeContri Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| NumeroInscricaoTag() | `String` |  |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [NumeroInscricaoTag()](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdIdeContri/NumeroInscricaoTag().md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdIdeContri.NumeroInscricaoTag()') | |

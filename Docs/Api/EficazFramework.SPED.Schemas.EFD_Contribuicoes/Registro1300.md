@@ -8,18 +8,17 @@ Controle dos valores retidos da fonte - pis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorNaturezaRetFonte | `IndicadorNatRetFonte` |  |
-| 03 | PeriodoRecebRetencao | `Nullable<DateTime>` |  |
-| 04 | VrTotalRetencao | `Nullable<Double>` |  |
-| 05 | VrRetencaoDedContrDevidaPerEscPerAnteriores | `Nullable<Double>` |  |
-| 06 | VrRetencaoUtilPedRestituicao | `Nullable<Double>` |  |
-| 07 | VrRetencaoUtilDeclaracaoComp | `Nullable<Double>` |  |
-| 08 | SaldoRetencaoPerApFuturos | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorNaturezaRetFonte | `IndicadorNatRetFonte` |  |
+| PeriodoRecebRetencao | `Nullable<DateTime>` |  |
+| VrTotalRetencao | `Nullable<Double>` |  |
+| VrRetencaoDedContrDevidaPerEscPerAnteriores | `Nullable<Double>` |  |
+| VrRetencaoUtilPedRestituicao | `Nullable<Double>` |  |
+| VrRetencaoUtilDeclaracaoComp | `Nullable<Double>` |  |
+| SaldoRetencaoPerApFuturos | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1300.LeParametros(string[])') | |

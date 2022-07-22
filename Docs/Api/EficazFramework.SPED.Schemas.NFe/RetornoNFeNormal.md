@@ -8,29 +8,28 @@ Objeto de retorno do tipo Cancelamento de Nota Fiscal (Autorizada ou Denegada).
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Chave | `String` |  |
-| 03 | EmitenteCNPJ_CPF | `String` |  |
-| 04 | EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 05 | EmitenteRazaoSocial | `String` |  |
-| 06 | EmitenteIE | `String` |  |
-| 07 | EmissaoData | `Nullable<DateTime>` |  |
-| 08 | DataEmissao | `Nullable<DateTime>` |  |
-| 09 | Operacao | `OperacaoNFe` |  |
-| 10 | ValorTotal | `String` |  |
-| 11 | DigestValue | `String` |  |
-| 12 | DataAutorizacao | `Nullable<DateTime>` |  |
-| 13 | Situacao | `SituacaoNFe` |  |
-| 14 | SituacaoManifestacao | `SituacaoManifestacaoDestinatario` |  |
-| 15 | NSU | `String` |  |
-| 16 | Protocolo | `String` |  |
-| 17 | DocumentType | `XMLDocumentType` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| LoadFrom(Stream, bool) | `RetornoNFeNormal` |  |
-| LoadFromAsync(Stream, bool) | `Task<RetornoNFeNormal>` |  |
-| Deserialize(string) | `RetornoNFeNormal` |  |
+| Chave | `String` |  |
+| EmitenteCNPJ_CPF | `String` |  |
+| EmitentePersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| EmitenteRazaoSocial | `String` |  |
+| EmitenteIE | `String` |  |
+| EmissaoData | `Nullable<DateTime>` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Operacao | `OperacaoNFe` |  |
+| ValorTotal | `String` |  |
+| DigestValue | `String` |  |
+| DataAutorizacao | `Nullable<DateTime>` |  |
+| Situacao | `SituacaoNFe` |  |
+| SituacaoManifestacao | `SituacaoManifestacaoDestinatario` |  |
+| NSU | `String` |  |
+| Protocolo | `String` |  |
+| DocumentType | `XMLDocumentType` |  |
+
+| Methods | |
+| :--- | :--- |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.Deserialize(string)') | |
+| [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.LoadFrom(System.IO.Stream, bool)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.LoadFromAsync(System.IO.Stream, bool)') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/ToString().md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.ToString()') | |

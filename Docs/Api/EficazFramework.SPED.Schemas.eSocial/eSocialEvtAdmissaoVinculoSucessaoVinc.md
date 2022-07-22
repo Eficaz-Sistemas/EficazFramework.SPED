@@ -4,10 +4,10 @@
 ## eSocialEvtAdmissaoVinculoSucessaoVinc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscAnt | `VinculoSucecssaoAnteriorTipo` |  |
-| 03 | cnpjEmpregAnt | `String` |  |
-| 04 | matricAnt | `String` |  |
-| 05 | dtTransf | `DateTime` |  |
-| 06 | observacao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInscAnt | `VinculoSucecssaoAnteriorTipo` |  |
+| cnpjEmpregAnt | `String` |  |
+| matricAnt | `String` |  |
+| dtTransf | `DateTime` |  |
+| observacao | `String` |  |

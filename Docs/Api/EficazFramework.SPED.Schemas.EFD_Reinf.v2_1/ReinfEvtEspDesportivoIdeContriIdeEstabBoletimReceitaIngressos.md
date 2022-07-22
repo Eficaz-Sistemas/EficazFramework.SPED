@@ -4,12 +4,12 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpIngresso | `TipoIngressoCompeticao` |  |
-| 03 | descIngr | `String` |  |
-| 04 | qtdeIngrVenda | `UInt32` |  |
-| 05 | qtdeIngrVendidos | `UInt32` |  |
-| 06 | qtdeIngrDev | `UInt32` |  |
-| 07 | precoIndiv | `String` |  |
-| 08 | vlrTotal | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpIngresso | `TipoIngressoCompeticao` |  |
+| descIngr | `String` |  |
+| qtdeIngrVenda | `UInt32` |  |
+| qtdeIngrVendidos | `UInt32` |  |
+| qtdeIngrDev | `UInt32` |  |
+| precoIndiv | `String` |  |
+| vlrTotal | `String` |  |

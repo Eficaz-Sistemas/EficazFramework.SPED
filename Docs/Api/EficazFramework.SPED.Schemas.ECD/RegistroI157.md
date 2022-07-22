@@ -8,15 +8,14 @@ Transferência de Saldos de Plano de Contas Anterior
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodConta | `String` |  |
-| 03 | CodCentroCusto | `String` |  |
-| 04 | VrSaldoInicialPeriodo | `Nullable<Double>` |  |
-| 05 | IndicadorSituacaoSaldoInicial | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodConta | `String` |  |
+| CodCentroCusto | `String` |  |
+| VrSaldoInicialPeriodo | `Nullable<Double>` |  |
+| IndicadorSituacaoSaldoInicial | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI157/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI157.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI157/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI157.LeParametros(string[])') | |

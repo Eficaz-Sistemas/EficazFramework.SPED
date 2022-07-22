@@ -8,16 +8,15 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataEmissao | `Nullable<DateTime>` |  |
-| 03 | NumeroSerieFabEquip | `String` |  |
-| 04 | SituacaoTributariaAliquota | `String` |  |
-| 05 | ValorAcumulado | `Nullable<Double>` |  |
-| 06 | Brancos | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| NumeroSerieFabEquip | `String` |  |
+| SituacaoTributariaAliquota | `String` |  |
+| ValorAcumulado | `Nullable<Double>` |  |
+| Brancos | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro60A/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro60A.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro60A/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro60A.LeParametros(string[])') | |

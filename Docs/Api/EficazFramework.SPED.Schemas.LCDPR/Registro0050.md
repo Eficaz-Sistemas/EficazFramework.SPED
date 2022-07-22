@@ -8,17 +8,16 @@ Cadastro das Contas Bancárias do Produtor Rural
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaBanco | `Nullable<Int32>` |  |
-| 03 | Pais | `String` |  |
-| 04 | NumeroInstBancaria | `String` |  |
-| 05 | Nome | `String` |  |
-| 06 | Agencia | `String` |  |
-| 07 | NumeroCC | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaBanco | `Nullable<Int32>` |  |
+| Pais | `String` |  |
+| NumeroInstBancaria | `String` |  |
+| Nome | `String` |  |
+| Agencia | `String` |  |
+| NumeroCC | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/Registro0050/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.Registro0050.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/Registro0050/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.Registro0050.LeParametros(string[])') | |

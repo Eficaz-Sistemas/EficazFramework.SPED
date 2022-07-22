@@ -4,37 +4,36 @@
 ## DetalhamentoICMS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CST | `CST_ICMS` |  |
-| 03 | vBC | `Nullable<Double>` |  |
-| 04 | pRedBC | `Nullable<Double>` |  |
-| 05 | pICMS | `Nullable<Double>` |  |
-| 06 | vICMS | `Nullable<Double>` |  |
-| 07 | vBCSTRet | `Nullable<Double>` |  |
-| 08 | vICMSSTRet | `Nullable<Double>` |  |
-| 09 | pICMSSTRet | `Nullable<Double>` |  |
-| 10 | vCred | `Nullable<Double>` |  |
-| 11 | pRedBCOutraUF | `Nullable<Double>` |  |
-| 12 | vBCOutraUF | `String` |  |
-| 13 | pICMSOutraUF | `String` |  |
-| 14 | vICMSOutraUF | `String` |  |
-| 15 | indSN | `DetalhamentoICMSIndicadorSN` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializevBC() | `Boolean` |  |
-| ShouldSerializepRedBC() | `Boolean` |  |
-| ShouldSerializepICMS() | `Boolean` |  |
-| ShouldSerializevICMS() | `Boolean` |  |
-| ShouldSerializevBCSTRet() | `Boolean` |  |
-| ShouldSerializevICMSSTRet() | `Boolean` |  |
-| ShouldSerializepICMSSTRet() | `Boolean` |  |
-| ShouldSerializevCred() | `Boolean` |  |
-| ShouldSerializepRedBCOutraUF() | `Boolean` |  |
-| ShouldSerializevBCOutraUF() | `Boolean` |  |
-| ShouldSerializepICMSOutraUF() | `Boolean` |  |
-| ShouldSerializevICMSOutraUF() | `Boolean` |  |
-| ShouldSerializeindSN() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| CST | `CST_ICMS` |  |
+| vBC | `Nullable<Double>` |  |
+| pRedBC | `Nullable<Double>` |  |
+| pICMS | `Nullable<Double>` |  |
+| vICMS | `Nullable<Double>` |  |
+| vBCSTRet | `Nullable<Double>` |  |
+| vICMSSTRet | `Nullable<Double>` |  |
+| pICMSSTRet | `Nullable<Double>` |  |
+| vCred | `Nullable<Double>` |  |
+| pRedBCOutraUF | `Nullable<Double>` |  |
+| vBCOutraUF | `String` |  |
+| pICMSOutraUF | `String` |  |
+| vICMSOutraUF | `String` |  |
+| indSN | `DetalhamentoICMSIndicadorSN` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.OnPropertyChanged(string)') | |
+| [ShouldSerializeindSN()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializeindSN().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializeindSN()') | |
+| [ShouldSerializepICMS()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializepICMS().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializepICMS()') | |
+| [ShouldSerializepICMSOutraUF()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializepICMSOutraUF().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializepICMSOutraUF()') | |
+| [ShouldSerializepICMSSTRet()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializepICMSSTRet().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializepICMSSTRet()') | |
+| [ShouldSerializepRedBC()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializepRedBC().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializepRedBC()') | |
+| [ShouldSerializepRedBCOutraUF()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializepRedBCOutraUF().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializepRedBCOutraUF()') | |
+| [ShouldSerializevBC()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevBC().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevBC()') | |
+| [ShouldSerializevBCOutraUF()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevBCOutraUF().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevBCOutraUF()') | |
+| [ShouldSerializevBCSTRet()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevBCSTRet().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevBCSTRet()') | |
+| [ShouldSerializevCred()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevCred().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevCred()') | |
+| [ShouldSerializevICMS()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevICMS().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevICMS()') | |
+| [ShouldSerializevICMSOutraUF()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevICMSOutraUF().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevICMSOutraUF()') | |
+| [ShouldSerializevICMSSTRet()](EficazFramework.SPED.Schemas.CTe/DetalhamentoICMS/ShouldSerializevICMSSTRet().md 'EficazFramework.SPED.Schemas.CTe.DetalhamentoICMS.ShouldSerializevICMSSTRet()') | |

@@ -8,15 +8,14 @@ Alteração do Item
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DescricaoItemAnterior | `String` |  |
-| 03 | DataInicial | `Nullable<DateTime>` |  |
-| 04 | Datafinal | `Nullable<DateTime>` |  |
-| 05 | CodigoItemAnterior | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DescricaoItemAnterior | `String` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| Datafinal | `Nullable<DateTime>` |  |
+| CodigoItemAnterior | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0205/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0205.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0205/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0205.LeParametros(string[])') | |

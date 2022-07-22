@@ -8,19 +8,18 @@ Notas Fiscais de Venda a Consumidor
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocFiscal | `String` |  |
-| 03 | CodigoParticipante | `String` |  |
-| 04 | SerieDocFiscal | `String` |  |
-| 05 | SubSerieDocFiscal | `String` |  |
-| 06 | NumeroDocFiscal | `Nullable<Int32>` |  |
-| 07 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
-| 08 | ValorDocFiscal | `Nullable<Double>` |  |
-| 09 | RegistrosC396 | `List<RegistroC396>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| CodigoParticipante | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| NumeroDocFiscal | `Nullable<Int32>` |  |
+| DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| ValorDocFiscal | `Nullable<Double>` |  |
+| RegistrosC396 | `List<RegistroC396>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC395/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC395.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC395/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC395.LeParametros(string[])') | |

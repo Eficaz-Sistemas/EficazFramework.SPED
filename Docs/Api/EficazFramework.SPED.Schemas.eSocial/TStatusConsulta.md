@@ -6,10 +6,10 @@
 Resultado dos servidores do eSocial após Invoke da Consulta de Lote de Eventos
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cdResposta | `Int32` |  |
-| 03 | descResposta | `String` |  |
-| 04 | tempoEstimadoConclusao | `Int32` |  |
-| 05 | tempoEstimadoConclusaoSpecified | `Boolean` |  |
-| 06 | ocorrencias | `List<TOcorrenciasOcorrencia>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cdResposta | `Int32` |  |
+| descResposta | `String` |  |
+| tempoEstimadoConclusao | `Int32` |  |
+| tempoEstimadoConclusaoSpecified | `Boolean` |  |
+| ocorrencias | `List<TOcorrenciasOcorrencia>` |  |

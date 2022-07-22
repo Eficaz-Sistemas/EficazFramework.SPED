@@ -8,17 +8,16 @@ Consolidação de Documentos Fiscais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
-| 03 | DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
-| 04 | CodigoModeloDocFiscal | `String` |  |
-| 05 | RegistrosC491 | `List<RegistroC491>` |  |
-| 06 | RegistrosC495 | `List<RegistroC495>` |  |
-| 07 | RegistrosC499 | `List<RegistroC499>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
+| DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| RegistrosC491 | `List<RegistroC491>` |  |
+| RegistrosC495 | `List<RegistroC495>` |  |
+| RegistrosC499 | `List<RegistroC499>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC490/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC490.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC490/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC490.LeParametros(string[])') | |

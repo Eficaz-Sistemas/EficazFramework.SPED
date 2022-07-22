@@ -4,12 +4,11 @@
 ## tcIdentificacaoOrgaoGerador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoMunicipio | `Int32` |  |
-| 03 | Uf | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CodigoMunicipio | `Int32` |  |
+| Uf | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcIdentificacaoOrgaoGerador/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcIdentificacaoOrgaoGerador.OnPropertyChanged(string)') | |

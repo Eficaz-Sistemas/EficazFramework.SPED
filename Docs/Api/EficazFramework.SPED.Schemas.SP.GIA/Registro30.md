@@ -6,14 +6,13 @@
 DIPAM-B
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoDipamB | `String` |  |
-| 03 | CodigoMunicipioSP | `String` |  |
-| 04 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoDipamB | `String` |  |
+| CodigoMunicipioSP | `String` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro30/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro30.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro30/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro30.LeParametros(string[])') | |

@@ -4,15 +4,14 @@
 ## DetalhamentoItemCombustivelEncerrante Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nBico | `String` |  |
-| 03 | nBomba | `String` |  |
-| 04 | nTanque | `String` |  |
-| 05 | vEncIni | `Nullable<Double>` |  |
-| 06 | vEncFin | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nBico | `String` |  |
+| nBomba | `String` |  |
+| nTanque | `String` |  |
+| vEncIni | `Nullable<Double>` |  |
+| vEncFin | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivelEncerrante/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivelEncerrante.OnPropertyChanged(string)') | |

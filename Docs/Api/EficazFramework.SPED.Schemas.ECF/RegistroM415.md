@@ -8,13 +8,12 @@ Identificação de Processos Judiciais e Administrativos Referentes ao Lançamen
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoProcesso | `TipoProcessoLancto` |  |
-| 03 | NumeroLancto | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoProcesso | `TipoProcessoLancto` |  |
+| NumeroLancto | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroM415/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroM415.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroM415/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroM415.LeParametros(string[])') | |

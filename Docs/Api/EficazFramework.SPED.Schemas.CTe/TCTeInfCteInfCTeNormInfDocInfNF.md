@@ -4,28 +4,27 @@
 ## TCTeInfCteInfCTeNormInfDocInfNF Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nRoma | `String` |  |
-| 03 | nPed | `String` |  |
-| 04 | mod | `TModNF` |  |
-| 05 | serie | `String` |  |
-| 06 | nDoc | `String` |  |
-| 07 | dEmi | `String` |  |
-| 08 | vBC | `String` |  |
-| 09 | vICMS | `String` |  |
-| 10 | vBCST | `String` |  |
-| 11 | vST | `String` |  |
-| 12 | vProd | `String` |  |
-| 13 | vNF | `String` |  |
-| 14 | nCFOP | `String` |  |
-| 15 | nPeso | `String` |  |
-| 16 | PIN | `String` |  |
-| 17 | dPrev | `String` |  |
-| 18 | Items | `ObservableCollection<Object>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| nRoma | `String` |  |
+| nPed | `String` |  |
+| mod | `TModNF` |  |
+| serie | `String` |  |
+| nDoc | `String` |  |
+| dEmi | `String` |  |
+| vBC | `String` |  |
+| vICMS | `String` |  |
+| vBCST | `String` |  |
+| vST | `String` |  |
+| vProd | `String` |  |
+| vNF | `String` |  |
+| nCFOP | `String` |  |
+| nPeso | `String` |  |
+| PIN | `String` |  |
+| dPrev | `String` |  |
+| Items | `ObservableCollection<Object>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfNF/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfNF.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfNF/ToString().md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfNF.ToString()') | |

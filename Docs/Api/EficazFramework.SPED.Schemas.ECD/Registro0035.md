@@ -8,13 +8,12 @@ Identificação das SCP
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoSCPCNPJ | `String` |  |
-| 03 | NomeSCP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IdentificacaoSCPCNPJ | `String` |  |
+| NomeSCP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0035/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0035.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0035/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0035.LeParametros(string[])') | |

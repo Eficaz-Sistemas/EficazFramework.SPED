@@ -8,24 +8,23 @@ Itens do Documento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoItem | `String` |  |
-| 03 | ValorItem | `Nullable<Double>` |  |
-| 04 | ValorDesconto | `Nullable<Double>` |  |
-| 05 | NaturezaBCCredito | `String` |  |
-| 06 | CSTPis | `String` |  |
-| 07 | ValorBCPis | `Nullable<Double>` |  |
-| 08 | AliquotaPIS | `Nullable<Double>` |  |
-| 09 | ValorPis | `Nullable<Double>` |  |
-| 10 | CSTCofins | `String` |  |
-| 11 | ValorBCCofins | `Nullable<Double>` |  |
-| 12 | AliquotaCofins | `Nullable<Double>` |  |
-| 13 | ValorCofins | `Nullable<Double>` |  |
-| 14 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoItem | `String` |  |
+| ValorItem | `Nullable<Double>` |  |
+| ValorDesconto | `Nullable<Double>` |  |
+| NaturezaBCCredito | `String` |  |
+| CSTPis | `String` |  |
+| ValorBCPis | `Nullable<Double>` |  |
+| AliquotaPIS | `Nullable<Double>` |  |
+| ValorPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| ValorBCCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC396/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC396.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC396/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC396.LeParametros(string[])') | |

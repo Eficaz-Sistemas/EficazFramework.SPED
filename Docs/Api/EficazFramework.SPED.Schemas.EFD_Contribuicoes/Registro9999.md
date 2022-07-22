@@ -6,12 +6,11 @@
 Encerramento do Arquivo Eletrônico
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TotalLinhas | `Nullable<Int32>` | Total de Linhas do Arquivo |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TotalLinhas | `Nullable<Int32>` | Total de Linhas do Arquivo |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro9999/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro9999.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro9999/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro9999.LeParametros(string[])') | |

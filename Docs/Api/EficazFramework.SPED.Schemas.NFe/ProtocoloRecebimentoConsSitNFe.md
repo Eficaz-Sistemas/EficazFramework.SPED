@@ -4,13 +4,12 @@
 ## ProtocoloRecebimentoConsSitNFe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InformacoesProtocolo | `InformacoesProtocoloConsSitNFe` |  |
-| 03 | Signature | `SignatureType` |  |
-| 04 | versao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| InformacoesProtocolo | `InformacoesProtocoloConsSitNFe` |  |
+| Signature | `SignatureType` |  |
+| versao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ProtocoloRecebimentoConsSitNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ProtocoloRecebimentoConsSitNFe.OnPropertyChanged(string)') | |

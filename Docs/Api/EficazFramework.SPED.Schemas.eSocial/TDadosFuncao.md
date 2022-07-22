@@ -4,7 +4,7 @@
 ## TDadosFuncao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | dscFuncao | `String` |  |
-| 03 | codCBO | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| dscFuncao | `String` |  |
+| codCBO | `String` |  |

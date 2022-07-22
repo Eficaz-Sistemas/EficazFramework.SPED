@@ -4,7 +4,7 @@
 ## TInfoEmpregadorInfoComplementares Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | situacaoPJ | `TInfoEmpregadorInfoComplementaresSituacaoPJ` |  |
-| 03 | situacaoPF | `TInfoEmpregadorInfoComplementaresSituacaoPF` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| situacaoPJ | `TInfoEmpregadorInfoComplementaresSituacaoPJ` |  |
+| situacaoPF | `TInfoEmpregadorInfoComplementaresSituacaoPF` |  |

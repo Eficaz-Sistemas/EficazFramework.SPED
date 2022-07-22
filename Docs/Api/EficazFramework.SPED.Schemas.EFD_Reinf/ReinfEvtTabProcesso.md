@@ -4,9 +4,9 @@
 ## ReinfEvtTabProcesso Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtTabProcessoIdeEvento` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | infoProcesso | `ReinfEvtTabProcessoInfoProcesso` |  |
-| 05 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtTabProcessoIdeEvento` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| infoProcesso | `ReinfEvtTabProcessoInfoProcesso` |  |
+| id | `String` |  |

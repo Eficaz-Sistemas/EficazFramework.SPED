@@ -4,45 +4,44 @@
 ## IdentificacaoOperacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoIBGE | `OrgaoIBGE` |  |
-| 03 | Chave | `String` |  |
-| 04 | CFOP | `String` |  |
-| 05 | NaturezaOperacao | `String` |  |
-| 06 | FormaPagamento | `FormaPagamento` |  |
-| 07 | Modelo | `Modelo` |  |
-| 08 | Serie | `String` |  |
-| 09 | Numero | `Nullable<Int64>` |  |
-| 10 | DataEmissao | `Nullable<DateTime>` |  |
-| 11 | TipoImpressao | `FormatoImpressao` |  |
-| 12 | FormaEmissao | `FormaEmissao` |  |
-| 13 | DigitoVerificador | `String` |  |
-| 14 | Ambiente | `Ambiente` |  |
-| 15 | Finalidade | `TipoCTe` |  |
-| 16 | ProcessoEmissao | `ProcessoEmissao` |  |
-| 17 | VersaoAplicativoEmissor | `String` |  |
-| 18 | ChaveCteReferenciado | `String` |  |
-| 19 | MunicipioEnvioCodigo | `String` |  |
-| 20 | MunicipioEnvioNome | `String` |  |
-| 21 | UFEnvio | `Estado` |  |
-| 22 | Modalidade | `ModalidadeTransporte` |  |
-| 23 | TipoServico | `TiposServico` |  |
-| 24 | MunicipioInicioCodigo | `String` |  |
-| 25 | MunicipioInicioNome | `String` |  |
-| 26 | UFInicio | `Estado` |  |
-| 27 | MunicipioFimCodigo | `String` |  |
-| 28 | MunicipioFimNome | `String` |  |
-| 29 | UFFim | `Estado` |  |
-| 30 | retira | `Retira` |  |
-| 31 | xDetRetira | `String` |  |
-| 32 | Tomador | `Object` |  |
-| 33 | DataHoraContingencia | `Nullable<DateTime>` |  |
-| 34 | JustificativaContingencia | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeDataEmissao() | `Boolean` |  |
-| ShouldSerializeDataHoraContingencia() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| CodigoIBGE | `OrgaoIBGE` |  |
+| Chave | `String` |  |
+| CFOP | `String` |  |
+| NaturezaOperacao | `String` |  |
+| FormaPagamento | `FormaPagamento` |  |
+| Modelo | `Modelo` |  |
+| Serie | `String` |  |
+| Numero | `Nullable<Int64>` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| TipoImpressao | `FormatoImpressao` |  |
+| FormaEmissao | `FormaEmissao` |  |
+| DigitoVerificador | `String` |  |
+| Ambiente | `Ambiente` |  |
+| Finalidade | `TipoCTe` |  |
+| ProcessoEmissao | `ProcessoEmissao` |  |
+| VersaoAplicativoEmissor | `String` |  |
+| ChaveCteReferenciado | `String` |  |
+| MunicipioEnvioCodigo | `String` |  |
+| MunicipioEnvioNome | `String` |  |
+| UFEnvio | `Estado` |  |
+| Modalidade | `ModalidadeTransporte` |  |
+| TipoServico | `TiposServico` |  |
+| MunicipioInicioCodigo | `String` |  |
+| MunicipioInicioNome | `String` |  |
+| UFInicio | `Estado` |  |
+| MunicipioFimCodigo | `String` |  |
+| MunicipioFimNome | `String` |  |
+| UFFim | `Estado` |  |
+| retira | `Retira` |  |
+| xDetRetira | `String` |  |
+| Tomador | `Object` |  |
+| DataHoraContingencia | `Nullable<DateTime>` |  |
+| JustificativaContingencia | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/IdentificacaoOperacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.IdentificacaoOperacao.OnPropertyChanged(string)') | |
+| [ShouldSerializeDataEmissao()](EficazFramework.SPED.Schemas.CTe/IdentificacaoOperacao/ShouldSerializeDataEmissao().md 'EficazFramework.SPED.Schemas.CTe.IdentificacaoOperacao.ShouldSerializeDataEmissao()') | |
+| [ShouldSerializeDataHoraContingencia()](EficazFramework.SPED.Schemas.CTe/IdentificacaoOperacao/ShouldSerializeDataHoraContingencia().md 'EficazFramework.SPED.Schemas.CTe.IdentificacaoOperacao.ShouldSerializeDataHoraContingencia()') | |

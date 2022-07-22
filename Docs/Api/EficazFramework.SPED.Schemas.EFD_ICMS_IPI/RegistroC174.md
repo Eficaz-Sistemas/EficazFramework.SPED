@@ -8,14 +8,13 @@ REGISTRO C174: OPERAÇÕES COM ARMAS DE FOGO (CÓDIGO 01)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoArmaFogo | `IndicadorTipoArmaFogo` |  |
-| 03 | NumSerieFabricacao | `String` |  |
-| 04 | DescricaoArma | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoArmaFogo | `IndicadorTipoArmaFogo` |  |
+| NumSerieFabricacao | `String` |  |
+| DescricaoArma | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC174/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC174.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC174/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC174.LeParametros(string[])') | |

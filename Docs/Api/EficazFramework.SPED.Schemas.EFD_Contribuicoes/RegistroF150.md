@@ -8,24 +8,23 @@ Crédito presumido sobre estoques de abertura
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NatBcCredito | `String` |  |
-| 03 | VrTotalEstoqueAbertura | `Nullable<Double>` |  |
-| 04 | ParcelaEstoqueSemCred | `Nullable<Double>` |  |
-| 05 | VrBcEstoqueAbertura | `Nullable<Double>` |  |
-| 06 | VrBcMensalCredEstoqueAbert | `Nullable<Double>` |  |
-| 07 | CSTPis | `String` |  |
-| 08 | AliqPis | `Nullable<Double>` |  |
-| 09 | VrMensalCredPresApPeriodoPis | `Nullable<Double>` |  |
-| 10 | CSTCofins | `String` |  |
-| 11 | AliqCofins | `Nullable<Double>` |  |
-| 12 | VrMensalCredPresApPeriodoCofins | `Nullable<Double>` |  |
-| 13 | DescricaoEstoque | `String` |  |
-| 14 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NatBcCredito | `String` |  |
+| VrTotalEstoqueAbertura | `Nullable<Double>` |  |
+| ParcelaEstoqueSemCred | `Nullable<Double>` |  |
+| VrBcEstoqueAbertura | `Nullable<Double>` |  |
+| VrBcMensalCredEstoqueAbert | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrMensalCredPresApPeriodoPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrMensalCredPresApPeriodoCofins | `Nullable<Double>` |  |
+| DescricaoEstoque | `String` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF150/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF150.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF150/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF150.LeParametros(string[])') | |

@@ -4,12 +4,11 @@
 ## InformacoesCteAnulacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Chave | `String` |  |
-| 03 | dEmi | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Chave | `String` |  |
+| dEmi | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/InformacoesCteAnulacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCteAnulacao.OnPropertyChanged(string)') | |

@@ -6,20 +6,19 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | NumeroSequencial | `Nullable<Int32>` |  |
-| 05 | TipoMovimento | `String` |  |
-| 06 | TipoTributo | `String` |  |
-| 07 | DadosTributo | `Registro3N_AnexoC` |  |
-| 08 | SeuNumero | `String` |  |
-| 09 | NossoNumero | `String` |  |
-| 10 | Ocorrencias | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| NumeroSequencial | `Nullable<Int32>` |  |
+| TipoMovimento | `String` |  |
+| TipoTributo | `String` |  |
+| DadosTributo | `Registro3N_AnexoC` |  |
+| SeuNumero | `String` |  |
+| NossoNumero | `String` |  |
+| Ocorrencias | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N.LeParametros(string[])') | |

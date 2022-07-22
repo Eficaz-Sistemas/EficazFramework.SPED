@@ -6,17 +6,16 @@
 Valores por CFOP
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadual | `String` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | DataInicial | `Nullable<DateTime>` |  |
-| 05 | Linha | `String` |  |
-| 06 | Coluna | `String` |  |
-| 07 | ValorDeclarado | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadual | `String` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| Linha | `String` |  |
+| Coluna | `String` |  |
+| ValorDeclarado | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.MG.DAPI/Registro10/EscreveLinha().md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro10.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.MG.DAPI/Registro10/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro10.LeParametros(string[])') | |

@@ -4,15 +4,14 @@
 ## RetornoNFe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ChaveNFe | `String` |  |
-| 03 | ResultadoCodigo | `String` |  |
-| 04 | ResultadoDescricao | `String` |  |
-| 05 | ResultadoXML | `Object` |  |
-| 06 | Resultado | `Object` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| ChaveNFe | `String` |  |
+| ResultadoCodigo | `String` |  |
+| ResultadoDescricao | `String` |  |
+| ResultadoXML | `Object` |  |
+| Resultado | `Object` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/RetornoNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFe.OnPropertyChanged(string)') | |

@@ -4,12 +4,11 @@
 ## TCTeInfCteInfCTeNormCobr Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | fat | `TCTeInfCteInfCTeNormCobrFat` |  |
-| 03 | dup | `ObservableCollection<TCTeInfCteInfCTeNormCobrDup>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| fat | `TCTeInfCteInfCTeNormCobrFat` |  |
+| dup | `ObservableCollection<TCTeInfCteInfCTeNormCobrDup>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormCobr/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormCobr.OnPropertyChanged(string)') | |

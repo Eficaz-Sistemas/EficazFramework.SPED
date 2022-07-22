@@ -8,26 +8,25 @@ Consolidação das operações da pj submetida ao retime de tributação com bas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalRecAufCSTAliq | `Nullable<Double>` |  |
-| 03 | CSTPis | `String` |  |
-| 04 | VrDescontoExclBcCalculoPis | `Nullable<Double>` |  |
-| 05 | VrBcPis | `Nullable<Double>` |  |
-| 06 | AliqPis | `Nullable<Double>` |  |
-| 07 | VrPis | `Nullable<Double>` |  |
-| 08 | CSTCofins | `String` |  |
-| 09 | VrDescontoExclBcCalculoCofins | `Nullable<Double>` |  |
-| 10 | VrBcCofins | `Nullable<Double>` |  |
-| 11 | AliqCofins | `Nullable<Double>` |  |
-| 12 | VrCofins | `Nullable<Double>` |  |
-| 13 | CodigoModDocFiscal | `String` |  |
-| 14 | CFOP | `String` |  |
-| 15 | CodigoContaContabil | `String` |  |
-| 16 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalRecAufCSTAliq | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| VrDescontoExclBcCalculoPis | `Nullable<Double>` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| VrDescontoExclBcCalculoCofins | `Nullable<Double>` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoModDocFiscal | `String` |  |
+| CFOP | `String` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF550/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF550.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF550/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF550.LeParametros(string[])') | |

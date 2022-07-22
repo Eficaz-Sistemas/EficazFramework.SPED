@@ -8,17 +8,16 @@ Equipamento ECF
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocFiscal | `String` |  |
-| 03 | ModeloEquipamento | `String` |  |
-| 04 | NumeroSerieFabricacaoECF | `String` |  |
-| 05 | NumeroCaixaAtribuidoECF | `String` |  |
-| 06 | RegistrosC405 | `List<RegistroC405>` |  |
-| 07 | RegistrosC489 | `List<RegistroC489>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| ModeloEquipamento | `String` |  |
+| NumeroSerieFabricacaoECF | `String` |  |
+| NumeroCaixaAtribuidoECF | `String` |  |
+| RegistrosC405 | `List<RegistroC405>` |  |
+| RegistrosC489 | `List<RegistroC489>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC400/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC400.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC400/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC400.LeParametros(string[])') | |

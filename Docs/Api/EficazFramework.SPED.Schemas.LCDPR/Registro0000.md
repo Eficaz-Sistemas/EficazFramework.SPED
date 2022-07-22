@@ -8,18 +8,17 @@ Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CPF | `String` |  |
-| 03 | Nome | `String` |  |
-| 04 | IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
-| 05 | SituacaoEspecial | `SituacaoEspecial` |  |
-| 06 | DataSituacaoEspecial | `Nullable<DateTime>` |  |
-| 07 | DataInicial | `Nullable<DateTime>` |  |
-| 08 | DataFinal | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CPF | `String` |  |
+| Nome | `String` |  |
+| IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
+| SituacaoEspecial | `SituacaoEspecial` |  |
+| DataSituacaoEspecial | `Nullable<DateTime>` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/Registro0000/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/Registro0000/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000.LeParametros(string[])') | |

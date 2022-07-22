@@ -4,7 +4,7 @@
 ## S1040_Inclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideFuncao | `TIdeFuncao` |  |
-| 03 | dadosFuncao | `TDadosFuncao` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideFuncao | `TIdeFuncao` |  |
+| dadosFuncao | `TDadosFuncao` |  |

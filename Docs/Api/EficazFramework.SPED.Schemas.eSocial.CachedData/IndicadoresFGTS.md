@@ -4,6 +4,6 @@
 ## IndicadoresFGTS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Instance | `Object` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| Instance | `Object` |  |

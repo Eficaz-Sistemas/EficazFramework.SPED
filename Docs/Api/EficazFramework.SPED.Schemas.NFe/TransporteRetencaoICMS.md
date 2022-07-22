@@ -4,16 +4,15 @@
 ## TransporteRetencaoICMS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ValorServico | `Nullable<Double>` |  |
-| 03 | BaseDeCalculo | `Nullable<Double>` |  |
-| 04 | Aliquota | `Nullable<Double>` |  |
-| 05 | ValorICMS | `Nullable<Double>` |  |
-| 06 | CFOP | `String` |  |
-| 07 | CodigoMunicipioFatoGerador | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| ValorServico | `Nullable<Double>` |  |
+| BaseDeCalculo | `Nullable<Double>` |  |
+| Aliquota | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| CFOP | `String` |  |
+| CodigoMunicipioFatoGerador | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TransporteRetencaoICMS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TransporteRetencaoICMS.OnPropertyChanged(string)') | |

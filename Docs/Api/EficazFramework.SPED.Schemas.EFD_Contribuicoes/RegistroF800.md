@@ -8,19 +8,18 @@ créditos decorrentes de eventos de incorporação, fusão e cisão
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorNaturezaEventoSucessao | `IndicadorNaturezaEventoSucessao` |  |
-| 03 | DataEvento | `Nullable<DateTime>` |  |
-| 04 | CNPJSucedida | `String` |  |
-| 05 | PeriodoApCredito | `Nullable<DateTime>` |  |
-| 06 | CodigoCreditoTransferido | `String` |  |
-| 07 | VrCredTransfPis | `Nullable<Double>` |  |
-| 08 | VrCredTransfCofins | `Nullable<Double>` |  |
-| 09 | PercentualCredOriginalTransf | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorNaturezaEventoSucessao | `IndicadorNaturezaEventoSucessao` |  |
+| DataEvento | `Nullable<DateTime>` |  |
+| CNPJSucedida | `String` |  |
+| PeriodoApCredito | `Nullable<DateTime>` |  |
+| CodigoCreditoTransferido | `String` |  |
+| VrCredTransfPis | `Nullable<Double>` |  |
+| VrCredTransfCofins | `Nullable<Double>` |  |
+| PercentualCredOriginalTransf | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF800/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF800.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF800/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF800.LeParametros(string[])') | |

@@ -4,17 +4,16 @@
 ## Recebedor Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | IE | `String` |  |
-| 05 | xNome | `String` |  |
-| 06 | fone | `String` |  |
-| 07 | enderReceb | `Endereco` |  |
-| 08 | email | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| fone | `String` |  |
+| enderReceb | `Endereco` |  |
+| email | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Recebedor/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Recebedor.OnPropertyChanged(string)') | |

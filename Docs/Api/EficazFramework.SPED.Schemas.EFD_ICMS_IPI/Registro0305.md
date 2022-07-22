@@ -8,14 +8,13 @@ Informação sobre a utilização do Bem
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CentroDeCusto | `String` |  |
-| 03 | DescricaoFuncaoBem | `String` |  |
-| 04 | VidaUtil | `Nullable<Int32>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CentroDeCusto | `String` |  |
+| DescricaoFuncaoBem | `String` |  |
+| VidaUtil | `Nullable<Int32>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0305/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0305.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0305/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0305.LeParametros(string[])') | |

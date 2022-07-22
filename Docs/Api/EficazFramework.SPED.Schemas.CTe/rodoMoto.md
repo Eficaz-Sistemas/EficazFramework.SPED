@@ -4,12 +4,11 @@
 ## rodoMoto Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xNome | `String` |  |
-| 03 | CPF | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xNome | `String` |  |
+| CPF | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoMoto/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoMoto.OnPropertyChanged(string)') | |

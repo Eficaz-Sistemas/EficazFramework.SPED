@@ -4,10 +4,10 @@
 ## TDadosHorContratual Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | hrEntr | `String` |  |
-| 03 | hrSaida | `String` |  |
-| 04 | durJornada | `String` |  |
-| 05 | perHorFlexivel | `String` |  |
-| 06 | horarioIntervalo | `TDadosHorContratualHorarioIntervalo[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| hrEntr | `String` |  |
+| hrSaida | `String` |  |
+| durJornada | `String` |  |
+| perHorFlexivel | `String` |  |
+| horarioIntervalo | `TDadosHorContratualHorarioIntervalo[]` |  |

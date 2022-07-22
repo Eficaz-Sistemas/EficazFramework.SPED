@@ -8,16 +8,15 @@ Regime de Apuração da Contribuição Previdenciária Sobre a Receita Bruta
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | RegimeApuracaoCPRB | `RegimeApuracaoCPRB` |  |
-| 03 | ValorRecBrutaPJPeriodo | `Nullable<Double>` |  |
-| 04 | ValorRecBrutaAtividadeCPRB | `Nullable<Double>` |  |
-| 05 | ValorRecBrutaAtividadenaoCPRB | `Nullable<Double>` |  |
-| 06 | InformacaoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| RegimeApuracaoCPRB | `RegimeApuracaoCPRB` |  |
+| ValorRecBrutaPJPeriodo | `Nullable<Double>` |  |
+| ValorRecBrutaAtividadeCPRB | `Nullable<Double>` |  |
+| ValorRecBrutaAtividadenaoCPRB | `Nullable<Double>` |  |
+| InformacaoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0145/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0145.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0145/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0145.LeParametros(string[])') | |

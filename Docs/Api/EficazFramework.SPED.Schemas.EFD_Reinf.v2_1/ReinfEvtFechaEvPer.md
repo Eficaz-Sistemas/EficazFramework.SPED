@@ -4,10 +4,10 @@
 ## ReinfEvtFechaEvPer Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtIdeEventoPeriodicoR209x` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | ideRespInf | `ReinfEvtFechaEvPerIdeRespInf` |  |
-| 05 | infoFech | `ReinfEvtFechaEvPerInfoFech` |  |
-| 06 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtIdeEventoPeriodicoR209x` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| ideRespInf | `ReinfEvtFechaEvPerIdeRespInf` |  |
+| infoFech | `ReinfEvtFechaEvPerInfoFech` |  |
+| id | `String` |  |

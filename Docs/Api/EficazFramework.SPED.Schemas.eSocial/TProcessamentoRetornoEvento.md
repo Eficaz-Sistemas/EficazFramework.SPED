@@ -6,10 +6,10 @@
 Dados do processamento informado em RetornoEvento
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cdResposta | `Int32` |  |
-| 03 | descResposta | `String` |  |
-| 04 | versaoAppProcessamento | `String` |  |
-| 05 | dhProcessamento | `DateTime` |  |
-| 06 | ocorrencias | `List<TOcorrenciasOcorrencia>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cdResposta | `Int32` |  |
+| descResposta | `String` |  |
+| versaoAppProcessamento | `String` |  |
+| dhProcessamento | `DateTime` |  |
+| ocorrencias | `List<TOcorrenciasOcorrencia>` |  |

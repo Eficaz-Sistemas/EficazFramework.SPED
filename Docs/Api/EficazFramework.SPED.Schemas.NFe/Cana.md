@@ -4,20 +4,19 @@
 ## Cana Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | safra | `String` |  |
-| 03 | @ref | `String` |  |
-| 04 | forDia | `List<CanaDiario>` |  |
-| 05 | qTotMes | `String` |  |
-| 06 | qTotAnt | `String` |  |
-| 07 | qTotGer | `String` |  |
-| 08 | deduc | `List<CanaDeducao>` |  |
-| 09 | vFor | `String` |  |
-| 10 | vTotDed | `String` |  |
-| 11 | vLiqFor | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| safra | `String` |  |
+| @ref | `String` |  |
+| forDia | `List<CanaDiario>` |  |
+| qTotMes | `String` |  |
+| qTotAnt | `String` |  |
+| qTotGer | `String` |  |
+| deduc | `List<CanaDeducao>` |  |
+| vFor | `String` |  |
+| vTotDed | `String` |  |
+| vLiqFor | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Cana/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Cana.OnPropertyChanged(string)') | |

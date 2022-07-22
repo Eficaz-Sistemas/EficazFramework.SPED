@@ -4,14 +4,13 @@
 ## CampoExtra Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codigo | `Int32` |  |
-| 03 | tipo | `Nullable<TipoCampoExtra>` |  |
-| 04 | valor | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializetipo() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| codigo | `Int32` |  |
+| tipo | `Nullable<TipoCampoExtra>` |  |
+| valor | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V2/CampoExtra/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V2.CampoExtra.OnPropertyChanged(string)') | |
+| [ShouldSerializetipo()](EficazFramework.SPED.Schemas.GNRE.V2/CampoExtra/ShouldSerializetipo().md 'EficazFramework.SPED.Schemas.GNRE.V2.CampoExtra.ShouldSerializetipo()') | |

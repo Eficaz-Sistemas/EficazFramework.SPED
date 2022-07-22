@@ -4,8 +4,8 @@
 ## S1020_Alteracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideLotacao | `TIdeLotacao` |  |
-| 03 | dadosLotacao | `TDadosLotacao` |  |
-| 04 | novaValidade | `TIdePeriodo` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideLotacao | `TIdeLotacao` |  |
+| dadosLotacao | `TDadosLotacao` |  |
+| novaValidade | `TIdePeriodo` |  |

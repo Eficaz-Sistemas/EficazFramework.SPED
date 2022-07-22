@@ -4,9 +4,9 @@
 ## TContato Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | fonePrinc | `String` |  |
-| 03 | foneAlternat | `String` |  |
-| 04 | emailPrinc | `String` |  |
-| 05 | emailAlternat | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| fonePrinc | `String` |  |
+| foneAlternat | `String` |  |
+| emailPrinc | `String` |  |
+| emailAlternat | `String` |  |

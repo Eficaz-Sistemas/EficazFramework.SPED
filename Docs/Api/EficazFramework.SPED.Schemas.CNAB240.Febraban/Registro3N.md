@@ -6,23 +6,22 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | NumeroSequencial | `Nullable<Int32>` |  |
-| 05 | TipoMovimento | `String` |  |
-| 06 | TipoTributo | `String` |  |
-| 07 | SeuNumero | `String` |  |
-| 08 | NossoNumero | `String` |  |
-| 09 | ContribuinteNome | `String` |  |
-| 10 | ValorArrecadado | `Nullable<Double>` |  |
-| 11 | DataArrecadacao | `Nullable<DateTime>` |  |
-| 12 | DadosTributo | `Registro3N_AnexoC` |  |
-| 13 | Ocorrencias | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| NumeroSequencial | `Nullable<Int32>` |  |
+| TipoMovimento | `String` |  |
+| TipoTributo | `String` |  |
+| SeuNumero | `String` |  |
+| NossoNumero | `String` |  |
+| ContribuinteNome | `String` |  |
+| ValorArrecadado | `Nullable<Double>` |  |
+| DataArrecadacao | `Nullable<DateTime>` |  |
+| DadosTributo | `Registro3N_AnexoC` |  |
+| Ocorrencias | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240.Febraban/Registro3N/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Febraban.Registro3N.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240.Febraban/Registro3N/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Febraban.Registro3N.LeParametros(string[])') | |

@@ -4,15 +4,15 @@
 ## ReinfEvtFechaEvPerInfoFech Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | evtServTm | `SimNao` |  |
-| 03 | evtServPr | `SimNao` |  |
-| 04 | evtAssDespRec | `SimNao` |  |
-| 05 | evtAssDespRep | `SimNao` |  |
-| 06 | evtComProd | `SimNao` |  |
-| 07 | evtCPRB | `SimNao` |  |
-| 08 | evtAquis | `SimNao` |  |
-| 09 | evtPgtos | `SimNao` |  |
-| 10 | evtPgtosSpecified | `Boolean` |  |
-| 11 | compSemMovto | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| evtServTm | `SimNao` |  |
+| evtServPr | `SimNao` |  |
+| evtAssDespRec | `SimNao` |  |
+| evtAssDespRep | `SimNao` |  |
+| evtComProd | `SimNao` |  |
+| evtCPRB | `SimNao` |  |
+| evtAquis | `SimNao` |  |
+| evtPgtos | `SimNao` |  |
+| evtPgtosSpecified | `Boolean` |  |
+| compSemMovto | `String` |  |

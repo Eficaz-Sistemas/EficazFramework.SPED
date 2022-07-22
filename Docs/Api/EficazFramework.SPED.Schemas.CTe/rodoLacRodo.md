@@ -4,11 +4,10 @@
 ## rodoLacRodo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nLacre | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nLacre | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoLacRodo/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoLacRodo.OnPropertyChanged(string)') | |

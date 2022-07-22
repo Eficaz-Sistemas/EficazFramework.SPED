@@ -8,13 +8,12 @@ Relação dos Eventos Societários
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | EventoSocietario | `EventoSocietario` |  |
-| 03 | DataEventoSocietario | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| EventoSocietario | `EventoSocietario` |  |
+| DataEventoSocietario | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK110/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK110.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK110/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK110.LeParametros(string[])') | |

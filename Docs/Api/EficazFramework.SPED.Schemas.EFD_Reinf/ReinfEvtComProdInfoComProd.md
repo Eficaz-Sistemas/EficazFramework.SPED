@@ -4,6 +4,6 @@
 ## ReinfEvtComProdInfoComProd Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEstab | `ReinfEvtComProdInfoComProdIdeEstab` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEstab | `ReinfEvtComProdInfoComProdIdeEstab` |  |

@@ -4,24 +4,23 @@
 ## Registro61 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadual | `String` |  |
-| 03 | Data | `Nullable<DateTime>` |  |
-| 04 | Modelo | `String` |  |
-| 05 | Serie | `String` |  |
-| 06 | SubSerie | `String` |  |
-| 07 | NumeroInicial | `String` |  |
-| 08 | NumeroFinal | `String` |  |
-| 09 | ValorTotal | `Nullable<Double>` |  |
-| 10 | BaseCalculo | `Nullable<Double>` |  |
-| 11 | ICMS | `Nullable<Double>` |  |
-| 12 | Isentas | `Nullable<Double>` |  |
-| 13 | Outras | `Nullable<Double>` |  |
-| 14 | Aliquota | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadual | `String` |  |
+| Data | `Nullable<DateTime>` |  |
+| Modelo | `String` |  |
+| Serie | `String` |  |
+| SubSerie | `String` |  |
+| NumeroInicial | `String` |  |
+| NumeroFinal | `String` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| BaseCalculo | `Nullable<Double>` |  |
+| ICMS | `Nullable<Double>` |  |
+| Isentas | `Nullable<Double>` |  |
+| Outras | `Nullable<Double>` |  |
+| Aliquota | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro61/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro61.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro61/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro61.LeParametros(string[])') | |

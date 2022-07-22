@@ -4,14 +4,13 @@
 ## NaturezaSubConta Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Numero | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | FundamentoLegal | `String` |  |
-| 05 | ContaPrincipal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
+| Numero | `String` |  |
+| Descricao | `String` |  |
+| FundamentoLegal | `String` |  |
+| ContaPrincipal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ToString()](EficazFramework.SPED.Schemas.ECD/NaturezaSubConta/ToString().md 'EficazFramework.SPED.Schemas.ECD.NaturezaSubConta.ToString()') | |

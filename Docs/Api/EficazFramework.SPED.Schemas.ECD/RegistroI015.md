@@ -8,12 +8,11 @@ Identificação das Contas da Escrituração Resumida a que se Refere a Escritur
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaResumida | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaResumida | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI015/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI015.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI015/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI015.LeParametros(string[])') | |

@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NSU | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| NSU | `String` |  |

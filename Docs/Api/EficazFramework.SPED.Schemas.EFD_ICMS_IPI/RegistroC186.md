@@ -9,30 +9,29 @@ substituição tributária(código 01, 1B, 04 e 55).
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroItem | `Nullable<Int16>` |  |
-| 03 | CodigoProduto | `String` |  |
-| 04 | Origem | `OrigemMercadoria` |  |
-| 05 | CST_ICMS | `CST_ICMS` |  |
-| 06 | CFOP | `String` |  |
-| 07 | CodMotivoRestituicao | `String` |  |
-| 08 | QuantidadeItem | `Nullable<Double>` |  |
-| 09 | Unidade | `String` |  |
-| 10 | EspecieDocEntrada | `String` |  |
-| 11 | SerieDocEntrada | `String` |  |
-| 12 | NumeroDocEntrada | `Nullable<Int64>` |  |
-| 13 | ChaveDocEntrada | `String` |  |
-| 14 | DataDocEntrada | `Nullable<DateTime>` |  |
-| 15 | NumeroItemDocEntrada | `Nullable<Int16>` |  |
-| 16 | VrUnitarioEntrada | `Nullable<Double>` |  |
-| 17 | VrUnitarioOpPropriaEntrada | `Nullable<Double>` |  |
-| 18 | VrUnitarioBC_STEntrada | `Nullable<Double>` |  |
-| 19 | VrUnitarioSTEntrada | `Nullable<Double>` |  |
-| 20 | VrUnitarioFCPEntrada | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroItem | `Nullable<Int16>` |  |
+| CodigoProduto | `String` |  |
+| Origem | `OrigemMercadoria` |  |
+| CST_ICMS | `CST_ICMS` |  |
+| CFOP | `String` |  |
+| CodMotivoRestituicao | `String` |  |
+| QuantidadeItem | `Nullable<Double>` |  |
+| Unidade | `String` |  |
+| EspecieDocEntrada | `String` |  |
+| SerieDocEntrada | `String` |  |
+| NumeroDocEntrada | `Nullable<Int64>` |  |
+| ChaveDocEntrada | `String` |  |
+| DataDocEntrada | `Nullable<DateTime>` |  |
+| NumeroItemDocEntrada | `Nullable<Int16>` |  |
+| VrUnitarioEntrada | `Nullable<Double>` |  |
+| VrUnitarioOpPropriaEntrada | `Nullable<Double>` |  |
+| VrUnitarioBC_STEntrada | `Nullable<Double>` |  |
+| VrUnitarioSTEntrada | `Nullable<Double>` |  |
+| VrUnitarioFCPEntrada | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC186/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC186.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC186/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC186.LeParametros(string[])') | |

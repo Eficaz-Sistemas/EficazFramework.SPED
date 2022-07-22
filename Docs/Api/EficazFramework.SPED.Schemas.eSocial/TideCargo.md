@@ -4,8 +4,8 @@
 ## TideCargo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codCargo | `String` |  |
-| 03 | iniValid | `String` |  |
-| 04 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| codCargo | `String` |  |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

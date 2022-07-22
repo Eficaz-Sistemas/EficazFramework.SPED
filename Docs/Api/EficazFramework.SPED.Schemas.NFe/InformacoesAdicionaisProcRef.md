@@ -4,12 +4,11 @@
 ## InformacoesAdicionaisProcRef Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nProc | `String` |  |
-| 03 | indProc | `IndicadorProcessoReferenciado` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nProc | `String` |  |
+| indProc | `IndicadorProcessoReferenciado` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionaisProcRef/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionaisProcRef.OnPropertyChanged(string)') | |

@@ -6,13 +6,12 @@
 Crédito Acumulado
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoAutorizacao | `String` |  |
-| 03 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoAutorizacao | `String` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro28/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro28.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro28/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro28.LeParametros(string[])') | |

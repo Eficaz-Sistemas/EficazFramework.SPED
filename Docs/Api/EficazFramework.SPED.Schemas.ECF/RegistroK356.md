@@ -8,14 +8,13 @@ Mapeamento Referencial dos Saldos Final
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaReferencial | `String` |  |
-| 03 | VrSaldoFinalPeriodo | `Nullable<Double>` |  |
-| 04 | IndicadorSituacaoSaldoFinal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaReferencial | `String` |  |
+| VrSaldoFinalPeriodo | `Nullable<Double>` |  |
+| IndicadorSituacaoSaldoFinal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroK356/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroK356.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroK356/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroK356.LeParametros(string[])') | |

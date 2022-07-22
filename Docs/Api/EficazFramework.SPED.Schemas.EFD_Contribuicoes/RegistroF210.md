@@ -8,21 +8,20 @@ Operaçãoes da Atividade imobiliária - custo orçado da unidade imobiliária v
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalCustoOrcadoConcUnidVendida | `Nullable<Double>` |  |
-| 03 | VrExcl | `Nullable<Double>` |  |
-| 04 | VrBcCredCustoOrcadoAjustado | `Nullable<Double>` |  |
-| 05 | VrBcCredCustoOrcadoPeriodoEscr | `Nullable<Double>` |  |
-| 06 | CSTPis | `String` |  |
-| 07 | AliqPis | `Nullable<Double>` |  |
-| 08 | VrCreditoCustoOrcadoPeriodoEscrPis | `Nullable<Double>` |  |
-| 09 | CSTCofins | `String` |  |
-| 10 | AliqCofins | `Nullable<Double>` |  |
-| 11 | VrCreditoCustoOrcadoPeriodoEscrCofins | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalCustoOrcadoConcUnidVendida | `Nullable<Double>` |  |
+| VrExcl | `Nullable<Double>` |  |
+| VrBcCredCustoOrcadoAjustado | `Nullable<Double>` |  |
+| VrBcCredCustoOrcadoPeriodoEscr | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrCreditoCustoOrcadoPeriodoEscrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrCreditoCustoOrcadoPeriodoEscrCofins | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF210/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF210.LeParametros(string[])') | |

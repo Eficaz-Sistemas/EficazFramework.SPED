@@ -4,12 +4,11 @@
 ## tcDadosConstrucaoCivil Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoObra | `String` |  |
-| 03 | Art | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CodigoObra | `String` |  |
+| Art | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcDadosConstrucaoCivil/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcDadosConstrucaoCivil.OnPropertyChanged(string)') | |

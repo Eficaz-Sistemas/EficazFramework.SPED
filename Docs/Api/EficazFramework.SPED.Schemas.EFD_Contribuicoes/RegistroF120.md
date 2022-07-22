@@ -8,28 +8,27 @@ Bens incorporados ao ativo imobilizado - operações geradoras de créditos
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NatBcCalculo | `NaturezaBaseCalculo` |  |
-| 03 | IdentificacaoBensGrupoAtivo | `IdentificacaoBensGrupoAtivoImobilizado` |  |
-| 04 | IndicadorOrigemBemAtivoImob | `IndicadorOrigemCreditoAtivoImobilizado` |  |
-| 05 | IndicadorUtilizacaoBensAtivoImob | `IndicadorUtilizacaoBensAtivoImobilizado` |  |
-| 06 | VrEncargoDepreciacao | `Nullable<Double>` |  |
-| 07 | ParcelaVrEncargoExcluirBc | `Nullable<Double>` |  |
-| 08 | CSTPis | `String` |  |
-| 09 | VrBcPis | `Nullable<Double>` |  |
-| 10 | AliqPis | `Nullable<Double>` |  |
-| 11 | VrPis | `Nullable<Double>` |  |
-| 12 | CSTCofins | `String` |  |
-| 13 | VrBcCofins | `Nullable<Double>` |  |
-| 14 | AliqCofins | `Nullable<Double>` |  |
-| 15 | VrCofins | `Nullable<Double>` |  |
-| 16 | CodigoContaContabil | `String` |  |
-| 17 | CodigoCentroCusto | `String` |  |
-| 18 | DescricaoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NatBcCalculo | `NaturezaBaseCalculo` |  |
+| IdentificacaoBensGrupoAtivo | `IdentificacaoBensGrupoAtivoImobilizado` |  |
+| IndicadorOrigemBemAtivoImob | `IndicadorOrigemCreditoAtivoImobilizado` |  |
+| IndicadorUtilizacaoBensAtivoImob | `IndicadorUtilizacaoBensAtivoImobilizado` |  |
+| VrEncargoDepreciacao | `Nullable<Double>` |  |
+| ParcelaVrEncargoExcluirBc | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| CodigoCentroCusto | `String` |  |
+| DescricaoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF120/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF120.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF120/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF120.LeParametros(string[])') | |

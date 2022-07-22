@@ -6,8 +6,8 @@
 Resultado dos servidores do eSocial após Invoke do Envio de Lote de Eventos
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cdResposta | `Int32` |  |
-| 03 | descResposta | `String` |  |
-| 04 | ocorrencias | `List<TOcorrenciasOcorrencia>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cdResposta | `Int32` |  |
+| descResposta | `String` |  |
+| ocorrencias | `List<TOcorrenciasOcorrencia>` |  |

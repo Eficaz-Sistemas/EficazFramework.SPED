@@ -8,23 +8,22 @@ Consolidação dos documentos emitidos no período por pessoa jurídica submetid
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJEstabPJEmitenteDocsGeradoresReceita | `String` |  |
-| 03 | CodModDocFiscal | `String` |  |
-| 04 | SerieDocFiscal | `String` |  |
-| 05 | SubSerieDocFiscal | `String` |  |
-| 06 | CodigoSitDocFiscal | `SituacaoDocumento` |  |
-| 07 | VrTotalRecConfDocsEmitidosPer | `Nullable<Double>` |  |
-| 08 | QtdeDocsEmitidosPeriodo | `Nullable<Int32>` |  |
-| 09 | CSTPis | `String` |  |
-| 10 | CSTCofins | `String` |  |
-| 11 | CFOP | `String` |  |
-| 12 | InfoComplementar | `String` |  |
-| 13 | CodigoConta | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJEstabPJEmitenteDocsGeradoresReceita | `String` |  |
+| CodModDocFiscal | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| CodigoSitDocFiscal | `SituacaoDocumento` |  |
+| VrTotalRecConfDocsEmitidosPer | `Nullable<Double>` |  |
+| QtdeDocsEmitidosPeriodo | `Nullable<Int32>` |  |
+| CSTPis | `String` |  |
+| CSTCofins | `String` |  |
+| CFOP | `String` |  |
+| InfoComplementar | `String` |  |
+| CodigoConta | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1900/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1900.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1900/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1900.LeParametros(string[])') | |

@@ -8,6 +8,6 @@ Informações Relativas às Operações e Prestações de Saídas e à Apuraçã
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Registros5315 | `IEnumerable<Registro5315>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| Registros5315 | `IEnumerable<Registro5315>` |  |

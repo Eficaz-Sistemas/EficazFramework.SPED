@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `String` |  |
-| 03 | ItemElementName | `PersonalidadJuridica` |  |
-| 04 | xNome | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| Item | `String` |  |
+| ItemElementName | `PersonalidadJuridica` |  |
+| xNome | `String` |  |

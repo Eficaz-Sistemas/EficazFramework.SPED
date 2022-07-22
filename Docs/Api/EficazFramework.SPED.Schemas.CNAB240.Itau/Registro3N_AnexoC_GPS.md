@@ -4,21 +4,20 @@
 ## Registro3N_AnexoC_GPS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoRecolhimento | `String` |  |
-| 03 | Competencia | `Nullable<DateTime>` |  |
-| 04 | CNPJ | `String` |  |
-| 05 | ValorTributo | `Nullable<Double>` |  |
-| 06 | ValorOutrasEntidades | `Nullable<Double>` |  |
-| 07 | ValorAtualizacaoMonetaria | `Nullable<Double>` |  |
-| 08 | ValorArrecadado | `Nullable<Double>` |  |
-| 09 | DataArrecadacao | `Nullable<DateTime>` |  |
-| 10 | UsoDaEmpresa | `String` |  |
-| 11 | ContribuinteNome | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoRecolhimento | `String` |  |
+| Competencia | `Nullable<DateTime>` |  |
+| CNPJ | `String` |  |
+| ValorTributo | `Nullable<Double>` |  |
+| ValorOutrasEntidades | `Nullable<Double>` |  |
+| ValorAtualizacaoMonetaria | `Nullable<Double>` |  |
+| ValorArrecadado | `Nullable<Double>` |  |
+| DataArrecadacao | `Nullable<DateTime>` |  |
+| UsoDaEmpresa | `String` |  |
+| ContribuinteNome | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N_AnexoC_GPS/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N_AnexoC_GPS.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240.Itau/Registro3N_AnexoC_GPS/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Itau.Registro3N_AnexoC_GPS.LeParametros(string[])') | |

@@ -8,17 +8,16 @@ Complemento da Consolidação Diária
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CstCofins | `String` |  |
-| 03 | VrTotaItens | `Nullable<Double>` |  |
-| 04 | VrBaseCalculoCofins | `Nullable<Double>` |  |
-| 05 | AliquotaCofins | `Nullable<Double>` |  |
-| 06 | VrCofins | `Nullable<Double>` |  |
-| 07 | CodContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CstCofins | `String` |  |
+| VrTotaItens | `Nullable<Double>` |  |
+| VrBaseCalculoCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC605/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC605.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC605/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC605.LeParametros(string[])') | |

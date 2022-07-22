@@ -4,11 +4,10 @@
 ## TomadorTipo03 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | toma | `TipoTomador` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| toma | `TipoTomador` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TomadorTipo03/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TomadorTipo03.OnPropertyChanged(string)') | |

@@ -4,14 +4,13 @@
 ## TCTeInfCteInfCTeNormInfCargaInfQ Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cUnid | `TCTeInfCteInfCTeNormInfCargaInfQCUnid` |  |
-| 03 | tpMed | `String` |  |
-| 04 | qCarga | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| cUnid | `TCTeInfCteInfCTeNormInfCargaInfQCUnid` |  |
+| tpMed | `String` |  |
+| qCarga | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCargaInfQ/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCargaInfQ.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCargaInfQ/ToString().md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCargaInfQ.ToString()') | |

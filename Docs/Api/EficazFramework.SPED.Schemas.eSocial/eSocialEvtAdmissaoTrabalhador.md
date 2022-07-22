@@ -4,23 +4,23 @@
 ## eSocialEvtAdmissaoTrabalhador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cpfTrab | `String` |  |
-| 03 | nisTrab | `String` |  |
-| 04 | nmTrab | `String` |  |
-| 05 | sexo | `String` |  |
-| 06 | racaCor | `RacaCor` |  |
-| 07 | estCiv | `EstadoCivil` |  |
-| 08 | estCivSpecified | `Boolean` |  |
-| 09 | grauInstr | `GrauInstrucao` |  |
-| 10 | indPriEmpr | `SimNaoString` |  |
-| 11 | nmSoc | `String` |  |
-| 12 | nascimento | `eSocialEvtAdmissaoTrabalhadorNascimento` |  |
-| 13 | documentos | `eSocialEvtAdmissaoTrabalhadorDocumentos` |  |
-| 14 | endereco | `eSocialEvtAdmissaoTrabalhadorEndereco` |  |
-| 15 | trabEstrangeiro | `TTrabEstrang` |  |
-| 16 | infoDeficiencia | `eSocialEvtAdmissaoTrabalhadorInfoDeficiencia` |  |
-| 17 | dependente | `List<TDependente>` |  |
-| 18 | aposentadoria | `eSocialEvtAdmissaoTrabalhadorAposentadoria` |  |
-| 19 | contato | `TContato` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cpfTrab | `String` |  |
+| nisTrab | `String` |  |
+| nmTrab | `String` |  |
+| sexo | `String` |  |
+| racaCor | `RacaCor` |  |
+| estCiv | `EstadoCivil` |  |
+| estCivSpecified | `Boolean` |  |
+| grauInstr | `GrauInstrucao` |  |
+| indPriEmpr | `SimNaoString` |  |
+| nmSoc | `String` |  |
+| nascimento | `eSocialEvtAdmissaoTrabalhadorNascimento` |  |
+| documentos | `eSocialEvtAdmissaoTrabalhadorDocumentos` |  |
+| endereco | `eSocialEvtAdmissaoTrabalhadorEndereco` |  |
+| trabEstrangeiro | `TTrabEstrang` |  |
+| infoDeficiencia | `eSocialEvtAdmissaoTrabalhadorInfoDeficiencia` |  |
+| dependente | `List<TDependente>` |  |
+| aposentadoria | `eSocialEvtAdmissaoTrabalhadorAposentadoria` |  |
+| contato | `TContato` |  |

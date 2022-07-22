@@ -8,32 +8,31 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoOperacao | `IndicadorOperacao` |  |
-| 03 | IndicadorEmitente | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | EspecieDocumento | `String` |  |
-| 06 | SituacaoDocumento | `SituacaoDocumento` |  |
-| 07 | Serie | `String` |  |
-| 08 | NumeroDoc | `Nullable<Int32>` |  |
-| 09 | ChaveNFe | `String` |  |
-| 10 | DataDoc | `Nullable<DateTime>` |  |
-| 11 | CodigoMunicipio | `String` |  |
-| 12 | ValorContabil | `Nullable<Double>` |  |
-| 13 | ValorMaterialTerceiro | `Nullable<Double>` |  |
-| 14 | ValorSubempreitada | `Nullable<Double>` |  |
-| 15 | ValorISSIsentoNTrib | `Nullable<Double>` |  |
-| 16 | ValorDedBC | `Nullable<Double>` |  |
-| 17 | ValorBCISS | `Nullable<Double>` |  |
-| 18 | ValorBCRetISS | `Nullable<Double>` |  |
-| 19 | ValorISSRetTomador | `Nullable<Double>` |  |
-| 20 | ValorISSDestacado | `Nullable<Double>` |  |
-| 21 | CodigoObsLactoFiscal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
-| DocumentoValido() | `Boolean` |  |
+| IndicadorTipoOperacao | `IndicadorOperacao` |  |
+| IndicadorEmitente | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| EspecieDocumento | `String` |  |
+| SituacaoDocumento | `SituacaoDocumento` |  |
+| Serie | `String` |  |
+| NumeroDoc | `Nullable<Int32>` |  |
+| ChaveNFe | `String` |  |
+| DataDoc | `Nullable<DateTime>` |  |
+| CodigoMunicipio | `String` |  |
+| ValorContabil | `Nullable<Double>` |  |
+| ValorMaterialTerceiro | `Nullable<Double>` |  |
+| ValorSubempreitada | `Nullable<Double>` |  |
+| ValorISSIsentoNTrib | `Nullable<Double>` |  |
+| ValorDedBC | `Nullable<Double>` |  |
+| ValorBCISS | `Nullable<Double>` |  |
+| ValorBCRetISS | `Nullable<Double>` |  |
+| ValorISSRetTomador | `Nullable<Double>` |  |
+| ValorISSDestacado | `Nullable<Double>` |  |
+| CodigoObsLactoFiscal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [DocumentoValido()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB020/DocumentoValido().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB020.DocumentoValido()') | |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB020/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB020.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB020/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB020.LeParametros(string[])') | |

@@ -6,15 +6,14 @@
 Total de Linhas do Arquivo
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadual | `String` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | DataInicial | `Nullable<DateTime>` |  |
-| 05 | TotalLinhas | `Int64` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadual | `String` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| TotalLinhas | `Int64` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.MG.DAPI/Registro99/EscreveLinha().md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro99.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.MG.DAPI/Registro99/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro99.LeParametros(string[])') | |

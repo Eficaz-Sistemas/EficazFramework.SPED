@@ -4,8 +4,8 @@
 ## TDadosCargoCargoPublicoLeiCargo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrLei | `String` |  |
-| 03 | dtLei | `DateTime` |  |
-| 04 | sitCargo | `SituacaoCargoPublico` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrLei | `String` |  |
+| dtLei | `DateTime` |  |
+| sitCargo | `SituacaoCargoPublico` |  |

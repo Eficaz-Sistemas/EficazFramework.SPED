@@ -4,14 +4,13 @@
 ## rodoValePed Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJForn | `String` |  |
-| 03 | nCompra | `String` |  |
-| 04 | CNPJPg | `String` |  |
-| 05 | vValePed | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJForn | `String` |  |
+| nCompra | `String` |  |
+| CNPJPg | `String` |  |
+| vValePed | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoValePed/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoValePed.OnPropertyChanged(string)') | |

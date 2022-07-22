@@ -8,19 +8,18 @@ Objeto de retorno do tipo Carta de Correção Eletrônica.
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ChaveNFe | `String` |  |
-| 03 | EventoData | `Nullable<DateTime>` |  |
-| 04 | EventoCodigo | `String` |  |
-| 05 | EventoNumeroSequencial | `String` |  |
-| 06 | EventoDescricao | `String` |  |
-| 07 | Correcao | `String` |  |
-| 08 | Operacao | `OperacaoNFe` |  |
-| 09 | DataAutorizacaoCorrecao | `Nullable<DateTime>` |  |
-| 10 | NSU | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
+| ChaveNFe | `String` |  |
+| EventoData | `Nullable<DateTime>` |  |
+| EventoCodigo | `String` |  |
+| EventoNumeroSequencial | `String` |  |
+| EventoDescricao | `String` |  |
+| Correcao | `String` |  |
+| Operacao | `OperacaoNFe` |  |
+| DataAutorizacaoCorrecao | `Nullable<DateTime>` |  |
+| NSU | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/RetornoCartaCorrecaoEletronica/ToString().md 'EficazFramework.SPED.Schemas.NFe.RetornoCartaCorrecaoEletronica.ToString()') | |

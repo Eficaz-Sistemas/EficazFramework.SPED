@@ -8,12 +8,11 @@ Saldo das Contas de Resultado Antes do Encerramento - Identificação da Data
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataApuracaoResultado | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataApuracaoResultado | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI350/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI350.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI350/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI350.LeParametros(string[])') | |

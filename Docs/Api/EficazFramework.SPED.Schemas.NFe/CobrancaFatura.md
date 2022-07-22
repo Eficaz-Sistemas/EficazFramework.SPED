@@ -4,15 +4,14 @@
 ## CobrancaFatura Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nFat | `String` |  |
-| 03 | vOrig | `Nullable<Double>` |  |
-| 04 | vDesc | `Nullable<Double>` |  |
-| 05 | vLiq | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| ToString() | `String` |  |
+| nFat | `String` |  |
+| vOrig | `Nullable<Double>` |  |
+| vDesc | `Nullable<Double>` |  |
+| vLiq | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/CobrancaFatura/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.CobrancaFatura.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/CobrancaFatura/ToString().md 'EficazFramework.SPED.Schemas.NFe.CobrancaFatura.ToString()') | |

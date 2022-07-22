@@ -6,27 +6,26 @@
 Identificação e Remuneração de Sócios, Titulares, Dirigentes e Conselheiros
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataAlteracao | `Nullable<DateTime>` |  |
-| 03 | DataSaida | `Nullable<DateTime>` |  |
-| 04 | Pais | `String` |  |
-| 05 | IndicadorQualificacao | `String` | PF = Pessoa Física            PJ = Pessoa Jurídica            FI = FUndo de Investimento |
-| 06 | CNPJ_CPF | `String` |  |
-| 07 | Nome | `String` |  |
-| 08 | Qualificacao | `String` |  |
-| 09 | PercentualCapitalTotal | `Nullable<Double>` |  |
-| 10 | PercentualCapitalVotante | `Nullable<Double>` |  |
-| 11 | CPF_ResponsavelLegal | `String` |  |
-| 12 | QualificacaoResponsavelLegal | `String` | 01 - Procurador            02 - Curador            03 - Mãe            04 - Pai            05 - Tutor            06 - Outro |
-| 13 | ValorRemuneracao | `Nullable<Double>` |  |
-| 14 | ValorLucrosDividendos | `Nullable<Double>` |  |
-| 15 | ValorJurosCapitalProprio | `Nullable<Double>` |  |
-| 16 | ValorDemaisRendimentos | `Nullable<Double>` |  |
-| 17 | ValorIR_Retido | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataAlteracao | `Nullable<DateTime>` |  |
+| DataSaida | `Nullable<DateTime>` |  |
+| Pais | `String` |  |
+| IndicadorQualificacao | `String` | PF = Pessoa Física            PJ = Pessoa Jurídica            FI = FUndo de Investimento |
+| CNPJ_CPF | `String` |  |
+| Nome | `String` |  |
+| Qualificacao | `String` |  |
+| PercentualCapitalTotal | `Nullable<Double>` |  |
+| PercentualCapitalVotante | `Nullable<Double>` |  |
+| CPF_ResponsavelLegal | `String` |  |
+| QualificacaoResponsavelLegal | `String` | 01 - Procurador            02 - Curador            03 - Mãe            04 - Pai            05 - Tutor            06 - Outro |
+| ValorRemuneracao | `Nullable<Double>` |  |
+| ValorLucrosDividendos | `Nullable<Double>` |  |
+| ValorJurosCapitalProprio | `Nullable<Double>` |  |
+| ValorDemaisRendimentos | `Nullable<Double>` |  |
+| ValorIR_Retido | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroY600/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroY600.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroY600/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroY600.LeParametros(string[])') | |

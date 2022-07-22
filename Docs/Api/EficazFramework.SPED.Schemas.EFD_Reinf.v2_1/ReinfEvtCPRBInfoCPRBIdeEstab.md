@@ -4,11 +4,11 @@
 ## ReinfEvtCPRBInfoCPRBIdeEstab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscEstab | `PersonalidadeJuridica` |  |
-| 03 | nrInscEstab | `String` |  |
-| 04 | vlrRecBrutaTotal | `String` |  |
-| 05 | vlrCPApurTotal | `String` |  |
-| 06 | vlrCPRBSuspTotal | `String` |  |
-| 07 | tipoCod | `ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInscEstab | `PersonalidadeJuridica` |  |
+| nrInscEstab | `String` |  |
+| vlrRecBrutaTotal | `String` |  |
+| vlrCPApurTotal | `String` |  |
+| vlrCPRBSuspTotal | `String` |  |
+| tipoCod | `ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[]` |  |

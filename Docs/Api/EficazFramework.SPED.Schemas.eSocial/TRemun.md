@@ -4,8 +4,8 @@
 ## TRemun Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vrSalFx | `Decimal` |  |
-| 03 | undSalFixo | `UnidadeSalarial` |  |
-| 04 | dscSalVar | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| vrSalFx | `Decimal` |  |
+| undSalFixo | `UnidadeSalarial` |  |
+| dscSalVar | `String` |  |

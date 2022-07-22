@@ -8,20 +8,19 @@ Resumo Diário de Documentos Emitidos Por ECF
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CSTPis | `String` |  |
-| 03 | ValorTotalItens | `Nullable<Double>` |  |
-| 04 | ValorBCPis | `Nullable<Double>` |  |
-| 05 | AliquotaPis | `Nullable<Double>` |  |
-| 06 | QtdeBCPis | `Nullable<Double>` |  |
-| 07 | AliquotaPISQtde | `Nullable<Double>` |  |
-| 08 | ValorPIS | `Nullable<Double>` |  |
-| 09 | CodigoItem | `String` |  |
-| 10 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CSTPis | `String` |  |
+| ValorTotalItens | `Nullable<Double>` |  |
+| ValorBCPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| QtdeBCPis | `Nullable<Double>` |  |
+| AliquotaPISQtde | `Nullable<Double>` |  |
+| ValorPIS | `Nullable<Double>` |  |
+| CodigoItem | `String` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC481/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC481.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC481/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC481.LeParametros(string[])') | |

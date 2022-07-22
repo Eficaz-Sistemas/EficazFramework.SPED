@@ -8,14 +8,13 @@ Identificação do relacionamento com o Participante
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodRelacionamentoTabelaSped | `String` |  |
-| 03 | DataInicioRelacionamento | `DateTime` |  |
-| 04 | DataTerminoRelacionamento | `DateTime` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodRelacionamentoTabelaSped | `String` |  |
+| DataInicioRelacionamento | `DateTime` |  |
+| DataTerminoRelacionamento | `DateTime` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0180/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0180.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0180/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0180.LeParametros(string[])') | |

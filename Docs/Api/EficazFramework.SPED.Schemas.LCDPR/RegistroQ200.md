@@ -8,16 +8,15 @@ Demonstração da Atividade Rural
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Competencia | `Nullable<DateTime>` |  |
-| 03 | ValorEntrada | `Nullable<Double>` |  |
-| 04 | ValorSaida | `Nullable<Double>` |  |
-| 05 | SaldoFinal | `Nullable<Double>` |  |
-| 06 | SaldoFinal_Natureza | `String` | [N/P] |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Competencia | `Nullable<DateTime>` |  |
+| ValorEntrada | `Nullable<Double>` |  |
+| ValorSaida | `Nullable<Double>` |  |
+| SaldoFinal | `Nullable<Double>` |  |
+| SaldoFinal_Natureza | `String` | [N/P] |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200.LeParametros(string[])') | |

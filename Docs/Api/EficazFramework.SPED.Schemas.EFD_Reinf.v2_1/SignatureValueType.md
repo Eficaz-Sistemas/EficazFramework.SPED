@@ -4,12 +4,11 @@
 ## SignatureValueType Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Id | `String` |  |
-| 03 | Value | `Byte[]` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Id | `String` |  |
+| Value | `Byte[]` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/SignatureValueType/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.SignatureValueType.OnPropertyChanged(string)') | |

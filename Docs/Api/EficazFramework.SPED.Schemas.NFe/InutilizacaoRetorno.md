@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | infInut | `TRetInutNFeInfInut` |  |
-| 03 | Signature | `SignatureType` |  |
-| 04 | versao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| infInut | `TRetInutNFeInfInut` |  |
+| Signature | `SignatureType` |  |
+| versao | `String` |  |

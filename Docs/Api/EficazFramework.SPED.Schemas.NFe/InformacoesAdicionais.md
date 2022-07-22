@@ -4,15 +4,14 @@
 ## InformacoesAdicionais Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | infAdFisco | `String` |  |
-| 03 | infCpl | `String` |  |
-| 04 | obsCont | `List<InformacoesAdicionaisObsContribuite>` |  |
-| 05 | obsFisco | `List<InformacoesAdicionaisObsFisco>` |  |
-| 06 | procRef | `List<InformacoesAdicionaisProcRef>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| infAdFisco | `String` |  |
+| infCpl | `String` |  |
+| obsCont | `List<InformacoesAdicionaisObsContribuite>` |  |
+| obsFisco | `List<InformacoesAdicionaisObsFisco>` |  |
+| procRef | `List<InformacoesAdicionaisProcRef>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacoesAdicionais/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacoesAdicionais.OnPropertyChanged(string)') | |

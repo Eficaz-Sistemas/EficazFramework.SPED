@@ -4,20 +4,19 @@
 ## TomadorTipo04 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | toma | `TipoTomador` |  |
-| 03 | ItemElementName | `PersonalidadeJuridica7` |  |
-| 04 | CNPJ_CPF | `String` |  |
-| 05 | CNPJ_CPFFormatado | `String` |  |
-| 06 | IE | `String` |  |
-| 07 | xNome | `String` |  |
-| 08 | xFant | `String` |  |
-| 09 | fone | `String` |  |
-| 10 | Endereco | `Endereco` |  |
-| 11 | email | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| toma | `TipoTomador` |  |
+| ItemElementName | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| xFant | `String` |  |
+| fone | `String` |  |
+| Endereco | `Endereco` |  |
+| email | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TomadorTipo04/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TomadorTipo04.OnPropertyChanged(string)') | |

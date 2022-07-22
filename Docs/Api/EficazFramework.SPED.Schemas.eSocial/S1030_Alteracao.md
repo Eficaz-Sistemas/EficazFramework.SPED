@@ -4,8 +4,8 @@
 ## S1030_Alteracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideCargo | `TideCargo` |  |
-| 03 | dadosCargo | `TDadosCargo` |  |
-| 04 | novaValidade | `TIdePeriodo` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideCargo | `TideCargo` |  |
+| dadosCargo | `TDadosCargo` |  |
+| novaValidade | `TIdePeriodo` |  |

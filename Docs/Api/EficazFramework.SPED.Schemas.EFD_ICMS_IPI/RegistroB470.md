@@ -8,25 +8,24 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalPrestacaoServico | `Nullable<Double>` |  |
-| 03 | VrTotalMaterialTerceiros | `Nullable<Double>` |  |
-| 04 | VrTotalMaterialProprio | `Nullable<Double>` |  |
-| 05 | VrTotalSubempreitadas | `Nullable<Double>` |  |
-| 06 | VrTotalOperIsentasNtributaISS | `Double` |  |
-| 07 | VrTotalDedBC | `Nullable<Double>` |  |
-| 08 | VrTotalBCISS | `Nullable<Double>` |  |
-| 09 | VrTotalBCRetencaoISSPrestDeclarante | `Nullable<Double>` |  |
-| 10 | VrTotalISSDestacado | `Nullable<Double>` |  |
-| 11 | VrTotalISSRetidoTomador | `Nullable<Double>` |  |
-| 12 | VrTotalDeducoesISSProprio | `Nullable<Double>` |  |
-| 13 | VrTotalApuradoISSProprioRecolher | `Nullable<Double>` |  |
-| 14 | VrTotalISSsubstitutoRecolher | `Nullable<Double>` |  |
-| 15 | VrISSProprioRecolherSociedUniprofissional | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalPrestacaoServico | `Nullable<Double>` |  |
+| VrTotalMaterialTerceiros | `Nullable<Double>` |  |
+| VrTotalMaterialProprio | `Nullable<Double>` |  |
+| VrTotalSubempreitadas | `Nullable<Double>` |  |
+| VrTotalOperIsentasNtributaISS | `Double` |  |
+| VrTotalDedBC | `Nullable<Double>` |  |
+| VrTotalBCISS | `Nullable<Double>` |  |
+| VrTotalBCRetencaoISSPrestDeclarante | `Nullable<Double>` |  |
+| VrTotalISSDestacado | `Nullable<Double>` |  |
+| VrTotalISSRetidoTomador | `Nullable<Double>` |  |
+| VrTotalDeducoesISSProprio | `Nullable<Double>` |  |
+| VrTotalApuradoISSProprioRecolher | `Nullable<Double>` |  |
+| VrTotalISSsubstitutoRecolher | `Nullable<Double>` |  |
+| VrISSProprioRecolherSociedUniprofissional | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB470/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB470.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB470/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB470.LeParametros(string[])') | |

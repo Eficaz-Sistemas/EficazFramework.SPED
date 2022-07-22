@@ -4,10 +4,10 @@
 ## ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrProcJud | `String` |  |
-| 03 | codSusp | `String` |  |
-| 04 | vlrCPNRet | `String` |  |
-| 05 | vlrRatNRet | `String` |  |
-| 06 | vlrSenarNRet | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrProcJud | `String` |  |
+| codSusp | `String` |  |
+| vlrCPNRet | `String` |  |
+| vlrRatNRet | `String` |  |
+| vlrSenarNRet | `String` |  |

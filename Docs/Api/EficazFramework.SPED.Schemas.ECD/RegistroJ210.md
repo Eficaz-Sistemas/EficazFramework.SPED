@@ -8,19 +8,18 @@ DLPA - Demonstração de Lucros ou Prejuízos Acumulados/DMPL - Demonstração d
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoDemonst | `IndicadorTipoDemonst` |  |
-| 03 | CodAglutinacao | `String` |  |
-| 04 | DescCodAglutinacao | `String` |  |
-| 05 | SaldoFinalCodAglutinacao | `Nullable<Double>` |  |
-| 06 | IndicadorSitSaldoInformado | `String` |  |
-| 07 | SaldoInicialCodAglutinacao | `Nullable<Double>` |  |
-| 08 | IndicadorSitSaldoInformadoInicial | `String` |  |
-| 09 | NotasExplicativas | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoDemonst | `IndicadorTipoDemonst` |  |
+| CodAglutinacao | `String` |  |
+| DescCodAglutinacao | `String` |  |
+| SaldoFinalCodAglutinacao | `Nullable<Double>` |  |
+| IndicadorSitSaldoInformado | `String` |  |
+| SaldoInicialCodAglutinacao | `Nullable<Double>` |  |
+| IndicadorSitSaldoInformadoInicial | `String` |  |
+| NotasExplicativas | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ210/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ210.LeParametros(string[])') | |

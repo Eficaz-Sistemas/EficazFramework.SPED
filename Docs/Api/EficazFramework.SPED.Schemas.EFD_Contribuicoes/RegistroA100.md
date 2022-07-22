@@ -8,35 +8,34 @@ Documento Nota Fiscal de Serviço
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoOperacao | `IndicadorTipoOperacao` |  |
-| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
-| 06 | SerieDocFiscal | `String` |  |
-| 07 | SubserieDocFiscal | `String` |  |
-| 08 | NumeroDocFiscal | `String` |  |
-| 09 | ChaveCodigoVerificacaoNFSe | `String` |  |
-| 10 | Datadocfiscal | `Nullable<DateTime>` |  |
-| 11 | DataExecucaoConclusao | `Nullable<DateTime>` |  |
-| 12 | VrTotalDoc | `Nullable<Double>` |  |
-| 13 | TipoPagamento | `FormaDePagamento` |  |
-| 14 | VrTotalDesconto | `Nullable<Double>` |  |
-| 15 | VrBaseCalculoPis | `Nullable<Double>` |  |
-| 16 | VrPis | `Nullable<Double>` |  |
-| 17 | VrBaseCalculoCofins | `Nullable<Double>` |  |
-| 18 | VrCofins | `Nullable<Double>` |  |
-| 19 | VrPisRetidoFonte | `Nullable<Double>` |  |
-| 20 | VrCofinsRetidoFonte | `Nullable<Double>` |  |
-| 21 | VrISS | `Nullable<Double>` |  |
-| 22 | RegistrosA110 | `List<RegistroA110>` |  |
-| 23 | RegistrosA111 | `List<RegistroA111>` |  |
-| 24 | RegistrosA120 | `List<RegistroA120>` |  |
-| 25 | RegistrosA170 | `List<RegistroA170>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoOperacao | `IndicadorTipoOperacao` |  |
+| IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
+| SerieDocFiscal | `String` |  |
+| SubserieDocFiscal | `String` |  |
+| NumeroDocFiscal | `String` |  |
+| ChaveCodigoVerificacaoNFSe | `String` |  |
+| Datadocfiscal | `Nullable<DateTime>` |  |
+| DataExecucaoConclusao | `Nullable<DateTime>` |  |
+| VrTotalDoc | `Nullable<Double>` |  |
+| TipoPagamento | `FormaDePagamento` |  |
+| VrTotalDesconto | `Nullable<Double>` |  |
+| VrBaseCalculoPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| VrBaseCalculoCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| VrPisRetidoFonte | `Nullable<Double>` |  |
+| VrCofinsRetidoFonte | `Nullable<Double>` |  |
+| VrISS | `Nullable<Double>` |  |
+| RegistrosA110 | `List<RegistroA110>` |  |
+| RegistrosA111 | `List<RegistroA111>` |  |
+| RegistrosA120 | `List<RegistroA120>` |  |
+| RegistrosA170 | `List<RegistroA170>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA100.LeParametros(string[])') | |

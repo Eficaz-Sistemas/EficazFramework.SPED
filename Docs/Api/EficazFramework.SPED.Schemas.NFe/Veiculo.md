@@ -4,13 +4,12 @@
 ## Veiculo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Placa | `String` |  |
-| 03 | UF | `Estado` |  |
-| 04 | RNTC | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Placa | `String` |  |
+| UF | `Estado` |  |
+| RNTC | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Veiculo/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Veiculo.OnPropertyChanged(string)') | |

@@ -8,19 +8,18 @@ Abertura do Bloco 0
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimento | `IndicadorMovimento` |  |
-| 03 | Registros0035 | `List<Registro0035>` |  |
-| 04 | Registros0100 | `List<Registro0100>` |  |
-| 05 | Registro0110 | `Registro0110` |  |
-| 06 | Registros0120 | `List<Registro0120>` |  |
-| 07 | Registros0140 | `List<Registro0140>` |  |
-| 08 | Registros0500 | `List<Registro0500>` |  |
-| 09 | Registros0600 | `List<Registro0600>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimento | `IndicadorMovimento` |  |
+| Registros0035 | `List<Registro0035>` |  |
+| Registros0100 | `List<Registro0100>` |  |
+| Registro0110 | `Registro0110` |  |
+| Registros0120 | `List<Registro0120>` |  |
+| Registros0140 | `List<Registro0140>` |  |
+| Registros0500 | `List<Registro0500>` |  |
+| Registros0600 | `List<Registro0600>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0001/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0001.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0001/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0001.LeParametros(string[])') | |

@@ -4,14 +4,13 @@
 ## RegistroTotalizador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | StringFormat | `String` |  |
-| 03 | RegistroTotalizado | `String` |  |
-| 04 | TotalRegistros | `Int32` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| StringFormat | `String` |  |
+| RegistroTotalizado | `String` |  |
+| TotalRegistros | `Int32` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Primitives/RegistroTotalizador/EscreveLinha().md 'EficazFramework.SPED.Schemas.Primitives.RegistroTotalizador.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Primitives/RegistroTotalizador/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Primitives.RegistroTotalizador.LeParametros(string[])') | |

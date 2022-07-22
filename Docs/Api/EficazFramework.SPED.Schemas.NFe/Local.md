@@ -4,19 +4,18 @@
 ## Local Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ_CPF | `String` |  |
-| 03 | PersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 04 | Logradouro | `String` |  |
-| 05 | Numero | `String` |  |
-| 06 | Complemento | `String` |  |
-| 07 | Bairro | `String` |  |
-| 08 | MunicipioCodigo | `String` |  |
-| 09 | MunicipioNome | `String` |  |
-| 10 | UF | `Estado` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ_CPF | `String` |  |
+| PersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| Logradouro | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| MunicipioCodigo | `String` |  |
+| MunicipioNome | `String` |  |
+| UF | `Estado` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Local/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Local.OnPropertyChanged(string)') | |
