@@ -44,7 +44,40 @@
      - Classes complementares
        - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
        - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
-   
+       
+## Exemplos
+
+### Layouts baseados em arquivos de Texto (txt):
+
+#### Leitura  
+```csharp  
+System.IO.Stream stream = System.IO.File.OpenRead(@"C:\SPED\SPED-EFD-ICMS-IPI.txt");  
+var escrituracao = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao();  
+escrituracao.Encoding = System.Text.Encoding.Default; //opcional  
+await escrituracao.LeArquivo(stream);  
+```  
+#### Escrita  
+```csharp  
+EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao escrituracao = new();  
+escrituracao.Encoding = System.Text.Encoding.Default; //opcional  
+escrituracao.Versao = "017"; //opcional  
+var reg0000 = new Registro0000(null, escrituracao.Versao)  
+{  
+    Finalidade = Primitives.Finalidade.Original,  
+    DataInicial = new System.DateTime(2022, 7, 1),  
+    DataFinal = new System.DateTime(2022, 7, 31),  
+    RazaoSocial = "Empresa Exemplo S/A",  
+    CNPJ = "00123456000100",  
+    UF = "MG",  
+    InscricaoEstadual = "00112345600001",  
+    MunicipioCodigo = "3129707",  
+    Perfil = Perfil.B,  
+    Atividade = Primitives.TipoAtividade.Outros  
+};  
+escrituracao.Blocos["0"].Registros.Add(reg0000);  
+// TODO: Adicionar demais registros em seus respectivos blocos...  
+await escrituracao.EscreveArquivo(System.IO.File.Create(@"C:\SPED\SPED-EFD-ICMS-IPI.txt"));  
+```
    
 ## Pré-Requisitos
 .NET 6.0, para versão mais recente da biblioteca (pode sofrer alterações sem aviso prévio). Pretende-se acompanhar a versão em produção recente do .NET.
