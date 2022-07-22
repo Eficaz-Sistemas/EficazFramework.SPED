@@ -16,7 +16,7 @@
 | [Registro0050](EficazFramework.SPED.Schemas.LCDPR/Registro0050.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0050') | Cadastro das Contas Bancárias do Produtor Rural |
 | [Registro9999](EficazFramework.SPED.Schemas.LCDPR/Registro9999.md 'EficazFramework.SPED.Schemas.LCDPR.Registro9999') | Dados do Contabilista |
 | [RegistroQ100](EficazFramework.SPED.Schemas.LCDPR/RegistroQ100.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ100') | Demonstração da Atividade Rural |
-| [RegistroQ200](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200') | Demonstração da Atividade Rural |
+| [RegistroQ200](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200') | Resumo Mensal do Demonstrativo do Resultado da Atividade Rural |
 
 | Enums | |
 | :--- | :--- |

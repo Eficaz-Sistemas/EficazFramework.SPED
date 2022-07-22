@@ -9,9 +9,10 @@
 [![Twitter Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&label=twitter&logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
 ![EFD ICMS/IPI](https://eficazshields.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v017-red?style=flat-square)
 ![EFD Contribuições](https://eficazshields.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
-![ECD](https://eficazshields.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square)
-![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square)
-
+![ECD](https://eficazshields.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square) 
+![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square) 
+![LCDPR](https://eficazshields.azurewebsites.net/badge/LCDPR-v0013-greenyellow?style=flat-square)
+   
    Bem vindo ao projeto EficazFramework.SPED.
    
    Este projeto tem por finalidade facilitar as tarefas de leitura, auditoria e escrita das mais diversas escriturações e arquivos eletrônicos governamentais.

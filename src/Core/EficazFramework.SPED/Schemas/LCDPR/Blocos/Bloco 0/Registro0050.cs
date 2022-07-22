@@ -12,7 +12,7 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// <example>
 /// ```csharp
 /// string _versao = "0013";
-/// var reg0040 = new Registro0040(null, _versao)
+/// var reg0050 = new Registro0050(null, _versao)
 /// {
 ///     CodigoContaBanco = 1,
 ///     Pais = "BR",

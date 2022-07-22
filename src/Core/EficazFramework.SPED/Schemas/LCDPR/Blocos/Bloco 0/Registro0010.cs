@@ -9,6 +9,7 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// Nível hierárquico - 2 <br/>
 /// Ocorrência - 1:1
 /// </remarks>
+/// <registrosped/>
 /// <example>
 /// ```csharp
 /// string _versao = "0013";
