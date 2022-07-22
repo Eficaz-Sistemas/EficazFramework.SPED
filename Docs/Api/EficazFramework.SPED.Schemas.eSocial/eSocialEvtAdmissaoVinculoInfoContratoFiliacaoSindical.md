@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cnpjSindTrab | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cnpjSindTrab | `String` |  |

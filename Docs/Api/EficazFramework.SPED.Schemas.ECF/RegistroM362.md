@@ -8,12 +8,11 @@ Números dos Lançamentos Relacionados à Conta Contábil
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroLancto | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroLancto | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroM362/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroM362.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroM362/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroM362.LeParametros(string[])') | |

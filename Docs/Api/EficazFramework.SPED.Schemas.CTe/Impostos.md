@@ -4,15 +4,14 @@
 ## Impostos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ICMS | `ICMS` |  |
-| 03 | infTribFed | `InftributosFederais` |  |
-| 04 | vTotTrib | `Nullable<Double>` |  |
-| 05 | infAdFisco | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializevTotTrib() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| ICMS | `ICMS` |  |
+| infTribFed | `InftributosFederais` |  |
+| vTotTrib | `Nullable<Double>` |  |
+| infAdFisco | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Impostos/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Impostos.OnPropertyChanged(string)') | |
+| [ShouldSerializevTotTrib()](EficazFramework.SPED.Schemas.CTe/Impostos/ShouldSerializevTotTrib().md 'EficazFramework.SPED.Schemas.CTe.Impostos.ShouldSerializevTotTrib()') | |

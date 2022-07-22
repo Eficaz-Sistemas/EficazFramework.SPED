@@ -4,10 +4,10 @@
 ## eSocialEvtAdmissao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeEveTrab` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | trabalhador | `eSocialEvtAdmissaoTrabalhador` |  |
-| 05 | vinculo | `eSocialEvtAdmissaoVinculo` |  |
-| 06 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeEveTrab` |  |
+| ideEmpregador | `TEmpregador` |  |
+| trabalhador | `eSocialEvtAdmissaoTrabalhador` |  |
+| vinculo | `eSocialEvtAdmissaoVinculo` |  |
+| Id | `String` |  |

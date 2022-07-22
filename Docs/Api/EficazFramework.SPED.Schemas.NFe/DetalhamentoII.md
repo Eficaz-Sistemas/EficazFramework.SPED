@@ -4,18 +4,17 @@
 ## DetalhamentoII Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vBC | `Nullable<Double>` |  |
-| 03 | vDespAdu | `Nullable<Double>` |  |
-| 04 | vII | `Nullable<Double>` |  |
-| 05 | vIOF | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializevBC() | `Boolean` |  |
-| ShouldSerializevDespAdu() | `Boolean` |  |
-| ShouldSerializevII() | `Boolean` |  |
-| ShouldSerializevIOF() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| vBC | `Nullable<Double>` |  |
+| vDespAdu | `Nullable<Double>` |  |
+| vII | `Nullable<Double>` |  |
+| vIOF | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoII/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII.OnPropertyChanged(string)') | |
+| [ShouldSerializevBC()](EficazFramework.SPED.Schemas.NFe/DetalhamentoII/ShouldSerializevBC().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII.ShouldSerializevBC()') | |
+| [ShouldSerializevDespAdu()](EficazFramework.SPED.Schemas.NFe/DetalhamentoII/ShouldSerializevDespAdu().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII.ShouldSerializevDespAdu()') | |
+| [ShouldSerializevII()](EficazFramework.SPED.Schemas.NFe/DetalhamentoII/ShouldSerializevII().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII.ShouldSerializevII()') | |
+| [ShouldSerializevIOF()](EficazFramework.SPED.Schemas.NFe/DetalhamentoII/ShouldSerializevIOF().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoII.ShouldSerializevIOF()') | |

@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cnpjPrestador | `String` |  |
-| 03 | vlrTotalBaseRet | `String` |  |
-| 04 | infoCRTom | `ReinfEvtTotalInfoTotalRTomInfoCRTom[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cnpjPrestador | `String` |  |
+| vlrTotalBaseRet | `String` |  |
+| infoCRTom | `ReinfEvtTotalInfoTotalRTomInfoCRTom[]` |  |

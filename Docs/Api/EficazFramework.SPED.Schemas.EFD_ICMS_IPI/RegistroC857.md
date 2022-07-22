@@ -8,18 +8,17 @@ Outras obrigações tributárias, ajustes e informações de  valores provenient
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoAjusteBeneficio | `String` |  |
-| 03 | DescricaoAjusteBeneficio | `String` |  |
-| 04 | CodigoItem | `String` |  |
-| 05 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
-| 06 | AliquotaICMS | `Nullable<Double>` |  |
-| 07 | ValorICMS | `Nullable<Double>` |  |
-| 08 | ValorOutros | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoAjusteBeneficio | `String` |  |
+| DescricaoAjusteBeneficio | `String` |  |
+| CodigoItem | `String` |  |
+| ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| ValorOutros | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC857/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC857.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC857/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC857.LeParametros(string[])') | |

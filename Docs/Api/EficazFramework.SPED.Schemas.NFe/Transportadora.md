@@ -4,20 +4,19 @@
 ## Transportadora Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ_CPF | `String` |  |
-| 03 | CNPJ_CPFFormatado | `String` |  |
-| 04 | TransportadoraPersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 05 | RazaoSocial | `String` |  |
-| 06 | InscricaoEstadual | `String` |  |
-| 07 | Endereco | `String` |  |
-| 08 | Municipio | `String` |  |
-| 09 | UF | `Estado` |  |
-| 10 | IEFormatado | `String` |  |
-| 11 | UFSpecified | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| TransportadoraPersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| RazaoSocial | `String` |  |
+| InscricaoEstadual | `String` |  |
+| Endereco | `String` |  |
+| Municipio | `String` |  |
+| UF | `Estado` |  |
+| IEFormatado | `String` |  |
+| UFSpecified | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Transportadora/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Transportadora.OnPropertyChanged(string)') | |

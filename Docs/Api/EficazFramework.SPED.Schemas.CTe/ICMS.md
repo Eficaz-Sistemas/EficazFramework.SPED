@@ -4,12 +4,11 @@
 ## ICMS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Tributacao | `DetalhamentoICMS` |  |
-| 03 | TributacaoIndentifier | `Tributacao_ICMS_Identifier` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Tributacao | `DetalhamentoICMS` |  |
+| TributacaoIndentifier | `Tributacao_ICMS_Identifier` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/ICMS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.ICMS.OnPropertyChanged(string)') | |

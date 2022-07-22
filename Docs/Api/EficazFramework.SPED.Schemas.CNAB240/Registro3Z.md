@@ -6,17 +6,16 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | NumeroSequencial | `Nullable<Int32>` |  |
-| 05 | Autenticacao | `String` |  |
-| 06 | SeuNumero | `String` |  |
-| 07 | NossoNumero | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| NumeroSequencial | `Nullable<Int32>` |  |
+| Autenticacao | `String` |  |
+| SeuNumero | `String` |  |
+| NossoNumero | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro3Z/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro3Z.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro3Z/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro3Z.LeParametros(string[])') | |

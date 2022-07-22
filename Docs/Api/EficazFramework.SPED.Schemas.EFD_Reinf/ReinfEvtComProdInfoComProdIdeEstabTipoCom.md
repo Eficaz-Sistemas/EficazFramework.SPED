@@ -4,8 +4,8 @@
 ## ReinfEvtComProdInfoComProdIdeEstabTipoCom Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indCom | `IndicadorContribuicaoProd` |  |
-| 03 | vlrRecBruta | `String` |  |
-| 04 | infoProc | `ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indCom | `IndicadorContribuicaoProd` |  |
+| vlrRecBruta | `String` |  |
+| infoProc | `ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc[]` |  |

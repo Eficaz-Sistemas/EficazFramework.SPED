@@ -6,14 +6,14 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `String` |  |
-| 03 | cUF | `String` |  |
-| 04 | opt | `String` |  |
-| 05 | Item | `String` |  |
-| 06 | ItemElementName | `ItemChoiceType1` |  |
-| 07 | nSeg | `String` |  |
-| 08 | dhEnvio | `String` |  |
-| 09 | nserieSAT | `String` |  |
-| 10 | versao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAmb | `String` |  |
+| cUF | `String` |  |
+| opt | `String` |  |
+| Item | `String` |  |
+| ItemElementName | `ItemChoiceType1` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| versao | `String` |  |

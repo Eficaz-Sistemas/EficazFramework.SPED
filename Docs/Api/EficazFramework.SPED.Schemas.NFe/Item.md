@@ -8,17 +8,16 @@ Grupo de detalhamento de Produtos e Serviços da NF-e
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Dados | `Produto` |  |
-| 03 | Imposto | `Tributacao` |  |
-| 04 | InformacoesAdicionais | `String` |  |
-| 05 | PossuiInformacoesAdicionais | `Boolean` |  |
-| 06 | NumeroSequencial | `String` |  |
-| 07 | vCustoST | `Double` |  |
-| 08 | vCustoTotal | `Double` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Dados | `Produto` |  |
+| Imposto | `Tributacao` |  |
+| InformacoesAdicionais | `String` |  |
+| PossuiInformacoesAdicionais | `Boolean` |  |
+| NumeroSequencial | `String` |  |
+| vCustoST | `Double` |  |
+| vCustoTotal | `Double` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Item/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Item.OnPropertyChanged(string)') | |

@@ -4,13 +4,12 @@
 ## DetalhamentoItemCombustivelCIDE Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | qBCProd | `String` |  |
-| 03 | vAliqProd | `Nullable<Double>` |  |
-| 04 | vCIDE | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| qBCProd | `String` |  |
+| vAliqProd | `Nullable<Double>` |  |
+| vCIDE | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivelCIDE/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivelCIDE.OnPropertyChanged(string)') | |

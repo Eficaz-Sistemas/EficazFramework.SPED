@@ -8,17 +8,16 @@ Informações adicionais de diferimento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | VrTotalVendasPeriodo | `Nullable<Double>` |  |
-| 04 | VrTotalNaoRecebPeriodo | `Nullable<Double>` |  |
-| 05 | VrContribDiferidaPeriodo | `Nullable<Double>` |  |
-| 06 | VrCreditoDiferidoPeriodo | `Nullable<Double>` |  |
-| 07 | CodigoTipoCredDiferido | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ | `String` |  |
+| VrTotalVendasPeriodo | `Nullable<Double>` |  |
+| VrTotalNaoRecebPeriodo | `Nullable<Double>` |  |
+| VrContribDiferidaPeriodo | `Nullable<Double>` |  |
+| VrCreditoDiferidoPeriodo | `Nullable<Double>` |  |
+| CodigoTipoCredDiferido | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM630/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM630.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM630/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM630.LeParametros(string[])') | |

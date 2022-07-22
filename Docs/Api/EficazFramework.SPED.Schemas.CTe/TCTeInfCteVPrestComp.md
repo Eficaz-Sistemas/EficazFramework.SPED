@@ -4,12 +4,11 @@
 ## TCTeInfCteVPrestComp Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xNome | `String` |  |
-| 03 | vComp | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xNome | `String` |  |
+| vComp | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteVPrestComp/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteVPrestComp.OnPropertyChanged(string)') | |

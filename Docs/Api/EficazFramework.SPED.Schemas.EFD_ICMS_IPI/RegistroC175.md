@@ -8,15 +8,14 @@ REGISTRO C175: OPERAÇÕES COM VEÍCULOS NOVOS (CÓDIGO 01 E 55)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoOperacaoVeiculo | `IndicadorTipoOperacaoVeiculo` |  |
-| 03 | CNPJ | `String` |  |
-| 04 | UFConcessionaria | `String` |  |
-| 05 | ChassiVeiculo | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoOperacaoVeiculo | `IndicadorTipoOperacaoVeiculo` |  |
+| CNPJ | `String` |  |
+| UFConcessionaria | `String` |  |
+| ChassiVeiculo | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC175/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC175.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC175/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC175.LeParametros(string[])') | |

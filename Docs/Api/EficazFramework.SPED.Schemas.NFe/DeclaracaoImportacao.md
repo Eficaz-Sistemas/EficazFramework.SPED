@@ -4,23 +4,22 @@
 ## DeclaracaoImportacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nDI | `String` |  |
-| 03 | dDI | `Nullable<DateTime>` |  |
-| 04 | xLocDesemb | `String` |  |
-| 05 | UFDesemb | `Estado` |  |
-| 06 | dDesemb | `Nullable<DateTime>` |  |
-| 07 | tpViaTransp | `TipoViaTransporteDI` |  |
-| 08 | ValorAFRMM | `Nullable<Double>` |  |
-| 09 | tpIntermedio | `TipoIntermedioDI` |  |
-| 10 | cExportador | `String` |  |
-| 11 | adi | `List<ProdutoDeclaracaoImportacao>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializedDI() | `Boolean` |  |
-| ShouldSerializedDesemb() | `Boolean` |  |
-| ShouldSerializedValorAFRMM() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| nDI | `String` |  |
+| dDI | `Nullable<DateTime>` |  |
+| xLocDesemb | `String` |  |
+| UFDesemb | `Estado` |  |
+| dDesemb | `Nullable<DateTime>` |  |
+| tpViaTransp | `TipoViaTransporteDI` |  |
+| ValorAFRMM | `Nullable<Double>` |  |
+| tpIntermedio | `TipoIntermedioDI` |  |
+| cExportador | `String` |  |
+| adi | `List<ProdutoDeclaracaoImportacao>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DeclaracaoImportacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DeclaracaoImportacao.OnPropertyChanged(string)') | |
+| [ShouldSerializedDesemb()](EficazFramework.SPED.Schemas.NFe/DeclaracaoImportacao/ShouldSerializedDesemb().md 'EficazFramework.SPED.Schemas.NFe.DeclaracaoImportacao.ShouldSerializedDesemb()') | |
+| [ShouldSerializedDI()](EficazFramework.SPED.Schemas.NFe/DeclaracaoImportacao/ShouldSerializedDI().md 'EficazFramework.SPED.Schemas.NFe.DeclaracaoImportacao.ShouldSerializedDI()') | |
+| [ShouldSerializedValorAFRMM()](EficazFramework.SPED.Schemas.NFe/DeclaracaoImportacao/ShouldSerializedValorAFRMM().md 'EficazFramework.SPED.Schemas.NFe.DeclaracaoImportacao.ShouldSerializedValorAFRMM()') | |

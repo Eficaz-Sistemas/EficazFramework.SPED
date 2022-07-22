@@ -6,12 +6,11 @@
 Abertura do Bloco 9
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimento | `IndicadorMovimento` | Indicador de Movimento no Bloco 9 |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimento | `IndicadorMovimento` | Indicador de Movimento no Bloco 9 |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro9001/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro9001.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro9001/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro9001.LeParametros(string[])') | |

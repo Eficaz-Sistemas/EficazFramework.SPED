@@ -4,9 +4,9 @@
 ## eSocialEvtTabRubrica Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeCadastro` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoRubrica | `eSocialEvtTabRubricaInfoRubrica` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeCadastro` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoRubrica | `eSocialEvtTabRubricaInfoRubrica` |  |
+| Id | `String` |  |

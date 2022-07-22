@@ -8,16 +8,15 @@ Totais no Livro Razão Auxiliar com Leiaute Parametrizável
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodProduto | `String` |  |
-| 03 | DescricaoProduto | `String` |  |
-| 04 | QtdeProduto | `Nullable<Double>` |  |
-| 05 | VrUnitario | `Nullable<Double>` |  |
-| 06 | VrTotal | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodProduto | `String` |  |
+| DescricaoProduto | `String` |  |
+| QtdeProduto | `Nullable<Double>` |  |
+| VrUnitario | `Nullable<Double>` |  |
+| VrTotal | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI555/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI555.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI555/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI555.LeParametros(string[])') | |

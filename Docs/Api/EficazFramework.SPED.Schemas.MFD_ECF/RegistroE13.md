@@ -8,18 +8,17 @@ Detalhe da Redução Z - Totalizadores Parciais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroFabricacaoECF | `String` |  |
-| 03 | MFAdicional | `String` |  |
-| 04 | Modelo | `String` |  |
-| 05 | NumeroUsuario | `Nullable<Int32>` |  |
-| 06 | CRZ | `Nullable<Int32>` |  |
-| 07 | TotalizadorParcial | `String` |  |
-| 08 | ValorAcumulado | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroFabricacaoECF | `String` |  |
+| MFAdicional | `String` |  |
+| Modelo | `String` |  |
+| NumeroUsuario | `Nullable<Int32>` |  |
+| CRZ | `Nullable<Int32>` |  |
+| TotalizadorParcial | `String` |  |
+| ValorAcumulado | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.MFD_ECF/RegistroE13/EscreveLinha().md 'EficazFramework.SPED.Schemas.MFD_ECF.RegistroE13.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.MFD_ECF/RegistroE13/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.MFD_ECF.RegistroE13.LeParametros(string[])') | |

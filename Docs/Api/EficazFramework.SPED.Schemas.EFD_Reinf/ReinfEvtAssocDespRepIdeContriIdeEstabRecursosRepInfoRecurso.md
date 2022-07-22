@@ -4,9 +4,9 @@
 ## ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpRepasse | `String` |  |
-| 03 | descRecurso | `String` |  |
-| 04 | vlrBruto | `String` |  |
-| 05 | vlrRetApur | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpRepasse | `String` |  |
+| descRecurso | `String` |  |
+| vlrBruto | `String` |  |
+| vlrRetApur | `String` |  |

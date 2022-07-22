@@ -6,30 +6,29 @@
 Registro de Header de Arquivo
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | VersaoLayoutArquivo | `String` |  |
-| 05 | TipoInscricao | `String` | 1 = CPF            2 = CNPJ [Default] |
-| 06 | CNPJ | `String` |  |
-| 07 | Convenio | `String` |  |
-| 08 | Agencia | `String` |  |
-| 09 | AgenciaDV | `String` |  |
-| 10 | Conta | `String` |  |
-| 11 | ContaDV | `String` |  |
-| 12 | DAC | `String` |  |
-| 13 | NomeEmpresa | `String` |  |
-| 14 | NomeBanco | `String` |  |
-| 15 | ArquivoCodigo | `String` | 1 = Remessa [Default]            2 = Retorno |
-| 16 | DataGeracaoArquivo | `Nullable<DateTime>` |  |
-| 17 | HoraGeracaoArquivo | `Nullable<TimeSpan>` |  |
-| 18 | NumeroSequencialArquivo | `String` |  |
-| 19 | VersaoCNAB | `String` |  |
-| 20 | UnidadeDensidade | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| VersaoLayoutArquivo | `String` |  |
+| TipoInscricao | `String` | 1 = CPF            2 = CNPJ [Default] |
+| CNPJ | `String` |  |
+| Convenio | `String` |  |
+| Agencia | `String` |  |
+| AgenciaDV | `String` |  |
+| Conta | `String` |  |
+| ContaDV | `String` |  |
+| DAC | `String` |  |
+| NomeEmpresa | `String` |  |
+| NomeBanco | `String` |  |
+| ArquivoCodigo | `String` | 1 = Remessa [Default]            2 = Retorno |
+| DataGeracaoArquivo | `Nullable<DateTime>` |  |
+| HoraGeracaoArquivo | `Nullable<TimeSpan>` |  |
+| NumeroSequencialArquivo | `String` |  |
+| VersaoCNAB | `String` |  |
+| UnidadeDensidade | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro0/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro0.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro0/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro0.LeParametros(string[])') | |

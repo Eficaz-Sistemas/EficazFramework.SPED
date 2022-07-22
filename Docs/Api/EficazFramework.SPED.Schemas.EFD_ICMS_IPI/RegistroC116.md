@@ -8,16 +8,15 @@ REGISTRO C116: CUPOM FISCAL ELETRÔNICO REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Cod_Modelo | `String` |  |
-| 03 | Num_Serie_SAT | `String` |  |
-| 04 | Chave_Cupom_Eletronico | `String` |  |
-| 05 | Num_CFE | `String` |  |
-| 06 | DataDoc | `DateTime` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Cod_Modelo | `String` |  |
+| Num_Serie_SAT | `String` |  |
+| Chave_Cupom_Eletronico | `String` |  |
+| Num_CFE | `String` |  |
+| DataDoc | `DateTime` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC116/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC116.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC116/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC116.LeParametros(string[])') | |

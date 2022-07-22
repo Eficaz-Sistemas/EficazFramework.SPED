@@ -8,19 +8,18 @@ Complemento do Documento de Transporte
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorNaturezaFrete | `IndicadorNaturezaFrete` |  |
-| 03 | VrTotalItens | `Nullable<Double>` |  |
-| 04 | CSTPis | `String` |  |
-| 05 | NatBcCredito | `String` |  |
-| 06 | VrBcPis | `Nullable<Double>` |  |
-| 07 | AliquotaPis | `Nullable<Double>` |  |
-| 08 | VrPis | `Nullable<Double>` |  |
-| 09 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorNaturezaFrete | `IndicadorNaturezaFrete` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| NatBcCredito | `String` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD101/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD101.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD101/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD101.LeParametros(string[])') | |

@@ -4,17 +4,16 @@
 ## DetalhamentoItemCombustivel Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cProdANP | `String` |  |
-| 03 | descANP | `String` |  |
-| 04 | CODIF | `String` |  |
-| 05 | qTemp | `String` |  |
-| 06 | UFCons | `Estado` |  |
-| 07 | CIDE | `DetalhamentoItemCombustivelCIDE` |  |
-| 08 | encerrante | `DetalhamentoItemCombustivelEncerrante` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| cProdANP | `String` |  |
+| descANP | `String` |  |
+| CODIF | `String` |  |
+| qTemp | `String` |  |
+| UFCons | `Estado` |  |
+| CIDE | `DetalhamentoItemCombustivelCIDE` |  |
+| encerrante | `DetalhamentoItemCombustivelEncerrante` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemCombustivel/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemCombustivel.OnPropertyChanged(string)') | |

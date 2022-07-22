@@ -4,27 +4,26 @@
 ## Registro70 Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | InscricaoEstadual | `String` |  |
-| 04 | Data | `Nullable<DateTime>` |  |
-| 05 | UF | `String` |  |
-| 06 | Modelo | `String` |  |
-| 07 | Serie | `String` |  |
-| 08 | SubSerie | `String` |  |
-| 09 | Numero | `String` |  |
-| 10 | CFOP | `String` |  |
-| 11 | ValorTotal | `Nullable<Double>` |  |
-| 12 | BaseCalculo | `Nullable<Double>` |  |
-| 13 | ICMS | `Nullable<Double>` |  |
-| 14 | Isentas | `Nullable<Double>` |  |
-| 15 | Outras | `Nullable<Double>` |  |
-| 16 | Modalidade | `String` |  |
-| 17 | Situacao | `SituacaoDocumento` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ | `String` |  |
+| InscricaoEstadual | `String` |  |
+| Data | `Nullable<DateTime>` |  |
+| UF | `String` |  |
+| Modelo | `String` |  |
+| Serie | `String` |  |
+| SubSerie | `String` |  |
+| Numero | `String` |  |
+| CFOP | `String` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| BaseCalculo | `Nullable<Double>` |  |
+| ICMS | `Nullable<Double>` |  |
+| Isentas | `Nullable<Double>` |  |
+| Outras | `Nullable<Double>` |  |
+| Modalidade | `String` |  |
+| Situacao | `SituacaoDocumento` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro70/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro70.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro70/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro70.LeParametros(string[])') | |

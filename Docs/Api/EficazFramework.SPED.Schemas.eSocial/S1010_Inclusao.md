@@ -4,7 +4,7 @@
 ## S1010_Inclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideRubrica | `TIdeRubrica` |  |
-| 03 | dadosRubrica | `TDadosRubrica` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideRubrica | `TIdeRubrica` |  |
+| dadosRubrica | `TDadosRubrica` |  |

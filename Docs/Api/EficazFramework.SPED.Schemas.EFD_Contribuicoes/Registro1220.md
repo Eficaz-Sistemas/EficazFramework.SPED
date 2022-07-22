@@ -8,15 +8,14 @@ Demonstração do crédito a descontar da contribuição extemporânea - pis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PeriodoApuracaoCredito | `Nullable<DateTime>` |  |
-| 03 | IndicadorOrigemCredito | `IndicadorOrigemCreditoBloco1` |  |
-| 04 | CodigoTipoCredito | `String` |  |
-| 05 | VrCredDescontar | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| PeriodoApuracaoCredito | `Nullable<DateTime>` |  |
+| IndicadorOrigemCredito | `IndicadorOrigemCreditoBloco1` |  |
+| CodigoTipoCredito | `String` |  |
+| VrCredDescontar | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1220/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1220.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1220/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1220.LeParametros(string[])') | |

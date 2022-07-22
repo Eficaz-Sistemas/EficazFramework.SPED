@@ -8,12 +8,11 @@ Código de Produto Conforme Tabela ANP(Combustíveis)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoCombustivelANP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoCombustivelANP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0206/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0206.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0206/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0206.LeParametros(string[])') | |

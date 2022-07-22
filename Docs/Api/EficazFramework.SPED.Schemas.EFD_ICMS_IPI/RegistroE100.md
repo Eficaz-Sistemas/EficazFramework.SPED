@@ -8,14 +8,13 @@ Período da Apuração do ICMS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicial | `Nullable<DateTime>` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | RegistroE110 | `RegistroE110` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| RegistroE110 | `RegistroE110` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE100.LeParametros(string[])') | |

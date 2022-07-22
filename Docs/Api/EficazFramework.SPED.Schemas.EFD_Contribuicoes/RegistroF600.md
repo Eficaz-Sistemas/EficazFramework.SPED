@@ -8,21 +8,20 @@ Contribuição Retida na fonte
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorNatRetFonte | `IndicadorNatRetFonte` |  |
-| 03 | DataRetencao | `Nullable<DateTime>` |  |
-| 04 | VrBcRetencao | `Nullable<Double>` |  |
-| 05 | VrTotalRetidoFonte | `Nullable<Double>` |  |
-| 06 | CodigoReceita | `String` |  |
-| 07 | IndicadorNatRec | `IndicadorNaturezaReceita` |  |
-| 08 | CNPJFontePagadora | `String` |  |
-| 09 | VrRetidoFontePis | `Nullable<Double>` |  |
-| 10 | VrRetidoFonteCofins | `Nullable<Double>` |  |
-| 11 | IndicadorCondDeclarante | `IndicadorCondicaoPJDeclarante` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorNatRetFonte | `IndicadorNatRetFonte` |  |
+| DataRetencao | `Nullable<DateTime>` |  |
+| VrBcRetencao | `Nullable<Double>` |  |
+| VrTotalRetidoFonte | `Nullable<Double>` |  |
+| CodigoReceita | `String` |  |
+| IndicadorNatRec | `IndicadorNaturezaReceita` |  |
+| CNPJFontePagadora | `String` |  |
+| VrRetidoFontePis | `Nullable<Double>` |  |
+| VrRetidoFonteCofins | `Nullable<Double>` |  |
+| IndicadorCondDeclarante | `IndicadorCondicaoPJDeclarante` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF600/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF600.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF600/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF600.LeParametros(string[])') | |

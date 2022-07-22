@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoTrabalhadorAposentadoria Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | trabAposent | `SimNaoString` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| trabAposent | `SimNaoString` |  |

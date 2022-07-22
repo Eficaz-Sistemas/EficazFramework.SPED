@@ -6,6 +6,6 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideStatus | `TStatus2` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideStatus | `TStatus2` |  |

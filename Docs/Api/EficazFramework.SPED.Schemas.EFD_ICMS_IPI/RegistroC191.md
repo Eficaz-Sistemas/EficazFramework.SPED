@@ -9,14 +9,13 @@ Provenientes de Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ValorFCP | `Nullable<Double>` |  |
-| 03 | ValorFCP_ST | `Nullable<Double>` |  |
-| 04 | ValorFCP_Ret | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ValorFCP | `Nullable<Double>` |  |
+| ValorFCP_ST | `Nullable<Double>` |  |
+| ValorFCP_Ret | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC191/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC191.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC191/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC191.LeParametros(string[])') | |

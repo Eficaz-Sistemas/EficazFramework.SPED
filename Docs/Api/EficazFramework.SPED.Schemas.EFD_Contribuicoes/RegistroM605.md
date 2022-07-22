@@ -8,14 +8,13 @@ Contribuição para o Cofins a recolher - detalhamento por código de receita
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroCampoRegistroM600 | `String` |  |
-| 03 | CodigoReceita | `String` |  |
-| 04 | VrDebitoDCTF | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroCampoRegistroM600 | `String` |  |
+| CodigoReceita | `String` |  |
+| VrDebitoDCTF | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM605/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM605.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM605/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM605.LeParametros(string[])') | |

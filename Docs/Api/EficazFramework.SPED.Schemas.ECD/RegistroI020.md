@@ -8,16 +8,15 @@ Campos Adicionais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoRegistroRecepCampoAdicional | `String` |  |
-| 03 | NumSeqCampoAdicional | `Nullable<Int16>` |  |
-| 04 | NomeCampoAdicional | `String` |  |
-| 05 | DescricaoCampoAdicional | `String` |  |
-| 06 | IndicacaoTipoData | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoRegistroRecepCampoAdicional | `String` |  |
+| NumSeqCampoAdicional | `Nullable<Int16>` |  |
+| NomeCampoAdicional | `String` |  |
+| DescricaoCampoAdicional | `String` |  |
+| IndicacaoTipoData | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI020/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI020.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI020/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI020.LeParametros(string[])') | |

@@ -8,14 +8,13 @@ Identificação de Sociedade em Conta de Participação - SCP
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoSCP | `String` |  |
-| 03 | DescricaoSCP | `String` |  |
-| 04 | InformacaoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IdentificacaoSCP | `String` |  |
+| DescricaoSCP | `String` |  |
+| InformacaoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0035/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0035.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0035/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0035.LeParametros(string[])') | |

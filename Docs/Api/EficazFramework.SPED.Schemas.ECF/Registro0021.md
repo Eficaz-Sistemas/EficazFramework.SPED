@@ -8,27 +8,26 @@ Parâmetros de Identificação dos Tipos de Programa ¬¬
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | REPES | `Boolean` |  |
-| 03 | RECAP | `Boolean` |  |
-| 04 | PADIS | `Boolean` |  |
-| 05 | PATVD | `Boolean` |  |
-| 06 | REIDI | `Boolean` |  |
-| 07 | REPENEC | `Boolean` |  |
-| 08 | REICOMP | `Boolean` |  |
-| 09 | RETAERO | `Boolean` |  |
-| 10 | RECINE | `Boolean` |  |
-| 11 | ResiduosSolidos | `Boolean` |  |
-| 12 | RECOPA | `Boolean` |  |
-| 13 | CopaDoMundo | `Boolean` |  |
-| 14 | RETID | `Boolean` |  |
-| 15 | REPNBL_REDES | `Boolean` |  |
-| 16 | REIF | `Boolean` |  |
-| 17 | Olimpiadas | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| REPES | `Boolean` |  |
+| RECAP | `Boolean` |  |
+| PADIS | `Boolean` |  |
+| PATVD | `Boolean` |  |
+| REIDI | `Boolean` |  |
+| REPENEC | `Boolean` |  |
+| REICOMP | `Boolean` |  |
+| RETAERO | `Boolean` |  |
+| RECINE | `Boolean` |  |
+| ResiduosSolidos | `Boolean` |  |
+| RECOPA | `Boolean` |  |
+| CopaDoMundo | `Boolean` |  |
+| RETID | `Boolean` |  |
+| REPNBL_REDES | `Boolean` |  |
+| REIF | `Boolean` |  |
+| Olimpiadas | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/Registro0021/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.Registro0021.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/Registro0021/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.Registro0021.LeParametros(string[])') | |

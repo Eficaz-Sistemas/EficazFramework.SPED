@@ -8,16 +8,15 @@ Sociedades cooperativas - composição da base de calculo Cofins
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoSociedadeCooperativa | `IndicadorTipoSociedadeCooperativa` |  |
-| 03 | VrBcContribuicao | `Nullable<Double>` |  |
-| 04 | VrExclusaoEspecCooperativasSobrasFATES | `Nullable<Double>` |  |
-| 05 | VrExclusaoEspecCooperativasTipo | `Nullable<Double>` |  |
-| 06 | VrBcAposExclusoes | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoSociedadeCooperativa | `IndicadorTipoSociedadeCooperativa` |  |
+| VrBcContribuicao | `Nullable<Double>` |  |
+| VrExclusaoEspecCooperativasSobrasFATES | `Nullable<Double>` |  |
+| VrExclusaoEspecCooperativasTipo | `Nullable<Double>` |  |
+| VrBcAposExclusoes | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM611/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM611.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM611/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM611.LeParametros(string[])') | |

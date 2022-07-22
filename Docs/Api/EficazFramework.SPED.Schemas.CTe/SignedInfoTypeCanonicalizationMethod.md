@@ -4,11 +4,10 @@
 ## SignedInfoTypeCanonicalizationMethod Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Algorithm | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Algorithm | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/SignedInfoTypeCanonicalizationMethod/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.SignedInfoTypeCanonicalizationMethod.OnPropertyChanged(string)') | |

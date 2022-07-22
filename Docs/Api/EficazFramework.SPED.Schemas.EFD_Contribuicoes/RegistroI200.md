@@ -8,16 +8,15 @@ Composição das receitas, deduções ou exclusões do período
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroCampoRegistroI100 | `Nullable<Int16>` |  |
-| 03 | CodigoTipoDetalhamento | `String` |  |
-| 04 | VrDetalhado | `Nullable<Double>` |  |
-| 05 | CodigoContaContabil | `String` |  |
-| 06 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroCampoRegistroI100 | `Nullable<Int16>` |  |
+| CodigoTipoDetalhamento | `String` |  |
+| VrDetalhado | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI200.LeParametros(string[])') | |

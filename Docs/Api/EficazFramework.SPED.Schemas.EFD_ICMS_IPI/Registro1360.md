@@ -8,13 +8,12 @@ Lacre da Bomba
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroLacre | `String` |  |
-| 03 | DataAplicacao | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroLacre | `String` |  |
+| DataAplicacao | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1360/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1360.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1360/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1360.LeParametros(string[])') | |

@@ -4,9 +4,9 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscEstab | `PersonalidadeJuridica` |  |
-| 03 | nrInscEstab | `String` |  |
-| 04 | boletim | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletim[]` |  |
-| 05 | receitaTotal | `ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInscEstab | `PersonalidadeJuridica` |  |
+| nrInscEstab | `String` |  |
+| boletim | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletim[]` |  |
+| receitaTotal | `ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal` |  |

@@ -4,11 +4,10 @@
 ## TUnidCargaLacUnidCarga Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nLacre | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nLacre | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TUnidCargaLacUnidCarga/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TUnidCargaLacUnidCarga.OnPropertyChanged(string)') | |

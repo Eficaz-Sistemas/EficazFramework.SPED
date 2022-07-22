@@ -8,12 +8,11 @@ Encerramento do Bloco P
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | QuantidadeLinhasBlocoP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| QuantidadeLinhasBlocoP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroP990/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroP990.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroP990/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroP990.LeParametros(string[])') | |

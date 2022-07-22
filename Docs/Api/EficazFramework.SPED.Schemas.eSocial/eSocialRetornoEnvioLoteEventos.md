@@ -4,9 +4,9 @@
 ## eSocialRetornoEnvioLoteEventos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEmpregador | `TEmpregador` |  |
-| 03 | ideTransmissor | `TIdeTransmissor` |  |
-| 04 | status | `TStatusEnvio` |  |
-| 05 | dadosRecepcaoLote | `TDadosRecepcao` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEmpregador | `TEmpregador` |  |
+| ideTransmissor | `TIdeTransmissor` |  |
+| status | `TStatusEnvio` |  |
+| dadosRecepcaoLote | `TDadosRecepcao` |  |

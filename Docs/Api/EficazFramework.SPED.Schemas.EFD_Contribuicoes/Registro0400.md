@@ -8,13 +8,12 @@ Tabela de Natureza da Operação/Prestação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoNaturezaOperacao | `String` |  |
-| 03 | DescricaoNaturezaOperacao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoNaturezaOperacao | `String` |  |
+| DescricaoNaturezaOperacao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0400/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0400.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0400/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0400.LeParametros(string[])') | |

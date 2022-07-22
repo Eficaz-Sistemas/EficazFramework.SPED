@@ -4,23 +4,22 @@
 ## Endereco Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Logradouro | `String` |  |
-| 03 | Numero | `String` |  |
-| 04 | Complemento | `String` |  |
-| 05 | Bairro | `String` |  |
-| 06 | MunicipioCodigo | `String` |  |
-| 07 | MunicipioNome | `String` |  |
-| 08 | UF | `Estado` |  |
-| 09 | CEP | `String` |  |
-| 10 | CEPFormatado | `String` |  |
-| 11 | PaisCodigo | `String` |  |
-| 12 | PaisNome | `String` |  |
-| 13 | Fone | `String` |  |
-| 14 | FoneFormatado | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Logradouro | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| MunicipioCodigo | `String` |  |
+| MunicipioNome | `String` |  |
+| UF | `Estado` |  |
+| CEP | `String` |  |
+| CEPFormatado | `String` |  |
+| PaisCodigo | `String` |  |
+| PaisNome | `String` |  |
+| Fone | `String` |  |
+| FoneFormatado | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Endereco/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Endereco.OnPropertyChanged(string)') | |

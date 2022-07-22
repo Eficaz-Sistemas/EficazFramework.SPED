@@ -8,20 +8,19 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataEmissao | `Nullable<DateTime>` |  |
-| 03 | NumeroSerieFabEquip | `String` |  |
-| 04 | CodigoProduto | `String` |  |
-| 05 | Quantidade | `Nullable<Decimal>` |  |
-| 06 | ValorLiquido | `Nullable<Double>` |  |
-| 07 | BaseCalculo | `Nullable<Double>` |  |
-| 08 | SituacaoTributariaAliquota | `String` |  |
-| 09 | ICMS | `Nullable<Double>` |  |
-| 10 | Brancos | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| NumeroSerieFabEquip | `String` |  |
+| CodigoProduto | `String` |  |
+| Quantidade | `Nullable<Decimal>` |  |
+| ValorLiquido | `Nullable<Double>` |  |
+| BaseCalculo | `Nullable<Double>` |  |
+| SituacaoTributariaAliquota | `String` |  |
+| ICMS | `Nullable<Double>` |  |
+| Brancos | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro60D/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro60D.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro60D/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro60D.LeParametros(string[])') | |

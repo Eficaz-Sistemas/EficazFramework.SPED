@@ -4,10 +4,10 @@
 ## TTrabEstrang Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | dtChegada | `DateTime` |  |
-| 03 | dtChegadaSpecified | `Boolean` |  |
-| 04 | classTrabEstrang | `ClasseTrabEstrangeiro` |  |
-| 05 | casadoBr | `SimNaoString` |  |
-| 06 | filhosBr | `SimNaoString` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| dtChegada | `DateTime` |  |
+| dtChegadaSpecified | `Boolean` |  |
+| classTrabEstrang | `ClasseTrabEstrangeiro` |  |
+| casadoBr | `SimNaoString` |  |
+| filhosBr | `SimNaoString` |  |

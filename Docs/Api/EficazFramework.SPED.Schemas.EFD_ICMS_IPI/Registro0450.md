@@ -8,13 +8,12 @@ Tabela de Informação Complementar do documento fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoInfComplementar | `String` | Código da Informação Complementar - 06 dígitos. |
-| 03 | TextoInfComplementar | `String` | Texto Livre da Informação Complementar. |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoInfComplementar | `String` | Código da Informação Complementar - 06 dígitos. |
+| TextoInfComplementar | `String` | Texto Livre da Informação Complementar. |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0450/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0450.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0450/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0450.LeParametros(string[])') | |

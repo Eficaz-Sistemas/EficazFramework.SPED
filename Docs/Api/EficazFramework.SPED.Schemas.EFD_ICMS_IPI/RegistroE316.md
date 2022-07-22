@@ -6,20 +6,19 @@
 Obrigações do ICMS Recolhido ou a Recolher - Difal
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoObrigacao | `String` |  |
-| 03 | ValorObrigacao | `Nullable<Double>` |  |
-| 04 | DataVencimento | `Nullable<DateTime>` |  |
-| 05 | CodigoReceita | `String` |  |
-| 06 | NumeroProcessoOuAuto | `String` |  |
-| 07 | OrigemProcesso | `Nullable<IndicadorOrigemProcesso>` |  |
-| 08 | DescricaoProcesso | `String` |  |
-| 09 | TextoComplementar | `String` |  |
-| 10 | MesReferencia | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoObrigacao | `String` |  |
+| ValorObrigacao | `Nullable<Double>` |  |
+| DataVencimento | `Nullable<DateTime>` |  |
+| CodigoReceita | `String` |  |
+| NumeroProcessoOuAuto | `String` |  |
+| OrigemProcesso | `Nullable<IndicadorOrigemProcesso>` |  |
+| DescricaoProcesso | `String` |  |
+| TextoComplementar | `String` |  |
+| MesReferencia | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE316/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE316.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE316/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE316.LeParametros(string[])') | |

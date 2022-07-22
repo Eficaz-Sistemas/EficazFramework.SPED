@@ -4,7 +4,7 @@
 ## TDadosEstabInfoTrabInfoPCD Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | contPCD | `IndicadorContratPCD` |  |
-| 03 | nrProcJud | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| contPCD | `IndicadorContratPCD` |  |
+| nrProcJud | `String` |  |

@@ -8,18 +8,17 @@ Abertura do Arquivo Digital e Identificação do Contribuinte
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Periodo | `Nullable<DateTime>` |  |
-| 03 | RazaoSocial | `String` |  |
-| 04 | CNPJ | `String` |  |
-| 05 | InscricaoEstadual | `String` |  |
-| 06 | CodigoMunicipio | `String` |  |
-| 07 | VersaoLayout | `VersaoLayout` |  |
-| 08 | Finalidade | `Finalidade` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Periodo | `Nullable<DateTime>` |  |
+| RazaoSocial | `String` |  |
+| CNPJ | `String` |  |
+| InscricaoEstadual | `String` |  |
+| CodigoMunicipio | `String` |  |
+| VersaoLayout | `VersaoLayout` |  |
+| Finalidade | `Finalidade` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0000/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0000.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42/Registro0000/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eRessarcimento.CAT42.Registro0000.LeParametros(string[])') | |

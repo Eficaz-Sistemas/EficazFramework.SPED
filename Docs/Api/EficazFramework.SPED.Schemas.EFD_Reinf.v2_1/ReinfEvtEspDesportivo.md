@@ -4,8 +4,8 @@
 ## ReinfEvtEspDesportivo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtEspDesportivoIdeEvento` |  |
-| 03 | ideContri | `ReinfEvtEspDesportivoIdeContri` |  |
-| 04 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtEspDesportivoIdeEvento` |  |
+| ideContri | `ReinfEvtEspDesportivoIdeContri` |  |
+| id | `String` |  |

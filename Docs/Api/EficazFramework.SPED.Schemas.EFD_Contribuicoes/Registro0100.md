@@ -8,24 +8,23 @@ Dados do Contabilista
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NomeContabilista | `String` |  |
-| 03 | NumeroCPFContabilista | `String` |  |
-| 04 | NumeroCRCContabilista | `String` |  |
-| 05 | NumeroCNPJEscrContabilidade | `String` |  |
-| 06 | CEP | `String` |  |
-| 07 | LogradouroImovel | `String` |  |
-| 08 | NumeroImovel | `String` |  |
-| 09 | DadosComplementaresEndereco | `String` |  |
-| 10 | Bairro | `String` |  |
-| 11 | Fone | `String` |  |
-| 12 | Fax | `String` |  |
-| 13 | Email | `String` |  |
-| 14 | CodigoMunicipio | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NomeContabilista | `String` |  |
+| NumeroCPFContabilista | `String` |  |
+| NumeroCRCContabilista | `String` |  |
+| NumeroCNPJEscrContabilidade | `String` |  |
+| CEP | `String` |  |
+| LogradouroImovel | `String` |  |
+| NumeroImovel | `String` |  |
+| DadosComplementaresEndereco | `String` |  |
+| Bairro | `String` |  |
+| Fone | `String` |  |
+| Fax | `String` |  |
+| Email | `String` |  |
+| CodigoMunicipio | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0100.LeParametros(string[])') | |

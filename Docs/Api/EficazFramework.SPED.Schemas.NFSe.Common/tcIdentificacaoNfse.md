@@ -4,15 +4,14 @@
 ## tcIdentificacaoNfse Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Numero | `String` |  |
-| 03 | CodigoVerificacao | `String` |  |
-| 04 | Cnpj | `String` |  |
-| 05 | InscricaoMunicipal | `String` |  |
-| 06 | CodigoMunicipio | `Int32` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Numero | `String` |  |
+| CodigoVerificacao | `String` |  |
+| Cnpj | `String` |  |
+| InscricaoMunicipal | `String` |  |
+| CodigoMunicipio | `Int32` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcIdentificacaoNfse/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcIdentificacaoNfse.OnPropertyChanged(string)') | |

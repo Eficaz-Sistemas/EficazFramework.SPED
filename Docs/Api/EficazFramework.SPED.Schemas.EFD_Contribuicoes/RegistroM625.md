@@ -8,19 +8,18 @@ Detalhamento dos ajustes da contribuição para o Cofins apurada
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DetVrContRedAcrescM620 | `Nullable<Double>` |  |
-| 03 | CSTCofins | `String` |  |
-| 04 | DetBcGeradoraAjCont | `Nullable<Double>` |  |
-| 05 | DetAliqAjusteCont | `Nullable<Double>` |  |
-| 06 | DataOperacaoAjuste | `Nullable<DateTime>` |  |
-| 07 | DescAjuste | `String` |  |
-| 08 | CodigoContaContabil | `String` |  |
-| 09 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DetVrContRedAcrescM620 | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| DetBcGeradoraAjCont | `Nullable<Double>` |  |
+| DetAliqAjusteCont | `Nullable<Double>` |  |
+| DataOperacaoAjuste | `Nullable<DateTime>` |  |
+| DescAjuste | `String` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM625/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM625.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM625/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM625.LeParametros(string[])') | |

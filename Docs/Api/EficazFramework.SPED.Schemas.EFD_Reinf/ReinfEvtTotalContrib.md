@@ -6,11 +6,11 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtTotalContribIdeEvento` |  |
-| 03 | ideContri | `ReinfEvtTotalContribIdeContri` |  |
-| 04 | ideRecRetorno | `ReinfEvtTotalContribIdeRecRetorno` |  |
-| 05 | infoRecEv | `TDadosProcessamentoEvento` |  |
-| 06 | infoTotalContrib | `ReinfEvtTotalContribInfoTotalContrib` |  |
-| 07 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtTotalContribIdeEvento` |  |
+| ideContri | `ReinfEvtTotalContribIdeContri` |  |
+| ideRecRetorno | `ReinfEvtTotalContribIdeRecRetorno` |  |
+| infoRecEv | `TDadosProcessamentoEvento` |  |
+| infoTotalContrib | `ReinfEvtTotalContribInfoTotalContrib` |  |
+| id | `String` |  |

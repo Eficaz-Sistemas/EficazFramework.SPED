@@ -6,14 +6,13 @@
 Detalhes Pagamentos
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Operacao | `Operacao` |  |
-| 03 | Imposto | `Nullable<Double>` |  |
-| 04 | DataVencimento | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Operacao | `Operacao` |  |
+| Imposto | `Nullable<Double>` |  |
+| DataVencimento | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro07/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro07.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro07/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro07.LeParametros(string[])') | |

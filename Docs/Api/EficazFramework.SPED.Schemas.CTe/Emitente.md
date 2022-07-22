@@ -4,16 +4,15 @@
 ## Emitente Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | CNPJ_Formatado | `String` |  |
-| 04 | IE | `String` |  |
-| 05 | xNome | `String` |  |
-| 06 | xFant | `String` |  |
-| 07 | Endereco | `Endereco` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ | `String` |  |
+| CNPJ_Formatado | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| xFant | `String` |  |
+| Endereco | `Endereco` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Emitente/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Emitente.OnPropertyChanged(string)') | |

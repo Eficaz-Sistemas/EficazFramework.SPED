@@ -6,20 +6,19 @@
 Ocorrências (Ajustes de Apuração)
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoOcorrencia | `String` |  |
-| 03 | Valor | `Nullable<Double>` |  |
-| 04 | Operacao | `Operacao` |  |
-| 05 | FundamentacaoLegal | `String` |  |
-| 06 | DescricaoOcorrencia | `String` |  |
-| 07 | Registros25 | `List<Registro25>` |  |
-| 08 | Registros26 | `List<Registro26>` |  |
-| 09 | Registros27 | `List<Registro27>` |  |
-| 10 | Registros28 | `List<Registro28>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoOcorrencia | `String` |  |
+| Valor | `Nullable<Double>` |  |
+| Operacao | `Operacao` |  |
+| FundamentacaoLegal | `String` |  |
+| DescricaoOcorrencia | `String` |  |
+| Registros25 | `List<Registro25>` |  |
+| Registros26 | `List<Registro26>` |  |
+| Registros27 | `List<Registro27>` |  |
+| Registros28 | `List<Registro28>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro20/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro20.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro20/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro20.LeParametros(string[])') | |

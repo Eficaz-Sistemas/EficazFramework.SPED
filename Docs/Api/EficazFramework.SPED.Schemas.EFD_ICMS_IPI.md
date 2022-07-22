@@ -75,7 +75,7 @@
 | [RegistroC140](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC140.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC140') | REGISTRO C140: FATURA (CÓDIGO 01) |
 | [RegistroC141](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC141.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC141') | REGISTRO C141: VENCIMENTO DA FATURA (CÓDIGO 01) |
 | [RegistroC160](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC160.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC160') | REGISTRO C160: VOLUMES TRANSPORTADOS (CÓDIGO 01 E 04) - EXCETO COMBUSTÍVEIS |
-| [RegistroC165](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC165.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC165') | REGISTRO C165: OPERAÇÕES COM COMBUSTÍVEIS |
+| [RegistroC165](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC165.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC165') | Operações com combustíveis |
 | [RegistroC170](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC170.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC170') | Items dos Documentos Fiscais |
 | [RegistroC171](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC171.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC171') | REGISTRO C171: ARMAZENAMENTO DE COMBUSTÍVEIS (CODIGO 01,55) |
 | [RegistroC172](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC172.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC172') | Operações com ISSQN |

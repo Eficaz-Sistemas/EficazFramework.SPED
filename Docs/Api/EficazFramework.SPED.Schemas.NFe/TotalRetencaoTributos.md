@@ -4,17 +4,16 @@
 ## TotalRetencaoTributos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vRetPIS | `String` |  |
-| 03 | vRetCOFINS | `String` |  |
-| 04 | vRetCSLL | `String` |  |
-| 05 | vBCIRRF | `String` |  |
-| 06 | vIRRF | `String` |  |
-| 07 | vBCRetPrev | `String` |  |
-| 08 | vRetPrev | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vRetPIS | `String` |  |
+| vRetCOFINS | `String` |  |
+| vRetCSLL | `String` |  |
+| vBCIRRF | `String` |  |
+| vIRRF | `String` |  |
+| vBCRetPrev | `String` |  |
+| vRetPrev | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TotalRetencaoTributos/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TotalRetencaoTributos.OnPropertyChanged(string)') | |

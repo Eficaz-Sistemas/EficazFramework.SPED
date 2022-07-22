@@ -8,12 +8,11 @@ Encerramento do Bloco K
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | QuantidadeLinhasBlocoK | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| QuantidadeLinhasBlocoK | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroK990/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroK990.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroK990/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroK990.LeParametros(string[])') | |

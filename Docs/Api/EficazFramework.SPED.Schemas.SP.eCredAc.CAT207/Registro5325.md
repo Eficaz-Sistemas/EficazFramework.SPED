@@ -8,16 +8,15 @@ Operações Geradoras de Crédito Acumulado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | EnquadramentoLegal | `Nullable<Int32>` |  |
-| 03 | IVA | `Nullable<Double>` |  |
-| 04 | PMC | `Nullable<Double>` |  |
-| 05 | CreditoEstimado | `Nullable<Double>` |  |
-| 06 | CreditoAcumulado | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| EnquadramentoLegal | `Nullable<Int32>` |  |
+| IVA | `Nullable<Double>` |  |
+| PMC | `Nullable<Double>` |  |
+| CreditoEstimado | `Nullable<Double>` |  |
+| CreditoAcumulado | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5325/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5325.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5325/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5325.LeParametros(string[])') | |

@@ -8,21 +8,20 @@ Contribuição social extemporânea - pis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PeriodoApContExtemporanea | `Nullable<DateTime>` |  |
-| 03 | NaturezaContRecolher | `String` |  |
-| 04 | VrContribuicaoApurada | `Nullable<Double>` |  |
-| 05 | VrCreditoPisDescontarContSocialExtemporanea | `Nullable<Double>` |  |
-| 06 | VrContSocialDevida | `Nullable<Double>` |  |
-| 07 | VrOutrasDeducoes | `Nullable<Double>` |  |
-| 08 | VrContSocialExtemporaneaPg | `Nullable<Double>` |  |
-| 09 | VrMulta | `Nullable<Double>` |  |
-| 10 | VrJuros | `Nullable<Double>` |  |
-| 11 | DataRecolhimento | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| PeriodoApContExtemporanea | `Nullable<DateTime>` |  |
+| NaturezaContRecolher | `String` |  |
+| VrContribuicaoApurada | `Nullable<Double>` |  |
+| VrCreditoPisDescontarContSocialExtemporanea | `Nullable<Double>` |  |
+| VrContSocialDevida | `Nullable<Double>` |  |
+| VrOutrasDeducoes | `Nullable<Double>` |  |
+| VrContSocialExtemporaneaPg | `Nullable<Double>` |  |
+| VrMulta | `Nullable<Double>` |  |
+| VrJuros | `Nullable<Double>` |  |
+| DataRecolhimento | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1200.LeParametros(string[])') | |

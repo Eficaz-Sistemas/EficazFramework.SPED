@@ -8,15 +8,14 @@ Informativo da Composição de Custos
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoReferencial | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | Valor | `Nullable<Double>` |  |
-| 05 | Analitica | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoReferencial | `String` |  |
+| Descricao | `String` |  |
+| Valor | `Nullable<Double>` |  |
+| Analitica | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroL210/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroL210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroL210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroL210.LeParametros(string[])') | |

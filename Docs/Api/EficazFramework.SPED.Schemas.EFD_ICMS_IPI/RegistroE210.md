@@ -6,27 +6,26 @@
 Apuração do ICMS ST
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimentoST | `IndicadorMovimentoST_Difal` |  |
-| 03 | SaldoCredorAnterior | `Nullable<Double>` |  |
-| 04 | ValorSTDevolucoes | `Nullable<Double>` |  |
-| 05 | ValorSTRessarcimentos | `Nullable<Double>` |  |
-| 06 | CreditosAjustes | `Nullable<Double>` |  |
-| 07 | CreditosAjustesDocFiscal | `Nullable<Double>` |  |
-| 08 | RetencaoST | `Nullable<Double>` |  |
-| 09 | DebitosAjustes | `Nullable<Double>` |  |
-| 10 | DebitosAjustesDocFiscal | `Nullable<Double>` |  |
-| 11 | SaldoDevedorApurado | `Nullable<Double>` |  |
-| 12 | DeducoesTotais | `Nullable<Double>` |  |
-| 13 | ICMSST_Recolher | `Nullable<Double>` |  |
-| 14 | SaldoCredorATransportar | `Nullable<Double>` |  |
-| 15 | DebitosExtraApuracao | `Nullable<Double>` |  |
-| 16 | RegistrosE220 | `List<RegistroE220>` |  |
-| 17 | RegistrosE250 | `List<RegistroE250>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimentoST | `IndicadorMovimentoST_Difal` |  |
+| SaldoCredorAnterior | `Nullable<Double>` |  |
+| ValorSTDevolucoes | `Nullable<Double>` |  |
+| ValorSTRessarcimentos | `Nullable<Double>` |  |
+| CreditosAjustes | `Nullable<Double>` |  |
+| CreditosAjustesDocFiscal | `Nullable<Double>` |  |
+| RetencaoST | `Nullable<Double>` |  |
+| DebitosAjustes | `Nullable<Double>` |  |
+| DebitosAjustesDocFiscal | `Nullable<Double>` |  |
+| SaldoDevedorApurado | `Nullable<Double>` |  |
+| DeducoesTotais | `Nullable<Double>` |  |
+| ICMSST_Recolher | `Nullable<Double>` |  |
+| SaldoCredorATransportar | `Nullable<Double>` |  |
+| DebitosExtraApuracao | `Nullable<Double>` |  |
+| RegistrosE220 | `List<RegistroE220>` |  |
+| RegistrosE250 | `List<RegistroE250>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE210/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE210.LeParametros(string[])') | |

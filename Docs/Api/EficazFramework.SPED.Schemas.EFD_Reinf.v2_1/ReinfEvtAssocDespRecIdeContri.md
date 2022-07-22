@@ -4,8 +4,8 @@
 ## ReinfEvtAssocDespRecIdeContri Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `PersonalidadeJuridica` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | ideEstab | `ReinfEvtAssocDespRecIdeContriIdeEstab` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `PersonalidadeJuridica` |  |
+| nrInsc | `String` |  |
+| ideEstab | `ReinfEvtAssocDespRecIdeContriIdeEstab` |  |

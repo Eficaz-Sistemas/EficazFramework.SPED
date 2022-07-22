@@ -4,15 +4,14 @@
 ## eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | retornoEvento | `XElement` |  |
-| 03 | tot | `eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot[]` |  |
-| 04 | Id | `String` |  |
-| 05 | evtDupl | `Boolean` |  |
-| 06 | evtDuplSpecified | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Result() | `eSocialRetornoEvento` |  |
+| retornoEvento | `XElement` |  |
+| tot | `eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot[]` |  |
+| Id | `String` |  |
+| evtDupl | `Boolean` |  |
+| evtDuplSpecified | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [Result()](EficazFramework.SPED.Schemas.eSocial/eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento/Result().md 'EficazFramework.SPED.Schemas.eSocial.eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento.Result()') | |

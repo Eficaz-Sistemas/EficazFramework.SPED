@@ -4,8 +4,8 @@
 ## ResultadoGuiaRecusadaGNRE Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NomeCampo | `String` |  |
-| 03 | CodigoRecusa | `String` |  |
-| 04 | MotivoRecusa | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| NomeCampo | `String` |  |
+| CodigoRecusa | `String` |  |
+| MotivoRecusa | `String` |  |

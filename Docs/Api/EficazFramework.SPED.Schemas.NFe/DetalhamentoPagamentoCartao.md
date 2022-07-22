@@ -4,14 +4,13 @@
 ## DetalhamentoPagamentoCartao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpIntegra | `TipoIntegracaoPgCartao` |  |
-| 03 | CNPJ | `String` |  |
-| 04 | tBand | `BandeiraCartaoCredito` |  |
-| 05 | cAut | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpIntegra | `TipoIntegracaoPgCartao` |  |
+| CNPJ | `String` |  |
+| tBand | `BandeiraCartaoCredito` |  |
+| cAut | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamentoCartao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamentoCartao.OnPropertyChanged(string)') | |

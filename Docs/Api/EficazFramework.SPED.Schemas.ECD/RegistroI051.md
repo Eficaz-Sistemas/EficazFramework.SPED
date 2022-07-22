@@ -8,14 +8,13 @@ Plano de Contas Referencial
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodInstRespPlanoContasRef | `String` |  |
-| 03 | CodCentroCusto | `String` |  |
-| 04 | CodContaReferencial | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodInstRespPlanoContasRef | `String` |  |
+| CodCentroCusto | `String` |  |
+| CodContaReferencial | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI051/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI051.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI051/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI051.LeParametros(string[])') | |

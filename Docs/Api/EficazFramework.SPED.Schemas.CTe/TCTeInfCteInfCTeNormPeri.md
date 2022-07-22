@@ -4,17 +4,16 @@
 ## TCTeInfCteInfCTeNormPeri Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nONU | `String` |  |
-| 03 | xNomeAE | `String` |  |
-| 04 | xClaRisco | `String` |  |
-| 05 | grEmb | `String` |  |
-| 06 | qTotProd | `String` |  |
-| 07 | qVolTipo | `String` |  |
-| 08 | pontoFulgor | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nONU | `String` |  |
+| xNomeAE | `String` |  |
+| xClaRisco | `String` |  |
+| grEmb | `String` |  |
+| qTotProd | `String` |  |
+| qVolTipo | `String` |  |
+| pontoFulgor | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormPeri/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormPeri.OnPropertyChanged(string)') | |

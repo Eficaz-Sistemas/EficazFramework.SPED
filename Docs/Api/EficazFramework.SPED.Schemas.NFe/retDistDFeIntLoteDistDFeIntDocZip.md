@@ -6,18 +6,17 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NSU | `String` |  |
-| 03 | schema | `String` |  |
-| 04 | Value | `Byte[]` |  |
-| 05 | DocumentType | `XMLDocumentType` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| DescompactaAsync() | `Task<Byte[]>` |  |
-| DecodedValueAsync() | `Task<String>` |  |
-| GetInstanceAsync() | `Task<IXmlSpedDocument>` |  |
-| SaveAsync(Stream) | `Task` |  |
-| ToString() | `String` |  |
+| NSU | `String` |  |
+| schema | `String` |  |
+| Value | `Byte[]` |  |
+| DocumentType | `XMLDocumentType` |  |
+
+| Methods | |
+| :--- | :--- |
+| [DecodedValueAsync()](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip/DecodedValueAsync().md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip.DecodedValueAsync()') | |
+| [DescompactaAsync()](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip/DescompactaAsync().md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip.DescompactaAsync()') | |
+| [GetInstanceAsync()](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip/GetInstanceAsync().md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip.GetInstanceAsync()') | |
+| [SaveAsync(Stream)](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip/SaveAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip.SaveAsync(System.IO.Stream)') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/retDistDFeIntLoteDistDFeIntDocZip/ToString().md 'EficazFramework.SPED.Schemas.NFe.retDistDFeIntLoteDistDFeIntDocZip.ToString()') | |

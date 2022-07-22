@@ -4,9 +4,9 @@
 ## eSocialEvtTabEstab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeCadastro` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoEstab | `eSocialEvtTabEstabInfoEstab` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeCadastro` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoEstab | `eSocialEvtTabEstabInfoEstab` |  |
+| Id | `String` |  |

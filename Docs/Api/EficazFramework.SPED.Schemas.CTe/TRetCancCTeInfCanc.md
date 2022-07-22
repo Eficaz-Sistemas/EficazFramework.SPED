@@ -4,20 +4,19 @@
 ## TRetCancCTeInfCanc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | cUF | `OrgaoIBGE` |  |
-| 04 | verAplic | `String` |  |
-| 05 | cStat | `String` |  |
-| 06 | xMotivo | `String` |  |
-| 07 | chCTe | `String` |  |
-| 08 | dhRecbto | `DateTime` |  |
-| 09 | dhRecbtoSpecified | `Boolean` |  |
-| 10 | nProt | `String` |  |
-| 11 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpAmb | `Ambiente` |  |
+| cUF | `OrgaoIBGE` |  |
+| verAplic | `String` |  |
+| cStat | `String` |  |
+| xMotivo | `String` |  |
+| chCTe | `String` |  |
+| dhRecbto | `DateTime` |  |
+| dhRecbtoSpecified | `Boolean` |  |
+| nProt | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TRetCancCTeInfCanc/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TRetCancCTeInfCanc.OnPropertyChanged(string)') | |

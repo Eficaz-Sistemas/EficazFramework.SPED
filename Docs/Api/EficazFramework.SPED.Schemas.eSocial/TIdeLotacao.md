@@ -4,8 +4,8 @@
 ## TIdeLotacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codLotacao | `String` |  |
-| 03 | iniValid | `String` |  |
-| 04 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| codLotacao | `String` |  |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

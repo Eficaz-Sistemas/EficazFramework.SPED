@@ -8,48 +8,47 @@ Complemento do Documento - itens do documento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroSequenciaItem | `Nullable<Int16>` |  |
-| 03 | CodigoItem | `String` |  |
-| 04 | DescricaoItem | `String` |  |
-| 05 | QuantidadeItem | `Nullable<Double>` |  |
-| 06 | UnidadeItem | `String` |  |
-| 07 | VrItem | `Nullable<Double>` |  |
-| 08 | VrDesconto | `Nullable<Double>` |  |
-| 09 | MovimentacaoFisica | `Nullable<Boolean>` |  |
-| 10 | Origem | `OrigemMercadoria` |  |
-| 11 | CST_ICMS | `CST_ICMS` |  |
-| 12 | CFOP | `String` |  |
-| 13 | CodNaturezaOperacao | `String` |  |
-| 14 | VrBaseCalculoICMS | `Nullable<Double>` |  |
-| 15 | AliquotaICMS | `Nullable<Double>` |  |
-| 16 | VrICMS | `Nullable<Double>` |  |
-| 17 | VrBaseCalculoICMSST | `Nullable<Double>` |  |
-| 18 | AliquotaICMSST | `Nullable<Double>` |  |
-| 19 | VrICMSST | `Nullable<Double>` |  |
-| 20 | IndicadorApuracaoIPI | `Nullable<IndicadorPeriodoIPI>` |  |
-| 21 | CST_IPI | `CST_IPI` |  |
-| 22 | CodEnquadramentoIPI | `String` |  |
-| 23 | VrBaseCalculoIPI | `Nullable<Double>` |  |
-| 24 | AliquotaIPI | `Nullable<Double>` |  |
-| 25 | VrIPI | `Nullable<Double>` |  |
-| 26 | CST_PIS | `CST_PIS` |  |
-| 27 | VrBaseCalculoPIS | `Nullable<Double>` |  |
-| 28 | AliquotaPIS | `Nullable<Double>` |  |
-| 29 | QuantidadeBCPIS | `Nullable<Double>` |  |
-| 30 | AliquotaPISQuantidade | `Nullable<Double>` |  |
-| 31 | VrPIS | `Nullable<Double>` |  |
-| 32 | CST_COFINS | `CST_COFINS` |  |
-| 33 | VrBaseCalculoCOFINS | `Nullable<Double>` |  |
-| 34 | AliquotaCOFINS | `Nullable<Double>` |  |
-| 35 | QuantidadeBCCOFINS | `Nullable<Double>` |  |
-| 36 | AliquotaCOFINSQuantidade | `Nullable<Double>` |  |
-| 37 | VrCOFINS | `Nullable<Double>` |  |
-| 38 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroSequenciaItem | `Nullable<Int16>` |  |
+| CodigoItem | `String` |  |
+| DescricaoItem | `String` |  |
+| QuantidadeItem | `Nullable<Double>` |  |
+| UnidadeItem | `String` |  |
+| VrItem | `Nullable<Double>` |  |
+| VrDesconto | `Nullable<Double>` |  |
+| MovimentacaoFisica | `Nullable<Boolean>` |  |
+| Origem | `OrigemMercadoria` |  |
+| CST_ICMS | `CST_ICMS` |  |
+| CFOP | `String` |  |
+| CodNaturezaOperacao | `String` |  |
+| VrBaseCalculoICMS | `Nullable<Double>` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| VrICMS | `Nullable<Double>` |  |
+| VrBaseCalculoICMSST | `Nullable<Double>` |  |
+| AliquotaICMSST | `Nullable<Double>` |  |
+| VrICMSST | `Nullable<Double>` |  |
+| IndicadorApuracaoIPI | `Nullable<IndicadorPeriodoIPI>` |  |
+| CST_IPI | `CST_IPI` |  |
+| CodEnquadramentoIPI | `String` |  |
+| VrBaseCalculoIPI | `Nullable<Double>` |  |
+| AliquotaIPI | `Nullable<Double>` |  |
+| VrIPI | `Nullable<Double>` |  |
+| CST_PIS | `CST_PIS` |  |
+| VrBaseCalculoPIS | `Nullable<Double>` |  |
+| AliquotaPIS | `Nullable<Double>` |  |
+| QuantidadeBCPIS | `Nullable<Double>` |  |
+| AliquotaPISQuantidade | `Nullable<Double>` |  |
+| VrPIS | `Nullable<Double>` |  |
+| CST_COFINS | `CST_COFINS` |  |
+| VrBaseCalculoCOFINS | `Nullable<Double>` |  |
+| AliquotaCOFINS | `Nullable<Double>` |  |
+| QuantidadeBCCOFINS | `Nullable<Double>` |  |
+| AliquotaCOFINSQuantidade | `Nullable<Double>` |  |
+| VrCOFINS | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC170/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC170.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC170/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC170.LeParametros(string[])') | |

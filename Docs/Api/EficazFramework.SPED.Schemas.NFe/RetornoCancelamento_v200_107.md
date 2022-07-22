@@ -9,13 +9,12 @@ ANTES da implantação de cancelamento por Evento de NF-e.
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InformacoesCancelamento | `RetornoCancelamentoInformacoes_v200_107` |  |
-| 03 | Signature | `SignatureType` |  |
-| 04 | Versao | `VersaoCancelamento` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| InformacoesCancelamento | `RetornoCancelamentoInformacoes_v200_107` |  |
+| Signature | `SignatureType` |  |
+| Versao | `VersaoCancelamento` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/RetornoCancelamento_v200_107/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.RetornoCancelamento_v200_107.OnPropertyChanged(string)') | |

@@ -8,16 +8,15 @@ Tabela de Receita Bruta Mensal para Fins de Rateio de Créditos Comuns
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ReceitaBrutaNaoCumulativaMercadoInt | `Nullable<Double>` |  |
-| 03 | ReceitaBrutaNaoCumulativaNaoTribMercInt | `Nullable<Double>` |  |
-| 04 | ReceitaBrutaNaoCumulativaExport | `Nullable<Double>` |  |
-| 05 | ReceitaBrutaCumulativa | `Nullable<Double>` |  |
-| 06 | ReceitaBrutaTotal | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ReceitaBrutaNaoCumulativaMercadoInt | `Nullable<Double>` |  |
+| ReceitaBrutaNaoCumulativaNaoTribMercInt | `Nullable<Double>` |  |
+| ReceitaBrutaNaoCumulativaExport | `Nullable<Double>` |  |
+| ReceitaBrutaCumulativa | `Nullable<Double>` |  |
+| ReceitaBrutaTotal | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0111/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0111.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0111/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0111.LeParametros(string[])') | |

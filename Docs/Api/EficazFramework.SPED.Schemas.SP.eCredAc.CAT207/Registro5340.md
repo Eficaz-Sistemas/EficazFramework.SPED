@@ -8,15 +8,14 @@ Dados da Exportação Indireta Comprovada - Ficha 5H
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Exportador_DataEmissao | `Nullable<DateTime>` |  |
-| 03 | Exportador_Numero | `Nullable<Int32>` |  |
-| 04 | Exportador_Serie | `String` |  |
-| 05 | DeclaracaoExportacao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Exportador_DataEmissao | `Nullable<DateTime>` |  |
+| Exportador_Numero | `Nullable<Int32>` |  |
+| Exportador_Serie | `String` |  |
+| DeclaracaoExportacao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5340/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5340.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5340/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5340.LeParametros(string[])') | |

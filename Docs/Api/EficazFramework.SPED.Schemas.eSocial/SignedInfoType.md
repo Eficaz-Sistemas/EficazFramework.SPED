@@ -4,14 +4,13 @@
 ## SignedInfoType Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CanonicalizationMethod | `SignedInfoTypeCanonicalizationMethod` |  |
-| 03 | SignatureMethod | `SignedInfoTypeSignatureMethod` |  |
-| 04 | Reference | `ReferenceType` |  |
-| 05 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CanonicalizationMethod | `SignedInfoTypeCanonicalizationMethod` |  |
+| SignatureMethod | `SignedInfoTypeSignatureMethod` |  |
+| Reference | `ReferenceType` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.eSocial/SignedInfoType/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.eSocial.SignedInfoType.OnPropertyChanged(string)') | |

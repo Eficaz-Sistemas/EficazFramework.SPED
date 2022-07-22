@@ -8,23 +8,22 @@ Consolidação da contribuição para o pis do período
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalContNcumulativa | `Nullable<Double>` |  |
-| 03 | VrCreditoDescontApPerEscrit | `Nullable<Double>` |  |
-| 04 | VrCreditoDescontApPerAnt | `Nullable<Double>` |  |
-| 05 | VrTotalContNCumulatDevida | `Nullable<Double>` |  |
-| 06 | VrRetFonteDedPeriodo | `Nullable<Double>` |  |
-| 07 | OutrasDedPeriodo | `Nullable<Double>` |  |
-| 08 | VrContNcumulativaPg | `Nullable<Double>` |  |
-| 09 | VrTotalContCumulativa | `Nullable<Double>` |  |
-| 10 | VrRetFonteDedPeriodoCum | `Nullable<Double>` |  |
-| 11 | OutrasDedPeriodoCum | `Nullable<Double>` |  |
-| 12 | VrContCumulativaPg | `Nullable<Double>` |  |
-| 13 | VrTotalContRecolherPeriodo | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalContNcumulativa | `Nullable<Double>` |  |
+| VrCreditoDescontApPerEscrit | `Nullable<Double>` |  |
+| VrCreditoDescontApPerAnt | `Nullable<Double>` |  |
+| VrTotalContNCumulatDevida | `Nullable<Double>` |  |
+| VrRetFonteDedPeriodo | `Nullable<Double>` |  |
+| OutrasDedPeriodo | `Nullable<Double>` |  |
+| VrContNcumulativaPg | `Nullable<Double>` |  |
+| VrTotalContCumulativa | `Nullable<Double>` |  |
+| VrRetFonteDedPeriodoCum | `Nullable<Double>` |  |
+| OutrasDedPeriodoCum | `Nullable<Double>` |  |
+| VrContCumulativaPg | `Nullable<Double>` |  |
+| VrTotalContRecolherPeriodo | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM200.LeParametros(string[])') | |

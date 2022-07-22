@@ -8,13 +8,12 @@ Complemento do Documento - Informação Complementar da Nota Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoInformacaoComplementas | `String` |  |
-| 03 | DescricaoComplementarCodRef | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoInformacaoComplementas | `String` |  |
+| DescricaoComplementarCodRef | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC110/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC110.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC110/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC110.LeParametros(string[])') | |

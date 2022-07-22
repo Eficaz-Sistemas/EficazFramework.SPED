@@ -4,37 +4,36 @@
 ## InformacoesCTe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoOperacao | `IdentificacaoOperacao` |  |
-| 03 | Complemento | `ComplementoCTe` |  |
-| 04 | Emitente | `Emitente` |  |
-| 05 | Tomador | `Object` |  |
-| 06 | Remetente | `Remetente` |  |
-| 07 | Expedidor | `Expedidor` | Tomador do Serviço? |
-| 08 | Recebedor | `Recebedor` |  |
-| 09 | Destinatario | `Destinatario` |  |
-| 10 | Valores | `ValoresPrestacaoServico` |  |
-| 11 | Impostos | `Impostos` |  |
-| 12 | DocumentosReferenciados | `ICollection` |  |
-| 13 | InformacaoCTePorTipo | `Object` |  |
-| 14 | AutorizadosDownloadXML | `ObservableCollection<AutorizadoXML>` |  |
-| 15 | Versao | `String` |  |
-| 16 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, InformacoesCTe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, InformacoesCTe) | `Boolean` |  |
-| Deserialize(string) | `InformacoesCTe` |  |
-| Deserialize(Stream) | `InformacoesCTe` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, InformacoesCTe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, InformacoesCTe) | `Boolean` |  |
-| LoadFrom(Stream) | `InformacoesCTe` |  |
-| LoadFromAsync(Stream) | `Task<InformacoesCTe>` |  |
+| IdentificacaoOperacao | `IdentificacaoOperacao` |  |
+| Complemento | `ComplementoCTe` |  |
+| Emitente | `Emitente` |  |
+| Tomador | `Object` |  |
+| Remetente | `Remetente` |  |
+| Expedidor | `Expedidor` | Tomador do Serviço? |
+| Recebedor | `Recebedor` |  |
+| Destinatario | `Destinatario` |  |
+| Valores | `ValoresPrestacaoServico` |  |
+| Impostos | `Impostos` |  |
+| DocumentosReferenciados | `ICollection` |  |
+| InformacaoCTePorTipo | `Object` |  |
+| AutorizadosDownloadXML | `ObservableCollection<AutorizadoXML>` |  |
+| Versao | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, InformacoesCTe)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/CanDeserialize(string,InformacoesCTe).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.CanDeserialize(string, EficazFramework.SPED.Schemas.CTe.InformacoesCTe)') | |
+| [CanDeserialize(string, InformacoesCTe, Exception)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/CanDeserialize(string,InformacoesCTe,Exception).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.CanDeserialize(string, EficazFramework.SPED.Schemas.CTe.InformacoesCTe, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, InformacoesCTe)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/CanLoadFrom(Stream,InformacoesCTe).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.CTe.InformacoesCTe)') | |
+| [CanLoadFrom(Stream, InformacoesCTe, Exception)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/CanLoadFrom(Stream,InformacoesCTe,Exception).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.CTe.InformacoesCTe, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/Deserialize(string).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/LoadFromAsync(Stream).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.LoadFromAsync(System.IO.Stream)') | |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.OnPropertyChanged(string)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.CTe/InformacoesCTe/Serialize().md 'EficazFramework.SPED.Schemas.CTe.InformacoesCTe.Serialize()') | Serializes current TNfeProc object into an XML document |

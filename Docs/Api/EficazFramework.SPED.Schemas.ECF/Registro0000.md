@@ -8,23 +8,22 @@ Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | NomeEmpresarial | `String` |  |
-| 04 | IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
-| 05 | SituacaoEspecial | `SituacaoEspecial` |  |
-| 06 | PatrimonioRemanescente | `Nullable<Double>` |  |
-| 07 | DataSituacaoEspecial | `Nullable<DateTime>` |  |
-| 08 | DataInicial | `Nullable<DateTime>` |  |
-| 09 | DataFinal | `Nullable<DateTime>` |  |
-| 10 | Retificadora | `Boolean` | Valores válidos:            S - ECF Retificadora            N - ECF Original            F - ECF Original com mudança de forma de tributação |
-| 11 | ReciboRetificacao | `String` |  |
-| 12 | TipoECF | `TipoECF` |  |
-| 13 | CodigoSCP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ | `String` |  |
+| NomeEmpresarial | `String` |  |
+| IndicadorSitInicioPeriodo | `SituacaoInicioPeriodo` |  |
+| SituacaoEspecial | `SituacaoEspecial` |  |
+| PatrimonioRemanescente | `Nullable<Double>` |  |
+| DataSituacaoEspecial | `Nullable<DateTime>` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| Retificadora | `Boolean` | Valores válidos:            S - ECF Retificadora            N - ECF Original            F - ECF Original com mudança de forma de tributação |
+| ReciboRetificacao | `String` |  |
+| TipoECF | `TipoECF` |  |
+| CodigoSCP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/Registro0000/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.Registro0000.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/Registro0000/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.Registro0000.LeParametros(string[])') | |

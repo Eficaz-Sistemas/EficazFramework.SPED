@@ -8,14 +8,13 @@ Fatores de Conversão de Unidades
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | UnidadeComercialConvertida | `String` |  |
-| 03 | FatorConversao | `Nullable<Double>` |  |
-| 04 | CodigoBarras | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| UnidadeComercialConvertida | `String` |  |
+| FatorConversao | `Nullable<Double>` |  |
+| CodigoBarras | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0220/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0220.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0220/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0220.LeParametros(string[])') | |

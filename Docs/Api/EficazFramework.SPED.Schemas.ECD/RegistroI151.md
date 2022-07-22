@@ -8,12 +8,11 @@ Assinatura Digital dos Arquivos que Contêm as Fichas de Lançamento Utilizadas 
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | HashFichasLanctos | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| HashFichasLanctos | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI151/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI151.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI151/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI151.LeParametros(string[])') | |

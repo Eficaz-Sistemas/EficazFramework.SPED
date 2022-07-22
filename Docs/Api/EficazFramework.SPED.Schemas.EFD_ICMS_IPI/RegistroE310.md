@@ -6,34 +6,33 @@
 Apuração do ICMS Difal
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimentoDifal | `IndicadorMovimentoST_Difal` |  |
-| 03 | SaldoCredorAnterior | `Nullable<Double>` |  |
-| 04 | DebitosDifal | `Nullable<Double>` |  |
-| 05 | OutrosDebitos | `Nullable<Double>` |  |
-| 06 | CreditosDifal | `Nullable<Double>` |  |
-| 07 | OutrosCreditos | `Nullable<Double>` |  |
-| 08 | SaldoDevedorApurado | `Nullable<Double>` |  |
-| 09 | DeducoesDifal | `Nullable<Double>` |  |
-| 10 | ICMSDifal_Recolher | `Nullable<Double>` |  |
-| 11 | SaldoCredorATransportar | `Nullable<Double>` |  |
-| 12 | DebitosExtraApuracao | `Nullable<Double>` |  |
-| 13 | SaldoCredorAnteriorFCP | `Nullable<Double>` |  |
-| 14 | DebitosFCP | `Nullable<Double>` |  |
-| 15 | OutrosDebitosFCP | `Nullable<Double>` |  |
-| 16 | CreditosFCP | `Nullable<Double>` |  |
-| 17 | OutrosCreditosFCP | `Nullable<Double>` |  |
-| 18 | SaldoDevedorApuradoFCP | `Nullable<Double>` |  |
-| 19 | DeducoesFCP | `Nullable<Double>` |  |
-| 20 | ICMSFCP_Recolher | `Nullable<Double>` |  |
-| 21 | SaldoCredorATransportarFCP | `Nullable<Double>` |  |
-| 22 | DebitosExtraApuracaoFCP | `Nullable<Double>` |  |
-| 23 | RegistrosE311 | `List<RegistroE311>` |  |
-| 24 | RegistrosE316 | `List<RegistroE316>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimentoDifal | `IndicadorMovimentoST_Difal` |  |
+| SaldoCredorAnterior | `Nullable<Double>` |  |
+| DebitosDifal | `Nullable<Double>` |  |
+| OutrosDebitos | `Nullable<Double>` |  |
+| CreditosDifal | `Nullable<Double>` |  |
+| OutrosCreditos | `Nullable<Double>` |  |
+| SaldoDevedorApurado | `Nullable<Double>` |  |
+| DeducoesDifal | `Nullable<Double>` |  |
+| ICMSDifal_Recolher | `Nullable<Double>` |  |
+| SaldoCredorATransportar | `Nullable<Double>` |  |
+| DebitosExtraApuracao | `Nullable<Double>` |  |
+| SaldoCredorAnteriorFCP | `Nullable<Double>` |  |
+| DebitosFCP | `Nullable<Double>` |  |
+| OutrosDebitosFCP | `Nullable<Double>` |  |
+| CreditosFCP | `Nullable<Double>` |  |
+| OutrosCreditosFCP | `Nullable<Double>` |  |
+| SaldoDevedorApuradoFCP | `Nullable<Double>` |  |
+| DeducoesFCP | `Nullable<Double>` |  |
+| ICMSFCP_Recolher | `Nullable<Double>` |  |
+| SaldoCredorATransportarFCP | `Nullable<Double>` |  |
+| DebitosExtraApuracaoFCP | `Nullable<Double>` |  |
+| RegistrosE311 | `List<RegistroE311>` |  |
+| RegistrosE316 | `List<RegistroE316>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE310/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE310.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE310/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE310.LeParametros(string[])') | |

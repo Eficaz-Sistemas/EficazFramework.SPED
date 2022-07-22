@@ -4,12 +4,11 @@
 ## AutorizadoXML Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `String` |  |
-| 03 | ItemElementName | `PersonalidadeJuridica79` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Item | `String` |  |
+| ItemElementName | `PersonalidadeJuridica79` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/AutorizadoXML/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.AutorizadoXML.OnPropertyChanged(string)') | |

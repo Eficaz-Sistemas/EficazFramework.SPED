@@ -4,17 +4,16 @@
 ## Escrituracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Registro01 | `Registro01` |  |
-| 03 | Registros05 | `IEnumerable<Registro05>` |  |
-| 04 | Registros07 | `IEnumerable<Registro07>` |  |
-| 05 | Registros10 | `IEnumerable<Registro10>` |  |
-| 06 | Registros14 | `IEnumerable<Registro14>` |  |
-| 07 | Registros20 | `IEnumerable<Registro20>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ProcessaLinha(string) | `Void` |  |
-| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| Registro01 | `Registro01` |  |
+| Registros05 | `IEnumerable<Registro05>` |  |
+| Registros07 | `IEnumerable<Registro07>` |  |
+| Registros10 | `IEnumerable<Registro10>` |  |
+| Registros14 | `IEnumerable<Registro14>` |  |
+| Registros20 | `IEnumerable<Registro20>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [LeEmpresaArquivo(Stream)](EficazFramework.SPED.Schemas.SP.GIA/Escrituracao/LeEmpresaArquivo(Stream).md 'EficazFramework.SPED.Schemas.SP.GIA.Escrituracao.LeEmpresaArquivo(System.IO.Stream)') | |
+| [ProcessaLinha(string)](EficazFramework.SPED.Schemas.SP.GIA/Escrituracao/ProcessaLinha(string).md 'EficazFramework.SPED.Schemas.SP.GIA.Escrituracao.ProcessaLinha(string)') | |

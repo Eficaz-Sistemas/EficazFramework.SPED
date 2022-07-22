@@ -4,23 +4,22 @@
 ## Endereco Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xLgr | `String` |  |
-| 03 | nro | `String` |  |
-| 04 | xCpl | `String` |  |
-| 05 | xBairro | `String` |  |
-| 06 | cMun | `String` |  |
-| 07 | xMun | `String` |  |
-| 08 | CEP | `String` |  |
-| 09 | CEPFormatado | `String` |  |
-| 10 | UF | `Estado` |  |
-| 11 | cPais | `String` |  |
-| 12 | xPais | `String` |  |
-| 13 | fone | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| CloneToEnderecoNFe() | `Endereco` |  |
+| xLgr | `String` |  |
+| nro | `String` |  |
+| xCpl | `String` |  |
+| xBairro | `String` |  |
+| cMun | `String` |  |
+| xMun | `String` |  |
+| CEP | `String` |  |
+| CEPFormatado | `String` |  |
+| UF | `Estado` |  |
+| cPais | `String` |  |
+| xPais | `String` |  |
+| fone | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CloneToEnderecoNFe()](EficazFramework.SPED.Schemas.CTe/Endereco/CloneToEnderecoNFe().md 'EficazFramework.SPED.Schemas.CTe.Endereco.CloneToEnderecoNFe()') | |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/Endereco/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.Endereco.OnPropertyChanged(string)') | |

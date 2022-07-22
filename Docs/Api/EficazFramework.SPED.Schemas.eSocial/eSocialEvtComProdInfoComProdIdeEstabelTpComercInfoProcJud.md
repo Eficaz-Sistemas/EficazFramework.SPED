@@ -4,14 +4,14 @@
 ## eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpProc | `SByte` |  |
-| 03 | nrProc | `String` |  |
-| 04 | codSusp | `String` |  |
-| 05 | vrCPSusp | `Decimal` |  |
-| 06 | vrCPSuspSpecified | `Boolean` |  |
-| 07 | vrRatSusp | `Decimal` |  |
-| 08 | vrRatSuspSpecified | `Boolean` |  |
-| 09 | vrSenarSusp | `Decimal` |  |
-| 10 | vrSenarSuspSpecified | `Boolean` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpProc | `SByte` |  |
+| nrProc | `String` |  |
+| codSusp | `String` |  |
+| vrCPSusp | `Decimal` |  |
+| vrCPSuspSpecified | `Boolean` |  |
+| vrRatSusp | `Decimal` |  |
+| vrRatSuspSpecified | `Boolean` |  |
+| vrSenarSusp | `Decimal` |  |
+| vrSenarSuspSpecified | `Boolean` |  |

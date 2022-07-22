@@ -4,14 +4,13 @@
 ## TCTeInfCteComplFluxo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xOrig | `String` |  |
-| 03 | pass | `ObservableCollection<TCTeInfCteComplFluxoPass>` |  |
-| 04 | xDest | `String` |  |
-| 05 | xRota | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xOrig | `String` |  |
+| pass | `ObservableCollection<TCTeInfCteComplFluxoPass>` |  |
+| xDest | `String` |  |
+| xRota | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplFluxo/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplFluxo.OnPropertyChanged(string)') | |

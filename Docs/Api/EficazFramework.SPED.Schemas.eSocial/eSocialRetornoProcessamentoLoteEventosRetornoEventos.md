@@ -4,6 +4,6 @@
 ## eSocialRetornoProcessamentoLoteEventosRetornoEventos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | evento | `eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| evento | `eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento[]` |  |

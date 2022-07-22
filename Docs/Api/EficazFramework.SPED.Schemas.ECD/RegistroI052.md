@@ -8,13 +8,12 @@ Indicação dos Códigos de Aglutinação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodCentroCusto | `String` |  |
-| 03 | CodAglutinacaoUtilzBalanco | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodCentroCusto | `String` |  |
+| CodAglutinacaoUtilzBalanco | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI052/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI052.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI052/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI052.LeParametros(string[])') | |

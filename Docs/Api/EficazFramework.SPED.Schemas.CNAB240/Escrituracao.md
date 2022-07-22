@@ -2,9 +2,8 @@
 ### [EficazFramework.SPED.Schemas.CNAB240](EficazFramework.SPED.Schemas.CNAB240.md 'EficazFramework.SPED.Schemas.CNAB240')
 
 ## Escrituracao Class
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| ProcessaLinha(string) | `Void` |  |
-| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| Methods | |
+| :--- | :--- |
+| [LeEmpresaArquivo(Stream)](EficazFramework.SPED.Schemas.CNAB240/Escrituracao/LeEmpresaArquivo(Stream).md 'EficazFramework.SPED.Schemas.CNAB240.Escrituracao.LeEmpresaArquivo(System.IO.Stream)') | |
+| [ProcessaLinha(string)](EficazFramework.SPED.Schemas.CNAB240/Escrituracao/ProcessaLinha(string).md 'EficazFramework.SPED.Schemas.CNAB240.Escrituracao.ProcessaLinha(string)') | |

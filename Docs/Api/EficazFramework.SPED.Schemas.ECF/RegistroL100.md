@@ -8,24 +8,23 @@ Balanço Patrimonial
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoReferencial | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | TipoConta | `String` | S - Sintética            A - Analitica |
-| 05 | Nivel | `Int32` |  |
-| 06 | Natureza | `TipoConta` |  |
-| 07 | ContaSuperior | `String` |  |
-| 08 | SaldoInicial | `Nullable<Double>` |  |
-| 09 | NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
-| 10 | Debitos | `Nullable<Double>` |  |
-| 11 | Creditos | `Nullable<Double>` |  |
-| 12 | SaldoFinal | `Nullable<Double>` |  |
-| 13 | NaturezaSaldoFinal | `String` | D - Devedor            C - Credor |
-| 14 | SubContas | `List<RegistroL100>` | Apenas para possibilitar a totalização na montagem do BP |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoReferencial | `String` |  |
+| Descricao | `String` |  |
+| TipoConta | `String` | S - Sintética            A - Analitica |
+| Nivel | `Int32` |  |
+| Natureza | `TipoConta` |  |
+| ContaSuperior | `String` |  |
+| SaldoInicial | `Nullable<Double>` |  |
+| NaturezaSaldoInicial | `String` | D - Devedor            C - Credor |
+| Debitos | `Nullable<Double>` |  |
+| Creditos | `Nullable<Double>` |  |
+| SaldoFinal | `Nullable<Double>` |  |
+| NaturezaSaldoFinal | `String` | D - Devedor            C - Credor |
+| SubContas | `List<RegistroL100>` | Apenas para possibilitar a totalização na montagem do BP |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroL100/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroL100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroL100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroL100.LeParametros(string[])') | |

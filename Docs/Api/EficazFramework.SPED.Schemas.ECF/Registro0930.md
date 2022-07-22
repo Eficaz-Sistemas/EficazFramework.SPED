@@ -8,17 +8,16 @@ Identificação dos Signatários da ECF
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Nome | `String` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | Qualificacao | `String` |  |
-| 05 | CRC_Contador | `String` |  |
-| 06 | EMail | `String` |  |
-| 07 | Telefone | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Nome | `String` |  |
+| CNPJ_CPF | `String` |  |
+| Qualificacao | `String` |  |
+| CRC_Contador | `String` |  |
+| EMail | `String` |  |
+| Telefone | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/Registro0930/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.Registro0930.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/Registro0930/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.Registro0930.LeParametros(string[])') | |

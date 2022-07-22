@@ -8,20 +8,19 @@ Identificação do Documento Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorEmissao | `IndicadorEmitente` |  |
-| 03 | CodigoParticipante | `String` |  |
-| 04 | Modelo | `String` |  |
-| 05 | Serie | `String` |  |
-| 06 | Numero | `Nullable<Int32>` |  |
-| 07 | Chave_NFeCTe | `String` |  |
-| 08 | DataEmissao | `Nullable<DateTime>` |  |
-| 09 | NumeroDocArrecadacao | `String` |  |
-| 10 | RegistrosG140 | `List<RegistroG140>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorEmissao | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| Modelo | `String` |  |
+| Serie | `String` |  |
+| Numero | `Nullable<Int32>` |  |
+| Chave_NFeCTe | `String` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| NumeroDocArrecadacao | `String` |  |
+| RegistrosG140 | `List<RegistroG140>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG130/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG130.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG130/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG130.LeParametros(string[])') | |

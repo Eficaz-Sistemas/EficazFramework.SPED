@@ -4,24 +4,23 @@
 ## TProtCTeInfProt Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | verAplic | `String` |  |
-| 04 | chCTe | `String` |  |
-| 05 | ChaveCTeCodificada | `String` |  |
-| 06 | ChaveCTeCodificadaByte | `Byte[]` |  |
-| 07 | ChaveCTeFormatada | `String` |  |
-| 08 | Logo | `Byte[]` |  |
-| 09 | dhRecbto | `DateTime` |  |
-| 10 | nProt | `String` |  |
-| 11 | digVal | `Byte[]` |  |
-| 12 | cStat | `String` |  |
-| 13 | xMotivo | `String` |  |
-| 14 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| SetCodeBarRaw(string, byte[]) | `Void` |  |
+| tpAmb | `Ambiente` |  |
+| verAplic | `String` |  |
+| chCTe | `String` |  |
+| ChaveCTeCodificada | `String` |  |
+| ChaveCTeCodificadaByte | `Byte[]` |  |
+| ChaveCTeFormatada | `String` |  |
+| Logo | `Byte[]` |  |
+| dhRecbto | `DateTime` |  |
+| nProt | `String` |  |
+| digVal | `Byte[]` |  |
+| cStat | `String` |  |
+| xMotivo | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TProtCTeInfProt/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TProtCTeInfProt.OnPropertyChanged(string)') | |
+| [SetCodeBarRaw(string, byte[])](EficazFramework.SPED.Schemas.CTe/TProtCTeInfProt/SetCodeBarRaw(string,byte[]).md 'EficazFramework.SPED.Schemas.CTe.TProtCTeInfProt.SetCodeBarRaw(string, byte[])') | |

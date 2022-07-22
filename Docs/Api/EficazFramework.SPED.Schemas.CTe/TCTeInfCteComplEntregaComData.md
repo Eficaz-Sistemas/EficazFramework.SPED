@@ -4,12 +4,11 @@
 ## TCTeInfCteComplEntregaComData Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpPer | `TCTeInfCteComplEntregaComDataTpPer` |  |
-| 03 | dProg | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpPer | `TCTeInfCteComplEntregaComDataTpPer` |  |
+| dProg | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaComData/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaComData.OnPropertyChanged(string)') | |

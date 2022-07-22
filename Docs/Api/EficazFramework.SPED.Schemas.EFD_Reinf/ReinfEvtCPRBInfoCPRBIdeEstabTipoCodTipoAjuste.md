@@ -4,10 +4,10 @@
 ## ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAjuste | `TipoAjusteContribuicao` |  |
-| 03 | codAjuste | `String` |  |
-| 04 | vlrAjuste | `String` |  |
-| 05 | descAjuste | `String` |  |
-| 06 | dtAjuste | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAjuste | `TipoAjusteContribuicao` |  |
+| codAjuste | `String` |  |
+| vlrAjuste | `String` |  |
+| descAjuste | `String` |  |
+| dtAjuste | `String` |  |

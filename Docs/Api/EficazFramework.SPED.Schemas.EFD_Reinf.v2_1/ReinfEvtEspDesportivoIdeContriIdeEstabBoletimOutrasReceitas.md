@@ -4,8 +4,8 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpReceita | `TipoReceitaCompeticao` |  |
-| 03 | vlrReceita | `String` |  |
-| 04 | descReceita | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpReceita | `TipoReceitaCompeticao` |  |
+| vlrReceita | `String` |  |
+| descReceita | `String` |  |

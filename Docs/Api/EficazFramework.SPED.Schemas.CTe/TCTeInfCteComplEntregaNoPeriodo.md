@@ -4,13 +4,12 @@
 ## TCTeInfCteComplEntregaNoPeriodo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpPer | `TCTeInfCteComplEntregaNoPeriodoTpPer` |  |
-| 03 | dIni | `String` |  |
-| 04 | dFim | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpPer | `TCTeInfCteComplEntregaNoPeriodoTpPer` |  |
+| dIni | `String` |  |
+| dFim | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaNoPeriodo/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaNoPeriodo.OnPropertyChanged(string)') | |

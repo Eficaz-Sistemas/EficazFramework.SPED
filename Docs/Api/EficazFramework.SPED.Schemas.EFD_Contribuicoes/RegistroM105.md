@@ -8,20 +8,19 @@ Detalhamento da base de calculo do crédito apurado no período Pis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NatBcCredito | `String` |  |
-| 03 | CSTPis | `String` |  |
-| 04 | VrTotalBc | `Nullable<Double>` |  |
-| 05 | VrTotalBcCumulativa | `Nullable<Double>` |  |
-| 06 | VrTotalBCNcumulativa | `Nullable<Double>` |  |
-| 07 | VrBcPis | `Nullable<Double>` |  |
-| 08 | QtdeBcPisTotal | `Nullable<Double>` |  |
-| 09 | QtdeBcPis | `Nullable<Double>` |  |
-| 10 | DescCredito | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NatBcCredito | `String` |  |
+| CSTPis | `String` |  |
+| VrTotalBc | `Nullable<Double>` |  |
+| VrTotalBcCumulativa | `Nullable<Double>` |  |
+| VrTotalBCNcumulativa | `Nullable<Double>` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| QtdeBcPisTotal | `Nullable<Double>` |  |
+| QtdeBcPis | `Nullable<Double>` |  |
+| DescCredito | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM105/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM105.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM105/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM105.LeParametros(string[])') | |

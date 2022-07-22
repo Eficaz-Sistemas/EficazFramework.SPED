@@ -4,9 +4,9 @@
 ## eSocialEvtFechaEvPerIdeRespInf Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nmResp | `String` |  |
-| 03 | cpfResp | `String` |  |
-| 04 | telefone | `String` |  |
-| 05 | email | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nmResp | `String` |  |
+| cpfResp | `String` |  |
+| telefone | `String` |  |
+| email | `String` |  |

@@ -8,14 +8,13 @@ Identificação dos Auditores Independentes
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJCPFAuditor | `String` |  |
-| 03 | NomeAuditor | `String` |  |
-| 04 | RegistroAuditorCVM | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJCPFAuditor | `String` |  |
+| NomeAuditor | `String` |  |
+| RegistroAuditorCVM | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ935/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ935.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ935/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ935.LeParametros(string[])') | |

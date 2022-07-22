@@ -8,22 +8,21 @@ Dados Cadastrais
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NaturezaJuridica | `String` |  |
-| 03 | CNAE | `String` |  |
-| 04 | Endereco | `String` |  |
-| 05 | Numero | `String` |  |
-| 06 | Complemento | `String` |  |
-| 07 | Bairro | `String` |  |
-| 08 | UF | `String` |  |
-| 09 | CodigoMunicipio | `String` |  |
-| 10 | CEP | `String` |  |
-| 11 | Telefone | `String` |  |
-| 12 | EMail | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NaturezaJuridica | `String` |  |
+| CNAE | `String` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| UF | `String` |  |
+| CodigoMunicipio | `String` |  |
+| CEP | `String` |  |
+| Telefone | `String` |  |
+| EMail | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/Registro0030/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.Registro0030.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/Registro0030/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.Registro0030.LeParametros(string[])') | |

@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | CPF | `String` |  |
-| 04 | IE | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| CNPJ | `String` |  |
+| CPF | `String` |  |
+| IE | `String` |  |

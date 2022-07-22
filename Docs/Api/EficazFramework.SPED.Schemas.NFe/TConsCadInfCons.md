@@ -4,14 +4,13 @@
 ## TConsCadInfCons Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xServ | `TConsCadInfConsXServ` |  |
-| 03 | UF | `Estado` |  |
-| 04 | Item | `String` |  |
-| 05 | ItemElementName | `TipoResultado` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xServ | `TConsCadInfConsXServ` |  |
+| UF | `Estado` |  |
+| Item | `String` |  |
+| ItemElementName | `TipoResultado` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TConsCadInfCons/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TConsCadInfCons.OnPropertyChanged(string)') | |

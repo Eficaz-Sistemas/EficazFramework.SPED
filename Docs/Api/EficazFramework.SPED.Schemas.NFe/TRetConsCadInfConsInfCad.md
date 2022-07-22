@@ -4,33 +4,32 @@
 ## TRetConsCadInfConsInfCad Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IE | `String` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | CNPJ_CPF_Formatado | `String` |  |
-| 05 | ItemElementName | `PersonalidadeJuridica` |  |
-| 06 | UF | `String` |  |
-| 07 | UFEnum | `Nullable<Estado>` |  |
-| 08 | cSit | `Situacao` |  |
-| 09 | indCredNFe | `CredenciamentoNFe` |  |
-| 10 | indCredCTe | `CredenciamentoCte` |  |
-| 11 | xNome | `String` |  |
-| 12 | xFant | `String` |  |
-| 13 | xRegApur | `String` |  |
-| 14 | CNAE | `String` |  |
-| 15 | dIniAtiv | `String` |  |
-| 16 | dIniAtivSpecified | `Boolean` |  |
-| 17 | dUltSit | `String` |  |
-| 18 | dUltSitSpecified | `Boolean` |  |
-| 19 | dBaixa | `String` |  |
-| 20 | dBaixaSpecified | `Boolean` |  |
-| 21 | IEUnica | `String` |  |
-| 22 | IEAtual | `String` |  |
-| 23 | ender | `TEndereco` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| IE | `String` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPF_Formatado | `String` |  |
+| ItemElementName | `PersonalidadeJuridica` |  |
+| UF | `String` |  |
+| UFEnum | `Nullable<Estado>` |  |
+| cSit | `Situacao` |  |
+| indCredNFe | `CredenciamentoNFe` |  |
+| indCredCTe | `CredenciamentoCte` |  |
+| xNome | `String` |  |
+| xFant | `String` |  |
+| xRegApur | `String` |  |
+| CNAE | `String` |  |
+| dIniAtiv | `String` |  |
+| dIniAtivSpecified | `Boolean` |  |
+| dUltSit | `String` |  |
+| dUltSitSpecified | `Boolean` |  |
+| dBaixa | `String` |  |
+| dBaixaSpecified | `Boolean` |  |
+| IEUnica | `String` |  |
+| IEAtual | `String` |  |
+| ender | `TEndereco` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TRetConsCadInfConsInfCad/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TRetConsCadInfConsInfCad.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/TRetConsCadInfConsInfCad/ToString().md 'EficazFramework.SPED.Schemas.NFe.TRetConsCadInfConsInfCad.ToString()') | |

@@ -8,13 +8,12 @@ Tabela de Histórico Padronizado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodHistPadronizado | `String` |  |
-| 03 | DescHistPadronizado | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodHistPadronizado | `String` |  |
+| DescHistPadronizado | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI075/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI075.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI075/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI075.LeParametros(string[])') | |

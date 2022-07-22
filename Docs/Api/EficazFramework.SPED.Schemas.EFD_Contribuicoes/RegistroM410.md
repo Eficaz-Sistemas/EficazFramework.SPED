@@ -8,15 +8,14 @@ Detalhamento das receitas isentas, não alcançadas pela incidência da contribu
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NaturezaReceitaCST | `String` |  |
-| 03 | VrReceitaBrutaPeriodo | `Nullable<Double>` |  |
-| 04 | CodigoContaContabil | `String` |  |
-| 05 | DescricaoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NaturezaReceitaCST | `String` |  |
+| VrReceitaBrutaPeriodo | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| DescricaoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM410/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM410.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM410/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM410.LeParametros(string[])') | |

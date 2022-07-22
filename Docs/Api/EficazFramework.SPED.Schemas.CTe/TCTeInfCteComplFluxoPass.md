@@ -4,11 +4,10 @@
 ## TCTeInfCteComplFluxoPass Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xPass | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xPass | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplFluxoPass/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplFluxoPass.OnPropertyChanged(string)') | |

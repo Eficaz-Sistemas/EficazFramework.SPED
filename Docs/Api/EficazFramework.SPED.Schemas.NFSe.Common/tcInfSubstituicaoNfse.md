@@ -4,12 +4,11 @@
 ## tcInfSubstituicaoNfse Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NfseSubstituidora | `String` |  |
-| 03 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| NfseSubstituidora | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcInfSubstituicaoNfse/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcInfSubstituicaoNfse.OnPropertyChanged(string)') | |

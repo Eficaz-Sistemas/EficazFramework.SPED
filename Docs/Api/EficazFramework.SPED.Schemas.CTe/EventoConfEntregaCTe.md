@@ -6,24 +6,23 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | descEvento | `String` |  |
-| 03 | nProt | `String` |  |
-| 04 | dhEntrega | `DateTime` |  |
-| 05 | nDoc | `String` |  |
-| 06 | xNome | `String` |  |
-| 07 | latitude | `Nullable<Double>` |  |
-| 08 | longitude | `Nullable<Double>` |  |
-| 09 | hashEntrega | `Byte[]` |  |
-| 10 | dhHashEntrega | `DateTime` |  |
-| 11 | infEntrega | `List<evCECTeInfEntrega>` |  |
-| 12 | DocumentType | `XMLDocumentType` |  |
-| 13 | DataEmissao | `Nullable<DateTime>` |  |
-| 14 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializelatitude() | `Boolean` |  |
-| ShouldSerializelongitude() | `Boolean` |  |
+| descEvento | `String` |  |
+| nProt | `String` |  |
+| dhEntrega | `DateTime` |  |
+| nDoc | `String` |  |
+| xNome | `String` |  |
+| latitude | `Nullable<Double>` |  |
+| longitude | `Nullable<Double>` |  |
+| hashEntrega | `Byte[]` |  |
+| dhHashEntrega | `DateTime` |  |
+| infEntrega | `List<evCECTeInfEntrega>` |  |
+| DocumentType | `XMLDocumentType` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ShouldSerializelatitude()](EficazFramework.SPED.Schemas.CTe/EventoConfEntregaCTe/ShouldSerializelatitude().md 'EficazFramework.SPED.Schemas.CTe.EventoConfEntregaCTe.ShouldSerializelatitude()') | |
+| [ShouldSerializelongitude()](EficazFramework.SPED.Schemas.CTe/EventoConfEntregaCTe/ShouldSerializelongitude().md 'EficazFramework.SPED.Schemas.CTe.EventoConfEntregaCTe.ShouldSerializelongitude()') | |

@@ -8,20 +8,19 @@ Documento Fiscal Referenciado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Operacao | `IndicadorOperacao` |  |
-| 03 | Emissao | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | EspecieDocumento | `String` |  |
-| 06 | Serie | `String` |  |
-| 07 | SubSerie | `Nullable<Int32>` |  |
-| 08 | Numero | `Nullable<Int32>` |  |
-| 09 | Data | `Nullable<DateTime>` |  |
-| 10 | ChaveDoce | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Operacao | `IndicadorOperacao` |  |
+| Emissao | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| EspecieDocumento | `String` |  |
+| Serie | `String` |  |
+| SubSerie | `Nullable<Int32>` |  |
+| Numero | `Nullable<Int32>` |  |
+| Data | `Nullable<DateTime>` |  |
+| ChaveDoce | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC113/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC113.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC113/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC113.LeParametros(string[])') | |

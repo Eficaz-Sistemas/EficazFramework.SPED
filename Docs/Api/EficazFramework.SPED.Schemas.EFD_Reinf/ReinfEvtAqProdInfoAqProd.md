@@ -4,6 +4,6 @@
 ## ReinfEvtAqProdInfoAqProd Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEstabAdquir | `ReinfEvtAqProdInfoAqProdIdeEstabAdquir` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEstabAdquir | `ReinfEvtAqProdInfoAqProdIdeEstabAdquir` |  |

@@ -4,22 +4,21 @@
 ## Tributacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ValorTotalTributos | `Nullable<Double>` |  |
-| 03 | DemaisImpostos | `List<Object>` |  |
-| 04 | PIS | `DetalhamentoPIS` |  |
-| 05 | PISST | `DetalhamentoPISST` |  |
-| 06 | COFINS | `DetalhamentoCOFINS` |  |
-| 07 | COFINSST | `DetalhamentoCOFINSST` |  |
-| 08 | ICMS | `DetalhamentoICMS` |  |
-| 09 | ICMSUFDestino | `DetalhamentoICMS_UF_Destinataria` |  |
-| 10 | IPI | `DetalhamentoIPI` |  |
-| 11 | ISSQN | `DetalhamentoISSQN` |  |
-| 12 | II | `DetalhamentoII` | Imposto de Importação |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeValorTotalTributos() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| ValorTotalTributos | `Nullable<Double>` |  |
+| DemaisImpostos | `List<Object>` |  |
+| PIS | `DetalhamentoPIS` |  |
+| PISST | `DetalhamentoPISST` |  |
+| COFINS | `DetalhamentoCOFINS` |  |
+| COFINSST | `DetalhamentoCOFINSST` |  |
+| ICMS | `DetalhamentoICMS` |  |
+| ICMSUFDestino | `DetalhamentoICMS_UF_Destinataria` |  |
+| IPI | `DetalhamentoIPI` |  |
+| ISSQN | `DetalhamentoISSQN` |  |
+| II | `DetalhamentoII` | Imposto de Importação |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Tributacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Tributacao.OnPropertyChanged(string)') | |
+| [ShouldSerializeValorTotalTributos()](EficazFramework.SPED.Schemas.NFe/Tributacao/ShouldSerializeValorTotalTributos().md 'EficazFramework.SPED.Schemas.NFe.Tributacao.ShouldSerializeValorTotalTributos()') | |

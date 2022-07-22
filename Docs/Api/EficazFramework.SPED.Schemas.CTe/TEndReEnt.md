@@ -4,20 +4,19 @@
 ## TEndReEnt Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | xNome | `String` |  |
-| 05 | xLgr | `String` |  |
-| 06 | nro | `String` |  |
-| 07 | xCpl | `String` |  |
-| 08 | xBairro | `String` |  |
-| 09 | cMun | `String` |  |
-| 10 | xMun | `String` |  |
-| 11 | UF | `Estado` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| xNome | `String` |  |
+| xLgr | `String` |  |
+| nro | `String` |  |
+| xCpl | `String` |  |
+| xBairro | `String` |  |
+| cMun | `String` |  |
+| xMun | `String` |  |
+| UF | `Estado` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TEndReEnt/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TEndReEnt.OnPropertyChanged(string)') | |

@@ -8,20 +8,19 @@ Detalhamento da base de calculo do crédito apurado no período Cofins
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NatBcCredito | `String` |  |
-| 03 | CSTCofins | `String` |  |
-| 04 | VrTotalBc | `Nullable<Double>` |  |
-| 05 | VrTotalBcCumulativa | `Nullable<Double>` |  |
-| 06 | VrTotalBCNcumulativa | `Nullable<Double>` |  |
-| 07 | VrBcCofins | `Nullable<Double>` |  |
-| 08 | QtdeBcCofinsTotal | `Nullable<Double>` |  |
-| 09 | QtdeBcCofins | `Nullable<Double>` |  |
-| 10 | DescCredito | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NatBcCredito | `String` |  |
+| CSTCofins | `String` |  |
+| VrTotalBc | `Nullable<Double>` |  |
+| VrTotalBcCumulativa | `Nullable<Double>` |  |
+| VrTotalBCNcumulativa | `Nullable<Double>` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| QtdeBcCofinsTotal | `Nullable<Double>` |  |
+| QtdeBcCofins | `Nullable<Double>` |  |
+| DescCredito | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM505/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM505.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM505/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM505.LeParametros(string[])') | |

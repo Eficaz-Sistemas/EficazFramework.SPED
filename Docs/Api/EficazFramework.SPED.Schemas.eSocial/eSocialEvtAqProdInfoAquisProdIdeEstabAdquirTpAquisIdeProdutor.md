@@ -4,14 +4,14 @@
 ## eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nfs | `List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs>` |  |
-| 03 | infoProcJud | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorInfoProcJud[]` |  |
-| 04 | tpInscProd | `PersonalidadeJuridica` |  |
-| 05 | nrInscProd | `String` |  |
-| 06 | vlrBruto | `Decimal` |  |
-| 07 | vrCPDescPR | `Decimal` |  |
-| 08 | vrRatDescPR | `Decimal` |  |
-| 09 | vrSenarDesc | `Decimal` |  |
-| 10 | indOpcCP | `OpcaoTributacaoPrevidenciaria` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nfs | `List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs>` |  |
+| infoProcJud | `eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorInfoProcJud[]` |  |
+| tpInscProd | `PersonalidadeJuridica` |  |
+| nrInscProd | `String` |  |
+| vlrBruto | `Decimal` |  |
+| vrCPDescPR | `Decimal` |  |
+| vrRatDescPR | `Decimal` |  |
+| vrSenarDesc | `Decimal` |  |
+| indOpcCP | `OpcaoTributacaoPrevidenciaria` |  |

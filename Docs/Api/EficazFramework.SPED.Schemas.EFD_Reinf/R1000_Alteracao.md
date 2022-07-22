@@ -4,8 +4,8 @@
 ## R1000_Alteracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | idePeriodo | `ReinfEvtIdePeriodo` |  |
-| 03 | infoCadastro | `R1000_InfoCadastro` |  |
-| 04 | novaValidade | `ReinfEvtIdePeriodo` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| idePeriodo | `ReinfEvtIdePeriodo` |  |
+| infoCadastro | `R1000_InfoCadastro` |  |
+| novaValidade | `ReinfEvtIdePeriodo` |  |

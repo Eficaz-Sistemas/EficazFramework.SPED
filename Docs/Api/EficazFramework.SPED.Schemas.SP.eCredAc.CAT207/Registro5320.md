@@ -8,15 +8,14 @@ Devolução de Saídas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataSaidaDocPrincipal | `Nullable<DateTime>` |  |
-| 03 | EspecieSaidaDocPrincipal | `Nullable<Int32>` |  |
-| 04 | SerieSaidaDocPrincipal | `String` |  |
-| 05 | NumeroSaidaDocPrincipal | `Nullable<Int32>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataSaidaDocPrincipal | `Nullable<DateTime>` |  |
+| EspecieSaidaDocPrincipal | `Nullable<Int32>` |  |
+| SerieSaidaDocPrincipal | `String` |  |
+| NumeroSaidaDocPrincipal | `Nullable<Int32>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5320/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5320.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.eCredAc.CAT207/Registro5320/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.eCredAc.CAT207.Registro5320.LeParametros(string[])') | |

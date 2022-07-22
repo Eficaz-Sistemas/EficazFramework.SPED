@@ -4,18 +4,17 @@
 ## DetalhamentoIPI Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Classe | `String` |  |
-| 03 | CNPJProdutor | `String` | CNPJ do produtor da mercadoria, quando diferente do emitente.            Somente para os casos de exportação direta ou indireta. |
-| 04 | SeloControle | `String` |  |
-| 05 | SeloQuantidade | `Nullable<Int32>` |  |
-| 06 | CodigoEnquadramento | `String` |  |
-| 07 | Tributacao | `DetalhamentoIPI_Tributacao` |  |
-| 08 | TributacaoIndentifier | `Tributacao_IPI_Identifier` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeSeloQuantidade() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| Classe | `String` |  |
+| CNPJProdutor | `String` | CNPJ do produtor da mercadoria, quando diferente do emitente.            Somente para os casos de exportação direta ou indireta. |
+| SeloControle | `String` |  |
+| SeloQuantidade | `Nullable<Int32>` |  |
+| CodigoEnquadramento | `String` |  |
+| Tributacao | `DetalhamentoIPI_Tributacao` |  |
+| TributacaoIndentifier | `Tributacao_IPI_Identifier` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI.OnPropertyChanged(string)') | |
+| [ShouldSerializeSeloQuantidade()](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI/ShouldSerializeSeloQuantidade().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI.ShouldSerializeSeloQuantidade()') | |

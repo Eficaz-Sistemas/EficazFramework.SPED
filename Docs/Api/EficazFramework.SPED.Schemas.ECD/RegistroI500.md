@@ -8,12 +8,11 @@ Parâmetros de Impressão e Visualização do Livro Razão Auxiliar com Leiaute 
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TamanhoFonte | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TamanhoFonte | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI500/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI500.LeParametros(string[])') | |

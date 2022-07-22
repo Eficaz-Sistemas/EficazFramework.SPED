@@ -4,14 +4,13 @@
 ## ProdutoDeclaracaoImportacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nAdicao | `String` |  |
-| 03 | nSeqAdic | `String` |  |
-| 04 | cFabricante | `String` |  |
-| 05 | vDescDI | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nAdicao | `String` |  |
+| nSeqAdic | `String` |  |
+| cFabricante | `String` |  |
+| vDescDI | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ProdutoDeclaracaoImportacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ProdutoDeclaracaoImportacao.OnPropertyChanged(string)') | |

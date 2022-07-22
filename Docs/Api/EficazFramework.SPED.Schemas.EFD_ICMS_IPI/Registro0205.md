@@ -8,15 +8,14 @@ Abertura do Bloco 0
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DescrAnteriorItem | `String` |  |
-| 03 | DataInicialUtilizacaoItem | `Nullable<DateTime>` |  |
-| 04 | DataFinalUtilizacaoItem | `Nullable<DateTime>` |  |
-| 05 | CodAnteriorItem | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DescrAnteriorItem | `String` |  |
+| DataInicialUtilizacaoItem | `Nullable<DateTime>` |  |
+| DataFinalUtilizacaoItem | `Nullable<DateTime>` |  |
+| CodAnteriorItem | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0205/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0205.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0205/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0205.LeParametros(string[])') | |

@@ -4,15 +4,14 @@
 ## TCTeInfCteInfCTeNormSeg Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | respSeg | `ResponsavelSeguro` |  |
-| 03 | xSeg | `String` |  |
-| 04 | nApol | `String` |  |
-| 05 | nAver | `String` |  |
-| 06 | vCarga | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| respSeg | `ResponsavelSeguro` |  |
+| xSeg | `String` |  |
+| nApol | `String` |  |
+| nAver | `String` |  |
+| vCarga | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormSeg/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormSeg.OnPropertyChanged(string)') | |

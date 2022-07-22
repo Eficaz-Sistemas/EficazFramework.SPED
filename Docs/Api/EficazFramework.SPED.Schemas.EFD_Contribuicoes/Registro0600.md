@@ -8,14 +8,13 @@ Centro de Custos
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
-| 03 | CodigoCentroCusto | `String` |  |
-| 04 | NomeCentroCusto | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| CodigoCentroCusto | `String` |  |
+| NomeCentroCusto | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0600/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0600.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0600/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0600.LeParametros(string[])') | |

@@ -4,16 +4,15 @@
 ## CTeNormalEmitenteDocumentonterior Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | IE | `String` |  |
-| 05 | UF | `Estado` |  |
-| 06 | xNome | `String` |  |
-| 07 | idDocAnt | `ObservableCollection<TCTeInfCteInfCTeNormEmiDocAntIdDocAnt>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| PersonalidadeJuridica7 | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| IE | `String` |  |
+| UF | `Estado` |  |
+| xNome | `String` |  |
+| idDocAnt | `ObservableCollection<TCTeInfCteInfCTeNormEmiDocAntIdDocAnt>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/CTeNormalEmitenteDocumentonterior/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.CTeNormalEmitenteDocumentonterior.OnPropertyChanged(string)') | |

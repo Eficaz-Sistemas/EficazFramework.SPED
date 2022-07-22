@@ -6,15 +6,14 @@
 Período da Apuração do ICMS ST
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | UF | `String` |  |
-| 03 | DataInicial | `Nullable<DateTime>` |  |
-| 04 | DataFinal | `Nullable<DateTime>` |  |
-| 05 | RegistroE210 | `RegistroE210` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| UF | `String` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| RegistroE210 | `RegistroE210` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE200/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE200.LeParametros(string[])') | |

@@ -6,15 +6,14 @@
 Período da Apuração do ICMS Difal
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | UF | `String` |  |
-| 03 | DataInicial | `Nullable<DateTime>` |  |
-| 04 | DataFinal | `Nullable<DateTime>` |  |
-| 05 | RegistroE310 | `RegistroE310` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| UF | `String` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| RegistroE310 | `RegistroE310` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE300.LeParametros(string[])') | |

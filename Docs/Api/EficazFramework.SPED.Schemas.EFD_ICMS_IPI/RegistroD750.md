@@ -9,26 +9,25 @@ Serviços de Comunicação – NFCom (Código 62)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | EspecieDocumento | `String` |  |
-| 03 | Serie | `String` |  |
-| 04 | DataEmissao | `Nullable<DateTime>` |  |
-| 05 | Quantidade | `Nullable<Int32>` |  |
-| 06 | IndicadorPrePago | `IndicadorPrePago` |  |
-| 07 | ValorTotalDocumentos | `Nullable<Double>` |  |
-| 08 | ValorServicos | `Nullable<Double>` |  |
-| 09 | ValorServicosNT | `Nullable<Double>` |  |
-| 10 | ValorCobradoTerceiros | `Nullable<Double>` |  |
-| 11 | ValorDesconto | `Nullable<Double>` |  |
-| 12 | ValorDespesasAcessorias | `Nullable<Double>` |  |
-| 13 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
-| 14 | ValorICMS | `Nullable<Double>` |  |
-| 15 | ValorPIS | `Nullable<Double>` |  |
-| 16 | ValorCofins | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| EspecieDocumento | `String` |  |
+| Serie | `String` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Quantidade | `Nullable<Int32>` |  |
+| IndicadorPrePago | `IndicadorPrePago` |  |
+| ValorTotalDocumentos | `Nullable<Double>` |  |
+| ValorServicos | `Nullable<Double>` |  |
+| ValorServicosNT | `Nullable<Double>` |  |
+| ValorCobradoTerceiros | `Nullable<Double>` |  |
+| ValorDesconto | `Nullable<Double>` |  |
+| ValorDespesasAcessorias | `Nullable<Double>` |  |
+| ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| ValorPIS | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD750/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD750.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD750/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD750.LeParametros(string[])') | |

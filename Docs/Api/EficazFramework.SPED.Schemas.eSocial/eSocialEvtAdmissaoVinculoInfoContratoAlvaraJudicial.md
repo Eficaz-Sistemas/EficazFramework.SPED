@@ -4,6 +4,6 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrProcJud | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrProcJud | `String` |  |

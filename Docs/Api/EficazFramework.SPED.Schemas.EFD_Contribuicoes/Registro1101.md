@@ -8,32 +8,31 @@ Apuração de Crédito Extemporâneo - Documentos e Operações de Períodos Ant
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoParticipante | `String` |  |
-| 03 | CodigoItem | `String` |  |
-| 04 | CodigoModDocFiscal | `String` |  |
-| 05 | SerieDocFiscal | `String` |  |
-| 06 | SubSerieDocFiscal | `String` |  |
-| 07 | NumeroDocFiscal | `String` |  |
-| 08 | DataOperacao | `Nullable<DateTime>` |  |
-| 09 | ChaveNFe | `String` |  |
-| 10 | VrOperacao | `Nullable<Double>` |  |
-| 11 | CFOP | `String` |  |
-| 12 | CodigoBCCredito | `String` |  |
-| 13 | IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
-| 14 | CSTPis | `String` |  |
-| 15 | VrBCPis | `Nullable<Double>` |  |
-| 16 | AliqPis | `Nullable<Double>` |  |
-| 17 | VrCredPis | `Nullable<Double>` |  |
-| 18 | CodigoContaContabil | `String` |  |
-| 19 | CodigoCentroCusto | `String` |  |
-| 20 | DescricaoComplementar | `String` |  |
-| 21 | MesAnoEscrituracao | `Nullable<DateTime>` |  |
-| 22 | CNPJEstabelecimentoCredito | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoParticipante | `String` |  |
+| CodigoItem | `String` |  |
+| CodigoModDocFiscal | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| NumeroDocFiscal | `String` |  |
+| DataOperacao | `Nullable<DateTime>` |  |
+| ChaveNFe | `String` |  |
+| VrOperacao | `Nullable<Double>` |  |
+| CFOP | `String` |  |
+| CodigoBCCredito | `String` |  |
+| IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
+| CSTPis | `String` |  |
+| VrBCPis | `Nullable<Double>` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrCredPis | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| CodigoCentroCusto | `String` |  |
+| DescricaoComplementar | `String` |  |
+| MesAnoEscrituracao | `Nullable<DateTime>` |  |
+| CNPJEstabelecimentoCredito | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1101/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1101.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1101/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1101.LeParametros(string[])') | |

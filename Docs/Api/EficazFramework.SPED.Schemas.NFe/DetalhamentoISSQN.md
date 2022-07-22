@@ -4,16 +4,15 @@
 ## DetalhamentoISSQN Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vBC | `Nullable<Double>` |  |
-| 03 | vAliq | `Nullable<Double>` |  |
-| 04 | vISSQN | `Nullable<Double>` |  |
-| 05 | cMunFG | `String` |  |
-| 06 | cListServ | `String` |  |
-| 07 | cSitTrib | `CST_ISSQN` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vBC | `Nullable<Double>` |  |
+| vAliq | `Nullable<Double>` |  |
+| vISSQN | `Nullable<Double>` |  |
+| cMunFG | `String` |  |
+| cListServ | `String` |  |
+| cSitTrib | `CST_ISSQN` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoISSQN/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoISSQN.OnPropertyChanged(string)') | |

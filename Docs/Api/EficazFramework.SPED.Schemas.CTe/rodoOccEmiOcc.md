@@ -4,15 +4,14 @@
 ## rodoOccEmiOcc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | cInt | `String` |  |
-| 04 | IE | `String` |  |
-| 05 | UF | `Estado` |  |
-| 06 | fone | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ | `String` |  |
+| cInt | `String` |  |
+| IE | `String` |  |
+| UF | `Estado` |  |
+| fone | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/rodoOccEmiOcc/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.rodoOccEmiOcc.OnPropertyChanged(string)') | |

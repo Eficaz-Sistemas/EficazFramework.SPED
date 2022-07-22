@@ -4,6 +4,6 @@
 ## ReinfEvtCPRBInfoCPRB Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEstab | `ReinfEvtCPRBInfoCPRBIdeEstab` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEstab | `ReinfEvtCPRBInfoCPRBIdeEstab` |  |

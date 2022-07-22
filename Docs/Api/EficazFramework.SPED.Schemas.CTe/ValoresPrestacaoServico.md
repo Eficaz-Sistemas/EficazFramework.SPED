@@ -4,13 +4,12 @@
 ## ValoresPrestacaoServico Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vTPrest | `Nullable<Double>` |  |
-| 03 | vRec | `Nullable<Double>` |  |
-| 04 | Comp | `ObservableCollection<TCTeInfCteVPrestComp>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vTPrest | `Nullable<Double>` |  |
+| vRec | `Nullable<Double>` |  |
+| Comp | `ObservableCollection<TCTeInfCteVPrestComp>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/ValoresPrestacaoServico/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.ValoresPrestacaoServico.OnPropertyChanged(string)') | |

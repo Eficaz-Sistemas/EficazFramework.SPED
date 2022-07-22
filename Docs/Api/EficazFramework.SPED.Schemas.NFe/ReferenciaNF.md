@@ -4,16 +4,15 @@
 ## ReferenciaNF Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoUF | `OrgaoIBGE` |  |
-| 03 | EmissaoAAMM | `String` |  |
-| 04 | CNPJ | `String` |  |
-| 05 | Modelo | `ModeloNF` |  |
-| 06 | Serie | `String` |  |
-| 07 | Numero | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CodigoUF | `OrgaoIBGE` |  |
+| EmissaoAAMM | `String` |  |
+| CNPJ | `String` |  |
+| Modelo | `ModeloNF` |  |
+| Serie | `String` |  |
+| Numero | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ReferenciaNF/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ReferenciaNF.OnPropertyChanged(string)') | |

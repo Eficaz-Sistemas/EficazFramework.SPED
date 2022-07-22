@@ -8,18 +8,17 @@ Deduções diversas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorOrigemDedDiversas | `IndicadorOrigemDeducoesDiversas` |  |
-| 03 | IndicadorNatDeducao | `IndicadorNatDeducao` |  |
-| 04 | VrDeduzirPis | `Nullable<Double>` |  |
-| 05 | VrDeduzirCofins | `Nullable<Double>` |  |
-| 06 | VrBcOperacao | `Nullable<Double>` |  |
-| 07 | CNPJPJ | `String` |  |
-| 08 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorOrigemDedDiversas | `IndicadorOrigemDeducoesDiversas` |  |
+| IndicadorNatDeducao | `IndicadorNatDeducao` |  |
+| VrDeduzirPis | `Nullable<Double>` |  |
+| VrDeduzirCofins | `Nullable<Double>` |  |
+| VrBcOperacao | `Nullable<Double>` |  |
+| CNPJPJ | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF700/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF700.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF700/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF700.LeParametros(string[])') | |

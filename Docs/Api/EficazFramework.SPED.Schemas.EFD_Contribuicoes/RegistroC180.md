@@ -8,21 +8,20 @@ Consolidação de Notas Fiscais Eletrônicas Emitidas Pela Pessoa Jurídica - C�
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocumento | `String` |  |
-| 03 | DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
-| 04 | DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
-| 05 | CodigoItem | `String` |  |
-| 06 | CodigoNCM | `String` |  |
-| 07 | CodigoEXTipi | `String` |  |
-| 08 | VrTotalItem | `Nullable<Double>` |  |
-| 09 | RegistrosC181 | `List<RegistroC181>` |  |
-| 10 | RegistrosC185 | `List<RegistroC185>` |  |
-| 11 | RegistrosC188 | `List<RegistroC188>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocumento | `String` |  |
+| DataEmissaoInicialDocs | `Nullable<DateTime>` |  |
+| DataEmissaoFinalDocs | `Nullable<DateTime>` |  |
+| CodigoItem | `String` |  |
+| CodigoNCM | `String` |  |
+| CodigoEXTipi | `String` |  |
+| VrTotalItem | `Nullable<Double>` |  |
+| RegistrosC181 | `List<RegistroC181>` |  |
+| RegistrosC185 | `List<RegistroC185>` |  |
+| RegistrosC188 | `List<RegistroC188>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC180/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC180.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC180/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC180.LeParametros(string[])') | |

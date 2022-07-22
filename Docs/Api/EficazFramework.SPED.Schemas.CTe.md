@@ -122,18 +122,10 @@ public interface ICabecalhoMensagem
 Derived  
 &#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.CTe/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.CTe.CabecalhoMensagem')  
 &#8627; [CabecalhoMensagem_CteConsulta](EficazFramework.SPED.Schemas.CTe/CabecalhoMensagem_CteConsulta.md 'EficazFramework.SPED.Schemas.CTe.CabecalhoMensagem_CteConsulta')
-### Methods
 
-<a name='EficazFramework.SPED.Schemas.CTe.ICabecalhoMensagem.Serialize()'></a>
-
-## ICabecalhoMensagem.Serialize() Method
-
-```csharp
-string Serialize();
-```
-
-#### Returns
-[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+| Methods | |
+| :--- | :--- |
+| [Serialize()](EficazFramework.SPED.Schemas.CTe/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.CTe.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

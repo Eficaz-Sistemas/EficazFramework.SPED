@@ -4,19 +4,18 @@
 ## Tomador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ItemElementName | `PersonalidadeJuridica7` |  |
-| 03 | CNPJ_CPF | `String` |  |
-| 04 | CNPJ_CPFFormatado | `String` |  |
-| 05 | IE | `String` |  |
-| 06 | xNome | `String` |  |
-| 07 | xFant | `String` |  |
-| 08 | fone | `String` |  |
-| 09 | Endereco | `Endereco` |  |
-| 10 | email | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| ItemElementName | `PersonalidadeJuridica7` |  |
+| CNPJ_CPF | `String` |  |
+| CNPJ_CPFFormatado | `String` |  |
+| IE | `String` |  |
+| xNome | `String` |  |
+| xFant | `String` |  |
+| fone | `String` |  |
+| Endereco | `Endereco` |  |
+| email | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTeOS/Tomador/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTeOS.Tomador.OnPropertyChanged(string)') | |

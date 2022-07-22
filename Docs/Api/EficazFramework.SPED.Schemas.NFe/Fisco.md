@@ -8,21 +8,20 @@ Informações do fisco emitente, grupo de uso exclusivo do fisco.
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | Orgao | `String` |  |
-| 04 | AgenteMatricula | `String` |  |
-| 05 | AgenteNome | `String` |  |
-| 06 | fone | `String` |  |
-| 07 | UF | `Estado` |  |
-| 08 | NumeroDAR | `String` | Número do Documento de Arrecadação Estadual |
-| 09 | DataEmissaoDAR | `String` | Data de emissão do Documento de Arrecadação Estadual |
-| 10 | ValorDAR | `String` | Valor Total do Documento de Arrecadação Estadual |
-| 11 | ReparticaoFiscal | `String` |  |
-| 12 | DataPagamentoDAR | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ | `String` |  |
+| Orgao | `String` |  |
+| AgenteMatricula | `String` |  |
+| AgenteNome | `String` |  |
+| fone | `String` |  |
+| UF | `Estado` |  |
+| NumeroDAR | `String` | Número do Documento de Arrecadação Estadual |
+| DataEmissaoDAR | `String` | Data de emissão do Documento de Arrecadação Estadual |
+| ValorDAR | `String` | Valor Total do Documento de Arrecadação Estadual |
+| ReparticaoFiscal | `String` |  |
+| DataPagamentoDAR | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Fisco/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Fisco.OnPropertyChanged(string)') | |

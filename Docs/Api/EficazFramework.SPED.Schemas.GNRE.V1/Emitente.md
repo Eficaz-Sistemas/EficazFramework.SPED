@@ -4,12 +4,11 @@
 ## Emitente Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ_CPF | `String` |  |
-| 03 | PersonalidadeJuridica | `PersonalidadeJuridica` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| CNPJ_CPF | `String` |  |
+| PersonalidadeJuridica | `PersonalidadeJuridica` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V1/Emitente/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V1.Emitente.OnPropertyChanged(string)') | |

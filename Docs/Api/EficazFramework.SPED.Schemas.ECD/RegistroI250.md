@@ -8,19 +8,18 @@ Partidas do Lançamento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodContaAnalitica | `String` |  |
-| 03 | CodCentroCusto | `String` |  |
-| 04 | VrPartida | `Nullable<Double>` |  |
-| 05 | IndNaturezaPartida | `String` |  |
-| 06 | NumeroCodigoCaminhoLocalizacaoArquivo | `String` |  |
-| 07 | CodHistoricoPadronizado | `String` |  |
-| 08 | HistoricoCompleto | `String` |  |
-| 09 | CodParticipante | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodContaAnalitica | `String` |  |
+| CodCentroCusto | `String` |  |
+| VrPartida | `Nullable<Double>` |  |
+| IndNaturezaPartida | `String` |  |
+| NumeroCodigoCaminhoLocalizacaoArquivo | `String` |  |
+| CodHistoricoPadronizado | `String` |  |
+| HistoricoCompleto | `String` |  |
+| CodParticipante | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI250/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI250.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI250/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI250.LeParametros(string[])') | |

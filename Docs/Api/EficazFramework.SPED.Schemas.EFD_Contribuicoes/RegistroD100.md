@@ -8,33 +8,32 @@ Aquisição de Serviços de Transporte
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorOperacao | `IndicadorTipoOperacaoBlocoD` |  |
-| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | CodigoModeloDocFiscal | `String` |  |
-| 06 | CodigoSituacaoDocFiscal | `String` |  |
-| 07 | SerieDocFiscal | `String` |  |
-| 08 | SubSerieDocFiscal | `String` |  |
-| 09 | NumeroDocFiscal | `Nullable<Int64>` |  |
-| 10 | ChaveCte | `String` |  |
-| 11 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
-| 12 | DataAquisicaoPrestServico | `Nullable<DateTime>` |  |
-| 13 | TipoCte | `String` |  |
-| 14 | ChaveCteReferencia | `String` |  |
-| 15 | VrTotalDocFiscal | `Nullable<Double>` |  |
-| 16 | VrTotalDesconto | `Nullable<Double>` |  |
-| 17 | IndicadorTipoFrete | `IndicadorFrete` |  |
-| 18 | VrTotalPrestacaoServ | `Nullable<Double>` |  |
-| 19 | VrBcICMS | `Nullable<Double>` |  |
-| 20 | VrICMS | `Nullable<Double>` |  |
-| 21 | VrNãoTributadoICMS | `Nullable<Double>` |  |
-| 22 | CodigoInfoComplementarDocFiscal | `String` |  |
-| 23 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorOperacao | `IndicadorTipoOperacaoBlocoD` |  |
+| IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| CodigoSituacaoDocFiscal | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| NumeroDocFiscal | `Nullable<Int64>` |  |
+| ChaveCte | `String` |  |
+| DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| DataAquisicaoPrestServico | `Nullable<DateTime>` |  |
+| TipoCte | `String` |  |
+| ChaveCteReferencia | `String` |  |
+| VrTotalDocFiscal | `Nullable<Double>` |  |
+| VrTotalDesconto | `Nullable<Double>` |  |
+| IndicadorTipoFrete | `IndicadorFrete` |  |
+| VrTotalPrestacaoServ | `Nullable<Double>` |  |
+| VrBcICMS | `Nullable<Double>` |  |
+| VrICMS | `Nullable<Double>` |  |
+| VrNãoTributadoICMS | `Nullable<Double>` |  |
+| CodigoInfoComplementarDocFiscal | `String` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD100.LeParametros(string[])') | |

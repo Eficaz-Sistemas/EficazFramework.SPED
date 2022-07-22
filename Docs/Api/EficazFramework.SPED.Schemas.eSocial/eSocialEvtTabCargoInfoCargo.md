@@ -4,6 +4,6 @@
 ## eSocialEvtTabCargoInfoCargo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `Object` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| Item | `Object` |  |

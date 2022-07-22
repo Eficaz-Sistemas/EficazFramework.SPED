@@ -4,8 +4,8 @@
 ## TDadosCargo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nmCargo | `String` |  |
-| 03 | codCBO | `String` |  |
-| 04 | cargoPublico | `TDadosCargoCargoPublico` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nmCargo | `String` |  |
+| codCBO | `String` |  |
+| cargoPublico | `TDadosCargoCargoPublico` |  |

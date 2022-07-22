@@ -4,11 +4,11 @@
 ## confReset Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `Ambiente` |  |
-| 03 | cUF | `String` |  |
-| 04 | nSeg | `String` |  |
-| 05 | dhEnvio | `String` |  |
-| 06 | nserieSAT | `String` |  |
-| 07 | versao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAmb | `Ambiente` |  |
+| cUF | `String` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| versao | `String` |  |

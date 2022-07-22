@@ -8,13 +8,12 @@ Processo Referenciado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoProcesso | `String` |  |
-| 03 | IndicadorOrigemProcesso | `IndicadorOrigemProcesso` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IdentificacaoProcesso | `String` |  |
+| IndicadorOrigemProcesso | `IndicadorOrigemProcesso` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF559/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF559.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroF559/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroF559.LeParametros(string[])') | |

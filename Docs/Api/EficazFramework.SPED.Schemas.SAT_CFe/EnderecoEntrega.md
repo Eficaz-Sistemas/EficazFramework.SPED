@@ -6,11 +6,11 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xLgr | `String` |  |
-| 03 | nro | `String` |  |
-| 04 | xCpl | `String` |  |
-| 05 | xBairro | `String` |  |
-| 06 | xMun | `String` |  |
-| 07 | UF | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| xLgr | `String` |  |
+| nro | `String` |  |
+| xCpl | `String` |  |
+| xBairro | `String` |  |
+| xMun | `String` |  |
+| UF | `String` |  |

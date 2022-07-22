@@ -8,20 +8,19 @@ Detalhamento da Consolidação - PIS/PASEP
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CSTPis | `String` |  |
-| 03 | CodigoItem | `String` |  |
-| 04 | VrTotalItens | `Nullable<Double>` |  |
-| 05 | VrBaseCalculoPis | `Nullable<Double>` |  |
-| 06 | AliquotaPIS | `Nullable<Double>` |  |
-| 07 | BCQuantidadePis | `Nullable<Double>` |  |
-| 08 | AliquotaPisReais | `Nullable<Double>` |  |
-| 09 | VrPIS | `Nullable<Double>` |  |
-| 10 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CSTPis | `String` |  |
+| CodigoItem | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| VrBaseCalculoPis | `Nullable<Double>` |  |
+| AliquotaPIS | `Nullable<Double>` |  |
+| BCQuantidadePis | `Nullable<Double>` |  |
+| AliquotaPisReais | `Nullable<Double>` |  |
+| VrPIS | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC381/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC381.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC381/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC381.LeParametros(string[])') | |

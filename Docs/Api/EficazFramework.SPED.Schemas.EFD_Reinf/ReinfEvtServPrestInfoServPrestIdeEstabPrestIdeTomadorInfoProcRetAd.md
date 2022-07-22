@@ -4,9 +4,9 @@
 ## ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpProcRetAdic | `TipoProcesso` |  |
-| 03 | nrProcRetAdic | `String` |  |
-| 04 | codSuspAdic | `String` |  |
-| 05 | valorAdic | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpProcRetAdic | `TipoProcesso` |  |
+| nrProcRetAdic | `String` |  |
+| codSuspAdic | `String` |  |
+| valorAdic | `String` |  |

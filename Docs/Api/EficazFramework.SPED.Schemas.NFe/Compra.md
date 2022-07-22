@@ -4,13 +4,12 @@
 ## Compra Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xNEmp | `String` |  |
-| 03 | xPed | `String` |  |
-| 04 | xCont | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xNEmp | `String` |  |
+| xPed | `String` |  |
+| xCont | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Compra/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Compra.OnPropertyChanged(string)') | |

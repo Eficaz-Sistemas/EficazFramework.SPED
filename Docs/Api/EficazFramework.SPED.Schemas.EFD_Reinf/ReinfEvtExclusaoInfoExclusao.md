@@ -4,8 +4,8 @@
 ## ReinfEvtExclusaoInfoExclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpEvento | `String` |  |
-| 03 | nrRecEvt | `String` |  |
-| 04 | perApur | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpEvento | `String` |  |
+| nrRecEvt | `String` |  |
+| perApur | `String` |  |

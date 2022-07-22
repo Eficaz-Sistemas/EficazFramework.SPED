@@ -10,14 +10,13 @@ EC 87/15 (CÓDIGO 55)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Vr_FCP_Uf_Destino | `Nullable<Double>` |  |
-| 03 | Vr_ICMS_UF_Destino | `Nullable<Double>` |  |
-| 04 | Vr_ICMS_UF_Remetente | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Vr_FCP_Uf_Destino | `Nullable<Double>` |  |
+| Vr_ICMS_UF_Destino | `Nullable<Double>` |  |
+| Vr_ICMS_UF_Remetente | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD101/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD101.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD101/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD101.LeParametros(string[])') | |

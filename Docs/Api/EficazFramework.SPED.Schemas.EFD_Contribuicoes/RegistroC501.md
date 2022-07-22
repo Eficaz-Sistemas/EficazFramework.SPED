@@ -8,21 +8,20 @@ Complemento da Operação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CstPis | `String` |  |
-| 03 | VrTotalItens | `Nullable<Double>` |  |
-| 04 | NatBaseCalculo | `String` |  |
-| 05 | VrBaseCalculoPis | `Double` |  |
-| 06 | AliquotaPis | `Nullable<Double>` |  |
-| 07 | VrPis | `Nullable<Double>` |  |
-| 08 | CodContaContabil | `String` |  |
-| 09 | RegistrosC501 | `List<RegistroC501>` |  |
-| 10 | RegistrosC505 | `List<RegistroC505>` |  |
-| 11 | RegistrosC509 | `List<RegistroC509>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CstPis | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| NatBaseCalculo | `String` |  |
+| VrBaseCalculoPis | `Double` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CodContaContabil | `String` |  |
+| RegistrosC501 | `List<RegistroC501>` |  |
+| RegistrosC505 | `List<RegistroC505>` |  |
+| RegistrosC509 | `List<RegistroC509>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC501/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC501.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC501/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC501.LeParametros(string[])') | |

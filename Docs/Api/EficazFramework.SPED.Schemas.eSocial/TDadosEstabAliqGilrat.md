@@ -4,12 +4,12 @@
 ## TDadosEstabAliqGilrat Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | aliqRat | `String` |  |
-| 03 | fap | `Decimal` |  |
-| 04 | fapSpecified | `Boolean` |  |
-| 05 | aliqRatAjust | `Decimal` |  |
-| 06 | aliqRatAjustSpecified | `Boolean` |  |
-| 07 | procAdmJudRat | `TDadosEstabAliqGilratProcAdmJudRat` |  |
-| 08 | procAdmJudFap | `TDadosEstabAliqGilratProcAdmJudFap` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| aliqRat | `String` |  |
+| fap | `Decimal` |  |
+| fapSpecified | `Boolean` |  |
+| aliqRatAjust | `Decimal` |  |
+| aliqRatAjustSpecified | `Boolean` |  |
+| procAdmJudRat | `TDadosEstabAliqGilratProcAdmJudRat` |  |
+| procAdmJudFap | `TDadosEstabAliqGilratProcAdmJudFap` |  |

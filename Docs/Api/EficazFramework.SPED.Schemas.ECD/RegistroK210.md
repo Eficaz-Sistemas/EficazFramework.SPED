@@ -8,13 +8,12 @@ Mapeamento para Planos de Contas das Empresas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoIdentEmpresaParticipante | `String` |  |
-| 03 | CodigoContaEmpresaParticipante | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoIdentEmpresaParticipante | `String` |  |
+| CodigoContaEmpresaParticipante | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK210/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK210.LeParametros(string[])') | |

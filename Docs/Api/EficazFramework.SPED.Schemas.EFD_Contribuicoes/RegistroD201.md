@@ -8,17 +8,16 @@ Totalização Resumo Diário
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CSTPis | `String` |  |
-| 03 | VrTotalItens | `Nullable<Double>` |  |
-| 04 | VrBcPis | `Nullable<Double>` |  |
-| 05 | AliquotaPis | `Nullable<Double>` |  |
-| 06 | VrPis | `Nullable<Double>` |  |
-| 07 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CSTPis | `String` |  |
+| VrTotalItens | `Nullable<Double>` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD201/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD201.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD201/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD201.LeParametros(string[])') | |

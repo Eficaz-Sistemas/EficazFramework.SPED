@@ -8,17 +8,16 @@ Ajustes da contribuição para o pis apurada
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
-| 03 | VrAjuste | `Nullable<Double>` |  |
-| 04 | CodigoAjuste | `String` |  |
-| 05 | NumeroProcesso | `String` |  |
-| 06 | DescResumAjuste | `String` |  |
-| 07 | DataAjuste | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
+| VrAjuste | `Nullable<Double>` |  |
+| CodigoAjuste | `String` |  |
+| NumeroProcesso | `String` |  |
+| DescResumAjuste | `String` |  |
+| DataAjuste | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM220/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM220.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM220/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM220.LeParametros(string[])') | |

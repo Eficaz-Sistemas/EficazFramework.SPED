@@ -4,7 +4,7 @@
 ## eSocialEvtAdmissaoVinculoAfastamento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | dtIniAfast | `DateTime` |  |
-| 03 | codMotAfast | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| dtIniAfast | `DateTime` |  |
+| codMotAfast | `String` |  |

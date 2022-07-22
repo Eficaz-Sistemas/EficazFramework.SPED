@@ -8,17 +8,16 @@ Abertura do Bloco B
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ValorContabil | `Nullable<Double>` |  |
-| 03 | ValorBcISS | `Nullable<Double>` |  |
-| 04 | AliquotaISS | `Nullable<Double>` |  |
-| 05 | TotalValorOpIsentas | `Nullable<Double>` |  |
-| 06 | TotalCombAliqISS | `Nullable<Double>` |  |
-| 07 | CodServico | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ValorContabil | `Nullable<Double>` |  |
+| ValorBcISS | `Nullable<Double>` |  |
+| AliquotaISS | `Nullable<Double>` |  |
+| TotalValorOpIsentas | `Nullable<Double>` |  |
+| TotalCombAliqISS | `Nullable<Double>` |  |
+| CodServico | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB420/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB420.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB420/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB420.LeParametros(string[])') | |

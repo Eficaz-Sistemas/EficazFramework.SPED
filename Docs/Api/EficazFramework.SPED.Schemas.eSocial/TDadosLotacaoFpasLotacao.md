@@ -4,9 +4,9 @@
 ## TDadosLotacaoFpasLotacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | fpas | `String` |  |
-| 03 | codTercs | `String` |  |
-| 04 | codTercsSusp | `String` |  |
-| 05 | infoProcJudTerceiros | `TDadosLotacaoFpasLotacaoProcJudTerceiro[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| fpas | `String` |  |
+| codTercs | `String` |  |
+| codTercsSusp | `String` |  |
+| infoProcJudTerceiros | `TDadosLotacaoFpasLotacaoProcJudTerceiro[]` |  |

@@ -4,16 +4,15 @@
 ## TCTeInfCteInfCTeNormVeicNovos Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | chassi | `String` |  |
-| 03 | cCor | `String` |  |
-| 04 | xCor | `String` |  |
-| 05 | cMod | `String` |  |
-| 06 | vUnit | `String` |  |
-| 07 | vFrete | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| chassi | `String` |  |
+| cCor | `String` |  |
+| xCor | `String` |  |
+| cMod | `String` |  |
+| vUnit | `String` |  |
+| vFrete | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormVeicNovos/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormVeicNovos.OnPropertyChanged(string)') | |

@@ -4,11 +4,10 @@
 ## TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle.OnPropertyChanged(string)') | |

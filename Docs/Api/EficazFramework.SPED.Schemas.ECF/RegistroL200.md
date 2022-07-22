@@ -8,12 +8,11 @@ Método de Avaliação do Estoque Final
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Metodo | `MetodoAvEstoque` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Metodo | `MetodoAvEstoque` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroL200/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroL200.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroL200/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroL200.LeParametros(string[])') | |

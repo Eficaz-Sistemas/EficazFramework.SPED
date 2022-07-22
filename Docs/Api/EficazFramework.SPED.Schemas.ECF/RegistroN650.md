@@ -8,14 +8,13 @@ Base de Cálculo da CSLL Após as Compensações da Base de Cálculo Negativa
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoReferencial | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoReferencial | `String` |  |
+| Descricao | `String` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroN650/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroN650.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroN650/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroN650.LeParametros(string[])') | |

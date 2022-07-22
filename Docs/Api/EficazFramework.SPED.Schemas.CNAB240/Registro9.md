@@ -6,15 +6,14 @@
 Registro Trailer de Arquivo
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | QuantidadeLotes | `Nullable<Int32>` |  |
-| 05 | QuantidadeRegistros | `Nullable<Int32>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| QuantidadeLotes | `Nullable<Int32>` |  |
+| QuantidadeRegistros | `Nullable<Int32>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro9/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro9.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro9/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro9.LeParametros(string[])') | |

@@ -4,13 +4,12 @@
 ## Cobranca Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | fat | `CobrancaFatura` |  |
-| 03 | dup | `List<CobrancaDuplicata>` |  |
-| 04 | MostraFatura | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| fat | `CobrancaFatura` |  |
+| dup | `List<CobrancaDuplicata>` |  |
+| MostraFatura | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Cobranca/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Cobranca.OnPropertyChanged(string)') | |

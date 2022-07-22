@@ -8,15 +8,14 @@ Termo de Verificação para Fins de Substituição da ECD
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TipoDoc | `String` |  |
-| 03 | DescricaoArquivoRTF | `String` |  |
-| 04 | HashArquivoRTF | `String` |  |
-| 05 | SequenciaBytesArquitoRTF | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TipoDoc | `String` |  |
+| DescricaoArquivoRTF | `String` |  |
+| HashArquivoRTF | `String` |  |
+| SequenciaBytesArquitoRTF | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ801/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ801.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ801/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ801.LeParametros(string[])') | |

@@ -8,16 +8,15 @@ Pis Folha de Salários
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalFolhaSalarios | `Nullable<Double>` |  |
-| 03 | VrTotalExclusoesBC | `Nullable<Double>` |  |
-| 04 | VrTotalBC | `Nullable<Double>` |  |
-| 05 | AliqPisFolhaSalarios | `Nullable<Double>` |  |
-| 06 | VrTotalContribFolhaSalarios | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalFolhaSalarios | `Nullable<Double>` |  |
+| VrTotalExclusoesBC | `Nullable<Double>` |  |
+| VrTotalBC | `Nullable<Double>` |  |
+| AliqPisFolhaSalarios | `Nullable<Double>` |  |
+| VrTotalContribFolhaSalarios | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM350/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM350.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM350/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM350.LeParametros(string[])') | |

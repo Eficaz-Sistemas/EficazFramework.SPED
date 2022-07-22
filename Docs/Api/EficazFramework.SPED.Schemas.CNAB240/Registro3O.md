@@ -6,30 +6,29 @@
 Registro Detalhe
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoBanco | `String` |  |
-| 03 | LoteDeServico | `String` |  |
-| 04 | NumeroSequencial | `Nullable<Int32>` |  |
-| 05 | TipoMovimento | `String` |  |
-| 06 | TipoTributo | `String` |  |
-| 07 | CodigoBarras | `String` |  |
-| 08 | ContribuinteNome | `String` |  |
-| 09 | DataVencimento | `Nullable<DateTime>` |  |
-| 10 | Moeda | `String` |  |
-| 11 | QuantidadeMoeda | `Nullable<Double>` |  |
-| 12 | ValorPrincipal | `Nullable<Double>` |  |
-| 13 | DataPagamento | `Nullable<DateTime>` |  |
-| 14 | ValorPago | `Nullable<Double>` |  |
-| 15 | NotaFiscal | `String` |  |
-| 16 | SeuNumero | `String` |  |
-| 17 | NossoNumero | `String` |  |
-| 18 | Ocorrencias | `String` |  |
-| 19 | Detalhamento_Z | `Registro3Z` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
-| CodigoDeBarrasSemDv() | `String` |  |
+| CodigoBanco | `String` |  |
+| LoteDeServico | `String` |  |
+| NumeroSequencial | `Nullable<Int32>` |  |
+| TipoMovimento | `String` |  |
+| TipoTributo | `String` |  |
+| CodigoBarras | `String` |  |
+| ContribuinteNome | `String` |  |
+| DataVencimento | `Nullable<DateTime>` |  |
+| Moeda | `String` |  |
+| QuantidadeMoeda | `Nullable<Double>` |  |
+| ValorPrincipal | `Nullable<Double>` |  |
+| DataPagamento | `Nullable<DateTime>` |  |
+| ValorPago | `Nullable<Double>` |  |
+| NotaFiscal | `String` |  |
+| SeuNumero | `String` |  |
+| NossoNumero | `String` |  |
+| Ocorrencias | `String` |  |
+| Detalhamento_Z | `Registro3Z` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CodigoDeBarrasSemDv()](EficazFramework.SPED.Schemas.CNAB240/Registro3O/CodigoDeBarrasSemDv().md 'EficazFramework.SPED.Schemas.CNAB240.Registro3O.CodigoDeBarrasSemDv()') | |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.CNAB240/Registro3O/EscreveLinha().md 'EficazFramework.SPED.Schemas.CNAB240.Registro3O.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.CNAB240/Registro3O/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.CNAB240.Registro3O.LeParametros(string[])') | |

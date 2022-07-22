@@ -4,13 +4,12 @@
 ## TCTeInfCteInfCTeNormCobrDup Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nDup | `String` |  |
-| 03 | dVenc | `String` |  |
-| 04 | vDup | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nDup | `String` |  |
+| dVenc | `String` |  |
+| vDup | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormCobrDup/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormCobrDup.OnPropertyChanged(string)') | |

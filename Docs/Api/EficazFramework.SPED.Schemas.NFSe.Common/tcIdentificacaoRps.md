@@ -4,13 +4,12 @@
 ## tcIdentificacaoRps Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Numero | `String` |  |
-| 03 | Serie | `String` |  |
-| 04 | Tipo | `Int32` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Numero | `String` |  |
+| Serie | `String` |  |
+| Tipo | `Int32` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcIdentificacaoRps/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcIdentificacaoRps.OnPropertyChanged(string)') | |

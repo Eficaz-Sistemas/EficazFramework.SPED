@@ -4,17 +4,16 @@
 ## Referencia Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | periodo | `ReferenciaPeriodo` |  |
-| 03 | periodoSpecified | `Boolean` |  |
-| 04 | mes | `Mes` |  |
-| 05 | mesSpecified | `Boolean` |  |
-| 06 | ano | `Nullable<Int32>` |  |
-| 07 | parcela | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeano() | `Boolean` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| periodo | `ReferenciaPeriodo` |  |
+| periodoSpecified | `Boolean` |  |
+| mes | `Mes` |  |
+| mesSpecified | `Boolean` |  |
+| ano | `Nullable<Int32>` |  |
+| parcela | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.GNRE.V1/Referencia/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.GNRE.V1.Referencia.OnPropertyChanged(string)') | |
+| [ShouldSerializeano()](EficazFramework.SPED.Schemas.GNRE.V1/Referencia/ShouldSerializeano().md 'EficazFramework.SPED.Schemas.GNRE.V1.Referencia.ShouldSerializeano()') | |

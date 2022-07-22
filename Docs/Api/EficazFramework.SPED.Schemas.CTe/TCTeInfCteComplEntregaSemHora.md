@@ -4,11 +4,10 @@
 ## TCTeInfCteComplEntregaSemHora Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpHor | `TCTeInfCteComplEntregaSemHoraTpHor` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpHor | `TCTeInfCteComplEntregaSemHoraTpHor` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteComplEntregaSemHora/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteComplEntregaSemHora.OnPropertyChanged(string)') | |

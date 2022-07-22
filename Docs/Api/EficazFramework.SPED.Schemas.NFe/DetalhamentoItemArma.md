@@ -4,14 +4,13 @@
 ## DetalhamentoItemArma Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpArma | `TipoArma` |  |
-| 03 | nSerie | `String` |  |
-| 04 | nCano | `String` |  |
-| 05 | descr | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpArma | `TipoArma` |  |
+| nSerie | `String` |  |
+| nCano | `String` |  |
+| descr | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoItemArma/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoItemArma.OnPropertyChanged(string)') | |

@@ -1,0 +1,14 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.CTeOS](EficazFramework.SPED.Schemas.CTeOS.md 'EficazFramework.SPED.Schemas.CTeOS').[CTeOS](EficazFramework.SPED.Schemas.CTeOS/CTeOS.md 'EficazFramework.SPED.Schemas.CTeOS.CTeOS')
+
+## CTeOS.Serialize() Method
+
+Serializes current TNfeProc object into an XML document
+
+```csharp
+public virtual string Serialize();
+```
+
+#### Returns
+[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
+string XML value

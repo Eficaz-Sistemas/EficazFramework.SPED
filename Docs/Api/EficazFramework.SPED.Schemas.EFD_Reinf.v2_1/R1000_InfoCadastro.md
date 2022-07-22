@@ -4,14 +4,14 @@
 ## R1000_InfoCadastro Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | classTrib | `String` |  |
-| 03 | indEscrituracao | `ObrigatoriedadeECD` |  |
-| 04 | indDesoneracao | `DesoneracaoCPRB` |  |
-| 05 | indAcordoIsenMulta | `AcordoInternacionalIsencaoMulta` |  |
-| 06 | indSitPJ | `SituacaoPessoaJuridica` |  |
-| 07 | indSitPJSpecified | `Boolean` |  |
-| 08 | contato | `R1000_InfoCadastro_Contato` |  |
-| 09 | softHouse | `R1000_InfoCadastro_SoftwareHouse` |  |
-| 10 | infoEFR | `ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| classTrib | `String` |  |
+| indEscrituracao | `ObrigatoriedadeECD` |  |
+| indDesoneracao | `DesoneracaoCPRB` |  |
+| indAcordoIsenMulta | `AcordoInternacionalIsencaoMulta` |  |
+| indSitPJ | `SituacaoPessoaJuridica` |  |
+| indSitPJSpecified | `Boolean` |  |
+| contato | `R1000_InfoCadastro_Contato` |  |
+| softHouse | `R1000_InfoCadastro_SoftwareHouse` |  |
+| infoEFR | `ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR` |  |

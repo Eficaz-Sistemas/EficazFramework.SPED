@@ -4,15 +4,14 @@
 ## TCTeInfCteInfCTeNormInfDocInfNFe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Chave | `String` |  |
-| 03 | PIN | `String` |  |
-| 04 | dPrev | `String` |  |
-| 05 | Items | `ObservableCollection<Object>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| Chave | `String` |  |
+| PIN | `String` |  |
+| dPrev | `String` |  |
+| Items | `ObservableCollection<Object>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfNFe.OnPropertyChanged(string)') | |
+| [ToString()](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfDocInfNFe/ToString().md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfDocInfNFe.ToString()') | |

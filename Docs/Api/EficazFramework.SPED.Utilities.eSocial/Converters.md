@@ -2,11 +2,10 @@
 ### [EficazFramework.SPED.Utilities.eSocial](EficazFramework.SPED.Utilities.eSocial.md 'EficazFramework.SPED.Utilities.eSocial')
 
 ## Converters Class
-### Methods
 
-| Name | Return Type | |
-| :--- | :---: | :--- |
-| EnumSimNaoToBoolean(SimNaoString) | `Boolean` |  |
-| EnumSimNaoToBoolean(SimNaoByte) | `Boolean` |  |
-| BooleanToEnumSimNaoString(bool) | `SimNaoString` |  |
-| BooleanToEnumSimNaoByte(bool) | `SimNaoByte` |  |
+| Methods | |
+| :--- | :--- |
+| [BooleanToEnumSimNaoByte(bool)](EficazFramework.SPED.Utilities.eSocial/Converters/BooleanToEnumSimNaoByte(bool).md 'EficazFramework.SPED.Utilities.eSocial.Converters.BooleanToEnumSimNaoByte(bool)') | |
+| [BooleanToEnumSimNaoString(bool)](EficazFramework.SPED.Utilities.eSocial/Converters/BooleanToEnumSimNaoString(bool).md 'EficazFramework.SPED.Utilities.eSocial.Converters.BooleanToEnumSimNaoString(bool)') | |
+| [EnumSimNaoToBoolean(SimNaoByte)](EficazFramework.SPED.Utilities.eSocial/Converters/EnumSimNaoToBoolean(SimNaoByte).md 'EficazFramework.SPED.Utilities.eSocial.Converters.EnumSimNaoToBoolean(EficazFramework.SPED.Schemas.eSocial.SimNaoByte)') | |
+| [EnumSimNaoToBoolean(SimNaoString)](EficazFramework.SPED.Utilities.eSocial/Converters/EnumSimNaoToBoolean(SimNaoString).md 'EficazFramework.SPED.Utilities.eSocial.Converters.EnumSimNaoToBoolean(EficazFramework.SPED.Schemas.eSocial.SimNaoString)') | |

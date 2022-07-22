@@ -4,12 +4,11 @@
 ## tcContato Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Telefone | `String` |  |
-| 03 | Email | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Telefone | `String` |  |
+| Email | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcContato/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcContato.OnPropertyChanged(string)') | |

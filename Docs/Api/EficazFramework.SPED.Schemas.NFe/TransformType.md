@@ -4,12 +4,11 @@
 ## TransformType Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | XPath | `List<String>` |  |
-| 03 | Algorithm | `TTransformURI` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| XPath | `List<String>` |  |
+| Algorithm | `TTransformURI` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TransformType/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TransformType.OnPropertyChanged(string)') | |

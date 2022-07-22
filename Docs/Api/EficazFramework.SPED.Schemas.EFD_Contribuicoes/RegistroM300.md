@@ -8,18 +8,17 @@ Contribuição de PIS diferida em períodos anteriores - valores a pagar no per�
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContribDiferidaPerAnter | `String` |  |
-| 03 | VrContribApuradaDiferidaPerAnter | `Nullable<Double>` |  |
-| 04 | NatCreditoDiferidoVincRecMerInterno | `NaturezaCreditoDiferido` |  |
-| 05 | VrCreditoDescontarVincContribDiferida | `Nullable<Double>` |  |
-| 06 | VrContribRecolherDiferidaPerAnteriores | `Nullable<Double>` |  |
-| 07 | PeriodoApuracaoContribCredDiferidos | `Nullable<DateTime>` |  |
-| 08 | DataRecebReceitaDiferimento | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContribDiferidaPerAnter | `String` |  |
+| VrContribApuradaDiferidaPerAnter | `Nullable<Double>` |  |
+| NatCreditoDiferidoVincRecMerInterno | `NaturezaCreditoDiferido` |  |
+| VrCreditoDescontarVincContribDiferida | `Nullable<Double>` |  |
+| VrContribRecolherDiferidaPerAnteriores | `Nullable<Double>` |  |
+| PeriodoApuracaoContribCredDiferidos | `Nullable<DateTime>` |  |
+| DataRecebReceitaDiferimento | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM300.LeParametros(string[])') | |

@@ -4,11 +4,11 @@
 ## eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | hipLeg | `TrabTemporarioHipotese` |  |
-| 03 | justContr | `String` |  |
-| 04 | tpInclContr | `TrabTemporarioTpInclusao` |  |
-| 05 | tpInclContrSpecified | `Boolean` |  |
-| 06 | ideTomadorServ | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ` |  |
-| 07 | ideTrabSubstituido | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| hipLeg | `TrabTemporarioHipotese` |  |
+| justContr | `String` |  |
+| tpInclContr | `TrabTemporarioTpInclusao` |  |
+| tpInclContrSpecified | `Boolean` |  |
+| ideTomadorServ | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ` |  |
+| ideTrabSubstituido | `eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[]` |  |

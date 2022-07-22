@@ -8,21 +8,20 @@ Documento Fiscal emitido por ECF (Código 02, 2D e 60)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModelo | `String` |  |
-| 03 | Situacao | `SituacaoDocumento` |  |
-| 04 | Numero | `Nullable<Int64>` |  |
-| 05 | Data | `Nullable<DateTime>` |  |
-| 06 | ValorTotal | `Nullable<Double>` |  |
-| 07 | ValorPIS | `Nullable<Double>` |  |
-| 08 | ValorCofins | `Nullable<Double>` |  |
-| 09 | CNPJ_CPF | `String` |  |
-| 10 | NomeAdquirente | `String` |  |
-| 11 | RegistrosC470 | `List<RegistroC470>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModelo | `String` |  |
+| Situacao | `SituacaoDocumento` |  |
+| Numero | `Nullable<Int64>` |  |
+| Data | `Nullable<DateTime>` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| ValorPIS | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+| CNPJ_CPF | `String` |  |
+| NomeAdquirente | `String` |  |
+| RegistrosC470 | `List<RegistroC470>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC460/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC460.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC460/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC460.LeParametros(string[])') | |

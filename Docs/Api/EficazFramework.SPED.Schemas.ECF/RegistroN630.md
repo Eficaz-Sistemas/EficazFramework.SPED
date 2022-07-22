@@ -8,14 +8,13 @@ Apuração do IRPJ Com Base no Lucro Real
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoReferencial | `String` |  |
-| 03 | Descricao | `String` |  |
-| 04 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoReferencial | `String` |  |
+| Descricao | `String` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroN630/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroN630.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroN630/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroN630.LeParametros(string[])') | |

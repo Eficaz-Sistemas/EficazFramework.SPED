@@ -8,15 +8,14 @@ Complemento das operações - detalhamento das receitas, deduções ou exclusõe
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoComplementar | `String` |  |
-| 03 | DetValor | `Nullable<Double>` |  |
-| 04 | CodigoContaContabil | `String` |  |
-| 05 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoComplementar | `String` |  |
+| DetValor | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI300.LeParametros(string[])') | |

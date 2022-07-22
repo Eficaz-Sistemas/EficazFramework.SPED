@@ -8,29 +8,28 @@ Resumo da Escrituração Diária - Bilhetes Consolidados
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoModeloDocFiscal | `String` |  |
-| 03 | SerieDocFiscal | `String` |  |
-| 04 | SubSerieDocFiscal | `String` |  |
-| 05 | NumeroDocFiscalInicial | `Nullable<Int64>` |  |
-| 06 | NumeroDocFiscalFinal | `Nullable<Int64>` |  |
-| 07 | CFOP | `String` |  |
-| 08 | DataReferenciaResumoDiario | `Nullable<DateTime>` |  |
-| 09 | VrTotalDocsFiscais | `Nullable<Double>` |  |
-| 10 | VrTotalDescontos | `Nullable<Double>` |  |
-| 11 | CSTPis | `String` |  |
-| 12 | VrBcPis | `Nullable<Double>` |  |
-| 13 | AliquotaPis | `Nullable<Double>` |  |
-| 14 | VrPis | `Nullable<Double>` |  |
-| 15 | CSTCofins | `String` |  |
-| 16 | VrBcCofins | `Nullable<Double>` |  |
-| 17 | AliquotaCofins | `Nullable<Double>` |  |
-| 18 | VrCofins | `Nullable<Double>` |  |
-| 19 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| SerieDocFiscal | `String` |  |
+| SubSerieDocFiscal | `String` |  |
+| NumeroDocFiscalInicial | `Nullable<Int64>` |  |
+| NumeroDocFiscalFinal | `Nullable<Int64>` |  |
+| CFOP | `String` |  |
+| DataReferenciaResumoDiario | `Nullable<DateTime>` |  |
+| VrTotalDocsFiscais | `Nullable<Double>` |  |
+| VrTotalDescontos | `Nullable<Double>` |  |
+| CSTPis | `String` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroD300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroD300.LeParametros(string[])') | |

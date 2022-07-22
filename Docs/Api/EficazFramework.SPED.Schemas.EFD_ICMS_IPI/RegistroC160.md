@@ -8,17 +8,16 @@ REGISTRO C160: VOLUMES TRANSPORTADOS (CÓDIGO 01 E 04) - EXCETO COMBUSTÍVEIS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodParticipante | `String` |  |
-| 03 | PlacaVeiculoIdent | `String` |  |
-| 04 | QuantVolumeTransp | `String` |  |
-| 05 | PesoBrutoTransp | `Nullable<Double>` |  |
-| 06 | PesoLiquidoTransp | `Nullable<Double>` |  |
-| 07 | UFPlacaVeiculo | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodParticipante | `String` |  |
+| PlacaVeiculoIdent | `String` |  |
+| QuantVolumeTransp | `String` |  |
+| PesoBrutoTransp | `Nullable<Double>` |  |
+| PesoLiquidoTransp | `Nullable<Double>` |  |
+| UFPlacaVeiculo | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC160/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC160.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC160/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC160.LeParametros(string[])') | |

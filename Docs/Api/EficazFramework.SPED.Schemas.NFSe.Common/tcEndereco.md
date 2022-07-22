@@ -4,20 +4,19 @@
 ## tcEndereco Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Endereco | `String` |  |
-| 03 | Numero | `String` |  |
-| 04 | Complemento | `String` |  |
-| 05 | Bairro | `String` |  |
-| 06 | CodigoMunicipio | `Int32` |  |
-| 07 | Cidade | `Int32` |  |
-| 08 | CodigoMunicipioSpecified | `Boolean` |  |
-| 09 | Uf | `String` |  |
-| 10 | Estado | `String` |  |
-| 11 | Cep | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| CodigoMunicipio | `Int32` |  |
+| Cidade | `Int32` |  |
+| CodigoMunicipioSpecified | `Boolean` |  |
+| Uf | `String` |  |
+| Estado | `String` |  |
+| Cep | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcEndereco/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcEndereco.OnPropertyChanged(string)') | |

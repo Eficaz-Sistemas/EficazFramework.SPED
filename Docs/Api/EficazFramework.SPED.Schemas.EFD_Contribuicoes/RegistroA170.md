@@ -8,29 +8,28 @@ Complemento do Documento - Itens do Documento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroItem | `Nullable<Int32>` |  |
-| 03 | CodigoItem | `String` |  |
-| 04 | DescricaoComplementarItem | `String` |  |
-| 05 | VrTotalItem | `Nullable<Double>` |  |
-| 06 | VrTotalDesconto | `Nullable<Double>` |  |
-| 07 | NaturezaBCCalculo | `NaturezaBaseCalculo` |  |
-| 08 | IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
-| 09 | CSTPis | `String` |  |
-| 10 | VrBaseCalculoPis | `Nullable<Double>` |  |
-| 11 | AliquotaPis | `Nullable<Double>` |  |
-| 12 | VrPis | `Nullable<Double>` |  |
-| 13 | CSTCofins | `String` |  |
-| 14 | VrBaseCalculoCofins | `Nullable<Double>` |  |
-| 15 | AliquotaCofins | `Nullable<Double>` |  |
-| 16 | VrCofins | `Nullable<Double>` |  |
-| 17 | CodigoContaContabil | `String` |  |
-| 18 | CodigoCentroCusto | `String` |  |
-| 19 | IndicadorTipoOperacao | `IndicadorTipoOperacao` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroItem | `Nullable<Int32>` |  |
+| CodigoItem | `String` |  |
+| DescricaoComplementarItem | `String` |  |
+| VrTotalItem | `Nullable<Double>` |  |
+| VrTotalDesconto | `Nullable<Double>` |  |
+| NaturezaBCCalculo | `NaturezaBaseCalculo` |  |
+| IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
+| CSTPis | `String` |  |
+| VrBaseCalculoPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| CSTCofins | `String` |  |
+| VrBaseCalculoCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| CodigoCentroCusto | `String` |  |
+| IndicadorTipoOperacao | `IndicadorTipoOperacao` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA170/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA170.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA170/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA170.LeParametros(string[])') | |

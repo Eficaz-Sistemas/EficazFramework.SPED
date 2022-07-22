@@ -8,22 +8,21 @@ Consolidação das Operações do Período
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalFatBrutoPeriodo | `Nullable<Double>` |  |
-| 03 | CSTPisCofinsReceitaPeriodo | `String` |  |
-| 04 | VrTotalDedExclusoesCaraterGeral | `Nullable<Double>` |  |
-| 05 | VrTotalDedExclusoesCaraterEspecif | `Nullable<Double>` |  |
-| 06 | VrBcPis | `Nullable<Double>` |  |
-| 07 | AliqPis | `Nullable<Double>` |  |
-| 08 | VrPis | `Nullable<Double>` |  |
-| 09 | VrBcCofins | `Nullable<Double>` |  |
-| 10 | AliqCofins | `Nullable<Double>` |  |
-| 11 | VrCofins | `Nullable<Double>` |  |
-| 12 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalFatBrutoPeriodo | `Nullable<Double>` |  |
+| CSTPisCofinsReceitaPeriodo | `String` |  |
+| VrTotalDedExclusoesCaraterGeral | `Nullable<Double>` |  |
+| VrTotalDedExclusoesCaraterEspecif | `Nullable<Double>` |  |
+| VrBcPis | `Nullable<Double>` |  |
+| AliqPis | `Nullable<Double>` |  |
+| VrPis | `Nullable<Double>` |  |
+| VrBcCofins | `Nullable<Double>` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI100.LeParametros(string[])') | |

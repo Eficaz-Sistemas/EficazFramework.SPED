@@ -8,18 +8,17 @@ Estoque Escriturado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataEscrituracao | `Nullable<DateTime>` |  |
-| 03 | CodigoProduto | `String` |  |
-| 04 | UnidadeInventariada | `String` |  |
-| 05 | QuantidadePositiva | `Nullable<Double>` |  |
-| 06 | QuantidadeNegativa | `Nullable<Double>` |  |
-| 07 | IndicadorPosse | `IndicadorPropriedade` |  |
-| 08 | CodigoParticipante | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataEscrituracao | `Nullable<DateTime>` |  |
+| CodigoProduto | `String` |  |
+| UnidadeInventariada | `String` |  |
+| QuantidadePositiva | `Nullable<Double>` |  |
+| QuantidadeNegativa | `Nullable<Double>` |  |
+| IndicadorPosse | `IndicadorPropriedade` |  |
+| CodigoParticipante | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroK280/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroK280.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroK280/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroK280.LeParametros(string[])') | |

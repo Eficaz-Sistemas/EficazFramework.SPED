@@ -4,14 +4,13 @@
 ## TCTeInfCteInfCTeNormCobrFat Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nFat | `String` |  |
-| 03 | vOrig | `String` |  |
-| 04 | vDesc | `String` |  |
-| 05 | vLiq | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nFat | `String` |  |
+| vOrig | `String` |  |
+| vDesc | `String` |  |
+| vLiq | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormCobrFat/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormCobrFat.OnPropertyChanged(string)') | |

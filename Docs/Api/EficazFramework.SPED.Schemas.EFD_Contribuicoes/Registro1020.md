@@ -8,14 +8,13 @@ Processo Referenciado - Processo administrativo
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentifProcessoAdmOuDecisaoAdm | `String` |  |
-| 03 | IndicadorNaturezaAcaoProcAdmSRFB | `IndicadorNaturezaAcaoProcAdmSRFB` |  |
-| 04 | DataDespachoDescisaoAdm | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IdentifProcessoAdmOuDecisaoAdm | `String` |  |
+| IndicadorNaturezaAcaoProcAdmSRFB | `IndicadorNaturezaAcaoProcAdmSRFB` |  |
+| DataDespachoDescisaoAdm | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1020/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1020.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1020/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1020.LeParametros(string[])') | |

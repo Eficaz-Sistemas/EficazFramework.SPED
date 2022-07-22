@@ -8,21 +8,20 @@ Detalhamento da Consolidação de Documentos Emitidos por ECF
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoItem | `String` |  |
-| 03 | CSTCofins | `String` |  |
-| 04 | CFOP | `String` |  |
-| 05 | ValorTotalItens | `Nullable<Double>` |  |
-| 06 | ValorBCCofins | `Nullable<Double>` |  |
-| 07 | AliquotaCofins | `Nullable<Double>` |  |
-| 08 | QtdeBCCofins | `Nullable<Double>` |  |
-| 09 | AliquotaCofinsQtde | `Nullable<Double>` |  |
-| 10 | ValorCofins | `Nullable<Double>` |  |
-| 11 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoItem | `String` |  |
+| CSTCofins | `String` |  |
+| CFOP | `String` |  |
+| ValorTotalItens | `Nullable<Double>` |  |
+| ValorBCCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| QtdeBCCofins | `Nullable<Double>` |  |
+| AliquotaCofinsQtde | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC495/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC495.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC495/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC495.LeParametros(string[])') | |

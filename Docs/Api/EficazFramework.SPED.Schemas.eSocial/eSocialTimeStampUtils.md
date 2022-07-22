@@ -4,11 +4,10 @@
 ## eSocialTimeStampUtils Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TimestampDict | `Dictionary<String,Int32>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| GetTimeStampIDForEvent() | `String` |  |
+| TimestampDict | `Dictionary<String,Int32>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [GetTimeStampIDForEvent()](EficazFramework.SPED.Schemas.eSocial/eSocialTimeStampUtils/GetTimeStampIDForEvent().md 'EficazFramework.SPED.Schemas.eSocial.eSocialTimeStampUtils.GetTimeStampIDForEvent()') | |

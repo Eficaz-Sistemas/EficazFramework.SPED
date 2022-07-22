@@ -8,24 +8,23 @@ Redução Z (Código 02, 2D e 60)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Data | `Nullable<DateTime>` |  |
-| 03 | CRO | `Nullable<Int32>` | Contador Reinínio Operação |
-| 04 | CRZ | `Nullable<Int32>` | Contador de Redução Z |
-| 05 | COO | `Nullable<Int32>` | Contador de Redução Z |
-| 06 | GrandeTotalFinal | `Nullable<Double>` |  |
-| 07 | VendaBruta | `Nullable<Double>` |  |
-| 08 | RegistroC410 | `RegistroC410` |  |
-| 09 | RegistrosC420 | `List<RegistroC420>` |  |
-| 10 | RegistrosC460 | `List<RegistroC460>` |  |
-| 11 | RegistrosC470 | `List<RegistroC470>` |  |
-| 12 | RegistrosC490 | `List<RegistroC490>` |  |
-| 13 | PossuiItemsC425 | `Boolean` |  |
-| 14 | PossuiItemsC470 | `Boolean` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Data | `Nullable<DateTime>` |  |
+| CRO | `Nullable<Int32>` | Contador Reinínio Operação |
+| CRZ | `Nullable<Int32>` | Contador de Redução Z |
+| COO | `Nullable<Int32>` | Contador de Redução Z |
+| GrandeTotalFinal | `Nullable<Double>` |  |
+| VendaBruta | `Nullable<Double>` |  |
+| RegistroC410 | `RegistroC410` |  |
+| RegistrosC420 | `List<RegistroC420>` |  |
+| RegistrosC460 | `List<RegistroC460>` |  |
+| RegistrosC470 | `List<RegistroC470>` |  |
+| RegistrosC490 | `List<RegistroC490>` |  |
+| PossuiItemsC425 | `Boolean` |  |
+| PossuiItemsC470 | `Boolean` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC405/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC405.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC405/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC405.LeParametros(string[])') | |

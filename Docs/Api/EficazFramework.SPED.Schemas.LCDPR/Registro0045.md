@@ -8,16 +8,15 @@ Cadastro de Terceiros
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Imovel | `Nullable<Int32>` |  |
-| 03 | TipoContratante | `TipoExploracaoTerceiro` |  |
-| 04 | CPF | `String` |  |
-| 05 | Nome | `String` |  |
-| 06 | Percentual | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Imovel | `Nullable<Int32>` |  |
+| TipoContratante | `TipoExploracaoTerceiro` |  |
+| CPF | `String` |  |
+| Nome | `String` |  |
+| Percentual | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/Registro0045/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.Registro0045.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/Registro0045/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.Registro0045.LeParametros(string[])') | |

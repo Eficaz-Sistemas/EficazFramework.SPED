@@ -4,12 +4,11 @@
 ## CanaDiario Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | qtde | `String` |  |
-| 03 | dia | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| qtde | `String` |  |
+| dia | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/CanaDiario/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.CanaDiario.OnPropertyChanged(string)') | |

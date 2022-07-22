@@ -4,25 +4,24 @@
 ## tcInfRps Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoRps | `tcIdentificacaoRps` |  |
-| 03 | DataEmissao | `DateTime` |  |
-| 04 | NaturezaOperacao | `Int32` |  |
-| 05 | RegimeEspecialTributacao | `Int32` |  |
-| 06 | RegimeEspecialTributacaoSpecified | `Boolean` |  |
-| 07 | OptanteSimplesNacional | `Int32` |  |
-| 08 | IncentivadorCultural | `Int32` |  |
-| 09 | Status | `Int32` |  |
-| 10 | RpsSubstituido | `tcIdentificacaoRps` |  |
-| 11 | Servico | `tcDadosServico` |  |
-| 12 | Prestador | `tcIdentificacaoPrestador` |  |
-| 13 | Tomador | `tcDadosTomador` |  |
-| 14 | IntermediarioServico | `tcIdentificacaoIntermediarioServico` |  |
-| 15 | ConstrucaoCivil | `tcDadosConstrucaoCivil` |  |
-| 16 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| IdentificacaoRps | `tcIdentificacaoRps` |  |
+| DataEmissao | `DateTime` |  |
+| NaturezaOperacao | `Int32` |  |
+| RegimeEspecialTributacao | `Int32` |  |
+| RegimeEspecialTributacaoSpecified | `Boolean` |  |
+| OptanteSimplesNacional | `Int32` |  |
+| IncentivadorCultural | `Int32` |  |
+| Status | `Int32` |  |
+| RpsSubstituido | `tcIdentificacaoRps` |  |
+| Servico | `tcDadosServico` |  |
+| Prestador | `tcIdentificacaoPrestador` |  |
+| Tomador | `tcDadosTomador` |  |
+| IntermediarioServico | `tcIdentificacaoIntermediarioServico` |  |
+| ConstrucaoCivil | `tcDadosConstrucaoCivil` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcInfRps/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcInfRps.OnPropertyChanged(string)') | |

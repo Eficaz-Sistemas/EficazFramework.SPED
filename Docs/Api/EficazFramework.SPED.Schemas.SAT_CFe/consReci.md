@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `String` |  |
-| 03 | nRec | `String` |  |
-| 04 | cUF | `String` |  |
-| 05 | nSeg | `String` |  |
-| 06 | dhEnvio | `String` |  |
-| 07 | nserieSAT | `String` |  |
-| 08 | versao | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpAmb | `String` |  |
+| nRec | `String` |  |
+| cUF | `String` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| versao | `String` |  |

@@ -142,18 +142,10 @@ Derived
 &#8627; [CabecalhoMensagem_ConsultaDestinatario](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_ConsultaDestinatario.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_ConsultaDestinatario')  
 &#8627; [CabecalhoMensagem_DownloadNF](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_DownloadNF.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_DownloadNF')  
 &#8627; [CabecalhoMensagem_RecepcaoEvento](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_RecepcaoEvento.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_RecepcaoEvento')
-### Methods
 
-<a name='EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem.Serialize()'></a>
-
-## ICabecalhoMensagem.Serialize() Method
-
-```csharp
-string Serialize();
-```
-
-#### Returns
-[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+| Methods | |
+| :--- | :--- |
+| [Serialize()](EficazFramework.SPED.Schemas.NFe/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

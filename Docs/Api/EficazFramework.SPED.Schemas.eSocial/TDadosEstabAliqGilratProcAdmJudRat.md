@@ -4,8 +4,8 @@
 ## TDadosEstabAliqGilratProcAdmJudRat Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpProc | `SByte` |  |
-| 03 | nrProc | `String` |  |
-| 04 | codSusp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpProc | `SByte` |  |
+| nrProc | `String` |  |
+| codSusp | `String` |  |

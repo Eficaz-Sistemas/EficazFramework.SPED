@@ -8,16 +8,15 @@ Regimes de Apuração da Contribuição Social e de Apropriação de Crédito
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoIndicador | `CodigoIncidenciaTributaria` |  |
-| 03 | MetodoApropriacao | `Nullable<MetodoApropriacaoEnum>` |  |
-| 04 | TipoContribuicao | `Nullable<TipoContribuicaoEnum>` |  |
-| 05 | CriterioEscrituracaoApuracao | `Nullable<Int32>` |  |
-| 06 | Registro0111 | `Registro0111` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoIndicador | `CodigoIncidenciaTributaria` |  |
+| MetodoApropriacao | `Nullable<MetodoApropriacaoEnum>` |  |
+| TipoContribuicao | `Nullable<TipoContribuicaoEnum>` |  |
+| CriterioEscrituracaoApuracao | `Nullable<Int32>` |  |
+| Registro0111 | `Registro0111` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0110/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0110.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0110/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0110.LeParametros(string[])') | |

@@ -17,18 +17,10 @@ public interface ICabecalhoMensagem
 
 Derived  
 &#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.GNRE/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.GNRE.CabecalhoMensagem')
-### Methods
 
-<a name='EficazFramework.SPED.Schemas.GNRE.ICabecalhoMensagem.Serialize()'></a>
-
-## ICabecalhoMensagem.Serialize() Method
-
-```csharp
-string Serialize();
-```
-
-#### Returns
-[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+| Methods | |
+| :--- | :--- |
+| [Serialize()](EficazFramework.SPED.Schemas.GNRE/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.GNRE.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

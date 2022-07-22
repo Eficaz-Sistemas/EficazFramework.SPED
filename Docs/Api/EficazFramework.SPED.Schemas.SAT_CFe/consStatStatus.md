@@ -6,27 +6,27 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tipoLan | `String` |  |
-| 03 | lanIP | `String` |  |
-| 04 | lanMAC | `String` |  |
-| 05 | lanMASK | `String` |  |
-| 06 | lanGW | `String` |  |
-| 07 | lanDNS1 | `String` |  |
-| 08 | lanDNS2 | `String` |  |
-| 09 | statLan | `String` |  |
-| 10 | nBat | `String` |  |
-| 11 | mtTotal | `String` |  |
-| 12 | mtUsada | `String` |  |
-| 13 | datahora | `String` |  |
-| 14 | verSoft | `String` |  |
-| 15 | verLay | `String` |  |
-| 16 | ultimoCFe | `String` |  |
-| 17 | listaInicial | `String` |  |
-| 18 | listafinal | `String` |  |
-| 19 | dhTransmissao | `String` |  |
-| 20 | dhComunicacao | `String` |  |
-| 21 | CERT_EMISSAO | `String` |  |
-| 22 | CERT_VENCIMENTO | `String` |  |
-| 23 | ESTADO_OPERACAO | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tipoLan | `String` |  |
+| lanIP | `String` |  |
+| lanMAC | `String` |  |
+| lanMASK | `String` |  |
+| lanGW | `String` |  |
+| lanDNS1 | `String` |  |
+| lanDNS2 | `String` |  |
+| statLan | `String` |  |
+| nBat | `String` |  |
+| mtTotal | `String` |  |
+| mtUsada | `String` |  |
+| datahora | `String` |  |
+| verSoft | `String` |  |
+| verLay | `String` |  |
+| ultimoCFe | `String` |  |
+| listaInicial | `String` |  |
+| listafinal | `String` |  |
+| dhTransmissao | `String` |  |
+| dhComunicacao | `String` |  |
+| CERT_EMISSAO | `String` |  |
+| CERT_VENCIMENTO | `String` |  |
+| ESTADO_OPERACAO | `String` |  |

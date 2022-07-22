@@ -9,22 +9,21 @@ e operações de devolução de compras e vendas - pis pasep
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJParticipanteOperConsolidadas | `String` |  |
-| 03 | CSTPis | `String` |  |
-| 04 | CFOP | `String` |  |
-| 05 | VrItem | `Nullable<Double>` |  |
-| 06 | VrDescontoExclusao | `Nullable<Double>` |  |
-| 07 | VrBaseCalculoPis | `Nullable<Double>` |  |
-| 08 | AliquotaPis | `Nullable<Double>` |  |
-| 09 | BCPISQuantidade | `Nullable<Double>` |  |
-| 10 | AliquotaPISReais | `Nullable<Double>` |  |
-| 11 | VrPIS | `Double` |  |
-| 12 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJParticipanteOperConsolidadas | `String` |  |
+| CSTPis | `String` |  |
+| CFOP | `String` |  |
+| VrItem | `Nullable<Double>` |  |
+| VrDescontoExclusao | `Nullable<Double>` |  |
+| VrBaseCalculoPis | `Nullable<Double>` |  |
+| AliquotaPis | `Nullable<Double>` |  |
+| BCPISQuantidade | `Nullable<Double>` |  |
+| AliquotaPISReais | `Nullable<Double>` |  |
+| VrPIS | `Double` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC191/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC191.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC191/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC191.LeParametros(string[])') | |

@@ -4,11 +4,10 @@
 ## VolumeLacres Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nLacre | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| nLacre | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/VolumeLacres/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.VolumeLacres.OnPropertyChanged(string)') | |

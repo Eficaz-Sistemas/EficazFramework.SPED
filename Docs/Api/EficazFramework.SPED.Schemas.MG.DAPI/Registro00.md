@@ -6,23 +6,22 @@
 Identificação da DAPI
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadual | `String` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | DataInicial | `Nullable<DateTime>` |  |
-| 05 | DapiSubstituta | `Boolean` |  |
-| 06 | RegimeRecolhimento | `Int32` | Valor padrao: 1 - Debito e Credito            2 - Isento e Imune (nao aplicável) |
-| 07 | RegimeEspecialFiscalizacao | `Boolean` |  |
-| 08 | OptanteFundese | `Boolean` |  |
-| 09 | DapiComMovimento | `Boolean` |  |
-| 10 | DapiComMovimentoCafe | `Boolean` |  |
-| 11 | CNAE | `String` |  |
-| 12 | CNAEDesmembramento | `String` |  |
-| 13 | TermoAceite | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadual | `String` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DapiSubstituta | `Boolean` |  |
+| RegimeRecolhimento | `Int32` | Valor padrao: 1 - Debito e Credito            2 - Isento e Imune (nao aplicável) |
+| RegimeEspecialFiscalizacao | `Boolean` |  |
+| OptanteFundese | `Boolean` |  |
+| DapiComMovimento | `Boolean` |  |
+| DapiComMovimentoCafe | `Boolean` |  |
+| CNAE | `String` |  |
+| CNAEDesmembramento | `String` |  |
+| TermoAceite | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.MG.DAPI/Registro00/EscreveLinha().md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro00.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.MG.DAPI/Registro00/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro00.LeParametros(string[])') | |

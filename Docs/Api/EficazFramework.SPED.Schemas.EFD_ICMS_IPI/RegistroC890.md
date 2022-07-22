@@ -8,19 +8,18 @@ Analíticos Diários do CF-e SAT por Equipamento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Origem | `OrigemMercadoria` |  |
-| 03 | CST_ICMS | `CST_ICMS` |  |
-| 04 | CFOP | `String` |  |
-| 05 | AliquotaICMS | `Nullable<Double>` |  |
-| 06 | ValorOperacao | `Nullable<Double>` |  |
-| 07 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
-| 08 | ValorICMS | `Nullable<Double>` |  |
-| 09 | CodigoObservavao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Origem | `OrigemMercadoria` |  |
+| CST_ICMS | `CST_ICMS` |  |
+| CFOP | `String` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| ValorOperacao | `Nullable<Double>` |  |
+| ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| CodigoObservavao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC890/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC890.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC890/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC890.LeParametros(string[])') | |

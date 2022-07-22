@@ -4,9 +4,9 @@
 ## ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codSusp | `String` |  |
-| 03 | indSusp | `String` |  |
-| 04 | dtDecisao | `DateTime` |  |
-| 05 | indDeposito | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| codSusp | `String` |  |
+| indSusp | `String` |  |
+| dtDecisao | `DateTime` |  |
+| indDeposito | `String` |  |

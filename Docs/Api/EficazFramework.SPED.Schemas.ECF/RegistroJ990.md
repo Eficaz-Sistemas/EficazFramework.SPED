@@ -8,12 +8,11 @@ Encerramento do Bloco J
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | QuantidadeLinhasBlocoJ | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| QuantidadeLinhasBlocoJ | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroJ990/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroJ990.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroJ990/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroJ990.LeParametros(string[])') | |

@@ -8,13 +8,12 @@ REGISTRO C111: PROCESSO REFERENCIADO
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Ident_Proc_AtoConcessorio | `String` |  |
-| 03 | Ind_Origem_Processo | `IndicadorOrigemProcesso` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Ident_Proc_AtoConcessorio | `String` |  |
+| Ind_Origem_Processo | `IndicadorOrigemProcesso` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC111/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC111.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC111/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC111.LeParametros(string[])') | |

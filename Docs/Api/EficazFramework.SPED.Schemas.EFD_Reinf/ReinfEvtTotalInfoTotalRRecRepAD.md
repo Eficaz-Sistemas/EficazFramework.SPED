@@ -6,10 +6,10 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | cnpjAssocDesp | `String` |  |
-| 03 | vlrTotalRep | `String` |  |
-| 04 | CRRecRepAD | `String` |  |
-| 05 | vlrCRRecRepAD | `String` |  |
-| 06 | vlrCRRecRepADSusp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| cnpjAssocDesp | `String` |  |
+| vlrTotalRep | `String` |  |
+| CRRecRepAD | `String` |  |
+| vlrCRRecRepAD | `String` |  |
+| vlrCRRecRepADSusp | `String` |  |

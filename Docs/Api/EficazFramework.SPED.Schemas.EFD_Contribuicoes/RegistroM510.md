@@ -8,17 +8,16 @@ Ajustes do crédito de Cofins apurado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
-| 03 | VrAjuste | `Nullable<Double>` |  |
-| 04 | CodigoAjuste | `String` |  |
-| 05 | NumeroProcessoVincAjuste | `String` |  |
-| 06 | DescResumAjuste | `String` |  |
-| 07 | DataRefAjuste | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoAjuste | `IndicadorTipoAjuste` |  |
+| VrAjuste | `Nullable<Double>` |  |
+| CodigoAjuste | `String` |  |
+| NumeroProcessoVincAjuste | `String` |  |
+| DescResumAjuste | `String` |  |
+| DataRefAjuste | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM510/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM510.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroM510/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroM510.LeParametros(string[])') | |

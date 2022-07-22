@@ -8,21 +8,20 @@ Controle de Saldos das Contas da Parte B do e-Lalur e do e-Lacs
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaB | `String` |  |
-| 03 | CodigoTributo | `String` | I = IRPJ            C = CSLL |
-| 04 | SaldoInicial | `Nullable<Double>` |  |
-| 05 | NaturezaSaldoInicial | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 06 | ValorLanctoParteA | `Nullable<Double>` |  |
-| 07 | NaturezaLanctoParteA | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 08 | ValorLanctoParteB | `Nullable<Double>` |  |
-| 09 | NaturezaLanctoParteB | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-| 10 | SaldoFinal | `Nullable<Double>` |  |
-| 11 | NaturezaSaldoFinal | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaB | `String` |  |
+| CodigoTributo | `String` | I = IRPJ            C = CSLL |
+| SaldoInicial | `Nullable<Double>` |  |
+| NaturezaSaldoInicial | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| ValorLanctoParteA | `Nullable<Double>` |  |
+| NaturezaLanctoParteA | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| ValorLanctoParteB | `Nullable<Double>` |  |
+| NaturezaLanctoParteB | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+| SaldoFinal | `Nullable<Double>` |  |
+| NaturezaSaldoFinal | `String` | D – Para prejuízos ou valores que reduzam o lucro real ou a base de cálculo da contribuição social em períodos subsequentes.            C – Para valores que aumentem o lucro real ou a base de cálculo da contribuição social em períodos subsequentes. |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroM500/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroM500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroM500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroM500.LeParametros(string[])') | |

@@ -8,18 +8,17 @@ Saldo das Contas Consolidadas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoContaConsolidada | `String` |  |
-| 03 | VrAbsolutoAglutinado | `Nullable<Double>` |  |
-| 04 | IndicadorSitVrAglutinado | `String` |  |
-| 05 | VrAbsolutoEliminacoes | `Nullable<Double>` |  |
-| 06 | IndicadorSitVrAglutinadoEliminado | `String` |  |
-| 07 | VrAbsolutoConsolidado | `Nullable<Double>` |  |
-| 08 | IndicadorSitVrConsolidado | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoContaConsolidada | `String` |  |
+| VrAbsolutoAglutinado | `Nullable<Double>` |  |
+| IndicadorSitVrAglutinado | `String` |  |
+| VrAbsolutoEliminacoes | `Nullable<Double>` |  |
+| IndicadorSitVrAglutinadoEliminado | `String` |  |
+| VrAbsolutoConsolidado | `Nullable<Double>` |  |
+| IndicadorSitVrConsolidado | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK300/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK300.LeParametros(string[])') | |

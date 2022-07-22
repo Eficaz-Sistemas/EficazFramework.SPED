@@ -4,12 +4,11 @@
 ## CanaDeducao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | xDed | `String` |  |
-| 03 | vDed | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| xDed | `String` |  |
+| vDed | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/CanaDeducao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.CanaDeducao.OnPropertyChanged(string)') | |

@@ -4,12 +4,11 @@
 ## KeyInfoType Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | X509Data | `X509DataType` |  |
-| 03 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| X509Data | `X509DataType` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.EFD_Reinf/KeyInfoType/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.EFD_Reinf.KeyInfoType.OnPropertyChanged(string)') | |

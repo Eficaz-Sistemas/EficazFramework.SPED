@@ -6,8 +6,8 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CRTom | `String` |  |
-| 03 | VlrCRTom | `String` |  |
-| 04 | VlrCRTomSusp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| CRTom | `String` |  |
+| VlrCRTom | `String` |  |
+| VlrCRTomSusp | `String` |  |

@@ -4,7 +4,7 @@
 ## S1020_Inclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideLotacao | `TIdeLotacao` |  |
-| 03 | dadosLotacao | `TDadosLotacao` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideLotacao | `TIdeLotacao` |  |
+| dadosLotacao | `TDadosLotacao` |  |

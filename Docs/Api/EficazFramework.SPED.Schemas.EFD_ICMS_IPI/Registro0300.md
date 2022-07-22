@@ -8,18 +8,17 @@ Cadastro de Bens ou Componentes do Ativo Imobilizado
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoProduto | `String` |  |
-| 03 | IdentificacaoTipo | `TipoMercadoriaImobilizado` |  |
-| 04 | Descricao | `String` |  |
-| 05 | CodigoBemPrincipal | `String` |  |
-| 06 | CodigoContaContabil | `String` |  |
-| 07 | NumeroParcelas | `Nullable<Int32>` |  |
-| 08 | Registro0305 | `Registro0305` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoProduto | `String` |  |
+| IdentificacaoTipo | `TipoMercadoriaImobilizado` |  |
+| Descricao | `String` |  |
+| CodigoBemPrincipal | `String` |  |
+| CodigoContaContabil | `String` |  |
+| NumeroParcelas | `Nullable<Int32>` |  |
+| Registro0305 | `Registro0305` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0300/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0300.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0300/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0300.LeParametros(string[])') | |

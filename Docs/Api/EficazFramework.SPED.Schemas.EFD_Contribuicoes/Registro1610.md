@@ -8,21 +8,20 @@ Detalhamento da Contribuição Social Extemporânea
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroCNPJCampoRegistro0140 | `String` |  |
-| 03 | CSTCofins | `String` |  |
-| 04 | CodParticipante | `String` |  |
-| 05 | DataOperacao | `Nullable<DateTime>` |  |
-| 06 | ValorOperacao | `Nullable<Double>` |  |
-| 07 | ValorBCCofins | `Nullable<Double>` |  |
-| 08 | AliqCofins | `Nullable<Double>` |  |
-| 09 | VrCofins | `Nullable<Double>` |  |
-| 10 | CodigoContaContabil | `String` |  |
-| 11 | DescComplementarDoc | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroCNPJCampoRegistro0140 | `String` |  |
+| CSTCofins | `String` |  |
+| CodParticipante | `String` |  |
+| DataOperacao | `Nullable<DateTime>` |  |
+| ValorOperacao | `Nullable<Double>` |  |
+| ValorBCCofins | `Nullable<Double>` |  |
+| AliqCofins | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| DescComplementarDoc | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1610/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1610.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1610/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1610.LeParametros(string[])') | |

@@ -8,19 +8,18 @@ Plano de Contas Contábeis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
-| 03 | CodigoNaturezaConta | `String` |  |
-| 04 | IndicadorConta | `String` |  |
-| 05 | NivelConta | `String` |  |
-| 06 | CodigoConta | `String` |  |
-| 07 | NomeConta | `String` |  |
-| 08 | CodigoContaReferencial | `String` |  |
-| 09 | CNPJEstabelecimento | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| CodigoNaturezaConta | `String` |  |
+| IndicadorConta | `String` |  |
+| NivelConta | `String` |  |
+| CodigoConta | `String` |  |
+| NomeConta | `String` |  |
+| CodigoContaReferencial | `String` |  |
+| CNPJEstabelecimento | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0500/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro0500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro0500.LeParametros(string[])') | |

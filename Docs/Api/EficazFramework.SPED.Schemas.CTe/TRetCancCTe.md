@@ -4,13 +4,12 @@
 ## TRetCancCTe Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | infCanc | `TRetCancCTeInfCanc` |  |
-| 03 | Signature | `SignatureType` |  |
-| 04 | versao | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| infCanc | `TRetCancCTeInfCanc` |  |
+| Signature | `SignatureType` |  |
+| versao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TRetCancCTe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TRetCancCTe.OnPropertyChanged(string)') | |

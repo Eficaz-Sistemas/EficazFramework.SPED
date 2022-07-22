@@ -4,8 +4,8 @@
 ## ReinfEvtReabreEvPer Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtIdeEventoPeriodicoR209x` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtIdeEventoPeriodicoR209x` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| id | `String` |  |

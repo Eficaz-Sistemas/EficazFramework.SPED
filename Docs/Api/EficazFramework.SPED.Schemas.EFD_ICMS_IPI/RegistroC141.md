@@ -8,14 +8,13 @@ REGISTRO C141: VENCIMENTO DA FATURA (CÓDIGO 01)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Numero_Parcela | `Nullable<Int32>` |  |
-| 03 | Data_vecto_parcela | `Nullable<DateTime>` |  |
-| 04 | Valor_parcela | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Numero_Parcela | `Nullable<Int32>` |  |
+| Data_vecto_parcela | `Nullable<DateTime>` |  |
+| Valor_parcela | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC141/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC141.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC141/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC141.LeParametros(string[])') | |

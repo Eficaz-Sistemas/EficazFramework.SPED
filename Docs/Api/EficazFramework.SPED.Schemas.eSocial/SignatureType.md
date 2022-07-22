@@ -4,14 +4,13 @@
 ## SignatureType Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | SignedInfo | `SignedInfoType` |  |
-| 03 | SignatureValue | `SignatureValueType` |  |
-| 04 | KeyInfo | `KeyInfoType` |  |
-| 05 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| SignedInfo | `SignedInfoType` |  |
+| SignatureValue | `SignatureValueType` |  |
+| KeyInfo | `KeyInfoType` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.eSocial/SignatureType/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.eSocial.SignatureType.OnPropertyChanged(string)') | |

@@ -8,19 +8,18 @@ Informacao Complementar - Operações de Importação
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | VrTotalServicoPFouPJExterior | `Nullable<Double>` |  |
-| 03 | VrBaseCalculoPis | `Nullable<Double>` |  |
-| 04 | VrPisImportacao | `Nullable<Double>` |  |
-| 05 | DataPgtoPisImportacao | `Nullable<DateTime>` |  |
-| 06 | VrBaseCalculoCofins | `Nullable<Double>` |  |
-| 07 | VrCofinsImportacao | `Nullable<Double>` |  |
-| 08 | DataPgtoCofinsImportacao | `Nullable<DateTime>` |  |
-| 09 | LocalExecucaoServico | `LocalExecucaoServico` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| VrTotalServicoPFouPJExterior | `Nullable<Double>` |  |
+| VrBaseCalculoPis | `Nullable<Double>` |  |
+| VrPisImportacao | `Nullable<Double>` |  |
+| DataPgtoPisImportacao | `Nullable<DateTime>` |  |
+| VrBaseCalculoCofins | `Nullable<Double>` |  |
+| VrCofinsImportacao | `Nullable<Double>` |  |
+| DataPgtoCofinsImportacao | `Nullable<DateTime>` |  |
+| LocalExecucaoServico | `LocalExecucaoServico` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA120/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA120.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA120/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA120.LeParametros(string[])') | |

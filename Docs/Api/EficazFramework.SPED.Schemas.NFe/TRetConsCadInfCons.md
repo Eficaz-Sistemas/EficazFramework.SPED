@@ -4,19 +4,18 @@
 ## TRetConsCadInfCons Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | verAplic | `String` |  |
-| 03 | cStat | `String` |  |
-| 04 | xMotivo | `String` |  |
-| 05 | UF | `String` |  |
-| 06 | Item | `String` |  |
-| 07 | ItemElementName | `TipoResultado` |  |
-| 08 | dhCons | `DateTime` |  |
-| 09 | cUF | `OrgaoIBGE` |  |
-| 10 | CadastrosRetornados | `ObservableCollection<TRetConsCadInfConsInfCad>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| verAplic | `String` |  |
+| cStat | `String` |  |
+| xMotivo | `String` |  |
+| UF | `String` |  |
+| Item | `String` |  |
+| ItemElementName | `TipoResultado` |  |
+| dhCons | `DateTime` |  |
+| cUF | `OrgaoIBGE` |  |
+| CadastrosRetornados | `ObservableCollection<TRetConsCadInfConsInfCad>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TRetConsCadInfCons/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TRetConsCadInfCons.OnPropertyChanged(string)') | |

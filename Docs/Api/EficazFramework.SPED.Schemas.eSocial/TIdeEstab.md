@@ -4,9 +4,9 @@
 ## TIdeEstab Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInsc | `TipoInscricao` |  |
-| 03 | nrInsc | `String` |  |
-| 04 | iniValid | `String` |  |
-| 05 | fimValid | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInsc | `TipoInscricao` |  |
+| nrInsc | `String` |  |
+| iniValid | `String` |  |
+| fimValid | `String` |  |

@@ -4,23 +4,22 @@
 ## InformacaoEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Orgao | `OrgaoIBGE` |  |
-| 03 | Ambiente | `Ambiente` |  |
-| 04 | CNPJ_CPF | `String` |  |
-| 05 | PersonalidadeJuridica | `PersonalidadeJuridica` |  |
-| 06 | ChaveNFe | `String` |  |
-| 07 | EventoData | `Nullable<DateTime>` |  |
-| 08 | EventoDataString | `String` |  |
-| 09 | EventoCodigo | `CodigoEvento` |  |
-| 10 | EventoNumeroSequencial | `String` | Sequencial do evento. INFORMAR 1. |
-| 11 | EventoVersao | `String` |  |
-| 12 | EventoDetalhes | `DetalheEvento` |  |
-| 13 | Id | `String` | Identificador da TAG a ser assinada.            A regra de formação do ID é:            "ID" + tpEvento + chave da NFe + nSeqEvento.            É gerado automaticamente. |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
-| Regenerate_ID() | `Void` |  |
+| Orgao | `OrgaoIBGE` |  |
+| Ambiente | `Ambiente` |  |
+| CNPJ_CPF | `String` |  |
+| PersonalidadeJuridica | `PersonalidadeJuridica` |  |
+| ChaveNFe | `String` |  |
+| EventoData | `Nullable<DateTime>` |  |
+| EventoDataString | `String` |  |
+| EventoCodigo | `CodigoEvento` |  |
+| EventoNumeroSequencial | `String` | Sequencial do evento. INFORMAR 1. |
+| EventoVersao | `String` |  |
+| EventoDetalhes | `DetalheEvento` |  |
+| Id | `String` | Identificador da TAG a ser assinada.            A regra de formação do ID é:            "ID" + tpEvento + chave da NFe + nSeqEvento.            É gerado automaticamente. |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacaoEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacaoEvento.OnPropertyChanged(string)') | |
+| [Regenerate_ID()](EficazFramework.SPED.Schemas.NFe/InformacaoEvento/Regenerate_ID().md 'EficazFramework.SPED.Schemas.NFe.InformacaoEvento.Regenerate_ID()') | |

@@ -4,13 +4,12 @@
 ## GuiaResultadoMotivo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | codigo | `String` |  |
-| 03 | descricao | `String` |  |
-| 04 | campo | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ToString() | `String` |  |
+| codigo | `String` |  |
+| descricao | `String` |  |
+| campo | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ToString()](EficazFramework.SPED.Schemas.GNRE.V2/GuiaResultadoMotivo/ToString().md 'EficazFramework.SPED.Schemas.GNRE.V2.GuiaResultadoMotivo.ToString()') | |

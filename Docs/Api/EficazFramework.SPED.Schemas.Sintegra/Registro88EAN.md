@@ -8,17 +8,16 @@ Código EAN/GTIN do produto
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Modo | `String` |  |
-| 03 | CodigoProduto | `String` |  |
-| 04 | Descricao | `String` |  |
-| 05 | UnidadeMedida | `String` |  |
-| 06 | EAN | `String` |  |
-| 07 | Brancos | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Modo | `String` |  |
+| CodigoProduto | `String` |  |
+| Descricao | `String` |  |
+| UnidadeMedida | `String` |  |
+| EAN | `String` |  |
+| Brancos | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro88EAN/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro88EAN.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro88EAN/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro88EAN.LeParametros(string[])') | |

@@ -4,9 +4,9 @@
 ## ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpProc | `TipoProcesso` |  |
-| 03 | nrProc | `String` |  |
-| 04 | codSusp | `String` |  |
-| 05 | vlrNRet | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpProc | `TipoProcesso` |  |
+| nrProc | `String` |  |
+| codSusp | `String` |  |
+| vlrNRet | `String` |  |

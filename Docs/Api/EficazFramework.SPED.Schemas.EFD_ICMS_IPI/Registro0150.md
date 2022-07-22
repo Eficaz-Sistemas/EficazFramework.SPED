@@ -8,24 +8,23 @@ Tabela de Cadastro do Participante
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ID | `String` |  |
-| 03 | Nome | `String` |  |
-| 04 | CodigoPais | `String` |  |
-| 05 | CNPJ | `String` |  |
-| 06 | CPF | `String` |  |
-| 07 | InscricaoEstadual | `String` |  |
-| 08 | CodigoMunicipio | `String` |  |
-| 09 | Suframa | `String` |  |
-| 10 | Endereco | `String` |  |
-| 11 | Numero | `String` |  |
-| 12 | Complemento | `String` |  |
-| 13 | Bairro | `String` |  |
-| 14 | Registros0175 | `List<Registro0175>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ID | `String` |  |
+| Nome | `String` |  |
+| CodigoPais | `String` |  |
+| CNPJ | `String` |  |
+| CPF | `String` |  |
+| InscricaoEstadual | `String` |  |
+| CodigoMunicipio | `String` |  |
+| Suframa | `String` |  |
+| Endereco | `String` |  |
+| Numero | `String` |  |
+| Complemento | `String` |  |
+| Bairro | `String` |  |
+| Registros0175 | `List<Registro0175>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0150/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0150/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150.LeParametros(string[])') | |

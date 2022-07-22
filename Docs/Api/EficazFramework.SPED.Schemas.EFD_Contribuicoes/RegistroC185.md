@@ -8,21 +8,20 @@ Detalhamento da Consolidação - Operações de Vendas - Cofins
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CSTCOFINS | `String` |  |
-| 03 | CFOP | `String` |  |
-| 04 | VrITem | `Nullable<Double>` |  |
-| 05 | VrDescontoExclusao | `Nullable<Double>` |  |
-| 06 | VrBaseCalculoCofins | `Nullable<Double>` |  |
-| 07 | AliquotaCofins | `Nullable<Double>` |  |
-| 08 | BCCofinsQuantidade | `Nullable<Double>` |  |
-| 09 | AliquotaCofinsReais | `Nullable<Double>` |  |
-| 10 | VrCofins | `Nullable<Double>` |  |
-| 11 | CodigoContaContabil | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CSTCOFINS | `String` |  |
+| CFOP | `String` |  |
+| VrITem | `Nullable<Double>` |  |
+| VrDescontoExclusao | `Nullable<Double>` |  |
+| VrBaseCalculoCofins | `Nullable<Double>` |  |
+| AliquotaCofins | `Nullable<Double>` |  |
+| BCCofinsQuantidade | `Nullable<Double>` |  |
+| AliquotaCofinsReais | `Nullable<Double>` |  |
+| VrCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC185/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC185.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC185/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC185.LeParametros(string[])') | |

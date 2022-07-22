@@ -8,14 +8,13 @@ Subcontas Correlatas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodIdentGrupoContaSubconta | `String` |  |
-| 03 | CodSubcontaCorrelata | `String` |  |
-| 04 | NaturezaSubcontaCorrelata | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodIdentGrupoContaSubconta | `String` |  |
+| CodSubcontaCorrelata | `String` |  |
+| NaturezaSubcontaCorrelata | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI053/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI053.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI053/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI053.LeParametros(string[])') | |

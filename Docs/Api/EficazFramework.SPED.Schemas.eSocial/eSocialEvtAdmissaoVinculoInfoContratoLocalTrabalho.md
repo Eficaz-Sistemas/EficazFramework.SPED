@@ -4,7 +4,7 @@
 ## eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | localTrabGeral | `TLocalTrab` |  |
-| 03 | localTrabDom | `TEnderecoBrasil` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| localTrabGeral | `TLocalTrab` |  |
+| localTrabDom | `TEnderecoBrasil` |  |

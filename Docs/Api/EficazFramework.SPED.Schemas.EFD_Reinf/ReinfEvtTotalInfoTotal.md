@@ -6,12 +6,12 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrRecArqBase | `String` |  |
-| 03 | RTom | `ReinfEvtTotalInfoTotalRTom` |  |
-| 04 | RPrest | `ReinfEvtTotalInfoTotalRPrest` |  |
-| 05 | RRecRepAD | `ReinfEvtTotalInfoTotalRRecRepAD[]` |  |
-| 06 | RComl | `ReinfEvtTotalInfoTotalRComl[]` |  |
-| 07 | RCPRB | `ReinfEvtTotalInfoTotalRCPRB[]` |  |
-| 08 | RRecEspetDesp | `ReinfEvtTotalInfoTotalRRecEspetDesp` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrRecArqBase | `String` |  |
+| RTom | `ReinfEvtTotalInfoTotalRTom` |  |
+| RPrest | `ReinfEvtTotalInfoTotalRPrest` |  |
+| RRecRepAD | `ReinfEvtTotalInfoTotalRRecRepAD[]` |  |
+| RComl | `ReinfEvtTotalInfoTotalRComl[]` |  |
+| RCPRB | `ReinfEvtTotalInfoTotalRCPRB[]` |  |
+| RRecEspetDesp | `ReinfEvtTotalInfoTotalRRecEspetDesp` |  |

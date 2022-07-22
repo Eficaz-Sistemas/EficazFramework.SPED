@@ -6,7 +6,7 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | RegistrosI200 | `IEnumerable<RegistroI200>` |  |
-| 03 | RegistrosI250 | `IEnumerable<RegistroI250>` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| RegistrosI200 | `IEnumerable<RegistroI200>` |  |
+| RegistrosI250 | `IEnumerable<RegistroI250>` |  |

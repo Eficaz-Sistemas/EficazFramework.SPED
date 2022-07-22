@@ -8,35 +8,34 @@ Plano de contas contábeis
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Operacao | `IndicadorOperacao` |  |
-| 03 | Emissao | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | EspecieDocumento | `String` |  |
-| 06 | SituacaoDocumento | `SituacaoDocumento` |  |
-| 07 | Serie | `String` |  |
-| 08 | SubSerie | `String` |  |
-| 09 | Numero | `Nullable<Int32>` |  |
-| 10 | DataEmissao | `Nullable<DateTime>` |  |
-| 11 | DataPrestacaoAquisicao | `Nullable<DateTime>` |  |
-| 12 | ValorTotalDocumento | `Nullable<Double>` |  |
-| 13 | ValorDesconto | `Nullable<Double>` |  |
-| 14 | ValorServicos | `Nullable<Double>` |  |
-| 15 | ValorServicosICMSNaoTributato | `Nullable<Double>` |  |
-| 16 | ValorCobradoTerceiros | `Nullable<Double>` |  |
-| 17 | ValorDespesasAcessorias | `Nullable<Double>` |  |
-| 18 | ValorBaseCalculoICMS | `Nullable<Double>` |  |
-| 19 | ValorICMS | `Nullable<Double>` |  |
-| 20 | CodigoInformacaoComplementar0450 | `String` |  |
-| 21 | ValorPIS | `Nullable<Double>` |  |
-| 22 | ValorCofins | `Nullable<Double>` |  |
-| 23 | CodigoContaContabil | `String` |  |
-| 24 | TipoAssinante | `TipoAssinanteComunincacao` |  |
-| 25 | RegistrosD590 | `List<RegistroD590>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| Operacao | `IndicadorOperacao` |  |
+| Emissao | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| EspecieDocumento | `String` |  |
+| SituacaoDocumento | `SituacaoDocumento` |  |
+| Serie | `String` |  |
+| SubSerie | `String` |  |
+| Numero | `Nullable<Int32>` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| DataPrestacaoAquisicao | `Nullable<DateTime>` |  |
+| ValorTotalDocumento | `Nullable<Double>` |  |
+| ValorDesconto | `Nullable<Double>` |  |
+| ValorServicos | `Nullable<Double>` |  |
+| ValorServicosICMSNaoTributato | `Nullable<Double>` |  |
+| ValorCobradoTerceiros | `Nullable<Double>` |  |
+| ValorDespesasAcessorias | `Nullable<Double>` |  |
+| ValorBaseCalculoICMS | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| CodigoInformacaoComplementar0450 | `String` |  |
+| ValorPIS | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+| CodigoContaContabil | `String` |  |
+| TipoAssinante | `TipoAssinanteComunincacao` |  |
+| RegistrosD590 | `List<RegistroD590>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD500/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD500.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD500/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD500.LeParametros(string[])') | |

@@ -6,29 +6,28 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Ambiente | `Ambiente` |  |
-| 03 | UF_Autor | `OrgaoIBGE` |  |
-| 04 | CNPJ_CPF | `String` |  |
-| 05 | ItemElementName | `PersonalidadeJuridica` |  |
-| 06 | NSUObject | `Object` |  |
-| 07 | consChNFe | `distDFeIntconsChNFe` |  |
-| 08 | versao | `VersaoServicoDistribuicaoDF` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Serialize() | `String` | Serializes current TEnvEvento object into an XML document |
-| SerializeToXMLDocument() | `XDocument` | Semelhante À Function Serialize, porém já retorna o resultado            em uma instância de XmlDocument, agilizando o processo de assinatura            digital dos eventos. |
-| CanDeserialize(string, PedidoDistribuicaoDFe, Exception) | `Boolean` | Deserializes workflow markup into an TEnvEvento object |
-| CanDeserialize(string, PedidoDistribuicaoDFe) | `Boolean` |  |
-| Deserialize(string) | `PedidoDistribuicaoDFe` |  |
-| Deserialize(Stream) | `PedidoDistribuicaoDFe` |  |
-| CanSaveTo(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, PedidoDistribuicaoDFe, Exception) | `Boolean` | Deserializes xml markup from file into an TEnvEvento object |
-| CanLoadFrom(Stream, PedidoDistribuicaoDFe) | `Boolean` |  |
-| LoadFrom(Stream, bool) | `PedidoDistribuicaoDFe` |  |
-| LoadFromAsync(Stream, bool) | `Task<PedidoDistribuicaoDFe>` |  |
+| Ambiente | `Ambiente` |  |
+| UF_Autor | `OrgaoIBGE` |  |
+| CNPJ_CPF | `String` |  |
+| ItemElementName | `PersonalidadeJuridica` |  |
+| NSUObject | `Object` |  |
+| consChNFe | `distDFeIntconsChNFe` |  |
+| versao | `VersaoServicoDistribuicaoDF` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, PedidoDistribuicaoDFe)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/CanDeserialize(string,PedidoDistribuicaoDFe).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.CanDeserialize(string, EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe)') | |
+| [CanDeserialize(string, PedidoDistribuicaoDFe, Exception)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/CanDeserialize(string,PedidoDistribuicaoDFe,Exception).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.CanDeserialize(string, EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe, System.Exception)') | Deserializes workflow markup into an TEnvEvento object |
+| [CanLoadFrom(Stream, PedidoDistribuicaoDFe)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/CanLoadFrom(Stream,PedidoDistribuicaoDFe).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe)') | |
+| [CanLoadFrom(Stream, PedidoDistribuicaoDFe, Exception)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/CanLoadFrom(Stream,PedidoDistribuicaoDFe,Exception).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe, System.Exception)') | Deserializes xml markup from file into an TEnvEvento object |
+| [CanSaveTo(Stream, Exception)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/CanSaveTo(Stream,Exception).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.CanSaveTo(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.LoadFrom(System.IO.Stream, bool)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.LoadFromAsync(System.IO.Stream, bool)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/Serialize().md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.Serialize()') | Serializes current TEnvEvento object into an XML document |
+| [SerializeToXMLDocument()](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe/SerializeToXMLDocument().md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe.SerializeToXMLDocument()') | Semelhante À Function Serialize, porém já retorna o resultado<br/>em uma instância de XmlDocument, agilizando o processo de assinatura<br/>digital dos eventos. |

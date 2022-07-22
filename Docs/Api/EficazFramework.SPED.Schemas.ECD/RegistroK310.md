@@ -8,14 +8,13 @@ Empresas Detentoras das Parcelas do Valor Eliminado Total
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoEmpresaDetVrAglutinadoEliminado | `String` |  |
-| 03 | ParcelaVrEliminadoTotal | `Nullable<Double>` |  |
-| 04 | IndicadorSitVrEliminada | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoEmpresaDetVrAglutinadoEliminado | `String` |  |
+| ParcelaVrEliminadoTotal | `Nullable<Double>` |  |
+| IndicadorSitVrEliminada | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK310/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK310.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK310/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK310.LeParametros(string[])') | |

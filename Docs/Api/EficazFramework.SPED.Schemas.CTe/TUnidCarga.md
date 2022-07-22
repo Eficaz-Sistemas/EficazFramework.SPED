@@ -4,14 +4,13 @@
 ## TUnidCarga Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpUnidCarga | `TtipoUnidCarga` |  |
-| 03 | idUnidCarga | `String` |  |
-| 04 | lacUnidCarga | `ObservableCollection<TUnidCargaLacUnidCarga>` |  |
-| 05 | qtdRat | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpUnidCarga | `TtipoUnidCarga` |  |
+| idUnidCarga | `String` |  |
+| lacUnidCarga | `ObservableCollection<TUnidCargaLacUnidCarga>` |  |
+| qtdRat | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TUnidCarga/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TUnidCarga.OnPropertyChanged(string)') | |

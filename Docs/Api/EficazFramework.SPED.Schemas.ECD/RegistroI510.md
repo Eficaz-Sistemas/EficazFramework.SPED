@@ -8,17 +8,16 @@ Definição de Campos do Livro Razão Auxiliar com Leiaute Parametrizável
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NomeCampo | `String` |  |
-| 03 | DescricaoCampo | `String` |  |
-| 04 | TipoCampo | `String` |  |
-| 05 | TamanhoCampo | `Nullable<Int16>` |  |
-| 06 | QtdeCasasDecimais | `Nullable<Int16>` |  |
-| 07 | LarguraColunaRelatorio | `Nullable<Int16>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NomeCampo | `String` |  |
+| DescricaoCampo | `String` |  |
+| TipoCampo | `String` |  |
+| TamanhoCampo | `Nullable<Int16>` |  |
+| QtdeCasasDecimais | `Nullable<Int16>` |  |
+| LarguraColunaRelatorio | `Nullable<Int16>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI510/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI510.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI510/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI510.LeParametros(string[])') | |

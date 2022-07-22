@@ -6,23 +6,22 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Any | `XElement` |  |
-| 03 | id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, TArquivoeReinf, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, TArquivoeReinf) | `Boolean` |  |
-| Deserialize(string) | `TArquivoeReinf` |  |
-| Deserialize(Stream) | `TArquivoeReinf` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, TArquivoeReinf, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, TArquivoeReinf) | `Boolean` |  |
-| LoadFrom(Stream) | `TArquivoeReinf` |  |
-| LoadFromAsync(Stream) | `Task<TArquivoeReinf>` |  |
+| Any | `XElement` |  |
+| id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, TArquivoeReinf)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/CanDeserialize(string,TArquivoeReinf).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.CanDeserialize(string, EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf)') | |
+| [CanDeserialize(string, TArquivoeReinf, Exception)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/CanDeserialize(string,TArquivoeReinf,Exception).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.CanDeserialize(string, EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, TArquivoeReinf)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/CanLoadFrom(Stream,TArquivoeReinf).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf)') | |
+| [CanLoadFrom(Stream, TArquivoeReinf, Exception)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/CanLoadFrom(Stream,TArquivoeReinf,Exception).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/Deserialize(string).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/LoadFromAsync(Stream).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.LoadFromAsync(System.IO.Stream)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf/Serialize().md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf.Serialize()') | Serializes current TNfeProc object into an XML document |

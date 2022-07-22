@@ -8,14 +8,13 @@ Identificação da pessoa jurídica estabelecimento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | IndicadorOperacoesPeriodo | `IdentificaoOperacaoPeriodo` |  |
-| 04 | InfoComplementar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ | `String` |  |
+| IndicadorOperacoesPeriodo | `IdentificaoOperacaoPeriodo` |  |
+| InfoComplementar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI010/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI010.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroI010/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroI010.LeParametros(string[])') | |

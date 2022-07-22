@@ -8,16 +8,15 @@ Deduções do ISS
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorHabilitacao | `IndicadorHabilitacao` |  |
-| 03 | IndicadorEscolaridade | `IndicadorEscolaridade` |  |
-| 04 | IndicadorParticipacaoSocietaria | `IndicadorParticipacaoSocietaria` |  |
-| 05 | NumeroCPFProfissional | `String` |  |
-| 06 | NomeProfissional | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorHabilitacao | `IndicadorHabilitacao` |  |
+| IndicadorEscolaridade | `IndicadorEscolaridade` |  |
+| IndicadorParticipacaoSocietaria | `IndicadorParticipacaoSocietaria` |  |
+| NumeroCPFProfissional | `String` |  |
+| NomeProfissional | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB510/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB510.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroB510/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroB510.LeParametros(string[])') | |

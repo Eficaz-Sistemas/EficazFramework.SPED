@@ -8,17 +8,16 @@ Ajuste da contribuição previdenciária apurada sobre a receita bruta
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoAjuste | `IndicadorTipoAjusteBlocoP` |  |
-| 03 | VrAjuste | `Nullable<Double>` |  |
-| 04 | CodigoAjuste | `String` |  |
-| 05 | NumeroProcesso | `String` |  |
-| 06 | DescricaoResumidaAjuste | `String` |  |
-| 07 | DataRefAjuste | `Nullable<DateTime>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorTipoAjuste | `IndicadorTipoAjusteBlocoP` |  |
+| VrAjuste | `Nullable<Double>` |  |
+| CodigoAjuste | `String` |  |
+| NumeroProcesso | `String` |  |
+| DescricaoResumidaAjuste | `String` |  |
+| DataRefAjuste | `Nullable<DateTime>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP210/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP210.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroP210/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroP210.LeParametros(string[])') | |

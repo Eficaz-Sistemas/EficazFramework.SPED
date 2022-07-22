@@ -4,13 +4,12 @@
 ## ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscProd | `PersonalidadeJuridica` |  |
-| 03 | nrInscProd | `String` |  |
-| 04 | indOpcCP | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeindOpcCP() | `Boolean` |  |
+| tpInscProd | `PersonalidadeJuridica` |  |
+| nrInscProd | `String` |  |
+| indOpcCP | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [ShouldSerializeindOpcCP()](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor/ShouldSerializeindOpcCP().md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor.ShouldSerializeindOpcCP()') | |

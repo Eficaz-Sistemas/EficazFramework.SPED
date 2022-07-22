@@ -4,6 +4,6 @@
 ## S1020_Exclusao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideLotacao | `TIdeLotacao` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideLotacao | `TIdeLotacao` |  |

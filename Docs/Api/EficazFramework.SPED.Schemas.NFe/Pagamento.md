@@ -6,11 +6,10 @@
 NF-e 4.00
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DetalhamentoPagamentos | `List<DetalhamentoPagamento>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| DetalhamentoPagamentos | `List<DetalhamentoPagamento>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/Pagamento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.Pagamento.OnPropertyChanged(string)') | |

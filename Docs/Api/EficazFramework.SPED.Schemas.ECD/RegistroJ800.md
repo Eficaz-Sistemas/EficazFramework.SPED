@@ -8,12 +8,11 @@ Outras Informações
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | SequenciaBytesArquitoRTF | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| SequenciaBytesArquitoRTF | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ800/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ800.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ800/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ800.LeParametros(string[])') | |

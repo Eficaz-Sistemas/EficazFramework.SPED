@@ -4,15 +4,14 @@
 ## TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpDoc | `TDocAssoc` |  |
-| 03 | serie | `String` |  |
-| 04 | subser | `String` |  |
-| 05 | nDoc | `String` |  |
-| 06 | dEmi | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| tpDoc | `TDocAssoc` |  |
+| serie | `String` |  |
+| subser | `String` |  |
+| nDoc | `String` |  |
+| dEmi | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap.OnPropertyChanged(string)') | |

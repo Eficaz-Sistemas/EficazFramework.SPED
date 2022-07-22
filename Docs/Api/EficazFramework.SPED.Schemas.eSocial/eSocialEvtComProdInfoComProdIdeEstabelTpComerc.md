@@ -4,17 +4,16 @@
 ## eSocialEvtComProdInfoComProdIdeEstabelTpComerc Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indComerc | `IndicadorComercializacaoS1260` |  |
-| 03 | vrTotCom | `Decimal` |  |
-| 04 | vrCPDesc | `Decimal` |  |
-| 05 | vrRatDescPR | `Decimal` |  |
-| 06 | vrSenarDesc | `Decimal` |  |
-| 07 | ideAdquir | `ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir>` |  |
-| 08 | infoProcJud | `eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[]` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| RaisePropertyChanged(string) | `Void` |  |
+| indComerc | `IndicadorComercializacaoS1260` |  |
+| vrTotCom | `Decimal` |  |
+| vrCPDesc | `Decimal` |  |
+| vrRatDescPR | `Decimal` |  |
+| vrSenarDesc | `Decimal` |  |
+| ideAdquir | `ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir>` |  |
+| infoProcJud | `eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[]` |  |
+
+| Methods | |
+| :--- | :--- |
+| [RaisePropertyChanged(string)](EficazFramework.SPED.Schemas.eSocial/eSocialEvtComProdInfoComProdIdeEstabelTpComerc/RaisePropertyChanged(string).md 'EficazFramework.SPED.Schemas.eSocial.eSocialEvtComProdInfoComProdIdeEstabelTpComerc.RaisePropertyChanged(string)') | |

@@ -4,6 +4,6 @@
 ## TInfoEmpregadorInfoComplementaresSituacaoPF Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indSitPF | `SituacaoPessoaFisica` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| indSitPF | `SituacaoPessoaFisica` |  |

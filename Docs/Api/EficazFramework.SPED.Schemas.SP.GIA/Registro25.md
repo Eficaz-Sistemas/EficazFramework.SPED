@@ -6,13 +6,12 @@
 IE's
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | InscricaoEstadual | `String` |  |
-| 03 | Valor | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| InscricaoEstadual | `String` |  |
+| Valor | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro25/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro25.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro25/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro25.LeParametros(string[])') | |

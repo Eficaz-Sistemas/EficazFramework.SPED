@@ -8,14 +8,13 @@ Detalhamento do Crédito Extemporâneo Vinculado a mais de um tipo de receita - 
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ParcelaCreditoCofinsReceitaMercInterno | `Nullable<Double>` |  |
-| 03 | ParcelaCreditoCofinsReceitaNãoTribMercInterno | `Nullable<Double>` |  |
-| 04 | ParcelaCreditoVincExportacao | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| ParcelaCreditoCofinsReceitaMercInterno | `Nullable<Double>` |  |
+| ParcelaCreditoCofinsReceitaNãoTribMercInterno | `Nullable<Double>` |  |
+| ParcelaCreditoVincExportacao | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1502/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1502.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/Registro1502/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.Registro1502.LeParametros(string[])') | |

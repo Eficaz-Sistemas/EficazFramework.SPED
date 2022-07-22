@@ -4,9 +4,9 @@
 ## ReinfEvtServPrest Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtIdeEvento_R20xx` |  |
-| 03 | ideContri | `ReinfEvtIdeContri` |  |
-| 04 | infoServPrest | `ReinfEvtServPrestInfoServPrest` |  |
-| 05 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtIdeEvento_R20xx` |  |
+| ideContri | `ReinfEvtIdeContri` |  |
+| infoServPrest | `ReinfEvtServPrestInfoServPrest` |  |
+| id | `String` |  |

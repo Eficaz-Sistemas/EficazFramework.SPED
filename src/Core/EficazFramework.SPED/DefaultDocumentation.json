@@ -10,6 +10,7 @@
       "summary",
       "remarks",
       "PropertiesTable",
+      "Methods",
       "example"
     ],
     "Markdown.TableOfContentsModes": "Grouped,IncludeSummary"

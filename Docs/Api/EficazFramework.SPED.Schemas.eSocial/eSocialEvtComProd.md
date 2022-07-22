@@ -4,9 +4,9 @@
 ## eSocialEvtComProd Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `TIdeEveFopagMensal` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | infoComProd | `eSocialEvtComProdInfoComProd` |  |
-| 05 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `TIdeEveFopagMensal` |  |
+| ideEmpregador | `TEmpregador` |  |
+| infoComProd | `eSocialEvtComProdInfoComProd` |  |
+| Id | `String` |  |

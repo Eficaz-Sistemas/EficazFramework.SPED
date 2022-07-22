@@ -8,23 +8,22 @@ Demonstração da Atividade Rural
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataMov | `Nullable<DateTime>` |  |
-| 03 | CodImovel | `Nullable<Int32>` |  |
-| 04 | CodigoContaBanco | `String` |  |
-| 05 | NumeroDoc | `String` |  |
-| 06 | TipoDocumento | `TipoDocumento` |  |
-| 07 | Historico | `String` |  |
-| 08 | TerceiroID | `String` | CPF ou CNPJ do Terceiro. Caso TipoDocumento = FolhaPagto utilizar o CPF do próprio declarante. |
-| 09 | TipoLancamento | `TipoLancamento` |  |
-| 10 | ValorEntrada | `Nullable<Double>` |  |
-| 11 | ValorSaida | `Nullable<Double>` |  |
-| 12 | SaldoFinal | `Nullable<Double>` |  |
-| 13 | SaldoFinal_Natureza | `String` | [N/P] |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataMov | `Nullable<DateTime>` |  |
+| CodImovel | `Nullable<Int32>` |  |
+| CodigoContaBanco | `String` |  |
+| NumeroDoc | `String` |  |
+| TipoDocumento | `TipoDocumento` |  |
+| Historico | `String` |  |
+| TerceiroID | `String` | CPF ou CNPJ do Terceiro. Caso TipoDocumento = FolhaPagto utilizar o CPF do próprio declarante. |
+| TipoLancamento | `TipoLancamento` |  |
+| ValorEntrada | `Nullable<Double>` |  |
+| ValorSaida | `Nullable<Double>` |  |
+| SaldoFinal | `Nullable<Double>` |  |
+| SaldoFinal_Natureza | `String` | [N/P] |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.LCDPR/RegistroQ100/EscreveLinha().md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.LCDPR/RegistroQ100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ100.LeParametros(string[])') | |

@@ -8,12 +8,11 @@ Encerramento do Bloco 9
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | TotalLinhas | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| TotalLinhas | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/Registro9990/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.Registro9990.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/Registro9990/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.Registro9990.LeParametros(string[])') | |

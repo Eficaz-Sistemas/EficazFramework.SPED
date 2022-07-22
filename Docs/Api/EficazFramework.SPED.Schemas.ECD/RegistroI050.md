@@ -8,18 +8,17 @@ Plano de Contas
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInclusaoAlteracao | `Nullable<DateTime>` |  |
-| 03 | CodNaturezaContaGrupo | `String` |  |
-| 04 | IndicadorTipoConta | `IndicadorConta` |  |
-| 05 | NivelContaAnaliticaGrupo | `Nullable<Int16>` |  |
-| 06 | CodContaAnaliticaGrupo | `String` |  |
-| 07 | CodContaSuperior | `String` |  |
-| 08 | NomeContaAnaliticaGrupo | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInclusaoAlteracao | `Nullable<DateTime>` |  |
+| CodNaturezaContaGrupo | `String` |  |
+| IndicadorTipoConta | `IndicadorConta` |  |
+| NivelContaAnaliticaGrupo | `Nullable<Int16>` |  |
+| CodContaAnaliticaGrupo | `String` |  |
+| CodContaSuperior | `String` |  |
+| NomeContaAnaliticaGrupo | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI050/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI050.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI050/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI050.LeParametros(string[])') | |

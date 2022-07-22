@@ -8,45 +8,44 @@ Documento - Nota Fiscal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorTipoOperacao | `OperacaoNFe` |  |
-| 03 | IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
-| 04 | CodigoParticipante | `String` |  |
-| 05 | CodigoModeloDocFiscal | `String` |  |
-| 06 | CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
-| 07 | SerieDocFiscal | `String` |  |
-| 08 | NumeroDocFiscal | `String` |  |
-| 09 | ChaveNFeDocFiscal | `String` |  |
-| 10 | DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
-| 11 | DataEntradaSaida | `Nullable<DateTime>` |  |
-| 12 | VrTotalDocFiscal | `Nullable<Double>` |  |
-| 13 | IndicadorTipoPagamento | `IndicadorPagamento` |  |
-| 14 | VrTotalDesconto | `Nullable<Double>` |  |
-| 15 | VrAbatimentoNT | `Nullable<Double>` |  |
-| 16 | VrTotalMercadorias | `Nullable<Double>` |  |
-| 17 | IndicadorTipoFrete | `IndicadorFrete` |  |
-| 18 | VrFrete | `Nullable<Double>` |  |
-| 19 | VrSeguro | `Nullable<Double>` |  |
-| 20 | VrOutrasDespesas | `Nullable<Double>` |  |
-| 21 | VrBaseCalculoICMS | `Nullable<Double>` |  |
-| 22 | VrICMS | `Nullable<Double>` |  |
-| 23 | VrBaseCalculoICMSST | `Nullable<Double>` |  |
-| 24 | VrICMSST | `Nullable<Double>` |  |
-| 25 | VrIPI | `Nullable<Double>` |  |
-| 26 | VrPIS | `Nullable<Double>` |  |
-| 27 | VrCOFINS | `Nullable<Double>` |  |
-| 28 | VrPISST | `Nullable<Double>` |  |
-| 29 | VrCOFINSST | `Nullable<Double>` |  |
-| 30 | RegistrosC110 | `List<RegistroC110>` |  |
-| 31 | RegistrosC111 | `List<RegistroC111>` |  |
-| 32 | RegistrosC120 | `List<RegistroC120>` |  |
-| 33 | RegistrosC170 | `List<RegistroC170>` |  |
-| 34 | RegistrosC175 | `List<RegistroC175>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
-| DocumentoValido() | `Boolean` |  |
+| IndicadorTipoOperacao | `OperacaoNFe` |  |
+| IndicadorEmitenteDocFiscal | `IndicadorEmitente` |  |
+| CodigoParticipante | `String` |  |
+| CodigoModeloDocFiscal | `String` |  |
+| CodigoSituacaoDocFiscal | `SituacaoDocumento` |  |
+| SerieDocFiscal | `String` |  |
+| NumeroDocFiscal | `String` |  |
+| ChaveNFeDocFiscal | `String` |  |
+| DataEmissaoDocFiscal | `Nullable<DateTime>` |  |
+| DataEntradaSaida | `Nullable<DateTime>` |  |
+| VrTotalDocFiscal | `Nullable<Double>` |  |
+| IndicadorTipoPagamento | `IndicadorPagamento` |  |
+| VrTotalDesconto | `Nullable<Double>` |  |
+| VrAbatimentoNT | `Nullable<Double>` |  |
+| VrTotalMercadorias | `Nullable<Double>` |  |
+| IndicadorTipoFrete | `IndicadorFrete` |  |
+| VrFrete | `Nullable<Double>` |  |
+| VrSeguro | `Nullable<Double>` |  |
+| VrOutrasDespesas | `Nullable<Double>` |  |
+| VrBaseCalculoICMS | `Nullable<Double>` |  |
+| VrICMS | `Nullable<Double>` |  |
+| VrBaseCalculoICMSST | `Nullable<Double>` |  |
+| VrICMSST | `Nullable<Double>` |  |
+| VrIPI | `Nullable<Double>` |  |
+| VrPIS | `Nullable<Double>` |  |
+| VrCOFINS | `Nullable<Double>` |  |
+| VrPISST | `Nullable<Double>` |  |
+| VrCOFINSST | `Nullable<Double>` |  |
+| RegistrosC110 | `List<RegistroC110>` |  |
+| RegistrosC111 | `List<RegistroC111>` |  |
+| RegistrosC120 | `List<RegistroC120>` |  |
+| RegistrosC170 | `List<RegistroC170>` |  |
+| RegistrosC175 | `List<RegistroC175>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [DocumentoValido()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC100/DocumentoValido().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC100.DocumentoValido()') | |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC100/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroC100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC100.LeParametros(string[])') | |

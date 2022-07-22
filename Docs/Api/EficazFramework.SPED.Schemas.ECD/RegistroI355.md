@@ -8,15 +8,14 @@ Detalhe dos Saldos das Contas de Resultado Antes do Encerramento
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodContaAnaliticaResultado | `String` |  |
-| 03 | CodCentroCusto | `String` |  |
-| 04 | VrSaldoFinalAntesEncerramento | `Nullable<Double>` |  |
-| 05 | IndicadorSituacaoSaldoFinal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodContaAnaliticaResultado | `String` |  |
+| CodCentroCusto | `String` |  |
+| VrSaldoFinalAntesEncerramento | `Nullable<Double>` |  |
+| IndicadorSituacaoSaldoFinal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI355/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI355.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI355/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI355.LeParametros(string[])') | |

@@ -8,16 +8,15 @@ Informações Adicionais do Ajuste da Apuração do ICMS ST
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoAjuste | `String` |  |
-| 03 | DescricaoComplementar | `String` |  |
-| 04 | ValorAjuste | `Nullable<Double>` |  |
-| 05 | RegistrosE230 | `List<RegistroE230>` |  |
-| 06 | RegistrosE240 | `List<RegistroE240>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoAjuste | `String` |  |
+| DescricaoComplementar | `String` |  |
+| ValorAjuste | `Nullable<Double>` |  |
+| RegistrosE230 | `List<RegistroE230>` |  |
+| RegistrosE240 | `List<RegistroE240>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE220/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE220.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE220/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE220.LeParametros(string[])') | |

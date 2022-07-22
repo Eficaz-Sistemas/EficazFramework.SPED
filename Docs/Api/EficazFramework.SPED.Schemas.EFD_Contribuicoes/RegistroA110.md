@@ -8,13 +8,12 @@ Complemento do Documento - Informação complementar da NF
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoInfoComplemDocFiscal | `String` |  |
-| 03 | InformacaoComplemDocFiscal | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoInfoComplemDocFiscal | `String` |  |
+| InformacaoComplemDocFiscal | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA110/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA110.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_Contribuicoes/RegistroA110/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroA110.LeParametros(string[])') | |

@@ -8,22 +8,21 @@ Balanço Patrimonial
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodAglutinacao | `String` |  |
-| 03 | IndicadorCodAglutinacao | `String` |  |
-| 04 | NivelCodAglut | `String` |  |
-| 05 | CodAglutinacaoSuperior | `String` |  |
-| 06 | IndicadorGrupoBalanco | `IndicadorGrupoBalanço` |  |
-| 07 | DescrCodAglut | `String` |  |
-| 08 | VrTotalCodAglut | `Nullable<Double>` |  |
-| 09 | IndicadorSitSaldo | `String` |  |
-| 10 | VrInicialCodAglut | `Nullable<Double>` |  |
-| 11 | IndicadorSitSaldoInicial | `String` |  |
-| 12 | NotaExplicativa | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodAglutinacao | `String` |  |
+| IndicadorCodAglutinacao | `String` |  |
+| NivelCodAglut | `String` |  |
+| CodAglutinacaoSuperior | `String` |  |
+| IndicadorGrupoBalanco | `IndicadorGrupoBalanço` |  |
+| DescrCodAglut | `String` |  |
+| VrTotalCodAglut | `Nullable<Double>` |  |
+| IndicadorSitSaldo | `String` |  |
+| VrInicialCodAglut | `Nullable<Double>` |  |
+| IndicadorSitSaldoInicial | `String` |  |
+| NotaExplicativa | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ100/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ100.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ100/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ100.LeParametros(string[])') | |

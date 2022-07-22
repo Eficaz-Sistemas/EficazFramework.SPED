@@ -4,18 +4,17 @@
 ## TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Item | `String` |  |
-| 03 | ItemElementName | `PersonalidadeJuridica7` |  |
-| 04 | mod | `TModDoc` |  |
-| 05 | serie | `String` |  |
-| 06 | subserie | `String` |  |
-| 07 | nro | `String` |  |
-| 08 | valor | `String` |  |
-| 09 | dEmi | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Item | `String` |  |
+| ItemElementName | `PersonalidadeJuridica7` |  |
+| mod | `TModDoc` |  |
+| serie | `String` |  |
+| subserie | `String` |  |
+| nro | `String` |  |
+| valor | `String` |  |
+| dEmi | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF.OnPropertyChanged(string)') | |

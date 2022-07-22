@@ -4,15 +4,14 @@
 ## TotalISSQN Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | vServ | `Nullable<Double>` |  |
-| 03 | vBC | `Nullable<Double>` |  |
-| 04 | vISS | `Nullable<Double>` |  |
-| 05 | vPIS | `Nullable<Double>` |  |
-| 06 | vCOFINS | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| vServ | `Nullable<Double>` |  |
+| vBC | `Nullable<Double>` |  |
+| vISS | `Nullable<Double>` |  |
+| vPIS | `Nullable<Double>` |  |
+| vCOFINS | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/TotalISSQN/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.TotalISSQN.OnPropertyChanged(string)') | |

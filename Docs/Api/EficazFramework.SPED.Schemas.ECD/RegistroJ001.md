@@ -8,12 +8,11 @@ Abertura do Bloco J
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IndicadorMovimento | `IndicadorMovimento` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| IndicadorMovimento | `IndicadorMovimento` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroJ001/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroJ001.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroJ001/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroJ001.LeParametros(string[])') | |

@@ -19,7 +19,7 @@ public abstract class Registro
         if (linha != null)
         {
             _versao = versao;
-            if (string.IsNullOrEmpty(linha) == false & string.IsNullOrWhiteSpace(linha) == false)
+            if (!string.IsNullOrEmpty(linha) && !string.IsNullOrWhiteSpace(linha))
             {
                 var data = linha.Split("|");
                 if (data.Length > 1)
@@ -28,14 +28,10 @@ public abstract class Registro
                     LeParametros(data);
                 }
                 else
-                {
                     _codigo = GetType().Name.Replace("Registro", string.Empty);
-                }
             }
             else
-            {
                 _codigo = GetType().Name.Replace("Registro", string.Empty);
-            }
         }
     }
 

@@ -4,21 +4,21 @@
 ## ReinfEvtEspDesportivoIdeContriIdeEstabBoletim Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | nrBoletim | `String` |  |
-| 03 | tpCompeticao | `TipoCompeticao` |  |
-| 04 | categEvento | `CategoriaEvento` |  |
-| 05 | modDesportiva | `String` |  |
-| 06 | nomeCompeticao | `String` |  |
-| 07 | cnpjMandante | `String` |  |
-| 08 | cnpjVisitante | `String` |  |
-| 09 | nomeVisitante | `String` |  |
-| 10 | pracaDesportiva | `String` |  |
-| 11 | codMunic | `UInt32` |  |
-| 12 | codMunicSpecified | `Boolean` |  |
-| 13 | uf | `String` |  |
-| 14 | qtdePagantes | `UInt32` |  |
-| 15 | qtdeNaoPagantes | `UInt32` |  |
-| 16 | receitaIngressos | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[]` |  |
-| 17 | outrasReceitas | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[]` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| nrBoletim | `String` |  |
+| tpCompeticao | `TipoCompeticao` |  |
+| categEvento | `CategoriaEvento` |  |
+| modDesportiva | `String` |  |
+| nomeCompeticao | `String` |  |
+| cnpjMandante | `String` |  |
+| cnpjVisitante | `String` |  |
+| nomeVisitante | `String` |  |
+| pracaDesportiva | `String` |  |
+| codMunic | `UInt32` |  |
+| codMunicSpecified | `Boolean` |  |
+| uf | `String` |  |
+| qtdePagantes | `UInt32` |  |
+| qtdeNaoPagantes | `UInt32` |  |
+| receitaIngressos | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[]` |  |
+| outrasReceitas | `ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[]` |  |

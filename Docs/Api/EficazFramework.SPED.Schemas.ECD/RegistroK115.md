@@ -8,14 +8,13 @@ Empresas Participantes do Evento Societário
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoEmpresaEnvolvidaOperacao | `String` |  |
-| 03 | CondicaoEmpresaRelacionada | `CondicaoEmpresaRelacionada` |  |
-| 04 | PercentualEmpPartEnvolvidaOper | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoEmpresaEnvolvidaOperacao | `String` |  |
+| CondicaoEmpresaRelacionada | `CondicaoEmpresaRelacionada` |  |
+| PercentualEmpPartEnvolvidaOper | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroK115/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroK115.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroK115/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroK115.LeParametros(string[])') | |

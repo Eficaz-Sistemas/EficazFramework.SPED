@@ -8,13 +8,12 @@ Outras Inscrições Cadastrais da Pessoa Jurídica
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoInstRespAdmCadastro | `String` |  |
-| 03 | CodigoCadastralPJInst | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoInstRespAdmCadastro | `String` |  |
+| CodigoCadastralPJInst | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0007/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0007.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0007/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0007.LeParametros(string[])') | |

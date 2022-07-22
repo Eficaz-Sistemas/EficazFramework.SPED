@@ -4,11 +4,11 @@
 ## TDadosLotacao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpLotacao | `String` |  |
-| 03 | tpInsc | `PersonalidadeJuridica` |  |
-| 04 | tpInscSpecified | `Boolean` |  |
-| 05 | nrInsc | `String` |  |
-| 06 | fpasLotacao | `TDadosLotacaoFpasLotacao` |  |
-| 07 | infoEmprParcial | `TDadosLotacaoInfoEmprParcial` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpLotacao | `String` |  |
+| tpInsc | `PersonalidadeJuridica` |  |
+| tpInscSpecified | `Boolean` |  |
+| nrInsc | `String` |  |
+| fpasLotacao | `TDadosLotacaoFpasLotacao` |  |
+| infoEmprParcial | `TDadosLotacaoInfoEmprParcial` |  |

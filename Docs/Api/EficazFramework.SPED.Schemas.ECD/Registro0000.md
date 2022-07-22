@@ -8,32 +8,31 @@ Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicial | `Nullable<DateTime>` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | NomeEmpresarialPJ | `String` |  |
-| 05 | CNPJ | `String` |  |
-| 06 | UF | `String` |  |
-| 07 | IEPj | `String` |  |
-| 08 | CodMunicipio | `String` |  |
-| 09 | InscMunicipal | `String` |  |
-| 10 | IndicadorSitEspecial | `String` |  |
-| 11 | IndicadorSitInicioPeriodo | `String` |  |
-| 12 | IndicadorExistNire | `IndicadorExistNire` |  |
-| 13 | IndicadorFinalidadeEscrit | `IndicadorFinalidadeEscrit` |  |
-| 14 | CodigoHash | `String` |  |
-| 15 | IndicadorGrandePorte | `IndicadorGrandePorte` |  |
-| 16 | IndicadorTipoECD | `IndicadorTipoECD` |  |
-| 17 | IdentificacaoSCP | `String` |  |
-| 18 | IdentificacaoMoedaFuncional | `Boolean` |  |
-| 19 | EscritContConsolidades | `Boolean` |  |
-| 20 | IndicadorCentralizada | `Boolean` |  |
-| 21 | IndicadorMudancaPlanoContas | `Boolean` |  |
-| 22 | CodigoPlanoContasReferencial | `Int32` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| NomeEmpresarialPJ | `String` |  |
+| CNPJ | `String` |  |
+| UF | `String` |  |
+| IEPj | `String` |  |
+| CodMunicipio | `String` |  |
+| InscMunicipal | `String` |  |
+| IndicadorSitEspecial | `String` |  |
+| IndicadorSitInicioPeriodo | `String` |  |
+| IndicadorExistNire | `IndicadorExistNire` |  |
+| IndicadorFinalidadeEscrit | `IndicadorFinalidadeEscrit` |  |
+| CodigoHash | `String` |  |
+| IndicadorGrandePorte | `IndicadorGrandePorte` |  |
+| IndicadorTipoECD | `IndicadorTipoECD` |  |
+| IdentificacaoSCP | `String` |  |
+| IdentificacaoMoedaFuncional | `Boolean` |  |
+| EscritContConsolidades | `Boolean` |  |
+| IndicadorCentralizada | `Boolean` |  |
+| IndicadorMudancaPlanoContas | `Boolean` |  |
+| CodigoPlanoContasReferencial | `Int32` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/Registro0000/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.Registro0000.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/Registro0000/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.Registro0000.LeParametros(string[])') | |

@@ -8,21 +8,20 @@ Dados do produto ou serviço
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | DataInicial | `Nullable<DateTime>` |  |
-| 03 | DataFinal | `Nullable<DateTime>` |  |
-| 04 | CodigoProduto | `String` |  |
-| 05 | CodigoNCM | `String` |  |
-| 06 | Descricao | `String` |  |
-| 07 | UnidadeMedida | `String` |  |
-| 08 | AliquotaIPI | `Nullable<Double>` |  |
-| 09 | AliquotaICMS | `Nullable<Double>` |  |
-| 10 | ReducaoBaseCalculoPercentual | `Nullable<Double>` |  |
-| 11 | BaseCalculoICMSST | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| DataInicial | `Nullable<DateTime>` |  |
+| DataFinal | `Nullable<DateTime>` |  |
+| CodigoProduto | `String` |  |
+| CodigoNCM | `String` |  |
+| Descricao | `String` |  |
+| UnidadeMedida | `String` |  |
+| AliquotaIPI | `Nullable<Double>` |  |
+| AliquotaICMS | `Nullable<Double>` |  |
+| ReducaoBaseCalculoPercentual | `Nullable<Double>` |  |
+| BaseCalculoICMSST | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.Sintegra/Registro75/EscreveLinha().md 'EficazFramework.SPED.Schemas.Sintegra.Registro75.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.Sintegra/Registro75/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.Sintegra.Registro75.LeParametros(string[])') | |

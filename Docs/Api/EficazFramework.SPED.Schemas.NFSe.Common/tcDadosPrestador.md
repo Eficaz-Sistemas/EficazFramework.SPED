@@ -4,15 +4,14 @@
 ## tcDadosPrestador Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoPrestador | `tcIdentificacaoPrestador` |  |
-| 03 | RazaoSocial | `String` |  |
-| 04 | NomeFantasia | `String` |  |
-| 05 | Endereco | `tcEndereco` |  |
-| 06 | Contato | `tcContato` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| IdentificacaoPrestador | `tcIdentificacaoPrestador` |  |
+| RazaoSocial | `String` |  |
+| NomeFantasia | `String` |  |
+| Endereco | `tcEndereco` |  |
+| Contato | `tcContato` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcDadosPrestador/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcDadosPrestador.OnPropertyChanged(string)') | |

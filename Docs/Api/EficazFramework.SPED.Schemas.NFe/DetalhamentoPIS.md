@@ -4,12 +4,11 @@
 ## DetalhamentoPIS Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Tributacao | `DetalhamentoPIS_Tributacao` |  |
-| 03 | TributacaoIndentifier | `Tributacao_PIS_Identifier` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Tributacao | `DetalhamentoPIS_Tributacao` |  |
+| TributacaoIndentifier | `Tributacao_PIS_Identifier` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoPIS/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPIS.OnPropertyChanged(string)') | |

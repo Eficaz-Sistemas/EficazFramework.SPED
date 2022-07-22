@@ -4,13 +4,12 @@
 ## tcCpfCnpj Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Identificador | `String` |  |
-| 03 | IdentificadorFormatado | `String` |  |
-| 04 | ItemElementName | `PersonalidadeJuridica` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Identificador | `String` |  |
+| IdentificadorFormatado | `String` |  |
+| ItemElementName | `PersonalidadeJuridica` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcCpfCnpj/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcCpfCnpj.OnPropertyChanged(string)') | |

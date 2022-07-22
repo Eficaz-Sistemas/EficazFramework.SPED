@@ -8,29 +8,28 @@ Cupom Fiscal Eletrônico SAT CF-e (59)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | EspecieDocumento | `String` |  |
-| 03 | SituacaoDocumento | `SituacaoDocumento` |  |
-| 04 | Numero | `Nullable<Int32>` |  |
-| 05 | DataEmissao | `Nullable<DateTime>` |  |
-| 06 | ValorTotalDocumento | `Nullable<Double>` |  |
-| 07 | ValorPIS | `Nullable<Double>` |  |
-| 08 | ValorCofins | `Nullable<Double>` |  |
-| 09 | CNPJ_CPF | `String` |  |
-| 10 | NumeroSerieSAT | `Nullable<Int32>` |  |
-| 11 | ChaveCFe | `String` |  |
-| 12 | ValorDesconto | `Nullable<Double>` |  |
-| 13 | ValorTotalMercadorias | `Nullable<Double>` |  |
-| 14 | ValorOutrasDespesas | `Nullable<Double>` |  |
-| 15 | ValorICMS | `Nullable<Double>` |  |
-| 16 | ValorPISST | `Nullable<Double>` |  |
-| 17 | ValorCofinsST | `Nullable<Double>` |  |
-| 18 | RegistrosC850 | `List<RegistroC850>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
-| DocumentoValido() | `Boolean` |  |
+| EspecieDocumento | `String` |  |
+| SituacaoDocumento | `SituacaoDocumento` |  |
+| Numero | `Nullable<Int32>` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| ValorTotalDocumento | `Nullable<Double>` |  |
+| ValorPIS | `Nullable<Double>` |  |
+| ValorCofins | `Nullable<Double>` |  |
+| CNPJ_CPF | `String` |  |
+| NumeroSerieSAT | `Nullable<Int32>` |  |
+| ChaveCFe | `String` |  |
+| ValorDesconto | `Nullable<Double>` |  |
+| ValorTotalMercadorias | `Nullable<Double>` |  |
+| ValorOutrasDespesas | `Nullable<Double>` |  |
+| ValorICMS | `Nullable<Double>` |  |
+| ValorPISST | `Nullable<Double>` |  |
+| ValorCofinsST | `Nullable<Double>` |  |
+| RegistrosC850 | `List<RegistroC850>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [DocumentoValido()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC800/DocumentoValido().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC800.DocumentoValido()') | |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC800/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC800.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC800/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC800.LeParametros(string[])') | |

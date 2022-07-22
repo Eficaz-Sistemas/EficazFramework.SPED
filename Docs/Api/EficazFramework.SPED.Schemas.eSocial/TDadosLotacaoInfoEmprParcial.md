@@ -4,9 +4,9 @@
 ## TDadosLotacaoInfoEmprParcial Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpInscContrat | `PersonalidadeJuridica` |  |
-| 03 | nrInscContrat | `String` |  |
-| 04 | tpInscProp | `PersonalidadeJuridica` |  |
-| 05 | nrInscProp | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| tpInscContrat | `PersonalidadeJuridica` |  |
+| nrInscContrat | `String` |  |
+| tpInscProp | `PersonalidadeJuridica` |  |
+| nrInscProp | `String` |  |

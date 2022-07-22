@@ -4,19 +4,18 @@
 ## DetalhamentoPagamento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | indPag | `Nullable<FormaDePagamento>` |  |
-| 03 | tPag | `FormaPagamento` |  |
-| 04 | vPag | `Nullable<Double>` |  |
-| 05 | DetalhamentoCartao | `DetalhamentoPagamentoCartao` |  |
-| 06 | vTroco | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ShouldSerializeindPag() | `Boolean` |  |
-| ShouldSerializevPag() | `Boolean` |  |
-| ShouldSerializevTroco() | `Boolean` |  |
-| ToString() | `String` |  |
-| OnPropertyChanged(string) | `Void` |  |
+| indPag | `Nullable<FormaDePagamento>` |  |
+| tPag | `FormaPagamento` |  |
+| vPag | `Nullable<Double>` |  |
+| DetalhamentoCartao | `DetalhamentoPagamentoCartao` |  |
+| vTroco | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento.OnPropertyChanged(string)') | |
+| [ShouldSerializeindPag()](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento/ShouldSerializeindPag().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento.ShouldSerializeindPag()') | |
+| [ShouldSerializevPag()](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento/ShouldSerializevPag().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento.ShouldSerializevPag()') | |
+| [ShouldSerializevTroco()](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento/ShouldSerializevTroco().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento.ShouldSerializevTroco()') | |
+| [ToString()](EficazFramework.SPED.Schemas.NFe/DetalhamentoPagamento/ToString().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoPagamento.ToString()') | |

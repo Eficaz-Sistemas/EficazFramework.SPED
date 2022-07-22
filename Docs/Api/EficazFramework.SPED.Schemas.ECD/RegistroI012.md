@@ -8,15 +8,14 @@ Livros Auxiliares ao Diário ou Livro Principal
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumeroOrdemInstAssociado | `Nullable<Int16>` |  |
-| 03 | NaturezaLivroAssociado | `String` |  |
-| 04 | TipoEscrituracao | `TipoEscrituracao` |  |
-| 05 | CodigoHASHLivroAuxiliar | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumeroOrdemInstAssociado | `Nullable<Int16>` |  |
+| NaturezaLivroAssociado | `String` |  |
+| TipoEscrituracao | `TipoEscrituracao` |  |
+| CodigoHASHLivroAuxiliar | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECD/RegistroI012/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECD.RegistroI012.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECD/RegistroI012/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECD.RegistroI012.LeParametros(string[])') | |

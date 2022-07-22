@@ -4,8 +4,8 @@
 ## ReinfEvtAssocDespRec Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `ReinfEvtAssocDespRecIdeEvento` |  |
-| 03 | ideContri | `ReinfEvtAssocDespRecIdeContri` |  |
-| 04 | id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `ReinfEvtAssocDespRecIdeEvento` |  |
+| ideContri | `ReinfEvtAssocDespRecIdeContri` |  |
+| id | `String` |  |

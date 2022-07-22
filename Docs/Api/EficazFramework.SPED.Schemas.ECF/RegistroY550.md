@@ -6,18 +6,17 @@
 Demonstrativo do Imposto de Renda e CSLL Retidos na Fonte
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ_FontePagadora | `String` |  |
-| 03 | NomeEmpresarial | `String` |  |
-| 04 | IndicadorOrgaoPublico | `Boolean` |  |
-| 05 | CodigoRecolhimento | `String` |  |
-| 06 | RendimentoBruto | `Nullable<Double>` |  |
-| 07 | IR_Retido | `Nullable<Double>` |  |
-| 08 | CSLL_Retida | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CNPJ_FontePagadora | `String` |  |
+| NomeEmpresarial | `String` |  |
+| IndicadorOrgaoPublico | `Boolean` |  |
+| CodigoRecolhimento | `String` |  |
+| RendimentoBruto | `Nullable<Double>` |  |
+| IR_Retido | `Nullable<Double>` |  |
+| CSLL_Retida | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.ECF/RegistroY550/EscreveLinha().md 'EficazFramework.SPED.Schemas.ECF.RegistroY550.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.ECF/RegistroY550/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.ECF.RegistroY550.LeParametros(string[])') | |

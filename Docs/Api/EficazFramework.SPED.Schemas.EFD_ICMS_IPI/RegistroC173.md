@@ -8,18 +8,17 @@ REGISTRO C173: OPERAÇÕES COM MEDICAMENTOS (CÓDIGO 01 E 55)
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | NumLoteFabricMedic | `String` |  |
-| 03 | QtdeItemLote | `Nullable<Double>` |  |
-| 04 | DataFabricMedic | `Nullable<DateTime>` |  |
-| 05 | DataExpValidMedic | `Nullable<DateTime>` |  |
-| 06 | IndicadorTipoCalculoST | `IndicadorTipoCalculoST` |  |
-| 07 | TipoProduto | `TipoProduto` |  |
-| 08 | VrPrecoTabPrecoMaximo | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| NumLoteFabricMedic | `String` |  |
+| QtdeItemLote | `Nullable<Double>` |  |
+| DataFabricMedic | `Nullable<DateTime>` |  |
+| DataExpValidMedic | `Nullable<DateTime>` |  |
+| IndicadorTipoCalculoST | `IndicadorTipoCalculoST` |  |
+| TipoProduto | `TipoProduto` |  |
+| VrPrecoTabPrecoMaximo | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC173/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC173.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroC173/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC173.LeParametros(string[])') | |

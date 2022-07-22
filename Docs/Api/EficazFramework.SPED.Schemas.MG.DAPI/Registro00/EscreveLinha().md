@@ -1,0 +1,11 @@
+#### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
+### [EficazFramework.SPED.Schemas.MG.DAPI](EficazFramework.SPED.Schemas.MG.DAPI.md 'EficazFramework.SPED.Schemas.MG.DAPI').[Registro00](EficazFramework.SPED.Schemas.MG.DAPI/Registro00.md 'EficazFramework.SPED.Schemas.MG.DAPI.Registro00')
+
+## Registro00.EscreveLinha() Method
+
+```csharp
+public override string EscreveLinha();
+```
+
+#### Returns
+[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')

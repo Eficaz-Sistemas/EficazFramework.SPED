@@ -6,32 +6,31 @@
 Classe Principal contendo lote de CF-e's cancelados
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | tpAmb | `String` |  |
-| 03 | idLote | `String` |  |
-| 04 | LoteCFeCanc | `CFeCancelado[]` |  |
-| 05 | cUF | `String` |  |
-| 06 | nSeg | `String` |  |
-| 07 | dhEnvio | `String` |  |
-| 08 | nserieSAT | `String` |  |
-| 09 | versao | `String` |  |
-| 10 | DocumentType | `XMLDocumentType` |  |
-| 11 | DataEmissao | `Nullable<DateTime>` |  |
-| 12 | Chave | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Serialize() | `String` | Serializes current TNfeProc object into an XML document |
-| CanDeserialize(string, CancelamentoCFe, Exception) | `Boolean` | Deserializes workflow markup into an TNfeProc object |
-| CanDeserialize(string, CancelamentoCFe) | `Boolean` |  |
-| Deserialize(string) | `CancelamentoCFe` |  |
-| Deserialize(Stream) | `CancelamentoCFe` |  |
-| CanSaveToFile(Stream, Exception) | `Boolean` | Serializes current TNfeProc object into file |
-| SaveTo(Stream) | `Void` |  |
-| SaveToAsync(Stream) | `Void` |  |
-| CanLoadFrom(Stream, CancelamentoCFe, Exception) | `Boolean` | Deserializes xml markup from file into an TNfeProc object |
-| CanLoadFrom(Stream, CancelamentoCFe) | `Boolean` |  |
-| LoadFrom(Stream) | `CancelamentoCFe` |  |
-| LoadFromAsync(Stream, bool) | `Task<CancelamentoCFe>` |  |
+| tpAmb | `String` |  |
+| idLote | `String` |  |
+| LoteCFeCanc | `CFeCancelado[]` |  |
+| cUF | `String` |  |
+| nSeg | `String` |  |
+| dhEnvio | `String` |  |
+| nserieSAT | `String` |  |
+| versao | `String` |  |
+| DocumentType | `XMLDocumentType` |  |
+| DataEmissao | `Nullable<DateTime>` |  |
+| Chave | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [CanDeserialize(string, CancelamentoCFe)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/CanDeserialize(string,CancelamentoCFe).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.CanDeserialize(string, EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe)') | |
+| [CanDeserialize(string, CancelamentoCFe, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/CanDeserialize(string,CancelamentoCFe,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.CanDeserialize(string, EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe, System.Exception)') | Deserializes workflow markup into an TNfeProc object |
+| [CanLoadFrom(Stream, CancelamentoCFe)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/CanLoadFrom(Stream,CancelamentoCFe).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe)') | |
+| [CanLoadFrom(Stream, CancelamentoCFe, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/CanLoadFrom(Stream,CancelamentoCFe,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.CanLoadFrom(System.IO.Stream, EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe, System.Exception)') | Deserializes xml markup from file into an TNfeProc object |
+| [CanSaveToFile(Stream, Exception)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/CanSaveToFile(Stream,Exception).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.CanSaveToFile(System.IO.Stream, System.Exception)') | Serializes current TNfeProc object into file |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/Deserialize(string).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.Deserialize(System.IO.Stream)') | |
+| [LoadFrom(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/LoadFrom(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.LoadFrom(System.IO.Stream)') | |
+| [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.LoadFromAsync(System.IO.Stream, bool)') | |
+| [SaveTo(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.SaveTo(System.IO.Stream)') | |
+| [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.SaveToAsync(System.IO.Stream)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe/Serialize().md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe.Serialize()') | Serializes current TNfeProc object into an XML document |

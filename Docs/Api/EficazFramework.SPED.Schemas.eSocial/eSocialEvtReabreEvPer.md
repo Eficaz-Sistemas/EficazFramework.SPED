@@ -4,8 +4,8 @@
 ## eSocialEvtReabreEvPer Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | ideEvento | `eSocialEvtReabreEvPerIdeEvento` |  |
-| 03 | ideEmpregador | `TEmpregador` |  |
-| 04 | Id | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| ideEvento | `eSocialEvtReabreEvPerIdeEvento` |  |
+| ideEmpregador | `TEmpregador` |  |
+| Id | `String` |  |

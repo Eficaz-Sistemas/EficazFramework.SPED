@@ -8,14 +8,13 @@ REGISTRO 1600: TOTAL DAS OPERAÇÕES COM CARTÃO DE CRÉDITO E/OU DÉBITO
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoParticipante | `String` |  |
-| 03 | TotalCredito | `Nullable<Double>` |  |
-| 04 | TotalDebito | `Nullable<Double>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoParticipante | `String` |  |
+| TotalCredito | `Nullable<Double>` |  |
+| TotalDebito | `Nullable<Double>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1600/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1600.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro1600/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro1600.LeParametros(string[])') | |

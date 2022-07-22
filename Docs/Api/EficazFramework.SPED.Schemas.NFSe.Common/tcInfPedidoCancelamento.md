@@ -4,13 +4,12 @@
 ## tcInfPedidoCancelamento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | IdentificacaoNfse | `List<tcIdentificacaoNfse>` |  |
-| 03 | CodigoCancelamento | `String` |  |
-| 04 | Id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| IdentificacaoNfse | `List<tcIdentificacaoNfse>` |  |
+| CodigoCancelamento | `String` |  |
+| Id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFSe.Common/tcInfPedidoCancelamento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFSe.Common.tcInfPedidoCancelamento.OnPropertyChanged(string)') | |

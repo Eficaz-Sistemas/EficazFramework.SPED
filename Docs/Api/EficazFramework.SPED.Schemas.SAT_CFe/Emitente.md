@@ -6,14 +6,14 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CNPJ | `String` |  |
-| 03 | xNome | `String` |  |
-| 04 | xFant | `String` |  |
-| 05 | enderEmit | `EmitenteEndereço` |  |
-| 06 | IE | `String` |  |
-| 07 | IM | `String` |  |
-| 08 | cRegTrib | `String` |  |
-| 09 | cRegTribISSQN | `String` |  |
-| 10 | indRatISSQN | `String` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| CNPJ | `String` |  |
+| xNome | `String` |  |
+| xFant | `String` |  |
+| enderEmit | `EmitenteEndereço` |  |
+| IE | `String` |  |
+| IM | `String` |  |
+| cRegTrib | `String` |  |
+| cRegTribISSQN | `String` |  |
+| indRatISSQN | `String` |  |

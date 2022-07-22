@@ -6,12 +6,11 @@
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Any | `XElement` |  |
-| 03 | id | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| Result() | `TotalEventos` |  |
+| Any | `XElement` |  |
+| id | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [Result()](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoReinf/Result().md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoReinf.Result()') | |

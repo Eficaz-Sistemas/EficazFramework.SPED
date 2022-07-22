@@ -6,23 +6,22 @@
 Detalhes CFOP's
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | UF | `String` |  |
-| 03 | ValorContabil_Contribuinte | `Nullable<Double>` |  |
-| 04 | BaseCalculo_Contribuinte | `Nullable<Double>` |  |
-| 05 | ValorContabil_NaoContribuinte | `Nullable<Double>` |  |
-| 06 | BaseCalculo_NaoContribuinte | `Nullable<Double>` |  |
-| 07 | Imposto | `Nullable<Double>` |  |
-| 08 | Outras | `Nullable<Double>` |  |
-| 09 | ICMSCobradoST | `Nullable<Double>` |  |
-| 10 | PetroleoEnergia | `Nullable<Double>` |  |
-| 11 | OutrosProdutos | `Nullable<Double>` |  |
-| 12 | BeneficioFiscal | `Boolean` |  |
-| 13 | Registros18 | `List<Registro18>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| UF | `String` |  |
+| ValorContabil_Contribuinte | `Nullable<Double>` |  |
+| BaseCalculo_Contribuinte | `Nullable<Double>` |  |
+| ValorContabil_NaoContribuinte | `Nullable<Double>` |  |
+| BaseCalculo_NaoContribuinte | `Nullable<Double>` |  |
+| Imposto | `Nullable<Double>` |  |
+| Outras | `Nullable<Double>` |  |
+| ICMSCobradoST | `Nullable<Double>` |  |
+| PetroleoEnergia | `Nullable<Double>` |  |
+| OutrosProdutos | `Nullable<Double>` |  |
+| BeneficioFiscal | `Boolean` |  |
+| Registros18 | `List<Registro18>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.SP.GIA/Registro14/EscreveLinha().md 'EficazFramework.SPED.Schemas.SP.GIA.Registro14.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.SP.GIA/Registro14/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.SP.GIA.Registro14.LeParametros(string[])') | |

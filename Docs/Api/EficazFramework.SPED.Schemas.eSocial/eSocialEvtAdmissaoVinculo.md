@@ -4,17 +4,17 @@
 ## eSocialEvtAdmissaoVinculo Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | matricula | `String` |  |
-| 03 | tpRegTrab | `VinculoTrabalhista` |  |
-| 04 | tpRegPrev | `RegimePrevidenciario` |  |
-| 05 | nrRecInfPrelim | `String` |  |
-| 06 | cadIni | `SimNaoString` |  |
-| 07 | infoRegimeTrab | `eSocialEvtAdmissaoVinculoInfoRegimeTrab` |  |
-| 08 | infoContrato | `eSocialEvtAdmissaoVinculoInfoContrato` |  |
-| 09 | sucessaoVinc | `eSocialEvtAdmissaoVinculoSucessaoVinc` |  |
-| 10 | transfDom | `eSocialEvtAdmissaoVinculoTransfDom` |  |
-| 11 | mudancaCPF | `eSocialEvtAdmissaoVinculoMudancaCPF` |  |
-| 12 | afastamento | `eSocialEvtAdmissaoVinculoAfastamento` |  |
-| 13 | desligamento | `eSocialEvtAdmissaoVinculoDesligamento` |  |
+| Name | Type | |
+| :--- | :---: | :--- |
+| matricula | `String` |  |
+| tpRegTrab | `VinculoTrabalhista` |  |
+| tpRegPrev | `RegimePrevidenciario` |  |
+| nrRecInfPrelim | `String` |  |
+| cadIni | `SimNaoString` |  |
+| infoRegimeTrab | `eSocialEvtAdmissaoVinculoInfoRegimeTrab` |  |
+| infoContrato | `eSocialEvtAdmissaoVinculoInfoContrato` |  |
+| sucessaoVinc | `eSocialEvtAdmissaoVinculoSucessaoVinc` |  |
+| transfDom | `eSocialEvtAdmissaoVinculoTransfDom` |  |
+| mudancaCPF | `eSocialEvtAdmissaoVinculoMudancaCPF` |  |
+| afastamento | `eSocialEvtAdmissaoVinculoAfastamento` |  |
+| desligamento | `eSocialEvtAdmissaoVinculoDesligamento` |  |

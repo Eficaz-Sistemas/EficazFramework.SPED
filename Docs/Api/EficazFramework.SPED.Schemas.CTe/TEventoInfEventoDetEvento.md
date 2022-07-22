@@ -4,12 +4,11 @@
 ## TEventoInfEventoDetEvento Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Any | `XElement` |  |
-| 03 | versaoEvento | `String` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| OnPropertyChanged(string) | `Void` |  |
+| Any | `XElement` |  |
+| versaoEvento | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TEventoInfEventoDetEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TEventoInfEventoDetEvento.OnPropertyChanged(string)') | |

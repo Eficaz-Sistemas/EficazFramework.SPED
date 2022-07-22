@@ -4,13 +4,12 @@
 ## Escrituracao Class
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | Registro00 | `Registro00` |  |
-| 03 | Registros10 | `IEnumerable<Registro10>` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| ProcessaLinha(string) | `Void` |  |
-| LeEmpresaArquivo(Stream) | `Task<String>` |  |
+| Registro00 | `Registro00` |  |
+| Registros10 | `IEnumerable<Registro10>` |  |
+
+| Methods | |
+| :--- | :--- |
+| [LeEmpresaArquivo(Stream)](EficazFramework.SPED.Schemas.MG.DAPI/Escrituracao/LeEmpresaArquivo(Stream).md 'EficazFramework.SPED.Schemas.MG.DAPI.Escrituracao.LeEmpresaArquivo(System.IO.Stream)') | |
+| [ProcessaLinha(string)](EficazFramework.SPED.Schemas.MG.DAPI/Escrituracao/ProcessaLinha(string).md 'EficazFramework.SPED.Schemas.MG.DAPI.Escrituracao.ProcessaLinha(string)') | |

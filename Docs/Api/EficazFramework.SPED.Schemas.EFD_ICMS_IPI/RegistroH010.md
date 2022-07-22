@@ -8,22 +8,21 @@ Inventário
 ### Remarks
 ### Properties
 
-| # | Name | Type | |
-| ---: | :--- | :---: | :--- |
-| 02 | CodigoProduto | `String` |  |
-| 03 | UnidadeInventariada | `String` |  |
-| 04 | Quantidade | `Nullable<Double>` |  |
-| 05 | ValorUnitario | `Nullable<Double>` |  |
-| 06 | ValorTotal | `Nullable<Double>` |  |
-| 07 | IndicadorPosse | `IndicadorPropriedade` |  |
-| 08 | CodigoParticipante | `String` |  |
-| 09 | TextoComplementar | `String` |  |
-| 10 | ContaAnaliticaContabil | `String` |  |
-| 11 | ValotTotalRIR | `Nullable<Double>` |  |
-| 12 | RegistroH020 | `RegistroH020` |  |
-### Methods
-
-| Name | Return Type | |
+| Name | Type | |
 | :--- | :---: | :--- |
-| EscreveLinha() | `String` |  |
-| LeParametros(string[]) | `Void` |  |
+| CodigoProduto | `String` |  |
+| UnidadeInventariada | `String` |  |
+| Quantidade | `Nullable<Double>` |  |
+| ValorUnitario | `Nullable<Double>` |  |
+| ValorTotal | `Nullable<Double>` |  |
+| IndicadorPosse | `IndicadorPropriedade` |  |
+| CodigoParticipante | `String` |  |
+| TextoComplementar | `String` |  |
+| ContaAnaliticaContabil | `String` |  |
+| ValotTotalRIR | `Nullable<Double>` |  |
+| RegistroH020 | `RegistroH020` |  |
+
+| Methods | |
+| :--- | :--- |
+| [EscreveLinha()](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroH010/EscreveLinha().md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroH010.EscreveLinha()') | |
+| [LeParametros(string[])](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroH010/LeParametros(string[]).md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroH010.LeParametros(string[])') | |
