@@ -10,4 +10,4 @@ Abertura, Identificação e Referências
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| Registro0000 | `Registro0000` |  |
+| Registro0000 | `Registro0000` | Retorna a primeira instância de Registro0000 encontrada em <see cref="P:EficazFramework.SPED.Schemas.Primitives.Bloco.Registros"/> |

@@ -5,18 +5,18 @@
 | Classes | |
 | :--- | :--- |
 | [Bloco0](EficazFramework.SPED.Schemas.LCDPR/Bloco0.md 'EficazFramework.SPED.Schemas.LCDPR.Bloco0') | Abertura, Identificação e Referências |
-| [Bloco9](EficazFramework.SPED.Schemas.LCDPR/Bloco9.md 'EficazFramework.SPED.Schemas.LCDPR.Bloco9') | |
-| [BlocoQ](EficazFramework.SPED.Schemas.LCDPR/BlocoQ.md 'EficazFramework.SPED.Schemas.LCDPR.BlocoQ') | |
+| [Bloco9](EficazFramework.SPED.Schemas.LCDPR/Bloco9.md 'EficazFramework.SPED.Schemas.LCDPR.Bloco9') | Encerramento do Arquivo Digital |
+| [BlocoQ](EficazFramework.SPED.Schemas.LCDPR/BlocoQ.md 'EficazFramework.SPED.Schemas.LCDPR.BlocoQ') | Demonstrativo do Resultado da Atividade Rural |
 | [Escrituracao](EficazFramework.SPED.Schemas.LCDPR/Escrituracao.md 'EficazFramework.SPED.Schemas.LCDPR.Escrituracao') | |
-| [Registro0000](EficazFramework.SPED.Schemas.LCDPR/Registro0000.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000') | Abertura do Arquivo Digital e Identificação do Empresário ou da Sociedade |
+| [Registro0000](EficazFramework.SPED.Schemas.LCDPR/Registro0000.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0000') | Abertura do Arquivo Digital e Identificação da Pessoa Física |
 | [Registro0010](EficazFramework.SPED.Schemas.LCDPR/Registro0010.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0010') | Parâmetros de Tributação |
 | [Registro0030](EficazFramework.SPED.Schemas.LCDPR/Registro0030.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0030') | Dados Cadastrais |
 | [Registro0040](EficazFramework.SPED.Schemas.LCDPR/Registro0040.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0040') | Cadastro dos Imóveis Rurais |
 | [Registro0045](EficazFramework.SPED.Schemas.LCDPR/Registro0045.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0045') | Cadastro de Terceiros |
 | [Registro0050](EficazFramework.SPED.Schemas.LCDPR/Registro0050.md 'EficazFramework.SPED.Schemas.LCDPR.Registro0050') | Cadastro das Contas Bancárias do Produtor Rural |
-| [Registro9999](EficazFramework.SPED.Schemas.LCDPR/Registro9999.md 'EficazFramework.SPED.Schemas.LCDPR.Registro9999') | Dados do Contabilista |
+| [Registro9999](EficazFramework.SPED.Schemas.LCDPR/Registro9999.md 'EficazFramework.SPED.Schemas.LCDPR.Registro9999') | Identificação do Signatário do LCDPR e Encerramento do Arquivo Digital |
 | [RegistroQ100](EficazFramework.SPED.Schemas.LCDPR/RegistroQ100.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ100') | Demonstração da Atividade Rural |
-| [RegistroQ200](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200') | Demonstração da Atividade Rural |
+| [RegistroQ200](EficazFramework.SPED.Schemas.LCDPR/RegistroQ200.md 'EficazFramework.SPED.Schemas.LCDPR.RegistroQ200') | Resumo Mensal do Demonstrativo do Resultado da Atividade Rural |
 
 | Enums | |
 | :--- | :--- |

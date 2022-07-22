@@ -3,6 +3,8 @@
 
 ## Registro9999.LeParametros(string[]) Method
 
+Efetua a leitura (desserialização) da linha especificada em [data](EficazFramework.SPED.Schemas.LCDPR/Registro9999/LeParametros(string[]).md#EficazFramework.SPED.Schemas.LCDPR.Registro9999.LeParametros(string[]).data 'EficazFramework.SPED.Schemas.LCDPR.Registro9999.LeParametros(string[]).data')
+
 ```csharp
 public override void LeParametros(string[] data);
 ```
@@ -11,3 +13,5 @@ public override void LeParametros(string[] data);
 <a name='EficazFramework.SPED.Schemas.LCDPR.Registro9999.LeParametros(string[]).data'></a>
 
 `data` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+
+Array de string contendo os valores obtidos da linha obtida no stream.

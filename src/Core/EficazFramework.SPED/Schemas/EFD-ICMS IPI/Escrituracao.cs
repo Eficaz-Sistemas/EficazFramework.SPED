@@ -64,6 +64,7 @@ public class Escrituracao : Primitives.Escrituracao
         RegistroTotalizadorStringFormat = $"|{RegistroTotalizadorCodigo}" + "|{0}|{1}|";
     }
 
+    /// <exclude/>
     public override void ProcessaLinha(string linha)
     {
         Registro reg = null;
@@ -1100,7 +1101,7 @@ public class Escrituracao : Primitives.Escrituracao
     }
 
     /// <summary>
-    /// Obtém o CNPJ do <see cref="Registro0000"/> do escrituração fornecida no parâmetro <paramref name="stream"/>
+    /// Obtém o valor do campo CNPJ do <see cref="Registro0000"/> do escrituração fornecida no parâmetro <paramref name="stream"/>
     /// </summary>
     public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
     {

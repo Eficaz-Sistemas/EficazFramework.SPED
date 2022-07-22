@@ -3,7 +3,7 @@
 
 ## Escrituracao.LeEmpresaArquivo(Stream) Method
 
-Obtém o CNPJ do [Registro0000](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0000.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0000') do escrituração fornecida no parâmetro [stream](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Escrituracao/LeEmpresaArquivo(Stream).md#EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao.LeEmpresaArquivo(System.IO.Stream).stream 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao.LeEmpresaArquivo(System.IO.Stream).stream')
+Obtém o valor do campo CNPJ do [Registro0000](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0000.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0000') do escrituração fornecida no parâmetro [stream](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Escrituracao/LeEmpresaArquivo(Stream).md#EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao.LeEmpresaArquivo(System.IO.Stream).stream 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao.LeEmpresaArquivo(System.IO.Stream).stream')
 
 ```csharp
 public override System.Threading.Tasks.Task<string> LeEmpresaArquivo(System.IO.Stream stream);
