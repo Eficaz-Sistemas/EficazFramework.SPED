@@ -3,6 +3,8 @@
 
 ## TipoLancamento Enum
 
+Natureza do Lançamento (Receita / Despesa).
+
 ```csharp
 public enum TipoLancamento
 ```

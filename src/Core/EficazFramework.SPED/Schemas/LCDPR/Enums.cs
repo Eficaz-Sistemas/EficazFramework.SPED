@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.LCDPR;
 
+/// <summary>
+/// Situação do Declarante no Início do Período da Escrituração quanto a início de atividades, ou obrigatoriedade no curso do ano-calendário.
+/// </summary>
 public enum SituacaoInicioPeriodo
 {
     [System.ComponentModel.Description("Regular (Início no primeiro dia do ano)")]
@@ -10,6 +13,9 @@ public enum SituacaoInicioPeriodo
     InicioObrigatoriedadeCursoAnoCalendario = 2
 }
 
+/// <summary>
+/// Situação especial do Declarante
+/// </summary>
 public enum SituacaoEspecial
 {
     [System.ComponentModel.Description("Normal")]
@@ -22,6 +28,9 @@ public enum SituacaoEspecial
     SaidaPais = 3
 }
 
+/// <summary>
+/// Forma de Apuração do Lucro da Atividade Rural.
+/// </summary>
 public enum FormaApuracao
 {
     [System.ComponentModel.Description("Livro Caixa")]
@@ -30,6 +39,9 @@ public enum FormaApuracao
     ApLucroArt5Lei8023_90 = 2
 }
 
+/// <summary>
+/// Situação da exploração, relativo a individual ou coletiva.
+/// </summary>
 public enum TipoExploracao
 {
     [System.ComponentModel.Description("Exploração Individual")]
@@ -46,6 +58,9 @@ public enum TipoExploracao
     Outros = 6
 }
 
+/// <summary>
+/// Formato de Participação dos demais sócios / terceiros quanto à exploração coletiva do Imóvel Rural.
+/// </summary>
 public enum TipoExploracaoTerceiro
 {
     [System.ComponentModel.Description("Condômino")]
@@ -60,7 +75,9 @@ public enum TipoExploracaoTerceiro
     Outros = 5
 }
 
-
+/// <summary>
+/// Tipo de Documento do Lançamento Fiscal (NF, Recibo, etc).
+/// </summary>
 public enum TipoDocumento
 {
     [System.ComponentModel.Description("Nota Fiscal")]
@@ -77,6 +94,9 @@ public enum TipoDocumento
     Outros = 4
 }
 
+/// <summary>
+/// Natureza do Lançamento (Receita / Despesa).
+/// </summary>
 public enum TipoLancamento
 {
     [System.ComponentModel.Description("Receita")]

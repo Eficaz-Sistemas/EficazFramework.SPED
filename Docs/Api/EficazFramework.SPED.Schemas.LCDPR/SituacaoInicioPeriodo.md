@@ -3,6 +3,8 @@
 
 ## SituacaoInicioPeriodo Enum
 
+Situação do Declarante no Início do Período da Escrituração quanto a início de atividades, ou obrigatoriedade no curso do ano-calendário.
+
 ```csharp
 public enum SituacaoInicioPeriodo
 ```
