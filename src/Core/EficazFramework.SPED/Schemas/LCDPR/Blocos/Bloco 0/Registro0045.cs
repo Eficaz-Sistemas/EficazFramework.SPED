@@ -43,7 +43,7 @@ public class Registro0045 : Primitives.Registro
         writer.Append((int)TipoContratante + "|"); // 3
         writer.Append(CPF + "|"); // 4
         writer.Append(Nome + "|"); // 5
-        writer.Append(Percentual.ValueToString(2)); // 6
+        writer.Append(Percentual.ValueToString(2).ToFixedLenghtString(5, Alignment.Left, "0")); // 6
         return writer.ToString();
     }
 
@@ -54,7 +54,7 @@ public class Registro0045 : Primitives.Registro
         TipoContratante = (TipoExploracaoTerceiro)data[2].ToEnum<TipoExploracaoTerceiro>(TipoExploracaoTerceiro.Condomino);
         CPF = data[3];
         Nome = data[4];
-        Percentual = data[5].ToNullableDouble();
+        Percentual = data[5].ToNullableDouble() / 100;
     }
 
     /// <summary>

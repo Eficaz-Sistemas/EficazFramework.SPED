@@ -150,7 +150,7 @@ public class Registro0040 : Primitives.Registro
         writer.Append(CodigoMunicipio + "|"); // 14
         writer.Append(CEP + "|"); // 15
         writer.Append((int)TipoExploracao + "|"); // 16
-        writer.Append(Percentual.ValueToString(2)); // 17
+        writer.Append(Percentual.ValueToString(2).ToFixedLenghtString(5, Alignment.Left, "0")); // 17
         return writer.ToString();
     }
 
