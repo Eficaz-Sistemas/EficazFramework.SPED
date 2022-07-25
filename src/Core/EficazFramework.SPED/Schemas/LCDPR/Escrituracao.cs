@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System;
 
 namespace EficazFramework.SPED.Schemas.LCDPR;
 
@@ -65,6 +66,14 @@ public class Escrituracao : Primitives.Escrituracao
             case "9999":
                 {
                     _mustStop = true;
+                    break;
+                }
+
+            default:
+                {
+                    string registro = linha.Substring(0, 4);
+                    reg = Activator.CreateInstance(Type.GetType($"EficazFramework.SPED.Schemas.LCDPR.Registro{registro}", true), new[] { linha, Versao }) as Primitives.Registro;
+                    Blocos[registro.Substring(0,1)].Registros.Add(reg);
                     break;
                 }
         }

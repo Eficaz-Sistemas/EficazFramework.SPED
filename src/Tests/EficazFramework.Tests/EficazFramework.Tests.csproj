@@ -35,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Schemas\LCDPR.Designer.cs">
+      <DependentUpon>LCDPR.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\Schemas\EFD_ICMS_IPI.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -58,6 +63,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Schemas\LCDPR.resx">
+      <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
+      <LastGenOutput>LCDPR.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Schemas\EFD_ICMS_IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EFD_ICMS_IPI.Designer.cs</LastGenOutput>

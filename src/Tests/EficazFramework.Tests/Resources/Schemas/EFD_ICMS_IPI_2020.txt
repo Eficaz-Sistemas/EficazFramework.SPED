@@ -1,7 +1,7 @@
 |0000|014|0|01092020|30092020|Exemplo EFD|20999111000139||MG|2970899900091|3129707|||B|1|
 |0001|0|
-|0005|Posto Santo Antônio|37990000|Rua Barao Do Rio Branco|203||Centro|3535441470|||
-|0100|Contador|00088866634|012345/O-MG|99444555000911|37990000|Rua Dezoito de Novembro|93||Centro|3535441511||contato@eficazctb.com.br|3129707|
+|0005|Posto Santo Antônio|37990000|Rua Rio Branco|203||Centro|3535449999|||
+|0100|Contador|00088866634|012345/O-MG|99444555000911|37990000|Rua Dezoito de Novembro|93||Centro|3535441511||contato@eficazcs.com.br|3129707|
 |0150|ID9IE14|Sergio Augusto Monteiro|1058||74243900825|0012147200042|3129707||Rua Faz Santa Luzia|0||Rural|
 |0150|ID37IE31|Angelo Vilhena|1058||23828676634|0011970770260|3129707||Rua Sitio Fortuna|0||Rural|
 |0150|ID100IE15|Jacinto Ricardo Neto|1058||21329907604|0014014590100|3129707||Fazenda Sitio Sao Jose|0||Rural|
@@ -10168,47 +10168,111 @@
 |9900|9900|52|
 |9990|55|
 |9999|10170|
-SBRCAAEPDR0€	*†H†÷ €0€10	+ 0€	*†H†÷ €$€66 ˆïEÓ;¿dÛ-6X/ÍU       €0‚¡0‚‰ 0	*†H†÷ 0—10	UBR10U
+SBRCAAEPDR0€	*†H†÷
+ €0€10	+ 0€	*†H†÷
+ €$€66 ˆïEÓ;¿dÛ-6X/ÍU
+       €0‚¡0‚‰ 0
+	*†H†÷
+
+ 0—10	UBR10U
 
-ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20100621190457Z230621190457Z0—10	UBR10U
+ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20
+100621190457Z
+230621190457Z0—10	UBR10U
 
-ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20‚"0	*†H†÷ ‚ 0‚
+ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20‚"0
+	*†H†÷
+ ‚ 0‚
 ‚ ºF¤İç@òµ |R•WEüm„ó†É…­˜«Òò^™É»obgıwD¹<Ò bÔp,Bƒyf«™V®¼jI½ótb·ë[f”B$F¬šB0ğ$¨QAê«•ñ¨+xiµ)'^œ.sÆş#¥ã¦Îılk Të ­O:L<ç
 ˆ[Ú^šVäµT8ò
-“dNÃA’S *ÏütnÔÛ38bäşLX÷*MÿÅ’Ù	R½Ïp iš3jˆ‡E!™Q4ß‚½´i¨||ÔİÓò\KÅXê…Ë6"X*rš–ŞÊÏQa¿´)+†şéMÃGËÏvÙq¦‡{@ä3€x¤ò›@;ÉrPßi¾ğ,–µÕ®tãe´Œéjûr\Å‚TêàSÄÌé÷Ş×/ÔH/G?&a±š3kµ†K+Ğ†Gíiûü„føVåŠlvÄkzÂ ZÑ#‰X|XÚÙ~}7¶¤Eõ…ÌGú‹yE¸fb3Ó&JŞéÔæm&¹<}Í(
-)›İc«¹¦G„×…¤eKRƒ4B1.æ³g•@~—z@ ùlƒ8X­3[¦ÄÁÅ°¬©ğ¦i4¶éø”HO>¦u	ìJÅ;àÉ^°2ÿŸiYÏ<0oÎ'WìZhÿìOox2>yÅ´]• £õ0ò0NU G0E0C`L 0:08+,http://acraiz.icpbrasil.gov.br/DPCacraiz.pdf0?U80604 2 0†.http://acraiz.icpbrasil.gov.br/LCRacraizv2.crl0U#0€9 :·Ë×(}A ÇúJ­2$¾0U9 :·Ë×(}A ÇúJ­2$¾0Uÿ0ÿ0Uÿ0	*†H†÷ ‚ Yšim})Cp}v›aßwvä©ÖËv¤L”ÆÑÅ­Ù-D¼²	v	€9g 4m
+“dNÃA’S *ÏütnÔÛ38bäşLX÷*MÿÅ’Ù	R½Ïp iš3jˆ‡E!™Q
+4ß‚½´i¨||ÔİÓò\KÅXê…Ë6"X*rš–ŞÊÏQa¿´)+†şéMÃGËÏvÙq¦‡{@ä3€x¤ò›@;ÉrPßi¾ğ,–µÕ®tãe´Œéjûr\Å‚TêàSÄÌé÷Ş×/ÔH/G?&a±š3kµ†K+Ğ†Gíiûü„føVåŠlvÄkzÂ ZÑ#‰X|XÚÙ~}7¶¤Eõ…ÌGú‹yE¸fb3Ó&JŞéÔæm&¹<}Í(
+)›İc«¹¦G„×…¤eKRƒ4B1.æ³g•@~—z@ ùlƒ8X­3[¦ÄÁÅ°¬
+©ğ¦i4¶éø”HO>¦u	ìJÅ;àÉ^°2ÿŸiYÏ<0o
+Î'WìZhÿìOox2>yÅ´]• £õ0ò0NU G0E0C`L 0:08+,http://acraiz.icpbrasil.gov.br/DPCacraiz.pdf0?U80604 2 0†.http://acraiz.icpbrasil.gov.br/LCRacraizv2.crl0U#0€9 :·Ë×(}A ÇúJ­2$¾0U9 :·Ë×(}A ÇúJ­2$¾0Uÿ0ÿ0Uÿ0
+	*†H†÷
+
+ ‚ Yšim})Cp}v›aßwvä©ÖËv¤L”ÆÑÅ­Ù-D¼²	v	€9g 4m
 æµYHºu`ü?Up+K•¬‰«
 w${aÄÇ‘&FQ7¶Œ'
-Óğš+"ƒƒ³½ƒ5­›<¼xƒ)5a6øq3 TcSEØZ„;×f$·ÄFÅ"Øs$î–È%èÏß…Pm<ê÷P—Ş§kÛÖsÒÏ|PÀ°ŒåSz†9¬5[gÇêÔûÑÂ]ê—s˜®)¿ä:ó6P,íŞÛ…è„	îó¦ƒ3[oGyOHµü¸&«ª³ôaûEgó>nş*K&DŸ±¢à<Úàä:x¬û¨¡M¿],w)Íï(Ø·ó[ÈÉ§~1ŠxbÄÑ¼c+‰İä\[2€DÔBì*óò@‡1Õ>â
+Ó
+ğš+"ƒƒ³½ƒ5­›<¼xƒ)5a6øq3 TcSEØZ„;×f$·ÄFÅ"Øs$î–È%èÏß…Pm<ê÷P—Ş§kÛÖsÒÏ|PÀ°ŒåSz†9¬5[gÇêÔûÑÂ]ê—s˜®)¿ä:ó6P,íŞÛ…è„	îó¦ƒ3[oGyOHµü¸&«ª³ôaûEgó>nş*K&DŸ±¢à<Úàä:x¬û¨¡M¿],w)Íï(Ø·ó[ÈÉ§~1ŠxbÄÑ¼c+
+‰İä\[2€DÔBì*óò@‡1Õ>â
 2Õrmæıä¨óuw›
-¹ú’™eˆ2gC-»5ñaèÙgwíåè-k4?ƒ³÷êJ>5„Œ€4?©•èÃ­ÄÍÊ,ä6‹¹¹£B%>ÃåÕhO f¦³¶s?@¹VBp‡ÿo-ıÿ÷…0ã1î'•ÌÉé™—Çm[µj=òEßº‚y$p.›‚f©¥m'Ìö*¢Ñ_…oàFªÒ¥NU0‚â0‚Ê I XîN0	*†H†÷ 0‰10	UBR10U
+¹ú’™eˆ2gC-»5ñaèÙgwíåè-k4?ƒ³÷êJ>5„Œ€4?©•èÃ­ÄÍÊ,ä6‹¹¹£B%>ÃåÕhO f¦³¶s?@¹VBp‡ÿo-ıÿ÷…0ã1î'•ÌÉé™—Çm[µj=òEßº‚y$p.›‚f©¥m'Ìö*¢Ñ_…oàFªÒ¥NU0‚â0‚Ê I XîN0
+	*†H†÷
+ 0‰10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla0200518112927Z210514180600Z0‚10	UBR10U
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla0
+200518112927Z
+210514180600Z0‚10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla10U3220243600015010UCertificado PJ A11G0EU>EFICAZ CONTABILIDADE E ASSESSORIA CONTABIL LTDA:106080250001260‚"0	*†H†÷ ‚ 0‚
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla10U3220243600015010UCertificado PJ A11G0EU>EFICAZ CONTABILIDADE E ASSESSORIA CONTABIL LTDA:106080250001260‚"0
+	*†H†÷
+ ‚ 0‚
 ‚ ˆÛ3ĞbY'öÆ‘âx	Èö0eœ¹½…RlÃ|+ŒñXãcÄ¯d=gú"Œ|vÖ_z¯0¦‰ó®1‚´LYwéæ'¬07è‹sÉ¯fA&ÁÈyËÂPéëw3[¹ÎiØó8¼S½†4.¶Õ ˜ú¨m›† Ha)’ğ8Gq¸HÚ?_8õÃtº`÷š9EZHèÉ³[°Ş°äß@ç»š(„ú;Xôï¹£˜fÍ Øa
 2¼käÃ‹*ÿ„,õsÜŸºÌàn0ˆxZòf7Şï»q¬s÷Mİc r,¢t÷VàÕï–Îş3&®JÜwÖd»Y £‚Ë0‚Ç0T+H0F0D+0†8http://ccd.acsoluti.com.br/lcr/ac-soluti-multipla-v1.p7b0U¤8ÈĞ®Şé8Z©ˆ2vÄ¢DD¦E0	U0 0U#0€5®1ö^ÒzOXş4¨g—
-Ä›0^U W0U0S`L&0I0G+;https://ccd.acsoluti.com.br/docs/dpc-ac-soluti-multipla.pdf0ŞUÖ0Ó0> < :†8http://ccd.acsoluti.com.br/lcr/ac-soluti-multipla-v1.crl0? = ;†9http://ccd2.acsoluti.com.br/lcr/ac-soluti-multipla-v1.crl0P N L†Jhttp://repositorio.icpbrasil.gov.br/lcr/ACSOLUTI/ac-soluti-multipla-v1.crl0Uÿà0U%0++0³U«0¨contato@eficazctb.com.br `L CALY ALVES DA CUNHA `L 10608025000126 8`L /-020219572133220763400000000000000000000000000 `L 0000000000000	*†H†÷ ‚ ‘Q.¬õÃƒx×²úßóØ=té•Ú §ÛÃOÉeò7^Dì¯*<ZÂõs½/…^·ÒÂ÷RìÎÉ¶ÚÆ9\È|yCõ‡q¼‹ft‰94q€ÚeÚr,ÄınÜx£¸åG¯Ûİ”²¦ëg Şº	Ú’R è,‹½ÄRyÕZ²^“yğoReÉã&b[¶w,ò…È¤cÒ­,Ø˜è-Ru"ƒZ±ü>˜ÏÁ¸È=é”…Aà8¢p«ğwê;­'7ØíRË¼,«ş¹gÍ7r|Ï²Ã¦Ï[f†Zu“µ&LÃL!ß)	Y¾È<ÃÓ‡b&”BëúAKÍÂ3‰qT©}‰Å¢0ı´´"•¬ıó¨¥ ^BûE‚´6
-Ğ¿³ur‰¥QEÚc”É ›‰­Z:©Ô{Y!Ì)"?†şş¢7ÏxR#(B‡åD/Îkß×%š+…êDWœ5Óz<¦m¾A(—hlÖX£uÚ<P .z×{y©”ñ„BİKàı;" …ÅÿâõĞLt>Ëlˆ‚{E°z^‡2@‡°ua¨‹Õşú=µÖkzi¬§}é¬ˆVø¯š×H°>-†(‡} ãzjò7	Ì½Õ
-¼ıTÓMóÄŠ×úhBÂSeè¼˜Ë-[»Åí7Lê}ª–T”î­â “b^Y!0‚-0‚ 0	*†H†÷ 0l10	UBR10U
+Ä›0^U W0U0S`L&0I0G+;https://ccd.acsoluti.com.br/docs/dpc-ac-soluti-multipla.pdf0ŞUÖ0Ó0> < :†8http://ccd.acsoluti.com.br/lcr/ac-soluti-multipla-v1.crl0? = ;†9http://ccd2.acsoluti.com.br/lcr/ac-soluti-multipla-v1.crl0P N L†Jhttp://repositorio.icpbrasil.gov.br/lcr/ACSOLUTI/ac-soluti-multipla-v1.crl0Uÿà0U%0++0³U«0¨contato@eficazctb.com.br `L CALY ALVES DA CUNHA `L 10608025000126 8`L /-020219572133220763400000000000000000000000000 `L 0000000000000
+	*†H†÷
+ ‚ ‘Q.¬õÃƒx×²úßóØ=té•Ú §ÛÃOÉeò7^Dì¯*<ZÂõs½/…^·ÒÂ÷RìÎÉ¶ÚÆ9\È|yCõ‡q¼‹ft‰94q€ÚeÚr,ÄınÜx£¸åG¯Ûİ”²¦
+ëg Şº	Ú’R è,‹½ÄRyÕZ²^“yğoReÉã&b[¶w,ò…È¤cÒ­,Ø˜è-Ru"ƒZ±ü>˜ÏÁ¸È=é”…Aà8¢p«ğwê;­'7ØíRË¼,«ş¹gÍ7r|Ï²Ã¦Ï[f†Zu“µ&LÃL!ß)	Y¾È<ÃÓ‡b&”BëúAKÍÂ3‰qT©}‰Å¢0ı´´"•¬ıó¨¥ ^BûE‚´6
+Ğ¿³ur‰¥QEÚc”É ›‰­Z:©Ô{Y!Ì)"?†şş¢7ÏxR#(B‡åD/Îkß×%š+…êDWœ5Óz<¦m¾A(—hlÖX£uÚ<P .z×{y©”ñ„BİKàı;" …ÅÿâõĞLt>Ë
+lˆ‚{E°z^‡2@‡°ua¨‹Õşú=µÖkzi¬§}é¬ˆVø¯š×H°>-†(‡} ãzjò7	Ì½Õ
+¼ıTÓMóÄŠ×úhBÂSeè¼˜Ë-[»Åí7Lê}ª–T”î­â “b^Y!0‚-0‚ 0
+	*†H†÷
+
+ 0l10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI0121205085039Z230620235859Z0‰10	UBR10U
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI0
+121205085039Z
+230620235859Z0‰10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla0‚"0	*†H†÷ ‚ 0‚
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI Multipla0‚"0
+	*†H†÷
+ ‚ 0‚
 ‚ ¥¡…şj‚Œ,ØúAq\HÈşŸFXƒüODâ*ÒÛ{?2ÆRÃÁ¼İÚ"6õüÈÂaÍG›Æ3‰]›²€WYßµò”ŠG*?
-¸	yRï@/9l GÈ<ØbÄ`8±ÿöæ´‚:ÕÃ#Ç YÀú’ª(7!ÿeÜüIî¯ò²}¢lùF•/*Ó¦h`.’GÇv „{÷×b¬–Õ"î“[#4P­Š¡ ÏIÿ(-Vç0˜h‹æ˜ıeaqïò½<ØJ–|1e‘X‡Ğõx'zÆ”¦› ‚;û¿Å¨2ÏKô¯*Ax×Lf®±¥İÂ;ĞEÅÀ6‚ŒÈ¦İu¯³šú·Æq_'xI˜Sº–œDSâm4`<¸]›cğ{^Š¨ØÅ(ÿµÌ¨Z‡ÔG3û)y8–}o˜&¢91&S<|öå§ sH•Yôá¸j9eü³iaÙÃy@d{Êş1‹ô1-)•1ÅÛaRÊ{Œä¤J‰Éî¬•z«0…ZV/pCÄ®Z&pzF•ÇfÓjM‚³:z*ŠÉ TWU€^Ìßı¼ ŞœÛQuIŸOAò²Î’¸LU×*äYyŸYª’%CÅ7•=ü¸ûœñ¦óæy&xNÜÕ¶´ŒWî¹0Òeµsc„}ß"£SÓ¬Nohc £‚º0‚¶0U5®1ö^ÒzOXş4¨g—
-Ä›0Uÿ0ÿ0U#0€d¥…+}Ïß@ÅÍ¢*–ÎêCë”j0‚‹U ‚‚0‚~0K`L‚00@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L&0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L%0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0K`L‚/0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0ÃU»0¸05 3 1†/http://ccd.acsoluti.com.br/lcr/ac-soluti-v1.crl06 4 2†0http://ccd2.acsoluti.com.br/lcr/ac-soluti-v1.crl0G E C†Ahttp://repositorio.icpbrasil.gov.br/lcr/ACSOLUTI/ac-soluti-v1.crl0Uÿ0	*†H†÷ ‚ orÅu»%5ğó–YúR£cô^hSlŞñZµ ±¬jã Š#Ô×¬<&Ú%¾CœÉ‡Ÿš÷ „ñısĞ5¦ĞB›°³]K­šòã“¶sA“6ˆêT„œÃr¦ªUƒC£<¼ü­¦›ŒA¸ŒÎ°Ëø«2´_¬fó§ñ+ZÍHëš·¦‹AMU?!Ó;Óû°Òˆ7—ÀôQÇ)bÉ¹Nİ‘DO’l+íy5ÎÊüŠ‰ycİ Úù>%¦nÜ;Ş.º-@lŠ¾ötâÙvÀ*üÕfî»‹ĞÿñRİ:&d!\úsn©¢Æm¢JG.3hÇpá8øA#{SÔ?P{ !‚äøvßm¿»úù™DæI²;e‰š¢ÔïËG]z¸KğŒ²è´µ^ùšäƒÌ‘/d‘*^­«x<†C´xóQq×Ê"ÒÅ¨×±¬5\´}Û&”²LcÁìıÃeóhÙÃbıUã™8=¢ÒÔ‰¼„Ñ Ó»èî0 £|Ë@ËYÜÍİºÅS`3’T:ÔÇW	É¦ô’¾bnk§p<^ÔºœŸæ¯àOG†ĞÅ~!¥6 µU”8 ?v¿GK˜2T€4¦;Y÷çŸ‘eŸÇë!¿9‰Íf§²·6 zf;|æŞçôkz½.+™a'0‚;0‚# 0	*†H†÷ 0—10	UBR10U
+¸	yRï@/9l GÈ<ØbÄ`8±ÿöæ´‚:ÕÃ#Ç YÀú’ª(7!ÿeÜüIî¯ò²}¢lùF•/*Ó¦h`.’GÇv „{÷×b¬–Õ"î“[#4P­Š¡ ÏIÿ(-Vç0˜h‹æ˜ıeaqïò½<ØJ–|1e‘X‡Ğõx'zÆ”¦› ‚;û¿Å¨2ÏKô¯*Ax×Lf®±¥İ
+Â;ĞEÅÀ6‚ŒÈ¦İu¯³šú·Æq_'xI˜Sº–œDSâm4`<¸]›
+cğ{^Š¨ØÅ(ÿµÌ¨Z‡ÔG3û)y8–}o˜&¢91&S<|öå§ sH•Yôá¸j9eü³iaÙÃy@d{Êş1‹ô1-)•1ÅÛaRÊ{Œä¤J‰Éî¬•z«0…ZV/pCÄ®Z&pzF•ÇfÓjM‚³:z*ŠÉ TWU€^Ìßı¼ ŞœÛQuIŸOAò²Î’¸LU×*äYyŸYª’%CÅ7•=ü¸ûœñ¦óæy&xNÜÕ¶´ŒWî¹0Òeµsc„}ß"£SÓ¬Nohc £‚º0‚¶0U5®1ö^ÒzOXş4¨g—
+Ä›0Uÿ0ÿ0U#0€d¥…+}Ïß@ÅÍ¢*–ÎêCë”j0‚‹U ‚‚0‚~0K`L‚00@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L&0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0J`L%0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0K`L‚/0@0>+2https://ccd.acsoluti.com.br/docs/dpc-ac-soluti.pdf0ÃU»0¸05 3 1†/http://ccd.acsoluti.com.br/lcr/ac-soluti-v1.crl06 4 2†0http://ccd2.acsoluti.com.br/lcr/ac-soluti-v1.crl0G E C†Ahttp://repositorio.icpbrasil.gov.br/lcr/ACSOLUTI/ac-soluti-v1.crl0Uÿ0
+	*†H†÷
+
+ ‚ orÅu»%5ğó–YúR£cô^hSlŞñZµ ±¬jã Š#Ô×¬<&Ú%¾CœÉ‡Ÿš÷ „ñısĞ5¦ĞB›
+°³]K­šòã“¶sA“6ˆêT„œÃr¦ªUƒC£<¼ü­¦›ŒA¸ŒÎ°Ëø«2´_¬fó§ñ+ZÍHëš·¦‹AMU?!Ó;Óû°Òˆ7—ÀôQÇ)bÉ¹Nİ‘DO’l+íy5ÎÊüŠ‰ycİ Úù>%¦nÜ;Ş.º-@lŠ¾ötâÙvÀ*üÕfî»‹ĞÿñRİ:&d!\úsn©¢Æm¢JG.3hÇpá8øA#{SÔ?P{ !‚äøvßm¿»úù™DæI²;e‰š¢ÔïËG]z¸KğŒ²è´µ^ùšäƒÌ‘/d‘*^­«x<†C´xóQq×Ê"ÒÅ¨×±¬5\´}Û&”²LcÁìıÃeóhÙÃbıUã™8=¢ÒÔ‰¼„Ñ Ó»èî0 £|Ë@ËYÜÍİºÅS`3’T:ÔÇW	É¦ô’¾bnk§p<^ÔºœŸæ¯àOG†ĞÅ~!¥6 µU”8 ?v¿GK˜2T€4¦;Y÷çŸ‘eŸÇë!¿9‰Íf§²·6 zf;|æŞçôkz½.+™a'0‚;0‚# 0
+	*†H†÷
+
+ 0—10	UBR10U
 
-ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20121203123913Z230620235959Z0l10	UBR10U
+ICP-Brasil1=0;U4Instituto Nacional de Tecnologia da Informacao - ITI1402U+Autoridade Certificadora Raiz Brasileira v20
+121203123913Z
+230620235959Z0l10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI0‚"0	*†H†÷ ‚ 0‚
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI0‚"0
+	*†H†÷
+ ‚ 0‚
 ‚ ›çÏô˜ùtìÅñµBF[›ˆ|FîeDq_ë~§‹ÖÒˆÁ(‚¢cù†L·Á|¬gé_VdùÖê>kBnÎ)P€á´&u4ÿ¼ÚÁ)b¼·ÀÂİä;ÂV›ˆA­<cdl¬ò
-B€Õv,:hRûçrò±†­C™ÓÚP@0â+ÒéØD×Â±ÎlÄ!…íÌş<¬Pœ+.Â.gH°ù}YVÄ†b¾Kó«ËéDÿ0
-µ©UÅ«cP$+¼ŞCz“EŒâa¹ºÊy!Ş…øğ0%Ê 8EDÚ°7i½æıíÑâú2kÆ“?Á‘“ç¾ D¢((¯ze§¸†#ÌÂ}4…ÆKœÚƒ	z«}Y(šbµW,L$ø…ù§¶Öe©+=Î+ãµÍL.Übq'‹Z\+5{É¸íıTç‰î-ÊÆ!v>g$7TvAmY„’Ï~—0ı‘ÛZşkÚ´â‰àïàì mç›­ŞÿÅªï8($‚Œ~Ç¹~É?Ø…VíóAjıÓ|lhÖ~^s—Ä^Vrû‰µRæ¥Åâ&ypcò‡Ï_|;cÍóÖ=¯|gy#iIjÄÏkëa4@¿¢•9–"´…¢lMÎš(]iœpÈ¤ù`ª}Ûb ÄpQÇ…6Dç 4Îpè)ÖÿÁ$Ì.„ãt €¸şO £»0¸0U 00	`L.0 0?U80604 2 0†.http://acraiz.icpbrasil.gov.br/LCRacraizv2.crl0U#0€9 :·Ë×(}A ÇúJ­2$¾0Ud¥…+}Ïß@ÅÍ¢*–ÎêCë”j0Uÿ0ÿ0Uÿ0	*†H†÷ ‚ cÙj3O75»"¾S[sbò~$Ùà|q{­²J>3èùûŠó¢¹tV´àB£~ ¡Ò[iô~¸×‘ba~ƒBJPçyğU1‡VG9K*ˆùF#6òø­Ó·Ç “ºàhÌ#q57GJ°™Á’ƒİ >òmô×
+B€Õv,:hRûçrò±†­C™ÓÚP@0â+ÒéØD×Â±ÎlÄ!…íÌş<¬Pœ+.Â
+.gH°ù}YVÄ†b¾Kó«ËéDÿ0
+µ©UÅ«cP$+¼ŞCz“EŒâa¹ºÊy!Ş…øğ0%Ê 8EDÚ°7i½æıíÑâú2kÆ“?Á‘“ç¾ D¢((¯ze§¸
+†#ÌÂ}4…ÆKœÚƒ	z«}Y(šbµW,L$ø…ù§¶Öe©+=Î+ãµÍL.Übq'‹Z\+5{É¸íıTç‰î-ÊÆ!v>g$7TvAmY„’Ï~—0ı‘ÛZşkÚ´â‰àïàì m
+ç›­Şÿ
+Åªï8($‚Œ~Ç¹~É?Ø…VíóAjıÓ|lhÖ~^s—Ä^Vrû‰µRæ¥Åâ&ypcò‡Ï_|;cÍóÖ=¯|gy#iIjÄÏkëa4@¿¢•9–"´…¢lMÎš(]iœpÈ¤ù`ª}Ûb ÄpQÇ…6Dç 4Îpè)ÖÿÁ$Ì.„ãt €¸şO £»0¸0U 
+00	`L.0 0?U80604 2 0†.http://acraiz.icpbrasil.gov.br/LCRacraizv2.crl0U#0€9 :·Ë×(}A ÇúJ­2$¾0Ud¥…+}Ïß@ÅÍ¢*–ÎêCë”j0Uÿ0ÿ0Uÿ0
+	*†H†÷
+
+ ‚ cÙj3O75»"¾S[sbò~$Ùà|q{­²J>3èùûŠó¢¹tV´àB£~ ¡Ò[iô~¸×‘ba~ƒBJPçyğU1‡VG9K*ˆùF#6òø­Ó·Ç “ºàhÌ#q57GJ°™Á’ƒİ >òmô×
 JëÜ(æ…Ä>+	ç“‹Fb®Qák¥•«¦
 ~äôğ²IéÌµïfÁ9‘ˆèñ<£¤õ½È¬/€ì–.¸„5
 ç‘»'Àê²¸İ×ĞŒ”øİÓqNJí.±cÑo]QH·ı¡•ª5Yb‰£‰[‚FT^\PQk?Ô‡¡â¨r ïæ.jùîBom%ôr†¥M6àvır
-s{JpÒp½gÛ>Ó€ ûa"ãÏ1õïÄ%ş°Ùä»e"%òmÙúéj¸'··ôÀwÌ‰ ¬Õóª,%êœº]f¡IÅİÖªJüiOÔg`„™¬ÜM¾ÑŠnj='Æ;*GÓØ~&ŠÊm¿€%£1ø‰Ï×2• õSèy<Ì‚E†Æ¿œ^hâ^øù§e®ëğ¨œtÚ{œ_úòë¸>-ôÜ×Ù1äHï´pL;¬Ü:Q!=¾É‚?Ô GKF‚ßôrµÑ¹üüŸ“÷S]•“TÌ53—-Â•Ì¢V  1‚P0‚L0–0‰10	UBR10U
+s{JpÒp½gÛ>
+Ó€ ûa"ãÏ1õïÄ%ş°Ùä»e"%òmÙúéj¸'··ôÀwÌ‰ ¬Õóª,%êœº]f¡IÅİÖªJüiOÔg`„™¬ÜM¾ÑŠnj='Æ;*GÓØ~&ŠÊm¿€%£1ø‰Ï×2• õSèy<Ì‚E†Æ¿œ^hâ^øù§e®ëğ¨œtÚ{œ_úòë¸>-ôÜ×Ù1äHï´pL;¬Ü:Q!=¾É‚?Ô GKF‚ßôrµÑ¹üüŸ“÷S]•“TÌ53—-Â•Ì¢V  1‚P0‚L0–0‰10	UBR10U
 
-ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI MultiplaI XîN0	+  0	*†H†÷	1	*†H†÷0	*†H†÷	1201008140604Z0#	*†H†÷	1Kö“749ÎY'gˆqF°şŞdu00
-+‚7X1" | 1 | 2 . 6 . 8 | 1 4 0 0 3 | 4 0	*†H†÷ ‚ 1ÌŸW9†Ì½r'‚¿=±	ïÁ)ËŒ¹6~®Ø?¯õ¨M¾ºó)OªPŒñ®óšËiÍl¤¿2X_¦[¼Î¿¶Hâu‰™’ÇQ”JÉHY¦ğ™N M¬”ĞÉlöå}cûŞ£Ÿ÷¿L¯µ:ÉYk-šÛNÀm½Ü8’Ëóœ¤ì“Ëm‡”|…Ê’½dKA+Š¤íÃ¥Š/B¬r»D_J=€@Ã4õK.à¬íöØ¸NŞi#"<¾4)–Ñ\A¥®ĞPªB¥2^j{Œ"‚u9yÁû¢E(ÑSÄ:B5Û&S¿M’®JZM€; Ôy^Ã+ı£¶»,ä¤`€I=t@      
+ICP-Brasil1402U+Autoridade Certificadora Raiz Brasileira v210U	AC SOLUTI10UAC SOLUTI MultiplaI XîN0	+  0	*†H†÷
+	1	*†H†÷
+0	*†H†÷
+	1
+201008140604Z0#	*†H†÷
+	1Kö“749ÎY'gˆqF°şŞdu00
++‚7X1" | 1 | 2 . 6 . 8 | 1 4 0 0 3 | 4 0
+	*†H†÷
+ ‚ 1ÌŸW9†Ì½r'‚¿=±	ïÁ)ËŒ¹6~®Ø?¯õ¨M¾ºó)OªPŒñ®óšËiÍl¤¿2X_¦[¼Î¿¶Hâu‰™’ÇQ”JÉHY¦ğ™N M¬”ĞÉlöå}cûŞ£Ÿ÷¿L¯µ:ÉYk-šÛNÀm½Ü8’Ëóœ¤ì“Ëm‡”|…Ê’½dKA+Š¤íÃ¥Š/B¬r»D_J=€@Ã4õK.à¬íöØ¸NŞi#"<¾4)–Ñ\A¥®ĞPªB¥2^j{Œ"‚u9yÁû¢E(ÑSÄ:B5Û&S¿M’®JZM€; Ôy^Ã+ı£¶»,ä¤`€I=t@      
