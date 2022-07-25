@@ -62,6 +62,7 @@ await escrituracao.LeArquivo(stream);
 EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao escrituracao = new();  
 escrituracao.Encoding = System.Text.Encoding.Default; //opcional  
 escrituracao.Versao = "017"; //opcional  
+
 var reg0000 = new Registro0000(null, escrituracao.Versao)  
 {  
     Finalidade = Primitives.Finalidade.Original,  
@@ -76,7 +77,9 @@ var reg0000 = new Registro0000(null, escrituracao.Versao)
     Atividade = Primitives.TipoAtividade.Outros  
 };  
 escrituracao.Blocos["0"].Registros.Add(reg0000);  
+
 // TODO: Adicionar demais registros em seus respectivos blocos...  
+
 await escrituracao.EscreveArquivo(System.IO.File.Create(@"C:\SPED\SPED-EFD-ICMS-IPI.txt"));  
 ```
    
