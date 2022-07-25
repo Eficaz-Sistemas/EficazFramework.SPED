@@ -5,7 +5,7 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// <summary>
 /// Abertura, Identificação e Referências
 /// </summary>
-/// <remarks></remarks>
+/// <exclude />
 public class Bloco0 : Primitives.Bloco
 {
     /// <summary>

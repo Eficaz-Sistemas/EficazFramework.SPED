@@ -3,6 +3,8 @@
 
 ## FormaApuracao Enum
 
+Forma de Apuração do Lucro da Atividade Rural.
+
 ```csharp
 public enum FormaApuracao
 ```
