@@ -172,6 +172,6 @@ public class Registro0040 : Primitives.Registro
         CodigoMunicipio = data[13];
         CEP = data[14];
         TipoExploracao = (TipoExploracao)data[15].ToEnum<TipoExploracao>(TipoExploracao.Individual);
-        Percentual = data[16].ToNullableDouble();
+        Percentual = data[16].ToNullableDouble() / 100;
     }
 }
