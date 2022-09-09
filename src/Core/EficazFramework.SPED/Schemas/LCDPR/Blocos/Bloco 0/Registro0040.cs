@@ -150,7 +150,7 @@ public class Registro0040 : Primitives.Registro
         writer.Append(CodigoMunicipio + "|"); // 14
         writer.Append(CEP + "|"); // 15
         writer.Append((int)TipoExploracao + "|"); // 16
-        writer.Append(Percentual.ValueToString(2)); // 17
+        writer.Append(Percentual.ValueToString(2).ToFixedLenghtString(5, Alignment.Left, "0")); // 17
         return writer.ToString();
     }
 
@@ -172,6 +172,6 @@ public class Registro0040 : Primitives.Registro
         CodigoMunicipio = data[13];
         CEP = data[14];
         TipoExploracao = (TipoExploracao)data[15].ToEnum<TipoExploracao>(TipoExploracao.Individual);
-        Percentual = data[16].ToNullableDouble();
+        Percentual = data[16].ToNullableDouble() / 100;
     }
 }

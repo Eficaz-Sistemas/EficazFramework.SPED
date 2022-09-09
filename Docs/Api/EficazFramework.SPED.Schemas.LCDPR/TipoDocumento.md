@@ -3,6 +3,8 @@
 
 ## TipoDocumento Enum
 
+Tipo de Documento do Lançamento Fiscal (NF, Recibo, etc).
+
 ```csharp
 public enum TipoDocumento
 ```

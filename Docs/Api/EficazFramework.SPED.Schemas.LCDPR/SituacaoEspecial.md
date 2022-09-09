@@ -3,6 +3,8 @@
 
 ## SituacaoEspecial Enum
 
+Situação especial do Declarante
+
 ```csharp
 public enum SituacaoEspecial
 ```

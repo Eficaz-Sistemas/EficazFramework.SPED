@@ -3,6 +3,8 @@
 
 ## TipoExploracaoTerceiro Enum
 
+Formato de Participação dos demais sócios / terceiros quanto à exploração coletiva do Imóvel Rural.
+
 ```csharp
 public enum TipoExploracaoTerceiro
 ```

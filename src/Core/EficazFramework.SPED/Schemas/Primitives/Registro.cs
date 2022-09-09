@@ -24,7 +24,11 @@ public abstract class Registro
                 var data = linha.Split("|");
                 if (data.Length > 1)
                 {
-                    _codigo = data[1];
+                    if (string.IsNullOrEmpty(data[0]))
+                        _codigo = data[1];
+                    else
+                        _codigo = data[0];
+                    
                     LeParametros(data);
                 }
                 else

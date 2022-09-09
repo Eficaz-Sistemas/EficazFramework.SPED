@@ -104,7 +104,7 @@ public class Registro0000 : Primitives.Registro
         IndicadorSitInicioPeriodo = (SituacaoInicioPeriodo)data[5].ToEnum<SituacaoInicioPeriodo>(SituacaoInicioPeriodo.Regular);
         SituacaoEspecial = (SituacaoEspecial)data[6].ToEnum<SituacaoEspecial>(SituacaoEspecial.Normal);
         DataSituacaoEspecial = data[7].ToDate();
-        DataInicial = data[9].ToDate();
+        DataInicial = data[8].ToDate();
         DataFinal = data[9].ToDate();
     }
 }
