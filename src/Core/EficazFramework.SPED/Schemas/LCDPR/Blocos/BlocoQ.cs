@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 ///  Demonstrativo do Resultado da Atividade Rural
 /// </summary>
 /// <exclude />
+[ExcludeFromCodeCoverage]
 public class BlocoQ : Primitives.Bloco
 {
 }

@@ -1,11 +1,10 @@
-﻿using System.Linq;
-
-namespace EficazFramework.SPED.Schemas.LCDPR;
+﻿namespace EficazFramework.SPED.Schemas.LCDPR;
 
 /// <summary>
 /// Abertura, Identificação e Referências
 /// </summary>
 /// <exclude />
+[ExcludeFromCodeCoverage]
 public class Bloco0 : Primitives.Bloco
 {
     /// <summary>
