@@ -35,4 +35,17 @@ internal class IO
         escrituracao.Blocos["Q"].Registros.Count(reg => reg.Codigo == "Q200").Should().Be(12);
         escrituracao.Blocos["9"].Registros.Count(reg => reg.Codigo == "9999").Should().Be(1);
     }
+
+    [Test]
+    public async Task ReadContribuinte()
+    {
+        var stream = new MemoryStream();
+        var writer = new StreamWriter(stream);
+        writer.Write(Resources.Schemas.LCDPR.v0013);
+        writer.Flush();
+        stream.Position = 0;
+        EficazFramework.SPED.Schemas.LCDPR.Escrituracao escrituracao = new();
+        (await escrituracao.LeEmpresaArquivo(stream)).Should().Be("12345678900");
+    }
+
 }
