@@ -17,6 +17,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Coverage\**" />
+    <EmbeddedResource Remove="Coverage\**" />
+    <None Remove="Coverage\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.msbuild" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,6 +41,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Schemas\LCDPR.Designer.cs">
+      <DependentUpon>LCDPR.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\Schemas\EFD_ICMS_IPI.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -58,6 +69,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Schemas\LCDPR.resx">
+      <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
+      <LastGenOutput>LCDPR.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Schemas\EFD_ICMS_IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EFD_ICMS_IPI.Designer.cs</LastGenOutput>
@@ -78,6 +94,11 @@
       <LastGenOutput>XML.Designer.cs</LastGenOutput>
       <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Schemas\LCDPR\BlocoQ\" />
+    <Folder Include="Schemas\LCDPR\Bloco9\" />
   </ItemGroup>
 
 </Project>

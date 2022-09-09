@@ -3,6 +3,8 @@
 
 ## TipoExploracao Enum
 
+Situação da exploração, relativo a individual ou coletiva.
+
 ```csharp
 public enum TipoExploracao
 ```
