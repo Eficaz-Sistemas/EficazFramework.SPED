@@ -17,13 +17,14 @@ using System.Xml.Serialization;
 namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
 {
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    #region R-1000
+
     [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01", IsNullable = false)]
     public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private R1000_EventoInfoContribuinte evtInfoContriField;
@@ -92,7 +93,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEvento ideEventoField;
@@ -180,7 +181,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_InfoContri : object, INotifyPropertyChanged
     {
         private object itemField;
@@ -220,7 +221,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_Alteracao : object, INotifyPropertyChanged
     {
         private ReinfEvtIdePeriodo idePeriodoField;
@@ -291,7 +292,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
     {
         private string ideEFRField;
@@ -346,7 +347,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_Exclusao : object, INotifyPropertyChanged
     {
         private ReinfEvtIdePeriodo idePeriodoField;
@@ -384,7 +385,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_Inclusao : object, INotifyPropertyChanged
     {
         private ReinfEvtIdePeriodo idePeriodoField;
@@ -438,7 +439,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
     {
         private string ideEFRField;
@@ -493,7 +494,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     {
         private string classTribField;
@@ -666,7 +667,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     {
         private string nmCttField;
@@ -771,7 +772,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
     public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyChanged
     {
         private string cnpjSoftHouseField = "19574916000183";
@@ -872,14 +873,16 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    #endregion
+
+    #region "R-1070"
+
     [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01", IsNullable = false)]
     public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtTabProcesso evtTabProcessoField;
@@ -948,7 +951,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     {
         private ReinfEvtTabProcessoIdeEvento ideEventoField;
@@ -1037,7 +1040,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChanged
     {
         private Ambiente tpAmbField;
@@ -1109,7 +1112,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyChanged
     {
         private object itemField;
@@ -1149,7 +1152,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyPropertyChanged
     {
         private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcessoField;
@@ -1203,7 +1206,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -1346,7 +1349,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
     {
         private string codSuspField;
@@ -1434,7 +1437,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
     {
         private string ufVaraField;
@@ -1505,7 +1508,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : object, INotifyPropertyChanged
     {
         private string iniValidField;
@@ -1564,7 +1567,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPropertyChanged
     {
         private ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcessoField;
@@ -1601,7 +1604,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -1694,7 +1697,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPropertyChanged
     {
         private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcessoField;
@@ -1731,7 +1734,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -1874,7 +1877,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
     {
         private string codSuspField;
@@ -1962,7 +1965,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
     public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
     {
         private string ufVaraField;
@@ -2029,14 +2032,15 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    #endregion
+
+
     [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01", IsNullable = false)]
     public partial class R2010 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtServTom evtServTomField;
@@ -2105,7 +2109,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTom : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -2193,7 +2197,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTom : object, INotifyPropertyChanged
     {
         private ReinfEvtServTomInfoServTomIdeEstabObra ideEstabObraField;
@@ -2230,7 +2234,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObra : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -2347,7 +2351,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ : object, INotifyPropertyChanged
     {
         private string cnpjPrestadorField;
@@ -2583,7 +2587,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs : object, INotifyPropertyChanged
     {
         private string serieField;
@@ -2706,7 +2710,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ : object, INotifyPropertyChanged
     {
         private string tpServicoField;
@@ -2905,7 +2909,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcRetPrincField;
@@ -2993,7 +2997,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
     public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcRetAdicField;
@@ -3083,8 +3087,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01", IsNullable = false)]
     public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtServPrest evtServPrestField;
@@ -3153,7 +3157,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -3241,7 +3245,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyChanged
     {
         private ReinfEvtServPrestInfoServPrestIdeEstabPrest ideEstabPrestField;
@@ -3278,7 +3282,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabPrestField;
@@ -3349,7 +3353,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscTomadorField;
@@ -3600,7 +3604,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : object, INotifyPropertyChanged
     {
         private string serieField;
@@ -3722,7 +3726,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ : object, INotifyPropertyChanged
     {
         private string tpServicoField;
@@ -3912,7 +3916,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcRetPrincField;
@@ -4000,7 +4004,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/v2_01_01")]
     public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcRetAdicField;
@@ -4090,8 +4094,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01", IsNullable = false)]
     public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtAssocDespRec evtAssocDespRecField;
@@ -4160,7 +4164,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
     {
         private ReinfEvtAssocDespRecIdeEvento ideEventoField;
@@ -4231,7 +4235,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChanged
     {
         private IndicadorRetificacao indRetifField;
@@ -4353,7 +4357,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscField;
@@ -4424,7 +4428,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -4495,7 +4499,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, INotifyPropertyChanged
     {
         private string cnpjOrigRecursoField;
@@ -4617,7 +4621,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso : object, INotifyPropertyChanged
     {
         private TipoRepasseAssocDesp tpRepasseField;
@@ -4705,7 +4709,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -4795,8 +4799,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01", IsNullable = false)]
     public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtAssocDespRep evtAssocDespRepField;
@@ -4865,7 +4869,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -4936,7 +4940,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscField;
@@ -5012,7 +5016,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -5083,7 +5087,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep : object, INotifyPropertyChanged
     {
         private string cnpjAssocDespField;
@@ -5205,7 +5209,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso : object, INotifyPropertyChanged
     {
         private string tpRepasseField;
@@ -5293,7 +5297,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/v2_01_01")]
     public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -5383,8 +5387,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01", IsNullable = false)]
     public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtComProd evtComProdField;
@@ -5453,7 +5457,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProd : object, INotifyPropertyChanged
     {
         private ReinfEvtComProdIdeEvento ideEventoField;
@@ -5541,7 +5545,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     {
         private IndicadorRetificacao indRetifField;
@@ -5663,7 +5667,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscField;
@@ -5717,7 +5721,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
     {
         private ReinfEvtComProdInfoComProdIdeEstab ideEstabField;
@@ -5754,7 +5758,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -5944,7 +5948,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotifyPropertyChanged
     {
         private IndicadorContribuicaoProd indComField;
@@ -6015,7 +6019,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
     public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -6139,8 +6143,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01", IsNullable = false)]
     public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtCPRB evtCPRBField;
@@ -6209,7 +6213,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -6297,7 +6301,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
     {
         private ReinfEvtCPRBInfoCPRBIdeEstab ideEstabField;
@@ -6334,7 +6338,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -6456,7 +6460,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyPropertyChanged
     {
         private string codAtivEconField;
@@ -6629,7 +6633,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INotifyPropertyChanged
     {
         private TipoAjusteContribuicao tpAjusteField;
@@ -6734,7 +6738,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
     public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -6824,8 +6828,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_01", IsNullable = false)]
     public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtReabreEvPer evtReabreEvPerField;
@@ -6894,7 +6898,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_01")]
     public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEventoPeriodicoR209x ideEventoField;
@@ -6967,8 +6971,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01", IsNullable = false)]
     public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtFechaEvPer evtFechaEvPerField;
@@ -7037,7 +7041,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
     public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
     {
         private ReinfEvtIdeEventoPeriodicoR209x ideEventoField;
@@ -7142,7 +7146,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
     public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChanged
     {
         private string nmRespField;
@@ -7230,7 +7234,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
     public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     {
         private SimNao evtServTmField = SimNao.Nao;
@@ -7405,8 +7409,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01", IsNullable = false)]
     public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtEspDesportivo evtEspDesportivoField;
@@ -7475,7 +7479,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
     {
         private ReinfEvtEspDesportivoIdeEvento ideEventoField;
@@ -7547,7 +7551,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyChanged
     {
         private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
@@ -7670,7 +7674,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscField;
@@ -7741,7 +7745,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscEstabField;
@@ -7830,7 +7834,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INotifyPropertyChanged
     {
         private string nrBoletimField;
@@ -8122,7 +8126,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos : object, INotifyPropertyChanged
     {
         private TipoIngressoCompeticao tpIngressoField;
@@ -8261,7 +8265,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas : object, INotifyPropertyChanged
     {
         private TipoReceitaCompeticao tpReceitaField;
@@ -8332,7 +8336,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object, INotifyPropertyChanged
     {
         private string vlrReceitaTotalField;
@@ -8454,7 +8458,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
     public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc : object, INotifyPropertyChanged
     {
         private TipoProcesso tpProcField;
@@ -8544,8 +8548,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01", IsNullable = false)]
     public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
     {
         private ReinfEvtExclusao evtExclusaoField;
@@ -8614,7 +8618,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
     public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     {
         private ReinfEvtExclusaoIdeEvento ideEventoField;
@@ -8703,7 +8707,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
     public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
     {
         private Ambiente tpAmbField;
@@ -8775,7 +8779,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
     public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
     {
         private PersonalidadeJuridica tpInscField;
@@ -8830,7 +8834,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1
     [Serializable()]
     [DebuggerStepThrough()]
     [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_00")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
     public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChanged
     {
         private string tpEventoField;
