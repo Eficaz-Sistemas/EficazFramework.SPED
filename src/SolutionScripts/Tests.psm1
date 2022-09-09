@@ -8,7 +8,7 @@ Param (
 	Process {
 		$location = Get-Location
 
-		dotnet test ./Tests/EficazFramework.Tests/EficazFramework.Tests.csproj --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./Coverage/' /p:Exclude=[*]EficazFramework.Resources.Strings.*%2c[*]EficazFramework.Data.*2c[*]EficazFramework.Utilities.*
+		dotnet test ./Tests/EficazFramework.Tests/EficazFramework.Tests.csproj --filter FullyQualifiedName~EficazFramework.SPED  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./Coverage/' /p:Exclude=[*]EficazFramework.Resources.Strings.*%2c[*]EficazFramework.Data.*2c[*]EficazFramework.Utilities.*
 					
 		$relativepath = 'Tests\EficazFramework.Tests\Coverage'
 		$source = '-reports:./' + $relativepath.replace('\','/') + '/coverage.cobertura.xml'
