@@ -300,5 +300,163 @@ public enum TipoEventoExclusao
 
     /// <remarks/>
     [System.Xml.Serialization.XmlEnum("R-3010")]
-    R3010 = 3010
+    R3010 = 3010,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("R-4010")]
+    R4010 = 4010
+
+}
+
+
+public enum RelacaoDependencia
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Cônjuge")]
+    Conjuge = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Companheiro(a) com o(a) qual tenha filho ou viva há mais de 5 (cinco) anos ou possua declaração de união estável")]
+    UniaoEstavel = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Filho(a) ou enteado(a)")]
+    FilhoOuEnteado = 3,
+    [System.Xml.Serialization.XmlEnum("6")]
+    [System.ComponentModel.Description("Irmão(ã), neto(a) ou bisneto(a) sem arrimo dos pais, do(a) qual detenha a guarda judicial do(a) qual detenha a guarda judicial")]
+    IrmaoNetoOuBisnetoGuardaJudicial = 6,
+    [System.Xml.Serialization.XmlEnum("8")]
+    [System.ComponentModel.Description("Pais")]
+    Pais = 8,
+    [System.Xml.Serialization.XmlEnum("9")]
+    [System.ComponentModel.Description("Avós e bisavós")]
+    AvosOuBisavos = 9,
+    [System.Xml.Serialization.XmlEnum("10")]
+    [System.ComponentModel.Description("Menor pobre do qual detenha a guarda judicial")]
+    MenorGuardaJudicial = 10,
+    [System.Xml.Serialization.XmlEnum("11")]
+    [System.ComponentModel.Description("A pessoa absolutamente incapaz, da qual seja tutor ou curador")]
+    IncapazTutor = 11,
+    [System.Xml.Serialization.XmlEnum("12")]
+    [System.ComponentModel.Description("Ex-cônjuge")]
+    ExConjuge = 12,
+    [System.Xml.Serialization.XmlEnum("99")]
+    [System.ComponentModel.Description("Agregado/Outros")]
+    AgregadoOutros = 99,
+}
+
+public enum IndicadorFciScp
+{
+
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("FCI - Fundo ou clube de investimento")]
+    FCI = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("SCP - Sociedade em conta de participação")]
+    SCP = 2
+}
+
+public enum IndicadorTipoDeducaoPrevidenciaria
+{
+
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Previdência oficial")]
+    PrevidenciaOficial = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Previdência privada")]
+    PrevidenciaPrivada = 2,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Fundo de aposentadoria programada individual - Fapi")]
+    Fapi = 3,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("Fundação de previdência complementar do servidor público - Funpresp")]
+    Funpresp = 4,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("Pensão alimentícia")]
+    PensaoAlimenticia = 5,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("7")]
+    [System.ComponentModel.Description("Dependentes")]
+    Dependentes = 7,
+
+}
+
+public enum TipoIsencao
+{
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Parcela isenta 65 anos")]
+    ParcelaIsenta65Anos = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Diária de viagem")]
+    DiariaViagem = 2,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Indenização e rescisão de contrato, inclusive a título de PDV e acidentes de trabalho")]
+    IndenizacaoTrabalhista = 3,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("Abono pecuniário")]
+    AbonoPecuniario = 4,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("Valores pagos a titular ou sócio de microempresa ou empresa de pequeno porte, exceto pró-labore, alugueis e serviços prestados")]
+    ValoresPagosTitularMeEpp = 5,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("6")]
+    [System.ComponentModel.Description("Pensão, aposentadoria ou reforma por moléstia grave ou acidente em serviço")]
+    MolestiaGraveOuAcidente = 6,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("7")]
+    [System.ComponentModel.Description("Complementação de aposentadoria, correspondente às contribuições efetuadas no período de 01/01/1989 a 31/12/1995")]
+    ComplementoAposentadoria89a95 = 7,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("8")]
+    [System.ComponentModel.Description("Ajuda de custo")]
+    AjudaCusto = 8,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("9")]
+    [System.ComponentModel.Description("Rendimentos pagos sem retenção do IR na fonte - Lei 10.833/2003")]
+    RendimentoSemIRRF = 9,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("99")]
+    [System.ComponentModel.Description("Outros (especificar)")]
+    Outros = 99,
+
+}
+
+public enum IndicadorOrigemDosRecursos
+{
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Recursos do próprio declarante")]
+    Propries = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Recursos de terceiros - Declarante é a instituição financeira responsável pelo repasse dos valores")]
+    Terceiros = 2
 }
