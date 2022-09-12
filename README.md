@@ -5,7 +5,7 @@
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps coverage](https://eficazshields.azurewebsites.net/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
 ![Licence](https://img.shields.io/static/v1?label=licence&message=MIT&color=blue&style=flat-square&logo=github&logoColor=white)
-[![Discord](https://eficazshields.azurewebsites.net/discord/846078359498653706?color=purple&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/ePvZEGBgaf)
+[![Discord](https://eficazshields.azurewebsites.net/discord/846078359498653706?color=purple&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/QgtMy6J6)
 [![Twitter Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&label=twitter&logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
 ![EFD ICMS/IPI](https://eficazshields.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v017-red?style=flat-square)
 ![EFD Contribuições](https://eficazshields.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
