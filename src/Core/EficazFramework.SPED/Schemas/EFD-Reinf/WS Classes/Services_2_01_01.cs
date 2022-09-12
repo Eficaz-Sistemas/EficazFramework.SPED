@@ -32,8 +32,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01", IsNullable = false)]
     public partial class RetornoLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfRetornoLoteEventos retornoLoteEventosField;
@@ -328,8 +328,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v1_05_01")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v1_05_01", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v2_01_01", IsNullable = false)]
     public partial class EnvioLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfLoteEventos loteEventosField;
@@ -607,8 +607,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01", IsNullable = false)]
     public partial class TotalEventoContrib : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfEvtTotalContrib evtTotalContribField;
@@ -1214,8 +1214,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
-    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
+    [XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01", IsNullable = false)]
     public partial class TotalEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfEvtTotal evtTotalField;
@@ -1508,7 +1508,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContrib : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfEvtTotalContribIdeEvento ideEventoField;
@@ -1633,7 +1633,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class ReinfRetornoLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private TIdeTransmissor ideTransmissorField;
@@ -1722,7 +1722,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class TIdeTransmissor : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string idTransmissorField;
@@ -1760,7 +1760,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class TArquivoReinf : object, System.ComponentModel.INotifyPropertyChanged
     {
         private XElement anyField;
@@ -1860,7 +1860,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class TStatus : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cdStatusField;
@@ -1933,7 +1933,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class TRegistroOcorrenciasOcorrencias : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string tipoField;
@@ -2022,7 +2022,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/retornoLoteEventos/v2_01_01")]
     public partial class ReinfRetornoLoteEventosRetornoEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private TArquivoReinf[] eventoField;
@@ -2060,7 +2060,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v2_01_01")]
     public partial class ReinfLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
     {
         private List<TArquivoeReinf> eventoField;
@@ -2098,8 +2098,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v1_05_01")]
-    [XmlRoot("evento", Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v1_05_01", IsNullable = false)]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v2_01_01")]
+    [XmlRoot("evento", Namespace = "http://www.reinf.esocial.gov.br/schemas/envioLoteEventos/v2_01_01", IsNullable = false)]
     public partial class TArquivoeReinf : object, System.ComponentModel.INotifyPropertyChanged
     {
         private XElement anyField;
@@ -2393,7 +2393,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribIdeEvento : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string perApurField;
@@ -2431,7 +2431,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribIdeContri : object, System.ComponentModel.INotifyPropertyChanged
     {
         private byte tpInscField;
@@ -2486,7 +2486,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribIdeRecRetorno : object, System.ComponentModel.INotifyPropertyChanged
     {
         private TStatus1 ideStatusField;
@@ -2524,7 +2524,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(TypeName = "TStatus", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(TypeName = "TStatus", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class TStatus1 : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cdRetornoField;
@@ -2596,7 +2596,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(TypeName = "TRegistroOcorrencias", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(TypeName = "TRegistroOcorrencias", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class TRegistroOcorrencias1 : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string tpOcorrField;
@@ -2685,7 +2685,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class TDadosProcessamentoEvento : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string nrProtEntrField;
@@ -2791,7 +2791,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContrib : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string nrRecArqBaseField;
@@ -2931,7 +2931,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRTom : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cnpjPrestadorField;
@@ -3003,7 +3003,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRTomInfoCRTom : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRTomField;
@@ -3075,7 +3075,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRPrest : object, System.ComponentModel.INotifyPropertyChanged
     {
         private byte tpInscTomadorField;
@@ -3215,7 +3215,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRRecRepAD : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cnpjAssocDespField;
@@ -3321,7 +3321,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRComl : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRComlField;
@@ -3393,7 +3393,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/v2_01_01")]
     public partial class ReinfEvtTotalContribInfoTotalContribRCPRB : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRCPRBField;
@@ -3465,7 +3465,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotal : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ReinfEvtTotalIdeEvento ideEventoField;
@@ -3588,7 +3588,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalIdeEvento : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string perApurField;
@@ -3626,7 +3626,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalIdeContri : object, System.ComponentModel.INotifyPropertyChanged
     {
         private byte tpInscField;
@@ -3681,7 +3681,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalIdeRecRetorno : object, System.ComponentModel.INotifyPropertyChanged
     {
         private TStatus2 ideStatusField;
@@ -3719,7 +3719,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(TypeName = "TStatus", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(TypeName = "TStatus", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class TStatus2 : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cdRetornoField;
@@ -3791,7 +3791,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(TypeName = "TRegistroOcorrencias", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(TypeName = "TRegistroOcorrencias", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class TRegistroOcorrencias2 : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string tpOcorrField;
@@ -3880,7 +3880,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoRecEv : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string nrProtEntrField;
@@ -3986,7 +3986,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotal : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string nrRecArqBaseField;
@@ -4126,7 +4126,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRTom : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cnpjPrestadorField;
@@ -4198,7 +4198,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRTomInfoCRTom : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRTomField;
@@ -4270,7 +4270,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRPrest : object, System.ComponentModel.INotifyPropertyChanged
     {
         private byte tpInscTomadorField;
@@ -4410,7 +4410,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRRecRepAD : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cnpjAssocDespField;
@@ -4516,7 +4516,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRComl : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRComlField;
@@ -4588,7 +4588,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRCPRB : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRCPRBField;
@@ -4660,7 +4660,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
     [Serializable()]
     [DebuggerStepThrough()]
     [System.ComponentModel.DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v1_05_01")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTotal/v2_01_01")]
     public partial class ReinfEvtTotalInfoTotalRRecEspetDesp : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string cRRecEspetDespField;
