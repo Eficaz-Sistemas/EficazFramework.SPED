@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01
+namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
 {
 
     // 
