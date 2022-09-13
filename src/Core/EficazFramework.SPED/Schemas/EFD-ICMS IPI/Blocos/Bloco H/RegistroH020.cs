@@ -25,8 +25,8 @@ public class RegistroH020 : Primitives.Registro
         var writer = new System.Text.StringBuilder();
         writer.Append("|H020|"); // 1
         writer.Append(CST + "|"); // 2
-        writer.Append(BaseCalculoICMS.ValueToString(2) + "|"); // 3
-        writer.Append(ValorICMS.ValueToString(2) + "|"); // 4
+        writer.Append(string.Format("{0:0.##}", BaseCalculoICMS) + "|"); // 3
+        writer.Append(string.Format("{0:0.##}", ValorICMS) + "|"); // 4
         return writer.ToString();
     }
 
