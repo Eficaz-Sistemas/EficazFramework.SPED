@@ -41,6 +41,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Schemas\EFD-Reinf.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFD-Reinf.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Schemas\LCDPR.Designer.cs">
       <DependentUpon>LCDPR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -69,6 +74,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Schemas\EFD-Reinf.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EFD-Reinf.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Schemas\LCDPR.resx">
       <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
       <LastGenOutput>LCDPR.Designer.cs</LastGenOutput>
@@ -97,7 +107,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Schemas\EFD-Reinf\2.1.1\" />
     <Folder Include="Schemas\LCDPR\BlocoQ\" />
     <Folder Include="Schemas\LCDPR\Bloco9\" />
   </ItemGroup>

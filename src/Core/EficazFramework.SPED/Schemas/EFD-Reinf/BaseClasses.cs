@@ -12,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
+using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
 namespace EficazFramework.SPED.Schemas.EFD_Reinf
@@ -50,7 +52,14 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
         public abstract string ContribuinteCNPJ();
 
         /// <summary>
-        /// Serializes current TNfeProc object into an XML document
+        /// Substitui o método ToString() de object para retornar o resultado do método <see cref="Serialize"/>
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() =>
+            Serialize();
+
+        /// <summary>
+        /// Serializa o evento da EFD-Reinf para a representação em string do conteúdo do XML.
         /// </summary>
         /// <returns>string XML value</returns>
         public string Serialize()
@@ -79,6 +88,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
                 }
             }
         }
+
+        /// <summary>
+        /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
+        /// </summary>
+        /// <returns></returns>
+        public IEfdReinfEvt Deserialize(string xmlContent)
+        {
+            sSerializer = DefineSerializer();
+            return Deserialize(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as IEfdReinfEvt;
+        }
+
+        /// <summary>
+        /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
+        /// </summary>
+        /// <returns></returns>
+        public IEfdReinfEvt Deserialize(System.IO.Stream xmlStream)
+        {
+            sSerializer = DefineSerializer();
+            var result = sSerializer.Deserialize(xmlStream);
+            return result as IEfdReinfEvt;
+        }
+
     }
 
     #endregion
