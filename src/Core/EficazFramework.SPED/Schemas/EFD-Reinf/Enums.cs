@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 public enum Ambiente
 {
@@ -459,4 +457,23 @@ public enum IndicadorOrigemDosRecursos
     [System.Xml.Serialization.XmlEnum("2")]
     [System.ComponentModel.Description("Recursos de terceiros - Declarante é a instituição financeira responsável pelo repasse dos valores")]
     Terceiros = 2
+}
+
+public enum IndicadorNIF
+{
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Beneficiário com NIF")]
+    ComNIF = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Beneficiário dispensado do NIF")]
+    DispensadoNIF = 2,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("País não exige NIF")]
+    PaisNaoExigeNIF = 3
+
 }
