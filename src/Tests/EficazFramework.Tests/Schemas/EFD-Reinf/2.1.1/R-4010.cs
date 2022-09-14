@@ -1,28 +1,15 @@
-﻿using EficazFramework.SPED.Schemas.CTe;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01.TestPeriodicos;
 
-namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01.TestPeriodicos;
-
-internal class TestR4010 : BaseEfdReinfTest<R4010>
+public class R4010Test : BaseEfdReinfTest<R4010>
 {
-    private int key = 0;
-
-    //[Test]
-    internal void TesteBasico()
+    [Test]
+    public void LeituraEscrita()
     {
         TestaEvento();
     }
 
-    public override void PreencheCampos(R4010 evento)
-    {
-        switch (key)
-        {
-            case 0:
-                PreencheCampos_TesteBasico(evento);
-                break;
-        }
-    }
 
-    private static void PreencheCampos_TesteBasico(R4010 evento)
+    public override void PreencheCampos(R4010 evento)
     {
         evento.evtRetPF = new()
         {
@@ -54,6 +41,6 @@ internal class TestR4010 : BaseEfdReinfTest<R4010>
 
     public override void ValidaLeituraXml(R4010 instanciaPopulada, R4010 instanciaXml)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
