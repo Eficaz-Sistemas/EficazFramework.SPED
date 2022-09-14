@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
@@ -266,14 +266,14 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
 public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INotifyPropertyChanged
 {
 
-    private byte tpInscEstabField;
+    private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
 
     private ReinfEvtRetPFIdeEstabIdeBenef ideBenefField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public byte tpInscEstab
+    public PersonalidadeJuridica tpInscEstab
     {
         get
         {
@@ -2047,7 +2047,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl : objec
     }
 
     /// <remarks/>
-    [XmlElement(Order = 1]
+    [XmlElement(Order = 1)]
     public decimal? vlrSaude {
         get {
             return this.vlrSaudeField;
