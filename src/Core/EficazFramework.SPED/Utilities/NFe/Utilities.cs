@@ -30,15 +30,9 @@ public class DownloadNF
         return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), data);
     }
 
-    public string NFeToXmlString(byte[] data)
-    {
-        return Encoding.UTF8.GetString(data);
-    }
-
     public string NFeToXmlString(object instance, Encoding encoder)
     {
-        if (instance is null)
-            return null;
+        if (instance is null) return null;
         try
         {
             var xml = NFeToXmlDocument(instance);
