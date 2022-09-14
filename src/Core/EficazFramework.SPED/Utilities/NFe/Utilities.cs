@@ -27,9 +27,7 @@ public class DownloadNF
 
     public XmlDocument NFeToXmlDocument(byte[] data)
     {
-        var xml = new XmlDocument();
-        xml.LoadXml(Encoding.UTF8.GetString(data));
-        return xml;
+        return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), data);
     }
 
     public string NFeToXmlString(byte[] data)
