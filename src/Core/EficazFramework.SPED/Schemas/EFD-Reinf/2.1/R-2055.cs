@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_1;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
 [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
