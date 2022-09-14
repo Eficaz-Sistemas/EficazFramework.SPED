@@ -1,8 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.VisualBasic;
 
@@ -12,7 +9,7 @@ public class Operations
 {
     private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
 
-    public static IXmlSpedDocument Open(System.IO.Stream source)
+    public static IXmlSpedDocument Open(Stream source)
     {
         return Task.Run(() => OpenAsync(source)).Result;
     }
@@ -21,10 +18,10 @@ public class Operations
     {
         string objString = null;
         XDocument xdoc;
-        var reader = new System.IO.StreamReader(source);
+        using var reader = new StreamReader(source);
         objString = await reader.ReadToEndAsync();
         ResetStreamOffset(source);
-        var fixedstream = new System.IO.MemoryStream();
+        using var fixedstream = new MemoryStream();
         try
         {
             // ## REMOVENDO vbNullChar
@@ -35,7 +32,7 @@ public class Operations
                 fixedstring = DTCheck.Replace(fixedstring, "$1");
 
             // ## CRIANDO NOVO STREAM
-            var stringReader = new System.IO.StringReader(fixedstring);
+            using var stringReader = new StringReader(fixedstring);
             xdoc = XDocument.Load(System.Xml.XmlReader.Create(stringReader));
             stringReader.Dispose();
             xdoc.Save(fixedstream);
@@ -225,8 +222,6 @@ public class Operations
             Debug.WriteLine(outer_ex.ToString());
         }
 
-        fixedstream.Dispose();
-        reader.Dispose();
         return resultobj;
     }
 
