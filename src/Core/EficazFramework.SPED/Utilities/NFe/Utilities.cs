@@ -1,35 +1,43 @@
-﻿using System;
+﻿using EficazFramework.SPED.Models.Contracts;
 using System.IO;
-using System.Text;
 using System.Xml;
+using EficazFramework.SPED.Schemas.NFe;
 
 namespace EficazFramework.SPED.Utilities.NFe;
 
 public class DownloadNF
 {
-    public static XmlDocument NFeToXmlDocument(object instance)
+    private readonly IXMLFunctions _xmlFunctions;
+
+    public DownloadNF(IXMLFunctions xmlFunctions)
     {
-        if (instance is null)
-            return null;
-        string tmp = ((XmlElement)((XmlNode[])instance)[1]).OuterXml;
-        var xml = new XmlDocument();
-        xml.LoadXml(tmp);
-        return xml;
+        _xmlFunctions = xmlFunctions;
     }
 
-    public static XmlDocument NFeToXmlDocument(byte[] data)
+    /// <summary>
+    /// Método para converter NFe em um documento XML
+    /// </summary>
+    /// <param name="instance">Informação para o XML Document</param>
+    public XmlDocument NFeToXmlDocument(object instance)
+    {
+        if (instance is null) return null;
+
+        return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), ((XmlElement)((XmlNode[])instance)[1]).OuterXml);
+    }
+
+    public XmlDocument NFeToXmlDocument(byte[] data)
     {
         var xml = new XmlDocument();
         xml.LoadXml(Encoding.UTF8.GetString(data));
         return xml;
     }
 
-    public static string NFeToXmlString(byte[] data)
+    public string NFeToXmlString(byte[] data)
     {
         return Encoding.UTF8.GetString(data);
     }
 
-    public static string NFeToXmlString(object instance, Encoding encoder)
+    public string NFeToXmlString(object instance, Encoding encoder)
     {
         if (instance is null)
             return null;
@@ -57,9 +65,9 @@ public class DownloadNF
         }
     }
 
-    public static Schemas.NFe.ProcessoNFe NFeObject(object instance)
+    public ProcessoNFe NFeObject(object instance)
     {
-        var proc = Schemas.NFe.ProcessoNFe.Deserialize(NFeToXmlString(instance, Encoding.UTF8)); // twr.ToString)
+        var proc = ProcessoNFe.Deserialize(NFeToXmlString(instance, Encoding.UTF8)); // twr.ToString)
         return proc;
     }
 }
