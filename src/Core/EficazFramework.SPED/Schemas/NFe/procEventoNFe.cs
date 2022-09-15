@@ -108,11 +108,11 @@ namespace EficazFramework.SPED.Schemas.NFe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeEvent;
+                return XmlDocumentType.NFeEvent;
             }
         }
 

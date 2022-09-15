@@ -61,11 +61,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_ABRASF_ConsultaLoteNFSe;
+                return XmlDocumentType.NFSe_ABRASF_ConsultaLoteNFSe;
             }
         }
 
@@ -467,11 +467,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_CommonSchema;
+                return XmlDocumentType.NFSe_CommonSchema;
             }
         }
 
