@@ -123,7 +123,7 @@
 
   <ItemGroup>
     <None Update="Resources\Certificados\WayneEnterprisesInc.pfx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
