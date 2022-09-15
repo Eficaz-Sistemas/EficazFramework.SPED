@@ -26,7 +26,6 @@ public class DownloadNF
 
                     using (streamReader)
                     {
-                        memoryStream.Seek(0L, SeekOrigin.Begin);
                         return streamReader.ReadToEnd();
                     }
                 }
@@ -43,7 +42,7 @@ public class DownloadNF
     {
         if (instance is null) return null;
 
-        using var memoryStream = new MemoryStream();
+        using var memoryStream = _xmlFunctions.CreateMemoryStreamWithParameters();
         return ProcessoNFe.Deserialize(
             NFeToXmlString
                 (

@@ -46,4 +46,11 @@ public class XMLFunctions : IXMLFunctions
     {
         LoadXMLWithAnInformation(CreateXmlDocument(), ((XmlElement)((XmlNode[])instance)[1]).OuterXml).Save(xmlWriter);
     }
+
+    public MemoryStream CreateMemoryStreamWithParameters()
+    {
+        var memoryStream = new MemoryStream();
+        memoryStream.Seek(0L, SeekOrigin.Begin);
+        return memoryStream;
+    }
 }

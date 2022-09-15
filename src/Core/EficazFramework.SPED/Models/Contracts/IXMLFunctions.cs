@@ -12,4 +12,5 @@ public interface IXMLFunctions
     public XmlWriterSettings CreateXMLWriterDefaultSettings(Encoding encoder);
     public StreamReader CreateStreamReader(MemoryStream memoryStream, Encoding encoder, bool specificEncoder);
     public void SaveObjectInstanceInXMLWriter(object instance, XmlWriter xmlWriter);
+    public MemoryStream CreateMemoryStreamWithParameters();
 }
