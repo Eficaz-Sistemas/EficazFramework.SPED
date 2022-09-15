@@ -129,10 +129,16 @@
   <data name="Classes_Save_NullStreamExceptionMessage" xml:space="preserve">
     <value>Nenhuma fonte de dados foi informada para gravação.</value>
   </data>
-  <data name="i509Certificate2DialogTitle" xml:space="preserve">
+  <data name="iX509Certificate2DialogTitle" xml:space="preserve">
     <value>Selecione um Certificado Digital</value>
   </data>
   <data name="iX509Certificate2NullReference" xml:space="preserve">
     <value>Nenhum certificado digital válido foi selecionado para utilização do serviço.</value>
+  </data>
+  <data name="XmlSign_NonUniqueTag" xml:space="preserve">
+    <value>A URI (tag) de assinatura {0} existe em multiplicidade. A assinatura não será realizada pois a tag precisa ser única no XML.</value>
+  </data>
+  <data name="XmlSign_TagNotFound" xml:space="preserve">
+    <value>A URI (tag) de assinatura {0} não foi encontrada.</value>
   </data>
 </root>
