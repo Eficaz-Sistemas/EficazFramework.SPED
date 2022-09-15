@@ -2,12 +2,17 @@
 
 public class R4010Test : BaseEfdReinfTest<R4010>
 {
+    public override string SignatureTag => throw new NotImplementedException();
+
+    public override string ValidationSchema => throw new NotImplementedException();
+
+    public override string ValidationSchemaNamespace => throw new NotImplementedException();
+
     [Test]
     public void LeituraEscrita()
     {
         TestaEvento();
     }
-
 
     public override void PreencheCampos(R4010 evento)
     {
@@ -39,8 +44,11 @@ public class R4010Test : BaseEfdReinfTest<R4010>
         };
     }
 
-    public override void ValidaLeituraXml(R4010 instanciaPopulada, R4010 instanciaXml)
+    public override void ValidaInstanciasLeituraEscrita(R4010 instanciaPopulada, R4010 instanciaXml)
     {
-        //throw new System.NotImplementedException();
+        // TODO: verifique se os campos de instanciaXml, preenchidos a partir da leitura de um XmlDocument, 
+        //       correspondem exatamente aos valores de instanciaPopulada, formado à partir do método
+        //       PreencheCampos().
+
     }
 }

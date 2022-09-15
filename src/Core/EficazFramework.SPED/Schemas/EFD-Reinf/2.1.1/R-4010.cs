@@ -87,8 +87,9 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
             this.RaisePropertyChanged("ideEvento");
         }
     }
-    
+
     /// <remarks/>
+    [XmlElement(Order = 1)]
     public ReinfEvtIdeContri ideContri {
         get {
             return this.ideContriField;
@@ -100,7 +101,7 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     }
 
     /// <remarks/>
-    [XmlElement(Order = 1)]
+    [XmlElement(Order = 2)]
     public ReinfEvtRetPFIdeEstab ideEstab {
         get {
             return this.ideEstabField;
@@ -111,7 +112,7 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
         }
     }
 
-    /// <remarks/>
+    [XmlAttribute(DataType = "ID")]
     public string id {
         get {
             return this.idField;
@@ -367,8 +368,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     }
 
     /// <remarks/>
-    [XmlElement(Order = 2)]
-    [System.Xml.Serialization.XmlElementAttribute("ideDep")]
+    [System.Xml.Serialization.XmlElementAttribute("ideDep", Order = 2)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDep {
         get {
             return this.ideDepField;
@@ -380,8 +380,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     }
 
     /// <remarks/>
-    [XmlElement(Order = 3)]
-    [System.Xml.Serialization.XmlElementAttribute("idePgto")]
+    [System.Xml.Serialization.XmlElementAttribute("idePgto", Order = 3)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgto {
         get {
             return this.idePgtoField;
@@ -393,8 +392,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     }
 
     /// <remarks/>
-    [XmlElement(Order = 4)]
-    [System.Xml.Serialization.XmlElementAttribute("ideOpSaude")]
+    [System.Xml.Serialization.XmlElementAttribute("ideOpSaude", Order = 4)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaude {
         get {
             return this.ideOpSaudeField;
@@ -486,8 +484,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgto : object, System.Compo
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgtoField = new();
 
     /// <remarks/>
-    [XmlElement(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
+    [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order = 0)]
     public string natRend {
         get {
             return this.natRendField;
@@ -511,8 +508,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgto : object, System.Compo
     }
 
     /// <remarks/>
-    [XmlElement(Order = 2)]
-    [System.Xml.Serialization.XmlElementAttribute("infoPgto")]
+    [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 2)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgto {
         get {
             return this.infoPgtoField;
@@ -561,8 +557,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     private ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt infoPgtoExtField;
 
     /// <remarks/>
-    [XmlElement(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType ="date")]
+    [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType ="date", Order = 0)]
     public System.DateTime DataFatoGerador {
         get {
             return this.dtFGField;
@@ -706,7 +701,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("detDed")]
+    [System.Xml.Serialization.XmlElementAttribute("detDed", Order = 12)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed> detDed {
         get {
             return this.detDedField;
@@ -718,7 +713,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("rendIsento")]
+    [System.Xml.Serialization.XmlElementAttribute("rendIsento", Order = 13)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento> rendIsento {
         get {
             return this.rendIsentoField;
@@ -730,7 +725,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("infoProcRet")]
+    [System.Xml.Serialization.XmlElementAttribute("infoProcRet", Order = 14)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet> infoProcRet {
         get {
             return this.infoProcRetField;
@@ -740,8 +735,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("infoProcRet");
         }
     }
-    
+
     /// <remarks/>
+    [XmlElement(Order = 15)]
     public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRA infoRRA {
         get {
             return this.infoRRAField;
@@ -751,8 +747,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("infoRRA");
         }
     }
-    
+
     /// <remarks/>
+    [XmlElement(Order = 16)]
     public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud infoProcJud {
         get {
             return this.infoProcJudField;
@@ -762,8 +759,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("infoProcJud");
         }
     }
-    
+
     /// <remarks/>
+    [XmlElement(Order = 17)]
     public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt infoPgtoExt {
         get {
             return this.infoPgtoExtField;
@@ -938,7 +936,6 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
     private decimal? vlrIsentoField;  
     private string descRendimentoField;
     private System.DateTime? dtLaudoField;
-    private bool dtLaudoFieldSpecified;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -977,8 +974,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
     }
 
     /// <remarks/>
-    [XmlElement(Order = 3)]
-    [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
+    [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order = 3)]
     public System.DateTime? dtLaudo {
         get {
             return this.dtLaudoField;
@@ -2059,8 +2055,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl : objec
     }
 
     /// <remarks/>
-    [XmlElement(Order = 2)]
-    [System.Xml.Serialization.XmlElementAttribute("infoReembDep")]
+    [System.Xml.Serialization.XmlElementAttribute("infoReembDep", Order = 2)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReembDep> infoReembDep {
         get {
             return this.infoReembDepField;
