@@ -68,13 +68,13 @@ public class Registro3N : Registro3
                 {
                     break;
                 }
-            // DARF SIMPLES: Fodam-se, todos vocês
+            // DARF SIMPLES, âmbito federal a implementar
 
             case "04":
                 {
                     break;
                 }
-            // DARJ: Não curtimos o Rio, que nunca foi lindo
+            // DARJ: Apenas Rio de Janeiro
 
             case "22":
             case "23":
@@ -88,7 +88,7 @@ public class Registro3N : Registro3
                 {
                     break;
                 }
-                // ah mas nao vou perder tempo com isso agora né!
+                // algum tipo de tributo que não consta no manual técnico, descartemos.
 
         }
 
