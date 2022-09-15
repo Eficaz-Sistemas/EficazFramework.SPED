@@ -20,8 +20,6 @@ public class DownloadNF
     /// <param name="instance">Informação para o XML Document</param>
     public XmlDocument NFeToXmlDocument(object instance)
     {
-        if (instance is null) return null;
-
         return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), ((XmlElement)((XmlNode[])instance)[1]).OuterXml);
     }
 
@@ -32,8 +30,6 @@ public class DownloadNF
 
     public string NFeToXmlString(object instance, MemoryStream memoryStream, XmlWriter xmlWriter, StreamReader streamReader)
     {
-        if (instance is null) return null;
-
         try
         {
             using (memoryStream)
@@ -58,6 +54,8 @@ public class DownloadNF
 
     public ProcessoNFe NFeObject(object instance)
     {
+        if (instance is null) return null;
+
         using var memoryStream = new MemoryStream();
         return ProcessoNFe.Deserialize(
             NFeToXmlString
