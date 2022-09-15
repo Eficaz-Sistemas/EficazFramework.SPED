@@ -36,17 +36,19 @@ public class DownloadNF
         try
         {
             var xml = NFeToXmlDocument(instance);
-            var ms = new MemoryStream();
-            var xmlWriter = XmlWriter.Create(ms, new XmlWriterSettings() { Indent = false, NewLineChars = string.Empty, Encoding = encoder });
-            xml.Save(xmlWriter);
-            var reader = new StreamReader(ms, encoder, true);
-            ms.Seek(0L, SeekOrigin.Begin);
-            string res = reader.ReadToEnd();
-            ms.Close();
-            ms.Dispose();
-            reader.Close();
-            reader.Dispose();
-            return res;
+            using (var ms = new MemoryStream())
+            {
+                using (var xmlWriter = XmlWriter.Create(ms, new XmlWriterSettings() { Indent = false, NewLineChars = string.Empty, Encoding = encoder }))
+                {
+                    xml.Save(xmlWriter);
+                    using (var reader = new StreamReader(ms, encoder, true))
+                    {
+                        ms.Seek(0L, SeekOrigin.Begin);
+                        string res = reader.ReadToEnd();
+                        return res;
+                    }
+                }
+            }
         }
         // Return stringWriter.ToString
         catch (Exception)
