@@ -201,11 +201,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeEvtConfirmacaoEntrega;
+                return XmlDocumentType.CTeEvtConfirmacaoEntrega;
             }
         }
 

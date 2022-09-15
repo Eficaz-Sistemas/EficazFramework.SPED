@@ -1125,7 +1125,7 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip : object, INotifyProperty
         return Encoding.UTF8.GetString(buffer, 0, buffer.Length);
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
@@ -1133,30 +1133,30 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip : object, INotifyProperty
             {
                 case "resEvento_v1.00.xsd":
                     {
-                        return XMLDocumentType.NFeEvent_Resumo;
+                        return XmlDocumentType.NFeEvent_Resumo;
                     }
 
                 case "resNFe_v1.00.xsd":
                 case "resNFe_v1.01.xsd":
                     {
-                        return XMLDocumentType.NFe_Resumo;
+                        return XmlDocumentType.NFe_Resumo;
                     }
 
                 case "procNFe_v2.00.xsd":
                 case "procNFe_v3.10.xsd":
                 case "procNFe_v4.00.xsd":
                     {
-                        return XMLDocumentType.NFeWithProtocol;
+                        return XmlDocumentType.NFeWithProtocol;
                     }
 
                 case "procEventoNFe_v1.00.xsd":
                     {
-                        return XMLDocumentType.NFeEvent;
+                        return XmlDocumentType.NFeEvent;
                     }
 
                 default:
                     {
-                        return XMLDocumentType.Unknown;
+                        return XmlDocumentType.Unknown;
                     }
             }
         }
@@ -1168,25 +1168,25 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip : object, INotifyProperty
         IXmlSpedDocument r = null;
         switch (DocumentType)
         {
-            case XMLDocumentType.NFeWithProtocol:
+            case XmlDocumentType.NFeWithProtocol:
                 {
                     r = await ProcessoNFe.LoadFromAsync(ms, false);
                     break;
                 }
 
-            case XMLDocumentType.NFeEvent:
+            case XmlDocumentType.NFeEvent:
                 {
                     r = await ProcessoEvento.LoadFromAsync(ms, false);
                     break;
                 }
 
-            case XMLDocumentType.NFe_Resumo:
+            case XmlDocumentType.NFe_Resumo:
                 {
                     r = await RetornoNFeNormal.LoadFromAsync(ms, false);
                     break;
                 }
 
-            case XMLDocumentType.NFeEvent_Resumo:
+            case XmlDocumentType.NFeEvent_Resumo:
                 {
                     r = await ResumoEvento.LoadFromAsync(ms, false);
                     break;
@@ -1436,11 +1436,11 @@ public partial class ResumoEvento : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.NFeEvent_Resumo;
+            return XmlDocumentType.NFeEvent_Resumo;
         }
     }
 

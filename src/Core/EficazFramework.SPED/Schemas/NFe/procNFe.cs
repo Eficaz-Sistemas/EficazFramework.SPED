@@ -85,11 +85,11 @@ namespace EficazFramework.SPED.Schemas.NFe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeWithProtocol_Base;
+                return XmlDocumentType.NFeWithProtocol_Base;
             }
         }
 
@@ -458,11 +458,11 @@ namespace EficazFramework.SPED.Schemas.NFe
         }
 
         [XmlIgnore()]
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeWithProtocol;
+                return XmlDocumentType.NFeWithProtocol;
             }
         }
 
@@ -816,11 +816,11 @@ namespace EficazFramework.SPED.Schemas.NFe
         }
 
         [XmlIgnore()]
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeWithoutProtocol;
+                return XmlDocumentType.NFeWithoutProtocol;
             }
         }
 

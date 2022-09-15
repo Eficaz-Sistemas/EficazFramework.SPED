@@ -108,11 +108,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.BETHA
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_BETHA_LoteRPS;
+                return XmlDocumentType.NFSe_BETHA_LoteRPS;
             }
         }
 

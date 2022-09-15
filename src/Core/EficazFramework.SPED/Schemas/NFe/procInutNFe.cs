@@ -95,11 +95,11 @@ namespace EficazFramework.SPED.Schemas.NFe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeInutilization;
+                return XmlDocumentType.NFeInutilization;
             }
         }
 

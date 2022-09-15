@@ -99,9 +99,9 @@ namespace EficazFramework.SPED.Resources.Strings {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Selecione um Certificado Digital.
         /// </summary>
-        public static string i509Certificate2DialogTitle {
+        public static string iX509Certificate2DialogTitle {
             get {
-                return ResourceManager.GetString("i509Certificate2DialogTitle", resourceCulture);
+                return ResourceManager.GetString("iX509Certificate2DialogTitle", resourceCulture);
             }
         }
         
@@ -111,6 +111,24 @@ namespace EficazFramework.SPED.Resources.Strings {
         public static string iX509Certificate2NullReference {
             get {
                 return ResourceManager.GetString("iX509Certificate2NullReference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A URI (tag) de assinatura {0} existe em multiplicidade. A assinatura não será realizada pois a tag precisa ser única no XML..
+        /// </summary>
+        public static string XmlSign_NonUniqueTag {
+            get {
+                return ResourceManager.GetString("XmlSign_NonUniqueTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A URI (tag) de assinatura {0} não foi encontrada..
+        /// </summary>
+        public static string XmlSign_TagNotFound {
+            get {
+                return ResourceManager.GetString("XmlSign_TagNotFound", resourceCulture);
             }
         }
     }

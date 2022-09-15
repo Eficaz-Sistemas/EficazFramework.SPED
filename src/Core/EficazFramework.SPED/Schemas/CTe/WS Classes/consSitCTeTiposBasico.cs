@@ -1532,11 +1532,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeEvent;
+                return XmlDocumentType.CTeEvent;
             }
         }
 
@@ -1903,11 +1903,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeEvent2;
+                return XmlDocumentType.CTeEvent2;
             }
         }
 

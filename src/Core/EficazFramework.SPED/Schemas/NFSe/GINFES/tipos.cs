@@ -65,11 +65,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.GINFES
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_GINFES_NFSeRPS_Consulta;
+                return XmlDocumentType.NFSe_GINFES_NFSeRPS_Consulta;
             }
         }
 
@@ -384,11 +384,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.GINFES
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_GINFES_LoteRPS2;
+                return XmlDocumentType.NFSe_GINFES_LoteRPS2;
             }
         }
 
@@ -702,11 +702,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.GINFES
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_GINFES_LoteRPS_Envio;
+                return XmlDocumentType.NFSe_GINFES_LoteRPS_Envio;
             }
         }
 
@@ -1033,11 +1033,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.GINFES
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_GINFES_LoteRPS;
+                return XmlDocumentType.NFSe_GINFES_LoteRPS;
             }
         }
 

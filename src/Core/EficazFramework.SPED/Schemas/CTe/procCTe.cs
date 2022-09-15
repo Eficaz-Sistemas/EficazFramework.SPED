@@ -108,11 +108,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeLote;
+                return XmlDocumentType.CTeLote;
             }
         }
 
@@ -482,11 +482,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeWithProtocol;
+                return XmlDocumentType.CTeWithProtocol;
             }
         }
 
@@ -879,11 +879,11 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.CTeWithoutProtocol;
+                return XmlDocumentType.CTeWithoutProtocol;
             }
         }
 

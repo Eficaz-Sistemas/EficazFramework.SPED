@@ -101,11 +101,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_CommonSchema;
+                return XmlDocumentType.NFSe_CommonSchema;
             }
         }
 
@@ -457,11 +457,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_CommonSchema;
+                return XmlDocumentType.NFSe_CommonSchema;
             }
         }
 
@@ -795,11 +795,11 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFSe_CommonSchema_SingleNFse;
+                return XmlDocumentType.NFSe_CommonSchema_SingleNFse;
             }
         }
 
