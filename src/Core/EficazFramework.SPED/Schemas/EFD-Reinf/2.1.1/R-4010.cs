@@ -10,7 +10,6 @@
 public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
     
     private ReinfEvtRetPF evtRetPFField;
-    
     private SignatureType signatureField;
     
     /// <remarks/>
@@ -36,21 +35,9 @@ public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
             this.RaisePropertyChanged("Signature");
         }
     }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4010));
-    }
 
+    // IEfdReinfEvt Members
     public override void GeraEventoID()
     {
         evtRetPFField.id = string.Format("ID{0}{1}{2}", (int)(evtRetPFField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtRetPFField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -61,6 +48,30 @@ public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
         return evtRetPFField.ideContri.nrInsc;
     }
 
+
+
+    // IXmlSignableDocument Members
+    public override string TagToSign => throw new NotImplementedException();
+    public override string Id => evtRetPFField!.id;
+    public override bool EmptyURI => false;
+    public override bool SignAsSHA256 => true;
+
+
+    // PropertyChanged Members
+    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+    protected void RaisePropertyChanged(string propertyName) {
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        if ((propertyChanged != null)) {
+            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+
+    // Serialization Members
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(R4010));
+    }
 }
 
 /// <remarks/>

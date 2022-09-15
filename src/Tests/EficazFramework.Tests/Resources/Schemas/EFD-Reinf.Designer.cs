@@ -59,5 +59,14 @@ namespace EficazFramework.SPED.Resources.Schemas {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        internal static string R4010_v2_01_01 {
+            get {
+                return ResourceManager.GetString("R4010_v2_01_01", resourceCulture);
+            }
+        }
     }
 }
