@@ -30,28 +30,28 @@ public class DownloadNF
         return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), data);
     }
 
-    public string NFeToXmlString(object instance, Encoding encoder)
+    public string NFeToXmlString(object instance, Encoding encoder, MemoryStream memoryStream, XmlWriter xmlWriter, StreamReader streamReader)
     {
         if (instance is null) return null;
+
         try
         {
             var xml = NFeToXmlDocument(instance);
-            using (var ms = new MemoryStream())
+            using (memoryStream)
             {
-                using (var xmlWriter = XmlWriter.Create(ms, new XmlWriterSettings() { Indent = false, NewLineChars = string.Empty, Encoding = encoder }))
+                using (xmlWriter)
                 {
                     xml.Save(xmlWriter);
-                    using (var reader = new StreamReader(ms, encoder, true))
+                    using (streamReader)
                     {
-                        ms.Seek(0L, SeekOrigin.Begin);
-                        string res = reader.ReadToEnd();
-                        return res;
+                        memoryStream.Seek(0L, SeekOrigin.Begin);
+                        return streamReader.ReadToEnd();
                     }
                 }
             }
         }
         // Return stringWriter.ToString
-        catch (Exception)
+        catch
         {
             return null;
         }
@@ -59,7 +59,13 @@ public class DownloadNF
 
     public ProcessoNFe NFeObject(object instance)
     {
-        var proc = ProcessoNFe.Deserialize(NFeToXmlString(instance, Encoding.UTF8)); // twr.ToString)
+        var memoryStream = new MemoryStream();
+        var proc = ProcessoNFe.Deserialize(NFeToXmlString(
+            instance, 
+            Encoding.UTF8, 
+            memoryStream, 
+            _xmlFunctions.CreateXMLWriter(memoryStream, _xmlFunctions.CreateXMLWriterDefaultSettings(Encoding.UTF8)),
+            _xmlFunctions.CreateStreamReader(memoryStream, Encoding.UTF8, true))); // twr.ToString)
         return proc;
     }
 }
