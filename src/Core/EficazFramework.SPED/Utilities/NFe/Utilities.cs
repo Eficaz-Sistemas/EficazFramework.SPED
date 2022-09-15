@@ -36,12 +36,11 @@ public class DownloadNF
 
         try
         {
-            var xml = NFeToXmlDocument(instance);
             using (memoryStream)
             {
                 using (xmlWriter)
                 {
-                    xml.Save(xmlWriter);
+                    NFeToXmlDocument(instance).Save(xmlWriter);
                     using (streamReader)
                     {
                         memoryStream.Seek(0L, SeekOrigin.Begin);
