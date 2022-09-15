@@ -84,8 +84,8 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
         settings.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
         settings.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
 
-        //string basefolder = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-        //EficazFramework.NET46.Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{basefolder}\\teste.pfx", "hccdlb32");
+
+        Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "hccdlb32");
         //cert.SignXml(document, "Reinf", ValidationTag, true, true);
 
         ValidationEventHandler eventHandler = new(ValidationEventHandler);
