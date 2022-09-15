@@ -42,7 +42,7 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
     /// Instância privada de Certificado Digital, contendo as informações
     /// sensíveis para assinatura de documentos.
     /// </summary>
-    public X509Certificate PrivateInstance { get; }
+    public X509Certificate2 PrivateInstance { get; }
 
     /// <summary>
     /// Inicia uma nova instância de <see cref="IcpBrasil_X509Certificate2"/> realizando a leitura
@@ -174,17 +174,4 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
         });
         return FormatData(list);
     }
-
-
-
-    //public void SignXml(XmlDocument xml, string tag, string id, bool signAsSHA256 = false, bool emptyURI = false)
-    //{
-    //    Utilities.XML.SignXml(xml, tag, id, PrivateInstance, signAsSHA256, emptyURI);
-    //}
-
-    //public void SignXml(XDocument xml, string tag, string id, bool signAsSHA256 = false, bool emptyURI = false)
-    //{
-    //    Utilities.XML.SignXml(xml, tag, id, PrivateInstance, signAsSHA256, emptyURI);
-    //}
-
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Utilities.XML;
 
@@ -8,7 +8,7 @@ public class Sign
     /// <summary>
     /// Realiza a assinatura digital de um documento XML.
     /// </summary>
-    /// <param name="xml">O XMLDocument a ser assinado.</param>
+    /// <param name="xml">O <see cref="XmlDocument"/> a ser assinado.</param>
     /// <param name="tag">A tag para localização do ponto de assinatura.</param>
     /// <param name="id">A tag a ser assinada.</param>
     /// <remarks></remarks>
@@ -67,14 +67,14 @@ public class Sign
     /// <summary>
     /// Realiza a assinatura digital de um documento XML.
     /// </summary>
-    /// <param name="xdoc">O XMLDocument a ser assinado.</param>
+    /// <param name="xdoc">O <see cref="XDocument"/> a ser assinado.</param>
     /// <param name="tag">A tag para localização do ponto de assinatura.</param>
     /// <param name="id">A tag a ser assinada.</param>
     /// <remarks></remarks>
     public static void SignXml(ref XDocument xdoc, string tag, string id, X509Certificate2 certificate, bool signAsSHA256 = false, bool emptyURI = false)
     {
-        XmlDocument xml = ToXmlDocument(xdoc);
+        XmlDocument xml = xdoc.ToXmlDocument();
         SignXml(xml, tag, id, certificate, signAsSHA256, emptyURI);
-        xdoc = ToXDocument(xml);
+        xdoc = xml.ToXDocument();
     }
 }
