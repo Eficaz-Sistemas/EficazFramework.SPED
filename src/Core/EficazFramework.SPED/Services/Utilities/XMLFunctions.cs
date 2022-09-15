@@ -41,4 +41,9 @@ public class XMLFunctions : IXMLFunctions
     {
         return new StreamReader(memoryStream, encoder, specificEncoder);
     }
+
+    public void SaveObjectInstanceInXMLWriter(object instance, XmlWriter xmlWriter)
+    {
+        LoadXMLWithAnInformation(CreateXmlDocument(), ((XmlElement)((XmlNode[])instance)[1]).OuterXml).Save(xmlWriter);
+    }
 }

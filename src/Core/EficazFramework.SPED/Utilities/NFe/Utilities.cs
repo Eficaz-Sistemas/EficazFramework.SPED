@@ -14,20 +14,6 @@ public class DownloadNF
         _xmlFunctions = xmlFunctions;
     }
 
-    /// <summary>
-    /// Método para converter NFe em um documento XML
-    /// </summary>
-    /// <param name="instance">Informação para o XML Document</param>
-    public XmlDocument NFeToXmlDocument(object instance)
-    {
-        return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), ((XmlElement)((XmlNode[])instance)[1]).OuterXml);
-    }
-
-    public XmlDocument NFeToXmlDocument(byte[] data)
-    {
-        return _xmlFunctions.LoadXMLWithAnInformation(_xmlFunctions.CreateXmlDocument(), data);
-    }
-
     public string NFeToXmlString(object instance, MemoryStream memoryStream, XmlWriter xmlWriter, StreamReader streamReader)
     {
         try
@@ -36,7 +22,8 @@ public class DownloadNF
             {
                 using (xmlWriter)
                 {
-                    NFeToXmlDocument(instance).Save(xmlWriter);
+                    _xmlFunctions.SaveObjectInstanceInXMLWriter(instance, xmlWriter);
+
                     using (streamReader)
                     {
                         memoryStream.Seek(0L, SeekOrigin.Begin);
