@@ -102,4 +102,10 @@
     <Folder Include="Schemas\LCDPR\Bloco9\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\Certificados\WayneEnterprisesInc.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
