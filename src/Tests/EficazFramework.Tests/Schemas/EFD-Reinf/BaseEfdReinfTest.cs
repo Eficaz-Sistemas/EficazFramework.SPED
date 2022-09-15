@@ -1,8 +1,4 @@
-﻿using EficazFramework.SPED.Schemas.eSocial;
-using System.Reflection.Metadata;
-using System.Xml.Linq;
-
-namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
 public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest where T : IEfdReinfEvt
 {
@@ -15,7 +11,7 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
         XmlDocument doc = EscreveEventoXml(instancia);
 
         // validação do XML pelo schema
-        ValidaSchemaXsd(doc, "", "", "");
+        ValidaSchemaXsd(doc, instancia);
 
         // deserialização para nova instância (leitura de xml)
         T novaInstancia = Activator.CreateInstance<T>();
@@ -52,29 +48,9 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
         return doc;
     }
 
-    /// <summary>
-    /// Informa ao validador do evento qual tag do XmlDocument que deve 
-    /// ser assinada pelo Certificado Digital.
-    /// </summary>
-    public abstract string SignatureTag { get; }
-
-    /// <summary>
-    /// Informa ao validador o schema XSD ao qual o XmlDocument deve ser validado.
-    /// Internamente, o validador irá criar uma instância de XmlSchemaSet utilizando
-    /// o método XmlReader.Create(). <br/><br/>
-    /// Esta propriedade deve passar o conteúdo do XSD em string. Considere armazenar
-    /// o conteúdo deste schema em arquivo de Rescurso.
-    /// </summary>
-    public abstract string ValidationSchema { get; }
-
-    /// <summary>
-    /// Informa ao validador qual deve ser o Namespace principal (xmlns) em que o XmlDocument
-    /// deve ser validado.
-    /// </summary>
-    public abstract string ValidationSchemaNamespace { get; }
 
     private int _errorCount = 0;
-    private void ValidaSchemaXsd(XmlDocument doc)
+    private void ValidaSchemaXsd(XmlDocument doc, T evento)
     {
         _errorCount = 0;
         XmlReaderSettings settings = new()
@@ -86,7 +62,7 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
 
 
         Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "hccdlb32");
-        //cert.SignXml(document, "Reinf", ValidationTag, true, true);
+        Utilities.XML.Sign.SignXml(doc, "Reinf", evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
         ValidationEventHandler eventHandler = new(ValidationEventHandler);
         doc.Validate(eventHandler);

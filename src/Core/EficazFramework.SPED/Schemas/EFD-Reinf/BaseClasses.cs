@@ -8,13 +8,7 @@
 // </auto-generated>
 // ------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
-using System.Text.Json.Serialization;
-using System.Xml.Serialization;
 
 namespace EficazFramework.SPED.Schemas.EFD_Reinf
 {
@@ -43,13 +37,55 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
         }
     }
 
-    public abstract class IEfdReinfEvt
+    public abstract class IEfdReinfEvt : IXmlSignableDocument
     {
-        private XmlSerializer sSerializer; // New System.Xml.Serialization.XmlSerializer(GetType(EnvioLoteEventos))
+        // Base Members
+        private XmlSerializer sSerializer;
 
+        /// <summary>
+        /// Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando <see cref="IEfdReinfEvt"/>
+        /// </summary>
         public abstract XmlSerializer DefineSerializer();
+
+        /// <summary>
+        /// Gera uma ID única para o Evento a ser enviado para o portal do SPED.
+        /// Cada tipo de evento da EFD-Reinf possui sua forma de geração.
+        /// </summary>
         public abstract void GeraEventoID();
+
+        /// <summary>
+        /// Retorna o CNPJ do Contribuinte titular do evento.
+        /// </summary>
+        /// <returns></returns>
         public abstract string ContribuinteCNPJ();
+
+
+
+        // IXmlSignableDocument Members
+
+        /// <summary>
+        /// Especifica qual Tag do XML do evento deve ser assinada por Certificado Digital
+        /// </summary>
+        public abstract string TagToSign { get; }
+
+        /// <summary>
+        /// Retorna a ID do evento, criada pelo método <see cref="GeraEventoID"/>
+        /// </summary>
+        public abstract string Id { get; }
+
+        /// <summary>
+        /// Informa se a Uri de referência da Tag assinada deve ser vazia, ou se deve ser formada conforme especificações do Manual Técnico.
+        /// </summary>
+        public abstract bool EmptyURI { get; }
+
+        /// <summary>
+        /// Informa se o XML deve ser assinado utilizando criptografia SHA256.
+        /// </summary>
+        public abstract bool SignAsSHA256 { get; }
+
+
+
+        // Implemented Members
 
         /// <summary>
         /// Substitui o método ToString() de object para retornar o resultado do método <see cref="Serialize"/>
