@@ -56,6 +56,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EFD_ICMS_IPI.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Schemas\XML.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>XML.resx</DependentUpon>
+    </Compile>
     <Compile Update="SPED\Schemas\Sources\EFD-ICMS IPI.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -89,6 +94,11 @@
       <LastGenOutput>EFD_ICMS_IPI.Designer.cs</LastGenOutput>
       <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Schemas\XML.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XML.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Update="SPED\Schemas\Sources\EFD-ICMS IPI.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace>EficazFramework.SPED.Schemas.Sources</CustomToolNamespace>
@@ -109,6 +119,12 @@
   <ItemGroup>
     <Folder Include="Schemas\LCDPR\BlocoQ\" />
     <Folder Include="Schemas\LCDPR\Bloco9\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Certificados\WayneEnterprisesInc.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
