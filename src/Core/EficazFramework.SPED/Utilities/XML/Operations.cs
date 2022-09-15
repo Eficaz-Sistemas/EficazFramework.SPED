@@ -1,17 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using EficazFramework.SPED.Schemas;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Microsoft.VisualBasic;
-
 namespace EficazFramework.SPED.Utilities.XML;
 
 public class Operations
 {
-    private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
-
     public static IXmlSpedDocument Open(System.IO.Stream source)
     {
         return Task.Run(() => OpenAsync(source)).Result;
@@ -19,7 +11,7 @@ public class Operations
 
     public static async Task<IXmlSpedDocument> OpenAsync(System.IO.Stream source)
     {
-        string objString = null;
+        string objString;
         XDocument xdoc;
         var reader = new System.IO.StreamReader(source);
         objString = await reader.ReadToEndAsync();
@@ -28,7 +20,7 @@ public class Operations
         try
         {
             // ## REMOVENDO vbNullChar
-            string fixedstring = objString.Replace(Constants.vbNullChar, ""); // .Replace(">.<", "><")
+            string fixedstring = objString.Replace("\0", ""); // .Replace(">.<", "><")
 
             // ## REMOVENDO TIMEZONE
             if (DTCheck.IsMatch(fixedstring))
@@ -267,151 +259,9 @@ public class Operations
 
         return new XElement(xmlDocument.Name.LocalName, xmlDocument.Elements().Select(el => RemoveAllNamespaces(el)));
     }
+
+    private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
+
 }
 
-public enum XMLDocumentType
-{
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */        /// <summary>
-                                                           /// EficazFramework.SPED.Schemas.NFe.ProcessoNFe
-                                                           /// </summary>
-    NFeWithProtocol = 0,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.NFe
-    /// </summary>
-    NFeWithoutProtocol = 1,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.ProcessoEvento
-    /// </summary>
-    NFeEvent = 2,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.ProcessoInutilizacaoNFe
-    /// </summary>
-    NFeInutilization = 3,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.ProcessoNFeBase
-    /// </summary>
-    NFeWithProtocol_Base = 4,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.ProcessoEvento
-    /// </summary>
-    NFeEvent_Resumo = 5,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.ProcessoEvento
-    /// </summary>
-    NFe_Resumo = 6,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFe.RetornoEnvioEvento
-    /// </summary>
-    NFeRetEvent = 7,
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */        /// <summary>
-                                                           /// EficazFramework.SPED.CTe.Classes.ProcessoCTe
-                                                           /// </summary>
-    CTeWithProtocol = 11,
-    /// <summary>
-    /// EficazFramework.SPED.CTe.Classes.CTe
-    /// </summary>
-    CTeWithoutProtocol = 12,
-    /// <summary>
-    /// EficazFramework.SPED.CTe.Classes.ProcessoEvento
-    /// </summary>
-    CTeEvent = 13,
-    /// <summary>
-    /// EficazFramework.SPED.CTe.Classes.LoteCte
-    /// </summary>
-    CTeLote = 14,
-    /// <summary>
-    /// EficazFramework.SPED.CTe.Classes.Evento
-    /// </summary>
-    CTeEvent2 = 13,
-
-    /// <summary>
-    /// EficazFramework.SPED.CTeOS.Classes.ProcessoCTeOS
-    /// </summary>
-    CTeOSWithProtocol = 16,
-    /// <summary>
-    /// EficazFramework.SPED.CTeOS.Classes.CTeOS
-    /// </summary>
-    CTeOSWithoutProtocol = 17,
-    /// <summary>
-    /// EficazFramework.SPED.CTe.Classes.EventoConfEntregaCTe
-    /// </summary>
-    CTeEvtConfirmacaoEntrega = 18,
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.Common.tcCompNfse
-    /// </summary>
-    NFSe_CommonSchema = 21,
-
-
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.GINFES
-    /// </summary>
-    NFSe_GINFES_LoteRPS = 22,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.GINFES
-    /// </summary>
-    NFSe_GINFES_LoteRPS2 = 23,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.GINFES
-    /// </summary>
-    NFSe_GINFES_LoteRPS_Envio = 24,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.GINFES.tcListaNfse
-    /// </summary>
-    NFSe_GINFES_NFSeRPS_Consulta = 25,
-
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.Common.tcCompNfse, EficazFramework.SPED.Schemas.NFSe.Common.tcComplNfse
-    /// </summary>
-    NFSe_CommonSchema2 = 26,
-
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.Common.tcCompNfse
-    /// </summary>
-    NFSe_CommonSchema_SingleNFse = 27,
-
-
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.BETHA
-    /// </summary>
-    NFSe_BETHA_LoteRPS = 32,
-
-
-
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.NFSe.ABRASF
-    /// </summary>
-    NFSe_ABRASF_ConsultaLoteNFSe = 39,
-
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */        /// <summary>
-                                                           /// EficazFramework.SPED.Schemas.SAT_CFe.CFe
-                                                           /// </summary>
-    SAT_CFe = 51,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.SAT_CFe.envCFe
-    /// </summary>
-    SAT_CFe_Lote = 52,
-    /// <summary>
-    /// EficazFramework.SPED.Schemas.SAT_CFe.cancCFe
-    /// </summary>
-    SAT_CFe_Cancelamento = 53,
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /// <summary>
-    /// Not valid XML SPED Document
-    /// </summary>
-    Unknown = 999
-}
-
-public interface IXmlSpedDocument
-{
-    XMLDocumentType DocumentType { get; }
-    DateTime? DataEmissao { get; }
-    string Chave { get; }
-}

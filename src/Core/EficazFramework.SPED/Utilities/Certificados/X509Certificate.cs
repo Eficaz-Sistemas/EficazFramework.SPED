@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using EficazFramework.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Utilities;
 

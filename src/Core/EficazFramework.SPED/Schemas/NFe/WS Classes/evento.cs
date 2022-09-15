@@ -1421,11 +1421,11 @@ namespace EficazFramework.SPED.Schemas.NFe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFeRetEvent;
+                return XmlDocumentType.NFeRetEvent;
             }
         }
 

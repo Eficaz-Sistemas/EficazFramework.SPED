@@ -99,11 +99,11 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.CTeOSWithProtocol;
+            return XmlDocumentType.CTeOSWithProtocol;
         }
     }
 
@@ -496,11 +496,11 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.CTeOSWithoutProtocol;
+            return XmlDocumentType.CTeOSWithoutProtocol;
         }
     }
 

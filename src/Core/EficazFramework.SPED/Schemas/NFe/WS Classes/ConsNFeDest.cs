@@ -1884,11 +1884,11 @@ namespace EficazFramework.SPED.Schemas.NFe
             }
         }
 
-        public XMLDocumentType DocumentType
+        public XmlDocumentType DocumentType
         {
             get
             {
-                return XMLDocumentType.NFe_Resumo;
+                return XmlDocumentType.NFe_Resumo;
             }
         }
 

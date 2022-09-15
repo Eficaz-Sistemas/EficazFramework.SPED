@@ -164,11 +164,11 @@ public partial class envCFe : object, INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.SAT_CFe_Lote;
+            return XmlDocumentType.SAT_CFe_Lote;
         }
     }
 
@@ -601,11 +601,11 @@ public partial class CancelamentoCFe : object, INotifyPropertyChanged, IXmlSpedD
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.SAT_CFe_Cancelamento;
+            return XmlDocumentType.SAT_CFe_Cancelamento;
         }
     }
 
@@ -1235,11 +1235,11 @@ public partial class CFe : object, INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XMLDocumentType DocumentType
+    public XmlDocumentType DocumentType
     {
         get
         {
-            return XMLDocumentType.SAT_CFe;
+            return XmlDocumentType.SAT_CFe;
         }
     }
 

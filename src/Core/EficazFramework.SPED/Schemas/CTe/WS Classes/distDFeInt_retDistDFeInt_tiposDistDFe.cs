@@ -1112,7 +1112,7 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip : object, System.Componen
         return Encoding.UTF8.GetString(buffer, 0, buffer.Length);
     }
 
-    public Utilities.XML.XMLDocumentType DocumentType
+    public Schemas.XmlDocumentType DocumentType
     {
         get
         {
@@ -1121,35 +1121,35 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip : object, System.Componen
                 case "procCTe_v2.00.xsd":
                 case "procCTe_v3.00.xsd":
                     {
-                        return Utilities.XML.XMLDocumentType.CTeWithProtocol;
+                        return Schemas.XmlDocumentType.CTeWithProtocol;
                     }
 
                 case "procEventoCTe_v3.00.xsd":
                     {
-                        return Utilities.XML.XMLDocumentType.CTeEvent;
+                        return Schemas.XmlDocumentType.CTeEvent;
                     }
 
                 default:
                     {
-                        return Utilities.XML.XMLDocumentType.Unknown;
+                        return Schemas.XmlDocumentType.Unknown;
                     }
             }
         }
     }
 
-    public async Task<Utilities.XML.IXmlSpedDocument> GetInstanceAsync()
+    public async Task<IXmlSpedDocument> GetInstanceAsync()
     {
         var ms = new System.IO.MemoryStream(await DescompactaAsync());
-        Utilities.XML.IXmlSpedDocument r = null;
+        IXmlSpedDocument r = null;
         switch (DocumentType)
         {
-            case Utilities.XML.XMLDocumentType.CTeWithProtocol:
+            case Schemas.XmlDocumentType.CTeWithProtocol:
                 {
                     r = await ProcessoCTe.LoadFromAsync(ms, false);
                     break;
                 }
 
-            case Utilities.XML.XMLDocumentType.CTeEvent:
+            case Schemas.XmlDocumentType.CTeEvent:
                 {
                     r = await ProcessoEvento.LoadFromAsync(ms, false);
                     break;
