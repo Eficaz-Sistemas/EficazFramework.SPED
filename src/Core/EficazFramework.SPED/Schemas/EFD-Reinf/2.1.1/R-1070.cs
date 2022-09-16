@@ -43,22 +43,8 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
 
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R1070));
-    }
-
+    // IEfdReinfEvt Members
     public override void GeraEventoID()
     {
         evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -68,6 +54,33 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     {
         return evtTabProcesso.ideContri.nrInsc;
     }
+
+
+    // IXmlSignableDocument Members
+    public override string TagToSign => "Reinf";
+    public override string TagId => "evtTabProcesso";
+    public override bool EmptyURI => true;
+    public override bool SignAsSHA256 => true;
+
+
+    // PropertyChanged Members
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+
+    // Serialization Members
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(R1070));
+    }
+
 }
 
 

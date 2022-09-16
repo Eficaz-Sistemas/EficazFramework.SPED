@@ -43,8 +43,28 @@ public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
 
+    // IEfdReinfEvt Members
+    public override void GeraEventoID()
+    {
+        evtAssocDespRepField.id = string.Format("ID{0}{1}{2}", (evtAssocDespRepField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAssocDespRepField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+    }
+
+    public override string ContribuinteCNPJ()
+    {
+        return evtAssocDespRep.ideContri.nrInsc;
+    }
+
+
+    // IXmlSignableDocument Members
+    public override string TagToSign => "Reinf";
+    public override string TagId => "evtAssocDespRep";
+    public override bool EmptyURI => true;
+    public override bool SignAsSHA256 => true;
+
+
+    // PropertyChanged Members
+    public event PropertyChangedEventHandler PropertyChanged;
     protected void RaisePropertyChanged(string propertyName)
     {
         var propertyChanged = PropertyChanged;
@@ -54,19 +74,11 @@ public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
         }
     }
 
+
+    // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
         return new XmlSerializer(typeof(R2040));
-    }
-
-    public override void GeraEventoID()
-    {
-        evtAssocDespRepField.id = string.Format("ID{0}{1}{2}", (evtAssocDespRepField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAssocDespRepField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
-
-    public override string ContribuinteCNPJ()
-    {
-        return evtAssocDespRep.ideContri.nrInsc;
     }
 }
 

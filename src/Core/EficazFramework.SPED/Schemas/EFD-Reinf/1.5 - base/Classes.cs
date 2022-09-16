@@ -8,12 +8,6 @@
 // </auto-generated>
 // ------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Xml.Serialization;
-
 namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
 {
     #region R-1000
@@ -61,8 +55,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtInfoContri.id = string.Format("ID{0}{1}{2}", (int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtInfoContri.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtInfoContri";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -72,19 +86,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R1000));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtInfoContri.id = string.Format("ID{0}{1}{2}", (int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtInfoContri.ideContri.nrInsc;
         }
     }
 
@@ -945,8 +951,27 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
 
+        public override string ContribuinteCNPJ()
+        {
+            return evtTabProcesso.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtTabProcesso";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -956,19 +981,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R1070));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtTabProcesso.ideContri.nrInsc;
         }
     }
 
@@ -2104,8 +2121,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtServTomField.id = string.Format("ID{0}{1}{2}", (int)(evtServTomField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServTomField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtServTom.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtServTom";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -2115,19 +2152,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2010));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtServTomField.id = string.Format("ID{0}{1}{2}", (int)(evtServTomField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServTomField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtServTom.ideContri.nrInsc;
         }
     }
 
@@ -3154,8 +3183,27 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtServPrestField.id = string.Format("ID{0}{1}{2}", (int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
 
+        public override string ContribuinteCNPJ()
+        {
+            return evtServPrest.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtServPrest";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -3165,19 +3213,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2020));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtServPrestField.id = string.Format("ID{0}{1}{2}", (int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtServPrest.ideContri.nrInsc;
         }
     }
 
@@ -4163,8 +4203,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtAssocDespRec.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtAssocDespRec";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -4174,19 +4234,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2030));
-        }
-
-        public override void GeraEventoID()
-        {
-            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtAssocDespRec.ideContri.nrInsc;
         }
     }
 
@@ -4870,8 +4922,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtAssocDespRepField.id = string.Format("ID{0}{1}{2}", (evtAssocDespRepField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAssocDespRepField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtAssocDespRep.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtAssocDespRep";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -4881,19 +4953,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2040));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtAssocDespRepField.id = string.Format("ID{0}{1}{2}", (evtAssocDespRepField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAssocDespRepField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtAssocDespRep.ideContri.nrInsc;
         }
     }
 
@@ -5460,8 +5524,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtComProd.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtRetPF";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -5471,20 +5555,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2050));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtComProdField.id = string.Format("ID{0}{1}{2}", (evtComProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtComProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-     
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtComProd.ideContri.nrInsc;
         }
     }
 
@@ -6224,8 +6299,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtAqProdField.id = string.Format("ID{0}{1}{2}", (int)(evtAqProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAqProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtAqProd.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtAqProd";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -6235,19 +6330,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2055));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtAqProdField.id = string.Format("ID{0}{1}{2}", (int)(evtAqProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAqProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtAqProd.ideContri.nrInsc;
         }
     }
 
@@ -7145,8 +7232,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtCPRB.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtCPRB";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -7156,19 +7263,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2060));
-        }
-
-        public override void GeraEventoID()
-        {
-            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtCPRB.ideContri.nrInsc;
         }
     }
 
@@ -7815,8 +7914,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtReabreEvPer.id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtReabreEvPer.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtReabreEvPer";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -7826,19 +7945,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2098));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtReabreEvPer.id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtReabreEvPer.ideContri.nrInsc;
         }
     }
 
@@ -7960,8 +8071,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            evtFechaEvPerField.id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtFechaEvPer.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtFechaEvPer";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -7971,19 +8102,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R2099));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtFechaEvPerField.id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtFechaEvPer.ideContri.nrInsc;
         }
     }
 
@@ -8417,8 +8540,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtEspDesportivo.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtRetPF";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -8428,19 +8571,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R3010));
-        }
-
-        public override void GeraEventoID()
-        {
-            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtEspDesportivo.ideContri.nrInsc;
         }
     }
 
@@ -9558,8 +9693,28 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        // IEfdReinfEvt Members
+        public override void GeraEventoID()
+        {
+            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
+        }
+
+        public override string ContribuinteCNPJ()
+        {
+            return evtExclusao.ideContri.nrInsc;
+        }
+
+
+        // IXmlSignableDocument Members
+        public override string TagToSign => "Reinf";
+        public override string TagId => "evtRetPF";
+        public override bool EmptyURI => true;
+        public override bool SignAsSHA256 => true;
+
+
+        // PropertyChanged Members
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void RaisePropertyChanged(string propertyName)
         {
             var propertyChanged = PropertyChanged;
@@ -9569,19 +9724,11 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf.v1_05
             }
         }
 
+
+        // Serialization Members
         public override XmlSerializer DefineSerializer()
         {
             return new XmlSerializer(typeof(R9000));
-        }
-
-        public override void GeraEventoID()
-        {
-            // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtExclusao.ideContri.nrInsc;
         }
     }
 

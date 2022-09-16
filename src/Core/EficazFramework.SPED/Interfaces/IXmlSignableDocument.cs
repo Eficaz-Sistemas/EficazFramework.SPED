@@ -5,7 +5,7 @@ public interface IXmlSignableDocument
 
     public string TagToSign { get; }
 
-    public string Id { get; }
+    public string TagId { get; }
 
     public bool EmptyURI { get; }
 

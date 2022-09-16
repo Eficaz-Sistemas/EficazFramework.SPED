@@ -80,7 +80,7 @@
 
   <ItemGroup>
 	  <EmbeddedResource Update="Resources\Schemas\EFD-Reinf.resx">
-		  <Generator>ResXFileCodeGenerator</Generator>
+		  <Generator>PublicResXFileCodeGenerator</Generator>
 		  <LastGenOutput>EFD-Reinf.Designer.cs</LastGenOutput>
 		  <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
 	  </EmbeddedResource>

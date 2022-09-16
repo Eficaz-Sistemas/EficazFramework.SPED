@@ -71,7 +71,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
         /// <summary>
         /// Retorna a ID do evento, criada pelo método <see cref="GeraEventoID"/>
         /// </summary>
-        public abstract string Id { get; }
+        public abstract string TagId { get; }
 
         /// <summary>
         /// Informa se a Uri de referência da Tag assinada deve ser vazia, ou se deve ser formada conforme especificações do Manual Técnico.
