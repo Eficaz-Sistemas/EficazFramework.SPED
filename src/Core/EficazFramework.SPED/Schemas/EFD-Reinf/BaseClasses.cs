@@ -15,7 +15,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
 
     #region IEfdReinfEvt Abstraction for API Usage
 
-    public class ReinfTimeStampUtils
+    public static class ReinfTimeStampUtils
     {
         public static Dictionary<string, int> TimestampDict { get; private set; } = new Dictionary<string, int>();
 
@@ -106,7 +106,13 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
             {
                 memoryStream = new System.IO.MemoryStream();
                 sSerializer = DefineSerializer();
-                sSerializer.Serialize(memoryStream, this);
+                using (var xmlwriter = XmlWriter.Create(memoryStream, new XmlWriterSettings()
+                {
+                    Indent = true,
+                }))
+                {
+                    sSerializer.Serialize(xmlwriter, this);
+                }
                 memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();

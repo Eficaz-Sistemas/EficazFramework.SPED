@@ -571,13 +571,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     private System.DateTime dtFGField;
     private string compFPField;
     private string indDecTercField;
-    private decimal? vlrRendBrutoField;
-    private decimal? vlrRendTribField;
-    private decimal? vlrIRField;
+    private string vlrRendBrutoField;
+    private string vlrRendTribField;
+    private string vlrIRField;
     private string indRRAField;
     private IndicadorFciScp? indFciScpField;
     private string nrInscFciScpField;
-    private decimal? percSCPField;
+    private string percSCPField;
     private string indJudField;
     private string paisResidExtField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed> detDedField;
@@ -640,7 +640,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public decimal? vlrRendBruto {
+    public string vlrRendBruto {
         get {
             return this.vlrRendBrutoField;
         }
@@ -649,11 +649,10 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("vlrRendBruto");
         }
     }
-    public bool ShouldSerializevlrRendBruto => vlrRendBruto.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public decimal? vlrRendTrib {
+    public string vlrRendTrib {
         get {
             return this.vlrRendTribField;
         }
@@ -662,11 +661,10 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("vlrRendTrib");
         }
     }
-    public bool ShouldSerializevlrRendTrib => vlrRendTrib.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public decimal? vlrIR {
+    public string vlrIR {
         get {
             return this.vlrIRField;
         }
@@ -699,6 +697,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("indFciScp");
         }
     }
+    public bool ShouldSerializeindFciScp() => indFciScp.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 8)]
@@ -714,7 +713,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
 
     /// <remarks/>
     [XmlElement(Order = 9)]
-    public decimal? percSCP {
+    public string percSCP {
         get {
             return this.percSCPField;
         }
@@ -839,10 +838,10 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed : object, System.ComponentModel.INotifyPropertyChanged {
     
     private IndicadorTipoDeducaoPrevidenciaria indTpDeducaoField;
-    private decimal? vlrDeducaoField;
+    private string vlrDeducaoField;
     private SimNao infoEntidField = SimNao.Nao;
     private string nrInscPrevCompField;
-    private decimal? vlrPatrocFunpField;
+    private string vlrPatrocFunpField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen> benefPenField;
 
     /// <remarks/>
@@ -859,7 +858,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed : object
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDeducao {
+    public string vlrDeducao {
         get {
             return this.vlrDeducaoField;
         }
@@ -895,7 +894,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed : object
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public decimal? vlrPatrocFunp {
+    public string vlrPatrocFunp {
         get {
             return this.vlrPatrocFunpField;
         }
@@ -936,7 +935,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed : object
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string cpfDepField;
-    private decimal? vlrDepenField;
+    private string vlrDepenField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -952,7 +951,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen 
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDepen {
+    public string vlrDepen {
         get {
             return this.vlrDepenField;
         }
@@ -981,7 +980,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen 
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : object, System.ComponentModel.INotifyPropertyChanged {
     
     private TipoIsencao tpIsencaoField;
-    private decimal? vlrIsentoField;  
+    private string vlrIsentoField;  
     private string descRendimentoField;
     private System.DateTime? dtLaudoField;
 
@@ -999,7 +998,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrIsento {
+    public string vlrIsento {
         get {
             return this.vlrIsentoField;
         }
@@ -1032,7 +1031,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
             this.RaisePropertyChanged("dtLaudo");
         }
     }
-        
+    public bool ShouldSerializedtLaudo() => dtLaudo.HasValue;
+
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
@@ -1054,11 +1055,11 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
     private TipoProcesso tpProcRetField;
     private string nrProcRetField;
     private string codSuspField;
-    private decimal? vlrNRetidoField;
-    private decimal? vlrDepJudField;
-    private decimal? vlrCmpAnoCalField;
-    private decimal? vlrCmpAnoAntField;
-    private decimal? vlrRendSuspField;
+    private string vlrNRetidoField;
+    private string vlrDepJudField;
+    private string vlrCmpAnoCalField;
+    private string vlrCmpAnoAntField;
+    private string vlrRendSuspField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSusp> dedSuspField;
 
     /// <remarks/>
@@ -1099,7 +1100,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public decimal? vlrNRetido {
+    public string vlrNRetido {
         get {
             return this.vlrNRetidoField;
         }
@@ -1111,7 +1112,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public decimal? vlrDepJud {
+    public string vlrDepJud {
         get {
             return this.vlrDepJudField;
         }
@@ -1123,7 +1124,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public decimal? vlrCmpAnoCal {
+    public string vlrCmpAnoCal {
         get {
             return this.vlrCmpAnoCalField;
         }
@@ -1135,7 +1136,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public decimal? vlrCmpAnoAnt {
+    public string vlrCmpAnoAnt {
         get {
             return this.vlrCmpAnoAntField;
         }
@@ -1147,7 +1148,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 7)]
-    public decimal? vlrRendSusp {
+    public string vlrRendSusp {
         get {
             return this.vlrRendSuspField;
         }
@@ -1188,7 +1189,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSusp : object, System.ComponentModel.INotifyPropertyChanged {
     
     private IndicadorTipoDeducaoPrevidenciaria indTpDeducaoField;
-    private decimal? vlrDedSuspField;
+    private string vlrDedSuspField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSuspBenefPen> benefPenField;
 
     /// <remarks/>
@@ -1205,7 +1206,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedS
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDedSusp {
+    public string vlrDedSusp {
         get {
             return this.vlrDedSuspField;
         }
@@ -1246,7 +1247,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedS
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSuspBenefPen : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string cpfDepField;
-    private decimal? vlrDepenSuspField;
+    private string vlrDepenSuspField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -1262,7 +1263,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedS
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDepenSusp {
+    public string vlrDepenSusp {
         get {
             return this.vlrDepenSuspField;
         }
@@ -1400,14 +1401,14 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRA : objec
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/v2_01_01")]
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJud : object, System.ComponentModel.INotifyPropertyChanged {
     
-    private decimal? vlrDespCustasField;
-    private decimal? vlrDespAdvogadosField;
+    private string vlrDespCustasField;
+    private string vlrDespAdvogadosField;
     
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJudIdeAdv> ideAdvField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public decimal? vlrDespCustas {
+    public string vlrDespCustas {
         get {
             return this.vlrDespCustasField;
         }
@@ -1419,7 +1420,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProc
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDespAdvogados {
+    public string vlrDespAdvogados {
         get {
             return this.vlrDespAdvogadosField;
         }
@@ -1462,7 +1463,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProc
     private PersonalidadeJuridica tpInscAdvField;
     
     private string nrInscAdvField;
-    private decimal? vlrAdvField;
+    private string vlrAdvField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -1490,7 +1491,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProc
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public decimal? vlrAdv {
+    public string vlrAdv {
         get {
             return this.vlrAdvField;
         }
@@ -1602,14 +1603,14 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud : o
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/v2_01_01")]
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJud : object, System.ComponentModel.INotifyPropertyChanged {
     
-    private decimal? vlrDespCustasField;
-    private decimal? vlrDespAdvogadosField;
+    private string vlrDespCustasField;
+    private string vlrDespAdvogadosField;
     
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJudIdeAdv> ideAdvField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public decimal? vlrDespCustas {
+    public string vlrDespCustas {
         get {
             return this.vlrDespCustasField;
         }
@@ -1621,7 +1622,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrDespAdvogados {
+    public string vlrDespAdvogados {
         get {
             return this.vlrDespAdvogadosField;
         }
@@ -1663,7 +1664,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
     
     private PersonalidadeJuridica tpInscAdvField;
     private string nrInscAdvField;
-    private decimal? vlrAdvField;
+    private string vlrAdvField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -1691,7 +1692,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public decimal? vlrAdv {
+    public string vlrAdv {
         get {
             return this.vlrAdvField;
         }
@@ -1919,7 +1920,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude : object, System.Co
     
     private string nrInscField;
     private string regANSField;
-    private decimal? vlrSaudeField;
+    private string vlrSaudeField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb> infoReembField;
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl> infoDependPlField;
 
@@ -1949,7 +1950,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude : object, System.Co
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public decimal? vlrSaude {
+    public string vlrSaude {
         get {
             return this.vlrSaudeField;
         }
@@ -2003,8 +2004,8 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb : object, 
     
     private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
     private string nrInscField;
-    private decimal? vlrReembField;
-    private decimal? vlrReembAntField;
+    private string vlrReembField;
+    private string vlrReembAntField;
 
     /// <remarks/>
     [XmlElement(Order=0)]
@@ -2032,7 +2033,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb : object, 
 
     /// <remarks/>
     [XmlElement(Order=2)]
-    public decimal? vlrReemb {
+    public string vlrReemb {
         get {
             return this.vlrReembField;
         }
@@ -2044,7 +2045,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb : object, 
 
     /// <remarks/>
     [XmlElement(Order=3)]
-    public decimal? vlrReembAnt {
+    public string vlrReembAnt {
         get {
             return this.vlrReembAntField;
         }
@@ -2074,7 +2075,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl : objec
     
     private string cpfDepField;
     
-    private decimal? vlrSaudeField;
+    private string vlrSaudeField;
     
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReembDep> infoReembDepField;
 
@@ -2092,7 +2093,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl : objec
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public decimal? vlrSaude {
+    public string vlrSaude {
         get {
             return this.vlrSaudeField;
         }
@@ -2134,8 +2135,8 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReem
     
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
-    private decimal? vlrReembField;
-    private decimal? vlrReembAntField;
+    private string vlrReembField;
+    private string vlrReembAntField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -2163,7 +2164,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReem
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public decimal? vlrReemb {
+    public string vlrReemb {
         get {
             return this.vlrReembField;
         }
@@ -2175,7 +2176,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReem
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public decimal? vlrReembAnt {
+    public string vlrReembAnt {
         get {
             return this.vlrReembAntField;
         }

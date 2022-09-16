@@ -25,7 +25,10 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
 
         // deserialização para nova instância (leitura de xml)
         T novaInstancia = Activator.CreateInstance<T>();
-        novaInstancia.Deserialize(doc.OuterXml);    
+        novaInstancia = (T)novaInstancia.Deserialize(doc.OuterXml);
+
+        // comparação entre as duas instâncias
+        ValidaInstanciasLeituraEscrita(instancia, novaInstancia);
     }
 
     /// <summary>
