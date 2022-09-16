@@ -1,7 +1,17 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest where T : IEfdReinfEvt
+public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEvt
 {
+    /// <summary>
+    /// Informa o namespace principal (xmlns) para validação do documento XML
+    /// </summary>
+    public abstract string ValidationSchemaNamespace { get; }
+
+    /// <summary>
+    /// Informa a ID do Recurso que contém o schema XSD para validação do documento XML.
+    /// </summary>
+    public abstract string ValidationSchema { get; }
+
     internal void TestaEvento()
     {
         // criação da instância e alimentação dos campos
@@ -30,7 +40,9 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
     }
 
     /// <summary>
-    /// Utilize este método para preencher os campos do <paramref name="evento"/>
+    /// Utilize este método para preencher os campos do <paramref name="evento"/> <br/><br/>
+    /// E preciso que a base do CNPJ seja igual ao do CNPJ do certificado digital e-CNPJ da Wayne Enterprises <br/><br/>
+    /// CNPJ Informado no Certificado Digital de testes: 34785515000166
     /// </summary>
     /// <param name="evento"></param>
     public abstract void PreencheCampos(T evento);
@@ -43,6 +55,7 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
     private XmlDocument EscreveEventoXml(T evento)
     {
         string xmlString = evento.Serialize(); // ou .ToString();
+        Console.WriteLine(xmlString);
         XmlDocument doc = new();
         doc.LoadXml(xmlString);
         return doc;
@@ -52,20 +65,21 @@ public abstract class BaseEfdReinfTest<T> : EficazFramework.SPED.Tests.BaseTest 
     private int _errorCount = 0;
     private void ValidaSchemaXsd(XmlDocument doc, T evento)
     {
+        // zerando contador de erros
         _errorCount = 0;
-        XmlReaderSettings settings = new()
-        {
-            ValidationType = ValidationType.Schema
-        };
-        settings.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
-        settings.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
 
-
-        Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "hccdlb32");
+        // assinando o documento XML com o certificado digital e-CNPJ de testes
+        Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "1234");
         Utilities.XML.Sign.SignXml(doc, "Reinf", evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
+        // adicionando os schemas para validação do documento XML
         ValidationEventHandler eventHandler = new(ValidationEventHandler);
+        doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
+        doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
+
+        // executando a validação
         doc.Validate(eventHandler);
+        _errorCount.Should().Be(0);
     }
 
     private void ValidationEventHandler(object sender, ValidationEventArgs e)

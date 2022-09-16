@@ -43,22 +43,8 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
 
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R1000));
-    }
-
+    // IEfdReinfEvt Members
     public override void GeraEventoID()
     {
         evtInfoContri.id = string.Format("ID{0}{1}{2}", (int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -68,6 +54,33 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
     {
         return evtInfoContri.ideContri.nrInsc;
     }
+
+
+    // IXmlSignableDocument Members
+    public override string TagToSign => "Reinf";
+    public override string TagId => "evtInfoContri";
+    public override bool EmptyURI => true;
+    public override bool SignAsSHA256 => true;
+
+
+    // PropertyChanged Members
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+
+    // Serialization Members
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(R1000));
+    }
+
 }
 
 
@@ -147,8 +160,9 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
 
+    // PropertyChanged Members
+    public event PropertyChangedEventHandler PropertyChanged;
     protected void RaisePropertyChanged(string propertyName)
     {
         var propertyChanged = PropertyChanged;

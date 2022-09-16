@@ -49,11 +49,10 @@ public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
     }
 
 
-
     // IXmlSignableDocument Members
-    public override string TagToSign => throw new NotImplementedException();
-    public override string Id => evtRetPFField!.id;
-    public override bool EmptyURI => false;
+    public override string TagToSign => "Reinf";
+    public override string TagId => "evtRetPF";
+    public override bool EmptyURI => true;
     public override bool SignAsSHA256 => true;
 
 
@@ -87,7 +86,10 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     private ReinfEvtRetPFIdeEstab ideEstabField;
     private string idField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Informações básicas do evento, como Período (AAAA-MM), ambiente (Produção, Homologação), 
+    /// e indicador de retificação (substituição)
+    /// </summary>
     [XmlElement(Order = 0)]
     public ReinfEvtIdeEvento_R40xx ideEvento {
         get {
@@ -99,7 +101,10 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do Contribuite (pagador)
+    /// Utilizar sempre os dados da Matriz
+    /// </summary>
     [XmlElement(Order = 1)]
     public ReinfEvtIdeContri ideContri {
         get {
@@ -111,7 +116,10 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do estabelecimento (pagador)
+    /// Neste caso utilizar o CNPJ que realiza o pagamento (Seja ele matrix ou filial)
+    /// </summary>
     [XmlElement(Order = 2)]
     public ReinfEvtRetPFIdeEstab ideEstab {
         get {
@@ -354,7 +362,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgtoField = new();
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaudeField = new();
 
-    /// <remarks/>
+    /// <summary>
+    /// CPF do Beneficiário recebedor dos Rendimentos
+    /// </summary>
     [XmlElement(Order = 0)]
     public string cpfBenef {
         get {
@@ -366,7 +376,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Nome do Beneficiário recebedor dos Rendimentos
+    /// </summary>
     [XmlElement(Order = 1)]
     public string nmBenef {
         get {
@@ -378,7 +390,10 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Listagem dos dependentes do Beneficiário (quando aplicável),
+    /// utilizados na dedução de IRRF
+    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("ideDep", Order = 2)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDep {
         get {
@@ -390,7 +405,9 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Listagem dos pagamentos ao beneficiário
+    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("idePgto", Order = 3)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgto {
         get {
@@ -402,7 +419,10 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Informações sobre a(s) Operadora(s) de Saúde, caso tenham sido abatidas
+    /// despesas médicas no Rendimento
+    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("ideOpSaude", Order = 4)]
     public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaude {
         get {
@@ -567,7 +587,14 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     private ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud infoProcJudField;
     private ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt infoPgtoExtField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Informar a data do fato gerador, ou, em caso de fato não tributável mas de 
+    /// informação obrigatória conforme legislação vigente, a data do pagamento ou
+    /// crédito, no formato AAAA-MM-DD. <br/><br/>
+    /// <b>Validação:</b> A data informada deve estar compreendida no período de apuração
+    /// ao qual se refere o arquivo, conforme informado em(perApur}, no formato
+    /// AAAA-MM-DD.
+    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType ="date", Order = 0)]
     public System.DateTime DataFatoGerador {
         get {
@@ -579,7 +606,15 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Informar a competência a que se refere os rendimentos.<br/><br/>
+    /// <b>Validação:</b> Informação permitida apenas se a natureza de rendimento
+    /// informada em { natRend } for do grupo 10 da Tabela 01 ou se constar "S" na
+    /// coluna "13°" da mesma tabela.
+    /// <br/>Se informado, não pode ser superior à data atual e deve estar no formato:<br/>
+    /// a) AAAA, se {indDecTerc} = [S];<br/>
+    /// b) AAAA-MM, nos demais casos
+    /// </summary>
     [XmlElement(Order = 1)]
     public string compFP {
         get {
@@ -614,6 +649,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("vlrRendBruto");
         }
     }
+    public bool ShouldSerializevlrRendBruto => vlrRendBruto.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 4)]
@@ -626,6 +662,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
             this.RaisePropertyChanged("vlrRendTrib");
         }
     }
+    public bool ShouldSerializevlrRendTrib => vlrRendTrib.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 5)]
