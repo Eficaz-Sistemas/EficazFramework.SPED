@@ -50,6 +50,7 @@
 	
   <ItemGroup>
     <Compile Remove="Schemas\EFD-Reinf\1.4 backup\Classes.cs" />
+    <Compile Remove="Schemas\EFD-Reinf\1.5 - base\Classes.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,6 +88,7 @@
 		<Folder Include="Schemas\EFD-Reinf\1.2 Backup\" />
 		<Folder Include="Schemas\EFD-Reinf\1.3.02 Backup\" />
 		<Folder Include="Schemas\EFD-Reinf\1.4 backup\" />
+		<Folder Include="Schemas\EFD-Reinf\1.5 - base\" />
 		<Folder Include="Schemas\Estaduais\SP\eCredac\CAT83\" />
 		<Folder Include="Schemas\NFSe\GINFES\WS Classes\" />
 	</ItemGroup>

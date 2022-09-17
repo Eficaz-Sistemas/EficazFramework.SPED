@@ -307,7 +307,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
     {
         private PersonalidadeJuridica tpInscField;
         private string nrInscField;
-        private ReinfEvtRetPFIdeContriInfoComplContri infoComplContriField = null;
+        private ReinfEvtRetIdeContriInfoComplContri infoComplContriField = null;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
@@ -343,7 +343,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
 
         /// <remarks/>
         [XmlElement(Order = 2)]
-        public ReinfEvtRetPFIdeContriInfoComplContri infoComplContri
+        public ReinfEvtRetIdeContriInfoComplContri infoComplContri
         {
             get
             {
@@ -380,7 +380,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/v2_01_01")]
-    public partial class ReinfEvtRetPFIdeContriInfoComplContri : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ReinfEvtRetIdeContriInfoComplContri : object, System.ComponentModel.INotifyPropertyChanged
     {
 
         private string natJurField;
