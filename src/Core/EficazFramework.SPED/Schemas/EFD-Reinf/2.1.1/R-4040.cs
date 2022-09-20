@@ -274,7 +274,7 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
         }
         set {
             this.dtFGField = value;
-            this.RaisePropertyChanged("dtFG");
+            this.RaisePropertyChanged("DataFatoGerador");
         }
     }
     

@@ -377,7 +377,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
         }
         set {
             this.dtFGField = value;
-            this.RaisePropertyChanged("dtFG");
+            this.RaisePropertyChanged("DataFatoGerador");
         }
     }
 
