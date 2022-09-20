@@ -464,7 +464,6 @@ public enum TipoIsencaoPJ
     InstituicaoFilantropica = 3,
 }
 
-
 public enum IndicadorOrigemDosRecursos
 {
     /// <remarks/>
