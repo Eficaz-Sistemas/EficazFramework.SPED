@@ -109,6 +109,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf
                 using (var xmlwriter = XmlWriter.Create(memoryStream, new XmlWriterSettings()
                 {
                     Indent = true,
+                   
                 }))
                 {
                     sSerializer.Serialize(xmlwriter, this);
