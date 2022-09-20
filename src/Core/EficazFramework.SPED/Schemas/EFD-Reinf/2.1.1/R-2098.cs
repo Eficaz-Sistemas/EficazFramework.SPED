@@ -90,13 +90,13 @@ public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
 [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/v2_01_01")]
 public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEventoPeriodicoR209x ideEventoField;
+    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
     private ReinfEvtIdeContri ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEventoPeriodicoR209x ideEvento
+    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento
     {
         get
         {

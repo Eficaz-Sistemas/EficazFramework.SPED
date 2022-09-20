@@ -495,3 +495,16 @@ public enum IndicadorNIF
     PaisNaoExigeNIF = 3
 
 }
+
+public enum IndicadorFechamentoReabertura
+{
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("0")]
+    [System.ComponentModel.Description("Fechamento")]
+    Fechamento = 0,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Reabertura")]
+    Reabertura = 1,
+}
