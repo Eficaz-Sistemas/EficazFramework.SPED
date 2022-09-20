@@ -83,5 +83,17 @@ namespace EficazFramework.SPED.Resources.Schemas {
                 return ResourceManager.GetString("R4020_v2_01_01", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01&quot; targetNamespace=&quot;http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;./xmldsig-core-schema.xsd&quot;/&gt;
+        ///  &lt;xs:e [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string R4040_v2_01_01 {
+            get {
+                return ResourceManager.GetString("R4040_v2_01_01", resourceCulture);
+            }
+        }
     }
 }
