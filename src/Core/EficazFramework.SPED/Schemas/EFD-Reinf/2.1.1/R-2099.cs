@@ -90,7 +90,7 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
 [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
 public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEventoPeriodicoR209x ideEventoField;
+    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
     private ReinfEvtIdeContri ideContriField;
     private ReinfEvtFechaEvPerIdeRespInf ideRespInfField;
     private ReinfEvtFechaEvPerInfoFech infoFechField;
@@ -98,7 +98,7 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEventoPeriodicoR209x ideEvento
+    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento
     {
         get
         {
@@ -173,95 +173,6 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
         {
             idField = value;
             RaisePropertyChanged("id");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
-public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChanged
-{
-    private string nmRespField;
-    private string cpfRespField;
-    private string telefoneField;
-    private string emailField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string nmResp
-    {
-        get
-        {
-            return nmRespField;
-        }
-
-        set
-        {
-            nmRespField = value;
-            RaisePropertyChanged("nmResp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string cpfResp
-    {
-        get
-        {
-            return cpfRespField;
-        }
-
-        set
-        {
-            cpfRespField = value;
-            RaisePropertyChanged("cpfResp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string telefone
-    {
-        get
-        {
-            return telefoneField;
-        }
-
-        set
-        {
-            telefoneField = value;
-            RaisePropertyChanged("telefone");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string email
-    {
-        get
-        {
-            return emailField;
-        }
-
-        set
-        {
-            emailField = value;
-            RaisePropertyChanged("email");
         }
     }
 
