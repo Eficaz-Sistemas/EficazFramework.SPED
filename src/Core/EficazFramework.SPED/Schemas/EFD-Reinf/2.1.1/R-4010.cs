@@ -979,14 +979,14 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen 
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/v2_01_01")]
 public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : object, System.ComponentModel.INotifyPropertyChanged {
     
-    private TipoIsencao tpIsencaoField;
+    private TipoIsencaoPF tpIsencaoField;
     private string vlrIsentoField;  
     private string descRendimentoField;
     private System.DateTime? dtLaudoField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public TipoIsencao tpIsencao {
+    public TipoIsencaoPF tpIsencao {
         get {
             return this.tpIsencaoField;
         }

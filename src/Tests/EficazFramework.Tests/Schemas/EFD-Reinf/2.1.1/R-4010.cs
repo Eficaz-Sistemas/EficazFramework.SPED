@@ -113,7 +113,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                                     {
                                         new()
                                         {
-                                            tpIsencao = TipoIsencao.RendimentoSemIRRF,
+                                            tpIsencao = TipoIsencaoPF.RendimentoSemIRRF,
                                             vlrIsento = 152725.25M.ToString("f2")
                                         }
                                     }

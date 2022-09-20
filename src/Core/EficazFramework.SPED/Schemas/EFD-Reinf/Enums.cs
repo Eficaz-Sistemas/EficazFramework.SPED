@@ -392,7 +392,7 @@ public enum IndicadorTipoDeducaoPrevidenciaria
 
 }
 
-public enum TipoIsencao
+public enum TipoIsencaoPF
 {
     /// <remarks/>
     [System.Xml.Serialization.XmlEnum("1")]
@@ -445,6 +445,25 @@ public enum TipoIsencao
     Outros = 99,
 
 }
+
+public enum TipoIsencaoPJ
+{
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Entidade não isenta/não imune - Tributação normal")]
+    EntidadeIsentaNaoImune = 1,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Instituição de educação e de assistência social sem fins lucrativos, a que se refere o art. 12 da Lei nº 9.532, de 10 de dezembro de 1997")]
+    InstEduOrAssistSocial = 2,
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Instituição de caráter filantrópico, recreativo, cultural, científico e às associações civis, a que se refere o art. 15 da Lei nº 9.532, de 1997")]
+    InstituicaoFilantropica = 3,
+}
+
 
 public enum IndicadorOrigemDosRecursos
 {
