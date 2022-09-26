@@ -2,6 +2,12 @@
 
 public class R4080Test : BaseEfdReinfTest<R4080>
 {
+    public R4080Test()
+    {
+        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4080RetencaoRecebimento/v2_01_01";
+        ValidationSchema = Resources.Schemas.EFD_Reinf.R4080_v2_01_01;
+    }
+
     [Test]
     public void RendimentosRecebidosComRetencao()
     {
@@ -9,10 +15,6 @@ public class R4080Test : BaseEfdReinfTest<R4080>
     }
 
     // BaseEfdReinfTest overrides
-    public override string ValidationSchemaNamespace => "http://www.reinf.esocial.gov.br/schemas/evt4080RetencaoRecebimento/v2_01_01";
-
-    public override string ValidationSchema => Resources.Schemas.EFD_Reinf.R4080_v2_01_01;
-
     public override void PreencheCampos(R4080 evento)
     {
         evento.evtRetRec = new()

@@ -2,6 +2,12 @@
 
 public class R4020Test : BaseEfdReinfTest<R4020>
 {
+    public R4020Test()
+    {
+        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/v2_01_01";
+        ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
+    }
+
     private int _testNumber = 0;
 
     [Test]
@@ -27,10 +33,6 @@ public class R4020Test : BaseEfdReinfTest<R4020>
 
 
     // BaseEfdReinfTest overrides
-    public override string ValidationSchemaNamespace => "http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/v2_01_01";
-
-    public override string ValidationSchema => Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
-
     public override void PreencheCampos(R4020 evento)
     {
         switch (_testNumber)

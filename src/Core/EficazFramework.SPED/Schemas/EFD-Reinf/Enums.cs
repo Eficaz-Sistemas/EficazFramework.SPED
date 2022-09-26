@@ -1,5 +1,11 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+public enum Versao
+{
+    v1_05_01 = 0,
+    v2_01_01 = 1
+}
+
 public enum Ambiente
 {
     [System.Xml.Serialization.XmlEnum("1")]
