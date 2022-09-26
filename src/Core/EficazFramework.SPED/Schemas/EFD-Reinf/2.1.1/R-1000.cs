@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01", IsNullable = false)]
 public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private R1000_EventoInfoContribuinte evtInfoContriField;
@@ -78,17 +73,12 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R1000));
+        return new XmlSerializer(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false});
     }
 
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento ideEventoField;
@@ -174,11 +164,6 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_InfoContri : object, INotifyPropertyChanged
 {
     private object itemField;
@@ -215,11 +200,6 @@ public partial class R1000_InfoContri : object, INotifyPropertyChanged
 
 
 // Alteração:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_Alteracao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -287,11 +267,6 @@ public partial class R1000_Alteracao : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
 {
     private string ideEFRField;
@@ -343,11 +318,6 @@ public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : 
 
 
 // Exclusão:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_Exclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -382,11 +352,6 @@ public partial class R1000_Exclusao : object, INotifyPropertyChanged
 
 
 // Inclusão:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_Inclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -436,11 +401,6 @@ public partial class R1000_Inclusao : object, INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
 {
     private string ideEFRField;
@@ -492,11 +452,6 @@ public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : o
 
 
 // R1000 Common:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
 {
     private string classTribField;
@@ -666,11 +621,6 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
 {
     private string nmCttField;
@@ -772,11 +722,6 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v2_01_01")]
 public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyChanged
 {
     private string cnpjSoftHouseField = "19574916000183";

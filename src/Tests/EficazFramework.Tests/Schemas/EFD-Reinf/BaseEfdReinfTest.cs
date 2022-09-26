@@ -5,12 +5,19 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
     /// <summary>
     /// Informa o namespace principal (xmlns) para validação do documento XML
     /// </summary>
-    public abstract string ValidationSchemaNamespace { get; }
+    public string ValidationSchemaNamespace { get; set; }
 
     /// <summary>
     /// Informa a ID do Recurso que contém o schema XSD para validação do documento XML.
     /// </summary>
-    public abstract string ValidationSchema { get; }
+    public string ValidationSchema { get; set; }
+
+    /// <summary>
+    /// Action executada quando uma nova instância de <see cref="T"/>
+    /// é criada pela leitura do arquivo XML do evento que está sendo lido / testado.
+    /// </summary>
+    /// <returns></returns>
+    public Action<T> InstanciaDesserializada { get; set; }
 
     internal void TestaEvento()
     {
@@ -25,6 +32,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
 
         // deserialização para nova instância (leitura de xml)
         T novaInstancia = Activator.CreateInstance<T>();
+        InstanciaDesserializada?.Invoke(novaInstancia);
         novaInstancia = (T)novaInstancia.Deserialize(doc.OuterXml);
 
         // comparação entre as duas instâncias

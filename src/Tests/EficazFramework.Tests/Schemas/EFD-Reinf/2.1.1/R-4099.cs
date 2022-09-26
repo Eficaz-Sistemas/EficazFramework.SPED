@@ -2,6 +2,12 @@
 
 public class R4099Test : BaseEfdReinfTest<R4099>
 {
+    public R4099Test()
+    {
+        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01";
+        ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
+    }
+
     private int _testNumber = 0;
 
     [Test]
@@ -20,10 +26,6 @@ public class R4099Test : BaseEfdReinfTest<R4099>
 
 
     // BaseEfdReinfTest overrides
-    public override string ValidationSchemaNamespace => "http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01";
-
-    public override string ValidationSchema => Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
-
     public override void PreencheCampos(R4099 evento)
     {
         switch (_testNumber)

@@ -2,6 +2,12 @@
 
 public class R4040Test : BaseEfdReinfTest<R4040>
 {
+    public R4040Test()
+    {
+        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01";
+        ValidationSchema = Resources.Schemas.EFD_Reinf.R4040_v2_01_01;
+    }
+
     //[Test] Ignorando o teste pois provavelmente o patten do campo 'natRend' ficou ERRADO.
     public void RendimentoNaoIdentificado()
     {
@@ -9,10 +15,6 @@ public class R4040Test : BaseEfdReinfTest<R4040>
     }
 
     // BaseEfdReinfTest overrides
-    public override string ValidationSchemaNamespace => "http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01";
-
-    public override string ValidationSchema => Resources.Schemas.EFD_Reinf.R4040_v2_01_01;
-
     public override void PreencheCampos(R4040 evento)
     {
         evento.evtBenefNId = new()
