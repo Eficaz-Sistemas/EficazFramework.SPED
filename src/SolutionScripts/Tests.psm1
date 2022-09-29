@@ -8,7 +8,7 @@ Param (
 	Process {
 		$location = Get-Location
 
-		dotnet test ./Tests/EficazFramework.Tests/EficazFramework.Tests.csproj --filter FullyQualifiedName~EficazFramework.SPED  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./Coverage/' /p:Exclude=[*]EficazFramework.Resources.Strings.*%2c[*]EficazFramework.Data.*2c[*]EficazFramework.Utilities.*
+		dotnet test ./Tests/EficazFramework.Tests/EficazFramework.Tests.csproj --filter FullyQualifiedName~EficazFramework.SPED  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./Coverage/' /p:Exclude="[EficazFramework.Data]*%2c[EficazFramework.Utilities]*%2c[*]EficazFramework.Resources.Strings.*"
 					
 		$relativepath = 'Tests\EficazFramework.Tests\Coverage'
 		$source = '-reports:./' + $relativepath.replace('\','/') + '/coverage.cobertura.xml'
@@ -19,7 +19,7 @@ Param (
 		Remove-Item $location\$relativepath\*.css
 		Remove-Item $location\$relativepath\*.svg
 
-		reportgenerator "$source" "$target" "-reporttypes:Html;HtmlChart" "-title:EficazFramework.SPED Code Coverage"
+		reportgenerator "$source" "$target" "-reporttypes:Html;HtmlChart" "-title:EficazFramework.SPED Code Coverage" "-assemblyfilters:-EficazFramework.Data;-EficazFramework.Utilities"
 		Invoke-Item $location\$relativepath\index.html
 		return
 	}
