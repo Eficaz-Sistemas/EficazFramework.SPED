@@ -1,18 +1,20 @@
-﻿
+﻿using EficazFramework.SPED.Schemas.Primitives;
+using System.Runtime.CompilerServices;
+
 namespace EficazFramework.SPED.Schemas.LCDPR;
 
 /// <summary>
-/// Dados Cadastrais
+/// LCPDR - Livro Caixa Digital do Produtor Rural
+/// Dados Cadastrais do Contribuinte: É utilizado para mostrar os dados cadastrais da pessoa física quanto ao esclarecimento à Receita Federal sobre as movimentações do produtor rural.
 /// </summary>
 /// <remarks>
-/// Nível hierárquico - 2 <br/>
-/// Ocorrência - 1:1
+/// Nível Hierárquico => 2 (Indexador)<br/>
+/// Ocorrência => 1:1 (1 documento para uma ocorrência)
 /// </remarks>
 /// <registrosped/>
 /// <example>
 /// ```csharp
-/// string _versao = "0013";
-/// var reg0030 = new Registro0030(null, _versao)
+/// var reg0030 = new Registro0030(null, "0013")
 /// {
 ///     Endereco = "Rua Teste",
 ///     Numero = 1234,
@@ -26,7 +28,7 @@ namespace EficazFramework.SPED.Schemas.LCDPR;
 /// };
 /// ```
 /// </example>
-public class Registro0030 : Primitives.Registro
+public class Registro0030 : Registro
 {
     /// <exclude />
     public Registro0030() : base("0030")
@@ -39,47 +41,47 @@ public class Registro0030 : Primitives.Registro
     }
 
     /// <summary>
-    /// Endereço da Pessoa Física
+    /// LCDPR | Dados Cadastrais | Registro0030 | Endereço da Pessoa Física
     /// </summary>
     public string Endereco { get; set; } = null;
 
     /// <summary>
-    /// Número
+    /// LCDPR | Dados Cadastrais | Registro0030 | Número do Endereço
     /// </summary>
     public string Numero { get; set; } = null;
-    
+
     /// <summary>
-    /// Complemento
+    /// LCDPR | Dados Cadastrais | Registro0030 | Complemento
     /// </summary>
     public string Complemento { get; set; } = null;
 
     /// <summary>
-    /// Bairro / Distrito
+    /// LCDPR | Dados Cadastrais | Registro0030 | Bairro / Distrito
     /// </summary>
     public string Bairro { get; set; } = null;
 
     /// <summary>
-    /// Unidade Federativa (http://sped.rfb.gov.br/pasta/show/1932)
+    /// LCDPR | Dados Cadastrais | Registro0030 | Unidade Federativa (http://sped.rfb.gov.br/pasta/show/1932)
     /// </summary>
     public string UF { get; set; } = null;
 
     /// <summary>
-    /// Código do Município (http://sped.rfb.gov.br/pasta/show/1932)
+    /// LCDPR | Dados Cadastrais | Registro0030 | Código do Município (http://sped.rfb.gov.br/pasta/show/1932)
     /// </summary>
     public string CodigoMunicipio { get; set; } = null;
 
     /// <summary>
-    /// Código de Endereçamento Postal
+    /// LCDPR | Dados Cadastrais | Registro0030 | Código de Endereçamento Postal(CEP)
     /// </summary>
     public string CEP { get; set; } = null;
 
     /// <summary>
-    /// DDD + Número de Telefone
+    /// LCDPR | Dados Cadastrais | Registro0030 | DDD + Número de Telefone
     /// </summary>
     public string Telefone { get; set; } = null;
 
     /// <summary>
-    /// Correio eletrônico
+    /// LCDPR | Dados Cadastrais | Registro0030 | Correio eletrônico
     /// </summary>
     public string EMail { get; set; } = null;
 
