@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01", IsNullable = false)]
 public partial class R2010 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtServTom evtServTomField;
@@ -78,16 +73,11 @@ public partial class R2010 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2010));
+        return new XmlSerializer(typeof(R2010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTom : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -172,11 +162,6 @@ public partial class ReinfEvtServTom : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTom : object, INotifyPropertyChanged
 {
     private ReinfEvtServTomInfoServTomIdeEstabObra ideEstabObraField;
@@ -210,11 +195,6 @@ public partial class ReinfEvtServTomInfoServTom : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObra : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -328,11 +308,6 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObra : object, INotifyPro
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ : object, INotifyPropertyChanged
 {
     private string cnpjPrestadorField;
@@ -565,11 +540,6 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ : object
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs : object, INotifyPropertyChanged
 {
     private string serieField;
@@ -689,11 +659,6 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs : obj
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ : object, INotifyPropertyChanged
 {
     private string tpServicoField;
@@ -889,11 +854,6 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTp
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetPrincField;
@@ -978,11 +938,6 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcR
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/v2_01_01")]
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetAdicField;
