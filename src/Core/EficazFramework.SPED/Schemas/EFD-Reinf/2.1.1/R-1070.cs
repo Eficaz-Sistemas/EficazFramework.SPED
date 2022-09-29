@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01", IsNullable = false)]
 public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtTabProcesso evtTabProcessoField;
@@ -78,17 +73,12 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R1070));
+        return new XmlSerializer(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
     }
 
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoIdeEvento ideEventoField;
@@ -174,11 +164,6 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 
 
 // Identificação do Evento:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChanged
 {
     private Ambiente tpAmbField;
@@ -247,11 +232,6 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
 
 
 // Informação do Processo:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyChanged
 {
     private object itemField;
@@ -288,11 +268,6 @@ public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyCh
 
 
 // Alteração:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcessoField;
@@ -343,11 +318,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyP
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -486,11 +456,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
 {
     private string codSuspField;
@@ -575,11 +540,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
 {
     private string ufVaraField;
@@ -647,11 +607,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosPro
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : object, INotifyPropertyChanged
 {
     private string iniValidField;
@@ -707,11 +662,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : obje
 
 
 // Exclusão:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcessoField;
@@ -744,11 +694,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPr
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -838,11 +783,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
 
 
 // Inclusão:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcessoField;
@@ -876,11 +816,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPr
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -1020,11 +955,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
 {
     private string codSuspField;
@@ -1109,11 +1039,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/v2_01_01")]
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
 {
     private string ufVaraField;
