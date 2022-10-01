@@ -2,7 +2,7 @@
     
 public static class Functions
 {
-    internal static string ConvertStringArrayInDefaultSchema(string[] data)
+    internal static string ConvertStringArrayInDefaultSchema(params string[] data)
     {
         var schemaDefault = new StringBuilder();
 
