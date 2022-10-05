@@ -1,7 +1,4 @@
-﻿
-using EficazFramework.SPED.Utilities.Registros;
-
-namespace EficazFramework.SPED.Schemas.LCDPR;
+﻿namespace EficazFramework.SPED.Schemas.LCDPR;
 
 /// <summary>
 /// Dados Cadastrais
@@ -89,7 +86,7 @@ public class Registro0030 : Primitives.Registro
     public override string EscreveLinha()
     {
         var dataArray = new string[] { Codigo, Endereco, Numero, Complemento, Bairro, UF, CodigoMunicipio, CEP, Telefone, EMail};
-        return Functions.ConvertStringArrayInDefaultSchema(dataArray);
+        return ConvertStringArrayInDefaultSchema(dataArray);
     }
 
     /// <inheritdoc/>
