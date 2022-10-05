@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using EficazFramework.SPED.Schemas.GNRE;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace EficazFramework.SPED.Schemas.LCDPR.Bloco0;
@@ -53,6 +54,13 @@ public class Registro0030 : Tests.BaseTest
         InternalRead(reg, versao);
     }
 
+    public void TestRegularConvertFunctionToRegularExpression()
+    {
+        var stringArray = new string[] { "Teste", "Teste", "Registro", "0030" };
+        var reg = new EficazFramework.SPED.Schemas.LCDPR.Registro0030("", "0013");
+        var result = reg.ConvertStringArrayInDefaultSchema(stringArray);
+        Assert.AreEqual(result, "Teste|Teste|Registro|0030");
+    }
 
     private void InternalRead(EficazFramework.SPED.Schemas.LCDPR.Registro0030 reg, string versao = "0013")
     {
