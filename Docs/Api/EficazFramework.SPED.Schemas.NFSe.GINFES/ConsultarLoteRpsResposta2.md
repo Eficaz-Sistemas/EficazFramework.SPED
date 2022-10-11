@@ -7,7 +7,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | Documentos | `List<tcInfNfse>` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

@@ -16,21 +16,3 @@
 | [Finalidade](EficazFramework.SPED.Schemas.Primitives/Finalidade.md 'EficazFramework.SPED.Schemas.Primitives.Finalidade') | |
 | [IndicadorMovimento](EficazFramework.SPED.Schemas.Primitives/IndicadorMovimento.md 'EficazFramework.SPED.Schemas.Primitives.IndicadorMovimento') | |
 | [TipoAtividade](EficazFramework.SPED.Schemas.Primitives/TipoAtividade.md 'EficazFramework.SPED.Schemas.Primitives.TipoAtividade') | |
-### Delegates
-
-<a name='EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventHandler(object,EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventArgs)'></a>
-
-## ContagemRegistroEventHandler(object, ContagemRegistroEventArgs) Delegate
-
-```csharp
-public delegate void ContagemRegistroEventHandler(object sender, EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventArgs e);
-```
-#### Parameters
-
-<a name='EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventHandler(object,EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventArgs).sender'></a>
-
-`sender` [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
-
-<a name='EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventHandler(object,EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventArgs).e'></a>
-
-`e` [ContagemRegistroEventArgs](EficazFramework.SPED.Schemas.Primitives/ContagemRegistroEventArgs.md 'EficazFramework.SPED.Schemas.Primitives.ContagemRegistroEventArgs')

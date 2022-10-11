@@ -25,7 +25,7 @@ Objeto de retorno do tipo Cancelamento de Nota Fiscal (Autorizada ou Denegada).
 | SituacaoManifestacao | `SituacaoManifestacaoDestinatario` |  |
 | NSU | `String` |  |
 | Protocolo | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 
 | Methods | |
 | :--- | :--- |

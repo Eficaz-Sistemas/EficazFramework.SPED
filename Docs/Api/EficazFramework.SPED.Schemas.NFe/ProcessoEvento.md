@@ -13,7 +13,7 @@ Esta classe representa o retorno de Cancelamento da NF-e por meio de Evento.
 | Evento | `Evento` |  |
 | EventoRetorno | `EventoRetorno` |  |
 | Versao | `VersaoServicoEvento` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

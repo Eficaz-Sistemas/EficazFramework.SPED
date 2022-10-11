@@ -11,7 +11,7 @@
 | Inutilizacao | `InutilizacaoNFe` |  |
 | RetornoInutilizacao | `InutilizacaoRetorno` |  |
 | versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

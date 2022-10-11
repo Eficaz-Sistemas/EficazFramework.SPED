@@ -14,7 +14,7 @@
 | RespostaDescricao | `String` |  |
 | ResultadoEventos | `List<EventoRetorno>` |  |
 | Versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

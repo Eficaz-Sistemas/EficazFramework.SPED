@@ -8,7 +8,7 @@
 | :--- | :---: | :--- |
 | InfNfse | `tcInfNfse` |  |
 | Signature | `List<SignatureType>` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

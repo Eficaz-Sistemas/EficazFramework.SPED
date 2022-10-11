@@ -4,7 +4,7 @@
 ## Operations.Open(Stream) Method
 
 ```csharp
-public static EficazFramework.SPED.Utilities.XML.IXmlSpedDocument Open(System.IO.Stream source);
+public static EficazFramework.SPED.Schemas.IXmlSpedDocument Open(System.IO.Stream source);
 ```
 #### Parameters
 
@@ -13,4 +13,4 @@ public static EficazFramework.SPED.Utilities.XML.IXmlSpedDocument Open(System.IO
 `source` [System.IO.Stream](https://docs.microsoft.com/en-us/dotnet/api/System.IO.Stream 'System.IO.Stream')
 
 #### Returns
-[IXmlSpedDocument](EficazFramework.SPED.Utilities.XML.md#EficazFramework.SPED.Utilities.XML.IXmlSpedDocument 'EficazFramework.SPED.Utilities.XML.IXmlSpedDocument')
+[IXmlSpedDocument](EficazFramework.SPED.Schemas.md#EficazFramework.SPED.Schemas.IXmlSpedDocument 'EficazFramework.SPED.Schemas.IXmlSpedDocument')

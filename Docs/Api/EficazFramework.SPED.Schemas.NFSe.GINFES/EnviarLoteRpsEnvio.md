@@ -7,7 +7,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | Lote | `tcLoteRps` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

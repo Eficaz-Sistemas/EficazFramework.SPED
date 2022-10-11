@@ -9,7 +9,7 @@
 | Nfse | `NFSe` |  |
 | NfseCancelamento | `tcCancelamentoNfse` |  |
 | NfseSubstituicao | `tcSubstituicaoNfse` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 
