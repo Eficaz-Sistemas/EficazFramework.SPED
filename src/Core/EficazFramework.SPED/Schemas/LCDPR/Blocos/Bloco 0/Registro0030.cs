@@ -1,4 +1,6 @@
 ﻿
+using EficazFramework.SPED.Utilities.Registros;
+
 namespace EficazFramework.SPED.Schemas.LCDPR;
 
 /// <summary>
@@ -86,18 +88,8 @@ public class Registro0030 : Primitives.Registro
     /// <inheritdoc/>
     public override string EscreveLinha()
     {
-        var writer = new System.Text.StringBuilder();
-        writer.Append("0030|"); // 1
-        writer.Append(Endereco + "|"); // 2
-        writer.Append(Numero + "|"); // 3
-        writer.Append(Complemento + "|"); // 4
-        writer.Append(Bairro + "|"); // 5
-        writer.Append(UF + "|"); // 6
-        writer.Append(CodigoMunicipio + "|"); // 7
-        writer.Append(CEP + "|"); // 8
-        writer.Append(Telefone + "|"); // 9
-        writer.Append(EMail); // 10
-        return writer.ToString();
+        var dataArray = new string[] { Codigo, Endereco, Numero, Complemento, Bairro, UF, CodigoMunicipio, CEP, Telefone, EMail};
+        return Functions.ConvertStringArrayInDefaultSchema(dataArray);
     }
 
     /// <inheritdoc/>
