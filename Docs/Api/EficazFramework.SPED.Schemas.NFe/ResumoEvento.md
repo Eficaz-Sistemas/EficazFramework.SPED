@@ -18,7 +18,7 @@
 | DescricaoEvento | `String` |  |
 | DataAutorizacao | `Nullable<DateTime>` |  |
 | Protocolo | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 
 | Methods | |
 | :--- | :--- |

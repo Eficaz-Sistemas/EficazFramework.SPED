@@ -4,8 +4,6 @@
 
 | Classes | |
 | :--- | :--- |
-| [ConsultaInformacoesConsolidadas](EficazFramework.SPED.Schemas.EFD_Reinf/ConsultaInformacoesConsolidadas.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ConsultaInformacoesConsolidadas') | Envio do evento R-5011 |
-| [EnvioLoteEventos](EficazFramework.SPED.Schemas.EFD_Reinf/EnvioLoteEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EnvioLoteEventos') | Envio dos eventos R-1000 ao R-2098 |
 | [IEfdReinfEvt](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt') | |
 | [KeyInfoType](EficazFramework.SPED.Schemas.EFD_Reinf/KeyInfoType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.KeyInfoType') | |
 | [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | |
@@ -121,53 +119,13 @@
 | [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso') | |
 | [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud') | |
 | [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp') | |
-| [ReinfEvtTotal](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotal') | |
-| [ReinfEvtTotalContrib](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContrib.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContrib') | |
-| [ReinfEvtTotalContribIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribIdeContri') | |
-| [ReinfEvtTotalContribIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribIdeEvento') | |
-| [ReinfEvtTotalContribIdeRecRetorno](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribIdeRecRetorno.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribIdeRecRetorno') | |
-| [ReinfEvtTotalContribInfoTotalContrib](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContrib.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContrib') | |
-| [ReinfEvtTotalContribInfoTotalContribRComl](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRComl.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRComl') | |
-| [ReinfEvtTotalContribInfoTotalContribRCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRCPRB') | |
-| [ReinfEvtTotalContribInfoTotalContribRPrest](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRPrest.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRPrest') | |
-| [ReinfEvtTotalContribInfoTotalContribRRecRepAD](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRRecRepAD.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRRecRepAD') | |
-| [ReinfEvtTotalContribInfoTotalContribRTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRTom') | |
-| [ReinfEvtTotalContribInfoTotalContribRTomInfoCRTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalContribInfoTotalContribRTomInfoCRTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalContribInfoTotalContribRTomInfoCRTom') | |
-| [ReinfEvtTotalIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalIdeContri') | |
-| [ReinfEvtTotalIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalIdeEvento') | |
-| [ReinfEvtTotalIdeRecRetorno](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalIdeRecRetorno.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalIdeRecRetorno') | |
-| [ReinfEvtTotalInfoRecEv](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoRecEv.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoRecEv') | |
-| [ReinfEvtTotalInfoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotal') | |
-| [ReinfEvtTotalInfoTotalRComl](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRComl.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRComl') | |
-| [ReinfEvtTotalInfoTotalRCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRCPRB') | |
-| [ReinfEvtTotalInfoTotalRPrest](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRPrest.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRPrest') | |
-| [ReinfEvtTotalInfoTotalRRecEspetDesp](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRRecEspetDesp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRRecEspetDesp') | |
-| [ReinfEvtTotalInfoTotalRRecRepAD](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRRecRepAD.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRRecRepAD') | |
-| [ReinfEvtTotalInfoTotalRTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRTom') | |
-| [ReinfEvtTotalInfoTotalRTomInfoCRTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTotalInfoTotalRTomInfoCRTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTotalInfoTotalRTomInfoCRTom') | |
-| [ReinfLoteEventos](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfLoteEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfLoteEventos') | |
-| [ReinfRetornoLoteEventos](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfRetornoLoteEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfRetornoLoteEventos') | |
-| [ReinfRetornoLoteEventosRetornoEventos](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfRetornoLoteEventosRetornoEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfRetornoLoteEventosRetornoEventos') | |
 | [ReinfTimeStampUtils](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils') | |
-| [RetornoLoteEventos](EficazFramework.SPED.Schemas.EFD_Reinf/RetornoLoteEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.RetornoLoteEventos') | Retorno ao chamado dos eventos R-1000 ao R-2098 |
 | [SignatureType](EficazFramework.SPED.Schemas.EFD_Reinf/SignatureType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignatureType') | |
 | [SignatureValueType](EficazFramework.SPED.Schemas.EFD_Reinf/SignatureValueType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignatureValueType') | |
 | [SignedInfoType](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoType') | |
 | [SignedInfoTypeCanonicalizationMethod](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoTypeCanonicalizationMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoTypeCanonicalizationMethod') | |
 | [SignedInfoTypeSignatureMethod](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoTypeSignatureMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoTypeSignatureMethod') | |
-| [TArquivoeReinf](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoeReinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoeReinf') | |
-| [TArquivoReinf](EficazFramework.SPED.Schemas.EFD_Reinf/TArquivoReinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TArquivoReinf') | |
-| [TDadosProcessamentoEvento](EficazFramework.SPED.Schemas.EFD_Reinf/TDadosProcessamentoEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TDadosProcessamentoEvento') | |
-| [TIdeTransmissor](EficazFramework.SPED.Schemas.EFD_Reinf/TIdeTransmissor.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TIdeTransmissor') | |
-| [TotalEventoContrib](EficazFramework.SPED.Schemas.EFD_Reinf/TotalEventoContrib.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalEventoContrib') | Retono ao chamado do evento R-5011 |
-| [TotalEventos](EficazFramework.SPED.Schemas.EFD_Reinf/TotalEventos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalEventos') | |
 | [TransformType](EficazFramework.SPED.Schemas.EFD_Reinf/TransformType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TransformType') | |
-| [TRegistroOcorrencias1](EficazFramework.SPED.Schemas.EFD_Reinf/TRegistroOcorrencias1.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TRegistroOcorrencias1') | |
-| [TRegistroOcorrencias2](EficazFramework.SPED.Schemas.EFD_Reinf/TRegistroOcorrencias2.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TRegistroOcorrencias2') | |
-| [TRegistroOcorrenciasOcorrencias](EficazFramework.SPED.Schemas.EFD_Reinf/TRegistroOcorrenciasOcorrencias.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TRegistroOcorrenciasOcorrencias') | |
-| [TStatus](EficazFramework.SPED.Schemas.EFD_Reinf/TStatus.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TStatus') | |
-| [TStatus1](EficazFramework.SPED.Schemas.EFD_Reinf/TStatus1.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TStatus1') | |
-| [TStatus2](EficazFramework.SPED.Schemas.EFD_Reinf/TStatus2.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TStatus2') | |
 | [X509DataType](EficazFramework.SPED.Schemas.EFD_Reinf/X509DataType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.X509DataType') | |
 
 | Enums | |

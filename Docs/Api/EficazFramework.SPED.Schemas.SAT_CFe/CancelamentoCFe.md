@@ -16,7 +16,7 @@ Classe Principal contendo lote de CF-e's cancelados
 | dhEnvio | `String` |  |
 | nserieSAT | `String` |  |
 | versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

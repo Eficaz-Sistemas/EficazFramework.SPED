@@ -8,7 +8,7 @@
 | :--- | :---: | :--- |
 | Informacoes | `InformacoesCTe` |  |
 | Signature | `SignatureType` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

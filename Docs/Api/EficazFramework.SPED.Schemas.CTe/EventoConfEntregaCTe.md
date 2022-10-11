@@ -18,7 +18,7 @@
 | hashEntrega | `Byte[]` |  |
 | dhHashEntrega | `DateTime` |  |
 | infEntrega | `List<evCECTeInfEntrega>` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

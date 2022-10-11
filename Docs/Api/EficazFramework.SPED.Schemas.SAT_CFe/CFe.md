@@ -10,7 +10,7 @@ Classe Principal do CF-e
 | :--- | :---: | :--- |
 | infCFe | `CFeInformacoes` |  |
 | Any | `XElement` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

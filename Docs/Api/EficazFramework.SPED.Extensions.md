@@ -8,6 +8,7 @@
 | [FinancialExtensions](EficazFramework.SPED.Extensions/FinancialExtensions.md 'EficazFramework.SPED.Extensions.FinancialExtensions') | |
 | [Number](EficazFramework.SPED.Extensions/Number.md 'EficazFramework.SPED.Extensions.Number') | |
 | [String](EficazFramework.SPED.Extensions/String.md 'EficazFramework.SPED.Extensions.String') | |
+| [Xml](EficazFramework.SPED.Extensions/Xml.md 'EficazFramework.SPED.Extensions.Xml') | |
 
 | Enums | |
 | :--- | :--- |

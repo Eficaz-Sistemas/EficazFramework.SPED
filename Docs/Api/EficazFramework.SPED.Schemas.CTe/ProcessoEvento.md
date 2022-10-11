@@ -9,7 +9,7 @@
 | eventoCTe | `Evento` |  |
 | retEventoCTe | `RetornoEvento` |  |
 | versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

@@ -109,23 +109,6 @@
 | [TUnidCargaLacUnidCarga](EficazFramework.SPED.Schemas.CTe/TUnidCargaLacUnidCarga.md 'EficazFramework.SPED.Schemas.CTe.TUnidCargaLacUnidCarga') | |
 | [ValoresPrestacaoServico](EficazFramework.SPED.Schemas.CTe/ValoresPrestacaoServico.md 'EficazFramework.SPED.Schemas.CTe.ValoresPrestacaoServico') | |
 | [X509DataType](EficazFramework.SPED.Schemas.CTe/X509DataType.md 'EficazFramework.SPED.Schemas.CTe.X509DataType') | |
-### Interfaces
-
-<a name='EficazFramework.SPED.Schemas.CTe.ICabecalhoMensagem'></a>
-
-## ICabecalhoMensagem Interface
-
-```csharp
-public interface ICabecalhoMensagem
-```
-
-Derived  
-&#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.CTe/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.CTe.CabecalhoMensagem')  
-&#8627; [CabecalhoMensagem_CteConsulta](EficazFramework.SPED.Schemas.CTe/CabecalhoMensagem_CteConsulta.md 'EficazFramework.SPED.Schemas.CTe.CabecalhoMensagem_CteConsulta')
-
-| Methods | |
-| :--- | :--- |
-| [Serialize()](EficazFramework.SPED.Schemas.CTe/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.CTe.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

@@ -20,6 +20,7 @@
 | [R2030](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2030.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2030') | |
 | [R2040](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2040') | |
 | [R2050](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2050.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2050') | |
+| [R2055](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2055.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2055') | |
 | [R2060](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2060.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2060') | |
 | [R2098](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2098.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2098') | |
 | [R2099](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R2099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R2099') | |
@@ -27,6 +28,14 @@
 | [R9000](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/R9000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.R9000') | |
 | [ReferenceType](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReferenceType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReferenceType') | |
 | [ReferenceTypeDigestMethod](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReferenceTypeDigestMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReferenceTypeDigestMethod') | |
+| [ReinfAqProd](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfAqProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfAqProd') | |
+| [ReinfEvtAqProdIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdIdeContri') | |
+| [ReinfEvtAqProdIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdIdeEvento') | |
+| [ReinfEvtAqProdInfoAqProd](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdInfoAqProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdInfoAqProd') | |
+| [ReinfEvtAqProdInfoAqProdIdeEstabAdquir](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdInfoAqProdIdeEstabAdquir.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdInfoAqProdIdeEstabAdquir') | |
+| [ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc') | |
+| [ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor') | |
+| [ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis') | |
 | [ReinfEvtAssocDespRec](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAssocDespRec.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAssocDespRec') | |
 | [ReinfEvtAssocDespRecIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAssocDespRecIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAssocDespRecIdeContri') | |
 | [ReinfEvtAssocDespRecIdeContriIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf.v2_1/ReinfEvtAssocDespRecIdeContriIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.v2_1.ReinfEvtAssocDespRecIdeContriIdeEstab') | |

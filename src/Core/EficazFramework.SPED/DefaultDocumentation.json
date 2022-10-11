@@ -3,6 +3,16 @@
     "Header",
     "Default"
   ],
+  "NamespaceDocItem": {
+    "Sections": [
+      "Header",
+      "Title",
+      "summary",
+      "remarks",
+      "Classes",
+      "Enums"
+    ]
+  },
   "ClassDocItem": {
     "Sections": [
       "Header",

@@ -127,25 +127,6 @@
 | [VolumeLacres](EficazFramework.SPED.Schemas.NFe/VolumeLacres.md 'EficazFramework.SPED.Schemas.NFe.VolumeLacres') | |
 | [VolumeTransportado](EficazFramework.SPED.Schemas.NFe/VolumeTransportado.md 'EficazFramework.SPED.Schemas.NFe.VolumeTransportado') | |
 | [X509DataType](EficazFramework.SPED.Schemas.NFe/X509DataType.md 'EficazFramework.SPED.Schemas.NFe.X509DataType') | |
-### Interfaces
-
-<a name='EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem'></a>
-
-## ICabecalhoMensagem Interface
-
-```csharp
-public interface ICabecalhoMensagem
-```
-
-Derived  
-&#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem')  
-&#8627; [CabecalhoMensagem_ConsultaDestinatario](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_ConsultaDestinatario.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_ConsultaDestinatario')  
-&#8627; [CabecalhoMensagem_DownloadNF](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_DownloadNF.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_DownloadNF')  
-&#8627; [CabecalhoMensagem_RecepcaoEvento](EficazFramework.SPED.Schemas.NFe/CabecalhoMensagem_RecepcaoEvento.md 'EficazFramework.SPED.Schemas.NFe.CabecalhoMensagem_RecepcaoEvento')
-
-| Methods | |
-| :--- | :--- |
-| [Serialize()](EficazFramework.SPED.Schemas.NFe/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.NFe.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

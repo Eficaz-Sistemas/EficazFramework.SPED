@@ -1,5 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System;
+using System.Drawing;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Policy;
 
 namespace EficazFramework.SPED.Schemas.LCDPR;
 
@@ -110,3 +113,21 @@ public class Escrituracao : Primitives.Escrituracao
         return cnpj;
     }
 }
+
+
+/// <summary>
+/// # Livro Caixa Digital do Produtor Rural (LCDPR)<br/>
+/// ## Publico Alvo<br/>
+///  - Produtor Rural Pessoa Física<br/>
+///  - Faturamento Anual acima de R$ 4,8 milhões de reais<br/>
+/// ## Guia<br/>
+/// Obrigação Assessória de competência do Produtor Rural, que visa esclarecer para a Receita Federal as suas movimentações (Receitas x Despesas), quando a Renda Bruta do ano-calendário ultrapassar o limite até R$4,8 milhões de reais. <br/>
+/// Foi implementada pela Instrução Normativa n° 1848, de 28 de Novembro de 2018.<br/>
+/// ## Objetivo<br/>
+/// Tornar o cumprimento das obrigações fiscais do produtor rural, obrigatoriamente, pessoa física, mais transparentes e claros, agilizando o processo por meio da digitalização.<br/>
+/// ## Links Úteis<br/>
+/// - [Manual de Preenchimento, v1.3](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/declaracoes-e-demonstrativos/lcdpr-livro-caixa-digital-do-produtor-rural/manual-de-preenchimento-do-lcdpr-1-3)<br/>
+/// - [Perguntas e Respostas](https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/perguntas-e-respostas-lcdpr/Perguntas-Respostas-LCDPR)<br/>
+/// ## Implementação<br/>
+/// </summary>
+internal class NamespaceDoc { }

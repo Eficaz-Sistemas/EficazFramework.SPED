@@ -4,7 +4,7 @@
 ## Operations.OpenAsync(Stream) Method
 
 ```csharp
-public static System.Threading.Tasks.Task<EficazFramework.SPED.Utilities.XML.IXmlSpedDocument> OpenAsync(System.IO.Stream source);
+public static System.Threading.Tasks.Task<EficazFramework.SPED.Schemas.IXmlSpedDocument> OpenAsync(System.IO.Stream source);
 ```
 #### Parameters
 
@@ -13,4 +13,4 @@ public static System.Threading.Tasks.Task<EficazFramework.SPED.Utilities.XML.IXm
 `source` [System.IO.Stream](https://docs.microsoft.com/en-us/dotnet/api/System.IO.Stream 'System.IO.Stream')
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[IXmlSpedDocument](EficazFramework.SPED.Utilities.XML.md#EficazFramework.SPED.Utilities.XML.IXmlSpedDocument 'EficazFramework.SPED.Utilities.XML.IXmlSpedDocument')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')
+[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[IXmlSpedDocument](EficazFramework.SPED.Schemas.md#EficazFramework.SPED.Schemas.IXmlSpedDocument 'EficazFramework.SPED.Schemas.IXmlSpedDocument')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')

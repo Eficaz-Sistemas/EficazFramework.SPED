@@ -9,7 +9,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | Documentos | `tcListaNfse` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 
