@@ -11,7 +11,7 @@
 | NSU | `String` |  |
 | schema | `String` |  |
 | Value | `Byte[]` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 
 | Methods | |
 | :--- | :--- |

@@ -9,7 +9,7 @@
 | NFe | `NFe` |  |
 | ProtocoloAutorizacao | `ProtocoloRecebimento` |  |
 | Versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

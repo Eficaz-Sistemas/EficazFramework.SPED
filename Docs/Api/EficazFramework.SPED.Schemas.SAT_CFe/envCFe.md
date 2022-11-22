@@ -16,7 +16,7 @@ Classe de Envio de lote de CF-e'ss
 | dhEnvio | `String` |  |
 | nserieSAT | `String` |  |
 | versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 

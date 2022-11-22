@@ -5,22 +5,6 @@
 | Classes | |
 | :--- | :--- |
 | [CabecalhoMensagem](EficazFramework.SPED.Schemas.GNRE/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.GNRE.CabecalhoMensagem') | |
-### Interfaces
-
-<a name='EficazFramework.SPED.Schemas.GNRE.ICabecalhoMensagem'></a>
-
-## ICabecalhoMensagem Interface
-
-```csharp
-public interface ICabecalhoMensagem
-```
-
-Derived  
-&#8627; [CabecalhoMensagem](EficazFramework.SPED.Schemas.GNRE/CabecalhoMensagem.md 'EficazFramework.SPED.Schemas.GNRE.CabecalhoMensagem')
-
-| Methods | |
-| :--- | :--- |
-| [Serialize()](EficazFramework.SPED.Schemas.GNRE/ICabecalhoMensagem/Serialize().md 'EficazFramework.SPED.Schemas.GNRE.ICabecalhoMensagem.Serialize()') | |
 
 | Enums | |
 | :--- | :--- |

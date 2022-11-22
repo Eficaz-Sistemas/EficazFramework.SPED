@@ -9,7 +9,7 @@
 | infEvento | `TEventoInfEvento` |  |
 | Signature | `SignatureType` |  |
 | versao | `String` |  |
-| DocumentType | `XMLDocumentType` |  |
+| DocumentType | `XmlDocumentType` |  |
 | DataEmissao | `Nullable<DateTime>` |  |
 | Chave | `String` |  |
 
