@@ -1,5 +1,4 @@
-﻿
-namespace EficazFramework.SPED.Utilities.EFD_Reinf;
+﻿namespace EficazFramework.SPED.Utilities.EFD_Reinf;
 
 public class Converters
 {
