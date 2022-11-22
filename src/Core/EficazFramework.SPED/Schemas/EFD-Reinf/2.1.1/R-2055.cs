@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01", IsNullable = false)]
 public partial class R2055 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfAqProd evtAqProdField;
@@ -78,16 +73,11 @@ public partial class R2055 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2055));
+        return new XmlSerializer(typeof(R2055), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfAqProd : object, INotifyPropertyChanged
 {
     private ReinfEvtAqProdIdeEvento ideEventoField;
@@ -172,11 +162,6 @@ public partial class ReinfAqProd : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -297,11 +282,6 @@ public partial class ReinfEvtAqProdIdeEvento : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -357,11 +337,6 @@ public partial class ReinfEvtAqProdIdeContri : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
 {
     private ReinfEvtAqProdInfoAqProdIdeEstabAdquir ideEstabField;
@@ -395,11 +370,6 @@ public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscAdqField;
@@ -596,11 +566,6 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscProdField;
@@ -707,11 +672,6 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : object, INotifyPropertyChanged
 {
     private IndicadorAquisProd indAquisField;
@@ -830,11 +790,6 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : ob
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/v1_05_01")]
 public partial class ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
 {
     private string nrProcJudField;

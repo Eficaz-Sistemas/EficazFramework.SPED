@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01", IsNullable = false)]
 public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtFechaEvPer evtFechaEvPerField;
@@ -78,16 +73,11 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2099));
+        return new XmlSerializer(typeof(R2099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtFechamento/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
 public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
@@ -189,11 +179,6 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtFechamento/v2_01_01")]
 public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
 {
     private SimNao evtServTmField = SimNao.Nao;

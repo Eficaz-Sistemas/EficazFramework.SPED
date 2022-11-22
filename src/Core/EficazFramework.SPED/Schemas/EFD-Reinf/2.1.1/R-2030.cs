@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01", IsNullable = false)]
 public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtAssocDespRec evtAssocDespRecField;
@@ -78,16 +73,11 @@ public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2030));
+        return new XmlSerializer(typeof(R2030), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
 {
     private ReinfEvtAssocDespRecIdeEvento ideEventoField;
@@ -155,11 +145,6 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -278,11 +263,6 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -350,11 +330,6 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -422,11 +397,6 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, INotifyPropertyChanged
 {
     private string cnpjOrigRecursoField;
@@ -545,11 +515,6 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso : object, INotifyPropertyChanged
 {
     private TipoRepasseAssocDesp tpRepasseField;
@@ -634,11 +599,6 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/v2_01_01")]
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
