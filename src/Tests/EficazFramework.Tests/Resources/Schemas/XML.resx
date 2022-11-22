@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Sign" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--
+&lt;!DOCTYPE schema
+PUBLIC "-//W3C//DTD XMLSchema 200102//EN" "http://www.w3.org/2001/XMLSchema.dtd"
+[
+&lt;!ATTLIST schema
+xmlns:ds CDATA #FIXED "http://www.w3.org/2000/09/xmldsig#"&gt;
+&lt;!ENTITY dsig 'http://www.w3.org/2000/09/xmldsig#'&gt;
+&lt;!ENTITY % p ''&gt;
+&lt;!ENTITY % s ''&gt;
+]&gt;
+--&gt;
+&lt;!-- Schema for XML Signatures
+http://www.w3.org/2000/09/xmldsig#
+$Revision: 4 $ on $Date: 2004-12-16 12:08:17 -0500 (Thu, 16 Dec 2004) $ by $Author: marcgratacos $
+
+Copyright 2001 The Internet Society and W3C (Massachusetts Institute
+of Technology, Institut National de Recherche en Informatique et en
+Automatique, Keio University). All Rights Reserved.
+http://www.w3.org/Consortium/Legal/
+
+This document is governed by the W3C Software License [1] as described
+in the FAQ [2].
+
+[1] http://www.w3.org/Consortium/Legal/copyright-software-19980720
+[2] http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD
+--&gt;
+&lt;schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/2000/09/xmldsig#" version="0.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"&gt;
+&lt;!-- Basic Types Defined for Signatures --&gt;
+&lt;simpleType name="CryptoBinary"&gt;
+&lt;restriction base="base64Binary"/&gt;
+&lt;/simpleType&gt;
+&lt;!-- Start Signature --&gt;
+&lt;element name="Signature" type="ds:SignatureType"/&gt;
+&lt;complexType name="SignatureType"&gt;
+&lt;sequence&gt;
+&lt;element ref="ds:SignedInfo"/&gt;
+&lt;element ref="ds:SignatureValue"/&gt;
+&lt;element minOccurs="0" ref="ds:KeyInfo"/&gt;
+&lt;element maxOccurs="unbounded" minOccurs="0" ref="ds:Object"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="SignatureValue" type="ds:SignatureValueType"/&gt;
+&lt;complexType name="SignatureValueType"&gt;
+&lt;simpleContent&gt;
+&lt;extension base="base64Binary"&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/extension&gt;
+&lt;/simpleContent&gt;
+&lt;/complexType&gt;
+&lt;!-- Start SignedInfo --&gt;
+&lt;element name="SignedInfo" type="ds:SignedInfoType"/&gt;
+&lt;complexType name="SignedInfoType"&gt;
+&lt;sequence&gt;
+&lt;element ref="ds:CanonicalizationMethod"/&gt;
+&lt;element ref="ds:SignatureMethod"/&gt;
+&lt;element maxOccurs="unbounded" ref="ds:Reference"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="CanonicalizationMethod" type="ds:CanonicalizationMethodType"/&gt;
+&lt;complexType mixed="true" name="CanonicalizationMethodType"&gt;
+&lt;sequence&gt;
+&lt;any maxOccurs="unbounded" minOccurs="0" namespace="##any"/&gt;
+&lt;!-- (0,unbounded) elements from (1,1) namespace --&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Algorithm" type="anyURI" use="required"/&gt;
+&lt;/complexType&gt;
+&lt;element name="SignatureMethod" type="ds:SignatureMethodType"/&gt;
+&lt;complexType mixed="true" name="SignatureMethodType"&gt;
+&lt;sequence&gt;
+&lt;element minOccurs="0" name="HMACOutputLength" type="ds:HMACOutputLengthType"/&gt;
+&lt;any maxOccurs="unbounded" minOccurs="0" namespace="##other"/&gt;
+&lt;!-- (0,unbounded) elements from (1,1) external namespace --&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Algorithm" type="anyURI" use="required"/&gt;
+&lt;/complexType&gt;
+&lt;!-- Start Reference --&gt;
+&lt;element name="Reference" type="ds:ReferenceType"/&gt;
+&lt;complexType name="ReferenceType"&gt;
+&lt;sequence&gt;
+&lt;element minOccurs="0" ref="ds:Transforms"/&gt;
+&lt;element ref="ds:DigestMethod"/&gt;
+&lt;element ref="ds:DigestValue"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;attribute name="URI" type="anyURI" use="optional"/&gt;
+&lt;attribute name="Type" type="anyURI" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="Transforms" type="ds:TransformsType"/&gt;
+&lt;complexType name="TransformsType"&gt;
+&lt;sequence&gt;
+&lt;element maxOccurs="unbounded" ref="ds:Transform"/&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;element name="Transform" type="ds:TransformType"/&gt;
+&lt;complexType mixed="true" name="TransformType"&gt;
+&lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
+&lt;any namespace="##other" processContents="lax"/&gt;
+&lt;!-- (1,1) elements from (0,unbounded) namespaces --&gt;
+&lt;element name="XPath" type="string"/&gt;
+&lt;/choice&gt;
+&lt;attribute name="Algorithm" type="anyURI" use="required"/&gt;
+&lt;/complexType&gt;
+&lt;!-- End Reference --&gt;
+&lt;element name="DigestMethod" type="ds:DigestMethodType"/&gt;
+&lt;complexType mixed="true" name="DigestMethodType"&gt;
+&lt;sequence&gt;
+&lt;any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Algorithm" type="anyURI" use="required"/&gt;
+&lt;/complexType&gt;
+&lt;element name="DigestValue" type="ds:DigestValueType"/&gt;
+&lt;simpleType name="DigestValueType"&gt;
+&lt;restriction base="base64Binary"/&gt;
+&lt;/simpleType&gt;
+&lt;!-- End SignedInfo --&gt;
+&lt;!-- Start KeyInfo --&gt;
+&lt;element name="KeyInfo" type="ds:KeyInfoType"/&gt;
+&lt;complexType mixed="true" name="KeyInfoType"&gt;
+&lt;choice maxOccurs="unbounded"&gt;
+&lt;element ref="ds:KeyName"/&gt;
+&lt;element ref="ds:KeyValue"/&gt;
+&lt;element ref="ds:RetrievalMethod"/&gt;
+&lt;element ref="ds:X509Data"/&gt;
+&lt;element ref="ds:PGPData"/&gt;
+&lt;element ref="ds:SPKIData"/&gt;
+&lt;element ref="ds:MgmtData"/&gt;
+&lt;any namespace="##other" processContents="lax"/&gt;
+&lt;!-- (1,1) elements from (0,unbounded) namespaces --&gt;
+&lt;/choice&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="KeyName" type="string"/&gt;
+&lt;element name="MgmtData" type="string"/&gt;
+&lt;element name="KeyValue" type="ds:KeyValueType"/&gt;
+&lt;complexType mixed="true" name="KeyValueType"&gt;
+&lt;choice&gt;
+&lt;element ref="ds:DSAKeyValue"/&gt;
+&lt;element ref="ds:RSAKeyValue"/&gt;
+&lt;any namespace="##other" processContents="lax"/&gt;
+&lt;/choice&gt;
+&lt;/complexType&gt;
+&lt;element name="RetrievalMethod" type="ds:RetrievalMethodType"/&gt;
+&lt;complexType name="RetrievalMethodType"&gt;
+&lt;sequence&gt;
+&lt;element minOccurs="0" ref="ds:Transforms"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="URI" type="anyURI"/&gt;
+&lt;attribute name="Type" type="anyURI" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;!-- Start X509Data --&gt;
+&lt;element name="X509Data" type="ds:X509DataType"/&gt;
+&lt;complexType name="X509DataType"&gt;
+&lt;sequence maxOccurs="unbounded"&gt;
+&lt;choice&gt;
+&lt;element name="X509IssuerSerial" type="ds:X509IssuerSerialType"/&gt;
+&lt;element name="X509SKI" type="base64Binary"/&gt;
+&lt;element name="X509SubjectName" type="string"/&gt;
+&lt;element name="X509Certificate" type="base64Binary"/&gt;
+&lt;element name="X509CRL" type="base64Binary"/&gt;
+&lt;any namespace="##other" processContents="lax"/&gt;
+&lt;/choice&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;complexType name="X509IssuerSerialType"&gt;
+&lt;sequence&gt;
+&lt;element name="X509IssuerName" type="string"/&gt;
+&lt;element name="X509SerialNumber" type="integer"/&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;!-- End X509Data --&gt;
+&lt;!-- Begin PGPData --&gt;
+&lt;element name="PGPData" type="ds:PGPDataType"/&gt;
+&lt;complexType name="PGPDataType"&gt;
+&lt;choice&gt;
+&lt;sequence&gt;
+&lt;element name="PGPKeyID" type="base64Binary"/&gt;
+&lt;element minOccurs="0" name="PGPKeyPacket" type="base64Binary"/&gt;
+&lt;any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/&gt;
+&lt;/sequence&gt;
+&lt;sequence&gt;
+&lt;element name="PGPKeyPacket" type="base64Binary"/&gt;
+&lt;any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/&gt;
+&lt;/sequence&gt;
+&lt;/choice&gt;
+&lt;/complexType&gt;
+&lt;!-- End PGPData --&gt;
+&lt;!-- Begin SPKIData --&gt;
+&lt;element name="SPKIData" type="ds:SPKIDataType"/&gt;
+&lt;complexType name="SPKIDataType"&gt;
+&lt;sequence maxOccurs="unbounded"&gt;
+&lt;element name="SPKISexp" type="base64Binary"/&gt;
+&lt;any minOccurs="0" namespace="##other" processContents="lax"/&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;!-- End SPKIData --&gt;
+&lt;!-- End KeyInfo --&gt;
+&lt;!-- Start Object (Manifest, SignatureProperty) --&gt;
+&lt;element name="Object" type="ds:ObjectType"/&gt;
+&lt;complexType mixed="true" name="ObjectType"&gt;
+&lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+&lt;any namespace="##any" processContents="lax"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;attribute name="MimeType" type="string" use="optional"/&gt;
+&lt;attribute name="Encoding" type="anyURI" use="optional"/&gt;
+&lt;!-- add a grep facet --&gt;
+&lt;/complexType&gt;
+&lt;element name="Manifest" type="ds:ManifestType"/&gt;
+&lt;complexType name="ManifestType"&gt;
+&lt;sequence&gt;
+&lt;element maxOccurs="unbounded" ref="ds:Reference"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="SignatureProperties" type="ds:SignaturePropertiesType"/&gt;
+&lt;complexType name="SignaturePropertiesType"&gt;
+&lt;sequence&gt;
+&lt;element maxOccurs="unbounded" ref="ds:SignatureProperty"/&gt;
+&lt;/sequence&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;element name="SignatureProperty" type="ds:SignaturePropertyType"/&gt;
+&lt;complexType mixed="true" name="SignaturePropertyType"&gt;
+&lt;choice maxOccurs="unbounded"&gt;
+&lt;any namespace="##other" processContents="lax"/&gt;
+&lt;!-- (1,1) elements from (1,unbounded) namespaces --&gt;
+&lt;/choice&gt;
+&lt;attribute name="Target" type="anyURI" use="required"/&gt;
+&lt;attribute name="Id" type="ID" use="optional"/&gt;
+&lt;/complexType&gt;
+&lt;!-- End Object (Manifest, SignatureProperty) --&gt;
+&lt;!-- Start Algorithm Parameters --&gt;
+&lt;simpleType name="HMACOutputLengthType"&gt;
+&lt;restriction base="integer"/&gt;
+&lt;/simpleType&gt;
+&lt;!-- Start KeyValue Element-types --&gt;
+&lt;element name="DSAKeyValue" type="ds:DSAKeyValueType"/&gt;
+&lt;complexType name="DSAKeyValueType"&gt;
+&lt;sequence&gt;
+&lt;sequence minOccurs="0"&gt;
+&lt;element name="P" type="ds:CryptoBinary"/&gt;
+&lt;element name="Q" type="ds:CryptoBinary"/&gt;
+&lt;/sequence&gt;
+&lt;element minOccurs="0" name="G" type="ds:CryptoBinary"/&gt;
+&lt;element name="Y" type="ds:CryptoBinary"/&gt;
+&lt;element minOccurs="0" name="J" type="ds:CryptoBinary"/&gt;
+&lt;sequence minOccurs="0"&gt;
+&lt;element name="Seed" type="ds:CryptoBinary"/&gt;
+&lt;element name="PgenCounter" type="ds:CryptoBinary"/&gt;
+&lt;/sequence&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;element name="RSAKeyValue" type="ds:RSAKeyValueType"/&gt;
+&lt;complexType name="RSAKeyValueType"&gt;
+&lt;sequence&gt;
+&lt;element name="Modulus" type="ds:CryptoBinary"/&gt;
+&lt;element name="Exponent" type="ds:CryptoBinary"/&gt;
+&lt;/sequence&gt;
+&lt;/complexType&gt;
+&lt;!-- End KeyValue Element-types --&gt;
+&lt;!-- End Signature --&gt;
+&lt;/schema&gt;</value>
+  </data>
+</root>

@@ -9,21 +9,21 @@ public class Sign
     /// Realiza a assinatura digital de um documento XML.
     /// </summary>
     /// <param name="xml">O <see cref="XmlDocument"/> a ser assinado.</param>
-    /// <param name="tag">A tag para localização do ponto de assinatura.</param>
-    /// <param name="id">A tag a ser assinada.</param>
+    /// <param name="tagToSign">A tag para localização do ponto de assinatura.</param>
+    /// <param name="tagID">A tag que contém a ID para assinatura.</param>
     /// <remarks></remarks>
-    public static void SignXml(XmlDocument xml, string tag, string id, X509Certificate2 certificate, bool signAsSHA256 = false, bool emptyURI = false)
+    public static void SignXml(XmlDocument xml, string tagToSign, string tagID, X509Certificate2 certificate, bool signAsSHA256 = false, bool emptyURI = false)
     {
         // ## Realiza ajustes necessários no XMLDocument e confere se a URI informada é válida
         if (certificate == null)
             throw new ArgumentNullException(Resources.Strings.Validation.iX509Certificate2NullReference);
 
-        XmlNodeList tags = xml.GetElementsByTagName(tag);
+        XmlNodeList tags = xml.GetElementsByTagName(tagToSign);
         int count = tags.Count;
         if (count == 0)
-            throw new ArgumentException(string.Format(Resources.Strings.Validation.XmlSign_TagNotFound, tag));
+            throw new ArgumentException(string.Format(Resources.Strings.Validation.XmlSign_TagNotFound, tagToSign));
         else if (count > 1)
-            throw new ArgumentException(string.Format(Resources.Strings.Validation.XmlSign_NonUniqueTag, tag));
+            throw new ArgumentException(string.Format(Resources.Strings.Validation.XmlSign_NonUniqueTag, tagToSign));
 
         // ## Solicita as credenciais do certificado
         SignedXml sxml = new(xml);
@@ -37,7 +37,7 @@ public class Sign
 
         Reference @ref = new();
         if (emptyURI == false)
-            @ref.Uri = "#" + xml.GetElementsByTagName(id).Item(0)!.Attributes.Cast<XmlAttribute>().Where(att => att.Name.ToLower() == "id").First().InnerText;
+            @ref.Uri = "#" + xml.GetElementsByTagName(tagID).Item(0)!.Attributes.Cast<XmlAttribute>().Where(att => att.Name.ToLower() == "id").First().InnerText;
         else
             @ref.Uri = "";
 

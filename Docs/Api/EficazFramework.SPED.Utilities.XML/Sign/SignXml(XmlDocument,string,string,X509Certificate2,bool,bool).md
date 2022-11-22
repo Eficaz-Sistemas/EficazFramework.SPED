@@ -6,7 +6,7 @@
 Realiza a assinatura digital de um documento XML.
 
 ```csharp
-public static void SignXml(System.Xml.XmlDocument xml, string tag, string id, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, bool signAsSHA256=false, bool emptyURI=false);
+public static void SignXml(System.Xml.XmlDocument xml, string tagToSign, string tagID, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, bool signAsSHA256=false, bool emptyURI=false);
 ```
 #### Parameters
 
@@ -16,17 +16,17 @@ public static void SignXml(System.Xml.XmlDocument xml, string tag, string id, Sy
 
 O [System.Xml.XmlDocument](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.XmlDocument 'System.Xml.XmlDocument') a ser assinado.
 
-<a name='EficazFramework.SPED.Utilities.XML.Sign.SignXml(System.Xml.XmlDocument,string,string,System.Security.Cryptography.X509Certificates.X509Certificate2,bool,bool).tag'></a>
+<a name='EficazFramework.SPED.Utilities.XML.Sign.SignXml(System.Xml.XmlDocument,string,string,System.Security.Cryptography.X509Certificates.X509Certificate2,bool,bool).tagToSign'></a>
 
-`tag` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+`tagToSign` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
 
 A tag para localização do ponto de assinatura.
 
-<a name='EficazFramework.SPED.Utilities.XML.Sign.SignXml(System.Xml.XmlDocument,string,string,System.Security.Cryptography.X509Certificates.X509Certificate2,bool,bool).id'></a>
+<a name='EficazFramework.SPED.Utilities.XML.Sign.SignXml(System.Xml.XmlDocument,string,string,System.Security.Cryptography.X509Certificates.X509Certificate2,bool,bool).tagID'></a>
 
-`id` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+`tagID` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
 
-A tag a ser assinada.
+A tag que contém a ID para assinatura.
 
 <a name='EficazFramework.SPED.Utilities.XML.Sign.SignXml(System.Xml.XmlDocument,string,string,System.Security.Cryptography.X509Certificates.X509Certificate2,bool,bool).certificate'></a>
 
