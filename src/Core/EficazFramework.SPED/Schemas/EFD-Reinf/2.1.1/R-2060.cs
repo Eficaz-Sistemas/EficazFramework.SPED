@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01", IsNullable = false)]
 public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtCPRB evtCPRBField;
@@ -78,16 +73,11 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2060));
+        return new XmlSerializer(typeof(R2060), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -172,11 +162,6 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
 {
     private ReinfEvtCPRBInfoCPRBIdeEstab ideEstabField;
@@ -210,11 +195,6 @@ public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -333,11 +313,6 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyPropertyChanged
 {
     private string codAtivEconField;
@@ -507,11 +482,6 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INotifyPropertyChanged
 {
     private TipoAjusteContribuicao tpAjusteField;
@@ -613,11 +583,6 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/v2_01_01")]
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

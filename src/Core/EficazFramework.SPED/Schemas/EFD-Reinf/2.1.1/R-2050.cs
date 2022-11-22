@@ -1,11 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01", IsNullable = false)]
 public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtComProd evtComProdField;
@@ -78,16 +73,11 @@ public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2050));
+        return new XmlSerializer(typeof(R2050), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProd : object, INotifyPropertyChanged
 {
     private ReinfEvtComProdIdeEvento ideEventoField;
@@ -172,11 +162,6 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -295,11 +280,6 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -350,11 +330,6 @@ public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
 {
     private ReinfEvtComProdInfoComProdIdeEstab ideEstabField;
@@ -388,11 +363,6 @@ public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -579,11 +549,6 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotifyPropertyChanged
 {
     private IndicadorContribuicaoProd indComField;
@@ -651,11 +616,6 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotify
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/v2_01_01")]
 public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
