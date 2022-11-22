@@ -1,11 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01", IsNullable = false)]
 public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtExclusao evtExclusaoField;
@@ -78,16 +73,11 @@ public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R9000));
+        return new XmlSerializer(typeof(R9000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtExclusao/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
 public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtExclusaoIdeEvento ideEventoField;
@@ -172,12 +162,9 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
 }
 
 
-// Identificação Evento:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
+/// <summary>
+/// Identificação Evento
+/// </summary>
 public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
 {
     private Ambiente tpAmbField;
@@ -245,12 +232,9 @@ public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
 }
 
 
-// Identificação Contribuinte:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
+/// <summary>
+/// Identificação Contribuinte
+/// </summary>
 public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -301,12 +285,9 @@ public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
 }
 
 
-// Identificação Evento:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01")]
+/// <summary>
+/// Identificação Evento (Exclusão)
+/// </summary>
 public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChanged
 {
     private string tpEventoField;

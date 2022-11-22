@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 public class R4080Test : BaseEfdReinfTest<R4080>
 {

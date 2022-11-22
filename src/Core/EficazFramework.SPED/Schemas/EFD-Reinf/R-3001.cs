@@ -1,11 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
-[XmlRoot("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01", IsNullable = false)]
 public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private ReinfEvtEspDesportivo evtEspDesportivoField;
@@ -78,15 +73,11 @@ public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R3010));
+        return new XmlSerializer(typeof(R3010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/{Versao}", IsNullable = false });
     }
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
 [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
 {
@@ -156,11 +147,6 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
 
 
 // Identificação Evento:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
@@ -280,11 +266,6 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
 
 
 // Identificação Contribuinte:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -352,11 +333,6 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -442,11 +418,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
 
 
 // Identificação Evento:
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INotifyPropertyChanged
 {
     private string nrBoletimField;
@@ -735,11 +706,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos : object, INotifyPropertyChanged
 {
     private TipoIngressoCompeticao tpIngressoField;
@@ -875,11 +841,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas : object, INotifyPropertyChanged
 {
     private TipoReceitaCompeticao tpReceitaField;
@@ -947,11 +908,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object, INotifyPropertyChanged
 {
     private string vlrReceitaTotalField;
@@ -1070,11 +1026,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
 }
 
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

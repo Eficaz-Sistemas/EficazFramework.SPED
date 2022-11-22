@@ -1,12 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01")]
-[System.Xml.Serialization.XmlRootAttribute("Reinf", Namespace="http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01", IsNullable=false)]
 public partial class R4099 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtFech evtFechField;
@@ -69,17 +63,11 @@ public partial class R4099 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R4099));
+        return new XmlSerializer(typeof(R4099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{Versao}", IsNullable = false });
     }
 
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01")]
 public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
@@ -158,12 +146,6 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01")]
 public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged {
     
     private IndicadorFechamentoReabertura fechRetField;

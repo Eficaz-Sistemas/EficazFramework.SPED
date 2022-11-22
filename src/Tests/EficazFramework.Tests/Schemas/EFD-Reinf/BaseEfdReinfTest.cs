@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEvt
 {
