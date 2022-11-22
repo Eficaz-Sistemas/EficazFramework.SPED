@@ -1,24 +1,24 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 [Serializable()]
-public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
 {
-    private ReinfEvtAssocDespRep evtAssocDespRepField;
+    private ReinfEvtCPRB evtCPRBField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtAssocDespRep evtAssocDespRep
+    public ReinfEvtCPRB evtCPRB
     {
         get
         {
-            return evtAssocDespRepField;
+            return evtCPRBField;
         }
 
         set
         {
-            evtAssocDespRepField = value;
-            RaisePropertyChanged("evtAssocDespRep");
+            evtCPRBField = value;
+            RaisePropertyChanged("evtCPRB");
         }
     }
 
@@ -42,18 +42,18 @@ public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
     // IEfdReinfEvt Members
     public override void GeraEventoID()
     {
-        evtAssocDespRepField.id = string.Format("ID{0}{1}{2}", (evtAssocDespRepField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAssocDespRepField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
     }
 
     public override string ContribuinteCNPJ()
     {
-        return evtAssocDespRep.ideContri.nrInsc;
+        return evtCPRB.ideContri.nrInsc;
     }
 
 
     // IXmlSignableDocument Members
     public override string TagToSign => "Reinf";
-    public override string TagId => "evtAssocDespRep";
+    public override string TagId => "evtCPRB";
     public override bool EmptyURI => true;
     public override bool SignAsSHA256 => true;
 
@@ -73,15 +73,16 @@ public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R2040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtRecursoRepassadoAssociacao/{Versao}", IsNullable = false });
+        return new XmlSerializer(typeof(R2060), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/{Versao}", IsNullable = false });
     }
 }
 
 
-public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
-    private ReinfEvtAssocDespRepIdeContri ideContriField;
+    private ReinfEvtIdeContri ideContriField;
+    private ReinfEvtCPRBInfoCPRB infoCPRBField;
     private string idField;
 
     /// <remarks/>
@@ -102,7 +103,7 @@ public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtAssocDespRepIdeContri ideContri
+    public ReinfEvtIdeContri ideContri
     {
         get
         {
@@ -113,6 +114,22 @@ public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
         {
             ideContriField = value;
             RaisePropertyChanged("ideContri");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public ReinfEvtCPRBInfoCPRB infoCPRB
+    {
+        get
+        {
+            return infoCPRBField;
+        }
+
+        set
+        {
+            infoCPRBField = value;
+            RaisePropertyChanged("infoCPRB");
         }
     }
 
@@ -145,47 +162,13 @@ public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
 }
 
 
-public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
 {
-    private PersonalidadeJuridica tpInscField;
-    private string nrInscField;
-    private ReinfEvtAssocDespRepIdeContriIdeEstab ideEstabField;
+    private ReinfEvtCPRBInfoCPRBIdeEstab ideEstabField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInsc
-    {
-        get
-        {
-            return tpInscField;
-        }
-
-        set
-        {
-            tpInscField = value;
-            RaisePropertyChanged("tpInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInsc
-    {
-        get
-        {
-            return nrInscField;
-        }
-
-        set
-        {
-            nrInscField = value;
-            RaisePropertyChanged("nrInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public ReinfEvtAssocDespRepIdeContriIdeEstab ideEstab
+    public ReinfEvtCPRBInfoCPRBIdeEstab ideEstab
     {
         get
         {
@@ -197,11 +180,6 @@ public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChan
             ideEstabField = value;
             RaisePropertyChanged("ideEstab");
         }
-    }
-
-    public string NumeroInscricaoTag()
-    {
-        return Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -217,11 +195,14 @@ public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChan
 }
 
 
-public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
-    private ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep[] recursosRepField;
+    private string vlrRecBrutaTotalField;
+    private string vlrCPApurTotalField;
+    private string vlrCPRBSuspTotalField;
+    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[] tipoCodField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -256,18 +237,66 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyProp
     }
 
     /// <remarks/>
-    [XmlElement("recursosRep", Order = 2)]
-    public ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep[] recursosRep
+    [XmlElement(Order = 2)]
+    public string vlrRecBrutaTotal
     {
         get
         {
-            return recursosRepField;
+            return vlrRecBrutaTotalField;
         }
 
         set
         {
-            recursosRepField = value;
-            RaisePropertyChanged("recursosRep");
+            vlrRecBrutaTotalField = value;
+            RaisePropertyChanged("vlrRecBrutaTotal");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 3)]
+    public string vlrCPApurTotal
+    {
+        get
+        {
+            return vlrCPApurTotalField;
+        }
+
+        set
+        {
+            vlrCPApurTotalField = value;
+            RaisePropertyChanged("vlrCPApurTotal");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 4)]
+    public string vlrCPRBSuspTotal
+    {
+        get
+        {
+            return vlrCPRBSuspTotalField;
+        }
+
+        set
+        {
+            vlrCPRBSuspTotalField = value;
+            RaisePropertyChanged("vlrCPRBSuspTotal");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement("tipoCod", Order = 5)]
+    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[] tipoCod
+    {
+        get
+        {
+            return tipoCodField;
+        }
+
+        set
+        {
+            tipoCodField = value;
+            RaisePropertyChanged("tipoCod");
         }
     }
 
@@ -284,98 +313,149 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyProp
 }
 
 
-public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyPropertyChanged
 {
-    private string cnpjAssocDespField;
-    private string vlrTotalRepField;
-    private string vlrTotalRetField;
-    private string vlrTotalNRetField;
-    private ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso[] infoRecursoField;
-    private ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc[] infoProcField;
+    private string codAtivEconField;
+    private string vlrRecBrutaAtivField;
+    private string vlrExcRecBrutaField;
+    private string vlrAdicRecBrutaField;
+    private string vlrBcCPRBField;
+    private string vlrCPRBapurField;
+    private string observField;
+    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste[] tipoAjusteField;
+    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc[] infoProcField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string cnpjAssocDesp
+    public string codAtivEcon
     {
         get
         {
-            return cnpjAssocDespField;
+            return codAtivEconField;
         }
 
         set
         {
-            cnpjAssocDespField = value;
-            RaisePropertyChanged("cnpjAssocDesp");
+            codAtivEconField = value;
+            RaisePropertyChanged("codAtivEcon");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrTotalRep
+    public string vlrRecBrutaAtiv
     {
         get
         {
-            return vlrTotalRepField;
+            return vlrRecBrutaAtivField;
         }
 
         set
         {
-            vlrTotalRepField = value;
-            RaisePropertyChanged("vlrTotalRep");
+            vlrRecBrutaAtivField = value;
+            RaisePropertyChanged("vlrRecBrutaAtiv");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrTotalRet
+    public string vlrExcRecBruta
     {
         get
         {
-            return vlrTotalRetField;
+            return vlrExcRecBrutaField;
         }
 
         set
         {
-            vlrTotalRetField = value;
-            RaisePropertyChanged("vlrTotalRet");
+            vlrExcRecBrutaField = value;
+            RaisePropertyChanged("vlrExcRecBruta");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrTotalNRet
+    public string vlrAdicRecBruta
     {
         get
         {
-            return vlrTotalNRetField;
+            return vlrAdicRecBrutaField;
         }
 
         set
         {
-            vlrTotalNRetField = value;
-            RaisePropertyChanged("vlrTotalNRet");
+            vlrAdicRecBrutaField = value;
+            RaisePropertyChanged("vlrAdicRecBruta");
         }
     }
 
     /// <remarks/>
-    [XmlElement("infoRecurso", Order = 4)]
-    public ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso[] infoRecurso
+    [XmlElement(Order = 4)]
+    public string vlrBcCPRB
     {
         get
         {
-            return infoRecursoField;
+            return vlrBcCPRBField;
         }
 
         set
         {
-            infoRecursoField = value;
-            RaisePropertyChanged("infoRecurso");
+            vlrBcCPRBField = value;
+            RaisePropertyChanged("vlrBcCPRB");
         }
     }
 
     /// <remarks/>
-    [XmlElement("infoProc", Order = 5)]
-    public ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc[] infoProc
+    [XmlElement(Order = 5)]
+    public string vlrCPRBapur
+    {
+        get
+        {
+            return vlrCPRBapurField;
+        }
+
+        set
+        {
+            vlrCPRBapurField = value;
+            RaisePropertyChanged("vlrCPRBapur");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 6)]
+    public string observ
+    {
+        get
+        {
+            return observField;
+        }
+
+        set
+        {
+            observField = value;
+            RaisePropertyChanged("observ");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement("tipoAjuste", Order = 7)]
+    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste[] tipoAjuste
+    {
+        get
+        {
+            return tipoAjusteField;
+        }
+
+        set
+        {
+            tipoAjusteField = value;
+            RaisePropertyChanged("tipoAjuste");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement("infoProc", Order = 8)]
+    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc[] infoProc
     {
         get
         {
@@ -402,74 +482,91 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep : object, 
 }
 
 
-public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INotifyPropertyChanged
 {
-    private string tpRepasseField;
-    private string descRecursoField;
-    private string vlrBrutoField;
-    private string vlrRetApurField;
+    private TipoAjusteContribuicao tpAjusteField;
+    private string codAjusteField;
+    private string vlrAjusteField;
+    private string descAjusteField;
+    private string dtAjusteField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string tpRepasse
+    public TipoAjusteContribuicao tpAjuste
     {
         get
         {
-            return tpRepasseField;
+            return tpAjusteField;
         }
 
         set
         {
-            tpRepasseField = value;
-            RaisePropertyChanged("tpRepasse");
+            tpAjusteField = value;
+            RaisePropertyChanged("tpAjuste");
         }
     }
 
     /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string descRecurso
+    [XmlElement(DataType = "integer", Order = 1)]
+    public string codAjuste
     {
         get
         {
-            return descRecursoField;
+            return codAjusteField;
         }
 
         set
         {
-            descRecursoField = value;
-            RaisePropertyChanged("descRecurso");
+            codAjusteField = value;
+            RaisePropertyChanged("codAjuste");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrBruto
+    public string vlrAjuste
     {
         get
         {
-            return vlrBrutoField;
+            return vlrAjusteField;
         }
 
         set
         {
-            vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
+            vlrAjusteField = value;
+            RaisePropertyChanged("vlrAjuste");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrRetApur
+    public string descAjuste
     {
         get
         {
-            return vlrRetApurField;
+            return descAjusteField;
         }
 
         set
         {
-            vlrRetApurField = value;
-            RaisePropertyChanged("vlrRetApur");
+            descAjusteField = value;
+            RaisePropertyChanged("descAjuste");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(DataType = "gYearMonth", Order = 4)]
+    public string dtAjuste
+    {
+        get
+        {
+            return dtAjusteField;
+        }
+
+        set
+        {
+            dtAjusteField = value;
+            RaisePropertyChanged("dtAjuste");
         }
     }
 
@@ -486,12 +583,12 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso
 }
 
 
-public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc : object, INotifyPropertyChanged
+public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
     private string nrProcField;
     private string codSuspField;
-    private string vlrNRetField;
+    private string vlrCPRBSuspField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -543,17 +640,17 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc : 
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrNRet
+    public string vlrCPRBSusp
     {
         get
         {
-            return vlrNRetField;
+            return vlrCPRBSuspField;
         }
 
         set
         {
-            vlrNRetField = value;
-            RaisePropertyChanged("vlrNRet");
+            vlrCPRBSuspField = value;
+            RaisePropertyChanged("vlrCPRBSusp");
         }
     }
 

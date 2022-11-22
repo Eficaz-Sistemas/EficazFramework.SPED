@@ -1,12 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
-[System.Xml.Serialization.XmlRootAttribute("Reinf", Namespace = "http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01", IsNullable=false)]
 public partial class R4040 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtBenefNId evtBenefNIdField;
@@ -69,16 +63,10 @@ public partial class R4040 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
     // Serialization Members
     public override XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(R4040));
+        return new XmlSerializer(typeof(R4040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{Versao}", IsNullable = false });
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
 public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEvento_R40xx ideEventoField;
@@ -144,12 +132,6 @@ public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPro
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
 public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
     
     private PersonalidadeJuridica tpInscEstabField;
@@ -202,12 +184,6 @@ public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.IN
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
 public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentModel.INotifyPropertyChanged {
     
     private int natRendField;
@@ -247,12 +223,6 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentMo
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
 public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
     
     private System.DateTime dtFGField;
@@ -355,12 +325,6 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
     }
 }
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01")]
 public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged {
     
     private TipoProcesso tpProcRetField;

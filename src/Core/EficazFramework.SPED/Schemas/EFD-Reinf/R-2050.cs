@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 [Serializable()]
 public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
