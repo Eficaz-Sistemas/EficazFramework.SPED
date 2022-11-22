@@ -45,16 +45,16 @@
 		  <DesignTime>True</DesignTime>
 		  <AutoGen>True</AutoGen>
 		  <DependentUpon>EFD-Reinf.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Schemas\EFD_ICMS_IPI.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EFD_ICMS_IPI.resx</DependentUpon>
 	  </Compile>   
 	  <Compile Update="Resources\Schemas\LCDPR.Designer.cs">
       <DependentUpon>LCDPR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\Schemas\EFD_ICMS_IPI.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EFD_ICMS_IPI.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Schemas\XML.Designer.cs">
       <DesignTime>True</DesignTime>
