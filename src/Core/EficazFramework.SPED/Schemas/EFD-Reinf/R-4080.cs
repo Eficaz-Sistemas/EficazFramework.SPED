@@ -1,5 +1,8 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;    
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Retenção no recebimento
+/// </summary>
 [System.SerializableAttribute()]
 public partial class R4080 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
@@ -67,6 +70,7 @@ public partial class R4080 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetRec : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEvento_R40xx ideEventoField;
@@ -132,6 +136,7 @@ public partial class ReinfEvtRetRec : object, System.ComponentModel.INotifyPrope
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetRecIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
     
     private PersonalidadeJuridica tpInscEstabField;  
@@ -184,6 +189,7 @@ public partial class ReinfEvtRetRecIdeEstab : object, System.ComponentModel.INot
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetRecIdeEstabIdeFont : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string cnpjFontField;
@@ -230,6 +236,7 @@ public partial class ReinfEvtRetRecIdeEstabIdeFont : object, System.ComponentMod
 /// <summary>
 /// Identificação do Rendimento
 /// </summary>
+/// <exclude />
 public partial class ReinfEvtRetRecIdeEstabIdeFontIdeRend : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string natRendField;
@@ -287,6 +294,7 @@ public partial class ReinfEvtRetRecIdeEstabIdeFontIdeRend : object, System.Compo
 /// <summary>
 /// Informações relativas ao recebimento do rendimento.
 /// </summary>
+/// <exclude />
 public partial class ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec : object, System.ComponentModel.INotifyPropertyChanged {
     
     private System.DateTime dtFGField;
@@ -365,6 +373,7 @@ public partial class ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec : object, Syste
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRecInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged {
     
     private TipoProcesso tpProcRetField;

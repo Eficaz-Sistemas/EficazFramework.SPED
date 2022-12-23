@@ -1,5 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -100,6 +101,7 @@ public partial class SignatureType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -200,6 +202,7 @@ public partial class SignedInfoType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -244,6 +247,7 @@ public partial class SignedInfoTypeCanonicalizationMethod : INotifyPropertyChang
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -288,6 +292,7 @@ public partial class SignedInfoTypeSignatureMethod : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -427,6 +432,7 @@ public partial class ReferenceType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -490,6 +496,7 @@ public partial class TransformType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
@@ -506,6 +513,7 @@ public enum TTransformURI
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -550,6 +558,7 @@ public partial class ReferenceTypeDigestMethod : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -608,6 +617,7 @@ public partial class SignatureValueType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]
@@ -670,6 +680,7 @@ public partial class KeyInfoType : INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [DesignerCategory("code")]

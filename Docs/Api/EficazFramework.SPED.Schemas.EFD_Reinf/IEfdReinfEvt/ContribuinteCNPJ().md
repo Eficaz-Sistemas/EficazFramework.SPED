@@ -3,6 +3,8 @@
 
 ## IEfdReinfEvt.ContribuinteCNPJ() Method
 
+Retorna o CNPJ do Contribuinte titular do evento.
+
 ```csharp
 public abstract string ContribuinteCNPJ();
 ```

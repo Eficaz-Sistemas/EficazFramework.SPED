@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Tabela de processos administrativos/judiciais
+/// </summary>
 [Serializable()]
 public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -79,6 +82,7 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoIdeEvento ideEventoField;
@@ -164,6 +168,7 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 
 
 // Identificação do Evento:
+/// <exclude />
 public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChanged
 {
     private Ambiente tpAmbField;
@@ -232,6 +237,7 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
 
 
 // Informação do Processo:
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyChanged
 {
     private object itemField;
@@ -268,6 +274,7 @@ public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyCh
 
 
 // Alteração:
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcessoField;
@@ -318,6 +325,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyP
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -456,6 +464,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
 {
     private string codSuspField;
@@ -540,6 +549,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
 {
     private string ufVaraField;
@@ -607,6 +617,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosPro
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : object, INotifyPropertyChanged
 {
     private string iniValidField;
@@ -662,6 +673,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : obje
 
 
 // Exclusão:
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcessoField;
@@ -694,6 +706,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPr
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -783,6 +796,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
 
 
 // Inclusão:
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcessoField;
@@ -816,6 +830,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPr
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;
@@ -955,6 +970,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
 {
     private string codSuspField;
@@ -1039,6 +1055,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
 }
 
 
+/// <exclude />
 public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
 {
     private string ufVaraField;

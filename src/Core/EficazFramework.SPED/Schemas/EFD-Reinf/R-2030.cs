@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Recursos recebidos por associação desportiva
+/// </summary>
 [Serializable()]
 public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
 {
     private ReinfEvtAssocDespRecIdeEvento ideEventoField;
@@ -145,6 +149,7 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -263,6 +268,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -330,6 +336,7 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -397,6 +404,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, INotifyPropertyChanged
 {
     private string cnpjOrigRecursoField;
@@ -515,6 +523,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso : object, INotifyPropertyChanged
 {
     private TipoRepasseAssocDesp tpRepasseField;
@@ -599,6 +608,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

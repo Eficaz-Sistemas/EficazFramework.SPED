@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Fechamento dos eventos da série R-2000
+/// </summary>
 [Serializable()]
 public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
@@ -179,6 +183,7 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
 {
     private SimNao evtServTmField = SimNao.Nao;

@@ -3,6 +3,8 @@
 
 ## IEfdReinfEvt.DefineSerializer() Method
 
+Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando [IEfdReinfEvt](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt')
+
 ```csharp
 public abstract System.Xml.Serialization.XmlSerializer DefineSerializer();
 ```

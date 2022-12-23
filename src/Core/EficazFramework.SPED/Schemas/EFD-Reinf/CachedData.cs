@@ -1,5 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <exclude />
 public class IndicadoresIRRF : Dictionary<string, string>
 {
 

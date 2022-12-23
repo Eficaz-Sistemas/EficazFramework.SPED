@@ -3,6 +3,8 @@
 
 ## ReinfTimeStampUtils.GetTimeStampIDForEvent() Method
 
+Gera uma string única para ser utilizada como identificar de um evento da EFD-Reinf.
+
 ```csharp
 public static string GetTimeStampIDForEvent();
 ```

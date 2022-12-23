@@ -62,4 +62,10 @@ public enum TipoEventoExclusao
 
 ### Remarks
 
+<a name='EficazFramework.SPED.Schemas.EFD_Reinf.TipoEventoExclusao.R4010'></a>
+
+`R4010` 4010
+
+### Remarks
+
 ### Remarks

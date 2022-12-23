@@ -2,6 +2,8 @@
 ### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf')
 
 ## ReinfTimeStampUtils Class
+
+Utilitário para geração do identificador único de evento, para sua transmissão.
 ### Properties
 
 | Name | Type | |
@@ -10,4 +12,4 @@
 
 | Methods | |
 | :--- | :--- |
-| [GetTimeStampIDForEvent()](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils/GetTimeStampIDForEvent().md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils.GetTimeStampIDForEvent()') | |
+| [GetTimeStampIDForEvent()](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils/GetTimeStampIDForEvent().md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils.GetTimeStampIDForEvent()') | Gera uma string única para ser utilizada como identificar de um evento da EFD-Reinf. |

@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Contribuição previdenciária sobre a receita bruta – CPRB
+/// </summary>
 [Serializable()]
 public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -162,6 +166,7 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
 {
     private ReinfEvtCPRBInfoCPRBIdeEstab ideEstabField;
@@ -195,6 +200,7 @@ public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -313,6 +319,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyPropertyChanged
 {
     private string codAtivEconField;
@@ -482,6 +489,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INotifyPropertyChanged
 {
     private TipoAjusteContribuicao tpAjusteField;
@@ -583,6 +591,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
 }
 
 
+/// <exclude />
 public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

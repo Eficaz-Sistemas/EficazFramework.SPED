@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Exclusão de eventos
+/// </summary>
 [Serializable()]
 public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtExclusaoIdeEvento ideEventoField;
@@ -165,6 +169,7 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação Evento
 /// </summary>
+/// <exclude />
 public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
 {
     private Ambiente tpAmbField;
@@ -235,6 +240,7 @@ public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação Contribuinte
 /// </summary>
+/// <exclude />
 public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -288,6 +294,7 @@ public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação Evento (Exclusão)
 /// </summary>
+/// <exclude />
 public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChanged
 {
     private string tpEventoField;
