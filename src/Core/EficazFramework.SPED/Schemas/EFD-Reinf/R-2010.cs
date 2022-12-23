@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Retenção de contribuição previdenciária - serviços tomados
+/// </summary>
 [Serializable()]
 public partial class R2010 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2010 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTom : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -162,6 +166,7 @@ public partial class ReinfEvtServTom : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTom : object, INotifyPropertyChanged
 {
     private ReinfEvtServTomInfoServTomIdeEstabObra ideEstabObraField;
@@ -195,6 +200,7 @@ public partial class ReinfEvtServTomInfoServTom : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObra : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -308,6 +314,7 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObra : object, INotifyPro
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ : object, INotifyPropertyChanged
 {
     private string cnpjPrestadorField;
@@ -540,6 +547,7 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ : object
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs : object, INotifyPropertyChanged
 {
     private string serieField;
@@ -659,6 +667,7 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs : obj
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ : object, INotifyPropertyChanged
 {
     private string tpServicoField;
@@ -854,6 +863,7 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTp
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetPrincField;
@@ -938,6 +948,7 @@ public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcR
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetAdicField;

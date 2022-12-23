@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Comercialização da produção p/ produtor rural PJ/agroindústria
+/// </summary>
 [Serializable()]
 public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProd : object, INotifyPropertyChanged
 {
     private ReinfEvtComProdIdeEvento ideEventoField;
@@ -162,6 +166,7 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -280,6 +285,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -330,6 +336,7 @@ public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
 {
     private ReinfEvtComProdInfoComProdIdeEstab ideEstabField;
@@ -363,6 +370,7 @@ public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -549,6 +557,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotifyPropertyChanged
 {
     private IndicadorContribuicaoProd indComField;
@@ -616,6 +625,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotify
 }
 
 
+/// <exclude />
 public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Aquisição de produção rural
+/// </summary>
 [Serializable()]
 public partial class R2055 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2055 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfAqProd : object, INotifyPropertyChanged
 {
     private ReinfEvtAqProdIdeEvento ideEventoField;
@@ -162,6 +166,7 @@ public partial class ReinfAqProd : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField;
@@ -282,6 +287,7 @@ public partial class ReinfEvtAqProdIdeEvento : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -337,6 +343,7 @@ public partial class ReinfEvtAqProdIdeContri : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
 {
     private ReinfEvtAqProdInfoAqProdIdeEstabAdquir ideEstabField;
@@ -370,6 +377,7 @@ public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscAdqField;
@@ -566,6 +574,7 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscProdField;
@@ -672,6 +681,7 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : object, INotifyPropertyChanged
 {
     private IndicadorAquisProd indAquisField;
@@ -790,6 +800,7 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : ob
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
 {
     private string nrProcJudField;

@@ -37,6 +37,7 @@
        - ECF
        - [EFD ICMS / IPI](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)
        - EFD Contribuições
+       - [EFD Reinf](/Docs/Api/EEficazFramework.SPED.Schemas.EFD_Reinf.md)
        - e-Social (em desenvolvimento)
        - GIA (SP)
        - GNRE

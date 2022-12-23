@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Recursos repassados para associação desportiva
+/// </summary>
 [Serializable()]
 public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2040 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -145,6 +149,7 @@ public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -217,6 +222,7 @@ public partial class ReinfEvtAssocDespRepIdeContri : object, INotifyPropertyChan
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -284,6 +290,7 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstab : object, INotifyProp
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep : object, INotifyPropertyChanged
 {
     private string cnpjAssocDespField;
@@ -402,6 +409,7 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep : object, 
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso : object, INotifyPropertyChanged
 {
     private string tpRepasseField;
@@ -486,6 +494,7 @@ public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso
 }
 
 
+/// <exclude />
 public partial class ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

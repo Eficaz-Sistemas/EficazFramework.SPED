@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Receita de espetáculos desportivos
+/// </summary>
 [Serializable()]
 public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 [XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
 public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
 {
@@ -147,6 +151,7 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
 
 
 // Identificação Evento:
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyChanged
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
@@ -266,6 +271,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
 
 
 // Identificação Contribuinte:
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscField;
@@ -333,6 +339,7 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
 }
 
 
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabField;
@@ -418,6 +425,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
 
 
 // Identificação Evento:
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INotifyPropertyChanged
 {
     private string nrBoletimField;
@@ -706,6 +714,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
 }
 
 
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos : object, INotifyPropertyChanged
 {
     private TipoIngressoCompeticao tpIngressoField;
@@ -841,6 +850,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
 }
 
 
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas : object, INotifyPropertyChanged
 {
     private TipoReceitaCompeticao tpReceitaField;
@@ -908,6 +918,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
 }
 
 
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object, INotifyPropertyChanged
 {
     private string vlrReceitaTotalField;
@@ -1026,6 +1037,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
 }
 
 
+/// <exclude />
 public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcField;

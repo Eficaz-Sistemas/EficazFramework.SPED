@@ -3,7 +3,7 @@
 
 ## IEfdReinfEvt.Serialize() Method
 
-Serializes current TNfeProc object into an XML document
+Serializa o evento da EFD-Reinf para a representação em string do conteúdo do XML.
 
 ```csharp
 public string Serialize();

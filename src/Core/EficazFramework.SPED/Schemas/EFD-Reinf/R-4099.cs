@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Fechamento/reabertura dos eventos da série R-4000
+/// </summary>
 [System.SerializableAttribute()]
 public partial class R4099 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
@@ -68,6 +71,7 @@ public partial class R4099 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
 
 }
 
+/// <exclude />
 public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
@@ -146,6 +150,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged {
     
     private IndicadorFechamentoReabertura fechRetField;

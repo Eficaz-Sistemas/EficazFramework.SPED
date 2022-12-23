@@ -1,8 +1,10 @@
 ﻿using System.Runtime.ConstrainedExecution;
 
-namespace EficazFramework.SPED.Schemas.EFD_Reinf; 
+namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-/// <remarks/>
+/// <summary>
+/// Pagamentos/créditos a beneficiário pessoa jurídica
+/// </summary>
 [System.SerializableAttribute()]
 public partial class R4020 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
@@ -70,6 +72,7 @@ public partial class R4020 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJ : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEvento_R40xx ideEventoField;
@@ -136,6 +139,7 @@ public partial class ReinfEvtRetPJ : object, System.ComponentModel.INotifyProper
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
     
     private PersonalidadeJuridica tpInscEstabField;
@@ -188,6 +192,7 @@ public partial class ReinfEvtRetPJIdeEstab : object, System.ComponentModel.INoti
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenef : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string cnpjBenefField;
@@ -259,6 +264,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenef : object, System.ComponentMod
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgto : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string natRendField;
@@ -313,6 +319,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgto : object, System.Compo
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
     
     private System.DateTime dtFGField;
@@ -481,6 +488,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string vlrBaseIRField;
@@ -634,6 +642,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes : obj
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged {
     
     private TipoProcesso tpProcRetField;
@@ -842,6 +851,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string nrProcField;
@@ -920,6 +930,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud : o
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJud : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string vlrDespCustasField;
@@ -972,6 +983,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJudIdeAdv : object, System.ComponentModel.INotifyPropertyChanged {
     
     private PersonalidadeJuridica tpInscAdvField;
@@ -1026,6 +1038,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt : object, System.ComponentModel.INotifyPropertyChanged {
     
     private IndicadorNIF indNIFField;
@@ -1104,6 +1117,8 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt : o
     }
 }
 
+
+/// <exclude />
 public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExtEndExt : object, System.ComponentModel.INotifyPropertyChanged {
     
     private string dscLogradField;

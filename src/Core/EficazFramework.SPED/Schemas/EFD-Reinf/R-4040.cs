@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Pagamentos/créditos a beneficiários não identificados
+/// </summary>
 [System.SerializableAttribute()]
 public partial class R4040 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
     
@@ -67,6 +70,7 @@ public partial class R4040 : IEfdReinfEvt, System.ComponentModel.INotifyProperty
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEvento_R40xx ideEventoField;
@@ -132,6 +136,7 @@ public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPro
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
     
     private PersonalidadeJuridica tpInscEstabField;
@@ -184,6 +189,7 @@ public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.IN
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentModel.INotifyPropertyChanged {
     
     private int natRendField;
@@ -223,6 +229,7 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentMo
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
     
     private System.DateTime dtFGField;
@@ -325,6 +332,7 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged {
     
     private TipoProcesso tpProcRetField;

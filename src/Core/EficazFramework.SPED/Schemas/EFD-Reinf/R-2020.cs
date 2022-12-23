@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Retenção de contribuição previdenciária – serviços prestados
+/// </summary>
 [Serializable()]
 public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -78,6 +81,7 @@ public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento_R20xx ideEventoField;
@@ -162,6 +166,7 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyChanged
 {
     private ReinfEvtServPrestInfoServPrestIdeEstabPrest ideEstabPrestField;
@@ -195,6 +200,7 @@ public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyCha
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscEstabPrestField;
@@ -262,6 +268,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : object, INotifyPropertyChanged
 {
     private PersonalidadeJuridica tpInscTomadorField;
@@ -509,6 +516,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : object, INotifyPropertyChanged
 {
     private string serieField;
@@ -627,6 +635,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ : object, INotifyPropertyChanged
 {
     private string tpServicoField;
@@ -813,6 +822,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetPrincField;
@@ -897,6 +907,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
 }
 
 
+/// <exclude />
 public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd : object, INotifyPropertyChanged
 {
     private TipoProcesso tpProcRetAdicField;

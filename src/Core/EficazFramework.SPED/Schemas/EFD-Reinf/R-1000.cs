@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Informações do contribuinte
+/// </summary>
 [Serializable()]
 public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 {
@@ -79,6 +82,7 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChanged
 {
     private ReinfEvtIdeEvento ideEventoField;
@@ -164,6 +168,7 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
 }
 
 
+/// <exclude />
 public partial class R1000_InfoContri : object, INotifyPropertyChanged
 {
     private object itemField;
@@ -200,6 +205,7 @@ public partial class R1000_InfoContri : object, INotifyPropertyChanged
 
 
 // Alteração:
+/// <exclude />
 public partial class R1000_Alteracao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -267,6 +273,7 @@ public partial class R1000_Alteracao : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
 {
     private string ideEFRField;
@@ -318,6 +325,7 @@ public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : 
 
 
 // Exclusão:
+/// <exclude />
 public partial class R1000_Exclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -352,6 +360,7 @@ public partial class R1000_Exclusao : object, INotifyPropertyChanged
 
 
 // Inclusão:
+/// <exclude />
 public partial class R1000_Inclusao : object, INotifyPropertyChanged
 {
     private ReinfEvtIdePeriodo idePeriodoField;
@@ -401,6 +410,7 @@ public partial class R1000_Inclusao : object, INotifyPropertyChanged
     }
 }
 
+/// <exclude />
 public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
 {
     private string ideEFRField;
@@ -452,6 +462,7 @@ public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : o
 
 
 // R1000 Common:
+/// <exclude />
 public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
 {
     private string classTribField;
@@ -621,6 +632,7 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
 }
 
 
+/// <exclude />
 public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
 {
     private string nmCttField;
@@ -721,7 +733,7 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     }
 }
 
-
+/// <exclude />
 public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyChanged
 {
     private string cnpjSoftHouseField = "19574916000183";
