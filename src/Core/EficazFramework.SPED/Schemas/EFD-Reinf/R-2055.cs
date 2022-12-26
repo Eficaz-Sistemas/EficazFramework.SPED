@@ -383,7 +383,6 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
     private PersonalidadeJuridica tpInscAdqField;
     private string nrInscAdqField;
     ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor tipoComField;
-    List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> _detAquisField = new List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis>();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -417,118 +416,6 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
         }
     }
 
-    ///// <remarks/>
-    //[XmlElement(Order = 2)]
-    //public string vlrRecBrutaTotal
-    //{
-    //    get
-    //    {
-    //        return vlrRecBrutaTotalField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrRecBrutaTotalField = value;
-    //        RaisePropertyChanged("vlrRecBrutaTotal");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 3)]
-    //public string vlrCPApur
-    //{
-    //    get
-    //    {
-    //        return vlrCPApurField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrCPApurField = value;
-    //        RaisePropertyChanged("vlrCPApur");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 4)]
-    //public string vlrRatApur
-    //{
-    //    get
-    //    {
-    //        return vlrRatApurField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrRatApurField = value;
-    //        RaisePropertyChanged("vlrRatApur");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 5)]
-    //public string vlrSenarApur
-    //{
-    //    get
-    //    {
-    //        return vlrSenarApurField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrSenarApurField = value;
-    //        RaisePropertyChanged("vlrSenarApur");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 6)]
-    //public string vlrCPSuspTotal
-    //{
-    //    get
-    //    {
-    //        return vlrCPSuspTotalField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrCPSuspTotalField = value;
-    //        RaisePropertyChanged("vlrCPSuspTotal");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 7)]
-    //public string vlrRatSuspTotal
-    //{
-    //    get
-    //    {
-    //        return vlrRatSuspTotalField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrRatSuspTotalField = value;
-    //        RaisePropertyChanged("vlrRatSuspTotal");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement(Order = 8)]
-    //public string vlrSenarSuspTotal
-    //{
-    //    get
-    //    {
-    //        return vlrSenarSuspTotalField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrSenarSuspTotalField = value;
-    //        RaisePropertyChanged("vlrSenarSuspTotal");
-    //    }
-    //}
-
     /// <remarks/>
     [XmlElement("ideProdutor", Order = 2)]
     public ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor ideProdutor
@@ -542,22 +429,6 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
         {
             tipoComField = value;
             RaisePropertyChanged("ideProdutor");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> detAquis
-    {
-        get
-        {
-            return _detAquisField;
-        }
-
-        set
-        {
-            _detAquisField = value;
-            RaisePropertyChanged("detAquis");
         }
     }
 
@@ -580,8 +451,7 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
     private PersonalidadeJuridica tpInscProdField;
     private string nrInscProdField;
     private string indOpcCPField;
-    //private string vlrRecBrutaField;
-    //private ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc[] infoProcField;
+    List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> _detAquisField = new List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis>();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -628,6 +498,22 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
         {
             indOpcCPField = value;
             RaisePropertyChanged("indOpcCP");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 3)]
+    public List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> detAquis
+    {
+        get
+        {
+            return _detAquisField;
+        }
+
+        set
+        {
+            _detAquisField = value;
+            RaisePropertyChanged("detAquis");
         }
     }
 
