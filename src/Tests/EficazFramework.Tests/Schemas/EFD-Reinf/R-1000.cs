@@ -1,27 +1,74 @@
-﻿using EficazFramework.SPED.Schemas.EFD_Reinf.v2_01_01;
-
-namespace EficazFramework.SPED.Schemas.EFD_Reinf.Versionamento;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 public class R1000Test : BaseEfdReinfTest<R1000>
 {
     private int _testNumber = 0;
-    private Versao _versao = Versao.v2_01_01;
 
     [Test]
     [TestCase(Versao.v1_05_01)]
     [TestCase(Versao.v2_01_01)]
-    public void TestaInclusao(Versao versao)
+    public void ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
         InstanciaDesserializada = (R1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
-        ValidationSchema = versao switch
+        switch (versao)
         {
-            Versao.v1_05_01 => Resources.Schemas.EFD_Reinf.R1000_v1_05_01,
-            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R1000_v2_01_01,
-            _ => ""
-        };
+            case Versao.v1_05_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
+                break;
+
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
+                break;
+        }
+        TestaEvento();
+    }
+
+
+    [Test]
+    [TestCase(Versao.v1_05_01)]
+    [TestCase(Versao.v2_01_01)]
+    public void ValidaAlteracao(Versao versao)
+    {
+        _testNumber = 1;
+        _versao = versao;
+        InstanciaDesserializada = (R1000 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
+        switch (versao)
+        {
+            case Versao.v1_05_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
+                break;
+
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
+                break;
+        }
+        TestaEvento();
+    }
+
+
+    [Test]
+    [TestCase(Versao.v1_05_01)]
+    [TestCase(Versao.v2_01_01)]
+    public void ValidaExclusao(Versao versao)
+    {
+        _testNumber = 2;
+        _versao = versao;
+        InstanciaDesserializada = (R1000 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
+        switch (versao)
+        {
+            case Versao.v1_05_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
+                break;
+
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
@@ -77,53 +124,46 @@ public class R1000Test : BaseEfdReinfTest<R1000>
 
 
     // Preenchimento e validação por tipo de teste
-    #region RendimentoIsento-LucrosDistribuidos
-    private void PreencheCamposInclusao(R1000 evento)
+    #region Inclusao
+    internal static void PreencheCamposInclusao(R1000 evento)
     {
-        evento.evtInfoContri = new()
+        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
-                verProc = "6.0"
+                verProc = "2.2"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166"
+                nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new()
+            infoContri = new R1000_InfoContri()
             {
                 Item = new R1000_Inclusao()
                 {
-                    idePeriodo = new()
+                    idePeriodo = new ReinfEvtIdePeriodo()
                     {
-                        iniValid = $"{DateTime.Now:yyyy-MM}",
-                        fimValid = $"{DateTime.Now.AddMonths(1):yyyy-MM}"
+                        iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
                     },
-                    infoCadastro = new()
+                    infoCadastro = new R1000_InfoCadastro()
                     {
                         classTrib = "99",
-                        indEscrituracao = ObrigatoriedadeECD.NaoFaz,
+                        indEscrituracao = ObrigatoriedadeECD.EntregaECD,
                         indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
                         indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
                         indSitPJ = SituacaoPessoaJuridica.Normal,
                         indSitPJSpecified = true,
-                        contato = new()
+                        contato = new R1000_InfoCadastro_Contato()
                         {
                             nmCtt = "Pierre de Fermat",
                             cpfCtt = "47363361886",
                             foneFixo = "3535441234",
                             email = "suporte@eficazcs.com.br"
                         },
-                        softHouse = new()
-                        {
-                            cnpjSoftHouse = "34785515000166",
-                            nmRazao = "Eficaz Sistemas",
-                            telefone = "3535444321",
-                            email = "comercial@eficazcs.com.br"
-                        }
+                        softHouse = new R1000_InfoCadastro_SoftwareHouse()
                     }
                 }
             }
@@ -163,58 +203,50 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     }
     #endregion
 
-    #region RendimentoTributado
-    private void PreencheCamposAlteracao(R1000 evento)
+    #region Alteracao
+    internal static void PreencheCamposAlteracao(R1000 evento)
     {
-        evento.evtInfoContri = new()
+        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
-                verProc = "6.0"
+                verProc = "2.2"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166"
+                nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new()
+            infoContri = new R1000_InfoContri()
             {
                 Item = new R1000_Alteracao()
                 {
-                    idePeriodo = new()
+                    idePeriodo = new ReinfEvtIdePeriodo()
                     {
-                        iniValid = $"{DateTime.Now:yyyy-MM}",
-                        fimValid = $"{DateTime.Now.AddMonths(1):yyyy-MM}"
+                        iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
                     },
-                    infoCadastro = new()
+                    infoCadastro = new R1000_InfoCadastro()
                     {
                         classTrib = "99",
-                        indEscrituracao = ObrigatoriedadeECD.NaoFaz,
+                        indEscrituracao = ObrigatoriedadeECD.EntregaECD,
                         indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
                         indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
                         indSitPJ = SituacaoPessoaJuridica.Normal,
                         indSitPJSpecified = true,
-                        contato = new()
+                        contato = new R1000_InfoCadastro_Contato()
                         {
                             nmCtt = "Pierre de Fermat",
                             cpfCtt = "47363361886",
                             foneFixo = "3535441234",
                             email = "suporte@eficazcs.com.br"
                         },
-                        softHouse = new()
-                        {
-                            cnpjSoftHouse = "34785515000166",
-                            nmRazao = "Eficaz Sistemas",
-                            telefone = "3535444321",
-                            email = "comercial@eficazcs.com.br"
-                        },
+                        softHouse = new R1000_InfoCadastro_SoftwareHouse(),
                     },
-                    novaValidade = new()
+                    novaValidade = new ReinfEvtIdePeriodo()
                     {
                         iniValid = $"{DateTime.Now:yyyy-MM}",
-                        fimValid = $"{DateTime.Now.AddMonths(1):yyyy-MM}"
                     }
                 }
             }
@@ -258,30 +290,29 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     }
     #endregion
 
-    #region RendimentoTributadoComDependente
-    private void PreencheCamposExclusao(R1000 evento)
+    #region Exclusao
+    internal static void PreencheCamposExclusao(R1000 evento)
     {
-        evento.evtInfoContri = new()
+        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
-                verProc = "6.0"
+                verProc = "2.2"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166"
+                nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new()
+            infoContri = new R1000_InfoContri()
             {
                 Item = new R1000_Exclusao()
                 {
-                    idePeriodo = new()
+                    idePeriodo = new ReinfEvtIdePeriodo()
                     {
                         iniValid = $"{DateTime.Now:yyyy-MM}",
-                        fimValid = $"{DateTime.Now.AddMonths(1):yyyy-MM}"
                     }
                 }
             }

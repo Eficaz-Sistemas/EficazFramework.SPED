@@ -2,24 +2,28 @@
 
 public class R4040Test : BaseEfdReinfTest<R4040>
 {
-    public R4040Test()
+    //[Test]
+    //[TestCase(Versao.v2_01_01)]
+    public void RendimentoNaoIdentificado(Versao versao)
     {
-        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/v2_01_01";
-        ValidationSchema = Resources.Schemas.EFD_Reinf.R4040_v2_01_01;
-    }
-
-    //[Test] Ignorando o teste pois provavelmente o patten do campo 'natRend' ficou ERRADO.
-    public void RendimentoNaoIdentificado()
-    {
+        _versao = versao;
+        InstanciaDesserializada = (R4040 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4040_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4040 evento)
     {
-        evento.evtBenefNId = new()
+        evento.evtBenefNId = new ReinfEvtBenefNId()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -27,34 +31,34 @@ public class R4040Test : BaseEfdReinfTest<R4040>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtBenefNIdIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideNat = new()
+                ideNat = new System.Collections.Generic.List<ReinfEvtBenefNIdIdeEstabIdeNat>()
+            {
+                new ReinfEvtBenefNIdIdeEstabIdeNat() //ideNat (1:N)
                 {
-                    new () //ideNat (1:N)
-                    {
-                        infoPgto = new()
+                    infoPgto = new System.Collections.Generic.List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto>()
+                            {
+                                new ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto()
                                 {
-                                    new()
-                                    {
-                                        DataFatoGerador = DateTime.Now,
-                                        vlrLiq = 1000000.00.ToString("f2"),
-                                        vlrBaseIR = 153846.15M.ToString("f2"),
-                                        vlrIR = 2307.69M.ToString("f2"),
-                                        descr = "Alguma prestação de serviço qualquer."
-                                    },
+                                    DataFatoGerador = System.DateTime.Now,
+                                    vlrLiq = 1000000.00.ToString("f2"),
+                                    vlrBaseIR = 153846.15M.ToString("f2"),
+                                    vlrIR = 2307.69M.ToString("f2"),
+                                    descr = "Alguma prestação de serviço qualquer."
                                 },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = 19009, // Remuneração de Serviços de auditoria;
-                    }
+                            },
+                    // Utilizar a tabela 01, do Anexo I do Manual
+                    natRend = 19009, // Remuneração de Serviços de auditoria;
                 }
+            }
             }
         };
     }

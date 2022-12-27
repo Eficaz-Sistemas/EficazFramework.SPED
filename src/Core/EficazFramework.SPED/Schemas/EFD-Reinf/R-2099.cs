@@ -192,6 +192,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     private SimNao evtAssDespRepField = SimNao.Nao;
     private SimNao evtComProdField = SimNao.Nao;
     private SimNao evtCPRBField = SimNao.Nao;
+    private SimNao evtAquisField = SimNao.Nao;
     private SimNao evtPgtosField = SimNao.Nao;
     private bool evtPgtosFieldSpecified = false;
     private string compSemMovtoField;
@@ -294,6 +295,22 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 6)]
+    public SimNao evtAquis
+    {
+        get
+        {
+            return evtAquisField;
+        }
+
+        set
+        {
+            evtAquisField = value;
+            RaisePropertyChanged("evtAquis");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 7)]
     public SimNao evtPgtos
     {
         get
@@ -325,7 +342,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     }
 
     /// <remarks/>
-    [XmlElement(DataType = "gYearMonth", Order = 7)]
+    [XmlElement(DataType = "gYearMonth", Order = 8)]
     public string compSemMovto
     {
         get
