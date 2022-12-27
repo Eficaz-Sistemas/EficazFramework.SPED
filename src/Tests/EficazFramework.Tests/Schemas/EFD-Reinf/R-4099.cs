@@ -2,25 +2,39 @@
 
 public class R4099Test : BaseEfdReinfTest<R4099>
 {
-    public R4099Test()
-    {
-        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/v2_01_01";
-        ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
-    }
-
     private int _testNumber = 0;
 
     [Test]
-    public void Fechamento()
+    [TestCase(Versao.v2_01_01)]
+    public void Fechamento(Versao versao)
     {
         _testNumber = 0;
+        _versao = versao;
+        InstanciaDesserializada = (R4099 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     [Test]
-    public void Abertura()
+    [TestCase(Versao.v2_01_01)]
+    public void Abertura(Versao versao)
     {
         _testNumber = 1;
+        _versao = versao;
+        InstanciaDesserializada = (R4099 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
@@ -60,28 +74,28 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     #region Fechamento
     private void PreencheCamposFechamento(R4099 evento)
     {
-        evento.evtFech = new()
+        evento.evtFech = new ReinfEvtFech()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEventoPeriodicoFechamento()
             {
                 perApur = "2022-08",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideRespInf = new()
+            ideRespInf = new ReinfEvtFechaEvPerIdeRespInf()
             {
                 nmResp = "Pierre de Fermat",
                 cpfResp = "47363361886",
                 telefone = "11999990000",
                 email = "contato@eficazcs.com.br",
             },
-            infoFech = new()
+            infoFech = new ReinfEvtFechInfoFech()
             {
                 fechRet = IndicadorFechamentoReabertura.Fechamento
             }
@@ -115,28 +129,28 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     #region Reabertura
     private void PreencheCamposReabertura(R4099 evento)
     {
-        evento.evtFech = new()
+        evento.evtFech = new ReinfEvtFech()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEventoPeriodicoFechamento()
             {
                 perApur = "2022-08",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideRespInf = new()
+            ideRespInf = new ReinfEvtFechaEvPerIdeRespInf()
             {
                 nmResp = "Pierre de Fermat",
                 cpfResp = "47363361886",
                 telefone = "11999990000",
                 email = "contato@eficazcs.com.br",
             },
-            infoFech = new()
+            infoFech = new ReinfEvtFechInfoFech()
             {
                 fechRet = IndicadorFechamentoReabertura.Reabertura
             }

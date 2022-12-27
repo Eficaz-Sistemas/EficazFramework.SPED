@@ -2,32 +2,56 @@
 
 public class R4020Test : BaseEfdReinfTest<R4020>
 {
-    public R4020Test()
-    {
-        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/v2_01_01";
-        ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
-    }
-
     private int _testNumber = 0;
 
     [Test]
-    public void RendimentosIsentos()
+    [TestCase(Versao.v2_01_01)]
+    public void RendimentosIsentos(Versao versao)
     {
         _testNumber = 0;
+        _versao = versao;
+        InstanciaDesserializada = (R4020 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     [Test]
-    public void RendimentosTributados()
+    [TestCase(Versao.v2_01_01)]
+    public void RendimentosTributados(Versao versao)
     {
         _testNumber = 1;
+        _versao = versao;
+        InstanciaDesserializada = (R4020 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     [Test]
-    public void RendimentosTributadosAgregados()
+    [TestCase(Versao.v2_01_01)]
+    public void RendimentosTributadosAgregados(Versao versao)
     {
         _testNumber = 2;
+        _versao = versao;
+        InstanciaDesserializada = (R4020 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
@@ -71,11 +95,11 @@ public class R4020Test : BaseEfdReinfTest<R4020>
 
     // Preenchimento e validação por tipo de teste
     #region RendimentoIsento-PgAssociacoesFilantropicas
-    private void PreencheCamposRendimentoisento(R4020 evento)
+    internal static void PreencheCamposRendimentoisento(R4020 evento)
     {
-        evento.evtRetPJ = new()
+        evento.evtRetPJ = new ReinfEvtRetPJ()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -83,43 +107,43 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPJIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Assistência Social",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new()
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
                     {
-                        // identificação do pagamento
-                        new()
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
                         {
-                            // informações do pagamento
-                            infoPgto = new()
+                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
                             {
-                                new()
-                                {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrBruto = 152725.25M.ToString("f2"),
-                                    retencoes = null 
-                                    // rendimento isento não possui renteção
-                                },
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrBruto = 152725.25M.ToString("f2"),
+                                retencoes = null 
+                                // rendimento isento não possui renteção
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "15049", // Pagamentos a entidades imunes ou isentas – IN RFB 1.234/2012
-                            observ = "Referente campanha do agasalho"
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "15049", // Pagamentos a entidades imunes ou isentas – IN RFB 1.234/2012
+                        observ = "Referente campanha do agasalho"
+                    },
+                }
                 }
             }
         };
@@ -137,11 +161,11 @@ public class R4020Test : BaseEfdReinfTest<R4020>
         // ideContri
         instanciaXml.evtRetPJ.ideContri.tpInsc.Should().Be(instanciaPopulada.evtRetPJ.ideContri.tpInsc);
         instanciaXml.evtRetPJ.ideContri.nrInsc.Should().Be(instanciaPopulada.evtRetPJ.ideContri.nrInsc);
-                            
+
         // ideEstab         
         instanciaXml.evtRetPJ.ideEstab.tpInscEstab.Should().Be(instanciaPopulada.evtRetPJ.ideEstab.tpInscEstab);
         instanciaXml.evtRetPJ.ideEstab.nrInscEstab.Should().Be(instanciaPopulada.evtRetPJ.ideEstab.nrInscEstab);
-                            
+
         // ideBenef         
         instanciaXml.evtRetPJ.ideEstab.ideBenef.cnpjBenef.Should().Be(instanciaPopulada.evtRetPJ.ideEstab.ideBenef.cnpjBenef);
         instanciaXml.evtRetPJ.ideEstab.ideBenef.nmBenef.Should().Be(instanciaPopulada.evtRetPJ.ideEstab.ideBenef.nmBenef);
@@ -192,11 +216,11 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #endregion
 
     #region RendimentoTributado
-    private void PreencheCamposRendimentoTributado(R4020 evento)
+    internal static void PreencheCamposRendimentoTributado(R4020 evento)
     {
-        evento.evtRetPJ = new()
+        evento.evtRetPJ = new ReinfEvtRetPJ()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -204,52 +228,52 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPJIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Auditoria Contábil",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new()
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
                     {
-                        // identificação do pagamento
-                        new()
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
                         {
-                            // informações do pagamento
-                            infoPgto = new()
+                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
                             {
-                                new()
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrBruto = 152725.25M.ToString("f2"),
+                                retencoes = new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes()
                                 {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrBruto = 152725.25M.ToString("f2"),
-                                    retencoes = new()
-                                    {
-                                        vlrBaseIR = 152725.25M.ToString("f2"),
-                                        vlrIR = 2290.88M.ToString("f2"),
-                                        vlrBaseCSLL = 152725.25M.ToString("f2"),
-                                        vlrCSLL = 15272.53M.ToString("f2"),
-                                        vlrBaseCofins = 152725.25M.ToString("f2"),
-                                        vlrCofins = 4581.76M.ToString("f2"),
-                                        vlrBasePP = 152725.25M.ToString("f2"),
-                                        vlrPP = 992.71M.ToString("f2"),
-                                    }
-                                },
+                                    vlrBaseIR = 152725.25M.ToString("f2"),
+                                    vlrIR = 2290.88M.ToString("f2"),
+                                    vlrBaseCSLL = 152725.25M.ToString("f2"),
+                                    vlrCSLL = 15272.53M.ToString("f2"),
+                                    vlrBaseCofins = 152725.25M.ToString("f2"),
+                                    vlrCofins = 4581.76M.ToString("f2"),
+                                    vlrBasePP = 152725.25M.ToString("f2"),
+                                    vlrPP = 992.71M.ToString("f2"),
+                                }
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "15010", // Remuneração de Serviços de auditoria;
-                            observ = "Referente auditoria das demonstrações contábeis do exercício de 2021"
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "15010", // Remuneração de Serviços de auditoria;
+                        observ = "Referente auditoria das demonstrações contábeis do exercício de 2021"
+                    },
+                }
                 }
             }
         };
@@ -352,11 +376,11 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #endregion
 
     #region RendimentoTributadoAgregado
-    private void PreencheCamposRendimentoTributadoAgregado(R4020 evento)
+    internal static void PreencheCamposRendimentoTributadoAgregado(R4020 evento)
     {
-        evento.evtRetPJ = new()
+        evento.evtRetPJ = new ReinfEvtRetPJ()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -364,48 +388,48 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPJIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Auditoria Contábil",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new()
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
                     {
-                        // identificação do pagamento
-                        new()
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
                         {
-                            // informações do pagamento
-                            infoPgto = new()
+                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
                             {
-                                new()
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrBruto = 152725.25M.ToString("f2"),
+                                retencoes = new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes()
                                 {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrBruto = 152725.25M.ToString("f2"),
-                                    retencoes = new()
-                                    {
-                                        vlrBaseIR = 152725.25M.ToString("f2"),
-                                        vlrIR = 2290.88M.ToString("f2"),
-                                        vlrBaseAgreg = 152725.25M.ToString("f2"),
-                                        vlrAgreg = 7101.72M.ToString("f2")
-                                    }
-                                },
+                                    vlrBaseIR = 152725.25M.ToString("f2"),
+                                    vlrIR = 2290.88M.ToString("f2"),
+                                    vlrBaseAgreg = 152725.25M.ToString("f2"),
+                                    vlrAgreg = 7101.72M.ToString("f2")
+                                }
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "15010", // Remuneração de Serviços de auditoria;
-                            observ = "Referente auditoria das demonstrações contábeis do exercício de 2021"
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "15010", // Remuneração de Serviços de auditoria;
+                        observ = "Referente auditoria das demonstrações contábeis do exercício de 2021"
+                    },
+                }
                 }
             }
         };

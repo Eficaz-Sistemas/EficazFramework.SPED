@@ -2,6 +2,9 @@
 
 public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEvt
 {
+    internal const string _cnpj = "34785515000166";
+    internal Versao _versao = Versao.v2_01_01;
+
     /// <summary>
     /// Informa o namespace principal (xmlns) para validação do documento XML
     /// </summary>

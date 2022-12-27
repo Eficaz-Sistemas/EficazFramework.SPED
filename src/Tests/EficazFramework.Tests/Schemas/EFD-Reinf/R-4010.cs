@@ -2,32 +2,56 @@
 
 public class R4010Test : BaseEfdReinfTest<R4010>
 {
-    public R4010Test()
-    {
-        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/v2_01_01";
-        ValidationSchema = Resources.Schemas.EFD_Reinf.R4010_v2_01_01;
-    }
-
     private int _testNumber = 0;
 
     [Test]
-    public void RendimentosIsentos()
+    [TestCase(Versao.v2_01_01)]
+    public void ValidaRendimentosIsentos(Versao versao)
     {
         _testNumber = 0;
+        _versao = versao;
+        InstanciaDesserializada = (R4010 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4010_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     [Test]
-    public void RendimentosTributados()
+    [TestCase(Versao.v2_01_01)]
+    public void ValidaRendimentosTributados(Versao versao)
     {
         _testNumber = 1;
+        _versao = versao;
+        InstanciaDesserializada = (R4010 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R2010_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     [Test]
-    public void RendimentosTributadosComDependente()
+    [TestCase(Versao.v2_01_01)]
+    public void ValidaRendimentosTributadosComDependente(Versao versao)
     {
         _testNumber = 2;
+        _versao = versao;
+        InstanciaDesserializada = (R4010 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R2010_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
@@ -35,6 +59,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4010 evento)
     {
+        evento.Versao = _versao;
         switch (_testNumber)
         {
             case 0:
@@ -71,11 +96,11 @@ public class R4010Test : BaseEfdReinfTest<R4010>
 
     // Preenchimento e validação por tipo de teste
     #region RendimentoIsento-LucrosDistribuidos
-    private void PreencheCamposRendimentoisento(R4010 evento)
+    internal static void PreencheCamposRendimentoisento(R4010 evento)
     {
-        evento.evtRetPF = new()
+        evento.evtRetPF = new ReinfEvtRetPF()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -83,50 +108,50 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPFIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
-                    idePgto = new()
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
                     {
-                        // identificação do pagamento
-                        new()
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
                         {
-                            // informações do pagamento
-                            infoPgto = new()
+                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
                             {
-                                new()
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrRendBruto = 152725.25M.ToString("f2"),
+                                // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
+                                rendIsento = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento>()
                                 {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrRendBruto = 152725.25M.ToString("f2"),
-                                    // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
-                                    rendIsento = new()
+                                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento()
                                     {
-                                        new()
-                                        {
-                                            tpIsencao = TipoIsencaoPF.RendimentoSemIRRF,
-                                            vlrIsento = 152725.25M.ToString("f2")
-                                        }
+                                        tpIsencao = TipoIsencaoPF.RendimentoSemIRRF,
+                                        vlrIsento = 152725.25M.ToString("f2")
                                     }
+                                }
 
-                                },
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "12001", // Lucro e dividendo
-                            observ = "Lucros do exercício de 2021"
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "12001", // Lucro e dividendo
+                        observ = "Lucros do exercício de 2021"
+                    },
+                }
                 }
             }
         };
@@ -213,7 +238,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
 
                 // rendIsento
                 instanciaXml.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento.Should().HaveCount(instanciaPopulada.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento.Count);
-                for (int iii = 0; iii < instanciaXml.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento.Count; iii ++)
+                for (int iii = 0; iii < instanciaXml.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento.Count; iii++)
                 {
                     instanciaXml.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento[iii].tpIsencao.Should().Be(instanciaPopulada.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento[iii].tpIsencao);
                     instanciaXml.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento[iii].vlrIsento.Should().Be(instanciaPopulada.evtRetPF.ideEstab.ideBenef.idePgto[i].infoPgto[ii].rendIsento[iii].vlrIsento);
@@ -227,11 +252,11 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #endregion
 
     #region RendimentoTributado
-    private void PreencheCamposRendimentoTributado(R4010 evento)
+    internal static void PreencheCamposRendimentoTributado(R4010 evento)
     {
-        evento.evtRetPF = new()
+        evento.evtRetPF = new ReinfEvtRetPF()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -239,42 +264,42 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPFIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
-                    idePgto = new()
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
                     {
-                        // identificação do pagamento
-                        new()
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
                         {
-                            // informações do pagamento
-                            infoPgto = new()
+                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
                             {
-                                new()
-                                {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrRendBruto = 750.ToString("f2"),
-                                    vlrRendTrib = 750.ToString("f2"),
-                                    vlrIR = 112.5.ToString("f2"),
-                                },
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrRendBruto = 750.ToString("f2"),
+                                vlrRendTrib = 750.ToString("f2"),
+                                vlrIR = 112.5.ToString("f2"),
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "10001", // Lucro e dividendo
-                            observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "10001", // Lucro e dividendo
+                        observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
+                    },
+                }
                 }
             }
         };
@@ -368,11 +393,11 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #endregion
 
     #region RendimentoTributadoComDependente
-    private void PreencheCamposRendimentoTributadoComDependente(R4010 evento)
+    internal static void PreencheCamposRendimentoTributadoComDependente(R4010 evento)
     {
-        evento.evtRetPF = new()
+        evento.evtRetPF = new ReinfEvtRetPF()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -380,59 +405,59 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetPFIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new()
+                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de dependentes (neste teste apenas para dedução de IRRF)
-                    ideDep = new()
+                    ideDep = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep>()
+                {
+                    new ReinfEvtRetPFIdeEstabIdeBenefIdeDep()
                     {
-                        new()
-                        {
-                            cpfDep = "36580385006",
-                            relDep = RelacaoDependencia.FilhoOuEnteado
-                        }
-                    },
-                    // listagem de pagamentos
-                    idePgto = new()
-                    {
-                        // identificação do pagamento
-                        new()
-                        {
-                            // informações do pagamento
-                            infoPgto = new()
-                            {
-                                new()
-                                {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrRendBruto = 750.ToString("f2"),
-                                    vlrRendTrib = 750.ToString("f2"),
-                                    vlrIR = 112.5.ToString("f2"),
-                                    detDed = new()
-                                    {
-                                        new()
-                                        {
-                                            indTpDeducao = IndicadorTipoDeducaoPrevidenciaria.Dependentes,
-                                            vlrDeducao = 33.75.ToString("f2")
-                                        }
-                                    }
-                                },
-                            },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "10001", // Lucro e dividendo
-                            observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
-                        },
+                        cpfDep = "36580385006",
+                        relDep = RelacaoDependencia.FilhoOuEnteado
                     }
+                },
+                    // listagem de pagamentos
+                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                {
+                    // identificação do pagamento
+                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
+                    {
+                        // informações do pagamento
+                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        {
+                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
+                            {
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrRendBruto = 750.ToString("f2"),
+                                vlrRendTrib = 750.ToString("f2"),
+                                vlrIR = 112.5.ToString("f2"),
+                                detDed = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed>()
+                                {
+                                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed()
+                                    {
+                                        indTpDeducao = IndicadorTipoDeducaoPrevidenciaria.Dependentes,
+                                        vlrDeducao = 33.75.ToString("f2")
+                                    }
+                                }
+                            },
+                        },
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "10001", // Lucro e dividendo
+                        observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
+                    },
+                }
                 }
             }
         };

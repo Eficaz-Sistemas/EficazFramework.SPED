@@ -2,24 +2,28 @@
 
 public class R4080Test : BaseEfdReinfTest<R4080>
 {
-    public R4080Test()
-    {
-        ValidationSchemaNamespace = "http://www.reinf.esocial.gov.br/schemas/evt4080RetencaoRecebimento/v2_01_01";
-        ValidationSchema = Resources.Schemas.EFD_Reinf.R4080_v2_01_01;
-    }
-
     [Test]
-    public void RendimentosRecebidosComRetencao()
+    [TestCase(Versao.v2_01_01)]
+    public void RendimentosRecebidosComRetencao(Versao versao)
     {
+        _versao = versao;
+        InstanciaDesserializada = (R4080 e) => e.Versao = versao;
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4080RetencaoRecebimento/{versao}";
+        switch (versao)
+        {
+            case Versao.v2_01_01:
+                ValidationSchema = Resources.Schemas.EFD_Reinf.R4080_v2_01_01;
+                break;
+        }
         TestaEvento();
     }
 
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4080 evento)
     {
-        evento.evtRetRec = new()
+        evento.evtRetRec = new ReinfEvtRetRec()
         {
-            ideEvento = new()
+            ideEvento = new ReinfEvtIdeEvento_R40xx()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -27,41 +31,41 @@ public class R4080Test : BaseEfdReinfTest<R4080>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new()
+            ideContri = new ReinfEvtIdeContri()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new()
+            ideEstab = new ReinfEvtRetRecIdeEstab()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideFont = new()
+                ideFont = new ReinfEvtRetRecIdeEstabIdeFont()
                 {
                     // identificação do beneficiário
                     cnpjFont = "10608025000126",
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    ideRend = new()
+                    ideRend = new System.Collections.Generic.List<ReinfEvtRetRecIdeEstabIdeFontIdeRend>()
+                {
+                    // identificação do recebimento
+                    new ReinfEvtRetRecIdeEstabIdeFontIdeRend()
                     {
-                        // identificação do recebimento
-                        new()
+                        // informações do recebimento
+                        infoRec = new System.Collections.Generic.List<ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec>()
                         {
-                            // informações do recebimento
-                            infoRec = new()
+                            new ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec()
                             {
-                                new()
-                                {
-                                    DataFatoGerador = DateTime.Now,
-                                    vlrBruto = 152725.25M.ToString("f2"),
-                                    vlrBaseIR = 152725.25M.ToString("f2"),
-                                    vlrIR = 2290.88M.ToString("f2")
-                                },
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrBruto = 152725.25M.ToString("f2"),
+                                vlrBaseIR = 152725.25M.ToString("f2"),
+                                vlrIR = 2290.88M.ToString("f2")
                             },
-                            // Utilizar a tabela 01, do Anexo I do Manual
-                            natRend = "20001", // Remuneração de Serviços de auditoria;
-                            observ = "Serviços de Propaganda e Publicidade"
                         },
-                    }
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = "20001", // Remuneração de Serviços de auditoria;
+                        observ = "Serviços de Propaganda e Publicidade"
+                    },
+                }
                 }
             }
         };
