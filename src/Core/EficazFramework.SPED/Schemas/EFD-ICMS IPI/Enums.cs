@@ -461,6 +461,8 @@ public enum IndicadorTipoOperacaoVeiculo
     Outros = 9
 }
 
+
+
 #endregion
 
 #region Bloco D
@@ -507,7 +509,23 @@ public enum IndicadorPrePago
     PosPago = 1
 }
 
-
+public enum IndicadorTipoReceitaTelecom
+{
+    [System.ComponentModel.Description("0 - Receita própria - serviços prestados")]
+    PropriaServPrestado = 0,
+    [System.ComponentModel.Description("1 - Receita própria - cobrança de débitos")]
+    PropriaCobrDebito = 1,
+    [System.ComponentModel.Description("2 - Receita própria - venda de mercadorias")]
+    VendaMercadorias = 2,
+    [System.ComponentModel.Description("3 - Receita própria - venda de serviço pré-pago")]
+    VendaServPrePago = 3,
+    [System.ComponentModel.Description("4 - Outras receitas próprias")]
+    OutrasProprias = 4,
+    [System.ComponentModel.Description("5 - Receitas de terceiros (co-faturamento)")]
+    Terceiros_CoFaturamento = 5,
+    [System.ComponentModel.Description("6 - Outras receitas de terceiros")]
+    OutrasTerceiros = 6
+}
 #endregion
 
 #region Bloco E
