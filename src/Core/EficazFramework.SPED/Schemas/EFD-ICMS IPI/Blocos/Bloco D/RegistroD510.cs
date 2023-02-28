@@ -39,10 +39,10 @@ public partial class RegistroD510 : Primitives.Registro
         writer.Append(string.Format("{0:0.##}", BaseCalculo_ICMS_UFs) + "|"); // 14
         writer.Append(string.Format("{0:0.##}", Valor_ICMS_UFs) + "|"); // 15
         writer.Append((int)IndicadorReceita + "|"); // 16
-        writer.Append(CodigoParticipante + "|"); // 4
-        writer.Append(string.Format("{0:0.##}", Valor_PIS) + "|"); // 13
-        writer.Append(string.Format("{0:0.##}", Valor_COFINS) + "|"); // 13
-        writer.Append(ContaContabil + "|"); // 4
+        writer.Append(CodigoParticipante + "|"); // 17
+        writer.Append(string.Format("{0:0.##}", Valor_PIS) + "|"); // 18
+        writer.Append(string.Format("{0:0.##}", Valor_COFINS) + "|"); // 19
+        writer.Append(ContaContabil + "|"); // 20
         return writer.ToString();
     }
 
