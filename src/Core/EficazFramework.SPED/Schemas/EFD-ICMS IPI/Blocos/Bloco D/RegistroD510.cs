@@ -38,7 +38,11 @@ public partial class RegistroD510 : Primitives.Registro
         writer.Append(string.Format("{0:0.##}", Valor_ICMS) + "|"); // 13
         writer.Append(string.Format("{0:0.##}", BaseCalculo_ICMS_UFs) + "|"); // 14
         writer.Append(string.Format("{0:0.##}", Valor_ICMS_UFs) + "|"); // 15
-        writer.Append((int)OutrosValores + "|"); // 16
+        writer.Append((int)IndicadorReceita + "|"); // 16
+        writer.Append(CodigoParticipante + "|"); // 4
+        writer.Append(string.Format("{0:0.##}", Valor_PIS) + "|"); // 13
+        writer.Append(string.Format("{0:0.##}", Valor_COFINS) + "|"); // 13
+        writer.Append(ContaContabil + "|"); // 4
         return writer.ToString();
     }
 
@@ -59,7 +63,11 @@ public partial class RegistroD510 : Primitives.Registro
         Valor_ICMS = data[13].ToNullableDouble();
         BaseCalculo_ICMS_UFs = data[14].ToNullableDouble();
         Valor_ICMS_UFs = data[15].ToNullableDouble();
-        OutrosValores = (IndicadorTipoReceitaTelecom)data[16].ToEnum<IndicadorTipoReceitaTelecom>(IndicadorTipoReceitaTelecom.PropriaServPrestado);
+        IndicadorReceita = (IndicadorTipoReceitaTelecom)data[16].ToEnum<IndicadorTipoReceitaTelecom>(IndicadorTipoReceitaTelecom.PropriaServPrestado);
+        CodigoParticipante = data[17];
+        Valor_PIS = data[18].ToNullableDouble();
+        Valor_COFINS = data[19].ToNullableDouble();
+        ContaContabil = data[20];
     }
 
     public int? NumeroSequencialItem { get; set; } // 2
@@ -77,6 +85,11 @@ public partial class RegistroD510 : Primitives.Registro
     public double? Valor_ICMS { get; set; } // 13
     public double? BaseCalculo_ICMS_UFs { get; set; } // 14
     public double? Valor_ICMS_UFs { get; set; } // 15
-    public IndicadorTipoReceitaTelecom OutrosValores { get; set; } = IndicadorTipoReceitaTelecom.PropriaServPrestado; // 16
+    public IndicadorTipoReceitaTelecom IndicadorReceita { get; set; } = IndicadorTipoReceitaTelecom.PropriaServPrestado; // 16
+    public string CodigoParticipante { get; set; } // 17
+    public double? Valor_PIS { get; set; } // 18
+    public double? Valor_COFINS { get; set; } // 19
+    public string ContaContabil { get; set; } // 20
+
 
 }
