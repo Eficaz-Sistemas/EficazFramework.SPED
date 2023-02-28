@@ -3,6 +3,8 @@
 
 ## TipoAtividade Enum
 
+Indicador de Tipo de Atividade
+
 ```csharp
 public enum TipoAtividade
 ```
@@ -12,6 +14,10 @@ public enum TipoAtividade
 
 `Industrial` 0
 
+Industrial ou Equiparado a Industrial
+
 <a name='EficazFramework.SPED.Schemas.Primitives.TipoAtividade.Outros'></a>
 
 `Outros` 1
+
+Outros

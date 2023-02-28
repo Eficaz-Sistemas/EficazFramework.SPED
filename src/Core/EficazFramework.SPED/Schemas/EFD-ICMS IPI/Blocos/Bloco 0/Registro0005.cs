@@ -1,10 +1,27 @@
-﻿
-namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
+﻿namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
 /// <summary>
 /// Dados Complementares da entidade
 /// </summary>
-/// <remarks></remarks>
+/// <remarks>
+/// Nível hierárquico - 1 <br/>
+/// Ocorrência - um por arquivo.
+/// </remarks>
+/// <registrosped/>
+/// <example>
+/// ```csharp
+/// string _versao = "017";
+/// var reg0005 = new Registro0005(null, _versao)
+/// {
+///     NomeFantasia = "Nome Fantasia Comércio de Artigos Diversos",
+///     CEP = "37990000",
+///     Endereco = "Rua Exemplo",
+///     Numero = "88",
+///     Bairro = "Centro",
+///     EMail = "contato@artdiversos.com.br"
+/// };
+/// ```
+/// </example>
 public class Registro0005 : Primitives.Registro
 {
     public Registro0005() : base("0005")
@@ -15,6 +32,7 @@ public class Registro0005 : Primitives.Registro
     {
     }
 
+    /// <inheritdoc/>
     public override string EscreveLinha()
     {
         var writer = new System.Text.StringBuilder();
@@ -31,6 +49,7 @@ public class Registro0005 : Primitives.Registro
         return writer.ToString();
     }
 
+    /// <inheritdoc/>
     public override void LeParametros(string[] data)
     {
         NomeFantasia = data[2];
@@ -44,13 +63,40 @@ public class Registro0005 : Primitives.Registro
         EMail = data[10];
     }
 
+    /// <summary>
+    /// Nome Fantasia assossiado ao nome empresarial
+    /// </summary>
     public string NomeFantasia { get; set; } = null;
+    /// <summary>
+    /// Código de Enderaçamento Postal
+    /// </summary>
     public string CEP { get; set; } = null;
+    /// <summary>
+    /// Logradouro e Endereço do imóvel
+    /// </summary>
     public string Endereco { get; set; } = null;
+    /// <summary>
+    /// Número do Imóvel
+    /// </summary>
     public string Numero { get; set; } = null;
+    /// <summary>
+    /// Dados complementares do endereço
+    /// </summary>
     public string Complemento { get; set; } = null;
+    /// <summary>
+    /// Bairro em que o imóvel está situado
+    /// </summary>
     public string Bairro { get; set; } = null;
+    /// <summary>
+    /// Número do telefone (ddd+fone)
+    /// </summary>
     public string Fone { get; set; } = null;
+    /// <summary>
+    /// Número do fax
+    /// </summary>
     public string Fax { get; set; } = null;
+    /// <summary>
+    /// Endereço de correio eletrônico
+    /// </summary>
     public string EMail { get; set; } = null;
 }
