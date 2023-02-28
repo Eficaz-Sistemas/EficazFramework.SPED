@@ -13,6 +13,6 @@
 
 | Enums | |
 | :--- | :--- |
-| [Finalidade](EficazFramework.SPED.Schemas.Primitives/Finalidade.md 'EficazFramework.SPED.Schemas.Primitives.Finalidade') | |
-| [IndicadorMovimento](EficazFramework.SPED.Schemas.Primitives/IndicadorMovimento.md 'EficazFramework.SPED.Schemas.Primitives.IndicadorMovimento') | |
-| [TipoAtividade](EficazFramework.SPED.Schemas.Primitives/TipoAtividade.md 'EficazFramework.SPED.Schemas.Primitives.TipoAtividade') | |
+| [Finalidade](EficazFramework.SPED.Schemas.Primitives/Finalidade.md 'EficazFramework.SPED.Schemas.Primitives.Finalidade') | Código da Finalidade do Arquivo |
+| [IndicadorMovimento](EficazFramework.SPED.Schemas.Primitives/IndicadorMovimento.md 'EficazFramework.SPED.Schemas.Primitives.IndicadorMovimento') | Indicador de Movimento |
+| [TipoAtividade](EficazFramework.SPED.Schemas.Primitives/TipoAtividade.md 'EficazFramework.SPED.Schemas.Primitives.TipoAtividade') | Indicador de Tipo de Atividade |

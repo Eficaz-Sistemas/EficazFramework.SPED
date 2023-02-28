@@ -3,6 +3,8 @@
 
 ## Finalidade Enum
 
+Código da Finalidade do Arquivo
+
 ```csharp
 public enum Finalidade
 ```
@@ -12,6 +14,10 @@ public enum Finalidade
 
 `Original` 0
 
+Remessa do Arquivo Original
+
 <a name='EficazFramework.SPED.Schemas.Primitives.Finalidade.Substituto'></a>
 
 `Substituto` 1
+
+Remessa do Arquivo Substituto
