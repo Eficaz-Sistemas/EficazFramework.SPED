@@ -13,7 +13,7 @@ public class RegistroD510 : Tests.BaseTest
     }
 
     
-    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0|", "015")]
+    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0||1,65|7,6||", "015")]
     public void Construtor(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD510(linha, versao);
@@ -21,7 +21,7 @@ public class RegistroD510 : Tests.BaseTest
     }
 
     
-    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0|", "016")]
+    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0||1,65|7,6||", "016")]
     public void Escrita(string result, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD510("", versao)
@@ -40,7 +40,9 @@ public class RegistroD510 : Tests.BaseTest
             Valor_ICMS = 100d,
             BaseCalculo_ICMS_UFs = 6d,
             Valor_ICMS_UFs = 42d,
-            OutrosValores = IndicadorTipoReceitaTelecom.PropriaServPrestado
+            IndicadorReceita = IndicadorTipoReceitaTelecom.PropriaServPrestado,
+            Valor_PIS = 1.65,
+            Valor_COFINS = 7.6
         };
         
        
@@ -48,7 +50,7 @@ public class RegistroD510 : Tests.BaseTest
     }
 
 
-    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0|", "016")]
+    [TestCase("|D510|2|Rvsta|0123|158|Un|500,85||040|1303|539,8|18|100|6|42|0||1,65|7,6||", "016")]
     public void Leitura(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD510("", versao);
@@ -74,5 +76,8 @@ public class RegistroD510 : Tests.BaseTest
         reg.Valor_ICMS.Should().Be(100d);
         reg.BaseCalculo_ICMS_UFs.Should().Be(6d);
         reg.Valor_ICMS_UFs.Should().Be(42d);
+        reg.Valor_PIS.Should().Be(1.65d);
+        reg.Valor_COFINS.Should().Be(7.6d);
+
     }
 }
