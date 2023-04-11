@@ -86,7 +86,10 @@ await escrituracao.EscreveArquivo(System.IO.File.Create(@"C:\SPED\SPED-EFD-ICMS-
 ```
    
 ## Pré-Requisitos
-.NET 6.0, para versão mais recente da biblioteca (pode sofrer alterações sem aviso prévio). Pretende-se acompanhar a versão em produção recente do .NET.
+| Versão | Versão do .NET | Suporte |
+| :--- | :--- | :---: |
+| 6.1.x | [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :white_check_mark:|
+| 6.0.x | [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) | :x: |
 
    
  ## Contribuições
