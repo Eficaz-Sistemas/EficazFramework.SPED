@@ -31,7 +31,7 @@
    - [Sumário](/Docs/Api/EficazFrameworkSPED.md) 
      - Schemas
        - CT-e e CT-eOS
-       - DAPI
+       - DAPI (MG)
        - e-CredAc, portarias CAT 83/09 e 207/09
        - e-Ressarcimento portaria CAT 42/18
        - ECD
