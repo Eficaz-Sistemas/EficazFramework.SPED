@@ -2,6 +2,7 @@
 # EficazFramework.SPED
 
 ![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=6.0%20%7C%207.0&color=blueviolet&style=flat-square&logo=dotnet)
+![Nuget](https://eficazshields.azurewebsites.net/nuget/v/EficazFramework.SPED?style=flat-square)
 ![Azure DevOps builds](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21?&logo=azurepipelines&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps coverage](https://eficazshields.azurewebsites.net/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
