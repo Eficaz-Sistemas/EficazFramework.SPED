@@ -538,6 +538,28 @@ public enum IndicadorMovimentoST_Difal
     ComOperacoes = 1
 }
 
+public enum IndicadorAjusteIPI
+{
+    [System.ComponentModel.Description("Ajuste a Débito")]
+    Debito = 0,
+    [System.ComponentModel.Description("Ajuste a Crédito")]
+    Credito = 1
+}
+
+public enum IndicadorOrigemAjusteIPI
+{
+    [System.ComponentModel.Description("Processo Judicial")]
+    Judicial = 0,
+    [System.ComponentModel.Description("Processo Administrativo")]
+    Administrativo = 1,
+    [System.ComponentModel.Description("Per/DCOMP")]
+    PerDCOMP = 2,
+    [System.ComponentModel.Description("Documento Fiscal")]
+    DocumentoFiscal = 3,
+    [System.ComponentModel.Description("Outros")]
+    Outros = 99
+}
+
 #endregion
 
 #region Bloco G
