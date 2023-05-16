@@ -35,7 +35,7 @@ public class Registro0002 : Registro
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|0002|"); // 1
-        writer.Append(((int)ClassificacaoEstabelecimento).ToString() + "|"); // 2
+        writer.Append($"{(int)ClassificacaoEstabelecimento:#00}" + "|"); // 2
         return writer.ToString();
     }
 
