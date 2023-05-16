@@ -42,7 +42,7 @@ public class Registro0002 : Registro
     /// <inheritdoc/>
     public override void LeParametros(string[] data)
     {
-        ClassificacaoEstabelecimento = (TipoAtividade)data[2].ToEnum<TipoDeAtividade>(TipoAtividade.Industrial);
+        ClassificacaoEstabelecimento = (TipoDeAtividade)data[2].ToEnum<TipoDeAtividade>(TipoDeAtividade.Outros);
     }
 
     /// <summary>
@@ -50,5 +50,5 @@ public class Registro0002 : Registro
     /// 0 - Industrial ou Equiparado a Industrial <br/>
     /// 1 - Outross <br/>
     /// </summary>
-    public TipoAtividade ClassificacaoEstabelecimento { get; set; } = TipoAtividade.Industrial; // 2
+    public TipoDeAtividade ClassificacaoEstabelecimento { get; set; } = TipoDeAtividade.Outros; // 2
 }
