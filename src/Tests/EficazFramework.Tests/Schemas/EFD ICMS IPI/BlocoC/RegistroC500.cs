@@ -28,14 +28,15 @@ public class RegistroC500 : Tests.BaseTest
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||", "015")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555||||||||||122021|||", "016")]
     [TestCase("|C500|0|1|123|06|00|U1||01|12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|3|01|5555|||2|||||||122021|||", "016", true)]
-    public void Escrita(string result, string versao = "016", bool indicadorContribIcms = false)
+    [TestCase("|C500|0|1|123|66|00|U1|||12345678|18062021|18062021|539,8||530|||9,8|539,8|100||||6|42|||5555|1||2|||||||122021||", "016", true, "66")]
+    public void Escrita(string result, string versao = "016", bool indicadorContribIcms = false, string especie = "06")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroC500("", versao)
         {
             Operacao = EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacao.Entrada,
             Emissao = EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEmitente.Terceiros,
             CodigoParticipante = "123",
-            EspecieDocumento = "06",
+            EspecieDocumento = especie,
             SituacaoDocumento = EficazFramework.SPED.Schemas.EFD_ICMS_IPI.SituacaoDocumento.Regular,
             Serie = "U1",
             CodigoConsumo = EficazFramework.SPED.Schemas.EFD_ICMS_IPI.CodigoConsumoEnEletricaOuGas.Comercial,
