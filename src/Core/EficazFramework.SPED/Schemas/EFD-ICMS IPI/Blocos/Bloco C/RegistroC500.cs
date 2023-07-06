@@ -36,7 +36,7 @@ public class RegistroC500 : Primitives.Registro
         }
         else
         {
-            writer.Append(string.Format("{0:00}", (int)CodigoConsumo) + "|");
+            writer.Append($"{(EspecieDocumento != "66" ? (int)CodigoConsumo : ""):00}|");
         } // 9
 
         writer.Append(Numero + "|"); // 10
