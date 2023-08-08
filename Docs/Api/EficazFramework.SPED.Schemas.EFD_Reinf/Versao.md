@@ -15,3 +15,7 @@ public enum Versao
 <a name='EficazFramework.SPED.Schemas.EFD_Reinf.Versao.v2_01_01'></a>
 
 `v2_01_01` 1
+
+<a name='EficazFramework.SPED.Schemas.EFD_Reinf.Versao.v2_01_02'></a>
+
+`v2_01_02` 2

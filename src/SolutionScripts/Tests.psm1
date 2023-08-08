@@ -1,10 +1,6 @@
 # Executa os testes e contrói a tabela de cobertura de código do Coverlet
 # Author: Henrique Clausing
 Function Coverage() {
-	[cmdletbinding()]
-Param (
-    [String]$area
-)
 	Process {
 		$location = Get-Location
 

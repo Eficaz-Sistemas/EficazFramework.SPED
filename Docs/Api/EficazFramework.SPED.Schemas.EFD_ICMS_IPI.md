@@ -163,6 +163,11 @@
 | [RegistroE312](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE312.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE312') | Informações Adicionais do Ajuste da Apuração do ICMS Difal |
 | [RegistroE313](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE313.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE313') | Identificação dos Documentos do Ajuste da Apuração do ICMS Difal |
 | [RegistroE316](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE316.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE316') | Obrigações do ICMS Recolhido ou a Recolher - Difal |
+| [RegistroE500](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE500.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE500') | Período de Apuração do IPI |
+| [RegistroE510](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE510.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE510') | Consolidação dos Valores do IPI |
+| [RegistroE520](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE520.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE520') | Apuração do IPI |
+| [RegistroE530](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE530.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE530') | Ajustes de Apuração do IPI |
+| [RegistroE531](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE531.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE531') | Informações Adicionais dos Ajustes da Apuração do IPI - Identificação dos <br/>Documentos Fiscais (01 e 55) |
 | [RegistroE990](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE990.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE990') | Encerramento do Bloco E |
 | [RegistroG001](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG001.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG001') | Abertura do Bloco G |
 | [RegistroG110](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG110.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG110') | ICMS - Ativo Permanente - CIAP |
@@ -197,6 +202,7 @@
 | [DocumentoImportacao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/DocumentoImportacao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.DocumentoImportacao') | |
 | [FinalidadeEmissaoDocE](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/FinalidadeEmissaoDocE.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.FinalidadeEmissaoDocE') | |
 | [GrupoTensao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/GrupoTensao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.GrupoTensao') | |
+| [IndicadorAjusteIPI](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorAjusteIPI.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorAjusteIPI') | |
 | [IndicadorDestinatario](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorDestinatario.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorDestinatario') | |
 | [IndicadorEmitente](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorEmitente.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEmitente') | |
 | [IndicadorEscolaridade](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorEscolaridade.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEscolaridade') | |
@@ -208,6 +214,7 @@
 | [IndicadorOperacao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacao') | |
 | [IndicadorOperacaoServicos](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacaoServicos.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacaoServicos') | |
 | [IndicadorOperacaoTransporte](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacaoTransporte.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacaoTransporte') | |
+| [IndicadorOrigemAjusteIPI](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemAjusteIPI.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemAjusteIPI') | |
 | [IndicadorOrigemProcesso](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemProcesso.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemProcesso') | |
 | [IndicadorOrigemProcessoServico](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemProcessoServico.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemProcessoServico') | |
 | [IndicadorPagamento](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorPagamento.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorPagamento') | |

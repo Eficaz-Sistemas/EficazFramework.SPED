@@ -3,13 +3,64 @@
 /// <summary>
 /// Informações do contribuinte
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R1000()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtInfoContri = new R1000_EventoInfoContribuinte()
+///     {
+///         ideEvento = new ReinfEvtIdeEvento()
+///         {
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "2.2"
+///         },
+///         ideContri = new ReinfEvtIdeContri()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         infoContri = new R1000_InfoContri()
+///         {
+///             Item = new R1000_Inclusao()
+///             {
+///                 idePeriodo = new ReinfEvtIdePeriodo()
+///                 {
+///                     iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+///                 },
+///                 infoCadastro = new R1000_InfoCadastro()
+///                 {
+///                     classTrib = "99",
+///                     indEscrituracao = ObrigatoriedadeECD.EntregaECD,
+///                     indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
+///                     indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
+///                     indSitPJ = SituacaoPessoaJuridica.Normal,
+///                     indSitPJSpecified = true,
+///                     contato = new R1000_InfoCadastro_Contato()
+///                     {
+///                         nmCtt = "Pierre de Fermat",
+///                         cpfCtt = "47363361886",
+///                         foneFixo = "3535441234",
+///                         email = "suporte@eficazcs.com.br"
+///                     },
+///                     softHouse = new R1000_InfoCadastro_SoftwareHouse()
+///                 }
+///             }
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
 public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 {
     private R1000_EventoInfoContribuinte evtInfoContriField;
     private SignatureType signatureField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Evento de informacoes do contribuinte.
+    /// </summary>
     [XmlElement(Order = 0)]
     public R1000_EventoInfoContribuinte evtInfoContri
     {
@@ -25,7 +76,7 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -43,11 +94,13 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 
 
     // IEfdReinfEvt Members
+    /// <exclude/>
     public override void GeraEventoID()
     {
         evtInfoContri.id = string.Format("ID{0}{1}{2}", (int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
     }
 
+    /// <exclude/>
     public override string ContribuinteCNPJ()
     {
         return evtInfoContri.ideContri.nrInsc;
@@ -55,9 +108,13 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtInfoContri";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
@@ -74,6 +131,7 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 
 
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer()
     {
         return new XmlSerializer(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false});
@@ -82,6 +140,9 @@ public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
 }
 
 
+/// <summary>
+/// 
+/// </summary>
 /// <exclude />
 public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChanged
 {
@@ -90,7 +151,19 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
     private R1000_InfoContri infoContriField;
     private string idField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do evento
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.ideEvento = new ReinfEvtIdeEvento()
+    /// {
+    ///     tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+    ///     procEmi = EmissorEvento.AppContribuinte,
+    ///     verProc = "2.2"
+    /// };
+    /// '''
+    /// </example>
     [XmlElement(Order = 0)]
     public ReinfEvtIdeEvento ideEvento
     {
@@ -106,7 +179,18 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do contribuinte. Mais informações em <see cref="ReinfEvtIdeContri"/>.
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.ideContri = new ReinfEvtIdeContri()
+    /// {
+    ///     tpInsc = PersonalidadeJuridica.CNPJ,
+    ///     nrInsc = "12345678"
+    /// };
+    /// '''
+    /// </example>
     [XmlElement(Order = 1)]
     public ReinfEvtIdeContri ideContri
     {
@@ -122,7 +206,46 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Informações do contribuinte.
+    /// Instanciar conforme a natureza do evento:
+    /// <list type="bullet">
+    /// <item><description>Inclusão: <see cref="R1000_Inclusao"/></description></item>
+    /// <item><description>Alteração: <see cref="R1000_Alteracao"/></description></item>
+    /// <item><description>Exclusão: <see cref="R1000_Exclusao"/></description></item>
+    /// </list>
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.infoContri = new R1000_InfoContri()
+    /// {
+    ///     Item = new R1000_Inclusao()
+    ///     {
+    ///         idePeriodo = new ReinfEvtIdePeriodo()
+    ///         {
+    ///             iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+    ///         },
+    ///         infoCadastro = new R1000_InfoCadastro()
+    ///         {
+    ///             classTrib = "99",
+    ///             indEscrituracao = ObrigatoriedadeECD.EntregaECD,
+    ///             indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
+    ///             indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
+    ///             indSitPJ = SituacaoPessoaJuridica.Normal,
+    ///             indSitPJSpecified = true,
+    ///             contato = new R1000_InfoCadastro_Contato()
+    ///             {
+    ///                 nmCtt = "Pierre de Fermat",
+    ///                 cpfCtt = "47363361886",
+    ///                 foneFixo = "3535441234",
+    ///                 email = "suporte@eficazcs.com.br"
+    ///             },
+    ///             softHouse = new R1000_InfoCadastro_SoftwareHouse()
+    ///         }
+    ///     }
+    /// };   
+    ///  '''
+    /// </example>
     [XmlElement(Order = 2)]
     public R1000_InfoContri infoContri
     {
