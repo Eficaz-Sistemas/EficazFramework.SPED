@@ -8,7 +8,7 @@ Interface padrão para implementação em todos os eventos da escrituração.
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| Versao | `Versao` |  |
+| Versao | `Versao` | <see cref="T:EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita |
 | TagToSign | `String` | Especifica qual Tag do XML do evento deve ser assinada por Certificado Digital |
 | TagId | `String` | Retorna a ID do evento, criada pelo método <see cref="M:EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt.GeraEventoID"/> |
 | EmptyURI | `Boolean` | Informa se a Uri de referência da Tag assinada deve ser vazia, ou se deve ser formada conforme especificações do Manual Técnico. |

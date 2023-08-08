@@ -40,6 +40,9 @@ public static class ReinfTimeStampUtils
 /// </summary>
 public abstract class IEfdReinfEvt : IXmlSignableDocument
 {
+    /// <summary>
+    /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita
+    /// </summary>
     [XmlIgnore]
     public Versao Versao { get; set; } = Versao.v2_01_02;
 
