@@ -12,7 +12,7 @@ Ocorrência - um por arquivo.
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| ClassificacaoEstabelecimento | `TipoAtividade` | Classificação do Estabelecimento conforme Tabela 4.5.5: <br/>            0 - Industrial ou Equiparado a Industrial <br/>            1 - Outross <br/> |
+| ClassificacaoEstabelecimento | `TipoDeAtividade` | Classificação do Estabelecimento conforme Tabela 4.5.5: <br/>            0 - Industrial ou Equiparado a Industrial <br/>            1 - Outross <br/> |
 
 | Methods | |
 | :--- | :--- |
