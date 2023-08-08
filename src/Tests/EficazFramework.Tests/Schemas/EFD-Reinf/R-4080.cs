@@ -4,23 +4,26 @@ public class R4080Test : BaseEfdReinfTest<R4080>
 {
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void RendimentosRecebidosComRetencao(Versao versao)
     {
         _versao = versao;
         InstanciaDesserializada = (R4080 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4080RetencaoRecebimento/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4080_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4080_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4080_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4080_v2_01_02_B
+        };
         TestaEvento();
     }
 
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4080 evento)
     {
+        evento.Versao = _versao;
         evento.evtRetRec = new ReinfEvtRetRec()
         {
             ideEvento = new ReinfEvtIdeEvento_R40xx()

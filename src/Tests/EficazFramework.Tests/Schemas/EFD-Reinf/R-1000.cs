@@ -7,22 +7,20 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     [Test]
     [TestCase(Versao.v1_05_01)]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
         InstanciaDesserializada = (R1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v1_05_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
-                break;
-
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => Resources.Schemas.EFD_Reinf.R1000_v1_05_01,
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R1000_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B
+        };
         TestaEvento();
     }
 
@@ -30,22 +28,20 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     [Test]
     [TestCase(Versao.v1_05_01)]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
         InstanciaDesserializada = (R1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v1_05_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
-                break;
-
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => Resources.Schemas.EFD_Reinf.R1000_v1_05_01,
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R1000_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B
+        };
         TestaEvento();
     }
 
@@ -53,22 +49,20 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     [Test]
     [TestCase(Versao.v1_05_01)]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
         _versao = versao;
         InstanciaDesserializada = (R1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v1_05_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v1_05_01;
-                break;
-
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R1000_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => Resources.Schemas.EFD_Reinf.R1000_v1_05_01,
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R1000_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R1000_v2_01_02_B
+        };
         TestaEvento();
     }
 

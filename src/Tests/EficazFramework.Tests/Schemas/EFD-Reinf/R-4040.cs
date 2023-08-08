@@ -2,25 +2,28 @@
 
 public class R4040Test : BaseEfdReinfTest<R4040>
 {
-    //[Test]
+    [Test]
     //[TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void RendimentoNaoIdentificado(Versao versao)
     {
         _versao = versao;
         InstanciaDesserializada = (R4040 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4040_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4040_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4040_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4040_v2_01_02_B
+        };
         TestaEvento();
     }
 
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4040 evento)
     {
+        evento.Versao = _versao;
         evento.evtBenefNId = new ReinfEvtBenefNId()
         {
             ideEvento = new ReinfEvtIdeEvento_R40xx()
@@ -95,9 +98,7 @@ public class R4040Test : BaseEfdReinfTest<R4040>
             {
                 instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].DataFatoGerador.Should().BeSameDateAs(instanciaPopulada.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].DataFatoGerador);
                 instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrLiq.Should().Be(instanciaPopulada.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrLiq);
-                instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrBaseIR.Should().BeNull();
                 instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrBaseIR.Should().Be(instanciaPopulada.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrBaseIR);
-                instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrIR.Should().BeNull();
                 instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrIR.Should().Be(instanciaPopulada.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].vlrIR);
                 instanciaXml.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].descr.Should().Be(instanciaPopulada.evtBenefNId.ideEstab.ideNat[i].infoPgto[ii].descr);
 
