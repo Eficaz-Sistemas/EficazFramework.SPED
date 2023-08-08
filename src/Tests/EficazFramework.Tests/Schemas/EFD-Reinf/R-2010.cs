@@ -110,11 +110,18 @@ public class R2010Test : BaseEfdReinfTest<R2010>
         int iDetAquis = 0;
         instanciaXml.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs.ForEach(ev =>
         {
-            //ev.indAquis.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].indAquis);
-            //ev.vlrBruto.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrBruto); ;
-            //ev.vlrCPDescPR.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrCPDescPR);
-            //ev.vlrRatDescPR.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrRatDescPR);
-            //ev.vlrSenarDesc.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrSenarDesc);
+            ev.dtEmissaoNF.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].dtEmissaoNF);
+            ev.vlrBruto.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrBruto); ;
+            ev.serie.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].serie);
+            ev.numDocto.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].numDocto);
+            int itpServ = 0;
+            ev.infoTpServ.ForEach(tpServ =>
+            {
+                tpServ.tpServico.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].infoTpServ[itpServ].tpServico);
+                tpServ.vlrBaseRet.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].infoTpServ[itpServ].vlrBaseRet);
+                tpServ.vlrRetencao.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].infoTpServ[itpServ].vlrRetencao);
+                itpServ += 1;
+            });
             iDetAquis += 1;
         });
     }
