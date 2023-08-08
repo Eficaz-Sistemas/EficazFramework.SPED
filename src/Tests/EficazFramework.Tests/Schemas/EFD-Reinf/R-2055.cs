@@ -5,21 +5,19 @@ public class R2055Test : BaseEfdReinfTest<R2055>
     [Test]
     [TestCase(Versao.v1_05_01)]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaEvento(Versao versao)
     {
         _versao = versao;
         InstanciaDesserializada = (R2055 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v1_05_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R2055_v1_05_01;
-                break;
-
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R2055_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => Resources.Schemas.EFD_Reinf.R2055_v1_05_01,
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R2055_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R2055_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R2055_v2_01_02_B
+        };
         TestaEvento();
     }
 

@@ -3,7 +3,8 @@
 public enum Versao
 {
     v1_05_01 = 0,
-    v2_01_01 = 1
+    v2_01_01 = 1,
+    v2_01_02 = 2,
 }
 
 public enum Ambiente

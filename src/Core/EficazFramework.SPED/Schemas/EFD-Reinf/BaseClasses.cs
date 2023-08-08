@@ -41,7 +41,7 @@ public static class ReinfTimeStampUtils
 public abstract class IEfdReinfEvt : IXmlSignableDocument
 {
     [XmlIgnore]
-    public Versao Versao { get; set; } = Versao.v2_01_01;
+    public Versao Versao { get; set; } = Versao.v2_01_02;
 
     // Base Members
     private XmlSerializer sSerializer;

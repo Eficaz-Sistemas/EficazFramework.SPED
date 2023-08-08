@@ -6,35 +6,39 @@ public class R4099Test : BaseEfdReinfTest<R4099>
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void Fechamento(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
         InstanciaDesserializada = (R4099 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4099_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4099_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4099_v2_01_02_B
+        };
         TestaEvento();
     }
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void Abertura(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
         InstanciaDesserializada = (R4099 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4099_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4099_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4099_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4099_v2_01_02_B
+        };
         TestaEvento();
     }
 
@@ -42,6 +46,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4099 evento)
     {
+        evento.Versao = _versao;
         switch (_testNumber)
         {
             case 0:

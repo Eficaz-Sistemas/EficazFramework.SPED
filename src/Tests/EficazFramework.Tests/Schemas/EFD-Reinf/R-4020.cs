@@ -6,52 +6,58 @@ public class R4020Test : BaseEfdReinfTest<R4020>
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void RendimentosIsentos(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
         InstanciaDesserializada = (R4020 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4020_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B
+        };
         TestaEvento();
     }
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void RendimentosTributados(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
         InstanciaDesserializada = (R4020 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4020_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B
+        };
         TestaEvento();
     }
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void RendimentosTributadosAgregados(Versao versao)
     {
         _testNumber = 2;
         _versao = versao;
         InstanciaDesserializada = (R4020 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4020_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4020_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4020_v2_01_02_B
+        };
         TestaEvento();
     }
 
@@ -59,6 +65,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(R4020 evento)
     {
+        evento.Versao = _versao;
         switch (_testNumber)
         {
             case 0:

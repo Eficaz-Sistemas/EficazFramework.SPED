@@ -6,52 +6,58 @@ public class R4010Test : BaseEfdReinfTest<R4010>
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaRendimentosIsentos(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
         InstanciaDesserializada = (R4010 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{versao}";
-        switch (versao)
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R4010_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4010_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B
+        };
         TestaEvento();
     }
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaRendimentosTributados(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
         InstanciaDesserializada = (R4010 e) => e.Versao = versao;
-        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{versao}";
-        switch (versao)
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{versao}";
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R2010_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4010_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B
+        };
         TestaEvento();
     }
 
     [Test]
     [TestCase(Versao.v2_01_01)]
+    [TestCase(Versao.v2_01_02)]
     public void ValidaRendimentosTributadosComDependente(Versao versao)
     {
         _testNumber = 2;
         _versao = versao;
         InstanciaDesserializada = (R4010 e) => e.Versao = versao;
-        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{versao}";
-        switch (versao)
+        ValidationSchemaNamespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{versao}";
+        ValidationSchema = versao switch
         {
-            case Versao.v2_01_01:
-                ValidationSchema = Resources.Schemas.EFD_Reinf.R2010_v2_01_01;
-                break;
-        }
+            Versao.v1_05_01 => throw new ArgumentException("Invalid version."),
+            Versao.v2_01_01 => Resources.Schemas.EFD_Reinf.R4010_v2_01_01,
+            Versao.v2_01_02 => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B,
+            _ => Resources.Schemas.EFD_Reinf.R4010_v2_01_02_B
+        };
         TestaEvento();
     }
 
@@ -140,8 +146,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                                 {
                                     new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento()
                                     {
-                                        tpIsencao = TipoIsencaoPF.RendimentoSemIRRF,
-                                        vlrIsento = 152725.25M.ToString("f2")
+                                        tpIsencao = evento.Versao >= Versao.v2_01_02 ? TipoIsencaoPF.Outros : TipoIsencaoPF.RendimentoSemIRRF,
+                                        vlrIsento = 152725.25M.ToString("f2"),
+                                        descRendimento = "Lucros do exercício de 2021"
                                     }
                                 }
 
