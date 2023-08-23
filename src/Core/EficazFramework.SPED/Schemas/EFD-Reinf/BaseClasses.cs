@@ -36,9 +36,9 @@ public static class ReinfTimeStampUtils
 
 
 /// <summary>
-/// Interface padrão para implementação em todos os eventos da escrituração.
+/// Abstração padrão para implementação em todos os eventos da escrituração.
 /// </summary>
-public abstract class IEfdReinfEvt : IXmlSignableDocument
+public abstract class IEfdReinfEvt : IXmlSignableDocument, INotifyPropertyChanged
 {
     /// <summary>
     /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita
@@ -63,7 +63,6 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
     /// <summary>
     /// Retorna o CNPJ do Contribuinte titular do evento.
     /// </summary>
-    /// <returns></returns>
     public abstract string ContribuinteCNPJ();
 
 
@@ -97,7 +96,6 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
     /// <summary>
     /// Substitui o método ToString() de object para retornar o resultado do método <see cref="Serialize"/>
     /// </summary>
-    /// <returns></returns>
     public override string ToString() =>
         Serialize();
 
@@ -142,7 +140,6 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    /// <returns></returns>
     public IEfdReinfEvt Deserialize(string xmlContent)
     {
         sSerializer = DefineSerializer();
@@ -152,7 +149,6 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    /// <returns></returns>
     public IEfdReinfEvt Deserialize(System.IO.Stream xmlStream)
     {
         sSerializer = DefineSerializer();
@@ -160,6 +156,14 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
         return result as IEfdReinfEvt;
     }
 
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+    }
 }
 
 #endregion
@@ -172,7 +176,6 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument
 /// <exclude />
 public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
 {
-    // , [Namespace]:="http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01"
     private string iniValidField;
     private string fimValidField;
 
@@ -182,11 +185,7 @@ public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
-
+        get => iniValidField;
         set
         {
             iniValidField = value;
@@ -200,11 +199,7 @@ public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
-
+        get => fimValidField
         set
         {
             fimValidField = value;
@@ -218,9 +213,7 @@ public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
     {
         var propertyChanged = PropertyChanged;
         if (propertyChanged != null)
-        {
             propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
 
@@ -235,15 +228,10 @@ public partial class ReinfEvtIdeEvento : object, INotifyPropertyChanged
     private EmissorEvento procEmiField;
     private string verProcField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField
         set
         {
             tpAmbField = value;
