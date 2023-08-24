@@ -4,7 +4,7 @@
 /// Comercialização da produção p/ produtor rural PJ/agroindústria
 /// </summary>
 [Serializable()]
-public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2050 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtComProd evtComProdField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtComProd evtComProd
     {
-        get
-        {
-            return evtComProdField;
-        }
+        get => evtComProdField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2050 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
@@ -93,10 +87,7 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtComProdIdeEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -109,10 +100,7 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public ReinfEvtComProdIdeContri ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -125,10 +113,7 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtComProdInfoComProd infoComProd
     {
-        get
-        {
-            return infoComProdField;
-        }
+        get => infoComProdField;
 
         set
         {
@@ -141,10 +126,7 @@ public partial class ReinfEvtComProd : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -180,10 +162,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
+        get => indRetifField;
 
         set
         {
@@ -196,10 +175,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
+        get => nrReciboField;
 
         set
         {
@@ -212,10 +188,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
+        get => perApurField;
 
         set
         {
@@ -228,10 +201,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -244,10 +214,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -260,10 +227,7 @@ public partial class ReinfEvtComProdIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 5)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -295,10 +259,7 @@ public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
+        get => tpInscField;
 
         set
         {
@@ -311,10 +272,7 @@ public partial class ReinfEvtComProdIdeContri : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
+        get => nrInscField;
 
         set
         {
@@ -345,10 +303,7 @@ public partial class ReinfEvtComProdInfoComProd : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtComProdInfoComProdIdeEstab ideEstab
     {
-        get
-        {
-            return ideEstabField;
-        }
+        get => ideEstabField;
 
         set
         {
@@ -388,10 +343,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstab
     {
-        get
-        {
-            return tpInscEstabField;
-        }
+        get => tpInscEstabField;
 
         set
         {
@@ -404,10 +356,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 1)]
     public string nrInscEstab
     {
-        get
-        {
-            return nrInscEstabField;
-        }
+        get => nrInscEstabField;
 
         set
         {
@@ -420,10 +369,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 2)]
     public string vlrRecBrutaTotal
     {
-        get
-        {
-            return vlrRecBrutaTotalField;
-        }
+        get => vlrRecBrutaTotalField;
 
         set
         {
@@ -436,10 +382,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 3)]
     public string vlrCPApur
     {
-        get
-        {
-            return vlrCPApurField;
-        }
+        get => vlrCPApurField;
 
         set
         {
@@ -452,10 +395,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 4)]
     public string vlrRatApur
     {
-        get
-        {
-            return vlrRatApurField;
-        }
+        get => vlrRatApurField;
 
         set
         {
@@ -468,10 +408,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 5)]
     public string vlrSenarApur
     {
-        get
-        {
-            return vlrSenarApurField;
-        }
+        get => vlrSenarApurField;
 
         set
         {
@@ -484,10 +421,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 6)]
     public string vlrCPSuspTotal
     {
-        get
-        {
-            return vlrCPSuspTotalField;
-        }
+        get => vlrCPSuspTotalField;
 
         set
         {
@@ -500,10 +434,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 7)]
     public string vlrRatSuspTotal
     {
-        get
-        {
-            return vlrRatSuspTotalField;
-        }
+        get => vlrRatSuspTotalField;
 
         set
         {
@@ -516,10 +447,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement(Order = 8)]
     public string vlrSenarSuspTotal
     {
-        get
-        {
-            return vlrSenarSuspTotalField;
-        }
+        get => vlrSenarSuspTotalField;
 
         set
         {
@@ -532,10 +460,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstab : object, INotifyPropert
     [XmlElement("tipoCom", Order = 9)]
     public ReinfEvtComProdInfoComProdIdeEstabTipoCom[] tipoCom
     {
-        get
-        {
-            return tipoComField;
-        }
+        get => tipoComField;
 
         set
         {
@@ -568,10 +493,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotify
     [XmlElement(Order = 0)]
     public IndicadorContribuicaoProd indCom
     {
-        get
-        {
-            return indComField;
-        }
+        get => indComField;
 
         set
         {
@@ -584,10 +506,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotify
     [XmlElement(Order = 1)]
     public string vlrRecBruta
     {
-        get
-        {
-            return vlrRecBrutaField;
-        }
+        get => vlrRecBrutaField;
 
         set
         {
@@ -600,10 +519,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoCom : object, INotify
     [XmlElement("infoProc", Order = 2)]
     public ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc[] infoProc
     {
-        get
-        {
-            return infoProcField;
-        }
+        get => infoProcField;
 
         set
         {
@@ -639,10 +555,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -655,10 +568,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -671,10 +581,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 2)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -687,10 +594,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 3)]
     public string vlrCPSusp
     {
-        get
-        {
-            return vlrCPSuspField;
-        }
+        get => vlrCPSuspField;
 
         set
         {
@@ -703,10 +607,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 4)]
     public string vlrRatSusp
     {
-        get
-        {
-            return vlrRatSuspField;
-        }
+        get => vlrRatSuspField;
 
         set
         {
@@ -719,10 +620,7 @@ public partial class ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc : object,
     [XmlElement(Order = 5)]
     public string vlrSenarSusp
     {
-        get
-        {
-            return vlrSenarSuspField;
-        }
+        get => vlrSenarSuspField;
 
         set
         {

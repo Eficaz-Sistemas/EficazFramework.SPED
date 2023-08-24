@@ -4,7 +4,7 @@
 /// Tabela de processos administrativos/judiciais
 /// </summary>
 [Serializable()]
-public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R1070 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtTabProcesso evtTabProcessoField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtTabProcesso evtTabProcesso
     {
-        get
-        {
-            return evtTabProcessoField;
-        }
+        get => evtTabProcessoField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -86,7 +80,7 @@ public partial class R1070 : IEfdReinfEvt, INotifyPropertyChanged
 public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 {
     private ReinfEvtTabProcessoIdeEvento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoContribuinte ideContriField;
     private ReinfEvtTabProcessoInfoProcesso infoProcessoField;
     private string idField;
 
@@ -94,10 +88,7 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtTabProcessoIdeEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -108,12 +99,9 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -126,10 +114,7 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtTabProcessoInfoProcesso infoProcesso
     {
-        get
-        {
-            return infoProcessoField;
-        }
+        get => infoProcessoField;
 
         set
         {
@@ -142,10 +127,7 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -179,10 +161,7 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
     [XmlElement(Order = 0)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -195,10 +174,7 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
     [XmlElement(Order = 1)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -211,10 +187,7 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
     [XmlElement(Order = 2)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -248,10 +221,7 @@ public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyCh
     [XmlElement("inclusao", typeof(ReinfEvtTabProcessoInfoProcessoInclusao), Order = 0)]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
+        get => itemField;
 
         set
         {
@@ -284,10 +254,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyP
     [XmlElement(Order = 0)]
     public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcesso
     {
-        get
-        {
-            return ideProcessoField;
-        }
+        get => ideProcessoField;
 
         set
         {
@@ -300,10 +267,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyP
     [XmlElement(Order = 1)]
     public ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade novaValidade
     {
-        get
-        {
-            return novaValidadeField;
-        }
+        get => novaValidadeField;
 
         set
         {
@@ -340,10 +304,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -356,10 +317,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -374,10 +332,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
+        get => iniValidField;
 
         set
         {
@@ -392,10 +347,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(DataType = "gYearMonth", Order = 3)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
+        get => fimValidField;
 
         set
         {
@@ -408,10 +360,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(Order = 4)]
     public IndicadorAuditoria indAutoria
     {
-        get
-        {
-            return indAutoriaField;
-        }
+        get => indAutoriaField;
 
         set
         {
@@ -424,10 +373,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement("infoSusp", Order = 5)]
     public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp[] infoSusp
     {
-        get
-        {
-            return infoSuspField;
-        }
+        get => infoSuspField;
 
         set
         {
@@ -440,10 +386,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : objec
     [XmlElement(Order = 6)]
     public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud dadosProcJud
     {
-        get
-        {
-            return dadosProcJudField;
-        }
+        get => dadosProcJudField;
 
         set
         {
@@ -476,10 +419,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
     [XmlElement(Order = 0)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -492,10 +432,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
     [XmlElement(Order = 1)]
     public string indSusp
     {
-        get
-        {
-            return indSuspField;
-        }
+        get => indSuspField;
 
         set
         {
@@ -508,10 +445,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
     [XmlElement(DataType = "date", Order = 2)]
     public DateTime dtDecisao
     {
-        get
-        {
-            return dtDecisaoField;
-        }
+        get => dtDecisaoField;
 
         set
         {
@@ -524,10 +458,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp
     [XmlElement(Order = 3)]
     public string indDeposito
     {
-        get
-        {
-            return indDepositoField;
-        }
+        get => indDepositoField;
 
         set
         {
@@ -560,10 +491,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosPro
     [XmlElement(Order = 0)]
     public string ufVara
     {
-        get
-        {
-            return ufVaraField;
-        }
+        get => ufVaraField;
 
         set
         {
@@ -576,10 +504,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosPro
     [XmlElement(Order = 1)]
     public string codMunic
     {
-        get
-        {
-            return codMunicField;
-        }
+        get => codMunicField;
 
         set
         {
@@ -592,10 +517,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosPro
     [XmlElement(Order = 2)]
     public string idVara
     {
-        get
-        {
-            return idVaraField;
-        }
+        get => idVaraField;
 
         set
         {
@@ -629,10 +551,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : obje
     [XmlElement(DataType = "gYearMonth", Order = 0)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
+        get => iniValidField;
 
         set
         {
@@ -647,10 +566,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : obje
     [XmlElement(DataType = "gYearMonth", Order = 1)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
+        get => fimValidField;
 
         set
         {
@@ -682,10 +598,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPr
     [XmlElement(Order = 0)]
     public ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcesso
     {
-        get
-        {
-            return ideProcessoField;
-        }
+        get => ideProcessoField;
 
         set
         {
@@ -718,10 +631,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -734,10 +644,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -752,10 +659,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
+        get => iniValidField;
 
         set
         {
@@ -770,10 +674,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
     [XmlElement(DataType = "gYearMonth", Order = 3)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
+        get => fimValidField;
 
         set
         {
@@ -805,10 +706,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPr
     [XmlElement(Order = 0)]
     public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcesso
     {
-        get
-        {
-            return ideProcessoField;
-        }
+        get => ideProcessoField;
 
         set
         {
@@ -845,10 +743,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -861,10 +756,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -879,10 +771,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
+        get => iniValidField;
 
         set
         {
@@ -897,10 +786,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(DataType = "gYearMonth", Order = 3)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
+        get => fimValidField;
 
         set
         {
@@ -913,10 +799,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(Order = 4)]
     public IndicadorAuditoria indAutoria
     {
-        get
-        {
-            return indAutoriaField;
-        }
+        get => indAutoriaField;
 
         set
         {
@@ -929,10 +812,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement("infoSusp", Order = 5)]
     public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp[] infoSusp
     {
-        get
-        {
-            return infoSuspField;
-        }
+        get => infoSuspField;
 
         set
         {
@@ -945,10 +825,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     [XmlElement(Order = 6)]
     public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud dadosProcJud
     {
-        get
-        {
-            return dadosProcJudField;
-        }
+        get => dadosProcJudField;
 
         set
         {
@@ -982,10 +859,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     [XmlElement(Order = 0)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -998,10 +872,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     [XmlElement(Order = 1)]
     public string indSusp
     {
-        get
-        {
-            return indSuspField;
-        }
+        get => indSuspField;
 
         set
         {
@@ -1014,10 +885,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     [XmlElement(DataType = "date", Order = 2)]
     public DateTime dtDecisao
     {
-        get
-        {
-            return dtDecisaoField;
-        }
+        get => dtDecisaoField;
 
         set
         {
@@ -1030,10 +898,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     [XmlElement(Order = 3)]
     public string indDeposito
     {
-        get
-        {
-            return indDepositoField;
-        }
+        get => indDepositoField;
 
         set
         {
@@ -1066,10 +931,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     [XmlElement(Order = 0)]
     public string ufVara
     {
-        get
-        {
-            return ufVaraField;
-        }
+        get => ufVaraField;
 
         set
         {
@@ -1082,10 +944,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     [XmlElement(Order = 1)]
     public string codMunic
     {
-        get
-        {
-            return codMunicField;
-        }
+        get => codMunicField;
 
         set
         {
@@ -1098,10 +957,7 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     [XmlElement(Order = 2)]
     public string idVara
     {
-        get
-        {
-            return idVaraField;
-        }
+        get => idVaraField;
 
         set
         {

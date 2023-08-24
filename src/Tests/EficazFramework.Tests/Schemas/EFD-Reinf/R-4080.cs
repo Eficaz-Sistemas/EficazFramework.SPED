@@ -34,7 +34,7 @@ public class R4080Test : BaseEfdReinfTest<R4080>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",

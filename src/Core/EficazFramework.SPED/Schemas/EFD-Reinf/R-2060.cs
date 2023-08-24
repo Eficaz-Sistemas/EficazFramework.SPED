@@ -4,7 +4,7 @@
 /// Contribuição previdenciária sobre a receita bruta – CPRB
 /// </summary>
 [Serializable()]
-public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2060 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtCPRB evtCPRBField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtCPRB evtCPRB
     {
-        get
-        {
-            return evtCPRBField;
-        }
+        get => evtCPRBField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
@@ -84,19 +78,16 @@ public partial class R2060 : IEfdReinfEvt, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEvento_R20xx ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoEventoR2000 ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
     private ReinfEvtCPRBInfoCPRB infoCPRBField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento_R20xx ideEvento
+    public IdentificacaoEventoR2000 ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -107,12 +98,9 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -125,10 +113,7 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtCPRBInfoCPRB infoCPRB
     {
-        get
-        {
-            return infoCPRBField;
-        }
+        get => infoCPRBField;
 
         set
         {
@@ -141,10 +126,7 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -175,10 +157,7 @@ public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtCPRBInfoCPRBIdeEstab ideEstab
     {
-        get
-        {
-            return ideEstabField;
-        }
+        get => ideEstabField;
 
         set
         {
@@ -214,10 +193,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstab
     {
-        get
-        {
-            return tpInscEstabField;
-        }
+        get => tpInscEstabField;
 
         set
         {
@@ -230,10 +206,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement(Order = 1)]
     public string nrInscEstab
     {
-        get
-        {
-            return nrInscEstabField;
-        }
+        get => nrInscEstabField;
 
         set
         {
@@ -246,10 +219,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement(Order = 2)]
     public string vlrRecBrutaTotal
     {
-        get
-        {
-            return vlrRecBrutaTotalField;
-        }
+        get => vlrRecBrutaTotalField;
 
         set
         {
@@ -262,10 +232,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement(Order = 3)]
     public string vlrCPApurTotal
     {
-        get
-        {
-            return vlrCPApurTotalField;
-        }
+        get => vlrCPApurTotalField;
 
         set
         {
@@ -278,10 +245,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement(Order = 4)]
     public string vlrCPRBSuspTotal
     {
-        get
-        {
-            return vlrCPRBSuspTotalField;
-        }
+        get => vlrCPRBSuspTotalField;
 
         set
         {
@@ -294,10 +258,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
     [XmlElement("tipoCod", Order = 5)]
     public ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[] tipoCod
     {
-        get
-        {
-            return tipoCodField;
-        }
+        get => tipoCodField;
 
         set
         {
@@ -336,10 +297,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 0)]
     public string codAtivEcon
     {
-        get
-        {
-            return codAtivEconField;
-        }
+        get => codAtivEconField;
 
         set
         {
@@ -352,10 +310,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 1)]
     public string vlrRecBrutaAtiv
     {
-        get
-        {
-            return vlrRecBrutaAtivField;
-        }
+        get => vlrRecBrutaAtivField;
 
         set
         {
@@ -368,10 +323,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 2)]
     public string vlrExcRecBruta
     {
-        get
-        {
-            return vlrExcRecBrutaField;
-        }
+        get => vlrExcRecBrutaField;
 
         set
         {
@@ -384,10 +336,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 3)]
     public string vlrAdicRecBruta
     {
-        get
-        {
-            return vlrAdicRecBrutaField;
-        }
+        get => vlrAdicRecBrutaField;
 
         set
         {
@@ -400,10 +349,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 4)]
     public string vlrBcCPRB
     {
-        get
-        {
-            return vlrBcCPRBField;
-        }
+        get => vlrBcCPRBField;
 
         set
         {
@@ -416,10 +362,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 5)]
     public string vlrCPRBapur
     {
-        get
-        {
-            return vlrCPRBapurField;
-        }
+        get => vlrCPRBapurField;
 
         set
         {
@@ -432,10 +375,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement(Order = 6)]
     public string observ
     {
-        get
-        {
-            return observField;
-        }
+        get => observField;
 
         set
         {
@@ -448,10 +388,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement("tipoAjuste", Order = 7)]
     public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste[] tipoAjuste
     {
-        get
-        {
-            return tipoAjusteField;
-        }
+        get => tipoAjusteField;
 
         set
         {
@@ -464,10 +401,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     [XmlElement("infoProc", Order = 8)]
     public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc[] infoProc
     {
-        get
-        {
-            return infoProcField;
-        }
+        get => infoProcField;
 
         set
         {
@@ -502,10 +436,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
     [XmlElement(Order = 0)]
     public TipoAjusteContribuicao tpAjuste
     {
-        get
-        {
-            return tpAjusteField;
-        }
+        get => tpAjusteField;
 
         set
         {
@@ -518,10 +449,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
     [XmlElement(DataType = "integer", Order = 1)]
     public string codAjuste
     {
-        get
-        {
-            return codAjusteField;
-        }
+        get => codAjusteField;
 
         set
         {
@@ -534,10 +462,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
     [XmlElement(Order = 2)]
     public string vlrAjuste
     {
-        get
-        {
-            return vlrAjusteField;
-        }
+        get => vlrAjusteField;
 
         set
         {
@@ -550,10 +475,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
     [XmlElement(Order = 3)]
     public string descAjuste
     {
-        get
-        {
-            return descAjusteField;
-        }
+        get => descAjusteField;
 
         set
         {
@@ -566,10 +488,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
     [XmlElement(DataType = "gYearMonth", Order = 4)]
     public string dtAjuste
     {
-        get
-        {
-            return dtAjusteField;
-        }
+        get => dtAjusteField;
 
         set
         {
@@ -603,10 +522,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INoti
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -619,10 +535,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INoti
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -635,10 +548,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INoti
     [XmlElement(Order = 2)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -651,10 +561,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INoti
     [XmlElement(Order = 3)]
     public string vlrCPRBSusp
     {
-        get
-        {
-            return vlrCPRBSuspField;
-        }
+        get => vlrCPRBSuspField;
 
         set
         {

@@ -1,6 +1,6 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEvt
+public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : Evento
 {
     internal const string _cnpj = "34785515000166";
     internal Versao _versao = Versao.v2_01_01;
@@ -36,7 +36,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
         // deserialização para nova instância (leitura de xml)
         T novaInstancia = Activator.CreateInstance<T>();
         InstanciaDesserializada?.Invoke(novaInstancia);
-        novaInstancia = (T)novaInstancia.Deserialize(doc.OuterXml);
+        novaInstancia = (T)novaInstancia.Read(doc.OuterXml);
 
         // comparação entre as duas instâncias
         ValidaInstanciasLeituraEscrita(instancia, novaInstancia);
@@ -68,7 +68,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
     /// <returns></returns>
     private XmlDocument EscreveEventoXml(T evento)
     {
-        string xmlString = evento.Serialize(); // ou .ToString();
+        string xmlString = evento.Write(); // ou .ToString();
         Console.WriteLine(xmlString);
         XmlDocument doc = new();
         doc.LoadXml(xmlString);

@@ -4,7 +4,7 @@
 /// Retenção de contribuição previdenciária – serviços prestados
 /// </summary>
 [Serializable()]
-public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2020 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtServPrest evtServPrestField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtServPrest evtServPrest
     {
-        get
-        {
-            return evtServPrestField;
-        }
+        get => evtServPrestField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         evtServPrestField.id = string.Format("ID{0}{1}{2}", (int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -84,19 +78,16 @@ public partial class R2020 : IEfdReinfEvt, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEvento_R20xx ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoEventoR2000 ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
     private ReinfEvtServPrestInfoServPrest infoServPrestField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento_R20xx ideEvento
+    public IdentificacaoEventoR2000 ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -107,12 +98,9 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -125,10 +113,7 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtServPrestInfoServPrest infoServPrest
     {
-        get
-        {
-            return infoServPrestField;
-        }
+        get => infoServPrestField;
 
         set
         {
@@ -141,10 +126,7 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -175,10 +157,7 @@ public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyCha
     [XmlElement(Order = 0)]
     public ReinfEvtServPrestInfoServPrestIdeEstabPrest ideEstabPrest
     {
-        get
-        {
-            return ideEstabPrestField;
-        }
+        get => ideEstabPrestField;
 
         set
         {
@@ -211,10 +190,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstabPrest
     {
-        get
-        {
-            return tpInscEstabPrestField;
-        }
+        get => tpInscEstabPrestField;
 
         set
         {
@@ -227,10 +203,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
     [XmlElement(Order = 1)]
     public string nrInscEstabPrest
     {
-        get
-        {
-            return nrInscEstabPrestField;
-        }
+        get => nrInscEstabPrestField;
 
         set
         {
@@ -243,10 +216,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
     [XmlElement(Order = 2)]
     public ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador ideTomador
     {
-        get
-        {
-            return ideTomadorField;
-        }
+        get => ideTomadorField;
 
         set
         {
@@ -288,10 +258,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscTomador
     {
-        get
-        {
-            return tpInscTomadorField;
-        }
+        get => tpInscTomadorField;
 
         set
         {
@@ -304,10 +271,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 1)]
     public string nrInscTomador
     {
-        get
-        {
-            return nrInscTomadorField;
-        }
+        get => nrInscTomadorField;
 
         set
         {
@@ -320,10 +284,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 2)]
     public IndicadorObra indObra
     {
-        get
-        {
-            return indObraField;
-        }
+        get => indObraField;
 
         set
         {
@@ -363,10 +324,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 3)]
     public string vlrTotalBruto
     {
-        get
-        {
-            return vlrTotalBrutoField;
-        }
+        get => vlrTotalBrutoField;
 
         set
         {
@@ -379,10 +337,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 4)]
     public string vlrTotalBaseRet
     {
-        get
-        {
-            return vlrTotalBaseRetField;
-        }
+        get => vlrTotalBaseRetField;
 
         set
         {
@@ -395,10 +350,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 5)]
     public string vlrTotalRetPrinc
     {
-        get
-        {
-            return vlrTotalRetPrincField;
-        }
+        get => vlrTotalRetPrincField;
 
         set
         {
@@ -411,10 +363,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 6)]
     public string vlrTotalRetAdic
     {
-        get
-        {
-            return vlrTotalRetAdicField;
-        }
+        get => vlrTotalRetAdicField;
 
         set
         {
@@ -427,10 +376,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 7)]
     public string vlrTotalNRetPrinc
     {
-        get
-        {
-            return vlrTotalNRetPrincField;
-        }
+        get => vlrTotalNRetPrincField;
 
         set
         {
@@ -443,10 +389,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement(Order = 8)]
     public string vlrTotalNRetAdic
     {
-        get
-        {
-            return vlrTotalNRetAdicField;
-        }
+        get => vlrTotalNRetAdicField;
 
         set
         {
@@ -459,10 +402,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement("nfs", Order = 9)]
     public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs> nfs
     {
-        get
-        {
-            return nfsField;
-        }
+        get => nfsField;
 
         set
         {
@@ -475,10 +415,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement("infoProcRetPr", Order = 10)]
     public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr> infoProcRetPr
     {
-        get
-        {
-            return infoProcRetPrField;
-        }
+        get => infoProcRetPrField;
 
         set
         {
@@ -491,10 +428,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     [XmlElement("infoProcRetAd", Order = 11)]
     public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd> infoProcRetAd
     {
-        get
-        {
-            return infoProcRetAdField;
-        }
+        get => infoProcRetAdField;
 
         set
         {
@@ -530,10 +464,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement(Order = 0)]
     public string serie
     {
-        get
-        {
-            return serieField;
-        }
+        get => serieField;
 
         set
         {
@@ -546,10 +477,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement(Order = 1)]
     public string numDocto
     {
-        get
-        {
-            return numDoctoField;
-        }
+        get => numDoctoField;
 
         set
         {
@@ -562,10 +490,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement(DataType = "date", Order = 2)]
     public DateTime dtEmissaoNF
     {
-        get
-        {
-            return dtEmissaoNFField;
-        }
+        get => dtEmissaoNFField;
 
         set
         {
@@ -578,10 +503,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement(Order = 3)]
     public string vlrBruto
     {
-        get
-        {
-            return vlrBrutoField;
-        }
+        get => vlrBrutoField;
 
         set
         {
@@ -594,10 +516,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement(Order = 4)]
     public string obs
     {
-        get
-        {
-            return obsField;
-        }
+        get => obsField;
 
         set
         {
@@ -610,10 +529,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : 
     [XmlElement("infoTpServ", Order = 5)]
     public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ> infoTpServ
     {
-        get
-        {
-            return infoTpServField;
-        }
+        get => infoTpServField;
 
         set
         {
@@ -653,10 +569,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 0)]
     public string tpServico
     {
-        get
-        {
-            return tpServicoField;
-        }
+        get => tpServicoField;
 
         set
         {
@@ -669,10 +582,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 1)]
     public string vlrBaseRet
     {
-        get
-        {
-            return vlrBaseRetField;
-        }
+        get => vlrBaseRetField;
 
         set
         {
@@ -685,10 +595,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 2)]
     public string vlrRetencao
     {
-        get
-        {
-            return vlrRetencaoField;
-        }
+        get => vlrRetencaoField;
 
         set
         {
@@ -701,10 +608,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 3)]
     public string vlrRetSub
     {
-        get
-        {
-            return vlrRetSubField;
-        }
+        get => vlrRetSubField;
 
         set
         {
@@ -717,10 +621,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 4)]
     public string vlrNRetPrinc
     {
-        get
-        {
-            return vlrNRetPrincField;
-        }
+        get => vlrNRetPrincField;
 
         set
         {
@@ -733,10 +634,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 5)]
     public string vlrServicos15
     {
-        get
-        {
-            return vlrServicos15Field;
-        }
+        get => vlrServicos15Field;
 
         set
         {
@@ -749,10 +647,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 6)]
     public string vlrServicos20
     {
-        get
-        {
-            return vlrServicos20Field;
-        }
+        get => vlrServicos20Field;
 
         set
         {
@@ -765,10 +660,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 7)]
     public string vlrServicos25
     {
-        get
-        {
-            return vlrServicos25Field;
-        }
+        get => vlrServicos25Field;
 
         set
         {
@@ -781,10 +673,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 8)]
     public string vlrAdicional
     {
-        get
-        {
-            return vlrAdicionalField;
-        }
+        get => vlrAdicionalField;
 
         set
         {
@@ -797,10 +686,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInf
     [XmlElement(Order = 9)]
     public string vlrNRetAdic
     {
-        get
-        {
-            return vlrNRetAdicField;
-        }
+        get => vlrNRetAdicField;
 
         set
         {
@@ -834,10 +720,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 0)]
     public TipoProcesso tpProcRetPrinc
     {
-        get
-        {
-            return tpProcRetPrincField;
-        }
+        get => tpProcRetPrincField;
 
         set
         {
@@ -850,10 +733,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 1)]
     public string nrProcRetPrinc
     {
-        get
-        {
-            return nrProcRetPrincField;
-        }
+        get => nrProcRetPrincField;
 
         set
         {
@@ -866,10 +746,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 2)]
     public string codSuspPrinc
     {
-        get
-        {
-            return codSuspPrincField;
-        }
+        get => codSuspPrincField;
 
         set
         {
@@ -882,10 +759,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 3)]
     public string valorPrinc
     {
-        get
-        {
-            return valorPrincField;
-        }
+        get => valorPrincField;
 
         set
         {
@@ -919,10 +793,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 0)]
     public TipoProcesso tpProcRetAdic
     {
-        get
-        {
-            return tpProcRetAdicField;
-        }
+        get => tpProcRetAdicField;
 
         set
         {
@@ -935,10 +806,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 1)]
     public string nrProcRetAdic
     {
-        get
-        {
-            return nrProcRetAdicField;
-        }
+        get => nrProcRetAdicField;
 
         set
         {
@@ -951,10 +819,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 2)]
     public string codSuspAdic
     {
-        get
-        {
-            return codSuspAdicField;
-        }
+        get => codSuspAdicField;
 
         set
         {
@@ -967,10 +832,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoPr
     [XmlElement(Order = 3)]
     public string valorAdic
     {
-        get
-        {
-            return valorAdicField;
-        }
+        get => valorAdicField;
 
         set
         {

@@ -34,8 +34,8 @@ public class R2010Test : BaseEfdReinfTest<R2010>
         EficazFramework.SPED.Schemas.EFD_Reinf.R2010 registro = new EficazFramework.SPED.Schemas.EFD_Reinf.R2010();
         evento.evtServTom = new ReinfEvtServTom()
         {
-            ideContri = new ReinfEvtIdeContri(),
-            ideEvento = new ReinfEvtIdeEvento_R20xx(),
+            ideContri = new IdentificacaoContribuinte(),
+            ideEvento = new IdentificacaoEventoR2000(),
             infoServTom = new ReinfEvtServTomInfoServTom()
         };
 

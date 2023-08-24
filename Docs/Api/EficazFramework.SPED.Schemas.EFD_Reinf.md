@@ -21,7 +21,7 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 
 | Classes | |
 | :--- | :--- |
-| [IEfdReinfEvt](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt') | Interface padrão para implementação em todos os eventos da escrituração. |
+| [IEvento](EficazFramework.SPED.Schemas.EFD_Reinf/IEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEvento') | Interface padrão para implementação em todos os eventos da escrituração. |
 | [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | Informações do contribuinte |
 | [R1070](EficazFramework.SPED.Schemas.EFD_Reinf/R1070.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1070') | Tabela de processos administrativos/judiciais |
 | [R2010](EficazFramework.SPED.Schemas.EFD_Reinf/R2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2010') | Retenção de contribuição previdenciária - serviços tomados |

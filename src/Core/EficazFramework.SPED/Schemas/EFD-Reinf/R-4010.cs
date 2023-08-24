@@ -4,37 +4,37 @@
 /// Pagamentos/créditos a beneficiário pessoa física
 /// </summary>
 [System.SerializableAttribute()]
-public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
+public partial class R4010 : Evento, INotifyPropertyChanged {
     
     private ReinfEvtRetPF evtRetPFField;
     private SignatureType signatureField;
     
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtRetPF evtRetPF {
-        get {
-            return this.evtRetPFField;
-        }
-        set {
-            this.evtRetPFField = value;
-            this.RaisePropertyChanged("evtRetPF");
+    public ReinfEvtRetPF evtRetPF
+    {
+        get => evtRetPFField;
+        set
+        {
+            evtRetPFField = value;
+            RaisePropertyChanged("evtRetPF");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-    public SignatureType Signature {
-        get {
-            return this.signatureField;
-        }
-        set {
-            this.signatureField = value;
-            this.RaisePropertyChanged("Signature");
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
+        {
+            signatureField = value;
+            RaisePropertyChanged("Signature");
         }
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         evtRetPFField.id = string.Format("ID{0}{1}{2}", (int)(evtRetPFField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtRetPFField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -56,7 +56,7 @@ public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
     // PropertyChanged Members
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -74,7 +74,7 @@ public partial class R4010 : IEfdReinfEvt, INotifyPropertyChanged {
 public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyPropertyChanged {
     
     private ReinfEvtIdeEvento_R40xx ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoContribuinte ideContriField;
     private ReinfEvtRetPFIdeEstab ideEstabField;
     private string idField;
 
@@ -83,13 +83,13 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     /// e indicador de retificação (substituição)
     /// </summary>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento_R40xx ideEvento {
-        get {
-            return this.ideEventoField;
-        }
-        set {
-            this.ideEventoField = value;
-            this.RaisePropertyChanged("ideEvento");
+    public ReinfEvtIdeEvento_R40xx ideEvento
+    {
+        get => ideEventoField;
+        set
+        {
+            ideEventoField = value;
+            RaisePropertyChanged("ideEvento");
         }
     }
 
@@ -98,13 +98,13 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     /// Utilizar sempre os dados da Matriz
     /// </summary>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri {
-        get {
-            return this.ideContriField;
-        }
-        set {
-            this.ideContriField = value;
-            this.RaisePropertyChanged("ideContri");
+    public IdentificacaoContribuinte ideContri
+    {
+        get => ideContriField;
+        set
+        {
+            ideContriField = value;
+            RaisePropertyChanged("ideContri");
         }
     }
 
@@ -113,31 +113,31 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     /// Neste caso utilizar o CNPJ que realiza o pagamento (Seja ele matrix ou filial)
     /// </summary>
     [XmlElement(Order = 2)]
-    public ReinfEvtRetPFIdeEstab ideEstab {
-        get {
-            return this.ideEstabField;
-        }
-        set {
-            this.ideEstabField = value;
-            this.RaisePropertyChanged("ideEstab");
+    public ReinfEvtRetPFIdeEstab ideEstab
+    {
+        get => ideEstabField;
+        set
+        {
+            ideEstabField = value;
+            RaisePropertyChanged("ideEstab");
         }
     }
 
     [XmlAttribute(DataType = "ID")]
-    public string id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-            this.RaisePropertyChanged("id");
+    public string id
+    {
+        get => idField;
+        set
+        {
+            idField = value;
+            RaisePropertyChanged("id");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -163,10 +163,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
+        get => indRetifField;
 
         set
         {
@@ -179,10 +176,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
+        get => nrReciboField;
 
         set
         {
@@ -195,10 +189,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
+        get => perApurField;
 
         set
         {
@@ -211,10 +202,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -227,10 +215,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -243,10 +228,7 @@ public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
     [XmlElement(Order = 5)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -280,14 +262,11 @@ public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INoti
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstab
     {
-        get
-        {
-            return this.tpInscEstabField;
-        }
+        get => tpInscEstabField;
         set
         {
-            this.tpInscEstabField = value;
-            this.RaisePropertyChanged("tpInscEstab");
+            tpInscEstabField = value;
+            RaisePropertyChanged("tpInscEstab");
         }
     }
 
@@ -295,14 +274,11 @@ public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INoti
     [XmlElement(Order = 1)]
     public string nrInscEstab
     {
-        get
-        {
-            return this.nrInscEstabField;
-        }
+        get => nrInscEstabField;
         set
         {
-            this.nrInscEstabField = value;
-            this.RaisePropertyChanged("nrInscEstab");
+            nrInscEstabField = value;
+            RaisePropertyChanged("nrInscEstab");
         }
     }
 
@@ -310,14 +286,11 @@ public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INoti
     [XmlElement(Order = 2)]
     public ReinfEvtRetPFIdeEstabIdeBenef ideBenef
     {
-        get
-        {
-            return this.ideBenefField;
-        }
+        get => ideBenefField;
         set
         {
-            this.ideBenefField = value;
-            this.RaisePropertyChanged("ideBenef");
+            ideBenefField = value;
+            RaisePropertyChanged("ideBenef");
         }
     }
 
@@ -325,7 +298,7 @@ public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INoti
 
     protected void RaisePropertyChanged(string propertyName)
     {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null))
         {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -346,13 +319,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// CPF do Beneficiário recebedor dos Rendimentos
     /// </summary>
     [XmlElement(Order = 0)]
-    public string cpfBenef {
-        get {
-            return this.cpfBenefField;
-        }
-        set {
-            this.cpfBenefField = value;
-            this.RaisePropertyChanged("cpfBenef");
+    public string cpfBenef
+    {
+        get => cpfBenefField;
+        set
+        {
+            cpfBenefField = value;
+            RaisePropertyChanged("cpfBenef");
         }
     }
 
@@ -360,13 +333,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// Nome do Beneficiário recebedor dos Rendimentos
     /// </summary>
     [XmlElement(Order = 1)]
-    public string nmBenef {
-        get {
-            return this.nmBenefField;
-        }
-        set {
-            this.nmBenefField = value;
-            this.RaisePropertyChanged("nmBenef");
+    public string nmBenef
+    {
+        get => nmBenefField;
+        set
+        {
+            nmBenefField = value;
+            RaisePropertyChanged("nmBenef");
         }
     }
 
@@ -375,13 +348,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// utilizados na dedução de IRRF
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("ideDep", Order = 2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDep {
-        get {
-            return this.ideDepField;
-        }
-        set {
-            this.ideDepField = value;
-            this.RaisePropertyChanged("ideDep");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDep
+    {
+        get => ideDepField;
+        set
+        {
+            ideDepField = value;
+            RaisePropertyChanged("ideDep");
         }
     }
 
@@ -389,13 +362,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// Listagem dos pagamentos ao beneficiário
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("idePgto", Order = 3)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgto {
-        get {
-            return this.idePgtoField;
-        }
-        set {
-            this.idePgtoField = value;
-            this.RaisePropertyChanged("idePgto");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgto
+    {
+        get => idePgtoField;
+        set
+        {
+            idePgtoField = value;
+            RaisePropertyChanged("idePgto");
         }
     }
 
@@ -404,20 +377,20 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// despesas médicas no Rendimento
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("ideOpSaude", Order = 4)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaude {
-        get {
-            return this.ideOpSaudeField;
-        }
-        set {
-            this.ideOpSaudeField = value;
-            this.RaisePropertyChanged("ideOpSaude");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaude
+    {
+        get => ideOpSaudeField;
+        set
+        {
+            ideOpSaudeField = value;
+            RaisePropertyChanged("ideOpSaude");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -433,44 +406,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeDep : object, System.Compon
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string cpfDep {
-        get {
-            return this.cpfDepField;
-        }
-        set {
-            this.cpfDepField = value;
-            this.RaisePropertyChanged("cpfDep");
+    public string cpfDep
+    {
+        get => cpfDepField;
+        set
+        {
+            cpfDepField = value;
+            RaisePropertyChanged("cpfDep");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public RelacaoDependencia relDep {
-        get {
-            return this.relDepField;
-        }
-        set {
-            this.relDepField = value;
-            this.RaisePropertyChanged("relDep");
+    public RelacaoDependencia relDep
+    {
+        get => relDepField;
+        set
+        {
+            relDepField = value;
+            RaisePropertyChanged("relDep");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string descrDep {
-        get {
-            return this.descrDepField;
-        }
-        set {
-            this.descrDepField = value;
-            this.RaisePropertyChanged("descrDep");
+    public string descrDep
+    {
+        get => descrDepField;
+        set
+        {
+            descrDepField = value;
+            RaisePropertyChanged("descrDep");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -486,44 +459,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgto : object, System.Compo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order = 0)]
-    public string natRend {
-        get {
-            return this.natRendField;
-        }
-        set {
-            this.natRendField = value;
-            this.RaisePropertyChanged("natRend");
+    public string natRend
+    {
+        get => natRendField;
+        set
+        {
+            natRendField = value;
+            RaisePropertyChanged("natRend");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string observ {
-        get {
-            return this.observField;
-        }
-        set {
-            this.observField = value;
-            this.RaisePropertyChanged("observ");
+    public string observ
+    {
+        get => observField;
+        set
+        {
+            observField = value;
+            RaisePropertyChanged("observ");
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgto {
-        get {
-            return this.infoPgtoField;
-        }
-        set {
-            this.infoPgtoField = value;
-            this.RaisePropertyChanged("infoPgto");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgto
+    {
+        get => infoPgtoField;
+        set
+        {
+            infoPgtoField = value;
+            RaisePropertyChanged("infoPgto");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -561,13 +534,13 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     /// AAAA-MM-DD.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType ="date", Order = 0)]
-    public System.DateTime DataFatoGerador {
-        get {
-            return this.dtFGField;
-        }
-        set {
-            this.dtFGField = value;
-            this.RaisePropertyChanged("DataFatoGerador");
+    public System.DateTime DataFatoGerador
+    {
+        get => dtFGField;
+        set
+        {
+            dtFGField = value;
+            RaisePropertyChanged("DataFatoGerador");
         }
     }
 
@@ -581,213 +554,213 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
     /// b) AAAA-MM, nos demais casos
     /// </summary>
     [XmlElement(Order = 1)]
-    public string compFP {
-        get {
-            return this.compFPField;
-        }
-        set {
-            this.compFPField = value;
-            this.RaisePropertyChanged("compFP");
+    public string compFP
+    {
+        get => compFPField;
+        set
+        {
+            compFPField = value;
+            RaisePropertyChanged("compFP");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string indDecTerc {
-        get {
-            return this.indDecTercField;
-        }
-        set {
-            this.indDecTercField = value;
-            this.RaisePropertyChanged("indDecTerc");
+    public string indDecTerc
+    {
+        get => indDecTercField;
+        set
+        {
+            indDecTercField = value;
+            RaisePropertyChanged("indDecTerc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrRendBruto {
-        get {
-            return this.vlrRendBrutoField;
-        }
-        set {
-            this.vlrRendBrutoField = value;
-            this.RaisePropertyChanged("vlrRendBruto");
+    public string vlrRendBruto
+    {
+        get => vlrRendBrutoField;
+        set
+        {
+            vlrRendBrutoField = value;
+            RaisePropertyChanged("vlrRendBruto");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public string vlrRendTrib {
-        get {
-            return this.vlrRendTribField;
-        }
-        set {
-            this.vlrRendTribField = value;
-            this.RaisePropertyChanged("vlrRendTrib");
+    public string vlrRendTrib
+    {
+        get => vlrRendTribField;
+        set
+        {
+            vlrRendTribField = value;
+            RaisePropertyChanged("vlrRendTrib");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public string vlrIR {
-        get {
-            return this.vlrIRField;
-        }
-        set {
-            this.vlrIRField = value;
-            this.RaisePropertyChanged("vlrIR");
+    public string vlrIR
+    {
+        get => vlrIRField;
+        set
+        {
+            vlrIRField = value;
+            RaisePropertyChanged("vlrIR");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public string indRRA {
-        get {
-            return this.indRRAField;
-        }
-        set {
-            this.indRRAField = value;
-            this.RaisePropertyChanged("indRRA");
+    public string indRRA
+    {
+        get => indRRAField;
+        set
+        {
+            indRRAField = value;
+            RaisePropertyChanged("indRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 7)]
-    public IndicadorFciScp? indFciScp {
-        get {
-            return this.indFciScpField;
-        }
-        set {
-            this.indFciScpField = value;
-            this.RaisePropertyChanged("indFciScp");
+    public IndicadorFciScp? indFciScp
+    {
+        get => indFciScpField;
+        set
+        {
+            indFciScpField = value;
+            RaisePropertyChanged("indFciScp");
         }
     }
     public bool ShouldSerializeindFciScp() => indFciScp.HasValue;
 
     /// <remarks/>
     [XmlElement(Order = 8)]
-    public string nrInscFciScp {
-        get {
-            return this.nrInscFciScpField;
-        }
-        set {
-            this.nrInscFciScpField = value;
-            this.RaisePropertyChanged("nrInscFciScp");
+    public string nrInscFciScp
+    {
+        get => nrInscFciScpField;
+        set
+        {
+            nrInscFciScpField = value;
+            RaisePropertyChanged("nrInscFciScp");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 9)]
-    public string percSCP {
-        get {
-            return this.percSCPField;
-        }
-        set {
-            this.percSCPField = value;
-            this.RaisePropertyChanged("percSCP");
+    public string percSCP
+    {
+        get => percSCPField;
+        set
+        {
+            percSCPField = value;
+            RaisePropertyChanged("percSCP");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 10)]
-    public string indJud {
-        get {
-            return this.indJudField;
-        }
-        set {
-            this.indJudField = value;
-            this.RaisePropertyChanged("indJud");
+    public string indJud
+    {
+        get => indJudField;
+        set
+        {
+            indJudField = value;
+            RaisePropertyChanged("indJud");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 11)]
-    public string paisResidExt {
-        get {
-            return this.paisResidExtField;
-        }
-        set {
-            this.paisResidExtField = value;
-            this.RaisePropertyChanged("paisResidExt");
+    public string paisResidExt
+    {
+        get => paisResidExtField;
+        set
+        {
+            paisResidExtField = value;
+            RaisePropertyChanged("paisResidExt");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("detDed", Order = 12)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed> detDed {
-        get {
-            return this.detDedField;
-        }
-        set {
-            this.detDedField = value;
-            this.RaisePropertyChanged("detDed");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed> detDed
+    {
+        get => detDedField;
+        set
+        {
+            detDedField = value;
+            RaisePropertyChanged("detDed");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("rendIsento", Order = 13)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento> rendIsento {
-        get {
-            return this.rendIsentoField;
-        }
-        set {
-            this.rendIsentoField = value;
-            this.RaisePropertyChanged("rendIsento");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento> rendIsento
+    {
+        get => rendIsentoField;
+        set
+        {
+            rendIsentoField = value;
+            RaisePropertyChanged("rendIsento");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoProcRet", Order = 14)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet> infoProcRet {
-        get {
-            return this.infoProcRetField;
-        }
-        set {
-            this.infoProcRetField = value;
-            this.RaisePropertyChanged("infoProcRet");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet> infoProcRet
+    {
+        get => infoProcRetField;
+        set
+        {
+            infoProcRetField = value;
+            RaisePropertyChanged("infoProcRet");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 15)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRA infoRRA {
-        get {
-            return this.infoRRAField;
-        }
-        set {
-            this.infoRRAField = value;
-            this.RaisePropertyChanged("infoRRA");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRA infoRRA
+    {
+        get => infoRRAField;
+        set
+        {
+            infoRRAField = value;
+            RaisePropertyChanged("infoRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 16)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud infoProcJud {
-        get {
-            return this.infoProcJudField;
-        }
-        set {
-            this.infoProcJudField = value;
-            this.RaisePropertyChanged("infoProcJud");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud infoProcJud
+    {
+        get => infoProcJudField;
+        set
+        {
+            infoProcJudField = value;
+            RaisePropertyChanged("infoProcJud");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 17)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt infoPgtoExt {
-        get {
-            return this.infoPgtoExtField;
-        }
-        set {
-            this.infoPgtoExtField = value;
-            this.RaisePropertyChanged("infoPgtoExt");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt infoPgtoExt
+    {
+        get => infoPgtoExtField;
+        set
+        {
+            infoPgtoExtField = value;
+            RaisePropertyChanged("infoPgtoExt");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -806,80 +779,80 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed : object
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IndicadorTipoDeducaoPrevidenciaria indTpDeducao {
-        get {
-            return this.indTpDeducaoField;
-        }
-        set {
-            this.indTpDeducaoField = value;
-            this.RaisePropertyChanged("indTpDeducao");
+    public IndicadorTipoDeducaoPrevidenciaria indTpDeducao
+    {
+        get => indTpDeducaoField;
+        set
+        {
+            indTpDeducaoField = value;
+            RaisePropertyChanged("indTpDeducao");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDeducao {
-        get {
-            return this.vlrDeducaoField;
-        }
-        set {
-            this.vlrDeducaoField = value;
-            this.RaisePropertyChanged("vlrDeducao");
+    public string vlrDeducao
+    {
+        get => vlrDeducaoField;
+        set
+        {
+            vlrDeducaoField = value;
+            RaisePropertyChanged("vlrDeducao");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public SimNao infoEntid {
-        get {
-            return this.infoEntidField;
-        }
-        set {
-            this.infoEntidField = value;
-            this.RaisePropertyChanged("infoEntid");
+    public SimNao infoEntid
+    {
+        get => infoEntidField;
+        set
+        {
+            infoEntidField = value;
+            RaisePropertyChanged("infoEntid");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string nrInscPrevComp {
-        get {
-            return this.nrInscPrevCompField;
-        }
-        set {
-            this.nrInscPrevCompField = value;
-            this.RaisePropertyChanged("nrInscPrevComp");
+    public string nrInscPrevComp
+    {
+        get => nrInscPrevCompField;
+        set
+        {
+            nrInscPrevCompField = value;
+            RaisePropertyChanged("nrInscPrevComp");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public string vlrPatrocFunp {
-        get {
-            return this.vlrPatrocFunpField;
-        }
-        set {
-            this.vlrPatrocFunpField = value;
-            this.RaisePropertyChanged("vlrPatrocFunp");
+    public string vlrPatrocFunp
+    {
+        get => vlrPatrocFunpField;
+        set
+        {
+            vlrPatrocFunpField = value;
+            RaisePropertyChanged("vlrPatrocFunp");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("benefPen", Order=5)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen> benefPen {
-        get {
-            return this.benefPenField;
-        }
-        set {
-            this.benefPenField = value;
-            this.RaisePropertyChanged("benefPen");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen> benefPen
+    {
+        get => benefPenField;
+        set
+        {
+            benefPenField = value;
+            RaisePropertyChanged("benefPen");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -894,32 +867,32 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDedBenefPen 
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string cpfDep {
-        get {
-            return this.cpfDepField;
-        }
-        set {
-            this.cpfDepField = value;
-            this.RaisePropertyChanged("cpfDep");
+    public string cpfDep
+    {
+        get => cpfDepField;
+        set
+        {
+            cpfDepField = value;
+            RaisePropertyChanged("cpfDep");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDepen {
-        get {
-            return this.vlrDepenField;
-        }
-        set {
-            this.vlrDepenField = value;
-            this.RaisePropertyChanged("vlrDepen");
+    public string vlrDepen
+    {
+        get => vlrDepenField;
+        set
+        {
+            vlrDepenField = value;
+            RaisePropertyChanged("vlrDepen");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -936,49 +909,49 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public TipoIsencaoPF tpIsencao {
-        get {
-            return this.tpIsencaoField;
-        }
-        set {
-            this.tpIsencaoField = value;
-            this.RaisePropertyChanged("tpIsencao");
+    public TipoIsencaoPF tpIsencao
+    {
+        get => tpIsencaoField;
+        set
+        {
+            tpIsencaoField = value;
+            RaisePropertyChanged("tpIsencao");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrIsento {
-        get {
-            return this.vlrIsentoField;
-        }
-        set {
-            this.vlrIsentoField = value;
-            this.RaisePropertyChanged("vlrIsento");
+    public string vlrIsento
+    {
+        get => vlrIsentoField;
+        set
+        {
+            vlrIsentoField = value;
+            RaisePropertyChanged("vlrIsento");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string descRendimento {
-        get {
-            return this.descRendimentoField;
-        }
-        set {
-            this.descRendimentoField = value;
-            this.RaisePropertyChanged("descRendimento");
+    public string descRendimento
+    {
+        get => descRendimentoField;
+        set
+        {
+            descRendimentoField = value;
+            RaisePropertyChanged("descRendimento");
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order = 3)]
-    public System.DateTime? dtLaudo {
-        get {
-            return this.dtLaudoField;
-        }
-        set {
-            this.dtLaudoField = value;
-            this.RaisePropertyChanged("dtLaudo");
+    public System.DateTime? dtLaudo
+    {
+        get => dtLaudoField;
+        set
+        {
+            dtLaudoField = value;
+            RaisePropertyChanged("dtLaudo");
         }
     }
     public bool ShouldSerializedtLaudo() => dtLaudo.HasValue;
@@ -987,7 +960,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento : ob
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1009,116 +982,116 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRet : o
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public TipoProcesso tpProcRet {
-        get {
-            return this.tpProcRetField;
-        }
-        set {
-            this.tpProcRetField = value;
-            this.RaisePropertyChanged("tpProcRet");
+    public TipoProcesso tpProcRet
+    {
+        get => tpProcRetField;
+        set
+        {
+            tpProcRetField = value;
+            RaisePropertyChanged("tpProcRet");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrProcRet {
-        get {
-            return this.nrProcRetField;
-        }
-        set {
-            this.nrProcRetField = value;
-            this.RaisePropertyChanged("nrProcRet");
+    public string nrProcRet
+    {
+        get => nrProcRetField;
+        set
+        {
+            nrProcRetField = value;
+            RaisePropertyChanged("nrProcRet");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string codSusp {
-        get {
-            return this.codSuspField;
-        }
-        set {
-            this.codSuspField = value;
-            this.RaisePropertyChanged("codSusp");
+    public string codSusp
+    {
+        get => codSuspField;
+        set
+        {
+            codSuspField = value;
+            RaisePropertyChanged("codSusp");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrNRetido {
-        get {
-            return this.vlrNRetidoField;
-        }
-        set {
-            this.vlrNRetidoField = value;
-            this.RaisePropertyChanged("vlrNRetido");
+    public string vlrNRetido
+    {
+        get => vlrNRetidoField;
+        set
+        {
+            vlrNRetidoField = value;
+            RaisePropertyChanged("vlrNRetido");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public string vlrDepJud {
-        get {
-            return this.vlrDepJudField;
-        }
-        set {
-            this.vlrDepJudField = value;
-            this.RaisePropertyChanged("vlrDepJud");
+    public string vlrDepJud
+    {
+        get => vlrDepJudField;
+        set
+        {
+            vlrDepJudField = value;
+            RaisePropertyChanged("vlrDepJud");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public string vlrCmpAnoCal {
-        get {
-            return this.vlrCmpAnoCalField;
-        }
-        set {
-            this.vlrCmpAnoCalField = value;
-            this.RaisePropertyChanged("vlrCmpAnoCal");
+    public string vlrCmpAnoCal
+    {
+        get => vlrCmpAnoCalField;
+        set
+        {
+            vlrCmpAnoCalField = value;
+            RaisePropertyChanged("vlrCmpAnoCal");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public string vlrCmpAnoAnt {
-        get {
-            return this.vlrCmpAnoAntField;
-        }
-        set {
-            this.vlrCmpAnoAntField = value;
-            this.RaisePropertyChanged("vlrCmpAnoAnt");
+    public string vlrCmpAnoAnt
+    {
+        get => vlrCmpAnoAntField;
+        set
+        {
+            vlrCmpAnoAntField = value;
+            RaisePropertyChanged("vlrCmpAnoAnt");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 7)]
-    public string vlrRendSusp {
-        get {
-            return this.vlrRendSuspField;
-        }
-        set {
-            this.vlrRendSuspField = value;
-            this.RaisePropertyChanged("vlrRendSusp");
+    public string vlrRendSusp
+    {
+        get => vlrRendSuspField;
+        set
+        {
+            vlrRendSuspField = value;
+            RaisePropertyChanged("vlrRendSusp");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("dedSusp", Order=8)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSusp> dedSusp {
-        get {
-            return this.dedSuspField;
-        }
-        set {
-            this.dedSuspField = value;
-            this.RaisePropertyChanged("dedSusp");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSusp> dedSusp
+    {
+        get => dedSuspField;
+        set
+        {
+            dedSuspField = value;
+            RaisePropertyChanged("dedSusp");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1134,44 +1107,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedS
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IndicadorTipoDeducaoPrevidenciaria indTpDeducao {
-        get {
-            return this.indTpDeducaoField;
-        }
-        set {
-            this.indTpDeducaoField = value;
-            this.RaisePropertyChanged("indTpDeducao");
+    public IndicadorTipoDeducaoPrevidenciaria indTpDeducao
+    {
+        get => indTpDeducaoField;
+        set
+        {
+            indTpDeducaoField = value;
+            RaisePropertyChanged("indTpDeducao");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDedSusp {
-        get {
-            return this.vlrDedSuspField;
-        }
-        set {
-            this.vlrDedSuspField = value;
-            this.RaisePropertyChanged("vlrDedSusp");
+    public string vlrDedSusp
+    {
+        get => vlrDedSuspField;
+        set
+        {
+            vlrDedSuspField = value;
+            RaisePropertyChanged("vlrDedSusp");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("benefPen", Order=2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSuspBenefPen> benefPen {
-        get {
-            return this.benefPenField;
-        }
-        set {
-            this.benefPenField = value;
-            this.RaisePropertyChanged("benefPen");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedSuspBenefPen> benefPen
+    {
+        get => benefPenField;
+        set
+        {
+            benefPenField = value;
+            RaisePropertyChanged("benefPen");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1186,32 +1159,32 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcRetDedS
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string cpfDep {
-        get {
-            return this.cpfDepField;
-        }
-        set {
-            this.cpfDepField = value;
-            this.RaisePropertyChanged("cpfDep");
+    public string cpfDep
+    {
+        get => cpfDepField;
+        set
+        {
+            cpfDepField = value;
+            RaisePropertyChanged("cpfDep");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDepenSusp {
-        get {
-            return this.vlrDepenSuspField;
-        }
-        set {
-            this.vlrDepenSuspField = value;
-            this.RaisePropertyChanged("vlrDepenSusp");
+    public string vlrDepenSusp
+    {
+        get => vlrDepenSuspField;
+        set
+        {
+            vlrDepenSuspField = value;
+            RaisePropertyChanged("vlrDepenSusp");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1231,92 +1204,92 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRA : objec
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public TipoProcesso tpProcRRA {
-        get {
-            return this.tpProcRRAField;
-        }
-        set {
-            this.tpProcRRAField = value;
-            this.RaisePropertyChanged("tpProcRRA");
+    public TipoProcesso tpProcRRA
+    {
+        get => tpProcRRAField;
+        set
+        {
+            tpProcRRAField = value;
+            RaisePropertyChanged("tpProcRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrProcRRA {
-        get {
-            return this.nrProcRRAField;
-        }
-        set {
-            this.nrProcRRAField = value;
-            this.RaisePropertyChanged("nrProcRRA");
+    public string nrProcRRA
+    {
+        get => nrProcRRAField;
+        set
+        {
+            nrProcRRAField = value;
+            RaisePropertyChanged("nrProcRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public IndicadorOrigemDosRecursos indOrigRec {
-        get {
-            return this.indOrigRecField;
-        }
-        set {
-            this.indOrigRecField = value;
-            this.RaisePropertyChanged("indOrigRec");
+    public IndicadorOrigemDosRecursos indOrigRec
+    {
+        get => indOrigRecField;
+        set
+        {
+            indOrigRecField = value;
+            RaisePropertyChanged("indOrigRec");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string descRRA {
-        get {
-            return this.descRRAField;
-        }
-        set {
-            this.descRRAField = value;
-            this.RaisePropertyChanged("descRRA");
+    public string descRRA
+    {
+        get => descRRAField;
+        set
+        {
+            descRRAField = value;
+            RaisePropertyChanged("descRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public int? qtdMesesRRA {
-        get {
-            return this.qtdMesesRRAField;
-        }
-        set {
-            this.qtdMesesRRAField = value;
-            this.RaisePropertyChanged("qtdMesesRRA");
+    public int? qtdMesesRRA
+    {
+        get => qtdMesesRRAField;
+        set
+        {
+            qtdMesesRRAField = value;
+            RaisePropertyChanged("qtdMesesRRA");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public string cnpjOrigRecurso {
-        get {
-            return this.cnpjOrigRecursoField;
-        }
-        set {
-            this.cnpjOrigRecursoField = value;
-            this.RaisePropertyChanged("cnpjOrigRecurso");
+    public string cnpjOrigRecurso
+    {
+        get => cnpjOrigRecursoField;
+        set
+        {
+            cnpjOrigRecursoField = value;
+            RaisePropertyChanged("cnpjOrigRecurso");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJud despProcJud {
-        get {
-            return this.despProcJudField;
-        }
-        set {
-            this.despProcJudField = value;
-            this.RaisePropertyChanged("despProcJud");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJud despProcJud
+    {
+        get => despProcJudField;
+        set
+        {
+            despProcJudField = value;
+            RaisePropertyChanged("despProcJud");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1333,44 +1306,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProc
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string vlrDespCustas {
-        get {
-            return this.vlrDespCustasField;
-        }
-        set {
-            this.vlrDespCustasField = value;
-            this.RaisePropertyChanged("vlrDespCustas");
+    public string vlrDespCustas
+    {
+        get => vlrDespCustasField;
+        set
+        {
+            vlrDespCustasField = value;
+            RaisePropertyChanged("vlrDespCustas");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDespAdvogados {
-        get {
-            return this.vlrDespAdvogadosField;
-        }
-        set {
-            this.vlrDespAdvogadosField = value;
-            this.RaisePropertyChanged("vlrDespAdvogados");
+    public string vlrDespAdvogados
+    {
+        get => vlrDespAdvogadosField;
+        set
+        {
+            vlrDespAdvogadosField = value;
+            RaisePropertyChanged("vlrDespAdvogados");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ideAdv", Order=2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJudIdeAdv> ideAdv {
-        get {
-            return this.ideAdvField;
-        }
-        set {
-            this.ideAdvField = value;
-            this.RaisePropertyChanged("ideAdv");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProcJudIdeAdv> ideAdv
+    {
+        get => ideAdvField;
+        set
+        {
+            ideAdvField = value;
+            RaisePropertyChanged("ideAdv");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1387,44 +1360,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoRRADespProc
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInscAdv {
-        get {
-            return this.tpInscAdvField;
-        }
-        set {
-            this.tpInscAdvField = value;
-            this.RaisePropertyChanged("tpInscAdv");
+    public PersonalidadeJuridica tpInscAdv
+    {
+        get => tpInscAdvField;
+        set
+        {
+            tpInscAdvField = value;
+            RaisePropertyChanged("tpInscAdv");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrInscAdv {
-        get {
-            return this.nrInscAdvField;
-        }
-        set {
-            this.nrInscAdvField = value;
-            this.RaisePropertyChanged("nrInscAdv");
+    public string nrInscAdv
+    {
+        get => nrInscAdvField;
+        set
+        {
+            nrInscAdvField = value;
+            RaisePropertyChanged("nrInscAdv");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrAdv {
-        get {
-            return this.vlrAdvField;
-        }
-        set {
-            this.vlrAdvField = value;
-            this.RaisePropertyChanged("vlrAdv");
+    public string vlrAdv
+    {
+        get => vlrAdvField;
+        set
+        {
+            vlrAdvField = value;
+            RaisePropertyChanged("vlrAdv");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1442,68 +1415,68 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJud : o
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string nrProc {
-        get {
-            return this.nrProcField;
-        }
-        set {
-            this.nrProcField = value;
-            this.RaisePropertyChanged("nrProc");
+    public string nrProc
+    {
+        get => nrProcField;
+        set
+        {
+            nrProcField = value;
+            RaisePropertyChanged("nrProc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public IndicadorOrigemDosRecursos indOrigRec {
-        get {
-            return this.indOrigRecField;
-        }
-        set {
-            this.indOrigRecField = value;
-            this.RaisePropertyChanged("indOrigRec");
+    public IndicadorOrigemDosRecursos indOrigRec
+    {
+        get => indOrigRecField;
+        set
+        {
+            indOrigRecField = value;
+            RaisePropertyChanged("indOrigRec");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string cnpjOrigRecurso {
-        get {
-            return this.cnpjOrigRecursoField;
-        }
-        set {
-            this.cnpjOrigRecursoField = value;
-            this.RaisePropertyChanged("cnpjOrigRecurso");
+    public string cnpjOrigRecurso
+    {
+        get => cnpjOrigRecursoField;
+        set
+        {
+            cnpjOrigRecursoField = value;
+            RaisePropertyChanged("cnpjOrigRecurso");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string desc {
-        get {
-            return this.descField;
-        }
-        set {
-            this.descField = value;
-            this.RaisePropertyChanged("desc");
+    public string desc
+    {
+        get => descField;
+        set
+        {
+            descField = value;
+            RaisePropertyChanged("desc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJud despProcJud {
-        get {
-            return this.despProcJudField;
-        }
-        set {
-            this.despProcJudField = value;
-            this.RaisePropertyChanged("despProcJud");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJud despProcJud
+    {
+        get => despProcJudField;
+        set
+        {
+            despProcJudField = value;
+            RaisePropertyChanged("despProcJud");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1520,44 +1493,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string vlrDespCustas {
-        get {
-            return this.vlrDespCustasField;
-        }
-        set {
-            this.vlrDespCustasField = value;
-            this.RaisePropertyChanged("vlrDespCustas");
+    public string vlrDespCustas
+    {
+        get => vlrDespCustasField;
+        set
+        {
+            vlrDespCustasField = value;
+            RaisePropertyChanged("vlrDespCustas");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrDespAdvogados {
-        get {
-            return this.vlrDespAdvogadosField;
-        }
-        set {
-            this.vlrDespAdvogadosField = value;
-            this.RaisePropertyChanged("vlrDespAdvogados");
+    public string vlrDespAdvogados
+    {
+        get => vlrDespAdvogadosField;
+        set
+        {
+            vlrDespAdvogadosField = value;
+            RaisePropertyChanged("vlrDespAdvogados");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ideAdv", Order=2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJudIdeAdv> ideAdv {
-        get {
-            return this.ideAdvField;
-        }
-        set {
-            this.ideAdvField = value;
-            this.RaisePropertyChanged("ideAdv");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDespProcJudIdeAdv> ideAdv
+    {
+        get => ideAdvField;
+        set
+        {
+            ideAdvField = value;
+            RaisePropertyChanged("ideAdv");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1573,44 +1546,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoProcJudDesp
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInscAdv {
-        get {
-            return this.tpInscAdvField;
-        }
-        set {
-            this.tpInscAdvField = value;
-            this.RaisePropertyChanged("tpInscAdv");
+    public PersonalidadeJuridica tpInscAdv
+    {
+        get => tpInscAdvField;
+        set
+        {
+            tpInscAdvField = value;
+            RaisePropertyChanged("tpInscAdv");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrInscAdv {
-        get {
-            return this.nrInscAdvField;
-        }
-        set {
-            this.nrInscAdvField = value;
-            this.RaisePropertyChanged("nrInscAdv");
+    public string nrInscAdv
+    {
+        get => nrInscAdvField;
+        set
+        {
+            nrInscAdvField = value;
+            RaisePropertyChanged("nrInscAdv");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrAdv {
-        get {
-            return this.vlrAdvField;
-        }
-        set {
-            this.vlrAdvField = value;
-            this.RaisePropertyChanged("vlrAdv");
+    public string vlrAdv
+    {
+        get => vlrAdvField;
+        set
+        {
+            vlrAdvField = value;
+            RaisePropertyChanged("vlrAdv");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1628,25 +1601,25 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt : o
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IndicadorNIF indNIF {
-        get {
-            return this.indNIFField;
-        }
-        set {
-            this.indNIFField = value;
-            this.RaisePropertyChanged("indNIF");
+    public IndicadorNIF indNIF
+    {
+        get => indNIFField;
+        set
+        {
+            indNIFField = value;
+            RaisePropertyChanged("indNIF");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nifBenef {
-        get {
-            return this.nifBenefField;
-        }
-        set {
-            this.nifBenefField = value;
-            this.RaisePropertyChanged("nifBenef");
+    public string nifBenef
+    {
+        get => nifBenefField;
+        set
+        {
+            nifBenefField = value;
+            RaisePropertyChanged("nifBenef");
         }
     }
 
@@ -1655,32 +1628,32 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExt : o
     /// </summary>
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string frmTribut {
-        get {
-            return this.frmTributField;
-        }
-        set {
-            this.frmTributField = value;
-            this.RaisePropertyChanged("frmTribut");
+    public string frmTribut
+    {
+        get => frmTributField;
+        set
+        {
+            frmTributField = value;
+            RaisePropertyChanged("frmTribut");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExtEndExt endExt {
-        get {
-            return this.endExtField;
-        }
-        set {
-            this.endExtField = value;
-            this.RaisePropertyChanged("endExt");
+    public ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExtEndExt endExt
+    {
+        get => endExtField;
+        set
+        {
+            endExtField = value;
+            RaisePropertyChanged("endExt");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1701,104 +1674,104 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoInfoPgtoExtEndE
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string dscLograd {
-        get {
-            return this.dscLogradField;
-        }
-        set {
-            this.dscLogradField = value;
-            this.RaisePropertyChanged("dscLograd");
+    public string dscLograd
+    {
+        get => dscLogradField;
+        set
+        {
+            dscLogradField = value;
+            RaisePropertyChanged("dscLograd");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrLograd {
-        get {
-            return this.nrLogradField;
-        }
-        set {
-            this.nrLogradField = value;
-            this.RaisePropertyChanged("nrLograd");
+    public string nrLograd
+    {
+        get => nrLogradField;
+        set
+        {
+            nrLogradField = value;
+            RaisePropertyChanged("nrLograd");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string complem {
-        get {
-            return this.complemField;
-        }
-        set {
-            this.complemField = value;
-            this.RaisePropertyChanged("complem");
+    public string complem
+    {
+        get => complemField;
+        set
+        {
+            complemField = value;
+            RaisePropertyChanged("complem");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string bairro {
-        get {
-            return this.bairroField;
-        }
-        set {
-            this.bairroField = value;
-            this.RaisePropertyChanged("bairro");
+    public string bairro
+    {
+        get => bairroField;
+        set
+        {
+            bairroField = value;
+            RaisePropertyChanged("bairro");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 4)]
-    public string cidade {
-        get {
-            return this.cidadeField;
-        }
-        set {
-            this.cidadeField = value;
-            this.RaisePropertyChanged("cidade");
+    public string cidade
+    {
+        get => cidadeField;
+        set
+        {
+            cidadeField = value;
+            RaisePropertyChanged("cidade");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public string estado {
-        get {
-            return this.estadoField;
-        }
-        set {
-            this.estadoField = value;
-            this.RaisePropertyChanged("estado");
+    public string estado
+    {
+        get => estadoField;
+        set
+        {
+            estadoField = value;
+            RaisePropertyChanged("estado");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public string codPostal {
-        get {
-            return this.codPostalField;
-        }
-        set {
-            this.codPostalField = value;
-            this.RaisePropertyChanged("codPostal");
+    public string codPostal
+    {
+        get => codPostalField;
+        set
+        {
+            codPostalField = value;
+            RaisePropertyChanged("codPostal");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 7)]
-    public string telef {
-        get {
-            return this.telefField;
-        }
-        set {
-            this.telefField = value;
-            this.RaisePropertyChanged("telef");
+    public string telef
+    {
+        get => telefField;
+        set
+        {
+            telefField = value;
+            RaisePropertyChanged("telef");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1816,68 +1789,68 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude : object, System.Co
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string nrInsc {
-        get {
-            return this.nrInscField;
-        }
-        set {
-            this.nrInscField = value;
-            this.RaisePropertyChanged("nrInsc");
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged("nrInsc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string regANS {
-        get {
-            return this.regANSField;
-        }
-        set {
-            this.regANSField = value;
-            this.RaisePropertyChanged("regANS");
+    public string regANS
+    {
+        get => regANSField;
+        set
+        {
+            regANSField = value;
+            RaisePropertyChanged("regANS");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrSaude {
-        get {
-            return this.vlrSaudeField;
-        }
-        set {
-            this.vlrSaudeField = value;
-            this.RaisePropertyChanged("vlrSaude");
+    public string vlrSaude
+    {
+        get => vlrSaudeField;
+        set
+        {
+            vlrSaudeField = value;
+            RaisePropertyChanged("vlrSaude");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoReemb", Order=3)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb> infoReemb {
-        get {
-            return this.infoReembField;
-        }
-        set {
-            this.infoReembField = value;
-            this.RaisePropertyChanged("infoReemb");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb> infoReemb
+    {
+        get => infoReembField;
+        set
+        {
+            infoReembField = value;
+            RaisePropertyChanged("infoReemb");
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoDependPl", Order=4)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl> infoDependPl {
-        get {
-            return this.infoDependPlField;
-        }
-        set {
-            this.infoDependPlField = value;
-            this.RaisePropertyChanged("infoDependPl");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl> infoDependPl
+    {
+        get => infoDependPlField;
+        set
+        {
+            infoDependPlField = value;
+            RaisePropertyChanged("infoDependPl");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1894,56 +1867,56 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoReemb : object, 
 
     /// <remarks/>
     [XmlElement(Order=0)]
-    public PersonalidadeJuridica tpInsc {
-        get {
-            return this.tpInscField;
-        }
-        set {
-            this.tpInscField = value;
-            this.RaisePropertyChanged("tpInsc");
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged("tpInsc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order=1)]
-    public string nrInsc {
-        get {
-            return this.nrInscField;
-        }
-        set {
-            this.nrInscField = value;
-            this.RaisePropertyChanged("nrInsc");
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged("nrInsc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order=2)]
-    public string vlrReemb {
-        get {
-            return this.vlrReembField;
-        }
-        set {
-            this.vlrReembField = value;
-            this.RaisePropertyChanged("vlrReemb");
+    public string vlrReemb
+    {
+        get => vlrReembField;
+        set
+        {
+            vlrReembField = value;
+            RaisePropertyChanged("vlrReemb");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order=3)]
-    public string vlrReembAnt {
-        get {
-            return this.vlrReembAntField;
-        }
-        set {
-            this.vlrReembAntField = value;
-            this.RaisePropertyChanged("vlrReembAnt");
+    public string vlrReembAnt
+    {
+        get => vlrReembAntField;
+        set
+        {
+            vlrReembAntField = value;
+            RaisePropertyChanged("vlrReembAnt");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -1961,44 +1934,44 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPl : objec
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public string cpfDep {
-        get {
-            return this.cpfDepField;
-        }
-        set {
-            this.cpfDepField = value;
-            this.RaisePropertyChanged("cpfDep");
+    public string cpfDep
+    {
+        get => cpfDepField;
+        set
+        {
+            cpfDepField = value;
+            RaisePropertyChanged("cpfDep");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string vlrSaude {
-        get {
-            return this.vlrSaudeField;
-        }
-        set {
-            this.vlrSaudeField = value;
-            this.RaisePropertyChanged("vlrSaude");
+    public string vlrSaude
+    {
+        get => vlrSaudeField;
+        set
+        {
+            vlrSaudeField = value;
+            RaisePropertyChanged("vlrSaude");
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoReembDep", Order = 2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReembDep> infoReembDep {
-        get {
-            return this.infoReembDepField;
-        }
-        set {
-            this.infoReembDepField = value;
-            this.RaisePropertyChanged("infoReembDep");
+    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReembDep> infoReembDep
+    {
+        get => infoReembDepField;
+        set
+        {
+            infoReembDepField = value;
+            RaisePropertyChanged("infoReembDep");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
@@ -2015,56 +1988,56 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaudeInfoDependPlInfoReem
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInsc {
-        get {
-            return this.tpInscField;
-        }
-        set {
-            this.tpInscField = value;
-            this.RaisePropertyChanged("tpInsc");
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged("tpInsc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public string nrInsc {
-        get {
-            return this.nrInscField;
-        }
-        set {
-            this.nrInscField = value;
-            this.RaisePropertyChanged("nrInsc");
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged("nrInsc");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public string vlrReemb {
-        get {
-            return this.vlrReembField;
-        }
-        set {
-            this.vlrReembField = value;
-            this.RaisePropertyChanged("vlrReemb");
+    public string vlrReemb
+    {
+        get => vlrReembField;
+        set
+        {
+            vlrReembField = value;
+            RaisePropertyChanged("vlrReemb");
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public string vlrReembAnt {
-        get {
-            return this.vlrReembAntField;
-        }
-        set {
-            this.vlrReembAntField = value;
-            this.RaisePropertyChanged("vlrReembAnt");
+    public string vlrReembAnt
+    {
+        get => vlrReembAntField;
+        set
+        {
+            vlrReembAntField = value;
+            RaisePropertyChanged("vlrReembAnt");
         }
     }
-    
+
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     
     protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
         if ((propertyChanged != null)) {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }

@@ -4,7 +4,7 @@
 /// Reabertura dos eventos da série R-2000
 /// </summary>
 [Serializable()]
-public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2098 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtReabreEvPer evtReabreEvPerField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtReabreEvPer evtReabreEvPer
     {
-        get
-        {
-            return evtReabreEvPerField;
-        }
+        get => evtReabreEvPerField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         evtReabreEvPer.id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -84,18 +78,15 @@ public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoEventoFechamento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento
+    public IdentificacaoEventoFechamento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -106,12 +97,9 @@ public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -124,10 +112,7 @@ public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {

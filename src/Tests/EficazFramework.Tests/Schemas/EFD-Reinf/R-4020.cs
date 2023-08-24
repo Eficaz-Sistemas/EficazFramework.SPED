@@ -114,7 +114,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
@@ -235,7 +235,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
@@ -395,7 +395,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",

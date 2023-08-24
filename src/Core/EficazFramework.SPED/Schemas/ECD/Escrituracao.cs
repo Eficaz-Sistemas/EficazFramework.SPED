@@ -11,13 +11,13 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Escrituracao() : base("Escrituração Contábil Digital")
     {
-        this.Blocos.Add("0", new ECD.Bloco0());
-        this.Blocos.Add("I", new ECD.BlocoI());
-        this.Blocos.Add("J", new ECD.BlocoJ());
-        this.Blocos.Add("9", new ECD.Bloco9());
-        this.BlocoTotalizador = "9";
-        this.RegistroTotalizadorCodigo = "9900";
-        this.RegistroTotalizadorStringFormat = "|" + this.RegistroTotalizadorCodigo + "|{0}|{1}|";
+        Blocos.Add("0", new ECD.Bloco0());
+        Blocos.Add("I", new ECD.BlocoI());
+        Blocos.Add("J", new ECD.BlocoJ());
+        Blocos.Add("9", new ECD.Bloco9());
+        BlocoTotalizador = "9";
+        RegistroTotalizadorCodigo = "9900";
+        RegistroTotalizadorStringFormat = "|" + RegistroTotalizadorCodigo + "|{0}|{1}|";
     }
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -29,8 +29,8 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
         {
             case "0000":
                 {
-                    reg = new ECD.Registro0000(linha, this.Versao);
-                    this.Blocos["0"].Registros.Add(reg);
+                    reg = new ECD.Registro0000(linha, Versao);
+                    Blocos["0"].Registros.Add(reg);
                     break;
                 }
 
@@ -56,9 +56,9 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
 
             case "0150":
                 {
-                    reg = new ECD.Registro0150(linha, this.Versao);
-                    this.Blocos["0"].Registros.Add(reg);
-                    ((ECD.Bloco0)this.Blocos["0"]).Registro0001.Registros0150.Add((ECD.Registro0150)reg);
+                    reg = new ECD.Registro0150(linha, Versao);
+                    Blocos["0"].Registros.Add(reg);
+                    ((ECD.Bloco0)Blocos["0"]).Registro0001.Registros0150.Add((ECD.Registro0150)reg);
                     break;
                 }
 
@@ -505,22 +505,22 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
             case "I010":
                 {
                     string vesaostr = linha.Split("|")[3];
-                    this.Versao = (Conversions.ToInteger(vesaostr.Replace(".", "")) / 100d).ToString();
+                    Versao = (Conversions.ToInteger(vesaostr.Replace(".", "")) / 100d).ToString();
                     break;
                 }
 
             case "I200":
                 {
-                    reg = new ECD.RegistroI200(linha, this.Versao);
-                    this.Blocos["I"].Registros.Add(reg);
+                    reg = new ECD.RegistroI200(linha, Versao);
+                    Blocos["I"].Registros.Add(reg);
                     break;
                 }
 
             case "I250":
                 {
-                    reg = new ECD.RegistroI250(linha, this.Versao);
-                    this.Blocos["I"].Registros.Add(reg);
-                    var regI200 = ((BlocoI)this.Blocos["I"]).RegistrosI200.LastOrDefault();
+                    reg = new ECD.RegistroI250(linha, Versao);
+                    Blocos["I"].Registros.Add(reg);
+                    var regI200 = ((BlocoI)Blocos["I"]).RegistrosI200.LastOrDefault();
                     if (regI200 != null)
                     {
                         regI200.RegistrosI250.Add((ECD.RegistroI250)reg);
@@ -531,7 +531,7 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
 
             case "9999":
                 {
-                    this._mustStop = true;
+                    _mustStop = true;
                     break;
                 }
         }
@@ -548,13 +548,13 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
     public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
     {
         string cnpj = null;
-        using (var reader = new System.IO.StreamReader(stream, this.Encoding))
+        using (var reader = new System.IO.StreamReader(stream, Encoding))
         {
             while (!reader.EndOfStream)
             {
                 string linha = await reader.ReadLineAsync();
                 // Me.Versao = linha.Substring(6, 3)
-                string reg = linha.Substring(this.HeaderPosition.Index, this.HeaderPosition.Lenght);
+                string reg = linha.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
                 if (reg == "0000")
                 {
                     var reg0000 = new ECD.Registro0000(linha, "");
@@ -564,7 +564,7 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
                 else if (reg == "I010")
                 {
                     string vesaostr = linha.Split("|")[3];
-                    this.Versao = (Conversions.ToInteger(vesaostr.Replace(".", "")) / 100d).ToString();
+                    Versao = (Conversions.ToInteger(vesaostr.Replace(".", "")) / 100d).ToString();
                     break;
                 }
             }
@@ -579,7 +579,7 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
     {
         var regs = new List<Schemas.Primitives.Registro>();
         var reg = new ECD.Registro9001();
-        if (this.Blocos["I"].Registros.Count <= 0 & this.Blocos["J"].Registros.Count <= 0)
+        if (Blocos["I"].Registros.Count <= 0 & Blocos["J"].Registros.Count <= 0)
         {
             reg.IndicadorMovimento = Schemas.Primitives.IndicadorMovimento.SemDados;
         }
@@ -604,7 +604,7 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
         var reg9900_9900 = new ECD.Registro9900
         {
             Registro = "9900",
-            TotalLinhas = (from reg in this.Blocos[BlocoTotalizador].Registros
+            TotalLinhas = (from reg in Blocos[BlocoTotalizador].Registros
                            where reg is Schemas.Primitives.RegistroTotalizador
                            select reg).Count() + 4
         };
@@ -623,12 +623,12 @@ public class Escrituracao : Schemas.Primitives.Escrituracao
         regs.Add(reg9900_9999);
         var reg9990 = new ECD.Registro9990
         {
-            TotalLinhas = (this.Blocos["9"].Registros.Count + 6).ToString()
+            TotalLinhas = (Blocos["9"].Registros.Count + 6).ToString()
         };
         regs.Add(reg9990);
         var reg9999 = new ECD.Registro9999
         {
-            TotalLinhas = (from bl in this.Blocos.Values
+            TotalLinhas = (from bl in Blocos.Values
                            select bl.Registros.Count).Sum() + 6
         };
         regs.Add(reg9999);
