@@ -4,17 +4,16 @@
 /// Tabela de processos administrativos/judiciais
 /// </summary>
 [Serializable()]
-public partial class R1070 : Evento, INotifyPropertyChanged
+public partial class R1070 : Evento
 {
-    private ReinfEvtTabProcesso evtTabProcessoField;
+    private R1070EventoTabProcesso evtTabProcessoField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtTabProcesso evtTabProcesso
+    public R1070EventoTabProcesso evtTabProcesso
     {
         get => evtTabProcessoField;
-
         set
         {
             evtTabProcessoField = value;
@@ -27,7 +26,6 @@ public partial class R1070 : Evento, INotifyPropertyChanged
     public SignatureType Signature
     {
         get => signatureField;
-
         set
         {
             signatureField = value;
@@ -37,15 +35,12 @@ public partial class R1070 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
+    public override void GeraEventoID() =>
         evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtTabProcesso.ideContri.nrInsc;
-    }
+
+    public override string ContribuinteCNPJ() =>
+        evtTabProcesso.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
@@ -55,41 +50,25 @@ public partial class R1070 : Evento, INotifyPropertyChanged
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
-    }
-
+    public override XmlSerializer DefineSerializer() =>
+        new XmlSerializer(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
 }
 
 
 /// <exclude />
-public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
+public partial class R1070EventoTabProcesso : EfdReinfBindableObject
 {
-    private ReinfEvtTabProcessoIdeEvento ideEventoField;
+    private IdentificacaoEvento ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtTabProcessoInfoProcesso infoProcessoField;
+    private R1070InfoProcesso infoProcessoField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtTabProcessoIdeEvento ideEvento
+    public IdentificacaoEvento ideEvento
     {
         get => ideEventoField;
-
         set
         {
             ideEventoField = value;
@@ -102,7 +81,6 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     public IdentificacaoContribuinte ideContri
     {
         get => ideContriField;
-
         set
         {
             ideContriField = value;
@@ -112,10 +90,9 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtTabProcessoInfoProcesso infoProcesso
+    public R1070InfoProcesso infoProcesso
     {
         get => infoProcessoField;
-
         set
         {
             infoProcessoField = value;
@@ -128,82 +105,10 @@ public partial class ReinfEvtTabProcesso : object, INotifyPropertyChanged
     public string id
     {
         get => idField;
-
         set
         {
             idField = value;
             RaisePropertyChanged("id");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-// Identificação do Evento:
-/// <exclude />
-public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChanged
-{
-    private Ambiente tpAmbField;
-    private EmissorEvento procEmiField;
-    private string verProcField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public Ambiente tpAmb
-    {
-        get => tpAmbField;
-
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public EmissorEvento procEmi
-    {
-        get => procEmiField;
-
-        set
-        {
-            procEmiField = value;
-            RaisePropertyChanged("procEmi");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string verProc
-    {
-        get => verProcField;
-
-        set
-        {
-            verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
@@ -211,33 +116,21 @@ public partial class ReinfEvtTabProcessoIdeEvento : object, INotifyPropertyChang
 
 // Informação do Processo:
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyChanged
+public partial class R1070InfoProcesso : EfdReinfBindableObject
 {
     private object itemField;
 
     /// <remarks/>
-    [XmlElement("alteracao", typeof(ReinfEvtTabProcessoInfoProcessoAlteracao), Order = 0)]
-    [XmlElement("exclusao", typeof(ReinfEvtTabProcessoInfoProcessoExclusao), Order = 0)]
-    [XmlElement("inclusao", typeof(ReinfEvtTabProcessoInfoProcessoInclusao), Order = 0)]
+    [XmlElement("alteracao", typeof(R1070Alteracao), Order = 0)]
+    [XmlElement("exclusao", typeof(R1070Exclusao), Order = 0)]
+    [XmlElement("inclusao", typeof(R1070Inclusao), Order = 0)]
     public object Item
     {
         get => itemField;
-
         set
         {
             itemField = value;
             RaisePropertyChanged("Item");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
@@ -245,17 +138,16 @@ public partial class ReinfEvtTabProcessoInfoProcesso : object, INotifyPropertyCh
 
 // Alteração:
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyPropertyChanged
+public partial class R1070Alteracao : EfdReinfBindableObject
 {
-    private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcessoField;
-    private ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade novaValidadeField;
+    private R1070IdentificacaoProcesso ideProcessoField;
+    private IdentificacaoPeriodo novaValidadeField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso ideProcesso
+    public R1070IdentificacaoProcesso ideProcesso
     {
         get => ideProcessoField;
-
         set
         {
             ideProcessoField = value;
@@ -265,324 +157,13 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracao : object, INotifyP
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade novaValidade
+    public IdentificacaoPeriodo novaValidade
     {
         get => novaValidadeField;
-
         set
         {
             novaValidadeField = value;
             RaisePropertyChanged("novaValidade");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso : object, INotifyPropertyChanged
-{
-    private TipoProcesso tpProcField;
-    private string nrProcField;
-    private string iniValidField;
-    private string fimValidField;
-    private IndicadorAuditoria indAutoriaField;
-    private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp[] infoSuspField;
-    private ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud dadosProcJudField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoProcesso tpProc
-    {
-        get => tpProcField;
-
-        set
-        {
-            tpProcField = value;
-            RaisePropertyChanged("tpProc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrProc
-    {
-        get => nrProcField;
-
-        set
-        {
-            nrProcField = value;
-            RaisePropertyChanged("nrProc");
-        }
-    }
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 2)]
-    public string iniValid
-    {
-        get => iniValidField;
-
-        set
-        {
-            iniValidField = value;
-            RaisePropertyChanged("iniValid");
-        }
-    }
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 3)]
-    public string fimValid
-    {
-        get => fimValidField;
-
-        set
-        {
-            fimValidField = value;
-            RaisePropertyChanged("fimValid");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public IndicadorAuditoria indAutoria
-    {
-        get => indAutoriaField;
-
-        set
-        {
-            indAutoriaField = value;
-            RaisePropertyChanged("indAutoria");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement("infoSusp", Order = 5)]
-    public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp[] infoSusp
-    {
-        get => infoSuspField;
-
-        set
-        {
-            infoSuspField = value;
-            RaisePropertyChanged("infoSusp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 6)]
-    public ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud dadosProcJud
-    {
-        get => dadosProcJudField;
-
-        set
-        {
-            dadosProcJudField = value;
-            RaisePropertyChanged("dadosProcJud");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-/// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
-{
-    private string codSuspField;
-    private string indSuspField;
-    private DateTime dtDecisaoField;
-    private string indDepositoField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string codSusp
-    {
-        get => codSuspField;
-
-        set
-        {
-            codSuspField = value;
-            RaisePropertyChanged("codSusp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string indSusp
-    {
-        get => indSuspField;
-
-        set
-        {
-            indSuspField = value;
-            RaisePropertyChanged("indSusp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(DataType = "date", Order = 2)]
-    public DateTime dtDecisao
-    {
-        get => dtDecisaoField;
-
-        set
-        {
-            dtDecisaoField = value;
-            RaisePropertyChanged("dtDecisao");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string indDeposito
-    {
-        get => indDepositoField;
-
-        set
-        {
-            indDepositoField = value;
-            RaisePropertyChanged("indDeposito");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
-{
-    private string ufVaraField;
-    private string codMunicField;
-    private string idVaraField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string ufVara
-    {
-        get => ufVaraField;
-
-        set
-        {
-            ufVaraField = value;
-            RaisePropertyChanged("ufVara");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string codMunic
-    {
-        get => codMunicField;
-
-        set
-        {
-            codMunicField = value;
-            RaisePropertyChanged("codMunic");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string idVara
-    {
-        get => idVaraField;
-
-        set
-        {
-            idVaraField = value;
-            RaisePropertyChanged("idVara");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : object, INotifyPropertyChanged
-{
-    private string iniValidField;
-    private string fimValidField;
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 0)]
-    public string iniValid
-    {
-        get => iniValidField;
-
-        set
-        {
-            iniValidField = value;
-            RaisePropertyChanged("iniValid");
-        }
-    }
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 1)]
-    public string fimValid
-    {
-        get => fimValidField;
-
-        set
-        {
-            fimValidField = value;
-            RaisePropertyChanged("fimValid");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
@@ -590,13 +171,13 @@ public partial class ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade : obje
 
 // Exclusão:
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPropertyChanged
+public partial class R1070Exclusao : EfdReinfBindableObject
 {
-    private ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcessoField;
+    private R1070IdentificacaoProcesso ideProcessoField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso ideProcesso
+    public R1070IdentificacaoProcesso ideProcesso
     {
         get => ideProcessoField;
 
@@ -604,93 +185,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusao : object, INotifyPr
         {
             ideProcessoField = value;
             RaisePropertyChanged("ideProcesso");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-/// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object, INotifyPropertyChanged
-{
-    private TipoProcesso tpProcField;
-    private string nrProcField;
-    private string iniValidField;
-    private string fimValidField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoProcesso tpProc
-    {
-        get => tpProcField;
-
-        set
-        {
-            tpProcField = value;
-            RaisePropertyChanged("tpProc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrProc
-    {
-        get => nrProcField;
-
-        set
-        {
-            nrProcField = value;
-            RaisePropertyChanged("nrProc");
-        }
-    }
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 2)]
-    public string iniValid
-    {
-        get => iniValidField;
-
-        set
-        {
-            iniValidField = value;
-            RaisePropertyChanged("iniValid");
-        }
-    }
-
-    /// <summary>
-    /// AAAA-MM
-    /// </summary>
-    [XmlElement(DataType = "gYearMonth", Order = 3)]
-    public string fimValid
-    {
-        get => fimValidField;
-
-        set
-        {
-            fimValidField = value;
-            RaisePropertyChanged("fimValid");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
@@ -698,16 +192,15 @@ public partial class ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso : object
 
 // Inclusão:
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPropertyChanged
+public partial class R1070Inclusao : EfdReinfBindableObject
 {
-    private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcessoField;
+    private R1070IdentificacaoProcesso ideProcessoField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso ideProcesso
+    public R1070IdentificacaoProcesso ideProcesso
     {
         get => ideProcessoField;
-
         set
         {
             ideProcessoField = value;
@@ -715,36 +208,26 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusao : object, INotifyPr
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object, INotifyPropertyChanged
+public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
 {
     private TipoProcesso tpProcField;
     private string nrProcField;
     private string iniValidField;
     private string fimValidField;
     private IndicadorAuditoria indAutoriaField;
-    private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp[] infoSuspField;
-    private ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud dadosProcJudField;
+    private bool indAutoriaFieldSpecified = false;
+    private R1070IdentificacaoProcessoInfoSusp[] infoSuspField;
+    private R1070IdentificacaoProcessoDadosProcJud dadosProcJudField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
         get => tpProcField;
-
         set
         {
             tpProcField = value;
@@ -757,7 +240,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     public string nrProc
     {
         get => nrProcField;
-
         set
         {
             nrProcField = value;
@@ -772,7 +254,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     public string iniValid
     {
         get => iniValidField;
-
         set
         {
             iniValidField = value;
@@ -787,7 +268,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     public string fimValid
     {
         get => fimValidField;
-
         set
         {
             fimValidField = value;
@@ -800,7 +280,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
     public IndicadorAuditoria indAutoria
     {
         get => indAutoriaField;
-
         set
         {
             indAutoriaField = value;
@@ -808,12 +287,28 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
         }
     }
 
+    /// <summary>
+    /// Indica se o campo <see cref="indAutoria"/>
+    /// deve ser informado no XML gerado.
+    /// </summary>
+    /// <exclude/>
+    [XmlIgnore()]
+    public bool indAutoriaSpecified
+    {
+        get => indAutoriaFieldSpecified;
+        set
+        {
+            indAutoriaFieldSpecified = value;
+            RaisePropertyChanged("indAutoriaSpecified");
+        }
+    }
+
+
     /// <remarks/>
     [XmlElement("infoSusp", Order = 5)]
-    public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp[] infoSusp
+    public R1070IdentificacaoProcessoInfoSusp[] infoSusp
     {
         get => infoSuspField;
-
         set
         {
             infoSuspField = value;
@@ -823,32 +318,19 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso : object
 
     /// <remarks/>
     [XmlElement(Order = 6)]
-    public ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud dadosProcJud
+    public R1070IdentificacaoProcessoDadosProcJud dadosProcJud
     {
         get => dadosProcJudField;
-
         set
         {
             dadosProcJudField = value;
             RaisePropertyChanged("dadosProcJud");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp : object, INotifyPropertyChanged
+public partial class R1070IdentificacaoProcessoInfoSusp : EfdReinfBindableObject
 {
     private string codSuspField;
     private string indSuspField;
@@ -860,7 +342,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     public string codSusp
     {
         get => codSuspField;
-
         set
         {
             codSuspField = value;
@@ -873,7 +354,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     public string indSusp
     {
         get => indSuspField;
-
         set
         {
             indSuspField = value;
@@ -886,7 +366,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     public DateTime dtDecisao
     {
         get => dtDecisaoField;
-
         set
         {
             dtDecisaoField = value;
@@ -899,29 +378,17 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp 
     public string indDeposito
     {
         get => indDepositoField;
-
         set
         {
             indDepositoField = value;
             RaisePropertyChanged("indDeposito");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud : object, INotifyPropertyChanged
+public partial class R1070IdentificacaoProcessoDadosProcJud : EfdReinfBindableObject
 {
     private string ufVaraField;
     private string codMunicField;
@@ -932,7 +399,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     public string ufVara
     {
         get => ufVaraField;
-
         set
         {
             ufVaraField = value;
@@ -945,7 +411,6 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     public string codMunic
     {
         get => codMunicField;
-
         set
         {
             codMunicField = value;
@@ -958,22 +423,10 @@ public partial class ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProc
     public string idVara
     {
         get => idVaraField;
-
         set
         {
             idVaraField = value;
             RaisePropertyChanged("idVara");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
