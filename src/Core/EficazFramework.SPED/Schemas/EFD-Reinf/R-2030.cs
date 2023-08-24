@@ -4,7 +4,7 @@
 /// Recursos recebidos por associação desportiva
 /// </summary>
 [Serializable()]
-public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2030 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtAssocDespRec evtAssocDespRecField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtAssocDespRec evtAssocDespRec
     {
-        get
-        {
-            return evtAssocDespRecField;
-        }
+        get => evtAssocDespRecField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2030 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
@@ -92,10 +86,7 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtAssocDespRecIdeEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -108,10 +99,7 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public ReinfEvtAssocDespRecIdeContri ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -124,10 +112,7 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -163,10 +148,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
+        get => indRetifField;
 
         set
         {
@@ -179,10 +161,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
+        get => nrReciboField;
 
         set
         {
@@ -195,10 +174,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
+        get => perApurField;
 
         set
         {
@@ -211,10 +187,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(Order = 3)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -227,10 +200,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(Order = 4)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -243,10 +213,7 @@ public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChan
     [XmlElement(Order = 5)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -279,10 +246,7 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
+        get => tpInscField;
 
         set
         {
@@ -295,10 +259,7 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
+        get => nrInscField;
 
         set
         {
@@ -311,10 +272,7 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
     [XmlElement(Order = 2)]
     public ReinfEvtAssocDespRecIdeContriIdeEstab ideEstab
     {
-        get
-        {
-            return ideEstabField;
-        }
+        get => ideEstabField;
 
         set
         {
@@ -347,10 +305,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstab
     {
-        get
-        {
-            return tpInscEstabField;
-        }
+        get => tpInscEstabField;
 
         set
         {
@@ -363,10 +318,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
     [XmlElement(Order = 1)]
     public string nrInscEstab
     {
-        get
-        {
-            return nrInscEstabField;
-        }
+        get => nrInscEstabField;
 
         set
         {
@@ -379,10 +331,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
     [XmlElement("recursosRec", Order = 2)]
     public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec[] recursosRec
     {
-        get
-        {
-            return recursosRecField;
-        }
+        get => recursosRecField;
 
         set
         {
@@ -418,10 +367,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement(Order = 0)]
     public string cnpjOrigRecurso
     {
-        get
-        {
-            return cnpjOrigRecursoField;
-        }
+        get => cnpjOrigRecursoField;
 
         set
         {
@@ -434,10 +380,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement(Order = 1)]
     public string vlrTotalRec
     {
-        get
-        {
-            return vlrTotalRecField;
-        }
+        get => vlrTotalRecField;
 
         set
         {
@@ -450,10 +393,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement(Order = 2)]
     public string vlrTotalRet
     {
-        get
-        {
-            return vlrTotalRetField;
-        }
+        get => vlrTotalRetField;
 
         set
         {
@@ -466,10 +406,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement(Order = 3)]
     public string vlrTotalNRet
     {
-        get
-        {
-            return vlrTotalNRetField;
-        }
+        get => vlrTotalNRetField;
 
         set
         {
@@ -482,10 +419,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement("infoRecurso", Order = 4)]
     public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso[] infoRecurso
     {
-        get
-        {
-            return infoRecursoField;
-        }
+        get => infoRecursoField;
 
         set
         {
@@ -498,10 +432,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
     [XmlElement("infoProc", Order = 5)]
     public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc[] infoProc
     {
-        get
-        {
-            return infoProcField;
-        }
+        get => infoProcField;
 
         set
         {
@@ -535,10 +466,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
     [XmlElement(Order = 0)]
     public TipoRepasseAssocDesp tpRepasse
     {
-        get
-        {
-            return tpRepasseField;
-        }
+        get => tpRepasseField;
 
         set
         {
@@ -551,10 +479,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
     [XmlElement(Order = 1)]
     public string descRecurso
     {
-        get
-        {
-            return descRecursoField;
-        }
+        get => descRecursoField;
 
         set
         {
@@ -567,10 +492,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
     [XmlElement(Order = 2)]
     public string vlrBruto
     {
-        get
-        {
-            return vlrBrutoField;
-        }
+        get => vlrBrutoField;
 
         set
         {
@@ -583,10 +505,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso
     [XmlElement(Order = 3)]
     public string vlrRetApur
     {
-        get
-        {
-            return vlrRetApurField;
-        }
+        get => vlrRetApurField;
 
         set
         {
@@ -620,10 +539,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : 
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -636,10 +552,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : 
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -652,10 +565,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : 
     [XmlElement(Order = 2)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -668,10 +578,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : 
     [XmlElement(Order = 3)]
     public string vlrNRet
     {
-        get
-        {
-            return vlrNRetField;
-        }
+        get => vlrNRetField;
 
         set
         {

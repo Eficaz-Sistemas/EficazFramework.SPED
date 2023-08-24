@@ -68,10 +68,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </summary>
     public bool IsLoading
     {
-        get
-        {
-            return _isWorking;
-        }
+        get => _isWorking;
 
         set
         {
@@ -97,10 +94,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </example>
     public string BlocoTotalizador
     {
-        get
-        {
-            return _blocoTotalizador;
-        }
+        get => _blocoTotalizador;
 
         set
         {
@@ -119,10 +113,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </example>
     public string RegistroTotalizadorCodigo
     {
-        get
-        {
-            return _codigoRegTotalizador;
-        }
+        get => _codigoRegTotalizador;
 
         set
         {
@@ -141,10 +132,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </example>
     public string RegistroTotalizadorStringFormat
     {
-        get
-        {
-            return _RegistroTotalizadorStringFormat;
-        }
+        get => _RegistroTotalizadorStringFormat;
 
         set
         {
@@ -158,10 +146,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </summary>
     public System.Text.Encoding Encoding
     {
-        get
-        {
-            return _encoding;
-        }
+        get => _encoding;
 
         set
         {

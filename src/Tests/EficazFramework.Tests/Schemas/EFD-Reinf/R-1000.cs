@@ -121,28 +121,28 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     #region Inclusao
     internal static void PreencheCamposInclusao(R1000 evento)
     {
-        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
+        evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
-            ideEvento = new ReinfEvtIdeEvento()
+            ideEvento = new IdentificacaoEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "2.2"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new R1000_InfoContri()
+            infoContri = new R1000InfoContribuinte()
             {
-                Item = new R1000_Inclusao()
+                Item = new R1000Inclusao()
                 {
-                    idePeriodo = new ReinfEvtIdePeriodo()
+                    idePeriodo = new IdentificacaoPeriodo()
                     {
                         iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
                     },
-                    infoCadastro = new R1000_InfoCadastro()
+                    infoCadastro = new R1000InfoCadastro()
                     {
                         classTrib = "99",
                         indEscrituracao = ObrigatoriedadeECD.EntregaECD,
@@ -150,14 +150,14 @@ public class R1000Test : BaseEfdReinfTest<R1000>
                         indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
                         indSitPJ = SituacaoPessoaJuridica.Normal,
                         indSitPJSpecified = true,
-                        contato = new R1000_InfoCadastro_Contato()
+                        contato = new R1000InfoCadastroContato()
                         {
                             nmCtt = "Pierre de Fermat",
                             cpfCtt = "47363361886",
                             foneFixo = "3535441234",
                             email = "suporte@eficazcs.com.br"
                         },
-                        softHouse = new R1000_InfoCadastro_SoftwareHouse()
+                        softHouse = new R1000InfoCadastroSoftwareHouse()
                     }
                 }
             }
@@ -166,8 +166,8 @@ public class R1000Test : BaseEfdReinfTest<R1000>
 
     public void ValidaCamposInclusao(R1000 instanciaPopulada, R1000 instanciaXml)
     {
-        R1000_Inclusao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000_Inclusao;
-        R1000_Inclusao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000_Inclusao;
+        R1000Inclusao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000Inclusao;
+        R1000Inclusao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000Inclusao;
         itemPopulado.Should().NotBeNull();
         itemXml.Should().NotBeNull();
 
@@ -200,28 +200,28 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     #region Alteracao
     internal static void PreencheCamposAlteracao(R1000 evento)
     {
-        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
+        evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
-            ideEvento = new ReinfEvtIdeEvento()
+            ideEvento = new IdentificacaoEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "2.2"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new R1000_InfoContri()
+            infoContri = new R1000InfoContribuinte()
             {
-                Item = new R1000_Alteracao()
+                Item = new R1000Alteracao()
                 {
-                    idePeriodo = new ReinfEvtIdePeriodo()
+                    idePeriodo = new IdentificacaoPeriodo()
                     {
                         iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
                     },
-                    infoCadastro = new R1000_InfoCadastro()
+                    infoCadastro = new R1000InfoCadastro()
                     {
                         classTrib = "99",
                         indEscrituracao = ObrigatoriedadeECD.EntregaECD,
@@ -229,16 +229,16 @@ public class R1000Test : BaseEfdReinfTest<R1000>
                         indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
                         indSitPJ = SituacaoPessoaJuridica.Normal,
                         indSitPJSpecified = true,
-                        contato = new R1000_InfoCadastro_Contato()
+                        contato = new R1000InfoCadastroContato()
                         {
                             nmCtt = "Pierre de Fermat",
                             cpfCtt = "47363361886",
                             foneFixo = "3535441234",
                             email = "suporte@eficazcs.com.br"
                         },
-                        softHouse = new R1000_InfoCadastro_SoftwareHouse(),
+                        softHouse = new R1000InfoCadastroSoftwareHouse(),
                     },
-                    novaValidade = new ReinfEvtIdePeriodo()
+                    novaValidade = new IdentificacaoPeriodo()
                     {
                         iniValid = $"{DateTime.Now:yyyy-MM}",
                     }
@@ -249,8 +249,8 @@ public class R1000Test : BaseEfdReinfTest<R1000>
 
     public void ValidaCamposAlteracao(R1000 instanciaPopulada, R1000 instanciaXml)
     {
-        R1000_Alteracao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000_Alteracao;
-        R1000_Alteracao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000_Alteracao;
+        R1000Alteracao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000Alteracao;
+        R1000Alteracao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000Alteracao;
         itemPopulado.Should().NotBeNull();
         itemXml.Should().NotBeNull();
 
@@ -287,24 +287,24 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     #region Exclusao
     internal static void PreencheCamposExclusao(R1000 evento)
     {
-        evento.evtInfoContri = new R1000_EventoInfoContribuinte()
+        evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
-            ideEvento = new ReinfEvtIdeEvento()
+            ideEvento = new IdentificacaoEvento()
             {
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "2.2"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = _cnpj.Substring(0, 8)
             },
-            infoContri = new R1000_InfoContri()
+            infoContri = new R1000InfoContribuinte()
             {
-                Item = new R1000_Exclusao()
+                Item = new R1000Exclusao()
                 {
-                    idePeriodo = new ReinfEvtIdePeriodo()
+                    idePeriodo = new IdentificacaoPeriodo()
                     {
                         iniValid = $"{DateTime.Now:yyyy-MM}",
                     }
@@ -315,8 +315,8 @@ public class R1000Test : BaseEfdReinfTest<R1000>
 
     public void ValidaCamposExclusao(R1000 instanciaPopulada, R1000 instanciaXml)
     {
-        R1000_Exclusao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000_Exclusao;
-        R1000_Exclusao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000_Exclusao;
+        R1000Exclusao itemPopulado = instanciaPopulada.evtInfoContri.infoContri.Item as R1000Exclusao;
+        R1000Exclusao itemXml = instanciaXml.evtInfoContri.infoContri.Item as R1000Exclusao;
         itemPopulado.Should().NotBeNull();
         itemXml.Should().NotBeNull();
 

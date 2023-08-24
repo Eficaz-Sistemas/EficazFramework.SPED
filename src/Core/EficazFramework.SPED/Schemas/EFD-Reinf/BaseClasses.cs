@@ -3,42 +3,10 @@
 namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 
-#region IEfdReinfEvt Abstraction for API Usage
-
-/// <summary>
-/// Utilitário para geração do identificador único de evento, para sua transmissão.
-/// </summary>
-public static class ReinfTimeStampUtils
-{
-    public static Dictionary<string, int> TimestampDict { get; private set; } = new Dictionary<string, int>();
-
-    /// <summary>
-    /// Gera uma string única para ser utilizada como identificar de um evento da EFD-Reinf.
-    /// </summary>
-    /// <returns></returns>
-    public static string GetTimeStampIDForEvent()
-    {
-        int ID = 1;
-        string timeString = string.Format("{0:yyyyMMddHHmmss}", DateTime.Now);
-        if (TimestampDict.ContainsKey(timeString))
-        {
-            ID = TimestampDict[timeString] + 1;
-            TimestampDict[timeString] = ID;
-        }
-        else
-        {
-            TimestampDict.Add(timeString, 1);
-        }
-
-        return string.Format("{0}{1:00000}", timeString, ID);
-    }
-}
-
-
 /// <summary>
 /// Abstração padrão para implementação em todos os eventos da escrituração.
 /// </summary>
-public abstract class IEfdReinfEvt : IXmlSignableDocument, INotifyPropertyChanged
+public abstract class Evento : EfdReinfBindableObject, IXmlSignableDocument
 {
     /// <summary>
     /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita
@@ -50,7 +18,7 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument, INotifyPropertyChange
     private XmlSerializer sSerializer;
 
     /// <summary>
-    /// Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando <see cref="IEfdReinfEvt"/>
+    /// Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando <see cref="Evento"/>
     /// </summary>
     public abstract XmlSerializer DefineSerializer();
 
@@ -97,13 +65,13 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument, INotifyPropertyChange
     /// Substitui o método ToString() de object para retornar o resultado do método <see cref="Serialize"/>
     /// </summary>
     public override string ToString() =>
-        Serialize();
+        Write();
 
     /// <summary>
     /// Serializa o evento da EFD-Reinf para a representação em string do conteúdo do XML.
     /// </summary>
     /// <returns>string XML value</returns>
-    public string Serialize()
+    public string Write()
     {
         System.IO.StreamReader streamReader = null;
         System.IO.MemoryStream memoryStream = null;
@@ -125,56 +93,37 @@ public abstract class IEfdReinfEvt : IXmlSignableDocument, INotifyPropertyChange
         }
         finally
         {
-            if (streamReader != null)
-            {
-                streamReader.Dispose();
-            }
-
-            if (memoryStream != null)
-            {
-                memoryStream.Dispose();
-            }
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
         }
     }
 
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public IEfdReinfEvt Deserialize(string xmlContent)
+    public Evento Read(string xmlContent)
     {
         sSerializer = DefineSerializer();
-        return Deserialize(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as IEfdReinfEvt;
+        return Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
     }
 
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public IEfdReinfEvt Deserialize(System.IO.Stream xmlStream)
+    public Evento Read(System.IO.Stream xmlStream)
     {
         sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
-        return result as IEfdReinfEvt;
+        return result as Evento;
     }
 
-
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
 }
 
-#endregion
-
-#region Generic
 
 /// <summary>
 /// Identificação de Período (iniValid e fimValid)
 /// </summary>
-/// <exclude />
-public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
+public partial class IdentificacaoPeriodo : EfdReinfBindableObject
 {
     private string iniValidField;
     private string fimValidField;
@@ -199,31 +148,21 @@ public partial class ReinfEvtIdePeriodo : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string fimValid
     {
-        get => fimValidField
+        get => fimValidField;
         set
         {
             fimValidField = value;
             RaisePropertyChanged("fimValid");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
 }
+
 
 /// <summary>
 /// Identificação do evento (Ambiente, Emissor e Versao)
 /// </summary>
-/// <exclude />
-public partial class ReinfEvtIdeEvento : object, INotifyPropertyChanged
+public partial class IdentificacaoEvento : EfdReinfBindableObject
 {
-    // , [Namespace]:="http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01"
     private Ambiente tpAmbField;
     private EmissorEvento procEmiField;
     private string verProcField;
@@ -231,7 +170,7 @@ public partial class ReinfEvtIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public Ambiente tpAmb
     {
-        get => tpAmbField
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
@@ -243,11 +182,7 @@ public partial class ReinfEvtIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
@@ -259,187 +194,20 @@ public partial class ReinfEvtIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
             RaisePropertyChanged("verProc");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-/// <summary>
-/// Identificação do contribuinte
-/// </summary>
-/// <exclude />
-public partial class ReinfEvtIdeContri : object, INotifyPropertyChanged
-{
-    private PersonalidadeJuridica tpInscField;
-    private string nrInscField;
-    private ReinfEvtRetIdeContriInfoComplContri infoComplContriField = null;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInsc
-    {
-        get
-        {
-            return tpInscField;
-        }
-
-        set
-        {
-            tpInscField = value;
-            RaisePropertyChanged("tpInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInsc
-    {
-        get
-        {
-            return nrInscField;
-        }
-
-        set
-        {
-            nrInscField = value;
-            RaisePropertyChanged("nrInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public ReinfEvtRetIdeContriInfoComplContri infoComplContri
-    {
-        get
-        {
-            return infoComplContriField;
-        }
-
-        set
-        {
-            infoComplContriField = value;
-            RaisePropertyChanged("infoComplContri");
-        }
-    }
-
-    public string NumeroInscricaoTag()
-    {
-        return Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-/// <remarks/>
-/// <exclude />
-public partial class ReinfEvtRetIdeContriInfoComplContri : object, System.ComponentModel.INotifyPropertyChanged
-{
-
-    private string natJurField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "integer")]
-    public string natJur
-    {
-        get
-        {
-            return this.natJurField;
-        }
-        set
-        {
-            this.natJurField = value;
-            this.RaisePropertyChanged("natJur");
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-/// <summary>
-/// Tabela 6 do Anexo IV: Relação de Serviços para registros R-2010 e R-2020s
-/// </summary>
-/// <exclude />
-public class R2xxx_TabelaServicos : Dictionary<string, string>
-{
-    public R2xxx_TabelaServicos()
-    {
-        Add("--", "Não Aplicável");
-        Add("100000001", "100000001 - Limpeza, conservação ou zeladoria");
-        Add("100000002", "100000002 - Vigilância ou segurança");
-        Add("100000003", "100000003 - Construção civil");
-        Add("100000004", "100000004 - Serviços de natureza rural");
-        Add("100000005", "100000005 - Digitação");
-        Add("100000006", "100000006 - Preparação de dados para processamento");
-        Add("100000007", "100000007 - Acabamento");
-        Add("100000008", "100000008 - Embalagem");
-        Add("100000009", "100000009 - Acondicionamento");
-        Add("100000010", "100000010 - Cobrança");
-        Add("100000011", "100000011 - Coleta ou reciclagem de lixo ou de resíduos");
-        Add("100000012", "100000012 - Copa");
-        Add("100000013", "100000013 - Hotelaria");
-        Add("100000014", "100000014 - Corte ou ligação de serviços públicos");
-        Add("100000015", "100000015 - Distribuição");
-        Add("100000016", "100000016 - Treinamento e ensino");
-        Add("100000017", "100000017 - Entrega de contas e de documentos");
-        Add("100000018", "100000018 - Ligação de medidores");
-        Add("100000019", "100000019 - Leitura de medidores");
-        Add("100000020", "100000020 - Manutenção de instalações, de máquinas ou de equipamentos");
-        Add("100000021", "100000021 - Montagem");
-        Add("100000022", "100000022 - Operação de máquinas, de equipamentos e de veículos");
-        Add("100000023", "100000023 - Operação de pedágio ou de terminal de transporte");
-        Add("100000024", "100000024 - Operação de transporte de passageiros");
-        Add("100000025", "100000025 - Portaria, recepção ou ascensorista");
-        Add("100000026", "100000026 - Recepção, triagem ou movimentação de materiais");
-        Add("100000027", "100000027 - Promoção de vendas ou de eventos");
-        Add("100000028", "100000028 - Secretaria e expediente");
-        Add("100000029", "100000029 - Saúde");
-        Add("100000030", "100000030 - Telefonia ou telemarketing");
-        Add("100000031", "100000031 - Trabalho temporário na forma da Lei nº 6.019, de janeiro de 1974");
-    }
-}
 
 /// <summary>
 /// Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060)
 /// </summary>
-/// <exclude />
-public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
+public partial class IdentificacaoEventoR2000 : EfdReinfBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
@@ -452,11 +220,7 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
-
+        get => indRetifField;
         set
         {
             indRetifField = value;
@@ -468,11 +232,7 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
-
+        get => nrReciboField;
         set
         {
             nrReciboField = value;
@@ -484,11 +244,7 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(DataType = "gYearMonth", Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
-
+        get => perApurField;
         set
         {
             perApurField = value;
@@ -500,11 +256,7 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
@@ -516,11 +268,7 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
@@ -532,35 +280,20 @@ public partial class ReinfEvtIdeEvento_R20xx : object, INotifyPropertyChanged
     [XmlElement(Order = 5)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
             RaisePropertyChanged("verProc");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
+
 
 /// <summary>
 /// Identificação do Evento (Período Apuracao, Ambiente, Emissor e Versao)
 /// </summary>
-/// <exclude />
-public partial class ReinfEvtIdeEventoPeriodicoFechamento : object, INotifyPropertyChanged
+public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
 {
     private string perApurField;
     private Ambiente tpAmbField = Ambiente.Producao;
@@ -571,11 +304,7 @@ public partial class ReinfEvtIdeEventoPeriodicoFechamento : object, INotifyPrope
     [XmlElement(Order = 0)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
-
+        get => perApurField;
         set
         {
             perApurField = value;
@@ -587,11 +316,7 @@ public partial class ReinfEvtIdeEventoPeriodicoFechamento : object, INotifyPrope
     [XmlElement(Order = 1)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
@@ -603,11 +328,7 @@ public partial class ReinfEvtIdeEventoPeriodicoFechamento : object, INotifyPrope
     [XmlElement(Order = 2)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
@@ -619,32 +340,88 @@ public partial class ReinfEvtIdeEventoPeriodicoFechamento : object, INotifyPrope
     [XmlElement(Order = 3)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
             RaisePropertyChanged("verProc");
         }
     }
+}
 
-    public event PropertyChangedEventHandler PropertyChanged;
 
-    protected void RaisePropertyChanged(string propertyName)
+/// <summary>
+/// Identificação do contribuinte
+/// </summary>
+public partial class IdentificacaoContribuinte : EfdReinfBindableObject
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+    private InformacaoComplementarContribuinte infoComplContriField = null;
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public PersonalidadeJuridica tpInsc
     {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
+        get => tpInscField;
+        set
         {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            tpInscField = value;
+            RaisePropertyChanged("tpInsc");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged("nrInsc");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public InformacaoComplementarContribuinte infoComplContri
+    {
+        get => infoComplContriField;
+        set
+        {
+            infoComplContriField = value;
+            RaisePropertyChanged("infoComplContri");
+        }
+    }
+
+    public string NumeroInscricaoTag() =>
+        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
+}
+
+
+public partial class InformacaoComplementarContribuinte : EfdReinfBindableObject
+{
+    private string natJurField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(DataType = "integer")]
+    public string natJur
+    {
+        get => natJurField;
+        set
+        {
+            natJurField = value;
+            RaisePropertyChanged("natJur");
         }
     }
 }
 
-/// <exclude />
-public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChanged
+
+/// <summary>
+/// Identificação do Responsável pelo Envio dos Eventos
+/// </summary>
+public partial class IdentificacaoResponsavel : EfdReinfBindableObject
 {
     private string nmRespField;
     private string cpfRespField;
@@ -655,11 +432,7 @@ public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChang
     [XmlElement(Order = 0)]
     public string nmResp
     {
-        get
-        {
-            return nmRespField;
-        }
-
+        get => nmRespField;
         set
         {
             nmRespField = value;
@@ -671,11 +444,7 @@ public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChang
     [XmlElement(Order = 1)]
     public string cpfResp
     {
-        get
-        {
-            return cpfRespField;
-        }
-
+        get => cpfRespField;
         set
         {
             cpfRespField = value;
@@ -687,11 +456,7 @@ public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChang
     [XmlElement(Order = 2)]
     public string telefone
     {
-        get
-        {
-            return telefoneField;
-        }
-
+        get => telefoneField;
         set
         {
             telefoneField = value;
@@ -703,31 +468,14 @@ public partial class ReinfEvtFechaEvPerIdeRespInf : object, INotifyPropertyChang
     [XmlElement(Order = 3)]
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             emailField = value;
             RaisePropertyChanged("email");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
-
-#endregion
 
 /// <summary>
 /// # Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais<br/>

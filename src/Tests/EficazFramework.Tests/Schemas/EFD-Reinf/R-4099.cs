@@ -81,19 +81,19 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     {
         evento.evtFech = new ReinfEvtFech()
         {
-            ideEvento = new ReinfEvtIdeEventoPeriodicoFechamento()
+            ideEvento = new IdentificacaoEventoFechamento()
             {
                 perApur = "2022-08",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideRespInf = new ReinfEvtFechaEvPerIdeRespInf()
+            ideRespInf = new IdentificacaoResponsavel()
             {
                 nmResp = "Pierre de Fermat",
                 cpfResp = "47363361886",
@@ -136,19 +136,19 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     {
         evento.evtFech = new ReinfEvtFech()
         {
-            ideEvento = new ReinfEvtIdeEventoPeriodicoFechamento()
+            ideEvento = new IdentificacaoEventoFechamento()
             {
                 perApur = "2022-08",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
             },
-            ideContri = new ReinfEvtIdeContri()
+            ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideRespInf = new ReinfEvtFechaEvPerIdeRespInf()
+            ideRespInf = new IdentificacaoResponsavel()
             {
                 nmResp = "Pierre de Fermat",
                 cpfResp = "47363361886",

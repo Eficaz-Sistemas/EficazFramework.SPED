@@ -1,9 +1,9 @@
 #### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
-### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf').[IEfdReinfEvt](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt')
+### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf').[IEvento](EficazFramework.SPED.Schemas.EFD_Reinf/IEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEvento')
 
-## IEfdReinfEvt.ToString() Method
+## IEvento.ToString() Method
 
-Substitui o método ToString() de object para retornar o resultado do método [Serialize()](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt/Serialize().md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt.Serialize()')
+Substitui o método ToString() de object para retornar o resultado do método [Serialize()](EficazFramework.SPED.Schemas.EFD_Reinf/IEvento/Serialize().md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEvento.Serialize()')
 
 ```csharp
 public override string ToString();

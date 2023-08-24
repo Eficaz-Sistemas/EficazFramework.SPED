@@ -4,7 +4,7 @@
 /// Exclusão de eventos
 /// </summary>
 [Serializable()]
-public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R9000 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtExclusao evtExclusaoField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtExclusao evtExclusao
     {
-        get
-        {
-            return evtExclusaoField;
-        }
+        get => evtExclusaoField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
@@ -93,10 +87,7 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtExclusaoIdeEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -109,10 +100,7 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public ReinfEvtExclusaoIdeContri ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -125,10 +113,7 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtExclusaoInfoExclusao infoExclusao
     {
-        get
-        {
-            return infoExclusaoField;
-        }
+        get => infoExclusaoField;
 
         set
         {
@@ -141,10 +126,7 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -180,10 +162,7 @@ public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -196,10 +175,7 @@ public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -212,10 +188,7 @@ public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -250,10 +223,7 @@ public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
+        get => tpInscField;
 
         set
         {
@@ -266,10 +236,7 @@ public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
+        get => nrInscField;
 
         set
         {
@@ -305,10 +272,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 0)]
     public string tpEvento
     {
-        get
-        {
-            return tpEventoField;
-        }
+        get => tpEventoField;
 
         set
         {
@@ -321,10 +285,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 1)]
     public string nrRecEvt
     {
-        get
-        {
-            return nrRecEvtField;
-        }
+        get => nrRecEvtField;
 
         set
         {
@@ -337,10 +298,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
+        get => perApurField;
 
         set
         {

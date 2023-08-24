@@ -34,8 +34,8 @@ public class R2020Test : BaseEfdReinfTest<R2020>
         EficazFramework.SPED.Schemas.EFD_Reinf.R2020 registro = new EficazFramework.SPED.Schemas.EFD_Reinf.R2020();
         evento.evtServPrest = new ReinfEvtServPrest()
         {
-            ideContri = new ReinfEvtIdeContri(),
-            ideEvento = new ReinfEvtIdeEvento_R20xx(),
+            ideContri = new IdentificacaoContribuinte(),
+            ideEvento = new IdentificacaoEventoR2000(),
             infoServPrest = new ReinfEvtServPrestInfoServPrest()
         };
 

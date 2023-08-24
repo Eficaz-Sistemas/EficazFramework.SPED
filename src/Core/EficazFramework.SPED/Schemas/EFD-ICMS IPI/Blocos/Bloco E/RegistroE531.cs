@@ -22,15 +22,15 @@ public class RegistroE531 : Primitives.Registro
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|E531|"); // 1
-        writer.Append(this.CodigoParticipante + "|"); // 2
-        writer.Append(this.EspecieDocumento + "|"); // 3
-        writer.Append(this.Serie.ToFixedLenghtString(3, Alignment.Left, "0") + "|"); // 4
-        writer.Append(this.SubSerie + "|"); // 5
-        writer.Append(this.Numero + "|"); // 6
-        writer.Append(this.DataEmissao.ToSpedString() + "|"); // 7
-        writer.Append(this.CodigoProduto + "|"); // 8
-        writer.Append(string.Format("{0:0.##}", this.ValorAjuste) + "|"); // 9
-        writer.Append(this.ChaveNFe + "|"); // 10
+        writer.Append(CodigoParticipante + "|"); // 2
+        writer.Append(EspecieDocumento + "|"); // 3
+        writer.Append(Serie.ToFixedLenghtString(3, Alignment.Left, "0") + "|"); // 4
+        writer.Append(SubSerie + "|"); // 5
+        writer.Append(Numero + "|"); // 6
+        writer.Append(DataEmissao.ToSpedString() + "|"); // 7
+        writer.Append(CodigoProduto + "|"); // 8
+        writer.Append(string.Format("{0:0.##}", ValorAjuste) + "|"); // 9
+        writer.Append(ChaveNFe + "|"); // 10
         return writer.ToString();
     }
 

@@ -23,9 +23,9 @@ public class RegistroE510 : Primitives.Registro
         writer.Append("|E510|"); // 1
         writer.Append(CFOP + "|"); // 2
         writer.Append($"{(int)CST:00}" + "|"); // 3
-        writer.Append(string.Format("{0:0.##}", this.ValorContabil) + "|"); // 4
-        writer.Append(string.Format("{0:0.##}", this.BaseDeCalculo) + "|"); // 5
-        writer.Append(string.Format("{0:0.##}", this.ValorIpi) + "|"); // 6
+        writer.Append(string.Format("{0:0.##}", ValorContabil) + "|"); // 4
+        writer.Append(string.Format("{0:0.##}", BaseDeCalculo) + "|"); // 5
+        writer.Append(string.Format("{0:0.##}", ValorIpi) + "|"); // 6
         return writer.ToString();
     }
 

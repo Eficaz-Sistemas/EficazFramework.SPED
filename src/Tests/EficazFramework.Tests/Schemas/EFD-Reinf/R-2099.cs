@@ -33,19 +33,19 @@ public class R2099Test : BaseEfdReinfTest<R2099>
     {
         evento.evtFechaEvPer = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPer()
         {
-            ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdeContri()
+            ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
             {
                 tpInsc = EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ,
                 nrInsc = _cnpj.Substring(0, 8)
             },
-            ideEvento = new ReinfEvtIdeEventoPeriodicoFechamento()
+            ideEvento = new IdentificacaoEventoFechamento()
             {
                 perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento.AppContribuinte,
                 verProc = "2.2"
             },
-            ideRespInf = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPerIdeRespInf()
+            ideRespInf = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoResponsavel()
             {
                 nmResp = "Teste",
                 cpfResp = "07448448609",

@@ -4,7 +4,7 @@
 /// Fechamento dos eventos da série R-2000
 /// </summary>
 [Serializable()]
-public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2099 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtFechaEvPer evtFechaEvPerField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtFechaEvPer evtFechaEvPer
     {
-        get
-        {
-            return evtFechaEvPerField;
-        }
+        get => evtFechaEvPerField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         evtFechaEvPerField.id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
@@ -84,20 +78,17 @@ public partial class R2099 : IEfdReinfEvt, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 {
-    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
-    private ReinfEvtFechaEvPerIdeRespInf ideRespInfField;
+    private IdentificacaoEventoFechamento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
+    private IdentificacaoResponsavel ideRespInfField;
     private ReinfEvtFechaEvPerInfoFech infoFechField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento
+    public IdentificacaoEventoFechamento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -108,12 +99,9 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -124,12 +112,9 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtFechaEvPerIdeRespInf ideRespInf
+    public IdentificacaoResponsavel ideRespInf
     {
-        get
-        {
-            return ideRespInfField;
-        }
+        get => ideRespInfField;
 
         set
         {
@@ -142,10 +127,7 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public ReinfEvtFechaEvPerInfoFech infoFech
     {
-        get
-        {
-            return infoFechField;
-        }
+        get => infoFechField;
 
         set
         {
@@ -158,10 +140,7 @@ public partial class ReinfEvtFechaEvPer : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -201,10 +180,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public SimNao evtServTm
     {
-        get
-        {
-            return evtServTmField;
-        }
+        get => evtServTmField;
 
         set
         {
@@ -217,10 +193,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public SimNao evtServPr
     {
-        get
-        {
-            return evtServPrField;
-        }
+        get => evtServPrField;
 
         set
         {
@@ -233,10 +206,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public SimNao evtAssDespRec
     {
-        get
-        {
-            return evtAssDespRecField;
-        }
+        get => evtAssDespRecField;
 
         set
         {
@@ -249,10 +219,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public SimNao evtAssDespRep
     {
-        get
-        {
-            return evtAssDespRepField;
-        }
+        get => evtAssDespRepField;
 
         set
         {
@@ -265,10 +232,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public SimNao evtComProd
     {
-        get
-        {
-            return evtComProdField;
-        }
+        get => evtComProdField;
 
         set
         {
@@ -281,10 +245,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 5)]
     public SimNao evtCPRB
     {
-        get
-        {
-            return evtCPRBField;
-        }
+        get => evtCPRBField;
 
         set
         {
@@ -297,10 +258,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 6)]
     public SimNao evtAquis
     {
-        get
-        {
-            return evtAquisField;
-        }
+        get => evtAquisField;
 
         set
         {
@@ -313,10 +271,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(Order = 7)]
     public SimNao evtPgtos
     {
-        get
-        {
-            return evtPgtosField;
-        }
+        get => evtPgtosField;
 
         set
         {
@@ -329,10 +284,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlIgnore()]
     public bool evtPgtosSpecified
     {
-        get
-        {
-            return evtPgtosFieldSpecified;
-        }
+        get => evtPgtosFieldSpecified;
 
         set
         {
@@ -345,10 +297,7 @@ public partial class ReinfEvtFechaEvPerInfoFech : object, INotifyPropertyChanged
     [XmlElement(DataType = "gYearMonth", Order = 8)]
     public string compSemMovto
     {
-        get
-        {
-            return compSemMovtoField;
-        }
+        get => compSemMovtoField;
 
         set
         {

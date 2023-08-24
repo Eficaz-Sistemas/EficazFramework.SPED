@@ -4,7 +4,7 @@
 /// Receita de espetáculos desportivos
 /// </summary>
 [Serializable()]
-public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R3010 : Evento, INotifyPropertyChanged
 {
     private ReinfEvtEspDesportivo evtEspDesportivoField;
     private SignatureType signatureField;
@@ -13,10 +13,7 @@ public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtEspDesportivo evtEspDesportivo
     {
-        get
-        {
-            return evtEspDesportivoField;
-        }
+        get => evtEspDesportivoField;
 
         set
         {
@@ -29,10 +26,7 @@ public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
@@ -42,7 +36,7 @@ public partial class R3010 : IEfdReinfEvt, INotifyPropertyChanged
     }
 
 
-    // IEfdReinfEvt Members
+    // Evento Members
     public override void GeraEventoID()
     {
         // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
@@ -93,10 +87,7 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public ReinfEvtEspDesportivoIdeEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
@@ -109,10 +100,7 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public ReinfEvtEspDesportivoIdeContri ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
@@ -125,10 +113,7 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
@@ -165,10 +150,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
+        get => indRetifField;
 
         set
         {
@@ -181,10 +163,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
+        get => nrReciboField;
 
         set
         {
@@ -197,10 +176,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(DataType = "date", Order = 2)]
     public DateTime dtApuracao
     {
-        get
-        {
-            return dtApuracaoField;
-        }
+        get => dtApuracaoField;
 
         set
         {
@@ -213,10 +189,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(Order = 3)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
+        get => tpAmbField;
 
         set
         {
@@ -229,10 +202,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(Order = 4)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
+        get => procEmiField;
 
         set
         {
@@ -245,10 +215,7 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
     [XmlElement(Order = 5)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
+        get => verProcField;
 
         set
         {
@@ -282,10 +249,7 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
+        get => tpInscField;
 
         set
         {
@@ -298,10 +262,7 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
+        get => nrInscField;
 
         set
         {
@@ -314,10 +275,7 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
     [XmlElement("ideEstab", Order = 2)]
     public ReinfEvtEspDesportivoIdeContriIdeEstab[] ideEstab
     {
-        get
-        {
-            return ideEstabField;
-        }
+        get => ideEstabField;
 
         set
         {
@@ -351,10 +309,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInscEstab
     {
-        get
-        {
-            return tpInscEstabField;
-        }
+        get => tpInscEstabField;
 
         set
         {
@@ -367,10 +322,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
     [XmlElement(Order = 1)]
     public string nrInscEstab
     {
-        get
-        {
-            return nrInscEstabField;
-        }
+        get => nrInscEstabField;
 
         set
         {
@@ -383,10 +335,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
     [XmlElement("boletim", Order = 2)]
     public ReinfEvtEspDesportivoIdeContriIdeEstabBoletim[] boletim
     {
-        get
-        {
-            return boletimField;
-        }
+        get => boletimField;
 
         set
         {
@@ -399,10 +348,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
     [XmlElement(Order = 3)]
     public ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal receitaTotal
     {
-        get
-        {
-            return receitaTotalField;
-        }
+        get => receitaTotalField;
 
         set
         {
@@ -449,10 +395,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 0)]
     public string nrBoletim
     {
-        get
-        {
-            return nrBoletimField;
-        }
+        get => nrBoletimField;
 
         set
         {
@@ -465,10 +408,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 1)]
     public TipoCompeticao tpCompeticao
     {
-        get
-        {
-            return tpCompeticaoField;
-        }
+        get => tpCompeticaoField;
 
         set
         {
@@ -481,10 +421,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 2)]
     public CategoriaEvento categEvento
     {
-        get
-        {
-            return categEventoField;
-        }
+        get => categEventoField;
 
         set
         {
@@ -497,10 +434,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 3)]
     public string modDesportiva
     {
-        get
-        {
-            return modDesportivaField;
-        }
+        get => modDesportivaField;
 
         set
         {
@@ -513,10 +447,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 4)]
     public string nomeCompeticao
     {
-        get
-        {
-            return nomeCompeticaoField;
-        }
+        get => nomeCompeticaoField;
 
         set
         {
@@ -529,10 +460,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 5)]
     public string cnpjMandante
     {
-        get
-        {
-            return cnpjMandanteField;
-        }
+        get => cnpjMandanteField;
 
         set
         {
@@ -545,10 +473,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 6)]
     public string cnpjVisitante
     {
-        get
-        {
-            return cnpjVisitanteField;
-        }
+        get => cnpjVisitanteField;
 
         set
         {
@@ -561,10 +486,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 7)]
     public string nomeVisitante
     {
-        get
-        {
-            return nomeVisitanteField;
-        }
+        get => nomeVisitanteField;
 
         set
         {
@@ -577,10 +499,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 8)]
     public string pracaDesportiva
     {
-        get
-        {
-            return pracaDesportivaField;
-        }
+        get => pracaDesportivaField;
 
         set
         {
@@ -593,10 +512,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 9)]
     public uint codMunic
     {
-        get
-        {
-            return codMunicField;
-        }
+        get => codMunicField;
 
         set
         {
@@ -609,10 +525,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlIgnore()]
     public bool codMunicSpecified
     {
-        get
-        {
-            return codMunicFieldSpecified;
-        }
+        get => codMunicFieldSpecified;
 
         set
         {
@@ -625,10 +538,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 10)]
     public string uf
     {
-        get
-        {
-            return ufField;
-        }
+        get => ufField;
 
         set
         {
@@ -641,10 +551,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 11)]
     public uint qtdePagantes
     {
-        get
-        {
-            return qtdePagantesField;
-        }
+        get => qtdePagantesField;
 
         set
         {
@@ -657,10 +564,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement(Order = 12)]
     public uint qtdeNaoPagantes
     {
-        get
-        {
-            return qtdeNaoPagantesField;
-        }
+        get => qtdeNaoPagantesField;
 
         set
         {
@@ -673,10 +577,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement("receitaIngressos", Order = 13)]
     public ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[] receitaIngressos
     {
-        get
-        {
-            return receitaIngressosField;
-        }
+        get => receitaIngressosField;
 
         set
         {
@@ -689,10 +590,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     [XmlElement("outrasReceitas", Order = 14)]
     public ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[] outrasReceitas
     {
-        get
-        {
-            return outrasReceitasField;
-        }
+        get => outrasReceitasField;
 
         set
         {
@@ -729,10 +627,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 0)]
     public TipoIngressoCompeticao tpIngresso
     {
-        get
-        {
-            return tpIngressoField;
-        }
+        get => tpIngressoField;
 
         set
         {
@@ -745,10 +640,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 1)]
     public string descIngr
     {
-        get
-        {
-            return descIngrField;
-        }
+        get => descIngrField;
 
         set
         {
@@ -761,10 +653,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 2)]
     public uint qtdeIngrVenda
     {
-        get
-        {
-            return qtdeIngrVendaField;
-        }
+        get => qtdeIngrVendaField;
 
         set
         {
@@ -777,10 +666,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 3)]
     public uint qtdeIngrVendidos
     {
-        get
-        {
-            return qtdeIngrVendidosField;
-        }
+        get => qtdeIngrVendidosField;
 
         set
         {
@@ -793,10 +679,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 4)]
     public uint qtdeIngrDev
     {
-        get
-        {
-            return qtdeIngrDevField;
-        }
+        get => qtdeIngrDevField;
 
         set
         {
@@ -809,10 +692,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 5)]
     public string precoIndiv
     {
-        get
-        {
-            return precoIndivField;
-        }
+        get => precoIndivField;
 
         set
         {
@@ -825,10 +705,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
     [XmlElement(Order = 6)]
     public string vlrTotal
     {
-        get
-        {
-            return vlrTotalField;
-        }
+        get => vlrTotalField;
 
         set
         {
@@ -861,10 +738,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
     [XmlElement(Order = 0)]
     public TipoReceitaCompeticao tpReceita
     {
-        get
-        {
-            return tpReceitaField;
-        }
+        get => tpReceitaField;
 
         set
         {
@@ -877,10 +751,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
     [XmlElement(Order = 1)]
     public string vlrReceita
     {
-        get
-        {
-            return vlrReceitaField;
-        }
+        get => vlrReceitaField;
 
         set
         {
@@ -893,10 +764,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
     [XmlElement(Order = 2)]
     public string descReceita
     {
-        get
-        {
-            return descReceitaField;
-        }
+        get => descReceitaField;
 
         set
         {
@@ -932,10 +800,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement(Order = 0)]
     public string vlrReceitaTotal
     {
-        get
-        {
-            return vlrReceitaTotalField;
-        }
+        get => vlrReceitaTotalField;
 
         set
         {
@@ -948,10 +813,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement(Order = 1)]
     public string vlrCP
     {
-        get
-        {
-            return vlrCPField;
-        }
+        get => vlrCPField;
 
         set
         {
@@ -964,10 +826,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement(Order = 2)]
     public string vlrCPSuspTotal
     {
-        get
-        {
-            return vlrCPSuspTotalField;
-        }
+        get => vlrCPSuspTotalField;
 
         set
         {
@@ -980,10 +839,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement(Order = 3)]
     public string vlrReceitaClubes
     {
-        get
-        {
-            return vlrReceitaClubesField;
-        }
+        get => vlrReceitaClubesField;
 
         set
         {
@@ -996,10 +852,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement(Order = 4)]
     public string vlrRetParc
     {
-        get
-        {
-            return vlrRetParcField;
-        }
+        get => vlrRetParcField;
 
         set
         {
@@ -1012,10 +865,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
     [XmlElement("infoProc", Order = 5)]
     public ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc[] infoProc
     {
-        get
-        {
-            return infoProcField;
-        }
+        get => infoProcField;
 
         set
         {
@@ -1049,10 +899,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc 
     [XmlElement(Order = 0)]
     public TipoProcesso tpProc
     {
-        get
-        {
-            return tpProcField;
-        }
+        get => tpProcField;
 
         set
         {
@@ -1065,10 +912,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc 
     [XmlElement(Order = 1)]
     public string nrProc
     {
-        get
-        {
-            return nrProcField;
-        }
+        get => nrProcField;
 
         set
         {
@@ -1081,10 +925,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc 
     [XmlElement(Order = 2)]
     public string codSusp
     {
-        get
-        {
-            return codSuspField;
-        }
+        get => codSuspField;
 
         set
         {
@@ -1097,10 +938,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc 
     [XmlElement(Order = 3)]
     public string vlrCPSusp
     {
-        get
-        {
-            return vlrCPSuspField;
-        }
+        get => vlrCPSuspField;
 
         set
         {
