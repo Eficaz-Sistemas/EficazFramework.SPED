@@ -3,6 +3,46 @@
 /// <summary>
 /// Tabela de processos administrativos/judiciais
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R1070()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtTabProcesso = new R1070EventoTabProcesso()
+///     {
+///         ideEvento = new IdentificacaoEvento()
+///         {
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "2.2"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         infoProcesso = new R1070InfoProcesso()
+///         {
+///             Item = new R1070Inclusao() // R1070Alteracao() ou R1070Exclusao()
+///             {
+///                 ideProcesso = new R1070IdentificacaoProcesso()
+///                 {
+///                     tpProc = TipoProcesso.Administrativo,
+///                     nrProc = "123",
+///                     iniValid = "2023-07",
+///                     dadosProcJud = new R1070IdentificacaoProcessoDadosProcJud()
+///                     {
+///                         ufVara = "MG",
+///                         codMunic = "3129707",
+///                         idVara = "..."
+///                     }
+///                 }
+///             }
+///         }
+///     }
+/// }
+/// ```
+/// </example>
 [Serializable()]
 public partial class R1070 : Evento
 {
@@ -21,7 +61,7 @@ public partial class R1070 : Evento
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -35,22 +75,30 @@ public partial class R1070 : Evento
 
 
     // Evento Members
+    /// <exclude/>
+
     public override void GeraEventoID() =>
         evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
 
 
+    /// <exclude/>
     public override string ContribuinteCNPJ() =>
         evtTabProcesso.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtTabProcesso";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
         new XmlSerializer(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
 }

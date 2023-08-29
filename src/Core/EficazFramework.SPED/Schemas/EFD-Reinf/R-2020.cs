@@ -3,15 +3,75 @@
 /// <summary>
 /// Retenção de contribuição previdenciária – serviços prestados
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R2020()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtServPrest = new R2020EventoServicoPrestado()
+///     {
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = _cnpj.Substring(0, 8)
+///         },
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             procEmi = EmissorEvento.AppContribuinte,
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             verProc = "2.2"
+///         },
+///         infoServPrest = new R2020ServicoPrestado()
+///         {
+///             ideEstabPrest = new R2020IdentificacaoEstabPrestacao()
+///             {
+///                 tpInscEstabPrest = PersonalidadeJuridica.CNPJ,
+///                 nrInscEstabPrest = _cnpj,
+///                 ideTomador = new R2020IdentificacaoTomadorServico()
+///                 {
+///                     tpInscTomador = PersonalidadeJuridica.CNPJ,
+///                     nrInscTomador = "61918769000188",
+///                     vlrTotalBruto = "600,00",
+///                     vlrTotalBaseRet = "600,00",
+///                     vlrTotalRetPrinc = "66,00",
+///                     indObra = IndicadorObra.NaoSujeitoCEI,
+///                     nfs = new()
+///                     {
+///                         new R2010eR2020Nfs()
+///                         {
+///                             serie = "0",
+///                             numDocto = "719",
+///                             dtEmissaoNF = new DateTime(DateTime.Now.Year, DateTime.Now.Date.AddMonths(-1).Month, 2),
+///                             vlrBruto = "600,00",
+///                             infoTpServ = new()
+///                             {
+///                                 new R2010eR2020InformacaoServico()
+///                                 {
+///                                     tpServico = "100000001",
+///                                     vlrBaseRet = "600,00",
+///                                     vlrRetencao = "66,00"
+///                                 }
+///                             }
+///                         }
+///                     }
+///                 }
+///             }
+///         },
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
 public partial class R2020 : Evento, INotifyPropertyChanged
 {
-    private ReinfEvtServPrest evtServPrestField;
+    private R2020EventoServicoPrestado evtServPrestField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtServPrest evtServPrest
+    public R2020EventoServicoPrestado evtServPrest
     {
         get => evtServPrestField;
 
@@ -22,7 +82,7 @@ public partial class R2020 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,11 +97,13 @@ public partial class R2020 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
+    /// <exclude/>
     public override void GeraEventoID()
     {
         evtServPrestField.id = string.Format("ID{0}{1}{2}", (int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
     }
 
+    /// <exclude/>
     public override string ContribuinteCNPJ()
     {
         return evtServPrest.ideContri.nrInsc;
@@ -49,25 +111,18 @@ public partial class R2020 : Evento, INotifyPropertyChanged
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtServPrest";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer()
     {
         return new XmlSerializer(typeof(R2020), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/{Versao}", IsNullable = false });
@@ -76,16 +131,16 @@ public partial class R2020 : Evento, INotifyPropertyChanged
 
 
 /// <exclude />
-public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
+public partial class R2020EventoServicoPrestado : EfdReinfBindableObject
 {
-    private IdentificacaoEventoR2000 ideEventoField;
+    private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtServPrestInfoServPrest infoServPrestField;
+    private R2020ServicoPrestado infoServPrestField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IdentificacaoEventoR2000 ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
 
@@ -111,7 +166,7 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtServPrestInfoServPrest infoServPrest
+    public R2020ServicoPrestado infoServPrest
     {
         get => infoServPrestField;
 
@@ -134,28 +189,17 @@ public partial class ReinfEvtServPrest : object, INotifyPropertyChanged
             RaisePropertyChanged("id");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyChanged
+public partial class R2020ServicoPrestado : EfdReinfBindableObject
 {
-    private ReinfEvtServPrestInfoServPrestIdeEstabPrest ideEstabPrestField;
+    private R2020IdentificacaoEstabPrestacao ideEstabPrestField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtServPrestInfoServPrestIdeEstabPrest ideEstabPrest
+    public R2020IdentificacaoEstabPrestacao ideEstabPrest
     {
         get => ideEstabPrestField;
 
@@ -165,26 +209,15 @@ public partial class ReinfEvtServPrestInfoServPrest : object, INotifyPropertyCha
             RaisePropertyChanged("ideEstabPrest");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INotifyPropertyChanged
+public partial class R2020IdentificacaoEstabPrestacao : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscEstabPrestField;
     private string nrInscEstabPrestField;
-    private ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador ideTomadorField;
+    private R2020IdentificacaoTomadorServico ideTomadorField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -214,7 +247,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador ideTomador
+    public R2020IdentificacaoTomadorServico ideTomador
     {
         get => ideTomadorField;
 
@@ -224,22 +257,11 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrest : object, INoti
             RaisePropertyChanged("ideTomador");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : object, INotifyPropertyChanged
+public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscTomadorField;
     private string nrInscTomadorField;
@@ -250,9 +272,9 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
     private string vlrTotalRetAdicField;
     private string vlrTotalNRetPrincField;
     private string vlrTotalNRetAdicField;
-    private List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs> nfsField = new List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs>();
-    private List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr> infoProcRetPrField = new List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr>();
-    private List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd> infoProcRetAdField = new List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd>();
+    private List<R2010eR2020Nfs> nfsField = new();
+    private List<R2010eR2020ProcessoRelacionado> infoProcRetPrField = new();
+    private List<R2010eR2020ProcessoRelacionadoAdic> infoProcRetAdField = new();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -400,7 +422,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
 
     /// <remarks/>
     [XmlElement("nfs", Order = 9)]
-    public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs> nfs
+    public List<R2010eR2020Nfs> nfs
     {
         get => nfsField;
 
@@ -413,7 +435,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
 
     /// <remarks/>
     [XmlElement("infoProcRetPr", Order = 10)]
-    public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr> infoProcRetPr
+    public List<R2010eR2020ProcessoRelacionado> infoProcRetPr
     {
         get => infoProcRetPrField;
 
@@ -426,7 +448,7 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
 
     /// <remarks/>s
     [XmlElement("infoProcRetAd", Order = 11)]
-    public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd> infoProcRetAd
+    public List<R2010eR2020ProcessoRelacionadoAdic> infoProcRetAd
     {
         get => infoProcRetAdField;
 
@@ -434,421 +456,6 @@ public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador : obj
         {
             infoProcRetAdField = value;
             RaisePropertyChanged("infoProcRetAd");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs : object, INotifyPropertyChanged
-{
-    private string serieField;
-    private string numDoctoField;
-    private DateTime dtEmissaoNFField;
-    private string vlrBrutoField;
-    private string obsField;
-    private List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ> infoTpServField = new List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ>();
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string serie
-    {
-        get => serieField;
-
-        set
-        {
-            serieField = value;
-            RaisePropertyChanged("serie");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string numDocto
-    {
-        get => numDoctoField;
-
-        set
-        {
-            numDoctoField = value;
-            RaisePropertyChanged("numDocto");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(DataType = "date", Order = 2)]
-    public DateTime dtEmissaoNF
-    {
-        get => dtEmissaoNFField;
-
-        set
-        {
-            dtEmissaoNFField = value;
-            RaisePropertyChanged("dtEmissaoNF");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string vlrBruto
-    {
-        get => vlrBrutoField;
-
-        set
-        {
-            vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public string obs
-    {
-        get => obsField;
-
-        set
-        {
-            obsField = value;
-            RaisePropertyChanged("obs");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement("infoTpServ", Order = 5)]
-    public List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ> infoTpServ
-    {
-        get => infoTpServField;
-
-        set
-        {
-            infoTpServField = value;
-            RaisePropertyChanged("infoTpServ");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ : object, INotifyPropertyChanged
-{
-    private string tpServicoField;
-    private string vlrBaseRetField;
-    private string vlrRetencaoField;
-    private string vlrRetSubField;
-    private string vlrNRetPrincField;
-    private string vlrServicos15Field;
-    private string vlrServicos20Field;
-    private string vlrServicos25Field;
-    private string vlrAdicionalField;
-    private string vlrNRetAdicField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string tpServico
-    {
-        get => tpServicoField;
-
-        set
-        {
-            tpServicoField = value;
-            RaisePropertyChanged("tpServico");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string vlrBaseRet
-    {
-        get => vlrBaseRetField;
-
-        set
-        {
-            vlrBaseRetField = value;
-            RaisePropertyChanged("vlrBaseRet");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string vlrRetencao
-    {
-        get => vlrRetencaoField;
-
-        set
-        {
-            vlrRetencaoField = value;
-            RaisePropertyChanged("vlrRetencao");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string vlrRetSub
-    {
-        get => vlrRetSubField;
-
-        set
-        {
-            vlrRetSubField = value;
-            RaisePropertyChanged("vlrRetSub");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public string vlrNRetPrinc
-    {
-        get => vlrNRetPrincField;
-
-        set
-        {
-            vlrNRetPrincField = value;
-            RaisePropertyChanged("vlrNRetPrinc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 5)]
-    public string vlrServicos15
-    {
-        get => vlrServicos15Field;
-
-        set
-        {
-            vlrServicos15Field = value;
-            RaisePropertyChanged("vlrServicos15");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 6)]
-    public string vlrServicos20
-    {
-        get => vlrServicos20Field;
-
-        set
-        {
-            vlrServicos20Field = value;
-            RaisePropertyChanged("vlrServicos20");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 7)]
-    public string vlrServicos25
-    {
-        get => vlrServicos25Field;
-
-        set
-        {
-            vlrServicos25Field = value;
-            RaisePropertyChanged("vlrServicos25");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 8)]
-    public string vlrAdicional
-    {
-        get => vlrAdicionalField;
-
-        set
-        {
-            vlrAdicionalField = value;
-            RaisePropertyChanged("vlrAdicional");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 9)]
-    public string vlrNRetAdic
-    {
-        get => vlrNRetAdicField;
-
-        set
-        {
-            vlrNRetAdicField = value;
-            RaisePropertyChanged("vlrNRetAdic");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr : object, INotifyPropertyChanged
-{
-    private TipoProcesso tpProcRetPrincField;
-    private string nrProcRetPrincField;
-    private string codSuspPrincField;
-    private string valorPrincField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoProcesso tpProcRetPrinc
-    {
-        get => tpProcRetPrincField;
-
-        set
-        {
-            tpProcRetPrincField = value;
-            RaisePropertyChanged("tpProcRetPrinc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrProcRetPrinc
-    {
-        get => nrProcRetPrincField;
-
-        set
-        {
-            nrProcRetPrincField = value;
-            RaisePropertyChanged("nrProcRetPrinc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string codSuspPrinc
-    {
-        get => codSuspPrincField;
-
-        set
-        {
-            codSuspPrincField = value;
-            RaisePropertyChanged("codSuspPrinc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string valorPrinc
-    {
-        get => valorPrincField;
-
-        set
-        {
-            valorPrincField = value;
-            RaisePropertyChanged("valorPrinc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd : object, INotifyPropertyChanged
-{
-    private TipoProcesso tpProcRetAdicField;
-    private string nrProcRetAdicField;
-    private string codSuspAdicField;
-    private string valorAdicField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoProcesso tpProcRetAdic
-    {
-        get => tpProcRetAdicField;
-
-        set
-        {
-            tpProcRetAdicField = value;
-            RaisePropertyChanged("tpProcRetAdic");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrProcRetAdic
-    {
-        get => nrProcRetAdicField;
-
-        set
-        {
-            nrProcRetAdicField = value;
-            RaisePropertyChanged("nrProcRetAdic");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string codSuspAdic
-    {
-        get => codSuspAdicField;
-
-        set
-        {
-            codSuspAdicField = value;
-            RaisePropertyChanged("codSuspAdic");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string valorAdic
-    {
-        get => valorAdicField;
-
-        set
-        {
-            valorAdicField = value;
-            RaisePropertyChanged("valorAdic");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

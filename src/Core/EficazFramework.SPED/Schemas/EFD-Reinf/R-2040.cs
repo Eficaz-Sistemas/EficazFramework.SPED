@@ -78,13 +78,13 @@ public partial class R2040 : Evento, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtAssocDespRep : object, INotifyPropertyChanged
 {
-    private IdentificacaoEventoR2000 ideEventoField;
+    private IdentificacaoEventoPeriodico ideEventoField;
     private ReinfEvtAssocDespRepIdeContri ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IdentificacaoEventoR2000 ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
 

@@ -1,4 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+﻿using System.Collections.Generic;
+
+namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 public class R2020Test : BaseEfdReinfTest<R2020>
 {
@@ -31,56 +33,59 @@ public class R2020Test : BaseEfdReinfTest<R2020>
 
     public static void PreencheCamposR2020(R2020 evento)
     {
-        EficazFramework.SPED.Schemas.EFD_Reinf.R2020 registro = new EficazFramework.SPED.Schemas.EFD_Reinf.R2020();
-        evento.evtServPrest = new ReinfEvtServPrest()
+        evento.evtServPrest = new R2020EventoServicoPrestado()
         {
-            ideContri = new IdentificacaoContribuinte(),
-            ideEvento = new IdentificacaoEventoR2000(),
-            infoServPrest = new ReinfEvtServPrestInfoServPrest()
-        };
-
-        //ideContri
-        evento.evtServPrest.ideContri.tpInsc = PersonalidadeJuridica.CNPJ;
-        evento.evtServPrest.ideContri.nrInsc = _cnpj.Substring(0, 8);
-
-        //ideEvento
-        evento.evtServPrest.ideEvento.indRetif = IndicadorRetificacao.Original;
-        evento.evtServPrest.ideEvento.perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}";
-        evento.evtServPrest.ideEvento.procEmi = EmissorEvento.AppContribuinte;
-        evento.evtServPrest.ideEvento.tpAmb = Ambiente.ProducaoRestrita_DadosReais;
-        evento.evtServPrest.ideEvento.verProc = "2.2";
-
-        //evtServTom
-        evento.evtServPrest.infoServPrest.ideEstabPrest = new ReinfEvtServPrestInfoServPrestIdeEstabPrest()
-        {
-            tpInscEstabPrest = PersonalidadeJuridica.CNPJ,
-            nrInscEstabPrest = _cnpj,
-            ideTomador = new ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador()
-        };
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.tpInscTomador = PersonalidadeJuridica.CNPJ;
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nrInscTomador = "61918769000188";
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.vlrTotalBruto = "600,00";
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.vlrTotalBaseRet = "600,00";
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.vlrTotalRetPrinc = "66,00";
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.indObra = IndicadorObra.NaoSujeitoCEI;
-        evento.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs.Add(new ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs()
-        {
-            serie = "0",
-            numDocto = "719",
-            dtEmissaoNF = new DateTime(DateTime.Now.Year, DateTime.Now.Date.AddMonths(-1).Month, 2),
-            vlrBruto = "600,00",
-            infoTpServ = new System.Collections.Generic.List<ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ>()
+            ideContri = new IdentificacaoContribuinte()
             {
-                new ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ()
+                tpInsc = PersonalidadeJuridica.CNPJ,
+                nrInsc = _cnpj.Substring(0, 8)
+            },
+            ideEvento = new IdentificacaoEventoPeriodico()
+            {
+                indRetif = IndicadorRetificacao.Original,
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                procEmi = EmissorEvento.AppContribuinte,
+                tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+                verProc = "2.2"
+            },
+            infoServPrest = new R2020ServicoPrestado()
+            {
+                ideEstabPrest = new R2020IdentificacaoEstabPrestacao()
                 {
-                    tpServico = "100000001",
-                    vlrBaseRet = "600,00",
-                    vlrRetencao = "66,00"
+                    tpInscEstabPrest = PersonalidadeJuridica.CNPJ,
+                    nrInscEstabPrest = _cnpj,
+                    ideTomador = new R2020IdentificacaoTomadorServico()
+                    {
+                        tpInscTomador = PersonalidadeJuridica.CNPJ,
+                        nrInscTomador = "61918769000188",
+                        vlrTotalBruto = "600,00",
+                        vlrTotalBaseRet = "600,00",
+                        vlrTotalRetPrinc = "66,00",
+                        indObra = IndicadorObra.NaoSujeitoCEI,
+                        nfs = new List<R2010eR2020Nfs>()
+                        {
+                            new R2010eR2020Nfs()
+                            {
+                                serie = "0",
+                                numDocto = "719",
+                                dtEmissaoNF = new DateTime(DateTime.Now.Year, DateTime.Now.Date.AddMonths(-1).Month, 2),
+                                vlrBruto = "600,00",
+                                infoTpServ = new List<R2010eR2020InformacaoServico>()
+                                {
+                                    new R2010eR2020InformacaoServico()
+                                    {
+                                        tpServico = "100000001",
+                                        vlrBaseRet = "600,00",
+                                        vlrRetencao = "66,00"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-        });
+            },
+        };
     }
-
 
     public override void ValidaInstanciasLeituraEscrita(R2020 instanciaPopulada, R2020 instanciaXml)
     {
@@ -125,4 +130,6 @@ public class R2020Test : BaseEfdReinfTest<R2020>
             iDetAquis += 1;
         });
     }
+
+
 }

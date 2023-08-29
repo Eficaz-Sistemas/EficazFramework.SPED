@@ -207,7 +207,7 @@ public partial class IdentificacaoEvento : EfdReinfBindableObject
 /// <summary>
 /// Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060)
 /// </summary>
-public partial class IdentificacaoEventoR2000 : EfdReinfBindableObject
+public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
