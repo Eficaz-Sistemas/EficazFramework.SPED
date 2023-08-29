@@ -10,26 +10,26 @@
 ///     Versao = Versao.v2_01_02,
 ///     evtInfoContri = new R1000_EventoInfoContribuinte()
 ///     {
-///         ideEvento = new ReinfEvtIdeEvento()
+///         ideEvento = new IdentificacaoEvento()
 ///         {
 ///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
 ///             procEmi = EmissorEvento.AppContribuinte,
 ///             verProc = "2.2"
 ///         },
-///         ideContri = new ReinfEvtIdeContri()
+///         ideContri = new IdentificacaoContribuinte()
 ///         {
 ///             tpInsc = PersonalidadeJuridica.CNPJ,
 ///             nrInsc = "12345678"
 ///         },
-///         infoContri = new R1000_InfoContri()
+///         infoContri = new R1000EventoInfoContribuinte()
 ///         {
-///             Item = new R1000_Inclusao()
+///             Item = new R1000Inclusao() // R1000Alteracao() ou R1000Exclusao()
 ///             {
-///                 idePeriodo = new ReinfEvtIdePeriodo()
+///                 idePeriodo = new IdentificacaoPeriodo()
 ///                 {
 ///                     iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
 ///                 },
-///                 infoCadastro = new R1000_InfoCadastro()
+///                 infoCadastro = new R1000InfoCadastro()
 ///                 {
 ///                     classTrib = "99",
 ///                     indEscrituracao = ObrigatoriedadeECD.EntregaECD,
@@ -37,14 +37,14 @@
 ///                     indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
 ///                     indSitPJ = SituacaoPessoaJuridica.Normal,
 ///                     indSitPJSpecified = true,
-///                     contato = new R1000_InfoCadastro_Contato()
+///                     contato = new R1000InfoCadastroContato()
 ///                     {
 ///                         nmCtt = "Pierre de Fermat",
 ///                         cpfCtt = "47363361886",
 ///                         foneFixo = "3535441234",
 ///                         email = "suporte@eficazcs.com.br"
 ///                     },
-///                     softHouse = new R1000_InfoCadastro_SoftwareHouse()
+///                     softHouse = new R1000InfoCadastroSoftwareHouse()
 ///                 }
 ///             }
 ///         }

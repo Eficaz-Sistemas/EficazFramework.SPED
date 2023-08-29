@@ -78,14 +78,14 @@ public partial class R2060 : Evento, INotifyPropertyChanged
 /// <exclude />
 public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 {
-    private IdentificacaoEventoR2000 ideEventoField;
+    private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
     private ReinfEvtCPRBInfoCPRB infoCPRBField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IdentificacaoEventoR2000 ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
 

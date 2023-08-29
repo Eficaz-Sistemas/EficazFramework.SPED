@@ -1,7 +1,7 @@
 #### [EficazFramework.SPED](EficazFrameworkSPED.md 'EficazFramework SPED')
-### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf').[IEvento](EficazFramework.SPED.Schemas.EFD_Reinf/IEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEvento')
+### [EficazFramework.SPED.Schemas.EFD_Reinf](EficazFramework.SPED.Schemas.EFD_Reinf.md 'EficazFramework.SPED.Schemas.EFD_Reinf').[Evento](EficazFramework.SPED.Schemas.EFD_Reinf/Evento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Evento')
 
-## IEvento.ContribuinteCNPJ() Method
+## Evento.ContribuinteCNPJ() Method
 
 Retorna o CNPJ do Contribuinte titular do evento.
 

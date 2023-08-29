@@ -6,7 +6,8 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 /// Pagamentos/créditos a beneficiário pessoa jurídica
 /// </summary>
 [System.SerializableAttribute()]
-public partial class R4020 : Evento, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4020 : Evento 
+{
     
     private ReinfEvtRetPJ evtRetPJField;
     private SignatureType signatureField;
@@ -52,16 +53,6 @@ public partial class R4020 : Evento, System.ComponentModel.INotifyPropertyChange
     public override string ContribuinteCNPJ()
     {
         return evtRetPJ.ideContri.nrInsc;
-    }
-
-
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
     }
 
 

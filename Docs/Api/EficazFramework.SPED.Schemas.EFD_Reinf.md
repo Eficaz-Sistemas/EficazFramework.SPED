@@ -21,9 +21,18 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 
 | Classes | |
 | :--- | :--- |
-| [IEvento](EficazFramework.SPED.Schemas.EFD_Reinf/IEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEvento') | Interface padrão para implementação em todos os eventos da escrituração. |
+| [EfdReinfBindableObject](EficazFramework.SPED.Schemas.EFD_Reinf/EfdReinfBindableObject.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EfdReinfBindableObject') | |
+| [Evento](EficazFramework.SPED.Schemas.EFD_Reinf/Evento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Evento') | Abstração padrão para implementação em todos os eventos da escrituração. |
+| [IdentificacaoContribuinte](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoContribuinte.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte') | Identificação do contribuinte |
+| [IdentificacaoEvento](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoEvento') | Identificação do evento (Ambiente, Emissor e Versao) |
+| [IdentificacaoEventoFechamento](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoEventoFechamento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoEventoFechamento') | Identificação do Evento (Período Apuracao, Ambiente, Emissor e Versao) |
+| [IdentificacaoEventoPeriodico](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoEventoPeriodico.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoEventoPeriodico') | Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060) |
+| [IdentificacaoPeriodo](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoPeriodo.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoPeriodo') | Identificação de Período (iniValid e fimValid) |
+| [IdentificacaoResponsavel](EficazFramework.SPED.Schemas.EFD_Reinf/IdentificacaoResponsavel.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoResponsavel') | Identificação do Responsável pelo Envio dos Eventos |
+| [InformacaoComplementarContribuinte](EficazFramework.SPED.Schemas.EFD_Reinf/InformacaoComplementarContribuinte.md 'EficazFramework.SPED.Schemas.EFD_Reinf.InformacaoComplementarContribuinte') | |
 | [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | Informações do contribuinte |
 | [R1070](EficazFramework.SPED.Schemas.EFD_Reinf/R1070.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1070') | Tabela de processos administrativos/judiciais |
+| [R2000TabelaServicos](EficazFramework.SPED.Schemas.EFD_Reinf/R2000TabelaServicos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2000TabelaServicos') | Tabela 6 do Anexo IV: Relação de Serviços para registros R-2010 e R-2020s |
 | [R2010](EficazFramework.SPED.Schemas.EFD_Reinf/R2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2010') | Retenção de contribuição previdenciária - serviços tomados |
 | [R2020](EficazFramework.SPED.Schemas.EFD_Reinf/R2020.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2020') | Retenção de contribuição previdenciária – serviços prestados |
 | [R2030](EficazFramework.SPED.Schemas.EFD_Reinf/R2030.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2030') | Recursos recebidos por associação desportiva |
