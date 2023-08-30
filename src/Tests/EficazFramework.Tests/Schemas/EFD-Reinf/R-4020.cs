@@ -104,9 +104,9 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoIsento-PgAssociacoesFilantropicas
     internal static void PreencheCamposRendimentoisento(R4020 evento)
     {
-        evento.evtRetPJ = new ReinfEvtRetPJ()
+        evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -119,26 +119,26 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPJIdeEstab()
+            ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Assistência Social",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
+                    new R4020IdentificacaoPagtoPj()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4020InfoPagtoPj>()
                         {
-                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4020InfoPagtoPj()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),
@@ -225,9 +225,9 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoTributado
     internal static void PreencheCamposRendimentoTributado(R4020 evento)
     {
-        evento.evtRetPJ = new ReinfEvtRetPJ()
+        evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -240,26 +240,26 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPJIdeEstab()
+            ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Auditoria Contábil",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
+                    new R4020IdentificacaoPagtoPj()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4020InfoPagtoPj>()
                         {
-                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4020InfoPagtoPj()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),
@@ -385,9 +385,9 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoTributadoAgregado
     internal static void PreencheCamposRendimentoTributadoAgregado(R4020 evento)
     {
-        evento.evtRetPJ = new ReinfEvtRetPJ()
+        evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -400,26 +400,26 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPJIdeEstab()
+            ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPJIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "10608025000126",
                     nmBenef = "Eficaz Auditoria Contábil",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPJIdeEstabIdeBenefIdePgto()
+                    new R4020IdentificacaoPagtoPj()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4020InfoPagtoPj>()
                         {
-                            new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4020InfoPagtoPj()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),

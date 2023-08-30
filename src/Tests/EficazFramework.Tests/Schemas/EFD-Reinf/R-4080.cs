@@ -26,7 +26,7 @@ public class R4080Test : BaseEfdReinfTest<R4080>
         evento.Versao = _versao;
         evento.evtRetRec = new ReinfEvtRetRec()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",

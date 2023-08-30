@@ -4,14 +4,14 @@
 /// Pagamentos/créditos a beneficiário pessoa física
 /// </summary>
 [System.SerializableAttribute()]
-public partial class R4010 : Evento, INotifyPropertyChanged {
-    
-    private ReinfEvtRetPF evtRetPFField;
+public partial class R4010 : Evento
+{
+    private R4010EventoRetencaoPf evtRetPFField;
     private SignatureType signatureField;
     
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtRetPF evtRetPF
+    public R4010EventoRetencaoPf evtRetPF
     {
         get => evtRetPFField;
         set
@@ -21,7 +21,7 @@ public partial class R4010 : Evento, INotifyPropertyChanged {
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -35,47 +35,38 @@ public partial class R4010 : Evento, INotifyPropertyChanged {
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtRetPFField.id = string.Format("ID{0}{1}{2}", (int)(evtRetPFField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtRetPFField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude
+    public override void GeraEventoID() =>
+        evtRetPFField.id = $"ID{(int)(evtRetPFField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtRetPFField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtRetPFField.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtRetPFField.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtRetPF";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{Versao}", IsNullable = false });
-    }
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4010PagtoBeneficiarioPF/{Versao}", IsNullable = false });
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private ReinfEvtIdeEvento_R40xx ideEventoField;
+public partial class R4010EventoRetencaoPf : EfdReinfBindableObject
+{
+    private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtRetPFIdeEstab ideEstabField;
+    private R4010IdentificacaoEstabelecimentoPf ideEstabField;
     private string idField;
 
     /// <summary>
@@ -83,7 +74,7 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     /// e indicador de retificação (substituição)
     /// </summary>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento_R40xx ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
         set
@@ -113,7 +104,7 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
     /// Neste caso utilizar o CNPJ que realiza o pagamento (Seja ele matrix ou filial)
     /// </summary>
     [XmlElement(Order = 2)]
-    public ReinfEvtRetPFIdeEstab ideEstab
+    public R4010IdentificacaoEstabelecimentoPf ideEstab
     {
         get => ideEstabField;
         set
@@ -133,158 +124,16 @@ public partial class ReinfEvtRetPF : object, System.ComponentModel.INotifyProper
             RaisePropertyChanged("id");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-}
-
-/// <summary>
-/// Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060)
-/// </summary>
-
-/// <exclude />
-public partial class ReinfEvtIdeEvento_R40xx : object, INotifyPropertyChanged
-{
-    private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
-    private string nrReciboField;
-    private string perApurField;
-    private Ambiente tpAmbField = Ambiente.Producao;
-    private EmissorEvento procEmiField = EmissorEvento.AppContribuinte;
-    private string verProcField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public IndicadorRetificacao indRetif
-    {
-        get => indRetifField;
-
-        set
-        {
-            indRetifField = value;
-            RaisePropertyChanged("indRetif");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrRecibo
-    {
-        get => nrReciboField;
-
-        set
-        {
-            nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(DataType = "gYearMonth", Order = 2)]
-    public string perApur
-    {
-        get => perApurField;
-
-        set
-        {
-            perApurField = value;
-            RaisePropertyChanged("perApur");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public Ambiente tpAmb
-    {
-        get => tpAmbField;
-
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public EmissorEvento procEmi
-    {
-        get => procEmiField;
-
-        set
-        {
-            procEmiField = value;
-            RaisePropertyChanged("procEmi");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 5)]
-    public string verProc
-    {
-        get => verProcField;
-
-        set
-        {
-            verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INotifyPropertyChanged
+public partial class R4010IdentificacaoEstabelecimentoPf : R4010eR4020IdentificacaoEstabelecimentoBase
 {
-
-    private PersonalidadeJuridica tpInscEstabField;
-    private string nrInscEstabField;
-
-    private ReinfEvtRetPFIdeEstabIdeBenef ideBenefField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInscEstab
-    {
-        get => tpInscEstabField;
-        set
-        {
-            tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInscEstab
-    {
-        get => nrInscEstabField;
-        set
-        {
-            nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
-        }
-    }
+    private R4010IdentificacaoBeneficiarioPf ideBenefField;
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtRetPFIdeEstabIdeBenef ideBenef
+    public R4010IdentificacaoBeneficiarioPf ideBenef
     {
         get => ideBenefField;
         set
@@ -293,26 +142,16 @@ public partial class ReinfEvtRetPFIdeEstab : object, System.ComponentModel.INoti
             RaisePropertyChanged("ideBenef");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4010IdentificacaoBeneficiarioPf : EfdReinfBindableObject
+{
     
     private string cpfBenefField;
     private string nmBenefField;
-    private List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDepField = new();
-    private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgtoField = new();
+    private List<R4010IdentificacaoDependente> ideDepField = new();
+    private List<R4010IdentificacaoPagtoPf> idePgtoField = new();
     private List<ReinfEvtRetPFIdeEstabIdeBenefIdeOpSaude> ideOpSaudeField = new();
 
     /// <summary>
@@ -348,7 +187,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// utilizados na dedução de IRRF
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("ideDep", Order = 2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep> ideDep
+    public List<R4010IdentificacaoDependente> ideDep
     {
         get => ideDepField;
         set
@@ -362,7 +201,7 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
     /// Listagem dos pagamentos ao beneficiário
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("idePgto", Order = 3)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto> idePgto
+    public List<R4010IdentificacaoPagtoPf> idePgto
     {
         get => idePgtoField;
         set
@@ -386,19 +225,11 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenef : object, System.ComponentMod
             RaisePropertyChanged("ideOpSaude");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeDep : object, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4010IdentificacaoDependente : EfdReinfBindableObject
+{
     
     private string cpfDepField;
     private RelacaoDependencia relDepField = RelacaoDependencia.Conjuge;
@@ -439,51 +270,16 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdeDep : object, System.Compon
             RaisePropertyChanged("descrDep");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgto : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private string natRendField;
-    private string observField;
-    private List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgtoField = new();
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order = 0)]
-    public string natRend
-    {
-        get => natRendField;
-        set
-        {
-            natRendField = value;
-            RaisePropertyChanged("natRend");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string observ
-    {
-        get => observField;
-        set
-        {
-            observField = value;
-            RaisePropertyChanged("observ");
-        }
-    }
+public partial class R4010IdentificacaoPagtoPf : R4010eR4020IdentificacaoPagtoBase
+{
+    private List<R4010InfoPagtoPf> infoPgtoField = new();
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 2)]
-    public List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto> infoPgto
+    public List<R4010InfoPagtoPf> infoPgto
     {
         get => infoPgtoField;
         set
@@ -492,20 +288,11 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgto : object, System.Compo
             RaisePropertyChanged("infoPgto");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
-    
+public partial class R4010InfoPagtoPf : EfdReinfBindableObject
+{
     private System.DateTime dtFGField;
     private string compFPField;
     private string indDecTercField;
@@ -754,15 +541,6 @@ public partial class ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
         {
             infoPgtoExtField = value;
             RaisePropertyChanged("infoPgtoExt");
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -104,9 +104,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoIsento-LucrosDistribuidos
     internal static void PreencheCamposRendimentoisento(R4010 evento)
     {
-        evento.evtRetPF = new ReinfEvtRetPF()
+        evento.evtRetPF = new R4010EventoRetencaoPf()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -119,25 +119,25 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPFIdeEstab()
+            ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
+                    new R4010IdentificacaoPagtoPf()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                         {
-                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4010InfoPagtoPf()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrRendBruto = 152725.25M.ToString("f2"),
@@ -261,9 +261,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoTributado
     internal static void PreencheCamposRendimentoTributado(R4010 evento)
     {
-        evento.evtRetPF = new ReinfEvtRetPF()
+        evento.evtRetPF = new R4010EventoRetencaoPf()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -276,25 +276,25 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPFIdeEstab()
+            ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
+                    new R4010IdentificacaoPagtoPf()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                         {
-                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4010InfoPagtoPf()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrRendBruto = 750.ToString("f2"),
@@ -402,9 +402,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoTributadoComDependente
     internal static void PreencheCamposRendimentoTributadoComDependente(R4010 evento)
     {
-        evento.evtRetPF = new ReinfEvtRetPF()
+        evento.evtRetPF = new R4010EventoRetencaoPf()
         {
-            ideEvento = new ReinfEvtIdeEvento_R40xx()
+            ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
                 perApur = "2022-08",
@@ -417,34 +417,34 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetPFIdeEstab()
+            ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideBenef = new ReinfEvtRetPFIdeEstabIdeBenef()
+                ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
                     cpfBenef = "47363361886",
                     nmBenef = "Pierre de Fermat",
                     // listagem de dependentes (neste teste apenas para dedução de IRRF)
-                    ideDep = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdeDep>()
+                    ideDep = new System.Collections.Generic.List<R4010IdentificacaoDependente>()
                 {
-                    new ReinfEvtRetPFIdeEstabIdeBenefIdeDep()
+                    new R4010IdentificacaoDependente()
                     {
                         cpfDep = "36580385006",
                         relDep = RelacaoDependencia.FilhoOuEnteado
                     }
                 },
                     // listagem de pagamentos
-                    idePgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgto>()
+                    idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
                 {
                     // identificação do pagamento
-                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgto()
+                    new R4010IdentificacaoPagtoPf()
                     {
                         // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto>()
+                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                         {
-                            new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgto()
+                            new R4010InfoPagtoPf()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrRendBruto = 750.ToString("f2"),
