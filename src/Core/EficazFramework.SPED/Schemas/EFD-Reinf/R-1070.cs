@@ -78,7 +78,7 @@ public partial class R1070 : Evento
     /// <exclude/>
 
     public override void GeraEventoID() =>
-        evtTabProcessoField.id = string.Format("ID{0}{1}{2}", (int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
+        evtTabProcessoField.id = $"ID{(int)(evtTabProcessoField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtTabProcessoField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
 
     /// <exclude/>
@@ -100,7 +100,7 @@ public partial class R1070 : Evento
     // Serialization Members
     /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
-        new XmlSerializer(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
+        new(typeof(R1070), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTabProcesso/{Versao}", IsNullable = false });
 }
 
 

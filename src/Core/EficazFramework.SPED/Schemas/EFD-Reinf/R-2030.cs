@@ -3,15 +3,64 @@
 /// <summary>
 /// Recursos recebidos por associação desportiva
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R2030()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtAssocDespRec = new R2030EventoAssociacaoDespRecebim()
+///     {
+///         ideContri = new R2030IdentificacaoContribuinteAssoc()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678",
+///             ideEstab = new R2030IdentificacaoEstabelecimentoAssoc()
+///             {
+///                 tpInscEstab = PersonalidadeJuridica.CNPJ,
+///                 nrInscEstab = "12345678000100",
+///                 recursosRec = new()
+///                 {
+///                     new R2030RecursosRecebidos()
+///                     {
+///                         cnpjOrigRecurso = "61918769000188",
+///                         vlrTotalRec = "600,00",
+///                         vlrTotalNRet = "0,00",
+///                         vlrTotalRet = "60,00",
+///                         infoRecurso = new()
+///                         {
+///                             new R2030eR2040InfoRecurso()
+///                             {
+///                                 tpRepasse = TipoRepasseAssocDesp.Patrocinio,
+///                                 descRecurso = "Exibição da marca durante campeonato nacional",
+///                                 vlrBruto = "660,00",
+///                                 vlrRetApur = "60,00"
+///                             }
+///                         }
+///                     }
+///                 }
+///             }
+///         },
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             procEmi = EmissorEvento.AppContribuinte,
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             verProc = "2.2"
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R2030 : Evento, INotifyPropertyChanged
+public partial class R2030 : Evento
 {
-    private ReinfEvtAssocDespRec evtAssocDespRecField;
+    private R2030EventoAssociacaoDespRecebim evtAssocDespRecField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtAssocDespRec evtAssocDespRec
+    public R2030EventoAssociacaoDespRecebim evtAssocDespRec
     {
         get => evtAssocDespRecField;
 
@@ -22,7 +71,7 @@ public partial class R2030 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,11 +86,11 @@ public partial class R2030 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtAssocDespRec.id = $"ID{(int)(evtAssocDespRec?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtAssocDespRec?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
+    /// <exclude/>
     public override string ContribuinteCNPJ()
     {
         return evtAssocDespRec.ideContri.nrInsc;
@@ -49,25 +98,18 @@ public partial class R2030 : Evento, INotifyPropertyChanged
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtAssocDespRec";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer()
     {
         return new XmlSerializer(typeof(R2030), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtRecursoRecebidoAssociacao/{Versao}", IsNullable = false });
@@ -76,15 +118,15 @@ public partial class R2030 : Evento, INotifyPropertyChanged
 
 
 /// <exclude />
-public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
+public partial class R2030EventoAssociacaoDespRecebim : EfdReinfBindableObject
 {
-    private ReinfEvtAssocDespRecIdeEvento ideEventoField;
-    private ReinfEvtAssocDespRecIdeContri ideContriField;
+    private IdentificacaoEventoPeriodico ideEventoField;
+    private R2030IdentificacaoContribuinteAssoc ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtAssocDespRecIdeEvento ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
 
@@ -97,7 +139,7 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtAssocDespRecIdeContri ideContri
+    public R2030IdentificacaoContribuinteAssoc ideContri
     {
         get => ideContriField;
 
@@ -120,127 +162,15 @@ public partial class ReinfEvtAssocDespRec : object, INotifyPropertyChanged
             RaisePropertyChanged("id");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAssocDespRecIdeEvento : object, INotifyPropertyChanged
-{
-    private IndicadorRetificacao indRetifField;
-    private string nrReciboField;
-    private string perApurField;
-    private Ambiente tpAmbField;
-    private EmissorEvento procEmiField;
-    private string verProcField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public IndicadorRetificacao indRetif
-    {
-        get => indRetifField;
-
-        set
-        {
-            indRetifField = value;
-            RaisePropertyChanged("indRetif");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrRecibo
-    {
-        get => nrReciboField;
-
-        set
-        {
-            nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(DataType = "gYearMonth", Order = 2)]
-    public string perApur
-    {
-        get => perApurField;
-
-        set
-        {
-            perApurField = value;
-            RaisePropertyChanged("perApur");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public Ambiente tpAmb
-    {
-        get => tpAmbField;
-
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public EmissorEvento procEmi
-    {
-        get => procEmiField;
-
-        set
-        {
-            procEmiField = value;
-            RaisePropertyChanged("procEmi");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 5)]
-    public string verProc
-    {
-        get => verProcField;
-
-        set
-        {
-            verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChanged
+public partial class R2030IdentificacaoContribuinteAssoc : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
-    private ReinfEvtAssocDespRecIdeContriIdeEstab ideEstabField;
+    private R2030IdentificacaoEstabelecimentoAssoc ideEstabField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -270,7 +200,7 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtAssocDespRecIdeContriIdeEstab ideEstab
+    public R2030IdentificacaoEstabelecimentoAssoc ideEstab
     {
         get => ideEstabField;
 
@@ -281,25 +211,17 @@ public partial class ReinfEvtAssocDespRecIdeContri : object, INotifyPropertyChan
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public string NumeroInscricaoTag() =>
+        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyPropertyChanged
+public partial class R2030IdentificacaoEstabelecimentoAssoc : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
-    private ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec[] recursosRecField;
+    private List<R2030RecursosRecebidos> recursosRecField = new();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -329,7 +251,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
 
     /// <remarks/>
     [XmlElement("recursosRec", Order = 2)]
-    public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec[] recursosRec
+    public List<R2030RecursosRecebidos> recursosRec
     {
         get => recursosRecField;
 
@@ -339,29 +261,18 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstab : object, INotifyProp
             RaisePropertyChanged("recursosRec");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, INotifyPropertyChanged
+public partial class R2030RecursosRecebidos : EfdReinfBindableObject
 {
     private string cnpjOrigRecursoField;
     private string vlrTotalRecField;
     private string vlrTotalRetField;
     private string vlrTotalNRetField;
-    private ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso[] infoRecursoField;
-    private ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc[] infoProcField;
+    private List<R2030eR2040InfoRecurso> infoRecursoField;
+    private List<R2030eR2040ProcessoRelacionado> infoProcField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -417,7 +328,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
 
     /// <remarks/>
     [XmlElement("infoRecurso", Order = 4)]
-    public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso[] infoRecurso
+    public List<R2030eR2040InfoRecurso> infoRecurso
     {
         get => infoRecursoField;
 
@@ -430,7 +341,7 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
 
     /// <remarks/>
     [XmlElement("infoProc", Order = 5)]
-    public ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc[] infoProc
+    public List<R2030eR2040ProcessoRelacionado> infoProc
     {
         get => infoProcField;
 
@@ -438,163 +349,6 @@ public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec : object, 
         {
             infoProcField = value;
             RaisePropertyChanged("infoProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso : object, INotifyPropertyChanged
-{
-    private TipoRepasseAssocDesp tpRepasseField;
-    private string descRecursoField;
-    private string vlrBrutoField;
-    private string vlrRetApurField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoRepasseAssocDesp tpRepasse
-    {
-        get => tpRepasseField;
-
-        set
-        {
-            tpRepasseField = value;
-            RaisePropertyChanged("tpRepasse");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string descRecurso
-    {
-        get => descRecursoField;
-
-        set
-        {
-            descRecursoField = value;
-            RaisePropertyChanged("descRecurso");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string vlrBruto
-    {
-        get => vlrBrutoField;
-
-        set
-        {
-            vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string vlrRetApur
-    {
-        get => vlrRetApurField;
-
-        set
-        {
-            vlrRetApurField = value;
-            RaisePropertyChanged("vlrRetApur");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc : object, INotifyPropertyChanged
-{
-    private TipoProcesso tpProcField;
-    private string nrProcField;
-    private string codSuspField;
-    private string vlrNRetField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public TipoProcesso tpProc
-    {
-        get => tpProcField;
-
-        set
-        {
-            tpProcField = value;
-            RaisePropertyChanged("tpProc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrProc
-    {
-        get => nrProcField;
-
-        set
-        {
-            nrProcField = value;
-            RaisePropertyChanged("nrProc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string codSusp
-    {
-        get => codSuspField;
-
-        set
-        {
-            codSuspField = value;
-            RaisePropertyChanged("codSusp");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string vlrNRet
-    {
-        get => vlrNRetField;
-
-        set
-        {
-            vlrNRetField = value;
-            RaisePropertyChanged("vlrNRet");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

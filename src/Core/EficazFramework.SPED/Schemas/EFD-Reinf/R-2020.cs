@@ -28,7 +28,7 @@
 ///             ideEstabPrest = new R2020IdentificacaoEstabPrestacao()
 ///             {
 ///                 tpInscEstabPrest = PersonalidadeJuridica.CNPJ,
-///                 nrInscEstabPrest = _cnpj,
+///                 nrInscEstabPrest = "12345678000100",
 ///                 ideTomador = new R2020IdentificacaoTomadorServico()
 ///                 {
 ///                     tpInscTomador = PersonalidadeJuridica.CNPJ,
@@ -64,7 +64,7 @@
 /// ```
 /// </example>
 [Serializable()]
-public partial class R2020 : Evento, INotifyPropertyChanged
+public partial class R2020 : Evento
 {
     private R2020EventoServicoPrestado evtServPrestField;
     private SignatureType signatureField;
@@ -98,16 +98,12 @@ public partial class R2020 : Evento, INotifyPropertyChanged
 
     // Evento Members
     /// <exclude/>
-    public override void GeraEventoID()
-    {
-        evtServPrestField.id = string.Format("ID{0}{1}{2}", (int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    public override void GeraEventoID() =>
+        evtServPrestField.id = $"ID{(int)(evtServPrestField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtServPrestField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
     /// <exclude/>
-    public override string ContribuinteCNPJ()
-    {
-        return evtServPrest.ideContri.nrInsc;
-    }
+    public override string ContribuinteCNPJ() =>
+        evtServPrest.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
@@ -123,10 +119,8 @@ public partial class R2020 : Evento, INotifyPropertyChanged
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R2020), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/{Versao}", IsNullable = false });
-    }
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R2020), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtPrestadorServicos/{Versao}", IsNullable = false });
 }
 
 

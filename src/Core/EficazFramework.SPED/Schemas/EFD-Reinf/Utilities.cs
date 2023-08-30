@@ -30,6 +30,7 @@ public static class ReinfTimeStampUtils
 }
 
 
+/// <exclude/>
 public abstract class EfdReinfBindableObject : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;

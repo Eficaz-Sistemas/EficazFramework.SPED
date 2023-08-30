@@ -123,6 +123,7 @@ public abstract class Evento : EfdReinfBindableObject, IXmlSignableDocument
 /// <summary>
 /// Identificação de Período (iniValid e fimValid)
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoPeriodo : EfdReinfBindableObject
 {
     private string iniValidField;
@@ -161,6 +162,7 @@ public partial class IdentificacaoPeriodo : EfdReinfBindableObject
 /// <summary>
 /// Identificação do evento (Ambiente, Emissor e Versao)
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoEvento : EfdReinfBindableObject
 {
     private Ambiente tpAmbField;
@@ -207,6 +209,7 @@ public partial class IdentificacaoEvento : EfdReinfBindableObject
 /// <summary>
 /// Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060)
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
@@ -293,6 +296,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
 /// <summary>
 /// Identificação do Evento (Período Apuracao, Ambiente, Emissor e Versao)
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
 {
     private string perApurField;
@@ -353,6 +357,7 @@ public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
 /// <summary>
 /// Identificação do contribuinte
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoContribuinte : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscField;
@@ -400,6 +405,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
 }
 
 
+/// <exclude/>
 public partial class InformacaoComplementarContribuinte : EfdReinfBindableObject
 {
     private string natJurField;
@@ -421,6 +427,7 @@ public partial class InformacaoComplementarContribuinte : EfdReinfBindableObject
 /// <summary>
 /// Identificação do Responsável pelo Envio dos Eventos
 /// </summary>
+/// <exclude/>
 public partial class IdentificacaoResponsavel : EfdReinfBindableObject
 {
     private string nmRespField;
@@ -488,10 +495,10 @@ public partial class IdentificacaoResponsavel : EfdReinfBindableObject
 /// ## Objetivo<br/>
 /// Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de Renda, Contribuição Social do contribuinte exceto aquelas relacionadas ao trabalho e informações sobre a receita bruta para a apuração das contribuições previdenciárias substituídas.<br/>
 /// ## Links Úteis<br/>
-/// - [Manual de Orientação ao Usuário, v2.1.1.1](http://sped.rfb.gov.br/arquivo/show/6084)<br/>
-/// - [Manual de Orientação ao Desenvolvedor, v2.0](http://sped.rfb.gov.br/arquivo/show/6118)<br/>
-/// - [Layout, v2.1.1](http://sped.rfb.gov.br/pasta/show/6041)<br/>
-/// - [Schemas XSD, v.2.1.1](http://sped.rfb.gov.br/arquivo/show/6048)<br/>
+/// - [Manual de Orientação ao Usuário, v2.1.2.1](http://sped.rfb.gov.br/arquivo/show/7261)<br/>
+/// - [Manual de Orientação ao Desenvolvedor, v2.3](http://sped.rfb.gov.br/arquivo/show/7258)<br/>
+/// - [Layout, v2.1.2](http://sped.rfb.gov.br/pasta/show/7184)<br/>
+/// - [Schemas XSD, v.2.1.2](http://sped.rfb.gov.br/item/show/7196)<br/>
 /// - [Perguntas e Respostas](http://sped.rfb.gov.br/pastaperguntas/show/1497)<br/>
 /// ## Implementação<br/>
 /// </summary>

@@ -28,7 +28,7 @@
 ///             ideEstabObra = new R2010IdentificacaoEstabObra()
 ///             {
 ///                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-///                 nrInscEstab = _cnpj,
+///                 nrInscEstab = "12345678000100",
 ///                 idePrestServ = new R2010IdentificacaoPrestServico()
 ///                 {
 ///                     cnpjPrestador = "61918769000188",
@@ -97,16 +97,12 @@ public partial class R2010 : Evento
 
     // Evento Members
     /// <exclude/>
-    public override void GeraEventoID()
-    {
-        evtServTomField.id = string.Format("ID{0}{1}{2}", (int)(evtServTomField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtServTomField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    public override void GeraEventoID() =>
+        evtServTomField.id = $"ID{(int)(evtServTomField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtServTomField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
     /// <exclude/>
-    public override string ContribuinteCNPJ()
-    {
-        return evtServTom.ideContri.nrInsc;
-    }
+    public override string ContribuinteCNPJ() =>
+        evtServTom.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
@@ -122,10 +118,8 @@ public partial class R2010 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R2010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{Versao}", IsNullable = false });
-    }
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R2010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTomadorServicos/{Versao}", IsNullable = false });
 }
 
 
