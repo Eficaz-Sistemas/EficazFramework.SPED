@@ -32,6 +32,7 @@ public class IndicadoresIRRF : Dictionary<string, string>
 /// <summary>
 /// Tabela 6 do Anexo IV: Relação de Serviços para registros R-2010 e R-2020s
 /// </summary>
+/// <exclude/>
 public class R2000TabelaServicos : Dictionary<string, string>
 {
     public R2000TabelaServicos()
