@@ -31,43 +31,47 @@ public class R2055Test : BaseEfdReinfTest<R2055>
 
     public static void PreencheCamposR2055(R2055 evento)
     {
-        EficazFramework.SPED.Schemas.EFD_Reinf.R2055 registro = new EficazFramework.SPED.Schemas.EFD_Reinf.R2055();
-        evento.evtAqProd = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfAqProd()
+        evento.evtAqProd = new EficazFramework.SPED.Schemas.EFD_Reinf.R2055EventoAquisProd()
         {
-            ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdIdeContri(),
-            ideEvento = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdIdeEvento(),
-            infoAquisProd = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAqProd(),
+            ideContri = new IdentificacaoContribuinte()
+            {
+                tpInsc = PersonalidadeJuridica.CNPJ,
+                nrInsc = _cnpj.Substring(0, 8)
+            },
+            ideEvento = new IdentificacaoEventoPeriodico()
+            {
+                indRetif = IndicadorRetificacao.Original,
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                procEmi = EmissorEvento.AppContribuinte,
+                tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+                verProc = "2.2"
+            },
+            infoAquisProd = new R2055InfoAquisProd()
+            {
+                ideEstabAdquir = new R2050IdentificacaoEstabAdquirente()
+                {
+                    tpInscAdq = PersonalidadeJuridica.CNPJ,
+                    nrInscAdq = _cnpj,
+                    ideProdutor = new R2055IdentificacaoProdutor()
+                    {
+                        tpInscProd = PersonalidadeJuridica.CPF,
+                        nrInscProd = "07731253619",
+                        detAquis = new()
+                        {
+                            new R2055DetalhamentoAquisicao()
+                            {
+                                indAquis = IndicadorAquisProd.PF,
+                                vlrBruto = $"{1000.01D:#0.00}",
+                                vlrCPDescPR = $"{15.02:#0.00}",
+                                vlrRatDescPR = $"{2.01:#0.00}",
+                                vlrSenarDesc = $"{1.01:#0.00}",
+                                infoProcJud = null
+                            }
+                        }
+                    }
+                }
+            },
         };
-
-        //ideContri
-        evento.evtAqProd.ideContri.tpInsc = PersonalidadeJuridica.CNPJ;
-        evento.evtAqProd.ideContri.nrInsc = _cnpj.Substring(0, 8);
-
-        //ideEvento
-        evento.evtAqProd.ideEvento.indRetif = IndicadorRetificacao.Original;
-        evento.evtAqProd.ideEvento.perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}";
-        evento.evtAqProd.ideEvento.procEmi = EmissorEvento.AppContribuinte;
-        evento.evtAqProd.ideEvento.tpAmb = Ambiente.ProducaoRestrita_DadosReais;
-        evento.evtAqProd.ideEvento.verProc = "2.2";
-
-        //infoAquisProd
-        evento.evtAqProd.infoAquisProd.ideEstabAdquir = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAqProdIdeEstabAdquir()
-        {
-            tpInscAdq = PersonalidadeJuridica.CNPJ,
-            nrInscAdq = _cnpj,
-            ideProdutor = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor()
-        };
-        evento.evtAqProd.infoAquisProd.ideEstabAdquir.ideProdutor.tpInscProd = PersonalidadeJuridica.CPF;
-        evento.evtAqProd.infoAquisProd.ideEstabAdquir.ideProdutor.nrInscProd = "07731253619";
-        evento.evtAqProd.infoAquisProd.ideEstabAdquir.ideProdutor.detAquis.Add(new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis
-        {
-            indAquis = IndicadorAquisProd.PF,
-            vlrBruto = $"{1000.01D:#0.00}",
-            vlrCPDescPR = $"{15.02:#0.00}",
-            vlrRatDescPR = $"{2.01:#0.00}",
-            vlrSenarDesc = $"{1.01:#0.00}",
-            infoProcJud = null
-        });
     }
 
 

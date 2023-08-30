@@ -31,7 +31,7 @@ public class R2099Test : BaseEfdReinfTest<R2099>
 
     public static void PreencheCamposR2099(R2099 evento)
     {
-        evento.evtFechaEvPer = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPer()
+        evento.evtFechaEvPer = new EficazFramework.SPED.Schemas.EFD_Reinf.R2099EventoFechamentoPeriodo()
         {
             ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
             {
@@ -52,7 +52,7 @@ public class R2099Test : BaseEfdReinfTest<R2099>
                 telefone = "3535441511",
                 email = "contato@eficazctb.com.br"
             },
-            infoFech = new EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPerInfoFech()
+            infoFech = new EficazFramework.SPED.Schemas.EFD_Reinf.R2099InformacoesFechamento()
             {
                 evtServTm = SimNao.Nao,
                 evtServPr = SimNao.Nao,

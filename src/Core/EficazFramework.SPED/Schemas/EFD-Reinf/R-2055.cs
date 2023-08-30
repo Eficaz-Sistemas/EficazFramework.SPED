@@ -3,15 +3,63 @@
 /// <summary>
 /// Aquisição de produção rural
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R2055()
+/// {
+///     evtAqProd = new EficazFramework.SPED.Schemas.EFD_Reinf.R2055EventoAquisProd()
+///     {
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             procEmi = EmissorEvento.AppContribuinte,
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             verProc = "2.2"
+///         },
+///         infoAquisProd = new R2055InfoAquisProd()
+///         {
+///             ideEstabAdquir = new R2050IdentificacaoEstabAdquirente()
+///             {
+///                 tpInscAdq = PersonalidadeJuridica.CNPJ,
+///                 nrInscAdq = "12345678000100",
+///                 ideProdutor = new R2055IdentificacaoProdutor()
+///                 {
+///                     tpInscProd = PersonalidadeJuridica.CPF,
+///                     nrInscProd = "07731253619",
+///                     detAquis = new()
+///                     {
+///                         new R2055DetalhamentoAquisicao()
+///                         {
+///                             indAquis = IndicadorAquisProd.PF,
+///                             vlrBruto = $"{1000.01D:#0.00}",
+///                             vlrCPDescPR = $"{15.02:#0.00}",
+///                             vlrRatDescPR = $"{2.01:#0.00}",
+///                             vlrSenarDesc = $"{1.01:#0.00}",
+///                             infoProcJud = null
+///                         }
+///                     }
+///                 }
+///             }
+///         },
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R2055 : Evento, INotifyPropertyChanged
+public partial class R2055 : Evento
 {
-    private ReinfAqProd evtAqProdField;
+    private R2055EventoAquisProd evtAqProdField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfAqProd evtAqProd
+    public R2055EventoAquisProd evtAqProd
     {
         get => evtAqProdField;
 
@@ -22,7 +70,7 @@ public partial class R2055 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,37 +85,28 @@ public partial class R2055 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtAqProdField.id = string.Format("ID{0}{1}{2}", (int)(evtAqProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAqProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtAqProdField.id = $"ID{(int)(evtAqProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtAqProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtAqProd.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtAqProd.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtAqProd";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer()
     {
         return new XmlSerializer(typeof(R2055), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt2055AquisicaoProdRural/{Versao}", IsNullable = false });
@@ -76,16 +115,16 @@ public partial class R2055 : Evento, INotifyPropertyChanged
 
 
 /// <exclude />
-public partial class ReinfAqProd : object, INotifyPropertyChanged
+public partial class R2055EventoAquisProd : EfdReinfBindableObject
 {
-    private ReinfEvtAqProdIdeEvento ideEventoField;
-    private ReinfEvtAqProdIdeContri ideContriField;
-    private ReinfEvtAqProdInfoAqProd infoAqProdField;
+    private IdentificacaoEventoPeriodico ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
+    private R2055InfoAquisProd infoAqProdField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtAqProdIdeEvento ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
 
@@ -98,7 +137,7 @@ public partial class ReinfAqProd : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtAqProdIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
         get => ideContriField;
 
@@ -111,7 +150,7 @@ public partial class ReinfAqProd : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtAqProdInfoAqProd infoAquisProd
+    public R2055InfoAquisProd infoAquisProd
     {
         get => infoAqProdField;
 
@@ -134,181 +173,17 @@ public partial class ReinfAqProd : object, INotifyPropertyChanged
             RaisePropertyChanged("id");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAqProdIdeEvento : object, INotifyPropertyChanged
+public partial class R2055InfoAquisProd : EfdReinfBindableObject
 {
-    private IndicadorRetificacao indRetifField;
-    private string nrReciboField;
-    private string perApurField;
-    private Ambiente tpAmbField;
-    private EmissorEvento procEmiField;
-    private string verProcField;
+    private R2050IdentificacaoEstabAdquirente ideEstabField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public IndicadorRetificacao indRetif
-    {
-        get => indRetifField;
-
-        set
-        {
-            indRetifField = value;
-            RaisePropertyChanged("indRetif");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrRecibo
-    {
-        get => nrReciboField;
-
-        set
-        {
-            nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(DataType = "gYearMonth", Order = 2)]
-    public string perApur
-    {
-        get => perApurField;
-
-        set
-        {
-            perApurField = value;
-            RaisePropertyChanged("perApur");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public Ambiente tpAmb
-    {
-        get => tpAmbField;
-
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public EmissorEvento procEmi
-    {
-        get => procEmiField;
-
-        set
-        {
-            procEmiField = value;
-            RaisePropertyChanged("procEmi");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 5)]
-    public string verProc
-    {
-        get => verProcField;
-
-        set
-        {
-            verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtAqProdIdeContri : object, INotifyPropertyChanged
-{
-    private PersonalidadeJuridica tpInscField;
-    private string nrInscField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInsc
-    {
-        get => tpInscField;
-
-        set
-        {
-            tpInscField = value;
-            RaisePropertyChanged("tpInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInsc
-    {
-        get => nrInscField;
-
-        set
-        {
-            nrInscField = value;
-            RaisePropertyChanged("nrInsc");
-        }
-    }
-
-    public string NumeroInscricaoTag()
-    {
-        return Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <exclude />
-public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
-{
-    private ReinfEvtAqProdInfoAqProdIdeEstabAdquir ideEstabField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public ReinfEvtAqProdInfoAqProdIdeEstabAdquir ideEstabAdquir
+    public R2050IdentificacaoEstabAdquirente ideEstabAdquir
     {
         get => ideEstabField;
 
@@ -318,26 +193,15 @@ public partial class ReinfEvtAqProdInfoAqProd : object, INotifyPropertyChanged
             RaisePropertyChanged("ideEstabAdquir");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPropertyChanged
+public partial class R2050IdentificacaoEstabAdquirente : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscAdqField;
     private string nrInscAdqField;
-    ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor tipoComField;
+    R2055IdentificacaoProdutor tipoComField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -367,7 +231,7 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
 
     /// <remarks/>
     [XmlElement("ideProdutor", Order = 2)]
-    public ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor ideProdutor
+    public R2055IdentificacaoProdutor ideProdutor
     {
         get => tipoComField;
 
@@ -377,27 +241,16 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabAdquir : object, INotifyPro
             RaisePropertyChanged("ideProdutor");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, INotifyPropertyChanged
+public partial class R2055IdentificacaoProdutor : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscProdField;
     private string nrInscProdField;
     private string indOpcCPField;
-    List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> _detAquisField = new List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis>();
+    List<R2055DetalhamentoAquisicao> _detAquisField = new List<R2055DetalhamentoAquisicao>();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -440,7 +293,7 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public List<ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis> detAquis
+    public List<R2055DetalhamentoAquisicao> detAquis
     {
         get => _detAquisField;
 
@@ -455,61 +308,18 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor : object, IN
     {
         return (indOpcCPField ?? "").ToUpper() == "S";
     }
-
-    ///// <remarks/>
-    //[XmlElement(Order = 1)]
-    //public string vlrRecBruta
-    //{
-    //    get
-    //    {
-    //        return vlrRecBrutaField;
-    //    }
-
-    //    set
-    //    {
-    //        vlrRecBrutaField = value;
-    //        RaisePropertyChanged("vlrRecBruta");
-    //    }
-    //}
-
-    ///// <remarks/>
-    //[XmlElement("infoProc", Order = 2)]
-    //public ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc[] infoProc
-    //{
-    //    get
-    //    {
-    //        return infoProcField;
-    //    }
-
-    //    set
-    //    {
-    //        infoProcField = value;
-    //        RaisePropertyChanged("infoProc");
-    //    }
-    //}
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : object, INotifyPropertyChanged
+public partial class R2055DetalhamentoAquisicao : EfdReinfBindableObject
 {
     private IndicadorAquisProd indAquisField;
     private string vlrBrutoField;
     private string vlrCPDescPRField;
     private string vlrRatDescPRField;
     private string vlrSenarDescField;
-    private ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc[] infoProcJudField;
+    private List<R2055InfoProcesso> infoProcJudField = new();
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -578,7 +388,7 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : ob
 
     /// <remarks/>
     [XmlElement("ideProdutor", Order = 5)]
-    public ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc[] infoProcJud
+    public List<R2055InfoProcesso> infoProcJud
     {
         get => infoProcJudField;
 
@@ -588,22 +398,11 @@ public partial class ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis : ob
             RaisePropertyChanged("infoProcJud");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc : object, INotifyPropertyChanged
+public partial class R2055InfoProcesso : EfdReinfBindableObject
 {
     private string nrProcJudField;
     private string codSuspField;
@@ -673,17 +472,6 @@ public partial class ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc : object, I
         {
             vlrSenarNRetField = value;
             RaisePropertyChanged("vlrSenarNRet");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

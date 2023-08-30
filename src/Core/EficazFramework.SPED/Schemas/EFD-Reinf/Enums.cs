@@ -1,5 +1,8 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Versão do schema
+/// </summary>
 public enum Versao
 {
     v1_05_01 = 0,
@@ -7,6 +10,9 @@ public enum Versao
     v2_01_02 = 2,
 }
 
+/// <summary>
+/// Ambiente em que os eventos são gerados e/ou enviados
+/// </summary>
 public enum Ambiente
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -20,6 +26,9 @@ public enum Ambiente
     // ProducaoRestrita_DadosFicticios = 3
 }
 
+/// <summary>
+/// Origem do software emissor/transmissor do evento
+/// </summary>
 public enum EmissorEvento
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -28,6 +37,9 @@ public enum EmissorEvento
     AppGovernamental = 2
 }
 
+/// <summary>
+/// Personalidade Jurídica do Contribuinte, Estabelecimento ou Participante
+/// </summary>
 public enum PersonalidadeJuridica
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -68,6 +80,9 @@ public enum AcordoInternacionalIsencaoMulta
     ComAcordo = 1
 }
 
+/// <summary>
+/// Indicador de Situação da Pessoa Jurídica
+/// </summary>
 public enum SituacaoPessoaJuridica
 {
     [System.Xml.Serialization.XmlEnum("0")]
@@ -105,32 +120,47 @@ public enum IndicadorAuditoria
 
 public enum TipoCompeticao
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     Oficial = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
     NaoOficial = 2
 }
 
 public enum CategoriaEvento
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     Internacional = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
     Interestadual = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
     Estadual = 3,
+    [System.Xml.Serialization.XmlEnum("4")]
     Local = 4
 }
 
 public enum TipoIngressoCompeticao
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     Arquibancada = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
     Geral = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
     Cadeiras = 3,
+    [System.Xml.Serialization.XmlEnum("4")]
     Camarote = 4
 }
 
 public enum TipoReceitaCompeticao
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     Transmissao = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
     Propaganda = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
     Publicidade = 3,
+    [System.Xml.Serialization.XmlEnum("4")]
     Sorteio = 4,
+    [System.Xml.Serialization.XmlEnum("5")]
     Outros = 5
 }
 
