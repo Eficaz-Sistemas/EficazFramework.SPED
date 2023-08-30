@@ -72,7 +72,7 @@ public partial class R2099 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    /// <exclude 
+    /// <exclude />
     public override void GeraEventoID()
     {
         evtFechaEvPerField.id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
