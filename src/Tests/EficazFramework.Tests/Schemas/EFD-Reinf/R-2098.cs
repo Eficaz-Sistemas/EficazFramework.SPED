@@ -31,7 +31,7 @@ public class R2098Test : BaseEfdReinfTest<R2098>
 
     public static void PreencheCamposR2098(R2098 evento)
     {
-        evento.evtReabreEvPer = new ReinfEvtReabreEvPer()
+        evento.evtReabreEvPer = new R2098EventoReabrePeriodo()
         {
             ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
             {

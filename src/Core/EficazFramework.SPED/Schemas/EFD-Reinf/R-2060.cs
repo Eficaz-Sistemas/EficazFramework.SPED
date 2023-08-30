@@ -3,15 +3,60 @@
 /// <summary>
 /// Contribuição previdenciária sobre a receita bruta – CPRB
 /// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R2060()
+/// {
+///     evtCPRB = new R2060EventoCprb()
+///     {
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = _cnpj.Substring(0, 8)
+///         },
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             procEmi = EmissorEvento.AppContribuinte,
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             verProc = "2.2"
+///         },
+///         infoCPRB = new R2060InfoCprb()
+///         {
+///             ideEstab = new R2060IdentificacaoEstabelecimento()
+///             {
+///                 tpInscEstab = PersonalidadeJuridica.CNPJ,
+///                 nrInscEstab = _cnpj,
+///                 vlrRecBrutaTotal = 1000.00M.ToString("f2"),
+///                 vlrCPApurTotal = 110.00M.ToString("f2"),
+///                 tipoCod = new()
+///                 {
+///                     new R2060ReceitaPorAtividade()
+///                     {
+///                         codAtivEcon = "12345678",
+///                         vlrRecBrutaAtiv = 1000.00M.ToString("f2"),
+///                         vlrExcRecBruta = 0M.ToString("f2"),
+///                         vlrAdicRecBruta = 0M.ToString("f2"),
+///                         vlrBcCPRB = 1000.00M.ToString("f2"),
+///                         vlrCPRBapur = 110.00M.ToString("f2")
+///                     }
+///                 }
+///             }
+///         },
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R2060 : Evento, INotifyPropertyChanged
+public partial class R2060 : Evento
 {
-    private ReinfEvtCPRB evtCPRBField;
+    private R2060EventoCprb evtCPRBField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtCPRB evtCPRB
+    public R2060EventoCprb evtCPRB
     {
         get => evtCPRBField;
 
@@ -22,7 +67,7 @@ public partial class R2060 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,50 +82,38 @@ public partial class R2060 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtCPRB.id = $"ID{(int)(evtCPRB?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtCPRB?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtCPRB.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtCPRB.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtCPRB";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R2060), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/{Versao}", IsNullable = false });
-    }
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R2060), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/{Versao}", IsNullable = false });
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
+public partial class R2060EventoCprb : EfdReinfBindableObject
 {
     private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtCPRBInfoCPRB infoCPRBField;
+    private R2060InfoCprb infoCPRBField;
     private string idField;
 
     /// <remarks/>
@@ -111,7 +144,7 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtCPRBInfoCPRB infoCPRB
+    public R2060InfoCprb infoCPRB
     {
         get => infoCPRBField;
 
@@ -134,28 +167,17 @@ public partial class ReinfEvtCPRB : object, INotifyPropertyChanged
             RaisePropertyChanged("id");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
+public partial class R2060InfoCprb : EfdReinfBindableObject
 {
-    private ReinfEvtCPRBInfoCPRBIdeEstab ideEstabField;
+    private R2060IdentificacaoEstabelecimento ideEstabField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtCPRBInfoCPRBIdeEstab ideEstab
+    public R2060IdentificacaoEstabelecimento ideEstab
     {
         get => ideEstabField;
 
@@ -165,29 +187,18 @@ public partial class ReinfEvtCPRBInfoCPRB : object, INotifyPropertyChanged
             RaisePropertyChanged("ideEstab");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChanged
+public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
     private string vlrRecBrutaTotalField;
     private string vlrCPApurTotalField;
     private string vlrCPRBSuspTotalField;
-    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[] tipoCodField;
+    private List<R2060ReceitaPorAtividade> tipoCodField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -256,7 +267,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
 
     /// <remarks/>
     [XmlElement("tipoCod", Order = 5)]
-    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCod[] tipoCod
+    public List<R2060ReceitaPorAtividade> tipoCod
     {
         get => tipoCodField;
 
@@ -266,22 +277,11 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstab : object, INotifyPropertyChang
             RaisePropertyChanged("tipoCod");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyPropertyChanged
+public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
 {
     private string codAtivEconField;
     private string vlrRecBrutaAtivField;
@@ -290,8 +290,8 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
     private string vlrBcCPRBField;
     private string vlrCPRBapurField;
     private string observField;
-    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste[] tipoAjusteField;
-    private ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc[] infoProcField;
+    private List<R2060AjusteContribuicao> tipoAjusteField;
+    private List<R2060InfoProcesso> infoProcField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -386,7 +386,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
 
     /// <remarks/>
     [XmlElement("tipoAjuste", Order = 7)]
-    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste[] tipoAjuste
+    public List<R2060AjusteContribuicao> tipoAjuste
     {
         get => tipoAjusteField;
 
@@ -399,7 +399,7 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
 
     /// <remarks/>
     [XmlElement("infoProc", Order = 8)]
-    public ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc[] infoProc
+    public List<R2060InfoProcesso> infoProc
     {
         get => infoProcField;
 
@@ -409,22 +409,11 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCod : object, INotifyProper
             RaisePropertyChanged("infoProc");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INotifyPropertyChanged
+public partial class R2060AjusteContribuicao : EfdReinfBindableObject
 {
     private TipoAjusteContribuicao tpAjusteField;
     private string codAjusteField;
@@ -496,22 +485,11 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste : object, INo
             RaisePropertyChanged("dtAjuste");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INotifyPropertyChanged
+public partial class R2060InfoProcesso : EfdReinfBindableObject
 {
     private TipoProcesso tpProcField;
     private string nrProcField;
@@ -567,17 +545,6 @@ public partial class ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc : object, INoti
         {
             vlrCPRBSuspField = value;
             RaisePropertyChanged("vlrCPRBSusp");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

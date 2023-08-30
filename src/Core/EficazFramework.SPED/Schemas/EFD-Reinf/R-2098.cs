@@ -3,15 +3,37 @@
 /// <summary>
 /// Reabertura dos eventos da série R-2000
 /// </summary>
+/// <example>
+/// ```csharp
+/// var registro = new R2098()
+/// {
+///     evtReabreEvPer = new R2098EventoReabrePeriodo()
+///     {
+///         ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
+///         {
+///             tpInsc = EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento.AppContribuinte,
+///             verProc = "2.2"
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R2098 : Evento, INotifyPropertyChanged
+public partial class R2098 : Evento
 {
-    private ReinfEvtReabreEvPer evtReabreEvPerField;
+    private R2098EventoReabrePeriodo evtReabreEvPerField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtReabreEvPer evtReabreEvPer
+    public R2098EventoReabrePeriodo evtReabreEvPer
     {
         get => evtReabreEvPerField;
 
@@ -22,7 +44,7 @@ public partial class R2098 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude />
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,46 +59,35 @@ public partial class R2098 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtReabreEvPer.id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude />
+    public override void GeraEventoID() =>
+        evtReabreEvPer.id = $"ID{(int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtReabreEvPer.ideContri.nrInsc;
-    }
+    /// <exclude />
+    public override string ContribuinteCNPJ() =>
+        evtReabreEvPer.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude />
     public override string TagToSign => "Reinf";
+    /// <exclude />
     public override string TagId => "evtReabreEvPer";
+    /// <exclude />
     public override bool EmptyURI => true;
+    /// <exclude />
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R2098), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/{Versao}", IsNullable = false });
-    }
+    /// <exclude />
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R2098), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/{Versao}", IsNullable = false });
 }
 
 
 /// <exclude />
-public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
+public partial class R2098EventoReabrePeriodo : EfdReinfBindableObject
 {
     private IdentificacaoEventoFechamento ideEventoField;
     private IdentificacaoContribuinte ideContriField;
@@ -118,17 +129,6 @@ public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
         {
             idField = value;
             RaisePropertyChanged("id");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

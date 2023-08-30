@@ -3,15 +3,107 @@
 /// <summary>
 /// Receita de espetáculos desportivos
 /// </summary>
+/// <example>
+/// ```csharp
+/// var eventoo = new R3010()
+/// {
+///     evtEspDesportivo = new R3010EventoEspDesportivo()
+///     {
+///         ideContri = new R3010IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678",
+///             ideEstab = new()
+///             {
+///                 new R3010IdentificacaoEstabelecimento()
+///                 {
+///                     tpInscEstab = PersonalidadeJuridica.CNPJ,
+///                     nrInscEstab = "12345678000100,
+///                     receitaTotal = new R3010ReceitaTotal()
+///                     {
+///                         vlrReceitaTotal = 1500000M.ToString("f2"),
+///                         vlrReceitaClubes = 1250000M.ToString("f2"),
+///                         vlrCP = 125000M.ToString("f2"),
+///                         vlrRetParc = 0M.ToString("f2")
+///                     },
+///                     boletim = new()
+///                     {
+///                         new R3010Boletim()
+///                         {
+///                             nrBoletim = "1234",
+///                             tpCompeticao = TipoCompeticao.Oficial,
+///                             categEvento = CategoriaEvento.Interestadual,
+///                             modDesportiva = "Futebol",
+///                             nomeCompeticao = "Campeonato Nacional",
+///                             cnpjMandante = "32522866000159",
+///                             cnpjVisitante = "73653529000188",
+///                             nomeVisitante = "Rio de Janeiro FC",
+///                             pracaDesportiva = "Estadio do Triângulo Mineiro",
+///                             codMunic = 3129707,
+///                             codMunicSpecified = true,
+///                             uf = "MG",
+///                             qtdePagantes = 45000,
+///                             qtdeNaoPagantes = 2250,
+///                             receitaIngressos = new()
+///                             {
+///                                 new R3010ReceitaIngressos()
+///                                 {
+///                                     tpIngresso = TipoIngressoCompeticao.Geral,
+///                                     descIngr = "G1",
+///                                     qtdeIngrVendidos = 25000,
+///                                     precoIndiv = 30M.ToString("f2"),
+///                                     vlrTotal = 750000M.ToString("f2")
+///                                 },
+///                                 new R3010ReceitaIngressos()
+///                                 {
+///                                     tpIngresso = TipoIngressoCompeticao.Arquibancada,
+///                                     descIngr = "A1",
+///                                     qtdeIngrVendidos = 750,
+///                                     precoIndiv = 300M.ToString("f2"),
+///                                     vlrTotal = 225000M.ToString("f2")
+///                                 }
+///                             },
+///                             outrasReceitas = new()
+///                             {
+///                                 new R3010OutrasReceitas()
+///                                 {
+///                                     tpReceita = TipoReceitaCompeticao.Transmissao,
+///                                     descReceita = "TV",
+///                                     vlrReceita = 175000M.ToString("f2")
+///                                 },
+///                                 new R3010OutrasReceitas()
+///                                 {
+///                                     tpReceita = TipoReceitaCompeticao.Propaganda,
+///                                     descReceita = "Anunciantes",
+///                                     vlrReceita = 80000M.ToString("f2")
+///                                 }
+///                             }
+///                         }
+///                     }
+///                 }
+///             }
+///         },
+///         ideEvento = new R3010IdentificacaoEvento()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             dtApuracao = DateTime.Now.AddMonths(-1),
+///             procEmi = EmissorEvento.AppContribuinte,
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             verProc = "2.2"
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R3010 : Evento, INotifyPropertyChanged
+public partial class R3010 : Evento
 {
-    private ReinfEvtEspDesportivo evtEspDesportivoField;
+    private R3010EventoEspDesportivo evtEspDesportivoField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtEspDesportivo evtEspDesportivo
+    public R3010EventoEspDesportivo evtEspDesportivo
     {
         get => evtEspDesportivoField;
 
@@ -22,7 +114,7 @@ public partial class R3010 : Evento, INotifyPropertyChanged
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -37,55 +129,42 @@ public partial class R3010 : Evento, INotifyPropertyChanged
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtEspDesportivo.id = $"ID{(int)(evtEspDesportivo?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtEspDesportivo?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtEspDesportivo.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtEspDesportivo.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtRetPF";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R3010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/{Versao}", IsNullable = false });
-    }
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R3010), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/{Versao}", IsNullable = false });
 }
 
 
 /// <exclude />
-[XmlType(AnonymousType = true, Namespace = "http://www.reinf.esocial.gov.br/schemas/evtEspDesportivo/v2_01_01")]
-public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
+public partial class R3010EventoEspDesportivo : EfdReinfBindableObject
 {
-    private ReinfEvtEspDesportivoIdeEvento ideEventoField;
-    private ReinfEvtEspDesportivoIdeContri ideContriField;
+    private R3010IdentificacaoEvento ideEventoField;
+    private R3010IdentificacaoContribuinte ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtEspDesportivoIdeEvento ideEvento
+    public R3010IdentificacaoEvento ideEvento
     {
         get => ideEventoField;
 
@@ -98,7 +177,7 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtEspDesportivoIdeContri ideContri
+    public R3010IdentificacaoContribuinte ideContri
     {
         get => ideContriField;
 
@@ -121,23 +200,12 @@ public partial class ReinfEvtEspDesportivo : object, INotifyPropertyChanged
             RaisePropertyChanged("id");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 // Identificação Evento:
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyChanged
+public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
@@ -223,27 +291,16 @@ public partial class ReinfEvtEspDesportivoIdeEvento : object, INotifyPropertyCha
             RaisePropertyChanged("verProc");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 // Identificação Contribuinte:
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyChanged
+public partial class R3010IdentificacaoContribuinte : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstab[] ideEstabField;
+    private List<R3010IdentificacaoEstabelecimento> ideEstabField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -273,7 +330,7 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
 
     /// <remarks/>
     [XmlElement("ideEstab", Order = 2)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstab[] ideEstab
+    public List<R3010IdentificacaoEstabelecimento> ideEstab
     {
         get => ideEstabField;
 
@@ -284,26 +341,18 @@ public partial class ReinfEvtEspDesportivoIdeContri : object, INotifyPropertyCha
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public string NumeroInscricaoTag() =>
+        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
 }
 
 
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPropertyChanged
+public partial class R3010IdentificacaoEstabelecimento : EfdReinfBindableObject
 {
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstabBoletim[] boletimField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal receitaTotalField;
+    private List<R3010Boletim> boletimField;
+    private R3010ReceitaTotal receitaTotalField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -333,7 +382,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
 
     /// <remarks/>
     [XmlElement("boletim", Order = 2)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstabBoletim[] boletim
+    public List<R3010Boletim> boletim
     {
         get => boletimField;
 
@@ -346,7 +395,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
 
     /// <remarks/>
     [XmlElement(Order = 3)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal receitaTotal
+    public R3010ReceitaTotal receitaTotal
     {
         get => receitaTotalField;
 
@@ -356,23 +405,12 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstab : object, INotifyPro
             RaisePropertyChanged("receitaTotal");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 // Identificação Evento:
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INotifyPropertyChanged
+public partial class R3010Boletim : EfdReinfBindableObject
 {
     private string nrBoletimField;
     private TipoCompeticao tpCompeticaoField;
@@ -388,8 +426,8 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
     private string ufField;
     private uint qtdePagantesField;
     private uint qtdeNaoPagantesField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[] receitaIngressosField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[] outrasReceitasField;
+    private List<R3010ReceitaIngressos> receitaIngressosField;
+    private List<R3010OutrasReceitas> outrasReceitasField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -575,7 +613,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
 
     /// <remarks/>
     [XmlElement("receitaIngressos", Order = 13)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos[] receitaIngressos
+    public List<R3010ReceitaIngressos> receitaIngressos
     {
         get => receitaIngressosField;
 
@@ -588,7 +626,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
 
     /// <remarks/>
     [XmlElement("outrasReceitas", Order = 14)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas[] outrasReceitas
+    public List<R3010OutrasReceitas> outrasReceitas
     {
         get => outrasReceitasField;
 
@@ -598,22 +636,11 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletim : object, INo
             RaisePropertyChanged("outrasReceitas");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos : object, INotifyPropertyChanged
+public partial class R3010ReceitaIngressos : EfdReinfBindableObject
 {
     private TipoIngressoCompeticao tpIngressoField;
     private string descIngrField;
@@ -713,22 +740,11 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngress
             RaisePropertyChanged("vlrTotal");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas : object, INotifyPropertyChanged
+public partial class R3010OutrasReceitas : EfdReinfBindableObject
 {
     private TipoReceitaCompeticao tpReceitaField;
     private string vlrReceitaField;
@@ -772,29 +788,18 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas
             RaisePropertyChanged("descReceita");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object, INotifyPropertyChanged
+public partial class R3010ReceitaTotal : EfdReinfBindableObject
 {
     private string vlrReceitaTotalField;
     private string vlrCPField;
     private string vlrCPSuspTotalField;
     private string vlrReceitaClubesField;
     private string vlrRetParcField;
-    private ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc[] infoProcField;
+    private R3010InfoProcesso[] infoProcField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
@@ -863,7 +868,7 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
 
     /// <remarks/>
     [XmlElement("infoProc", Order = 5)]
-    public ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc[] infoProc
+    public R3010InfoProcesso[] infoProc
     {
         get => infoProcField;
 
@@ -873,22 +878,11 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal : object
             RaisePropertyChanged("infoProc");
         }
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 
 /// <exclude />
-public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc : object, INotifyPropertyChanged
+public partial class R3010InfoProcesso : EfdReinfBindableObject
 {
     private TipoProcesso tpProcField;
     private string nrProcField;
@@ -944,17 +938,6 @@ public partial class ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc 
         {
             vlrCPSuspField = value;
             RaisePropertyChanged("vlrCPSusp");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
