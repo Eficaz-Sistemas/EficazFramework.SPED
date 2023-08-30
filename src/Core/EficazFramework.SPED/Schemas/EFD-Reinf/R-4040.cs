@@ -3,16 +3,64 @@
 /// <summary>
 /// Pagamentos/créditos a beneficiários não identificados
 /// </summary>
+/// <example>
+/// ```csharp
+/// var eventoo = new R4040()
+/// {
+///     evtBenefNId = new R4040EventoBenefNaoIdentificado()
+///     {
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = "2022-08",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideEstab = new R4040IdentificacaoEstabelecimento()
+///         {
+///             tpInscEstab = PersonalidadeJuridica.CNPJ,
+///             nrInscEstab = "34785515000166",
+///             ideNat = new()
+///             {
+///                 new R4040IdentificacaoNaturezaRend() //ideNat (1:N)
+///                 {
+///                     // Utilizar a tabela 01, do Anexo I do Manual
+///                     natRend = 19009, // Remuneração de Serviços de auditoria;
+/// 
+///                     infoPgto = new ()
+///                     {
+///                         new R4040InfoPagamento()
+///                         {
+///                             DataFatoGerador = System.DateTime.Now,
+///                             vlrLiq = 1000000.00.ToString("f2"),
+///                             vlrBaseIR = 153846.15M.ToString("f2"),
+///                             vlrIR = 2307.69M.ToString("f2"),
+///                             descr = "Alguma prestação de serviço qualquer."
+///                         },
+///                     },
+///                 }
+///             }
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [System.SerializableAttribute()]
-public partial class R4040 : Evento, System.ComponentModel.INotifyPropertyChanged
+public partial class R4040 : Evento
 {
 
-    private ReinfEvtBenefNId evtBenefNIdField;
+    private R4040EventoBenefNaoIdentificado evtBenefNIdField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public ReinfEvtBenefNId evtBenefNId
+    public R4040EventoBenefNaoIdentificado evtBenefNId
     {
         get => evtBenefNIdField;
         set
@@ -22,7 +70,7 @@ public partial class R4040 : Evento, System.ComponentModel.INotifyPropertyChange
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -36,50 +84,39 @@ public partial class R4040 : Evento, System.ComponentModel.INotifyPropertyChange
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "ReinfEvtBenefNId";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtBenefNId.id = string.Format("ID{0}{1}{2}", (int)(evtBenefNId?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtBenefNId?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtBenefNId.id = $"ID{(int)(evtBenefNId?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtBenefNId?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtBenefNId.ideContri.nrInsc;
-    }
-
-
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtBenefNId.ideContri.nrInsc;
 
 
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{Versao}", IsNullable = false });
-    }
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{Versao}", IsNullable = false });
 }
 
-/// <exclude />
-public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPropertyChanged
-{
 
+/// <exclude />
+public partial class R4040EventoBenefNaoIdentificado : EfdReinfBindableObject
+{
     private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtBenefNIdIdeEstab ideEstabField;
+    private R4040IdentificacaoEstabelecimento ideEstabField;
     private string idField;
 
     /// <remarks/>
@@ -108,7 +145,7 @@ public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPro
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public ReinfEvtBenefNIdIdeEstab ideEstab
+    public R4040IdentificacaoEstabelecimento ideEstab
     {
         get => ideEstabField;
         set
@@ -129,26 +166,15 @@ public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPro
             RaisePropertyChanged("id");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-/// <exclude />
-public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.INotifyPropertyChanged
-{
 
+/// <exclude />
+public partial class R4040IdentificacaoEstabelecimento : EfdReinfBindableObject
+{
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNat> ideNatField;
+    private List<R4040IdentificacaoNaturezaRend> ideNatField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -176,7 +202,7 @@ public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.IN
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("ideNat", Order = 2)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNat> ideNat
+    public List<R4040IdentificacaoNaturezaRend> ideNat
     {
         get => ideNatField;
         set
@@ -185,25 +211,14 @@ public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.IN
             RaisePropertyChanged("ideNat");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-/// <exclude />
-public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentModel.INotifyPropertyChanged
-{
 
+/// <exclude />
+public partial class R4040IdentificacaoNaturezaRend : EfdReinfBindableObject
+{
     private int natRendField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto> infoPgtoField;
+    private List<R4040InfoPagamento> infoPgtoField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -219,7 +234,7 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentMo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 1)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto> infoPgto
+    public List<R4040InfoPagamento> infoPgto
     {
         get => infoPgtoField;
         set
@@ -228,29 +243,18 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentMo
             RaisePropertyChanged("infoPgto");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-/// <exclude />
-public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.ComponentModel.INotifyPropertyChanged
-{
 
+/// <exclude />
+public partial class R4040InfoPagamento : EfdReinfBindableObject
+{
     private System.DateTime dtFGField;
     private string vlrLiqField;
     private string vlrBaseIRField;
     private string vlrIRField;
     private string descrField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet> infoProcRetField;
+    private List<R4040InfoProcessoRelacionado> infoProcRetField;
 
     /// <summary>
     /// Informar a data do fato gerador, no formato AAAA-MM-DD. <br/><br/>
@@ -325,7 +329,7 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoProcRet", Order = 5)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet> infoProcRet
+    public List<R4040InfoProcessoRelacionado> infoProcRet
     {
         get => infoProcRetField;
         set
@@ -334,23 +338,12 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
             RaisePropertyChanged("infoProcRet");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
-/// <exclude />
-public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged
-{
 
+/// <exclude />
+public partial class R4040InfoProcessoRelacionado : EfdReinfBindableObject
+{
     private TipoProcesso tpProcRetField;
     private string nrProcRetField;
     private string codSuspField;
@@ -427,17 +420,6 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet : object,
         {
             vlrDepIRField = value;
             RaisePropertyChanged("vlrDepIR");
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }

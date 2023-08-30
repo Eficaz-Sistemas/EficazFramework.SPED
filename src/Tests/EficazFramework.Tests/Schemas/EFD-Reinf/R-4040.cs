@@ -24,7 +24,7 @@ public class R4040Test : BaseEfdReinfTest<R4040>
     public override void PreencheCampos(R4040 evento)
     {
         evento.Versao = _versao;
-        evento.evtBenefNId = new ReinfEvtBenefNId()
+        evento.evtBenefNId = new R4040EventoBenefNaoIdentificado()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -39,29 +39,30 @@ public class R4040Test : BaseEfdReinfTest<R4040>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtBenefNIdIdeEstab()
+            ideEstab = new R4040IdentificacaoEstabelecimento()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideNat = new System.Collections.Generic.List<ReinfEvtBenefNIdIdeEstabIdeNat>()
-            {
-                new ReinfEvtBenefNIdIdeEstabIdeNat() //ideNat (1:N)
+                ideNat = new System.Collections.Generic.List<R4040IdentificacaoNaturezaRend>()
                 {
-                    infoPgto = new System.Collections.Generic.List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto>()
+                    new R4040IdentificacaoNaturezaRend() //ideNat (1:N)
+                    {
+                        // Utilizar a tabela 01, do Anexo I do Manual
+                        natRend = 19009, // Remuneração de Serviços de auditoria;
+
+                        infoPgto = new System.Collections.Generic.List<R4040InfoPagamento>()
+                        {
+                            new R4040InfoPagamento()
                             {
-                                new ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto()
-                                {
-                                    DataFatoGerador = System.DateTime.Now,
-                                    vlrLiq = 1000000.00.ToString("f2"),
-                                    vlrBaseIR = 153846.15M.ToString("f2"),
-                                    vlrIR = 2307.69M.ToString("f2"),
-                                    descr = "Alguma prestação de serviço qualquer."
-                                },
+                                DataFatoGerador = System.DateTime.Now,
+                                vlrLiq = 1000000.00.ToString("f2"),
+                                vlrBaseIR = 153846.15M.ToString("f2"),
+                                vlrIR = 2307.69M.ToString("f2"),
+                                descr = "Alguma prestação de serviço qualquer."
                             },
-                    // Utilizar a tabela 01, do Anexo I do Manual
-                    natRend = 19009, // Remuneração de Serviços de auditoria;
+                        },
+                    }
                 }
-            }
             }
         };
     }
