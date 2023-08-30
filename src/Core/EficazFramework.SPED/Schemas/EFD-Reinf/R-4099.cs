@@ -4,13 +4,14 @@
 /// Fechamento/reabertura dos eventos da série R-4000
 /// </summary>
 [System.SerializableAttribute()]
-public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChanged {
-    
+public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChanged
+{
+
     private ReinfEvtFech evtFechField;
     private SignatureType signatureField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public ReinfEvtFech evtFech
     {
         get => evtFechField;
@@ -22,7 +23,7 @@ public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChange
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=1)]
+    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
         get => signatureField;
@@ -55,9 +56,11 @@ public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChange
 
     // PropertyChanged Members
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName) {
+    protected void RaisePropertyChanged(string propertyName)
+    {
         System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
+        if ((propertyChanged != null))
+        {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
@@ -72,16 +75,17 @@ public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChange
 }
 
 /// <exclude />
-public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged {
-    
+public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged
+{
+
     private IdentificacaoEventoFechamento ideEventoField;
     private IdentificacaoContribuinte ideContriField;
     private IdentificacaoResponsavel ideRespInfField;
     private ReinfEvtFechInfoFech infoFechField;
     private string idField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public IdentificacaoEventoFechamento ideEvento
     {
         get => ideEventoField;
@@ -93,7 +97,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public IdentificacaoContribuinte ideContri
     {
         get => ideContriField;
@@ -105,7 +109,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
     public IdentificacaoResponsavel ideRespInf
     {
         get => ideRespInfField;
@@ -117,7 +121,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
     public ReinfEvtFechInfoFech infoFech
     {
         get => infoFechField;
@@ -129,7 +133,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
     public string id
     {
         get => idField;
@@ -141,22 +145,25 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
     }
 
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
         System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
+        if ((propertyChanged != null))
+        {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }
 
 /// <exclude />
-public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged {
-    
+public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged
+{
+
     private IndicadorFechamentoReabertura fechRetField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public IndicadorFechamentoReabertura fechRet
     {
         get => fechRetField;
@@ -168,10 +175,12 @@ public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotif
     }
 
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
         System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
+        if ((propertyChanged != null))
+        {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }

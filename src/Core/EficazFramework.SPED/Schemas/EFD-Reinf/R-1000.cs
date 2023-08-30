@@ -88,7 +88,7 @@ public partial class R1000 : Evento
     // Evento Members
     /// <exclude/>
     public override void GeraEventoID() =>
-        evtInfoContri.id = $"ID{(int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{ evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
+        evtInfoContri.id = $"ID{(int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
     /// <exclude/>
     public override string ContribuinteCNPJ() =>
@@ -109,7 +109,7 @@ public partial class R1000 : Evento
     // Serialization Members
     /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
-        new(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false});
+        new(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false });
 }
 
 

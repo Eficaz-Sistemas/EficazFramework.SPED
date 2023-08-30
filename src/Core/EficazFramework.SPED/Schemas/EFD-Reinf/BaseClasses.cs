@@ -82,7 +82,7 @@ public abstract class Evento : EfdReinfBindableObject, IXmlSignableDocument
             using (var xmlwriter = XmlWriter.Create(memoryStream, new XmlWriterSettings()
             {
                 Indent = true,
-               
+
             }))
             {
                 sSerializer.Serialize(xmlwriter, this);

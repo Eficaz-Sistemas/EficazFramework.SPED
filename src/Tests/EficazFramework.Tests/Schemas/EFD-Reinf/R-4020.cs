@@ -263,7 +263,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),
-                                retencoes = new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes()
+                                retencoes = new R4020InfoPagtoRetencoes()
                                 {
                                     vlrBaseIR = 152725.25M.ToString("f2"),
                                     vlrIR = 2290.88M.ToString("f2"),
@@ -423,7 +423,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),
-                                retencoes = new ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgtoRetencoes()
+                                retencoes = new R4020InfoPagtoRetencoes()
                                 {
                                     vlrBaseIR = 152725.25M.ToString("f2"),
                                     vlrIR = 2290.88M.ToString("f2"),
