@@ -1,6 +1,4 @@
-﻿using System.Runtime.ConstrainedExecution;
-
-namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 /// <summary>
 /// Pagamentos/créditos a beneficiário pessoa jurídica
@@ -9,12 +7,12 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 public partial class R4020 : Evento 
 {
     
-    private ReinfEvtRetPJ evtRetPJField;
+    private R4020EventoRetencaoPj evtRetPJField;
     private SignatureType signatureField;
     
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtRetPJ evtRetPJ
+    public R4020EventoRetencaoPj evtRetPJ
     {
         get => evtRetPJField;
         set
@@ -24,7 +22,7 @@ public partial class R4020 : Evento
         }
     }
 
-    /// <remarks/>
+    /// <exclude />
     [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -38,43 +36,45 @@ public partial class R4020 : Evento
 
 
     // IXmlSignableDocument Members
+    /// <exclude />
     public override string TagToSign => "Reinf";
+    /// <exclude />
     public override string TagId => "evtRetPJ";
+    /// <exclude />
     public override bool EmptyURI => true;
+    /// <exclude />
     public override bool SignAsSHA256 => true;
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtRetPJ.id = string.Format("ID{0}{1}{2}", (int)(evtRetPJ?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtRetPJ?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude />
+    public override void GeraEventoID() => 
+        evtRetPJ.id = $"ID{(int)(evtRetPJ?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtRetPJ?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtRetPJ.ideContri.nrInsc;
-    }
+    /// <exclude />
+    public override string ContribuinteCNPJ() =>
+        evtRetPJ.ideContri.nrInsc;
 
 
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4020), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{Versao}", IsNullable = false });
-    }
+    /// <exclude />
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4020), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4020PagtoBeneficiarioPJ/{Versao}", IsNullable = false });
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPJ : object, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
+{
     
-    private ReinfEvtIdeEvento_R40xx ideEventoField;
+    private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
-    private ReinfEvtRetPJIdeEstab ideEstabField;
+    private R4020IdentificacaoEstabelecimentoPj ideEstabField;
     
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento_R40xx ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
         set
@@ -98,7 +98,7 @@ public partial class ReinfEvtRetPJ : object, System.ComponentModel.INotifyProper
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtRetPJIdeEstab ideEstab
+    public R4020IdentificacaoEstabelecimentoPj ideEstab
     {
         get => ideEstabField;
         set
@@ -119,51 +119,16 @@ public partial class ReinfEvtRetPJ : object, System.ComponentModel.INotifyProper
             RaisePropertyChanged("id");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPJIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private PersonalidadeJuridica tpInscEstabField;
-    private string nrInscEstabField;
-    private ReinfEvtRetPJIdeEstabIdeBenef ideBenefField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInscEstab
-    {
-        get => tpInscEstabField;
-        set
-        {
-            tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInscEstab
-    {
-        get => nrInscEstabField;
-        set
-        {
-            nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
-        }
-    }
+public partial class R4020IdentificacaoEstabelecimentoPj : R4010eR4020IdentificacaoEstabelecimentoBase
+{
+    private R4010IdentificacaoBeneficiarioPj ideBenefField;
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtRetPJIdeEstabIdeBenef ideBenef
+    public R4010IdentificacaoBeneficiarioPj ideBenef
     {
         get => ideBenefField;
         set
@@ -172,24 +137,16 @@ public partial class ReinfEvtRetPJIdeEstab : object, System.ComponentModel.INoti
             RaisePropertyChanged("ideBenef");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPJIdeEstabIdeBenef : object, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
+{
     
     private string cnpjBenefField;
     private string nmBenefField;
     private TipoIsencaoPJ? isenImunField;
-    private List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto> idePgtoField;
+    private List<R4020IdentificacaoPagtoPj> idePgtoField;
 
     /// <summary>
     /// CNPJ do Beneficiário recebedor dos Rendimentos
@@ -235,7 +192,7 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenef : object, System.ComponentMod
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("idePgto", Order = 3)]
-    public List<ReinfEvtRetPJIdeEstabIdeBenefIdePgto> idePgto
+    public List<R4020IdentificacaoPagtoPj> idePgto
     {
         get => idePgtoField;
         set
@@ -244,53 +201,16 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenef : object, System.ComponentMod
             RaisePropertyChanged("idePgto");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgto : object, System.ComponentModel.INotifyPropertyChanged {
+public partial class R4020IdentificacaoPagtoPj : R4010eR4020IdentificacaoPagtoBase
+{
+    private List<R4020InfoPagtoPj> infoPgtoField;
     
-    private string natRendField;
-    
-    private string observField;
-    
-    private List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto> infoPgtoField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order = 0)]
-    public string natRend
-    {
-        get => natRendField;
-        set
-        {
-            natRendField = value;
-            RaisePropertyChanged("natRend");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string observ
-    {
-        get => observField;
-        set
-        {
-            observField = value;
-            RaisePropertyChanged("observ");
-        }
-    }
-
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 2)]
-    public List<ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto> infoPgto
+    public List<R4020InfoPagtoPj> infoPgto
     {
         get => infoPgtoField;
         set
@@ -299,20 +219,11 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgto : object, System.Compo
             RaisePropertyChanged("infoPgto");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
-    
+public partial class R4020InfoPagtoPj : EfdReinfBindableObject
+{
     private System.DateTime dtFGField;
     private string vlrBrutoField;
     private IndicadorFciScp? indFciScpField;
@@ -466,15 +377,6 @@ public partial class ReinfEvtRetPJIdeEstabIdeBenefIdePgtoInfoPgto : object, Syst
         {
             infoPgtoExtField = value;
             RaisePropertyChanged("infoPgtoExt");
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }

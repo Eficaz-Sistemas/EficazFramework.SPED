@@ -45,11 +45,11 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | Enums | |
 | :--- | :--- |
 | [AcordoInternacionalIsencaoMulta](EficazFramework.SPED.Schemas.EFD_Reinf/AcordoInternacionalIsencaoMulta.md 'EficazFramework.SPED.Schemas.EFD_Reinf.AcordoInternacionalIsencaoMulta') | |
-| [Ambiente](EficazFramework.SPED.Schemas.EFD_Reinf/Ambiente.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente') | |
+| [Ambiente](EficazFramework.SPED.Schemas.EFD_Reinf/Ambiente.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente') | Ambiente em que os eventos são gerados e/ou enviados |
 | [CategoriaEvento](EficazFramework.SPED.Schemas.EFD_Reinf/CategoriaEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.CategoriaEvento') | |
 | [CodigoAjusteConstribuicao](EficazFramework.SPED.Schemas.EFD_Reinf/CodigoAjusteConstribuicao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.CodigoAjusteConstribuicao') | |
 | [DesoneracaoCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/DesoneracaoCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.DesoneracaoCPRB') | |
-| [EmissorEvento](EficazFramework.SPED.Schemas.EFD_Reinf/EmissorEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento') | |
+| [EmissorEvento](EficazFramework.SPED.Schemas.EFD_Reinf/EmissorEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento') | Origem do software emissor/transmissor do evento |
 | [IndicadorAquisProd](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorAquisProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorAquisProd') | |
 | [IndicadorAuditoria](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorAuditoria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorAuditoria') | |
 | [IndicadorContribuicaoProd](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorContribuicaoProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorContribuicaoProd') | |
@@ -62,10 +62,10 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | [IndicadorRetificacao](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorRetificacao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorRetificacao') | |
 | [IndicadorTipoDeducaoPrevidenciaria](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorTipoDeducaoPrevidenciaria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorTipoDeducaoPrevidenciaria') | |
 | [ObrigatoriedadeECD](EficazFramework.SPED.Schemas.EFD_Reinf/ObrigatoriedadeECD.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ObrigatoriedadeECD') | |
-| [PersonalidadeJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica') | |
+| [PersonalidadeJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica') | Personalidade Jurídica do Contribuinte, Estabelecimento ou Participante |
 | [RelacaoDependencia](EficazFramework.SPED.Schemas.EFD_Reinf/RelacaoDependencia.md 'EficazFramework.SPED.Schemas.EFD_Reinf.RelacaoDependencia') | |
 | [SimNao](EficazFramework.SPED.Schemas.EFD_Reinf/SimNao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SimNao') | |
-| [SituacaoPessoaJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/SituacaoPessoaJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SituacaoPessoaJuridica') | |
+| [SituacaoPessoaJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/SituacaoPessoaJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SituacaoPessoaJuridica') | Indicador de Situação da Pessoa Jurídica |
 | [TipoAjusteContribuicao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoAjusteContribuicao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoAjusteContribuicao') | |
 | [TipoCompeticao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoCompeticao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoCompeticao') | |
 | [TipoEventoExclusao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoEventoExclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoEventoExclusao') | |
@@ -76,4 +76,4 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | [TipoProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/TipoProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoProcesso') | |
 | [TipoReceitaCompeticao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoReceitaCompeticao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoReceitaCompeticao') | |
 | [TipoRepasseAssocDesp](EficazFramework.SPED.Schemas.EFD_Reinf/TipoRepasseAssocDesp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoRepasseAssocDesp') | |
-| [Versao](EficazFramework.SPED.Schemas.EFD_Reinf/Versao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Versao') | |
+| [Versao](EficazFramework.SPED.Schemas.EFD_Reinf/Versao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Versao') | Versão do schema |

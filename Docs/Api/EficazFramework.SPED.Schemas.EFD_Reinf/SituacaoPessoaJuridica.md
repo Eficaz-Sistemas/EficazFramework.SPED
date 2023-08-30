@@ -3,6 +3,8 @@
 
 ## SituacaoPessoaJuridica Enum
 
+Indicador de Situação da Pessoa Jurídica
+
 ```csharp
 public enum SituacaoPessoaJuridica
 ```

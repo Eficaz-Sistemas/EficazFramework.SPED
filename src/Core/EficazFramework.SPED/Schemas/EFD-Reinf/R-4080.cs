@@ -73,14 +73,14 @@ public partial class R4080 : Evento, System.ComponentModel.INotifyPropertyChange
 /// <exclude />
 public partial class ReinfEvtRetRec : object, System.ComponentModel.INotifyPropertyChanged {
     
-    private ReinfEvtIdeEvento_R40xx ideEventoField;
+    private IdentificacaoEventoPeriodico ideEventoField;
     private IdentificacaoContribuinte ideContriField;
     private ReinfEvtRetRecIdeEstab ideEstabField;
     private string idField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public ReinfEvtIdeEvento_R40xx ideEvento
+    public IdentificacaoEventoPeriodico ideEvento
     {
         get => ideEventoField;
         set
