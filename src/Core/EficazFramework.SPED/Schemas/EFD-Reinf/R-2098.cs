@@ -7,6 +7,7 @@
 /// ```csharp
 /// var registro = new R2098()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtReabreEvPer = new R2098EventoReabrePeriodo()
 ///     {
 ///         ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()

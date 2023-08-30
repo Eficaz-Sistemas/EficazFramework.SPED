@@ -39,7 +39,6 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | [R4040](EficazFramework.SPED.Schemas.EFD_Reinf/R4040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4040') | Pagamentos/créditos a beneficiários não identificados |
 | [R4080](EficazFramework.SPED.Schemas.EFD_Reinf/R4080.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4080') | Retenção no recebimento |
 | [R4099](EficazFramework.SPED.Schemas.EFD_Reinf/R4099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4099') | Fechamento/reabertura dos eventos da série R-4000 |
-| [R9000](EficazFramework.SPED.Schemas.EFD_Reinf/R9000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9000') | Exclusão de eventos |
 | [ReinfTimeStampUtils](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils') | Utilitário para geração do identificador único de evento, para sua transmissão. |
 
 | Enums | |

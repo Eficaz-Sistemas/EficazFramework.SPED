@@ -7,6 +7,7 @@
 /// ```csharp
 /// var eventoo = new R3010()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtEspDesportivo = new R3010EventoEspDesportivo()
 ///     {
 ///         ideContri = new R3010IdentificacaoContribuinte()

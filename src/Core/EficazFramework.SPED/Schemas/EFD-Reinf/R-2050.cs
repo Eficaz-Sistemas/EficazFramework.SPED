@@ -7,6 +7,7 @@
 /// ```csharp
 /// var evento = new R2050() 
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtComProd = new R2050EventoInfoComProdutor()
 ///     {
 ///         ideContri = new IdentificacaoContribuinte()

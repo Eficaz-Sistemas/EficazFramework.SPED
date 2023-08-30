@@ -24,7 +24,7 @@ public class R4080Test : BaseEfdReinfTest<R4080>
     public override void PreencheCampos(R4080 evento)
     {
         evento.Versao = _versao;
-        evento.evtRetRec = new ReinfEvtRetRec()
+        evento.evtRetRec = new R4080EventoRetRecebimento()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -39,24 +39,24 @@ public class R4080Test : BaseEfdReinfTest<R4080>
                 tpInsc = PersonalidadeJuridica.CNPJ,
                 nrInsc = "34785515000166",
             },
-            ideEstab = new ReinfEvtRetRecIdeEstab()
+            ideEstab = new R4080IdentificacaoEstabelecimento()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = "34785515000166",
-                ideFont = new ReinfEvtRetRecIdeEstabIdeFont()
+                ideFont = new R4080IdentificacaoFontePagadora()
                 {
                     // identificação do beneficiário
                     cnpjFont = "10608025000126",
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
-                    ideRend = new System.Collections.Generic.List<ReinfEvtRetRecIdeEstabIdeFontIdeRend>()
+                    ideRend = new System.Collections.Generic.List<R4080IdentificacaoRendimento>()
                 {
                     // identificação do recebimento
-                    new ReinfEvtRetRecIdeEstabIdeFontIdeRend()
+                    new R4080IdentificacaoRendimento()
                     {
                         // informações do recebimento
-                        infoRec = new System.Collections.Generic.List<ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec>()
+                        infoRec = new System.Collections.Generic.List<R4080InfoRecebimento>()
                         {
-                            new ReinfEvtRetRecIdeEstabIdeFontIdeRendInfoRec()
+                            new R4080InfoRecebimento()
                             {
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrBruto = 152725.25M.ToString("f2"),

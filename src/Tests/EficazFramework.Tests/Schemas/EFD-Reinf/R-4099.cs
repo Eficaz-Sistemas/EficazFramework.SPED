@@ -79,7 +79,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     #region Fechamento
     private void PreencheCamposFechamento(R4099 evento)
     {
-        evento.evtFech = new ReinfEvtFech()
+        evento.evtFech = new R4099EventoFechamReabertura()
         {
             ideEvento = new IdentificacaoEventoFechamento()
             {
@@ -100,7 +100,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
                 telefone = "11999990000",
                 email = "contato@eficazcs.com.br",
             },
-            infoFech = new ReinfEvtFechInfoFech()
+            infoFech = new R4099InformacaoFechamReabertura()
             {
                 fechRet = IndicadorFechamentoReabertura.Fechamento
             }
@@ -134,7 +134,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     #region Reabertura
     private void PreencheCamposReabertura(R4099 evento)
     {
-        evento.evtFech = new ReinfEvtFech()
+        evento.evtFech = new R4099EventoFechamReabertura()
         {
             ideEvento = new IdentificacaoEventoFechamento()
             {
@@ -155,7 +155,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
                 telefone = "11999990000",
                 email = "contato@eficazcs.com.br",
             },
-            infoFech = new ReinfEvtFechInfoFech()
+            infoFech = new R4099InformacaoFechamReabertura()
             {
                 fechRet = IndicadorFechamentoReabertura.Reabertura
             }

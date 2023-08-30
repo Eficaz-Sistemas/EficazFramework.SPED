@@ -7,6 +7,7 @@
 /// ```csharp
 /// var evento = new R2099()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtFechaEvPer = new EficazFramework.SPED.Schemas.EFD_Reinf.R2099EventoFechamentoPeriodo()
 ///     {
 ///         ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
