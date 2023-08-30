@@ -7,6 +7,7 @@
 /// ```csharp
 /// var evento = new R2055()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtAqProd = new EficazFramework.SPED.Schemas.EFD_Reinf.R2055EventoAquisProd()
 ///     {
 ///         ideContri = new IdentificacaoContribuinte()

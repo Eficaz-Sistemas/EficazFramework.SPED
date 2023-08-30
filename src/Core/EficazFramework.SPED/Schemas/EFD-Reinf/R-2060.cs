@@ -7,6 +7,7 @@
 /// ```csharp
 /// var evento = new R2060()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtCPRB = new R2060EventoCprb()
 ///     {
 ///         ideContri = new IdentificacaoContribuinte()

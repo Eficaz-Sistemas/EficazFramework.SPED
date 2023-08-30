@@ -8,6 +8,7 @@
 /// // Rendimento Isento:
 /// var evento = new R4020()
 /// {
+///     Versao = Versao.v2_01_02,
 ///     evtRetPJ = new R4020EventoRetencaoPj()
 ///     {
 ///         ideEvento = new IdentificacaoEventoPeriodico()
@@ -61,7 +62,9 @@
 /// };
 /// 
 /// // Rendimento Tributável:
-/// var eventoo = new R4020() {
+/// var eventoo = new R4020() 
+/// {
+///     Versao = Versao.v2_01_02,
 ///     evtRetPJ = new R4020EventoRetencaoPj()
 ///     {
 ///         ideEvento = new IdentificacaoEventoPeriodico()

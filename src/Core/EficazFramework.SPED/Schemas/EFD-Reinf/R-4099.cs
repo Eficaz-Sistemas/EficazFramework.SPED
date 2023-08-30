@@ -3,16 +3,83 @@
 /// <summary>
 /// Fechamento/reabertura dos eventos da série R-4000
 /// </summary>
+/// <example>
+/// ```csharp
+/// // Fechamento:
+/// var evento = new R4099()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtFech = new R4099EventoFechamReabertura()
+///     {
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideRespInf = new IdentificacaoResponsavel()
+///         {
+///             nmResp = "Pierre de Fermat",
+///             cpfResp = "47363361886",
+///             telefone = "11999990000",
+///             email = "contato@eficazcs.com.br",
+///         },
+///         infoFech = new R4099InformacaoFechamReabertura()
+///         {
+///             fechRet = IndicadorFechamentoReabertura.Fechamento // atenção!
+///         }
+///     }
+/// };
+///
+/// // Reabertura:
+/// var evento = new R4099()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtFech = new R4099EventoFechamReabertura()
+///     {
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideRespInf = new IdentificacaoResponsavel()
+///         {
+///             nmResp = "Pierre de Fermat",
+///             cpfResp = "47363361886",
+///             telefone = "11999990000",
+///             email = "contato@eficazcs.com.br",
+///         },
+///         infoFech = new R4099InformacaoFechamReabertura()
+///         {
+///             fechRet = IndicadorFechamentoReabertura.Reabertura // atenção!
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [System.SerializableAttribute()]
-public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChanged
+public partial class R4099 : Evento
 {
 
-    private ReinfEvtFech evtFechField;
+    private R4099EventoFechamReabertura evtFechField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public ReinfEvtFech evtFech
+    public R4099EventoFechamReabertura evtFech
     {
         get => evtFechField;
         set
@@ -22,7 +89,7 @@ public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChange
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
@@ -36,52 +103,40 @@ public partial class R4099 : Evento, System.ComponentModel.INotifyPropertyChange
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtFechField";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
     // Evento Members
-    public override void GeraEventoID()
-    {
-        evtFechField.id = string.Format("ID{0}{1}{2}", (int)(evtFechField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtFechField.id = $"ID{(int)(evtFechField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtFechField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtFechField.ideContri.nrInsc;
-    }
-
-
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtFechField.ideContri.nrInsc;
 
 
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{Versao}", IsNullable = false });
-    }
-
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{Versao}", IsNullable = false });
 }
 
 /// <exclude />
-public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged
+public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
 {
 
     private IdentificacaoEventoFechamento ideEventoField;
     private IdentificacaoContribuinte ideContriField;
     private IdentificacaoResponsavel ideRespInfField;
-    private ReinfEvtFechInfoFech infoFechField;
+    private R4099InformacaoFechamReabertura infoFechField;
     private string idField;
 
     /// <remarks/>
@@ -122,7 +177,7 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public ReinfEvtFechInfoFech infoFech
+    public R4099InformacaoFechamReabertura infoFech
     {
         get => infoFechField;
         set
@@ -143,21 +198,10 @@ public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropert
             RaisePropertyChanged("id");
         }
     }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <exclude />
-public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged
+public partial class R4099InformacaoFechamReabertura : EfdReinfBindableObject
 {
 
     private IndicadorFechamentoReabertura fechRetField;
@@ -171,17 +215,6 @@ public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotif
         {
             fechRetField = value;
             RaisePropertyChanged("fechRet");
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
-        if ((propertyChanged != null))
-        {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }
