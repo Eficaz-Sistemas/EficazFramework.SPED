@@ -83,7 +83,7 @@ public partial class R2050 : Evento
     /// <exclude/>
     public override void GeraEventoID() =>
         evtComProdField.id = $"ID{(int)(evtComProdField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtComProdField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
-    
+
     /// <exclude/>
     public override string ContribuinteCNPJ() =>
         evtComProd.ideContri.nrInsc;

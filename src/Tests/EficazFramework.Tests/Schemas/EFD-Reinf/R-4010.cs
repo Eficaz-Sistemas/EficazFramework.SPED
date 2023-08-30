@@ -142,9 +142,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                                 DataFatoGerador = System.DateTime.Now,
                                 vlrRendBruto = 152725.25M.ToString("f2"),
                                 // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
-                                rendIsento = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento>()
+                                rendIsento = new System.Collections.Generic.List<R4010InfoRendIsento>()
                                 {
-                                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoRendIsento()
+                                    new R4010InfoRendIsento()
                                     {
                                         tpIsencao = evento.Versao >= Versao.v2_01_02 ? TipoIsencaoPF.Outros : TipoIsencaoPF.RendimentoSemIRRF,
                                         vlrIsento = 152725.25M.ToString("f2"),
@@ -450,9 +450,9 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                                 vlrRendBruto = 750.ToString("f2"),
                                 vlrRendTrib = 750.ToString("f2"),
                                 vlrIR = 112.5.ToString("f2"),
-                                detDed = new System.Collections.Generic.List<ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed>()
+                                detDed = new System.Collections.Generic.List<R4010DetalhamentoDeducao>()
                                 {
-                                    new ReinfEvtRetPFIdeEstabIdeBenefIdePgtoInfoPgtoDetDed()
+                                    new R4010DetalhamentoDeducao()
                                     {
                                         indTpDeducao = IndicadorTipoDeducaoPrevidenciaria.Dependentes,
                                         vlrDeducao = 33.75.ToString("f2")
