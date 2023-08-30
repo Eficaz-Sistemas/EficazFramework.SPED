@@ -85,11 +85,91 @@ escrituracao.Blocos["0"].Registros.Add(reg0000);
 
 await escrituracao.EscreveArquivo(System.IO.File.Create(@"C:\SPED\SPED-EFD-ICMS-IPI.txt"));  
 ```
-   
+### Layouts baseados em arquivos xml:
+
+#### Leitura  
+```csharp
+using EficazFramework.SPED.Schemas.EFD_Reinf;
+
+System.IO.Stream stream = System.IO.File.OpenRead(@"C:\SPED\SPED-EFD-REINF-EVT-R1000.xml");
+var evento = new R1000()
+{
+    Versao = Versao.v2_01_02
+};
+evento.Read(stream);
+stream.Dispose();
+```
+#### Escrita  
+```csharp
+using EficazFramework.SPED.Schemas.EFD_Reinf;
+
+var evento = new R1000()
+{
+    Versao = Versao.v2_01_02,
+    evtInfoContri = new R1000_EventoInfoContribuinte()
+    {
+        ideEvento = new IdentificacaoEvento()
+        {
+            tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+            procEmi = EmissorEvento.AppContribuinte,
+            verProc = "2.2"
+        },
+        ideContri = new IdentificacaoContribuinte()
+        {
+            tpInsc = PersonalidadeJuridica.CNPJ,
+            nrInsc = "12345678"
+        },
+        infoContri = new R1000EventoInfoContribuinte()
+        {
+            Item = new R1000Inclusao() // R1000Alteracao() ou R1000Exclusao()
+            {
+                idePeriodo = new IdentificacaoPeriodo()
+                {
+                    iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+                },
+                infoCadastro = new R1000InfoCadastro()
+                {
+                    classTrib = "99",
+                    indEscrituracao = ObrigatoriedadeECD.EntregaECD,
+                    indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
+                    indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
+                    indSitPJ = SituacaoPessoaJuridica.Normal,
+                    indSitPJSpecified = true,
+                    contato = new R1000InfoCadastroContato()
+                    {
+                        nmCtt = "Pierre de Fermat",
+                        cpfCtt = "47363361886",
+                        foneFixo = "3535441234",
+                        email = "suporte@eficazcs.com.br"
+                    },
+                    softHouse = new R1000InfoCadastroSoftwareHouse()
+                }
+            }
+        }
+    }
+};
+
+var xmlString = evento.ToString();
+System.IO.Stream stream = System.IO.File.Create(@"C:\SPED\SPED-EFD-REINF-EVT-R1000.xml");
+
+// Escrita, opção 1:
+System.Xml.XmlDocument doc = new();
+doc.LoadXml(xmlString);
+doc.Save(stream);
+
+// Outra forma de escrita:
+using (var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8))
+{
+    await writer.WriteAsync(xmlString);
+    await writer.FlushAsync();
+    writer.Dispose();
+}
+```
+
 ## Pré-Requisitos
 | Versão | Versão do .NET | Suporte |
 | :--- | :--- | :---: |
-| 6.1.x | [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :white_check_mark:|
+| 6.1.x + | [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :white_check_mark:|
 | 6.0.x | [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) | :x: |
 
    
