@@ -101,6 +101,7 @@ public partial class R2050 : Evento
 
 
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
         new(typeof(R2050), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoProdRural/{Versao}", IsNullable = false });
 }

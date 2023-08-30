@@ -103,6 +103,7 @@ public partial class R2060 : Evento
 
 
     // Serialization Members
+    /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
         new(typeof(R2060), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoCPRB/{Versao}", IsNullable = false });
 }
