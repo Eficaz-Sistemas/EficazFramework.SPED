@@ -601,5 +601,44 @@ namespace EficazFramework.SPED.Resources.Schemas {
                 return ResourceManager.GetString("R4099_v2_01_02_B", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v1_05_01&quot; targetNamespace=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v1_05_01&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;./xmldsig-core-schema.xsd&quot;/&gt;
+        ///  &lt;xs:element name=&quot;Reinf&quot;&gt;
+        ///    &lt;xs:annotation&gt;        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string R9000_v1_05_01 {
+            get {
+                return ResourceManager.GetString("R9000_v1_05_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01&quot; targetNamespace=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_01&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;./xmldsig-core-schema.xsd&quot;/&gt;
+        ///  &lt;xs:element name=&quot;Reinf&quot;&gt;
+        ///    &lt;xs:annotation&gt;        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string R9000_v2_01_01 {
+            get {
+                return ResourceManager.GetString("R9000_v2_01_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_02&quot; targetNamespace=&quot;http://www.reinf.esocial.gov.br/schemas/evtExclusao/v2_01_02&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;./xmldsig-core-schema.xsd&quot;/&gt;
+        ///  &lt;xs:element name=&quot;Reinf&quot;&gt;
+        ///    &lt;xs:annotation&gt;        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string R9000_v2_01_02_B {
+            get {
+                return ResourceManager.GetString("R9000_v2_01_02_B", resourceCulture);
+            }
+        }
     }
 }
