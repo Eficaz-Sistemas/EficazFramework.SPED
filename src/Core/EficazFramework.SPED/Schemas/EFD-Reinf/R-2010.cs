@@ -77,7 +77,7 @@ public partial class R2010 : Evento
         set
         {
             evtServTomField = value;
-            RaisePropertyChanged("evtServTom");
+            RaisePropertyChanged(nameof(evtServTom));
         }
     }
 
@@ -90,7 +90,7 @@ public partial class R2010 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -140,7 +140,7 @@ public partial class R2010EventoServicoTomado : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -153,7 +153,7 @@ public partial class R2010EventoServicoTomado : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -166,7 +166,7 @@ public partial class R2010EventoServicoTomado : EfdReinfBindableObject
         set
         {
             infoServTomField = value;
-            RaisePropertyChanged("infoServTom");
+            RaisePropertyChanged(nameof(infoServTom));
         }
     }
 
@@ -179,7 +179,7 @@ public partial class R2010EventoServicoTomado : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -199,7 +199,7 @@ public partial class R2010ServicoTomado : EfdReinfBindableObject
         set
         {
             ideEstabObraField = value;
-            RaisePropertyChanged("ideEstabObra");
+            RaisePropertyChanged(nameof(ideEstabObra));
         }
     }
 }
@@ -222,7 +222,7 @@ public partial class R2010IdentificacaoEstabObra : EfdReinfBindableObject
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -235,7 +235,7 @@ public partial class R2010IdentificacaoEstabObra : EfdReinfBindableObject
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 
@@ -248,8 +248,8 @@ public partial class R2010IdentificacaoEstabObra : EfdReinfBindableObject
         set
         {
             indObraField = value;
-            RaisePropertyChanged("indObra");
-            RaisePropertyChanged("indObra_Str");
+            RaisePropertyChanged(nameof(indObra));
+            RaisePropertyChanged(nameof(indObra_Str));
         }
     }
 
@@ -290,7 +290,7 @@ public partial class R2010IdentificacaoEstabObra : EfdReinfBindableObject
         set
         {
             idePrestServField = value;
-            RaisePropertyChanged("idePrestServ");
+            RaisePropertyChanged(nameof(idePrestServ));
         }
     }
 }
@@ -320,7 +320,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         set
         {
             cnpjPrestadorField = value;
-            RaisePropertyChanged("cnpjPrestador");
+            RaisePropertyChanged(nameof(cnpjPrestador));
         }
     }
 
@@ -334,7 +334,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalBrutoField = value;
             // If Me.vlrTotalBrutoField.HasValue Then Me.vlrTotalBrutoField = Math.Round(Me.vlrTotalBrutoField.Value, 2)
-            RaisePropertyChanged("vlrTotalBruto");
+            RaisePropertyChanged(nameof(vlrTotalBruto));
         }
     }
 
@@ -348,7 +348,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalBaseRetField = value;
             // If Me.vlrTotalBaseRetField.HasValue Then Me.vlrTotalBaseRetField = Math.Round(Me.vlrTotalBaseRetField.Value, 2)
-            RaisePropertyChanged("vlrTotalBaseRet");
+            RaisePropertyChanged(nameof(vlrTotalBaseRet));
         }
     }
 
@@ -362,7 +362,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalRetPrincField = value;
             // If Me.vlrTotalRetPrincField.HasValue Then Me.vlrTotalRetPrincField = Math.Round(Me.vlrTotalRetPrincField.Value, 2)
-            RaisePropertyChanged("vlrTotalRetPrinc");
+            RaisePropertyChanged(nameof(vlrTotalRetPrinc));
         }
     }
 
@@ -376,7 +376,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalRetAdicField = value;
             // If Me.vlrTotalRetAdicField.HasValue Then Me.vlrTotalRetAdicField = Math.Round(Me.vlrTotalRetAdicField.Value, 2)
-            RaisePropertyChanged("vlrTotalRetAdic");
+            RaisePropertyChanged(nameof(vlrTotalRetAdic));
         }
     }
 
@@ -390,7 +390,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalNRetPrincField = value;
             // If Me.vlrTotalNRetPrincField.HasValue Then Me.vlrTotalNRetPrincField = Math.Round(Me.vlrTotalNRetPrincField.Value, 2)
-            RaisePropertyChanged("vlrTotalNRetPrinc");
+            RaisePropertyChanged(nameof(vlrTotalNRetPrinc));
         }
     }
 
@@ -404,7 +404,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         {
             vlrTotalNRetAdicField = value;
             // If Me.vlrTotalNRetAdicField.HasValue Then Me.vlrTotalNRetAdicField = Math.Round(Me.vlrTotalNRetAdicField.Value, 2)
-            RaisePropertyChanged("vlrTotalNRetAdic");
+            RaisePropertyChanged(nameof(vlrTotalNRetAdic));
         }
     }
 
@@ -417,8 +417,8 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         set
         {
             indCPRBField = value;
-            RaisePropertyChanged("indCPRB");
-            RaisePropertyChanged("indCPRB_Str");
+            RaisePropertyChanged(nameof(indCPRB));
+            RaisePropertyChanged(nameof(indCPRB_Str));
         }
     }
 
@@ -453,7 +453,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         set
         {
             nfsField = value;
-            RaisePropertyChanged("nfs");
+            RaisePropertyChanged(nameof(nfs));
         }
     }
 
@@ -466,7 +466,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         set
         {
             infoProcRetPrField = value;
-            RaisePropertyChanged("infoProcRetPr");
+            RaisePropertyChanged(nameof(infoProcRetPr));
         }
     }
 
@@ -479,7 +479,7 @@ public partial class R2010IdentificacaoPrestServico : EfdReinfBindableObject
         set
         {
             infoProcRetAdField = value;
-            RaisePropertyChanged("infoProcRetAd");
+            RaisePropertyChanged(nameof(infoProcRetAd));
         }
     }
 }

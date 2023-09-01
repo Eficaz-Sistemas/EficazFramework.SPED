@@ -111,7 +111,7 @@ public partial class R3010 : Evento
         set
         {
             evtEspDesportivoField = value;
-            RaisePropertyChanged("evtEspDesportivo");
+            RaisePropertyChanged(nameof(evtEspDesportivo));
         }
     }
 
@@ -124,7 +124,7 @@ public partial class R3010 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -172,7 +172,7 @@ public partial class R3010EventoEspDesportivo : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -185,7 +185,7 @@ public partial class R3010EventoEspDesportivo : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -198,7 +198,7 @@ public partial class R3010EventoEspDesportivo : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -224,7 +224,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             indRetifField = value;
-            RaisePropertyChanged("indRetif");
+            RaisePropertyChanged(nameof(indRetif));
         }
     }
 
@@ -237,7 +237,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
+            RaisePropertyChanged(nameof(nrRecibo));
         }
     }
 
@@ -250,7 +250,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             dtApuracaoField = value;
-            RaisePropertyChanged("dtApuracao");
+            RaisePropertyChanged(nameof(dtApuracao));
         }
     }
 
@@ -263,7 +263,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
@@ -276,7 +276,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
@@ -289,7 +289,7 @@ public partial class R3010IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -312,7 +312,7 @@ public partial class R3010IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             tpInscField = value;
-            RaisePropertyChanged("tpInsc");
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
@@ -325,7 +325,7 @@ public partial class R3010IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             nrInscField = value;
-            RaisePropertyChanged("nrInsc");
+            RaisePropertyChanged(nameof(nrInsc));
         }
     }
 
@@ -338,7 +338,7 @@ public partial class R3010IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             ideEstabField = value;
-            RaisePropertyChanged("ideEstab");
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
 
@@ -364,7 +364,7 @@ public partial class R3010IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -377,7 +377,7 @@ public partial class R3010IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 
@@ -390,7 +390,7 @@ public partial class R3010IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             boletimField = value;
-            RaisePropertyChanged("boletim");
+            RaisePropertyChanged(nameof(boletim));
         }
     }
 
@@ -403,7 +403,7 @@ public partial class R3010IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             receitaTotalField = value;
-            RaisePropertyChanged("receitaTotal");
+            RaisePropertyChanged(nameof(receitaTotal));
         }
     }
 }
@@ -439,7 +439,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             nrBoletimField = value;
-            RaisePropertyChanged("nrBoletim");
+            RaisePropertyChanged(nameof(nrBoletim));
         }
     }
 
@@ -452,7 +452,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             tpCompeticaoField = value;
-            RaisePropertyChanged("tpCompeticao");
+            RaisePropertyChanged(nameof(tpCompeticao));
         }
     }
 
@@ -465,7 +465,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             categEventoField = value;
-            RaisePropertyChanged("categEvento");
+            RaisePropertyChanged(nameof(categEvento));
         }
     }
 
@@ -478,7 +478,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             modDesportivaField = value;
-            RaisePropertyChanged("modDesportiva");
+            RaisePropertyChanged(nameof(modDesportiva));
         }
     }
 
@@ -491,7 +491,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             nomeCompeticaoField = value;
-            RaisePropertyChanged("nomeCompeticao");
+            RaisePropertyChanged(nameof(nomeCompeticao));
         }
     }
 
@@ -504,7 +504,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             cnpjMandanteField = value;
-            RaisePropertyChanged("cnpjMandante");
+            RaisePropertyChanged(nameof(cnpjMandante));
         }
     }
 
@@ -517,7 +517,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             cnpjVisitanteField = value;
-            RaisePropertyChanged("cnpjVisitante");
+            RaisePropertyChanged(nameof(cnpjVisitante));
         }
     }
 
@@ -530,7 +530,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             nomeVisitanteField = value;
-            RaisePropertyChanged("nomeVisitante");
+            RaisePropertyChanged(nameof(nomeVisitante));
         }
     }
 
@@ -543,7 +543,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             pracaDesportivaField = value;
-            RaisePropertyChanged("pracaDesportiva");
+            RaisePropertyChanged(nameof(pracaDesportiva));
         }
     }
 
@@ -556,7 +556,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             codMunicField = value;
-            RaisePropertyChanged("codMunic");
+            RaisePropertyChanged(nameof(codMunic));
         }
     }
 
@@ -569,7 +569,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             codMunicFieldSpecified = value;
-            RaisePropertyChanged("codMunicSpecified");
+            RaisePropertyChanged(nameof(codMunicSpecified));
         }
     }
 
@@ -582,7 +582,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             ufField = value;
-            RaisePropertyChanged("uf");
+            RaisePropertyChanged(nameof(uf));
         }
     }
 
@@ -595,7 +595,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             qtdePagantesField = value;
-            RaisePropertyChanged("qtdePagantes");
+            RaisePropertyChanged(nameof(qtdePagantes));
         }
     }
 
@@ -608,7 +608,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             qtdeNaoPagantesField = value;
-            RaisePropertyChanged("qtdeNaoPagantes");
+            RaisePropertyChanged(nameof(qtdeNaoPagantes));
         }
     }
 
@@ -621,7 +621,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             receitaIngressosField = value;
-            RaisePropertyChanged("receitaIngressos");
+            RaisePropertyChanged(nameof(receitaIngressos));
         }
     }
 
@@ -634,7 +634,7 @@ public partial class R3010Boletim : EfdReinfBindableObject
         set
         {
             outrasReceitasField = value;
-            RaisePropertyChanged("outrasReceitas");
+            RaisePropertyChanged(nameof(outrasReceitas));
         }
     }
 }
@@ -660,7 +660,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             tpIngressoField = value;
-            RaisePropertyChanged("tpIngresso");
+            RaisePropertyChanged(nameof(tpIngresso));
         }
     }
 
@@ -673,7 +673,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             descIngrField = value;
-            RaisePropertyChanged("descIngr");
+            RaisePropertyChanged(nameof(descIngr));
         }
     }
 
@@ -686,7 +686,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             qtdeIngrVendaField = value;
-            RaisePropertyChanged("qtdeIngrVenda");
+            RaisePropertyChanged(nameof(qtdeIngrVenda));
         }
     }
 
@@ -699,7 +699,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             qtdeIngrVendidosField = value;
-            RaisePropertyChanged("qtdeIngrVendidos");
+            RaisePropertyChanged(nameof(qtdeIngrVendidos));
         }
     }
 
@@ -712,7 +712,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             qtdeIngrDevField = value;
-            RaisePropertyChanged("qtdeIngrDev");
+            RaisePropertyChanged(nameof(qtdeIngrDev));
         }
     }
 
@@ -725,7 +725,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             precoIndivField = value;
-            RaisePropertyChanged("precoIndiv");
+            RaisePropertyChanged(nameof(precoIndiv));
         }
     }
 
@@ -738,7 +738,7 @@ public partial class R3010ReceitaIngressos : EfdReinfBindableObject
         set
         {
             vlrTotalField = value;
-            RaisePropertyChanged("vlrTotal");
+            RaisePropertyChanged(nameof(vlrTotal));
         }
     }
 }
@@ -760,7 +760,7 @@ public partial class R3010OutrasReceitas : EfdReinfBindableObject
         set
         {
             tpReceitaField = value;
-            RaisePropertyChanged("tpReceita");
+            RaisePropertyChanged(nameof(tpReceita));
         }
     }
 
@@ -773,7 +773,7 @@ public partial class R3010OutrasReceitas : EfdReinfBindableObject
         set
         {
             vlrReceitaField = value;
-            RaisePropertyChanged("vlrReceita");
+            RaisePropertyChanged(nameof(vlrReceita));
         }
     }
 
@@ -786,7 +786,7 @@ public partial class R3010OutrasReceitas : EfdReinfBindableObject
         set
         {
             descReceitaField = value;
-            RaisePropertyChanged("descReceita");
+            RaisePropertyChanged(nameof(descReceita));
         }
     }
 }
@@ -811,7 +811,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             vlrReceitaTotalField = value;
-            RaisePropertyChanged("vlrReceitaTotal");
+            RaisePropertyChanged(nameof(vlrReceitaTotal));
         }
     }
 
@@ -824,7 +824,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             vlrCPField = value;
-            RaisePropertyChanged("vlrCP");
+            RaisePropertyChanged(nameof(vlrCP));
         }
     }
 
@@ -837,7 +837,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             vlrCPSuspTotalField = value;
-            RaisePropertyChanged("vlrCPSuspTotal");
+            RaisePropertyChanged(nameof(vlrCPSuspTotal));
         }
     }
 
@@ -850,7 +850,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             vlrReceitaClubesField = value;
-            RaisePropertyChanged("vlrReceitaClubes");
+            RaisePropertyChanged(nameof(vlrReceitaClubes));
         }
     }
 
@@ -863,7 +863,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             vlrRetParcField = value;
-            RaisePropertyChanged("vlrRetParc");
+            RaisePropertyChanged(nameof(vlrRetParc));
         }
     }
 
@@ -876,7 +876,7 @@ public partial class R3010ReceitaTotal : EfdReinfBindableObject
         set
         {
             infoProcField = value;
-            RaisePropertyChanged("infoProc");
+            RaisePropertyChanged(nameof(infoProc));
         }
     }
 }
@@ -899,7 +899,7 @@ public partial class R3010InfoProcesso : EfdReinfBindableObject
         set
         {
             tpProcField = value;
-            RaisePropertyChanged("tpProc");
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
@@ -912,7 +912,7 @@ public partial class R3010InfoProcesso : EfdReinfBindableObject
         set
         {
             nrProcField = value;
-            RaisePropertyChanged("nrProc");
+            RaisePropertyChanged(nameof(nrProc));
         }
     }
 
@@ -925,7 +925,7 @@ public partial class R3010InfoProcesso : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -938,7 +938,7 @@ public partial class R3010InfoProcesso : EfdReinfBindableObject
         set
         {
             vlrCPSuspField = value;
-            RaisePropertyChanged("vlrCPSusp");
+            RaisePropertyChanged(nameof(vlrCPSusp));
         }
     }
 }

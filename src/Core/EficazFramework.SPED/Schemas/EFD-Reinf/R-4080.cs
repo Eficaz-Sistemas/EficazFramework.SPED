@@ -75,7 +75,7 @@ public partial class R4080 : Evento
         set
         {
             evtRetRecField = value;
-            RaisePropertyChanged("evtRetRec");
+            RaisePropertyChanged(nameof(evtRetRec));
         }
     }
 
@@ -87,7 +87,7 @@ public partial class R4080 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -138,7 +138,7 @@ public partial class R4080EventoRetRecebimento : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -150,7 +150,7 @@ public partial class R4080EventoRetRecebimento : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -162,7 +162,7 @@ public partial class R4080EventoRetRecebimento : EfdReinfBindableObject
         set
         {
             ideEstabField = value;
-            RaisePropertyChanged("ideEstab");
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
 
@@ -174,7 +174,7 @@ public partial class R4080EventoRetRecebimento : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -196,7 +196,7 @@ public partial class R4080IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -208,7 +208,7 @@ public partial class R4080IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 
@@ -220,7 +220,7 @@ public partial class R4080IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             ideFontField = value;
-            RaisePropertyChanged("ideFont");
+            RaisePropertyChanged(nameof(ideFont));
         }
     }
 }
@@ -243,7 +243,7 @@ public partial class R4080IdentificacaoFontePagadora : EfdReinfBindableObject
         set
         {
             cnpjFontField = value;
-            RaisePropertyChanged("cnpjFont");
+            RaisePropertyChanged(nameof(cnpjFont));
         }
     }
 
@@ -257,7 +257,7 @@ public partial class R4080IdentificacaoFontePagadora : EfdReinfBindableObject
         set
         {
             ideRendField = value;
-            RaisePropertyChanged("ideRend");
+            RaisePropertyChanged(nameof(ideRend));
         }
     }
 }
@@ -282,7 +282,7 @@ public partial class R4080IdentificacaoRendimento : EfdReinfBindableObject
         set
         {
             natRendField = value;
-            RaisePropertyChanged("natRend");
+            RaisePropertyChanged(nameof(natRend));
         }
     }
 
@@ -296,7 +296,7 @@ public partial class R4080IdentificacaoRendimento : EfdReinfBindableObject
         set
         {
             observField = value;
-            RaisePropertyChanged("observ");
+            RaisePropertyChanged(nameof(observ));
         }
     }
 
@@ -308,7 +308,7 @@ public partial class R4080IdentificacaoRendimento : EfdReinfBindableObject
         set
         {
             infoRecField = value;
-            RaisePropertyChanged("infoRec");
+            RaisePropertyChanged(nameof(infoRec));
         }
     }
 }
@@ -333,7 +333,7 @@ public partial class R4080InfoRecebimento : EfdReinfBindableObject
         set
         {
             dtFGField = value;
-            RaisePropertyChanged("DataFatoGerador");
+            RaisePropertyChanged(nameof(DataFatoGerador));
         }
     }
 
@@ -345,7 +345,7 @@ public partial class R4080InfoRecebimento : EfdReinfBindableObject
         set
         {
             vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
+            RaisePropertyChanged(nameof(vlrBruto));
         }
     }
 
@@ -357,7 +357,7 @@ public partial class R4080InfoRecebimento : EfdReinfBindableObject
         set
         {
             vlrBaseIRField = value;
-            RaisePropertyChanged("vlrBaseIR");
+            RaisePropertyChanged(nameof(vlrBaseIR));
         }
     }
 
@@ -369,7 +369,7 @@ public partial class R4080InfoRecebimento : EfdReinfBindableObject
         set
         {
             vlrIRField = value;
-            RaisePropertyChanged("vlrIR");
+            RaisePropertyChanged(nameof(vlrIR));
         }
     }
 
@@ -381,7 +381,7 @@ public partial class R4080InfoRecebimento : EfdReinfBindableObject
         set
         {
             infoProcRetField = value;
-            RaisePropertyChanged("infoProcRet");
+            RaisePropertyChanged(nameof(infoProcRet));
         }
     }
 }

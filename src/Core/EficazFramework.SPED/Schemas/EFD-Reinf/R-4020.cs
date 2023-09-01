@@ -142,7 +142,7 @@ public partial class R4020 : Evento
         set
         {
             evtRetPJField = value;
-            RaisePropertyChanged("evtRetPJ");
+            RaisePropertyChanged(nameof(evtRetPJ));
         }
     }
 
@@ -154,7 +154,7 @@ public partial class R4020 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -204,7 +204,7 @@ public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -216,7 +216,7 @@ public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -228,7 +228,7 @@ public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
         set
         {
             ideEstabField = value;
-            RaisePropertyChanged("ideEstab");
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
 
@@ -240,7 +240,7 @@ public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -258,7 +258,7 @@ public partial class R4020IdentificacaoEstabelecimentoPj : R4010eR4020Identifica
         set
         {
             ideBenefField = value;
-            RaisePropertyChanged("ideBenef");
+            RaisePropertyChanged(nameof(ideBenef));
         }
     }
 }
@@ -282,7 +282,7 @@ public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
         set
         {
             cnpjBenefField = value;
-            RaisePropertyChanged("cnpjBenef");
+            RaisePropertyChanged(nameof(cnpjBenef));
         }
     }
 
@@ -296,7 +296,7 @@ public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
         set
         {
             nmBenefField = value;
-            RaisePropertyChanged("nmBenef");
+            RaisePropertyChanged(nameof(nmBenef));
         }
     }
 
@@ -308,7 +308,7 @@ public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
         set
         {
             isenImunField = value;
-            RaisePropertyChanged("isenImun");
+            RaisePropertyChanged(nameof(isenImun));
         }
     }
     public bool ShouldSerializeTipoIsencaoPJ() => isenImun.HasValue;
@@ -322,7 +322,7 @@ public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
         set
         {
             idePgtoField = value;
-            RaisePropertyChanged("idePgto");
+            RaisePropertyChanged(nameof(idePgto));
         }
     }
 }
@@ -340,7 +340,7 @@ public partial class R4020IdentificacaoPagtoPj : R4010eR4020IdentificacaoPagtoBa
         set
         {
             infoPgtoField = value;
-            RaisePropertyChanged("infoPgto");
+            RaisePropertyChanged(nameof(infoPgto));
         }
     }
 }
@@ -375,7 +375,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             dtFGField = value;
-            RaisePropertyChanged("DataFatoGerador");
+            RaisePropertyChanged(nameof(DataFatoGerador));
         }
     }
 
@@ -387,7 +387,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
+            RaisePropertyChanged(nameof(vlrBruto));
         }
     }
 
@@ -399,7 +399,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             indFciScpField = value;
-            RaisePropertyChanged("indFciScp");
+            RaisePropertyChanged(nameof(indFciScp));
         }
     }
     public bool ShouldSerializeindFciScp() => indFciScp.HasValue;
@@ -412,7 +412,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             nrInscFciScpField = value;
-            RaisePropertyChanged("nrInscFciScp");
+            RaisePropertyChanged(nameof(nrInscFciScp));
         }
     }
 
@@ -424,7 +424,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             percSCPField = value;
-            RaisePropertyChanged("percSCP");
+            RaisePropertyChanged(nameof(percSCP));
         }
     }
 
@@ -436,7 +436,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             indJudField = value;
-            RaisePropertyChanged("indJud");
+            RaisePropertyChanged(nameof(indJud));
         }
     }
 
@@ -448,7 +448,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             paisResidExtField = value;
-            RaisePropertyChanged("paisResidExt");
+            RaisePropertyChanged(nameof(paisResidExt));
         }
     }
 
@@ -462,7 +462,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             retencoesField = value;
-            RaisePropertyChanged("retencoes");
+            RaisePropertyChanged(nameof(retencoes));
         }
     }
 
@@ -476,7 +476,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             infoProcRetField = value;
-            RaisePropertyChanged("infoProcRet");
+            RaisePropertyChanged(nameof(infoProcRet));
         }
     }
 
@@ -488,7 +488,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             infoProcJudField = value;
-            RaisePropertyChanged("infoProcJud");
+            RaisePropertyChanged(nameof(infoProcJud));
         }
     }
 
@@ -500,7 +500,7 @@ public partial class R4020InfoPagtoPj : EfdReinfBindableObject
         set
         {
             infoPgtoExtField = value;
-            RaisePropertyChanged("infoPgtoExt");
+            RaisePropertyChanged(nameof(infoPgtoExt));
         }
     }
 }
@@ -528,7 +528,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrBaseIRField = value;
-            RaisePropertyChanged("vlrBaseIR");
+            RaisePropertyChanged(nameof(vlrBaseIR));
         }
     }
 
@@ -540,7 +540,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrIRField = value;
-            RaisePropertyChanged("vlrIR");
+            RaisePropertyChanged(nameof(vlrIR));
         }
     }
 
@@ -559,7 +559,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrBaseAgregField = value;
-            RaisePropertyChanged("vlrBaseAgreg");
+            RaisePropertyChanged(nameof(vlrBaseAgreg));
         }
     }
 
@@ -574,7 +574,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrAgregField = value;
-            RaisePropertyChanged("vlrAgreg");
+            RaisePropertyChanged(nameof(vlrAgreg));
         }
     }
 
@@ -586,7 +586,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrBaseCSLLField = value;
-            RaisePropertyChanged("vlrBaseCSLL");
+            RaisePropertyChanged(nameof(vlrBaseCSLL));
         }
     }
 
@@ -598,7 +598,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrCSLLField = value;
-            RaisePropertyChanged("vlrCSLL");
+            RaisePropertyChanged(nameof(vlrCSLL));
         }
     }
 
@@ -610,7 +610,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrBaseCofinsField = value;
-            RaisePropertyChanged("vlrBaseCofins");
+            RaisePropertyChanged(nameof(vlrBaseCofins));
         }
     }
 
@@ -622,7 +622,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrCofinsField = value;
-            RaisePropertyChanged("vlrCofins");
+            RaisePropertyChanged(nameof(vlrCofins));
         }
     }
 
@@ -634,7 +634,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrBasePPField = value;
-            RaisePropertyChanged("vlrBasePP");
+            RaisePropertyChanged(nameof(vlrBasePP));
         }
     }
 
@@ -646,7 +646,7 @@ public partial class R4020InfoPagtoRetencoes : EfdReinfBindableObject
         set
         {
             vlrPPField = value;
-            RaisePropertyChanged("vlrPP");
+            RaisePropertyChanged(nameof(vlrPP));
         }
     }
 }
@@ -679,7 +679,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             tpProcRetField = value;
-            RaisePropertyChanged("tpProcRet");
+            RaisePropertyChanged(nameof(tpProcRet));
         }
     }
 
@@ -691,7 +691,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             nrProcRetField = value;
-            RaisePropertyChanged("nrProcRet");
+            RaisePropertyChanged(nameof(nrProcRet));
         }
     }
 
@@ -703,7 +703,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -715,7 +715,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrBaseSuspIRField = value;
-            RaisePropertyChanged("vlrBaseSuspIR");
+            RaisePropertyChanged(nameof(vlrBaseSuspIR));
         }
     }
 
@@ -727,7 +727,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNIRField = value;
-            RaisePropertyChanged("vlrNIR");
+            RaisePropertyChanged(nameof(vlrNIR));
         }
     }
 
@@ -739,7 +739,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrDepIRField = value;
-            RaisePropertyChanged("vlrDepIR");
+            RaisePropertyChanged(nameof(vlrDepIR));
         }
     }
 
@@ -751,7 +751,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrBaseSuspCSLLField = value;
-            RaisePropertyChanged("vlrBaseSuspCSLL");
+            RaisePropertyChanged(nameof(vlrBaseSuspCSLL));
         }
     }
 
@@ -763,7 +763,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNCSLLField = value;
-            RaisePropertyChanged("vlrNCSLL");
+            RaisePropertyChanged(nameof(vlrNCSLL));
         }
     }
 
@@ -775,7 +775,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrDepCSLLField = value;
-            RaisePropertyChanged("vlrDepCSLL");
+            RaisePropertyChanged(nameof(vlrDepCSLL));
         }
     }
 
@@ -787,7 +787,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrBaseSuspCofinsField = value;
-            RaisePropertyChanged("vlrBaseSuspCofins");
+            RaisePropertyChanged(nameof(vlrBaseSuspCofins));
         }
     }
 
@@ -799,7 +799,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNCofinsField = value;
-            RaisePropertyChanged("vlrNCofins");
+            RaisePropertyChanged(nameof(vlrNCofins));
         }
     }
 
@@ -811,7 +811,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrDepCofinsField = value;
-            RaisePropertyChanged("vlrDepCofins");
+            RaisePropertyChanged(nameof(vlrDepCofins));
         }
     }
 
@@ -823,7 +823,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrBaseSuspPPField = value;
-            RaisePropertyChanged("vlrBaseSuspPP");
+            RaisePropertyChanged(nameof(vlrBaseSuspPP));
         }
     }
 
@@ -835,7 +835,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNPPField = value;
-            RaisePropertyChanged("vlrNPP");
+            RaisePropertyChanged(nameof(vlrNPP));
         }
     }
 
@@ -847,7 +847,7 @@ public partial class R4020InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrDepPPField = value;
-            RaisePropertyChanged("vlrDepPP");
+            RaisePropertyChanged(nameof(vlrDepPP));
         }
     }
 }
@@ -869,7 +869,7 @@ public partial class R4020InfoPagtoResExt : EfdReinfBindableObject
         set
         {
             indNIFField = value;
-            RaisePropertyChanged("indNIF");
+            RaisePropertyChanged(nameof(indNIF));
         }
     }
 
@@ -881,7 +881,7 @@ public partial class R4020InfoPagtoResExt : EfdReinfBindableObject
         set
         {
             nifBenefField = value;
-            RaisePropertyChanged("nifBenef");
+            RaisePropertyChanged(nameof(nifBenef));
         }
     }
 
@@ -893,7 +893,7 @@ public partial class R4020InfoPagtoResExt : EfdReinfBindableObject
         set
         {
             relFontPgField = value;
-            RaisePropertyChanged("relFontPg");
+            RaisePropertyChanged(nameof(relFontPg));
         }
     }
 
@@ -905,7 +905,7 @@ public partial class R4020InfoPagtoResExt : EfdReinfBindableObject
         set
         {
             frmTributField = value;
-            RaisePropertyChanged("frmTribut");
+            RaisePropertyChanged(nameof(frmTribut));
         }
     }
 
@@ -917,7 +917,7 @@ public partial class R4020InfoPagtoResExt : EfdReinfBindableObject
         set
         {
             endExtField = value;
-            RaisePropertyChanged("endExt");
+            RaisePropertyChanged(nameof(endExt));
         }
     }
 }

@@ -78,7 +78,7 @@ public partial class R2020 : Evento
         set
         {
             evtServPrestField = value;
-            RaisePropertyChanged("evtServPrest");
+            RaisePropertyChanged(nameof(evtServPrest));
         }
     }
 
@@ -91,7 +91,7 @@ public partial class R2020 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -141,7 +141,7 @@ public partial class R2020EventoServicoPrestado : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -154,7 +154,7 @@ public partial class R2020EventoServicoPrestado : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -167,7 +167,7 @@ public partial class R2020EventoServicoPrestado : EfdReinfBindableObject
         set
         {
             infoServPrestField = value;
-            RaisePropertyChanged("infoServPrest");
+            RaisePropertyChanged(nameof(infoServPrest));
         }
     }
 
@@ -180,7 +180,7 @@ public partial class R2020EventoServicoPrestado : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -200,7 +200,7 @@ public partial class R2020ServicoPrestado : EfdReinfBindableObject
         set
         {
             ideEstabPrestField = value;
-            RaisePropertyChanged("ideEstabPrest");
+            RaisePropertyChanged(nameof(ideEstabPrest));
         }
     }
 }
@@ -222,7 +222,7 @@ public partial class R2020IdentificacaoEstabPrestacao : EfdReinfBindableObject
         set
         {
             tpInscEstabPrestField = value;
-            RaisePropertyChanged("tpInscEstabPrest");
+            RaisePropertyChanged(nameof(tpInscEstabPrest));
         }
     }
 
@@ -235,7 +235,7 @@ public partial class R2020IdentificacaoEstabPrestacao : EfdReinfBindableObject
         set
         {
             nrInscEstabPrestField = value;
-            RaisePropertyChanged("nrInscEstabPrest");
+            RaisePropertyChanged(nameof(nrInscEstabPrest));
         }
     }
 
@@ -248,7 +248,7 @@ public partial class R2020IdentificacaoEstabPrestacao : EfdReinfBindableObject
         set
         {
             ideTomadorField = value;
-            RaisePropertyChanged("ideTomador");
+            RaisePropertyChanged(nameof(ideTomador));
         }
     }
 }
@@ -279,7 +279,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             tpInscTomadorField = value;
-            RaisePropertyChanged("tpInscTomador");
+            RaisePropertyChanged(nameof(tpInscTomador));
         }
     }
 
@@ -292,7 +292,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             nrInscTomadorField = value;
-            RaisePropertyChanged("nrInscTomador");
+            RaisePropertyChanged(nameof(nrInscTomador));
         }
     }
 
@@ -305,7 +305,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             indObraField = value;
-            RaisePropertyChanged("indObra");
+            RaisePropertyChanged(nameof(indObra));
         }
     }
 
@@ -345,7 +345,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalBrutoField = value;
-            RaisePropertyChanged("vlrTotalBruto");
+            RaisePropertyChanged(nameof(vlrTotalBruto));
         }
     }
 
@@ -358,7 +358,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalBaseRetField = value;
-            RaisePropertyChanged("vlrTotalBaseRet");
+            RaisePropertyChanged(nameof(vlrTotalBaseRet));
         }
     }
 
@@ -371,7 +371,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalRetPrincField = value;
-            RaisePropertyChanged("vlrTotalRetPrinc");
+            RaisePropertyChanged(nameof(vlrTotalRetPrinc));
         }
     }
 
@@ -384,7 +384,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalRetAdicField = value;
-            RaisePropertyChanged("vlrTotalRetAdic");
+            RaisePropertyChanged(nameof(vlrTotalRetAdic));
         }
     }
 
@@ -397,7 +397,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalNRetPrincField = value;
-            RaisePropertyChanged("vlrTotalNRetPrinc");
+            RaisePropertyChanged(nameof(vlrTotalNRetPrinc));
         }
     }
 
@@ -410,7 +410,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             vlrTotalNRetAdicField = value;
-            RaisePropertyChanged("vlrTotalNRetAdic");
+            RaisePropertyChanged(nameof(vlrTotalNRetAdic));
         }
     }
 
@@ -423,7 +423,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             nfsField = value;
-            RaisePropertyChanged("nfs");
+            RaisePropertyChanged(nameof(nfs));
         }
     }
 
@@ -436,7 +436,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             infoProcRetPrField = value;
-            RaisePropertyChanged("infoProcRetPr");
+            RaisePropertyChanged(nameof(infoProcRetPr));
         }
     }
 
@@ -449,7 +449,7 @@ public partial class R2020IdentificacaoTomadorServico : EfdReinfBindableObject
         set
         {
             infoProcRetAdField = value;
-            RaisePropertyChanged("infoProcRetAd");
+            RaisePropertyChanged(nameof(infoProcRetAd));
         }
     }
 }

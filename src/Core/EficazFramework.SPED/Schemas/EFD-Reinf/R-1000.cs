@@ -68,7 +68,7 @@ public partial class R1000 : Evento
         set
         {
             evtInfoContriField = value;
-            RaisePropertyChanged("evtInfoContri");
+            RaisePropertyChanged(nameof(evtInfoContri));
         }
     }
 
@@ -80,7 +80,7 @@ public partial class R1000 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -141,7 +141,7 @@ public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -164,7 +164,7 @@ public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -215,7 +215,7 @@ public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
         set
         {
             infoContriField = value;
-            RaisePropertyChanged("infoContri");
+            RaisePropertyChanged(nameof(infoContri));
         }
     }
 
@@ -227,7 +227,7 @@ public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -248,7 +248,7 @@ public partial class R1000InfoContribuinte : EfdReinfBindableObject
         set
         {
             itemField = value;
-            RaisePropertyChanged("Item");
+            RaisePropertyChanged(nameof(Item));
         }
     }
 }
@@ -270,7 +270,7 @@ public partial class R1000Alteracao : EfdReinfBindableObject
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 
@@ -282,7 +282,7 @@ public partial class R1000Alteracao : EfdReinfBindableObject
         set
         {
             infoCadastroField = value;
-            RaisePropertyChanged("infoCadastro");
+            RaisePropertyChanged(nameof(infoCadastro));
         }
     }
 
@@ -294,7 +294,7 @@ public partial class R1000Alteracao : EfdReinfBindableObject
         set
         {
             novaValidadeField = value;
-            RaisePropertyChanged("novaValidade");
+            RaisePropertyChanged(nameof(novaValidade));
         }
     }
 }
@@ -314,7 +314,7 @@ public partial class R1000Exclusao : EfdReinfBindableObject
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 }
@@ -335,7 +335,7 @@ public partial class R1000Inclusao : EfdReinfBindableObject
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 
@@ -347,7 +347,7 @@ public partial class R1000Inclusao : EfdReinfBindableObject
         set
         {
             infoCadastroField = value;
-            RaisePropertyChanged("infoCadastro");
+            RaisePropertyChanged(nameof(infoCadastro));
         }
     }
 }
@@ -367,7 +367,7 @@ public partial class R1000InfoCadastroEFR : EfdReinfBindableObject
         set
         {
             ideEFRField = value;
-            RaisePropertyChanged("ideEFR");
+            RaisePropertyChanged(nameof(ideEFR));
         }
     }
 
@@ -379,7 +379,7 @@ public partial class R1000InfoCadastroEFR : EfdReinfBindableObject
         set
         {
             cnpjEFRField = value;
-            RaisePropertyChanged("cnpjEFR");
+            RaisePropertyChanged(nameof(cnpjEFR));
         }
     }
 }
@@ -407,7 +407,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             classTribField = value;
-            RaisePropertyChanged("classTrib");
+            RaisePropertyChanged(nameof(classTrib));
         }
     }
 
@@ -419,7 +419,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             indEscrituracaoField = value;
-            RaisePropertyChanged("indEscrituracao");
+            RaisePropertyChanged(nameof(indEscrituracao));
         }
     }
 
@@ -431,7 +431,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             indDesoneracaoField = value;
-            RaisePropertyChanged("indDesoneracao");
+            RaisePropertyChanged(nameof(indDesoneracao));
         }
     }
 
@@ -443,7 +443,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             indAcordoIsenMultaField = value;
-            RaisePropertyChanged("indAcordoIsenMulta");
+            RaisePropertyChanged(nameof(indAcordoIsenMulta));
         }
     }
 
@@ -455,7 +455,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             indSitPJField = value;
-            RaisePropertyChanged("indSitPJ");
+            RaisePropertyChanged(nameof(indSitPJ));
         }
     }
 
@@ -467,7 +467,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             indSitPJFieldSpecified = value;
-            RaisePropertyChanged("indSitPJSpecified");
+            RaisePropertyChanged(nameof(indSitPJSpecified));
         }
     }
 
@@ -479,7 +479,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             contatoField = value;
-            RaisePropertyChanged("contato");
+            RaisePropertyChanged(nameof(contato));
         }
     }
 
@@ -491,7 +491,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             softHouseField = value;
-            RaisePropertyChanged("softHouse");
+            RaisePropertyChanged(nameof(softHouse));
         }
     }
 
@@ -503,7 +503,7 @@ public partial class R1000InfoCadastro : EfdReinfBindableObject
         set
         {
             infoEFRField = value;
-            RaisePropertyChanged("infoEFR");
+            RaisePropertyChanged(nameof(infoEFR));
         }
     }
 }
@@ -526,7 +526,7 @@ public partial class R1000InfoCadastroContato : EfdReinfBindableObject
         set
         {
             nmCttField = value;
-            RaisePropertyChanged("nmCtt");
+            RaisePropertyChanged(nameof(nmCtt));
         }
     }
 
@@ -538,7 +538,7 @@ public partial class R1000InfoCadastroContato : EfdReinfBindableObject
         set
         {
             cpfCttField = value;
-            RaisePropertyChanged("cpfCtt");
+            RaisePropertyChanged(nameof(cpfCtt));
         }
     }
 
@@ -550,7 +550,7 @@ public partial class R1000InfoCadastroContato : EfdReinfBindableObject
         set
         {
             foneFixoField = value;
-            RaisePropertyChanged("foneFixo");
+            RaisePropertyChanged(nameof(foneFixo));
         }
     }
 
@@ -562,7 +562,7 @@ public partial class R1000InfoCadastroContato : EfdReinfBindableObject
         set
         {
             foneCelField = value;
-            RaisePropertyChanged("foneCel");
+            RaisePropertyChanged(nameof(foneCel));
         }
     }
 
@@ -574,7 +574,7 @@ public partial class R1000InfoCadastroContato : EfdReinfBindableObject
         set
         {
             emailField = value;
-            RaisePropertyChanged("email");
+            RaisePropertyChanged(nameof(email));
         }
     }
 }
@@ -597,7 +597,7 @@ public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
         set
         {
             cnpjSoftHouseField = value;
-            RaisePropertyChanged("cnpjSoftHouse");
+            RaisePropertyChanged(nameof(cnpjSoftHouse));
         }
     }
 
@@ -609,7 +609,7 @@ public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
         set
         {
             nmRazaoField = value;
-            RaisePropertyChanged("nmRazao");
+            RaisePropertyChanged(nameof(nmRazao));
         }
     }
 
@@ -621,7 +621,7 @@ public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
         set
         {
             nmContField = value;
-            RaisePropertyChanged("nmCont");
+            RaisePropertyChanged(nameof(nmCont));
         }
     }
 
@@ -633,7 +633,7 @@ public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
         set
         {
             telefoneField = value;
-            RaisePropertyChanged("telefone");
+            RaisePropertyChanged(nameof(telefone));
         }
     }
 
@@ -645,7 +645,7 @@ public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
         set
         {
             emailField = value;
-            RaisePropertyChanged("email");
+            RaisePropertyChanged(nameof(email));
         }
     }
 }

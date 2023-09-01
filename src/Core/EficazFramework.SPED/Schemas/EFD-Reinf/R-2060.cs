@@ -64,7 +64,7 @@ public partial class R2060 : Evento
         set
         {
             evtCPRBField = value;
-            RaisePropertyChanged("evtCPRB");
+            RaisePropertyChanged(nameof(evtCPRB));
         }
     }
 
@@ -77,7 +77,7 @@ public partial class R2060 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -127,7 +127,7 @@ public partial class R2060EventoCprb : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -140,7 +140,7 @@ public partial class R2060EventoCprb : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -153,7 +153,7 @@ public partial class R2060EventoCprb : EfdReinfBindableObject
         set
         {
             infoCPRBField = value;
-            RaisePropertyChanged("infoCPRB");
+            RaisePropertyChanged(nameof(infoCPRB));
         }
     }
 
@@ -166,7 +166,7 @@ public partial class R2060EventoCprb : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -186,7 +186,7 @@ public partial class R2060InfoCprb : EfdReinfBindableObject
         set
         {
             ideEstabField = value;
-            RaisePropertyChanged("ideEstab");
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
 }
@@ -211,7 +211,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -224,7 +224,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 
@@ -237,7 +237,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             vlrRecBrutaTotalField = value;
-            RaisePropertyChanged("vlrRecBrutaTotal");
+            RaisePropertyChanged(nameof(vlrRecBrutaTotal));
         }
     }
 
@@ -250,7 +250,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             vlrCPApurTotalField = value;
-            RaisePropertyChanged("vlrCPApurTotal");
+            RaisePropertyChanged(nameof(vlrCPApurTotal));
         }
     }
 
@@ -263,7 +263,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             vlrCPRBSuspTotalField = value;
-            RaisePropertyChanged("vlrCPRBSuspTotal");
+            RaisePropertyChanged(nameof(vlrCPRBSuspTotal));
         }
     }
 
@@ -276,7 +276,7 @@ public partial class R2060IdentificacaoEstabelecimento : EfdReinfBindableObject
         set
         {
             tipoCodField = value;
-            RaisePropertyChanged("tipoCod");
+            RaisePropertyChanged(nameof(tipoCod));
         }
     }
 }
@@ -304,7 +304,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             codAtivEconField = value;
-            RaisePropertyChanged("codAtivEcon");
+            RaisePropertyChanged(nameof(codAtivEcon));
         }
     }
 
@@ -317,7 +317,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             vlrRecBrutaAtivField = value;
-            RaisePropertyChanged("vlrRecBrutaAtiv");
+            RaisePropertyChanged(nameof(vlrRecBrutaAtiv));
         }
     }
 
@@ -330,7 +330,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             vlrExcRecBrutaField = value;
-            RaisePropertyChanged("vlrExcRecBruta");
+            RaisePropertyChanged(nameof(vlrExcRecBruta));
         }
     }
 
@@ -343,7 +343,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             vlrAdicRecBrutaField = value;
-            RaisePropertyChanged("vlrAdicRecBruta");
+            RaisePropertyChanged(nameof(vlrAdicRecBruta));
         }
     }
 
@@ -356,7 +356,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             vlrBcCPRBField = value;
-            RaisePropertyChanged("vlrBcCPRB");
+            RaisePropertyChanged(nameof(vlrBcCPRB));
         }
     }
 
@@ -369,7 +369,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             vlrCPRBapurField = value;
-            RaisePropertyChanged("vlrCPRBapur");
+            RaisePropertyChanged(nameof(vlrCPRBapur));
         }
     }
 
@@ -382,7 +382,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             observField = value;
-            RaisePropertyChanged("observ");
+            RaisePropertyChanged(nameof(observ));
         }
     }
 
@@ -395,7 +395,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             tipoAjusteField = value;
-            RaisePropertyChanged("tipoAjuste");
+            RaisePropertyChanged(nameof(tipoAjuste));
         }
     }
 
@@ -408,7 +408,7 @@ public partial class R2060ReceitaPorAtividade : EfdReinfBindableObject
         set
         {
             infoProcField = value;
-            RaisePropertyChanged("infoProc");
+            RaisePropertyChanged(nameof(infoProc));
         }
     }
 }
@@ -432,7 +432,7 @@ public partial class R2060AjusteContribuicao : EfdReinfBindableObject
         set
         {
             tpAjusteField = value;
-            RaisePropertyChanged("tpAjuste");
+            RaisePropertyChanged(nameof(tpAjuste));
         }
     }
 
@@ -445,7 +445,7 @@ public partial class R2060AjusteContribuicao : EfdReinfBindableObject
         set
         {
             codAjusteField = value;
-            RaisePropertyChanged("codAjuste");
+            RaisePropertyChanged(nameof(codAjuste));
         }
     }
 
@@ -458,7 +458,7 @@ public partial class R2060AjusteContribuicao : EfdReinfBindableObject
         set
         {
             vlrAjusteField = value;
-            RaisePropertyChanged("vlrAjuste");
+            RaisePropertyChanged(nameof(vlrAjuste));
         }
     }
 
@@ -471,7 +471,7 @@ public partial class R2060AjusteContribuicao : EfdReinfBindableObject
         set
         {
             descAjusteField = value;
-            RaisePropertyChanged("descAjuste");
+            RaisePropertyChanged(nameof(descAjuste));
         }
     }
 
@@ -484,7 +484,7 @@ public partial class R2060AjusteContribuicao : EfdReinfBindableObject
         set
         {
             dtAjusteField = value;
-            RaisePropertyChanged("dtAjuste");
+            RaisePropertyChanged(nameof(dtAjuste));
         }
     }
 }
@@ -507,7 +507,7 @@ public partial class R2060InfoProcesso : EfdReinfBindableObject
         set
         {
             tpProcField = value;
-            RaisePropertyChanged("tpProc");
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
@@ -520,7 +520,7 @@ public partial class R2060InfoProcesso : EfdReinfBindableObject
         set
         {
             nrProcField = value;
-            RaisePropertyChanged("nrProc");
+            RaisePropertyChanged(nameof(nrProc));
         }
     }
 
@@ -533,7 +533,7 @@ public partial class R2060InfoProcesso : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -546,7 +546,7 @@ public partial class R2060InfoProcesso : EfdReinfBindableObject
         set
         {
             vlrCPRBSuspField = value;
-            RaisePropertyChanged("vlrCPRBSusp");
+            RaisePropertyChanged(nameof(vlrCPRBSusp));
         }
     }
 }
