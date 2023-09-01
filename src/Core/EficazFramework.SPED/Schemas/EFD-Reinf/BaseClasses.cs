@@ -139,7 +139,7 @@ public partial class IdentificacaoPeriodo : EfdReinfBindableObject
         set
         {
             iniValidField = value;
-            RaisePropertyChanged("iniValid");
+            RaisePropertyChanged(nameof(iniValid));
         }
     }
 
@@ -153,7 +153,7 @@ public partial class IdentificacaoPeriodo : EfdReinfBindableObject
         set
         {
             fimValidField = value;
-            RaisePropertyChanged("fimValid");
+            RaisePropertyChanged(nameof(fimValid));
         }
     }
 }
@@ -176,7 +176,7 @@ public partial class IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
@@ -188,7 +188,7 @@ public partial class IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
@@ -200,7 +200,7 @@ public partial class IdentificacaoEvento : EfdReinfBindableObject
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -227,7 +227,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             indRetifField = value;
-            RaisePropertyChanged("indRetif");
+            RaisePropertyChanged(nameof(indRetif));
         }
     }
 
@@ -239,7 +239,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
+            RaisePropertyChanged(nameof(nrRecibo));
         }
     }
 
@@ -251,7 +251,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             perApurField = value;
-            RaisePropertyChanged("perApur");
+            RaisePropertyChanged(nameof(perApur));
         }
     }
 
@@ -263,7 +263,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
@@ -275,7 +275,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
@@ -287,7 +287,7 @@ public partial class IdentificacaoEventoPeriodico : EfdReinfBindableObject
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -312,7 +312,7 @@ public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
         set
         {
             perApurField = value;
-            RaisePropertyChanged("perApur");
+            RaisePropertyChanged(nameof(perApur));
         }
     }
 
@@ -324,7 +324,7 @@ public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
@@ -336,7 +336,7 @@ public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
@@ -348,7 +348,7 @@ public partial class IdentificacaoEventoFechamento : EfdReinfBindableObject
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -372,7 +372,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             tpInscField = value;
-            RaisePropertyChanged("tpInsc");
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
@@ -384,7 +384,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             nrInscField = value;
-            RaisePropertyChanged("nrInsc");
+            RaisePropertyChanged(nameof(nrInsc));
         }
     }
 
@@ -396,7 +396,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
         set
         {
             infoComplContriField = value;
-            RaisePropertyChanged("infoComplContri");
+            RaisePropertyChanged(nameof(infoComplContri));
         }
     }
 
@@ -418,7 +418,7 @@ public partial class InformacaoComplementarContribuinte : EfdReinfBindableObject
         set
         {
             natJurField = value;
-            RaisePropertyChanged("natJur");
+            RaisePropertyChanged(nameof(natJur));
         }
     }
 }
@@ -443,7 +443,7 @@ public partial class IdentificacaoResponsavel : EfdReinfBindableObject
         set
         {
             nmRespField = value;
-            RaisePropertyChanged("nmResp");
+            RaisePropertyChanged(nameof(nmResp));
         }
     }
 
@@ -455,7 +455,7 @@ public partial class IdentificacaoResponsavel : EfdReinfBindableObject
         set
         {
             cpfRespField = value;
-            RaisePropertyChanged("cpfResp");
+            RaisePropertyChanged(nameof(cpfResp));
         }
     }
 
@@ -467,7 +467,7 @@ public partial class IdentificacaoResponsavel : EfdReinfBindableObject
         set
         {
             telefoneField = value;
-            RaisePropertyChanged("telefone");
+            RaisePropertyChanged(nameof(telefone));
         }
     }
 
@@ -479,10 +479,11 @@ public partial class IdentificacaoResponsavel : EfdReinfBindableObject
         set
         {
             emailField = value;
-            RaisePropertyChanged("email");
+            RaisePropertyChanged(nameof(email));
         }
     }
 }
+
 
 /// <summary>
 /// # Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais<br/>

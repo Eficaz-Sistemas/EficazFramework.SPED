@@ -17,7 +17,7 @@ public partial class R2030eR2040InfoRecurso : EfdReinfBindableObject
         set
         {
             tpRepasseField = value;
-            RaisePropertyChanged("tpRepasse");
+            RaisePropertyChanged(nameof(tpRepasse));
         }
     }
 
@@ -30,7 +30,7 @@ public partial class R2030eR2040InfoRecurso : EfdReinfBindableObject
         set
         {
             descRecursoField = value;
-            RaisePropertyChanged("descRecurso");
+            RaisePropertyChanged(nameof(descRecurso));
         }
     }
 
@@ -43,7 +43,7 @@ public partial class R2030eR2040InfoRecurso : EfdReinfBindableObject
         set
         {
             vlrBrutoField = value;
-            RaisePropertyChanged("vlrBruto");
+            RaisePropertyChanged(nameof(vlrBruto));
         }
     }
 
@@ -56,7 +56,7 @@ public partial class R2030eR2040InfoRecurso : EfdReinfBindableObject
         set
         {
             vlrRetApurField = value;
-            RaisePropertyChanged("vlrRetApur");
+            RaisePropertyChanged(nameof(vlrRetApur));
         }
     }
 }
@@ -78,7 +78,7 @@ public partial class R2030eR2040ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             tpProcField = value;
-            RaisePropertyChanged("tpProc");
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
@@ -91,7 +91,7 @@ public partial class R2030eR2040ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             nrProcField = value;
-            RaisePropertyChanged("nrProc");
+            RaisePropertyChanged(nameof(nrProc));
         }
     }
 
@@ -104,7 +104,7 @@ public partial class R2030eR2040ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -117,7 +117,7 @@ public partial class R2030eR2040ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNRetField = value;
-            RaisePropertyChanged("vlrNRet");
+            RaisePropertyChanged(nameof(vlrNRet));
         }
     }
 }

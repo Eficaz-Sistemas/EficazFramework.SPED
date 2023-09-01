@@ -41,7 +41,7 @@ public partial class R2098 : Evento
         set
         {
             evtReabreEvPerField = value;
-            RaisePropertyChanged("evtReabreEvPer");
+            RaisePropertyChanged(nameof(evtReabreEvPer));
         }
     }
 
@@ -54,7 +54,7 @@ public partial class R2098 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -103,7 +103,7 @@ public partial class R2098EventoReabrePeriodo : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -116,7 +116,7 @@ public partial class R2098EventoReabrePeriodo : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -129,7 +129,7 @@ public partial class R2098EventoReabrePeriodo : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }

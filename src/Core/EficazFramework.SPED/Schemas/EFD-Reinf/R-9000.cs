@@ -47,7 +47,7 @@ public partial class R9000 : Evento
         set
         {
             evtExclusaoField = value;
-            RaisePropertyChanged("evtExclusao");
+            RaisePropertyChanged(nameof(evtExclusao));
         }
     }
 
@@ -60,7 +60,7 @@ public partial class R9000 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -109,7 +109,7 @@ public partial class R9000EventoExclusao : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -122,7 +122,7 @@ public partial class R9000EventoExclusao : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -135,7 +135,7 @@ public partial class R9000EventoExclusao : EfdReinfBindableObject
         set
         {
             infoExclusaoField = value;
-            RaisePropertyChanged("infoExclusao");
+            RaisePropertyChanged(nameof(infoExclusao));
         }
     }
 
@@ -148,7 +148,7 @@ public partial class R9000EventoExclusao : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -174,7 +174,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : EfdReinfBindableObject
         set
         {
             tpEventoField = value;
-            RaisePropertyChanged("tpEvento");
+            RaisePropertyChanged(nameof(tpEvento));
         }
     }
 
@@ -187,7 +187,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : EfdReinfBindableObject
         set
         {
             nrRecEvtField = value;
-            RaisePropertyChanged("nrRecEvt");
+            RaisePropertyChanged(nameof(nrRecEvt));
         }
     }
 
@@ -200,7 +200,7 @@ public partial class ReinfEvtExclusaoInfoExclusao : EfdReinfBindableObject
         set
         {
             perApurField = value;
-            RaisePropertyChanged("perApur");
+            RaisePropertyChanged(nameof(perApur));
         }
     }
 }

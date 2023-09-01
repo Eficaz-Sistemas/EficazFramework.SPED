@@ -18,7 +18,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             tpProcRetField = value;
-            RaisePropertyChanged("tpProcRet");
+            RaisePropertyChanged(nameof(tpProcRet));
         }
     }
 
@@ -30,7 +30,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             nrProcRetField = value;
-            RaisePropertyChanged("nrProcRet");
+            RaisePropertyChanged(nameof(nrProcRet));
         }
     }
 
@@ -42,7 +42,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -54,7 +54,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrBaseSuspIRField = value;
-            RaisePropertyChanged("vlrBaseSuspIR");
+            RaisePropertyChanged(nameof(vlrBaseSuspIR));
         }
     }
 
@@ -66,7 +66,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrNIRField = value;
-            RaisePropertyChanged("vlrNIR");
+            RaisePropertyChanged(nameof(vlrNIR));
         }
     }
 
@@ -78,7 +78,7 @@ public partial class R4040e4080InfoProcessoRelacionado : EfdReinfBindableObject
         set
         {
             vlrDepIRField = value;
-            RaisePropertyChanged("vlrDepIR");
+            RaisePropertyChanged(nameof(vlrDepIR));
         }
     }
 }

@@ -67,7 +67,7 @@ public partial class R2040 : Evento
         set
         {
             evtAssocDespRepField = value;
-            RaisePropertyChanged("evtAssocDespRep");
+            RaisePropertyChanged(nameof(evtAssocDespRep));
         }
     }
 
@@ -80,7 +80,7 @@ public partial class R2040 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -129,7 +129,7 @@ public partial class R2040EventoAssociacaoDespRepasse : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -142,7 +142,7 @@ public partial class R2040EventoAssociacaoDespRepasse : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -155,7 +155,7 @@ public partial class R2040EventoAssociacaoDespRepasse : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -177,7 +177,7 @@ public partial class R2040IdentificacaoContribuinteAssoc : EfdReinfBindableObjec
         set
         {
             tpInscField = value;
-            RaisePropertyChanged("tpInsc");
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
@@ -190,7 +190,7 @@ public partial class R2040IdentificacaoContribuinteAssoc : EfdReinfBindableObjec
         set
         {
             nrInscField = value;
-            RaisePropertyChanged("nrInsc");
+            RaisePropertyChanged(nameof(nrInsc));
         }
     }
 
@@ -203,7 +203,7 @@ public partial class R2040IdentificacaoContribuinteAssoc : EfdReinfBindableObjec
         set
         {
             ideEstabField = value;
-            RaisePropertyChanged("ideEstab");
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
 
@@ -230,7 +230,7 @@ public partial class R2040IdentificacaoEstabelecimentoAssoc : EfdReinfBindableOb
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -243,7 +243,7 @@ public partial class R2040IdentificacaoEstabelecimentoAssoc : EfdReinfBindableOb
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 
@@ -256,7 +256,7 @@ public partial class R2040IdentificacaoEstabelecimentoAssoc : EfdReinfBindableOb
         set
         {
             recursosRepField = value;
-            RaisePropertyChanged("recursosRep");
+            RaisePropertyChanged(nameof(recursosRep));
         }
     }
 }
@@ -281,7 +281,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             cnpjAssocDespField = value;
-            RaisePropertyChanged("cnpjAssocDesp");
+            RaisePropertyChanged(nameof(cnpjAssocDesp));
         }
     }
 
@@ -294,7 +294,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             vlrTotalRepField = value;
-            RaisePropertyChanged("vlrTotalRep");
+            RaisePropertyChanged(nameof(vlrTotalRep));
         }
     }
 
@@ -307,7 +307,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             vlrTotalRetField = value;
-            RaisePropertyChanged("vlrTotalRet");
+            RaisePropertyChanged(nameof(vlrTotalRet));
         }
     }
 
@@ -320,7 +320,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             vlrTotalNRetField = value;
-            RaisePropertyChanged("vlrTotalNRet");
+            RaisePropertyChanged(nameof(vlrTotalNRet));
         }
     }
 
@@ -333,7 +333,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             infoRecursoField = value;
-            RaisePropertyChanged("infoRecurso");
+            RaisePropertyChanged(nameof(infoRecurso));
         }
     }
 
@@ -346,7 +346,7 @@ public partial class R2040RecursosRepassados : EfdReinfBindableObject
         set
         {
             infoProcField = value;
-            RaisePropertyChanged("infoProc");
+            RaisePropertyChanged(nameof(infoProc));
         }
     }
 }

@@ -85,7 +85,7 @@ public partial class R4099 : Evento
         set
         {
             evtFechField = value;
-            RaisePropertyChanged("evtFech");
+            RaisePropertyChanged(nameof(evtFech));
         }
     }
 
@@ -97,7 +97,7 @@ public partial class R4099 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -147,7 +147,7 @@ public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -159,7 +159,7 @@ public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -171,7 +171,7 @@ public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
         set
         {
             ideRespInfField = value;
-            RaisePropertyChanged("ideRespInf");
+            RaisePropertyChanged(nameof(ideRespInf));
         }
     }
 
@@ -183,7 +183,7 @@ public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
         set
         {
             infoFechField = value;
-            RaisePropertyChanged("infoFech");
+            RaisePropertyChanged(nameof(infoFech));
         }
     }
 
@@ -195,7 +195,7 @@ public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -214,7 +214,7 @@ public partial class R4099InformacaoFechamReabertura : EfdReinfBindableObject
         set
         {
             fechRetField = value;
-            RaisePropertyChanged("fechRet");
+            RaisePropertyChanged(nameof(fechRet));
         }
     }
 }

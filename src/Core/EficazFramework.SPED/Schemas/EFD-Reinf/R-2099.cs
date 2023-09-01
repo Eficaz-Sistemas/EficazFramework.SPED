@@ -54,7 +54,7 @@ public partial class R2099 : Evento, INotifyPropertyChanged
         set
         {
             evtFechaEvPerField = value;
-            RaisePropertyChanged("evtFechaEvPer");
+            RaisePropertyChanged(nameof(evtFechaEvPer));
         }
     }
 
@@ -67,7 +67,7 @@ public partial class R2099 : Evento, INotifyPropertyChanged
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -124,7 +124,7 @@ public partial class R2099EventoFechamentoPeriodo : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -137,7 +137,7 @@ public partial class R2099EventoFechamentoPeriodo : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -150,7 +150,7 @@ public partial class R2099EventoFechamentoPeriodo : EfdReinfBindableObject
         set
         {
             ideRespInfField = value;
-            RaisePropertyChanged("ideRespInf");
+            RaisePropertyChanged(nameof(ideRespInf));
         }
     }
 
@@ -163,7 +163,7 @@ public partial class R2099EventoFechamentoPeriodo : EfdReinfBindableObject
         set
         {
             infoFechField = value;
-            RaisePropertyChanged("infoFech");
+            RaisePropertyChanged(nameof(infoFech));
         }
     }
 
@@ -176,7 +176,7 @@ public partial class R2099EventoFechamentoPeriodo : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -205,7 +205,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtServTmField = value;
-            RaisePropertyChanged("evtServTm");
+            RaisePropertyChanged(nameof(evtServTm));
         }
     }
 
@@ -218,7 +218,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtServPrField = value;
-            RaisePropertyChanged("evtServPr");
+            RaisePropertyChanged(nameof(evtServPr));
         }
     }
 
@@ -231,7 +231,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtAssDespRecField = value;
-            RaisePropertyChanged("evtAssDespRec");
+            RaisePropertyChanged(nameof(evtAssDespRec));
         }
     }
 
@@ -244,7 +244,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtAssDespRepField = value;
-            RaisePropertyChanged("evtAssDespRep");
+            RaisePropertyChanged(nameof(evtAssDespRep));
         }
     }
 
@@ -257,7 +257,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtComProdField = value;
-            RaisePropertyChanged("evtComProd");
+            RaisePropertyChanged(nameof(evtComProd));
         }
     }
 
@@ -270,7 +270,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtCPRBField = value;
-            RaisePropertyChanged("evtCPRB");
+            RaisePropertyChanged(nameof(evtCPRB));
         }
     }
 
@@ -283,7 +283,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtAquisField = value;
-            RaisePropertyChanged("evtAquis");
+            RaisePropertyChanged(nameof(evtAquis));
         }
     }
 
@@ -296,7 +296,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtPgtosField = value;
-            RaisePropertyChanged("evtPgtos");
+            RaisePropertyChanged(nameof(evtPgtos));
         }
     }
 
@@ -309,7 +309,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             evtPgtosFieldSpecified = value;
-            RaisePropertyChanged("evtPgtosSpecified");
+            RaisePropertyChanged(nameof(evtPgtosSpecified));
         }
     }
 
@@ -322,7 +322,7 @@ public partial class R2099InformacoesFechamento : EfdReinfBindableObject
         set
         {
             compSemMovtoField = value;
-            RaisePropertyChanged("compSemMovto");
+            RaisePropertyChanged(nameof(compSemMovto));
         }
     }
 }

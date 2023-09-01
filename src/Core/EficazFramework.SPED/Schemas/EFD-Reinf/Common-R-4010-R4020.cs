@@ -15,7 +15,7 @@ public abstract class R4010eR4020IdentificacaoEstabelecimentoBase : EfdReinfBind
         set
         {
             tpInscEstabField = value;
-            RaisePropertyChanged("tpInscEstab");
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
 
@@ -27,7 +27,7 @@ public abstract class R4010eR4020IdentificacaoEstabelecimentoBase : EfdReinfBind
         set
         {
             nrInscEstabField = value;
-            RaisePropertyChanged("nrInscEstab");
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
 }
@@ -47,7 +47,7 @@ public abstract class R4010eR4020IdentificacaoPagtoBase : EfdReinfBindableObject
         set
         {
             natRendField = value;
-            RaisePropertyChanged("natRend");
+            RaisePropertyChanged(nameof(natRend));
         }
     }
 
@@ -59,7 +59,7 @@ public abstract class R4010eR4020IdentificacaoPagtoBase : EfdReinfBindableObject
         set
         {
             observField = value;
-            RaisePropertyChanged("observ");
+            RaisePropertyChanged(nameof(observ));
         }
     }
 }
@@ -81,7 +81,7 @@ public partial class R4010eR4020InfomacaoProcessoJudic : EfdReinfBindableObject
         set
         {
             nrProcField = value;
-            RaisePropertyChanged("nrProc");
+            RaisePropertyChanged(nameof(nrProc));
         }
     }
 
@@ -93,7 +93,7 @@ public partial class R4010eR4020InfomacaoProcessoJudic : EfdReinfBindableObject
         set
         {
             indOrigRecField = value;
-            RaisePropertyChanged("indOrigRec");
+            RaisePropertyChanged(nameof(indOrigRec));
         }
     }
 
@@ -105,7 +105,7 @@ public partial class R4010eR4020InfomacaoProcessoJudic : EfdReinfBindableObject
         set
         {
             cnpjOrigRecursoField = value;
-            RaisePropertyChanged("cnpjOrigRecurso");
+            RaisePropertyChanged(nameof(cnpjOrigRecurso));
         }
     }
 
@@ -117,7 +117,7 @@ public partial class R4010eR4020InfomacaoProcessoJudic : EfdReinfBindableObject
         set
         {
             descField = value;
-            RaisePropertyChanged("desc");
+            RaisePropertyChanged(nameof(desc));
         }
     }
 
@@ -129,7 +129,7 @@ public partial class R4010eR4020InfomacaoProcessoJudic : EfdReinfBindableObject
         set
         {
             despProcJudField = value;
-            RaisePropertyChanged("despProcJud");
+            RaisePropertyChanged(nameof(despProcJud));
         }
     }
 }
@@ -151,7 +151,7 @@ public partial class R4010eR4020DespesasAdvogado : EfdReinfBindableObject
         set
         {
             vlrDespCustasField = value;
-            RaisePropertyChanged("vlrDespCustas");
+            RaisePropertyChanged(nameof(vlrDespCustas));
         }
     }
 
@@ -163,7 +163,7 @@ public partial class R4010eR4020DespesasAdvogado : EfdReinfBindableObject
         set
         {
             vlrDespAdvogadosField = value;
-            RaisePropertyChanged("vlrDespAdvogados");
+            RaisePropertyChanged(nameof(vlrDespAdvogados));
         }
     }
 
@@ -175,7 +175,7 @@ public partial class R4010eR4020DespesasAdvogado : EfdReinfBindableObject
         set
         {
             ideAdvField = value;
-            RaisePropertyChanged("ideAdv");
+            RaisePropertyChanged(nameof(ideAdv));
         }
     }
 }
@@ -197,7 +197,7 @@ public partial class R4010eR4020IdentificacaoAdvogado : EfdReinfBindableObject
         set
         {
             tpInscAdvField = value;
-            RaisePropertyChanged("tpInscAdv");
+            RaisePropertyChanged(nameof(tpInscAdv));
         }
     }
 
@@ -209,7 +209,7 @@ public partial class R4010eR4020IdentificacaoAdvogado : EfdReinfBindableObject
         set
         {
             nrInscAdvField = value;
-            RaisePropertyChanged("nrInscAdv");
+            RaisePropertyChanged(nameof(nrInscAdv));
         }
     }
 
@@ -221,7 +221,7 @@ public partial class R4010eR4020IdentificacaoAdvogado : EfdReinfBindableObject
         set
         {
             vlrAdvField = value;
-            RaisePropertyChanged("vlrAdv");
+            RaisePropertyChanged(nameof(vlrAdv));
         }
     }
 }
@@ -247,7 +247,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             dscLogradField = value;
-            RaisePropertyChanged("dscLograd");
+            RaisePropertyChanged(nameof(dscLograd));
         }
     }
 
@@ -259,7 +259,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             nrLogradField = value;
-            RaisePropertyChanged("nrLograd");
+            RaisePropertyChanged(nameof(nrLograd));
         }
     }
 
@@ -271,7 +271,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             complemField = value;
-            RaisePropertyChanged("complem");
+            RaisePropertyChanged(nameof(complem));
         }
     }
 
@@ -283,7 +283,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             bairroField = value;
-            RaisePropertyChanged("bairro");
+            RaisePropertyChanged(nameof(bairro));
         }
     }
 
@@ -295,7 +295,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             cidadeField = value;
-            RaisePropertyChanged("cidade");
+            RaisePropertyChanged(nameof(cidade));
         }
     }
 
@@ -307,7 +307,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             estadoField = value;
-            RaisePropertyChanged("estado");
+            RaisePropertyChanged(nameof(estado));
         }
     }
 
@@ -319,7 +319,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             codPostalField = value;
-            RaisePropertyChanged("codPostal");
+            RaisePropertyChanged(nameof(codPostal));
         }
     }
 
@@ -331,7 +331,7 @@ public partial class R4010e4020EnderecoResExterior : EfdReinfBindableObject
         set
         {
             telefField = value;
-            RaisePropertyChanged("telef");
+            RaisePropertyChanged(nameof(telef));
         }
     }
 }

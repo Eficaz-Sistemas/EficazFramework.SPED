@@ -57,7 +57,7 @@ public partial class R1070 : Evento
         set
         {
             evtTabProcessoField = value;
-            RaisePropertyChanged("evtTabProcesso");
+            RaisePropertyChanged(nameof(evtTabProcesso));
         }
     }
 
@@ -69,7 +69,7 @@ public partial class R1070 : Evento
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
@@ -120,7 +120,7 @@ public partial class R1070EventoTabProcesso : EfdReinfBindableObject
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
@@ -132,7 +132,7 @@ public partial class R1070EventoTabProcesso : EfdReinfBindableObject
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -144,7 +144,7 @@ public partial class R1070EventoTabProcesso : EfdReinfBindableObject
         set
         {
             infoProcessoField = value;
-            RaisePropertyChanged("infoProcesso");
+            RaisePropertyChanged(nameof(infoProcesso));
         }
     }
 
@@ -156,7 +156,7 @@ public partial class R1070EventoTabProcesso : EfdReinfBindableObject
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
@@ -178,7 +178,7 @@ public partial class R1070InfoProcesso : EfdReinfBindableObject
         set
         {
             itemField = value;
-            RaisePropertyChanged("Item");
+            RaisePropertyChanged(nameof(Item));
         }
     }
 }
@@ -199,7 +199,7 @@ public partial class R1070Alteracao : EfdReinfBindableObject
         set
         {
             ideProcessoField = value;
-            RaisePropertyChanged("ideProcesso");
+            RaisePropertyChanged(nameof(ideProcesso));
         }
     }
 
@@ -211,7 +211,7 @@ public partial class R1070Alteracao : EfdReinfBindableObject
         set
         {
             novaValidadeField = value;
-            RaisePropertyChanged("novaValidade");
+            RaisePropertyChanged(nameof(novaValidade));
         }
     }
 }
@@ -232,7 +232,7 @@ public partial class R1070Exclusao : EfdReinfBindableObject
         set
         {
             ideProcessoField = value;
-            RaisePropertyChanged("ideProcesso");
+            RaisePropertyChanged(nameof(ideProcesso));
         }
     }
 }
@@ -252,7 +252,7 @@ public partial class R1070Inclusao : EfdReinfBindableObject
         set
         {
             ideProcessoField = value;
-            RaisePropertyChanged("ideProcesso");
+            RaisePropertyChanged(nameof(ideProcesso));
         }
     }
 
@@ -279,7 +279,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             tpProcField = value;
-            RaisePropertyChanged("tpProc");
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
@@ -291,7 +291,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             nrProcField = value;
-            RaisePropertyChanged("nrProc");
+            RaisePropertyChanged(nameof(nrProc));
         }
     }
 
@@ -305,7 +305,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             iniValidField = value;
-            RaisePropertyChanged("iniValid");
+            RaisePropertyChanged(nameof(iniValid));
         }
     }
 
@@ -319,7 +319,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             fimValidField = value;
-            RaisePropertyChanged("fimValid");
+            RaisePropertyChanged(nameof(fimValid));
         }
     }
 
@@ -331,7 +331,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             indAutoriaField = value;
-            RaisePropertyChanged("indAutoria");
+            RaisePropertyChanged(nameof(indAutoria));
         }
     }
 
@@ -347,7 +347,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             indAutoriaFieldSpecified = value;
-            RaisePropertyChanged("indAutoriaSpecified");
+            RaisePropertyChanged(nameof(indAutoriaSpecified));
         }
     }
 
@@ -360,7 +360,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             infoSuspField = value;
-            RaisePropertyChanged("infoSusp");
+            RaisePropertyChanged(nameof(infoSusp));
         }
     }
 
@@ -372,7 +372,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
         set
         {
             dadosProcJudField = value;
-            RaisePropertyChanged("dadosProcJud");
+            RaisePropertyChanged(nameof(dadosProcJud));
         }
     }
 }
@@ -393,7 +393,7 @@ public partial class R1070IdentificacaoProcessoInfoSusp : EfdReinfBindableObject
         set
         {
             codSuspField = value;
-            RaisePropertyChanged("codSusp");
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 
@@ -405,7 +405,7 @@ public partial class R1070IdentificacaoProcessoInfoSusp : EfdReinfBindableObject
         set
         {
             indSuspField = value;
-            RaisePropertyChanged("indSusp");
+            RaisePropertyChanged(nameof(indSusp));
         }
     }
 
@@ -417,7 +417,7 @@ public partial class R1070IdentificacaoProcessoInfoSusp : EfdReinfBindableObject
         set
         {
             dtDecisaoField = value;
-            RaisePropertyChanged("dtDecisao");
+            RaisePropertyChanged(nameof(dtDecisao));
         }
     }
 
@@ -429,7 +429,7 @@ public partial class R1070IdentificacaoProcessoInfoSusp : EfdReinfBindableObject
         set
         {
             indDepositoField = value;
-            RaisePropertyChanged("indDeposito");
+            RaisePropertyChanged(nameof(indDeposito));
         }
     }
 }
@@ -450,7 +450,7 @@ public partial class R1070IdentificacaoProcessoDadosProcJud : EfdReinfBindableOb
         set
         {
             ufVaraField = value;
-            RaisePropertyChanged("ufVara");
+            RaisePropertyChanged(nameof(ufVara));
         }
     }
 
@@ -462,7 +462,7 @@ public partial class R1070IdentificacaoProcessoDadosProcJud : EfdReinfBindableOb
         set
         {
             codMunicField = value;
-            RaisePropertyChanged("codMunic");
+            RaisePropertyChanged(nameof(codMunic));
         }
     }
 
@@ -474,7 +474,7 @@ public partial class R1070IdentificacaoProcessoDadosProcJud : EfdReinfBindableOb
         set
         {
             idVaraField = value;
-            RaisePropertyChanged("idVara");
+            RaisePropertyChanged(nameof(idVara));
         }
     }
 }

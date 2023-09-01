@@ -19,7 +19,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         set
         {
             serieField = value;
-            RaisePropertyChanged("serie");
+            RaisePropertyChanged(nameof(serie));
         }
     }
 
@@ -32,7 +32,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         set
         {
             numDoctoField = value;
-            RaisePropertyChanged("numDocto");
+            RaisePropertyChanged(nameof(numDocto));
         }
     }
 
@@ -45,7 +45,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         set
         {
             dtEmissaoNFField = value;
-            RaisePropertyChanged("dtEmissaoNF");
+            RaisePropertyChanged(nameof(dtEmissaoNF));
         }
     }
 
@@ -59,7 +59,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         {
             vlrBrutoField = value;
             // If Me.vlrBrutoField.HasValue Then Me.vlrBrutoField = Math.Round(Me.vlrBrutoField.Value, 2)
-            RaisePropertyChanged("vlrBruto");
+            RaisePropertyChanged(nameof(vlrBruto));
         }
     }
 
@@ -72,7 +72,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         set
         {
             obsField = value;
-            RaisePropertyChanged("obs");
+            RaisePropertyChanged(nameof(obs));
         }
     }
 
@@ -85,7 +85,7 @@ public partial class R2010eR2020Nfs : EfdReinfBindableObject
         set
         {
             infoTpServField = value;
-            RaisePropertyChanged("infoTpServ");
+            RaisePropertyChanged(nameof(infoTpServ));
         }
     }
 }
@@ -114,7 +114,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         set
         {
             tpServicoField = value;
-            RaisePropertyChanged("tpServico");
+            RaisePropertyChanged(nameof(tpServico));
         }
     }
 
@@ -128,7 +128,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrBaseRetField = value;
             // If Me.vlrBaseRetField.HasValue Then Me.vlrBaseRetField = Math.Round(Me.vlrBaseRetField.Value, 2)
-            RaisePropertyChanged("vlrBaseRet");
+            RaisePropertyChanged(nameof(vlrBaseRet));
         }
     }
 
@@ -142,7 +142,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrRetencaoField = value;
             // If Me.vlrRetencaoField.HasValue Then Me.vlrRetencaoField = Math.Round(Me.vlrRetencaoField.Value, 2)
-            RaisePropertyChanged("vlrRetencao");
+            RaisePropertyChanged(nameof(vlrRetencao));
         }
     }
 
@@ -156,7 +156,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrRetSubField = value;
             // If Me.vlrRetSubField.HasValue Then Me.vlrRetSubField = Math.Round(Me.vlrRetSubField.Value, 2)
-            RaisePropertyChanged("vlrRetSub");
+            RaisePropertyChanged(nameof(vlrRetSub));
         }
     }
 
@@ -170,7 +170,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrNRetPrincField = value;
             // If Me.vlrNRetPrincField.HasValue Then Me.vlrNRetPrincField = Math.Round(Me.vlrNRetPrincField.Value, 2)
-            RaisePropertyChanged("vlrNRetPrinc");
+            RaisePropertyChanged(nameof(vlrNRetPrinc));
         }
     }
 
@@ -184,7 +184,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrServicos15Field = value;
             // If Me.vlrServicos15Field.HasValue Then Me.vlrServicos15Field = Math.Round(Me.vlrServicos15Field.Value, 2)
-            RaisePropertyChanged("vlrServicos15");
+            RaisePropertyChanged(nameof(vlrServicos15));
         }
     }
 
@@ -198,7 +198,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrServicos20Field = value;
             // If Me.vlrServicos20Field.HasValue Then Me.vlrServicos20Field = Math.Round(Me.vlrServicos20Field.Value, 2)
-            RaisePropertyChanged("vlrServicos20");
+            RaisePropertyChanged(nameof(vlrServicos20));
         }
     }
 
@@ -212,7 +212,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrServicos25Field = value;
             // If Me.vlrServicos25Field.HasValue Then Me.vlrServicos25Field = Math.Round(Me.vlrServicos25Field.Value, 2)
-            RaisePropertyChanged("vlrServicos25");
+            RaisePropertyChanged(nameof(vlrServicos25));
         }
     }
 
@@ -226,7 +226,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrAdicionalField = value;
             // If Me.vlrAdicionalField.HasValue Then Me.vlrAdicionalField = Math.Round(Me.vlrAdicionalField.Value, 2)
-            RaisePropertyChanged("vlrAdicional");
+            RaisePropertyChanged(nameof(vlrAdicional));
         }
     }
 
@@ -240,7 +240,7 @@ public partial class R2010eR2020InformacaoServico : EfdReinfBindableObject
         {
             vlrNRetAdicField = value;
             // If Me.vlrNRetAdicField.HasValue Then Me.vlrNRetAdicField = Math.Round(Me.vlrNRetAdicField.Value, 2)
-            RaisePropertyChanged("vlrNRetAdic");
+            RaisePropertyChanged(nameof(vlrNRetAdic));
         }
     }
 }
@@ -263,7 +263,7 @@ public partial class R2010eR2020ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             tpProcRetPrincField = value;
-            RaisePropertyChanged("tpProcRetPrinc");
+            RaisePropertyChanged(nameof(tpProcRetPrinc));
         }
     }
 
@@ -276,7 +276,7 @@ public partial class R2010eR2020ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             nrProcRetPrincField = value;
-            RaisePropertyChanged("nrProcRetPrinc");
+            RaisePropertyChanged(nameof(nrProcRetPrinc));
         }
     }
 
@@ -289,7 +289,7 @@ public partial class R2010eR2020ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             codSuspPrincField = value;
-            RaisePropertyChanged("codSuspPrinc");
+            RaisePropertyChanged(nameof(codSuspPrinc));
         }
     }
 
@@ -302,7 +302,7 @@ public partial class R2010eR2020ProcessoRelacionado : EfdReinfBindableObject
         set
         {
             valorPrincField = value;
-            RaisePropertyChanged("valorPrinc");
+            RaisePropertyChanged(nameof(valorPrinc));
         }
     }
 }
@@ -325,7 +325,7 @@ public partial class R2010eR2020ProcessoRelacionadoAdic : EfdReinfBindableObject
         set
         {
             tpProcRetAdicField = value;
-            RaisePropertyChanged("tpProcRetAdic");
+            RaisePropertyChanged(nameof(tpProcRetAdic));
         }
     }
 
@@ -338,7 +338,7 @@ public partial class R2010eR2020ProcessoRelacionadoAdic : EfdReinfBindableObject
         set
         {
             nrProcRetAdicField = value;
-            RaisePropertyChanged("nrProcRetAdic");
+            RaisePropertyChanged(nameof(nrProcRetAdic));
         }
     }
 
@@ -351,7 +351,7 @@ public partial class R2010eR2020ProcessoRelacionadoAdic : EfdReinfBindableObject
         set
         {
             codSuspAdicField = value;
-            RaisePropertyChanged("codSuspAdic");
+            RaisePropertyChanged(nameof(codSuspAdic));
         }
     }
 
@@ -364,7 +364,7 @@ public partial class R2010eR2020ProcessoRelacionadoAdic : EfdReinfBindableObject
         set
         {
             valorAdicField = value;
-            RaisePropertyChanged("valorAdic");
+            RaisePropertyChanged(nameof(valorAdic));
         }
     }
 }
