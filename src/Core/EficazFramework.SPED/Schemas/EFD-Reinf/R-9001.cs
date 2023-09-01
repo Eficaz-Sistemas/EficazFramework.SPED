@@ -6,23 +6,19 @@
 [Serializable()]
 public partial class R9001 : EventoRetorno
 {
-    //private ReinfEvtTotal evtTotalField;
+    private EventoRetornoTotal evtTotalField;
     private SignatureType signatureField;
 
     [XmlElement(Order = 0)]
-    //public ReinfEvtTotal evtTotal
-    //{
-    //    get
-    //    {
-    //        return evtTotalField;
-    //    }
-
-    //    set
-    //    {
-    //        evtTotalField = value;
-    //        RaisePropertyChanged("evtTotal");
-    //    }
-    //}
+    public EventoRetornoTotal evtTotal
+    {
+        get => evtTotalField;
+        set
+        {
+            evtTotalField = value;
+            RaisePropertyChanged(nameof(evtTotal));
+        }
+    }
 
     /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
@@ -36,7 +32,7 @@ public partial class R9001 : EventoRetorno
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
