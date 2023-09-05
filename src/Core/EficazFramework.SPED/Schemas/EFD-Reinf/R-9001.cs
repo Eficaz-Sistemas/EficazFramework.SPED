@@ -6,7 +6,7 @@
 [Serializable()]
 public partial class R9001 : EventoRetorno
 {
-    private EventoRetornoTotal evtTotalField;
+    private R9001EventoRetornoTotal evtTotalField;
     private SignatureType signatureField;
 
     [XmlElement(Order = 0)]
@@ -24,11 +24,7 @@ public partial class R9001 : EventoRetorno
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
-
+        get => signatureField;
         set
         {
             signatureField = value;
@@ -38,7 +34,7 @@ public partial class R9001 : EventoRetorno
 
     /// <exclude/>
     public override string ContribuinteCNPJ() =>
-        throw new NotImplementedException();
+        evtTotal.ideContri.nrInsc;
 
     // Serialization Members
     /// <exclude/>
@@ -50,6 +46,9 @@ public partial class R9001 : EventoRetorno
         });
 }
 
+/// <summary>
+/// Evento Totalizador - Retorno dos eventos da série R-2000, exceto pelo fechamento e/ou reabertura (R-2099 e R-2098)
+/// </summary>
 public partial class R9001EventoRetornoTotal : EventoRetornoTotal
 {
 
