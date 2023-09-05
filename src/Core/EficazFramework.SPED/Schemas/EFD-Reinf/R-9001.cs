@@ -10,7 +10,7 @@ public partial class R9001 : EventoRetorno
     private SignatureType signatureField;
 
     [XmlElement(Order = 0)]
-    public EventoRetornoTotal evtTotal
+    public R9001EventoRetornoTotal evtTotal
     {
         get => evtTotalField;
         set
@@ -48,4 +48,9 @@ public partial class R9001 : EventoRetorno
             Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTotal/{Versao}",
             IsNullable = false
         });
+}
+
+public partial class R9001EventoRetornoTotal : EventoRetornoTotal
+{
+
 }
