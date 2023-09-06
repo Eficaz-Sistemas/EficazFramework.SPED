@@ -46,10 +46,79 @@ public partial class R9001 : EventoRetorno
         });
 }
 
+
 /// <summary>
 /// Evento Totalizador - Retorno dos eventos da série R-2000, exceto pelo fechamento e/ou reabertura (R-2099 e R-2098)
 /// </summary>
 public partial class R9001EventoRetornoTotal : EventoRetornoTotal
 {
+    private R9001InfoTotal infoTotalField;
 
+    /// <summary>
+    /// Informacoes relativas as Totalizacoes
+    /// </summary>
+    [XmlElement()]
+    public R9001InfoTotal infoTotal
+    {
+        get => infoTotalField;
+        set
+        {
+            infoTotalField = value;
+            RaisePropertyChanged(nameof(infoTotal));
+        }
+    }
+}
+
+
+public partial class R9001InfoTotal : EfdReinfBindableObject
+{
+    private R9001IdentificacaoEstabelecimento ideEstabField;
+
+    /// <summary>
+    /// Informacoes relativas as Totalizacoes
+    /// </summary>
+    [XmlElement()]
+    public R9001IdentificacaoEstabelecimento ideEstab
+    {
+        get => ideEstabField;
+        set
+        {
+            ideEstabField = value;
+            RaisePropertyChanged(nameof(ideEstab));
+        }
+    }
+}
+
+
+/// <summary>
+/// Identificação do Estabelecimento do Evento Totalizador, série R-2000
+/// </summary>
+public partial class R9001IdentificacaoEstabelecimento : TotalSerieR2000
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+
+    /// <remarks/>
+    [XmlElement()]
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement()]
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
+        }
+    }
 }
