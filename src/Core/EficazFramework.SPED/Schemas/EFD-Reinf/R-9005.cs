@@ -1,7 +1,7 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 /// <summary>
-/// Informações de bases e tributos por evento. Retorno da série R-2000.
+/// Informações de bases e tributos por evento. Retorno da série R-4000.
 /// </summary>
 [Serializable()]
 public partial class R9005 : EventoRetorno
@@ -41,14 +41,14 @@ public partial class R9005 : EventoRetorno
     public override XmlSerializer DefineSerializer() =>
         new XmlSerializer(typeof(R9005), new XmlRootAttribute("Reinf")
         {
-            Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTotal/{Versao}",
+            Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtRet/{Versao}",
             IsNullable = false
         });
 }
 
 
 /// <summary>
-/// Evento Totalizador - Retorno dos eventos da série R-2000, exceto pelo fechamento e/ou reabertura (R-2099 e R-2098)
+/// Evento Totalizador - Retorno dos eventos da série R-4000, exceto pelo fechamento e/ou reabertura (R-4099)
 /// </summary>
 public partial class R9005EventoRetornoTotal : EventoRetornoTotal
 {
