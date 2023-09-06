@@ -365,7 +365,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
     private InformacaoComplementarContribuinte infoComplContriField = null;
 
     /// <remarks/>
-    [XmlElement(Order = 0)]
+    [XmlElement()]
     public PersonalidadeJuridica tpInsc
     {
         get => tpInscField;
@@ -377,7 +377,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
     }
 
     /// <remarks/>
-    [XmlElement(Order = 1)]
+    [XmlElement()]
     public string nrInsc
     {
         get => nrInscField;
@@ -389,7 +389,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
     }
 
     /// <remarks/>
-    [XmlElement(Order = 2)]
+    [XmlElement()]
     public InformacaoComplementarContribuinte infoComplContri
     {
         get => infoComplContriField;
@@ -399,9 +399,6 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
             RaisePropertyChanged(nameof(infoComplContri));
         }
     }
-
-    public string NumeroInscricaoTag() =>
-        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
 }
 
 

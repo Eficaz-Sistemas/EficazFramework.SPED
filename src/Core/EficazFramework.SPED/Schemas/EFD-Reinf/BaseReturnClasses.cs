@@ -99,7 +99,7 @@ public partial class EventoRetornoTotal : EfdReinfBindableObject
     private IdentificacaoContribuinte ideContriField;
     private EventoTotalReciboRetorno ideRecRetornoField;
     private EventoTotalDadosProcessamento infoRecEvField;
-    //private ReinfEvtTotalInfoTotal infoTotalField;
+    //private ReinfEvtTotalInfoTotal infoTotalField; -> R9001InfoTotal
     //private TotalContribuinteR9015 infoCR_CNRField;
     //private TotalContribuinteR9015 infoTotalCRField;
     private string idField;
