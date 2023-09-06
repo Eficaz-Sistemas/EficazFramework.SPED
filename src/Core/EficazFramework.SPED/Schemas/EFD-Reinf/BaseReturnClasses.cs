@@ -99,8 +99,7 @@ public partial class EventoRetornoTotal : EfdReinfBindableObject
     private IdentificacaoContribuinte ideContriField;
     private EventoTotalReciboRetorno ideRecRetornoField;
     private EventoTotalDadosProcessamento infoRecEvField;
-    //private ReinfEvtTotalInfoTotal infoTotalField; -> R9001InfoTotal
-    //private TotalContribuinteR9015 infoCR_CNRField;
+=    //private TotalContribuinteR9015 infoCR_CNRField;
     //private TotalContribuinteR9015 infoTotalCRField;
     private string idField;
 
@@ -147,20 +146,6 @@ public partial class EventoRetornoTotal : EfdReinfBindableObject
             RaisePropertyChanged(nameof(infoRecEv));
         }
     }
-
-    ///// <summary>
-    ///// Informacoes relativas as Totalizacoes
-    ///// </summary>
-    //[XmlElement()]
-    //public ReinfEvtTotalInfoTotal infoTotal
-    //{
-    //    get => infoTotalField;
-    //    set
-    //    {
-    //        infoTotalField = value;
-    //        RaisePropertyChanged(nameof(infoTotal));
-    //    }
-    //}
 
     ///// <summary>
     ///// Informacoes relativas a totalizadores pela natureza do rendimento e codigo de receita (apenas R-9015)
