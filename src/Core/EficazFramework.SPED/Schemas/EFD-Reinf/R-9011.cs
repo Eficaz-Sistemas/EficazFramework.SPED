@@ -39,7 +39,7 @@ public partial class R9011 : EventoRetorno
     // Serialization Members
     /// <exclude/>
     public override XmlSerializer DefineSerializer() =>
-        new XmlSerializer(typeof(R9001), new XmlRootAttribute("Reinf")
+        new XmlSerializer(typeof(R9011), new XmlRootAttribute("Reinf")
         {
             Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtTotalContrib/{Versao}",
             IsNullable = false
