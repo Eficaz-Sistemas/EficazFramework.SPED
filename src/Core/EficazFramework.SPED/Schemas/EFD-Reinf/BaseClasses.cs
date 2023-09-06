@@ -399,6 +399,9 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
             RaisePropertyChanged(nameof(infoComplContri));
         }
     }
+
+    public string NumeroInscricaoTag() =>
+        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
 }
 
 
