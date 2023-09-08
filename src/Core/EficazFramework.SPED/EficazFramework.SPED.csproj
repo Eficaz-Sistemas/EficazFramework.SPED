@@ -38,13 +38,10 @@
   <ItemGroup>
     <Compile Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <Compile Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <Compile Remove="Services\**" />
     <EmbeddedResource Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <EmbeddedResource Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <EmbeddedResource Remove="Services\**" />
     <None Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <None Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <None Remove="Services\**" />
   </ItemGroup>
 	
   <ItemGroup>
