@@ -70,20 +70,20 @@ public abstract class EventoRetorno : EfdReinfBindableObject
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public Evento Read(string xmlContent)
+    public EventoRetorno Read(string xmlContent)
     {
         sSerializer = DefineSerializer();
-        return Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
+        return Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as EventoRetorno;
     }
 
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public Evento Read(System.IO.Stream xmlStream)
+    public EventoRetorno Read(System.IO.Stream xmlStream)
     {
         sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
-        return result as Evento;
+        return result as EventoRetorno;
     }
 
 }

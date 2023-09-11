@@ -117,6 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Content_R9015_v2_01_02_B_SemMovto" xml:space="preserve">
+    <value>&lt;Reinf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.reinf.esocial.gov.br/schemas/evtRetCons/v2_01_02"&gt;
+  &lt;evtRetCons id="ID9015000000000000000000000323704091"&gt;
+    &lt;ideEvento&gt;
+      &lt;perApur&gt;2023-07&lt;/perApur&gt;
+    &lt;/ideEvento&gt;
+    &lt;ideContri&gt;
+      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+      &lt;nrInsc&gt;34785515&lt;/nrInsc&gt;
+    &lt;/ideContri&gt;
+    &lt;ideRecRetorno&gt;
+      &lt;ideStatus&gt;
+        &lt;cdRetorno&gt;0&lt;/cdRetorno&gt;
+        &lt;descRetorno&gt;SUCESSO&lt;/descRetorno&gt;
+      &lt;/ideStatus&gt;
+    &lt;/ideRecRetorno&gt;
+    &lt;infoRecEv&gt;
+      &lt;nrRecArqBase&gt;1300-02-4099-2307-1300&lt;/nrRecArqBase&gt;
+      &lt;nrProtLote&gt;2.202308.864398&lt;/nrProtLote&gt;
+      &lt;dhRecepcao&gt;0001-01-01T00:00:00&lt;/dhRecepcao&gt;
+      &lt;dhProcess&gt;2023-08-17T22:05:46.0749941-03:00&lt;/dhProcess&gt;
+      &lt;tpEv&gt;4099&lt;/tpEv&gt;
+      &lt;idEv&gt;ID1000000112116922023081722054500001&lt;/idEv&gt;
+      &lt;hash&gt;O/T2ech5LsnIeFah46hJaEVP0vj3VP9d3LMODfqRxyw=&lt;/hash&gt;
+      &lt;fechRet&gt;0&lt;/fechRet&gt;
+    &lt;/infoRecEv&gt;
+    &lt;infoCR_CNR&gt;
+      &lt;indExistInfo&gt;2&lt;/indExistInfo&gt;
+      &lt;identEscritDCTF&gt;0&lt;/identEscritDCTF&gt;
+    &lt;/infoCR_CNR&gt;
+  &lt;/evtRetCons&gt;
+  &lt;Signature xmlns="http://www.w3.org/2000/09/xmldsig#"&gt;
+    &lt;SignedInfo&gt;
+      &lt;CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /&gt;
+      &lt;SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /&gt;
+      &lt;Reference URI="#ID9015000000000000000000000323704091"&gt;
+        &lt;Transforms&gt;
+          &lt;Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /&gt;
+          &lt;Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /&gt;
+        &lt;/Transforms&gt;
+        &lt;DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /&gt;
+        &lt;DigestValue&gt;Fs/7eddYSI3v6X+1Z+2w8PP37AJpKCoxE5ytK92iENk=&lt;/DigestValue&gt;
+      &lt;/Reference&gt;
+    &lt;/SignedInfo&gt;
+    &lt;SignatureValue&gt;j8GCCHd18v1Q7bkT0pOONx1MjhSUZZPDuP3+CFbjBV/PEbTPgiQ932M1KsltVuyjMtgh1aWUmyuf3ST+f/iXpADtP4sk3s9u9jIHNTDqi6kwM1CN1beS9qv3Zt/4Gd+5cRjy5p8ZUk/tnEHd9i8VxRlr4s22+SJiuHr3dr1k0k5jfEJzdDGjMHZKMCu8bQ70ZHegx2jdj3FVyCJgzAIcyqTVHt+g+vKS0abEF9kj1fbuaW2AHeQWkX8RH5CiK3O0+wUPrJAHtSwsg6xtnLVmE7hjNaLzXdTKsNUrgL8v0EN/Ei7oovINI/QVh189cHJJmYHAIIVqkZAYU4XQxtB0Sw==&lt;/SignatureValue&gt;
+    &lt;KeyInfo&gt;
+      &lt;X509Data&gt;
+        &lt;X509Certificate&gt;MIIIdjCCBl6gAwIBAgIMZZc7Q/7bTI7BiFwJMA0GCSqGSIb3DQEBCwUAMIGMMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDE1MDMGA1UECwwsQXV0b3JpZGFkZSBDZXJ0aWZpY2Fkb3JhIFJhaXogQnJhc2lsZWlyYSB2MTAxMTAvBgNVBAMMKEF1dG9yaWRhZGUgQ2VydGlmaWNhZG9yYSBkbyBTRVJQUk8gU1NMdjEwHhcNMjMwNzE0MTAyMDIxWhcNMjQwNzEzMTAyMDIxWjCB5DELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CRUxPIEhPUklaT05URTE7MDkGA1UECgwyU0VSVklDTyBGRURFUkFMIERFIFBST0NFU1NBTUVOVE8gREUgREFET1MgKFNFUlBSTykxFzAVBgNVBAUTDjMzNjgzMTExMDAwMTA3MSowKAYDVQQDDCFwcmUtcmVpbmYucmVjZWl0YS5lY29ub21pYS5nb3YuYnIxGDAWBgNVBA8TD0J1c2luZXNzIEVudGl0eTETMBEGCysGAQQBgjc8AgEDEwJCUjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMD7T5pWJikYGvUJMuWivl99HYJnkGI+R1FC8vKQjg1l0Y7sXW2mkQhNarI6QAiKDrhjk/6eVU/PLXXJL4RI3OejhagN1EnMSNGxMe5Nii1BfXygu46pPC/Naj2QbyLLLthOqxZ0jzYqayWzWoVZ4bLmU/o1ExcDpt64cxXfID3rnFO2bA5k23qyB8hT5k63t5pXI/Ibj6CkBeFIanibyzlRwkn9QhHL2aDwX2kMxrk3gGDq0iH+A4WHW4n25VB3qCFi3yeOTIuCZMUksF3dWA8LLmalrojlNDzeQfBX/y2VOX2lUG5si4oWs7wx0pkroS7DouKcuR3LFYIfTFWK618CAwEAAaOCA3wwggN4MB8GA1UdIwQYMBaAFK0WT0vxDL7CiqKFGNcNRiWTIuPNMIGIBgNVHR8EgYAwfjA8oDqgOIY2aHR0cDovL3JlcG9zaXRvcmlvLnNlcnByby5nb3YuYnIvbGNyL2Fjc2VycHJvc3NsdjEuY3JsMD6gPKA6hjhodHRwOi8vY2VydGlmaWNhZG9zMi5zZXJwcm8uZ292LmJyL2xjci9hY3NlcnByb3NzbHYxLmNybDCBhwYIKwYBBQUHAQEEezB5MEIGCCsGAQUFBzAChjZodHRwOi8vcmVwb3NpdG9yaW8uc2VycHJvLmdvdi5ici9jYWRlaWFzL3NlcnByb3NzbC5wN2IwMwYIKwYBBQUHMAGGJ2h0dHA6Ly9vY3NwLnNlcnByby5nb3YuYnIvYWNzZXJwcm9zc2x2MTAsBgNVHREEJTAjgiFwcmUtcmVpbmYucmVjZWl0YS5lY29ub21pYS5nb3YuYnIwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBjBgNVHSAEXDBaMAgGBmeBDAECAjBOBgZgTAECAWkwRDBCBggrBgEFBQcCARY2aHR0cDovL3JlcG9zaXRvcmlvLnNlcnByby5nb3YuYnIvZG9jcy9kcGNzZXJwcm9zc2wucGRmMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYlT6qNAAAAEAwBHMEUCIAa+h4haItsQCtCwg//qdA7RyJjCZCDk0fRi0ybAoCikAiEApGVLbECh4FMnVjlfM2Y0XuPJ7H3kNAG/82WmfdtYgAAAdQB2/4g/Crb7lVHCYcz1h7o0tKTNuyncaEIKn+ZnTFo6dAAAAYlT6qk8AAAEAwBGMEQCIDsSd0Su1ioVVGDKTRFb5JbSaoz0BF/1EzNPm86HbHL1AiB1xX90HM5T9/cfohEeEElPbGD/Dq8i4dhFOlA+pITpmQB1AIdPtQ3AKdmTHeVz6fKJno5FM7OS04sKRiV0vw/usvweAAABiVPqtf4AAAQDAEYwRAIgPSgwTiToD+J50iq0DwhwUWnx/ebxVByyuRRdEmNywisCIDvee9X3gEoB8XALkbWXe8PfOD36Za70XrnB03f8DI17MA0GCSqGSIb3DQEBCwUAA4ICAQAedpP6FuSoJHRfsUH2gFuWz2TTG5F0S+6K35mesMI6Ybr/SvaCWAG8skpkxtG4ygeWtYAmPi/Zxd6FW4QvFwM443jrm8rkXU1nT3T1O2efdy9rGWoqLtph/rv4W0PALCYIT8XAuqMf5X1EbRuauZojbPldYhhucHCTLfsvYIbL9QWiwqDPZBoQYgu/MehUEtWuvSUyEbaAIASEtfsn5sN1YXAwvRZBQvDRkh1Q8/NZXxJshK6IBRzG2pbysBdq/HUJi3bIeg1UEdDDJfP21v6fJ7cSRrNxdcLa3tRO3QoREos1wiXR9yE+LnbPix6obFddup7ebeoRs1urHXM+52pTgUCZ9lUqhRcI7evDJ7+hGYd+ADrnCKcAKXxpxsZVCficxtAy/C4jwu0VT0Pj4injebosSZOBoO+4C5ELWULFJZTC4BkHk0gp4Pa/Ad9HqT3ihddtTpgelRnzLGJolAds6rpXqO4QWVJzKYNDEFtW0kydwRF+C6azgEVXo6rU0MJYe3pPIJxJA6LzKFSuYnSoKs1yzlZSPzvhkgBrm7MEPO89Zoq6M3MZjjFQvSdNu04PQtapvsGGXGyoBDnVIEONRjpeFEdySrvisGmnE0IuPyD++n+V7JX1W1A0ufGKgY6BNFO10KgA4YOArPSRSW3iu51hUtco9t1baM50z1RR+w==&lt;/X509Certificate&gt;
+      &lt;/X509Data&gt;
+    &lt;/KeyInfo&gt;
+  &lt;/Signature&gt;
+&lt;/Reinf&gt;</value>
+  </data>
   <data name="R1000_v1_05_01" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;xs:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01" targetNamespace="http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01" elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;

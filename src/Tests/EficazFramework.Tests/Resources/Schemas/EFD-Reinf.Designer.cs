@@ -61,6 +61,27 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;Reinf xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtRetCons/v2_01_02&quot;&gt;
+        ///  &lt;evtRetCons id=&quot;ID9015000000000000000000000323704091&quot;&gt;
+        ///    &lt;ideEvento&gt;
+        ///      &lt;perApur&gt;2023-07&lt;/perApur&gt;
+        ///    &lt;/ideEvento&gt;
+        ///    &lt;ideContri&gt;
+        ///      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///      &lt;nrInsc&gt;34785515&lt;/nrInsc&gt;
+        ///    &lt;/ideContri&gt;
+        ///    &lt;ideRecRetorno&gt;
+        ///      &lt;ideStatus&gt;
+        ///        &lt;cdRetorno&gt;0&lt;/cdRetorno&gt;
+        ///        &lt;descRetorno&gt;SUCESSO&lt;/descRetorno [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string Content_R9015_v2_01_02_B_SemMovto {
+            get {
+                return ResourceManager.GetString("Content_R9015_v2_01_02_B_SemMovto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01&quot; targetNamespace=&quot;http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/v1_05_01&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;./xmldsig-core-schema.xsd&quot;/&gt;
