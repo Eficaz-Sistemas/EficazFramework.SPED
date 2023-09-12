@@ -75,9 +75,30 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///        &lt;cdRetorno&gt;0&lt;/cdRetorno&gt;
         ///        &lt;descRetorno&gt;SUCESSO&lt;/descRetorno [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        public static string Content_R9015_v2_01_02_B_SemMovto {
+        public static string Content_R9015_v2_01_02_B_MovIsento {
             get {
-                return ResourceManager.GetString("Content_R9015_v2_01_02_B_SemMovto", resourceCulture);
+                return ResourceManager.GetString("Content_R9015_v2_01_02_B_MovIsento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;Reinf xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.reinf.esocial.gov.br/schemas/evtRetCons/v2_01_02&quot;&gt;
+        ///  &lt;evtRetCons id=&quot;ID9015000000000000000000000706807356&quot;&gt;
+        ///    &lt;ideEvento&gt;
+        ///      &lt;perApur&gt;2023-08&lt;/perApur&gt;
+        ///    &lt;/ideEvento&gt;
+        ///    &lt;ideContri&gt;
+        ///      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///      &lt;nrInsc&gt;34785515&lt;/nrInsc&gt;
+        ///    &lt;/ideContri&gt;
+        ///    &lt;ideRecRetorno&gt;
+        ///      &lt;ideStatus&gt;
+        ///        &lt;cdRetorno&gt;0&lt;/cdRetorno&gt;
+        ///        &lt;descRetorno&gt;SUCESSO&lt;/descRetorno [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string Content_R9015_v2_01_02_B_MovTributavel {
+            get {
+                return ResourceManager.GetString("Content_R9015_v2_01_02_B_MovTributavel", resourceCulture);
             }
         }
         

@@ -52,14 +52,14 @@ public partial class R9015 : EventoRetorno
 /// </summary>
 public partial class R9015EventoRetornoTotal : EventoRetornoTotal
 {
-    private R9015InfoTotalCnr infoCR_CNRField;
-    private TotalSerieR4000 infoTotalCRField;
+    private R9015InfoTotal infoCR_CNRField;
+    private R9015InfoTotal infoTotalCRField;
 
     /// <summary>
     /// Informacoes relativas as Totalizadores Pela Natureza do Rendimento
     /// </summary>
     [XmlElement()]
-    public R9015InfoTotalCnr infoCR_CNR
+    public R9015InfoTotal infoCR_CNR
     {
         get => infoCR_CNRField;
         set
@@ -73,7 +73,7 @@ public partial class R9015EventoRetornoTotal : EventoRetornoTotal
     /// Informacoes consolidadas dos tributos da empresa
     /// </summary>
     [XmlElement()]
-    public TotalSerieR4000 infoTotalCR
+    public R9015InfoTotal infoTotalCR
     {
         get => infoTotalCRField;
         set
@@ -86,10 +86,15 @@ public partial class R9015EventoRetornoTotal : EventoRetornoTotal
 }
 
 
-public partial class R9015InfoTotalCnr : TotalSerieR4000
+public partial class R9015InfoTotal : EfdReinfBindableObject
 {
     private uint indExistInfoField;
     private uint identEscritDCTFField;
+    private ApuracaoTributoR4000Fechamento[] totApurMenField;
+    private ApuracaoTributoR4000Fechamento[] totApurQuiField;
+    private ApuracaoTributoR4000Fechamento[] totApurDecField;
+    private ApuracaoTributoR4000Fechamento[] totApurSemField;
+    private ApuracaoTributoR4000Fechamento[] totApurDiaField;
 
     public uint indExistInfo
     {
@@ -110,4 +115,75 @@ public partial class R9015InfoTotalCnr : TotalSerieR4000
             RaisePropertyChanged(nameof(identEscritDCTF));
         }
     }
+
+    /// <summary>
+    /// Bases e tributos com periodo de apuracao mensal
+    /// </summary>
+    [XmlElement("totApurMen")]
+    public ApuracaoTributoR4000Fechamento[] TotalApuracaoMensal
+    {
+        get => totApurMenField;
+        set
+        {
+            totApurMenField = value;
+            RaisePropertyChanged(nameof(TotalApuracaoMensal));
+        }
+    }
+
+    /// <summary>
+    /// Bases e tributos com periodo de apuracao quinzenal
+    /// </summary>
+    [XmlElement("totApurQui")]
+    public ApuracaoTributoR4000Fechamento[] TotalApuracaoQuinzenal
+    {
+        get => totApurQuiField;
+        set
+        {
+            totApurQuiField = value;
+            RaisePropertyChanged(nameof(TotalApuracaoQuinzenal));
+        }
+    }
+
+    /// <summary>
+    /// Bases e tributos com periodo de apuracao decendial
+    /// </summary>
+    [XmlElement("totApurDec")]
+    public ApuracaoTributoR4000Fechamento[] TotalApuracaoDecendial
+    {
+        get => totApurDecField;
+        set
+        {
+            totApurDecField = value;
+            RaisePropertyChanged(nameof(TotalApuracaoDecendial));
+        }
+    }
+
+    /// <summary>
+    /// Bases e tributos com periodo de apuracao semanal
+    /// </summary>
+    [XmlElement("totApurSem")]
+    public ApuracaoTributoR4000Fechamento[] TotalApuracaoSemanal
+    {
+        get => totApurSemField;
+        set
+        {
+            totApurSemField = value;
+            RaisePropertyChanged(nameof(TotalApuracaoSemanal));
+        }
+    }
+
+    /// <summary>
+    /// Bases e tributos com periodo de apuracao diária
+    /// </summary>
+    [XmlElement("totApurDia")]
+    public ApuracaoTributoR4000Fechamento[] TotalApuracaoDiaria
+    {
+        get => totApurDiaField;
+        set
+        {
+            totApurDiaField = value;
+            RaisePropertyChanged(nameof(TotalApuracaoDiaria));
+        }
+    }
+
 }
