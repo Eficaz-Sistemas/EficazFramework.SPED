@@ -6,13 +6,13 @@ public class R9015Test
 {
     [Test]
     [TestCase(Versao.v2_01_02)]
-    public void ValidaFechamentoSemMovimento(Versao versao)
+    public void ValidaFechamentoMovimentoIsento(Versao versao)
     {
         R9015 instancia = new()
         {
             Versao = versao
         };
-        instancia = (R9015)instancia.Read(Resources.Schemas.EFD_Reinf.Content_R9015_v2_01_02_B_SemMovto);
+        instancia = (R9015)instancia.Read(Resources.Schemas.EFD_Reinf.Content_R9015_v2_01_02_B_MovIsento);
         instancia.evtRetCons.id.Should().Be("ID9015000000000000000000000323704091");
         instancia.evtRetCons.ideEvento.perApur.Should().Be("2023-07");
         instancia.evtRetCons.ideContri.tpInsc.Should().Be(PersonalidadeJuridica.CNPJ);
@@ -32,5 +32,81 @@ public class R9015Test
         instancia.evtRetCons.infoRecEv.fechRet.Should().Be(IndicadorFechamentoReabertura.Fechamento);
         instancia.evtRetCons.infoCR_CNR.indExistInfo.Should().Be(2);
         instancia.evtRetCons.infoCR_CNR.identEscritDCTF.Should().Be(0);
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoMensal.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoQuinzenal.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoDecendial.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoSemanal.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoDiaria.Should().BeNull();
     }
+
+    [Test]
+    [TestCase(Versao.v2_01_02)]
+    public void ValidaFechamentoMovimentoTrib(Versao versao)
+    {
+        R9015 instancia = new()
+        {
+            Versao = versao
+        };
+        instancia = (R9015)instancia.Read(Resources.Schemas.EFD_Reinf.Content_R9015_v2_01_02_B_MovTributavel);
+        instancia.evtRetCons.id.Should().Be("ID9015000000000000000000000706807356");
+        instancia.evtRetCons.ideEvento.perApur.Should().Be("2023-08");
+        instancia.evtRetCons.ideContri.tpInsc.Should().Be(PersonalidadeJuridica.CNPJ);
+        instancia.evtRetCons.ideContri.nrInsc.Should().Be("34785515");
+        instancia.evtRetCons.ideRecRetorno.ideStatus.cdRetorno.Should().Be("0");
+        instancia.evtRetCons.ideRecRetorno.ideStatus.descRetorno.Should().Be("SUCESSO");
+        instancia.evtRetCons.infoRecEv.nrRecArqBase.Should().Be("1971-02-4099-2308-1971");
+        instancia.evtRetCons.infoRecEv.nrProtLote.Should().Be("2.202309.1214293");
+        instancia.evtRetCons.infoRecEv.dhRecepcao.Date.Should().Be(new DateTime(2023, 09, 11));
+        instancia.evtRetCons.infoRecEv.dhRecepcao.Hour.Should().Be(7);
+        instancia.evtRetCons.infoRecEv.dhRecepcao.Minute.Should().Be(17);
+        instancia.evtRetCons.infoRecEv.dhRecepcao.Second.Should().Be(19);
+        instancia.evtRetCons.infoRecEv.dhProcess.Date.Should().Be(new DateTime(2023, 09, 11));
+        instancia.evtRetCons.infoRecEv.dhProcess.Hour.Should().Be(7);
+        instancia.evtRetCons.infoRecEv.dhProcess.Minute.Should().Be(17);
+        instancia.evtRetCons.infoRecEv.dhProcess.Second.Should().Be(19);
+        instancia.evtRetCons.infoRecEv.tpEv.Should().Be("4099");
+        instancia.evtRetCons.infoRecEv.idEv.Should().Be("ID1000000112116922023091107172200001");
+        instancia.evtRetCons.infoRecEv.hash.Should().Be("p2H1AcWIrf6sS6oJBk9kDeGrj398KOE7+RPfKLuyXkk=");
+        instancia.evtRetCons.infoRecEv.fechRet.Should().Be(IndicadorFechamentoReabertura.Fechamento);
+        
+        //! TOTAIS POR NATUREZA DE RECEITA
+        instancia.evtRetCons.infoCR_CNR.indExistInfo.Should().Be(1);
+        instancia.evtRetCons.infoCR_CNR.identEscritDCTF.Should().Be(0);
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoMensal?.Should().HaveCountGreaterThan(0);
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoQuinzenal.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoDecendial.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoSemanal.Should().BeNull();
+        instancia.evtRetCons.infoCR_CNR.TotalApuracaoDiaria.Should().BeNull();
+
+        var totalMesNR = instancia.evtRetCons.infoCR_CNR.TotalApuracaoMensal;
+        totalMesNR.Should().NotBeNull();
+        totalMesNR.Where(e => e.CodigoReceita == "058807")
+                  .Sum(e => decimal.Parse(e.ValorCRInformado ?? "0"))
+                  .Should().Be(112.5M);
+        totalMesNR.Where(e => e.CodigoReceita == "058807")
+                  .Sum(e => decimal.Parse(e.ValorCrDctf ?? "0"))
+                  .Should().Be(112.5M);
+        totalMesNR.Sum(e => decimal.Parse(e.ValorCRInformado ?? "0")).Should().Be(23250.38M);
+        totalMesNR.Sum(e => decimal.Parse(e.ValorCrDctf ?? "0")).Should().Be(23250.38M);
+
+
+        //! TOTAIS CONSOLIDADOS
+        instancia.evtRetCons.infoTotalCR.TotalApuracaoMensal?.Should().HaveCountGreaterThan(0);
+        instancia.evtRetCons.infoTotalCR.TotalApuracaoQuinzenal.Should().BeNull();
+        instancia.evtRetCons.infoTotalCR.TotalApuracaoDecendial.Should().BeNull();
+        instancia.evtRetCons.infoTotalCR.TotalApuracaoSemanal.Should().BeNull();
+        instancia.evtRetCons.infoTotalCR.TotalApuracaoDiaria.Should().BeNull();
+
+        var totalMes = instancia.evtRetCons.infoCR_CNR.TotalApuracaoMensal;
+        totalMes.Should().NotBeNull();
+        totalMes.Where(e => e.CodigoReceita == "058807")
+                .Sum(e => decimal.Parse(e.ValorCRInformado ?? "0"))
+                .Should().Be(112.5M);
+        totalMes.Where(e => e.CodigoReceita == "058807")
+                .Sum(e => decimal.Parse(e.ValorCrDctf ?? "0"))
+                .Should().Be(112.5M);
+        totalMes.Sum(e => decimal.Parse(e.ValorCRInformado ?? "0")).Should().Be(23250.38M);
+        totalMes.Sum(e => decimal.Parse(e.ValorCrDctf ?? "0")).Should().Be(23250.38M);
+    }
+
 }
