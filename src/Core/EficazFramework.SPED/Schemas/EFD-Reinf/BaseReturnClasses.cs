@@ -11,6 +11,7 @@ public abstract class EventoRetorno : EfdReinfBindableObject
     /// <summary>
     /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita
     /// </summary>
+    [XmlIgnore]
     public Versao Versao { get; set; } = Versao.v2_01_02;
 
     // Base Members
