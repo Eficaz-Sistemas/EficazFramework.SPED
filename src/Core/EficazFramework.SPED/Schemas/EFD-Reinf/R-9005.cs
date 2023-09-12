@@ -9,7 +9,7 @@ public partial class R9005 : EventoRetorno
     private R9005EventoRetornoTotal evtRetField;
     private SignatureType signatureField;
 
-    [XmlElement(Order = 0)]
+    [XmlElement()]
     public R9005EventoRetornoTotal evtRet
     {
         get => evtRetField;
@@ -21,7 +21,7 @@ public partial class R9005 : EventoRetorno
     }
 
     /// <exclude/>
-    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
         get => signatureField;
