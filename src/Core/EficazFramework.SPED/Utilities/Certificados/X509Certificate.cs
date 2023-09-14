@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Utilities;
 
-public class IcpBrasil_X509Certificate2 : X509Certificate2
+public class IcpBrasilX509Certificate2 : X509Certificate2
 {
     /// <summary>
     /// Autoridade Certificadora, emissora do Certificado Digital
@@ -45,13 +45,13 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
     public X509Certificate2 PrivateInstance { get; }
 
     /// <summary>
-    /// Inicia uma nova instância de <see cref="IcpBrasil_X509Certificate2"/> realizando a leitura
+    /// Inicia uma nova instância de <see cref="IcpBrasilX509Certificate2"/> realizando a leitura
     /// do arquivo localizado em <paramref name="filename"/>, sendo exigida a senha no parâmetro
     /// <paramref name="password"/> para acesso à chave privada do mesmo.
     /// </summary>
     /// <param name="filename"></param>
     /// <param name="password"></param>
-    public IcpBrasil_X509Certificate2(string filename, string password) : base(filename, password)
+    public IcpBrasilX509Certificate2(string filename, string password) : base(filename, password)
     {
         string[] data = Subject.Split(",");
         string[] temp = data[0].Split(":");
@@ -74,13 +74,13 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
     }
 
     /// <summary>
-    /// Inicia uma nova instância de <see cref="IcpBrasil_X509Certificate2"/>
+    /// Inicia uma nova instância de <see cref="IcpBrasilX509Certificate2"/>
     /// à partir de uma instância de certificado, cujo conteúdo foi serializado
     /// em array de bytes
     /// </summary>
     /// <param name="rawdata"></param>
     /// <param name="instance"></param>
-    public IcpBrasil_X509Certificate2(byte[] rawdata, X509Certificate2 instance) : base(rawdata)
+    public IcpBrasilX509Certificate2(byte[] rawdata, X509Certificate2 instance) : base(rawdata)
     {
         string[] data = Subject.Split(",");
         string[] temp = data[0].Split(":");
@@ -132,19 +132,19 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
 
     /// <summary>
     /// Transforma a listagem de certificados obtidos em <see cref="GetCertificatesStoreInternal(object, StoreLocation)"/>
-    /// para uma lista de classes <see cref="IcpBrasil_X509Certificate2"/>, para exibição amigável das informações
+    /// para uma lista de classes <see cref="IcpBrasilX509Certificate2"/>, para exibição amigável das informações
     /// do padrão de Certificados Digitais ICP-Brasil.
     /// </summary>
     /// <param name="certificados"></param>
-    private static List<IcpBrasil_X509Certificate2> FormatData(X509Certificate2Collection certificados)
+    private static List<IcpBrasilX509Certificate2> FormatData(X509Certificate2Collection certificados)
     {
-        List<IcpBrasil_X509Certificate2> final = new List<IcpBrasil_X509Certificate2>();
+        List<IcpBrasilX509Certificate2> final = new List<IcpBrasilX509Certificate2>();
 
         foreach (X509Certificate2 cert in certificados)
         {
             if (!cert.Subject.ToLower().Contains("icp-brasil"))
                 continue;
-            final.Add(new IcpBrasil_X509Certificate2(cert.RawData, cert));
+            final.Add(new IcpBrasilX509Certificate2(cert.RawData, cert));
         }
 
         return final.OrderBy(f => f.Titular).ToList();
@@ -155,7 +155,7 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
     /// </summary>
     /// <param name="filtro">Especifica algum critério para filtragem. Opcional.</param>
     /// <param name="storeLocation">Determina se será pesquisado no Rpositório Global ou no Repositório do Usuário Logado.</param>
-    public static List<IcpBrasil_X509Certificate2> ListaCertificados(object filtro, StoreLocation storeLocation)
+    public static List<IcpBrasilX509Certificate2> ListaCertificados(object filtro, StoreLocation storeLocation)
     {
         X509Certificate2Collection list = GetCertificatesStoreInternal(filtro, storeLocation);
         return FormatData(list);
@@ -166,7 +166,7 @@ public class IcpBrasil_X509Certificate2 : X509Certificate2
     /// </summary>
     /// <param name="filtro">Especifica algum critério para filtragem. Opcional.</param>
     /// <param name="storeLocation">Determina se será pesquisado no Repositório Global ou no Repositório do Usuário Logado.</param>
-    public static async Task<List<IcpBrasil_X509Certificate2>> ListaCertificadosAsync(object filtro, StoreLocation storeLocation)
+    public static async Task<List<IcpBrasilX509Certificate2>> ListaCertificadosAsync(object filtro, StoreLocation storeLocation)
     {
         X509Certificate2Collection list = await Task.Run(() =>
         {
