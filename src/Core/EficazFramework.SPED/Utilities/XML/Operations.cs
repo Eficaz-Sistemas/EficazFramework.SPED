@@ -267,8 +267,14 @@ public partial class Operations
     }
 
 
+#if NET7_0_OR_GREATER
+    private static readonly Regex DTCheck = DTCheckInternal();
+
     [GeneratedRegex("(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})([\\+|-]\\d{2}:\\d{2})")]
-    private static partial Regex DTCheck();
+    private static partial Regex DTCheckInternal();
+#else
+    private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
+#endif
 
 
 
