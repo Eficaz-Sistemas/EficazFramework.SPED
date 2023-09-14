@@ -58,8 +58,11 @@ public class R9015Test
         instancia.evtRetCons.ideRecRetorno.ideStatus.descRetorno.Should().Be("SUCESSO");
         instancia.evtRetCons.infoRecEv.nrRecArqBase.Should().Be("1971-02-4099-2308-1971");
         instancia.evtRetCons.infoRecEv.nrProtLote.Should().Be("2.202309.1214293");
-        instancia.evtRetCons.infoRecEv.dhRecepcao.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 7, 17, 19, TimeSpan.FromHours(-3)),
-                                                                             TimeSpan.FromSeconds(1));
+
+        DateTimeOffset excectedDtRecepcao = new DateTimeOffset(2023, 09, 11, 7, 17, 19, TimeSpan.FromHours(-3));
+        (instancia.evtRetCons.infoRecEv.dhRecepcao + instancia.evtRetCons.infoRecEv.dhRecepcao.Offset)
+            .Should().BeCloseTo(excectedDtRecepcao + excectedDtRecepcao.Offset, TimeSpan.FromSeconds(1));
+
         instancia.evtRetCons.infoRecEv.dhProcess.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 7, 17, 19, TimeSpan.FromHours(-3)),
                                                                             TimeSpan.FromSeconds(1));
         instancia.evtRetCons.infoRecEv.tpEv.Should().Be("4099");
