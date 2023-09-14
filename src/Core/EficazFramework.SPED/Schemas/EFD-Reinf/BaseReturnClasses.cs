@@ -341,8 +341,8 @@ public partial class EventoTotalDadosProcessamento : EfdReinfBindableObject
     private string nrRecArqBaseField;
     private string nrProtEntrField;
     private string nrProtLoteField;
-    private DateTime dhRecepcaoField;
-    private DateTime dhProcessField;
+    private DateTimeOffset dhRecepcaoField;
+    private DateTimeOffset dhProcessField;
     private string tpEvField;
     private string idEvField;
     private string hashField;
@@ -390,7 +390,7 @@ public partial class EventoTotalDadosProcessamento : EfdReinfBindableObject
     /// <summary>
     /// Data e hora da recepcao do evento
     /// </summary>
-    public DateTime dhRecepcao
+    public DateTimeOffset dhRecepcao
     {
         get => dhRecepcaoField;
         set
@@ -403,7 +403,7 @@ public partial class EventoTotalDadosProcessamento : EfdReinfBindableObject
     /// <summary>
     /// Data e hora do processamento
     /// </summary>
-    public DateTime dhProcess
+    public DateTimeOffset dhProcess
     {
         get => dhProcessField;
         set
