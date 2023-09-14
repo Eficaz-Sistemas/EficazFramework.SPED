@@ -103,6 +103,36 @@ public class IcpBrasilX509Certificate2 : X509Certificate2
         PrivateInstance = instance;
     }
 
+    /// <summary>
+    /// Inicia uma nova instância de <see cref="IcpBrasilX509Certificate2"/>,
+    /// cujo conteúdo foi serializado em array de bytes
+    /// </summary>
+    /// <param name="rawdata"></param>
+    /// <param name="instance"></param>
+    public IcpBrasilX509Certificate2(byte[] rawdata, string password) : base(rawdata, password)
+    {
+        string[] data = Subject.Split(",");
+        string[] temp = data[0].Split(":");
+
+        if (temp.Length >= 1)
+            Titular = temp[0].Replace("CN=", "");
+
+        if (temp.Length >= 2)
+            CNPJ_CPF = temp[1].ToString().FormatRFBDocument();
+
+        if (data.Length >= 2)
+            AutoridadeCertificadora = data[1].Replace("OU=Autenticado por ", "");
+
+        if (data.Length >= 3)
+            Tipo = data[2].Replace("OU=", "");
+
+        DataEfetiva = DateTime.Parse(GetEffectiveDateString());
+        Validade = DateTime.Parse(GetExpirationDateString());
+        PrivateInstance = this;
+    }
+
+
+
     public override string ToString()
     {
         return string.Format("{0} | CNPJ / CPF: {1} | Validade: {2} a {3}", Titular, CNPJ_CPF, DataEfetiva, Validade);
