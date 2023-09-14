@@ -1,4 +1,5 @@
 ﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Utilities.XML;
 
 namespace EficazFramework.SPED.Utilities;
 
@@ -174,4 +175,27 @@ public class IcpBrasilX509Certificate2 : X509Certificate2
         });
         return FormatData(list);
     }
+
+
+
+    /// <summary>
+    /// Realiza a assinatura de um <see cref="XmlDocument"/> na tag especificada
+    /// </summary>
+    /// <param name="xml">Conteúdo do XML a ser assinado</param>
+    /// <param name="tag">Tag a ser assinada</param>
+    /// <param name="id"></param>
+    /// <param name="signAsSHA256">Usar criptografia SHA256 na assinatura</param>
+    public void SignXml(XmlDocument xml, string tag, string id, bool signAsSHA256 = false, bool emptyURI = false) =>
+        xml.SignXml(tag, id, PrivateInstance, signAsSHA256, emptyURI);
+
+
+    /// <summary>
+    /// Realiza a assinatura de um <see cref="XDocument"/> na tag especificada
+    /// </summary>
+    /// <param name="xdoc">Conteúdo do XML a ser assinad</param>
+    /// <param name="tag">Tag a ser assinada</param>
+    /// <param name="id"></param>
+    /// <param name="signAsSHA256">Usar criptografia SHA256 na assinatur</param>
+    public void SignXml(XDocument xdoc, string tag, string id, bool signAsSHA256 = false, bool emptyURI = false) =>
+        XML.Sign.SignXml(ref xdoc, tag, id, PrivateInstance, signAsSHA256, emptyURI);
 }
