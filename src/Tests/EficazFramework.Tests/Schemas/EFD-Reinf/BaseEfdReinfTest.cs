@@ -83,7 +83,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : Evento
         _errorCount = 0;
 
         // assinando o documento XML com o certificado digital e-CNPJ de testes
-        Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "1234");
+        Utilities.IcpBrasilX509Certificate2 cert = new Utilities.IcpBrasilX509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "1234");
         Utilities.XML.Sign.SignXml(doc, "Reinf", evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
         // adicionando os schemas para validação do documento XML

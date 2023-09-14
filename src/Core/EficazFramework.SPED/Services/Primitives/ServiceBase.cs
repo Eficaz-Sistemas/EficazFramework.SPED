@@ -7,18 +7,18 @@ namespace EficazFramework.SPED.Services.Primitives;
 /// </summary>
 internal abstract class ServiceBase
 {
-    private IcpBrasil_X509Certificate2  _certificado;
+    private IcpBrasilX509Certificate2  _certificado;
     /// <summary>
     /// Certificado digital a ser utilizado nas requests
     /// </summary>
-    public IcpBrasil_X509Certificate2 Certificado => _certificado;
+    public IcpBrasilX509Certificate2 Certificado => _certificado;
 
 
     /// <summary>
     /// Função executada para retornar a instância de Certificado Digital que deve ser utilizada nas requests.
     /// É chamada apenas quando <see cref="Certificado"/> é null
     /// </summary>
-    public Func<IcpBrasil_X509Certificate2> SelecionaCertificado;
+    public Func<IcpBrasilX509Certificate2> SelecionaCertificado;
 
 
     /// <summary>
