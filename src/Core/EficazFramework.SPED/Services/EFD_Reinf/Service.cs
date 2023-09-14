@@ -19,10 +19,10 @@ public class EfdReinfServices : RestServiceBase
     /// <param name="versao">Versão do Serviço REST</param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public async Task<object> EnviaEventosAsync(IList<Schemas.EFD_Reinf.Evento> eventos,
-                                                Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte,
-                                                Schemas.EFD_Reinf.Ambiente ambiente = Schemas.EFD_Reinf.Ambiente.Producao,
-                                                VersaoRest versao = VersaoRest.v1_00_00)
+    public async Task<Response> EnviaEventosAsync(IList<Schemas.EFD_Reinf.Evento> eventos,
+                                                  Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte,
+                                                  Schemas.EFD_Reinf.Ambiente ambiente = Schemas.EFD_Reinf.Ambiente.Producao,
+                                                  VersaoRest versao = VersaoRest.v1_00_00)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -53,7 +53,7 @@ public class EfdReinfServices : RestServiceBase
 
         //! definindo o body da request
         XmlDocument xmlBody = new();
-        xmlBody.LoadXml(new Body
+        xmlBody.LoadXml(new Request
         {
             Versao = versao,
             envioLoteEventos = new()
@@ -61,7 +61,7 @@ public class EfdReinfServices : RestServiceBase
                 ideContribuinte = contribuinte,
                 eventos = new()
             }
-        }.Write(BodySchemaName.envioLoteEventosAssincrono));
+        }.Write());
 
 
         //! Gera ID's dos eventos,
@@ -79,15 +79,14 @@ public class EfdReinfServices : RestServiceBase
         if (string.IsNullOrEmpty(resultString))
             resultString = post.ReasonPhrase;
 
-
         Logger?.LogDebug($"EFD Reinf Services: POST Response{Environment.NewLine}Status Code: {(int)post.StatusCode}{Environment.NewLine}Result:{Environment.NewLine}{resultString}");
         if (post.IsSuccessStatusCode)
         {
-            Body response = new()
+            Response response = new()
             {
                 Versao = versao
             };
-            response.Read(resultString, BodySchemaName.retornoLoteEventosAssincrono);
+            response.Read(resultString);
 
             //? desserializando a correta instância de retorno entre R-9001, R-9005, R-9011 e R-9015
             for (int i = 0; i < response.retornoLoteEventosAssincrono.retornoEventos.evento.Length; i++)
@@ -108,6 +107,70 @@ public class EfdReinfServices : RestServiceBase
     }
 
 
+    /// <summary>
+    /// Efetua a requisição à API REST consulta/lotes da EFD-REINF para consulta de processamento de lote enviado
+    /// </summary>
+    /// <param name="protocolo">Número do protocolo para consulta</param>
+    /// <param name="ambiente">Ambiente de Produção ou Testes</param>
+    public async Task<Response> ConsultaLoteAsync(string protocolo,
+                                                  Schemas.EFD_Reinf.Ambiente ambiente = Schemas.EFD_Reinf.Ambiente.Producao,
+                                                  VersaoRest versao = VersaoRest.v1_00_00)
+    {
+        //! validações iniciais:
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+        if (string.IsNullOrEmpty(protocolo))
+            throw new ArgumentOutOfRangeException("Protocolo", "O Número do Protocolo para consulta não foi devidamente informado.");
+
+
+        //! definindo o Certificado Digitral no HttpClientHandler:
+        HttpClientHandler.ClientCertificates.Clear();
+        HttpClientHandler.ClientCertificates.Add(Certificado);
+
+
+        //! definindo o EndPoint conforme ambiente:
+        HttpClient.BaseAddress = ambiente switch
+        {
+            Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais => new Uri("https://pre-reinf.receita.economia.gov.br/"),
+            _ => new Uri("https://reinf.receita.economia.gov.br/")
+        };
+
+
+        //! post
+        var post = await HttpClient.GetAsync($"consulta/lotes/{protocolo}");
+        var resultString = await post.Content.ReadAsStringAsync();
+
+        if (string.IsNullOrEmpty(resultString))
+            resultString = post.ReasonPhrase;
+
+        Logger?.LogDebug($"EFD Reinf Services: POST Response{Environment.NewLine}Status Code: {(int)post.StatusCode}{Environment.NewLine}Result:{Environment.NewLine}{resultString}");
+        if (post.IsSuccessStatusCode)
+        {
+            Response response = new()
+            {
+                Versao = versao
+            };
+            response.Read(resultString);
+
+            //? desserializando a correta instância de retorno entre R-9001, R-9005, R-9011 e R-9015
+            for (int i = 0; i < response.retornoLoteEventosAssincrono.retornoEventos.evento.Length; i++)
+                response.retornoLoteEventosAssincrono.retornoEventos.evento[i].ParseXml(Schemas.EFD_Reinf.Versao.v2_01_02);
+            return response;
+        }
+        else
+        {
+            Exception ex = (int)post.StatusCode switch
+            {
+                401 | 403 => new UnauthorizedAccessException($"A autenticação com o servidor do SPED foi recusada com as credenciais informadas. Detalhes: {resultString}"),
+                404 => new KeyNotFoundException("Lote não encontrado"),
+                422 => new XmlSchemaValidationException($"Houveram falhas na validação do conteúdo do(s) evento(s) enviados. Detalhes: {Environment.NewLine} {resultString}"),
+                495 | 496 => new UnauthorizedAccessException($"O Certificado Digital fornecido não foi aceito pelo servidor. Detalhes: {resultString}"),
+                _ => new Exception($"Ocorreu uma falha ao enviar o(s) evento(s): {resultString}")
+            };
+            throw ex;
+        }
+    }
 
 
 

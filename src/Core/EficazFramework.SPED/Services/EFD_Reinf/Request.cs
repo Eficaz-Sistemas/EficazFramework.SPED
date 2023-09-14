@@ -3,9 +3,9 @@
 namespace EficazFramework.SPED.Services.EFD_Reinf;
 
 /// <summary>
-/// Classe base utilizada nas requests e responses dos serviços REST (assíncronos) da EFD-Reinf
+/// Classe base utilizada nas requests dos serviços REST (assíncronos) da EFD-Reinf
 [Serializable()]
-public partial class Body : Schemas.EFD_Reinf.EfdReinfBindableObject
+public partial class Request : Schemas.EFD_Reinf.EfdReinfBindableObject
 {
     [XmlIgnore]
     public VersaoRest Versao { get; set; } = VersaoRest.v1_00_00;
@@ -24,27 +24,14 @@ public partial class Body : Schemas.EFD_Reinf.EfdReinfBindableObject
     }
 
 
-    private RetornoLoteEventos retornoLoteEventosAssincronoField;
-    [XmlElement(Order = 1)]
-    public RetornoLoteEventos retornoLoteEventosAssincrono
-    {
-        get => retornoLoteEventosAssincronoField;
-        set
-        {
-            retornoLoteEventosAssincronoField = value;
-            RaisePropertyChanged(nameof(retornoLoteEventosAssincrono));
-        }
-    }
-
-
     private XmlSerializer sSerializer;
 
     // Serialization Members
-    private XmlSerializer DefineSerializer(BodySchemaName schemaName)
+    private XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(Body), new XmlRootAttribute("Reinf")
+        return new XmlSerializer(typeof(Request), new XmlRootAttribute("Reinf")
         {
-            Namespace = $"http://www.reinf.esocial.gov.br/schemas/{schemaName}/{Versao}",
+            Namespace = $"http://www.reinf.esocial.gov.br/schemas/envioLoteEventosAssincrono/{Versao}",
             IsNullable = false
         });
     }
@@ -54,14 +41,14 @@ public partial class Body : Schemas.EFD_Reinf.EfdReinfBindableObject
     /// Escreve o conteúdo da instância no formato XML
     /// </summary>
     /// <param name="schemaName"></param>
-    public string Write(BodySchemaName schemaName)
+    public string Write()
     {
         StreamReader streamReader = null;
         MemoryStream memoryStream = null;
         try
         {
             memoryStream = new MemoryStream();
-            sSerializer = DefineSerializer(schemaName);
+            sSerializer = DefineSerializer();
             using (var xmlwriter = System.Xml.XmlWriter.Create(memoryStream, new XmlWriterSettings() { Indent = true }))
             {
                 sSerializer.Serialize(xmlwriter, this);
@@ -79,22 +66,22 @@ public partial class Body : Schemas.EFD_Reinf.EfdReinfBindableObject
 
 
     /// <summary>
-    /// Retorna a instância de <see cref="Body"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="Request"/> desserializada do conteúdo XML
     /// </summary>
-    public Body Read(string xmlContent, BodySchemaName schemaName)
+    public Request Read(string xmlContent)
     {
-        sSerializer = DefineSerializer(schemaName);
-        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent)), schemaName) as Body;
+        sSerializer = DefineSerializer();
+        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as Request;
     }
 
     /// <summary>
-    /// Retorna a instância de <see cref="Body"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="Request"/> desserializada do conteúdo XML
     /// </summary>
-    public Body Read(Stream xmlStream, BodySchemaName schemaName)
+    public Request Read(Stream xmlStream)
     {
-        sSerializer = DefineSerializer(schemaName);
+        sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
-        return result as Body;
+        return result as Request;
     }
 }
 
@@ -227,6 +214,90 @@ public partial class ConteudoReinf : Schemas.EFD_Reinf.EfdReinfBindableObject
         sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
         return result as ConteudoReinf;
+    }
+}
+
+
+/// <summary>
+/// Classe base utilizada nas responses dos serviços REST (assíncronos) da EFD-Reinf
+[Serializable()]
+public partial class Response : Schemas.EFD_Reinf.EfdReinfBindableObject
+{
+    [XmlIgnore]
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_00_00;
+
+
+    private RetornoLoteEventos retornoLoteEventosAssincronoField;
+    [XmlElement(Order = 1)]
+    public RetornoLoteEventos retornoLoteEventosAssincrono
+    {
+        get => retornoLoteEventosAssincronoField;
+        set
+        {
+            retornoLoteEventosAssincronoField = value;
+            RaisePropertyChanged(nameof(retornoLoteEventosAssincrono));
+        }
+    }
+
+
+    private XmlSerializer sSerializer;
+
+    // Serialization Members
+    private XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(Response), new XmlRootAttribute("Reinf")
+        {
+            Namespace = $"http://www.reinf.esocial.gov.br/schemas/retornoLoteEventosAssincrono/{Versao}",
+            IsNullable = false
+        });
+    }
+
+
+    /// <summary>
+    /// Escreve o conteúdo da instância no formato XML
+    /// </summary>
+    /// <param name="schemaName"></param>
+    public string Write()
+    {
+        StreamReader streamReader = null;
+        MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new MemoryStream();
+            sSerializer = DefineSerializer();
+            using (var xmlwriter = System.Xml.XmlWriter.Create(memoryStream, new XmlWriterSettings() { Indent = true }))
+            {
+                sSerializer.Serialize(xmlwriter, this);
+            }
+            memoryStream.Seek(0L, SeekOrigin.Begin);
+            streamReader = new StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
+
+    /// <summary>
+    /// Retorna a instância de <see cref="Response"/> desserializada do conteúdo XML
+    /// </summary>
+    public Response Read(string xmlContent)
+    {
+        sSerializer = DefineSerializer();
+        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as Response;
+    }
+
+    /// <summary>
+    /// Retorna a instância de <see cref="Response"/> desserializada do conteúdo XML
+    /// </summary>
+    public Response Read(Stream xmlStream)
+    {
+        sSerializer = DefineSerializer();
+        var result = sSerializer.Deserialize(xmlStream);
+        return result as Response;
     }
 }
 

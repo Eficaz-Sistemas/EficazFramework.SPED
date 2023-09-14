@@ -10,9 +10,3 @@ public enum VersaoRest
 {
     v1_00_00 = 0
 }
-
-public enum BodySchemaName
-{
-    envioLoteEventosAssincrono = 0,
-    retornoLoteEventosAssincrono = 1
-}
