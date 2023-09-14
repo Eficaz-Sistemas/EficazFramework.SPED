@@ -6,6 +6,7 @@ namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 /// <summary>
 /// Abstração padrão para implementação em todos os eventos da escrituração.
 /// </summary>
+[XmlRoot("Reinf")]
 public abstract class Evento : EfdReinfBindableObject, IXmlSignableDocument
 {
     /// <summary>

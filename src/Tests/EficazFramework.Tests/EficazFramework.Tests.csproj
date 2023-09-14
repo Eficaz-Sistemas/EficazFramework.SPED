@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\EFD-Reinf\MovEfdReinfTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -45,6 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <Compile Update="Resources\Certificados\Certificados.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Certificados.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Schemas\EFD-Reinf.Designer.cs">
 		  <DesignTime>True</DesignTime>
 		  <AutoGen>True</AutoGen>
@@ -83,6 +92,11 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <EmbeddedResource Update="Resources\Certificados\Certificados.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Certificados.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>EficazFramework.SPED.Resources</CustomToolNamespace>
+	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\Schemas\EFD-Reinf.resx">
 		  <Generator>PublicResXFileCodeGenerator</Generator>
 		  <LastGenOutput>EFD-Reinf.Designer.cs</LastGenOutput>

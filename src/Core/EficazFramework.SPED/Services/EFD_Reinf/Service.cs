@@ -28,7 +28,7 @@ public class EfdReinfServices : RestServiceBase
         if (!ValidaCertificado())
             throw new ArgumentNullException("Certificado","Nenhum certificado digital foi fornecido para a requisição.");
 
-        if (eventos == null || eventos.Any())
+        if (eventos == null || !eventos.Any())
             throw new ArgumentNullException("Eventos", "Não há nenhum evento no lote de envios da requisição.");
 
         if (contribuinte == null)
@@ -96,10 +96,11 @@ public class EfdReinfServices : RestServiceBase
         }
         else
         {
-            Exception ex = (int)post.StatusCode switch
+            Exception ex = ((int)post.StatusCode) switch
             {
-                401 | 403 => new UnauthorizedAccessException($"A autenticação com o servidor do SPED foi recusada com as credenciais informadas. Detalhes: {resultString}"),
-                415 | 422 => new XmlSchemaValidationException($"Houveram falhas na validação do conteúdo do(s) evento(s) enviados. Detalhes: {Environment.NewLine} {resultString}"),
+                401 or 403 => new UnauthorizedAccessException($"A autenticação com o servidor do SPED foi recusada com as credenciais informadas. Detalhes: {resultString}"),
+                415 or 422 => new XmlSchemaValidationException($"Houveram falhas na validação do conteúdo do(s) evento(s) enviados. Detalhes: {Environment.NewLine} {resultString}"),
+                495 or 496 => new UnauthorizedAccessException($"O Certificado Digital fornecido não foi aceito pelo servidor. Detalhes: {resultString}"),
                 _ => new Exception($"Ocorreu uma falha ao enviar o(s) evento(s): {resultString}")
             };
             throw ex;
@@ -162,10 +163,10 @@ public class EfdReinfServices : RestServiceBase
         {
             Exception ex = (int)post.StatusCode switch
             {
-                401 | 403 => new UnauthorizedAccessException($"A autenticação com o servidor do SPED foi recusada com as credenciais informadas. Detalhes: {resultString}"),
+                401 or 403 => new UnauthorizedAccessException($"A autenticação com o servidor do SPED foi recusada com as credenciais informadas. Detalhes: {resultString}"),
                 404 => new KeyNotFoundException("Lote não encontrado"),
                 422 => new XmlSchemaValidationException($"Houveram falhas na validação do conteúdo do(s) evento(s) enviados. Detalhes: {Environment.NewLine} {resultString}"),
-                495 | 496 => new UnauthorizedAccessException($"O Certificado Digital fornecido não foi aceito pelo servidor. Detalhes: {resultString}"),
+                495 or 496 => new UnauthorizedAccessException($"O Certificado Digital fornecido não foi aceito pelo servidor. Detalhes: {resultString}"),
                 _ => new Exception($"Ocorreu uma falha ao enviar o(s) evento(s): {resultString}")
             };
             throw ex;
@@ -191,8 +192,8 @@ public class EfdReinfServices : RestServiceBase
 
             //! gerando XML e assinando com certificado digital
             XmlDocument xmlEvento = new();
-            xmlEvento.Load(evento.Write());
-            Certificado.SignXml(xmlEvento, "Reinf", evento.TagToSign, true);
+            xmlEvento.LoadXml(evento.Write());
+            Certificado.SignXml(xmlEvento, evento.TagToSign, evento.TagId, true);
 
 
             //! instanciando estrutura necessária para anexar ao body
@@ -202,7 +203,7 @@ public class EfdReinfServices : RestServiceBase
                 Id = $"ID{contador}",
                 Versao = versao
             };
-            xmlEvento.Load(root.Write());
+            xmlEvento.LoadXml(root.Write());
             xmlBody.GetElementsByTagName("eventos").Item(0).AppendChild(xmlBody.ImportNode(xmlEvento.DocumentElement, true));
 
         }
