@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-public class R9015Test
+public class R9015Test : BaseEfdReinfEvtRetTest<R9015>
 {
     [Test]
     [TestCase(Versao.v2_01_02)]
