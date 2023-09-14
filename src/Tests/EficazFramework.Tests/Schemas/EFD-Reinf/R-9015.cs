@@ -26,6 +26,8 @@ public class R9015Test
         instancia.evtRetCons.infoRecEv.dhProcess.Hour.Should().Be(22);
         instancia.evtRetCons.infoRecEv.dhProcess.Minute.Should().Be(5);
         instancia.evtRetCons.infoRecEv.dhProcess.Second.Should().Be(46);
+        instancia.evtRetCons.infoRecEv.dhProcess.Should().BeCloseTo(new DateTimeOffset(2023, 08, 17, 22, 5, 46, TimeSpan.FromHours(-3)),
+                                                                    TimeSpan.FromSeconds(1));
         instancia.evtRetCons.infoRecEv.tpEv.Should().Be("4099");
         instancia.evtRetCons.infoRecEv.idEv.Should().Be("ID1000000112116922023081722054500001");
         instancia.evtRetCons.infoRecEv.hash.Should().Be("O/T2ech5LsnIeFah46hJaEVP0vj3VP9d3LMODfqRxyw=");
@@ -56,14 +58,10 @@ public class R9015Test
         instancia.evtRetCons.ideRecRetorno.ideStatus.descRetorno.Should().Be("SUCESSO");
         instancia.evtRetCons.infoRecEv.nrRecArqBase.Should().Be("1971-02-4099-2308-1971");
         instancia.evtRetCons.infoRecEv.nrProtLote.Should().Be("2.202309.1214293");
-        instancia.evtRetCons.infoRecEv.dhRecepcao.Date.Should().Be(new DateTime(2023, 09, 11));
-        instancia.evtRetCons.infoRecEv.dhRecepcao.Hour.Should().Be(7);
-        instancia.evtRetCons.infoRecEv.dhRecepcao.Minute.Should().Be(17);
-        instancia.evtRetCons.infoRecEv.dhRecepcao.Second.Should().Be(19);
-        instancia.evtRetCons.infoRecEv.dhProcess.Date.Should().Be(new DateTime(2023, 09, 11));
-        instancia.evtRetCons.infoRecEv.dhProcess.Hour.Should().Be(7);
-        instancia.evtRetCons.infoRecEv.dhProcess.Minute.Should().Be(17);
-        instancia.evtRetCons.infoRecEv.dhProcess.Second.Should().Be(19);
+        instancia.evtRetCons.infoRecEv.dhRecepcao.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 7, 17, 19, TimeSpan.FromHours(-3)),
+                                                                             TimeSpan.FromSeconds(1));
+        instancia.evtRetCons.infoRecEv.dhProcess.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 7, 17, 19, TimeSpan.FromHours(-3)),
+                                                                            TimeSpan.FromSeconds(1));
         instancia.evtRetCons.infoRecEv.tpEv.Should().Be("4099");
         instancia.evtRetCons.infoRecEv.idEv.Should().Be("ID1000000112116922023091107172200001");
         instancia.evtRetCons.infoRecEv.hash.Should().Be("p2H1AcWIrf6sS6oJBk9kDeGrj398KOE7+RPfKLuyXkk=");

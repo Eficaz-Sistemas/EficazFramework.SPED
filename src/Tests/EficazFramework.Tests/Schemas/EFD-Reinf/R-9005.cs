@@ -21,14 +21,10 @@ public class R9005Test
         instancia.evtRet.ideRecRetorno.ideStatus.descRetorno.Should().Be("SUCESSO");
         instancia.evtRet.infoRecEv.nrRecArqBase.Should().Be("26072-02-4020-2308-26072");
         instancia.evtRet.infoRecEv.nrProtLote.Should().Be("2.202309.1247674");
-        instancia.evtRet.infoRecEv.dhRecepcao.Date.Should().Be(new DateTime(2023, 09, 11));
-        instancia.evtRet.infoRecEv.dhRecepcao.Hour.Should().Be(21);
-        instancia.evtRet.infoRecEv.dhRecepcao.Minute.Should().Be(43);
-        instancia.evtRet.infoRecEv.dhRecepcao.Second.Should().Be(41);
-        instancia.evtRet.infoRecEv.dhProcess.Date.Should().Be(new DateTime(2023, 09, 11));
-        instancia.evtRet.infoRecEv.dhProcess.Hour.Should().Be(21);
-        instancia.evtRet.infoRecEv.dhProcess.Minute.Should().Be(43);
-        instancia.evtRet.infoRecEv.dhProcess.Second.Should().Be(42);
+        instancia.evtRet.infoRecEv.dhRecepcao.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 21, 43, 41, 877, TimeSpan.FromHours(-3)),
+                                                                 TimeSpan.FromSeconds(1));
+        instancia.evtRet.infoRecEv.dhProcess.Should().BeCloseTo(new DateTimeOffset(2023, 09, 11, 21, 43, 42, 591, TimeSpan.FromHours(-3)), 
+                                                                TimeSpan.FromSeconds(1));
         instancia.evtRet.infoRecEv.tpEv.Should().Be("4020");
         instancia.evtRet.infoRecEv.idEv.Should().Be("ID1000000112116922023091121434100001");
         instancia.evtRet.infoRecEv.hash.Should().Be("NBZkwxhz0EL9Uxq0UQxgz/BJZF72DtqKkYB4az7Bqf0=");
