@@ -1,11 +1,12 @@
 ﻿using EficazFramework.SPED.Utilities;
+using Microsoft.Extensions.Logging;
 
 namespace EficazFramework.SPED.Services.Primitives;
 
 /// <summary>
 /// Define as regras comumns para todos os serviços da biblioteca.
 /// </summary>
-internal abstract class ServiceBase
+public abstract class ServiceBase
 {
     private IcpBrasilX509Certificate2  _certificado;
     /// <summary>
@@ -25,9 +26,12 @@ internal abstract class ServiceBase
     /// Executa a validação da instância de Certificado Digital antes de qualquer requisição.
     /// </summary>
     /// <returns></returns>
-    internal bool ValidaCertificado()
+    public bool ValidaCertificado()
     {
         _certificado ??= SelecionaCertificado?.Invoke();
         return _certificado is not null;
     }
+
+
+    public ILogger Logger { get; set; }
 }
