@@ -1,6 +1,8 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+﻿using System.Globalization;
 
-public class R9005Test
+namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+
+public class R9005Test : BaseEfdReinfEvtRetTest<R9015>
 {
     [Test]
     [TestCase(Versao.v2_01_02)]
