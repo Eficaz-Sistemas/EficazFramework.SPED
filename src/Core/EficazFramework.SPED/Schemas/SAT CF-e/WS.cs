@@ -1022,7 +1022,7 @@ public partial class consStatStatus : object, System.ComponentModel.INotifyPrope
 [System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true)]
 [System.Xml.Serialization.XmlRoot(Namespace = "", IsNullable = false)]
-public partial class certifica : object, System.ComponentModel.INotifyPropertyChanged
+public partial class Certifica : object, System.ComponentModel.INotifyPropertyChanged
 {
     private string tpAmbField;
     private string cUFField;
