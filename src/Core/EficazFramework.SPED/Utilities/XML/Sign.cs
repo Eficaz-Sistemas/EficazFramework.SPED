@@ -33,7 +33,9 @@ public static class Sign
             sxml.SignedInfo.SignatureMethod = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
         }
         else
+#pragma warning disable SYSLIB0028
             sxml.SigningKey = certificate.PrivateKey;
+#pragma warning restore SYSLIB0028
 
         Reference @ref = new();
         if (emptyURI == false)
