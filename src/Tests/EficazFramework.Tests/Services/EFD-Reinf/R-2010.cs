@@ -1,31 +1,26 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿namespace EficazFramework.SPED.Services.EFD_Reinf;
 
-namespace EficazFramework.SPED.Services.EFD_Reinf;
-
-[TestClass]
 public class R2010Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2010>
 {
     [Test]
     [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task EnviaMovimento(Schemas.EFD_Reinf.Versao versao)
     {
-        _versao = versao;
         var result = await TestaEvento(versao);
         var retorno = result.retornoLoteEventosAssincrono.retornoEventos.evento.SingleOrDefault();
         retorno.Should().NotBeNull();
         var totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
-        totalEstabelecimento.RTom.cnpjPrestador.Should().Be("61918769000188");
-        totalEstabelecimento.RTom.vlrTotalBaseRet.Should().Be("600,00");
-        Console.WriteLine($"R-2010, Código de Recolhimento Retornado: {totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().CRTom}");
-        totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("66,00");
+        totalEstabelecimento.RTom.Single().cnpjPrestador.Should().Be("61918769000188");
+        totalEstabelecimento.RTom.Single().vlrTotalBaseRet.Should().Be("600,00");
+        Console.WriteLine($"R-2010, Código de Recolhimento Retornado: {totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().CRTom}");
+        totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("66,00");
     }
 
     [Test]
     [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task EnviaMovimentoEmLote(Schemas.EFD_Reinf.Versao versao)
     {
-        _versao = versao;
         var result = await TestaLoteEvento(versao, 2);
 
         //! Evento 1: 61918769000188 | 600,00 | 1 nf
@@ -33,26 +28,25 @@ public class R2010Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2010>
         retorno.Should().NotBeNull();
         var totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
-        totalEstabelecimento.RTom.cnpjPrestador.Should().Be("61918769000188");
-        totalEstabelecimento.RTom.vlrTotalBaseRet.Should().Be("600,00");
-        Console.WriteLine($"R-2010, Código de Recolhimento Retornado do Evento 1: {totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().CRTom}");
-        totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("66,00");
+        totalEstabelecimento.RTom.Single().cnpjPrestador.Should().Be("61918769000188");
+        totalEstabelecimento.RTom.Single().vlrTotalBaseRet.Should().Be("600,00");
+        Console.WriteLine($"R-2010, Código de Recolhimento Retornado do Evento 1: {totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().CRTom}");
+        totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("66,00");
 
         //! Evento 2: 18505527000133 | 1600,00 | 2 nfs
         retorno = result.retornoLoteEventosAssincrono.retornoEventos.evento.LastOrDefault();
         retorno.Should().NotBeNull();
         totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
-        totalEstabelecimento.RTom.cnpjPrestador.Should().Be("18505527000133");
-        totalEstabelecimento.RTom.vlrTotalBaseRet.Should().Be("1600,00");
-        Console.WriteLine($"R-2010, Código de Recolhimento Retornado do Evento 2: {totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().CRTom}");
-        totalEstabelecimento.RTom.infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("176,00");
+        totalEstabelecimento.RTom.Single().cnpjPrestador.Should().Be("18505527000133");
+        totalEstabelecimento.RTom.Single().vlrTotalBaseRet.Should().Be("1600,00");
+        Console.WriteLine($"R-2010, Código de Recolhimento Retornado do Evento 2: {totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().CRTom}");
+        totalEstabelecimento.RTom.Single().infoCRTom.FirstOrDefault().vlrCRTom.Should().Be("176,00");
     }
 
 
     public override void PreencheCampos(Schemas.EFD_Reinf.R2010 evento, int index = 0)
     {
-        evento.Versao = _versao;
         Schemas.EFD_Reinf.R2010Test.PreencheCamposR2010(evento, CnpjCpf);
 
         if (index != 0)

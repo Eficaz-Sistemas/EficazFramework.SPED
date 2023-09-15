@@ -6,8 +6,8 @@
 /// </summary>
 public partial class TotalSerieR2000 : EfdReinfBindableObject
 {
-    private TotalizadorR2010 rTomField;
-    private TotalizadorR2020 rPrestField;
+    private TotalizadorR2010[] rTomField;
+    private TotalizadorR2020[] rPrestField;
     private TotalizadorR2030eR2040[] rRecRepADField;
     private TotalizadorR2050[] rComlField;
     private TotalizadorR2055[] rAquisField;
@@ -18,7 +18,8 @@ public partial class TotalSerieR2000 : EfdReinfBindableObject
     /// <summary>
     /// Totalizador do evento R-2010
     /// </summary>
-    public TotalizadorR2010 RTom
+    [XmlElement("RTom")]
+    public TotalizadorR2010[] RTom
     {
         get => rTomField;
         set
@@ -31,7 +32,8 @@ public partial class TotalSerieR2000 : EfdReinfBindableObject
     /// <summary>
     /// Totalizador do evento R-2020
     /// </summary>
-    public TotalizadorR2020 RPrest
+    [XmlElement("RPrest")]
+    public TotalizadorR2020[] RPrest
     {
         get => rPrestField;
         set

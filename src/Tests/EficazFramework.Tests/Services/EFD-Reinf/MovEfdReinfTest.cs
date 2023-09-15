@@ -4,9 +4,8 @@ namespace EficazFramework.SPED.Services.EFD_Reinf;
 
 public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_Reinf.Evento
 {
-    internal string CnpjCpf { get; private set; } = "34785515000166";
-    internal Schemas.EFD_Reinf.Versao _versao = Schemas.EFD_Reinf.Versao.v2_01_01;
-    internal Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte = new()
+    internal string CnpjCpf { get; set; } = "34785515000166";
+    internal Schemas.EFD_Reinf.IdentificacaoContribuinte Contribuinte { get; set; } = new()
     {
         nrInsc = "",
         tpInsc = Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ
@@ -22,7 +21,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
         if (!string.IsNullOrEmpty(_cnpj))
         {
             CnpjCpf = _cnpj;
-            contribuinte.nrInsc = _cnpj;
+            Contribuinte.nrInsc = _cnpj;
         }
     }
 
@@ -183,7 +182,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
         {
             SelecionaCertificado = InstanciaCertificado
         };
-        var r = await _ws.EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await _ws.EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
@@ -201,7 +200,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
         {
             SelecionaCertificado = InstanciaCertificado
         };
-        var r = await _ws.EnviaEventosAsync(eventos, contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await _ws.EnviaEventosAsync(eventos, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
