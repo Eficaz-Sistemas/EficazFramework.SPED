@@ -2,15 +2,18 @@
 
 namespace EficazFramework.SPED.Services.EFD_Reinf;
 
-public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_Reinf.Evento
+public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_Reinf.Evento
 {
-    internal string CnpjCpf { get; set; } = "34785515000166";
+    internal string CnpjCpf { get; private set; } = "34785515000166";
     internal Schemas.EFD_Reinf.Versao _versao = Schemas.EFD_Reinf.Versao.v2_01_01;
-    internal Schemas.EFD_Reinf.IdentificacaoContribuinte Contribuinte { get; set; } = new()
+    internal Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte = new()
     {
         nrInsc = "",
         tpInsc = Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ
     };
+    internal bool GeraDadosCadastrais { get; set; } = true;
+    internal bool ReciclaDadosCadastrais { get; set; } = true;
+    internal string[] CodigosResultadoEsperado = { "0", "2" };
 
     [SetUp]
     public void OverrideParameters()
@@ -19,22 +22,27 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         if (!string.IsNullOrEmpty(_cnpj))
         {
             CnpjCpf = _cnpj;
-            Contribuinte.nrInsc = _cnpj;
+            contribuinte.nrInsc = _cnpj;
         }
     }
 
 
-    internal bool LogToConsole { get; set; } = true;
-
-    /// <summary>
-    /// Executa o teste de um único evento cadastral
-    /// </summary>
-    /// <param name="versao"></param>
-    /// <returns></returns>
-    internal async Task<RetornoLoteEventos> TestaEvento(Schemas.EFD_Reinf.Versao versao)
+    internal async Task<Response> TestaEvento(Schemas.EFD_Reinf.Versao versao)
     {
         // criação da instância e alimentação dos campos
         T instancia = CriaInstanciaEvento(versao);
+
+        // criação das informações cadastrais
+        R1000Test cad = new() 
+        {
+            LogToConsole = false,
+            CnpjCpf = CnpjCpf,
+        };
+        cad.Contribuinte.nrInsc = CnpjCpf;
+        if (GeraDadosCadastrais)
+            await cad.Envia01Inclusao(instancia.Versao);
+
+        // envio do evento <T>
         var retornoEnvio = await EnviaEvento(instancia);
         retornoEnvio.retornoLoteEventosAssincrono.status.cdResposta.Should().Be("1");
         var protocolo = retornoEnvio.retornoLoteEventosAssincrono.dadosRecepcaoLote.protocoloEnvio;
@@ -49,27 +57,46 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
             await Task.Delay(500);
             retornoConsulta = await ConsultaProtocolo(protocolo);
         }
-        retornoConsulta.retornoLoteEventosAssincrono.status.cdResposta.Should().Be("2");
+
+        // remoção dos dados cadastrais
+        if (ReciclaDadosCadastrais)
+            await cad.Envia04InclusaoRemocaoDados(instancia.Versao);
+
+        // assert
+        retornoConsulta.retornoLoteEventosAssincrono.status.cdResposta.Should().BeOneOf(CodigosResultadoEsperado);
         retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.Should().NotBeNull();
 
         foreach (LoteEventoRetornoInfo evt in retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.evento)
-            evt.retornoEventoInfo.evtTotal.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(new[] { "0", "2" });
-
-        return retornoConsulta.retornoLoteEventosAssincrono;
+        {
+            if (evt.retornoEventoFechamentoInfo != null)
+                evt?.retornoEventoFechamentoInfo.evtTotalContrib.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else if (evt.retornoEventoRetInfo != null)
+                evt?.retornoEventoRetInfo.evtRet.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else if (evt.retornoEventoFechamentoRetInfo != null)
+                evt?.retornoEventoFechamentoRetInfo.evtRetCons.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else
+                evt?.retornoEventoInfo.evtTotal.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+        }
+        return retornoConsulta;
     }
 
-
-    /// <summary>
-    /// Executa o teste de envio de um lote de eventos cadastrais
-    /// </summary>
-    /// <param name="versao"></param>
-    /// <param name="tamanhoLote"></param>
-    /// <returns></returns>
-    internal async Task<RetornoLoteEventos> TestaLoteEvento(Schemas.EFD_Reinf.Versao versao, int tamanhoLote)
+    internal async Task<Response> TestaLoteEvento(Schemas.EFD_Reinf.Versao versao, int tamanhoLote)
     {
         // criação da instância e alimentação dos campos
-        IList<T> instancias = CriaLoteEvento(versao, tamanhoLote);
-        var retornoEnvio = await EnviaLoteEvento((IList<Schemas.EFD_Reinf.Evento>)instancias);
+        IList<Schemas.EFD_Reinf.Evento> instancias = CriaLoteEvento(versao, tamanhoLote);
+
+        // criação das informações cadastrais
+        R1000Test cad = new()
+        {
+            LogToConsole = false,
+            CnpjCpf = CnpjCpf
+        };
+        cad.Contribuinte.nrInsc = CnpjCpf;
+        if (GeraDadosCadastrais)
+            await cad.Envia01Inclusao(instancias.First().Versao);
+
+        // envio do evento <T>
+        var retornoEnvio = await EnviaLoteEvento(instancias);
         retornoEnvio.retornoLoteEventosAssincrono.status.cdResposta.Should().Be("1");
         var protocolo = retornoEnvio.retornoLoteEventosAssincrono.dadosRecepcaoLote.protocoloEnvio;
 
@@ -78,10 +105,32 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
 
         // consulta do protocolo
         var retornoConsulta = await ConsultaProtocolo(protocolo);
-        foreach (LoteEventoRetornoInfo evt in retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.evento)
-            evt.retornoEventoInfo.evtTotal.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(new[] { "2" });
+        while (retornoConsulta.retornoLoteEventosAssincrono.status.cdResposta == "1")
+        {
+            await Task.Delay(150);
+            retornoConsulta = await ConsultaProtocolo(protocolo);
+        }
 
-        return retornoConsulta.retornoLoteEventosAssincrono;
+        // remoção dos dados cadastrais
+        if (ReciclaDadosCadastrais)
+            await cad.Envia04InclusaoRemocaoDados(instancias.First().Versao);
+
+        // assert
+        retornoConsulta.retornoLoteEventosAssincrono.status.cdResposta.Should().BeOneOf(CodigosResultadoEsperado);
+        retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.Should().NotBeNull();
+
+        foreach (LoteEventoRetornoInfo evt in retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.evento)
+        {
+            if (evt.retornoEventoFechamentoInfo != null)
+                evt?.retornoEventoFechamentoInfo.evtTotalContrib.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else if (evt.retornoEventoRetInfo != null)
+                evt?.retornoEventoRetInfo.evtRet.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else if (evt.retornoEventoFechamentoRetInfo != null)
+                evt?.retornoEventoFechamentoRetInfo.evtRetCons.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+            else
+                evt?.retornoEventoInfo.evtTotal.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(CodigosResultadoEsperado);
+        }
+        return retornoConsulta;
     }
 
 
@@ -97,19 +146,19 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         return instancia;
     }
 
-
     /// <summary>
     /// Cria um lote de instâncias do Evento do Tipo T, pelo método <see cref="PreencheCampos(T)"/>
     /// </summary>
-    private IList<T> CriaLoteEvento(Schemas.EFD_Reinf.Versao versao, int tamanhoLote)
+    private IList<Schemas.EFD_Reinf.Evento> CriaLoteEvento(Schemas.EFD_Reinf.Versao versao, int tamanhoLote)
     {
-        var result = new List<T>();
-        for (int i = 0; i <= tamanhoLote; i++)
+        var result = new List<Schemas.EFD_Reinf.Evento>();
+        for (int i = 0; i < tamanhoLote; i++)
         {
             T instancia = Activator.CreateInstance<T>();
             instancia.Versao = versao;
             PreencheCampos(instancia, i);
             instancia.GeraEventoID();
+            result.Add(instancia);  
         }
         return result;
     }
@@ -134,7 +183,7 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         {
             SelecionaCertificado = InstanciaCertificado
         };
-        var r = await _ws.EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await _ws.EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
@@ -152,17 +201,11 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         {
             SelecionaCertificado = InstanciaCertificado
         };
-        var r = await _ws.EnviaEventosAsync(eventos, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await _ws.EnviaEventosAsync(eventos, contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
 
-
-    /// <summary>
-    /// Realiza a pesquisa de protocolo dos eventos enviados, para teste do retorno
-    /// </summary>
-    /// <param name="protocolo"></param>
-    /// <returns></returns>
     public async Task<Response> ConsultaProtocolo(string protocolo)
     {
         var _ws = new EficazFramework.SPED.Services.EFD_Reinf.EfdReinfServices
@@ -173,7 +216,6 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         r.Should().NotBeNull();
         return r;
     }
-
 
     /// <summary>
     /// Define o certificado digital a ser utilizado nas requests.

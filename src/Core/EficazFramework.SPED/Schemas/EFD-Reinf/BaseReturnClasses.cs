@@ -74,7 +74,11 @@ public abstract class EventoRetorno : EfdReinfBindableObject
     public EventoRetorno Read(string xmlContent)
     {
         sSerializer = DefineSerializer();
-        return Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as EventoRetorno;
+        var encoder = System.Text.Encoding.UTF8;
+        if (!xmlContent.Contains("utf-8"))
+            encoder = System.Text.Encoding.Unicode;
+
+        return Read(new MemoryStream(encoder.GetBytes(xmlContent))) as EventoRetorno;
     }
 
     /// <summary>

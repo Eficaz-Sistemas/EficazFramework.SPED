@@ -86,10 +86,10 @@ public class EfdReinfServices : RestServiceBase
             {
                 Versao = versao
             };
-            response.Read(resultString);
+            response =response.Read(resultString);
 
             //? desserializando a correta instância de retorno entre R-9001, R-9005, R-9011 e R-9015
-            for (int i = 0; i < response.retornoLoteEventosAssincrono.retornoEventos.evento.Length; i++)
+            for (int i = 0; i < (response.retornoLoteEventosAssincrono.retornoEventos?.evento?.Length ?? -1); i++)
                 response.retornoLoteEventosAssincrono.retornoEventos.evento[i].ParseXml(eventos[i].Versao);
 
             return response;
@@ -152,10 +152,10 @@ public class EfdReinfServices : RestServiceBase
             {
                 Versao = versao
             };
-            response.Read(resultString);
+            response = response.Read(resultString);
 
             //? desserializando a correta instância de retorno entre R-9001, R-9005, R-9011 e R-9015
-            for (int i = 0; i < response.retornoLoteEventosAssincrono.retornoEventos.evento.Length; i++)
+            for (int i = 0; i < (response.retornoLoteEventosAssincrono.retornoEventos?.evento?.Length ?? -1); i++)
                 response.retornoLoteEventosAssincrono.retornoEventos.evento[i].ParseXml(Schemas.EFD_Reinf.Versao.v2_01_02);
             return response;
         }
