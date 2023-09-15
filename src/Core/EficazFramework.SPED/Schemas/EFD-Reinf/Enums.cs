@@ -427,6 +427,10 @@ public enum IndicadorTipoDeducaoPrevidenciaria
     [System.ComponentModel.Description("Dependentes")]
     Dependentes = 7,
 
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnum("8")]
+    [System.ComponentModel.Description("Desconto simplificado mensal")]
+    DescontoSimplMensal = 8,
 }
 
 public enum TipoIsencaoPF
