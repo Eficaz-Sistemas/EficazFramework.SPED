@@ -26,7 +26,7 @@ public class R9000Test : BaseEfdReinfTest<R9000>
     public override void PreencheCampos(R9000 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposInclusao(evento);
+        PreencheCamposInclusao(evento, CnpjCpf);
     }
 
     public override void ValidaInstanciasLeituraEscrita(R9000 instanciaPopulada, R9000 instanciaXml)
@@ -51,7 +51,7 @@ public class R9000Test : BaseEfdReinfTest<R9000>
         instanciaXml.evtExclusao.infoExclusao.tpEvento.Should().Be(instanciaPopulada.evtExclusao.infoExclusao.tpEvento);
     }
 
-    internal static void PreencheCamposInclusao(R9000 evento)
+    internal static void PreencheCamposInclusao(R9000 evento, string cnpjCpf)
     {
         evento.evtExclusao = new R9000EventoExclusao()
         {
@@ -64,7 +64,7 @@ public class R9000Test : BaseEfdReinfTest<R9000>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             infoExclusao = new ReinfEvtExclusaoInfoExclusao()
             {

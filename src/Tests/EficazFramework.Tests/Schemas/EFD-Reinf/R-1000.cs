@@ -74,13 +74,13 @@ public class R1000Test : BaseEfdReinfTest<R1000>
         switch (_testNumber)
         {
             case 0:
-                PreencheCamposInclusao(evento);
+                PreencheCamposInclusao(evento, CnpjCpf);
                 break;
             case 1:
-                PreencheCamposAlteracao(evento);
+                PreencheCamposAlteracao(evento, CnpjCpf);
                 break;
             case 2:
-                PreencheCamposExclusao(evento);
+                PreencheCamposExclusao(evento, CnpjCpf);
                 break;
         }
     }
@@ -119,7 +119,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
 
     // Preenchimento e validação por tipo de teste
     #region Inclusao
-    internal static void PreencheCamposInclusao(R1000 evento)
+    internal static void PreencheCamposInclusao(R1000 evento, string cnpjCpf)
     {
         evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
@@ -132,7 +132,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             infoContri = new R1000InfoContribuinte()
             {
@@ -198,7 +198,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     #endregion
 
     #region Alteracao
-    internal static void PreencheCamposAlteracao(R1000 evento)
+    internal static void PreencheCamposAlteracao(R1000 evento, string cnpjCpf)
     {
         evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
@@ -211,7 +211,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             infoContri = new R1000InfoContribuinte()
             {
@@ -285,7 +285,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
     #endregion
 
     #region Exclusao
-    internal static void PreencheCamposExclusao(R1000 evento)
+    internal static void PreencheCamposExclusao(R1000 evento, string cnpjCpf)
     {
         evento.evtInfoContri = new R1000EventoInfoContribuinte()
         {
@@ -298,7 +298,7 @@ public class R1000Test : BaseEfdReinfTest<R1000>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             infoContri = new R1000InfoContribuinte()
             {

@@ -26,17 +26,17 @@ public class R2050Test : BaseEfdReinfTest<R2050>
     public override void PreencheCampos(R2050 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2050(evento);
+        PreencheCamposR2050(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2050(R2050 evento)
+    public static void PreencheCamposR2050(R2050 evento, string cnpjCpf)
     {
         evento.evtComProd = new R2050EventoInfoComProdutor()
         {
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoPeriodico()
             {

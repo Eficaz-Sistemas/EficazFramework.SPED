@@ -28,21 +28,21 @@ public class R2030Test : BaseEfdReinfTest<R2030>
     public override void PreencheCampos(R2030 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2030(evento);
+        PreencheCamposR2030(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2030(R2030 evento)
+    public static void PreencheCamposR2030(R2030 evento, string cnpjCpf)
     {
         evento.evtAssocDespRec = new R2030EventoAssociacaoDespRecebim()
         {
             ideContri = new R2030IdentificacaoContribuinteAssoc()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8),
+                nrInsc = cnpjCpf.Substring(0, 8),
                 ideEstab = new R2030IdentificacaoEstabelecimentoAssoc()
                 {
                     tpInscEstab = PersonalidadeJuridica.CNPJ,
-                    nrInscEstab = _cnpj,
+                    nrInscEstab = cnpjCpf,
                     recursosRec = new()
                     {
                         new R2030RecursosRecebidos()

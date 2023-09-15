@@ -28,21 +28,21 @@ public class R2040Test : BaseEfdReinfTest<R2040>
     public override void PreencheCampos(R2040 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2040(evento);
+        PreencheCamposR2040(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2040(R2040 evento)
+    public static void PreencheCamposR2040(R2040 evento, string cnpjCpf)
     {
         evento.evtAssocDespRep = new R2040EventoAssociacaoDespRepasse()
         {
             ideContri = new R2040IdentificacaoContribuinteAssoc()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8),
+                nrInsc = cnpjCpf.Substring(0, 8),
                 ideEstab = new R2040IdentificacaoEstabelecimentoAssoc()
                 {
                     tpInscEstab = PersonalidadeJuridica.CNPJ,
-                    nrInscEstab = _cnpj,
+                    nrInscEstab = cnpjCpf,
                     recursosRep = new()
                     {
                         new R2040RecursosRepassados()

@@ -14,6 +14,8 @@
     <SignAssembly>True</SignAssembly>
 
     <AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
+
+    <UserSecretsId>9df2e9d9-6b22-460c-afa9-22b7fc35a9a5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,6 +38,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="FluentAssertions" Version="6.8.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
@@ -140,6 +144,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Certificados\WayneEnterprisesInc.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

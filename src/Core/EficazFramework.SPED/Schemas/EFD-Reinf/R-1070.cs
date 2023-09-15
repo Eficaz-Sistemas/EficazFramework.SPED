@@ -268,7 +268,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
     private string fimValidField;
     private IndicadorAuditoria indAutoriaField;
     private bool indAutoriaFieldSpecified = false;
-    private R1070IdentificacaoProcessoInfoSusp[] infoSuspField;
+    private List<R1070IdentificacaoProcessoInfoSusp> infoSuspField;
     private R1070IdentificacaoProcessoDadosProcJud dadosProcJudField;
 
     /// <remarks/>
@@ -354,7 +354,7 @@ public partial class R1070IdentificacaoProcesso : EfdReinfBindableObject
 
     /// <remarks/>
     [XmlElement("infoSusp", Order = 5)]
-    public R1070IdentificacaoProcessoInfoSusp[] infoSusp
+    public List<R1070IdentificacaoProcessoInfoSusp> infoSusp
     {
         get => infoSuspField;
         set

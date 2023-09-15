@@ -2,8 +2,18 @@
 
 public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : Evento
 {
-    internal const string _cnpj = "34785515000166";
+    internal string CnpjCpf { get; private set; } = "34785515000166";
     internal Versao _versao = Versao.v2_01_01;
+
+    [SetUp]
+    public void OverrideParameters()
+    {
+        string _cnpj = Configuration["SSL:EFDREINF:CertificateCnpjCpf"];
+        if (!string.IsNullOrEmpty(_cnpj))
+            CnpjCpf = _cnpj;
+    }
+
+
 
     /// <summary>
     /// Informa o namespace principal (xmlns) para validação do documento XML

@@ -27,23 +27,23 @@ public class R3010Test : BaseEfdReinfTest<R3010>
     public override void PreencheCampos(R3010 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR3010(evento);
+        PreencheCamposR3010(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR3010(R3010 evento)
+    public static void PreencheCamposR3010(R3010 evento, string cnpjCpf)
     {
         evento.evtEspDesportivo = new R3010EventoEspDesportivo()
         {
             ideContri = new R3010IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8),
+                nrInsc = cnpjCpf.Substring(0, 8),
                 ideEstab = new List<R3010IdentificacaoEstabelecimento>()
                 {
                     new R3010IdentificacaoEstabelecimento()
                     {
                         tpInscEstab = PersonalidadeJuridica.CNPJ,
-                        nrInscEstab = _cnpj,
+                        nrInscEstab = cnpjCpf,
                         receitaTotal = new R3010ReceitaTotal()
                         {
                             vlrReceitaTotal = 1500000M.ToString("f2"),
