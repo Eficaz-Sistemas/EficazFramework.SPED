@@ -10,7 +10,6 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     public async Task Envia01Inclusao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 0;
-        _versao = versao;
         _ = await TestaEvento(versao);
     }
 
@@ -20,7 +19,6 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     public async Task Envia02Alteracao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 1;
-        _versao = versao;
         _ = await TestaEvento(versao);
     }
 
@@ -30,7 +28,6 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     public async Task Envia03Exclusao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 2;
-        _versao = versao;
         _ = await TestaEvento(versao);
     }
 
@@ -40,7 +37,6 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     public async Task Envia04InclusaoRemocaoDados(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 3;
-        _versao = versao;
         _ = await TestaEvento(versao);
     }
 
@@ -49,7 +45,6 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     // BaseEfdReinfTest overrides
     public override void PreencheCampos(Schemas.EFD_Reinf.R1000 evento, int i)
     {
-        evento.Versao = _versao;
         switch (_testNumber)
         {
             case 0:
