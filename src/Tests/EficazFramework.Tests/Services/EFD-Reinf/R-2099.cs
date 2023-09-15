@@ -72,6 +72,7 @@
         public async Task EnviaSemMovimento(Schemas.EFD_Reinf.Versao versao)
         {
             _testNumber = 1;
+            GeraDadosCadastrais = true;
             var result = await TestaEvento(versao);
             result.retornoLoteEventosAssincrono.retornoEventos.evento.ToList().ForEach(evt =>
             {
