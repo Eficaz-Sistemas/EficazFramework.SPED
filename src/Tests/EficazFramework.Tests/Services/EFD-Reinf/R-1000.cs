@@ -1,14 +1,12 @@
-﻿using FluentAssertions;
-
-namespace EficazFramework.SPED.Services.EFD_Reinf;
+﻿namespace EficazFramework.SPED.Services.EFD_Reinf;
 
 public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
 {
     private int _testNumber = 0;
 
 
-    //[Test]
-    //[TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
+    [Test]
+    [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task Envia01Inclusao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 0;
@@ -17,8 +15,8 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     }
 
 
-    //[Test]
-    //[TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
+    [Test]
+    [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task Envia02Alteracao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 1;
@@ -27,8 +25,8 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     }
 
 
-    //[Test]
-    //[TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
+    [Test]
+    [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task Envia03Exclusao(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 2;
@@ -37,8 +35,8 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
     }
 
 
-    //[Test]
-    //[TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
+    [Test]
+    [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task Envia04InclusaoRemocaoDados(Schemas.EFD_Reinf.Versao versao)
     {
         _testNumber = 3;
@@ -70,5 +68,4 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
                 break;
         }
     }
-
 }

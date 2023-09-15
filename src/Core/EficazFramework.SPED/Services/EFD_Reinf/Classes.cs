@@ -228,7 +228,6 @@ public partial class Response : Schemas.EFD_Reinf.EfdReinfBindableObject
 
 
     private RetornoLoteEventos retornoLoteEventosAssincronoField;
-    [XmlElement(Order = 1)]
     public RetornoLoteEventos retornoLoteEventosAssincrono
     {
         get => retornoLoteEventosAssincronoField;
@@ -660,7 +659,7 @@ public partial class LoteEventoRetornoInfo : Schemas.EFD_Reinf.EfdReinfBindableO
         {
         } // ex As Exception
 
-        switch (rawXmlField.Descendants().First().Name.LocalName ?? "" ?? "")
+        switch (rawXmlField?.Descendants()?.First()?.Name.LocalName ?? "")
         {
             case "evtTotal":
                 {
