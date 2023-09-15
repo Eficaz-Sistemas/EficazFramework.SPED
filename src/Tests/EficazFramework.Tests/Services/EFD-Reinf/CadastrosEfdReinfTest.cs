@@ -4,13 +4,25 @@ namespace EficazFramework.SPED.Services.EFD_Reinf;
 
 public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_Reinf.Evento
 {
-    internal const string _cnpj = "34785515000166";
+    internal string CnpjCpf { get; private set; } = "34785515000166";
     internal Schemas.EFD_Reinf.Versao _versao = Schemas.EFD_Reinf.Versao.v2_01_01;
     internal Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte = new()
     {
-        nrInsc = _cnpj,
+        nrInsc = "",
         tpInsc = Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ
     };
+
+    [SetUp]
+    public void OverrideParameters()
+    {
+        string _cnpj = Configuration["SSL:EFDREINF:CertificateCnpjCpf"];
+        if (!string.IsNullOrEmpty(_cnpj))
+        {
+            CnpjCpf = _cnpj;
+            contribuinte.nrInsc = _cnpj;
+        }
+    }
+
 
     internal bool LogToConsole { get; set; } = true;
 

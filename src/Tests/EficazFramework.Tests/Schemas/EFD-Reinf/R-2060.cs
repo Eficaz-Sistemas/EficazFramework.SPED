@@ -26,18 +26,18 @@ public class R2060Test : BaseEfdReinfTest<R2060>
     public override void PreencheCampos(R2060 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2060(evento);
+        PreencheCamposR2060(evento, CnpjCpf);
     }
 
 
-    public static void PreencheCamposR2060(R2060 evento)
+    public static void PreencheCamposR2060(R2060 evento, string cnpjCpf)
     {
         evento.evtCPRB = new R2060EventoCprb()
         {
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -52,7 +52,7 @@ public class R2060Test : BaseEfdReinfTest<R2060>
                 ideEstab = new R2060IdentificacaoEstabelecimento()
                 {
                     tpInscEstab = PersonalidadeJuridica.CNPJ,
-                    nrInscEstab = _cnpj,
+                    nrInscEstab = cnpjCpf,
                     vlrRecBrutaTotal = 1000.00M.ToString("f2"),
                     vlrCPApurTotal = 110.00M.ToString("f2"),
                     tipoCod = new()

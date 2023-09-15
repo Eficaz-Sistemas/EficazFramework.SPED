@@ -6,6 +6,7 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
 {
     private int _testNumber = 0;
 
+
     //[Test]
     //[TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task Envia01Inclusao(Schemas.EFD_Reinf.Versao versao)
@@ -54,16 +55,16 @@ public class R1000Test : CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>
         switch (_testNumber)
         {
             case 0:
-                Schemas.EFD_Reinf.R1000Test.PreencheCamposInclusao(evento);
+                Schemas.EFD_Reinf.R1000Test.PreencheCamposInclusao(evento, CnpjCpf);
                 break;
             case 1:
-                Schemas.EFD_Reinf.R1000Test.PreencheCamposAlteracao(evento);
+                Schemas.EFD_Reinf.R1000Test.PreencheCamposAlteracao(evento, CnpjCpf);
                 break;
             case 2:
-                Schemas.EFD_Reinf.R1000Test.PreencheCamposExclusao(evento);
+                Schemas.EFD_Reinf.R1000Test.PreencheCamposExclusao(evento, CnpjCpf);
                 break;
             case 3:
-                Schemas.EFD_Reinf.R1000Test.PreencheCamposInclusao(evento);
+                Schemas.EFD_Reinf.R1000Test.PreencheCamposInclusao(evento, CnpjCpf);
                 evento.evtInfoContri.ideEvento.verProc = "RemoverContribuinte";
                 ((Schemas.EFD_Reinf.R1000Inclusao)evento.evtInfoContri.infoContri.Item).infoCadastro.classTrib = "00";
                 break;

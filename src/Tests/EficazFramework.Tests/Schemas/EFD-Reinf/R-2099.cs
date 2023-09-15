@@ -26,17 +26,17 @@ public class R2099Test : BaseEfdReinfTest<R2099>
     public override void PreencheCampos(R2099 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2099(evento);
+        PreencheCamposR2099(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2099(R2099 evento)
+    public static void PreencheCamposR2099(R2099 evento, string cnpjCpf)
     {
         evento.evtFechaEvPer = new EficazFramework.SPED.Schemas.EFD_Reinf.R2099EventoFechamentoPeriodo()
         {
             ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
             {
                 tpInsc = EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoFechamento()
             {

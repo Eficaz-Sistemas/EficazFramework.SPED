@@ -28,17 +28,17 @@ public class R2010Test : BaseEfdReinfTest<R2010>
     public override void PreencheCampos(R2010 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2010(evento);
+        PreencheCamposR2010(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2010(R2010 evento)
+    public static void PreencheCamposR2010(R2010 evento, string cnpjCpf)
     {
         evento.evtServTom = new R2010EventoServicoTomado()
         {
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -53,7 +53,7 @@ public class R2010Test : BaseEfdReinfTest<R2010>
                 ideEstabObra = new R2010IdentificacaoEstabObra()
                 {
                     tpInscEstab = PersonalidadeJuridica.CNPJ,
-                    nrInscEstab = _cnpj,
+                    nrInscEstab = cnpjCpf,
                     idePrestServ = new R2010IdentificacaoPrestServico()
                     {
                         cnpjPrestador = "61918769000188",

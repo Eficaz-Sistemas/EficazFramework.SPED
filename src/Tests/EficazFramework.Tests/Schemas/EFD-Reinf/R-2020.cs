@@ -28,17 +28,17 @@ public class R2020Test : BaseEfdReinfTest<R2020>
     public override void PreencheCampos(R2020 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2020(evento);
+        PreencheCamposR2020(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2020(R2020 evento)
+    public static void PreencheCamposR2020(R2020 evento, string cnpjCpf)
     {
         evento.evtServPrest = new R2020EventoServicoPrestado()
         {
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -53,7 +53,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
                 ideEstabPrest = new R2020IdentificacaoEstabPrestacao()
                 {
                     tpInscEstabPrest = PersonalidadeJuridica.CNPJ,
-                    nrInscEstabPrest = _cnpj,
+                    nrInscEstabPrest = cnpjCpf,
                     ideTomador = new R2020IdentificacaoTomadorServico()
                     {
                         tpInscTomador = PersonalidadeJuridica.CNPJ,

@@ -26,17 +26,17 @@ public class R2055Test : BaseEfdReinfTest<R2055>
     public override void PreencheCampos(R2055 evento)
     {
         evento.Versao = _versao;
-        PreencheCamposR2055(evento);
+        PreencheCamposR2055(evento, CnpjCpf);
     }
 
-    public static void PreencheCamposR2055(R2055 evento)
+    public static void PreencheCamposR2055(R2055 evento, string cnpjCpf)
     {
         evento.evtAqProd = new EficazFramework.SPED.Schemas.EFD_Reinf.R2055EventoAquisProd()
         {
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = _cnpj.Substring(0, 8)
+                nrInsc = cnpjCpf.Substring(0, 8)
             },
             ideEvento = new IdentificacaoEventoPeriodico()
             {
@@ -51,7 +51,7 @@ public class R2055Test : BaseEfdReinfTest<R2055>
                 ideEstabAdquir = new R2050IdentificacaoEstabAdquirente()
                 {
                     tpInscAdq = PersonalidadeJuridica.CNPJ,
-                    nrInscAdq = _cnpj,
+                    nrInscAdq = cnpjCpf,
                     ideProdutor = new R2055IdentificacaoProdutor()
                     {
                         tpInscProd = PersonalidadeJuridica.CPF,
