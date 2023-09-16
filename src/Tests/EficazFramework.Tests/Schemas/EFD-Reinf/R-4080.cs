@@ -24,12 +24,17 @@ public class R4080Test : BaseEfdReinfTest<R4080>
     public override void PreencheCampos(R4080 evento)
     {
         evento.Versao = _versao;
+        PreencheCamposServices(evento, CnpjCpf);
+    }
+
+    internal static void PreencheCamposServices(R4080 evento, string cnpjCpf)
+    {
         evento.evtRetRec = new R4080EventoRetRecebimento()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -37,38 +42,38 @@ public class R4080Test : BaseEfdReinfTest<R4080>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8],
             },
             ideEstab = new R4080IdentificacaoEstabelecimento()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideFont = new R4080IdentificacaoFontePagadora()
                 {
                     // identificação do beneficiário
-                    cnpjFont = "10608025000126",
+                    cnpjFont = "34785515000166",
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     ideRend = new System.Collections.Generic.List<R4080IdentificacaoRendimento>()
-                {
-                    // identificação do recebimento
-                    new R4080IdentificacaoRendimento()
                     {
-                        // informações do recebimento
-                        infoRec = new System.Collections.Generic.List<R4080InfoRecebimento>()
+                        // identificação do recebimento
+                        new R4080IdentificacaoRendimento()
                         {
-                            new R4080InfoRecebimento()
+                            // informações do recebimento
+                            infoRec = new System.Collections.Generic.List<R4080InfoRecebimento>()
                             {
-                                DataFatoGerador = System.DateTime.Now,
-                                vlrBruto = 152725.25M.ToString("f2"),
-                                vlrBaseIR = 152725.25M.ToString("f2"),
-                                vlrIR = 2290.88M.ToString("f2")
+                                new R4080InfoRecebimento()
+                                {
+                                    DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                    vlrBruto = 152725.25M.ToString("f2"),
+                                    vlrBaseIR = 152725.25M.ToString("f2"),
+                                    vlrIR = 2290.88M.ToString("f2")
+                                },
                             },
+                            // Utilizar a tabela 01, do Anexo I do Manual
+                            natRend = "20001", // propaganda e publicidade;
+                            observ = "Serviços de Propaganda e Publicidade"
                         },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = "20001", // Remuneração de Serviços de auditoria;
-                        observ = "Serviços de Propaganda e Publicidade"
-                    },
-                }
+                    }
                 }
             }
         };
