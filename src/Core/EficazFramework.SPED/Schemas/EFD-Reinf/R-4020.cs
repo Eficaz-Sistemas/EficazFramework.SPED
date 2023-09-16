@@ -311,7 +311,7 @@ public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
             RaisePropertyChanged(nameof(isenImun));
         }
     }
-    public bool ShouldSerializeTipoIsencaoPJ() => isenImun.HasValue;
+    public bool ShouldSerializeisenImun() => isenImun.HasValue;
 
 
     /// <remarks/>

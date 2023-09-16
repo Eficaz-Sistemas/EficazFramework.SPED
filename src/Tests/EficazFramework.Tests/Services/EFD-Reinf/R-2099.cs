@@ -41,6 +41,7 @@
 
             //? Encerra com R-2099
             GeraDadosCadastrais = false;
+            ReciclaDadosCadastrais = true;
             var result = await TestaEvento(versao);
             result.retornoLoteEventosAssincrono.retornoEventos.evento.ToList().ForEach(evt =>
             {
