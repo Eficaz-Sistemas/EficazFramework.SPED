@@ -69,13 +69,13 @@ public class R4020Test : BaseEfdReinfTest<R4020>
         switch (_testNumber)
         {
             case 0:
-                PreencheCamposRendimentoisento(evento);
+                PreencheCamposRendimentoisento(evento, CnpjCpf);
                 break;
             case 1:
-                PreencheCamposRendimentoTributado(evento);
+                PreencheCamposRendimentoTributado(evento, CnpjCpf);
                 break;
             case 2:
-                PreencheCamposRendimentoTributadoAgregado(evento);
+                PreencheCamposRendimentoTributadoAgregado(evento, CnpjCpf);
                 break;
         }
     }
@@ -102,14 +102,14 @@ public class R4020Test : BaseEfdReinfTest<R4020>
 
     // Preenchimento e validação por tipo de teste
     #region RendimentoIsento-PgAssociacoesFilantropicas
-    internal static void PreencheCamposRendimentoisento(R4020 evento)
+    internal static void PreencheCamposRendimentoisento(R4020 evento, string cnpjCpf)
     {
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -117,17 +117,17 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8] ,
             },
             ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
-                    cnpjBenef = "10608025000126",
-                    nmBenef = "Eficaz Assistência Social",
+                    cnpjBenef = "34785515000166",
+                    nmBenef = "Wayne Enterprise Inc",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
@@ -140,7 +140,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                         {
                             new R4020InfoPagtoPj()
                             {
-                                DataFatoGerador = System.DateTime.Now,
+                                DataFatoGerador = DateTime.Now.AddMonths(-1),
                                 vlrBruto = 152725.25M.ToString("f2"),
                                 retencoes = null 
                                 // rendimento isento não possui renteção
@@ -223,14 +223,14 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #endregion
 
     #region RendimentoTributado
-    internal static void PreencheCamposRendimentoTributado(R4020 evento)
+    internal static void PreencheCamposRendimentoTributado(R4020 evento, string cnpjCpf)
     {
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -238,17 +238,17 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8],
             },
             ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
-                    cnpjBenef = "10608025000126",
-                    nmBenef = "Eficaz Auditoria Contábil",
+                    cnpjBenef = "34785515000166",
+                    nmBenef = "Wayne Enterprise Inc",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
@@ -261,7 +261,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                         {
                             new R4020InfoPagtoPj()
                             {
-                                DataFatoGerador = System.DateTime.Now,
+                                DataFatoGerador = DateTime.Now.AddMonths(-1),
                                 vlrBruto = 152725.25M.ToString("f2"),
                                 retencoes = new R4020InfoPagtoRetencoes()
                                 {
@@ -383,14 +383,14 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #endregion
 
     #region RendimentoTributadoAgregado
-    internal static void PreencheCamposRendimentoTributadoAgregado(R4020 evento)
+    internal static void PreencheCamposRendimentoTributadoAgregado(R4020 evento, string cnpjCpf)
     {
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -398,17 +398,17 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8],
             },
             ideEstab = new R4020IdentificacaoEstabelecimentoPj()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
-                    cnpjBenef = "10608025000126",
-                    nmBenef = "Eficaz Auditoria Contábil",
+                    cnpjBenef = "34785515000166",
+                    nmBenef = "Wayne Enterprise Inc",
                     isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
@@ -421,7 +421,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                         {
                             new R4020InfoPagtoPj()
                             {
-                                DataFatoGerador = System.DateTime.Now,
+                                DataFatoGerador = DateTime.Now.AddMonths(-1),
                                 vlrBruto = 152725.25M.ToString("f2"),
                                 retencoes = new R4020InfoPagtoRetencoes()
                                 {
