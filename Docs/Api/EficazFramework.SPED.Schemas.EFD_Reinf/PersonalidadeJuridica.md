@@ -3,6 +3,8 @@
 
 ## PersonalidadeJuridica Enum
 
+Personalidade Jurídica do Contribuinte, Estabelecimento ou Participante
+
 ```csharp
 public enum PersonalidadeJuridica
 ```

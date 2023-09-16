@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Utilities.XML;
 
-public class Sign
+public static class Sign
 {
 
     /// <summary>
@@ -12,7 +12,7 @@ public class Sign
     /// <param name="tagToSign">A tag para localização do ponto de assinatura.</param>
     /// <param name="tagID">A tag que contém a ID para assinatura.</param>
     /// <remarks></remarks>
-    public static void SignXml(XmlDocument xml, string tagToSign, string tagID, X509Certificate2 certificate, bool signAsSHA256 = false, bool emptyURI = false)
+    public static void SignXml(this XmlDocument xml, string tagToSign, string tagID, X509Certificate2 certificate, bool signAsSHA256 = false, bool emptyURI = false)
     {
         // ## Realiza ajustes necessários no XMLDocument e confere se a URI informada é válida
         if (certificate == null)
@@ -33,7 +33,9 @@ public class Sign
             sxml.SignedInfo.SignatureMethod = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
         }
         else
+#pragma warning disable SYSLIB0028
             sxml.SigningKey = certificate.PrivateKey;
+#pragma warning restore SYSLIB0028
 
         Reference @ref = new();
         if (emptyURI == false)

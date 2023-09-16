@@ -1,7 +1,20 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
-public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEvt
+public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : Evento
 {
+    internal string CnpjCpf { get; private set; } = "34785515000166";
+    internal Versao _versao = Versao.v2_01_01;
+
+    [SetUp]
+    public void OverrideParameters()
+    {
+        string _cnpj = Configuration["SSL:EFDREINF:CertificateCnpjCpf"];
+        if (!string.IsNullOrEmpty(_cnpj))
+            CnpjCpf = _cnpj;
+    }
+
+
+
     /// <summary>
     /// Informa o namespace principal (xmlns) para validação do documento XML
     /// </summary>
@@ -33,7 +46,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
         // deserialização para nova instância (leitura de xml)
         T novaInstancia = Activator.CreateInstance<T>();
         InstanciaDesserializada?.Invoke(novaInstancia);
-        novaInstancia = (T)novaInstancia.Deserialize(doc.OuterXml);
+        novaInstancia = (T)novaInstancia.Read(doc.OuterXml);
 
         // comparação entre as duas instâncias
         ValidaInstanciasLeituraEscrita(instancia, novaInstancia);
@@ -65,7 +78,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
     /// <returns></returns>
     private XmlDocument EscreveEventoXml(T evento)
     {
-        string xmlString = evento.Serialize(); // ou .ToString();
+        string xmlString = evento.Write(); // ou .ToString();
         Console.WriteLine(xmlString);
         XmlDocument doc = new();
         doc.LoadXml(xmlString);
@@ -80,7 +93,7 @@ public abstract class BaseEfdReinfTest<T> : Tests.BaseTest where T : IEfdReinfEv
         _errorCount = 0;
 
         // assinando o documento XML com o certificado digital e-CNPJ de testes
-        Utilities.IcpBrasil_X509Certificate2 cert = new Utilities.IcpBrasil_X509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "1234");
+        Utilities.IcpBrasilX509Certificate2 cert = new Utilities.IcpBrasilX509Certificate2($"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx", "1234");
         Utilities.XML.Sign.SignXml(doc, "Reinf", evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
         // adicionando os schemas para validação do documento XML

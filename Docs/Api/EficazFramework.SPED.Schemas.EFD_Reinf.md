@@ -2,156 +2,77 @@
 
 ## EficazFramework.SPED.Schemas.EFD_Reinf Namespace
 
+# Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais<br/>  
+## Publico Alvo<br/>  
+ - Pessoas Físicas e Jurídicas;<br/>  
+ - Ocorrência de valores de tributos ou contribuições previdenciárias retidos.<br/>  
+## Guia<br/>  
+Obrigação acessória que deve ser enviada mensalmente (ou a cada competência Janeiro, havendo a persistência da situação 'Sem Movimento'), para compor os valores de tributos ou contribuições previdenciárias retidas (substituídas) na DCTF-Web,   
+de forma permitir o cálculo mensal das obrigações do contribuinte por meio deste.  
+## Objetivo<br/>  
+Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de Renda, Contribuição Social do contribuinte exceto aquelas relacionadas ao trabalho e informações sobre a receita bruta para a apuração das contribuições previdenciárias substituídas.<br/>  
+## Links Úteis<br/>  
+- [Manual de Orientação ao Usuário, v2.1.2.1](http://sped.rfb.gov.br/arquivo/show/7261)<br/>  
+- [Manual de Orientação ao Desenvolvedor, v2.3](http://sped.rfb.gov.br/arquivo/show/7258)<br/>  
+- [Layout, v2.1.2](http://sped.rfb.gov.br/pasta/show/7184)<br/>  
+- [Schemas XSD, v.2.1.2](http://sped.rfb.gov.br/item/show/7196)<br/>  
+- [Perguntas e Respostas](http://sped.rfb.gov.br/pastaperguntas/show/1497)<br/>  
+## Implementação<br/>
+
 | Classes | |
 | :--- | :--- |
-| [IEfdReinfEvt](EficazFramework.SPED.Schemas.EFD_Reinf/IEfdReinfEvt.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IEfdReinfEvt') | |
-| [KeyInfoType](EficazFramework.SPED.Schemas.EFD_Reinf/KeyInfoType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.KeyInfoType') | |
-| [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | |
-| [R1000_Alteracao](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_Alteracao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_Alteracao') | |
-| [R1000_ClassificacaoTributaria](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_ClassificacaoTributaria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_ClassificacaoTributaria') | |
-| [R1000_EventoInfoContribuinte](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_EventoInfoContribuinte.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_EventoInfoContribuinte') | |
-| [R1000_Exclusao](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_Exclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_Exclusao') | |
-| [R1000_Inclusao](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_Inclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_Inclusao') | |
-| [R1000_InfoCadastro](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_InfoCadastro.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_InfoCadastro') | |
-| [R1000_InfoCadastro_Contato](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_InfoCadastro_Contato.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_InfoCadastro_Contato') | |
-| [R1000_InfoCadastro_SoftwareHouse](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_InfoCadastro_SoftwareHouse.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_InfoCadastro_SoftwareHouse') | |
-| [R1000_InfoContri](EficazFramework.SPED.Schemas.EFD_Reinf/R1000_InfoContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000_InfoContri') | |
-| [R1070](EficazFramework.SPED.Schemas.EFD_Reinf/R1070.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1070') | |
-| [R2010](EficazFramework.SPED.Schemas.EFD_Reinf/R2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2010') | |
-| [R2020](EficazFramework.SPED.Schemas.EFD_Reinf/R2020.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2020') | |
-| [R2030](EficazFramework.SPED.Schemas.EFD_Reinf/R2030.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2030') | |
-| [R2040](EficazFramework.SPED.Schemas.EFD_Reinf/R2040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2040') | |
-| [R2050](EficazFramework.SPED.Schemas.EFD_Reinf/R2050.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2050') | |
-| [R2055](EficazFramework.SPED.Schemas.EFD_Reinf/R2055.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2055') | |
-| [R2060](EficazFramework.SPED.Schemas.EFD_Reinf/R2060.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2060') | |
-| [R2098](EficazFramework.SPED.Schemas.EFD_Reinf/R2098.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2098') | |
-| [R2099](EficazFramework.SPED.Schemas.EFD_Reinf/R2099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2099') | |
-| [R2xxx_TabelaServicos](EficazFramework.SPED.Schemas.EFD_Reinf/R2xxx_TabelaServicos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2xxx_TabelaServicos') | Tabela 6 do Anexo IV: Relação de Serviços para registros R-2010 e R-2020s |
-| [R3010](EficazFramework.SPED.Schemas.EFD_Reinf/R3010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R3010') | |
-| [R9000](EficazFramework.SPED.Schemas.EFD_Reinf/R9000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9000') | |
-| [ReferenceType](EficazFramework.SPED.Schemas.EFD_Reinf/ReferenceType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReferenceType') | |
-| [ReferenceTypeDigestMethod](EficazFramework.SPED.Schemas.EFD_Reinf/ReferenceTypeDigestMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReferenceTypeDigestMethod') | |
-| [ReinfAqProd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfAqProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfAqProd') | |
-| [ReinfEvtAqProdIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdIdeContri') | |
-| [ReinfEvtAqProdIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdIdeEvento') | |
-| [ReinfEvtAqProdInfoAqProd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAqProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAqProd') | |
-| [ReinfEvtAqProdInfoAqProdIdeEstabAdquir](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAqProdIdeEstabAdquir.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAqProdIdeEstabAdquir') | |
-| [ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAqProdIdeEstabTipoComInfoProc') | |
-| [ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutor') | |
-| [ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAqProdInfoAquisProdIdeEstabIdeProdutorDetAquis') | |
-| [ReinfEvtAssocDespRec](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRec.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRec') | |
-| [ReinfEvtAssocDespRecIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeContri') | |
-| [ReinfEvtAssocDespRecIdeContriIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeContriIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeContriIdeEstab') | |
-| [ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRec') | |
-| [ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoProc') | |
-| [ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeContriIdeEstabRecursosRecInfoRecurso') | |
-| [ReinfEvtAssocDespRecIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRecIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRecIdeEvento') | |
-| [ReinfEvtAssocDespRep](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRep.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRep') | |
-| [ReinfEvtAssocDespRepIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRepIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRepIdeContri') | |
-| [ReinfEvtAssocDespRepIdeContriIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRepIdeContriIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRepIdeContriIdeEstab') | |
-| [ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRep') | |
-| [ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoProc') | |
-| [ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtAssocDespRepIdeContriIdeEstabRecursosRepInfoRecurso') | |
-| [ReinfEvtComProd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProd') | |
-| [ReinfEvtComProdIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdIdeContri') | |
-| [ReinfEvtComProdIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdIdeEvento') | |
-| [ReinfEvtComProdInfoComProd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdInfoComProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdInfoComProd') | |
-| [ReinfEvtComProdInfoComProdIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdInfoComProdIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdInfoComProdIdeEstab') | |
-| [ReinfEvtComProdInfoComProdIdeEstabTipoCom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdInfoComProdIdeEstabTipoCom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdInfoComProdIdeEstabTipoCom') | |
-| [ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtComProdInfoComProdIdeEstabTipoComInfoProc') | |
-| [ReinfEvtCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRB') | |
-| [ReinfEvtCPRBInfoCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRBInfoCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRBInfoCPRB') | |
-| [ReinfEvtCPRBInfoCPRBIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRBInfoCPRBIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRBInfoCPRBIdeEstab') | |
-| [ReinfEvtCPRBInfoCPRBIdeEstabTipoCod](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRBInfoCPRBIdeEstabTipoCod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRBInfoCPRBIdeEstabTipoCod') | |
-| [ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRBInfoCPRBIdeEstabTipoCodInfoProc') | |
-| [ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtCPRBInfoCPRBIdeEstabTipoCodTipoAjuste') | |
-| [ReinfEvtEspDesportivo](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivo.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivo') | |
-| [ReinfEvtEspDesportivoIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContri') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstab](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstab.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstab') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstabBoletim](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstabBoletim.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstabBoletim') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstabBoletimOutrasReceitas') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstabBoletimReceitaIngressos') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotal') | |
-| [ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeContriIdeEstabReceitaTotalInfoProc') | |
-| [ReinfEvtEspDesportivoIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtEspDesportivoIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtEspDesportivoIdeEvento') | |
-| [ReinfEvtExclusao](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtExclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtExclusao') | |
-| [ReinfEvtExclusaoIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtExclusaoIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtExclusaoIdeContri') | |
-| [ReinfEvtExclusaoIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtExclusaoIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtExclusaoIdeEvento') | |
-| [ReinfEvtExclusaoInfoExclusao](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtExclusaoInfoExclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtExclusaoInfoExclusao') | |
-| [ReinfEvtFechaEvPer](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtFechaEvPer.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPer') | |
-| [ReinfEvtFechaEvPerIdeRespInf](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtFechaEvPerIdeRespInf.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPerIdeRespInf') | |
-| [ReinfEvtFechaEvPerInfoFech](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtFechaEvPerInfoFech.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtFechaEvPerInfoFech') | |
-| [ReinfEvtIdeContri](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtIdeContri.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdeContri') | Identificação do contribuinte |
-| [ReinfEvtIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdeEvento') | Identificação do evento (Ambiente, Emissor e Versao) |
-| [ReinfEvtIdeEvento_R20xx](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtIdeEvento_R20xx.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdeEvento_R20xx') | Identificação do Evento (Indicador de Retificação, Número Recibo Retif., Período Apuração, Ambiente, Emissor e Versão) (R-2010, R-2020, R-2040 e R-2060) |
-| [ReinfEvtIdeEventoPeriodicoR209x](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtIdeEventoPeriodicoR209x.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdeEventoPeriodicoR209x') | Identificação do Evento (Período Apuracao, Ambiente, Emissor e Versao) |
-| [ReinfEvtIdePeriodo](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtIdePeriodo.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtIdePeriodo') | Identificação de Período (iniValid e fimValid) |
-| [ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR') | |
-| [ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR') | |
-| [ReinfEvtReabreEvPer](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtReabreEvPer.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtReabreEvPer') | |
-| [ReinfEvtServPrest](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrest.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrest') | |
-| [ReinfEvtServPrestInfoServPrest](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrest.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrest') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrest](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrest.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrest') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomador') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetAd') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorInfoProcRetPr') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfs') | |
-| [ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServPrestInfoServPrestIdeEstabPrestIdeTomadorNfsInfoTpServ') | |
-| [ReinfEvtServTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTom') | |
-| [ReinfEvtServTomInfoServTom](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTom.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTom') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObra](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObra.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObra') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServ') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetAd') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServInfoProcRetPr') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfs') | |
-| [ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtServTomInfoServTomIdeEstabObraIdePrestServNfsInfoTpServ') | |
-| [ReinfEvtTabProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcesso') | |
-| [ReinfEvtTabProcessoIdeEvento](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoIdeEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoIdeEvento') | |
-| [ReinfEvtTabProcessoInfoProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcesso') | |
-| [ReinfEvtTabProcessoInfoProcessoAlteracao](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoAlteracao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoAlteracao') | |
-| [ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcesso') | |
-| [ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoDadosProcJud') | |
-| [ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoAlteracaoIdeProcessoInfoSusp') | |
-| [ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoAlteracaoNovaValidade') | |
-| [ReinfEvtTabProcessoInfoProcessoExclusao](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoExclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoExclusao') | |
-| [ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoExclusaoIdeProcesso') | |
-| [ReinfEvtTabProcessoInfoProcessoInclusao](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusao') | |
-| [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcesso') | |
-| [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoDadosProcJud') | |
-| [ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfEvtTabProcessoInfoProcessoInclusaoIdeProcessoInfoSusp') | |
-| [ReinfTimeStampUtils](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils') | |
-| [SignatureType](EficazFramework.SPED.Schemas.EFD_Reinf/SignatureType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignatureType') | |
-| [SignatureValueType](EficazFramework.SPED.Schemas.EFD_Reinf/SignatureValueType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignatureValueType') | |
-| [SignedInfoType](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoType') | |
-| [SignedInfoTypeCanonicalizationMethod](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoTypeCanonicalizationMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoTypeCanonicalizationMethod') | |
-| [SignedInfoTypeSignatureMethod](EficazFramework.SPED.Schemas.EFD_Reinf/SignedInfoTypeSignatureMethod.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SignedInfoTypeSignatureMethod') | |
-| [TransformType](EficazFramework.SPED.Schemas.EFD_Reinf/TransformType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TransformType') | |
-| [X509DataType](EficazFramework.SPED.Schemas.EFD_Reinf/X509DataType.md 'EficazFramework.SPED.Schemas.EFD_Reinf.X509DataType') | |
+| [Evento](EficazFramework.SPED.Schemas.EFD_Reinf/Evento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Evento') | Abstração padrão para implementação em todos os eventos da escrituração. |
+| [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | Informações do contribuinte |
+| [R1070](EficazFramework.SPED.Schemas.EFD_Reinf/R1070.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1070') | Tabela de processos administrativos/judiciais |
+| [R2010](EficazFramework.SPED.Schemas.EFD_Reinf/R2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2010') | Retenção de contribuição previdenciária - serviços tomados |
+| [R2020](EficazFramework.SPED.Schemas.EFD_Reinf/R2020.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2020') | Retenção de contribuição previdenciária – serviços prestados |
+| [R2030](EficazFramework.SPED.Schemas.EFD_Reinf/R2030.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2030') | Recursos recebidos por associação desportiva |
+| [R2040](EficazFramework.SPED.Schemas.EFD_Reinf/R2040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2040') | Recursos repassados para associação desportiva |
+| [R2050](EficazFramework.SPED.Schemas.EFD_Reinf/R2050.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2050') | Comercialização da produção p/ produtor rural PJ/agroindústria |
+| [R2055](EficazFramework.SPED.Schemas.EFD_Reinf/R2055.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2055') | Aquisição de produção rural |
+| [R2060](EficazFramework.SPED.Schemas.EFD_Reinf/R2060.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2060') | Contribuição previdenciária sobre a receita bruta – CPRB |
+| [R2098](EficazFramework.SPED.Schemas.EFD_Reinf/R2098.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2098') | Reabertura dos eventos da série R-2000 |
+| [R2099](EficazFramework.SPED.Schemas.EFD_Reinf/R2099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2099') | Fechamento dos eventos da série R-2000 |
+| [R3010](EficazFramework.SPED.Schemas.EFD_Reinf/R3010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R3010') | Receita de espetáculos desportivos |
+| [R4010](EficazFramework.SPED.Schemas.EFD_Reinf/R4010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4010') | Pagamentos/créditos a beneficiário pessoa física |
+| [R4020](EficazFramework.SPED.Schemas.EFD_Reinf/R4020.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4020') | Pagamentos/créditos a beneficiário pessoa jurídica |
+| [R4040](EficazFramework.SPED.Schemas.EFD_Reinf/R4040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4040') | Pagamentos/créditos a beneficiários não identificados |
+| [R4080](EficazFramework.SPED.Schemas.EFD_Reinf/R4080.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4080') | Retenção no recebimento |
+| [R4099](EficazFramework.SPED.Schemas.EFD_Reinf/R4099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4099') | Fechamento/reabertura dos eventos da série R-4000 |
+| [ReinfTimeStampUtils](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils') | Utilitário para geração do identificador único de evento, para sua transmissão. |
 
 | Enums | |
 | :--- | :--- |
 | [AcordoInternacionalIsencaoMulta](EficazFramework.SPED.Schemas.EFD_Reinf/AcordoInternacionalIsencaoMulta.md 'EficazFramework.SPED.Schemas.EFD_Reinf.AcordoInternacionalIsencaoMulta') | |
-| [Ambiente](EficazFramework.SPED.Schemas.EFD_Reinf/Ambiente.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente') | |
+| [Ambiente](EficazFramework.SPED.Schemas.EFD_Reinf/Ambiente.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente') | Ambiente em que os eventos são gerados e/ou enviados |
 | [CategoriaEvento](EficazFramework.SPED.Schemas.EFD_Reinf/CategoriaEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.CategoriaEvento') | |
 | [CodigoAjusteConstribuicao](EficazFramework.SPED.Schemas.EFD_Reinf/CodigoAjusteConstribuicao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.CodigoAjusteConstribuicao') | |
 | [DesoneracaoCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/DesoneracaoCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.DesoneracaoCPRB') | |
-| [EmissorEvento](EficazFramework.SPED.Schemas.EFD_Reinf/EmissorEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento') | |
+| [EmissorEvento](EficazFramework.SPED.Schemas.EFD_Reinf/EmissorEvento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento') | Origem do software emissor/transmissor do evento |
 | [IndicadorAquisProd](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorAquisProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorAquisProd') | |
 | [IndicadorAuditoria](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorAuditoria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorAuditoria') | |
 | [IndicadorContribuicaoProd](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorContribuicaoProd.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorContribuicaoProd') | |
 | [IndicadorContribuinteCPRB](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorContribuinteCPRB.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorContribuinteCPRB') | |
+| [IndicadorFciScp](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorFciScp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorFciScp') | |
+| [IndicadorFechamentoReabertura](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorFechamentoReabertura.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorFechamentoReabertura') | |
+| [IndicadorNIF](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorNIF.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorNIF') | |
 | [IndicadorObra](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorObra.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorObra') | |
+| [IndicadorOrigemDosRecursos](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorOrigemDosRecursos.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorOrigemDosRecursos') | |
 | [IndicadorRetificacao](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorRetificacao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorRetificacao') | |
+| [IndicadorTipoDeducaoPrevidenciaria](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorTipoDeducaoPrevidenciaria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorTipoDeducaoPrevidenciaria') | |
 | [ObrigatoriedadeECD](EficazFramework.SPED.Schemas.EFD_Reinf/ObrigatoriedadeECD.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ObrigatoriedadeECD') | |
-| [PersonalidadeJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica') | |
+| [PersonalidadeJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica') | Personalidade Jurídica do Contribuinte, Estabelecimento ou Participante |
+| [RelacaoDependencia](EficazFramework.SPED.Schemas.EFD_Reinf/RelacaoDependencia.md 'EficazFramework.SPED.Schemas.EFD_Reinf.RelacaoDependencia') | |
 | [SimNao](EficazFramework.SPED.Schemas.EFD_Reinf/SimNao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SimNao') | |
-| [SituacaoPessoaJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/SituacaoPessoaJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SituacaoPessoaJuridica') | |
+| [SituacaoPessoaJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/SituacaoPessoaJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SituacaoPessoaJuridica') | Indicador de Situação da Pessoa Jurídica |
 | [TipoAjusteContribuicao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoAjusteContribuicao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoAjusteContribuicao') | |
 | [TipoCompeticao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoCompeticao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoCompeticao') | |
 | [TipoEventoExclusao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoEventoExclusao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoEventoExclusao') | |
 | [TipoIngressoCompeticao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoIngressoCompeticao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoIngressoCompeticao') | |
+| [TipoIsencaoPF](EficazFramework.SPED.Schemas.EFD_Reinf/TipoIsencaoPF.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoIsencaoPF') | |
+| [TipoIsencaoPJ](EficazFramework.SPED.Schemas.EFD_Reinf/TipoIsencaoPJ.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoIsencaoPJ') | |
 | [TipoOCorrenciaR5001](EficazFramework.SPED.Schemas.EFD_Reinf/TipoOCorrenciaR5001.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoOCorrenciaR5001') | |
 | [TipoProcesso](EficazFramework.SPED.Schemas.EFD_Reinf/TipoProcesso.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoProcesso') | |
 | [TipoReceitaCompeticao](EficazFramework.SPED.Schemas.EFD_Reinf/TipoReceitaCompeticao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoReceitaCompeticao') | |
 | [TipoRepasseAssocDesp](EficazFramework.SPED.Schemas.EFD_Reinf/TipoRepasseAssocDesp.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TipoRepasseAssocDesp') | |
-| [TTransformURI](EficazFramework.SPED.Schemas.EFD_Reinf/TTransformURI.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TTransformURI') | |
+| [Versao](EficazFramework.SPED.Schemas.EFD_Reinf/Versao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Versao') | Versão do schema |

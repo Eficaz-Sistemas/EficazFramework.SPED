@@ -1,173 +1,220 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Fechamento/reabertura dos eventos da série R-4000
+/// </summary>
+/// <example>
+/// ```csharp
+/// // Fechamento:
+/// var evento = new R4099()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtFech = new R4099EventoFechamReabertura()
+///     {
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideRespInf = new IdentificacaoResponsavel()
+///         {
+///             nmResp = "Pierre de Fermat",
+///             cpfResp = "47363361886",
+///             telefone = "11999990000",
+///             email = "contato@eficazcs.com.br",
+///         },
+///         infoFech = new R4099InformacaoFechamReabertura()
+///         {
+///             fechRet = IndicadorFechamentoReabertura.Fechamento // atenção!
+///         }
+///     }
+/// };
+///
+/// // Reabertura:
+/// var evento = new R4099()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtFech = new R4099EventoFechamReabertura()
+///     {
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideRespInf = new IdentificacaoResponsavel()
+///         {
+///             nmResp = "Pierre de Fermat",
+///             cpfResp = "47363361886",
+///             telefone = "11999990000",
+///             email = "contato@eficazcs.com.br",
+///         },
+///         infoFech = new R4099InformacaoFechamReabertura()
+///         {
+///             fechRet = IndicadorFechamentoReabertura.Reabertura // atenção!
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [System.SerializableAttribute()]
-public partial class R4099 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
-    
-    private ReinfEvtFech evtFechField;
+public partial class R4099 : Evento
+{
+
+    private R4099EventoFechamReabertura evtFechField;
     private SignatureType signatureField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public ReinfEvtFech evtFech {
-        get {
-            return this.evtFechField;
-        }
-        set {
-            this.evtFechField = value;
-            this.RaisePropertyChanged("evtFech");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public R4099EventoFechamReabertura evtFech
+    {
+        get => evtFechField;
+        set
+        {
+            evtFechField = value;
+            RaisePropertyChanged(nameof(evtFech));
         }
     }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=1)]
-    public SignatureType Signature {
-        get {
-            return this.signatureField;
-        }
-        set {
-            this.signatureField = value;
-            this.RaisePropertyChanged("Signature");
+
+    /// <exclude/>
+    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
+        {
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
-    public override string TagId => "evtFechField";
+    /// <exclude/>
+    public override string TagId => "evtFech";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // IEfdReinfEvt Members
-    public override void GeraEventoID()
-    {
-        evtFechField.id = string.Format("ID{0}{1}{2}", (int)(evtFechField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    // Evento Members
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtFechField.id = $"ID{(int)(evtFechField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtFechField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtFechField.ideContri.nrInsc;
-    }
-
-
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtFechField.ideContri.nrInsc;
 
 
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{Versao}", IsNullable = false });
-    }
-
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4099), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4099FechamentoDirf/{Versao}", IsNullable = false });
 }
 
-public partial class ReinfEvtFech : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
-    private ReinfEvtFechaEvPerIdeRespInf ideRespInfField;
-    private ReinfEvtFechInfoFech infoFechField;
+/// <exclude />
+public partial class R4099EventoFechamReabertura : EfdReinfBindableObject
+{
+
+    private IdentificacaoEventoFechamento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
+    private IdentificacaoResponsavel ideRespInfField;
+    private R4099InformacaoFechamReabertura infoFechField;
     private string idField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento {
-        get {
-            return this.ideEventoField;
-        }
-        set {
-            this.ideEventoField = value;
-            this.RaisePropertyChanged("ideEvento");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public IdentificacaoEventoFechamento ideEvento
+    {
+        get => ideEventoField;
+        set
+        {
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public ReinfEvtIdeContri ideContri {
-        get {
-            return this.ideContriField;
-        }
-        set {
-            this.ideContriField = value;
-            this.RaisePropertyChanged("ideContri");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+    public IdentificacaoContribuinte ideContri
+    {
+        get => ideContriField;
+        set
+        {
+            ideContriField = value;
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public ReinfEvtFechaEvPerIdeRespInf ideRespInf {
-        get {
-            return this.ideRespInfField;
-        }
-        set {
-            this.ideRespInfField = value;
-            this.RaisePropertyChanged("ideRespInf");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+    public IdentificacaoResponsavel ideRespInf
+    {
+        get => ideRespInfField;
+        set
+        {
+            ideRespInfField = value;
+            RaisePropertyChanged(nameof(ideRespInf));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-    public ReinfEvtFechInfoFech infoFech {
-        get {
-            return this.infoFechField;
-        }
-        set {
-            this.infoFechField = value;
-            this.RaisePropertyChanged("infoFech");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+    public R4099InformacaoFechamReabertura infoFech
+    {
+        get => infoFechField;
+        set
+        {
+            infoFechField = value;
+            RaisePropertyChanged(nameof(infoFech));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-            this.RaisePropertyChanged("id");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+    public string id
+    {
+        get => idField;
+        set
+        {
+            idField = value;
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
 
-public partial class ReinfEvtFechInfoFech : object, System.ComponentModel.INotifyPropertyChanged {
-    
+/// <exclude />
+public partial class R4099InformacaoFechamReabertura : EfdReinfBindableObject
+{
+
     private IndicadorFechamentoReabertura fechRetField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public IndicadorFechamentoReabertura fechRet {
-        get {
-            return this.fechRetField;
-        }
-        set {
-            this.fechRetField = value;
-            this.RaisePropertyChanged("fechRet");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public IndicadorFechamentoReabertura fechRet
+    {
+        get => fechRetField;
+        set
+        {
+            fechRetField = value;
+            RaisePropertyChanged(nameof(fechRet));
         }
     }
 }

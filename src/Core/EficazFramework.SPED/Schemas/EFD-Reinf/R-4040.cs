@@ -1,264 +1,289 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Pagamentos/créditos a beneficiários não identificados
+/// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R4040()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtBenefNId = new R4040EventoBenefNaoIdentificado()
+///     {
+///         ideEvento = new IdentificacaoEventoPeriodico()
+///         {
+///             indRetif = IndicadorRetificacao.Original,
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "34785515000166",
+///         },
+///         ideEstab = new R4040IdentificacaoEstabelecimento()
+///         {
+///             tpInscEstab = PersonalidadeJuridica.CNPJ,
+///             nrInscEstab = "34785515000166",
+///             ideNat = new()
+///             {
+///                 new R4040IdentificacaoNaturezaRend() //ideNat (1:N)
+///                 {
+///                     // Utilizar a tabela 01, do Anexo I do Manual
+///                     natRend = 19009, // Remuneração de Serviços de auditoria;
+/// 
+///                     infoPgto = new ()
+///                     {
+///                         new R4040InfoPagamento()
+///                         {
+///                             DataFatoGerador = System.DateTime.Now,
+///                             vlrLiq = 1000000.00.ToString("f2"),
+///                             vlrBaseIR = 153846.15M.ToString("f2"),
+///                             vlrIR = 2307.69M.ToString("f2"),
+///                             descr = "Alguma prestação de serviço qualquer."
+///                         },
+///                     },
+///                 }
+///             }
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [System.SerializableAttribute()]
-public partial class R4040 : IEfdReinfEvt, System.ComponentModel.INotifyPropertyChanged {
-    
-    private ReinfEvtBenefNId evtBenefNIdField;
+public partial class R4040 : Evento
+{
+
+    private R4040EventoBenefNaoIdentificado evtBenefNIdField;
     private SignatureType signatureField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public ReinfEvtBenefNId evtBenefNId {
-        get {
-            return this.evtBenefNIdField;
-        }
-        set {
-            this.evtBenefNIdField = value;
-            this.RaisePropertyChanged("evtBenefNId");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public R4040EventoBenefNaoIdentificado evtBenefNId
+    {
+        get => evtBenefNIdField;
+        set
+        {
+            evtBenefNIdField = value;
+            RaisePropertyChanged(nameof(evtBenefNId));
         }
     }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=1)]
-    public SignatureType Signature {
-        get {
-            return this.signatureField;
-        }
-        set {
-            this.signatureField = value;
-            this.RaisePropertyChanged("Signature");
+
+    /// <exclude/>
+    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
+        {
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "ReinfEvtBenefNId";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // IEfdReinfEvt Members
-    public override void GeraEventoID()
-    {
-        evtBenefNId.id = string.Format("ID{0}{1}{2}", (int)(evtBenefNId?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtBenefNId?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    // Evento Members
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtBenefNId.id = $"ID{(int)(evtBenefNId?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtBenefNId?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtBenefNId.ideContri.nrInsc;
-    }
-
-
-    // PropertyChanged Members
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtBenefNId.ideContri.nrInsc;
 
 
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R4040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{Versao}", IsNullable = false });
-    }
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R4040), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evt4040PagtoBenefNaoIdentificado/{Versao}", IsNullable = false });
 }
 
-public partial class ReinfEvtBenefNId : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private ReinfEvtIdeEvento_R40xx ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
-    private ReinfEvtBenefNIdIdeEstab ideEstabField;
+
+/// <exclude />
+public partial class R4040EventoBenefNaoIdentificado : EfdReinfBindableObject
+{
+    private IdentificacaoEventoPeriodico ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
+    private R4040IdentificacaoEstabelecimento ideEstabField;
     private string idField;
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public ReinfEvtIdeEvento_R40xx ideEvento {
-        get {
-            return this.ideEventoField;
-        }
-        set {
-            this.ideEventoField = value;
-            this.RaisePropertyChanged("ideEvento");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public IdentificacaoEventoPeriodico ideEvento
+    {
+        get => ideEventoField;
+        set
+        {
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public ReinfEvtIdeContri ideContri {
-        get {
-            return this.ideContriField;
-        }
-        set {
-            this.ideContriField = value;
-            this.RaisePropertyChanged("ideContri");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+    public IdentificacaoContribuinte ideContri
+    {
+        get => ideContriField;
+        set
+        {
+            ideContriField = value;
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public ReinfEvtBenefNIdIdeEstab ideEstab {
-        get {
-            return this.ideEstabField;
-        }
-        set {
-            this.ideEstabField = value;
-            this.RaisePropertyChanged("ideEstab");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+    public R4040IdentificacaoEstabelecimento ideEstab
+    {
+        get => ideEstabField;
+        set
+        {
+            ideEstabField = value;
+            RaisePropertyChanged(nameof(ideEstab));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-            this.RaisePropertyChanged("id");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+    public string id
+    {
+        get => idField;
+        set
+        {
+            idField = value;
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
 
-public partial class ReinfEvtBenefNIdIdeEstab : object, System.ComponentModel.INotifyPropertyChanged {
-    
+
+/// <exclude />
+public partial class R4040IdentificacaoEstabelecimento : EfdReinfBindableObject
+{
     private PersonalidadeJuridica tpInscEstabField;
     private string nrInscEstabField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNat> ideNatField;
-    
+    private List<R4040IdentificacaoNaturezaRend> ideNatField;
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public PersonalidadeJuridica tpInscEstab {
-        get {
-            return this.tpInscEstabField;
-        }
-        set {
-            this.tpInscEstabField = value;
-            this.RaisePropertyChanged("tpInscEstab");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public PersonalidadeJuridica tpInscEstab
+    {
+        get => tpInscEstabField;
+        set
+        {
+            tpInscEstabField = value;
+            RaisePropertyChanged(nameof(tpInscEstab));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public string nrInscEstab {
-        get {
-            return this.nrInscEstabField;
-        }
-        set {
-            this.nrInscEstabField = value;
-            this.RaisePropertyChanged("nrInscEstab");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+    public string nrInscEstab
+    {
+        get => nrInscEstabField;
+        set
+        {
+            nrInscEstabField = value;
+            RaisePropertyChanged(nameof(nrInscEstab));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("ideNat", Order=2)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNat> ideNat {
-        get {
-            return this.ideNatField;
-        }
-        set {
-            this.ideNatField = value;
-            this.RaisePropertyChanged("ideNat");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlElementAttribute("ideNat", Order = 2)]
+    public List<R4040IdentificacaoNaturezaRend> ideNat
+    {
+        get => ideNatField;
+        set
+        {
+            ideNatField = value;
+            RaisePropertyChanged(nameof(ideNat));
         }
     }
 }
 
-public partial class ReinfEvtBenefNIdIdeEstabIdeNat : object, System.ComponentModel.INotifyPropertyChanged {
-    
+
+/// <exclude />
+public partial class R4040IdentificacaoNaturezaRend : EfdReinfBindableObject
+{
     private int natRendField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto> infoPgtoField;
-    
+    private List<R4040InfoPagamento> infoPgtoField;
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public int natRend {
-        get {
-            return this.natRendField;
-        }
-        set {
-            this.natRendField = value;
-            this.RaisePropertyChanged("natRend");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public int natRend
+    {
+        get => natRendField;
+        set
+        {
+            natRendField = value;
+            RaisePropertyChanged(nameof(natRend));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order=1)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto> infoPgto {
-        get {
-            return this.infoPgtoField;
-        }
-        set {
-            this.infoPgtoField = value;
-            this.RaisePropertyChanged("infoPgto");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlElementAttribute("infoPgto", Order = 1)]
+    public List<R4040InfoPagamento> infoPgto
+    {
+        get => infoPgtoField;
+        set
+        {
+            infoPgtoField = value;
+            RaisePropertyChanged(nameof(infoPgto));
         }
     }
 }
 
-public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.ComponentModel.INotifyPropertyChanged {
-    
+
+/// <exclude />
+public partial class R4040InfoPagamento : EfdReinfBindableObject
+{
     private System.DateTime dtFGField;
     private string vlrLiqField;
     private string vlrBaseIRField;
     private string vlrIRField;
     private string descrField;
-    private List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet> infoProcRetField;
+    private List<R4040e4080InfoProcessoRelacionado> infoProcRetField;
 
     /// <summary>
     /// Informar a data do fato gerador, no formato AAAA-MM-DD. <br/><br/>
     /// <b>Validação: </b>A data informada deve estar compreendida no período de apuração 
     /// ao qual se refere o arquivo, conforme informado em(perApur}, no formato AAAA-MM-DD.
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType ="date", Order=0)]
-    public System.DateTime DataFatoGerador {
-        get {
-            return this.dtFGField;
-        }
-        set {
-            this.dtFGField = value;
-            this.RaisePropertyChanged("DataFatoGerador");
+    [System.Xml.Serialization.XmlElementAttribute("dtFG", DataType = "date", Order = 0)]
+    public System.DateTime DataFatoGerador
+    {
+        get => dtFGField;
+        set
+        {
+            dtFGField = value;
+            RaisePropertyChanged(nameof(DataFatoGerador));
         }
     }
-    
+
     /// <summary>
     /// Valor líquido do Pagamento
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public string vlrLiq {
-        get {
-            return this.vlrLiqField;
-        }
-        set {
-            this.vlrLiqField = value;
-            this.RaisePropertyChanged("vlrLiq");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+    public string vlrLiq
+    {
+        get => vlrLiqField;
+        set
+        {
+            vlrLiqField = value;
+            RaisePropertyChanged(nameof(vlrLiq));
         }
     }
 
@@ -266,152 +291,52 @@ public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgto : object, System.Com
     /// Valor reajustado, considerado como valor da base de cálculo do IRRF.<br/><br/>
     /// <b>Validação: </b> Deve corresponder a (<see cref="vlrLiq"/> / 0,65).
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public string vlrBaseIR {
-        get {
-            return this.vlrBaseIRField;
-        }
-        set {
-            this.vlrBaseIRField = value;
-            this.RaisePropertyChanged("vlrBaseIR");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+    public string vlrBaseIR
+    {
+        get => vlrBaseIRField;
+        set
+        {
+            vlrBaseIRField = value;
+            RaisePropertyChanged(nameof(vlrBaseIR));
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-    public string vlrIR {
-        get {
-            return this.vlrIRField;
-        }
-        set {
-            this.vlrIRField = value;
-            this.RaisePropertyChanged("vlrIR");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+    public string vlrIR
+    {
+        get => vlrIRField;
+        set
+        {
+            vlrIRField = value;
+            RaisePropertyChanged(nameof(vlrIR));
         }
     }
-    
+
     /// <summary>
     /// Descrição do Pagamento
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-    public string descr {
-        get {
-            return this.descrField;
-        }
-        set {
-            this.descrField = value;
-            this.RaisePropertyChanged("descr");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("infoProcRet", Order=5)]
-    public List<ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet> infoProcRet {
-        get {
-            return this.infoProcRetField;
-        }
-        set {
-            this.infoProcRetField = value;
-            this.RaisePropertyChanged("infoProcRet");
+    [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+    public string descr
+    {
+        get => descrField;
+        set
+        {
+            descrField = value;
+            RaisePropertyChanged(nameof(descr));
         }
     }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
 
-public partial class ReinfEvtBenefNIdIdeEstabIdeNatInfoPgtoInfoProcRet : object, System.ComponentModel.INotifyPropertyChanged {
-    
-    private TipoProcesso tpProcRetField;
-    private string nrProcRetField;
-    private string codSuspField;
-    private string vlrBaseSuspIRField;
-    private string vlrNIRField;
-    private string vlrDepIRField;
-    
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public TipoProcesso tpProcRet {
-        get {
-            return this.tpProcRetField;
-        }
-        set {
-            this.tpProcRetField = value;
-            this.RaisePropertyChanged("tpProcRet");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public string nrProcRet {
-        get {
-            return this.nrProcRetField;
-        }
-        set {
-            this.nrProcRetField = value;
-            this.RaisePropertyChanged("nrProcRet");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public string codSusp {
-        get {
-            return this.codSuspField;
-        }
-        set {
-            this.codSuspField = value;
-            this.RaisePropertyChanged("codSusp");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-    public string vlrBaseSuspIR {
-        get {
-            return this.vlrBaseSuspIRField;
-        }
-        set {
-            this.vlrBaseSuspIRField = value;
-            this.RaisePropertyChanged("vlrBaseSuspIR");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-    public string vlrNIR {
-        get {
-            return this.vlrNIRField;
-        }
-        set {
-            this.vlrNIRField = value;
-            this.RaisePropertyChanged("vlrNIR");
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-    public string vlrDepIR {
-        get {
-            return this.vlrDepIRField;
-        }
-        set {
-            this.vlrDepIRField = value;
-            this.RaisePropertyChanged("vlrDepIR");
-        }
-    }
-    
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-    
-    protected void RaisePropertyChanged(string propertyName) {
-        System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-        if ((propertyChanged != null)) {
-            propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    [System.Xml.Serialization.XmlElementAttribute("infoProcRet", Order = 5)]
+    public List<R4040e4080InfoProcessoRelacionado> infoProcRet
+    {
+        get => infoProcRetField;
+        set
+        {
+            infoProcRetField = value;
+            RaisePropertyChanged(nameof(infoProcRet));
         }
     }
 }

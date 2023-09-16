@@ -1,136 +1,221 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Informações do contribuinte
+/// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R1000()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtInfoContri = new R1000_EventoInfoContribuinte()
+///     {
+///         ideEvento = new IdentificacaoEvento()
+///         {
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "2.2"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         infoContri = new R1000EventoInfoContribuinte()
+///         {
+///             Item = new R1000Inclusao() // R1000Alteracao() ou R1000Exclusao()
+///             {
+///                 idePeriodo = new IdentificacaoPeriodo()
+///                 {
+///                     iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+///                 },
+///                 infoCadastro = new R1000InfoCadastro()
+///                 {
+///                     classTrib = "99",
+///                     indEscrituracao = ObrigatoriedadeECD.EntregaECD,
+///                     indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
+///                     indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
+///                     indSitPJ = SituacaoPessoaJuridica.Normal,
+///                     indSitPJSpecified = true,
+///                     contato = new R1000InfoCadastroContato()
+///                     {
+///                         nmCtt = "Pierre de Fermat",
+///                         cpfCtt = "47363361886",
+///                         foneFixo = "3535441234",
+///                         email = "suporte@eficazcs.com.br"
+///                     },
+///                     softHouse = new R1000InfoCadastroSoftwareHouse()
+///                 }
+///             }
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R1000 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R1000 : Evento
 {
-    private R1000_EventoInfoContribuinte evtInfoContriField;
+    private R1000EventoInfoContribuinte evtInfoContriField;
     private SignatureType signatureField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Evento de informacoes do contribuinte.
+    /// </summary>
     [XmlElement(Order = 0)]
-    public R1000_EventoInfoContribuinte evtInfoContri
+    public R1000EventoInfoContribuinte evtInfoContri
     {
-        get
-        {
-            return evtInfoContriField;
-        }
-
+        get => evtInfoContriField;
         set
         {
             evtInfoContriField = value;
-            RaisePropertyChanged("evtInfoContri");
+            RaisePropertyChanged(nameof(evtInfoContri));
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
-
+        get => signatureField;
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
 
-    // IEfdReinfEvt Members
-    public override void GeraEventoID()
-    {
-        evtInfoContri.id = string.Format("ID{0}{1}{2}", (int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    // Evento Members
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtInfoContri.id = $"ID{(int)(evtInfoContriField?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtInfoContriField?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtInfoContri.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtInfoContri.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtInfoContri";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false});
-    }
-
+    /// <exclude/>
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R1000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtInfoContribuinte/{Versao}", IsNullable = false });
 }
 
 
-public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
 {
-    private ReinfEvtIdeEvento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
-    private R1000_InfoContri infoContriField;
+    private IdentificacaoEvento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
+    private R1000InfoContribuinte infoContriField;
     private string idField;
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do evento
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.ideEvento = new ReinfEvtIdeEvento()
+    /// {
+    ///     tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+    ///     procEmi = EmissorEvento.AppContribuinte,
+    ///     verProc = "2.2"
+    /// };
+    /// '''
+    /// </example>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEvento ideEvento
+    public IdentificacaoEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
-
+        get => ideEventoField;
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Identificação do contribuinte. Mais informações em <see cref="IdentificacaoContribuinte"/>.
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.ideContri = new ReinfEvtIdeContri()
+    /// {
+    ///     tpInsc = PersonalidadeJuridica.CNPJ,
+    ///     nrInsc = "12345678"
+    /// };
+    /// '''
+    /// </example>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
-
+        get => ideContriField;
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
-    /// <remarks/>
+    /// <summary>
+    /// Informações do contribuinte.
+    /// Instanciar conforme a natureza do evento:
+    /// <list type="bullet">
+    /// <item><description>Inclusão: <see cref="R1000Inclusao"/></description></item>
+    /// <item><description>Alteração: <see cref="R1000Alteracao"/></description></item>
+    /// <item><description>Exclusão: <see cref="R1000Exclusao"/></description></item>
+    /// </list>
+    /// </summary>
+    /// <example>
+    /// '''csharp
+    /// evento.evtInfoContri.infoContri = new R1000_InfoContri()
+    /// {
+    ///     Item = new R1000_Inclusao()
+    ///     {
+    ///         idePeriodo = new ReinfEvtIdePeriodo()
+    ///         {
+    ///             iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+    ///         },
+    ///         infoCadastro = new R1000_InfoCadastro()
+    ///         {
+    ///             classTrib = "99",
+    ///             indEscrituracao = ObrigatoriedadeECD.EntregaECD,
+    ///             indDesoneracao = DesoneracaoCPRB.NaoAplicavel,
+    ///             indAcordoIsenMulta = AcordoInternacionalIsencaoMulta.SemAcordo,
+    ///             indSitPJ = SituacaoPessoaJuridica.Normal,
+    ///             indSitPJSpecified = true,
+    ///             contato = new R1000_InfoCadastro_Contato()
+    ///             {
+    ///                 nmCtt = "Pierre de Fermat",
+    ///                 cpfCtt = "47363361886",
+    ///                 foneFixo = "3535441234",
+    ///                 email = "suporte@eficazcs.com.br"
+    ///             },
+    ///             softHouse = new R1000_InfoCadastro_SoftwareHouse()
+    ///         }
+    ///     }
+    /// };   
+    ///  '''
+    /// </example>
     [XmlElement(Order = 2)]
-    public R1000_InfoContri infoContri
+    public R1000InfoContribuinte infoContri
     {
-        get
-        {
-            return infoContriField;
-        }
-
+        get => infoContriField;
         set
         {
             infoContriField = value;
-            RaisePropertyChanged("infoContri");
+            RaisePropertyChanged(nameof(infoContri));
         }
     }
 
@@ -138,270 +223,138 @@ public partial class R1000_EventoInfoContribuinte : object, INotifyPropertyChang
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
-        }
-    }
-
-
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
 
 
-public partial class R1000_InfoContri : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000InfoContribuinte : EfdReinfBindableObject
 {
     private object itemField;
 
     /// <remarks/>
-    [XmlElement("alteracao", typeof(R1000_Alteracao), Order = 0)]
-    [XmlElement("exclusao", typeof(R1000_Exclusao), Order = 0)]
-    [XmlElement("inclusao", typeof(R1000_Inclusao), Order = 0)]
+    [XmlElement("alteracao", typeof(R1000Alteracao), Order = 0)]
+    [XmlElement("exclusao", typeof(R1000Exclusao), Order = 0)]
+    [XmlElement("inclusao", typeof(R1000Inclusao), Order = 0)]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             itemField = value;
-            RaisePropertyChanged("Item");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(Item));
         }
     }
 }
 
 
 // Alteração:
-public partial class R1000_Alteracao : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000Alteracao : EfdReinfBindableObject
 {
-    private ReinfEvtIdePeriodo idePeriodoField;
-    private R1000_InfoCadastro infoCadastroField;
-    private ReinfEvtIdePeriodo novaValidadeField;
+    private IdentificacaoPeriodo idePeriodoField;
+    private R1000InfoCadastro infoCadastroField;
+    private IdentificacaoPeriodo novaValidadeField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdePeriodo idePeriodo
+    public IdentificacaoPeriodo idePeriodo
     {
-        get
-        {
-            return idePeriodoField;
-        }
-
+        get => idePeriodoField;
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public R1000_InfoCadastro infoCadastro
+    public R1000InfoCadastro infoCadastro
     {
-        get
-        {
-            return infoCadastroField;
-        }
-
+        get => infoCadastroField;
         set
         {
             infoCadastroField = value;
-            RaisePropertyChanged("infoCadastro");
+            RaisePropertyChanged(nameof(infoCadastro));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public ReinfEvtIdePeriodo novaValidade
+    public IdentificacaoPeriodo novaValidade
     {
-        get
-        {
-            return novaValidadeField;
-        }
-
+        get => novaValidadeField;
         set
         {
             novaValidadeField = value;
-            RaisePropertyChanged("novaValidade");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-public partial class ReinfEvtInfoContriInfoContriAlteracaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
-{
-    private string ideEFRField;
-    private string cnpjEFRField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public string ideEFR
-    {
-        get
-        {
-            return ideEFRField;
-        }
-
-        set
-        {
-            ideEFRField = value;
-            RaisePropertyChanged("ideEFR");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string cnpjEFR
-    {
-        get
-        {
-            return cnpjEFRField;
-        }
-
-        set
-        {
-            cnpjEFRField = value;
-            RaisePropertyChanged("cnpjEFR");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(novaValidade));
         }
     }
 }
 
 
 // Exclusão:
-public partial class R1000_Exclusao : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000Exclusao : EfdReinfBindableObject
 {
-    private ReinfEvtIdePeriodo idePeriodoField;
+    private IdentificacaoPeriodo idePeriodoField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdePeriodo idePeriodo
+    public IdentificacaoPeriodo idePeriodo
     {
-        get
-        {
-            return idePeriodoField;
-        }
-
+        get => idePeriodoField;
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 }
 
 
 // Inclusão:
-public partial class R1000_Inclusao : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000Inclusao : EfdReinfBindableObject
 {
-    private ReinfEvtIdePeriodo idePeriodoField;
-    private R1000_InfoCadastro infoCadastroField;
+    private IdentificacaoPeriodo idePeriodoField;
+    private R1000InfoCadastro infoCadastroField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdePeriodo idePeriodo
+    public IdentificacaoPeriodo idePeriodo
     {
-        get
-        {
-            return idePeriodoField;
-        }
-
+        get => idePeriodoField;
         set
         {
             idePeriodoField = value;
-            RaisePropertyChanged("idePeriodo");
+            RaisePropertyChanged(nameof(idePeriodo));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public R1000_InfoCadastro infoCadastro
+    public R1000InfoCadastro infoCadastro
     {
-        get
-        {
-            return infoCadastroField;
-        }
-
+        get => infoCadastroField;
         set
         {
             infoCadastroField = value;
-            RaisePropertyChanged("infoCadastro");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(infoCadastro));
         }
     }
 }
 
-public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : object, INotifyPropertyChanged
+
+/// <exclude />
+public partial class R1000InfoCadastroEFR : EfdReinfBindableObject
 {
     private string ideEFRField;
     private string cnpjEFRField;
@@ -410,15 +363,11 @@ public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : o
     [XmlElement(Order = 0)]
     public string ideEFR
     {
-        get
-        {
-            return ideEFRField;
-        }
-
+        get => ideEFRField;
         set
         {
             ideEFRField = value;
-            RaisePropertyChanged("ideEFR");
+            RaisePropertyChanged(nameof(ideEFR));
         }
     }
 
@@ -426,33 +375,19 @@ public partial class ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR : o
     [XmlElement(Order = 1)]
     public string cnpjEFR
     {
-        get
-        {
-            return cnpjEFRField;
-        }
-
+        get => cnpjEFRField;
         set
         {
             cnpjEFRField = value;
-            RaisePropertyChanged("cnpjEFR");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(cnpjEFR));
         }
     }
 }
 
 
 // R1000 Common:
-public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000InfoCadastro : EfdReinfBindableObject
 {
     private string classTribField;
     private ObrigatoriedadeECD indEscrituracaoField;
@@ -460,23 +395,19 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     private AcordoInternacionalIsencaoMulta indAcordoIsenMultaField = AcordoInternacionalIsencaoMulta.SemAcordo;
     private SituacaoPessoaJuridica indSitPJField;
     private bool indSitPJFieldSpecified = false;
-    private R1000_InfoCadastro_Contato contatoField;
-    private R1000_InfoCadastro_SoftwareHouse softHouseField;
-    private ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR infoEFRField;
+    private R1000InfoCadastroContato contatoField;
+    private R1000InfoCadastroSoftwareHouse softHouseField;
+    private R1000InfoCadastroEFR infoEFRField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
     public string classTrib
     {
-        get
-        {
-            return classTribField;
-        }
-
+        get => classTribField;
         set
         {
             classTribField = value;
-            RaisePropertyChanged("classTrib");
+            RaisePropertyChanged(nameof(classTrib));
         }
     }
 
@@ -484,15 +415,11 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public ObrigatoriedadeECD indEscrituracao
     {
-        get
-        {
-            return indEscrituracaoField;
-        }
-
+        get => indEscrituracaoField;
         set
         {
             indEscrituracaoField = value;
-            RaisePropertyChanged("indEscrituracao");
+            RaisePropertyChanged(nameof(indEscrituracao));
         }
     }
 
@@ -500,15 +427,11 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public DesoneracaoCPRB indDesoneracao
     {
-        get
-        {
-            return indDesoneracaoField;
-        }
-
+        get => indDesoneracaoField;
         set
         {
             indDesoneracaoField = value;
-            RaisePropertyChanged("indDesoneracao");
+            RaisePropertyChanged(nameof(indDesoneracao));
         }
     }
 
@@ -516,15 +439,11 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public AcordoInternacionalIsencaoMulta indAcordoIsenMulta
     {
-        get
-        {
-            return indAcordoIsenMultaField;
-        }
-
+        get => indAcordoIsenMultaField;
         set
         {
             indAcordoIsenMultaField = value;
-            RaisePropertyChanged("indAcordoIsenMulta");
+            RaisePropertyChanged(nameof(indAcordoIsenMulta));
         }
     }
 
@@ -532,15 +451,11 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public SituacaoPessoaJuridica indSitPJ
     {
-        get
-        {
-            return indSitPJField;
-        }
-
+        get => indSitPJField;
         set
         {
             indSitPJField = value;
-            RaisePropertyChanged("indSitPJ");
+            RaisePropertyChanged(nameof(indSitPJ));
         }
     }
 
@@ -548,80 +463,54 @@ public partial class R1000_InfoCadastro : object, INotifyPropertyChanged
     [XmlIgnore()]
     public bool indSitPJSpecified
     {
-        get
-        {
-            return indSitPJFieldSpecified;
-        }
-
+        get => indSitPJFieldSpecified;
         set
         {
             indSitPJFieldSpecified = value;
-            RaisePropertyChanged("indSitPJSpecified");
+            RaisePropertyChanged(nameof(indSitPJSpecified));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 5)]
-    public R1000_InfoCadastro_Contato contato
+    public R1000InfoCadastroContato contato
     {
-        get
-        {
-            return contatoField;
-        }
-
+        get => contatoField;
         set
         {
             contatoField = value;
-            RaisePropertyChanged("contato");
+            RaisePropertyChanged(nameof(contato));
         }
     }
 
     /// <remarks/>
     [XmlElement("softHouse", Order = 6)]
-    public R1000_InfoCadastro_SoftwareHouse softHouse
+    public R1000InfoCadastroSoftwareHouse softHouse
     {
-        get
-        {
-            return softHouseField;
-        }
-
+        get => softHouseField;
         set
         {
             softHouseField = value;
-            RaisePropertyChanged("softHouse");
+            RaisePropertyChanged(nameof(softHouse));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 7)]
-    public ReinfEvtInfoContriInfoContriInclusaoInfoCadastroInfoEFR infoEFR
+    public R1000InfoCadastroEFR infoEFR
     {
-        get
-        {
-            return infoEFRField;
-        }
-
+        get => infoEFRField;
         set
         {
             infoEFRField = value;
-            RaisePropertyChanged("infoEFR");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(infoEFR));
         }
     }
 }
 
 
-public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000InfoCadastroContato : EfdReinfBindableObject
 {
     private string nmCttField;
     private string cpfCttField;
@@ -633,15 +522,11 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     [XmlElement(Order = 0)]
     public string nmCtt
     {
-        get
-        {
-            return nmCttField;
-        }
-
+        get => nmCttField;
         set
         {
             nmCttField = value;
-            RaisePropertyChanged("nmCtt");
+            RaisePropertyChanged(nameof(nmCtt));
         }
     }
 
@@ -649,15 +534,11 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     [XmlElement(Order = 1)]
     public string cpfCtt
     {
-        get
-        {
-            return cpfCttField;
-        }
-
+        get => cpfCttField;
         set
         {
             cpfCttField = value;
-            RaisePropertyChanged("cpfCtt");
+            RaisePropertyChanged(nameof(cpfCtt));
         }
     }
 
@@ -665,15 +546,11 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public string foneFixo
     {
-        get
-        {
-            return foneFixoField;
-        }
-
+        get => foneFixoField;
         set
         {
             foneFixoField = value;
-            RaisePropertyChanged("foneFixo");
+            RaisePropertyChanged(nameof(foneFixo));
         }
     }
 
@@ -681,15 +558,11 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     [XmlElement(Order = 3)]
     public string foneCel
     {
-        get
-        {
-            return foneCelField;
-        }
-
+        get => foneCelField;
         set
         {
             foneCelField = value;
-            RaisePropertyChanged("foneCel");
+            RaisePropertyChanged(nameof(foneCel));
         }
     }
 
@@ -697,32 +570,18 @@ public partial class R1000_InfoCadastro_Contato : object, INotifyPropertyChanged
     [XmlElement(Order = 4)]
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             emailField = value;
-            RaisePropertyChanged("email");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(email));
         }
     }
 }
 
 
-public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R1000InfoCadastroSoftwareHouse : EfdReinfBindableObject
 {
     private string cnpjSoftHouseField = "19574916000183";
     private string nmRazaoField = "EFICAZ SISTEMAS DE GESTÃO E INTELIGÊNCIA TRIBUTÁRIA LTDA - ME";
@@ -734,15 +593,11 @@ public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyC
     [XmlElement(Order = 0)]
     public string cnpjSoftHouse
     {
-        get
-        {
-            return cnpjSoftHouseField;
-        }
-
+        get => cnpjSoftHouseField;
         set
         {
             cnpjSoftHouseField = value;
-            RaisePropertyChanged("cnpjSoftHouse");
+            RaisePropertyChanged(nameof(cnpjSoftHouse));
         }
     }
 
@@ -750,15 +605,11 @@ public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyC
     [XmlElement(Order = 1)]
     public string nmRazao
     {
-        get
-        {
-            return nmRazaoField;
-        }
-
+        get => nmRazaoField;
         set
         {
             nmRazaoField = value;
-            RaisePropertyChanged("nmRazao");
+            RaisePropertyChanged(nameof(nmRazao));
         }
     }
 
@@ -766,15 +617,11 @@ public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyC
     [XmlElement(Order = 2)]
     public string nmCont
     {
-        get
-        {
-            return nmContField;
-        }
-
+        get => nmContField;
         set
         {
             nmContField = value;
-            RaisePropertyChanged("nmCont");
+            RaisePropertyChanged(nameof(nmCont));
         }
     }
 
@@ -782,15 +629,11 @@ public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyC
     [XmlElement(Order = 3)]
     public string telefone
     {
-        get
-        {
-            return telefoneField;
-        }
-
+        get => telefoneField;
         set
         {
             telefoneField = value;
-            RaisePropertyChanged("telefone");
+            RaisePropertyChanged(nameof(telefone));
         }
     }
 
@@ -798,26 +641,11 @@ public partial class R1000_InfoCadastro_SoftwareHouse : object, INotifyPropertyC
     [XmlElement(Order = 4)]
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             emailField = value;
-            RaisePropertyChanged("email");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(email));
         }
     }
 }

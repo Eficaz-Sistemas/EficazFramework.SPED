@@ -7,9 +7,9 @@
 | [Escrituracao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Escrituracao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Escrituracao') | Classe principal de configuração, leitura e escrita da EFD ICMS / IPI. |
 | [Registro0000](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0000.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0000') | Abertura do Arquivo Digital e Identificação da entidade |
 | [Registro0001](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0001.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0001') | Abertura do Bloco 0 |
-| [Registro0002](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0002.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0002') | Abertura do Bloco 0 |
+| [Registro0002](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0002.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0002') | Classificação do Estabelecimento Industrial ou Equiparado a Industrial |
 | [Registro0005](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0005.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0005') | Dados Complementares da entidade |
-| [Registro0015](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0015.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0015') | Dados do Contribuinte Substituto |
+| [Registro0015](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0015.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0015') | Dados do Contribuinte Substituto Ou Responsável pelo ICMS Destino |
 | [Registro0100](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0100.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0100') | Dados do Contabilista |
 | [Registro0150](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0150.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150') | Tabela de Cadastro do Participante |
 | [Registro0175](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/Registro0175.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0175') | Alteração da Tabela de Cadastro do Participante |
@@ -132,6 +132,7 @@
 | [RegistroD195](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD195.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD195') | Outras obrigações Tributárias, Ajustes e Infos. de Valores<br/>Provenientes de Documento Fiscal |
 | [RegistroD197](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD197.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD197') | Outras obrigações Tributárias, Ajustes e Infos. de Valores<br/>Provenientes de Documento Fiscal |
 | [RegistroD500](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD500.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD500') | Plano de contas contábeis |
+| [RegistroD510](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD510.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD510') | Itens do Documento - Nota Fiscal de Serviõ de Comunicação (Código 21) e Serviço de Telecomunicação (Código 22) |
 | [RegistroD590](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD590.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD590') | Plano de contas contábeis |
 | [RegistroD700](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD700.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD700') | Nota Fiscal Fatura Eletrônica de Serviços de Comunicação – NFCom(Código 62) |
 | [RegistroD730](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroD730.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroD730') | Registro analítico Nota Fiscal Fatura Eletrônica de Serviços de Comunicação – NFCom (Código 62) |
@@ -162,6 +163,11 @@
 | [RegistroE312](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE312.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE312') | Informações Adicionais do Ajuste da Apuração do ICMS Difal |
 | [RegistroE313](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE313.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE313') | Identificação dos Documentos do Ajuste da Apuração do ICMS Difal |
 | [RegistroE316](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE316.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE316') | Obrigações do ICMS Recolhido ou a Recolher - Difal |
+| [RegistroE500](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE500.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE500') | Período de Apuração do IPI |
+| [RegistroE510](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE510.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE510') | Consolidação dos Valores do IPI |
+| [RegistroE520](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE520.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE520') | Apuração do IPI |
+| [RegistroE530](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE530.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE530') | Ajustes de Apuração do IPI |
+| [RegistroE531](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE531.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE531') | Informações Adicionais dos Ajustes da Apuração do IPI - Identificação dos <br/>Documentos Fiscais (01 e 55) |
 | [RegistroE990](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroE990.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroE990') | Encerramento do Bloco E |
 | [RegistroG001](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG001.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG001') | Abertura do Bloco G |
 | [RegistroG110](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/RegistroG110.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.RegistroG110') | ICMS - Ativo Permanente - CIAP |
@@ -196,6 +202,7 @@
 | [DocumentoImportacao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/DocumentoImportacao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.DocumentoImportacao') | |
 | [FinalidadeEmissaoDocE](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/FinalidadeEmissaoDocE.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.FinalidadeEmissaoDocE') | |
 | [GrupoTensao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/GrupoTensao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.GrupoTensao') | |
+| [IndicadorAjusteIPI](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorAjusteIPI.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorAjusteIPI') | |
 | [IndicadorDestinatario](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorDestinatario.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorDestinatario') | |
 | [IndicadorEmitente](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorEmitente.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEmitente') | |
 | [IndicadorEscolaridade](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorEscolaridade.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorEscolaridade') | |
@@ -207,6 +214,7 @@
 | [IndicadorOperacao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacao') | |
 | [IndicadorOperacaoServicos](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacaoServicos.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacaoServicos') | |
 | [IndicadorOperacaoTransporte](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOperacaoTransporte.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOperacaoTransporte') | |
+| [IndicadorOrigemAjusteIPI](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemAjusteIPI.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemAjusteIPI') | |
 | [IndicadorOrigemProcesso](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemProcesso.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemProcesso') | |
 | [IndicadorOrigemProcessoServico](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorOrigemProcessoServico.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorOrigemProcessoServico') | |
 | [IndicadorPagamento](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorPagamento.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorPagamento') | |
@@ -219,6 +227,7 @@
 | [IndicadorTipoDeducao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTipoDeducao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTipoDeducao') | |
 | [IndicadorTipoOperacao](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTipoOperacao.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTipoOperacao') | |
 | [IndicadorTipoOperacaoVeiculo](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTipoOperacaoVeiculo.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTipoOperacaoVeiculo') | |
+| [IndicadorTipoReceitaTelecom](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTipoReceitaTelecom.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTipoReceitaTelecom') | |
 | [IndicadorTipoTransporte](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTipoTransporte.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTipoTransporte') | |
 | [IndicadorTituloCredito](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/IndicadorTituloCredito.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.IndicadorTituloCredito') | |
 | [ModeloDocumentoArrecadacaoC176](EficazFramework.SPED.Schemas.EFD_ICMS_IPI/ModeloDocumentoArrecadacaoC176.md 'EficazFramework.SPED.Schemas.EFD_ICMS_IPI.ModeloDocumentoArrecadacaoC176') | |

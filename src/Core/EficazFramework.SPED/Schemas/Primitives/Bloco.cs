@@ -21,10 +21,7 @@ public abstract class Bloco
     private System.Collections.ObjectModel.ObservableCollection<Registro> _registros
     {
         [MethodImpl(MethodImplOptions.Synchronized)]
-        get
-        {
-            return __registros;
-        }
+        get => __registros;
 
         [MethodImpl(MethodImplOptions.Synchronized)]
         set

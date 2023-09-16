@@ -3,6 +3,8 @@
 
 ## Ambiente Enum
 
+Ambiente em que os eventos são gerados e/ou enviados
+
 ```csharp
 public enum Ambiente
 ```

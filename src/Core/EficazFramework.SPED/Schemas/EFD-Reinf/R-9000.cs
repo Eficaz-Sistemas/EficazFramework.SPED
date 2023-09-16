@@ -1,119 +1,128 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Exclusão de eventos
+/// </summary>
+/// <example>
+/// ```csharp
+/// var evento = new R9000()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtExclusao = new R9000EventoExclusao()
+///     {
+///     
+///         ideEvento = new IdentificacaoEvento()
+///         {
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppContribuinte,
+///             verProc = "6.0"
+///         },
+///         ideContri = new IdentificacaoContribuinte()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         infoExclusao = new ReinfEvtExclusaoInfoExclusao()
+///         {
+///             nrRecEvt = "12345-00-1234-9876-0",
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpEvento = "R-4010" // ou qualquer outro evento que for preciso, exceto pelos de Fechamento/reabertura - R-2098, R-2099 e R-4099
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R9000 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R9000 : Evento
 {
-    private ReinfEvtExclusao evtExclusaoField;
+    private R9000EventoExclusao evtExclusaoField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtExclusao evtExclusao
+    public R9000EventoExclusao evtExclusao
     {
-        get
-        {
-            return evtExclusaoField;
-        }
+        get => evtExclusaoField;
 
         set
         {
             evtExclusaoField = value;
-            RaisePropertyChanged("evtExclusao");
+            RaisePropertyChanged(nameof(evtExclusao));
         }
     }
 
-    /// <remarks/>
+    /// <exclude/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
 
-    // IEfdReinfEvt Members
-    public override void GeraEventoID()
-    {
-        // Me.evtTabProcessoField.id = String.Format("ID{0}{1}{2}", If(Me.evtTabProcessoField?.ideContri?.tpInsc, "1"), If(Me.evtTabProcessoFields?.ideContri?.NumeroInscricaoTag, "00000000000000"), ReinfTimeStampUtils.GetTimeStampIDForEvent)
-    }
+    // Evento Members
+    /// <exclude/>
+    public override void GeraEventoID() =>
+        evtExclusao.id = $"ID{(int)(evtExclusao?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtExclusao?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtExclusao.ideContri.nrInsc;
-    }
+    /// <exclude/>
+    public override string ContribuinteCNPJ() =>
+        evtExclusao.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude/>
     public override string TagToSign => "Reinf";
+    /// <exclude/>
     public override string TagId => "evtRetPF";
+    /// <exclude/>
     public override bool EmptyURI => true;
+    /// <exclude/>
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R9000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtExclusao/{Versao}", IsNullable = false });
-    }
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R9000), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtExclusao/{Versao}", IsNullable = false });
 }
 
 
-public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
-{
-    private ReinfEvtExclusaoIdeEvento ideEventoField;
-    private ReinfEvtExclusaoIdeContri ideContriField;
+/// <exclude />
+public partial class R9000EventoExclusao : EfdReinfBindableObject
+{ 
+    private IdentificacaoEvento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
     private ReinfEvtExclusaoInfoExclusao infoExclusaoField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtExclusaoIdeEvento ideEvento
+    public IdentificacaoEvento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtExclusaoIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -121,15 +130,12 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlElement(Order = 2)]
     public ReinfEvtExclusaoInfoExclusao infoExclusao
     {
-        get
-        {
-            return infoExclusaoField;
-        }
+        get => infoExclusaoField;
 
         set
         {
             infoExclusaoField = value;
-            RaisePropertyChanged("infoExclusao");
+            RaisePropertyChanged(nameof(infoExclusao));
         }
     }
 
@@ -137,158 +143,23 @@ public partial class ReinfEvtExclusao : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
 
-
-/// <summary>
-/// Identificação Evento
-/// </summary>
-public partial class ReinfEvtExclusaoIdeEvento : object, INotifyPropertyChanged
-{
-    private Ambiente tpAmbField;
-    private EmissorEvento procEmiField;
-    private string verProcField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public Ambiente tpAmb
-    {
-        get
-        {
-            return tpAmbField;
-        }
-
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public EmissorEvento procEmi
-    {
-        get
-        {
-            return procEmiField;
-        }
-
-        set
-        {
-            procEmiField = value;
-            RaisePropertyChanged("procEmi");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public string verProc
-    {
-        get
-        {
-            return verProcField;
-        }
-
-        set
-        {
-            verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
-
-
-/// <summary>
-/// Identificação Contribuinte
-/// </summary>
-public partial class ReinfEvtExclusaoIdeContri : object, INotifyPropertyChanged
-{
-    private PersonalidadeJuridica tpInscField;
-    private string nrInscField;
-
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public PersonalidadeJuridica tpInsc
-    {
-        get
-        {
-            return tpInscField;
-        }
-
-        set
-        {
-            tpInscField = value;
-            RaisePropertyChanged("tpInsc");
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string nrInsc
-    {
-        get
-        {
-            return nrInscField;
-        }
-
-        set
-        {
-            nrInscField = value;
-            RaisePropertyChanged("nrInsc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-}
 
 
 /// <summary>
 /// Identificação Evento (Exclusão)
 /// </summary>
-public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChanged
+/// <exclude />
+public partial class ReinfEvtExclusaoInfoExclusao : EfdReinfBindableObject
 {
     private string tpEventoField;
     private string nrRecEvtField;
@@ -298,15 +169,12 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 0)]
     public string tpEvento
     {
-        get
-        {
-            return tpEventoField;
-        }
+        get => tpEventoField;
 
         set
         {
             tpEventoField = value;
-            RaisePropertyChanged("tpEvento");
+            RaisePropertyChanged(nameof(tpEvento));
         }
     }
 
@@ -314,15 +182,12 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 1)]
     public string nrRecEvt
     {
-        get
-        {
-            return nrRecEvtField;
-        }
+        get => nrRecEvtField;
 
         set
         {
             nrRecEvtField = value;
-            RaisePropertyChanged("nrRecEvt");
+            RaisePropertyChanged(nameof(nrRecEvt));
         }
     }
 
@@ -330,26 +195,12 @@ public partial class ReinfEvtExclusaoInfoExclusao : object, INotifyPropertyChang
     [XmlElement(Order = 2)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
+        get => perApurField;
 
         set
         {
             perApurField = value;
-            RaisePropertyChanged("perApur");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(perApur));
         }
     }
 }

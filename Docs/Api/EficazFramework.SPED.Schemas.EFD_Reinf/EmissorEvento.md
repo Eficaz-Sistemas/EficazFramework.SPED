@@ -3,6 +3,8 @@
 
 ## EmissorEvento Enum
 
+Origem do software emissor/transmissor do evento
+
 ```csharp
 public enum EmissorEvento
 ```

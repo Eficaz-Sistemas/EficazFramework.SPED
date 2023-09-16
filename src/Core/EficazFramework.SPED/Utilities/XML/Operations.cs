@@ -2,13 +2,18 @@
 using System.Text.RegularExpressions;
 namespace EficazFramework.SPED.Utilities.XML;
 
-public class Operations
+public partial class Operations
 {
-    public static IXmlSpedDocument Open(System.IO.Stream source)
-    {
-        return Task.Run(() => OpenAsync(source)).Result;
-    }
+    /// <summary>
+    /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
+    /// </summary>
+    public static IXmlSpedDocument Open(System.IO.Stream source) =>
+        Task.Run(() => OpenAsync(source)).Result;
 
+
+    /// <summary>
+    /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
+    /// </summary>
     public static async Task<IXmlSpedDocument> OpenAsync(System.IO.Stream source)
     {
         string objString;
@@ -28,7 +33,7 @@ public class Operations
 
             // ## CRIANDO NOVO STREAM
             var stringReader = new System.IO.StringReader(fixedstring);
-            xdoc = XDocument.Load(System.Xml.XmlReader.Create(stringReader));
+            xdoc = XDocument.Load(XmlReader.Create(stringReader));
             stringReader.Dispose();
             xdoc.Save(fixedstream);
             ResetStreamOffset(fixedstream);
@@ -222,6 +227,7 @@ public class Operations
         return resultobj;
     }
 
+
     protected static void ResetStreamOffset(System.IO.Stream source)
     {
         if (source is null)
@@ -236,11 +242,11 @@ public class Operations
         } // ex As Exception
     }
 
+
     public static string RemoveAllNamespaces(string xmlDocument)
     {
         var xmlDocumentWithoutNs = RemoveAllNamespaces(XElement.Parse(xmlDocument));
         string result = xmlDocumentWithoutNs.ToString();
-        xmlDocumentWithoutNs = null;
         return result;
     }
 
@@ -260,8 +266,23 @@ public class Operations
         return new XElement(xmlDocument.Name.LocalName, xmlDocument.Elements().Select(el => RemoveAllNamespaces(el)));
     }
 
-    private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
 
+#if NET7_0_OR_GREATER
+    private static readonly Regex DTCheck = DTCheckInternal();
+
+    [GeneratedRegex("(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})([\\+|-]\\d{2}:\\d{2})")]
+    private static partial Regex DTCheckInternal();
+#else
+    private static readonly Regex DTCheck = new Regex(@"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})([\+|-]\d{2}:\d{2})");
+#endif
+
+
+
+    /// <summary>
+    /// Converte uma instância de <see cref="XmlElement"/> para <see cref="XElement"/>
+    /// </summary>
+    public static object ToXElement(XmlElement source) =>
+        XElement.Parse(source.OuterXml);
 }
 
 

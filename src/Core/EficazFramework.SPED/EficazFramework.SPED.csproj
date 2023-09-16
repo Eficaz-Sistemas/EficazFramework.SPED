@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <Version>6.1.0</Version>
-	<AssemblyVersion>6.1.0.0</AssemblyVersion>
-	<FileVersion>6.0.0.1</FileVersion>
+    <Version>6.2.0</Version>
+	<AssemblyVersion>6.2.0.0</AssemblyVersion>
+	<FileVersion>6.2.0.0</FileVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
-    <Copyright>Copyright ©  2022. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+    <Copyright>Copyright ©  2023. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
     <RepositoryUrl>https://eficazcs.visualstudio.com/_git/EficazFramework</RepositoryUrl>
@@ -38,13 +38,10 @@
   <ItemGroup>
     <Compile Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <Compile Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <Compile Remove="Services\**" />
     <EmbeddedResource Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <EmbeddedResource Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <EmbeddedResource Remove="Services\**" />
     <None Remove="Schemas\EFD-Reinf\1.2 Backup\**" />
     <None Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
-    <None Remove="Services\**" />
   </ItemGroup>
 	
   <ItemGroup>
@@ -63,10 +60,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.0" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
-    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
-    <PackageReference Include="System.ServiceModel.Security" Version="4.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.2" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.2" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.2" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.2" />
   </ItemGroup>
 
   <ItemGroup>

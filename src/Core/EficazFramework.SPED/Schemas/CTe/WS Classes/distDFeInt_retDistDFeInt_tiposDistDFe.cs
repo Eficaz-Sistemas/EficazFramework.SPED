@@ -984,15 +984,9 @@ public partial class ListaDFe
     [XmlElement("DocZip", Order = 0)]
     public List<retDistDFeIntLoteDistDFeIntDocZip> DocZip
     {
-        get
-        {
-            return DocZipfield;
-        }
+        get => DocZipfield;
 
-        set
-        {
-            DocZipfield = value;
-        }
+        set => DocZipfield = value;
     }
 }
 

@@ -36,7 +36,7 @@ public class RegistroC500 : Primitives.Registro
         }
         else
         {
-            writer.Append(string.Format("{0:00}", (int)CodigoConsumo) + "|");
+            writer.Append($"{(EspecieDocumento != "66" ? (int)CodigoConsumo : ""):00}|");
         } // 9
 
         writer.Append(Numero + "|"); // 10
@@ -80,13 +80,13 @@ public class RegistroC500 : Primitives.Registro
         }
         if (Conversions.ToInteger(Versao) > 15)
         {
-            writer.Append(this.EspecieDocumentoReferenciado + "|"); // 34
-            writer.Append(this.HashDocumentoReferenciado + "|"); // 35
-            writer.Append(this.SerieDocumentoReferenciado + "|"); // 36
-            writer.Append(this.NumeroDocumentoReferenciado + "|"); // 37
-            writer.Append(string.Format("{0:MMyyyy}", this.CompetenciaDocumentoReferenciado) + "|"); // 38
-            writer.Append(string.Format("{0:0.##}", this.EnergiaInjetada) + "|"); // 39
-            writer.Append(string.Format("{0:0.##}", this.OutrasDeducoes) + "|"); // 40
+            writer.Append(EspecieDocumentoReferenciado + "|"); // 34
+            writer.Append(HashDocumentoReferenciado + "|"); // 35
+            writer.Append(SerieDocumentoReferenciado + "|"); // 36
+            writer.Append(NumeroDocumentoReferenciado + "|"); // 37
+            writer.Append(string.Format("{0:MMyyyy}", CompetenciaDocumentoReferenciado) + "|"); // 38
+            writer.Append(string.Format("{0:0.##}", EnergiaInjetada) + "|"); // 39
+            writer.Append(string.Format("{0:0.##}", OutrasDeducoes) + "|"); // 40
         }
         return writer.ToString();
     }

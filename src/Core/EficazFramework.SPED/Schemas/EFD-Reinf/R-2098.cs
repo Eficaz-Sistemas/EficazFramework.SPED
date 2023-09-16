@@ -1,118 +1,122 @@
 ﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
+/// <summary>
+/// Reabertura dos eventos da série R-2000
+/// </summary>
+/// <example>
+/// ```csharp
+/// var registro = new R2098()
+/// {
+///     Versao = Versao.v2_01_02,
+///     evtReabreEvPer = new R2098EventoReabrePeriodo()
+///     {
+///         ideContri = new EficazFramework.SPED.Schemas.EFD_Reinf.IdentificacaoContribuinte()
+///         {
+///             tpInsc = EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         ideEvento = new IdentificacaoEventoFechamento()
+///         {
+///             perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+///             tpAmb = EficazFramework.SPED.Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EficazFramework.SPED.Schemas.EFD_Reinf.EmissorEvento.AppContribuinte,
+///             verProc = "2.2"
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
-public partial class R2098 : IEfdReinfEvt, INotifyPropertyChanged
+public partial class R2098 : Evento
 {
-    private ReinfEvtReabreEvPer evtReabreEvPerField;
+    private R2098EventoReabrePeriodo evtReabreEvPerField;
     private SignatureType signatureField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtReabreEvPer evtReabreEvPer
+    public R2098EventoReabrePeriodo evtReabreEvPer
     {
-        get
-        {
-            return evtReabreEvPerField;
-        }
+        get => evtReabreEvPerField;
 
         set
         {
             evtReabreEvPerField = value;
-            RaisePropertyChanged("evtReabreEvPer");
+            RaisePropertyChanged(nameof(evtReabreEvPer));
         }
     }
 
-    /// <remarks/>
+    /// <exclude />
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
+        get => signatureField;
 
         set
         {
             signatureField = value;
-            RaisePropertyChanged("Signature");
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
 
-    // IEfdReinfEvt Members
-    public override void GeraEventoID()
-    {
-        evtReabreEvPer.id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000", ReinfTimeStampUtils.GetTimeStampIDForEvent());
-    }
+    // Evento Members
+    /// <exclude />
+    public override void GeraEventoID() =>
+        evtReabreEvPer.id = $"ID{(int)(evtReabreEvPer?.ideContri?.tpInsc ?? PersonalidadeJuridica.CNPJ)}{evtReabreEvPer?.ideContri?.NumeroInscricaoTag() ?? "00000000000000"}{ReinfTimeStampUtils.GetTimeStampIDForEvent()}";
 
-    public override string ContribuinteCNPJ()
-    {
-        return evtReabreEvPer.ideContri.nrInsc;
-    }
+    /// <exclude />
+    public override string ContribuinteCNPJ() =>
+        evtReabreEvPer.ideContri.nrInsc;
 
 
     // IXmlSignableDocument Members
+    /// <exclude />
     public override string TagToSign => "Reinf";
+    /// <exclude />
     public override string TagId => "evtReabreEvPer";
+    /// <exclude />
     public override bool EmptyURI => true;
+    /// <exclude />
     public override bool SignAsSHA256 => true;
 
 
-    // PropertyChanged Members
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
     // Serialization Members
-    public override XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(R2098), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/{Versao}", IsNullable = false });
-    }
+    /// <exclude />
+    public override XmlSerializer DefineSerializer() =>
+        new(typeof(R2098), new XmlRootAttribute("Reinf") { Namespace = $"http://www.reinf.esocial.gov.br/schemas/evtReabreEvPer/{Versao}", IsNullable = false });
 }
 
 
-public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
+/// <exclude />
+public partial class R2098EventoReabrePeriodo : EfdReinfBindableObject
 {
-    private ReinfEvtIdeEventoPeriodicoFechamento ideEventoField;
-    private ReinfEvtIdeContri ideContriField;
+    private IdentificacaoEventoFechamento ideEventoField;
+    private IdentificacaoContribuinte ideContriField;
     private string idField;
 
     /// <remarks/>
     [XmlElement(Order = 0)]
-    public ReinfEvtIdeEventoPeriodicoFechamento ideEvento
+    public IdentificacaoEventoFechamento ideEvento
     {
-        get
-        {
-            return ideEventoField;
-        }
+        get => ideEventoField;
 
         set
         {
             ideEventoField = value;
-            RaisePropertyChanged("ideEvento");
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
     /// <remarks/>
     [XmlElement(Order = 1)]
-    public ReinfEvtIdeContri ideContri
+    public IdentificacaoContribuinte ideContri
     {
-        get
-        {
-            return ideContriField;
-        }
+        get => ideContriField;
 
         set
         {
             ideContriField = value;
-            RaisePropertyChanged("ideContri");
+            RaisePropertyChanged(nameof(ideContri));
         }
     }
 
@@ -120,26 +124,12 @@ public partial class ReinfEvtReabreEvPer : object, INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string id
     {
-        get
-        {
-            return idField;
-        }
+        get => idField;
 
         set
         {
             idField = value;
-            RaisePropertyChanged("id");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(id));
         }
     }
 }
