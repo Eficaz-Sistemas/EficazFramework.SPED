@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <Version>6.1.0</Version>
-	<AssemblyVersion>6.1.0.0</AssemblyVersion>
-	<FileVersion>6.0.0.1</FileVersion>
+    <Version>6.2.0</Version>
+	<AssemblyVersion>6.2.0.0</AssemblyVersion>
+	<FileVersion>6.2.0.0</FileVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
-    <Copyright>Copyright ©  2022. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+    <Copyright>Copyright ©  2023. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
     <RepositoryUrl>https://eficazcs.visualstudio.com/_git/EficazFramework</RepositoryUrl>
