@@ -670,7 +670,7 @@ public partial class R4010DetalhamentoDeducao : EfdReinfBindableObject
 {
     private IndicadorTipoDeducaoPrevidenciaria indTpDeducaoField;
     private string vlrDeducaoField;
-    private SimNao infoEntidField = SimNao.Nao;
+    private SimNao? infoEntidField;
     private string nrInscPrevCompField;
     private string vlrPatrocFunpField;
     private List<R4010BeneficiarioDeducao> benefPenField;
@@ -701,7 +701,7 @@ public partial class R4010DetalhamentoDeducao : EfdReinfBindableObject
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public SimNao infoEntid
+    public SimNao? infoEntid
     {
         get => infoEntidField;
         set
@@ -710,6 +710,8 @@ public partial class R4010DetalhamentoDeducao : EfdReinfBindableObject
             RaisePropertyChanged(nameof(infoEntid));
         }
     }
+    public bool ShouldSerializeinfoEntid() => infoEntid.HasValue;
+
 
     /// <remarks/>
     [XmlElement(Order = 3)]
