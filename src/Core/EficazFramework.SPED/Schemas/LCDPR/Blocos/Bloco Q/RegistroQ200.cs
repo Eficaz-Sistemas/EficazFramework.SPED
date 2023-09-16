@@ -56,9 +56,9 @@ public class RegistroQ200 : Primitives.Registro
     public override void LeParametros(string[] data)
     {
         Competencia = data[1].ToDate(DateFormat.MMAAAA);
-        ValorEntrada = data[2].ToNullableDouble();
-        ValorSaida = data[3].ToNullableDouble();
-        SaldoFinal = data[4].ToNullableDouble();
+        ValorEntrada = data[2].ToNullableDouble(2);
+        ValorSaida = data[3].ToNullableDouble(2);
+        SaldoFinal = data[4].ToNullableDouble(2);
         SaldoFinal_Natureza = data[5];
     }
 
