@@ -69,13 +69,13 @@ public class R4010Test : BaseEfdReinfTest<R4010>
         switch (_testNumber)
         {
             case 0:
-                PreencheCamposRendimentoisento(evento);
+                PreencheCamposRendimentoisento(evento, CnpjCpf);
                 break;
             case 1:
-                PreencheCamposRendimentoTributado(evento);
+                PreencheCamposRendimentoTributado(evento, CnpjCpf);
                 break;
             case 2:
-                PreencheCamposRendimentoTributadoComDependente(evento);
+                PreencheCamposRendimentoTributadoComDependente(evento, CnpjCpf);
                 break;
         }
     }
@@ -102,14 +102,14 @@ public class R4010Test : BaseEfdReinfTest<R4010>
 
     // Preenchimento e validação por tipo de teste
     #region RendimentoIsento-LucrosDistribuidos
-    internal static void PreencheCamposRendimentoisento(R4010 evento)
+    internal static void PreencheCamposRendimentoisento(R4010 evento, string cnpjCpf)
     {
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -117,12 +117,12 @@ public class R4010Test : BaseEfdReinfTest<R4010>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8]
             },
             ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
@@ -130,35 +130,35 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
                     idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
-                {
-                    // identificação do pagamento
-                    new R4010IdentificacaoPagtoPf()
                     {
-                        // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
+                        // identificação do pagamento
+                        new R4010IdentificacaoPagtoPf()
                         {
-                            new R4010InfoPagtoPf()
+                            // informações do pagamento
+                            infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                             {
-                                DataFatoGerador = System.DateTime.Now,
-                                vlrRendBruto = 152725.25M.ToString("f2"),
-                                // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
-                                rendIsento = new System.Collections.Generic.List<R4010InfoRendIsento>()
+                                new R4010InfoPagtoPf()
                                 {
-                                    new R4010InfoRendIsento()
+                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    vlrRendBruto = 152725.25M.ToString("f2"),
+                                    // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
+                                    rendIsento = new System.Collections.Generic.List<R4010InfoRendIsento>()
                                     {
-                                        tpIsencao = evento.Versao >= Versao.v2_01_02 ? TipoIsencaoPF.Outros : TipoIsencaoPF.RendimentoSemIRRF,
-                                        vlrIsento = 152725.25M.ToString("f2"),
-                                        descRendimento = "Lucros do exercício de 2021"
+                                        new R4010InfoRendIsento()
+                                        {
+                                            tpIsencao = evento.Versao >= Versao.v2_01_02 ? TipoIsencaoPF.Outros : TipoIsencaoPF.RendimentoSemIRRF,
+                                            vlrIsento = 152725.25M.ToString("f2"),
+                                            descRendimento = "Lucros do exercício de 2021"
+                                        }
                                     }
-                                }
 
+                                },
                             },
+                            // Utilizar a tabela 01, do Anexo I do Manual
+                            natRend = "12001", // Lucro e dividendo
+                            observ = "Lucros do exercício de 2021"
                         },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = "12001", // Lucro e dividendo
-                        observ = "Lucros do exercício de 2021"
-                    },
-                }
+                    }
                 }
             }
         };
@@ -259,14 +259,14 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #endregion
 
     #region RendimentoTributado
-    internal static void PreencheCamposRendimentoTributado(R4010 evento)
+    internal static void PreencheCamposRendimentoTributado(R4010 evento, string cnpjCpf)
     {
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -274,12 +274,12 @@ public class R4010Test : BaseEfdReinfTest<R4010>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8]
             },
             ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
@@ -287,26 +287,26 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                     nmBenef = "Pierre de Fermat",
                     // listagem de pagamentos
                     idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
-                {
-                    // identificação do pagamento
-                    new R4010IdentificacaoPagtoPf()
                     {
-                        // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
+                        // identificação do pagamento
+                        new R4010IdentificacaoPagtoPf()
                         {
-                            new R4010InfoPagtoPf()
+                            // informações do pagamento
+                            infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                             {
-                                DataFatoGerador = System.DateTime.Now,
-                                vlrRendBruto = 750.ToString("f2"),
-                                vlrRendTrib = 750.ToString("f2"),
-                                vlrIR = 112.5.ToString("f2"),
+                                new R4010InfoPagtoPf()
+                                {
+                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    vlrRendBruto = 750.ToString("f2"),
+                                    vlrRendTrib = 750.ToString("f2"),
+                                    vlrIR = 112.5.ToString("f2"),
+                                },
                             },
+                            // Utilizar a tabela 01, do Anexo I do Manual
+                            natRend = "10002", // sem vinculo empregatício
+                            observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
                         },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = "10001", // Lucro e dividendo
-                        observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
-                    },
-                }
+                    }
                 }
             }
         };
@@ -400,14 +400,14 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #endregion
 
     #region RendimentoTributadoComDependente
-    internal static void PreencheCamposRendimentoTributadoComDependente(R4010 evento)
+    internal static void PreencheCamposRendimentoTributadoComDependente(R4010 evento, string cnpjCpf)
     {
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -415,12 +415,12 @@ public class R4010Test : BaseEfdReinfTest<R4010>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8]
             },
             ideEstab = new R4010IdentificacaoEstabelecimentoPf()
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
-                nrInscEstab = "34785515000166",
+                nrInscEstab = cnpjCpf,
                 ideBenef = new R4010IdentificacaoBeneficiarioPf()
                 {
                     // identificação do beneficiário
@@ -428,43 +428,43 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                     nmBenef = "Pierre de Fermat",
                     // listagem de dependentes (neste teste apenas para dedução de IRRF)
                     ideDep = new System.Collections.Generic.List<R4010IdentificacaoDependente>()
-                {
-                    new R4010IdentificacaoDependente()
                     {
-                        cpfDep = "36580385006",
-                        relDep = RelacaoDependencia.FilhoOuEnteado
-                    }
-                },
+                        new R4010IdentificacaoDependente()
+                        {
+                            cpfDep = "36580385006",
+                            relDep = RelacaoDependencia.FilhoOuEnteado
+                        }
+                    },
                     // listagem de pagamentos
                     idePgto = new System.Collections.Generic.List<R4010IdentificacaoPagtoPf>()
-                {
-                    // identificação do pagamento
-                    new R4010IdentificacaoPagtoPf()
                     {
-                        // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
+                        // identificação do pagamento
+                        new R4010IdentificacaoPagtoPf()
                         {
-                            new R4010InfoPagtoPf()
+                            // informações do pagamento
+                            infoPgto = new System.Collections.Generic.List<R4010InfoPagtoPf>()
                             {
-                                DataFatoGerador = System.DateTime.Now,
-                                vlrRendBruto = 750.ToString("f2"),
-                                vlrRendTrib = 750.ToString("f2"),
-                                vlrIR = 112.5.ToString("f2"),
-                                detDed = new System.Collections.Generic.List<R4010DetalhamentoDeducao>()
+                                new R4010InfoPagtoPf()
                                 {
-                                    new R4010DetalhamentoDeducao()
+                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    vlrRendBruto = 750.ToString("f2"),
+                                    vlrRendTrib = 750.ToString("f2"),
+                                    vlrIR = 112.5.ToString("f2"),
+                                    detDed = new System.Collections.Generic.List<R4010DetalhamentoDeducao>()
                                     {
-                                        indTpDeducao = IndicadorTipoDeducaoPrevidenciaria.Dependentes,
-                                        vlrDeducao = 33.75.ToString("f2")
+                                        new R4010DetalhamentoDeducao()
+                                        {
+                                            indTpDeducao = IndicadorTipoDeducaoPrevidenciaria.Dependentes,
+                                            vlrDeducao = 33.75.ToString("f2"),
+                                        }
                                     }
-                                }
+                                },
                             },
+                            // Utilizar a tabela 01, do Anexo I do Manual
+                            natRend = "10002", // sem vinculo empregatício
+                            observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
                         },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = "10001", // Lucro e dividendo
-                        observ = "Algum rendimento sem vínculo empregatício" // na verdade, não imagino que exista esta possibilidade
-                    },
-                }
+                    }
                 }
             }
         };
