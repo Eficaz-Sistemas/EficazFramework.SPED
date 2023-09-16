@@ -135,7 +135,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Schemas\LCDPR\BlocoQ\" />
     <Folder Include="Schemas\LCDPR\Bloco9\" />
   </ItemGroup>
 

@@ -73,9 +73,9 @@ public class RegistroQ100 : Primitives.Registro
         Historico = data[6];
         TerceiroID = data[7];
         TipoLancamento = (TipoLancamento)data[8].ToEnum<TipoLancamento>(TipoLancamento.Despesa);
-        ValorEntrada = data[9].ToNullableDouble();
-        ValorSaida = data[10].ToNullableDouble();
-        SaldoFinal = data[11].ToNullableDouble();
+        ValorEntrada = data[9].ToNullableDouble(2);
+        ValorSaida = data[10].ToNullableDouble(2);
+        SaldoFinal = data[11].ToNullableDouble(2);
         SaldoFinal_Natureza = data[12];
     }
 
@@ -99,7 +99,7 @@ public class RegistroQ100 : Primitives.Registro
     /// <summary>
     /// Número do Documento
     /// </summary>
-    public string NumeroDoc { get; set; } = "BR";
+    public string NumeroDoc { get; set; } = null;
 
     /// <summary>
     /// Tipo de Documento: <br/>
