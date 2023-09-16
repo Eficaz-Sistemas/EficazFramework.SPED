@@ -106,7 +106,7 @@ public partial class R4099 : Evento
     /// <exclude/>
     public override string TagToSign => "Reinf";
     /// <exclude/>
-    public override string TagId => "evtFechField";
+    public override string TagId => "evtFech";
     /// <exclude/>
     public override bool EmptyURI => true;
     /// <exclude/>

@@ -50,10 +50,10 @@ public class R4099Test : BaseEfdReinfTest<R4099>
         switch (_testNumber)
         {
             case 0:
-                PreencheCamposFechamento(evento);
+                PreencheCamposFechamento(evento, CnpjCpf);
                 break;
             case 1:
-                PreencheCamposReabertura(evento);
+                PreencheCamposReabertura(evento, CnpjCpf);
                 break;
         }
     }
@@ -77,13 +77,13 @@ public class R4099Test : BaseEfdReinfTest<R4099>
 
     // Preenchimento e validação por tipo de teste
     #region Fechamento
-    private void PreencheCamposFechamento(R4099 evento)
+    internal static void PreencheCamposFechamento(R4099 evento, string cnpjCpf)
     {
         evento.evtFech = new R4099EventoFechamReabertura()
         {
             ideEvento = new IdentificacaoEventoFechamento()
             {
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -91,7 +91,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8]
             },
             ideRespInf = new IdentificacaoResponsavel()
             {
@@ -132,13 +132,13 @@ public class R4099Test : BaseEfdReinfTest<R4099>
     #endregion
 
     #region Reabertura
-    private void PreencheCamposReabertura(R4099 evento)
+    internal static void PreencheCamposReabertura(R4099 evento, string cnpjCpf)
     {
         evento.evtFech = new R4099EventoFechamReabertura()
         {
             ideEvento = new IdentificacaoEventoFechamento()
             {
-                perApur = "2022-08",
+                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -146,7 +146,7 @@ public class R4099Test : BaseEfdReinfTest<R4099>
             ideContri = new IdentificacaoContribuinte()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = "34785515000166",
+                nrInsc = cnpjCpf[..8]
             },
             ideRespInf = new IdentificacaoResponsavel()
             {

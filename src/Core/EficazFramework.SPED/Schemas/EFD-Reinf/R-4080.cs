@@ -96,7 +96,7 @@ public partial class R4080 : Evento
     /// <exclude/>
     public override string TagToSign => "Reinf";
     /// <exclude/>
-    public override string TagId => "evtRetRecField";
+    public override string TagId => "evtRetRec";
     /// <exclude/>
     public override bool EmptyURI => true;
     /// <exclude/>
