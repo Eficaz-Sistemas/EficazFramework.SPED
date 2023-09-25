@@ -32,7 +32,7 @@ public class RegistroF100 : Primitives.Registro
     public double? VrBcCofins { get; set; }
     public double? AliqCofins { get; set; }
     public double? VrCofins { get; set; }
-    public string NatBcCredito { get; set; } = null;
+    public NaturezaBaseCalculo NatBcCredito { get; set; } = NaturezaBaseCalculo.OutOpDireitoCredito;
     public IndicadorOrigemCredito IndicadorOrigemCredito { get; set; } = IndicadorOrigemCredito.OperacaoMercadoInterno;
     public string CodigoContaContabil { get; set; } = null;
     public string CodigoCentroCustos { get; set; } = null;
@@ -55,7 +55,10 @@ public class RegistroF100 : Primitives.Registro
         writer.Append(VrBcCofins + "|");
         writer.Append(AliqCofins + "|");
         writer.Append(VrCofins + "|");
-        writer.Append(NatBcCredito + "|");
+        if (IndicadorTipoOperacaoF == IndicadorTipoOperacaoF.OperacaoRepresentativaAquisCustosDespEncargRecIncPisCofins)
+            writer.Append(string.Format("{0:00}", (int)NatBcCredito) + "|");
+        else
+            writer.Append('|');
         writer.Append(((int)IndicadorOrigemCredito).ToString() + "|");
         writer.Append(CodigoContaContabil + "|");
         writer.Append(CodigoCentroCustos + "|");
@@ -78,7 +81,7 @@ public class RegistroF100 : Primitives.Registro
         VrBcCofins = data[12].ToNullableDouble();
         AliqCofins = data[13].ToNullableDouble();
         VrCofins = data[14].ToNullableDouble();
-        NatBcCredito = data[15];
+        NatBcCredito = (NaturezaBaseCalculo)data[15].ToEnum<NaturezaBaseCalculo>(NaturezaBaseCalculo.OutOpDireitoCredito);
         IndicadorOrigemCredito = (IndicadorOrigemCredito)data[16].ToEnum<IndicadorOrigemCredito>(IndicadorOrigemCredito.OperacaoMercadoInterno);
         CodigoContaContabil = data[17];
         CodigoCentroCustos = data[18];
