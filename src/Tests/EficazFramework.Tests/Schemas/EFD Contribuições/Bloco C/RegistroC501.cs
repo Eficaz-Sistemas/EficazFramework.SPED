@@ -14,10 +14,10 @@ public class RegistroC501 : Tests.BaseTest
 
     
     [TestCase("|C501|50|153,09|04|153,09|1,65|2,53|50036|", "006")]
-    public void Construtor(string linha, string versao = "006", bool indicadorContribIcms = false)
+    public void Construtor(string linha, string versao = "006", bool omitirTributo = false)
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_Contribuicoes.RegistroC501(linha, versao);
-        InternalRead(reg, versao, indicadorContribIcms);
+        InternalRead(reg, versao, omitirTributo);
     }
 
     
@@ -63,6 +63,7 @@ public class RegistroC501 : Tests.BaseTest
         reg.CstPis.Should().Be("50");
         reg.CodContaContabil.Should().Be("50036");
         reg.VrBaseCalculoPis.Should().Be(153.09d);
+        reg.AliquotaPis.Should().Be(1.65d);
         reg.VrTotalItens.Should().Be(153.09d);
         if (omitirTributo)
         {
