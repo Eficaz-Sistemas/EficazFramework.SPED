@@ -20,7 +20,7 @@ public class RegistroD501 : Primitives.Registro
     // Campos'
     public string CSTPis { get; set; } = null;
     public double? VrTotalItens { get; set; }
-    public string NatBcCalculo { get; set; } = null;
+    public NaturezaBaseCalculo NatBcCalculo { get; set; } = NaturezaBaseCalculo.OutOpDireitoCredito;
     public double? VrBCPis { get; set; }
     public double? AliquotaPis { get; set; }
     public double? VrPis { get; set; }
@@ -32,7 +32,10 @@ public class RegistroD501 : Primitives.Registro
         writer.Append("|D501|");
         writer.Append(CSTPis + "|");
         writer.Append(string.Format("{0:0.##}", VrTotalItens) + "|");
-        writer.Append(NatBcCalculo + "|");
+        if ((VrPis ?? 0d) > 0d)
+            writer.Append(string.Format("{0:00}", (int)NatBcCalculo) + "|");
+        else
+            writer.Append('|');
         writer.Append(string.Format("{0:0.##}", VrBCPis) + "|");
         writer.Append(string.Format("{0:0.####}", AliquotaPis) + "|");
         writer.Append(string.Format("{0:0.##}", VrPis) + "|");
@@ -44,7 +47,7 @@ public class RegistroD501 : Primitives.Registro
     {
         CSTPis = data[2];
         VrTotalItens = data[3].ToNullableDouble();
-        NatBcCalculo = data[4];
+        NatBcCalculo = (NaturezaBaseCalculo)data[4].ToEnum<NaturezaBaseCalculo>(NaturezaBaseCalculo.OutOpDireitoCredito);
         VrBCPis = data[5].ToNullableDouble();
         AliquotaPis = data[6].ToNullableDouble();
         VrPis = data[7].ToNullableDouble();
