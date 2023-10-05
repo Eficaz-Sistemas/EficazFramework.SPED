@@ -34,6 +34,7 @@ public class RegistroC500 : Primitives.Registro
     public string CodigoInfoComplementar { get; set; } = null;
     public double? VrPis { get; set; }
     public double? VrCofins { get; set; }
+    public string ChaveDocEletronico { get; set; } = null;
 
     public override string EscreveLinha()
     {
@@ -52,6 +53,9 @@ public class RegistroC500 : Primitives.Registro
         writer.Append(CodigoInfoComplementar + "|");
         writer.Append(string.Format("{0:0.##}", VrPis) + "|");
         writer.Append(string.Format("{0:0.##}", VrCofins) + "|");
+        if (int.Parse(Versao) >= 6)
+            writer.Append(ChaveDocEletronico + "|");
+
         return writer.ToString();
     }
 
@@ -70,5 +74,8 @@ public class RegistroC500 : Primitives.Registro
         CodigoInfoComplementar = data[12];
         VrPis = data[13].ToNullableDouble();
         VrCofins = data[14].ToNullableDouble();
+        if (int.Parse(Versao) >= 6)
+            ChaveDocEletronico = data[15];
+
     }
 }
