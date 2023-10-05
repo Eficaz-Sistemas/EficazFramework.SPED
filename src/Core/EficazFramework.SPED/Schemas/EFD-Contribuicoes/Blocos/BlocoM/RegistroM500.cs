@@ -49,8 +49,8 @@ public class RegistroM500 : Primitives.Registro
         writer.Append(string.Format("{0:0.##}", VrTotalCredDiferido) + "|");
         writer.Append(string.Format("{0:0.##}", VrTotalCredDispPerido) + "|");
         writer.Append(((int)IndicadorUtilCredDisp).ToString() + "|");
-        writer.Append(VrCredDispDescContApPeriodo + "|");
-        writer.Append(SaldoCreditosUtilFuturo + "|");
+        writer.Append(string.Format("{0:0.##}", VrCredDispDescContApPeriodo) + "|" + "|");
+        writer.Append(string.Format("{0:0.##}", SaldoCreditosUtilFuturo) + "|" + "|");
         return writer.ToString();
     }
 
