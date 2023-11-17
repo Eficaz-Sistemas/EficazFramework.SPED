@@ -2,13 +2,11 @@
 
 public class R4080Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4080>
 {
-    private int _testNumber = 0;
 
     [Test]
     [TestCase(Schemas.EFD_Reinf.Versao.v2_01_02)]
     public async Task EnviaMovimentoRendimentosTributados(Schemas.EFD_Reinf.Versao versao)
     {
-        _testNumber = 0;
         var result = await TestaEvento(versao);
         var retorno = result.retornoLoteEventosAssincrono.retornoEventos.evento.FirstOrDefault();
         retorno.retornoEventoRetInfo.evtRet.infoRecEv.tpEv.Should().Be("4080");
