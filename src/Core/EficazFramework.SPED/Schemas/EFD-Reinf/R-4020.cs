@@ -248,11 +248,11 @@ public partial class R4020EventoRetencaoPj : EfdReinfBindableObject
 /// <exclude />
 public partial class R4020IdentificacaoEstabelecimentoPj : R4010eR4020IdentificacaoEstabelecimentoBase
 {
-    private R4010IdentificacaoBeneficiarioPj ideBenefField;
+    private R4020IdentificacaoBeneficiarioPj ideBenefField;
 
     /// <remarks/>
     [XmlElement(Order = 2)]
-    public R4010IdentificacaoBeneficiarioPj ideBenef
+    public R4020IdentificacaoBeneficiarioPj ideBenef
     {
         get => ideBenefField;
         set
@@ -264,7 +264,7 @@ public partial class R4020IdentificacaoEstabelecimentoPj : R4010eR4020Identifica
 }
 
 /// <exclude />
-public partial class R4010IdentificacaoBeneficiarioPj : EfdReinfBindableObject
+public partial class R4020IdentificacaoBeneficiarioPj : EfdReinfBindableObject
 {
 
     private string cnpjBenefField;
