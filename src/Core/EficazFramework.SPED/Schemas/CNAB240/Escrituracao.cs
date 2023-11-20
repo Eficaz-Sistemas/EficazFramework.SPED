@@ -10,6 +10,7 @@ public class Escrituracao : Primitives.Escrituracao
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Escrituracao() : base("Arquivo Eletrônico CNAB240 padrão Febraban")
     {
+        ValidaPipeInicial = false;
         HeaderPosition.Index = 7;
         HeaderPosition.Lenght = 1;
         Blocos.Add("U", new BlocoUnico());
