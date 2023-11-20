@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <Version>6.2.0</Version>
-	<AssemblyVersion>6.2.0.0</AssemblyVersion>
-	<FileVersion>6.2.0.0</FileVersion>
+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
+    <Version>6.3.0</Version>
+	<AssemblyVersion>6.2.1.0</AssemblyVersion>
+	<FileVersion>6.2.1.0</FileVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
@@ -64,7 +64,7 @@
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.2" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.2" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.2" />
-    <PackageReference Include="System.ServiceModel.Security" Version="4.10.2" />
+    <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

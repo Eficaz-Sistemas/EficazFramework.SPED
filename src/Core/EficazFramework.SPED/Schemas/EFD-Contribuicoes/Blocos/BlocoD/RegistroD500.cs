@@ -54,8 +54,8 @@ public class RegistroD500 : Primitives.Registro
         writer.Append(SerieDocFiscal + "|");
         writer.Append(SubSerieDocFiscal + "|");
         writer.Append(NumeroDocFiscal + "|");
-        writer.Append(DataEmissaoDocFiscal + "|");
-        writer.Append(DataEntrada + "|");
+        writer.Append(DataEmissaoDocFiscal.ToSpedString() + "|");
+        writer.Append(DataEntrada.ToSpedString() + "|");
         writer.Append(string.Format("{0:0.##}", VrTotalDocFiscal) + "|");
         writer.Append(string.Format("{0:0.##}", VrTotalDesconto) + "|");
         writer.Append(string.Format("{0:0.##}", VrPrestacaoServico) + "|");
