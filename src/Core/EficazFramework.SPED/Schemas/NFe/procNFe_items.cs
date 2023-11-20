@@ -30,6 +30,7 @@ public partial class Item : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private Produto prodField;
     private Tributacao impostoField;
+    private TributacaoDevolucao impostoDevolvidoField;
     private string infAdProdField;
     private string nItemField;
 
@@ -68,6 +69,24 @@ public partial class Item : INotifyPropertyChanged
             {
                 impostoField = value;
                 OnPropertyChanged("Imposto");
+            }
+        }
+    }
+
+    [XmlElement("impostoDevol")]
+    public TributacaoDevolucao ImpostoDevolvido
+    {
+        get
+        {
+            return impostoDevolvidoField;
+        }
+
+        set
+        {
+            if (impostoDevolvidoField is null || impostoDevolvidoField.Equals(value) != true)
+            {
+                impostoDevolvidoField = value;
+                OnPropertyChanged("ImpostoDevolvido");
             }
         }
     }
@@ -1191,6 +1210,91 @@ public partial class Tributacao : INotifyPropertyChanged
     }
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+}
+
+[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+[Serializable()]
+[System.ComponentModel.DesignerCategory("code")]
+[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
+public partial class TributacaoDevolucao : System.ComponentModel.INotifyPropertyChanged
+{
+
+    #region Constructor
+
+    public TributacaoDevolucao() : base()
+    {
+    }
+
+    #endregion
+
+    #region Fields
+
+    private double? pDevolField;
+    private DetalhamentoIPI ipiField;
+
+    #endregion
+
+    #region Properties
+
+    [XmlElement("pDevol")]
+    public double? pDevol
+    {
+        get
+        {
+            return pDevolField;
+        }
+        set
+        {
+            if (pDevolField is null || pDevolField.Equals(value) != true)
+            {
+                pDevolField = value;
+                OnPropertyChanged("pDevol");
+            }
+        }
+    }
+
+    public bool ShouldSerializepDevol()
+    {
+        return pDevolField.HasValue;
+    }
+
+    public DetalhamentoIPI IPI
+    {
+        get
+        {
+            return ipiField;
+        }
+        set
+        {
+            if (ipiField is null || ipiField.Equals(value) != true)
+            {
+                ipiField = value;
+                OnPropertyChanged("IPI");
+            }
+        }
+    }
+
+    #endregion
+
+    #region Events
+
+    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+    #endregion
+
+    #region Handlers
+
+    public virtual void OnPropertyChanged(string propertyName)
+    {
+        var handler = PropertyChanged;
+        if (handler is not null)
+        {
+            handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    #endregion
+
 }
 
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3306,6 +3410,7 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     private string cEnqField;
     private DetalhamentoIPI_Tributacao itemField;
     private Tributacao_IPI_Identifier itemElementNameField;
+    private double? vIPIDevolField;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3448,6 +3553,30 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
             }
         }
     }
+
+    [XmlElement("vIPIDevol")]
+    public double? vIPIDevol
+    {
+        get
+        {
+            return vIPIDevolField;
+        }
+
+        set
+        {
+            if (vIPIDevolField is null || vIPIDevolField.Equals(value) != true)
+            {
+                vIPIDevolField = value;
+                OnPropertyChanged("vIPIDevol");
+            }
+        }
+    }
+
+    public bool ShouldSerializevIPIDevol()
+    {
+        return vIPIDevolField.HasValue;
+    }
+
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
