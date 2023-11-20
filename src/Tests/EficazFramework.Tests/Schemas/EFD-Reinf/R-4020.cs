@@ -128,7 +128,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                     // identificação do beneficiário
                     cnpjBenef = "34785515000166",
                     nmBenef = "Wayne Enterprise Inc",
-                    //isenImun = TipoIsencaoPJ.InstituicaoFilantropica,
+                    isenImun = TipoIsencaoPJ.InstituicaoFilantropica,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
                     {
