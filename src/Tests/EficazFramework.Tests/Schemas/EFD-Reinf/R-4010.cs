@@ -449,7 +449,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                                     DataFatoGerador = System.DateTime.Now.AddMonths(-1),
                                     vlrRendBruto = 750.ToString("f2"),
                                     vlrRendTrib = 750.ToString("f2"),
-                                    vlrIR = 112.5.ToString("f2"),
+                                    vlrIR = 78.75.ToString("f2"),
                                     detDed = new System.Collections.Generic.List<R4010DetalhamentoDeducao>()
                                     {
                                         new R4010DetalhamentoDeducao()

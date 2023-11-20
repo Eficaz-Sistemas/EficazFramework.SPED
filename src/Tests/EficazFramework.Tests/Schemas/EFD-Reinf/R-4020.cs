@@ -123,34 +123,34 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = cnpjCpf,
-                ideBenef = new R4010IdentificacaoBeneficiarioPj()
+                ideBenef = new R4020IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "34785515000166",
                     nmBenef = "Wayne Enterprise Inc",
-                    isenImun = TipoIsencaoPJ.InstEduOrAssistSocial,
+                    //isenImun = TipoIsencaoPJ.InstituicaoFilantropica,
                     // pagamento (1:1, diferentemente ao apresentado em R-4010
                     idePgto = new System.Collections.Generic.List<R4020IdentificacaoPagtoPj>()
-                {
-                    // identificação do pagamento
-                    new R4020IdentificacaoPagtoPj()
                     {
-                        // informações do pagamento
-                        infoPgto = new System.Collections.Generic.List<R4020InfoPagtoPj>()
+                        // identificação do pagamento
+                        new R4020IdentificacaoPagtoPj()
                         {
-                            new R4020InfoPagtoPj()
+                            // informações do pagamento
+                            infoPgto = new System.Collections.Generic.List<R4020InfoPagtoPj>()
                             {
-                                DataFatoGerador = DateTime.Now.AddMonths(-1),
-                                vlrBruto = 152725.25M.ToString("f2"),
-                                retencoes = null 
-                                // rendimento isento não possui renteção
+                                new R4020InfoPagtoPj()
+                                {
+                                    DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                    vlrBruto = 152725.25M.ToString("f2"),
+                                    retencoes = null 
+                                    // rendimento isento não possui renteção
+                                },
                             },
+                            // Utilizar a tabela 01, do Anexo I do Manual
+                            natRend = "12001", 
+                            observ = "Lucros do exercício/trimestre anterior"
                         },
-                        // Utilizar a tabela 01, do Anexo I do Manual
-                        natRend = "15049", // Pagamentos a entidades imunes ou isentas – IN RFB 1.234/2012
-                        observ = "Referente campanha do agasalho"
-                    },
-                }
+                    }
                 }
             }
         };
@@ -244,7 +244,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = cnpjCpf,
-                ideBenef = new R4010IdentificacaoBeneficiarioPj()
+                ideBenef = new R4020IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "34785515000166",
@@ -404,7 +404,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
             {
                 tpInscEstab = PersonalidadeJuridica.CNPJ,
                 nrInscEstab = cnpjCpf,
-                ideBenef = new R4010IdentificacaoBeneficiarioPj()
+                ideBenef = new R4020IdentificacaoBeneficiarioPj()
                 {
                     // identificação do beneficiário
                     cnpjBenef = "34785515000166",

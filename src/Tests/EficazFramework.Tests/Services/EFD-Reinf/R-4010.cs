@@ -57,8 +57,8 @@ public class R4010Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4010>
         retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.nrInscBenef.Should().Be("47363361886");
         retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().CodigoReceita.Should().Be("058807");
         retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().natRend.Should().Be("10002");
-        retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().ValorBaseCR.Should().Be("716,25");
-        retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().TotalApuracaoTributo.ValorCRInformado.Should().Be("112,50");
+        retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().ValorBaseCR.Should().Be("750,00");
+        retorno.retornoEventoRetInfo.evtRet.infoTotal.ideEstab.TotalApuracaoMensal.Single().TotalApuracaoTributo.ValorCRInformado.Should().Be("78,75");
     }
 
     public override void PreencheCampos(Schemas.EFD_Reinf.R4010 evento, int index = 0)
