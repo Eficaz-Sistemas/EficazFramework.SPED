@@ -136,6 +136,7 @@
 
   <ItemGroup>
     <Folder Include="Schemas\LCDPR\Bloco9\" />
+    <Folder Include="Schemas\NFe\" />
   </ItemGroup>
 
   <ItemGroup>
