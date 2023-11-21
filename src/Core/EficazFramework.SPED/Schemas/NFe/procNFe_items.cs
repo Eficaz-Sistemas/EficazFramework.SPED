@@ -8,38 +8,28 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// </summary>
 public partial class Item : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Item() : base()
     {
         // Me.impostoField = New Tributacao()
         // Me.prodField = New Produto()
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private Produto prodField;
     private Tributacao impostoField;
     private TributacaoDevolucao impostoDevolvidoField;
     private string infAdProdField;
     private string nItemField;
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("prod")]
     public Produto Dados
     {
-        get
-        {
-            return prodField;
-        }
+        get => prodField;
         set
         {
             if (prodField is null || prodField.Equals(value) != true)
             {
                 prodField = value;
-                OnPropertyChanged("Dados");
+                OnPropertyChanged(nameof(Dados));
             }
         }
     }
@@ -47,16 +37,13 @@ public partial class Item : INotifyPropertyChanged
     [XmlElement("imposto")]
     public Tributacao Imposto
     {
-        get
-        {
-            return impostoField;
-        }
+        get => impostoField;
         set
         {
             if (impostoField is null || impostoField.Equals(value) != true)
             {
                 impostoField = value;
-                OnPropertyChanged("Imposto");
+                OnPropertyChanged(nameof(Imposto));
             }
         }
     }
@@ -64,16 +51,13 @@ public partial class Item : INotifyPropertyChanged
     [XmlElement("impostoDevol")]
     public TributacaoDevolucao ImpostoDevolvido
     {
-        get
-        {
-            return impostoDevolvidoField;
-        }
+        get => impostoDevolvidoField;
         set
         {
             if (impostoDevolvidoField is null || impostoDevolvidoField.Equals(value) != true)
             {
                 impostoDevolvidoField = value;
-                OnPropertyChanged("ImpostoDevolvido");
+                OnPropertyChanged(nameof(ImpostoDevolvido));
             }
         }
     }
@@ -81,16 +65,13 @@ public partial class Item : INotifyPropertyChanged
     [XmlElement("infAdProd")]
     public string InformacoesAdicionais
     {
-        get
-        {
-            return infAdProdField;
-        }
+        get => infAdProdField;
         set
         {
             if (infAdProdField is null || infAdProdField.Equals(value) != true)
             {
                 infAdProdField = value;
-                OnPropertyChanged("InformacoesAdicionais");
+                OnPropertyChanged(nameof(InformacoesAdicionais));
             }
         }
     }
@@ -113,16 +94,13 @@ public partial class Item : INotifyPropertyChanged
     [XmlAttribute("nItem")]
     public string NumeroSequencial
     {
-        get
-        {
-            return nItemField;
-        }
+        get => nItemField;
         set
         {
             if (nItemField is null || nItemField.Equals(value) != true)
             {
                 nItemField = value;
-                OnPropertyChanged("NumeroSequencial");
+                OnPropertyChanged(nameof(NumeroSequencial));
             }
         }
     }
@@ -190,36 +168,19 @@ public partial class Item : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class Produto : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public Produto() : base()
     {
         itemsField = new List<object>();
         diField = new List<DeclaracaoImportacao>();
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private string cProdField;
     private string cEANField;
     private string xProdField;
@@ -246,22 +207,16 @@ public partial class Produto : INotifyPropertyChanged
     private List<object> itemsField;
     private string _cest;
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("cProd")]
     public string Codigo
     {
-        get
-        {
-            return cProdField;
-        }
+        get => cProdField;
         set
         {
             if (cProdField is null || cProdField.Equals(value) != true)
             {
                 cProdField = value;
-                OnPropertyChanged("Codigo");
+                OnPropertyChanged(nameof(Codigo));
             }
         }
     }
@@ -276,16 +231,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("cEAN")]
     public string GTIN
     {
-        get
-        {
-            return cEANField;
-        }
+        get => cEANField;
         set
         {
             if (cEANField is null || cEANField.Equals(value) != true)
             {
                 cEANField = value;
-                OnPropertyChanged("GTIN");
+                OnPropertyChanged(nameof(GTIN));
             }
         }
     }
@@ -293,80 +245,65 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("xProd")]
     public string Descricao
     {
-        get
-        {
-            return xProdField;
-        }
+        get => xProdField;
         set
         {
             if (xProdField is null || xProdField.Equals(value) != true)
             {
                 xProdField = value;
-                OnPropertyChanged("Descricao");
+                OnPropertyChanged(nameof(Descricao));
             }
         }
     }
 
     public string NCM
     {
-        get
-        {
-            return nCMField;
-        }
+        get => nCMField;
         set
         {
             if (nCMField is null || nCMField.Equals(value) != true)
             {
                 nCMField = value;
-                OnPropertyChanged("NCM");
+                OnPropertyChanged(nameof(NCM));
             }
         }
     }
 
     public string CEST
     {
-        get
-        {
-            return _cest;
-        }
+        get => _cest;
         set
         {
             if (_cest is null || _cest.Equals(value) != true)
             {
                 _cest = value;
-                OnPropertyChanged("CEST");
+                OnPropertyChanged(nameof(CEST));
             }
         }
     }
 
     public string EXTIPI
     {
-        get
-        {
-            return eXTIPIField;
-        }
+        get => eXTIPIField;
         set
         {
             if (eXTIPIField is null || eXTIPIField.Equals(value) != true)
             {
                 eXTIPIField = value;
-                OnPropertyChanged("EXTIPI");
+                OnPropertyChanged(nameof(EXTIPI));
             }
         }
     }
 
     public string CFOP
     {
-        get
-        {
-            return cFOPField;
-        }
+        get => cFOPField;
         set
         {
             if (cFOPField is null || cFOPField.Equals(value) != true)
             {
                 cFOPField = value;
-                OnPropertyChanged("CFOP");
+                OnPropertyChanged(nameof(CFOP));
             }
         }
     }
@@ -374,16 +311,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("uCom")]
     public string UnidadeComercial
     {
-        get
-        {
-            return uComField;
-        }
+        get => uComField;
         set
         {
             if (uComField is null || uComField.Equals(value) != true)
             {
                 uComField = value;
-                OnPropertyChanged("UnidadeComercial");
+                OnPropertyChanged(nameof(UnidadeComercial));
             }
         }
     }
@@ -391,10 +325,7 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("qCom")]
     public double? QuantidadeComercial
     {
-        get
-        {
-            return qComField;
-        }
+        get => qComField;
         set
         {
             if (qComField is null || qComField.Equals(value) != true)
@@ -405,46 +336,34 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeQuantidadeComercial()
-    {
-        return qComField.HasValue;
-    }
+    public bool ShouldSerializeQuantidadeComercial() => qComField.HasValue;
 
     [XmlElement("vUnCom")]
     public double? ValorUnitarioComercial
     {
-        get
-        {
-            return vUnComField;
-        }
+        get => vUnComField;
         set
         {
             if (vUnComField is null || vUnComField.Equals(value) != true)
             {
                 vUnComField = value;
-                OnPropertyChanged("ValorUnitarioComercial");
+                OnPropertyChanged(nameof(ValorUnitarioComercial));
             }
         }
     }
 
-    public bool ShouldSerializeValorUnitarioComercial()
-    {
-        return vUnComField.HasValue;
-    }
+    public bool ShouldSerializeValorUnitarioComercial() => vUnComField.HasValue;
 
     [XmlIgnore()]
     public double? ValorTotalBruto
     {
-        get
-        {
-            return vProdField;
-        }
+        get => vProdField;
         set
         {
             if (vProdField is null || vProdField.Equals(value) != true)
             {
                 vProdField = value;
-                OnPropertyChanged("ValorTotalBruto");
+                OnPropertyChanged(nameof(ValorTotalBruto));
             }
         }
     }
@@ -493,15 +412,12 @@ public partial class Produto : INotifyPropertyChanged
                     vProdField = default;
                 }
 
-                OnPropertyChanged("ValorTotalBruto");
+                OnPropertyChanged(nameof(ValorTotalBruto));
             }
         }
     }
 
-    public bool ShouldSerializeValorTotalBruto_XML()
-    {
-        return vProdField.HasValue;
-    }
+    public bool ShouldSerializeValorTotalBruto_XML() => vProdField.HasValue;
 
     /// <summary>
     /// Global Trade Item Number: Código do Produto, antigo código EAN ou código de barras.
@@ -514,16 +430,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("cEANTrib")]
     public string GTIN_Tributavel
     {
-        get
-        {
-            return cEANTribField;
-        }
+        get => cEANTribField;
         set
         {
             if (cEANTribField is null || cEANTribField.Equals(value) != true)
             {
                 cEANTribField = value;
-                OnPropertyChanged("GTIN_Tributavel");
+                OnPropertyChanged(nameof(GTIN_Tributavel));
             }
         }
     }
@@ -531,16 +444,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("uTrib")]
     public string UnidadeTributavel
     {
-        get
-        {
-            return uTribField;
-        }
+        get => uTribField;
         set
         {
             if (uTribField is null || uTribField.Equals(value) != true)
             {
                 uTribField = value;
-                OnPropertyChanged("UnidadeTributavel");
+                OnPropertyChanged(nameof(UnidadeTributavel));
             }
         }
     }
@@ -548,148 +458,109 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("qTrib")]
     public double? QuantidadeTributavel
     {
-        get
-        {
-            return qTribField;
-        }
+        get => qTribField;
         set
         {
             if (qTribField is null || qTribField.Equals(value) != true)
             {
                 qTribField = value;
-                OnPropertyChanged("QuantidadeTributavel");
+                OnPropertyChanged(nameof(QuantidadeTributavel));
             }
         }
     }
 
-    public bool ShouldSerializeQuantidadeTributavel()
-    {
-        return qTribField.HasValue;
-    }
+    public bool ShouldSerializeQuantidadeTributavel() => qTribField.HasValue;
 
     [XmlElement("vUnTrib")]
     public double? ValorUnitarioTributavel
     {
-        get
-        {
-            return vUnTribField;
-        }
+        get => vUnTribField;
         set
         {
             if (vUnTribField is null || vUnTribField.Equals(value) != true)
             {
                 vUnTribField = value;
-                OnPropertyChanged("ValorUnitarioTributavel");
+                OnPropertyChanged(nameof(ValorUnitarioTributavel));
             }
         }
     }
 
-    public bool ShouldSerializeValorUnitarioTributavel()
-    {
-        return vUnTribField.HasValue;
-    }
+    public bool ShouldSerializeValorUnitarioTributavel() => vUnTribField.HasValue;
 
     [XmlElement("vFrete")]
     public double? ValorFrete
     {
-        get
-        {
-            return vFreteField;
-        }
+        get => vFreteField;
         set
         {
             if (vFreteField is null || vFreteField.Equals(value) != true)
             {
                 vFreteField = value;
-                OnPropertyChanged("ValorFrete");
+                OnPropertyChanged(nameof(ValorFrete));
             }
         }
     }
 
-    public bool ShouldSerializeValorFrete()
-    {
-        return vFreteField.HasValue;
-    }
+    public bool ShouldSerializeValorFrete() => vFreteField.HasValue;
 
     [XmlElement("vSeg")]
     public double? ValorSeguro
     {
-        get
-        {
-            return vSegField;
-        }
+        get => vSegField;
         set
         {
             if (vSegField is null || vSegField.Equals(value) != true)
             {
                 vSegField = value;
-                OnPropertyChanged("ValorSeguro");
+                OnPropertyChanged(nameof(ValorSeguro));
             }
         }
     }
 
-    public bool ShouldSerializeValorSeguro()
-    {
-        return vSegField.HasValue;
-    }
+    public bool ShouldSerializeValorSeguro() => vSegField.HasValue;
 
     [XmlElement("vDesc")]
     public double? ValorDesconto
     {
-        get
-        {
-            return vDescField;
-        }
+        get => vDescField;
         set
         {
             if (vDescField is null || vDescField.Equals(value) != true)
             {
                 vDescField = value;
-                OnPropertyChanged("ValorDesconto");
+                OnPropertyChanged(nameof(ValorDesconto));
             }
         }
     }
 
-    public bool ShouldSerializeValorDesconto()
-    {
-        return vDescField.HasValue;
-    }
+    public bool ShouldSerializeValorDesconto() => vDescField.HasValue;
 
     [XmlElement("vOutro")]
     public double? ValorOutrasDespesas
     {
-        get
-        {
-            return vOutroField;
-        }
+        get => vOutroField;
         set
         {
             if (vOutroField is null || vOutroField.Equals(value) != true)
             {
                 vOutroField = value;
-                OnPropertyChanged("ValorOutrasDespesas");
+                OnPropertyChanged(nameof(ValorOutrasDespesas));
             }
         }
     }
 
-    public bool ShouldSerializeValorOutrasDespesas()
-    {
-        return vOutroField.HasValue;
-    }
+    public bool ShouldSerializeValorOutrasDespesas() => vOutroField.HasValue;
 
     [XmlElement("indTot")]
     public IndicadorTotal IndicadorComposicaoTotal
     {
-        get
-        {
-            return indTotField;
-        }
+        get => indTotField;
         set
         {
             if (indTotField.Equals(value) != true)
             {
                 indTotField = value;
-                OnPropertyChanged("IndicadorComposicaoTotal");
+                OnPropertyChanged(nameof(IndicadorComposicaoTotal));
             }
         }
     }
@@ -697,16 +568,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("nFCI")]
     public string NumeroFCI
     {
-        get
-        {
-            return _nFCIField;
-        }
+        get => _nFCIField;
         set
         {
             if (cProdField is null || cProdField.Equals(value) != true)
             {
                 _nFCIField = value;
-                OnPropertyChanged("NumeroFCI");
+                OnPropertyChanged(nameof(NumeroFCI));
             }
         }
     }
@@ -722,16 +590,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("DI")]
     public List<DeclaracaoImportacao> Importacoes
     {
-        get
-        {
-            return diField;
-        }
+        get => diField;
         set
         {
             if (diField is null || diField.Equals(value) != true)
             {
                 diField = value;
-                OnPropertyChanged("Importacoes");
+                OnPropertyChanged(nameof(Importacoes));
             }
         }
     }
@@ -739,16 +604,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("xPed")]
     public string PedidoCompraNumero
     {
-        get
-        {
-            return xPedField;
-        }
+        get => xPedField;
         set
         {
             if (xPedField is null || xPedField.Equals(value) != true)
             {
                 xPedField = value;
-                OnPropertyChanged("PedidoCompraNumero");
+                OnPropertyChanged(nameof(PedidoCompraNumero));
             }
         }
     }
@@ -756,10 +618,7 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("nItemPed")]
     public int? PedidoCompraItem
     {
-        get
-        {
-            return nItemPedField;
-        }
+        get => nItemPedField;
         set
         {
             if (nItemPedField is null || nItemPedField.Equals(value) != true)
@@ -770,10 +629,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializePedidoCompraItem()
-    {
-        return nItemPedField.HasValue;
-    }
+    public bool ShouldSerializePedidoCompraItem() => nItemPedField.HasValue;
 
     [XmlElement("arma", typeof(DetalhamentoItemArma))]
     [XmlElement("comb", typeof(DetalhamentoItemCombustivel))]
@@ -782,16 +638,13 @@ public partial class Produto : INotifyPropertyChanged
     [XmlElement("veicProd", typeof(DetalhamentoItemVeiculo))]
     public List<object> Detalhamentos
     {
-        get
-        {
-            return itemsField;
-        }
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Detalhamentos");
+                OnPropertyChanged(nameof(Detalhamentos));
             }
         }
     }
@@ -899,14 +752,7 @@ public partial class Produto : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -939,24 +785,18 @@ public partial class Tributacao : INotifyPropertyChanged
     [XmlElement("vTotTrib")]
     public double? ValorTotalTributos
     {
-        get
-        {
-            return vTotTribField;
-        }
+        get => vTotTribField;
         set
         {
             if (vTotTribField is null || vTotTribField.Equals(value) != true)
             {
                 vTotTribField = value;
-                OnPropertyChanged("ValorTotalTributos");
+                OnPropertyChanged(nameof(ValorTotalTributos));
             }
         }
     }
 
-    public bool ShouldSerializeValorTotalTributos()
-    {
-        return vTotTribField.HasValue;
-    }
+    public bool ShouldSerializeValorTotalTributos() => vTotTribField.HasValue;
 
     [XmlElement("ICMS", typeof(DetalhamentoICMS))]
     [XmlElement("ICMSUFDest", typeof(DetalhamentoICMS_UF_Destinataria))]
@@ -965,10 +805,7 @@ public partial class Tributacao : INotifyPropertyChanged
     [XmlElement("ISSQN", typeof(DetalhamentoISSQN))]
     public List<object> DemaisImpostos
     {
-        get
-        {
-            return itemsField;
-        }
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
@@ -981,64 +818,52 @@ public partial class Tributacao : INotifyPropertyChanged
 
     public DetalhamentoPIS PIS
     {
-        get
-        {
-            return pISField;
-        }
+        get => pISField;
         set
         {
             if (pISField is null || pISField.Equals(value) != true)
             {
                 pISField = value;
-                OnPropertyChanged("PIS");
+                OnPropertyChanged(nameof(PIS));
             }
         }
     }
 
     public DetalhamentoPISST PISST
     {
-        get
-        {
-            return pISSTField;
-        }
+        get => pISSTField;
         set
         {
             if (pISSTField is null || pISSTField.Equals(value) != true)
             {
                 pISSTField = value;
-                OnPropertyChanged("PISST");
+                OnPropertyChanged(nameof(PISST));
             }
         }
     }
 
     public DetalhamentoCOFINS COFINS
     {
-        get
-        {
-            return cOFINSField;
-        }
+        get => cOFINSField;
         set
         {
             if (cOFINSField is null || cOFINSField.Equals(value) != true)
             {
                 cOFINSField = value;
-                OnPropertyChanged("COFINS");
+                OnPropertyChanged(nameof(COFINS));
             }
         }
     }
 
     public DetalhamentoCOFINSST COFINSST
     {
-        get
-        {
-            return cOFINSSTField;
-        }
+        get => cOFINSSTField;
         set
         {
             if (cOFINSSTField is null || cOFINSSTField.Equals(value) != true)
             {
                 cOFINSSTField = value;
-                OnPropertyChanged("COFINSST");
+                OnPropertyChanged(nameof(COFINSST));
             }
         }
     }
@@ -1145,14 +970,7 @@ public partial class Tributacao : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -1180,35 +998,26 @@ public partial class TributacaoDevolucao : System.ComponentModel.INotifyProperty
     [XmlElement("pDevol")]
     public double? pDevol
     {
-        get
-        {
-            return pDevolField;
-        }        set
+        get => pDevolField; set
         {
             if (pDevolField is null || pDevolField.Equals(value) != true)
             {
                 pDevolField = value;
-                OnPropertyChanged("pDevol");
+                OnPropertyChanged(nameof(pDevol));
             }
         }
     }
 
-    public bool ShouldSerializepDevol()
-    {
-        return pDevolField.HasValue;
-    }
+    public bool ShouldSerializepDevol() => pDevolField.HasValue;
 
     public DetalhamentoIPI IPI
     {
-        get
-        {
-            return ipiField;
-        }        set
+        get => ipiField; set
         {
             if (ipiField is null || ipiField.Equals(value) != true)
             {
                 ipiField = value;
-                OnPropertyChanged("IPI");
+                OnPropertyChanged(nameof(IPI));
             }
         }
     }
@@ -1267,16 +1076,13 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
     [XmlChoiceIdentifier("TributacaoIndentifier")]
     public DetalhamentoICMS_Tributacao Tributacao
     {
-        get
-        {
-            return itemField;
-        }
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Tributacao");
+                OnPropertyChanged(nameof(Tributacao));
             }
         }
     }
@@ -1284,16 +1090,13 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
     [XmlIgnore()]
     public Tributacao_ICMS_Identifier TributacaoIndentifier
     {
-        get
-        {
-            return itemElementNameField;
-        }
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TributacaoIndentifier");
+                OnPropertyChanged(nameof(TributacaoIndentifier));
             }
         }
     }
@@ -1398,14 +1201,7 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -1491,26 +1287,20 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public OrigemMercadoria orig
     {
-        get
-        {
-            return origField;
-        }
+        get => origField;
         set
         {
             if (origField.Equals(value) != true)
             {
                 origField = value;
-                OnPropertyChanged("orig");
+                OnPropertyChanged(nameof(orig));
             }
         }
     }
 
     public CST_ICMS CST
     {
-        get
-        {
-            return cSTField;
-        }
+        get => cSTField;
         set
         {
             if (cSTField.Equals(value) != true)
@@ -1521,31 +1311,22 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeCSTNormal()
-    {
-        return CST != CST_ICMS.CST_NA;
-    }
+    public bool ShouldSerializeCSTNormal() => CST != CST_ICMS.CST_NA;
 
     public CSOSN_ICMS CSOSN
     {
-        get
-        {
-            return cSOSNField;
-        }
+        get => cSOSNField;
         set
         {
             if (cSOSNField.Equals(value) != true)
             {
                 cSOSNField = value;
-                OnPropertyChanged("CSOSN");
+                OnPropertyChanged(nameof(CSOSN));
             }
         }
     }
 
-    public bool ShouldSerializeCSOSN()
-    {
-        return CSOSN != CSOSN_ICMS.CSTNA;
-    }
+    public bool ShouldSerializeCSOSN() => CSOSN != CSOSN_ICMS.CSTNA;
 
     public int CSTFinal
     {
@@ -1569,16 +1350,13 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
@@ -1627,50 +1405,38 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vBCField = default;
                 }
 
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
-    public bool ShouldSerializevBC_XML()
-    {
-        return vBCField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_40 & CST != CST_ICMS.CST_41 & CST != CST_ICMS.CST_50 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevBC_XML() => vBCField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_40 & CST != CST_ICMS.CST_41 & CST != CST_ICMS.CST_50 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
 
     public double? pICMS
     {
-        get
-        {
-            return pICMSField;
-        }
+        get => pICMSField;
         set
         {
             if (pICMSField is null || pICMSField.Equals(value) != true)
             {
                 pICMSField = value;
-                OnPropertyChanged("pICMS");
+                OnPropertyChanged(nameof(pICMS));
             }
         }
     }
 
-    public bool ShouldSerializepICMS()
-    {
-        return pICMSField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_40 & CST != CST_ICMS.CST_41 & CST != CST_ICMS.CST_50 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepICMS() => pICMSField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_40 & CST != CST_ICMS.CST_41 & CST != CST_ICMS.CST_50 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public double? vICMS
     {
-        get
-        {
-            return vICMSField;
-        }
+        get => vICMSField;
         set
         {
             if (vICMSField is null || vICMSField.Equals(value) != true)
             {
                 vICMSField = value;
-                OnPropertyChanged("vICMS");
+                OnPropertyChanged(nameof(vICMS));
             }
         }
     }
@@ -1719,31 +1485,25 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vICMSField = default;
                 }
 
-                OnPropertyChanged("vICMS");
+                OnPropertyChanged(nameof(vICMS));
             }
         }
     }
 
-    public bool ShouldSerializevICMS_XML()
-    {
-        return vICMSField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevICMS_XML() => vICMSField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST00_ModBC modBC00
     {
-        get
-        {
-            return modBCField00;
-        }
+        get => modBCField00;
         set
         {
             if (modBCField00.Equals(value) != true)
             {
                 modBCField00 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC00");
+                OnPropertyChanged(nameof(modBC00));
             }
         }
     }
@@ -1753,17 +1513,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST10_ModBC modBC10
     {
-        get
-        {
-            return modBCField10;
-        }
+        get => modBCField10;
         set
         {
             if (modBCField10.Equals(value) != true)
             {
                 modBCField10 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC10");
+                OnPropertyChanged(nameof(modBC10));
             }
         }
     }
@@ -1771,17 +1528,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST10_ModBCST modBCST10
     {
-        get
-        {
-            return modBCSTField10;
-        }
+        get => modBCSTField10;
         set
         {
             if (modBCSTField10.Equals(value) != true)
             {
                 modBCSTField10 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST10");
+                OnPropertyChanged(nameof(modBCST10));
             }
         }
     }
@@ -1791,17 +1545,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST20_ModBC modBC20
     {
-        get
-        {
-            return modBCField20;
-        }
+        get => modBCField20;
         set
         {
             if (modBCField20.Equals(value) != true)
             {
                 modBCField20 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC20");
+                OnPropertyChanged(nameof(modBC20));
             }
         }
     }
@@ -1811,17 +1562,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST30_ModBCST modBCST30
     {
-        get
-        {
-            return modBCSTField30;
-        }
+        get => modBCSTField30;
         set
         {
             if (modBCSTField30.Equals(value) != true)
             {
                 modBCSTField30 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST30");
+                OnPropertyChanged(nameof(modBCST30));
             }
         }
     }
@@ -1847,7 +1595,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
             if (modBCField51.Equals(value) != true)
             {
                 modBCField51 = value;
-                OnPropertyChanged("modBC51");
+                OnPropertyChanged(nameof(modBC51));
             }
         }
     }
@@ -1857,16 +1605,13 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public double? vBCSTRet
     {
-        get
-        {
-            return vBCSTRetField;
-        }
+        get => vBCSTRetField;
         set
         {
             if (vBCSTRetField is null || vBCSTRetField.Equals(value) != true)
             {
                 vBCSTRetField = value;
-                OnPropertyChanged("vBCSTRet");
+                OnPropertyChanged(nameof(vBCSTRet));
             }
         }
     }
@@ -1915,29 +1660,23 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vBCSTRetField = default;
                 }
 
-                OnPropertyChanged("vBCSTRet");
+                OnPropertyChanged(nameof(vBCSTRet));
             }
         }
     }
 
-    public bool ShouldSerializevBCSTRet_XML()
-    {
-        return vBCSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
-    }
+    public bool ShouldSerializevBCSTRet_XML() => vBCSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
 
     [XmlIgnore()]
     public double? vICMSSTRet
     {
-        get
-        {
-            return vICMSSTRetField;
-        }
+        get => vICMSSTRetField;
         set
         {
             if (vICMSSTRetField is null || vICMSSTRetField.Equals(value) != true)
             {
                 vICMSSTRetField = value;
-                OnPropertyChanged("vICMSSTRet");
+                OnPropertyChanged(nameof(vICMSSTRet));
             }
         }
     }
@@ -1986,32 +1725,26 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vICMSSTRetField = default;
                 }
 
-                OnPropertyChanged("vICMSSTRet");
+                OnPropertyChanged(nameof(vICMSSTRet));
             }
         }
     }
 
-    public bool ShouldSerializevICMSSTRet_XML()
-    {
-        return vICMSSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
-    }
+    public bool ShouldSerializevICMSSTRet_XML() => vICMSSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST70_ModBC modBC70
     {
-        get
-        {
-            return modBCField70;
-        }
+        get => modBCField70;
         set
         {
             if (modBCField70.Equals(value) != true)
             {
                 modBCField70 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC70");
+                OnPropertyChanged(nameof(modBC70));
             }
         }
     }
@@ -2019,17 +1752,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST70_ModBCST modBCST70
     {
-        get
-        {
-            return modBCSTField70;
-        }
+        get => modBCSTField70;
         set
         {
             if (modBCSTField70.Equals(value) != true)
             {
                 modBCSTField70 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST70");
+                OnPropertyChanged(nameof(modBCST70));
             }
         }
     }
@@ -2039,17 +1769,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST90_ModBC modBC90
     {
-        get
-        {
-            return modBCField90;
-        }
+        get => modBCField90;
         set
         {
             if (modBCField90.Equals(value) != true)
             {
                 modBCField90 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC90");
+                OnPropertyChanged(nameof(modBC90));
             }
         }
     }
@@ -2057,17 +1784,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_CST90_ModBCST modBCST90
     {
-        get
-        {
-            return modBCSTField90;
-        }
+        get => modBCSTField90;
         set
         {
             if (modBCSTField90.Equals(value) != true)
             {
                 modBCSTField90 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST90");
+                OnPropertyChanged(nameof(modBCST90));
             }
         }
     }
@@ -2076,59 +1800,44 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pMVAST
     {
-        get
-        {
-            return pMVASTField;
-        }
+        get => pMVASTField;
         set
         {
             if (pMVASTField is null || pMVASTField.Equals(value) != true)
             {
                 pMVASTField = value;
-                OnPropertyChanged("pMVAST");
+                OnPropertyChanged(nameof(pMVAST));
             }
         }
     }
 
-    public bool ShouldSerializepMVAST()
-    {
-        return pMVAST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepMVAST() => pMVAST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     public double? pRedBCST
     {
-        get
-        {
-            return pRedBCSTField;
-        }
+        get => pRedBCSTField;
         set
         {
             if (pRedBCSTField is null || pRedBCSTField.Equals(value) != true)
             {
                 pRedBCSTField = value;
-                OnPropertyChanged("pRedBCST");
+                OnPropertyChanged(nameof(pRedBCST));
             }
         }
     }
 
-    public bool ShouldSerializepRedBCST()
-    {
-        return pRedBCST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepRedBCST() => pRedBCST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public double? vBCST
     {
-        get
-        {
-            return vBCSTField;
-        }
+        get => vBCSTField;
         set
         {
             if (vBCSTField is null || vBCSTField.Equals(value) != true)
             {
                 vBCSTField = value;
-                OnPropertyChanged("vBCST");
+                OnPropertyChanged(nameof(vBCST));
             }
         }
     }
@@ -2177,50 +1886,38 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vBCSTField = default;
                 }
 
-                OnPropertyChanged("vBCST");
+                OnPropertyChanged(nameof(vBCST));
             }
         }
     }
 
-    public bool ShouldSerializevBCST_XML()
-    {
-        return vBCST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevBCST_XML() => vBCST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     public double? pICMSST
     {
-        get
-        {
-            return pICMSSTField;
-        }
+        get => pICMSSTField;
         set
         {
             if (pICMSSTField is null || pICMSSTField.Equals(value) != true)
             {
                 pICMSSTField = value;
-                OnPropertyChanged("pICMSST");
+                OnPropertyChanged(nameof(pICMSST));
             }
         }
     }
 
-    public bool ShouldSerializepICMSST()
-    {
-        return pICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepICMSST() => pICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public double? vICMSST
     {
-        get
-        {
-            return vICMSSTField;
-        }
+        get => vICMSSTField;
         set
         {
             if (vICMSSTField is null || vICMSSTField.Equals(value) != true)
             {
                 vICMSSTField = value;
-                OnPropertyChanged("vICMSST");
+                OnPropertyChanged(nameof(vICMSST));
             }
         }
     }
@@ -2269,15 +1966,12 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vICMSSTField = default;
                 }
 
-                OnPropertyChanged("vICMSST");
+                OnPropertyChanged(nameof(vICMSST));
             }
         }
     }
 
-    public bool ShouldSerializevICMSST_XML()
-    {
-        return vICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevICMSST_XML() => vICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     // ## FCP da ST
 
@@ -2325,67 +2019,52 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vBCFCPSTField = default;
                 }
 
-                OnPropertyChanged("vBCFCPST");
+                OnPropertyChanged(nameof(vBCFCPST));
             }
         }
     }
 
-    public bool ShouldSerializevBCFCPST_XML()
-    {
-        return vBCFCPST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevBCFCPST_XML() => vBCFCPST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public double? vBCFCPST
     {
-        get
-        {
-            return vBCFCPSTField;
-        }
+        get => vBCFCPSTField;
         set
         {
             if (vBCFCPSTField is null || vBCFCPSTField.Equals(value) != true)
             {
                 vBCFCPSTField = value;
-                OnPropertyChanged("vBCFCPST");
+                OnPropertyChanged(nameof(vBCFCPST));
             }
         }
     }
 
     public double? pFCPST
     {
-        get
-        {
-            return pFCPSTField;
-        }
+        get => pFCPSTField;
         set
         {
             if (pFCPSTField is null || pFCPSTField.Equals(value) != true)
             {
                 pFCPSTField = value;
-                OnPropertyChanged("pFCPST");
+                OnPropertyChanged(nameof(pFCPST));
             }
         }
     }
 
-    public bool ShouldSerializepFCPST()
-    {
-        return pICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepFCPST() => pICMSST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public double? vFCPST
     {
-        get
-        {
-            return vFCPSTField;
-        }
+        get => vFCPSTField;
         set
         {
             if (vFCPSTField is null || vFCPSTField.Equals(value) != true)
             {
                 vFCPSTField = value;
-                OnPropertyChanged("vFCPST");
+                OnPropertyChanged(nameof(vFCPST));
             }
         }
     }
@@ -2434,118 +2113,88 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vFCPSTField = default;
                 }
 
-                OnPropertyChanged("vFCPST");
+                OnPropertyChanged(nameof(vFCPST));
             }
         }
     }
 
-    public bool ShouldSerializevFCPST_XML()
-    {
-        return vFCPST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializevFCPST_XML() => vFCPST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pRedBC
     {
-        get
-        {
-            return pRedBCField;
-        }
+        get => pRedBCField;
         set
         {
             if (pRedBCField is null || pRedBCField.Equals(value) != true)
             {
                 pRedBCField = value;
-                OnPropertyChanged("pRedBC");
+                OnPropertyChanged(nameof(pRedBC));
             }
         }
     }
 
-    public bool ShouldSerializepRedBC()
-    {
-        return pRedBC.HasValue == true & (CST == CST_ICMS.CST_20 | CST == CST_ICMS.CST_51 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST900);
-    }
+    public bool ShouldSerializepRedBC() => pRedBC.HasValue == true & (CST == CST_ICMS.CST_20 | CST == CST_ICMS.CST_51 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST900);
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public DetalhamentoICMS_CST40_MotivoDesoneracao motDesICMS
     {
-        get
-        {
-            return motDesICMSField;
-        }
+        get => motDesICMSField;
         set
         {
             if (motDesICMSField.Equals(value) != true)
             {
                 motDesICMSField = value;
-                OnPropertyChanged("motDesICMS");
+                OnPropertyChanged(nameof(motDesICMS));
             }
         }
     }
 
-    public bool ShouldSerializemotDesICMS()
-    {
-        return CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50;
-    }
+    public bool ShouldSerializemotDesICMS() => CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50;
 
     public double? vICMSDeson
     {
-        get
-        {
-            return pvICMSDeson;
-        }
+        get => pvICMSDeson;
         set
         {
             if (pvICMSDeson is null || pvICMSDeson.Equals(value) != true)
             {
                 pvICMSDeson = value;
-                OnPropertyChanged("vICMSDeson");
+                OnPropertyChanged(nameof(vICMSDeson));
             }
         }
     }
 
-    public bool ShouldSerializevICMSDeson()
-    {
-        return pvICMSDeson.HasValue & (CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50);
-    }
+    public bool ShouldSerializevICMSDeson() => pvICMSDeson.HasValue & (CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50);
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pCredSN
     {
-        get
-        {
-            return pCredSNField;
-        }
+        get => pCredSNField;
         set
         {
             if (pCredSNField is null || pCredSNField.Equals(value) != true)
             {
                 pCredSNField = value;
-                OnPropertyChanged("pCredSN");
+                OnPropertyChanged(nameof(pCredSN));
             }
         }
     }
 
-    public bool ShouldSerializepCredSN()
-    {
-        return CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
-    }
+    public bool ShouldSerializepCredSN() => CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
 
     public double? vCredICMSSN
     {
-        get
-        {
-            return vCredICMSSNField;
-        }
+        get => vCredICMSSNField;
         set
         {
             if (vCredICMSSNField is null || vCredICMSSNField.Equals(value) != true)
             {
                 vCredICMSSNField = value;
-                OnPropertyChanged("vCredICMSSN");
+                OnPropertyChanged(nameof(vCredICMSSN));
             }
         }
     }
@@ -2586,32 +2235,26 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vCredICMSSNField = default;
                 }
 
-                OnPropertyChanged("vCredICMSSN");
+                OnPropertyChanged(nameof(vCredICMSSN));
             }
         }
     }
 
-    public bool ShouldSerializevCredICMSSN_XML()
-    {
-        return CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
-    }
+    public bool ShouldSerializevCredICMSSN_XML() => CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN201_ModBCST modBCST201
     {
-        get
-        {
-            return modBCSTField201;
-        }
+        get => modBCSTField201;
         set
         {
             if (modBCSTField201.Equals(value) != true)
             {
                 modBCSTField201 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST201");
+                OnPropertyChanged(nameof(modBCST201));
             }
         }
     }
@@ -2621,17 +2264,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN202_ModBCST modBCST202
     {
-        get
-        {
-            return modBCSTField202;
-        }
+        get => modBCSTField202;
         set
         {
             if (modBCSTField202.Equals(value) != true)
             {
                 modBCSTField202 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST202");
+                OnPropertyChanged(nameof(modBCST202));
             }
         }
     }
@@ -2641,17 +2281,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN900_ModBC modBC900
     {
-        get
-        {
-            return modBCField900;
-        }
+        get => modBCField900;
         set
         {
             if (modBCField900.Equals(value) != true)
             {
                 modBCField900 = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBC900");
+                OnPropertyChanged(nameof(modBC900));
             }
         }
     }
@@ -2659,17 +2296,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN900_ModBCST modBCST900
     {
-        get
-        {
-            return modBCSTField900;
-        }
+        get => modBCSTField900;
         set
         {
             if (modBCSTField900.Equals(value) != true)
             {
                 modBCSTField900 = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST900");
+                OnPropertyChanged(nameof(modBCST900));
             }
         }
     }
@@ -2679,17 +2313,14 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_Part_ModBC modBCPart
     {
-        get
-        {
-            return (DetalhamentoICMS_Part_ModBC)modBCField;
-        }
+        get => (DetalhamentoICMS_Part_ModBC)modBCField;
         set
         {
             if (modBCField.Equals(value) != true)
             {
                 modBCFieldPart = value;
                 modBCField = (int?)value;
-                OnPropertyChanged("modBCPart");
+                OnPropertyChanged(nameof(modBCPart));
             }
         }
     }
@@ -2697,78 +2328,60 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public DetalhamentoICMS_Part_ModBCST modBCSTPart
     {
-        get
-        {
-            return (DetalhamentoICMS_Part_ModBCST)modBCSTField;
-        }
+        get => (DetalhamentoICMS_Part_ModBCST)modBCSTField;
         set
         {
             if (modBCSTField.Equals(value) != true)
             {
                 modBCSTFieldPart = value;
                 modBCSTField = (int?)value;
-                OnPropertyChanged("modBCST");
+                OnPropertyChanged(nameof(modBCST));
             }
         }
     }
 
     public Estado UFST
     {
-        get
-        {
-            return uFSTField;
-        }
+        get => uFSTField;
         set
         {
             if (uFSTField.Equals(value) != true)
             {
                 uFSTField = value;
-                OnPropertyChanged("UFST");
+                OnPropertyChanged(nameof(UFST));
             }
         }
     }
 
-    public bool ShouldSerializeUFST()
-    {
-        return pBCOpField.HasValue == true;
-    }
+    public bool ShouldSerializeUFST() => pBCOpField.HasValue == true;
 
     public double? pBCOp
     {
-        get
-        {
-            return pBCOpField;
-        }
+        get => pBCOpField;
         set
         {
             if (pBCOpField is null || pBCOpField.Equals(value) != true)
             {
                 pBCOpField = value;
-                OnPropertyChanged("pBCOp");
+                OnPropertyChanged(nameof(pBCOp));
             }
         }
     }
 
-    public bool ShouldSerializepBCOp()
-    {
-        return pBCOpField.HasValue == true;
-    }
+    public bool ShouldSerializepBCOp() => pBCOpField.HasValue == true;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public double? vBCSTDest
     {
-        get
-        {
-            return vBCSTDestField;
-        }
+        get => vBCSTDestField;
         set
         {
             if (vBCSTDestField is null || vBCSTDestField.Equals(value) != true)
             {
                 vBCSTDestField = value;
-                OnPropertyChanged("vBCSTDest");
+                OnPropertyChanged(nameof(vBCSTDest));
             }
         }
     }
@@ -2817,29 +2430,23 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vBCSTDestField = default;
                 }
 
-                OnPropertyChanged("vBCSTDest");
+                OnPropertyChanged(nameof(vBCSTDest));
             }
         }
     }
 
-    public bool ShouldSerializevBCSTDest_XML()
-    {
-        return vBCSTDest.HasValue == true;
-    }
+    public bool ShouldSerializevBCSTDest_XML() => vBCSTDest.HasValue == true;
 
     [XmlIgnore()]
     public double? vICMSSTDest
     {
-        get
-        {
-            return vICMSSTDestField;
-        }
+        get => vICMSSTDestField;
         set
         {
             if (vICMSSTDestField is null || vICMSSTDestField.Equals(value) != true)
             {
                 vICMSSTDestField = value;
-                OnPropertyChanged("vICMSSTDest");
+                OnPropertyChanged(nameof(vICMSSTDest));
             }
         }
     }
@@ -2888,67 +2495,49 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                     vICMSSTDestField = default;
                 }
 
-                OnPropertyChanged("vICMSSTDest");
+                OnPropertyChanged(nameof(vICMSSTDest));
             }
         }
     }
 
-    public bool ShouldSerializevICMSSTDest_XML()
-    {
-        return vICMSSTDest.HasValue == true;
-    }
+    public bool ShouldSerializevICMSSTDest_XML() => vICMSSTDest.HasValue == true;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("vBCEfet")]
     public double? vBCEfet
     {
-        get
-        {
-            return vBCEfetField;
-        }
+        get => vBCEfetField;
         set
         {
             if (vBCEfetField is null || vBCEfetField.Equals(value) != true)
             {
                 vBCEfetField = value;
-                OnPropertyChanged("vBCEfet");
+                OnPropertyChanged(nameof(vBCEfet));
             }
         }
     }
 
-    public bool ShouldSerializevBCEfet()
-    {
-        return vBCEfetField.HasValue;
-    }
+    public bool ShouldSerializevBCEfet() => vBCEfetField.HasValue;
 
     public double? pICMSEfet
     {
-        get
-        {
-            return pICMSEfetField;
-        }
+        get => pICMSEfetField;
         set
         {
             if (pICMSEfetField is null || pICMSEfetField.Equals(value) != true)
             {
                 pICMSEfetField = value;
-                OnPropertyChanged("pICMSEfet");
+                OnPropertyChanged(nameof(pICMSEfet));
             }
         }
     }
 
-    public bool ShouldSerializepICMSEfet()
-    {
-        return pICMSEfetField.HasValue;
-    }
+    public bool ShouldSerializepICMSEfet() => pICMSEfetField.HasValue;
 
     public double? vICMSEfet
     {
-        get
-        {
-            return vICMSEfetField;
-        }
+        get => vICMSEfetField;
         set
         {
             if (vICMSEfetField is null || vICMSEfetField.Equals(value) != true)
@@ -2959,10 +2548,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializevICMSEfet()
-    {
-        return vICMSEfetField.HasValue;
-    }
+    public bool ShouldSerializevICMSEfet() => vICMSEfetField.HasValue;
 
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -2977,16 +2563,13 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     /// <remarks></remarks>
     public int? modBC
     {
-        get
-        {
-            return modBCField;
-        }
+        get => modBCField;
         set
         {
             if (modBCField.Equals(value) != true)
             {
                 modBCField = value;
-                OnPropertyChanged("modBC");
+                OnPropertyChanged(nameof(modBC));
             }
         }
     }
@@ -2994,10 +2577,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public bool modBCSpecified
     {
-        get
-        {
-            return modBCField.HasValue;
-        }
+        get => modBCField.HasValue;
         set
         {
             if (value == false)
@@ -3007,10 +2587,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializemodBC()
-    {
-        return modBCField.HasValue;
-    }
+    public bool ShouldSerializemodBC() => modBCField.HasValue;
 
     /// <summary>
     /// Propriedade genérica apenas para compatibilidade com Parser XML.
@@ -3022,16 +2599,13 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     /// <remarks></remarks>
     public int? modBCST
     {
-        get
-        {
-            return modBCSTField;
-        }
+        get => modBCSTField;
         set
         {
             if (modBCSTField.Equals(value) != true)
             {
                 modBCSTField = value;
-                OnPropertyChanged("modBCST");
+                OnPropertyChanged(nameof(modBCST));
             }
         }
     }
@@ -3039,10 +2613,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     [XmlIgnore()]
     public bool modBCSTSpecified
     {
-        get
-        {
-            return modBCSTField.HasValue;
-        }
+        get => modBCSTField.HasValue;
         set
         {
             if (value == false)
@@ -3052,10 +2623,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializemodBCST()
-    {
-        return modBCSTField.HasValue;
-    }
+    public bool ShouldSerializemodBCST() => modBCSTField.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -3064,14 +2632,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -3081,8 +2642,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 /// </summary>
 public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? vBCUFDestField;
     private double? pFCPUFDestField;
     private double? pICMSUFDestField;
@@ -3093,21 +2652,16 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     private double? vICMSUFRemField;
 
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("vBCUFDest")]
     public double? BaseCalculoUFDestino
     {
-        get
-        {
-            return vBCUFDestField;
-        }
+        get => vBCUFDestField;
         set
         {
             if (vBCUFDestField is null || vBCUFDestField.Equals(value) != true)
             {
                 vBCUFDestField = value;
-                OnPropertyChanged("BaseCalculoUFDestino");
+                OnPropertyChanged(nameof(BaseCalculoUFDestino));
             }
         }
     }
@@ -3115,16 +2669,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("pFCPUFDest")]
     public double? PercentualICMS_FCP
     {
-        get
-        {
-            return pFCPUFDestField;
-        }
+        get => pFCPUFDestField;
         set
         {
             if (pFCPUFDestField is null || pFCPUFDestField.Equals(value) != true)
             {
                 pFCPUFDestField = value;
-                OnPropertyChanged("PercentualICMS_FCP");
+                OnPropertyChanged(nameof(PercentualICMS_FCP));
             }
         }
     }
@@ -3132,16 +2683,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("pICMSUFDest")]
     public double? PercentualICMS_UFDestino
     {
-        get
-        {
-            return pICMSUFDestField;
-        }
+        get => pICMSUFDestField;
         set
         {
             if (pICMSUFDestField is null || pICMSUFDestField.Equals(value) != true)
             {
                 pICMSUFDestField = value;
-                OnPropertyChanged("PercentualICMS_UFDestino");
+                OnPropertyChanged(nameof(PercentualICMS_UFDestino));
             }
         }
     }
@@ -3149,16 +2697,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("pICMSInter")]
     public double? PercentualICMS_Interno
     {
-        get
-        {
-            return pICMSInterField;
-        }
+        get => pICMSInterField;
         set
         {
             if (pICMSInterField is null || pICMSInterField.Equals(value) != true)
             {
                 pICMSInterField = value;
-                OnPropertyChanged("PercentualICMS_Interno");
+                OnPropertyChanged(nameof(PercentualICMS_Interno));
             }
         }
     }
@@ -3166,16 +2711,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("pICMSInterPart")]
     public double? PercentualICMS_InternoPartilha
     {
-        get
-        {
-            return pICMSInterPartField;
-        }
+        get => pICMSInterPartField;
         set
         {
             if (pICMSInterPartField is null || pICMSInterPartField.Equals(value) != true)
             {
                 pICMSInterPartField = value;
-                OnPropertyChanged("PercentualICMS_InternoPartilha");
+                OnPropertyChanged(nameof(PercentualICMS_InternoPartilha));
             }
         }
     }
@@ -3183,16 +2725,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("vFCPUFDest")]
     public double? ValorICMS_FCP
     {
-        get
-        {
-            return vFCPUFDestField;
-        }
+        get => vFCPUFDestField;
         set
         {
             if (vFCPUFDestField is null || vFCPUFDestField.Equals(value) != true)
             {
                 vFCPUFDestField = value;
-                OnPropertyChanged("ValorICMS_FCP");
+                OnPropertyChanged(nameof(ValorICMS_FCP));
             }
         }
     }
@@ -3200,16 +2739,13 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("vICMSUFDest")]
     public double? ValorICMS_UFDestinataria
     {
-        get
-        {
-            return vICMSUFDestField;
-        }
+        get => vICMSUFDestField;
         set
         {
             if (vICMSUFDestField is null || vICMSUFDestField.Equals(value) != true)
             {
                 vICMSUFDestField = value;
-                OnPropertyChanged("ValorICMS_UFDestinataria");
+                OnPropertyChanged(nameof(ValorICMS_UFDestinataria));
             }
         }
     }
@@ -3217,36 +2753,20 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
     [XmlElement("vICMSUFRemet")]
     public double? ValorICMS_UFRemetente
     {
-        get
-        {
-            return vICMSUFRemField;
-        }
+        get => vICMSUFRemField;
         set
         {
             if (vICMSUFRemField is null || vICMSUFRemField.Equals(value) != true)
             {
                 vICMSUFRemField = value;
-                OnPropertyChanged("ValorICMS_UFRemetente");
+                OnPropertyChanged(nameof(ValorICMS_UFRemetente));
             }
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 
@@ -3268,16 +2788,13 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlElement("clEnq")]
     public string Classe
     {
-        get
-        {
-            return clEnqField;
-        }
+        get => clEnqField;
         set
         {
             if (clEnqField is null || clEnqField.Equals(value) != true)
             {
                 clEnqField = value;
-                OnPropertyChanged("Classe");
+                OnPropertyChanged(nameof(Classe));
             }
         }
     }
@@ -3292,16 +2809,13 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlElement("CNPJProd")]
     public string CNPJProdutor
     {
-        get
-        {
-            return cNPJProdField;
-        }
+        get => cNPJProdField;
         set
         {
             if (cNPJProdField is null || cNPJProdField.Equals(value) != true)
             {
                 cNPJProdField = value;
-                OnPropertyChanged("CNPJProdutor");
+                OnPropertyChanged(nameof(CNPJProdutor));
             }
         }
     }
@@ -3309,16 +2823,13 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlElement("cSelo")]
     public string SeloControle
     {
-        get
-        {
-            return cSeloField;
-        }
+        get => cSeloField;
         set
         {
             if (cSeloField is null || cSeloField.Equals(value) != true)
             {
                 cSeloField = value;
-                OnPropertyChanged("SeloControle");
+                OnPropertyChanged(nameof(SeloControle));
             }
         }
     }
@@ -3326,10 +2837,7 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlElement("qSelo")]
     public int? SeloQuantidade
     {
-        get
-        {
-            return qSeloField;
-        }
+        get => qSeloField;
         set
         {
             if (qSeloField is null || qSeloField.Equals(value) != true)
@@ -3340,24 +2848,18 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeSeloQuantidade()
-    {
-        return qSeloField.HasValue;
-    }
+    public bool ShouldSerializeSeloQuantidade() => qSeloField.HasValue;
 
     [XmlElement("cEnq")]
     public string CodigoEnquadramento
     {
-        get
-        {
-            return cEnqField;
-        }
+        get => cEnqField;
         set
         {
             if (cEnqField is null || cEnqField.Equals(value) != true)
             {
                 cEnqField = value;
-                OnPropertyChanged("CodigoEnquadramento");
+                OnPropertyChanged(nameof(CodigoEnquadramento));
             }
         }
     }
@@ -3367,10 +2869,7 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlChoiceIdentifier("TributacaoIndentifier")]
     public DetalhamentoIPI_Tributacao Tributacao
     {
-        get
-        {
-            return itemField;
-        }
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -3384,16 +2883,13 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlIgnore()]
     public Tributacao_IPI_Identifier TributacaoIndentifier
     {
-        get
-        {
-            return itemElementNameField;
-        }
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TributacaoIndentifier");
+                OnPropertyChanged(nameof(TributacaoIndentifier));
             }
         }
     }
@@ -3401,24 +2897,18 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     [XmlElement("vIPIDevol")]
     public double? vIPIDevol
     {
-        get
-        {
-            return vIPIDevolField;
-        }
+        get => vIPIDevolField;
         set
         {
             if (vIPIDevolField is null || vIPIDevolField.Equals(value) != true)
             {
                 vIPIDevolField = value;
-                OnPropertyChanged("vIPIDevol");
+                OnPropertyChanged(nameof(vIPIDevol));
             }
         }
     }
 
-    public bool ShouldSerializevIPIDevol()
-    {
-        return vIPIDevolField.HasValue;
-    }
+    public bool ShouldSerializevIPIDevol() => vIPIDevolField.HasValue;
 
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -3427,14 +2917,7 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -3470,16 +2953,13 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     /// <remarks></remarks>
     public CST_IPI CST
     {
-        get
-        {
-            return cSTField;
-        }
+        get => cSTField;
         set
         {
             if (cSTField.Equals(value) != true)
             {
                 cSTField = value;
-                OnPropertyChanged("CST");
+                OnPropertyChanged(nameof(CST));
             }
         }
     }
@@ -3526,24 +3006,18 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     [XmlElement("pIPI")]
     public double? Aliquota
     {
-        get
-        {
-            return _pIPI;
-        }
+        get => _pIPI;
         set
         {
             if (_pIPI is null || _pIPI.Equals(value) != true)
             {
                 _pIPI = value;
-                OnPropertyChanged("Aliquota");
+                OnPropertyChanged(nameof(Aliquota));
             }
         }
     }
 
-    public bool ShouldSerializeAliquota()
-    {
-        return Aliquota.HasValue;
-    }
+    public bool ShouldSerializeAliquota() => Aliquota.HasValue;
 
     /// <summary>
     /// Informar apenas para IPI calculado por unidade.
@@ -3554,24 +3028,18 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     [XmlElement("qUnid")]
     public double? Quantidade
     {
-        get
-        {
-            return _qUnid;
-        }
+        get => _qUnid;
         set
         {
             if (_qUnid is null || _qUnid.Equals(value) != true)
             {
                 _qUnid = value;
-                OnPropertyChanged("Quantidade");
+                OnPropertyChanged(nameof(Quantidade));
             }
         }
     }
 
-    public bool ShouldSerializeQuantidade()
-    {
-        return Quantidade.HasValue;
-    }
+    public bool ShouldSerializeQuantidade() => Quantidade.HasValue;
 
     /// <summary>
     /// Informar apenas para IPI calculado por alíquota.
@@ -3582,24 +3050,18 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     [XmlElement("vBC")]
     public double? BaseDeCalculo
     {
-        get
-        {
-            return _vBC;
-        }
+        get => _vBC;
         set
         {
             if (_vBC is null || _vBC.Equals(value) != true)
             {
                 _vBC = value;
-                OnPropertyChanged("BaseDeCalculo");
+                OnPropertyChanged(nameof(BaseDeCalculo));
             }
         }
     }
 
-    public bool ShouldSerializeBaseDeCalculo()
-    {
-        return BaseDeCalculo.HasValue;
-    }
+    public bool ShouldSerializeBaseDeCalculo() => BaseDeCalculo.HasValue;
 
     /// <summary>
     /// Informar apenas para IPI calculado por unidade.
@@ -3610,46 +3072,34 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     [XmlElement("vUnid")]
     public double? ValorPorUnidade
     {
-        get
-        {
-            return _vUnid;
-        }
+        get => _vUnid;
         set
         {
             if (_vUnid is null || _vUnid.Equals(value) != true)
             {
                 _vUnid = value;
-                OnPropertyChanged("ValorPorUnidade");
+                OnPropertyChanged(nameof(ValorPorUnidade));
             }
         }
     }
 
-    public bool ShouldSerializeValorPorUnidade()
-    {
-        return ValorPorUnidade.HasValue;
-    }
+    public bool ShouldSerializeValorPorUnidade() => ValorPorUnidade.HasValue;
 
     [XmlElement("vIPI")]
     public double? ValorIPI
     {
-        get
-        {
-            return vIPIField;
-        }
+        get => vIPIField;
         set
         {
             if (vIPIField is null || vIPIField.Equals(value) != true)
             {
                 vIPIField = value;
-                OnPropertyChanged("ValorIPI");
+                OnPropertyChanged(nameof(ValorIPI));
             }
         }
     }
 
-    public bool ShouldSerializeValorIPI()
-    {
-        return ValorIPI.HasValue;
-    }
+    public bool ShouldSerializeValorIPI() => ValorIPI.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3657,14 +3107,7 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -3683,87 +3126,63 @@ public partial class DetalhamentoII : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
-    public bool ShouldSerializevBC()
-    {
-        return vBC.HasValue;
-    }
+    public bool ShouldSerializevBC() => vBC.HasValue;
 
     public double? vDespAdu
     {
-        get
-        {
-            return vDespAduField;
-        }
+        get => vDespAduField;
         set
         {
             if (vDespAduField is null || vDespAduField.Equals(value) != true)
             {
                 vDespAduField = value;
-                OnPropertyChanged("vDespAdu");
+                OnPropertyChanged(nameof(vDespAdu));
             }
         }
     }
 
-    public bool ShouldSerializevDespAdu()
-    {
-        return vDespAdu.HasValue;
-    }
+    public bool ShouldSerializevDespAdu() => vDespAdu.HasValue;
 
     public double? vII
     {
-        get
-        {
-            return vIIField;
-        }
+        get => vIIField;
         set
         {
             if (vIIField is null || vIIField.Equals(value) != true)
             {
                 vIIField = value;
-                OnPropertyChanged("vII");
+                OnPropertyChanged(nameof(vII));
             }
         }
     }
 
-    public bool ShouldSerializevII()
-    {
-        return vII.HasValue;
-    }
+    public bool ShouldSerializevII() => vII.HasValue;
 
     public double? vIOF
     {
-        get
-        {
-            return vIOFField;
-        }
+        get => vIOFField;
         set
         {
             if (vIOFField is null || vIOFField.Equals(value) != true)
             {
                 vIOFField = value;
-                OnPropertyChanged("vIOF");
+                OnPropertyChanged(nameof(vIOF));
             }
         }
     }
 
-    public bool ShouldSerializevIOF()
-    {
-        return vIOF.HasValue;
-    }
+    public bool ShouldSerializevIOF() => vIOF.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3771,14 +3190,7 @@ public partial class DetalhamentoII : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -3799,110 +3211,85 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
     public double? vAliq
     {
-        get
-        {
-            return vAliqField;
-        }
+        get => vAliqField;
         set
         {
             if (vAliqField is null || vAliqField.Equals(value) != true)
             {
                 vAliqField = value;
-                OnPropertyChanged("vAliq");
+                OnPropertyChanged(nameof(vAliq));
             }
         }
     }
 
     public double? vISSQN
     {
-        get
-        {
-            return vISSQNField;
-        }
+        get => vISSQNField;
         set
         {
             if (vISSQNField is null || vISSQNField.Equals(value) != true)
             {
                 vISSQNField = value;
-                OnPropertyChanged("vISSQN");
+                OnPropertyChanged(nameof(vISSQN));
             }
         }
     }
 
     public string cMunFG
     {
-        get
-        {
-            return cMunFGField;
-        }
+        get => cMunFGField;
         set
         {
             if (cMunFGField is null || cMunFGField.Equals(value) != true)
             {
                 cMunFGField = value;
-                OnPropertyChanged("cMunFG");
+                OnPropertyChanged(nameof(cMunFG));
             }
         }
     }
 
     public string cListServ
     {
-        get
-        {
-            return cListServField;
-        }
+        get => cListServField;
         set
         {
             if (cListServField is null || cListServField.Equals(value) != true)
             {
                 cListServField = value;
-                OnPropertyChanged("cListServ");
+                OnPropertyChanged(nameof(cListServ));
             }
         }
     }
 
     public CST_ISSQN cSitTrib
     {
-        get
-        {
-            return cSitTribField;
-        }
+        get => cSitTribField;
         set
         {
             if (cSitTribField.Equals(value) != true)
             {
                 cSitTribField = value;
-                OnPropertyChanged("cSitTrib");
+                OnPropertyChanged(nameof(cSitTrib));
             }
         }
     }
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3928,16 +3315,13 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
     [XmlChoiceIdentifier("TributacaoIndentifier")]
     public DetalhamentoPIS_Tributacao Tributacao
     {
-        get
-        {
-            return itemField;
-        }
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Tributacao");
+                OnPropertyChanged(nameof(Tributacao));
             }
         }
     }
@@ -3945,16 +3329,13 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
     [XmlIgnore()]
     public Tributacao_PIS_Identifier TributacaoIndentifier
     {
-        get
-        {
-            return itemElementNameField;
-        }
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TributacaoIndentifier");
+                OnPropertyChanged(nameof(TributacaoIndentifier));
             }
         }
     }
@@ -3965,14 +3346,7 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -4000,126 +3374,93 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public CST_PIS CST
     {
-        get
-        {
-            return cSTField;
-        }
+        get => cSTField;
         set
         {
             if (cSTField.Equals(value) != true)
             {
                 cSTField = value;
-                OnPropertyChanged("CST");
+                OnPropertyChanged(nameof(CST));
             }
         }
     }
 
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
-    public bool ShouldSerializevBC()
-    {
-        return vBC.HasValue;
-    }
+    public bool ShouldSerializevBC() => vBC.HasValue;
 
     public double? pPIS
     {
-        get
-        {
-            return pPISField;
-        }
+        get => pPISField;
         set
         {
             if (pPISField is null || pPISField.Equals(value) != true)
             {
                 pPISField = value;
-                OnPropertyChanged("pPIS");
+                OnPropertyChanged(nameof(pPIS));
             }
         }
     }
 
-    public bool ShouldSerializepPIS()
-    {
-        return pPIS.HasValue;
-    }
+    public bool ShouldSerializepPIS() => pPIS.HasValue;
 
     public double? vPIS
     {
-        get
-        {
-            return vPISField;
-        }
+        get => vPISField;
         set
         {
             if (vPISField is null || vPISField.Equals(value) != true)
             {
                 vPISField = value;
-                OnPropertyChanged("vPIS");
+                OnPropertyChanged(nameof(vPIS));
             }
         }
     }
 
-    public bool ShouldSerializevPIS()
-    {
-        return vPIS.HasValue;
-    }
+    public bool ShouldSerializevPIS() => vPIS.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? qBCProd
     {
-        get
-        {
-            return qBCProdField;
-        }
+        get => qBCProdField;
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
             {
                 qBCProdField = value;
-                OnPropertyChanged("qBCProd");
+                OnPropertyChanged(nameof(qBCProd));
             }
         }
     }
 
-    public bool ShouldSerializeqBCProd()
-    {
-        return qBCProd.HasValue;
-    }
+    public bool ShouldSerializeqBCProd() => qBCProd.HasValue;
 
     public double? vAliqProd
     {
-        get
-        {
-            return vAliqProdField;
-        }
+        get => vAliqProdField;
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
             {
                 vAliqProdField = value;
-                OnPropertyChanged("vAliqProd");
+                OnPropertyChanged(nameof(vAliqProd));
             }
         }
     }
 
-    public bool ShouldSerializevAliqProd()
-    {
-        return vAliqProd.HasValue;
-    }
+    public bool ShouldSerializevAliqProd() => vAliqProd.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -4128,14 +3469,7 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -4212,16 +3546,13 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     [XmlElement("pPIS")]
     public double? Aliquota
     {
-        get
-        {
-            return _pPIS;
-        }
+        get => _pPIS;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _pPIS = value;
-                OnPropertyChanged("Aliquota");
+                OnPropertyChanged(nameof(Aliquota));
             }
         }
     }
@@ -4229,16 +3560,13 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     [XmlElement("qBCProd")]
     public double? QuantidadeVendida
     {
-        get
-        {
-            return _qBCProd;
-        }
+        get => _qBCProd;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _qBCProd = value;
-                OnPropertyChanged("QuantidadeVendida");
+                OnPropertyChanged(nameof(QuantidadeVendida));
             }
         }
     }
@@ -4252,16 +3580,13 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     [XmlElement("vAliqProd")]
     public double? AliquotaMoeda
     {
-        get
-        {
-            return _vAliqProd;
-        }
+        get => _vAliqProd;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _vAliqProd = value;
-                OnPropertyChanged("AliquotaMoeda");
+                OnPropertyChanged(nameof(AliquotaMoeda));
             }
         }
     }
@@ -4269,16 +3594,13 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     [XmlElement("vBC")]
     public double? BaseDeCalculo
     {
-        get
-        {
-            return _vBC;
-        }
+        get => _vBC;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _vBC = value;
-                OnPropertyChanged("BaseDeCalculo");
+                OnPropertyChanged(nameof(BaseDeCalculo));
             }
         }
     }
@@ -4286,16 +3608,13 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     [XmlElement("vPIS")]
     public double? ValorPISST
     {
-        get
-        {
-            return vPISField;
-        }
+        get => vPISField;
         set
         {
             if (vPISField is null || vPISField.Equals(value) != true)
             {
                 vPISField = value;
-                OnPropertyChanged("ValorPISST");
+                OnPropertyChanged(nameof(ValorPISST));
             }
         }
     }
@@ -4306,14 +3625,7 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -4335,16 +3647,13 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
     [XmlChoiceIdentifier("TributacaoIndentifier")]
     public DetalhamentoCOFINS_Tributacao Tributacao
     {
-        get
-        {
-            return itemField;
-        }
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Tributacao");
+                OnPropertyChanged(nameof(Tributacao));
             }
         }
     }
@@ -4352,16 +3661,13 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
     [XmlIgnore()]
     public Tributacao_COFINS_Identifier TributacaoIndentifier
     {
-        get
-        {
-            return itemElementNameField;
-        }
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TributacaoIndentifier");
+                OnPropertyChanged(nameof(TributacaoIndentifier));
             }
         }
     }
@@ -4372,14 +3678,7 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -4408,138 +3707,98 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public CST_COFINS CST
     {
-        get
-        {
-            return cSTField;
-        }
+        get => cSTField;
         set
         {
             if (cSTField.Equals(value) != true)
             {
                 cSTField = value;
-                OnPropertyChanged("CST");
+                OnPropertyChanged(nameof(CST));
             }
         }
     }
 
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
-    public bool ShouldSerializevBC()
-    {
-        return vBC.HasValue;
-    }
+    public bool ShouldSerializevBC() => vBC.HasValue;
 
     public double? pCOFINS
     {
-        get
-        {
-            return pCOFINSField;
-        }
+        get => pCOFINSField;
         set
         {
             if (pCOFINSField is null || pCOFINSField.Equals(value) != true)
             {
                 pCOFINSField = value;
-                OnPropertyChanged("pCOFINS");
+                OnPropertyChanged(nameof(pCOFINS));
             }
         }
     }
 
-    public bool ShouldSerializepCOFINS()
-    {
-        return pCOFINS.HasValue;
-    }
+    public bool ShouldSerializepCOFINS() => pCOFINS.HasValue;
 
     public double? vCOFINS
     {
-        get
-        {
-            return vCOFINSField;
-        }
+        get => vCOFINSField;
         set
         {
             if (vCOFINSField is null || vCOFINSField.Equals(value) != true)
             {
                 vCOFINSField = value;
-                OnPropertyChanged("vCOFINS");
+                OnPropertyChanged(nameof(vCOFINS));
             }
         }
     }
 
-    public bool ShouldSerializevCOFINS()
-    {
-        return vCOFINS.HasValue;
-    }
+    public bool ShouldSerializevCOFINS() => vCOFINS.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? qBCProd
     {
-        get
-        {
-            return qBCProdField;
-        }
+        get => qBCProdField;
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
             {
                 qBCProdField = value;
-                OnPropertyChanged("qBCProd");
+                OnPropertyChanged(nameof(qBCProd));
             }
         }
     }
 
-    public bool ShouldSerializeqBCProd()
-    {
-        return qBCProd.HasValue;
-    }
+    public bool ShouldSerializeqBCProd() => qBCProd.HasValue;
 
     public double? vAliqProd
     {
-        get
-        {
-            return vAliqProdField;
-        }
+        get => vAliqProdField;
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
             {
                 vAliqProdField = value;
-                OnPropertyChanged("vAliqProd");
+                OnPropertyChanged(nameof(vAliqProd));
             }
         }
     }
 
-    public bool ShouldSerializevAliqProd()
-    {
-        return vAliqProd.HasValue;
-    }
+    public bool ShouldSerializevAliqProd() => vAliqProd.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -4616,16 +3875,13 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     [XmlElement("pCOFINS")]
     public double? Aliquota
     {
-        get
-        {
-            return _pCOFINS;
-        }
+        get => _pCOFINS;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _pCOFINS = value;
-                OnPropertyChanged("Aliquota");
+                OnPropertyChanged(nameof(Aliquota));
             }
         }
     }
@@ -4633,16 +3889,13 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     [XmlElement("qBCProd")]
     public double? QuantidadeVendida
     {
-        get
-        {
-            return _qBCProd;
-        }
+        get => _qBCProd;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _qBCProd = value;
-                OnPropertyChanged("QuantidadeVendida");
+                OnPropertyChanged(nameof(QuantidadeVendida));
             }
         }
     }
@@ -4656,16 +3909,13 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     [XmlElement("vAliqProd")]
     public double? AliquotaMoeda
     {
-        get
-        {
-            return _vAliqProd;
-        }
+        get => _vAliqProd;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _vAliqProd = value;
-                OnPropertyChanged("AliquotaMoeda");
+                OnPropertyChanged(nameof(AliquotaMoeda));
             }
         }
     }
@@ -4673,16 +3923,13 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     [XmlElement("vBC")]
     public double? BaseDeCalculo
     {
-        get
-        {
-            return _vBC;
-        }
+        get => _vBC;
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
             {
                 _vBC = value;
-                OnPropertyChanged("BaseDeCalculo");
+                OnPropertyChanged(nameof(BaseDeCalculo));
             }
         }
     }
@@ -4690,16 +3937,13 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     [XmlElement("vCOFINS")]
     public double? ValorCOFINS
     {
-        get
-        {
-            return vCOFINSField;
-        }
+        get => vCOFINSField;
         set
         {
             if (vCOFINSField is null || vCOFINSField.Equals(value) != true)
             {
                 vCOFINSField = value;
-                OnPropertyChanged("ValorCOFINS");
+                OnPropertyChanged(nameof(ValorCOFINS));
             }
         }
     }
@@ -4710,14 +3954,7 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
@@ -4731,78 +3968,59 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
 
     public TipoArma tpArma
     {
-        get
-        {
-            return tpArmaField;
-        }
+        get => tpArmaField;
         set
         {
             if (tpArmaField.Equals(value) != true)
             {
                 tpArmaField = value;
-                OnPropertyChanged("tpArma");
+                OnPropertyChanged(nameof(tpArma));
             }
         }
     }
 
     public string nSerie
     {
-        get
-        {
-            return nSerieField;
-        }
+        get => nSerieField;
         set
         {
             if (nSerieField is null || nSerieField.Equals(value) != true)
             {
                 nSerieField = value;
-                OnPropertyChanged("nSerie");
+                OnPropertyChanged(nameof(nSerie));
             }
         }
     }
 
     public string nCano
     {
-        get
-        {
-            return nCanoField;
-        }
+        get => nCanoField;
         set
         {
             if (nCanoField is null || nCanoField.Equals(value) != true)
             {
                 nCanoField = value;
-                OnPropertyChanged("nCano");
+                OnPropertyChanged(nameof(nCano));
             }
         }
     }
 
     public string descr
     {
-        get
-        {
-            return descrField;
-        }
+        get => descrField;
         set
         {
             if (descrField is null || descrField.Equals(value) != true)
             {
                 descrField = value;
-                OnPropertyChanged("descr");
+                OnPropertyChanged(nameof(descr));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
@@ -4823,16 +4041,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("cProdANP")]
     public string cProdANP
     {
-        get
-        {
-            return cProdANPField;
-        }
+        get => cProdANPField;
         set
         {
             if (cProdANPField is null || cProdANPField.Equals(value) != true)
             {
                 cProdANPField = value;
-                OnPropertyChanged("cProdANP");
+                OnPropertyChanged(nameof(cProdANP));
             }
         }
     }
@@ -4840,16 +4055,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("descANP")]
     public string descANP
     {
-        get
-        {
-            return descANPField;
-        }
+        get => descANPField;
         set
         {
             if (descANPField is null || descANPField.Equals(value) != true)
             {
                 descANPField = value;
-                OnPropertyChanged("descANP");
+                OnPropertyChanged(nameof(descANP));
             }
         }
     }
@@ -4857,16 +4069,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("CODIF")]
     public string CODIF
     {
-        get
-        {
-            return cODIFField;
-        }
+        get => cODIFField;
         set
         {
             if (cODIFField is null || cODIFField.Equals(value) != true)
             {
                 cODIFField = value;
-                OnPropertyChanged("CODIF");
+                OnPropertyChanged(nameof(CODIF));
             }
         }
     }
@@ -4874,16 +4083,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("qTemp")]
     public string qTemp
     {
-        get
-        {
-            return qTempField;
-        }
+        get => qTempField;
         set
         {
             if (qTempField is null || qTempField.Equals(value) != true)
             {
                 qTempField = value;
-                OnPropertyChanged("qTemp");
+                OnPropertyChanged(nameof(qTemp));
             }
         }
     }
@@ -4891,16 +4097,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("UFCons")]
     public Estado UFCons
     {
-        get
-        {
-            return uFConsField;
-        }
+        get => uFConsField;
         set
         {
             if (uFConsField.Equals(value) != true)
             {
                 uFConsField = value;
-                OnPropertyChanged("UFCons");
+                OnPropertyChanged(nameof(UFCons));
             }
         }
     }
@@ -4908,16 +4111,13 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("CIDE")]
     public DetalhamentoItemCombustivelCIDE CIDE
     {
-        get
-        {
-            return cIDEField;
-        }
+        get => cIDEField;
         set
         {
             if (cIDEField is null || cIDEField.Equals(value) != true)
             {
                 cIDEField = value;
-                OnPropertyChanged("CIDE");
+                OnPropertyChanged(nameof(CIDE));
             }
         }
     }
@@ -4925,30 +4125,20 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     [XmlElement("encerrante")]
     public DetalhamentoItemCombustivelEncerrante encerrante
     {
-        get
-        {
-            return encerranteField;
-        }
+        get => encerranteField;
         set
         {
             if (encerranteField is null || encerranteField.Equals(value) != true)
             {
                 encerranteField = value;
-                OnPropertyChanged("encerrante");
+                OnPropertyChanged(nameof(encerrante));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
@@ -4959,62 +4149,46 @@ public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
 
     public string qBCProd
     {
-        get
-        {
-            return Convert.ToString(qBCProdField);
-        }
+        get => Convert.ToString(qBCProdField);
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
             {
                 qBCProdField = Convert.ToDouble(value);
-                OnPropertyChanged("qBCProd");
+                OnPropertyChanged(nameof(qBCProd));
             }
         }
     }
 
     public double? vAliqProd
     {
-        get
-        {
-            return vAliqProdField;
-        }
+        get => vAliqProdField;
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
             {
                 vAliqProdField = value;
-                OnPropertyChanged("vAliqProd");
+                OnPropertyChanged(nameof(vAliqProd));
             }
         }
     }
 
     public double? vCIDE
     {
-        get
-        {
-            return vCIDEField;
-        }
+        get => vCIDEField;
         set
         {
             if (vCIDEField is null || vCIDEField.Equals(value) != true)
             {
                 vCIDEField = value;
-                OnPropertyChanged("vCIDE");
+                OnPropertyChanged(nameof(vCIDE));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChanged
@@ -5027,94 +4201,72 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
 
     public string nBico
     {
-        get
-        {
-            return nBicoField;
-        }
+        get => nBicoField;
         set
         {
             if (nBicoField is null || nBicoField.Equals(value) != true)
             {
                 nBicoField = value;
-                OnPropertyChanged("nBico");
+                OnPropertyChanged(nameof(nBico));
             }
         }
     }
 
     public string nBomba
     {
-        get
-        {
-            return nBombaField;
-        }
+        get => nBombaField;
         set
         {
             if (nBombaField is null || nBombaField.Equals(value) != true)
             {
                 nBombaField = value;
-                OnPropertyChanged("nBomba");
+                OnPropertyChanged(nameof(nBomba));
             }
         }
     }
 
     public string nTanque
     {
-        get
-        {
-            return nTanqueField;
-        }
+        get => nTanqueField;
         set
         {
             if (nTanqueField is null || nTanqueField.Equals(value) != true)
             {
                 nTanqueField = value;
-                OnPropertyChanged("nTanque");
+                OnPropertyChanged(nameof(nTanque));
             }
         }
     }
 
     public double? vEncIni
     {
-        get
-        {
-            return vEncIniField;
-        }
+        get => vEncIniField;
         set
         {
             if (vEncIniField is null || vEncIniField.Equals(value) != true)
             {
                 vEncIniField = value;
-                OnPropertyChanged("vEncIni");
+                OnPropertyChanged(nameof(vEncIni));
             }
         }
     }
 
     public double? vEncFin
     {
-        get
-        {
-            return vEncFinField;
-        }
+        get => vEncFinField;
         set
         {
             if (vEncFinField is null || vEncFinField.Equals(value) != true)
             {
                 vEncFinField = value;
-                OnPropertyChanged("vEncFin");
+                OnPropertyChanged(nameof(vEncFin));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
@@ -5128,32 +4280,26 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
 
     public string nLote
     {
-        get
-        {
-            return nLoteField;
-        }
+        get => nLoteField;
         set
         {
             if (nLoteField is null || nLoteField.Equals(value) != true)
             {
                 nLoteField = value;
-                OnPropertyChanged("nLote");
+                OnPropertyChanged(nameof(nLote));
             }
         }
     }
 
     public string qLote
     {
-        get
-        {
-            return qLoteField;
-        }
+        get => qLoteField;
         set
         {
             if (qLoteField is null || qLoteField.Equals(value) != true)
             {
                 qLoteField = value;
-                OnPropertyChanged("qLote");
+                OnPropertyChanged(nameof(qLote));
             }
         }
     }
@@ -5161,16 +4307,13 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
     [XmlIgnore()]
     public DateTime? DataFabricacao
     {
-        get
-        {
-            return dFabField;
-        }
+        get => dFabField;
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
             {
                 dFabField = value;
-                OnPropertyChanged("DataFabricacao");
+                OnPropertyChanged(nameof(DataFabricacao));
             }
         }
     }
@@ -5208,7 +4351,7 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
                     dFabField = default;
                 }
 
-                OnPropertyChanged("DataFabricacao");
+                OnPropertyChanged(nameof(DataFabricacao));
             }
         }
     }
@@ -5216,16 +4359,13 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
     [XmlIgnore()]
     public DateTime? DataValidade
     {
-        get
-        {
-            return dValField.ToDate(DateFormat.XML_AAAAMMDD);
-        }
+        get => dValField.ToDate(DateFormat.XML_AAAAMMDD);
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
             {
                 dValField = Convert.ToString(value);
-                OnPropertyChanged("DataValidade");
+                OnPropertyChanged(nameof(DataValidade));
             }
         }
     }
@@ -5264,53 +4404,40 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
                     dValField = null;
                 }
 
-                OnPropertyChanged("DataValidade");
+                OnPropertyChanged(nameof(DataValidade));
             }
         }
     }
 
     public string cProdANVISA
     {
-        get
-        {
-            return cProdAnvisaField;
-        }
+        get => cProdAnvisaField;
         set
         {
             if (cProdAnvisaField is null || cProdAnvisaField.Equals(value) != true)
             {
                 cProdAnvisaField = value;
-                OnPropertyChanged("cProdANVISA");
+                OnPropertyChanged(nameof(cProdANVISA));
             }
         }
     }
 
     public double? vPMC
     {
-        get
-        {
-            return vPMCField;
-        }
+        get => vPMCField;
         set
         {
             if (vPMCField is null || vPMCField.Equals(value) != true)
             {
                 vPMCField = value;
-                OnPropertyChanged("vPMC");
+                OnPropertyChanged(nameof(vPMC));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
@@ -5324,32 +4451,26 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
 
     public string nLote
     {
-        get
-        {
-            return nLoteField;
-        }
+        get => nLoteField;
         set
         {
             if (nLoteField is null || nLoteField.Equals(value) != true)
             {
                 nLoteField = value;
-                OnPropertyChanged("nLote");
+                OnPropertyChanged(nameof(nLote));
             }
         }
     }
 
     public string qLote
     {
-        get
-        {
-            return qLoteField;
-        }
+        get => qLoteField;
         set
         {
             if (qLoteField is null || qLoteField.Equals(value) != true)
             {
                 qLoteField = value;
-                OnPropertyChanged("qLote");
+                OnPropertyChanged(nameof(qLote));
             }
         }
     }
@@ -5357,16 +4478,13 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
     [XmlIgnore()]
     public DateTime? DataFabricacao
     {
-        get
-        {
-            return dFabField;
-        }
+        get => dFabField;
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
             {
                 dFabField = value;
-                OnPropertyChanged("DataFabricacao");
+                OnPropertyChanged(nameof(DataFabricacao));
             }
         }
     }
@@ -5404,7 +4522,7 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
                     dFabField = default;
                 }
 
-                OnPropertyChanged("DataFabricacao");
+                OnPropertyChanged(nameof(DataFabricacao));
             }
         }
     }
@@ -5412,16 +4530,13 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
     [XmlIgnore()]
     public DateTime? DataValidade
     {
-        get
-        {
-            return dValField.ToDate(DateFormat.XML_AAAAMMDD);
-        }
+        get => dValField.ToDate(DateFormat.XML_AAAAMMDD);
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
             {
                 dValField = Convert.ToString(value);
-                OnPropertyChanged("DataValidade");
+                OnPropertyChanged(nameof(DataValidade));
             }
         }
     }
@@ -5460,53 +4575,40 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
                     dValField = null;
                 }
 
-                OnPropertyChanged("DataValidade");
+                OnPropertyChanged(nameof(DataValidade));
             }
         }
     }
 
     public string cProdANVISA
     {
-        get
-        {
-            return cProdAnvisaField;
-        }
+        get => cProdAnvisaField;
         set
         {
             if (cProdAnvisaField is null || cProdAnvisaField.Equals(value) != true)
             {
                 cProdAnvisaField = value;
-                OnPropertyChanged("cProdANVISA");
+                OnPropertyChanged(nameof(cProdANVISA));
             }
         }
     }
 
     public double? vPMC
     {
-        get
-        {
-            return vPMCField;
-        }
+        get => vPMCField;
         set
         {
             if (vPMCField is null || vPMCField.Equals(value) != true)
             {
                 vPMCField = value;
-                OnPropertyChanged("vPMC");
+                OnPropertyChanged(nameof(vPMC));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
@@ -5538,80 +4640,65 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public VeiculoTipoOperacao tpOp
     {
-        get
-        {
-            return tpOpField;
-        }
+        get => tpOpField;
         set
         {
             if (tpOpField.Equals(value) != true)
             {
                 tpOpField = value;
-                OnPropertyChanged("tpOp");
+                OnPropertyChanged(nameof(tpOp));
             }
         }
     }
 
     public string chassi
     {
-        get
-        {
-            return chassiField;
-        }
+        get => chassiField;
         set
         {
             if (chassiField is null || chassiField.Equals(value) != true)
             {
                 chassiField = value;
-                OnPropertyChanged("chassi");
+                OnPropertyChanged(nameof(chassi));
             }
         }
     }
 
     public string cCor
     {
-        get
-        {
-            return cCorField;
-        }
+        get => cCorField;
         set
         {
             if (cCorField is null || cCorField.Equals(value) != true)
             {
                 cCorField = value;
-                OnPropertyChanged("cCor");
+                OnPropertyChanged(nameof(cCor));
             }
         }
     }
 
     public string xCor
     {
-        get
-        {
-            return xCorField;
-        }
+        get => xCorField;
         set
         {
             if (xCorField is null || xCorField.Equals(value) != true)
             {
                 xCorField = value;
-                OnPropertyChanged("xCor");
+                OnPropertyChanged(nameof(xCor));
             }
         }
     }
 
     public string pot
     {
-        get
-        {
-            return potField;
-        }
+        get => potField;
         set
         {
             if (potField is null || potField.Equals(value) != true)
             {
                 potField = value;
-                OnPropertyChanged("pot");
+                OnPropertyChanged(nameof(pot));
             }
         }
     }
@@ -5639,16 +4726,13 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public string cilin
     {
-        get
-        {
-            return cilinField;
-        }
+        get => cilinField;
         set
         {
             if (cilinField is null || cilinField.Equals(value) != true)
             {
                 cilinField = value;
-                OnPropertyChanged("cilin");
+                OnPropertyChanged(nameof(cilin));
             }
         }
     }
@@ -5676,16 +4760,13 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public string pesoL
     {
-        get
-        {
-            return pesoLField;
-        }
+        get => pesoLField;
         set
         {
             if (pesoLField is null || pesoLField.Equals(value) != true)
             {
                 pesoLField = value;
-                OnPropertyChanged("pesoL");
+                OnPropertyChanged(nameof(pesoL));
             }
         }
     }
@@ -5713,16 +4794,13 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public string pesoB
     {
-        get
-        {
-            return pesoBField;
-        }
+        get => pesoBField;
         set
         {
             if (pesoBField is null || pesoBField.Equals(value) != true)
             {
                 pesoBField = value;
-                OnPropertyChanged("pesoB");
+                OnPropertyChanged(nameof(pesoB));
             }
         }
     }
@@ -5750,64 +4828,52 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public string nSerie
     {
-        get
-        {
-            return nSerieField;
-        }
+        get => nSerieField;
         set
         {
             if (nSerieField is null || nSerieField.Equals(value) != true)
             {
                 nSerieField = value;
-                OnPropertyChanged("nSerie");
+                OnPropertyChanged(nameof(nSerie));
             }
         }
     }
 
     public VeiculoTipoCombustivel tpComb
     {
-        get
-        {
-            return tpCombField;
-        }
+        get => tpCombField;
         set
         {
             if (tpCombField.Equals(value) != true)
             {
                 tpCombField = value;
-                OnPropertyChanged("tpComb");
+                OnPropertyChanged(nameof(tpComb));
             }
         }
     }
 
     public string nMotor
     {
-        get
-        {
-            return nMotorField;
-        }
+        get => nMotorField;
         set
         {
             if (nMotorField is null || nMotorField.Equals(value) != true)
             {
                 nMotorField = value;
-                OnPropertyChanged("nMotor");
+                OnPropertyChanged(nameof(nMotor));
             }
         }
     }
 
     public string CMT
     {
-        get
-        {
-            return cMTField;
-        }
+        get => cMTField;
         set
         {
             if (cMTField is null || cMTField.Equals(value) != true)
             {
                 cMTField = value;
-                OnPropertyChanged("CMT");
+                OnPropertyChanged(nameof(CMT));
             }
         }
     }
@@ -5835,16 +4901,13 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public string dist
     {
-        get
-        {
-            return distField;
-        }
+        get => distField;
         set
         {
             if (distField is null || distField.Equals(value) != true)
             {
                 distField = value;
-                OnPropertyChanged("dist");
+                OnPropertyChanged(nameof(dist));
             }
         }
     }
@@ -5872,188 +4935,148 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 
     public int? anoMod
     {
-        get
-        {
-            return anoModField;
-        }
+        get => anoModField;
         set
         {
             if (anoModField is null || anoModField.Equals(value) != true)
             {
                 anoModField = value;
-                OnPropertyChanged("anoMod");
+                OnPropertyChanged(nameof(anoMod));
             }
         }
     }
 
     public int? anoFab
     {
-        get
-        {
-            return anoFabField;
-        }
+        get => anoFabField;
         set
         {
             if (anoFabField is null || anoFabField.Equals(value) != true)
             {
                 anoFabField = value;
-                OnPropertyChanged("anoFab");
+                OnPropertyChanged(nameof(anoFab));
             }
         }
     }
 
     public string tpPint
     {
-        get
-        {
-            return tpPintField;
-        }
+        get => tpPintField;
         set
         {
             if (tpPintField is null || tpPintField.Equals(value) != true)
             {
                 tpPintField = value;
-                OnPropertyChanged("tpPint");
+                OnPropertyChanged(nameof(tpPint));
             }
         }
     }
 
     public VeiculoTipo tpVeic
     {
-        get
-        {
-            return tpVeicField;
-        }
+        get => tpVeicField;
         set
         {
             if (tpVeicField.Equals(value) != true)
             {
                 tpVeicField = value;
-                OnPropertyChanged("tpVeic");
+                OnPropertyChanged(nameof(tpVeic));
             }
         }
     }
 
     public VeiculoEspecie espVeic
     {
-        get
-        {
-            return espVeicField;
-        }
+        get => espVeicField;
         set
         {
             if (espVeicField.Equals(value) != true)
             {
                 espVeicField = value;
-                OnPropertyChanged("espVeic");
+                OnPropertyChanged(nameof(espVeic));
             }
         }
     }
 
     public VeiculoCondicaoChassi VIN
     {
-        get
-        {
-            return vINField;
-        }
+        get => vINField;
         set
         {
             if (vINField.Equals(value) != true)
             {
                 vINField = value;
-                OnPropertyChanged("VIN");
+                OnPropertyChanged(nameof(VIN));
             }
         }
     }
 
     public VeiculoCondicao condVeic
     {
-        get
-        {
-            return condVeicField;
-        }
+        get => condVeicField;
         set
         {
             if (condVeicField.Equals(value) != true)
             {
                 condVeicField = value;
-                OnPropertyChanged("condVeic");
+                OnPropertyChanged(nameof(condVeic));
             }
         }
     }
 
     public string cMod
     {
-        get
-        {
-            return cModField;
-        }
+        get => cModField;
         set
         {
             if (cModField is null || cModField.Equals(value) != true)
             {
                 cModField = value;
-                OnPropertyChanged("cMod");
+                OnPropertyChanged(nameof(cMod));
             }
         }
     }
 
     public VeiculoCorDENATRAN cCorDENATRAN
     {
-        get
-        {
-            return cCorDENATRANField;
-        }
+        get => cCorDENATRANField;
         set
         {
             if (cCorDENATRANField.Equals(value) != true)
             {
                 cCorDENATRANField = value;
-                OnPropertyChanged("cCorDENATRAN");
+                OnPropertyChanged(nameof(cCorDENATRAN));
             }
         }
     }
 
     public int? lota
     {
-        get
-        {
-            return lotaField;
-        }
+        get => lotaField;
         set
         {
             if (lotaField is null || lotaField.Equals(value) != true)
             {
                 lotaField = value;
-                OnPropertyChanged("lota");
+                OnPropertyChanged(nameof(lota));
             }
         }
     }
 
     public VeiculoRestricao tpRest
     {
-        get
-        {
-            return tpRestField;
-        }
+        get => tpRestField;
         set
         {
             if (tpRestField.Equals(value) != true)
             {
                 tpRestField = value;
-                OnPropertyChanged("tpRest");
+                OnPropertyChanged(nameof(tpRest));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }

@@ -1,22 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Xml.Serialization;
+﻿namespace EficazFramework.SPED.Schemas.NFe;
 
-namespace EficazFramework.SPED.Schemas.NFe;
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class ReferenciaDocFiscal : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private object itemField;
     private TipoDocumentoReferencia itemElementNameField;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("refCTe", typeof(string))]
     [XmlElement("refECF", typeof(ReferenciaECF))]
     [XmlElement("refNF", typeof(ReferenciaNF))]
@@ -25,17 +13,13 @@ public partial class ReferenciaDocFiscal : INotifyPropertyChanged
     [XmlChoiceIdentifier("TipoReferencia")]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
         }
     }
@@ -43,68 +27,38 @@ public partial class ReferenciaDocFiscal : INotifyPropertyChanged
     [XmlIgnore()]
     public TipoDocumentoReferencia TipoReferencia
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TipoReferencia");
+                OnPropertyChanged(nameof(TipoReferencia));
             }
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class ReferenciaECF : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private ModeloECF modField;
     private string nECFField;
     private string nCOOField;
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("mod")]
     public ModeloECF Modelo
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("Modelo");
+                OnPropertyChanged(nameof(Modelo));
             }
         }
     }
@@ -112,17 +66,13 @@ public partial class ReferenciaECF : INotifyPropertyChanged
     [XmlElement("nECF")]
     public string NumeroECF
     {
-        get
-        {
-            return nECFField;
-        }
-
+        get => nECFField;
         set
         {
             if (nECFField is null || nECFField.Equals(value) != true)
             {
                 nECFField = value;
-                OnPropertyChanged("NumeroECF");
+                OnPropertyChanged(nameof(NumeroECF));
             }
         }
     }
@@ -130,42 +80,24 @@ public partial class ReferenciaECF : INotifyPropertyChanged
     [XmlElement("nCOO")]
     public string ContadorOperacoesCOO
     {
-        get
-        {
-            return nCOOField;
-        }
-
+        get => nCOOField;
         set
         {
             if (nCOOField is null || nCOOField.Equals(value) != true)
             {
                 nCOOField = value;
-                OnPropertyChanged("ContadorOperacoesCOO");
+                OnPropertyChanged(nameof(ContadorOperacoesCOO));
             }
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class ReferenciaNF : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private OrgaoIBGE cUFField;
     private string aAMMField;
     private string cNPJField;
@@ -173,22 +105,16 @@ public partial class ReferenciaNF : INotifyPropertyChanged
     private string serieField;
     private string nNFField;
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     [XmlElement("cUF")]
     public OrgaoIBGE CodigoUF
     {
-        get
-        {
-            return cUFField;
-        }
-
+        get => cUFField;
         set
         {
             if (cUFField.Equals(value) != true)
             {
                 cUFField = value;
-                OnPropertyChanged("CodigoUF");
+                OnPropertyChanged(nameof(CodigoUF));
             }
         }
     }
@@ -196,34 +122,26 @@ public partial class ReferenciaNF : INotifyPropertyChanged
     [XmlElement("AAMM")]
     public string EmissaoAAMM
     {
-        get
-        {
-            return aAMMField;
-        }
-
+        get => aAMMField;
         set
         {
             if (aAMMField is null || aAMMField.Equals(value) != true)
             {
                 aAMMField = value;
-                OnPropertyChanged("EmissaoAAMM");
+                OnPropertyChanged(nameof(EmissaoAAMM));
             }
         }
     }
 
     public string CNPJ
     {
-        get
-        {
-            return cNPJField;
-        }
-
+        get => cNPJField;
         set
         {
             if (cNPJField is null || cNPJField.Equals(value) != true)
             {
                 cNPJField = value;
-                OnPropertyChanged("CNPJ");
+                OnPropertyChanged(nameof(CNPJ));
             }
         }
     }
@@ -231,17 +149,13 @@ public partial class ReferenciaNF : INotifyPropertyChanged
     [XmlElement("mod")]
     public ModeloNF Modelo
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("Modelo");
+                OnPropertyChanged(nameof(Modelo));
             }
         }
     }
@@ -249,17 +163,13 @@ public partial class ReferenciaNF : INotifyPropertyChanged
     [XmlElement("serie")]
     public string Serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("Serie");
+                OnPropertyChanged(nameof(Serie));
             }
         }
     }
@@ -267,46 +177,24 @@ public partial class ReferenciaNF : INotifyPropertyChanged
     [XmlElement("nNF")]
     public string Numero
     {
-        get
-        {
-            return nNFField;
-        }
-
+        get => nNFField;
         set
         {
             if (nNFField is null || nNFField.Equals(value) != true)
             {
                 nNFField = value;
-                OnPropertyChanged("Numero");
+                OnPropertyChanged(nameof(Numero));
             }
         }
     }
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class ReferenciaNFProdutor : INotifyPropertyChanged
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private OrgaoIBGE cUFField;
     private string aAMMField;
     private string itemField;
@@ -316,23 +204,16 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     private string serieField;
     private string nNFField;
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("cUF")]
     public OrgaoIBGE CodigoUF
     {
-        get
-        {
-            return cUFField;
-        }
-
+        get => cUFField;
         set
         {
             if (cUFField.Equals(value) != true)
             {
                 cUFField = value;
-                OnPropertyChanged("CodigoUF");
+                OnPropertyChanged(nameof(CodigoUF));
             }
         }
     }
@@ -340,17 +221,13 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlElement("AAMM")]
     public string EmissaoAAMM
     {
-        get
-        {
-            return aAMMField;
-        }
-
+        get => aAMMField;
         set
         {
             if (aAMMField is null || aAMMField.Equals(value) != true)
             {
                 aAMMField = value;
-                OnPropertyChanged("EmissaoAAMM");
+                OnPropertyChanged(nameof(EmissaoAAMM));
             }
         }
     }
@@ -360,17 +237,13 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlChoiceIdentifier("ProdutorPersonalidadeJuridica")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -378,11 +251,7 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica ProdutorPersonalidadeJuridica
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -396,17 +265,13 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlElement("IE")]
     public string InscricaoEstadual
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("InscricaoEstadual");
+                OnPropertyChanged(nameof(InscricaoEstadual));
             }
         }
     }
@@ -414,17 +279,13 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlElement("mod")]
     public ModeloNFProdutor Modelo
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("Modelo");
+                OnPropertyChanged(nameof(Modelo));
             }
         }
     }
@@ -432,17 +293,13 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlElement("serie")]
     public string Serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("Serie");
+                OnPropertyChanged(nameof(Serie));
             }
         }
     }
@@ -450,35 +307,18 @@ public partial class ReferenciaNFProdutor : INotifyPropertyChanged
     [XmlElement("nNF")]
     public string Numero
     {
-        get
-        {
-            return nNFField;
-        }
-
+        get => nNFField;
         set
         {
             if (nNFField is null || nNFField.Equals(value) != true)
             {
                 nNFField = value;
-                OnPropertyChanged("Numero");
+                OnPropertyChanged(nameof(Numero));
             }
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
