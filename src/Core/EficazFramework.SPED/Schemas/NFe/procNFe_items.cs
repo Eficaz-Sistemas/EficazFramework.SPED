@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using EficazFramework.SPED.Extensions;
 using System.Reflection;
-using System.Xml.Serialization;
-using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.NFe;
 
 /// <summary>
 /// Grupo de detalhamento de Produtos e Serviços da NF-e
 /// </summary>
-/// <remarks></remarks>
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class Item : INotifyPropertyChanged
 {
 
@@ -44,7 +34,6 @@ public partial class Item : INotifyPropertyChanged
         {
             return prodField;
         }
-
         set
         {
             if (prodField is null || prodField.Equals(value) != true)
@@ -62,7 +51,6 @@ public partial class Item : INotifyPropertyChanged
         {
             return impostoField;
         }
-
         set
         {
             if (impostoField is null || impostoField.Equals(value) != true)
@@ -80,7 +68,6 @@ public partial class Item : INotifyPropertyChanged
         {
             return impostoDevolvidoField;
         }
-
         set
         {
             if (impostoDevolvidoField is null || impostoDevolvidoField.Equals(value) != true)
@@ -98,7 +85,6 @@ public partial class Item : INotifyPropertyChanged
         {
             return infAdProdField;
         }
-
         set
         {
             if (infAdProdField is null || infAdProdField.Equals(value) != true)
@@ -131,7 +117,6 @@ public partial class Item : INotifyPropertyChanged
         {
             return nItemField;
         }
-
         set
         {
             if (nItemField is null || nItemField.Equals(value) != true)
@@ -223,10 +208,6 @@ public partial class Item : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class Produto : INotifyPropertyChanged
 {
 
@@ -275,7 +256,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return cProdField;
         }
-
         set
         {
             if (cProdField is null || cProdField.Equals(value) != true)
@@ -300,7 +280,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return cEANField;
         }
-
         set
         {
             if (cEANField is null || cEANField.Equals(value) != true)
@@ -318,7 +297,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return xProdField;
         }
-
         set
         {
             if (xProdField is null || xProdField.Equals(value) != true)
@@ -335,7 +313,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return nCMField;
         }
-
         set
         {
             if (nCMField is null || nCMField.Equals(value) != true)
@@ -352,7 +329,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return _cest;
         }
-
         set
         {
             if (_cest is null || _cest.Equals(value) != true)
@@ -369,7 +345,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return eXTIPIField;
         }
-
         set
         {
             if (eXTIPIField is null || eXTIPIField.Equals(value) != true)
@@ -386,7 +361,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return cFOPField;
         }
-
         set
         {
             if (cFOPField is null || cFOPField.Equals(value) != true)
@@ -404,7 +378,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return uComField;
         }
-
         set
         {
             if (uComField is null || uComField.Equals(value) != true)
@@ -422,7 +395,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return qComField;
         }
-
         set
         {
             if (qComField is null || qComField.Equals(value) != true)
@@ -445,7 +417,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vUnComField;
         }
-
         set
         {
             if (vUnComField is null || vUnComField.Equals(value) != true)
@@ -468,7 +439,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vProdField;
         }
-
         set
         {
             if (vProdField is null || vProdField.Equals(value) != true)
@@ -501,7 +471,6 @@ public partial class Produto : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vProdField is null || vProdField.Equals(value) != true)
@@ -549,7 +518,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return cEANTribField;
         }
-
         set
         {
             if (cEANTribField is null || cEANTribField.Equals(value) != true)
@@ -567,7 +535,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return uTribField;
         }
-
         set
         {
             if (uTribField is null || uTribField.Equals(value) != true)
@@ -585,7 +552,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return qTribField;
         }
-
         set
         {
             if (qTribField is null || qTribField.Equals(value) != true)
@@ -608,7 +574,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vUnTribField;
         }
-
         set
         {
             if (vUnTribField is null || vUnTribField.Equals(value) != true)
@@ -631,7 +596,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vFreteField;
         }
-
         set
         {
             if (vFreteField is null || vFreteField.Equals(value) != true)
@@ -654,7 +618,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vSegField;
         }
-
         set
         {
             if (vSegField is null || vSegField.Equals(value) != true)
@@ -677,7 +640,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vDescField;
         }
-
         set
         {
             if (vDescField is null || vDescField.Equals(value) != true)
@@ -700,7 +662,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return vOutroField;
         }
-
         set
         {
             if (vOutroField is null || vOutroField.Equals(value) != true)
@@ -723,7 +684,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return indTotField;
         }
-
         set
         {
             if (indTotField.Equals(value) != true)
@@ -741,7 +701,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return _nFCIField;
         }
-
         set
         {
             if (cProdField is null || cProdField.Equals(value) != true)
@@ -767,7 +726,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return diField;
         }
-
         set
         {
             if (diField is null || diField.Equals(value) != true)
@@ -785,7 +743,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return xPedField;
         }
-
         set
         {
             if (xPedField is null || xPedField.Equals(value) != true)
@@ -803,7 +760,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return nItemPedField;
         }
-
         set
         {
             if (nItemPedField is null || nItemPedField.Equals(value) != true)
@@ -830,7 +786,6 @@ public partial class Produto : INotifyPropertyChanged
         {
             return itemsField;
         }
-
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
@@ -956,10 +911,6 @@ public partial class Produto : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class Tributacao : INotifyPropertyChanged
 {
 
@@ -992,7 +943,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return vTotTribField;
         }
-
         set
         {
             if (vTotTribField is null || vTotTribField.Equals(value) != true)
@@ -1019,7 +969,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return itemsField;
         }
-
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
@@ -1036,7 +985,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return pISField;
         }
-
         set
         {
             if (pISField is null || pISField.Equals(value) != true)
@@ -1053,7 +1001,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return pISSTField;
         }
-
         set
         {
             if (pISSTField is null || pISSTField.Equals(value) != true)
@@ -1070,7 +1017,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return cOFINSField;
         }
-
         set
         {
             if (cOFINSField is null || cOFINSField.Equals(value) != true)
@@ -1087,7 +1033,6 @@ public partial class Tributacao : INotifyPropertyChanged
         {
             return cOFINSSTField;
         }
-
         set
         {
             if (cOFINSSTField is null || cOFINSSTField.Equals(value) != true)
@@ -1212,10 +1157,6 @@ public partial class Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class TributacaoDevolucao : System.ComponentModel.INotifyPropertyChanged
 {
 
@@ -1242,8 +1183,7 @@ public partial class TributacaoDevolucao : System.ComponentModel.INotifyProperty
         get
         {
             return pDevolField;
-        }
-        set
+        }        set
         {
             if (pDevolField is null || pDevolField.Equals(value) != true)
             {
@@ -1263,8 +1203,7 @@ public partial class TributacaoDevolucao : System.ComponentModel.INotifyProperty
         get
         {
             return ipiField;
-        }
-        set
+        }        set
         {
             if (ipiField is null || ipiField.Equals(value) != true)
             {
@@ -1297,11 +1236,6 @@ public partial class TributacaoDevolucao : System.ComponentModel.INotifyProperty
 
 }
 
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoICMS : INotifyPropertyChanged
 {
 
@@ -1337,7 +1271,6 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
         {
             return itemField;
         }
-
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -1355,7 +1288,6 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
         {
             return itemElementNameField;
         }
-
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -1481,10 +1413,6 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
 /// <summary>
 /// Clase genérica para tratamento das tributações de ICMS.
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 {
 
@@ -1567,7 +1495,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return origField;
         }
-
         set
         {
             if (origField.Equals(value) != true)
@@ -1584,7 +1511,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return cSTField;
         }
-
         set
         {
             if (cSTField.Equals(value) != true)
@@ -1606,7 +1532,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return cSOSNField;
         }
-
         set
         {
             if (cSOSNField.Equals(value) != true)
@@ -1648,7 +1573,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCField;
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -1681,7 +1605,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -1720,7 +1643,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pICMSField;
         }
-
         set
         {
             if (pICMSField is null || pICMSField.Equals(value) != true)
@@ -1743,7 +1665,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vICMSField;
         }
-
         set
         {
             if (vICMSField is null || vICMSField.Equals(value) != true)
@@ -1776,7 +1697,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vICMSField is null || vICMSField.Equals(value) != true)
@@ -1817,7 +1737,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField00;
         }
-
         set
         {
             if (modBCField00.Equals(value) != true)
@@ -1838,7 +1757,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField10;
         }
-
         set
         {
             if (modBCField10.Equals(value) != true)
@@ -1857,7 +1775,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField10;
         }
-
         set
         {
             if (modBCSTField10.Equals(value) != true)
@@ -1878,7 +1795,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField20;
         }
-
         set
         {
             if (modBCField20.Equals(value) != true)
@@ -1899,7 +1815,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField30;
         }
-
         set
         {
             if (modBCSTField30.Equals(value) != true)
@@ -1927,7 +1842,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return DetalhamentoICMS_CST51_ModBC.ValorOperacao;
             }
         }
-
         set
         {
             if (modBCField51.Equals(value) != true)
@@ -1947,7 +1861,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCSTRetField;
         }
-
         set
         {
             if (vBCSTRetField is null || vBCSTRetField.Equals(value) != true)
@@ -1980,7 +1893,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vBCSTRetField is null || vBCSTRetField.Equals(value) != true)
@@ -2020,7 +1932,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vICMSSTRetField;
         }
-
         set
         {
             if (vICMSSTRetField is null || vICMSSTRetField.Equals(value) != true)
@@ -2053,7 +1964,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vICMSSTRetField is null || vICMSSTRetField.Equals(value) != true)
@@ -2095,7 +2005,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField70;
         }
-
         set
         {
             if (modBCField70.Equals(value) != true)
@@ -2114,7 +2023,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField70;
         }
-
         set
         {
             if (modBCSTField70.Equals(value) != true)
@@ -2135,7 +2043,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField90;
         }
-
         set
         {
             if (modBCField90.Equals(value) != true)
@@ -2154,7 +2061,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField90;
         }
-
         set
         {
             if (modBCSTField90.Equals(value) != true)
@@ -2174,7 +2080,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pMVASTField;
         }
-
         set
         {
             if (pMVASTField is null || pMVASTField.Equals(value) != true)
@@ -2196,7 +2101,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pRedBCSTField;
         }
-
         set
         {
             if (pRedBCSTField is null || pRedBCSTField.Equals(value) != true)
@@ -2219,7 +2123,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCSTField;
         }
-
         set
         {
             if (vBCSTField is null || vBCSTField.Equals(value) != true)
@@ -2252,7 +2155,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vBCSTField is null || vBCSTField.Equals(value) != true)
@@ -2291,7 +2193,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pICMSSTField;
         }
-
         set
         {
             if (pICMSSTField is null || pICMSSTField.Equals(value) != true)
@@ -2314,7 +2215,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vICMSSTField;
         }
-
         set
         {
             if (vICMSSTField is null || vICMSSTField.Equals(value) != true)
@@ -2347,7 +2247,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vICMSSTField is null || vICMSSTField.Equals(value) != true)
@@ -2404,7 +2303,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vBCFCPSTField is null || vBCFCPSTField.Equals(value) != true)
@@ -2444,7 +2342,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCFCPSTField;
         }
-
         set
         {
             if (vBCFCPSTField is null || vBCFCPSTField.Equals(value) != true)
@@ -2461,7 +2358,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pFCPSTField;
         }
-
         set
         {
             if (pFCPSTField is null || pFCPSTField.Equals(value) != true)
@@ -2484,7 +2380,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vFCPSTField;
         }
-
         set
         {
             if (vFCPSTField is null || vFCPSTField.Equals(value) != true)
@@ -2517,7 +2412,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vFCPSTField is null || vFCPSTField.Equals(value) != true)
@@ -2558,7 +2452,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pRedBCField;
         }
-
         set
         {
             if (pRedBCField is null || pRedBCField.Equals(value) != true)
@@ -2582,7 +2475,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return motDesICMSField;
         }
-
         set
         {
             if (motDesICMSField.Equals(value) != true)
@@ -2604,7 +2496,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pvICMSDeson;
         }
-
         set
         {
             if (pvICMSDeson is null || pvICMSDeson.Equals(value) != true)
@@ -2628,7 +2519,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pCredSNField;
         }
-
         set
         {
             if (pCredSNField is null || pCredSNField.Equals(value) != true)
@@ -2650,7 +2540,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vCredICMSSNField;
         }
-
         set
         {
             if (vCredICMSSNField is null || vCredICMSSNField.Equals(value) != true)
@@ -2675,7 +2564,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vCredICMSSNField is null || vCredICMSSNField.Equals(value) != true)
@@ -2717,7 +2605,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField201;
         }
-
         set
         {
             if (modBCSTField201.Equals(value) != true)
@@ -2738,7 +2625,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField202;
         }
-
         set
         {
             if (modBCSTField202.Equals(value) != true)
@@ -2759,7 +2645,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField900;
         }
-
         set
         {
             if (modBCField900.Equals(value) != true)
@@ -2778,7 +2663,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField900;
         }
-
         set
         {
             if (modBCSTField900.Equals(value) != true)
@@ -2799,7 +2683,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return (DetalhamentoICMS_Part_ModBC)modBCField;
         }
-
         set
         {
             if (modBCField.Equals(value) != true)
@@ -2818,7 +2701,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return (DetalhamentoICMS_Part_ModBCST)modBCSTField;
         }
-
         set
         {
             if (modBCSTField.Equals(value) != true)
@@ -2836,7 +2718,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return uFSTField;
         }
-
         set
         {
             if (uFSTField.Equals(value) != true)
@@ -2858,7 +2739,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pBCOpField;
         }
-
         set
         {
             if (pBCOpField is null || pBCOpField.Equals(value) != true)
@@ -2883,7 +2763,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCSTDestField;
         }
-
         set
         {
             if (vBCSTDestField is null || vBCSTDestField.Equals(value) != true)
@@ -2916,7 +2795,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vBCSTDestField is null || vBCSTDestField.Equals(value) != true)
@@ -2956,7 +2834,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vICMSSTDestField;
         }
-
         set
         {
             if (vICMSSTDestField is null || vICMSSTDestField.Equals(value) != true)
@@ -2989,7 +2866,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (vICMSSTDestField is null || vICMSSTDestField.Equals(value) != true)
@@ -3031,7 +2907,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vBCEfetField;
         }
-
         set
         {
             if (vBCEfetField is null || vBCEfetField.Equals(value) != true)
@@ -3053,7 +2928,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return pICMSEfetField;
         }
-
         set
         {
             if (pICMSEfetField is null || pICMSEfetField.Equals(value) != true)
@@ -3075,7 +2949,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return vICMSEfetField;
         }
-
         set
         {
             if (vICMSEfetField is null || vICMSEfetField.Equals(value) != true)
@@ -3108,7 +2981,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField;
         }
-
         set
         {
             if (modBCField.Equals(value) != true)
@@ -3126,7 +2998,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCField.HasValue;
         }
-
         set
         {
             if (value == false)
@@ -3155,7 +3026,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField;
         }
-
         set
         {
             if (modBCSTField.Equals(value) != true)
@@ -3173,7 +3043,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         {
             return modBCSTField.HasValue;
         }
-
         set
         {
             if (value == false)
@@ -3210,10 +3079,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 /// <summary>
 /// Campos referente EC 87/2015
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
 {
 
@@ -3237,7 +3102,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return vBCUFDestField;
         }
-
         set
         {
             if (vBCUFDestField is null || vBCUFDestField.Equals(value) != true)
@@ -3255,7 +3119,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return pFCPUFDestField;
         }
-
         set
         {
             if (pFCPUFDestField is null || pFCPUFDestField.Equals(value) != true)
@@ -3273,7 +3136,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return pICMSUFDestField;
         }
-
         set
         {
             if (pICMSUFDestField is null || pICMSUFDestField.Equals(value) != true)
@@ -3291,7 +3153,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return pICMSInterField;
         }
-
         set
         {
             if (pICMSInterField is null || pICMSInterField.Equals(value) != true)
@@ -3309,7 +3170,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return pICMSInterPartField;
         }
-
         set
         {
             if (pICMSInterPartField is null || pICMSInterPartField.Equals(value) != true)
@@ -3327,7 +3187,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return vFCPUFDestField;
         }
-
         set
         {
             if (vFCPUFDestField is null || vFCPUFDestField.Equals(value) != true)
@@ -3345,7 +3204,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return vICMSUFDestField;
         }
-
         set
         {
             if (vICMSUFDestField is null || vICMSUFDestField.Equals(value) != true)
@@ -3363,7 +3221,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         {
             return vICMSUFRemField;
         }
-
         set
         {
             if (vICMSUFRemField is null || vICMSUFRemField.Equals(value) != true)
@@ -3393,12 +3250,6 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
 }
 
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoIPI : INotifyPropertyChanged
 {
 
@@ -3421,7 +3272,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return clEnqField;
         }
-
         set
         {
             if (clEnqField is null || clEnqField.Equals(value) != true)
@@ -3446,7 +3296,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return cNPJProdField;
         }
-
         set
         {
             if (cNPJProdField is null || cNPJProdField.Equals(value) != true)
@@ -3464,7 +3313,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return cSeloField;
         }
-
         set
         {
             if (cSeloField is null || cSeloField.Equals(value) != true)
@@ -3482,7 +3330,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return qSeloField;
         }
-
         set
         {
             if (qSeloField is null || qSeloField.Equals(value) != true)
@@ -3505,7 +3352,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return cEnqField;
         }
-
         set
         {
             if (cEnqField is null || cEnqField.Equals(value) != true)
@@ -3525,7 +3371,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return itemField;
         }
-
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -3543,7 +3388,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return itemElementNameField;
         }
-
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -3561,7 +3405,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
         {
             return vIPIDevolField;
         }
-
         set
         {
             if (vIPIDevolField is null || vIPIDevolField.Equals(value) != true)
@@ -3596,10 +3439,6 @@ public partial class DetalhamentoIPI : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
 {
 
@@ -3635,7 +3474,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return cSTField;
         }
-
         set
         {
             if (cSTField.Equals(value) != true)
@@ -3692,7 +3530,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return _pIPI;
         }
-
         set
         {
             if (_pIPI is null || _pIPI.Equals(value) != true)
@@ -3721,7 +3558,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return _qUnid;
         }
-
         set
         {
             if (_qUnid is null || _qUnid.Equals(value) != true)
@@ -3750,7 +3586,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return _vBC;
         }
-
         set
         {
             if (_vBC is null || _vBC.Equals(value) != true)
@@ -3779,7 +3614,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return _vUnid;
         }
-
         set
         {
             if (_vUnid is null || _vUnid.Equals(value) != true)
@@ -3802,7 +3636,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
         {
             return vIPIField;
         }
-
         set
         {
             if (vIPIField is null || vIPIField.Equals(value) != true)
@@ -3836,12 +3669,6 @@ public partial class DetalhamentoIPI_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoII : INotifyPropertyChanged
 {
 
@@ -3860,7 +3687,6 @@ public partial class DetalhamentoII : INotifyPropertyChanged
         {
             return vBCField;
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -3882,7 +3708,6 @@ public partial class DetalhamentoII : INotifyPropertyChanged
         {
             return vDespAduField;
         }
-
         set
         {
             if (vDespAduField is null || vDespAduField.Equals(value) != true)
@@ -3904,7 +3729,6 @@ public partial class DetalhamentoII : INotifyPropertyChanged
         {
             return vIIField;
         }
-
         set
         {
             if (vIIField is null || vIIField.Equals(value) != true)
@@ -3926,7 +3750,6 @@ public partial class DetalhamentoII : INotifyPropertyChanged
         {
             return vIOFField;
         }
-
         set
         {
             if (vIOFField is null || vIOFField.Equals(value) != true)
@@ -3960,12 +3783,6 @@ public partial class DetalhamentoII : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoISSQN : INotifyPropertyChanged
 {
 
@@ -3986,7 +3803,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return vBCField;
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -4003,7 +3819,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return vAliqField;
         }
-
         set
         {
             if (vAliqField is null || vAliqField.Equals(value) != true)
@@ -4020,7 +3835,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return vISSQNField;
         }
-
         set
         {
             if (vISSQNField is null || vISSQNField.Equals(value) != true)
@@ -4037,7 +3851,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return cMunFGField;
         }
-
         set
         {
             if (cMunFGField is null || cMunFGField.Equals(value) != true)
@@ -4054,7 +3867,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return cListServField;
         }
-
         set
         {
             if (cListServField is null || cListServField.Equals(value) != true)
@@ -4071,7 +3883,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
         {
             return cSitTribField;
         }
-
         set
         {
             if (cSitTribField.Equals(value) != true)
@@ -4100,12 +3911,6 @@ public partial class DetalhamentoISSQN : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoPIS : INotifyPropertyChanged
 {
 
@@ -4127,7 +3932,6 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
         {
             return itemField;
         }
-
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -4145,7 +3949,6 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
         {
             return itemElementNameField;
         }
-
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -4177,11 +3980,6 @@ public partial class DetalhamentoPIS : INotifyPropertyChanged
 /// <summary>
 /// Clase genérica para tratamento das tributações de PIS (sem ST).
 /// </summary>
-/// <remarks></remarks>
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
 {
 
@@ -4206,7 +4004,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return cSTField;
         }
-
         set
         {
             if (cSTField.Equals(value) != true)
@@ -4223,7 +4020,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return vBCField;
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -4245,7 +4041,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return pPISField;
         }
-
         set
         {
             if (pPISField is null || pPISField.Equals(value) != true)
@@ -4267,7 +4062,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return vPISField;
         }
-
         set
         {
             if (vPISField is null || vPISField.Equals(value) != true)
@@ -4291,7 +4085,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return qBCProdField;
         }
-
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
@@ -4313,7 +4106,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
         {
             return vAliqProdField;
         }
-
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
@@ -4352,10 +4144,6 @@ public partial class DetalhamentoPIS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoPISST : INotifyPropertyChanged
 {
 
@@ -4428,7 +4216,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         {
             return _pPIS;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4446,7 +4233,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         {
             return _qBCProd;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4470,7 +4256,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         {
             return _vAliqProd;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4488,7 +4273,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         {
             return _vBC;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4506,7 +4290,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         {
             return vPISField;
         }
-
         set
         {
             if (vPISField is null || vPISField.Equals(value) != true)
@@ -4535,12 +4318,6 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoCOFINS : INotifyPropertyChanged
 {
 
@@ -4562,7 +4339,6 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
         {
             return itemField;
         }
-
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -4580,7 +4356,6 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
         {
             return itemElementNameField;
         }
-
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -4613,10 +4388,6 @@ public partial class DetalhamentoCOFINS : INotifyPropertyChanged
 /// Clase genérica para tratamento das tributações de COFINS (sem ST).
 /// </summary>
 /// <remarks></remarks>
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
 {
 
@@ -4641,7 +4412,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return cSTField;
         }
-
         set
         {
             if (cSTField.Equals(value) != true)
@@ -4658,7 +4428,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return vBCField;
         }
-
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
@@ -4680,7 +4449,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return pCOFINSField;
         }
-
         set
         {
             if (pCOFINSField is null || pCOFINSField.Equals(value) != true)
@@ -4702,7 +4470,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return vCOFINSField;
         }
-
         set
         {
             if (vCOFINSField is null || vCOFINSField.Equals(value) != true)
@@ -4726,7 +4493,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return qBCProdField;
         }
-
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
@@ -4748,7 +4514,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
         {
             return vAliqProdField;
         }
-
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
@@ -4783,10 +4548,6 @@ public partial class DetalhamentoCOFINS_Tributacao : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
 {
 
@@ -4859,7 +4620,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         {
             return _pCOFINS;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4877,7 +4637,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         {
             return _qBCProd;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4901,7 +4660,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         {
             return _vAliqProd;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4919,7 +4677,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         {
             return _vBC;
         }
-
         set
         {
             if (itemsElementNameField is null || itemsElementNameField.Equals(value) != true)
@@ -4937,7 +4694,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         {
             return vCOFINSField;
         }
-
         set
         {
             if (vCOFINSField is null || vCOFINSField.Equals(value) != true)
@@ -4966,12 +4722,6 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemArma : INotifyPropertyChanged
 {
     private TipoArma tpArmaField;
@@ -4985,7 +4735,6 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
         {
             return tpArmaField;
         }
-
         set
         {
             if (tpArmaField.Equals(value) != true)
@@ -5002,7 +4751,6 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
         {
             return nSerieField;
         }
-
         set
         {
             if (nSerieField is null || nSerieField.Equals(value) != true)
@@ -5019,7 +4767,6 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
         {
             return nCanoField;
         }
-
         set
         {
             if (nCanoField is null || nCanoField.Equals(value) != true)
@@ -5036,7 +4783,6 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
         {
             return descrField;
         }
-
         set
         {
             if (descrField is null || descrField.Equals(value) != true)
@@ -5059,10 +4805,6 @@ public partial class DetalhamentoItemArma : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
 {
     private string cProdANPField;
@@ -5085,7 +4827,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return cProdANPField;
         }
-
         set
         {
             if (cProdANPField is null || cProdANPField.Equals(value) != true)
@@ -5103,7 +4844,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return descANPField;
         }
-
         set
         {
             if (descANPField is null || descANPField.Equals(value) != true)
@@ -5121,7 +4861,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return cODIFField;
         }
-
         set
         {
             if (cODIFField is null || cODIFField.Equals(value) != true)
@@ -5139,7 +4878,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return qTempField;
         }
-
         set
         {
             if (qTempField is null || qTempField.Equals(value) != true)
@@ -5157,7 +4895,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return uFConsField;
         }
-
         set
         {
             if (uFConsField.Equals(value) != true)
@@ -5175,7 +4912,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return cIDEField;
         }
-
         set
         {
             if (cIDEField is null || cIDEField.Equals(value) != true)
@@ -5193,7 +4929,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
         {
             return encerranteField;
         }
-
         set
         {
             if (encerranteField is null || encerranteField.Equals(value) != true)
@@ -5216,10 +4951,6 @@ public partial class DetalhamentoItemCombustivel : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
 {
     private double? qBCProdField;
@@ -5232,7 +4963,6 @@ public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
         {
             return Convert.ToString(qBCProdField);
         }
-
         set
         {
             if (qBCProdField is null || qBCProdField.Equals(value) != true)
@@ -5249,7 +4979,6 @@ public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
         {
             return vAliqProdField;
         }
-
         set
         {
             if (vAliqProdField is null || vAliqProdField.Equals(value) != true)
@@ -5266,7 +4995,6 @@ public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
         {
             return vCIDEField;
         }
-
         set
         {
             if (vCIDEField is null || vCIDEField.Equals(value) != true)
@@ -5289,10 +5017,6 @@ public partial class DetalhamentoItemCombustivelCIDE : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChanged
 {
     private string nBicoField;
@@ -5307,7 +5031,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
         {
             return nBicoField;
         }
-
         set
         {
             if (nBicoField is null || nBicoField.Equals(value) != true)
@@ -5324,7 +5047,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
         {
             return nBombaField;
         }
-
         set
         {
             if (nBombaField is null || nBombaField.Equals(value) != true)
@@ -5341,7 +5063,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
         {
             return nTanqueField;
         }
-
         set
         {
             if (nTanqueField is null || nTanqueField.Equals(value) != true)
@@ -5358,7 +5079,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
         {
             return vEncIniField;
         }
-
         set
         {
             if (vEncIniField is null || vEncIniField.Equals(value) != true)
@@ -5375,7 +5095,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
         {
             return vEncFinField;
         }
-
         set
         {
             if (vEncFinField is null || vEncFinField.Equals(value) != true)
@@ -5398,10 +5117,6 @@ public partial class DetalhamentoItemCombustivelEncerrante : INotifyPropertyChan
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
 {
     private string nLoteField;
@@ -5417,7 +5132,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return nLoteField;
         }
-
         set
         {
             if (nLoteField is null || nLoteField.Equals(value) != true)
@@ -5434,7 +5148,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return qLoteField;
         }
-
         set
         {
             if (qLoteField is null || qLoteField.Equals(value) != true)
@@ -5452,7 +5165,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return dFabField;
         }
-
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
@@ -5482,7 +5194,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
@@ -5509,7 +5220,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return dValField.ToDate(DateFormat.XML_AAAAMMDD);
         }
-
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
@@ -5540,7 +5250,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
@@ -5566,7 +5275,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return cProdAnvisaField;
         }
-
         set
         {
             if (cProdAnvisaField is null || cProdAnvisaField.Equals(value) != true)
@@ -5583,7 +5291,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
         {
             return vPMCField;
         }
-
         set
         {
             if (vPMCField is null || vPMCField.Equals(value) != true)
@@ -5606,10 +5313,6 @@ public partial class DetalhamentoItemMedicamento_Rastro : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
 {
     private string nLoteField;
@@ -5625,7 +5328,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return nLoteField;
         }
-
         set
         {
             if (nLoteField is null || nLoteField.Equals(value) != true)
@@ -5642,7 +5344,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return qLoteField;
         }
-
         set
         {
             if (qLoteField is null || qLoteField.Equals(value) != true)
@@ -5660,7 +5361,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return dFabField;
         }
-
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
@@ -5690,7 +5390,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (dFabField is null || dFabField.Equals(value) != true)
@@ -5717,7 +5416,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return dValField.ToDate(DateFormat.XML_AAAAMMDD);
         }
-
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
@@ -5748,7 +5446,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
                 return null;
             }
         }
-
         set
         {
             if (dValField is null || dValField.Equals(value) != true)
@@ -5774,7 +5471,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return cProdAnvisaField;
         }
-
         set
         {
             if (cProdAnvisaField is null || cProdAnvisaField.Equals(value) != true)
@@ -5791,7 +5487,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
         {
             return vPMCField;
         }
-
         set
         {
             if (vPMCField is null || vPMCField.Equals(value) != true)
@@ -5814,10 +5509,6 @@ public partial class DetalhamentoItemMedicamento : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
 {
     private VeiculoTipoOperacao tpOpField;
@@ -5851,7 +5542,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return tpOpField;
         }
-
         set
         {
             if (tpOpField.Equals(value) != true)
@@ -5868,7 +5558,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return chassiField;
         }
-
         set
         {
             if (chassiField is null || chassiField.Equals(value) != true)
@@ -5885,7 +5574,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return cCorField;
         }
-
         set
         {
             if (cCorField is null || cCorField.Equals(value) != true)
@@ -5902,7 +5590,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return xCorField;
         }
-
         set
         {
             if (xCorField is null || xCorField.Equals(value) != true)
@@ -5919,7 +5606,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return potField;
         }
-
         set
         {
             if (potField is null || potField.Equals(value) != true)
@@ -5957,7 +5643,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return cilinField;
         }
-
         set
         {
             if (cilinField is null || cilinField.Equals(value) != true)
@@ -5995,7 +5680,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return pesoLField;
         }
-
         set
         {
             if (pesoLField is null || pesoLField.Equals(value) != true)
@@ -6033,7 +5717,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return pesoBField;
         }
-
         set
         {
             if (pesoBField is null || pesoBField.Equals(value) != true)
@@ -6071,7 +5754,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return nSerieField;
         }
-
         set
         {
             if (nSerieField is null || nSerieField.Equals(value) != true)
@@ -6088,7 +5770,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return tpCombField;
         }
-
         set
         {
             if (tpCombField.Equals(value) != true)
@@ -6105,7 +5786,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return nMotorField;
         }
-
         set
         {
             if (nMotorField is null || nMotorField.Equals(value) != true)
@@ -6122,7 +5802,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return cMTField;
         }
-
         set
         {
             if (cMTField is null || cMTField.Equals(value) != true)
@@ -6160,7 +5839,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return distField;
         }
-
         set
         {
             if (distField is null || distField.Equals(value) != true)
@@ -6198,7 +5876,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return anoModField;
         }
-
         set
         {
             if (anoModField is null || anoModField.Equals(value) != true)
@@ -6215,7 +5892,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return anoFabField;
         }
-
         set
         {
             if (anoFabField is null || anoFabField.Equals(value) != true)
@@ -6232,7 +5908,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return tpPintField;
         }
-
         set
         {
             if (tpPintField is null || tpPintField.Equals(value) != true)
@@ -6249,7 +5924,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return tpVeicField;
         }
-
         set
         {
             if (tpVeicField.Equals(value) != true)
@@ -6266,7 +5940,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return espVeicField;
         }
-
         set
         {
             if (espVeicField.Equals(value) != true)
@@ -6283,7 +5956,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return vINField;
         }
-
         set
         {
             if (vINField.Equals(value) != true)
@@ -6300,7 +5972,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return condVeicField;
         }
-
         set
         {
             if (condVeicField.Equals(value) != true)
@@ -6317,7 +5988,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return cModField;
         }
-
         set
         {
             if (cModField is null || cModField.Equals(value) != true)
@@ -6334,7 +6004,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return cCorDENATRANField;
         }
-
         set
         {
             if (cCorDENATRANField.Equals(value) != true)
@@ -6351,7 +6020,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return lotaField;
         }
-
         set
         {
             if (lotaField is null || lotaField.Equals(value) != true)
@@ -6368,7 +6036,6 @@ public partial class DetalhamentoItemVeiculo : INotifyPropertyChanged
         {
             return tpRestField;
         }
-
         set
         {
             if (tpRestField.Equals(value) != true)
