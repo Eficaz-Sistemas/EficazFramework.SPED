@@ -44,6 +44,7 @@ public class Escrituracao : Primitives.Escrituracao
 {
     public Escrituracao() : base("Escrituração Livro Caixa Digital do Produtor Rural")
     {
+        ValidaPipeInicial = false;
         Blocos.Add("0", new Bloco0());
         Blocos.Add("Q", new BlocoQ());
         Blocos.Add("9", new Bloco9());
