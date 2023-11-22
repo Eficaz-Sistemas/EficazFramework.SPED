@@ -5,6 +5,7 @@
     <Version>6.2.1</Version>
 	<AssemblyVersion>6.2.1.0</AssemblyVersion>
 	<FileVersion>6.2.1.0</FileVersion>
+	<LangVersion>12.0</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>

@@ -61,6 +61,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35231000000000000000000000000000000000000000&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;35&lt;/cUF&gt;
+        ///                &lt;cNF&gt;18139565&lt;/cNF&gt;
+        ///                &lt;natOp&gt;DEVOLUCAO DE COMPRA&lt;/natOp&gt;
+        ///                &lt;mod&gt;55&lt;/mod&gt;
+        ///                &lt;serie&gt;1&lt;/serie&gt;
+        ///                &lt;nNF&gt;123&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2023-10-10T00:00:00-03:00&lt;/dhEmi&gt;
+        ///            [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFeIpiDevolvido {
+            get {
+                return ResourceManager.GetString("NFeIpiDevolvido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;!--
         ///&lt;!DOCTYPE schema
