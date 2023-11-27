@@ -26,22 +26,18 @@ namespace EficazFramework.SPED.Schemas.CTe
     [XmlRoot("enviCTe", Namespace = "http://www.portalfiscal.inf.br/cte", IsNullable = false)]
     public partial class LoteCte : INotifyPropertyChanged, IXmlSpedDocument
     {
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public LoteCte() : base()
         {
             // Me.protCTeField = String
             cTeField = new CTe();
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private CTe cTeField;
         private string idLoteField;
         private string versaoField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
+        
         public CTe CTe
         {
             get
@@ -137,12 +133,8 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -152,8 +144,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
         /// Serializes current TNfeProc object into an XML document
         /// </summary>
@@ -400,22 +390,17 @@ namespace EficazFramework.SPED.Schemas.CTe
     public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
     {
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public ProcessoCTe() : base()
         {
             protCTeField = new ProtocoloAutorizacao();
             cTeField = new CTe();
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private CTe cTeField;
         private ProtocoloAutorizacao protCTeField;
         private string versaoField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public CTe CTe
         {
             get
@@ -512,12 +497,8 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -527,8 +508,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
         /// Serializes current TNfeProc object into an XML document
         /// </summary>
@@ -815,21 +794,16 @@ namespace EficazFramework.SPED.Schemas.CTe
     public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
     {
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public CTe() : base()
         {
             signatureField = new SignatureType();
             infCteField = new InformacoesCTe();
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private InformacoesCTe infCteField;
         private SignatureType signatureField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         [XmlElement("infCte")]
         public InformacoesCTe Informacoes
         {
@@ -909,12 +883,8 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -924,8 +894,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
         /// Serializes current TNfeProc object into an XML document
         /// </summary>
@@ -1197,7 +1165,6 @@ namespace EficazFramework.SPED.Schemas.CTe
     public partial class InformacoesCTe : INotifyPropertyChanged
     {
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public InformacoesCTe() : base()
         {
             autXMLField = new ObservableCollection<AutorizadoXML>();
@@ -1212,8 +1179,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             ideField = new IdentificacaoOperacao();
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private IdentificacaoOperacao ideField;
         private ComplementoCTe complField;
         private Emitente emitField;
@@ -1230,8 +1195,6 @@ namespace EficazFramework.SPED.Schemas.CTe
         private string idField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         [XmlElement("ide")]
         public IdentificacaoOperacao IdentificacaoOperacao
         {
@@ -1538,12 +1501,8 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -1553,8 +1512,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
         /// Serializes current TNfeProc object into an XML document
         /// </summary>
@@ -1798,7 +1755,6 @@ namespace EficazFramework.SPED.Schemas.CTe
     public partial class IdentificacaoOperacao : INotifyPropertyChanged
     {
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private NFe.OrgaoIBGE cUFField;
         private string cCTField;
         private string cFOPField;
@@ -1834,8 +1790,6 @@ namespace EficazFramework.SPED.Schemas.CTe
         private string xJustField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         [XmlElement("cUF")]
         public NFe.OrgaoIBGE CodigoIBGE
         {
@@ -2456,12 +2410,8 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -2568,7 +2518,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         /// <summary>
         /// Serializes current TNfeProc object into an XML document
         /// </summary>
@@ -3058,7 +3007,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public void SetCodeBarRaw(string encodedString, byte[] encodedArray)
         {
             chave_codificada = encodedString;
@@ -4435,7 +4383,6 @@ namespace EficazFramework.SPED.Schemas.CTe
     public partial class DetalhamentoICMS : INotifyPropertyChanged
     {
 
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private NFe.CST_ICMS cSTField;
         private double? vBCField;
         private double? pRedBCField;
@@ -4452,8 +4399,6 @@ namespace EficazFramework.SPED.Schemas.CTe
         private DetalhamentoICMSIndicadorSN indSNField;
         private static XmlSerializer sSerializer;
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public NFe.CST_ICMS CST
         {
             get
@@ -4770,8 +4715,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public virtual void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -4781,8 +4724,6 @@ namespace EficazFramework.SPED.Schemas.CTe
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public event PropertyChangedEventHandler PropertyChanged;
 
         /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
