@@ -1157,9 +1157,15 @@ public enum CST_ICMS
     [System.Xml.Serialization.XmlEnum("00")]
     [System.ComponentModel.Description("00")]
     CST_00 = 0,
+    [System.Xml.Serialization.XmlEnum("02")]
+    [System.ComponentModel.Description("02")]
+    CST_02 = 2,
     [System.ComponentModel.Description("10")]
     [System.Xml.Serialization.XmlEnum("10")]
     CST_10 = 10,
+    [System.ComponentModel.Description("15")]
+    [System.Xml.Serialization.XmlEnum("15")]
+    CST_15 = 15,
     [System.ComponentModel.Description("20")]
     [System.Xml.Serialization.XmlEnum("20")]
     CST_20 = 20,
@@ -1178,9 +1184,15 @@ public enum CST_ICMS
     [System.ComponentModel.Description("51")]
     [System.Xml.Serialization.XmlEnum("51")]
     CST_51 = 51,
+    [System.ComponentModel.Description("53")]
+    [System.Xml.Serialization.XmlEnum("53")]
+    CST_53 = 53,
     [System.ComponentModel.Description("60")]
     [System.Xml.Serialization.XmlEnum("60")]
     CST_60 = 60,
+    [System.ComponentModel.Description("61")]
+    [System.Xml.Serialization.XmlEnum("61")]
+    CST_61 = 61,
     [System.ComponentModel.Description("70")]
     [System.Xml.Serialization.XmlEnum("70")]
     CST_70 = 70,
@@ -1238,12 +1250,16 @@ public enum CSOSN_ICMS
 public enum Tributacao_ICMS_Identifier
 {
     ICMS00,
+    ICMS02,
     ICMS10,
+    ICMS15,
     ICMS20,
     ICMS30,
     ICMS40,
     ICMS51,
+    ICMS53,
     ICMS60,
+    ICMS61,
     ICMS70,
     ICMS90,
     ICMSPart,

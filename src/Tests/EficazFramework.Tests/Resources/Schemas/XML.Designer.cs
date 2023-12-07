@@ -61,6 +61,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe Id=&quot;NFe31231120855151000139650040000938509100660678&quot; versao=&quot;4.00&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;31&lt;/cUF&gt;
+        ///                &lt;cNF&gt;10066067&lt;/cNF&gt;
+        ///                &lt;natOp&gt;VENDA&lt;/natOp&gt;
+        ///                &lt;mod&gt;65&lt;/mod&gt;
+        ///                &lt;serie&gt;4&lt;/serie&gt;
+        ///                &lt;nNF&gt;93850&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2023-11-01T01:14:2 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFCeNt2023_001 {
+            get {
+                return ResourceManager.GetString("NFCeNt2023_001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
         ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
         ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35231000000000000000000000000000000000000000&quot;&gt;
