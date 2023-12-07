@@ -1057,12 +1057,16 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
 
     [XmlElement("ICMS00", typeof(DetalhamentoICMS_Tributacao))]
+    [XmlElement("ICMS02", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS10", typeof(DetalhamentoICMS_Tributacao))]
+    [XmlElement("ICMS15", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS20", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS30", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS40", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS51", typeof(DetalhamentoICMS_Tributacao))]
+    [XmlElement("ICMS53", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS60", typeof(DetalhamentoICMS_Tributacao))]
+    [XmlElement("ICMS61", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS70", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMS90", typeof(DetalhamentoICMS_Tributacao))]
     [XmlElement("ICMSSN101", typeof(DetalhamentoICMS_Tributacao))]
@@ -1159,11 +1163,11 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
             {
                 try
                 {
-                    if ((int)TributacaoIndentifier <= 8)
+                    if ((int)TributacaoIndentifier <= 12)
                     {
                         return (int)Tributacao.orig + string.Format("{0:#00}", Tributacao.CSTFinal);
                     }
-                    else if ((int)TributacaoIndentifier >= 10 & (int)TributacaoIndentifier <= 15)
+                    else if ((int)TributacaoIndentifier >= 14 & (int)TributacaoIndentifier <= 19)
                     {
                         return (int)Tributacao.orig + string.Format("{0:#000}", Tributacao.CSTFinal);
                     }
@@ -1221,27 +1225,18 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     private double? vICMSField;
 
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST00_ModBC modBCField00;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST10_ModBC modBCField10;
     private DetalhamentoICMS_CST10_ModBCST modBCSTField10;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST20_ModBC modBCField20;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST30_ModBCST modBCSTField30;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST51_ModBC? modBCField51;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? vBCSTRetField;
     private double? vICMSSTRetField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST70_ModBC modBCField70;
     private DetalhamentoICMS_CST70_ModBCST modBCSTField70;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST90_ModBC modBCField90;
     private DetalhamentoICMS_CST90_ModBCST modBCSTField90;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? pMVASTField;
     private double? pRedBCSTField;
     private double? vBCSTField;
@@ -1252,39 +1247,34 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     private double? pFCPSTField;
     private double? vFCPSTField;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? pRedBCField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_CST40_MotivoDesoneracao motDesICMSField;
     private double? pvICMSDeson;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? pCredSNField;
     private double? vCredICMSSNField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMSSN_CSOSN201_ModBCST modBCSTField201;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMSSN_CSOSN202_ModBCST modBCSTField202;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMSSN_CSOSN900_ModBC modBCField900;
     private DetalhamentoICMSSN_CSOSN900_ModBCST modBCSTField900;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private DetalhamentoICMS_Part_ModBC modBCFieldPart;
     private DetalhamentoICMS_Part_ModBCST modBCSTFieldPart;
     private Estado uFSTField;
     private double? pBCOpField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? vBCSTDestField;
     private double? vICMSSTDestField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private double? vBCEfetField;
     private double? pICMSEfetField;
     private double? vICMSEfetField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia *//* TODO ERROR: Skipped RegionDirectiveTrivia */
     private int? modBCField;
     private int? modBCSTField;
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+
+    // NT 2023.001 ICMS Monofásico para Combustíveis
+    private double? qBCMonoRet_OpcField;
+    private double? adRemICMSRetField;
+    private double? vICMSMonoRetField;
+
+
+
     public OrigemMercadoria orig
     {
         get => origField;
@@ -1492,7 +1482,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevICMS_XML() => vICMSField.HasValue & CST != CST_ICMS.CST_30 & CST != CST_ICMS.CST_60 & (CSOSN == CSOSN_ICMS.CSTNA | CSOSN == CSOSN_ICMS.CST900);
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST00_ModBC modBC00
     {
@@ -1508,8 +1497,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST10_ModBC modBC10
     {
@@ -1540,8 +1527,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST20_ModBC modBC20
     {
@@ -1557,8 +1542,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST30_ModBCST modBCST30
     {
@@ -1574,8 +1557,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST51_ModBC modBC51
     {
@@ -1600,8 +1581,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public double? vBCSTRet
     {
@@ -1732,8 +1711,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevICMSSTRet_XML() => vICMSSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST70_ModBC modBC70
     {
@@ -1764,8 +1741,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_CST90_ModBC modBC90
     {
@@ -1796,8 +1771,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pMVAST
     {
         get => pMVASTField;
@@ -2120,8 +2093,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevFCPST_XML() => vFCPST.HasValue == true & (CST == CST_ICMS.CST_10 | CST == CST_ICMS.CST_30 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST202 | CSOSN == CSOSN_ICMS.CST203 | CSOSN == CSOSN_ICMS.CST900);
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pRedBC
     {
         get => pRedBCField;
@@ -2137,8 +2108,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializepRedBC() => pRedBC.HasValue == true & (CST == CST_ICMS.CST_20 | CST == CST_ICMS.CST_51 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST900);
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public DetalhamentoICMS_CST40_MotivoDesoneracao motDesICMS
     {
         get => motDesICMSField;
@@ -2169,8 +2138,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevICMSDeson() => pvICMSDeson.HasValue & (CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50);
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public double? pCredSN
     {
         get => pCredSNField;
@@ -2242,8 +2209,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevCredICMSSN_XML() => CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN201_ModBCST modBCST201
     {
@@ -2259,8 +2224,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN202_ModBCST modBCST202
     {
@@ -2276,8 +2239,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN900_ModBC modBC900
     {
@@ -2308,8 +2269,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public DetalhamentoICMS_Part_ModBC modBCPart
     {
@@ -2370,8 +2329,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializepBCOp() => pBCOpField.HasValue == true;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlIgnore()]
     public double? vBCSTDest
     {
@@ -2502,8 +2459,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializevICMSSTDest_XML() => vICMSSTDest.HasValue == true;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("vBCEfet")]
     public double? vBCEfet
     {
@@ -2551,8 +2506,6 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     public bool ShouldSerializevICMSEfet() => vICMSEfetField.HasValue;
 
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     /// <summary>
     /// Propriedade genérica apenas para compatibilidade com Parser XML.
     /// Para correto funcionamento, utilizar as propriedades modBCXXXX.
@@ -2625,16 +2578,58 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializemodBCST() => modBCSTField.HasValue;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+
+    // NT 2023.001 ICMS Monofásico para Combustíveis
+    public double? qBCMonoRet
+    {
+        get => qBCMonoRet_OpcField;
+        set
+        {
+            if (qBCMonoRet_OpcField is null || qBCMonoRet_OpcField.Equals(value) != true)
+            {
+                qBCMonoRet_OpcField = value;
+                OnPropertyChanged("qBCMonoRet_Opc");
+            }
+        }
+    }
+    public bool ShouldSerializeqBCMonoRet_Opc() => qBCMonoRet_OpcField.HasValue;
+
+
+    public double? adRemICMSRet
+    {
+        get => adRemICMSRetField;
+        set
+        {
+            if (adRemICMSRetField is null || adRemICMSRetField.Equals(value) != true)
+            {
+                adRemICMSRetField = value;
+                OnPropertyChanged("adRemICMSRet");
+            }
+        }
+    }
+    public bool ShouldSerializeadRemICMSRet() => adRemICMSRetField.HasValue;
+
+
+    public double? vICMSMonoRet
+    {
+        get => vICMSMonoRetField;
+        set
+        {
+            if (vICMSMonoRetField is null || vICMSMonoRetField.Equals(value) != true)
+            {
+                vICMSMonoRetField = value;
+                OnPropertyChanged("vICMSMonoRet");
+            }
+        }
+    }
+    public bool ShouldSerializevICMSMonoRet() => vICMSMonoRetField.HasValue;
+
+
+
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
 /// <summary>
