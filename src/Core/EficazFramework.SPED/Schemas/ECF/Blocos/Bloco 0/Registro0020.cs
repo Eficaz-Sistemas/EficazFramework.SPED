@@ -22,6 +22,9 @@ public class Registro0020 : Primitives.Registro
     public bool ParticipacoesConsorcios { get; set; } = false;
     public bool OperacoesExterior { get; set; } = false;
     public bool OperacoesVinculadas { get; set; } = false;
+    /// <summary>
+    /// PJ Enquadrada nos artigos 48 ou 49 da Instrução Normativa RFB nº 1.312/2012
+    /// </summary>
     public bool EnquadramentoArts48ou49_IN_1312_12 { get; set; } = false;
     public bool ParticipacoesExterior { get; set; } = false;
     public bool AtividadeRural { get; set; } = false;
@@ -42,151 +45,74 @@ public class Registro0020 : Primitives.Registro
     public bool PgRemessasTitServicosJurosDiv { get; set; } = false;
     public bool InovacaoTenologica { get; set; } = false;
     public bool CapacitacaoInformaticaInclDigital { get; set; } = false;
+    /// <summary>
+    /// PJ Habilitada ao Repes, Recap, Padis, Reidi, Recine, Retid, Óleo Bunker, Reporto, RET II, 
+    /// RET PMCMV/PCVA, RET EEI, EBAS Imune, Repetro-Industrialização, RepetroNacional, Repetro-Permanente e 
+    /// Repetro-Temporário:
+    /// </summary>
     public bool RecapRepesPadisPatvdReidiOlimpEDemaisDiachos { get; set; } = false;
     public bool PoloIndManausAmazonaOcidencal { get; set; } = false;
     public bool ZonaExportacao { get; set; } = false;
     public bool AreaLivreComercio { get; set; } = false;
     public bool IntegranteMultinacional { get; set; } = false;
     public bool DEREX { get; set; } = false;
+    /// <summary>
+    /// Opção pelas novas regras de preços de transferência no ano-calendário 2023 (Lei nº 14.956/2023)
+    /// </summary>
+    public bool OpcaoLei14956_2023 { get; set; } = false;
 
     public override string EscreveLinha()
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|0020|"); // 1
-        if (FormaTributacao != IndicadorAliquotaCSLL2015.NA)
-            writer.Append((int)FormaTributacao + "|");
-        else
-            writer.Append('|'); // 2
+        writer.Append(FormaTributacao != IndicadorAliquotaCSLL2015.NA ? $"{(int)FormaTributacao}|" : "|"); // 2
         writer.Append(QuantidadeSCP + "|"); // 3
-        if (AdminFundoClubeInvest)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 4
-        if (ParticipacoesConsorcios)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 5
-        if (OperacoesExterior)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 6
-        if (OperacoesVinculadas)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 7
-        if (EnquadramentoArts48ou49_IN_1312_12)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 8
-        if (ParticipacoesExterior)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 9
-        if (AtividadeRural)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 10
-        if (LucroExploracao)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 11
-        if (IsencaoReducaoLucroPresumido)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 12
-        if (Finor_Finam)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 13
+        writer.Append(AdminFundoClubeInvest ? "S|" : "N|"); // 4
+        writer.Append(ParticipacoesConsorcios ? "S|" : "N|"); // 5
+        writer.Append(OperacoesExterior ? "S|" : "N|"); // 6
+        writer.Append(OperacoesVinculadas ? "S|" : "N|"); // 7
+        writer.Append(EnquadramentoArts48ou49_IN_1312_12 ? "S|" : "N|"); // 8
+        writer.Append(ParticipacoesExterior ? "S|" : "N|"); // 9
+        writer.Append(AtividadeRural ? "S|" : "N|"); // 10
+        writer.Append(LucroExploracao ? "S|" : "N|"); // 11
+        writer.Append(IsencaoReducaoLucroPresumido ? "S|" : "N|"); // 12
+        writer.Append(Finor_Finam ? "S|" : "N|"); // 13
+
         if (int.Parse(Versao) < 7)
-        {
-            if (DoacaoEleitoral)
-                writer.Append("S|");
-            else
-                writer.Append("N|"); // 14
-        }
-        if (ParticipAvMetodoEquivPatrim)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 15
+            writer.Append(DoacaoEleitoral ? "S|" : "N|"); // 14
+
+        writer.Append(ParticipAvMetodoEquivPatrim ? "S|" : "N|"); // 14 (sim, atualmente é o campo 14)
+
+
         if (int.Parse(Versao) < 7)
-        {
-            if (VendasExportacao)
-                writer.Append("S|");
-            else
-                writer.Append("N|"); // 16
-        }
-        if (RecebimExterior)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 17
-        if (AtivosNoExterior)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 18
+            writer.Append(VendasExportacao ? "S|" : "N|"); // 15
+
+        writer.Append(RecebimExterior ? "S|" : "N|"); // 15 (sim, atualmente é o campo 15)
+
+        writer.Append(AtivosNoExterior ? "S|" : "N|"); // 16
+
         if (int.Parse(Versao) < 7)
-        {
-            if (PJExportadora)
-                writer.Append("S|");
-            else
-                writer.Append("N|"); // 19
-        }
-        if (PagtosExterior)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 20
-        if (ComEletronicoTI)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 21
-        if (RoyaltiesRecebidos)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 22
-        if (RoyaltiesPagos)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 23
-        if (RendServicosJurosDivRecebidos)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 24
-        if (PgRemessasTitServicosJurosDiv)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 25
-        if (InovacaoTenologica)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 26
-        if (CapacitacaoInformaticaInclDigital)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 27
-        if (RecapRepesPadisPatvdReidiOlimpEDemaisDiachos)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 28
-        if (PoloIndManausAmazonaOcidencal)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 29
-        if (ZonaExportacao)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 30
-        if (AreaLivreComercio)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 31
-        if (IntegranteMultinacional)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 32
-        if (DEREX)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 33
+            writer.Append(PJExportadora ? "S|" : "N|"); // 17
+
+        writer.Append(PagtosExterior ? "S|" : "N|"); // 17 (sim, atualmente é o campo 17)
+
+        writer.Append(ComEletronicoTI ? "S|" : "N|"); // 18
+        writer.Append(RoyaltiesRecebidos ? "S|" : "N|"); // 19
+        writer.Append(RoyaltiesPagos ? "S|" : "N|"); // 20
+        writer.Append(RendServicosJurosDivRecebidos ? "S|" : "N|"); // 21
+        writer.Append(PgRemessasTitServicosJurosDiv ? "S|" : "N|"); // 22
+        writer.Append(InovacaoTenologica ? "S|" : "N|"); // 23
+        writer.Append(CapacitacaoInformaticaInclDigital ? "S|" : "N|"); // 24
+        writer.Append(RecapRepesPadisPatvdReidiOlimpEDemaisDiachos ? "S|" : "N|"); // 25
+        writer.Append(PoloIndManausAmazonaOcidencal ? "S|" : "N|"); // 26
+        writer.Append(ZonaExportacao ? "S|" : "N|"); // 27
+        writer.Append(AreaLivreComercio ? "S|" : "N|"); // 28
+        writer.Append(IntegranteMultinacional ? "S|" : "N|"); // 29
+        writer.Append(DEREX ? "S|" : "N|"); // 30
+
+        if (int.Parse(Versao) >= 10)
+            writer.Append(OpcaoLei14956_2023 ? "S|" : "N|"); // 31
+
         return writer.ToString();
     }
 

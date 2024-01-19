@@ -144,6 +144,8 @@ public enum IndicadorAliquotaCSLL2015
     DezessetePorcento = 2,
     [System.ComponentModel.Description("20%")]
     VintePorcento = 3,
+    [System.ComponentModel.Description("15%")]
+    QuinzePorCento = 4,
     [System.ComponentModel.Description("Não Aplicável")]
     NA = 99
 }

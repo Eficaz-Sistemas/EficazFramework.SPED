@@ -33,74 +33,64 @@ public class Registro0021 : Primitives.Registro
     public bool REIF { get; set; } = false;
     public bool Olimpiadas { get; set; } = false;
 
+    // Versao 00010 e acima:
+
+    public bool SuspensaoOleoBunker { get; set; } = false;
+    public bool REPORTO { get; set; } = false;
+    public bool RetII { get; set; } = false;
+    public bool RETPMCMV { get; set; } = false;
+    public bool RetEEI { get; set; } = false;
+    public bool IndEBAS { get; set; } = false;
+    public bool REPETROIND { get; set; } = false;
+    public bool REPETRONAC { get; set; } = false;
+    public bool REPETROPERM { get; set; } = false;
+    public bool REPETROTEMP { get; set; } = false;
+
+
     public override string EscreveLinha()
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|0021|"); // 1
-        if (REPES)
-            writer.Append("S|");
+
+        if (int.Parse(Versao) >= 10)
+        {
+            writer.Append(REPES ? "S|" : "N|"); // 2
+            writer.Append(RECAP ? "S|" : "N|"); // 3
+            writer.Append(PADIS ? "S|" : "N|"); // 4
+            writer.Append(REIDI ? "S|" : "N|"); // 5
+            writer.Append(RECINE ? "S|" : "N|"); // 6
+            writer.Append(RETID ? "S|" : "N|"); // 7
+            writer.Append(SuspensaoOleoBunker ? "S|" : "N|"); // 8
+            writer.Append(REPORTO ? "S|" : "N|"); // 9
+            writer.Append(RetII ? "S|" : "N|"); // 10
+            writer.Append(RETPMCMV ? "S|" : "N|"); // 11
+            writer.Append(RetEEI ? "S|" : "N|"); // 12
+            writer.Append(IndEBAS ? "S|" : "N|"); // 13
+            writer.Append(REPETROIND ? "S|" : "N|"); // 14
+            writer.Append(REPETRONAC ? "S|" : "N|"); // 15
+            writer.Append(REPETROPERM ? "S|" : "N|"); // 16
+            writer.Append(REPETROTEMP ? "S|" : "N|"); // 17
+        }
         else
-            writer.Append("N|"); // 2
-        if (RECAP)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 3
-        if (PADIS)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 4
-        if (PATVD)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 5
-        if (REIDI)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 6
-        if (REPENEC)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 7
-        if (REICOMP)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 8
-        if (RETAERO)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 9
-        if (RECINE)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 10
-        if (ResiduosSolidos)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 11
-        if (RECOPA)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 12
-        if (CopaDoMundo)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 13
-        if (RETID)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 14
-        if (REPNBL_REDES)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 15
-        if (REIF)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 16
-        if (Olimpiadas)
-            writer.Append("S|");
-        else
-            writer.Append("N|"); // 17
+        {
+            writer.Append(REPES ? "S|" : "N|"); // 2
+            writer.Append(RECAP ? "S|" : "N|"); // 3
+            writer.Append(PADIS ? "S|" : "N|"); // 4
+            writer.Append(PATVD ? "S|" : "N|"); // 5
+            writer.Append(REIDI ? "S|" : "N|"); // 6
+            writer.Append(REPENEC ? "S|" : "N|"); // 7
+            writer.Append(REICOMP ? "S|" : "N|"); // 8
+            writer.Append(RETAERO ? "S|" : "N|"); // 9
+            writer.Append(RECINE ? "S|" : "N|"); // 10
+            writer.Append(ResiduosSolidos ? "S|" : "N|"); // 11
+            writer.Append(RECOPA ? "S|" : "N|"); // 12
+            writer.Append(CopaDoMundo ? "S|" : "N|"); // 13
+            writer.Append(RETID ? "S|" : "N|"); // 14
+            writer.Append(REPNBL_REDES ? "S|" : "N|"); // 15
+            writer.Append(REIF ? "S|" : "N|"); // 16
+            writer.Append(Olimpiadas ? "S|" : "N|"); // 17
+        }
+
         return writer.ToString();
     }
 
