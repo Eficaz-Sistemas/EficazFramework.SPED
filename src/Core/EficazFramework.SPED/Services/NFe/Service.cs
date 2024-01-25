@@ -11,7 +11,7 @@ public class NFeService : SoapServiceBase
     /// </summary>
     /// <param name="chave">Chave da NF-e ou NFC-e para consulta</param>
     /// <param name="ambiente">Produção ou Homologação</param>
-    public async Task<object> ConsultaProtocoloAsync(string chave, Ambiente ambiente = Ambiente.Producao)
+    public async Task<string> ConsultaProtocoloAsync(string chave, Ambiente ambiente = Ambiente.Producao)
     {
         //! validações iniciais:
         if (chave.Length != 44)
@@ -27,7 +27,18 @@ public class NFeService : SoapServiceBase
 
 
         //! execução:
-        var teste = await ExecuteAsync<SoapClients.NfeConsultaProtocolo4>(null, modelo, uf.ToString());
-       return "todo";
+        var request = new Contracts.nfeConsultaNFRequest();
+        var dados = new Schemas.NFe.PedidoConsultaSituacaoNFe()
+        {
+            Ambiente = ambiente,
+            ChaveNFe = chave,
+            Versao = VersaoServicoConsSitNFe.Versao_4_00
+        };
+        var xml = new XmlDocument();
+        xml.LoadXml(dados.Serialize());
+        var node = xml.DocumentElement;
+        Debug.WriteLine(node.OuterXml);
+        var teste = await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient>(request, uf.ToString(), modelo); ;
+        return "todo";
     }
 }

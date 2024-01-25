@@ -12,9 +12,11 @@ namespace EficazFramework.SPED.Schemas.NFe;
 [System.Xml.Serialization.XmlType(TypeName = "TAmb", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum Ambiente
 {
+    [EnumMember(Value="1")]
     [System.Xml.Serialization.XmlEnum("1")]
     [System.ComponentModel.Description("Enum_Ambiente_Producao")]
     Producao = 1,
+    [EnumMember(Value = "2")]
     [System.Xml.Serialization.XmlEnum("2")]
     [System.ComponentModel.Description("Enum_Ambiente_Homologacao")]
     Homologacao = 2
