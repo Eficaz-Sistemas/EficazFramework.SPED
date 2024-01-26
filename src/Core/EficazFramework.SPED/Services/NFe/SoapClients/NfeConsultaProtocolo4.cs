@@ -115,13 +115,15 @@ public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaPr
     static ISoapClient ISoapClient.Create(params string[] args)
     {
         var client = Create(Enum.Parse<Schemas.NFe.OrgaoIBGE>(args[0]), args[1]);
+#if DEBUG
         client.Endpoint.EndpointBehaviors.Add(new Utilities.WCF.SoapInspectorBehavior());
+#endif
         return client;
     }
 
-    async Task<ISoapResponse> ISoapClient.ExecuteAsync(ISoapRequest request, IcpBrasilX509Certificate2 certificate)
+    async Task<ISoapResponse<TMessage>> ISoapClient.ExecuteAsync<TMessage>(ISoapRequest request, IcpBrasilX509Certificate2 certificate)
     {
         ClientCredentials.ClientCertificate.Certificate = certificate.PrivateInstance;
-        return await nfeConsultaNFAsync(request as nfeConsultaNFRequest);
+        return (ISoapResponse<TMessage>)await Channel.nfeConsultaNFAsync(request as nfeConsultaNFRequest);
     }
 }
