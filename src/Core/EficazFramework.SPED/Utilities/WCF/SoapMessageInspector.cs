@@ -10,10 +10,14 @@ using System.Threading.Tasks;
 namespace EficazFramework.SPED.Utilities.WCF;
 internal class SoapMessageInspector : IClientMessageInspector
 {
-    public void AfterReceiveReply(ref Message reply, object correlationState) { }
+    public void AfterReceiveReply(ref Message reply, object correlationState)
+    {
+        Console.WriteLine(reply.ToString());
+    }
 
     public object BeforeSendRequest(ref Message request, IClientChannel channel)
     {
+        Console.WriteLine(request.ToString());
         return null;
     }
 }

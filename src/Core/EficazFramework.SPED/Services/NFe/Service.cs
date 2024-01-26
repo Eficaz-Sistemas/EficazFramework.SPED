@@ -1,5 +1,6 @@
 ﻿using EficazFramework.SPED.Schemas.NFe;
 using EficazFramework.SPED.Services.Primitives;
+using System.Xml.Linq;
 
 namespace EficazFramework.SPED.Services.NFe;
 
@@ -32,12 +33,13 @@ public class NFeService : SoapServiceBase
         {
             Ambiente = ambiente,
             ChaveNFe = chave,
+            Servico = "CONSULTAR",
             Versao = VersaoServicoConsSitNFe.Versao_4_00
         };
         var xml = new XmlDocument();
         xml.LoadXml(dados.Serialize());
         var node = xml.DocumentElement;
-        Debug.WriteLine(node.OuterXml);
+        request.nfeDadosMsg = node;
         var teste = await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient>(request, uf.ToString(), modelo); ;
         return "todo";
     }
