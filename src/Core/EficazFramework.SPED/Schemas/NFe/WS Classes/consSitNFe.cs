@@ -51,12 +51,13 @@ public partial class PedidoConsultaSituacaoNFe
     /// </summary>
     /// <returns></returns>
     /// <remarks></remarks>
-    public virtual XDocument SerializeToXMLDocument()
+    public virtual XmlDocument SerializeToXMLDocument()
     {
         string str = Serialize();
         if (!string.IsNullOrEmpty(str) | string.IsNullOrWhiteSpace(str))
         {
-            var doc = XDocument.Load(Serialize());
+            var doc = new XmlDocument();
+            doc.LoadXml(str);
             return doc;
         }
         else

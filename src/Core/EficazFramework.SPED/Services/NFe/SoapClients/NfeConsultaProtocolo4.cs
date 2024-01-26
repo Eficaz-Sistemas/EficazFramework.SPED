@@ -9,9 +9,7 @@ namespace EficazFramework.SPED.Services.NFe.SoapClients;
 public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaProtocolo4Soap>, INFeConsultaProtocolo4Soap, ISoapClient
 {
     public static NFeConsultaProtocolo4SoapClient Create(Schemas.NFe.OrgaoIBGE uf, string modelo = "55")
-    {
-        return new NFeConsultaProtocolo4SoapClient(ConfigureBinding(), new(ConfigureUrl(uf, modelo)));
-    }
+        => new NFeConsultaProtocolo4SoapClient(ConfigureBinding(), new (ConfigureUrl(uf, modelo)));
 
     public NFeConsultaProtocolo4SoapClient(Binding binding, EndpointAddress remoteAddress) : base(binding, remoteAddress) { }
 
@@ -51,7 +49,7 @@ public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaPr
                 Schemas.NFe.OrgaoIBGE.RR => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.RS => "https://nfe.sefazrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.SC => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
-                Schemas.NFe.OrgaoIBGE.SE => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx\"",
+                Schemas.NFe.OrgaoIBGE.SE => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.SP => "https://nfe.fazenda.sp.gov.br/ws/nfeconsultaprotocolo4.asmx",
                 Schemas.NFe.OrgaoIBGE.TO => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCAN => "https://www.sefazvirtual.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx",
