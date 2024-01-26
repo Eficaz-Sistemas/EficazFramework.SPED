@@ -102,12 +102,12 @@ public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaPr
         };
         binding.Elements.Add(new TextMessageEncodingBindingElement
         {
-            MessageVersion = MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, AddressingVersion.None)
+            MessageVersion = MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, AddressingVersion.None),
         });
         binding.Elements.Add((BindingElement)new HttpsTransportBindingElement
         {
             RequireClientCertificate = true,
-            MaxReceivedMessageSize = 65536
+            MaxReceivedMessageSize = 65536,
         });
         return binding;
     }
