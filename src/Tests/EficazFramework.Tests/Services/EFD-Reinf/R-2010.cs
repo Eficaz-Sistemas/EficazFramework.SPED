@@ -51,6 +51,7 @@ public class R2010Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2010>
 
         if (index != 0)
         {
+            DateTime dtbase = DateTime.Now.AddMonths(-1);
             //evtServTom
             evento.evtServTom.infoServTom.ideEstabObra.idePrestServ.cnpjPrestador = "18505527000133";
             evento.evtServTom.infoServTom.ideEstabObra.idePrestServ.vlrTotalBruto = "1600,00";
@@ -61,7 +62,7 @@ public class R2010Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2010>
             {
                 serie = "1",
                 numDocto = "2000",
-                dtEmissaoNF = new DateTime(DateTime.Now.Year, DateTime.Now.Date.AddMonths(-1).Month, 3),
+                dtEmissaoNF = dtbase,
                 vlrBruto = "1000,00",
                 infoTpServ = new System.Collections.Generic.List<Schemas.EFD_Reinf.R2010eR2020InformacaoServico>
             {

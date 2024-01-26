@@ -104,12 +104,13 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoIsento-LucrosDistribuidos
     internal static void PreencheCamposRendimentoisento(R4010 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -139,7 +140,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                             {
                                 new R4010InfoPagtoPf()
                                 {
-                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    DataFatoGerador = dtbase,
                                     vlrRendBruto = 152725.25M.ToString("f2"),
                                     // desmembramento da parte isenta dos rendimentos (que neste caso é todo isento)
                                     rendIsento = new System.Collections.Generic.List<R4010InfoRendIsento>()
@@ -261,12 +262,13 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoTributado
     internal static void PreencheCamposRendimentoTributado(R4010 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -296,7 +298,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                             {
                                 new R4010InfoPagtoPf()
                                 {
-                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    DataFatoGerador = dtbase,
                                     vlrRendBruto = 750.ToString("f2"),
                                     vlrRendTrib = 750.ToString("f2"),
                                     vlrIR = 112.5.ToString("f2"),
@@ -402,12 +404,13 @@ public class R4010Test : BaseEfdReinfTest<R4010>
     #region RendimentoTributadoComDependente
     internal static void PreencheCamposRendimentoTributadoComDependente(R4010 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPF = new R4010EventoRetencaoPf()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -446,7 +449,7 @@ public class R4010Test : BaseEfdReinfTest<R4010>
                             {
                                 new R4010InfoPagtoPf()
                                 {
-                                    DataFatoGerador = System.DateTime.Now.AddMonths(-1),
+                                    DataFatoGerador = dtbase,
                                     vlrRendBruto = 750.ToString("f2"),
                                     vlrRendTrib = 750.ToString("f2"),
                                     vlrIR = 78.75.ToString("f2"),
