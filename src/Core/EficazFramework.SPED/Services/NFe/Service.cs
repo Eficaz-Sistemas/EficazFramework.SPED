@@ -1,18 +1,15 @@
-﻿using EficazFramework.SPED.Schemas.NFe;
-using EficazFramework.SPED.Services.Primitives;
-using System.Xml.Linq;
+﻿using EficazFramework.SPED.Services.Primitives;
 
 namespace EficazFramework.SPED.Services.NFe;
 
 public class NFeService : SoapServiceBase
 {
-
     /// <summary>
-    /// Efetua a consulta de protocolo de NF-e / NFC-e
+    /// Efetua a consulta de protocolo de NF-e / NFC-e na versão 4.00
     /// </summary>
     /// <param name="chave">Chave da NF-e ou NFC-e para consulta</param>
     /// <param name="ambiente">Produção ou Homologação</param>
-    public async Task<string> ConsultaProtocoloAsync(string chave, Ambiente ambiente = Ambiente.Producao)
+    public async Task<Schemas.NFe.RetornoConsultaSituacaoNFe> ConsultaProtocolo4Async(string chave, Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
         if (chave.Length != 44)
@@ -23,7 +20,7 @@ public class NFeService : SoapServiceBase
 
 
         //! montagem dos argumentos:
-        string uf = ((OrgaoIBGE)int.Parse(chave[..2])).ToString();
+        string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2])).ToString();
         string modelo = chave[20..22];
 
 
@@ -33,14 +30,12 @@ public class NFeService : SoapServiceBase
         {
             Ambiente = ambiente,
             ChaveNFe = chave,
-            Servico = "CONSULTAR",
-            Versao = VersaoServicoConsSitNFe.Versao_4_00
+            Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
         };
         var xml = new XmlDocument();
         xml.LoadXml(dados.Serialize());
         var node = xml.DocumentElement;
         request.nfeDadosMsg = node;
-        var teste = await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient>(request, uf.ToString(), modelo); ;
-        return "todo";
+        return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo); ;
     }
 }

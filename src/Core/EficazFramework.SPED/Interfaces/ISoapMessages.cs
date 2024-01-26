@@ -3,4 +3,7 @@
 
 internal interface ISoapRequest { }
 
-internal interface ISoapResponse { }
+internal interface ISoapResponse<TMessage>
+{
+    TMessage UnWrap();
+}

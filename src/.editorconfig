@@ -3,3 +3,4 @@
 # You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
 [*.cs]
 csharp_style_namespace_declarations =file_scoped:suggestion
+dotnet_style_prefer_auto_properties =true
