@@ -116,7 +116,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
         int iDetAquis = 0;
         instanciaXml.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs.ForEach(ev =>
         {
-            ev.dtEmissaoNF.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].dtEmissaoNF);
+            ev.dtEmissaoNF.Should().BeSameDateAs(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].dtEmissaoNF);
             ev.vlrBruto.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].vlrBruto); ;
             ev.serie.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].serie);
             ev.numDocto.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].numDocto);
