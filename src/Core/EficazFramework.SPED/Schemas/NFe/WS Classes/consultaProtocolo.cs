@@ -113,7 +113,7 @@ public partial class RetornoConsultaSituacaoNFe
     public ProtocoloRecebimentoConsSitNFe ProtocoloNFe {  get; set; }
 
     [XmlElement("procEventoNFe")]
-    public ObservableCollection<Evento> RetornoEventos {  get; set; }
+    public ObservableCollection<ProcessoEvento> Eventos { get; set; } = [];
 
     [XmlAttribute(AttributeName = "versao")]
     public VersaoServicoConsSitNFe Versao {  get; set; }
