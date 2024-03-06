@@ -45,6 +45,9 @@
     <None Remove="Schemas\EFD-Reinf\1.3.02 Backup\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Schemas\NFe\WS Classes\ConsNFeDest.cs" />
+    <Compile Remove="Schemas\NFe\WS Classes\DownloadNFe.cs" />
+    <Compile Remove="Schemas\NFe\WS Classes\nfeMensagem.cs" />
     <Compile Remove="Services\NFe\Contracts\INfeConsultaProtocolo4.cs" />
   </ItemGroup>
 	

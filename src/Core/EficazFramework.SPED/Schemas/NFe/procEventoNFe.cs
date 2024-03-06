@@ -8,12 +8,6 @@
 [XmlRoot("procEventoNFe", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
 public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
 {
-    public ProcessoEvento() : base()
-    {
-        // Me.retEventoField = New EventoRetorno
-        // Me.eventoField = New Evento()
-    }
-
     private Evento eventoField; // TEvento
     private EventoRetorno retEventoField; // TRetEvento
     private VersaoServicoEvento versaoField;
@@ -22,10 +16,7 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
     [XmlElement("evento")]
     public Evento Evento
     {
-        get
-        {
-            return eventoField;
-        }
+        get => eventoField;
         set
         {
             if (eventoField is null || eventoField.Equals(value) != true)
@@ -39,10 +30,7 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
     [XmlElement("retEvento")]
     public EventoRetorno EventoRetorno
     {
-        get
-        {
-            return retEventoField;
-        }
+        get => retEventoField;
         set
         {
             if (retEventoField is null || retEventoField.Equals(value) != true)
@@ -56,10 +44,7 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
     [XmlAttribute(AttributeName = "versao")]
     public VersaoServicoEvento Versao
     {
-        get
-        {
-            return versaoField;
-        }
+        get => versaoField;
         set
         {
             if (versaoField.Equals(value) != true)
@@ -79,22 +64,10 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    public XmlDocumentType DocumentType
-    {
-        get
-        {
-            return XmlDocumentType.NFeEvent;
-        }
-    }
+    public XmlDocumentType DocumentType => XmlDocumentType.NFeEvent;
 
     [XmlIgnore()]
-    public DateTime? DataEmissao
-    {
-        get
-        {
-            return Evento.InformacaoEvento.EventoData;
-        }
-    }
+    public DateTime? DataEmissao => Evento.InformacaoEvento.EventoData;
 
     [XmlIgnore()]
     public string Chave
@@ -111,14 +84,8 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /// <summary>
     /// Serializes current TNfeProc object into an XML document
@@ -178,10 +145,8 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             stringReader = new System.IO.StringReader(xml);
-            // stringReader.ReadToEnd() 'TESTING...
             return (ProcessoEvento)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
         }
-        // Return CType(Serializer.Deserialize(stringReader), ProcessoEvento)
         finally
         {
             stringReader?.Dispose();
@@ -223,8 +188,6 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             string xmlString = Serialize();
-            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
-            // streamWriter = xmlFile.CreateText
             streamWriter.WriteLine(xmlString);
             streamWriter.Flush();
         }
@@ -288,17 +251,13 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = sr.ReadToEnd();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
         {
             source?.Dispose();
-
             sr?.Dispose();
         }
     }
@@ -310,11 +269,8 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
@@ -332,19 +288,14 @@ public partial class ProcessoEvento : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
         {
             if (sr != null & close_stream == true)
-            {
                 sr.Dispose();
-            }
         }
     }
 }
