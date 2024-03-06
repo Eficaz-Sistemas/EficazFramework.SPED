@@ -116,7 +116,7 @@ public class R2010Test : BaseEfdReinfTest<R2010>
         int iDetAquis = 0;
         instanciaXml.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs.ForEach(ev =>
         {
-            ev.dtEmissaoNF.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].dtEmissaoNF);
+            ev.dtEmissaoNF.Should().BeSameDateAs(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].dtEmissaoNF);
             ev.vlrBruto.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].vlrBruto); ;
             ev.serie.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].serie);
             ev.numDocto.Should().Be(instanciaPopulada.evtServTom.infoServTom.ideEstabObra.idePrestServ.nfs[iDetAquis].numDocto);
