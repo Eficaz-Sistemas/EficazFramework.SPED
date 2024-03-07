@@ -5,13 +5,11 @@ using System.ServiceModel.Channels;
 
 namespace EficazFramework.SPED.Services.NFe.SoapClients;
 
-public partial class CadConsultaCadastro4SoapClient : System.ServiceModel.ClientBase<ICadConsultaCadastro4Soap>, ICadConsultaCadastro4Soap, ISoapClient
+public partial class CadConsultaCadastro4SoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : System.ServiceModel.ClientBase<ICadConsultaCadastro4Soap>(binding, remoteAddress), ICadConsultaCadastro4Soap, ISoapClient
 {
 
     public static CadConsultaCadastro4SoapClient Create(Schemas.NFe.OrgaoIBGE uf)
-        => new CadConsultaCadastro4SoapClient(ConfigureBinding(), new(ConfigureUrl(uf)));
-
-    public CadConsultaCadastro4SoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : base(binding, remoteAddress) { }
+        => new(ConfigureBinding(), new(ConfigureUrl(uf)));
 
 
     public async Task<consultaCadastroResponse> consultaCadastroAsync(consultaCadastroRequest request)
