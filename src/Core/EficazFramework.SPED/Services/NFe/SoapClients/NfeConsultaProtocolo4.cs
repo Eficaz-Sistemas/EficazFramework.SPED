@@ -6,12 +6,10 @@ using System.ServiceModel.Channels;
 
 namespace EficazFramework.SPED.Services.NFe.SoapClients;
 
-public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaProtocolo4Soap>, INFeConsultaProtocolo4Soap, ISoapClient
+public partial class NFeConsultaProtocolo4SoapClient(Binding binding, EndpointAddress remoteAddress) : ClientBase<INFeConsultaProtocolo4Soap>(binding, remoteAddress), INFeConsultaProtocolo4Soap, ISoapClient
 {
     public static NFeConsultaProtocolo4SoapClient Create(Schemas.NFe.OrgaoIBGE uf, string modelo = "55")
-        => new NFeConsultaProtocolo4SoapClient(ConfigureBinding(), new (ConfigureUrl(uf, modelo)));
-
-    public NFeConsultaProtocolo4SoapClient(Binding binding, EndpointAddress remoteAddress) : base(binding, remoteAddress) { }
+        => new(ConfigureBinding(), new (ConfigureUrl(uf, modelo)));
 
 
     public async Task<nfeConsultaNFResponse> nfeConsultaNFAsync(nfeConsultaNFRequest request)
@@ -19,6 +17,7 @@ public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaPr
 
     public nfeConsultaNFResponse nfeConsultaNF(nfeConsultaNFRequest request)
         => Channel.nfeConsultaNF(request);
+
 
     private static string ConfigureUrl(Schemas.NFe.OrgaoIBGE uf, string modelo = "55") 
         => modelo switch
@@ -109,6 +108,7 @@ public partial class NFeConsultaProtocolo4SoapClient : ClientBase<INFeConsultaPr
         });
         return binding;
     }
+
 
     static ISoapClient ISoapClient.Create(params string[] args)
     {

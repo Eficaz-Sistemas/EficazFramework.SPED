@@ -84,13 +84,13 @@ public partial class PedidoDistribuicaoDFe
     /// </summary>
     /// <returns></returns>
     /// <remarks></remarks>
-    public virtual XDocument SerializeToXMLDocument()
+    public virtual XmlDocument SerializeToXMLDocument()
     {
         string str = Serialize();
         if (!string.IsNullOrEmpty(str) | string.IsNullOrWhiteSpace(str))
         {
-            var doc = XDocument.Load(Serialize());
-            // doc.LoadXml(Me.Serialize)
+            var doc = new XmlDocument();
+            doc.LoadXml(str);
             return doc;
         }
         else
@@ -98,6 +98,7 @@ public partial class PedidoDistribuicaoDFe
             return null;
         }
     }
+
 
     /// <summary>
     /// Deserializes workflow markup into an TEnvEvento object
