@@ -1,5 +1,4 @@
 ﻿using EficazFramework.SPED.Extensions;
-using Microsoft.VisualBasic.CompilerServices;
 using System.Collections;
 using System.Collections.ObjectModel;
 
@@ -20,7 +19,7 @@ public partial class LoteCte : INotifyPropertyChanged, IXmlSpedDocument
     private string versaoField;
     private static XmlSerializer sSerializer;
 
-    
+
     public CTe CTe
     {
         get => cTeField;
@@ -29,7 +28,7 @@ public partial class LoteCte : INotifyPropertyChanged, IXmlSpedDocument
             if (cTeField is null || cTeField.Equals(value) != true)
             {
                 cTeField = value;
-                OnPropertyChanged("CTe");
+                OnPropertyChanged(nameof(CTe));
             }
         }
     }
@@ -57,7 +56,7 @@ public partial class LoteCte : INotifyPropertyChanged, IXmlSpedDocument
             if (versaoField is null || versaoField.Equals(value) != true)
             {
                 versaoField = value;
-                OnPropertyChanged("Versao");
+                OnPropertyChanged(nameof(Versao));
             }
         }
     }
@@ -316,7 +315,7 @@ public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
             if (cTeField is null || cTeField.Equals(value) != true)
             {
                 cTeField = value;
-                OnPropertyChanged("CTe");
+                OnPropertyChanged(nameof(CTe));
             }
         }
     }
@@ -330,7 +329,7 @@ public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
             if (protCTeField is null || protCTeField.Equals(value) != true)
             {
                 protCTeField = value;
-                OnPropertyChanged("ProtocoloAutorizacao");
+                OnPropertyChanged(nameof(ProtocoloAutorizacao));
             }
         }
     }
@@ -344,7 +343,7 @@ public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
             if (versaoField is null || versaoField.Equals(value) != true)
             {
                 versaoField = value;
-                OnPropertyChanged("Versao");
+                OnPropertyChanged(nameof(Versao));
             }
         }
     }
@@ -627,6 +626,7 @@ public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
     private SignatureType signatureField;
     private static XmlSerializer sSerializer;
 
+
     [XmlElement("infCte")]
     public InformacoesCTe Informacoes
     {
@@ -636,7 +636,7 @@ public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
             if (infCteField is null || infCteField.Equals(value) != true)
             {
                 infCteField = value;
-                OnPropertyChanged("Informacoes");
+                OnPropertyChanged(nameof(Informacoes));
             }
         }
     }
@@ -650,7 +650,7 @@ public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
             if (signatureField is null || signatureField.Equals(value) != true)
             {
                 signatureField = value;
-                OnPropertyChanged("Signature");
+                OnPropertyChanged(nameof(Signature));
             }
         }
     }
@@ -910,7 +910,7 @@ public partial class InformacoesCTe : INotifyPropertyChanged
 
     public InformacoesCTe() : base()
     {
-        autXMLField = new ObservableCollection<AutorizadoXML>();
+        autXMLField = [];
         impField = new Impostos();
         vPrestField = new ValoresPrestacaoServico();
         destField = new Destinatario();
@@ -938,20 +938,17 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     private string idField;
     private static XmlSerializer sSerializer;
 
+
     [XmlElement("ide")]
     public IdentificacaoOperacao IdentificacaoOperacao
     {
-        get
-        {
-            return ideField;
-        }
-
+        get => ideField;
         set
         {
             if (ideField is null || ideField.Equals(value) != true)
             {
                 ideField = value;
-                OnPropertyChanged("IdentificacaoOperacao");
+                OnPropertyChanged(nameof(IdentificacaoOperacao));
             }
         }
     }
@@ -959,17 +956,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("compl")]
     public ComplementoCTe Complemento
     {
-        get
-        {
-            return complField;
-        }
-
+        get => complField;
         set
         {
             if (complField is null || complField.Equals(value) != true)
             {
                 complField = value;
-                OnPropertyChanged("Complemento");
+                OnPropertyChanged(nameof(Complemento));
             }
         }
     }
@@ -977,17 +970,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("emit")]
     public Emitente Emitente
     {
-        get
-        {
-            return emitField;
-        }
-
+        get => emitField;
         set
         {
             if (emitField is null || emitField.Equals(value) != true)
             {
                 emitField = value;
-                OnPropertyChanged("Emitente");
+                OnPropertyChanged(nameof(Emitente));
             }
         }
     }
@@ -998,17 +987,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("toma", typeof(CTeOS.Tomador))]
     public object Tomador
     {
-        get
-        {
-            return tomaField;
-        }
-
+        get => tomaField;
         set
         {
             if (tomaField is null || tomaField.Equals(value) != true)
             {
                 tomaField = value;
-                OnPropertyChanged("Tomador");
+                OnPropertyChanged(nameof(Tomador));
             }
         }
     }
@@ -1016,17 +1001,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("rem")]
     public Remetente Remetente
     {
-        get
-        {
-            return remField;
-        }
-
+        get => remField;
         set
         {
             if (remField is null || remField.Equals(value) != true)
             {
                 remField = value;
-                OnPropertyChanged("Remetente");
+                OnPropertyChanged(nameof(Remetente));
             }
         }
     }
@@ -1040,17 +1021,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("exped")]
     public Expedidor Expedidor
     {
-        get
-        {
-            return expedField;
-        }
-
+        get => expedField;
         set
         {
             if (expedField is null || expedField.Equals(value) != true)
             {
                 expedField = value;
-                OnPropertyChanged("Expedidor");
+                OnPropertyChanged(nameof(Expedidor));
             }
         }
     }
@@ -1058,17 +1035,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("receb")]
     public Recebedor Recebedor
     {
-        get
-        {
-            return recebField;
-        }
-
+        get => recebField;
         set
         {
             if (recebField is null || recebField.Equals(value) != true)
             {
                 recebField = value;
-                OnPropertyChanged("Recebedor");
+                OnPropertyChanged(nameof(Recebedor));
             }
         }
     }
@@ -1076,17 +1049,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("dest")]
     public Destinatario Destinatario
     {
-        get
-        {
-            return destField;
-        }
-
+        get => destField;
         set
         {
             if (destField is null || destField.Equals(value) != true)
             {
                 destField = value;
-                OnPropertyChanged("Destinatario");
+                OnPropertyChanged(nameof(Destinatario));
             }
         }
     }
@@ -1094,17 +1063,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("vPrest")]
     public ValoresPrestacaoServico Valores
     {
-        get
-        {
-            return vPrestField;
-        }
-
+        get => vPrestField;
         set
         {
             if (vPrestField is null || vPrestField.Equals(value) != true)
             {
                 vPrestField = value;
-                OnPropertyChanged("Valores");
+                OnPropertyChanged(nameof(Valores));
             }
         }
     }
@@ -1112,17 +1077,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("imp")]
     public Impostos Impostos
     {
-        get
-        {
-            return impField;
-        }
-
+        get => impField;
         set
         {
             if (impField is null || impField.Equals(value) != true)
             {
                 impField = value;
-                OnPropertyChanged("Impostos");
+                OnPropertyChanged(nameof(Impostos));
             }
         }
     }
@@ -1162,17 +1123,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("infCteComp", typeof(InformacoesCteComplementado))]
     public object InformacaoCTePorTipo
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("InformacaoCTePorTipo");
+                OnPropertyChanged(nameof(InformacaoCTePorTipo));
             }
         }
     }
@@ -1180,17 +1137,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlElement("autXML")]
     public ObservableCollection<AutorizadoXML> AutorizadosDownloadXML
     {
-        get
-        {
-            return autXMLField;
-        }
-
+        get => autXMLField;
         set
         {
             if (autXMLField is null || autXMLField.Equals(value) != true)
             {
                 autXMLField = value;
-                OnPropertyChanged("AutorizadosDownloadXML");
+                OnPropertyChanged(nameof(AutorizadosDownloadXML));
             }
         }
     }
@@ -1198,17 +1151,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlAttribute("versao")]
     public string Versao
     {
-        get
-        {
-            return versaoField;
-        }
-
+        get => versaoField;
         set
         {
             if (versaoField is null || versaoField.Equals(value) != true)
             {
                 versaoField = value;
-                OnPropertyChanged("Versao");
+                OnPropertyChanged(nameof(Versao));
             }
         }
     }
@@ -1216,17 +1165,13 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
         }
     }
@@ -1235,25 +1180,15 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     {
         get
         {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(InformacoesCTe));
-            }
-
+            sSerializer ??= new XmlSerializer(typeof(InformacoesCTe));
             return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     /// <summary>
     /// Serializes current TNfeProc object into an XML document
@@ -1333,10 +1268,7 @@ public partial class InformacoesCTe : INotifyPropertyChanged
         }
     }
 
-    public static InformacoesCTe Deserialize(System.IO.Stream s)
-    {
-        return (InformacoesCTe)Serializer.Deserialize(s);
-    }
+    public static InformacoesCTe Deserialize(System.IO.Stream s) => (InformacoesCTe)Serializer.Deserialize(s);
 
 
     /// <summary>
@@ -1491,10 +1423,6 @@ public partial class InformacoesCTe : INotifyPropertyChanged
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class IdentificacaoOperacao : INotifyPropertyChanged
 {
 
@@ -1531,22 +1459,17 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     private object itemField;
     private DateTime? dhContField;
     private string xJustField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("cUF")]
     public NFe.OrgaoIBGE CodigoIBGE
     {
-        get
-        {
-            return cUFField;
-        }
-
+        get => cUFField;
         set
         {
             if (cUFField.Equals(value) != true)
             {
                 cUFField = value;
-                OnPropertyChanged("cUF");
+                OnPropertyChanged(nameof(CodigoIBGE));
             }
         }
     }
@@ -1554,17 +1477,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("cCT")]
     public string Chave
     {
-        get
-        {
-            return cCTField;
-        }
-
+        get => cCTField;
         set
         {
             if (cCTField is null || cCTField.Equals(value) != true)
             {
                 cCTField = value;
-                OnPropertyChanged("Chave");
+                OnPropertyChanged(nameof(Chave));
             }
         }
     }
@@ -1572,17 +1491,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("CFOP")]
     public string CFOP
     {
-        get
-        {
-            return cFOPField;
-        }
-
+        get => cFOPField;
         set
         {
             if (cFOPField is null || cFOPField.Equals(value) != true)
             {
                 cFOPField = value;
-                OnPropertyChanged("CFOP");
+                OnPropertyChanged(nameof(CFOP));
             }
         }
     }
@@ -1590,17 +1505,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("natOp")]
     public string NaturezaOperacao
     {
-        get
-        {
-            return natOpField;
-        }
-
+        get => natOpField;
         set
         {
             if (natOpField is null || natOpField.Equals(value) != true)
             {
                 natOpField = value;
-                OnPropertyChanged("NaturezaOperacao");
+                OnPropertyChanged(nameof(NaturezaOperacao));
             }
         }
     }
@@ -1608,17 +1519,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("forPag")]
     public FormaPagamento FormaPagamento
     {
-        get
-        {
-            return forPagField;
-        }
-
+        get => forPagField;
         set
         {
             if (forPagField.Equals(value) != true)
             {
                 forPagField = value;
-                OnPropertyChanged("FormaPagamento");
+                OnPropertyChanged(nameof(FormaPagamento));
             }
         }
     }
@@ -1626,17 +1533,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("mod")]
     public Modelo Modelo
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("Modelo");
+                OnPropertyChanged(nameof(Modelo));
             }
         }
     }
@@ -1644,17 +1547,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("serie")]
     public string Serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("Serie");
+                OnPropertyChanged(nameof(Serie));
             }
         }
     }
@@ -1662,17 +1561,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("nCT")]
     public long? Numero
     {
-        get
-        {
-            return nCTField;
-        }
-
+        get => nCTField;
         set
         {
             if (nCTField is null || nCTField.Equals(value) != true)
             {
                 nCTField = value;
-                OnPropertyChanged("Numero");
+                OnPropertyChanged(nameof(Numero));
             }
         }
     }
@@ -1680,40 +1575,29 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("dhEmi")]
     public DateTime? DataEmissao
     {
-        get
-        {
-            return dhEmiField;
-        }
-
+        get => dhEmiField;
         set
         {
             if (dhEmiField is null || dhEmiField.Equals(value) != true)
             {
                 dhEmiField = value;
-                OnPropertyChanged("DataEmissao");
+                OnPropertyChanged(nameof(DataEmissao));
             }
         }
     }
 
-    public bool ShouldSerializeDataEmissao()
-    {
-        return dhEmiField.HasValue;
-    }
+    public bool ShouldSerializeDataEmissao() => dhEmiField.HasValue;
 
     [XmlElement("tpImp")]
     public FormatoImpressao TipoImpressao
     {
-        get
-        {
-            return tpImpField;
-        }
-
+        get => tpImpField;
         set
         {
             if (tpImpField.Equals(value) != true)
             {
                 tpImpField = value;
-                OnPropertyChanged("TipoImpressao");
+                OnPropertyChanged(nameof(TipoImpressao));
             }
         }
     }
@@ -1721,17 +1605,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("tpEmis")]
     public FormaEmissao FormaEmissao
     {
-        get
-        {
-            return tpEmisField;
-        }
-
+        get => tpEmisField;
         set
         {
             if (tpEmisField.Equals(value) != true)
             {
                 tpEmisField = value;
-                OnPropertyChanged("FormaEmissao");
+                OnPropertyChanged(nameof(FormaEmissao));
             }
         }
     }
@@ -1739,11 +1619,7 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("cDV")]
     public string DigitoVerificador
     {
-        get
-        {
-            return cDVField;
-        }
-
+        get => cDVField;
         set
         {
             if (cDVField is null || cDVField.Equals(value) != true)
@@ -1757,17 +1633,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("tpAmb")]
     public NFe.Ambiente Ambiente
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             if (tpAmbField.Equals(value) != true)
             {
                 tpAmbField = value;
-                OnPropertyChanged("Ambiente");
+                OnPropertyChanged(nameof(Ambiente));
             }
         }
     }
@@ -1775,11 +1647,7 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("tpCTe")]
     public TipoCTe Finalidade
     {
-        get
-        {
-            return tpCTeField;
-        }
-
+        get => tpCTeField;
         set
         {
             if (tpCTeField.Equals(value) != true)
@@ -1793,17 +1661,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("procEmi")]
     public ProcessoEmissao ProcessoEmissao
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             if (procEmiField.Equals(value) != true)
             {
                 procEmiField = value;
-                OnPropertyChanged("ProcessoEmissao");
+                OnPropertyChanged(nameof(ProcessoEmissao));
             }
         }
     }
@@ -1811,17 +1675,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("verProc")]
     public string VersaoAplicativoEmissor
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             if (verProcField is null || verProcField.Equals(value) != true)
             {
                 verProcField = value;
-                OnPropertyChanged("VersaoAplicativoEmissor");
+                OnPropertyChanged(nameof(VersaoAplicativoEmissor));
             }
         }
     }
@@ -1829,17 +1689,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("refCTE")]
     public string ChaveCteReferenciado
     {
-        get
-        {
-            return refCTEField;
-        }
-
+        get => refCTEField;
         set
         {
             if (refCTEField is null || refCTEField.Equals(value) != true)
             {
                 refCTEField = value;
-                OnPropertyChanged("ChaveCteReferenciado");
+                OnPropertyChanged(nameof(ChaveCteReferenciado));
             }
         }
     }
@@ -1847,17 +1703,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("cMunEnv")]
     public string MunicipioEnvioCodigo
     {
-        get
-        {
-            return cMunEnvField;
-        }
-
+        get => cMunEnvField;
         set
         {
             if (cMunEnvField is null || cMunEnvField.Equals(value) != true)
             {
                 cMunEnvField = value;
-                OnPropertyChanged("MunicipioEnvioCodigo");
+                OnPropertyChanged(nameof(MunicipioEnvioCodigo));
             }
         }
     }
@@ -1865,17 +1717,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("xMunEnv")]
     public string MunicipioEnvioNome
     {
-        get
-        {
-            return xMunEnvField;
-        }
-
+        get => xMunEnvField;
         set
         {
             if (xMunEnvField is null || xMunEnvField.Equals(value) != true)
             {
                 xMunEnvField = value;
-                OnPropertyChanged("MunicipioEnvioNome");
+                OnPropertyChanged(nameof(MunicipioEnvioNome));
             }
         }
     }
@@ -1883,17 +1731,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("UFEnv")]
     public NFe.Estado UFEnvio
     {
-        get
-        {
-            return uFEnvField;
-        }
-
+        get => uFEnvField;
         set
         {
             if (uFEnvField.Equals(value) != true)
             {
                 uFEnvField = value;
-                OnPropertyChanged("UFEnvio");
+                OnPropertyChanged(nameof(UFEnvio));
             }
         }
     }
@@ -1901,17 +1745,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("modal")]
     public ModalidadeTransporte Modalidade
     {
-        get
-        {
-            return modalField;
-        }
-
+        get => modalField;
         set
         {
             if (modalField.Equals(value) != true)
             {
                 modalField = value;
-                OnPropertyChanged("Modalidade");
+                OnPropertyChanged(nameof(Modalidade));
             }
         }
     }
@@ -1919,17 +1759,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("tpServ")]
     public TiposServico TipoServico
     {
-        get
-        {
-            return tpServField;
-        }
-
+        get => tpServField;
         set
         {
             if (tpServField.Equals(value) != true)
             {
                 tpServField = value;
-                OnPropertyChanged("TipoServico");
+                OnPropertyChanged(nameof(TipoServico));
             }
         }
     }
@@ -1937,17 +1773,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("cMunIni")]
     public string MunicipioInicioCodigo
     {
-        get
-        {
-            return cMunIniField;
-        }
-
+        get => cMunIniField;
         set
         {
             if (cMunIniField is null || cMunIniField.Equals(value) != true)
             {
                 cMunIniField = value;
-                OnPropertyChanged("MunicipioInicioCodigo");
+                OnPropertyChanged(nameof(MunicipioInicioCodigo));
             }
         }
     }
@@ -1955,17 +1787,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("xMunIni")]
     public string MunicipioInicioNome
     {
-        get
-        {
-            return xMunIniField;
-        }
-
+        get => xMunIniField;
         set
         {
             if (xMunIniField is null || xMunIniField.Equals(value) != true)
             {
                 xMunIniField = value;
-                OnPropertyChanged("MunicipioInicioNome");
+                OnPropertyChanged(nameof(MunicipioInicioNome));
             }
         }
     }
@@ -1973,17 +1801,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("UFIni")]
     public NFe.Estado UFInicio
     {
-        get
-        {
-            return uFIniField;
-        }
-
+        get => uFIniField;
         set
         {
             if (uFIniField.Equals(value) != true)
             {
                 uFIniField = value;
-                OnPropertyChanged("UFInicio");
+                OnPropertyChanged(nameof(UFInicio));
             }
         }
     }
@@ -1991,17 +1815,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("cMunFim")]
     public string MunicipioFimCodigo
     {
-        get
-        {
-            return cMunFimField;
-        }
-
+        get => cMunFimField;
         set
         {
             if (cMunFimField is null || cMunFimField.Equals(value) != true)
             {
                 cMunFimField = value;
-                OnPropertyChanged("MunicipioFimCodigo");
+                OnPropertyChanged(nameof(MunicipioFimCodigo));
             }
         }
     }
@@ -2009,17 +1829,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("xMunFim")]
     public string MunicipioFimNome
     {
-        get
-        {
-            return xMunFimField;
-        }
-
+        get => xMunFimField;
         set
         {
             if (xMunFimField is null || xMunFimField.Equals(value) != true)
             {
                 xMunFimField = value;
-                OnPropertyChanged("MunicipioFimNome");
+                OnPropertyChanged(nameof(MunicipioFimNome));
             }
         }
     }
@@ -2027,17 +1843,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("UFFim")]
     public NFe.Estado UFFim
     {
-        get
-        {
-            return uFFimField;
-        }
-
+        get => uFFimField;
         set
         {
             if (uFFimField.Equals(value) != true)
             {
                 uFFimField = value;
-                OnPropertyChanged("UFFim");
+                OnPropertyChanged(nameof(UFFim));
             }
         }
     }
@@ -2045,17 +1857,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("retira")]
     public Retira retira
     {
-        get
-        {
-            return retiraField;
-        }
-
+        get => retiraField;
         set
         {
             if (retiraField.Equals(value) != true)
             {
                 retiraField = value;
-                OnPropertyChanged("retira");
+                OnPropertyChanged(nameof(retira));
             }
         }
     }
@@ -2063,17 +1871,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("xDetRetira")]
     public string xDetRetira
     {
-        get
-        {
-            return xDetRetiraField;
-        }
-
+        get => xDetRetiraField;
         set
         {
             if (xDetRetiraField is null || xDetRetiraField.Equals(value) != true)
             {
                 xDetRetiraField = value;
-                OnPropertyChanged("xDetRetira");
+                OnPropertyChanged(nameof(xDetRetira));
             }
         }
     }
@@ -2084,17 +1888,13 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("toma", typeof(CTeOS.Tomador))]
     public object Tomador
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Tomador");
+                OnPropertyChanged(nameof(Tomador));
             }
         }
     }
@@ -2102,101 +1902,59 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
     [XmlElement("dhCont")]
     public DateTime? DataHoraContingencia
     {
-        get
-        {
-            return dhContField;
-        }
-
+        get => dhContField;
         set
         {
             if (dhContField is null || dhContField.Equals(value) != true)
             {
                 dhContField = value;
-                OnPropertyChanged("DataHoraContingencia");
+                OnPropertyChanged(nameof(DataHoraContingencia));
             }
         }
     }
 
-    public bool ShouldSerializeDataHoraContingencia()
-    {
-        return dhContField.HasValue;
-    }
+    public bool ShouldSerializeDataHoraContingencia() => dhContField.HasValue;
 
     [XmlElement("xJust")]
     public string JustificativaContingencia
     {
-        get
-        {
-            return xJustField;
-        }
-
+        get => xJustField;
         set
         {
             if (xJustField is null || xJustField.Equals(value) != true)
             {
                 xJustField = value;
-                OnPropertyChanged("JustificativaContingencia");
+                OnPropertyChanged(nameof(JustificativaContingencia));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(IdentificacaoOperacao));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class ProtocoloAutorizacao : INotifyPropertyChanged
 {
     private TProtCTeInfProt infProtField;
     private SignatureType signatureField;
     private string versaoField;
-    private static XmlSerializer sSerializer;
 
     public ProtocoloAutorizacao() : base()
     {
-        // Me.signatureField = New SignatureType()
         infProtField = new TProtCTeInfProt();
     }
 
     public TProtCTeInfProt infProt
     {
-        get
-        {
-            return infProtField;
-        }
-
+        get => infProtField;
         set
         {
             if (infProtField is null || infProtField.Equals(value) != true)
             {
                 infProtField = value;
-                OnPropertyChanged("infProt");
+                OnPropertyChanged(nameof(infProt));
             }
         }
     }
@@ -2204,17 +1962,13 @@ public partial class ProtocoloAutorizacao : INotifyPropertyChanged
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
-
+        get => signatureField;
         set
         {
             if (signatureField is null || signatureField.Equals(value) != true)
             {
                 signatureField = value;
-                OnPropertyChanged("Signature");
+                OnPropertyChanged(nameof(Signature));
             }
         }
     }
@@ -2222,285 +1976,23 @@ public partial class ProtocoloAutorizacao : INotifyPropertyChanged
     [XmlAttribute()]
     public string versao
     {
-        get
-        {
-            return versaoField;
-        }
-
+        get => versaoField;
         set
         {
             if (versaoField is null || versaoField.Equals(value) != true)
             {
                 versaoField = value;
-                OnPropertyChanged("versao");
+                OnPropertyChanged(nameof(versao));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ProtocoloAutorizacao));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /// <summary>
-    /// Serializes current TNfeProc object into an XML document
-    /// </summary>
-    /// <returns>string XML value</returns>
-    public virtual string Serialize()
-    {
-        System.IO.StreamReader streamReader = null;
-        System.IO.MemoryStream memoryStream = null;
-        try
-        {
-            memoryStream = new System.IO.MemoryStream();
-            Serializer.Serialize(memoryStream, this);
-            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
-            streamReader = new System.IO.StreamReader(memoryStream);
-            return streamReader.ReadToEnd();
-        }
-        finally
-        {
-            if (streamReader != null)
-            {
-                streamReader.Dispose();
-            }
-
-            if (memoryStream != null)
-            {
-                memoryStream.Dispose();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Deserializes workflow markup into an TNfeProc object
-    /// </summary>
-    /// <param name="xml">string workflow markup to deserialize</param>
-    /// <param name="obj">Output TNfeProc object</param>
-    /// <param name="exception">output Exception value if deserialize failed</param>
-    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-    public static bool CanDeserialize(string xml, ref ProtocoloAutorizacao obj, ref Exception exception)
-    {
-        exception = null;
-        obj = default;
-        try
-        {
-            obj = Deserialize(xml);
-            return true;
-        }
-        catch (Exception ex)
-        {
-            exception = ex;
-            return false;
-        }
-    }
-
-    public static bool CanDeserialize(string xml, ref ProtocoloAutorizacao obj)
-    {
-        Exception exception = null;
-        return CanDeserialize(xml, ref obj, ref exception);
-    }
-
-    public static ProtocoloAutorizacao Deserialize(string xml)
-    {
-        System.IO.StringReader stringReader = null;
-        try
-        {
-            stringReader = new System.IO.StringReader(xml);
-            // stringReader.ReadToEnd() 'TESTING...
-            return (ProtocoloAutorizacao)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
-        }
-        // Return CType(Serializer.Deserialize(stringReader), ProtocoloAutorizacao)
-        finally
-        {
-            if (stringReader != null)
-            {
-                stringReader.Dispose();
-            }
-        }
-    }
-
-    public static ProtocoloAutorizacao Deserialize(System.IO.Stream s)
-    {
-        return (ProtocoloAutorizacao)Serializer.Deserialize(s);
-    }
-
-
-    /// <summary>
-    /// Serializes current TNfeProc object into file
-    /// </summary>
-    /// <param name="target">target stream of outupt xml file</param>
-    /// <param name="exception">output Exception value if failed</param>
-    /// <returns>true if can serialize and save into file; otherwise, false</returns>
-    public virtual bool CanSaveToFile(System.IO.Stream target, ref Exception exception)
-    {
-        exception = null;
-        try
-        {
-            SaveTo(target);
-            return true;
-        }
-        catch (Exception e)
-        {
-            exception = e;
-            return false;
-        }
-    }
-
-    public virtual void SaveTo(System.IO.Stream target)
-    {
-        if (target is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
-        var streamWriter = new System.IO.StreamWriter(target);
-        try
-        {
-            string xmlString = Serialize();
-            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
-            // streamWriter = xmlFile.CreateText
-            streamWriter.WriteLine(xmlString);
-            streamWriter.Flush();
-        }
-        finally
-        {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
-        }
-    }
-
-    public virtual async void SaveToAsync(System.IO.Stream target)
-    {
-        if (target is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
-        var streamWriter = new System.IO.StreamWriter(target);
-        try
-        {
-            string xmlString = Serialize();
-            await streamWriter.WriteLineAsync(xmlString);
-            await streamWriter.FlushAsync();
-        }
-        finally
-        {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
-        }
-    }
-
-
-    /// <summary>
-    /// Deserializes xml markup from file into an TNfeProc object
-    /// </summary>
-    /// <param name="source">target stream of outupt xml file</param>
-    /// <param name="obj">Output TNfeProc object</param>
-    /// <param name="exception">output Exception value if deserialize failed</param>
-    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-    public static bool CanLoadFrom(System.IO.Stream source, ref ProtocoloAutorizacao obj, ref Exception exception)
-    {
-        exception = null;
-        obj = default;
-        try
-        {
-            obj = LoadFrom(source);
-            return true;
-        }
-        catch (Exception ex)
-        {
-            exception = ex;
-            return false;
-        }
-    }
-
-    public static bool CanLoadFrom(System.IO.Stream source, ref ProtocoloAutorizacao obj)
-    {
-        Exception exception = null;
-        return CanLoadFrom(source, ref obj, ref exception);
-    }
-
-    public static ProtocoloAutorizacao LoadFrom(System.IO.Stream source)
-    {
-        if (source is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
-        System.IO.StreamReader sr = null;
-        try
-        {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
-            sr = new System.IO.StreamReader(source);
-            string xmlString = sr.ReadToEnd();
-            // sr.Close()
-            // file.Close()
-            return Deserialize(xmlString);
-        }
-        finally
-        {
-            if (source != null)
-            {
-                source.Dispose();
-            }
-
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
-        }
-    }
-
-    public static async Task<ProtocoloAutorizacao> LoadFromAsync(System.IO.Stream source)
-    {
-        if (source is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
-        System.IO.StreamReader sr = null;
-        try
-        {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
-            sr = new System.IO.StreamReader(source);
-            string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
-            return Deserialize(xmlString);
-        }
-        finally
-        {
-            if (source != null)
-            {
-                source.Dispose();
-            }
-
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TProtCTeInfProt : INotifyPropertyChanged
 {
     private NFe.Ambiente tpAmbField;
@@ -2512,55 +2004,42 @@ public partial class TProtCTeInfProt : INotifyPropertyChanged
     private string cStatField;
     private string xMotivoField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     public NFe.Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             if (tpAmbField.Equals(value) != true)
             {
                 tpAmbField = value;
-                OnPropertyChanged("tpAmb");
+                OnPropertyChanged(nameof(tpAmb));
             }
         }
     }
 
     public string verAplic
     {
-        get
-        {
-            return verAplicField;
-        }
-
+        get => verAplicField;
         set
         {
             if (verAplicField is null || verAplicField.Equals(value) != true)
             {
                 verAplicField = value;
-                OnPropertyChanged("verAplic");
+                OnPropertyChanged(nameof(verAplic));
             }
         }
     }
 
     public string chCTe
     {
-        get
-        {
-            return chCTeField;
-        }
-
+        get => chCTeField;
         set
         {
             if (chCTeField is null || chCTeField.Equals(value) != true)
             {
                 chCTeField = value;
-                OnPropertyChanged("chCTe");
+                OnPropertyChanged(nameof(chCTe));
             }
         }
     }
@@ -2568,24 +2047,12 @@ public partial class TProtCTeInfProt : INotifyPropertyChanged
     private string chave_codificada = null;
 
     [XmlIgnore]
-    public string ChaveCTeCodificada
-    {
-        get
-        {
-            return chave_codificada;
-        }
-    }
+    public string ChaveCTeCodificada => chave_codificada;
 
     private byte[] chaveArray;
 
     [XmlIgnore]
-    public byte[] ChaveCTeCodificadaByte
-    {
-        get
-        {
-            return chaveArray;
-        }
-    }
+    public byte[] ChaveCTeCodificadaByte => chaveArray;
 
     public string ChaveCTeFormatada
     {
@@ -2610,48 +2077,36 @@ public partial class TProtCTeInfProt : INotifyPropertyChanged
     [XmlIgnore()]
     public byte[] Logo
     {
-        get
-        {
-            return _logo;
-        }
-
+        get => _logo;
         set
         {
             _logo = value;
-            OnPropertyChanged("Logo");
+            OnPropertyChanged(nameof(Logo));
         }
     }
 
     public DateTime dhRecbto
     {
-        get
-        {
-            return dhRecbtoField;
-        }
-
+        get => dhRecbtoField;
         set
         {
             if (dhRecbtoField.Equals(value) != true)
             {
                 dhRecbtoField = value;
-                OnPropertyChanged("dhRecbto");
+                OnPropertyChanged(nameof(dhRecbto));
             }
         }
     }
 
     public string nProt
     {
-        get
-        {
-            return nProtField;
-        }
-
+        get => nProtField;
         set
         {
             if (nProtField is null || nProtField.Equals(value) != true)
             {
                 nProtField = value;
-                OnPropertyChanged("nProt");
+                OnPropertyChanged(nameof(nProt));
             }
         }
     }
@@ -2659,51 +2114,39 @@ public partial class TProtCTeInfProt : INotifyPropertyChanged
     [XmlElement(DataType = "base64Binary")]
     public byte[] digVal
     {
-        get
-        {
-            return digValField;
-        }
-
+        get => digValField;
         set
         {
             if (digValField is null || digValField.Equals(value) != true)
             {
                 digValField = value;
-                OnPropertyChanged("digVal");
+                OnPropertyChanged(nameof(digVal));
             }
         }
     }
 
     public string cStat
     {
-        get
-        {
-            return cStatField;
-        }
-
+        get => cStatField;
         set
         {
             if (cStatField is null || cStatField.Equals(value) != true)
             {
                 cStatField = value;
-                OnPropertyChanged("cStat");
+                OnPropertyChanged(nameof(cStat));
             }
         }
     }
 
     public string xMotivo
     {
-        get
-        {
-            return xMotivoField;
-        }
-
+        get => xMotivoField;
         set
         {
             if (xMotivoField is null || xMotivoField.Equals(value) != true)
             {
                 xMotivoField = value;
-                OnPropertyChanged("xMotivo");
+                OnPropertyChanged(nameof(xMotivo));
             }
         }
     }
@@ -2711,65 +2154,35 @@ public partial class TProtCTeInfProt : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TProtCTeInfProt));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public void SetCodeBarRaw(string encodedString, byte[] encodedArray)
     {
         chave_codificada = encodedString;
         chaveArray = encodedArray;
     }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignatureType : INotifyPropertyChanged
 {
     private SignedInfoType signedInfoField;
     private SignatureValueType signatureValueField;
     private KeyInfoType keyInfoField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     public SignatureType() : base()
     {
@@ -2780,51 +2193,39 @@ public partial class SignatureType : INotifyPropertyChanged
 
     public SignedInfoType SignedInfo
     {
-        get
-        {
-            return signedInfoField;
-        }
-
+        get => signedInfoField;
         set
         {
             if (signedInfoField is null || signedInfoField.Equals(value) != true)
             {
                 signedInfoField = value;
-                OnPropertyChanged("SignedInfo");
+                OnPropertyChanged(nameof(SignedInfo));
             }
         }
     }
 
     public SignatureValueType SignatureValue
     {
-        get
-        {
-            return signatureValueField;
-        }
-
+        get => signatureValueField;
         set
         {
             if (signatureValueField is null || signatureValueField.Equals(value) != true)
             {
                 signatureValueField = value;
-                OnPropertyChanged("SignatureValue");
+                OnPropertyChanged(nameof(SignatureValue));
             }
         }
     }
 
     public KeyInfoType KeyInfo
     {
-        get
-        {
-            return keyInfoField;
-        }
-
+        get => keyInfoField;
         set
         {
             if (keyInfoField is null || keyInfoField.Equals(value) != true)
             {
                 keyInfoField = value;
-                OnPropertyChanged("KeyInfo");
+                OnPropertyChanged(nameof(KeyInfo));
             }
         }
     }
@@ -2832,57 +2233,29 @@ public partial class SignatureType : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(SignatureType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignedInfoType : INotifyPropertyChanged
 {
     private SignedInfoTypeCanonicalizationMethod canonicalizationMethodField;
     private SignedInfoTypeSignatureMethod signatureMethodField;
     private ReferenceType referenceField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     public SignedInfoType() : base()
     {
@@ -2893,51 +2266,39 @@ public partial class SignedInfoType : INotifyPropertyChanged
 
     public SignedInfoTypeCanonicalizationMethod CanonicalizationMethod
     {
-        get
-        {
-            return canonicalizationMethodField;
-        }
-
+        get => canonicalizationMethodField;
         set
         {
             if (canonicalizationMethodField is null || canonicalizationMethodField.Equals(value) != true)
             {
                 canonicalizationMethodField = value;
-                OnPropertyChanged("CanonicalizationMethod");
+                OnPropertyChanged(nameof(CanonicalizationMethod));
             }
         }
     }
 
     public SignedInfoTypeSignatureMethod SignatureMethod
     {
-        get
-        {
-            return signatureMethodField;
-        }
-
+        get => signatureMethodField;
         set
         {
             if (signatureMethodField is null || signatureMethodField.Equals(value) != true)
             {
                 signatureMethodField = value;
-                OnPropertyChanged("SignatureMethod");
+                OnPropertyChanged(nameof(SignatureMethod));
             }
         }
     }
 
     public ReferenceType Reference
     {
-        get
-        {
-            return referenceField;
-        }
-
+        get => referenceField;
         set
         {
             if (referenceField is null || referenceField.Equals(value) != true)
             {
                 referenceField = value;
-                OnPropertyChanged("Reference");
+                OnPropertyChanged(nameof(Reference));
             }
         }
     }
@@ -2945,54 +2306,26 @@ public partial class SignedInfoType : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(SignedInfoType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignedInfoTypeCanonicalizationMethod : INotifyPropertyChanged
 {
     private string algorithmField;
-    private static XmlSerializer sSerializer;
 
     public SignedInfoTypeCanonicalizationMethod() : base()
     {
@@ -3002,54 +2335,26 @@ public partial class SignedInfoTypeCanonicalizationMethod : INotifyPropertyChang
     [XmlAttribute(DataType = "anyURI")]
     public string Algorithm
     {
-        get
-        {
-            return algorithmField;
-        }
-
+        get => algorithmField;
         set
         {
             if (algorithmField is null || algorithmField.Equals(value) != true)
             {
                 algorithmField = value;
-                OnPropertyChanged("Algorithm");
+                OnPropertyChanged(nameof(Algorithm));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(SignedInfoTypeCanonicalizationMethod));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignedInfoTypeSignatureMethod : INotifyPropertyChanged
 {
     private string algorithmField;
-    private static XmlSerializer sSerializer;
 
     public SignedInfoTypeSignatureMethod() : base()
     {
@@ -3059,50 +2364,23 @@ public partial class SignedInfoTypeSignatureMethod : INotifyPropertyChanged
     [XmlAttribute(DataType = "anyURI")]
     public string Algorithm
     {
-        get
-        {
-            return algorithmField;
-        }
-
+        get => algorithmField;
         set
         {
             if (algorithmField is null || algorithmField.Equals(value) != true)
             {
                 algorithmField = value;
-                OnPropertyChanged("Algorithm");
+                OnPropertyChanged(nameof(Algorithm));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(SignedInfoTypeSignatureMethod));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class ReferenceType : INotifyPropertyChanged
 {
     private ObservableCollection<TransformType> transformsField;
@@ -3111,45 +2389,36 @@ public partial class ReferenceType : INotifyPropertyChanged
     private string idField;
     private string uRIField;
     private string typeField;
-    private static XmlSerializer sSerializer;
 
     public ReferenceType() : base()
     {
         digestMethodField = new ReferenceTypeDigestMethod();
-        transformsField = new ObservableCollection<TransformType>();
+        transformsField = [];
     }
 
     [XmlArrayItem("Transform", IsNullable = false)]
     public ObservableCollection<TransformType> Transforms
     {
-        get
-        {
-            return transformsField;
-        }
-
+        get => transformsField;
         set
         {
             if (transformsField is null || transformsField.Equals(value) != true)
             {
                 transformsField = value;
-                OnPropertyChanged("Transforms");
+                OnPropertyChanged(nameof(Transforms));
             }
         }
     }
 
     public ReferenceTypeDigestMethod DigestMethod
     {
-        get
-        {
-            return digestMethodField;
-        }
-
+        get => digestMethodField;
         set
         {
             if (digestMethodField is null || digestMethodField.Equals(value) != true)
             {
                 digestMethodField = value;
-                OnPropertyChanged("DigestMethod");
+                OnPropertyChanged(nameof(DigestMethod));
             }
         }
     }
@@ -3157,17 +2426,13 @@ public partial class ReferenceType : INotifyPropertyChanged
     [XmlElement(DataType = "base64Binary")]
     public byte[] DigestValue
     {
-        get
-        {
-            return digestValueField;
-        }
-
+        get => digestValueField;
         set
         {
             if (digestValueField is null || digestValueField.Equals(value) != true)
             {
                 digestValueField = value;
-                OnPropertyChanged("DigestValue");
+                OnPropertyChanged(nameof(DigestValue));
             }
         }
     }
@@ -3175,17 +2440,13 @@ public partial class ReferenceType : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
         }
     }
@@ -3193,17 +2454,13 @@ public partial class ReferenceType : INotifyPropertyChanged
     [XmlAttribute(DataType = "anyURI")]
     public string URI
     {
-        get
-        {
-            return uRIField;
-        }
-
+        get => uRIField;
         set
         {
             if (uRIField is null || uRIField.Equals(value) != true)
             {
                 uRIField = value;
-                OnPropertyChanged("URI");
+                OnPropertyChanged(nameof(URI));
             }
         }
     }
@@ -3211,75 +2468,43 @@ public partial class ReferenceType : INotifyPropertyChanged
     [XmlAttribute(DataType = "anyURI")]
     public string Type
     {
-        get
-        {
-            return typeField;
-        }
-
+        get => typeField;
         set
         {
             if (typeField is null || typeField.Equals(value) != true)
             {
                 typeField = value;
-                OnPropertyChanged("Type");
+                OnPropertyChanged(nameof(Type));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ReferenceType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class TransformType : INotifyPropertyChanged
 {
     private ObservableCollection<string> xPathField;
     private TTransformURI algorithmField;
-    private static XmlSerializer sSerializer;
 
     public TransformType() : base()
     {
-        xPathField = new ObservableCollection<string>();
+        xPathField = [];
     }
 
     [XmlElement("XPath")]
     public ObservableCollection<string> XPath
     {
-        get
-        {
-            return xPathField;
-        }
-
+        get => xPathField;
         set
         {
             if (xPathField is null || xPathField.Equals(value) != true)
             {
                 xPathField = value;
-                OnPropertyChanged("XPath");
+                OnPropertyChanged(nameof(XPath));
             }
         }
     }
@@ -3287,49 +2512,23 @@ public partial class TransformType : INotifyPropertyChanged
     [XmlAttribute()]
     public TTransformURI Algorithm
     {
-        get
-        {
-            return algorithmField;
-        }
-
+        get => algorithmField;
         set
         {
             if (algorithmField.Equals(value) != true)
             {
                 algorithmField = value;
-                OnPropertyChanged("Algorithm");
+                OnPropertyChanged(nameof(Algorithm));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TransformType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public enum TTransformURI
 {
 
@@ -3342,14 +2541,9 @@ public enum TTransformURI
     httpwwww3orgTR2001RECxmlc14n20010315
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class ReferenceTypeDigestMethod : INotifyPropertyChanged
 {
     private string algorithmField;
-    private static XmlSerializer sSerializer;
 
     public ReferenceTypeDigestMethod() : base()
     {
@@ -3359,70 +2553,38 @@ public partial class ReferenceTypeDigestMethod : INotifyPropertyChanged
     [XmlAttribute(DataType = "anyURI")]
     public string Algorithm
     {
-        get
-        {
-            return algorithmField;
-        }
-
+        get => algorithmField;
         set
         {
             if (algorithmField is null || algorithmField.Equals(value) != true)
             {
                 algorithmField = value;
-                OnPropertyChanged("Algorithm");
+                OnPropertyChanged(nameof(Algorithm));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ReferenceTypeDigestMethod));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignatureValueType : INotifyPropertyChanged
 {
     private string idField;
     private byte[] valueField;
-    private static XmlSerializer sSerializer;
 
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
         }
     }
@@ -3430,55 +2592,27 @@ public partial class SignatureValueType : INotifyPropertyChanged
     [XmlText(DataType = "base64Binary")]
     public byte[] Value
     {
-        get
-        {
-            return valueField;
-        }
-
+        get => valueField;
         set
         {
             if (valueField is null || valueField.Equals(value) != true)
             {
                 valueField = value;
-                OnPropertyChanged("Value");
+                OnPropertyChanged(nameof(Value));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(SignatureValueType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class KeyInfoType : INotifyPropertyChanged
 {
     private X509DataType x509DataField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     public KeyInfoType() : base()
     {
@@ -3487,17 +2621,13 @@ public partial class KeyInfoType : INotifyPropertyChanged
 
     public X509DataType X509Data
     {
-        get
-        {
-            return x509DataField;
-        }
-
+        get => x509DataField;
         set
         {
             if (x509DataField is null || x509DataField.Equals(value) != true)
             {
                 x509DataField = value;
-                OnPropertyChanged("X509Data");
+                OnPropertyChanged(nameof(X509Data));
             }
         }
     }
@@ -3505,145 +2635,82 @@ public partial class KeyInfoType : INotifyPropertyChanged
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
-        get
-        {
-            return idField;
-        }
-
+        get => idField;
         set
         {
             if (idField is null || idField.Equals(value) != true)
             {
                 idField = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(nameof(Id));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(KeyInfoType));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
 public partial class X509DataType : INotifyPropertyChanged
 {
     private byte[] x509CertificateField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement(DataType = "base64Binary")]
     public byte[] X509Certificate
     {
-        get
-        {
-            return x509CertificateField;
-        }
-
+        get => x509CertificateField;
         set
         {
             if (x509CertificateField is null || x509CertificateField.Equals(value) != true)
             {
                 x509CertificateField = value;
-                OnPropertyChanged("X509Certificate");
+                OnPropertyChanged(nameof(X509Certificate));
             }
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(X509DataType));
-            }
-
-            return sSerializer;
-        }
-    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TUnidCarga : INotifyPropertyChanged
 {
     private TtipoUnidCarga tpUnidCargaField;
     private string idUnidCargaField;
     private ObservableCollection<TUnidCargaLacUnidCarga> lacUnidCargaField;
     private string qtdRatField;
-    private static XmlSerializer sSerializer;
 
     public TUnidCarga() : base()
     {
-        lacUnidCargaField = new ObservableCollection<TUnidCargaLacUnidCarga>();
+        lacUnidCargaField = [];
     }
 
     public TtipoUnidCarga tpUnidCarga
     {
-        get
-        {
-            return tpUnidCargaField;
-        }
-
+        get => tpUnidCargaField;
         set
         {
             if (tpUnidCargaField.Equals(value) != true)
             {
                 tpUnidCargaField = value;
-                OnPropertyChanged("tpUnidCarga");
+                OnPropertyChanged(nameof(tpUnidCarga));
             }
         }
     }
 
     public string idUnidCarga
     {
-        get
-        {
-            return idUnidCargaField;
-        }
-
+        get => idUnidCargaField;
         set
         {
             if (idUnidCargaField is null || idUnidCargaField.Equals(value) != true)
             {
                 idUnidCargaField = value;
-                OnPropertyChanged("idUnidCarga");
+                OnPropertyChanged(nameof(idUnidCarga));
             }
         }
     }
@@ -3651,66 +2718,36 @@ public partial class TUnidCarga : INotifyPropertyChanged
     [XmlElement("lacUnidCarga")]
     public ObservableCollection<TUnidCargaLacUnidCarga> lacUnidCarga
     {
-        get
-        {
-            return lacUnidCargaField;
-        }
-
+        get => lacUnidCargaField;
         set
         {
             if (lacUnidCargaField is null || lacUnidCargaField.Equals(value) != true)
             {
                 lacUnidCargaField = value;
-                OnPropertyChanged("lacUnidCarga");
+                OnPropertyChanged(nameof(lacUnidCarga));
             }
         }
     }
 
     public string qtdRat
     {
-        get
-        {
-            return qtdRatField;
-        }
-
+        get => qtdRatField;
         set
         {
             if (qtdRatField is null || qtdRatField.Equals(value) != true)
             {
                 qtdRatField = value;
-                OnPropertyChanged("qtdRat");
+                OnPropertyChanged(nameof(qtdRat));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TUnidCarga));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TtipoUnidCarga
 {
 
@@ -3731,61 +2768,29 @@ public enum TtipoUnidCarga
     Item4
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TUnidCargaLacUnidCarga : INotifyPropertyChanged
 {
     private string nLacreField;
-    private static XmlSerializer sSerializer;
 
     public string nLacre
     {
-        get
-        {
-            return nLacreField;
-        }
-
+        get => nLacreField;
         set
         {
             if (nLacreField is null || nLacreField.Equals(value) != true)
             {
                 nLacreField = value;
-                OnPropertyChanged("nLacre");
+                OnPropertyChanged(nameof(nLacre));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TUnidCargaLacUnidCarga));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TUnidadeTransp : INotifyPropertyChanged
 {
     private TtipoUnidTransp tpUnidTranspField;
@@ -3793,44 +2798,35 @@ public partial class TUnidadeTransp : INotifyPropertyChanged
     private ObservableCollection<TUnidadeTranspLacUnidTransp> lacUnidTranspField;
     private ObservableCollection<TUnidCarga> infUnidCargaField;
     private string qtdRatField;
-    private static XmlSerializer sSerializer;
 
     public TUnidadeTransp() : base()
     {
-        infUnidCargaField = new ObservableCollection<TUnidCarga>();
-        lacUnidTranspField = new ObservableCollection<TUnidadeTranspLacUnidTransp>();
+        infUnidCargaField = [];
+        lacUnidTranspField = [];
     }
 
     public TtipoUnidTransp tpUnidTransp
     {
-        get
-        {
-            return tpUnidTranspField;
-        }
-
+        get => tpUnidTranspField;
         set
         {
             if (tpUnidTranspField.Equals(value) != true)
             {
                 tpUnidTranspField = value;
-                OnPropertyChanged("tpUnidTransp");
+                OnPropertyChanged(nameof(tpUnidTransp));
             }
         }
     }
 
     public string idUnidTransp
     {
-        get
-        {
-            return idUnidTranspField;
-        }
-
+        get => idUnidTranspField;
         set
         {
             if (idUnidTranspField is null || idUnidTranspField.Equals(value) != true)
             {
                 idUnidTranspField = value;
-                OnPropertyChanged("idUnidTransp");
+                OnPropertyChanged(nameof(idUnidTransp));
             }
         }
     }
@@ -3838,17 +2834,13 @@ public partial class TUnidadeTransp : INotifyPropertyChanged
     [XmlElement("lacUnidTransp")]
     public ObservableCollection<TUnidadeTranspLacUnidTransp> lacUnidTransp
     {
-        get
-        {
-            return lacUnidTranspField;
-        }
-
+        get => lacUnidTranspField;
         set
         {
             if (lacUnidTranspField is null || lacUnidTranspField.Equals(value) != true)
             {
                 lacUnidTranspField = value;
-                OnPropertyChanged("lacUnidTransp");
+                OnPropertyChanged(nameof(lacUnidTransp));
             }
         }
     }
@@ -3856,66 +2848,36 @@ public partial class TUnidadeTransp : INotifyPropertyChanged
     [XmlElement("infUnidCarga")]
     public ObservableCollection<TUnidCarga> infUnidCarga
     {
-        get
-        {
-            return infUnidCargaField;
-        }
-
+        get => infUnidCargaField;
         set
         {
             if (infUnidCargaField is null || infUnidCargaField.Equals(value) != true)
             {
                 infUnidCargaField = value;
-                OnPropertyChanged("infUnidCarga");
+                OnPropertyChanged(nameof(infUnidCarga));
             }
         }
     }
 
     public string qtdRat
     {
-        get
-        {
-            return qtdRatField;
-        }
-
+        get => qtdRatField;
         set
         {
             if (qtdRatField is null || qtdRatField.Equals(value) != true)
             {
                 qtdRatField = value;
-                OnPropertyChanged("qtdRat");
+                OnPropertyChanged(nameof(qtdRat));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TUnidadeTransp));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TtipoUnidTransp
 {
 
@@ -3948,66 +2910,33 @@ public enum TtipoUnidTransp
     Item7
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TUnidadeTranspLacUnidTransp : INotifyPropertyChanged
 {
     private string nLacreField;
-    private static XmlSerializer sSerializer;
 
     public string nLacre
     {
-        get
-        {
-            return nLacreField;
-        }
-
+        get => nLacreField;
         set
         {
             if (nLacreField is null || nLacreField.Equals(value) != true)
             {
                 nLacreField = value;
-                OnPropertyChanged("nLacre");
+                OnPropertyChanged(nameof(nLacre));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TUnidadeTranspLacUnidTransp));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class ICMS : INotifyPropertyChanged
 {
     private DetalhamentoICMS itemField;
     private Tributacao_ICMS_Identifier itemElementNameField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("ICMS00", typeof(DetalhamentoICMS))]
     [XmlElement("ICMS20", typeof(DetalhamentoICMS))]
@@ -4024,11 +2953,7 @@ public partial class ICMS : INotifyPropertyChanged
     [XmlChoiceIdentifier("TributacaoIndentifier")]
     public DetalhamentoICMS Tributacao
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
@@ -4042,87 +2967,46 @@ public partial class ICMS : INotifyPropertyChanged
     [XmlIgnore()]
     public Tributacao_ICMS_Identifier TributacaoIndentifier
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("TributacaoIndentifier");
+                OnPropertyChanged(nameof(TributacaoIndentifier));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ICMS));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public class InftributosFederais : INotifyPropertyChanged
 {
     private double? _vINSS;
 
     public double? vINSS
     {
-        get
-        {
-            return _vINSS;
-        }
-
+        get => _vINSS;
         set
         {
             if (_vINSS is null || _vINSS.Equals(value) != true)
             {
                 _vINSS = value;
-                OnPropertyChanged("vINSS");
+                OnPropertyChanged(nameof(vINSS));
             }
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class DetalhamentoICMS : INotifyPropertyChanged
 {
 
@@ -4140,342 +3024,221 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
     private double? pICMSOutraUFField;
     private double? vICMSOutraUFField;
     private DetalhamentoICMSIndicadorSN indSNField;
-    private static XmlSerializer sSerializer;
 
     public NFe.CST_ICMS CST
     {
-        get
-        {
-            return cSTField;
-        }
-
+        get => cSTField;
         set
         {
             if (cSTField.Equals(value) != true)
             {
                 cSTField = value;
-                OnPropertyChanged("CST");
+                OnPropertyChanged(nameof(CST));
             }
         }
     }
 
     public double? vBC
     {
-        get
-        {
-            return vBCField;
-        }
-
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
-    public bool ShouldSerializevBC()
-    {
-        return vBCField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
-    }
+    public bool ShouldSerializevBC() => vBCField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
 
     public double? pRedBC
     {
-        get
-        {
-            return pRedBCField;
-        }
-
+        get => pRedBCField;
         set
         {
             if (pRedBCField is null || pRedBCField.Equals(value) != true)
             {
                 pRedBCField = value;
-                OnPropertyChanged("pRedBC");
+                OnPropertyChanged(nameof(pRedBC));
             }
         }
     }
 
-    public bool ShouldSerializepRedBC()
-    {
-        return pRedBCField.HasValue & (CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
-    }
+    public bool ShouldSerializepRedBC() => pRedBCField.HasValue & (CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
 
     public double? pICMS
     {
-        get
-        {
-            return pICMSField;
-        }
-
+        get => pICMSField;
         set
         {
             if (pICMSField is null || pICMSField.Equals(value) != true)
             {
                 pICMSField = value;
-                OnPropertyChanged("pICMS");
+                OnPropertyChanged(nameof(pICMS));
             }
         }
     }
 
-    public bool ShouldSerializepICMS()
-    {
-        return pICMSField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
-    }
+    public bool ShouldSerializepICMS() => pICMSField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
 
     public double? vICMS
     {
-        get
-        {
-            return vICMSField;
-        }
-
+        get => vICMSField;
         set
         {
             if (vICMSField is null || vICMSField.Equals(value) != true)
             {
                 vICMSField = value;
-                OnPropertyChanged("vICMS");
+                OnPropertyChanged(nameof(vICMS));
             }
         }
     }
 
-    public bool ShouldSerializevICMS()
-    {
-        return vICMSField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
-    }
+    public bool ShouldSerializevICMS() => vICMSField.HasValue & (CST == NFe.CST_ICMS.CST_00 | CST == NFe.CST_ICMS.CST_20 | CST == NFe.CST_ICMS.CST_90);
 
     public double? vBCSTRet
     {
-        get
-        {
-            return vBCSTRetField;
-        }
-
+        get => vBCSTRetField;
         set
         {
             if (vBCSTRetField is null || vBCSTRetField.Equals(value) != true)
             {
                 vBCSTRetField = value;
-                OnPropertyChanged("vBCSTRet");
+                OnPropertyChanged(nameof(vBCSTRet));
             }
         }
     }
 
-    public bool ShouldSerializevBCSTRet()
-    {
-        return vBCSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
-    }
+    public bool ShouldSerializevBCSTRet() => vBCSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
 
     public double? vICMSSTRet
     {
-        get
-        {
-            return vICMSSTRetField;
-        }
-
+        get => vICMSSTRetField;
         set
         {
             if (vICMSSTRetField is null || vICMSSTRetField.Equals(value) != true)
             {
                 vICMSSTRetField = value;
-                OnPropertyChanged("vICMSSTRet");
+                OnPropertyChanged(nameof(vICMSSTRet));
             }
         }
     }
 
-    public bool ShouldSerializevICMSSTRet()
-    {
-        return vICMSSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
-    }
+    public bool ShouldSerializevICMSSTRet() => vICMSSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
 
     public double? pICMSSTRet
     {
-        get
-        {
-            return pICMSSTRetField;
-        }
-
+        get => pICMSSTRetField;
         set
         {
             if (pICMSSTRetField is null || pICMSSTRetField.Equals(value) != true)
             {
                 pICMSSTRetField = value;
-                OnPropertyChanged("pICMSSTRet");
+                OnPropertyChanged(nameof(pICMSSTRet));
             }
         }
     }
 
-    public bool ShouldSerializepICMSSTRet()
-    {
-        return pICMSSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
-    }
+    public bool ShouldSerializepICMSSTRet() => pICMSSTRetField.HasValue & CST == NFe.CST_ICMS.CST_60;
 
     public double? vCred
     {
-        get
-        {
-            return vCredField;
-        }
-
+        get => vCredField;
         set
         {
             if (vCredField is null || vCredField.Equals(value) != true)
             {
                 vCredField = value;
-                OnPropertyChanged("vCred");
+                OnPropertyChanged(nameof(vCred));
             }
         }
     }
 
-    public bool ShouldSerializevCred()
-    {
-        return vCredField.HasValue & (CST == NFe.CST_ICMS.CST_60 | CST == NFe.CST_ICMS.CST_90);
-    }
+    public bool ShouldSerializevCred() => vCredField.HasValue & (CST == NFe.CST_ICMS.CST_60 | CST == NFe.CST_ICMS.CST_90);
 
     public double? pRedBCOutraUF
     {
-        get
-        {
-            return pRedBCOutraUFField;
-        }
-
+        get => pRedBCOutraUFField;
         set
         {
             if (pRedBCOutraUFField is null || pRedBCOutraUFField.Equals(value) != true)
             {
                 pRedBCOutraUFField = value;
-                OnPropertyChanged("pRedBCOutraUF");
+                OnPropertyChanged(nameof(pRedBCOutraUF));
             }
         }
     }
 
-    public bool ShouldSerializepRedBCOutraUF()
-    {
-        return pRedBCOutraUFField.HasValue;
-    }
+    public bool ShouldSerializepRedBCOutraUF() => pRedBCOutraUFField.HasValue;
 
     public string vBCOutraUF
     {
-        get
-        {
-            return Conversions.ToString(vBCOutraUFField);
-        }
-
+        get => vBCOutraUFField?.ToString();
         set
         {
             if (vBCOutraUFField is null || vBCOutraUFField.Equals(value) != true)
             {
                 vBCOutraUFField = value.ToNullableDouble();
-                OnPropertyChanged("vBCOutraUF");
+                OnPropertyChanged(nameof(vBCOutraUF));
             }
         }
     }
 
-    public bool ShouldSerializevBCOutraUF()
-    {
-        return vBCOutraUFField.HasValue;
-    }
+    public bool ShouldSerializevBCOutraUF() => vBCOutraUFField.HasValue;
 
     public string pICMSOutraUF
     {
-        get
-        {
-            return Conversions.ToString(pICMSOutraUFField);
-        }
-
+        get => pICMSOutraUFField.ToString();
         set
         {
             if (pICMSOutraUFField is null || pICMSOutraUFField.Equals(value) != true)
             {
                 pICMSOutraUFField = value.ToNullableDouble();
-                OnPropertyChanged("pICMSOutraUF");
+                OnPropertyChanged(nameof(pICMSOutraUF));
             }
         }
     }
 
-    public bool ShouldSerializepICMSOutraUF()
-    {
-        return pICMSOutraUFField.HasValue;
-    }
+    public bool ShouldSerializepICMSOutraUF() => pICMSOutraUFField.HasValue;
 
     public string vICMSOutraUF
     {
-        get
-        {
-            return Conversions.ToString(vICMSOutraUFField);
-        }
-
+        get => vICMSOutraUFField.ToString();
         set
         {
             if (vICMSOutraUFField is null || vICMSOutraUFField.Equals(value) != true)
             {
                 vICMSOutraUFField = value.ToNullableDouble();
-                OnPropertyChanged("vICMSOutraUF");
+                OnPropertyChanged(nameof(vICMSOutraUF));
             }
         }
     }
 
-    public bool ShouldSerializevICMSOutraUF()
-    {
-        return vICMSOutraUFField.HasValue;
-    }
+    public bool ShouldSerializevICMSOutraUF() => vICMSOutraUFField.HasValue;
 
     public DetalhamentoICMSIndicadorSN indSN
     {
-        get
-        {
-            return indSNField;
-        }
-
+        get => indSNField;
         set
         {
             if (indSNField.Equals(value) != true)
             {
                 indSNField = value;
-                OnPropertyChanged("indSN");
+                OnPropertyChanged(nameof(indSN));
             }
         }
     }
 
-    public bool ShouldSerializeindSN()
-    {
-        return vCredField.HasValue == false & CST != NFe.CST_ICMS.CST_60 & CST != NFe.CST_ICMS.CST_90;
-    }
+    public bool ShouldSerializeindSN() => vCredField.HasValue == false & CST != NFe.CST_ICMS.CST_60 & CST != NFe.CST_ICMS.CST_90;
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(DetalhamentoICMS));
-            }
-
-            return sSerializer;
-        }
-    }
-
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public event PropertyChangedEventHandler PropertyChanged;
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TEndReEnt : INotifyPropertyChanged
 {
     private string itemField;
@@ -4488,16 +3251,11 @@ public partial class TEndReEnt : INotifyPropertyChanged
     private string cMunField;
     private string xMunField;
     private NFe.Estado ufField;
-    private static XmlSerializer sSerializer;
 
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -4513,186 +3271,127 @@ public partial class TEndReEnt : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string xLgr
     {
-        get
-        {
-            return xLgrField;
-        }
-
+        get => xLgrField;
         set
         {
             if (xLgrField is null || xLgrField.Equals(value) != true)
             {
                 xLgrField = value;
-                OnPropertyChanged("xLgr");
+                OnPropertyChanged(nameof(xLgr));
             }
         }
     }
 
     public string nro
     {
-        get
-        {
-            return nroField;
-        }
-
+        get => nroField;
         set
         {
             if (nroField is null || nroField.Equals(value) != true)
             {
                 nroField = value;
-                OnPropertyChanged("nro");
+                OnPropertyChanged(nameof(nro));
             }
         }
     }
 
     public string xCpl
     {
-        get
-        {
-            return xCplField;
-        }
-
+        get => xCplField;
         set
         {
             if (xCplField is null || xCplField.Equals(value) != true)
             {
                 xCplField = value;
-                OnPropertyChanged("xCpl");
+                OnPropertyChanged(nameof(xCpl));
             }
         }
     }
 
     public string xBairro
     {
-        get
-        {
-            return xBairroField;
-        }
-
+        get => xBairroField;
         set
         {
             if (xBairroField is null || xBairroField.Equals(value) != true)
             {
                 xBairroField = value;
-                OnPropertyChanged("xBairro");
+                OnPropertyChanged(nameof(xBairro));
             }
         }
     }
 
     public string cMun
     {
-        get
-        {
-            return cMunField;
-        }
-
+        get => cMunField;
         set
         {
             if (cMunField is null || cMunField.Equals(value) != true)
             {
                 cMunField = value;
-                OnPropertyChanged("cMun");
+                OnPropertyChanged(nameof(cMun));
             }
         }
     }
 
     public string xMun
     {
-        get
-        {
-            return xMunField;
-        }
-
+        get => xMunField;
         set
         {
             if (xMunField is null || xMunField.Equals(value) != true)
             {
                 xMunField = value;
-                OnPropertyChanged("xMun");
+                OnPropertyChanged(nameof(xMun));
             }
         }
     }
 
     public NFe.Estado UF
     {
-        get
-        {
-            return ufField;
-        }
-
+        get => ufField;
         set
         {
             if (ufField.Equals(value) != true)
             {
                 ufField = value;
-                OnPropertyChanged("UF");
+                OnPropertyChanged(nameof(UF));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TEndReEnt));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TEndeEmi : INotifyPropertyChanged
 {
     private string xLgrField;
@@ -4704,189 +3403,130 @@ public partial class TEndeEmi : INotifyPropertyChanged
     private string cEPField;
     private TUF_sem_EX ufField;
     private string foneField;
-    private static XmlSerializer sSerializer;
 
     public string xLgr
     {
-        get
-        {
-            return xLgrField;
-        }
-
+        get => xLgrField;
         set
         {
             if (xLgrField is null || xLgrField.Equals(value) != true)
             {
                 xLgrField = value;
-                OnPropertyChanged("xLgr");
+                OnPropertyChanged(nameof(xLgr));
             }
         }
     }
 
     public string nro
     {
-        get
-        {
-            return nroField;
-        }
-
+        get => nroField;
         set
         {
             if (nroField is null || nroField.Equals(value) != true)
             {
                 nroField = value;
-                OnPropertyChanged("nro");
+                OnPropertyChanged(nameof(nro));
             }
         }
     }
 
     public string xCpl
     {
-        get
-        {
-            return xCplField;
-        }
-
+        get => xCplField;
         set
         {
             if (xCplField is null || xCplField.Equals(value) != true)
             {
                 xCplField = value;
-                OnPropertyChanged("xCpl");
+                OnPropertyChanged(nameof(xCpl));
             }
         }
     }
 
     public string xBairro
     {
-        get
-        {
-            return xBairroField;
-        }
-
+        get => xBairroField;
         set
         {
             if (xBairroField is null || xBairroField.Equals(value) != true)
             {
                 xBairroField = value;
-                OnPropertyChanged("xBairro");
+                OnPropertyChanged(nameof(xBairro));
             }
         }
     }
 
     public string cMun
     {
-        get
-        {
-            return cMunField;
-        }
-
+        get => cMunField;
         set
         {
             if (cMunField is null || cMunField.Equals(value) != true)
             {
                 cMunField = value;
-                OnPropertyChanged("cMun");
+                OnPropertyChanged(nameof(cMun));
             }
         }
     }
 
     public string xMun
     {
-        get
-        {
-            return xMunField;
-        }
-
+        get => xMunField;
         set
         {
             if (xMunField is null || xMunField.Equals(value) != true)
             {
                 xMunField = value;
-                OnPropertyChanged("xMun");
+                OnPropertyChanged(nameof(xMun));
             }
         }
     }
 
     public string CEP
     {
-        get
-        {
-            return cEPField;
-        }
-
+        get => cEPField;
         set
         {
             if (cEPField is null || cEPField.Equals(value) != true)
             {
                 cEPField = value;
-                OnPropertyChanged("CEP");
+                OnPropertyChanged(nameof(CEP));
             }
         }
     }
 
     public TUF_sem_EX UF
     {
-        get
-        {
-            return ufField;
-        }
-
+        get => ufField;
         set
         {
             if (ufField.Equals(value) != true)
             {
                 ufField = value;
-                OnPropertyChanged("UF");
+                OnPropertyChanged(nameof(UF));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TEndeEmi));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TUF_sem_EX
 {
 
@@ -4972,10 +3612,6 @@ public enum TUF_sem_EX
     TO
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Endereco : INotifyPropertyChanged
 {
     private string xLgrField;
@@ -4989,124 +3625,95 @@ public partial class Endereco : INotifyPropertyChanged
     private string cPaisField;
     private string xPaisField;
     private string fonefield;
-    private static XmlSerializer sSerializer;
 
     public string xLgr
     {
-        get
-        {
-            return xLgrField;
-        }
-
+        get => xLgrField;
         set
         {
             if (xLgrField is null || xLgrField.Equals(value) != true)
             {
                 xLgrField = value;
-                OnPropertyChanged("xLgr");
+                OnPropertyChanged(nameof(xLgr));
             }
         }
     }
 
     public string nro
     {
-        get
-        {
-            return nroField;
-        }
-
+        get => nroField;
         set
         {
             if (nroField is null || nroField.Equals(value) != true)
             {
                 nroField = value;
-                OnPropertyChanged("nro");
+                OnPropertyChanged(nameof(nro));
             }
         }
     }
 
     public string xCpl
     {
-        get
-        {
-            return xCplField;
-        }
-
+        get => xCplField;
         set
         {
             if (xCplField is null || xCplField.Equals(value) != true)
             {
                 xCplField = value;
-                OnPropertyChanged("xCpl");
+                OnPropertyChanged(nameof(xCpl));
             }
         }
     }
 
     public string xBairro
     {
-        get
-        {
-            return xBairroField;
-        }
-
+        get => xBairroField;
         set
         {
             if (xBairroField is null || xBairroField.Equals(value) != true)
             {
                 xBairroField = value;
-                OnPropertyChanged("xBairro");
+                OnPropertyChanged(nameof(xBairro));
             }
         }
     }
 
     public string cMun
     {
-        get
-        {
-            return cMunField;
-        }
-
+        get => cMunField;
         set
         {
             if (cMunField is null || cMunField.Equals(value) != true)
             {
                 cMunField = value;
-                OnPropertyChanged("cMun");
+                OnPropertyChanged(nameof(cMun));
             }
         }
     }
 
     public string xMun
     {
-        get
-        {
-            return xMunField;
-        }
-
+        get => xMunField;
         set
         {
             if (xMunField is null || xMunField.Equals(value) != true)
             {
                 xMunField = value;
-                OnPropertyChanged("xMun");
+                OnPropertyChanged(nameof(xMun));
             }
         }
     }
 
     public string CEP
     {
-        get
-        {
-            return cEPField;
-        }
-
+        get => cEPField;
         set
         {
             if (cEPField is null || cEPField.Equals(value) != true)
             {
                 cEPField = value;
-                OnPropertyChanged("CEP");
-                OnPropertyChanged("CEPFormatado");
+                OnPropertyChanged(nameof(CEP));
+                OnPropertyChanged(nameof(CEPFormatado));
             }
         }
     }
@@ -5129,95 +3736,60 @@ public partial class Endereco : INotifyPropertyChanged
 
     public NFe.Estado UF
     {
-        get
-        {
-            return ufField;
-        }
-
+        get => ufField;
         set
         {
             if (ufField.Equals(value) != true)
             {
                 ufField = value;
-                OnPropertyChanged("UF");
+                OnPropertyChanged(nameof(UF));
             }
         }
     }
 
     public string cPais
     {
-        get
-        {
-            return cPaisField;
-        }
-
+        get => cPaisField;
         set
         {
             if (cPaisField is null || cPaisField.Equals(value) != true)
             {
                 cPaisField = value;
-                OnPropertyChanged("cPais");
+                OnPropertyChanged(nameof(cPais));
             }
         }
     }
 
     public string xPais
     {
-        get
-        {
-            return xPaisField;
-        }
-
+        get => xPaisField;
         set
         {
             if (xPaisField is null || xPaisField.Equals(value) != true)
             {
                 xPaisField = value;
-                OnPropertyChanged("xPais");
+                OnPropertyChanged(nameof(xPais));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return fonefield;
-        }
-
+        get => fonefield;
         set
         {
             if (fonefield is null || fonefield.Equals(value) != true)
             {
                 fonefield = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Endereco));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public NFe.Endereco CloneToEnderecoNFe()
     {
@@ -5236,10 +3808,6 @@ public partial class Endereco : INotifyPropertyChanged
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class ComplementoCTe : INotifyPropertyChanged
 {
     private string xCaracAdField;
@@ -5252,148 +3820,115 @@ public partial class ComplementoCTe : INotifyPropertyChanged
     private string xObsField;
     private ObservableCollection<TCTeInfCteComplObsCont> obsContField;
     private ObservableCollection<TCTeInfCteComplObsFisco> obsFiscoField;
-    private static XmlSerializer sSerializer;
 
     public ComplementoCTe() : base()
     {
-        obsFiscoField = new ObservableCollection<TCTeInfCteComplObsFisco>();
-        obsContField = new ObservableCollection<TCTeInfCteComplObsCont>();
+        obsFiscoField = [];
+        obsContField = [];
         entregaField = new TCTeInfCteComplEntrega();
         fluxoField = new TCTeInfCteComplFluxo();
     }
 
     public string xCaracAd
     {
-        get
-        {
-            return xCaracAdField;
-        }
-
+        get => xCaracAdField;
         set
         {
             if (xCaracAdField is null || xCaracAdField.Equals(value) != true)
             {
                 xCaracAdField = value;
-                OnPropertyChanged("xCaracAd");
+                OnPropertyChanged(nameof(xCaracAd));
             }
         }
     }
 
     public string xCaracSer
     {
-        get
-        {
-            return xCaracSerField;
-        }
-
+        get => xCaracSerField;
         set
         {
             if (xCaracSerField is null || xCaracSerField.Equals(value) != true)
             {
                 xCaracSerField = value;
-                OnPropertyChanged("xCaracSer");
+                OnPropertyChanged(nameof(xCaracSer));
             }
         }
     }
 
     public string xEmi
     {
-        get
-        {
-            return xEmiField;
-        }
-
+        get => xEmiField;
         set
         {
             if (xEmiField is null || xEmiField.Equals(value) != true)
             {
                 xEmiField = value;
-                OnPropertyChanged("xEmi");
+                OnPropertyChanged(nameof(xEmi));
             }
         }
     }
 
     public TCTeInfCteComplFluxo fluxo
     {
-        get
-        {
-            return fluxoField;
-        }
-
+        get => fluxoField;
         set
         {
             if (fluxoField is null || fluxoField.Equals(value) != true)
             {
                 fluxoField = value;
-                OnPropertyChanged("fluxo");
+                OnPropertyChanged(nameof(fluxo));
             }
         }
     }
 
     public TCTeInfCteComplEntrega Entrega
     {
-        get
-        {
-            return entregaField;
-        }
-
+        get => entregaField;
         set
         {
             if (entregaField is null || entregaField.Equals(value) != true)
             {
                 entregaField = value;
-                OnPropertyChanged("Entrega");
+                OnPropertyChanged(nameof(Entrega));
             }
         }
     }
 
     public string origCalc
     {
-        get
-        {
-            return origCalcField;
-        }
-
+        get => origCalcField;
         set
         {
             if (origCalcField is null || origCalcField.Equals(value) != true)
             {
                 origCalcField = value;
-                OnPropertyChanged("origCalc");
+                OnPropertyChanged(nameof(origCalc));
             }
         }
     }
 
     public string destCalc
     {
-        get
-        {
-            return destCalcField;
-        }
-
+        get => destCalcField;
         set
         {
             if (destCalcField is null || destCalcField.Equals(value) != true)
             {
                 destCalcField = value;
-                OnPropertyChanged("destCalc");
+                OnPropertyChanged(nameof(destCalc));
             }
         }
     }
 
     public string xObs
     {
-        get
-        {
-            return xObsField;
-        }
-
+        get => xObsField;
         set
         {
             if (xObsField is null || xObsField.Equals(value) != true)
             {
                 xObsField = value;
-                OnPropertyChanged("xObs");
+                OnPropertyChanged(nameof(xObs));
             }
         }
     }
@@ -5401,17 +3936,13 @@ public partial class ComplementoCTe : INotifyPropertyChanged
     [XmlElement("ObsCont")]
     public ObservableCollection<TCTeInfCteComplObsCont> ObsCont
     {
-        get
-        {
-            return obsContField;
-        }
-
+        get => obsContField;
         set
         {
             if (obsContField is null || obsContField.Equals(value) != true)
             {
                 obsContField = value;
-                OnPropertyChanged("ObsCont");
+                OnPropertyChanged(nameof(ObsCont));
             }
         }
     }
@@ -5419,76 +3950,44 @@ public partial class ComplementoCTe : INotifyPropertyChanged
     [XmlElement("ObsFisco")]
     public ObservableCollection<TCTeInfCteComplObsFisco> ObsFisco
     {
-        get
-        {
-            return obsFiscoField;
-        }
-
+        get => obsFiscoField;
         set
         {
             if (obsFiscoField is null || obsFiscoField.Equals(value) != true)
             {
                 obsFiscoField = value;
-                OnPropertyChanged("ObsFisco");
+                OnPropertyChanged(nameof(ObsFisco));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ComplementoCTe));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplFluxo : INotifyPropertyChanged
 {
     private string xOrigField;
     private ObservableCollection<TCTeInfCteComplFluxoPass> passField;
     private string xDestField;
     private string xRotaField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplFluxo() : base()
     {
-        passField = new ObservableCollection<TCTeInfCteComplFluxoPass>();
+        passField = [];
     }
 
     public string xOrig
     {
-        get
-        {
-            return xOrigField;
-        }
-
+        get => xOrigField;
         set
         {
             if (xOrigField is null || xOrigField.Equals(value) != true)
             {
                 xOrigField = value;
-                OnPropertyChanged("xOrig");
+                OnPropertyChanged(nameof(xOrig));
             }
         }
     }
@@ -5496,157 +3995,89 @@ public partial class TCTeInfCteComplFluxo : INotifyPropertyChanged
     [XmlElement("pass")]
     public ObservableCollection<TCTeInfCteComplFluxoPass> pass
     {
-        get
-        {
-            return passField;
-        }
-
+        get => passField;
         set
         {
             if (passField is null || passField.Equals(value) != true)
             {
                 passField = value;
-                OnPropertyChanged("pass");
+                OnPropertyChanged(nameof(pass));
             }
         }
     }
 
     public string xDest
     {
-        get
-        {
-            return xDestField;
-        }
-
+        get => xDestField;
         set
         {
             if (xDestField is null || xDestField.Equals(value) != true)
             {
                 xDestField = value;
-                OnPropertyChanged("xDest");
+                OnPropertyChanged(nameof(xDest));
             }
         }
     }
 
     public string xRota
     {
-        get
-        {
-            return xRotaField;
-        }
-
+        get => xRotaField;
         set
         {
             if (xRotaField is null || xRotaField.Equals(value) != true)
             {
                 xRotaField = value;
-                OnPropertyChanged("xRota");
+                OnPropertyChanged(nameof(xRota));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplFluxo));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplFluxoPass : INotifyPropertyChanged
 {
     private string xPassField;
-    private static XmlSerializer sSerializer;
 
     public string xPass
     {
-        get
-        {
-            return xPassField;
-        }
-
+        get => xPassField;
         set
         {
             if (xPassField is null || xPassField.Equals(value) != true)
             {
                 xPassField = value;
-                OnPropertyChanged("xPass");
+                OnPropertyChanged(nameof(xPass));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplFluxoPass));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntrega : INotifyPropertyChanged
 {
     private object itemField;
     private object item1Field;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("comData", typeof(TCTeInfCteComplEntregaComData))]
     [XmlElement("noPeriodo", typeof(TCTeInfCteComplEntregaNoPeriodo))]
     [XmlElement("semData", typeof(TCTeInfCteComplEntregaSemData))]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
         }
     }
@@ -5656,118 +4087,60 @@ public partial class TCTeInfCteComplEntrega : INotifyPropertyChanged
     [XmlElement("semHora", typeof(TCTeInfCteComplEntregaSemHora))]
     public object Item1
     {
-        get
-        {
-            return item1Field;
-        }
-
+        get => item1Field;
         set
         {
             if (item1Field is null || item1Field.Equals(value) != true)
             {
                 item1Field = value;
-                OnPropertyChanged("Item1");
+                OnPropertyChanged(nameof(Item1));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntrega));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaComData : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaComDataTpPer tpPerField;
     private string dProgField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaComDataTpPer tpPer
     {
-        get
-        {
-            return tpPerField;
-        }
-
+        get => tpPerField;
         set
         {
             if (tpPerField.Equals(value) != true)
             {
                 tpPerField = value;
-                OnPropertyChanged("tpPer");
+                OnPropertyChanged(nameof(tpPer));
             }
         }
     }
 
     public string dProg
     {
-        get
-        {
-            return dProgField;
-        }
-
+        get => dProgField;
         set
         {
             if (dProgField is null || dProgField.Equals(value) != true)
             {
                 dProgField = value;
-                OnPropertyChanged("dProg");
+                OnPropertyChanged(nameof(dProg));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaComData));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaComDataTpPer
 {
 
@@ -5784,96 +4157,58 @@ public enum TCTeInfCteComplEntregaComDataTpPer
     Item3
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaNoPeriodo : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaNoPeriodoTpPer tpPerField;
     private string dIniField;
     private string dFimField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaNoPeriodoTpPer tpPer
     {
-        get
-        {
-            return tpPerField;
-        }
-
+        get => tpPerField;
         set
         {
             if (tpPerField.Equals(value) != true)
             {
                 tpPerField = value;
-                OnPropertyChanged("tpPer");
+                OnPropertyChanged(nameof(tpPer));
             }
         }
     }
 
     public string dIni
     {
-        get
-        {
-            return dIniField;
-        }
-
+        get => dIniField;
         set
         {
             if (dIniField is null || dIniField.Equals(value) != true)
             {
                 dIniField = value;
-                OnPropertyChanged("dIni");
+                OnPropertyChanged(nameof(dIni));
             }
         }
     }
 
     public string dFim
     {
-        get
-        {
-            return dFimField;
-        }
-
+        get => dFimField;
         set
         {
             if (dFimField is null || dFimField.Equals(value) != true)
             {
                 dFimField = value;
-                OnPropertyChanged("dFim");
+                OnPropertyChanged(nameof(dFim));
             }
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaNoPeriodo));
-            }
-
-            return sSerializer;
-        }
-    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaNoPeriodoTpPer
 {
 
@@ -5882,60 +4217,29 @@ public enum TCTeInfCteComplEntregaNoPeriodoTpPer
     Item4
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaSemData : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaSemDataTpPer tpPerField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaSemDataTpPer tpPer
     {
-        get
-        {
-            return tpPerField;
-        }
-
+        get => tpPerField;
         set
         {
             if (tpPerField.Equals(value) != true)
             {
                 tpPerField = value;
-                OnPropertyChanged("tpPer");
+                OnPropertyChanged(nameof(tpPer));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaSemData));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaSemDataTpPer
 {
 
@@ -5944,78 +4248,43 @@ public enum TCTeInfCteComplEntregaSemDataTpPer
     Item0
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaComHora : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaComHoraTpHor tpHorField;
     private string hProgField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaComHoraTpHor tpHor
     {
-        get
-        {
-            return tpHorField;
-        }
-
+        get => tpHorField;
         set
         {
             if (tpHorField.Equals(value) != true)
             {
                 tpHorField = value;
-                OnPropertyChanged("tpHor");
+                OnPropertyChanged(nameof(tpHor));
             }
         }
     }
 
     public string hProg
     {
-        get
-        {
-            return hProgField;
-        }
-
+        get => hProgField;
         set
         {
             if (hProgField is null || hProgField.Equals(value) != true)
             {
                 hProgField = value;
-                OnPropertyChanged("hProg");
+                OnPropertyChanged(nameof(hProg));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaComHora));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaComHoraTpHor
 {
 
@@ -6032,96 +4301,57 @@ public enum TCTeInfCteComplEntregaComHoraTpHor
     Item3
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaNoInter : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaNoInterTpHor tpHorField;
     private string hIniField;
     private string hFimField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaNoInterTpHor tpHor
     {
-        get
-        {
-            return tpHorField;
-        }
-
+        get => tpHorField;
         set
         {
             if (tpHorField.Equals(value) != true)
             {
                 tpHorField = value;
-                OnPropertyChanged("tpHor");
+                OnPropertyChanged(nameof(tpHor));
             }
         }
     }
 
     public string hIni
     {
-        get
-        {
-            return hIniField;
-        }
-
+        get => hIniField;
         set
         {
             if (hIniField is null || hIniField.Equals(value) != true)
             {
                 hIniField = value;
-                OnPropertyChanged("hIni");
+                OnPropertyChanged(nameof(hIni));
             }
         }
     }
 
     public string hFim
     {
-        get
-        {
-            return hFimField;
-        }
-
+        get => hFimField;
         set
         {
             if (hFimField is null || hFimField.Equals(value) != true)
             {
                 hFimField = value;
-                OnPropertyChanged("hFim");
+                OnPropertyChanged(nameof(hFim));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaNoInter));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaNoInterTpHor
 {
 
@@ -6130,60 +4360,29 @@ public enum TCTeInfCteComplEntregaNoInterTpHor
     Item4
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplEntregaSemHora : INotifyPropertyChanged
 {
     private TCTeInfCteComplEntregaSemHoraTpHor tpHorField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteComplEntregaSemHoraTpHor tpHor
     {
-        get
-        {
-            return tpHorField;
-        }
-
+        get => tpHorField;
         set
         {
             if (tpHorField.Equals(value) != true)
             {
                 tpHorField = value;
-                OnPropertyChanged("tpHor");
+                OnPropertyChanged(nameof(tpHor));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplEntregaSemHora));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteComplEntregaSemHoraTpHor
 {
 
@@ -6192,29 +4391,20 @@ public enum TCTeInfCteComplEntregaSemHoraTpHor
     Item0
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplObsCont : INotifyPropertyChanged
 {
     private string xTextoField;
     private string xCampoField;
-    private static XmlSerializer sSerializer;
 
     public string xTexto
     {
-        get
-        {
-            return xTextoField;
-        }
-
+        get => xTextoField;
         set
         {
             if (xTextoField is null || xTextoField.Equals(value) != true)
             {
                 xTextoField = value;
-                OnPropertyChanged("xTexto");
+                OnPropertyChanged(nameof(xTexto));
             }
         }
     }
@@ -6222,69 +4412,37 @@ public partial class TCTeInfCteComplObsCont : INotifyPropertyChanged
     [XmlAttribute()]
     public string xCampo
     {
-        get
-        {
-            return xCampoField;
-        }
-
+        get => xCampoField;
         set
         {
             if (xCampoField is null || xCampoField.Equals(value) != true)
             {
                 xCampoField = value;
-                OnPropertyChanged("xCampo");
+                OnPropertyChanged(nameof(xCampo));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplObsCont));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteComplObsFisco : INotifyPropertyChanged
 {
     private string xTextoField;
     private string xCampoField;
-    private static XmlSerializer sSerializer;
 
     public string xTexto
     {
-        get
-        {
-            return xTextoField;
-        }
-
+        get => xTextoField;
         set
         {
             if (xTextoField is null || xTextoField.Equals(value) != true)
             {
                 xTextoField = value;
-                OnPropertyChanged("xTexto");
+                OnPropertyChanged(nameof(xTexto));
             }
         }
     }
@@ -6292,50 +4450,23 @@ public partial class TCTeInfCteComplObsFisco : INotifyPropertyChanged
     [XmlAttribute()]
     public string xCampo
     {
-        get
-        {
-            return xCampoField;
-        }
-
+        get => xCampoField;
         set
         {
             if (xCampoField is null || xCampoField.Equals(value) != true)
             {
                 xCampoField = value;
-                OnPropertyChanged("xCampo");
+                OnPropertyChanged(nameof(xCampo));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteComplObsFisco));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Emitente : INotifyPropertyChanged
 {
     private string cNPJField;
@@ -6343,7 +4474,6 @@ public partial class Emitente : INotifyPropertyChanged
     private string xNomeField;
     private string xFantField;
     private Endereco enderEmitField;
-    private static XmlSerializer sSerializer;
 
     public Emitente() : base()
     {
@@ -6352,17 +4482,13 @@ public partial class Emitente : INotifyPropertyChanged
 
     public string CNPJ
     {
-        get
-        {
-            return cNPJField;
-        }
-
+        get => cNPJField;
         set
         {
             if (cNPJField is null || cNPJField.Equals(value) != true)
             {
                 cNPJField = value;
-                OnPropertyChanged("CNPJ");
+                OnPropertyChanged(nameof(CNPJ));
             }
         }
     }
@@ -6385,51 +4511,39 @@ public partial class Emitente : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string xFant
     {
-        get
-        {
-            return xFantField;
-        }
-
+        get => xFantField;
         set
         {
             if (xFantField is null || xFantField.Equals(value) != true)
             {
                 xFantField = value;
-                OnPropertyChanged("xFant");
+                OnPropertyChanged(nameof(xFant));
             }
         }
     }
@@ -6437,50 +4551,23 @@ public partial class Emitente : INotifyPropertyChanged
     [XmlElement("enderEmit")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderEmitField;
-        }
-
+        get => enderEmitField;
         set
         {
             if (enderEmitField is null || enderEmitField.Equals(value) != true)
             {
                 enderEmitField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Emitente));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Remetente : INotifyPropertyChanged
 {
     private string itemField;
@@ -6491,11 +4578,10 @@ public partial class Remetente : INotifyPropertyChanged
     private string foneField;
     private Endereco enderRemeField;
     private string emailField;
-    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNF> infNFField = new ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNF>();
-    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNFe> infNFeField = new ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNFe>();
-    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfOutros> infOutrsField = new ObservableCollection<TCTeInfCteInfCTeNormInfDocInfOutros>();
+    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNF> infNFField = [];
+    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNFe> infNFeField = [];
+    private ObservableCollection<TCTeInfCteInfCTeNormInfDocInfOutros> infOutrsField = [];
     private TEndReEnt locColetaField;
-    private static XmlSerializer sSerializer;
 
     public Remetente() : base()
     {
@@ -6506,11 +4592,7 @@ public partial class Remetente : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -6526,17 +4608,13 @@ public partial class Remetente : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -6559,68 +4637,52 @@ public partial class Remetente : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string xFant
     {
-        get
-        {
-            return xFantField;
-        }
-
+        get => xFantField;
         set
         {
             if (xFantField is null || xFantField.Equals(value) != true)
             {
                 xFantField = value;
-                OnPropertyChanged("xFant");
+                OnPropertyChanged(nameof(xFant));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
@@ -6628,34 +4690,26 @@ public partial class Remetente : INotifyPropertyChanged
     [XmlElement("enderReme")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderRemeField;
-        }
-
+        get => enderRemeField;
         set
         {
             if (enderRemeField is null || enderRemeField.Equals(value) != true)
             {
                 enderRemeField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
         }
     }
@@ -6663,30 +4717,22 @@ public partial class Remetente : INotifyPropertyChanged
     [XmlElement("infNF")]
     public ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNF> InfNF
     {
-        get
-        {
-            return infNFField;
-        }
-
+        get => infNFField;
         set
         {
             infNFField = value;
-            OnPropertyChanged("InfNF");
+            OnPropertyChanged(nameof(InfNF));
         }
     }
 
     [XmlElement("infNFe")]
     public ObservableCollection<TCTeInfCteInfCTeNormInfDocInfNFe> InfNFe
     {
-        get
-        {
-            return infNFeField;
-        }
-
+        get => infNFeField;
         set
         {
             infNFeField = value;
-            OnPropertyChanged("InfNFe");
+            OnPropertyChanged(nameof(InfNFe));
         }
     }
 
@@ -6706,64 +4752,33 @@ public partial class Remetente : INotifyPropertyChanged
     [XmlElement("infOutros")]
     public ObservableCollection<TCTeInfCteInfCTeNormInfDocInfOutros> infOutros
     {
-        get
-        {
-            return infOutrsField;
-        }
-
+        get => infOutrsField;
         set
         {
             infOutrsField = value;
-            OnPropertyChanged("infOutros");
+            OnPropertyChanged(nameof(infOutros));
         }
     }
 
     public TEndReEnt locColeta
     {
-        get
-        {
-            return locColetaField;
-        }
-
+        get => locColetaField;
         set
         {
             if (locColetaField is null || locColetaField.Equals(value) != true)
             {
                 locColetaField = value;
-                OnPropertyChanged("locColeta");
+                OnPropertyChanged(nameof(locColeta));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Remetente));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Expedidor : INotifyPropertyChanged
 {
     private string itemField;
@@ -6773,7 +4788,6 @@ public partial class Expedidor : INotifyPropertyChanged
     private string foneField;
     private Endereco enderExpedField;
     private string emailField;
-    private static XmlSerializer sSerializer;
 
     public Expedidor() : base()
     {
@@ -6783,11 +4797,7 @@ public partial class Expedidor : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -6803,17 +4813,13 @@ public partial class Expedidor : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -6836,51 +4842,39 @@ public partial class Expedidor : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
@@ -6888,67 +4882,36 @@ public partial class Expedidor : INotifyPropertyChanged
     [XmlElement("enderExped")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderExpedField;
-        }
-
+        get => enderExpedField;
         set
         {
             if (enderExpedField is null || enderExpedField.Equals(value) != true)
             {
                 enderExpedField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Expedidor));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Recebedor : INotifyPropertyChanged
 {
     private string itemField;
@@ -6958,7 +4921,6 @@ public partial class Recebedor : INotifyPropertyChanged
     private string foneField;
     private Endereco enderRecebField;
     private string emailField;
-    private static XmlSerializer sSerializer;
 
     public Recebedor() : base()
     {
@@ -6968,11 +4930,7 @@ public partial class Recebedor : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -6988,135 +4946,88 @@ public partial class Recebedor : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
 
     public Endereco enderReceb
     {
-        get
-        {
-            return enderRecebField;
-        }
-
+        get => enderRecebField;
         set
         {
             if (enderRecebField is null || enderRecebField.Equals(value) != true)
             {
                 enderRecebField = value;
-                OnPropertyChanged("enderReceb");
+                OnPropertyChanged(nameof(enderReceb));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Recebedor));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Destinatario : INotifyPropertyChanged
 {
     private string itemField;
@@ -7128,7 +5039,6 @@ public partial class Destinatario : INotifyPropertyChanged
     private Endereco enderDestField;
     private string emailField;
     private TEndReEnt locEntField;
-    private static XmlSerializer sSerializer;
 
     public Destinatario() : base()
     {
@@ -7139,11 +5049,7 @@ public partial class Destinatario : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -7159,17 +5065,13 @@ public partial class Destinatario : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -7192,68 +5094,52 @@ public partial class Destinatario : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
 
     public string ISUF
     {
-        get
-        {
-            return iSUFField;
-        }
-
+        get => iSUFField;
         set
         {
             if (iSUFField is null || iSUFField.Equals(value) != true)
             {
                 iSUFField = value;
-                OnPropertyChanged("ISUF");
+                OnPropertyChanged(nameof(ISUF));
             }
         }
     }
@@ -7261,143 +5147,76 @@ public partial class Destinatario : INotifyPropertyChanged
     [XmlElement("enderDest")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderDestField;
-        }
-
+        get => enderDestField;
         set
         {
             if (enderDestField is null || enderDestField.Equals(value) != true)
             {
                 enderDestField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
         }
     }
 
     public TEndReEnt locEnt
     {
-        get
-        {
-            return locEntField;
-        }
-
+        get => locEntField;
         set
         {
             if (locEntField is null || locEntField.Equals(value) != true)
             {
                 locEntField = value;
-                OnPropertyChanged("locEnt");
+                OnPropertyChanged(nameof(locEnt));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Destinatario));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TomadorTipo03 : INotifyPropertyChanged
 {
     private TipoTomador tomaField;
-    private static XmlSerializer sSerializer;
 
     public TipoTomador toma
     {
-        get
-        {
-            return tomaField;
-        }
-
+        get => tomaField;
         set
         {
             if (tomaField.Equals(value) != true)
             {
                 tomaField = value;
-                OnPropertyChanged("toma");
+                OnPropertyChanged(nameof(toma));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TomadorTipo03));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TomadorTipo3 : TomadorTipo03
 {
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TomadorTipo04 : INotifyPropertyChanged
 {
     private TipoTomador tomaField;
@@ -7409,7 +5228,6 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
     private string foneField;
     private Endereco enderTomaField;
     private string emailField;
-    private static XmlSerializer sSerializer;
 
     public TomadorTipo04() : base()
     {
@@ -7418,17 +5236,13 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
 
     public TipoTomador toma
     {
-        get
-        {
-            return tomaField;
-        }
-
+        get => tomaField;
         set
         {
             if (tomaField.Equals(value) != true)
             {
                 tomaField = value;
-                OnPropertyChanged("toma");
+                OnPropertyChanged(nameof(toma));
             }
         }
     }
@@ -7436,15 +5250,8 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 ItemElementName
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
-        set
-        {
-            itemElementNameField = value;
-        }
+        get => itemElementNameField;
+        set => itemElementNameField = value;
     }
 
     [XmlElement("CNPJ", typeof(string))]
@@ -7452,17 +5259,13 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
     [XmlChoiceIdentifier("ItemElementName")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -7485,68 +5288,52 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string xFant
     {
-        get
-        {
-            return xFantField;
-        }
-
+        get => xFantField;
         set
         {
             if (xFantField is null || xFantField.Equals(value) != true)
             {
                 xFantField = value;
-                OnPropertyChanged("xFant");
+                OnPropertyChanged(nameof(xFant));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
@@ -7554,109 +5341,69 @@ public partial class TomadorTipo04 : INotifyPropertyChanged
     [XmlElement("enderToma")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderTomaField;
-        }
-
+        get => enderTomaField;
         set
         {
             if (enderTomaField is null || enderTomaField.Equals(value) != true)
             {
                 enderTomaField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TomadorTipo04));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class ValoresPrestacaoServico : INotifyPropertyChanged
 {
     private double? vTPrestField;
     private double? vRecField;
     private ObservableCollection<TCTeInfCteVPrestComp> compField;
-    private static XmlSerializer sSerializer;
 
     public ValoresPrestacaoServico() : base()
     {
-        compField = new ObservableCollection<TCTeInfCteVPrestComp>();
+        compField = [];
     }
 
     public double? vTPrest
     {
-        get
-        {
-            return vTPrestField;
-        }
-
+        get => vTPrestField;
         set
         {
             if (vTPrestField is null || vTPrestField.Equals(value) != true)
             {
                 vTPrestField = value;
-                OnPropertyChanged("vTPrest");
+                OnPropertyChanged(nameof(vTPrest));
             }
         }
     }
 
     public double? vRec
     {
-        get
-        {
-            return vRecField;
-        }
-
+        get => vRecField;
         set
         {
             if (vRecField is null || vRecField.Equals(value) != true)
             {
                 vRecField = value;
-                OnPropertyChanged("vRec");
+                OnPropertyChanged(nameof(vRec));
             }
         }
     }
@@ -7664,126 +5411,66 @@ public partial class ValoresPrestacaoServico : INotifyPropertyChanged
     [XmlElement("Comp")]
     public ObservableCollection<TCTeInfCteVPrestComp> Comp
     {
-        get
-        {
-            return compField;
-        }
-
+        get => compField;
         set
         {
             if (compField is null || compField.Equals(value) != true)
             {
                 compField = value;
-                OnPropertyChanged("Comp");
+                OnPropertyChanged(nameof(Comp));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ValoresPrestacaoServico));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteVPrestComp : INotifyPropertyChanged
 {
     private string xNomeField;
     private double? vCompField;
-    private static XmlSerializer sSerializer;
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public double? vComp
     {
-        get
-        {
-            return vCompField;
-        }
-
+        get => vCompField;
         set
         {
             if (vCompField is null || vCompField.Equals(value) != true)
             {
                 vCompField = value;
-                OnPropertyChanged("vComp");
+                OnPropertyChanged(nameof(vComp));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteVPrestComp));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Impostos : INotifyPropertyChanged
 {
     private ICMS iCMSField;
     private InftributosFederais federaisField;
     private double? vTotTribField;
     private string infAdFiscoField;
-    private static XmlSerializer sSerializer;
 
     public Impostos() : base()
     {
@@ -7792,106 +5479,64 @@ public partial class Impostos : INotifyPropertyChanged
 
     public ICMS ICMS
     {
-        get
-        {
-            return iCMSField;
-        }
-
+        get => iCMSField;
         set
         {
             if (iCMSField is null || iCMSField.Equals(value) != true)
             {
                 iCMSField = value;
-                OnPropertyChanged("ICMS");
+                OnPropertyChanged(nameof(ICMS));
             }
         }
     }
 
     public InftributosFederais infTribFed
     {
-        get
-        {
-            return federaisField;
-        }
-
+        get => federaisField;
         set
         {
             if (federaisField is null || federaisField.Equals(value) != true)
             {
                 federaisField = value;
-                OnPropertyChanged("infTribFed");
+                OnPropertyChanged(nameof(infTribFed));
             }
         }
     }
 
     public double? vTotTrib
     {
-        get
-        {
-            return vTotTribField;
-        }
-
+        get => vTotTribField;
         set
         {
             if (vTotTribField is null || vTotTribField.Equals(value) != true)
             {
                 vTotTribField = value;
-                OnPropertyChanged("vTotTrib");
+                OnPropertyChanged(nameof(vTotTrib));
             }
         }
     }
 
-    public bool ShouldSerializevTotTrib()
-    {
-        return vTotTribField.HasValue;
-    }
+    public bool ShouldSerializevTotTrib() => vTotTribField.HasValue;
 
     public string infAdFisco
     {
-        get
-        {
-            return infAdFiscoField;
-        }
-
+        get => infAdFiscoField;
         set
         {
             if (infAdFiscoField is null || infAdFiscoField.Equals(value) != true)
             {
                 infAdFiscoField = value;
-                OnPropertyChanged("infAdFisco");
+                OnPropertyChanged(nameof(infAdFisco));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Impostos));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class InformacoesCteNormal : INotifyPropertyChanged
 {
     private TCTeInfCteInfCTeNormInfCarga infCargaField;
@@ -7903,51 +5548,42 @@ public partial class InformacoesCteNormal : INotifyPropertyChanged
     private ObservableCollection<TCTeInfCteInfCTeNormVeicNovos> veicNovosField;
     private TCTeInfCteInfCTeNormCobr cobrField;
     private TCTeInfCteInfCTeNormInfCteSub infCteSubField;
-    private static XmlSerializer sSerializer;
 
     public InformacoesCteNormal() : base()
     {
         // Me.infCteSubField = New TCTeInfCteInfCTeNormInfCteSub()
         // Me.cobrField = New TCTeInfCteInfCTeNormCobr()
-        veicNovosField = new ObservableCollection<TCTeInfCteInfCTeNormVeicNovos>();
-        periField = new ObservableCollection<TCTeInfCteInfCTeNormPeri>();
+        veicNovosField = [];
+        periField = [];
         infModalField = new TCTeInfCteInfCTeNormInfModal();
-        segField = new ObservableCollection<TCTeInfCteInfCTeNormSeg>();
-        docAntField = new ObservableCollection<CTeNormalEmitenteDocumentonterior>();
+        segField = [];
+        docAntField = [];
         infDocField = new TCTeInfCteInfCTeNormInfDoc();
         infCargaField = new TCTeInfCteInfCTeNormInfCarga();
     }
 
     public TCTeInfCteInfCTeNormInfCarga infCarga
     {
-        get
-        {
-            return infCargaField;
-        }
-
+        get => infCargaField;
         set
         {
             if (infCargaField is null || infCargaField.Equals(value) != true)
             {
                 infCargaField = value;
-                OnPropertyChanged("infCarga");
+                OnPropertyChanged(nameof(infCarga));
             }
         }
     }
 
     public TCTeInfCteInfCTeNormInfDoc infDoc
     {
-        get
-        {
-            return infDocField;
-        }
-
+        get => infDocField;
         set
         {
             if (infDocField is null || infDocField.Equals(value) != true)
             {
                 infDocField = value;
-                OnPropertyChanged("infDoc");
+                OnPropertyChanged(nameof(infDoc));
             }
         }
     }
@@ -7955,17 +5591,13 @@ public partial class InformacoesCteNormal : INotifyPropertyChanged
     [XmlArrayItem("emiDocAnt", IsNullable = false)]
     public ObservableCollection<CTeNormalEmitenteDocumentonterior> docAnt
     {
-        get
-        {
-            return docAntField;
-        }
-
+        get => docAntField;
         set
         {
             if (docAntField is null || docAntField.Equals(value) != true)
             {
                 docAntField = value;
-                OnPropertyChanged("docAnt");
+                OnPropertyChanged(nameof(docAnt));
             }
         }
     }
@@ -7985,34 +5617,26 @@ public partial class InformacoesCteNormal : INotifyPropertyChanged
     [XmlElement("seg")]
     public ObservableCollection<TCTeInfCteInfCTeNormSeg> seg
     {
-        get
-        {
-            return segField;
-        }
-
+        get => segField;
         set
         {
             if (segField is null || segField.Equals(value) != true)
             {
                 segField = value;
-                OnPropertyChanged("seg");
+                OnPropertyChanged(nameof(seg));
             }
         }
     }
 
     public TCTeInfCteInfCTeNormInfModal infModal
     {
-        get
-        {
-            return infModalField;
-        }
-
+        get => infModalField;
         set
         {
             if (infModalField is null || infModalField.Equals(value) != true)
             {
                 infModalField = value;
-                OnPropertyChanged("infModal");
+                OnPropertyChanged(nameof(infModal));
             }
         }
     }
@@ -8020,17 +5644,13 @@ public partial class InformacoesCteNormal : INotifyPropertyChanged
     [XmlElement("peri")]
     public ObservableCollection<TCTeInfCteInfCTeNormPeri> peri
     {
-        get
-        {
-            return periField;
-        }
-
+        get => periField;
         set
         {
             if (periField is null || periField.Equals(value) != true)
             {
                 periField = value;
-                OnPropertyChanged("peri");
+                OnPropertyChanged(nameof(peri));
             }
         }
     }
@@ -8038,144 +5658,96 @@ public partial class InformacoesCteNormal : INotifyPropertyChanged
     [XmlElement("veicNovos")]
     public ObservableCollection<TCTeInfCteInfCTeNormVeicNovos> veicNovos
     {
-        get
-        {
-            return veicNovosField;
-        }
-
+        get => veicNovosField;
         set
         {
             if (veicNovosField is null || veicNovosField.Equals(value) != true)
             {
                 veicNovosField = value;
-                OnPropertyChanged("veicNovos");
+                OnPropertyChanged(nameof(veicNovos));
             }
         }
     }
 
     public TCTeInfCteInfCTeNormCobr cobr
     {
-        get
-        {
-            return cobrField;
-        }
-
+        get => cobrField;
         set
         {
             if (cobrField is null || cobrField.Equals(value) != true)
             {
                 cobrField = value;
-                OnPropertyChanged("cobr");
+                OnPropertyChanged(nameof(cobr));
             }
         }
     }
 
     public TCTeInfCteInfCTeNormInfCteSub infCteSub
     {
-        get
-        {
-            return infCteSubField;
-        }
-
+        get => infCteSubField;
         set
         {
             if (infCteSubField is null || infCteSubField.Equals(value) != true)
             {
                 infCteSubField = value;
-                OnPropertyChanged("infCteSub");
+                OnPropertyChanged(nameof(infCteSub));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(InformacoesCteNormal));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCarga : INotifyPropertyChanged
 {
     private double? vCargaField;
     private string proPredField;
     private string xOutCatField;
     private ObservableCollection<TCTeInfCteInfCTeNormInfCargaInfQ> infQField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfCarga() : base()
     {
-        infQField = new ObservableCollection<TCTeInfCteInfCTeNormInfCargaInfQ>();
+        infQField = [];
     }
 
     public double? vCarga
     {
-        get
-        {
-            return vCargaField;
-        }
-
+        get => vCargaField;
         set
         {
             if (vCargaField is null || vCargaField.Equals(value) != true)
             {
                 vCargaField = value;
-                OnPropertyChanged("vCarga");
+                OnPropertyChanged(nameof(vCarga));
             }
         }
     }
 
     public string proPred
     {
-        get
-        {
-            return proPredField;
-        }
-
+        get => proPredField;
         set
         {
             if (proPredField is null || proPredField.Equals(value) != true)
             {
                 proPredField = value;
-                OnPropertyChanged("proPred");
+                OnPropertyChanged(nameof(proPred));
             }
         }
     }
 
     public string xOutCat
     {
-        get
-        {
-            return xOutCatField;
-        }
-
+        get => xOutCatField;
         set
         {
             if (xOutCatField is null || xOutCatField.Equals(value) != true)
             {
                 xOutCatField = value;
-                OnPropertyChanged("xOutCat");
+                OnPropertyChanged(nameof(xOutCat));
             }
         }
     }
@@ -8183,142 +5755,78 @@ public partial class TCTeInfCteInfCTeNormInfCarga : INotifyPropertyChanged
     [XmlElement("infQ")]
     public ObservableCollection<TCTeInfCteInfCTeNormInfCargaInfQ> infQ
     {
-        get
-        {
-            return infQField;
-        }
-
+        get => infQField;
         set
         {
             if (infQField is null || infQField.Equals(value) != true)
             {
                 infQField = value;
-                OnPropertyChanged("infQ");
+                OnPropertyChanged(nameof(infQ));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCarga));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCargaInfQ : INotifyPropertyChanged
 {
     private TCTeInfCteInfCTeNormInfCargaInfQCUnid cUnidField;
     private string tpMedField;
     private string qCargaField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfCargaInfQCUnid cUnid
     {
-        get
-        {
-            return cUnidField;
-        }
-
+        get => cUnidField;
         set
         {
             if (cUnidField.Equals(value) != true)
             {
                 cUnidField = value;
-                OnPropertyChanged("cUnid");
+                OnPropertyChanged(nameof(cUnid));
             }
         }
     }
 
     public string tpMed
     {
-        get
-        {
-            return tpMedField;
-        }
-
+        get => tpMedField;
         set
         {
             if (tpMedField is null || tpMedField.Equals(value) != true)
             {
                 tpMedField = value;
-                OnPropertyChanged("tpMed");
+                OnPropertyChanged(nameof(tpMed));
             }
         }
     }
 
     public string qCarga
     {
-        get
-        {
-            return qCargaField;
-        }
-
+        get => qCargaField;
         set
         {
             if (qCargaField is null || qCargaField.Equals(value) != true)
             {
                 qCargaField = value;
-                OnPropertyChanged("qCarga");
+                OnPropertyChanged(nameof(qCarga));
             }
         }
     }
 
-    public override string ToString()
-    {
+    public override string ToString() =>
         // Return MyBase.ToString()
-        return qCarga + "/" + tpMed;
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCargaInfQ));
-            }
-
-            return sSerializer;
-        }
-    }
+        qCarga + "/" + tpMed;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteInfCTeNormInfCargaInfQCUnid
 {
 
@@ -8347,18 +5855,13 @@ public enum TCTeInfCteInfCTeNormInfCargaInfQCUnid
     Item05
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfDoc : INotifyPropertyChanged
 {
     private ObservableCollection<object> itemsField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfDoc() : base()
     {
-        itemsField = new ObservableCollection<object>();
+        itemsField = [];
     }
 
     [XmlElement("infNF", typeof(TCTeInfCteInfCTeNormInfDocInfNF))]
@@ -8366,50 +5869,23 @@ public partial class TCTeInfCteInfCTeNormInfDoc : INotifyPropertyChanged
     [XmlElement("infOutros", typeof(TCTeInfCteInfCTeNormInfDocInfOutros))]
     public ObservableCollection<object> Items
     {
-        get
-        {
-            return itemsField;
-        }
-
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Items");
+                OnPropertyChanged(nameof(Items));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfDoc));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfDocInfNF : INotifyPropertyChanged
 {
     private string nRomaField;
@@ -8429,281 +5905,216 @@ public partial class TCTeInfCteInfCTeNormInfDocInfNF : INotifyPropertyChanged
     private string pINField;
     private string dPrevField;
     private ObservableCollection<object> itemsField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfDocInfNF() : base()
     {
-        itemsField = new ObservableCollection<object>();
+        itemsField = [];
     }
 
     public string nRoma
     {
-        get
-        {
-            return nRomaField;
-        }
-
+        get => nRomaField;
         set
         {
             if (nRomaField is null || nRomaField.Equals(value) != true)
             {
                 nRomaField = value;
-                OnPropertyChanged("nRoma");
+                OnPropertyChanged(nameof(nRoma));
             }
         }
     }
 
     public string nPed
     {
-        get
-        {
-            return nPedField;
-        }
-
+        get => nPedField;
         set
         {
             if (nPedField is null || nPedField.Equals(value) != true)
             {
                 nPedField = value;
-                OnPropertyChanged("nPed");
+                OnPropertyChanged(nameof(nPed));
             }
         }
     }
 
     public TModNF mod
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("mod");
+                OnPropertyChanged(nameof(mod));
             }
         }
     }
 
     public string serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("serie");
+                OnPropertyChanged(nameof(serie));
             }
         }
     }
 
     public string nDoc
     {
-        get
-        {
-            return nDocField;
-        }
-
+        get => nDocField;
         set
         {
             if (nDocField is null || nDocField.Equals(value) != true)
             {
                 nDocField = value;
-                OnPropertyChanged("nDoc");
+                OnPropertyChanged(nameof(nDoc));
             }
         }
     }
 
     public string dEmi
     {
-        get
-        {
-            return dEmiField;
-        }
-
+        get => dEmiField;
         set
         {
             if (dEmiField is null || dEmiField.Equals(value) != true)
             {
                 dEmiField = value;
-                OnPropertyChanged("dEmi");
+                OnPropertyChanged(nameof(dEmi));
             }
         }
     }
 
     public string vBC
     {
-        get
-        {
-            return vBCField;
-        }
-
+        get => vBCField;
         set
         {
             if (vBCField is null || vBCField.Equals(value) != true)
             {
                 vBCField = value;
-                OnPropertyChanged("vBC");
+                OnPropertyChanged(nameof(vBC));
             }
         }
     }
 
     public string vICMS
     {
-        get
-        {
-            return vICMSField;
-        }
-
+        get => vICMSField;
         set
         {
             if (vICMSField is null || vICMSField.Equals(value) != true)
             {
                 vICMSField = value;
-                OnPropertyChanged("vICMS");
+                OnPropertyChanged(nameof(vICMS));
             }
         }
     }
 
     public string vBCST
     {
-        get
-        {
-            return vBCSTField;
-        }
-
+        get => vBCSTField;
         set
         {
             if (vBCSTField is null || vBCSTField.Equals(value) != true)
             {
                 vBCSTField = value;
-                OnPropertyChanged("vBCST");
+                OnPropertyChanged(nameof(vBCST));
             }
         }
     }
 
     public string vST
     {
-        get
-        {
-            return vSTField;
-        }
-
+        get => vSTField;
         set
         {
             if (vSTField is null || vSTField.Equals(value) != true)
             {
                 vSTField = value;
-                OnPropertyChanged("vST");
+                OnPropertyChanged(nameof(vST));
             }
         }
     }
 
     public string vProd
     {
-        get
-        {
-            return vProdField;
-        }
-
+        get => vProdField;
         set
         {
             if (vProdField is null || vProdField.Equals(value) != true)
             {
                 vProdField = value;
-                OnPropertyChanged("vProd");
+                OnPropertyChanged(nameof(vProd));
             }
         }
     }
 
     public string vNF
     {
-        get
-        {
-            return vNFField;
-        }
-
+        get => vNFField;
         set
         {
             if (vNFField is null || vNFField.Equals(value) != true)
             {
                 vNFField = value;
-                OnPropertyChanged("vNF");
+                OnPropertyChanged(nameof(vNF));
             }
         }
     }
 
     public string nCFOP
     {
-        get
-        {
-            return nCFOPField;
-        }
-
+        get => nCFOPField;
         set
         {
             if (nCFOPField is null || nCFOPField.Equals(value) != true)
             {
                 nCFOPField = value;
-                OnPropertyChanged("nCFOP");
+                OnPropertyChanged(nameof(nCFOP));
             }
         }
     }
 
     public string nPeso
     {
-        get
-        {
-            return nPesoField;
-        }
-
+        get => nPesoField;
         set
         {
             if (nPesoField is null || nPesoField.Equals(value) != true)
             {
                 nPesoField = value;
-                OnPropertyChanged("nPeso");
+                OnPropertyChanged(nameof(nPeso));
             }
         }
     }
 
     public string PIN
     {
-        get
-        {
-            return pINField;
-        }
-
+        get => pINField;
         set
         {
             if (pINField is null || pINField.Equals(value) != true)
             {
                 pINField = value;
-                OnPropertyChanged("PIN");
+                OnPropertyChanged(nameof(PIN));
             }
         }
     }
 
     public string dPrev
     {
-        get
-        {
-            return dPrevField;
-        }
-
+        get => dPrevField;
         set
         {
             if (dPrevField is null || dPrevField.Equals(value) != true)
             {
                 dPrevField = value;
-                OnPropertyChanged("dPrev");
+                OnPropertyChanged(nameof(dPrev));
             }
         }
     }
@@ -8712,54 +6123,25 @@ public partial class TCTeInfCteInfCTeNormInfDocInfNF : INotifyPropertyChanged
     [XmlElement("infUnidTransp", typeof(TUnidadeTransp))]
     public ObservableCollection<object> Items
     {
-        get
-        {
-            return itemsField;
-        }
-
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Items");
+                OnPropertyChanged(nameof(Items));
             }
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfDocInfNF));
-            }
-
-            return sSerializer;
-        }
-    }
-
-    public override string ToString()
-    {
-        return "NF"; // MyBase.ToString()
-    }
+    public override string ToString() => "NF"; // MyBase.ToString()
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TModNF
 {
 
@@ -8772,31 +6154,22 @@ public enum TModNF
     Item04
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfDocInfNFe : INotifyPropertyChanged
 {
     private string chaveField;
     private string pINField;
     private string dPrevField;
     private ObservableCollection<object> itemsField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfDocInfNFe() : base()
     {
-        itemsField = new ObservableCollection<object>();
+        itemsField = [];
     }
 
     [XmlElement("chave")]
     public string Chave
     {
-        get
-        {
-            return chaveField;
-        }
-
+        get => chaveField;
         set
         {
             if (chaveField is null || chaveField.Equals(value) != true)
@@ -8809,34 +6182,26 @@ public partial class TCTeInfCteInfCTeNormInfDocInfNFe : INotifyPropertyChanged
 
     public string PIN
     {
-        get
-        {
-            return pINField;
-        }
-
+        get => pINField;
         set
         {
             if (pINField is null || pINField.Equals(value) != true)
             {
                 pINField = value;
-                OnPropertyChanged("PIN");
+                OnPropertyChanged(nameof(PIN));
             }
         }
     }
 
     public string dPrev
     {
-        get
-        {
-            return dPrevField;
-        }
-
+        get => dPrevField;
         set
         {
             if (dPrevField is null || dPrevField.Equals(value) != true)
             {
                 dPrevField = value;
-                OnPropertyChanged("dPrev");
+                OnPropertyChanged(nameof(dPrev));
             }
         }
     }
@@ -8845,55 +6210,25 @@ public partial class TCTeInfCteInfCTeNormInfDocInfNFe : INotifyPropertyChanged
     [XmlElement("infUnidTransp", typeof(TUnidadeTransp))]
     public ObservableCollection<object> Items
     {
-        get
-        {
-            return itemsField;
-        }
-
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Items");
+                OnPropertyChanged(nameof(Items));
             }
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfDocInfNFe));
-            }
-
-            return sSerializer;
-        }
-    }
-
-    public override string ToString()
-    {
-        return "NFe"; // MyBase.ToString()
-    }
+    public override string ToString() => "NFe"; // MyBase.ToString()
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfDocInfOutros : INotifyPropertyChanged
 {
     private TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc tpDocField;
@@ -8903,111 +6238,86 @@ public partial class TCTeInfCteInfCTeNormInfDocInfOutros : INotifyPropertyChange
     private string vDocFiscField;
     private string dPrevField;
     private ObservableCollection<object> itemsField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormInfDocInfOutros() : base()
     {
-        itemsField = new ObservableCollection<object>();
+        itemsField = [];
     }
 
     public TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc tpDoc
     {
-        get
-        {
-            return tpDocField;
-        }
-
+        get => tpDocField;
         set
         {
             if (tpDocField.Equals(value) != true)
             {
                 tpDocField = value;
-                OnPropertyChanged("tpDoc");
+                OnPropertyChanged(nameof(tpDoc));
             }
         }
     }
 
     public string descOutros
     {
-        get
-        {
-            return descOutrosField;
-        }
-
+        get => descOutrosField;
         set
         {
             if (descOutrosField is null || descOutrosField.Equals(value) != true)
             {
                 descOutrosField = value;
-                OnPropertyChanged("descOutros");
+                OnPropertyChanged(nameof(descOutros));
             }
         }
     }
 
     public string nDoc
     {
-        get
-        {
-            return nDocField;
-        }
-
+        get => nDocField;
         set
         {
             if (nDocField is null || nDocField.Equals(value) != true)
             {
                 nDocField = value;
-                OnPropertyChanged("nDoc");
+                OnPropertyChanged(nameof(nDoc));
             }
         }
     }
 
     public string dEmi
     {
-        get
-        {
-            return dEmiField;
-        }
-
+        get => dEmiField;
         set
         {
             if (dEmiField is null || dEmiField.Equals(value) != true)
             {
                 dEmiField = value;
-                OnPropertyChanged("dEmi");
+                OnPropertyChanged(nameof(dEmi));
             }
         }
     }
 
     public string vDocFisc
     {
-        get
-        {
-            return vDocFiscField;
-        }
-
+        get => vDocFiscField;
         set
         {
             if (vDocFiscField is null || vDocFiscField.Equals(value) != true)
             {
                 vDocFiscField = value;
-                OnPropertyChanged("vDocFisc");
+                OnPropertyChanged(nameof(vDocFisc));
             }
         }
     }
 
     public string dPrev
     {
-        get
-        {
-            return dPrevField;
-        }
-
+        get => dPrevField;
         set
         {
             if (dPrevField is null || dPrevField.Equals(value) != true)
             {
                 dPrevField = value;
-                OnPropertyChanged("dPrev");
+                OnPropertyChanged(nameof(dPrev));
             }
         }
     }
@@ -9016,54 +6326,25 @@ public partial class TCTeInfCteInfCTeNormInfDocInfOutros : INotifyPropertyChange
     [XmlElement("infUnidTransp", typeof(TUnidadeTransp))]
     public ObservableCollection<object> Items
     {
-        get
-        {
-            return itemsField;
-        }
-
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Items");
+                OnPropertyChanged(nameof(Items));
             }
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfDocInfOutros));
-            }
-
-            return sSerializer;
-        }
-    }
-
-    public override string ToString()
-    {
-        return "Outros"; // MyBase.ToString()
-    }
+    public override string ToString() => "Outros"; // MyBase.ToString()
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc
 {
 
@@ -9080,10 +6361,6 @@ public enum TCTeInfCteInfCTeNormInfDocInfOutrosTpDoc
     Item99
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class CTeNormalEmitenteDocumentonterior : INotifyPropertyChanged
 {
     private string itemField;
@@ -9092,21 +6369,16 @@ public partial class CTeNormalEmitenteDocumentonterior : INotifyPropertyChanged
     private NFe.Estado ufField;
     private string xNomeField;
     private ObservableCollection<TCTeInfCteInfCTeNormEmiDocAntIdDocAnt> idDocAntField;
-    private static XmlSerializer sSerializer;
 
     public CTeNormalEmitenteDocumentonterior() : base()
     {
-        idDocAntField = new ObservableCollection<TCTeInfCteInfCTeNormEmiDocAntIdDocAnt>();
+        idDocAntField = [];
     }
 
     [XmlIgnore()]
     public PersonalidadeJuridica7 PersonalidadeJuridica7
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
@@ -9122,68 +6394,52 @@ public partial class CTeNormalEmitenteDocumentonterior : INotifyPropertyChanged
     [XmlChoiceIdentifier("PersonalidadeJuridica7")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public NFe.Estado UF
     {
-        get
-        {
-            return ufField;
-        }
-
+        get => ufField;
         set
         {
             if (ufField.Equals(value) != true)
             {
                 ufField = value;
-                OnPropertyChanged("UF");
+                OnPropertyChanged(nameof(UF));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
@@ -9191,159 +6447,76 @@ public partial class CTeNormalEmitenteDocumentonterior : INotifyPropertyChanged
     [XmlElement("idDocAnt")]
     public ObservableCollection<TCTeInfCteInfCTeNormEmiDocAntIdDocAnt> idDocAnt
     {
-        get
-        {
-            return idDocAntField;
-        }
-
+        get => idDocAntField;
         set
         {
             if (idDocAntField is null || idDocAntField.Equals(value) != true)
             {
                 idDocAntField = value;
-                OnPropertyChanged("idDocAnt");
+                OnPropertyChanged(nameof(idDocAnt));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(CTeNormalEmitenteDocumentonterior));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormEmiDocAntIdDocAnt : INotifyPropertyChanged
 {
     private ObservableCollection<object> itemsField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormEmiDocAntIdDocAnt() : base()
     {
-        itemsField = new ObservableCollection<object>();
+        itemsField = [];
     }
 
     [XmlElement("idDocAntEle", typeof(TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle))]
     [XmlElement("idDocAntPap", typeof(TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap))]
     public ObservableCollection<object> Items
     {
-        get
-        {
-            return itemsField;
-        }
-
+        get => itemsField;
         set
         {
             if (itemsField is null || itemsField.Equals(value) != true)
             {
                 itemsField = value;
-                OnPropertyChanged("Items");
+                OnPropertyChanged(nameof(Items));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormEmiDocAntIdDocAnt));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle : INotifyPropertyChanged
 {
     private string chaveField;
-    private static XmlSerializer sSerializer;
 
     public string chave
     {
-        get
-        {
-            return chaveField;
-        }
-
+        get => chaveField;
         set
         {
             if (chaveField is null || chaveField.Equals(value) != true)
             {
                 chaveField = value;
-                OnPropertyChanged("chave");
+                OnPropertyChanged(nameof(chave));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntEle));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap : INotifyPropertyChanged
 {
     private TDocAssoc tpDocField;
@@ -9351,121 +6524,78 @@ public partial class TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap : INotifyP
     private string subserField;
     private string nDocField;
     private string dEmiField;
-    private static XmlSerializer sSerializer;
 
     public TDocAssoc tpDoc
     {
-        get
-        {
-            return tpDocField;
-        }
-
+        get => tpDocField;
         set
         {
             if (tpDocField.Equals(value) != true)
             {
                 tpDocField = value;
-                OnPropertyChanged("tpDoc");
+                OnPropertyChanged(nameof(tpDoc));
             }
         }
     }
 
     public string serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("serie");
+                OnPropertyChanged(nameof(serie));
             }
         }
     }
 
     public string subser
     {
-        get
-        {
-            return subserField;
-        }
-
+        get => subserField;
         set
         {
             if (subserField is null || subserField.Equals(value) != true)
             {
                 subserField = value;
-                OnPropertyChanged("subser");
+                OnPropertyChanged(nameof(subser));
             }
         }
     }
 
     public string nDoc
     {
-        get
-        {
-            return nDocField;
-        }
-
+        get => nDocField;
         set
         {
             if (nDocField is null || nDocField.Equals(value) != true)
             {
                 nDocField = value;
-                OnPropertyChanged("nDoc");
+                OnPropertyChanged(nameof(nDoc));
             }
         }
     }
 
     public string dEmi
     {
-        get
-        {
-            return dEmiField;
-        }
-
+        get => dEmiField;
         set
         {
             if (dEmiField is null || dEmiField.Equals(value) != true)
             {
                 dEmiField = value;
-                OnPropertyChanged("dEmi");
+                OnPropertyChanged(nameof(dEmi));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormEmiDocAntIdDocAntIdDocAntPap));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TDocAssoc
 {
 
@@ -9526,10 +6656,6 @@ public enum TDocAssoc
     Item99
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormSeg : INotifyPropertyChanged
 {
     private ResponsavelSeguro respSegField;
@@ -9537,143 +6663,94 @@ public partial class TCTeInfCteInfCTeNormSeg : INotifyPropertyChanged
     private string nApolField;
     private string nAverField;
     private string vCargaField;
-    private static XmlSerializer sSerializer;
 
     public ResponsavelSeguro respSeg
     {
-        get
-        {
-            return respSegField;
-        }
-
+        get => respSegField;
         set
         {
             if (respSegField.Equals(value) != true)
             {
                 respSegField = value;
-                OnPropertyChanged("respSeg");
+                OnPropertyChanged(nameof(respSeg));
             }
         }
     }
 
     public string xSeg
     {
-        get
-        {
-            return xSegField;
-        }
-
+        get => xSegField;
         set
         {
             if (xSegField is null || xSegField.Equals(value) != true)
             {
                 xSegField = value;
-                OnPropertyChanged("xSeg");
+                OnPropertyChanged(nameof(xSeg));
             }
         }
     }
 
     public string nApol
     {
-        get
-        {
-            return nApolField;
-        }
-
+        get => nApolField;
         set
         {
             if (nApolField is null || nApolField.Equals(value) != true)
             {
                 nApolField = value;
-                OnPropertyChanged("nApol");
+                OnPropertyChanged(nameof(nApol));
             }
         }
     }
 
     public string nAver
     {
-        get
-        {
-            return nAverField;
-        }
-
+        get => nAverField;
         set
         {
             if (nAverField is null || nAverField.Equals(value) != true)
             {
                 nAverField = value;
-                OnPropertyChanged("nAver");
+                OnPropertyChanged(nameof(nAver));
             }
         }
     }
 
     public string vCarga
     {
-        get
-        {
-            return vCargaField;
-        }
-
+        get => vCargaField;
         set
         {
             if (vCargaField is null || vCargaField.Equals(value) != true)
             {
                 vCargaField = value;
-                OnPropertyChanged("vCarga");
+                OnPropertyChanged(nameof(vCarga));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormSeg));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfModal : INotifyPropertyChanged
 {
     private XElement anyField; // System.Xml.XmlElement
     private string versaoModalField;
     private object itemField;
-    private static XmlSerializer sSerializer;
 
     [XmlAnyElement()]
     public XElement Any // System.Xml.XmlElement
     {
-        get
-        {
-            return anyField;
-        }
-
+        get => anyField;
         set // System.Xml.XmlElement)
         {
             if (anyField is null || anyField.Equals(value) != true)
             {
                 anyField = value;
-                OnPropertyChanged("Any");
+                OnPropertyChanged(nameof(Any));
             }
         }
     }
@@ -9681,17 +6758,13 @@ public partial class TCTeInfCteInfCTeNormInfModal : INotifyPropertyChanged
     [XmlAttribute()]
     public string versaoModal
     {
-        get
-        {
-            return versaoModalField;
-        }
-
+        get => versaoModalField;
         set
         {
             if (versaoModalField is null || versaoModalField.Equals(value) != true)
             {
                 versaoModalField = value;
-                OnPropertyChanged("versaoModal");
+                OnPropertyChanged(nameof(versaoModal));
             }
         }
     }
@@ -9699,50 +6772,23 @@ public partial class TCTeInfCteInfCTeNormInfModal : INotifyPropertyChanged
     [XmlElement("rodo", typeof(CTeRodoviario))]
     public object ItemModal
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("ItemModal");
+                OnPropertyChanged(nameof(ItemModal));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfModal));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormPeri : INotifyPropertyChanged
 {
     private string nONUField;
@@ -9752,156 +6798,104 @@ public partial class TCTeInfCteInfCTeNormPeri : INotifyPropertyChanged
     private string qTotProdField;
     private string qVolTipoField;
     private string pontoFulgorField;
-    private static XmlSerializer sSerializer;
 
     public string nONU
     {
-        get
-        {
-            return nONUField;
-        }
-
+        get => nONUField;
         set
         {
             if (nONUField is null || nONUField.Equals(value) != true)
             {
                 nONUField = value;
-                OnPropertyChanged("nONU");
+                OnPropertyChanged(nameof(nONU));
             }
         }
     }
 
     public string xNomeAE
     {
-        get
-        {
-            return xNomeAEField;
-        }
-
+        get => xNomeAEField;
         set
         {
             if (xNomeAEField is null || xNomeAEField.Equals(value) != true)
             {
                 xNomeAEField = value;
-                OnPropertyChanged("xNomeAE");
+                OnPropertyChanged(nameof(xNomeAE));
             }
         }
     }
 
     public string xClaRisco
     {
-        get
-        {
-            return xClaRiscoField;
-        }
-
+        get => xClaRiscoField;
         set
         {
             if (xClaRiscoField is null || xClaRiscoField.Equals(value) != true)
             {
                 xClaRiscoField = value;
-                OnPropertyChanged("xClaRisco");
+                OnPropertyChanged(nameof(xClaRisco));
             }
         }
     }
 
     public string grEmb
     {
-        get
-        {
-            return grEmbField;
-        }
-
+        get => grEmbField;
         set
         {
             if (grEmbField is null || grEmbField.Equals(value) != true)
             {
                 grEmbField = value;
-                OnPropertyChanged("grEmb");
+                OnPropertyChanged(nameof(grEmb));
             }
         }
     }
 
     public string qTotProd
     {
-        get
-        {
-            return qTotProdField;
-        }
-
+        get => qTotProdField;
         set
         {
             if (qTotProdField is null || qTotProdField.Equals(value) != true)
             {
                 qTotProdField = value;
-                OnPropertyChanged("qTotProd");
+                OnPropertyChanged(nameof(qTotProd));
             }
         }
     }
 
     public string qVolTipo
     {
-        get
-        {
-            return qVolTipoField;
-        }
-
+        get => qVolTipoField;
         set
         {
             if (qVolTipoField is null || qVolTipoField.Equals(value) != true)
             {
                 qVolTipoField = value;
-                OnPropertyChanged("qVolTipo");
+                OnPropertyChanged(nameof(qVolTipo));
             }
         }
     }
 
     public string pontoFulgor
     {
-        get
-        {
-            return pontoFulgorField;
-        }
-
+        get => pontoFulgorField;
         set
         {
             if (pontoFulgorField is null || pontoFulgorField.Equals(value) != true)
             {
                 pontoFulgorField = value;
-                OnPropertyChanged("pontoFulgor");
+                OnPropertyChanged(nameof(pontoFulgor));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormPeri));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormVeicNovos : INotifyPropertyChanged
 {
     private string chassiField;
@@ -9910,164 +6904,111 @@ public partial class TCTeInfCteInfCTeNormVeicNovos : INotifyPropertyChanged
     private string cModField;
     private string vUnitField;
     private string vFreteField;
-    private static XmlSerializer sSerializer;
 
     public string chassi
     {
-        get
-        {
-            return chassiField;
-        }
-
+        get => chassiField;
         set
         {
             if (chassiField is null || chassiField.Equals(value) != true)
             {
                 chassiField = value;
-                OnPropertyChanged("chassi");
+                OnPropertyChanged(nameof(chassi));
             }
         }
     }
 
     public string cCor
     {
-        get
-        {
-            return cCorField;
-        }
-
+        get => cCorField;
         set
         {
             if (cCorField is null || cCorField.Equals(value) != true)
             {
                 cCorField = value;
-                OnPropertyChanged("cCor");
+                OnPropertyChanged(nameof(cCor));
             }
         }
     }
 
     public string xCor
     {
-        get
-        {
-            return xCorField;
-        }
-
+        get => xCorField;
         set
         {
             if (xCorField is null || xCorField.Equals(value) != true)
             {
                 xCorField = value;
-                OnPropertyChanged("xCor");
+                OnPropertyChanged(nameof(xCor));
             }
         }
     }
 
     public string cMod
     {
-        get
-        {
-            return cModField;
-        }
-
+        get => cModField;
         set
         {
             if (cModField is null || cModField.Equals(value) != true)
             {
                 cModField = value;
-                OnPropertyChanged("cMod");
+                OnPropertyChanged(nameof(cMod));
             }
         }
     }
 
     public string vUnit
     {
-        get
-        {
-            return vUnitField;
-        }
-
+        get => vUnitField;
         set
         {
             if (vUnitField is null || vUnitField.Equals(value) != true)
             {
                 vUnitField = value;
-                OnPropertyChanged("vUnit");
+                OnPropertyChanged(nameof(vUnit));
             }
         }
     }
 
     public string vFrete
     {
-        get
-        {
-            return vFreteField;
-        }
-
+        get => vFreteField;
         set
         {
             if (vFreteField is null || vFreteField.Equals(value) != true)
             {
                 vFreteField = value;
-                OnPropertyChanged("vFrete");
+                OnPropertyChanged(nameof(vFrete));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormVeicNovos));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormCobr : INotifyPropertyChanged
 {
     private TCTeInfCteInfCTeNormCobrFat fatField;
     private ObservableCollection<TCTeInfCteInfCTeNormCobrDup> dupField;
-    private static XmlSerializer sSerializer;
 
     public TCTeInfCteInfCTeNormCobr() : base()
     {
-        dupField = new ObservableCollection<TCTeInfCteInfCTeNormCobrDup>();
+        dupField = [];
         fatField = new TCTeInfCteInfCTeNormCobrFat();
     }
 
     public TCTeInfCteInfCTeNormCobrFat fat
     {
-        get
-        {
-            return fatField;
-        }
-
+        get => fatField;
         set
         {
             if (fatField is null || fatField.Equals(value) != true)
             {
                 fatField = value;
-                OnPropertyChanged("fat");
+                OnPropertyChanged(nameof(fat));
             }
         }
     }
@@ -10075,261 +7016,153 @@ public partial class TCTeInfCteInfCTeNormCobr : INotifyPropertyChanged
     [XmlElement("dup")]
     public ObservableCollection<TCTeInfCteInfCTeNormCobrDup> dup
     {
-        get
-        {
-            return dupField;
-        }
-
+        get => dupField;
         set
         {
             if (dupField is null || dupField.Equals(value) != true)
             {
                 dupField = value;
-                OnPropertyChanged("dup");
+                OnPropertyChanged(nameof(dup));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormCobr));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormCobrFat : INotifyPropertyChanged
 {
     private string nFatField;
     private string vOrigField;
     private string vDescField;
     private string vLiqField;
-    private static XmlSerializer sSerializer;
 
     public string nFat
     {
-        get
-        {
-            return nFatField;
-        }
-
+        get => nFatField;
         set
         {
             if (nFatField is null || nFatField.Equals(value) != true)
             {
                 nFatField = value;
-                OnPropertyChanged("nFat");
+                OnPropertyChanged(nameof(nFat));
             }
         }
     }
 
     public string vOrig
     {
-        get
-        {
-            return vOrigField;
-        }
-
+        get => vOrigField;
         set
         {
             if (vOrigField is null || vOrigField.Equals(value) != true)
             {
                 vOrigField = value;
-                OnPropertyChanged("vOrig");
+                OnPropertyChanged(nameof(vOrig));
             }
         }
     }
 
     public string vDesc
     {
-        get
-        {
-            return vDescField;
-        }
-
+        get => vDescField;
         set
         {
             if (vDescField is null || vDescField.Equals(value) != true)
             {
                 vDescField = value;
-                OnPropertyChanged("vDesc");
+                OnPropertyChanged(nameof(vDesc));
             }
         }
     }
 
     public string vLiq
     {
-        get
-        {
-            return vLiqField;
-        }
-
+        get => vLiqField;
         set
         {
             if (vLiqField is null || vLiqField.Equals(value) != true)
             {
                 vLiqField = value;
-                OnPropertyChanged("vLiq");
+                OnPropertyChanged(nameof(vLiq));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormCobrFat));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormCobrDup : INotifyPropertyChanged
 {
     private string nDupField;
     private string dVencField;
     private string vDupField;
-    private static XmlSerializer sSerializer;
 
     public string nDup
     {
-        get
-        {
-            return nDupField;
-        }
-
+        get => nDupField;
         set
         {
             if (nDupField is null || nDupField.Equals(value) != true)
             {
                 nDupField = value;
-                OnPropertyChanged("nDup");
+                OnPropertyChanged(nameof(nDup));
             }
         }
     }
 
     public string dVenc
     {
-        get
-        {
-            return dVencField;
-        }
-
+        get => dVencField;
         set
         {
             if (dVencField is null || dVencField.Equals(value) != true)
             {
                 dVencField = value;
-                OnPropertyChanged("dVenc");
+                OnPropertyChanged(nameof(dVenc));
             }
         }
     }
 
     public string vDup
     {
-        get
-        {
-            return vDupField;
-        }
-
+        get => vDupField;
         set
         {
             if (vDupField is null || vDupField.Equals(value) != true)
             {
                 vDupField = value;
-                OnPropertyChanged("vDup");
+                OnPropertyChanged(nameof(vDup));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormCobrDup));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCteSub : INotifyPropertyChanged
 {
     private string chCteField;
     private object itemField;
-    private static XmlSerializer sSerializer;
 
     public string chCte
     {
-        get
-        {
-            return chCteField;
-        }
-
+        get => chCteField;
         set
         {
             if (chCteField is null || chCteField.Equals(value) != true)
             {
                 chCteField = value;
-                OnPropertyChanged("chCte");
+                OnPropertyChanged(nameof(chCte));
             }
         }
     }
@@ -10338,55 +7171,27 @@ public partial class TCTeInfCteInfCTeNormInfCteSub : INotifyPropertyChanged
     [XmlElement("tomaNaoICMS", typeof(TCTeInfCteInfCTeNormInfCteSubTomaNaoICMS))]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCteSub));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMS : INotifyPropertyChanged
 {
     private object itemField;
     private PersonalidadeJuridica78 itemElementNameField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("refCte", typeof(string))]
     [XmlElement("refNF", typeof(TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF))]
@@ -10394,17 +7199,13 @@ public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMS : INotifyPropertyChan
     [XmlChoiceIdentifier("ItemElementName")]
     public object Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
         }
     }
@@ -10412,50 +7213,23 @@ public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMS : INotifyPropertyChan
     [XmlIgnore()]
     public PersonalidadeJuridica78 ItemElementName
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("ItemElementName");
+                OnPropertyChanged(nameof(ItemElementName));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCteSubTomaICMS));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF : INotifyPropertyChanged
 {
     private string itemField;
@@ -10466,24 +7240,19 @@ public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF : INotifyPropert
     private string nroField;
     private string valorField;
     private string dEmiField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("CNPJ", typeof(string))]
     [XmlElement("CPF", typeof(string))]
     [XmlChoiceIdentifier("ItemElementName")]
     public string Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
         }
     }
@@ -10491,151 +7260,101 @@ public partial class TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF : INotifyPropert
     [XmlIgnore()]
     public PersonalidadeJuridica7 ItemElementName
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("ItemElementName");
+                OnPropertyChanged(nameof(ItemElementName));
             }
         }
     }
 
     public TModDoc mod
     {
-        get
-        {
-            return modField;
-        }
-
+        get => modField;
         set
         {
             if (modField.Equals(value) != true)
             {
                 modField = value;
-                OnPropertyChanged("mod");
+                OnPropertyChanged(nameof(mod));
             }
         }
     }
 
     public string serie
     {
-        get
-        {
-            return serieField;
-        }
-
+        get => serieField;
         set
         {
             if (serieField is null || serieField.Equals(value) != true)
             {
                 serieField = value;
-                OnPropertyChanged("serie");
+                OnPropertyChanged(nameof(serie));
             }
         }
     }
 
     public string subserie
     {
-        get
-        {
-            return subserieField;
-        }
-
+        get => subserieField;
         set
         {
             if (subserieField is null || subserieField.Equals(value) != true)
             {
                 subserieField = value;
-                OnPropertyChanged("subserie");
+                OnPropertyChanged(nameof(subserie));
             }
         }
     }
 
     public string nro
     {
-        get
-        {
-            return nroField;
-        }
-
+        get => nroField;
         set
         {
             if (nroField is null || nroField.Equals(value) != true)
             {
                 nroField = value;
-                OnPropertyChanged("nro");
+                OnPropertyChanged(nameof(nro));
             }
         }
     }
 
     public string valor
     {
-        get
-        {
-            return valorField;
-        }
-
+        get => valorField;
         set
         {
             if (valorField is null || valorField.Equals(value) != true)
             {
                 valorField = value;
-                OnPropertyChanged("valor");
+                OnPropertyChanged(nameof(valor));
             }
         }
     }
 
     public string dEmi
     {
-        get
-        {
-            return dEmiField;
-        }
-
+        get => dEmiField;
         set
         {
             if (dEmiField is null || dEmiField.Equals(value) != true)
             {
                 dEmiField = value;
-                OnPropertyChanged("dEmi");
+                OnPropertyChanged(nameof(dEmi));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCteSubTomaICMSRefNF));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte", IncludeInSchema = false)]
 public enum PersonalidadeJuridica7
 {
 
@@ -10646,9 +7365,6 @@ public enum PersonalidadeJuridica7
     CPF
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte")]
 public enum TModDoc
 {
 
@@ -10769,9 +7485,6 @@ public enum TModDoc
     Item55
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte", IncludeInSchema = false)]
 public enum PersonalidadeJuridica78
 {
 
@@ -10785,75 +7498,38 @@ public enum PersonalidadeJuridica78
     refNFe
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class TCTeInfCteInfCTeNormInfCteSubTomaNaoICMS : INotifyPropertyChanged
 {
     private string refCteAnuField;
-    private static XmlSerializer sSerializer;
 
     public string refCteAnu
     {
-        get
-        {
-            return refCteAnuField;
-        }
-
+        get => refCteAnuField;
         set
         {
             if (refCteAnuField is null || refCteAnuField.Equals(value) != true)
             {
                 refCteAnuField = value;
-                OnPropertyChanged("refCteAnu");
+                OnPropertyChanged(nameof(refCteAnu));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(TCTeInfCteInfCTeNormInfCteSubTomaNaoICMS));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class InformacoesCteAnulacao : INotifyPropertyChanged
 {
     private string chCteField;
     private string dEmiField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("chCte")]
     public string Chave
     {
-        get
-        {
-            return chCteField;
-        }
-
+        get => chCteField;
         set
         {
             if (chCteField is null || chCteField.Equals(value) != true)
@@ -10866,63 +7542,31 @@ public partial class InformacoesCteAnulacao : INotifyPropertyChanged
 
     public string dEmi
     {
-        get
-        {
-            return dEmiField;
-        }
-
+        get => dEmiField;
         set
         {
             if (dEmiField is null || dEmiField.Equals(value) != true)
             {
                 dEmiField = value;
-                OnPropertyChanged("dEmi");
+                OnPropertyChanged(nameof(dEmi));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(InformacoesCteAnulacao));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class InformacoesCteComplementado : INotifyPropertyChanged
 {
     private string chaveField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("chave")]
     public string Chave
     {
-        get
-        {
-            return chaveField;
-        }
-
+        get => chaveField;
         set
         {
             if (chaveField is null || chaveField.Equals(value) != true)
@@ -10933,57 +7577,29 @@ public partial class InformacoesCteComplementado : INotifyPropertyChanged
         }
     }
 
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(InformacoesCteComplementado));
-            }
-
-            return sSerializer;
-        }
-    }
-
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class AutorizadoXML : INotifyPropertyChanged
 {
     private string itemField;
     private PersonalidadeJuridica79 itemElementNameField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("CNPJ", typeof(string))]
     [XmlElement("CPF", typeof(string))]
     [XmlChoiceIdentifier("ItemElementName")]
     public string Item
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("Item");
+                OnPropertyChanged(nameof(Item));
             }
         }
     }
@@ -10991,49 +7607,23 @@ public partial class AutorizadoXML : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica79 ItemElementName
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
+        get => itemElementNameField;
         set
         {
             if (itemElementNameField.Equals(value) != true)
             {
                 itemElementNameField = value;
-                OnPropertyChanged("ItemElementName");
+                OnPropertyChanged(nameof(ItemElementName));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(AutorizadoXML));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[XmlType(Namespace = "http://www.portalfiscal.inf.br/cte", IncludeInSchema = false)]
 public enum PersonalidadeJuridica79
 {
 
