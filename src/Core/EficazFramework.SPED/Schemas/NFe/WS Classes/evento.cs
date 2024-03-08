@@ -74,12 +74,13 @@ public partial class PedidoEnvioEvento
     /// </summary>
     /// <returns></returns>
     /// <remarks></remarks>
-    public virtual XDocument SerializeToXMLDocument()
+    public virtual XmlDocument SerializeToXMLDocument()
     {
         string str = Serialize();
         if (!string.IsNullOrEmpty(str) | string.IsNullOrWhiteSpace(str))
         {
-            var doc = XDocument.Load(Serialize());
+            var doc = new XmlDocument();
+            doc.LoadXml(str);
             return doc;
         }
         else
@@ -264,9 +265,14 @@ public partial class PedidoEnvioEvento
     }
 }
 
+[Serializable()]
+[XmlType(TypeName = "evento", Namespace = "http://www.portalfiscal.inf.br/nfe")]
+[XmlRoot(Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = true)]
 public partial class Evento
 {
     private string versaoField;
+    private static XmlSerializer sSerializer;
+
 
     [XmlElement("infEvento")]
     public InformacaoEvento InformacaoEvento { get; set; }
@@ -295,6 +301,237 @@ public partial class Evento
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public event PropertyChangedEventHandler PropertyChanged;
+
+
+    private static XmlSerializer Serializer
+    {
+        get
+        {
+            sSerializer ??= new XmlSerializer(typeof(Evento));
+            return sSerializer;
+        }
+    }
+
+
+    /// <summary>
+    /// Serializes current TEnvEvento object into an XML document
+    /// </summary>
+    /// <returns>string XML value</returns>
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null;
+        System.IO.MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            Serializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
+    /// <summary>
+    /// Semelhante À Function Serialize, porém já retorna o resultado
+    /// em uma instância de XmlDocument, agilizando o processo de assinatura
+    /// digital dos eventos.
+    /// </summary>
+    /// <returns></returns>
+    /// <remarks></remarks>
+    public virtual XmlDocument SerializeToXMLDocument()
+    {
+        string str = Serialize();
+        if (!string.IsNullOrEmpty(str) | string.IsNullOrWhiteSpace(str))
+        {
+            var doc = new XmlDocument();
+            doc.LoadXml(str);
+            return doc;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Deserializes workflow markup into an TEnvEvento object
+    /// </summary>
+    /// <param name="xml">string workflow markup to deserialize</param>
+    /// <param name="obj">Output TEnvEvento object</param>
+    /// <param name="exception">output Exception value if deserialize failed</param>
+    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+    public static bool CanDeserialize(string xml, ref Evento obj, ref Exception exception)
+    {
+        exception = null;
+        obj = default;
+        try
+        {
+            obj = Deserialize(xml);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+            return false;
+        }
+    }
+
+    public static bool CanDeserialize(string xml, ref Evento obj)
+    {
+        Exception exception = null;
+        return CanDeserialize(xml, ref obj, ref exception);
+    }
+
+    public static Evento Deserialize(string xml)
+    {
+        System.IO.StringReader stringReader = null;
+        try
+        {
+            stringReader = new System.IO.StringReader(xml);
+            return (Evento)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+        }
+        finally
+        {
+            stringReader?.Dispose();
+        }
+    }
+
+    public static Evento Deserialize(System.IO.Stream s) =>
+        (Evento)Serializer.Deserialize(s);
+
+    /// <summary>
+    /// Serializes current TNfeProc object into file
+    /// </summary>
+    /// <param name="target">target stream of outupt xml file</param>
+    /// <param name="exception">output Exception value if failed</param>
+    /// <returns>true if can serialize and save into file; otherwise, false</returns>
+    public virtual bool CanSaveTo(System.IO.Stream target, ref Exception exception)
+    {
+        exception = null;
+        try
+        {
+            SaveTo(target);
+            return true;
+        }
+        catch (Exception e)
+        {
+            exception = e;
+            return false;
+        }
+    }
+
+    public virtual void SaveTo(System.IO.Stream target)
+    {
+        if (target is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
+        var streamWriter = new System.IO.StreamWriter(target);
+        try
+        {
+            string xmlString = Serialize();
+            streamWriter.WriteLine(xmlString);
+            streamWriter.Flush();
+        }
+        finally
+        {
+            streamWriter?.Dispose();
+        }
+    }
+
+    public virtual async void SaveToAsync(System.IO.Stream target)
+    {
+        if (target is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
+        var streamWriter = new System.IO.StreamWriter(target);
+        try
+        {
+            string xmlString = Serialize();
+            await streamWriter.WriteLineAsync(xmlString);
+            await streamWriter.FlushAsync();
+        }
+        finally
+        {
+            streamWriter?.Dispose();
+        }
+    }
+
+
+    /// <summary>
+    /// Deserializes xml markup from file into an TEnvEvento object
+    /// </summary>
+    /// <param name="source">target stream of outupt xml file</param>
+    /// <param name="obj">Output TEnvEvento object</param>
+    /// <param name="exception">output Exception value if deserialize failed</param>
+    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+    public static bool CanLoadFrom(System.IO.Stream source, ref Evento obj, ref Exception exception)
+    {
+        exception = null;
+        obj = default;
+        try
+        {
+            obj = LoadFrom(source, false);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+            return false;
+        }
+    }
+
+    public static bool CanLoadFrom(System.IO.Stream source, ref Evento obj)
+    {
+        Exception exception = null;
+        return CanLoadFrom(source, ref obj, ref exception);
+    }
+
+    public static Evento LoadFrom(System.IO.Stream source, bool close_stream = true)
+    {
+        // Dim file As System.IO.FileStream = Nothing
+        if (source is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
+        System.IO.StreamReader sr = null;
+        try
+        {
+            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
+            sr = new System.IO.StreamReader(source);
+            string xmlString = sr.ReadToEnd();
+            // sr.Close()
+            // file.Close()
+            return Deserialize(xmlString);
+        }
+        finally
+        {
+            if (sr != null & close_stream == true)
+            {
+                sr.Dispose();
+            }
+        }
+    }
+
+    public static async Task<Evento> LoadFromAsync(System.IO.Stream source, bool close_stream = true)
+    {
+        if (source is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
+        System.IO.StreamReader sr = null;
+        try
+        {
+            sr = new System.IO.StreamReader(source);
+            string xmlString = await sr.ReadToEndAsync();
+            return Deserialize(xmlString);
+        }
+        finally
+        {
+            if (sr != null & close_stream == true)
+            {
+                sr.Dispose();
+            }
+        }
+    }
 }
 
 public partial class InformacaoEvento
