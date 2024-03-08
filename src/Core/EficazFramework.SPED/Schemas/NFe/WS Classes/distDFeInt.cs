@@ -9,26 +9,21 @@ public partial class PedidoDistribuicaoDFe
 {
     private static XmlSerializer sSerializer;
 
-    /// <remarks/>
     [XmlElement("tpAmb", Namespace = null, Order = 0)]
     public Ambiente Ambiente { get; set; }
 
-    /// <remarks/>
     [XmlElement("cUFAutor", Namespace = null, Order = 1)]
     public OrgaoIBGE UF_Autor { get; set; }
 
-    /// <remarks/>
     [XmlElement("CNPJ", typeof(string), Namespace = null, Order = 2)]
     [XmlElement("CPF", typeof(string), Namespace = null, Order = 2)]
     [XmlChoiceIdentifier("ItemElementName")]
     public string CNPJ_CPF { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 3)]
     [XmlIgnore()]
     public PersonalidadeJuridica ItemElementName { get; set; }
 
-    /// <remarks/>
     [XmlElement("consNSU", typeof(distDFeIntConsNSU), Namespace = null, Order = 4)]
     [XmlElement("distNSU", typeof(distDFeIntDistNSU), Namespace = null, Order = 4)]
     public object NSUObject { get; set; }
@@ -37,7 +32,6 @@ public partial class PedidoDistribuicaoDFe
     public distDFeIntconsChNFe consChNFe { get; set; }
 
 
-    /// <remarks/>
     [XmlAttribute()]
     public VersaoServicoDistribuicaoDF versao { get; set; }
 
@@ -656,7 +650,7 @@ public partial class retDistDFeIntLoteDistDFeIntDocZip
         await target.WriteAsync(buffer, 0, buffer.Length, default);
     }
 
-    public override string ToString() => string.Format("Schema: {0} | NSU: {1}", schema, NSU);
+    public override string ToString() => $"Schema: {schema} | NSU: {NSU}";
 }
 
 
