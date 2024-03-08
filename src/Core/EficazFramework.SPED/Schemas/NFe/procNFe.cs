@@ -50,7 +50,6 @@ public partial class ProcessoNFeBase : INotifyPropertyChanged, IXmlSpedDocument
         get
         {
             sSerializer ??= new XmlSerializer(typeof(ProcessoNFeBase));
-
             return sSerializer;
         }
     }
@@ -630,11 +629,7 @@ public partial class NFe : INotifyPropertyChanged, IXmlSpedDocument
     {
         get
         {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(NFe));
-            }
-
+            sSerializer ??= new XmlSerializer(typeof(NFe));
             return sSerializer;
         }
     }
