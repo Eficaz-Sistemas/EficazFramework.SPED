@@ -899,7 +899,6 @@ public partial class InformacoesNFe : INotifyPropertyChanged
     private Cana canaField;
     private string versaoField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("ide")]
     public IdentificacaoNFe IdentificacaoOperacao
@@ -1832,7 +1831,6 @@ public partial class ProtocoloRecebimento : INotifyPropertyChanged
     private InformacoesProtocolo infProtField;
     private SignatureType signatureField;
     private string versaoField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("infProt")]
     public InformacoesProtocolo InformacoesProtocolo
@@ -1892,7 +1890,6 @@ public partial class InformacoesProtocolo : INotifyPropertyChanged
     private string cStatField;
     private string xMotivoField;
     private string idField;
-    private static XmlSerializer sSerializer;
 
     [XmlElement("tpAmb")]
     public Ambiente Ambiente
