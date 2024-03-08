@@ -12,7 +12,7 @@ public class NFeDistribuicaoDFeTests : BaseNFeTests
         
         if (result.cStat == "656" && result.xMotivo.Contains("Deve ser utilizado o ultNSU"))
         {
-            result.loteDistDFeInt.docZip.Should().HaveCount(0);
+            result.loteDistDFeInt?.docZip?.Should().HaveCount(0);
             result.ultNSU.Should().NotBe("000000000000000");
             var ultNsuResult = await client.DistribuicaoDFeAsync(uf, Configuration["SSL:NFE:CertificateCnpjCpf"], int.Parse(result.ultNSU), ambiente, null);
             ultNsuResult.Should().NotBeNull();
