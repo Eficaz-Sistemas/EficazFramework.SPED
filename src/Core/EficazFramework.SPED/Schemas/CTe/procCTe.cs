@@ -612,7 +612,7 @@ public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
     }
 }
 
-Serializable()]
+[Serializable()]
 [XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 [XmlRoot("CTe", Namespace = "http://www.portalfiscal.inf.br/cte", IsNullable = false)]
 public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument

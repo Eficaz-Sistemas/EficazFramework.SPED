@@ -756,17 +756,7 @@ public partial class EventoRetorno
 
 public partial class InformacaoEventoRetorno
 {
-    private Ambiente tpAmbField;
-    private string verAplicField;
-    private OrgaoIBGE cOrgaoField;
-    private string cStatField;
-    private string xMotivoField;
-    private string chNFeField;
-    private CodigoEvento tpEventoField;
-    private string nSeqEventoField;
     private DateTime? dhRegEventoField;
-    private string nProtField;
-    private string idField;
 
     [XmlElement("tpAmb")]
     public Ambiente Ambiente { get; set; }
