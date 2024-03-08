@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Services.CTe.Contracts;
 
-[System.ServiceModel.ServiceContract(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", ConfigurationName = "SPED.Services.NFe.CTeDistribuicaoDFe")]
+[System.ServiceModel.ServiceContract(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", ConfigurationName = "SPED.Services.CTe.CTeDistribuicaoDFe")]
 public partial interface ICTeDistribuicaoDFeSoap
 {
     [System.ServiceModel.OperationContract(Action = "http://www.portalfiscal.inf.br/cte/wsdl/CTeDistribuicaoDFe/cteDistDFeInteresse", ReplyAction = "*")]
