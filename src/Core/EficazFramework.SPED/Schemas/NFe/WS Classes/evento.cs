@@ -299,17 +299,9 @@ public partial class Evento
 
 public partial class InformacaoEvento
 {
-    public InformacaoEvento() : base()
-    {
-        detEventoField = new();
-    }
-
     private string chNFeField;
     private CodigoEvento tpEventoField;
     private string nSeqEventoField;
-    private string verEventoField;
-    private DetalheEvento detEventoField;
-    private string idField;
 
     [XmlElement("cOrgao")]
     public OrgaoIBGE Orgao { get; set; }
