@@ -24,7 +24,7 @@ public partial class CTeDistribuicaoDFeRequest : ISoapRequest
 public partial class CTeDistribuicaoDFeRequestBody
 {
     [System.ServiceModel.MessageBodyMember(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", Order = 0)]
-    public XmlNode nfeDadosMsg;
+    public XmlNode cteDadosMsg;
 }
 
 
