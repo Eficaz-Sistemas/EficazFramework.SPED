@@ -53,6 +53,7 @@ public partial class NFeConsultaProtocolo4SoapClient(Binding binding, EndpointAd
                 Schemas.NFe.OrgaoIBGE.TO => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCAN => "https://www.sefazvirtual.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx",
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
+                Schemas.NFe.OrgaoIBGE.SefazNacional_SVCSP => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 _ => ""
             },
             "65" => uf switch
@@ -86,6 +87,7 @@ public partial class NFeConsultaProtocolo4SoapClient(Binding binding, EndpointAd
                 Schemas.NFe.OrgaoIBGE.TO => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCAN => "https://www.sefazvirtual.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx",
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
+                Schemas.NFe.OrgaoIBGE.SefazNacional_SVCSP => "https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx",
                 _ => ""
             },
             _ => ""
