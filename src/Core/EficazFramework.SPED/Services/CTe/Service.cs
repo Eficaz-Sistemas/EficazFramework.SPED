@@ -6,39 +6,38 @@ namespace EficazFramework.SPED.Services.CTe;
 
 public class CTeService : SoapServiceBase
 {
-    ///// <summary>
-    ///// Efetua a consulta de protocolo de CT-e / CT-eOS
-    ///// </summary>
-    ///// <param name="chave">Chave da CT-e ou CT-eOS para consulta</param>
-    ///// <param name="ambiente">Produção ou Homologação</param>
-    //public async Task<Schemas.NFe.RetornoConsultaSituacaoNFe> ConsultaProtocolo4Async(
-    //    string chave,
-    //    Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
-    //{
-    //    //! validações iniciais:
-    //    if (chave.Length != 44)
-    //        throw new ArgumentException("A chave informada não é válida");
+    /// <summary>
+    /// Efetua a consulta de protocolo de CT-e / CT-eOS
+    /// </summary>
+    /// <param name="chave">Chave da CT-e ou CT-eOS para consulta</param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<Schemas.CTe.RetornoConsultaSituacaoCTe> ConsultaSituacaoAsync(
+        string chave,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        //! validações iniciais:
+        if (chave.Length != 44)
+            throw new ArgumentException("A chave informada não é válida");
 
-    //    if (!ValidaCertificado())
-    //        throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
-
-
-    //    //! montagem dos argumentos:
-    //    string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2])).ToString();
-    //    string modelo = chave[20..22];
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
 
 
-    //    //! execução:
-    //    var request = new Contracts.nfeConsultaNFRequest();
-    //    var dados = new Schemas.NFe.PedidoConsultaSituacaoNFe()
-    //    {
-    //        Ambiente = ambiente,
-    //        ChaveNFe = chave,
-    //        Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
-    //    };
-    //    request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-    //    return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo); ;
-    //}
+        //! montagem dos argumentos:
+        string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2])).ToString();
+
+
+        //! execução:
+        var request = new Contracts.CteConsultaCTRequest();
+        var dados = new Schemas.CTe.PedidoConsultaSituacaoCTe()
+        {
+            Ambiente = ambiente,
+            Chave = chave,
+            versao = Schemas.CTe.VersaoServicoConsulta.Versao_4_00
+        };
+        request.cteDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
+        return await ExecuteAsync<SoapClients.CteConsultaSoapClient, Schemas.CTe.RetornoConsultaSituacaoCTe>(request, uf); ;
+    }
 
 
 

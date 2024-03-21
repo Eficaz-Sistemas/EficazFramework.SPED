@@ -250,6 +250,9 @@ public enum OrgaoIBGE
     [System.ComponentModel.Description("Enum_OrgaoIBGE_AN")]
     [System.Xml.Serialization.XmlEnum("92")]
     SefazNacional_AN = 92,
+    [System.ComponentModel.Description("Enum_OrgaoIBGE_SVAN")]
+    [System.Xml.Serialization.XmlEnum("93")]
+    SefazNacional_SVCSP = 93,
     [System.ComponentModel.Description("Exporacao")] // , False)>
     [System.Xml.Serialization.XmlEnum("99")]
     EX = 99

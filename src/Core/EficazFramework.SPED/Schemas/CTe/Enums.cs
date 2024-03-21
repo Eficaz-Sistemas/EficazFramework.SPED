@@ -298,7 +298,10 @@ public enum VersaoServicoConsulta
     Versao_2_00,
     [System.ComponentModel.Description("3.00")]
     [System.Xml.Serialization.XmlEnum("3.00")]
-    Versao_3_00
+    Versao_3_00,
+    [System.ComponentModel.Description("4.00")]
+    [System.Xml.Serialization.XmlEnum("4.00")]
+    Versao_4_00
 }
 
 // <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033"),
