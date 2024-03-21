@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Services.CTe.Contracts;
 
-[System.ServiceModel.ServiceContract(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", ConfigurationName = "SPED.Services.CTe.CTeDistribuicaoDFe")]
+[System.ServiceModel.ServiceContract(Namespace = "http://www.portalfiscal.inf.br/cte/wsdl/CTeDistribuicaoDFe", ConfigurationName = "SPED.Services.CTe.CTeDistribuicaoDFe")]
 public partial interface ICTeDistribuicaoDFeSoap
 {
     [System.ServiceModel.OperationContract(Action = "http://www.portalfiscal.inf.br/cte/wsdl/CTeDistribuicaoDFe/cteDistDFeInteresse", ReplyAction = "*")]
@@ -17,13 +17,13 @@ public partial interface ICTeDistribuicaoDFeSoap
 [System.ServiceModel.MessageContract(IsWrapped = false)]
 public partial class CTeDistribuicaoDFeRequest : ISoapRequest
 {
-    [System.ServiceModel.MessageBodyMember(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", Order = 0)]
+    [System.ServiceModel.MessageBodyMember(Namespace = "http://www.portalfiscal.inf.br/cte/wsdl/CTeDistribuicaoDFe", Order = 0)]
     public CTeDistribuicaoDFeRequestBody cteDistDFeInteresse;
 }
 
 public partial class CTeDistribuicaoDFeRequestBody
 {
-    [System.ServiceModel.MessageBodyMember(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/CTeDistribuicaoDFe", Order = 0)]
+    [System.ServiceModel.MessageBodyMember(Namespace = "http://www.portalfiscal.inf.br/cte/wsdl/CTeDistribuicaoDFe", Order = 0)]
     public XmlNode cteDadosMsg;
 }
 

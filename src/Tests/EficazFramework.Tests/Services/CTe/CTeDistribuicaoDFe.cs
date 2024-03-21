@@ -1,9 +1,11 @@
-﻿namespace EficazFramework.SPED.Services.CTe;
+﻿using EficazFramework.SPED.Schemas;
+
+namespace EficazFramework.SPED.Services.CTe;
 
 public class CTeDistribuicaoDF : BaseCTeTests
 {
-    //[Test]
-    //[TestCase(SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao)]
+    [Test]
+    [TestCase(SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao)]
     public async Task NsuTest(Schemas.NFe.OrgaoIBGE uf, SPED.Schemas.NFe.Ambiente ambiente)
     {
         var client = CreateClient();
@@ -24,6 +26,14 @@ public class CTeDistribuicaoDF : BaseCTeTests
         if (result.cStat == "138")
         {
             result.loteDistDFeInt.DocZip.Should().HaveCountGreaterThan(0);
+            var someCte = result.loteDistDFeInt.DocZip.Where(z => z.schema == "procCTe_v3.00.xsd").FirstOrDefault();
+            if (someCte != null)
+            {
+                var cteArray = await someCte.DescompactaAsync();
+                IXmlSpedDocument cte = await EficazFramework.SPED.Utilities.XML.Operations.OpenAsync(new MemoryStream(cteArray));
+                cte.DocumentType.Should().Be(Schemas.XmlDocumentType.CTeWithProtocol);
+                Console.WriteLine(cte.Chave);
+            }
         }
     }
 }
