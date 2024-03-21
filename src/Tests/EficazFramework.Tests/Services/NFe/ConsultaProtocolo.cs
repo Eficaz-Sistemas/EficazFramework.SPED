@@ -3,7 +3,7 @@
 public class ConsultaProtocoloTests : BaseNFeTests
 {
     [Test]
-    [TestCase("31231211211692000133550020000514371000517813", SPED.Schemas.NFe.Ambiente.Producao, "100")]
+    [TestCase("31240261156501011000550110001321351664476971", SPED.Schemas.NFe.Ambiente.Producao, "100")]
     [TestCase("31240134557109000146550010000001011828480400", SPED.Schemas.NFe.Ambiente.Producao, "101")]
     public async Task ConsultaProtocoloAsync(string chave, SPED.Schemas.NFe.Ambiente ambiente, string resultadoCodigo)
     {
