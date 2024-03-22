@@ -101,7 +101,7 @@ internal static class NFe
                         Imposto = new()
                         {
                             ValorTotalTributos = 6.28,
-                            DemaisImpostos =
+                            IcmsIpiIssqnIi =
                             [
                                 new Schemas.NFe.DetalhamentoICMS()
                                 {

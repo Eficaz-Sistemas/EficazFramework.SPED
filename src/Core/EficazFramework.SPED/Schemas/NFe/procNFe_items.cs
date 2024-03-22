@@ -112,7 +112,7 @@ public partial class Item : INotifyPropertyChanged
             double ST = 0d;
             try
             {
-                var icms = Imposto.DemaisImpostos[0];
+                var icms = Imposto.IcmsIpiIssqnIi[0];
                 var trib = icms.GetType().GetRuntimeProperty("Tributacao").GetValue(icms, null);
                 ST = Convert.ToDouble(trib.GetType().GetRuntimeProperty("vICMSST").GetValue(trib));
             }
@@ -803,7 +803,7 @@ public partial class Tributacao : INotifyPropertyChanged
     [XmlElement("II", typeof(DetalhamentoII))]
     [XmlElement("IPI", typeof(DetalhamentoIPI))]
     [XmlElement("ISSQN", typeof(DetalhamentoISSQN))]
-    public List<object> DemaisImpostos
+    public List<object> IcmsIpiIssqnIi
     {
         get => itemsField;
         set
@@ -874,11 +874,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = DemaisImpostos.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
             {
-                if (DemaisImpostos[i] is DetalhamentoICMS)
+                if (IcmsIpiIssqnIi[i] is DetalhamentoICMS)
                 {
-                    return (DetalhamentoICMS)DemaisImpostos[i];
+                    return (DetalhamentoICMS)IcmsIpiIssqnIi[i];
                 }
             }
 
@@ -892,11 +892,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = DemaisImpostos.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
             {
-                if (DemaisImpostos[i] is DetalhamentoICMS_UF_Destinataria)
+                if (IcmsIpiIssqnIi[i] is DetalhamentoICMS_UF_Destinataria)
                 {
-                    return (DetalhamentoICMS_UF_Destinataria)DemaisImpostos[i];
+                    return (DetalhamentoICMS_UF_Destinataria)IcmsIpiIssqnIi[i];
                 }
             }
 
@@ -910,11 +910,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = DemaisImpostos.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
             {
-                if (DemaisImpostos[i] is DetalhamentoIPI)
+                if (IcmsIpiIssqnIi[i] is DetalhamentoIPI)
                 {
-                    return (DetalhamentoIPI)DemaisImpostos[i];
+                    return (DetalhamentoIPI)IcmsIpiIssqnIi[i];
                 }
             }
 
@@ -928,11 +928,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = DemaisImpostos.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
             {
-                if (DemaisImpostos[i] is DetalhamentoISSQN)
+                if (IcmsIpiIssqnIi[i] is DetalhamentoISSQN)
                 {
-                    return (DetalhamentoISSQN)DemaisImpostos[i];
+                    return (DetalhamentoISSQN)IcmsIpiIssqnIi[i];
                 }
             }
 
@@ -952,11 +952,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = DemaisImpostos.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
             {
-                if (DemaisImpostos[i] is DetalhamentoII)
+                if (IcmsIpiIssqnIi[i] is DetalhamentoII)
                 {
-                    return (DetalhamentoII)DemaisImpostos[i];
+                    return (DetalhamentoII)IcmsIpiIssqnIi[i];
                 }
             }
 
