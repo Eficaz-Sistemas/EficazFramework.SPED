@@ -1165,21 +1165,21 @@ public partial class DetalhamentoICMS : INotifyPropertyChanged
                 {
                     if ((int)TributacaoIndentifier <= 12)
                     {
-                        return (int)Tributacao.orig + string.Format("{0:#00}", Tributacao.CSTFinal);
+                        return (int)Tributacao.Origem + string.Format("{0:#00}", Tributacao.CSTFinal);
                     }
                     else if ((int)TributacaoIndentifier >= 14 & (int)TributacaoIndentifier <= 19)
                     {
-                        return (int)Tributacao.orig + string.Format("{0:#000}", Tributacao.CSTFinal);
+                        return (int)Tributacao.Origem + string.Format("{0:#000}", Tributacao.CSTFinal);
                     }
                     else if (TributacaoIndentifier == Tributacao_ICMS_Identifier.ICMSST)
                     {
-                        return (int)Tributacao.orig + string.Format("{0:#00}", Tributacao.CSTFinal);
+                        return (int)Tributacao.Origem + string.Format("{0:#00}", Tributacao.CSTFinal);
                     }
                     else
                     {
                         try
                         {
-                            return (int)Tributacao.orig + string.Format("{0:#00}", Tributacao.CSTFinal);
+                            return (int)Tributacao.Origem + string.Format("{0:#00}", Tributacao.CSTFinal);
                         }
                         catch (Exception)
                         {
@@ -1232,6 +1232,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     private DetalhamentoICMS_CST30_ModBCST modBCSTField30;
     private DetalhamentoICMS_CST51_ModBC? modBCField51;
     private double? vBCSTRetField;
+    private double? pSTField;
     private double? vICMSSTRetField;
     private DetalhamentoICMS_CST70_ModBC modBCField70;
     private DetalhamentoICMS_CST70_ModBCST modBCSTField70;
@@ -1274,8 +1275,8 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     private double? vICMSMonoRetField;
 
 
-
-    public OrigemMercadoria orig
+    [XmlElement("orig")]
+    public OrigemMercadoria Origem
     {
         get => origField;
         set
@@ -1283,7 +1284,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
             if (origField.Equals(value) != true)
             {
                 origField = value;
-                OnPropertyChanged(nameof(orig));
+                OnPropertyChanged(nameof(Origem));
             }
         }
     }
@@ -1645,6 +1646,74 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     }
 
     public bool ShouldSerializevBCSTRet_XML() => vBCSTRet.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
+
+
+    [XmlIgnore()]
+    public double? pST
+    {
+        get => pSTField;
+        set
+        {
+            if (pSTField is null || pSTField.Equals(value) != true)
+            {
+                pSTField = value;
+                OnPropertyChanged(nameof(pST));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Campo em formato string para escrita do XML no padrão exigido pela NF-e
+    /// Utilize o campo 'pST' (Double?) para trabalho. Ambos estarão
+    /// automaticamente em sincronia
+    /// </summary>
+    /// <value></value>
+    /// <returns></returns>
+    /// <remarks></remarks>
+    [XmlElement("pST")]
+    public string pST_XML
+    {
+        get
+        {
+            if (pST.HasValue == true)
+            {
+                return string.Format("{0:0.00}", pST).Replace(",", ".");
+            }
+            else
+            {
+                return null;
+            }
+        }
+        set
+        {
+            if (pSTField is null || pSTField.Equals(value) != true)
+            {
+                if (value != null)
+                {
+                    if (double.TryParse(value, out double noresult))
+                    {
+                        if (!value.Contains(".") & !value.Contains(","))
+                            value = value + "00"; // fix for 0 decimal values
+                        pSTField = Convert.ToDouble(value) / 100d;
+                    }
+                    else
+                    {
+                        pSTField = default;
+                    }
+                }
+                else
+                {
+                    pSTField = default;
+                }
+
+                OnPropertyChanged(nameof(pST));
+            }
+        }
+    }
+
+    public bool ShouldSerializepST_XML() => pST.HasValue & (CST == CST_ICMS.CST_60 | CSOSN == CSOSN_ICMS.CST500);
+
+
 
     [XmlIgnore()]
     public double? vICMSSTRet

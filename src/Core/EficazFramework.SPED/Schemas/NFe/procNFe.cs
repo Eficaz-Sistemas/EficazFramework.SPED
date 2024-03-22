@@ -288,12 +288,6 @@ public partial class ProcessoNFeBase : INotifyPropertyChanged, IXmlSpedDocument
 [XmlRoot("nfeProc", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
 public partial class ProcessoNFe : INotifyPropertyChanged, IXmlSpedDocument
 {
-    public ProcessoNFe() : base()
-    {
-        protNFeField = new ProtocoloRecebimento();
-        nFeField = new NFe();
-    }
-
     private NFe nFeField;
     private ProtocoloRecebimento protNFeField;
     private string versaoField;
@@ -1831,6 +1825,8 @@ public partial class ProtocoloRecebimento : INotifyPropertyChanged
     private InformacoesProtocolo infProtField;
     private SignatureType signatureField;
     private string versaoField;
+    private static XmlSerializer sSerializer;
+
 
     [XmlElement("infProt")]
     public InformacoesProtocolo InformacoesProtocolo
@@ -1873,6 +1869,27 @@ public partial class ProtocoloRecebimento : INotifyPropertyChanged
             }
         }
     }
+
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null;
+        System.IO.MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            sSerializer ??= new XmlSerializer(typeof(ProtocoloRecebimento));
+            sSerializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -2780,6 +2797,7 @@ public partial class Destinatario : INotifyPropertyChanged
     private string ieField;
     private string iSUFField;
     private string emailField;
+    private IndicadorIeDestinatario _indicadorInscricaoEstDestinatorioField = IndicadorIeDestinatario.NaoContribuinte;
 
     [XmlElement("CNPJ", typeof(string))]
     [XmlElement("CPF", typeof(string))]
@@ -2866,6 +2884,20 @@ public partial class Destinatario : INotifyPropertyChanged
             {
                 ieField = value;
                 OnPropertyChanged(nameof(InscricaoEstadual));
+            }
+        }
+    }
+
+    [XmlElement("indIEDest")]
+    public IndicadorIeDestinatario IndicadorInscricaoEstDestinatorio
+    {
+        get => _indicadorInscricaoEstDestinatorioField;
+        set
+        {
+            if (_indicadorInscricaoEstDestinatorioField.Equals(value) != true)
+            {
+                _indicadorInscricaoEstDestinatorioField = value;
+                OnPropertyChanged(nameof(IndicadorInscricaoEstDestinatorio));
             }
         }
     }

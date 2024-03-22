@@ -7,8 +7,6 @@ namespace EficazFramework.SPED.Schemas.NFe;
 // CABEÇALHO '
 // ############
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TAmb", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum Ambiente
 {
@@ -22,8 +20,6 @@ public enum Ambiente
     Homologacao = 2
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestXServ", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ServicoSolicitado
 {
@@ -37,8 +33,18 @@ public enum ServicoSolicitado
     CONSULTARNFEDEST
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
+[System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestXServ", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
+public enum IndicadorAutorizacao
+{
+    [System.Xml.Serialization.XmlEnum("0")]
+    [System.ComponentModel.Description("Processamento Assíncrono")]
+    Assincrono = 0,
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Processamento Síncrono")]
+    Sincrono = 1
+}
+
+
 [System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestIndNFe", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorTipoNFe
 {
@@ -59,8 +65,6 @@ public enum IndicadorTipoNFe
     NaoManifestasNaoCientes = 2
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestIndEmi", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorEmissorNFe
 {
@@ -82,8 +86,6 @@ public enum IndicadorEmissorNFe
     NaoFinalMatrizCNPJ = 1
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TRetConsNFeDestRetResCCeTpNF", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum OperacaoNFe
 {
@@ -95,8 +97,6 @@ public enum OperacaoNFe
     Saida = 1
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceType1", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum PersonalidadeJuridica
 {
@@ -114,8 +114,6 @@ public enum PersonalidadeJuridica
     CPF
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TRetConsNFeDestRetResCancCSitNFe", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum SituacaoNFe
 {
@@ -130,8 +128,6 @@ public enum SituacaoNFe
     Cancelada = 3
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TRetConsNFeDestRetResCancCSitConf", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum SituacaoManifestacaoDestinatario
 {
@@ -152,8 +148,6 @@ public enum SituacaoManifestacaoDestinatario
     Ciencia = 4
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(TypeName = "TCOrgaoIBGE", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum OrgaoIBGE
 {
@@ -258,8 +252,6 @@ public enum OrgaoIBGE
     EX = 99
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
-[DataContract()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum Estado
 {
@@ -320,10 +312,26 @@ public enum Estado
     [System.ComponentModel.Description("Enum_Estado_EX")]
     EX
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TNFeInfNFeIdeIndPag", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
+
+
+public enum IndicadorIeDestinatario
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 – Contribuinte ICMS, pagamento à vista")]
+    Contribuinte = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("2 – Contribuinte isento de inscrição")]
+    Isento = 2,
+
+    [System.Xml.Serialization.XmlEnum("9")]
+    [System.ComponentModel.Description("9 – Não Contribuinte")]
+    NaoContribuinte = 2
+}
+
+
 public enum FormaDePagamento
 {
     [System.Xml.Serialization.XmlEnum("0")]
@@ -339,8 +347,6 @@ public enum FormaDePagamento
     [System.Xml.Serialization.XmlEnum("9")]
     SemPagto = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ModeloDocumento
@@ -352,8 +358,6 @@ public enum ModeloDocumento
     [System.Xml.Serialization.XmlEnum("65")]
     NFeAv = 65
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoImpressao
@@ -381,8 +385,6 @@ public enum TipoImpressao
     [System.Xml.Serialization.XmlEnum("5")]
     DanfeNFCeMensagemEletronica = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum FormaEmissao
@@ -412,8 +414,6 @@ public enum FormaEmissao
     [System.Xml.Serialization.XmlEnum("9")]
     ContingenciaOffLine_NFCe = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum FinalidadeEmissao
@@ -431,8 +431,6 @@ public enum FinalidadeEmissao
     [System.Xml.Serialization.XmlEnum("4")]
     Devolucao = 4
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ProcessoEmissao
@@ -450,8 +448,6 @@ public enum ProcessoEmissao
     [System.Xml.Serialization.XmlEnum("3")]
     AplicativoFisco = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum RegimeTributario
@@ -466,8 +462,6 @@ public enum RegimeTributario
     [System.Xml.Serialization.XmlEnum("3")]
     RegimeNormal = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorProcessoReferenciado
@@ -498,8 +492,6 @@ public enum IndicadorProcessoReferenciado
     [System.Xml.Serialization.XmlEnum("9")]
     Outros = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum TipoDocumentoReferencia
@@ -520,8 +512,6 @@ public enum TipoDocumentoReferencia
     [System.Xml.Serialization.XmlEnum("refNFe")]
     NFe
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ModeloECF
@@ -536,8 +526,6 @@ public enum ModeloECF
     [System.Xml.Serialization.XmlEnum("2D")]
     Modelo2D = 2
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ModeloNF
@@ -546,8 +534,6 @@ public enum ModeloNF
     [System.Xml.Serialization.XmlEnum("01")]
     Modelo_1 = 1
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ModeloNFProdutor
@@ -559,8 +545,6 @@ public enum ModeloNFProdutor
     [System.Xml.Serialization.XmlEnum("04")]
     Modelo_4 = 4
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum FormaTransporte
@@ -574,8 +558,6 @@ public enum FormaTransporte
     [System.ComponentModel.Description("Enum_FormaTransporte_Veiculo")]
     veicTransp
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum ModalidadeFrete
@@ -599,8 +581,6 @@ public enum ModalidadeFrete
     [System.Xml.Serialization.XmlEnum("9")]
     SemFrete = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoAtendimento
@@ -627,8 +607,6 @@ public enum TipoAtendimento
     [System.Xml.Serialization.XmlEnum("9")]
     NaoPresencial_Outros = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DestinoOperacao
@@ -643,8 +621,6 @@ public enum DestinoOperacao
     [System.Xml.Serialization.XmlEnum("3")]
     Exterior = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoViaTransporteDI
@@ -686,8 +662,6 @@ public enum TipoViaTransporteDI
     [System.Xml.Serialization.XmlEnum("12")]
     NA12 = 12
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoIntermedioDI
@@ -708,7 +682,7 @@ public enum TipoIntermedioDI
 // ############
 
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorTotal
@@ -720,8 +694,6 @@ public enum IndicadorTotal
     [System.Xml.Serialization.XmlEnum("1")]
     CompoeTotal = 1
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http: //www.portalfiscal.inf.br/nfe")]
 public enum OrigemMercadoria
@@ -756,8 +728,6 @@ public enum OrigemMercadoria
     [System.Xml.Serialization.XmlEnum("8")]
     NacionalConteudoImpSup70 = 8
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoArma
@@ -776,8 +746,6 @@ public enum TipoArma
     [System.Xml.Serialization.XmlIgnore()]
     NA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoTipoOperacao
@@ -803,8 +771,6 @@ public enum VeiculoTipoOperacao
     [System.Xml.Serialization.XmlEnum("0")]
     Outros = 0
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoTipoCombustivel
@@ -867,8 +833,6 @@ public enum VeiculoTipoCombustivel
     [System.Xml.Serialization.XmlIgnore()]
     NA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoCondicaoChassi
@@ -880,8 +844,6 @@ public enum VeiculoCondicaoChassi
     [System.Xml.Serialization.XmlEnum("N")]
     N
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoCondicao
@@ -902,8 +864,6 @@ public enum VeiculoCondicao
     [System.Xml.Serialization.XmlEnum("3")]
     SemiAcabado = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoRestricao
@@ -939,8 +899,6 @@ public enum VeiculoRestricao
     [System.Xml.Serialization.XmlEnum("9")]
     Outras = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoTipo
@@ -1039,8 +997,6 @@ public enum VeiculoTipo
     [System.Xml.Serialization.XmlIgnore()]
     NA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoEspecie
@@ -1070,8 +1026,6 @@ public enum VeiculoEspecie
     [System.Xml.Serialization.XmlIgnore()]
     NA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VeiculoCorDENATRAN
@@ -1154,7 +1108,7 @@ public enum VeiculoCorDENATRAN
 }
 
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CST_ICMS
@@ -1208,8 +1162,6 @@ public enum CST_ICMS
     [System.Xml.Serialization.XmlEnum("999")]
     CST_NA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CSOSN_ICMS
@@ -1248,8 +1200,6 @@ public enum CSOSN_ICMS
     [System.Xml.Serialization.XmlEnum("999")]
     CSTNA = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceTypeICMSTrib", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum Tributacao_ICMS_Identifier
@@ -1276,8 +1226,6 @@ public enum Tributacao_ICMS_Identifier
     ICMSSN900,
     ICMSST
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST00_ModBC
@@ -1301,8 +1249,6 @@ public enum DetalhamentoICMS_CST00_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST10_ModBC
@@ -1328,8 +1274,6 @@ public enum DetalhamentoICMS_CST10_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST10_ModBCST
@@ -1365,8 +1309,6 @@ public enum DetalhamentoICMS_CST10_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST20_ModBC
@@ -1391,8 +1333,6 @@ public enum DetalhamentoICMS_CST20_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST30_ModBCST
@@ -1428,8 +1368,6 @@ public enum DetalhamentoICMS_CST30_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST40_MotivoDesoneracao
@@ -1480,8 +1418,6 @@ public enum DetalhamentoICMS_CST40_MotivoDesoneracao
     [System.Xml.Serialization.XmlEnum("9")]
     Outros = 9
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST51_ModBC
@@ -1507,8 +1443,6 @@ public enum DetalhamentoICMS_CST51_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST70_ModBC
@@ -1534,8 +1468,6 @@ public enum DetalhamentoICMS_CST70_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST70_ModBCST
@@ -1571,8 +1503,6 @@ public enum DetalhamentoICMS_CST70_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST90_ModBC
@@ -1598,8 +1528,6 @@ public enum DetalhamentoICMS_CST90_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_CST90_ModBCST
@@ -1635,8 +1563,6 @@ public enum DetalhamentoICMS_CST90_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMSSN_CSOSN201_ModBCST
@@ -1672,8 +1598,6 @@ public enum DetalhamentoICMSSN_CSOSN201_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMSSN_CSOSN202_ModBCST
@@ -1709,8 +1633,6 @@ public enum DetalhamentoICMSSN_CSOSN202_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMSSN_CSOSN900_ModBC
@@ -1736,8 +1658,6 @@ public enum DetalhamentoICMSSN_CSOSN900_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMSSN_CSOSN900_ModBCST
@@ -1773,8 +1693,6 @@ public enum DetalhamentoICMSSN_CSOSN900_ModBCST
     [System.Xml.Serialization.XmlEnum("5")]
     PautaVal = 5
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_Part_ModBC
@@ -1800,8 +1718,6 @@ public enum DetalhamentoICMS_Part_ModBC
     [System.Xml.Serialization.XmlEnum("3")]
     ValorOperacao = 3
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum DetalhamentoICMS_Part_ModBCST
@@ -1840,7 +1756,7 @@ public enum DetalhamentoICMS_Part_ModBCST
 
 /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CST_IPI
@@ -1888,8 +1804,6 @@ public enum CST_IPI
     [System.Xml.Serialization.XmlEnum("99")]
     OutrasSaidas = 99
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceTypeIPITrib", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum Tributacao_IPI_Identifier
@@ -1897,8 +1811,6 @@ public enum Tributacao_IPI_Identifier
     IPINT,
     IPITrib
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceTypeIPISTTrib", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum Tributacao_IPI_ST_Identifier
@@ -1906,8 +1818,6 @@ public enum Tributacao_IPI_ST_Identifier
     IPINT,
     IPITrib
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum DetalhamentoIPI_Tributado_ModoCalculo
@@ -1928,7 +1838,7 @@ public enum DetalhamentoIPI_Tributado_ModoCalculo
 
 /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CST_ISSQN
@@ -1949,7 +1859,7 @@ public enum CST_ISSQN
 
 /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CST_PIS
@@ -2057,8 +1967,6 @@ public enum CST_PIS
     [System.Xml.Serialization.XmlEnum("999")]
     NotValid = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceTypePIS", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum Tributacao_PIS_Identifier
@@ -2068,8 +1976,6 @@ public enum Tributacao_PIS_Identifier
     PISOutr,
     PISQtde
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum DetalhamentoPISST_ModoCalculo
@@ -2091,7 +1997,7 @@ public enum DetalhamentoPISST_ModoCalculo
 
 /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CST_COFINS
@@ -2199,8 +2105,6 @@ public enum CST_COFINS
     [System.Xml.Serialization.XmlEnum("999")]
     NotValid = 999
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "ItemChoiceTypeCOFINS", Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum Tributacao_COFINS_Identifier
@@ -2210,8 +2114,6 @@ public enum Tributacao_COFINS_Identifier
     COFINSOutr,
     COFINSQtde
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe", IncludeInSchema = false)]
 public enum DetalhamentoCOFINSST_ModoCalculo
@@ -2237,7 +2139,7 @@ public enum DetalhamentoCOFINSST_ModoCalculo
 // PAGAMENTO   '
 // ################
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum FormaPagamento
@@ -2294,8 +2196,6 @@ public enum FormaPagamento
     [System.Xml.Serialization.XmlEnum("99")]
     Outros = 99
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum TipoIntegracaoPgCartao
@@ -2307,8 +2207,6 @@ public enum TipoIntegracaoPgCartao
     [System.Xml.Serialization.XmlEnum("2")]
     POS = 2
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum BandeiraCartaoCredito
@@ -2350,7 +2248,7 @@ public enum BandeiraCartaoCredito
 // #############
 
 /* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
+
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TEventoInfEventoDetEventoVersao", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoServicoEvento
@@ -2367,8 +2265,6 @@ public enum VersaoServicoEvento
     [System.Xml.Serialization.XmlEnum("3.00")]
     Versao_3_00
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TEventoInfEventoTpEvento", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum CodigoEvento
@@ -2437,8 +2333,6 @@ public enum CodigoEvento
     [System.Xml.Serialization.XmlEnum("990910")]
     IntarnalizacaoSuframa = 990910
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoServicoConsSitNFe
@@ -2468,8 +2362,6 @@ public enum VersaoServicoConsSitNFe
     [System.Xml.Serialization.XmlEnum("5.00")]
     Versao_5_00
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoCancelamento
@@ -2487,8 +2379,6 @@ public enum VersaoCancelamento
     [System.Xml.Serialization.XmlEnum("1.00")]
     Versao_1_00
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TVeConsNFeDest", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoServicoConsCadastro
@@ -2508,8 +2398,6 @@ public enum VersaoServicoConsCadastro
     [System.Xml.Serialization.XmlEnum("4.00")]
     Versao_4_00
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TVeConsNFeDest", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoServicoConsDestinatario
@@ -2523,8 +2411,6 @@ public enum VersaoServicoConsDestinatario
     [System.Xml.Serialization.XmlEnum("1.01")]
     Versao_1_01
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TRetConsNFeDestIndCont", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorContinuacao
@@ -2540,8 +2426,6 @@ public enum IndicadorContinuacao
     [System.ComponentModel.Description("Enum_ConsultaDestinatario_IndCont_Desc")]
     Desconhecido = 1
 }
-
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18033")]
 [Serializable()]
 [System.Xml.Serialization.XmlType(TypeName = "TVerDownloadNFe", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum VersaoServicoDownload
