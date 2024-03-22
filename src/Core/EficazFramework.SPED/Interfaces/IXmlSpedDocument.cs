@@ -16,6 +16,8 @@ public interface IXmlSpedDocument
     /// Chave única do Documento Fiscal
     /// </summary>
     string Chave { get; }
+
+    string Serialize();
 }
 public enum XmlDocumentType
 {

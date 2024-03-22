@@ -1131,7 +1131,7 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
     private SituacaoNFe cSitNFeField = SituacaoNFe.Autorizada;
     private SituacaoManifestacaoDestinatario cSitConfField = SituacaoManifestacaoDestinatario.Desconhecida;
     private string nSUField;
-    private static XmlSerializer sSerializer;
+    private static XmlSerializer _serializer;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -1411,12 +1411,12 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
     {
         get
         {
-            if (sSerializer is null)
+            if (_serializer is null)
             {
-                sSerializer = new XmlSerializer(typeof(RetornoNFeNormal));
+                _serializer = new XmlSerializer(typeof(RetornoNFeNormal));
             }
 
-            return sSerializer;
+            return _serializer;
         }
     }
 
@@ -1538,6 +1538,27 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
             }
         }
     }
+
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null;
+        System.IO.MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            _serializer ??= new XmlSerializer(typeof(RetornoNFeNormal));
+            _serializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }

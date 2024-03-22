@@ -79,7 +79,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
 
         instance.NFe.InformacoesNFe.Items[0].Imposto.ValorTotalTributos.Should().Be(18.01d);
 
-        instance.NFe.InformacoesNFe.Items[0].Imposto.ICMS.Tributacao.orig.Should().Be(OrigemMercadoria.Nacional);
+        instance.NFe.InformacoesNFe.Items[0].Imposto.ICMS.Tributacao.Origem.Should().Be(OrigemMercadoria.Nacional);
         instance.NFe.InformacoesNFe.Items[0].Imposto.ICMS.Tributacao.CST.Should().Be(CST_ICMS.CST_61);
         instance.NFe.InformacoesNFe.Items[0].Imposto.ICMS.Tributacao.qBCMonoRet.Should().Be(16.761d);
         instance.NFe.InformacoesNFe.Items[0].Imposto.ICMS.Tributacao.adRemICMSRet.Should().Be(1.2200d);
@@ -132,5 +132,27 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.ProtocoloAutorizacao.InformacoesProtocolo.Protocolo.Should().Be("131230964542575");
         instance.ProtocoloAutorizacao.InformacoesProtocolo.StatusNFeCodigo.Should().Be("100");
         instance.ProtocoloAutorizacao.InformacoesProtocolo.StatusNfeMotivo.Should().Be("Autorizado o uso da NF-e");
+    }
+
+    //[Test]
+    public void ValidaPreenchimento()
+    {
+        NFe instance = Mock.NFe.PreencheNFeFake();
+        BaseXmlTest<NFe> mockSvc = new();
+        var result = mockSvc.ValidateSchemaAsync(
+            instance, 
+            [ 
+                "http://www.portalfiscal.inf.br/nfe",
+                "http://www.portalfiscal.inf.br/nfe",
+                "http://www.portalfiscal.inf.br/nfe"
+            ],
+            [
+                Resources.Schemas.XML.nfe_v4_00,
+                Resources.Schemas.XML.leiauteNFe_v4_00,
+                Resources.Schemas.XML.tiposBasico_v4_00
+            ],
+            "infNFe");
+        Console.Write(instance.Serialize());
+        result.Should().HaveCountLessThanOrEqualTo(0);
     }
 }
