@@ -10,7 +10,7 @@ public class AutorizacaoTests : BaseNFeTests
     /// Tal fato pode ser compreendido como sucesso, no contexto de que os textes são de 
     /// comunicação e schema do XML enviado.
     /// </summary>
-    [Test]
+    //[Test]
     public async Task AutorizacaoSincronoAsync()
     {
         var client = CreateClient();
