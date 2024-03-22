@@ -12,7 +12,7 @@ internal static class NFe
         {
             InformacoesNFe = new()
             {
-                Id = $"NFe{31}{DateTime.Now.Year:00}{DateTime.Now.Month:00}10608025000126550010000000011123456781",
+                Id = $"NFe{31}{DateTime.Now:yy}{DateTime.Now:MM}10608025000126550010000000011123456781",
                 Versao = "4.00",
                 IdentificacaoOperacao = new()
                 {
@@ -32,7 +32,7 @@ internal static class NFe
                     ChaveDigitoVerificador = "1",
                     Ambiente = Schemas.NFe.Ambiente.Homologacao,
                     Finalidade = Schemas.NFe.FinalidadeEmissao.Normal,
-                    ConsumidorFinal = false,
+                    ConsumidorFinal = Schemas.NFe.IndicadorConsumidorFinal.Nao,
                     TipoAtendimento = Schemas.NFe.TipoAtendimento.NaoPresencial_Outros,
                     VersaoProcessoEmissao = typeof(Schemas.NFe.NFe).Assembly.ImageRuntimeVersion,
                 },
@@ -94,6 +94,7 @@ internal static class NFe
                             ValorDesconto = 9.91,
                             ValorTotalBruto = 80,
                             GTIN_Tributavel = "789000000000",
+                            QuantidadeTributavel = 9,
                             UnidadeTributavel = "Un",
                             ValorUnitarioTributavel = 9.99,
                             IndicadorComposicaoTotal = Schemas.NFe.IndicadorTotal.CompoeTotal
@@ -101,7 +102,7 @@ internal static class NFe
                         Imposto = new()
                         {
                             ValorTotalTributos = 6.28,
-                            IcmsIpiIssqnIi =
+                            EstaduaisMunicipais =
                             [
                                 new Schemas.NFe.DetalhamentoICMS()
                                 {
@@ -145,22 +146,78 @@ internal static class NFe
                 {
                     ICMS = new()
                     {
-                        BaseDeCalculo = 0.0,
-                        ICMS = 0.0,
-                        BaseDeCalculoST = 0.0,
-                        ICMSST = 0.0,
                         Produtos = 89.91,
                         Desconto = 9.91,
-                        Frete = 0.0,
-                        Seguros = 0.0,
-                        II = 0.0,
-                        IPI = 0.0,
-                        vIPIDevol = 0.0,
-                        PIS = 0.0,
-                        COFINS = 0.0,
-                        Outros = 0.0,
-                        TotalNF = 80
+                        TotalNF = 80,
+                        TotalTributos = 6.28
                     }
+                },
+                Transporte = new()
+                {
+                    Modalidade = Schemas.NFe.ModalidadeFrete.Emitente,
+                    Transportadora = new()
+                    {
+                        CNPJ_CPF = "26396769000164",
+                        RazaoSocial = "Transportadora Express",
+                        InscricaoEstadual = "1901965978011",
+                        Endereco = "Rodovia do Transporte, 123",
+                        Municipio = "Ibiraci",
+                        UF = Schemas.NFe.Estado.MG
+                    },
+                    Volumes =
+                    [
+                        new()
+                        {
+                            qVol = 60,
+                            esp = "VOL",
+                            pesoL = 140.4,
+                            pesoB = 140.7
+                        }
+                    ]
+                },
+                Cobranca = new()
+                {
+                    fat = new()
+                    {
+                        nFat = "3145082",
+                        vOrig = 89.91,
+                        vDesc = 9.91,
+                        vLiq = 80
+                    },
+                    dup =
+                    [
+                        new()
+                        {
+                            nDup = "001",
+                            dVenc = DateTime.Now.AddMonths(1),
+                            vDup = 40
+                        },
+                        new()
+                        {
+                            nDup = "002",
+                            dVenc = DateTime.Now.AddMonths(2),
+                            vDup = 40
+                        }
+
+                    ]
+                },
+                Pagamento = new()
+                {
+                    DetalhamentoPagamentos =
+                    [
+                        new()
+                        {
+                            indPag = Schemas.NFe.FormaDePagamento.Prazo,
+                            tPag = Schemas.NFe.FormaPagamento.BoletoBancario,
+                            vPag = 40
+                        },
+                        new()
+                        {
+                            indPag = Schemas.NFe.FormaDePagamento.Prazo,
+                            tPag = Schemas.NFe.FormaPagamento.BoletoBancario,
+                            vPag = 40
+                        }
+                    ]
                 }
             }
         };

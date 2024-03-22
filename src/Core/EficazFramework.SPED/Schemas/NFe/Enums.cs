@@ -44,6 +44,18 @@ public enum IndicadorAutorizacao
     Sincrono = 1
 }
 
+[System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestXServ", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
+public enum IndicadorConsumidorFinal
+{
+    [System.Xml.Serialization.XmlEnum("0")]
+    [System.ComponentModel.Description("Não")]
+    Nao = 0,
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Sim")]
+    Sim = 1
+}
+
+
 
 [System.Xml.Serialization.XmlType(TypeName = "TConsNFeDestIndNFe", AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public enum IndicadorTipoNFe
