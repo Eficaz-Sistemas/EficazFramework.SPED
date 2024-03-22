@@ -4,16 +4,6 @@ namespace EficazFramework.SPED.Schemas.NFe;
 
 public partial class InformacoesTransporte : INotifyPropertyChanged
 {
-    public InformacoesTransporte() : base()
-    {
-        volField = new List<VolumeTransportado>();
-        // Me.itemsElementNameField = New List(Of FormaTransporte)()
-        // Me.itemsField = New List(Of Object)()
-        retTranspField = new TransporteRetencaoICMS();
-        transportaField = new Transportadora();
-        _reboques = new List<Veiculo>();
-    }
-
     private ModalidadeFrete modFreteField;
     private Transportadora transportaField;
     private TransporteRetencaoICMS retTranspField;
@@ -437,6 +427,9 @@ public partial class TransporteRetencaoICMS : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeValorServico() => ValorServico.HasValue;
+
+
     [XmlElement("vBCRet")]
     public double? BaseDeCalculo
     {
@@ -450,6 +443,9 @@ public partial class TransporteRetencaoICMS : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeBaseDeCalculo() => BaseDeCalculo.HasValue;
+
 
     [XmlElement("pICMSRet")]
     public double? Aliquota
@@ -465,6 +461,9 @@ public partial class TransporteRetencaoICMS : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeAliquota() => Aliquota.HasValue;
+
+
     [XmlElement("vICMSRet")]
     public double? ValorICMS
     {
@@ -478,6 +477,9 @@ public partial class TransporteRetencaoICMS : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorICMS() => ValorICMS.HasValue;
+
 
     public string CFOP
     {
@@ -513,11 +515,6 @@ public partial class TransporteRetencaoICMS : INotifyPropertyChanged
 
 public partial class VolumeTransportado : INotifyPropertyChanged
 {
-    public VolumeTransportado() : base()
-    {
-        lacresField = new List<VolumeLacres>();
-    }
-
     private double? qVolField;
     private string espField;
     private string marcaField;
@@ -578,6 +575,7 @@ public partial class VolumeTransportado : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public double? pesoL
     {
         get => pesoLField;
@@ -591,6 +589,40 @@ public partial class VolumeTransportado : INotifyPropertyChanged
         }
     }
 
+    [XmlElement("pesoL")]
+    public string pesoLXml
+    {
+        get => $"{pesoLField:#0.000}".Replace(',', '.');
+        set
+        {
+            if (pesoLField is null || pesoLField.Equals(value) != true)
+            {
+                if (value != null)
+                {
+                    if (double.TryParse(value, out double noresult))
+                    {
+                        if (!value.Contains('.') & !value.Contains(','))
+                            value += "00";
+                        pesoLField = double.Parse(value) / 100d;
+                    }
+                    else
+                    {
+                        pesoLField = default;
+                    }
+                }
+                else
+                {
+                    pesoLField = default;
+                }
+
+                OnPropertyChanged(nameof(pesoL));
+            }
+        }
+    }
+
+    public bool ShouldSerializepesoLXml() => pesoLField.HasValue;
+
+    [XmlIgnore()]
     public double? pesoB
     {
         get => pesoBField;
@@ -603,6 +635,40 @@ public partial class VolumeTransportado : INotifyPropertyChanged
             }
         }
     }
+
+    [XmlElement("pesoB")]
+    public string pesoBLXml
+    {
+        get => $"{pesoBField:#0.000}".Replace(',', '.');
+        set
+        {
+            if (pesoBField is null || pesoBField.Equals(value) != true)
+            {
+                if (value != null)
+                {
+                    if (double.TryParse(value, out double noresult))
+                    {
+                        if (!value.Contains('.') & !value.Contains(','))
+                            value += "00";
+                        pesoBField = double.Parse(value) / 100d;
+                    }
+                    else
+                    {
+                        pesoBField = default;
+                    }
+                }
+                else
+                {
+                    pesoBField = default;
+                }
+
+                OnPropertyChanged(nameof(pesoB));
+            }
+        }
+    }
+
+    public bool ShouldSerializepesoBLXml() => pesoBField.HasValue;
+
 
     [XmlElement("lacres")]
     public List<VolumeLacres> lacres

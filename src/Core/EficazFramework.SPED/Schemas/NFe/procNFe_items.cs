@@ -112,7 +112,7 @@ public partial class Item : INotifyPropertyChanged
             double ST = 0d;
             try
             {
-                var icms = Imposto.IcmsIpiIssqnIi[0];
+                var icms = Imposto.EstaduaisMunicipais[0];
                 var trib = icms.GetType().GetRuntimeProperty("Tributacao").GetValue(icms, null);
                 ST = Convert.ToDouble(trib.GetType().GetRuntimeProperty("vICMSST").GetValue(trib));
             }
@@ -649,6 +649,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public List<DetalhamentoItemArma> DetalhamentoArmamento
     {
         get
@@ -666,6 +667,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public List<DetalhamentoItemMedicamento> DetalhamentoMedicamento
     {
         get
@@ -683,6 +685,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public List<DetalhamentoItemMedicamento_Rastro> DetalhamentoMedicamento_Rastro
     {
         get
@@ -700,6 +703,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public DetalhamentoItemCombustivel DetalhamentoCombustivel
     {
         get
@@ -723,6 +727,7 @@ public partial class Produto : INotifyPropertyChanged
         }
     }
 
+    [XmlIgnore()]
     public DetalhamentoItemVeiculo DetalhamentoVeiculo
     {
         get
@@ -803,7 +808,7 @@ public partial class Tributacao : INotifyPropertyChanged
     [XmlElement("II", typeof(DetalhamentoII))]
     [XmlElement("IPI", typeof(DetalhamentoIPI))]
     [XmlElement("ISSQN", typeof(DetalhamentoISSQN))]
-    public List<object> IcmsIpiIssqnIi
+    public List<object> EstaduaisMunicipais
     {
         get => itemsField;
         set
@@ -874,11 +879,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = EstaduaisMunicipais.Count - 1; i <= loopTo; i++)
             {
-                if (IcmsIpiIssqnIi[i] is DetalhamentoICMS)
+                if (EstaduaisMunicipais[i] is DetalhamentoICMS)
                 {
-                    return (DetalhamentoICMS)IcmsIpiIssqnIi[i];
+                    return (DetalhamentoICMS)EstaduaisMunicipais[i];
                 }
             }
 
@@ -892,11 +897,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = EstaduaisMunicipais.Count - 1; i <= loopTo; i++)
             {
-                if (IcmsIpiIssqnIi[i] is DetalhamentoICMS_UF_Destinataria)
+                if (EstaduaisMunicipais[i] is DetalhamentoICMS_UF_Destinataria)
                 {
-                    return (DetalhamentoICMS_UF_Destinataria)IcmsIpiIssqnIi[i];
+                    return (DetalhamentoICMS_UF_Destinataria)EstaduaisMunicipais[i];
                 }
             }
 
@@ -910,11 +915,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = EstaduaisMunicipais.Count - 1; i <= loopTo; i++)
             {
-                if (IcmsIpiIssqnIi[i] is DetalhamentoIPI)
+                if (EstaduaisMunicipais[i] is DetalhamentoIPI)
                 {
-                    return (DetalhamentoIPI)IcmsIpiIssqnIi[i];
+                    return (DetalhamentoIPI)EstaduaisMunicipais[i];
                 }
             }
 
@@ -928,11 +933,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = EstaduaisMunicipais.Count - 1; i <= loopTo; i++)
             {
-                if (IcmsIpiIssqnIi[i] is DetalhamentoISSQN)
+                if (EstaduaisMunicipais[i] is DetalhamentoISSQN)
                 {
-                    return (DetalhamentoISSQN)IcmsIpiIssqnIi[i];
+                    return (DetalhamentoISSQN)EstaduaisMunicipais[i];
                 }
             }
 
@@ -952,11 +957,11 @@ public partial class Tributacao : INotifyPropertyChanged
         get
         {
             // Return _icms
-            for (int i = 0, loopTo = IcmsIpiIssqnIi.Count - 1; i <= loopTo; i++)
+            for (int i = 0, loopTo = EstaduaisMunicipais.Count - 1; i <= loopTo; i++)
             {
-                if (IcmsIpiIssqnIi[i] is DetalhamentoII)
+                if (EstaduaisMunicipais[i] is DetalhamentoII)
                 {
-                    return (DetalhamentoII)IcmsIpiIssqnIi[i];
+                    return (DetalhamentoII)EstaduaisMunicipais[i];
                 }
             }
 
@@ -2220,7 +2225,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializepCredSN() => CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
+    public bool ShouldSerializepCredSN() => pCredSN.HasValue && (CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900);
 
     public double? vCredICMSSN
     {
@@ -2234,6 +2239,8 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializevCredICMSSN() => vCredICMSSN.HasValue && (CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlAttribute("vCredICMSSN")]
     public string vCredICMSSN_XML
@@ -2276,7 +2283,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializevCredICMSSN_XML() => CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900;
+    public bool ShouldSerializevCredICMSSN_XML() => vCredICMSSN.HasValue && (CSOSN == CSOSN_ICMS.CST101 | CSOSN == CSOSN_ICMS.CST201 | CSOSN == CSOSN_ICMS.CST900);
 
     [XmlIgnore()]
     public DetalhamentoICMSSN_CSOSN201_ModBCST modBCST201
@@ -2661,7 +2668,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
             }
         }
     }
-    public bool ShouldSerializeqBCMonoRet_Opc() => qBCMonoRet_OpcField.HasValue;
+    public bool ShouldSerializeqBCMonoRet() => qBCMonoRet_OpcField.HasValue;
 
 
     public double? adRemICMSRet

@@ -1,4 +1,5 @@
 ﻿using EficazFramework.SPED.Extensions;
+using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.NFe;
@@ -581,12 +582,6 @@ public partial class ProcessoNFe : INotifyPropertyChanged, IXmlSpedDocument
 [XmlRoot("NFe", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
 public partial class NFe : INotifyPropertyChanged, IXmlSpedDocument
 {
-    public NFe() : base()
-    {
-        signatureField = new SignatureType();
-        infNFeField = new InformacoesNFe();
-    }
-
     private InformacoesNFe infNFeField;
     private SignatureType signatureField;
     private static XmlSerializer sSerializer;
@@ -1147,7 +1142,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     private OrgaoIBGE cUFField;
     private string cNFField;
     private string natOpField;
-    private FormaDePagamento indPagField;
+    private FormaDePagamento? indPagField;
     private ModeloDocumento modField;
     private int serieField;
     private long nNFField;
@@ -1168,7 +1163,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     private string verProcField;
     private DateTime? dhContField;
     private string xJustField;
-    private bool _conumidorFinalField = false; // NEW 15/12/2016
+    private IndicadorConsumidorFinal _conumidorFinalField = IndicadorConsumidorFinal.Nao; // NEW 15/12/2016
     private TipoAtendimento _tpAtendimentoField; // NEW 15/12/2016
     private DestinoOperacao _destOperacao; // NEW 15/12/2016
 
@@ -1215,7 +1210,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     }
 
     [XmlElement("indPag")]
-    public FormaDePagamento FormaDePagamento
+    public FormaDePagamento? FormaDePagamento
     {
         get => indPagField;
         set
@@ -1227,6 +1222,8 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeFormaDePagamento() => FormaDePagamento.HasValue;
 
     [XmlElement("mod")]
     public ModeloDocumento Modelo
@@ -1343,13 +1340,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
 
     public bool ShouldSerializeDataEmissaoXML() => dEmiField.HasValue;
 
-    /// <summary>
-    /// v3.10
-    /// </summary>
-    /// <value></value>
-    /// <returns></returns>
-    /// <remarks></remarks>
-    [XmlElement("dhEmi")]
+    [XmlIgnore()]
     public DateTime? DataHoraEmissao
     {
         get => dhEmiField;
@@ -1363,7 +1354,23 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeDataHoraEmissao() => dhEmiField.HasValue;
+    [XmlElement("dhEmi")]
+    public string DataHoraEmissaoXml
+    {
+        get => $"{dhEmiField:yyyy-MM-ddThh:mm:ssK}";
+        set
+        {
+            var parsedValue = DateTime.Parse(value);
+            if (dhEmiField is null || dhEmiField.Equals(parsedValue) != true)
+            {
+                dhEmiField = parsedValue;
+                OnPropertyChanged(nameof(DataHoraEmissao));
+            }
+        }
+    }
+
+
+    public bool ShouldSerializeDataHoraEmissaoXml() => dhEmiField.HasValue;
 
     /// <summary>
     /// Fornece valores válidos para NFe 2.00 e 3.10
@@ -1484,13 +1491,8 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
 
     public bool ShouldSerializeHoraSaidaEntrada() => hSaiEntField.HasValue;
 
-    /// <summary>
-    /// v3.10
-    /// </summary>
-    /// <value></value>
-    /// <returns></returns>
-    /// <remarks></remarks>
-    [XmlElement("dhSaiEnt")]
+
+    [XmlIgnore()]
     public DateTime? DataHoraSaidaEntrada
     {
         get => dhSaiEntField;
@@ -1504,7 +1506,23 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeDataHoraSaidaEntrada() => dhSaiEntField.HasValue;
+    [XmlElement("dhSaiEnt")]
+    public string DataHoraSaidaEntradaXml
+    {
+        get => $"{dhSaiEntField:yyyy-MM-ddThh:mm:ssK}";
+        set
+        {
+            var parsedValue = DateTime.Parse(value);
+            if (dhSaiEntField is null || dhSaiEntField.Equals(parsedValue) != true)
+            {
+                dhSaiEntField = parsedValue;
+                OnPropertyChanged(nameof(DataHoraSaidaEntrada));
+            }
+        }
+    }
+
+
+    public bool ShouldSerializeDataHoraSaidaEntradaXml() => dhSaiEntField.HasValue;
 
     /// <summary>
     /// Campo em formato string para escrita do XML no padrão exigido pela NF-e
@@ -1568,6 +1586,17 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
                 tpNFField = value;
                 OnPropertyChanged(nameof(TipoOperacao));
             }
+        }
+    }
+
+    [XmlElement("idDest")]
+    public DestinoOperacao DestinoOperacao // NEW!!! 15/12/2016
+    {
+        get => _destOperacao;
+        set
+        {
+            _destOperacao = value;
+            OnPropertyChanged(nameof(DestinoOperacao));
         }
     }
 
@@ -1669,6 +1698,31 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
         }
     }
 
+    [XmlElement("indFinal")]
+    public IndicadorConsumidorFinal ConsumidorFinal // NEW!!! 15/12/2016
+    {
+        get => _conumidorFinalField;
+        set
+        {
+            if (value != _conumidorFinalField)
+            {
+                _conumidorFinalField = value;
+                OnPropertyChanged(nameof(ConsumidorFinal));
+            }
+        }
+    }
+
+    [XmlElement("indPres")]
+    public TipoAtendimento TipoAtendimento // NEW!!! 15/12/2016
+    {
+        get => _tpAtendimentoField;
+        set
+        {
+            _tpAtendimentoField = value;
+            OnPropertyChanged(nameof(TipoAtendimento));
+        }
+    }
+
     [XmlElement("procEmi")]
     public ProcessoEmissao ProcessoDeEmissao
     {
@@ -1708,42 +1762,6 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
                 dhContField = value;
                 OnPropertyChanged(nameof(DataHoraContingencia));
             }
-        }
-    }
-
-    [XmlElement("indFinal")]
-    public bool ConsumidorFinal // NEW!!! 15/12/2016
-    {
-        get => _conumidorFinalField;
-        set
-        {
-            if (value != _conumidorFinalField)
-            {
-                _conumidorFinalField = value;
-                OnPropertyChanged(nameof(ConsumidorFinal));
-            }
-        }
-    }
-
-    [XmlElement("indPres")]
-    public TipoAtendimento TipoAtendimento // NEW!!! 15/12/2016
-    {
-        get => _tpAtendimentoField;
-        set
-        {
-            _tpAtendimentoField = value;
-            OnPropertyChanged(nameof(TipoAtendimento));
-        }
-    }
-
-    [XmlElement("idDest")]
-    public DestinoOperacao DestinoOperacao // NEW!!! 15/12/2016
-    {
-        get => _destOperacao;
-        set
-        {
-            _destOperacao = value;
-            OnPropertyChanged(nameof(DestinoOperacao));
         }
     }
 
@@ -2874,20 +2892,6 @@ public partial class Destinatario : INotifyPropertyChanged
         }
     }
 
-    [XmlElement("IE")]
-    public string InscricaoEstadual
-    {
-        get => ieField;
-        set
-        {
-            if (ieField is null || ieField.Equals(value) != true)
-            {
-                ieField = value;
-                OnPropertyChanged(nameof(InscricaoEstadual));
-            }
-        }
-    }
-
     [XmlElement("indIEDest")]
     public IndicadorIeDestinatario IndicadorInscricaoEstDestinatorio
     {
@@ -2898,6 +2902,20 @@ public partial class Destinatario : INotifyPropertyChanged
             {
                 _indicadorInscricaoEstDestinatorioField = value;
                 OnPropertyChanged(nameof(IndicadorInscricaoEstDestinatorio));
+            }
+        }
+    }
+
+    [XmlElement("IE")]
+    public string InscricaoEstadual
+    {
+        get => ieField;
+        set
+        {
+            if (ieField is null || ieField.Equals(value) != true)
+            {
+                ieField = value;
+                OnPropertyChanged(nameof(InscricaoEstadual));
             }
         }
     }
@@ -3225,21 +3243,26 @@ public partial class Totais : INotifyPropertyChanged
 
 public partial class TotalICMS : INotifyPropertyChanged
 {
-    private double? vBCField;
-    private double? vICMSField;
-    private double? vBCSTField;
-    private double? vSTField;
-    private double? vProdField;
-    private double? vFreteField;
-    private double? vSegField;
-    private double? vDescField;
-    private double? vIIField;
-    private double? vIPIField;
-    private double? vIPIDevolField;
-    private double? vPISField;
-    private double? vCOFINSField;
-    private double? vOutroField;
-    private double? vNFField;
+    private double? vBCField = 0.0;
+    private double? vICMSField = 0.0;
+    private double? vICMSDesoneradoField = 0.00;
+    private double? vICMSFcpField = 0.0;
+    private double? vBCSTField = 0.00;
+    private double? vSTField = 0.0;
+    private double? vICMSFcpStField = 0.0;
+    private double? vICMSFcpStRetField = 0.0;
+    private double? vProdField = 0.0;
+    private double? vFreteField = 0.0;
+    private double? vSegField = 0.0;
+    private double? vDescField = 0.0;
+    private double? vIIField = 0.0;
+    private double? vIPIField = 0.0;
+    private double? vIPIDevolField = 0.0;
+    private double? vPISField = 0.0;
+    private double? vCOFINSField = 0.0;
+    private double? vOutroField = 0.0;
+    private double? vNFField = 0.0;
+    private double? vTotTribField = 0.0;
 
     [XmlElement("vBC")]
     public double? BaseDeCalculo
@@ -3273,6 +3296,41 @@ public partial class TotalICMS : INotifyPropertyChanged
 
     public bool ShouldSerializeICMS() => vICMSField.HasValue;
 
+
+    [XmlElement("vICMSDeson")]
+    public double? ICMSDesonerado
+    {
+        get => vICMSDesoneradoField;
+        set
+        {
+            if (vICMSDesoneradoField is null || vICMSDesoneradoField.Equals(value) != true)
+            {
+                vICMSDesoneradoField = value;
+                OnPropertyChanged(nameof(ICMSDesonerado));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSDesonerado() => vICMSDesoneradoField.HasValue;
+
+
+    [XmlElement("vFCP")]
+    public double? ICMSFCP
+    {
+        get => vICMSFcpField;
+        set
+        {
+            if (vICMSFcpField is null || vICMSFcpField.Equals(value) != true)
+            {
+                vICMSFcpField = value;
+                OnPropertyChanged(nameof(ICMSFCP));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSFCP() => vICMSFcpField.HasValue;
+
+
     [XmlElement("vBCST")]
     public double? BaseDeCalculoST
     {
@@ -3304,6 +3362,38 @@ public partial class TotalICMS : INotifyPropertyChanged
     }
 
     public bool ShouldSerializeICMSST() => vSTField.HasValue;
+
+    [XmlElement("vFCPST")]
+    public double? ICMSFCPST
+    {
+        get => vICMSFcpStField;
+        set
+        {
+            if (vICMSFcpStField is null || vICMSFcpStField.Equals(value) != true)
+            {
+                vICMSFcpStField = value;
+                OnPropertyChanged(nameof(ICMSFCPST));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSFCPST() => vICMSFcpStField.HasValue;
+
+    [XmlElement("vFCPSTRet")]
+    public double? ICMSFCPSTRet
+    {
+        get => vICMSFcpStRetField;
+        set
+        {
+            if (vICMSFcpStRetField is null || vICMSFcpStRetField.Equals(value) != true)
+            {
+                vICMSFcpStRetField = value;
+                OnPropertyChanged(nameof(ICMSFCPSTRet));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSFCPSTRet() => vICMSFcpStRetField.HasValue;
 
     [XmlElement("vProd")]
     public double? Produtos
@@ -3486,6 +3576,23 @@ public partial class TotalICMS : INotifyPropertyChanged
     }
 
     public bool ShouldSerializeTotalNF() => vNFField.HasValue;
+
+    [XmlElement("vTotTrib")]
+    public double? TotalTributos
+    {
+        get => vTotTribField;
+        set
+        {
+            if (vTotTribField is null || vTotTribField.Equals(value) != true)
+            {
+                vTotTribField = value;
+                OnPropertyChanged(nameof(TotalTributos));
+            }
+        }
+    }
+
+    public bool ShouldSerializeTotalTributos() => vTotTribField.HasValue;
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 
