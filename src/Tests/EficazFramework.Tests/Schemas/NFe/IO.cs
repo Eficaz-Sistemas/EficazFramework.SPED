@@ -30,7 +30,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.ChaveDigitoVerificador.Should().Be("8");
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Ambiente.Should().Be(Ambiente.Producao);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Finalidade.Should().Be(FinalidadeEmissao.Normal);
-        instance.NFe.InformacoesNFe.IdentificacaoOperacao.ConsumidorFinal.Should().Be(IndicadorConsumidorFinal.Nao);
+        instance.NFe.InformacoesNFe.IdentificacaoOperacao.ConsumidorFinal.Should().Be(IndicadorConsumidorFinal.Sim);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.ProcessoDeEmissao.Should().Be(ProcessoEmissao.AplicativoContribuinte);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.VersaoProcessoEmissao.Should().Be("43.81");
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.DataHoraContingencia.Should().BeSameDateAs(new(2023,11,1));
