@@ -1307,7 +1307,7 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializeCSTNormal() => CST != CST_ICMS.CST_NA;
+    public bool ShouldSerializeCST() => CST != CST_ICMS.CST_NA;
 
     public CSOSN_ICMS CSOSN
     {
