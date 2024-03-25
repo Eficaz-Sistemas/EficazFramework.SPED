@@ -8,16 +8,20 @@ internal static class NFe
     /// <returns></returns>
     public static EficazFramework.SPED.Schemas.NFe.NFe PreencheNFeFake()
     {
+        string chave43 = $"{31}{DateTime.Now:yy}{DateTime.Now:MM}1060802500012655001000000001100000002";
+        string cNF = "00000002";
+        string cDV = Utilities.XML.NFe.CalculaDigitoVerificador(chave43);
+
         return new()
         {
             InformacoesNFe = new()
             {
-                Id = $"NFe{31}{DateTime.Now:yy}{DateTime.Now:MM}10608025000126550010000000011123456781",
+                Id = $"NFe{chave43}{cDV}",
                 Versao = "4.00",
                 IdentificacaoOperacao = new()
                 {
                     UF = Schemas.NFe.OrgaoIBGE.MG,
-                    Chave = "12345678",
+                    Chave = cNF,
                     NaturezaOperacao = "Teste de homologação de autorização de NFe",
                     Modelo = Schemas.NFe.ModeloDocumento.NFe,
                     Serie = 1,
@@ -29,11 +33,11 @@ internal static class NFe
                     CodigoMunicipio = "3129707",
                     TipoImpressao = Schemas.NFe.TipoImpressao.Retrato,
                     FormaEmissao = Schemas.NFe.FormaEmissao.Normal,
-                    ChaveDigitoVerificador = "1",
+                    ChaveDigitoVerificador = cDV,
                     Ambiente = Schemas.NFe.Ambiente.Homologacao,
                     Finalidade = Schemas.NFe.FinalidadeEmissao.Normal,
                     ConsumidorFinal = Schemas.NFe.IndicadorConsumidorFinal.Nao,
-                    TipoAtendimento = Schemas.NFe.TipoAtendimento.NaoPresencial_Outros,
+                    TipoAtendimento = Schemas.NFe.TipoAtendimento.Presencial,
                     VersaoProcessoEmissao = typeof(Schemas.NFe.NFe).Assembly.ImageRuntimeVersion,
                 },
                 Emitente = new()
@@ -58,7 +62,7 @@ internal static class NFe
                 Destinatario = new()
                 {
                     CNPJ_CPF = "18398117000130",
-                    RazaoSocial = "Teste Destinatário Ltda",
+                    RazaoSocial = "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
                     Endereco = new()
                     {
                         Logradouro = "Rua de Teste",
@@ -72,7 +76,7 @@ internal static class NFe
                         PaisNome = "Brasil",
                         Fone = "3535440001"
                     },
-                    IndicadorInscricaoEstDestinatorio = Schemas.NFe.IndicadorIeDestinatario.NaoContribuinte,
+                    IndicadorInscricaoEstDestinatorio = Schemas.NFe.IndicadorIeDestinatario.Contribuinte,
                     InscricaoEstadual = "0648480792506"
                 },
                 Items =
@@ -83,7 +87,7 @@ internal static class NFe
                         Dados = new()
                         {
                             Codigo = "ABC",
-                            GTIN = "789000000000",
+                            GTIN = "7891991000826",
                             Descricao = "Guaraná Fantástica 2L",
                             NCM = "22021000",
                             CEST = "0301000",
@@ -92,8 +96,8 @@ internal static class NFe
                             QuantidadeComercial = 9,
                             ValorUnitarioComercial = 9.99,
                             ValorDesconto = 9.91,
-                            ValorTotalBruto = 80,
-                            GTIN_Tributavel = "789000000000",
+                            ValorTotalBruto = 89.91,
+                            GTIN_Tributavel = "7891991000826",
                             QuantidadeTributavel = 9,
                             UnidadeTributavel = "Un",
                             ValorUnitarioTributavel = 9.99,
@@ -106,11 +110,11 @@ internal static class NFe
                             [
                                 new Schemas.NFe.DetalhamentoICMS()
                                 {
-                                    TributacaoIndentifier = Schemas.NFe.Tributacao_ICMS_Identifier.ICMS60,
+                                    TributacaoIndentifier = Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN500,
                                     Tributacao = new()
                                     {
                                         Origem = Schemas.NFe.OrigemMercadoria.Nacional,
-                                        CST = Schemas.NFe.CST_ICMS.CST_60,
+                                        CSOSN = Schemas.NFe.CSOSN_ICMS.CST500,
                                         vBCSTRet = 132.17,
                                         pST = 18,
                                         vICMSSTRet = 23.79,
@@ -162,7 +166,8 @@ internal static class NFe
                         InscricaoEstadual = "1901965978011",
                         Endereco = "Rodovia do Transporte, 123",
                         Municipio = "Ibiraci",
-                        UF = Schemas.NFe.Estado.MG
+                        UF = Schemas.NFe.Estado.MG,
+                        UFSpecified = true
                     },
                     Volumes =
                     [

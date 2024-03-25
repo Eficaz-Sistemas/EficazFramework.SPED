@@ -10,20 +10,17 @@ public class AutorizacaoTests : BaseNFeTests
     /// Tal fato pode ser compreendido como sucesso, no contexto de que os textes são de 
     /// comunicação e schema do XML enviado.
     /// </summary>
-    //[Test]
+    [Test]
     public async Task AutorizacaoSincronoAsync()
     {
         var client = CreateClient();
         client.SelecionaCertificado = InstanciaCertificadoAutorizacao; // aqui estamos fazendo algumas mudanças para usar outro certificado
         var result = await client.Autoriza4Async(Schemas.Mock.NFe.PreencheNFeFake(), $"{1:000000000}", Schemas.NFe.Ambiente.Homologacao);
-        result.Should().NotBeNull();    
-        //result.ChaveNFe.Should().Be(chave);
-        //result.Ambiente.Should().Be(ambiente);
-        //result.RetornoCodigo.Should().Be(resultadoCodigo);
-        //result.ProtocoloNFe.Should().NotBeNull();
-        //result.ProtocoloNFe.InformacoesProtocolo.Should().NotBeNull();
-        //result.ProtocoloNFe.InformacoesProtocolo.Ambiente.Should().Be(ambiente);
-        //result.ProtocoloNFe.InformacoesProtocolo.ChaveNFe.Should().Be(chave);
+        result.Should().NotBeNull();
+        result.Ambiente.Should().Be(Schemas.NFe.Ambiente.Homologacao);
+        result.RetornoCodigo.Should().Be("104");
+        result.ProtocoloRecebimento.Should().NotBeNull();
+        result.ProtocoloRecebimento.InformacoesProtocolo.StatusNFeCodigo.Should().Be("230"); //Emitente não cadastrado para emissão de NFe
     }
 
 

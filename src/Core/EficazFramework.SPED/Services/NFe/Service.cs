@@ -1,6 +1,7 @@
 ﻿using EficazFramework.SPED.Extensions;
 using EficazFramework.SPED.Services.Primitives;
 using EficazFramework.SPED.Utilities.XML;
+using System.Net;
 
 namespace EficazFramework.SPED.Services.NFe;
 
@@ -42,12 +43,16 @@ public class NFeService : SoapServiceBase
         {
             IdentificadorLote = identificadorLote,
             IndicadorAutorizacao = Schemas.NFe.IndicadorAutorizacao.Sincrono,
+            Versao = "4.00"
         };
         XmlDocument dadosXml = new();
         dadosXml.LoadXml(dados.Serialize().RemoveW3CNamespaces());
-        dadosXml.ImportNode(nfeXml.DocumentElement, true);
+        dadosXml.GetElementsByTagName("enviNFe").Item(0).AppendChild(dadosXml.ImportNode(nfeXml.DocumentElement, true));
+
         request.nfeDadosMsg = dadosXml.DocumentElement;
-        return await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo); ;
+
+        var result =  await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo, ambiente.ToString());
+        return result;
     }
 
 

@@ -14,6 +14,9 @@ public partial class PedidoAutorizacaoNFe
     [XmlElement("NFe")]
     public List<NFe> NotasFiscais { get; set; } = [];
 
+    [XmlAttribute("versao")]
+    public string Versao { get; set; } = "4.00";
+
 
     private static XmlSerializer Serializer { get; set; }
 
