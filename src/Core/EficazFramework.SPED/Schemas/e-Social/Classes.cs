@@ -104,14 +104,14 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class eSocialEvtInfoEmpregador : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtInfoEmpregadorInfoEmpregador infoEmpregadorField;
         private string idField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -127,7 +127,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -1440,13 +1440,13 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class S1000_Alteracao : object, INotifyPropertyChanged
     {
-        private TIdePeriodo idePeriodoField;
+        private IdePeriodo idePeriodoField;
         private TInfoEmpregador infoCadastroField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdePeriodo idePeriodo
+        public IdePeriodo idePeriodo
         {
             get
             {
@@ -1478,7 +1478,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 2)]
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -1512,11 +1512,11 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class eSocialEvtInfoEmpregadorInfoEmpregadorExclusao : object, INotifyPropertyChanged
     {
-        private TIdePeriodo idePeriodoField;
+        private IdePeriodo idePeriodoField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdePeriodo idePeriodo
+        public IdePeriodo idePeriodo
         {
             get
             {
@@ -1550,12 +1550,12 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class S1000_Inclusao : object, INotifyPropertyChanged
     {
-        private TIdePeriodo idePeriodoField;
+        private IdePeriodo idePeriodoField;
         private TInfoEmpregador infoCadastroField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdePeriodo idePeriodo
+        public IdePeriodo idePeriodo
         {
             get
             {
@@ -1681,14 +1681,14 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class eSocialEvtTabEstab : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabEstabInfoEstab infoEstabField;
         private string idField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -1704,7 +1704,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -2607,7 +2607,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TIdeEstab ideEstabField;
         private TDadosEstab dadosEstabField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
@@ -2643,7 +2643,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 2)]
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -2845,13 +2845,13 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType("eSocial", AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabRubrica/v02_05_00")]
     public partial class eSocialEvtTabRubrica : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabRubricaInfoRubrica infoRubricaField;
         private string idField;
 
         /// <remarks/>
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -2866,7 +2866,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -3590,7 +3590,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TIdeRubrica ideRubricaField;
         private TDadosRubrica dadosRubricaField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         public TIdeRubrica ideRubrica
@@ -3623,7 +3623,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -3732,13 +3732,13 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
     public partial class eSocialEvtTabLotacao : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabLotacaoInfoLotacao infoLotacaoField;
         private string idField;
 
         /// <remarks/>
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -3753,7 +3753,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -4373,7 +4373,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TIdeLotacao ideLotacaoField;
         private TDadosLotacao dadosLotacaoField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         public TIdeLotacao ideLotacao
@@ -4406,7 +4406,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -4515,13 +4515,13 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
     public partial class eSocialEvtTabCargo : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabCargoInfoCargo infoCargoField;
         private string idField;
 
         /// <remarks/>
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -4536,7 +4536,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -4931,7 +4931,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TideCargo ideCargoField;
         private TDadosCargo dadosCargoField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         public TideCargo ideCargo
@@ -4964,7 +4964,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -5163,12 +5163,12 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
     public partial class eSocialEvtTabFuncao : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabFuncaoInfoFuncao infoFuncaoField;
         private string idField;
 
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -5183,7 +5183,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -5409,7 +5409,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TIdeFuncao ideFuncaoField;
         private TDadosFuncao dadosFuncaoField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         public TIdeFuncao ideFuncao
@@ -5442,7 +5442,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -5641,13 +5641,13 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
     public partial class eSocialEvtTabHorTur : object, INotifyPropertyChanged
     {
-        private TIdeCadastro ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdentificacaoCadastro ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtTabHorTurInfoHorContratual infoHorContratualField;
         private string idField;
 
         /// <remarks/>
-        public TIdeCadastro ideEvento
+        public IdentificacaoCadastro ideEvento
         {
             get
             {
@@ -5662,7 +5662,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -6023,7 +6023,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     {
         private TIdeHorContratual ideHorContratualField;
         private TDadosHorContratual dadosHorContratualField;
-        private TIdePeriodo novaValidadeField;
+        private IdePeriodo novaValidadeField;
 
         /// <remarks/>
         public TIdeHorContratual ideHorContratual
@@ -6056,7 +6056,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TIdePeriodo novaValidade
+        public IdePeriodo novaValidade
         {
             get
             {
@@ -6257,14 +6257,14 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class eSocialEvtAqProd : object, INotifyPropertyChanged
     {
-        private TIdeEveFopagMensal ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdeEventoPeriodico ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtAqProdInfoAquisProd infoAquisProdField;
         private string idField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdeEveFopagMensal ideEvento
+        public IdeEventoPeriodico ideEvento
         {
             get
             {
@@ -6280,7 +6280,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -7172,14 +7172,14 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true)]
     public partial class eSocialEvtComProd : object, INotifyPropertyChanged
     {
-        private TIdeEveFopagMensal ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdeEventoPeriodico ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtComProdInfoComProd infoComProdField;
         private string idField;
 
         /// <remarks/>
         [XmlElement(Order = 0)]
-        public TIdeEveFopagMensal ideEvento
+        public IdeEventoPeriodico ideEvento
         {
             get
             {
@@ -7195,7 +7195,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -7976,7 +7976,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     public partial class eSocialEvtReabreEvPer : object, INotifyPropertyChanged
     {
         private eSocialEvtReabreEvPerIdeEvento ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private Empregador ideEmpregadorField;
         private string idField;
 
         /// <remarks/>
@@ -7997,7 +7997,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -8229,7 +8229,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     public partial class eSocialEvtFechaEvPer : object, INotifyPropertyChanged
     {
         private eSocialEvtFechaEvPerIdeEvento ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtFechaEvPerIdeRespInf ideRespInfField;
         private eSocialEvtFechaEvPerInfoFech infoFechField;
         private string idField;
@@ -8252,7 +8252,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
 
         /// <remarks/>
         [XmlElement(Order = 1)]
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -8741,14 +8741,14 @@ namespace EficazFramework.SPED.Schemas.eSocial
     [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
     public partial class eSocialEvtAdmissao : object, INotifyPropertyChanged
     {
-        private TIdeEveTrab ideEventoField;
-        private TEmpregador ideEmpregadorField;
+        private IdeEventoNaoPeriodico ideEventoField;
+        private Empregador ideEmpregadorField;
         private eSocialEvtAdmissaoTrabalhador trabalhadorField;
         private eSocialEvtAdmissaoVinculo vinculoField;
         private string idField;
 
         /// <remarks/>
-        public TIdeEveTrab ideEvento
+        public IdeEventoNaoPeriodico ideEvento
         {
             get
             {
@@ -8763,7 +8763,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEmpregador ideEmpregador
+        public Empregador ideEmpregador
         {
             get
             {
@@ -10021,7 +10021,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         private object itemField;
 
         /// <remarks/>
-        [XmlElement("brasil", typeof(TEnderecoBrasil))]
+        [XmlElement("brasil", typeof(EnderecoBrasileiro))]
         [XmlElement("exterior", typeof(TEnderecoExterior))]
         public object Item
         {
@@ -12145,7 +12145,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
     public partial class eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho : object, INotifyPropertyChanged
     {
         private TLocalTrab localTrabGeralField;
-        private TEnderecoBrasil localTrabDomField;
+        private EnderecoBrasileiro localTrabDomField;
 
         /// <remarks/>
         public TLocalTrab localTrabGeral
@@ -12163,7 +12163,7 @@ namespace EficazFramework.SPED.Schemas.eSocial
         }
 
         /// <remarks/>
-        public TEnderecoBrasil localTrabDom
+        public EnderecoBrasileiro localTrabDom
         {
             get
             {
