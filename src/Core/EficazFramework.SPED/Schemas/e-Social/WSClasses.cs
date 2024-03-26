@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.IO;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
 
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
 /// <summary>
 /// Envio dos eventos
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1")]
 [System.Xml.Serialization.XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1", IsNullable = false)]
 public partial class EnvioLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
@@ -309,22 +300,19 @@ public partial class EnvioLoteEventos : object, System.ComponentModel.INotifyPro
 /// <summary>
 /// Retorno ao chamado de envio dos eventos
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/v1_1_0")]
 [System.Xml.Serialization.XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/v1_1_0", IsNullable = false)]
 public partial class RetornoLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private eSocialRetornoEnvioLoteEventos retornoEnvioLoteEventosField;
+    private RetornoEnvioLoteEventos retornoEnvioLoteEventosField;
 
     [System.Xml.Serialization.XmlIgnore]
     public EnvioLoteEventos DadosEnvio { get; set; } = null;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public eSocialRetornoEnvioLoteEventos retornoEnvioLoteEventos
+    public RetornoEnvioLoteEventos retornoEnvioLoteEventos
     {
         get
         {
@@ -588,22 +576,16 @@ public partial class RetornoLoteEventos : object, System.ComponentModel.INotifyP
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1")]
 public partial class eSocialEnvioLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private TEmpregador ideEmpregadorField;
-    private TIdeTransmissor ideTransmissorField;
+    private Empregador ideEmpregadorField;
+    private IdeTransmissor ideTransmissorField;
     private eSocialEnvioLoteEventosEventos eventosField;
     private int grupoField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public TEmpregador ideEmpregador
+    public Empregador ideEmpregador
     {
         get
         {
@@ -619,7 +601,7 @@ public partial class eSocialEnvioLoteEventos : object, System.ComponentModel.INo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 1)]
-    public TIdeTransmissor ideTransmissor
+    public IdeTransmissor ideTransmissor
     {
         get
         {
@@ -677,18 +659,13 @@ public partial class eSocialEnvioLoteEventos : object, System.ComponentModel.INo
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1")]
 public partial class eSocialEnvioLoteEventosEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private List<TArquivoEsocial> eventoField = new List<TArquivoEsocial>();
+    private List<ArquivoEsocial> eventoField = new List<ArquivoEsocial>();
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement("evento", Order = 0)]
-    public List<TArquivoEsocial> evento
+    public List<ArquivoEsocial> evento
     {
         get
         {
@@ -714,13 +691,7 @@ public partial class eSocialEnvioLoteEventosEventos : object, System.ComponentMo
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlRoot("evento", Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1")]
-[System.Xml.Serialization.XmlType(Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1")]
-public partial class TArquivoEsocial : object, System.ComponentModel.INotifyPropertyChanged
+public partial class ArquivoEsocial : object, System.ComponentModel.INotifyPropertyChanged
 {
     private XElement anyField;
     private string idField;
@@ -769,7 +740,7 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
     }
 
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    private static System.Xml.Serialization.XmlSerializer sSerializer = new System.Xml.Serialization.XmlSerializer(typeof(TArquivoEsocial));
+    private static System.Xml.Serialization.XmlSerializer sSerializer = new System.Xml.Serialization.XmlSerializer(typeof(ArquivoEsocial));
 
     /// <summary>
     /// Serializes current TNfeProc object into an XML document
@@ -808,7 +779,7 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
     /// <param name="obj">Output TNfeProc object</param>
     /// <param name="exception">output Exception value if deserialize failed</param>
     /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-    public static bool CanDeserialize(string xml, ref TArquivoEsocial obj, ref Exception exception)
+    public static bool CanDeserialize(string xml, ref ArquivoEsocial obj, ref Exception exception)
     {
         exception = null;
         obj = default;
@@ -824,20 +795,20 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
         }
     }
 
-    public static bool CanDeserialize(string xml, ref TArquivoEsocial obj)
+    public static bool CanDeserialize(string xml, ref ArquivoEsocial obj)
     {
         Exception exception = null;
         return CanDeserialize(xml, ref obj, ref exception);
     }
 
-    public static TArquivoEsocial Deserialize(string xml)
+    public static ArquivoEsocial Deserialize(string xml)
     {
         StringReader stringReader = null;
         try
         {
             stringReader = new StringReader(xml);
             // stringReader.ReadToEnd() 'TESTING...
-            return (TArquivoEsocial)sSerializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+            return (ArquivoEsocial)sSerializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
         }
         // Return CType(Serializer.Deserialize(stringReader), CabecalhoMensagem)
         finally
@@ -849,9 +820,9 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
         }
     }
 
-    public static TArquivoEsocial Deserialize(Stream s)
+    public static ArquivoEsocial Deserialize(Stream s)
     {
-        return (TArquivoEsocial)sSerializer.Deserialize(s);
+        return (ArquivoEsocial)sSerializer.Deserialize(s);
     }
 
 
@@ -926,7 +897,7 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
     /// <param name="obj">Output TNfeProc object</param>
     /// <param name="exception">output Exception value if deserialize failed</param>
     /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-    public static bool CanLoadFrom(Stream source, ref TArquivoEsocial obj, ref Exception exception)
+    public static bool CanLoadFrom(Stream source, ref ArquivoEsocial obj, ref Exception exception)
     {
         exception = null;
         obj = default;
@@ -942,13 +913,13 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
         }
     }
 
-    public static bool CanLoadFrom(Stream source, ref TArquivoEsocial obj)
+    public static bool CanLoadFrom(Stream source, ref ArquivoEsocial obj)
     {
         Exception exception = null;
         return CanLoadFrom(source, ref obj, ref exception);
     }
 
-    public static TArquivoEsocial LoadFrom(Stream source)
+    public static ArquivoEsocial LoadFrom(Stream source)
     {
         if (source is null)
             throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
@@ -976,7 +947,7 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
         }
     }
 
-    public static async Task<TArquivoEsocial> LoadFromAsync(Stream source)
+    public static async Task<ArquivoEsocial> LoadFromAsync(Stream source)
     {
         if (source is null)
             throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
@@ -1007,21 +978,16 @@ public partial class TArquivoEsocial : object, System.ComponentModel.INotifyProp
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/v1_1_0")]
-public partial class eSocialRetornoEnvioLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
+public partial class RetornoEnvioLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private TEmpregador ideEmpregadorField;
-    private TIdeTransmissor ideTransmissorField;
-    private TStatusEnvio statusField;
-    private TDadosRecepcao dadosRecepcaoLoteField;
+    private Empregador ideEmpregadorField;
+    private IdeTransmissor ideTransmissorField;
+    private StatusEnvio statusField;
+    private DadosRecepcao dadosRecepcaoLoteField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public TEmpregador ideEmpregador
+    public Empregador ideEmpregador
     {
         get
         {
@@ -1037,7 +1003,7 @@ public partial class eSocialRetornoEnvioLoteEventos : object, System.ComponentMo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 1)]
-    public TIdeTransmissor ideTransmissor
+    public IdeTransmissor ideTransmissor
     {
         get
         {
@@ -1053,7 +1019,7 @@ public partial class eSocialRetornoEnvioLoteEventos : object, System.ComponentMo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 2)]
-    public TStatusEnvio status
+    public StatusEnvio status
     {
         get
         {
@@ -1069,7 +1035,7 @@ public partial class eSocialRetornoEnvioLoteEventos : object, System.ComponentMo
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 3)]
-    public TDadosRecepcao dadosRecepcaoLote
+    public DadosRecepcao dadosRecepcaoLote
     {
         get
         {
@@ -1095,16 +1061,10 @@ public partial class eSocialRetornoEnvioLoteEventos : object, System.ComponentMo
     }
 }
 
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
 /// <summary>
 /// Consulta de lote de eventos
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/consulta/retornoProcessamento/v1_0_0")]
 [System.Xml.Serialization.XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/consulta/retornoProcessamento/v1_0_0", IsNullable = false)]
 public partial class ConsultaLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
@@ -1380,19 +1340,16 @@ public partial class ConsultaLoteEventos : object, System.ComponentModel.INotify
 /// <summary>
 /// Retorno á consulta de lote de eventos
 /// </summary>
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
 [Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
 [System.Xml.Serialization.XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0", IsNullable = false)]
 public partial class RetornoConsultaLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private eSocialRetornoProcessamentoLoteEventos retornoProcessamentoLoteEventosField;
+    private RetornoProcessamentoLoteEventos retornoProcessamentoLoteEventosField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public eSocialRetornoProcessamentoLoteEventos retornoProcessamentoLoteEventos
+    public RetornoProcessamentoLoteEventos retornoProcessamentoLoteEventos
     {
         get
         {
@@ -1656,12 +1613,6 @@ public partial class RetornoConsultaLoteEventos : object, System.ComponentModel.
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-/* TODO ERROR: Skipped RegionDirectiveTrivia */
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/consulta/retornoProcessamento/v1_0_0")]
 public partial class eSocialConsultaLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
     private string protocoloEnvioField;
@@ -1694,23 +1645,18 @@ public partial class eSocialConsultaLoteEventos : object, System.ComponentModel.
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
-public partial class eSocialRetornoProcessamentoLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
+public partial class RetornoProcessamentoLoteEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private TEmpregador ideEmpregadorField;
-    private TIdeTransmissor ideTransmissorField;
-    private TStatusConsulta statusField;
-    private TDadosRecepcao dadosRecepcaoLoteField;
-    private TDadosProcessamento dadosProcessamentoLoteField;
-    private eSocialRetornoProcessamentoLoteEventosRetornoEventos retornoEventosField;
+    private Empregador ideEmpregadorField;
+    private IdeTransmissor ideTransmissorField;
+    private StatusConsulta statusField;
+    private DadosRecepcao dadosRecepcaoLoteField;
+    private DadosProcessamento dadosProcessamentoLoteField;
+    private RetornoProcessamentoLoteEventosRetornoEventos retornoEventosField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public TEmpregador ideEmpregador
+    public Empregador ideEmpregador
     {
         get
         {
@@ -1726,7 +1672,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 1)]
-    public TIdeTransmissor ideTransmissor
+    public IdeTransmissor ideTransmissor
     {
         get
         {
@@ -1742,7 +1688,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 2)]
-    public TStatusConsulta status
+    public StatusConsulta status
     {
         get
         {
@@ -1758,7 +1704,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 3)]
-    public TDadosRecepcao dadosRecepcaoLote
+    public DadosRecepcao dadosRecepcaoLote
     {
         get
         {
@@ -1774,7 +1720,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 4)]
-    public TDadosProcessamento dadosProcessamentoLote
+    public DadosProcessamento dadosProcessamentoLote
     {
         get
         {
@@ -1790,7 +1736,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 5)]
-    public eSocialRetornoProcessamentoLoteEventosRetornoEventos retornoEventos
+    public RetornoProcessamentoLoteEventosRetornoEventos retornoEventos
     {
         get
         {
@@ -1816,12 +1762,7 @@ public partial class eSocialRetornoProcessamentoLoteEventos : object, System.Com
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
-public partial class TDadosProcessamento : object, System.ComponentModel.INotifyPropertyChanged
+public partial class DadosProcessamento : object, System.ComponentModel.INotifyPropertyChanged
 {
     private string versaoAplicativoProcessamentoLoteField;
 
@@ -1853,18 +1794,13 @@ public partial class TDadosProcessamento : object, System.ComponentModel.INotify
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
-public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventos : object, System.ComponentModel.INotifyPropertyChanged
+public partial class RetornoProcessamentoLoteEventosRetornoEventos : object, System.ComponentModel.INotifyPropertyChanged
 {
-    private eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento[] eventoField;
+    private RetornoProcessamentoLoteEventosRetornoEventosEvento[] eventoField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement("evento", Order = 0)]
-    public eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento[] evento
+    public RetornoProcessamentoLoteEventosRetornoEventosEvento[] evento
     {
         get
         {
@@ -1890,18 +1826,13 @@ public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventos : obje
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
-public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento : object, System.ComponentModel.INotifyPropertyChanged
+public partial class RetornoProcessamentoLoteEventosRetornoEventosEvento : object, System.ComponentModel.INotifyPropertyChanged
 {
     // tag eSocial
 
 
     private XElement retornoEventoField;
-    private eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot[] totField;
+    private RetornoProcessamentoLoteEventosRetornoEventosEventoTot[] totField;
     private string idField;
     private bool evtDuplField;
     private bool evtDuplFieldSpecified;
@@ -1945,7 +1876,7 @@ public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento 
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement("tot", Order = 1)]
-    public eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot[] tot
+    public RetornoProcessamentoLoteEventosRetornoEventosEventoTot[] tot
     {
         get
         {
@@ -2019,12 +1950,7 @@ public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventosEvento 
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0")]
-public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoTot : object, System.ComponentModel.INotifyPropertyChanged
+public partial class RetornoProcessamentoLoteEventosRetornoEventosEventoTot : object, System.ComponentModel.INotifyPropertyChanged
 {
     private XElement anyField;
     private string tipoField;
@@ -2073,18 +1999,12 @@ public partial class eSocialRetornoProcessamentoLoteEventosRetornoEventosEventoT
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType("retornoEvento", Namespace = "")]
-[System.Xml.Serialization.XmlRoot("retornoEvento", Namespace = "", IsNullable = false)]
 public partial class eSocialRetornoEvento : object, System.ComponentModel.INotifyPropertyChanged
 {
     private string idField;
-    private TEmpregador ideEmpregadorField;
-    private TDadosRecepcaoRetornoEvento recepcaoield;
-    private TProcessamentoRetornoEvento processamentoField;
+    private Empregador ideEmpregadorField;
+    private DadosRecepcaoRetornoEvento recepcaoield;
+    private ProcessamentoRetornoEvento processamentoField;
     private eSocialRetornoEventoRecibo reciboField;
 
     /// <remarks/>
@@ -2105,7 +2025,7 @@ public partial class eSocialRetornoEvento : object, System.ComponentModel.INotif
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 0)]
-    public TEmpregador ideEmpregador
+    public Empregador ideEmpregador
     {
         get
         {
@@ -2121,7 +2041,7 @@ public partial class eSocialRetornoEvento : object, System.ComponentModel.INotif
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 1)]
-    public TDadosRecepcaoRetornoEvento recepcao
+    public DadosRecepcaoRetornoEvento recepcao
     {
         get
         {
@@ -2137,7 +2057,7 @@ public partial class eSocialRetornoEvento : object, System.ComponentModel.INotif
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElement(Order = 2)]
-    public TProcessamentoRetornoEvento processamento
+    public ProcessamentoRetornoEvento processamento
     {
         get
         {
@@ -2418,11 +2338,6 @@ public partial class eSocialRetornoEvento : object, System.ComponentModel.INotif
 
 }
 
-[System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-[Serializable()]
-[DebuggerStepThrough()]
-[System.ComponentModel.DesignerCategory("code")]
-[System.Xml.Serialization.XmlType(Namespace = "")]
 public partial class eSocialRetornoEventoRecibo : object, System.ComponentModel.INotifyPropertyChanged
 {
     private string nrReciboField;
@@ -2466,6 +2381,520 @@ public partial class eSocialRetornoEventoRecibo : object, System.ComponentModel.
         if (propertyChanged != null)
         {
             propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+
+
+/// <summary>
+/// Resultado dos servidores do eSocial após Invoke do Envio de Lote de Eventos
+/// </summary>
+public partial class StatusEnvio : object, INotifyPropertyChanged
+{
+    private int cdRespostaField;
+    private string descRespostaField;
+    private List<DetalhamentoOcorrencia> ocorrenciasField = new List<DetalhamentoOcorrencia>();
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public int cdResposta
+    {
+        get
+        {
+            return cdRespostaField;
+        }
+
+        set
+        {
+            cdRespostaField = value;
+            RaisePropertyChanged("cdResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public string descResposta
+    {
+        get
+        {
+            return descRespostaField;
+        }
+
+        set
+        {
+            descRespostaField = value;
+            RaisePropertyChanged("descResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlArray("ocorrencias", Order = 2)]
+    [XmlArrayItem("ocorrencia")]
+    public List<DetalhamentoOcorrencia> ocorrencias
+    {
+        get
+        {
+            return ocorrenciasField;
+        }
+
+        set
+        {
+            ocorrenciasField = value;
+            RaisePropertyChanged("ocorrencias");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+/// <summary>
+/// Resultado dos servidores do eSocial após Invoke da Consulta de Lote de Eventos
+/// </summary>
+public partial class StatusConsulta : object, INotifyPropertyChanged
+{
+    private int cdRespostaField;
+    private string descRespostaField;
+    private int tempoEstimadoConclusaoField;
+    private bool tempoEstimadoConclusaoFieldSpecified;
+    private List<DetalhamentoOcorrencia> ocorrenciasField = new List<DetalhamentoOcorrencia>();
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public int cdResposta
+    {
+        get
+        {
+            return cdRespostaField;
+        }
+
+        set
+        {
+            cdRespostaField = value;
+            RaisePropertyChanged("cdResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public string descResposta
+    {
+        get
+        {
+            return descRespostaField;
+        }
+
+        set
+        {
+            descRespostaField = value;
+            RaisePropertyChanged("descResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public int tempoEstimadoConclusao
+    {
+        get
+        {
+            return tempoEstimadoConclusaoField;
+        }
+
+        set
+        {
+            tempoEstimadoConclusaoField = value;
+            RaisePropertyChanged("tempoEstimadoConclusao");
+        }
+    }
+
+    /// <remarks/>
+    [XmlIgnore()]
+    public bool tempoEstimadoConclusaoSpecified
+    {
+        get
+        {
+            return tempoEstimadoConclusaoFieldSpecified;
+        }
+
+        set
+        {
+            tempoEstimadoConclusaoFieldSpecified = value;
+            RaisePropertyChanged("tempoEstimadoConclusaoSpecified");
+        }
+    }
+
+    /// <remarks/>
+    [XmlArray("ocorrencias", Order = 3)]
+    [XmlArrayItem("ocorrencia")]
+    public List<DetalhamentoOcorrencia> ocorrencias
+    {
+        get
+        {
+            return ocorrenciasField;
+        }
+
+        set
+        {
+            ocorrenciasField = value;
+            RaisePropertyChanged("ocorrencias");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+/// <summary>
+/// Detalhamento da ocorrência do Status
+/// </summary>
+public partial class DetalhamentoOcorrencia : object, INotifyPropertyChanged
+{
+    private int codigoField;
+    private string descricaoField;
+    private byte tipoField;
+    private string localizacaoField;
+
+    public int codigo
+    {
+        get
+        {
+            return codigoField;
+        }
+
+        set
+        {
+            codigoField = value;
+            RaisePropertyChanged("codigo");
+        }
+    }
+
+    public string descricao
+    {
+        get
+        {
+            return descricaoField;
+        }
+
+        set
+        {
+            descricaoField = value;
+            RaisePropertyChanged("descricao");
+        }
+    }
+
+    public byte tipo
+    {
+        get
+        {
+            return tipoField;
+        }
+
+        set
+        {
+            tipoField = value;
+            RaisePropertyChanged("tipo");
+        }
+    }
+
+    public string localizacao
+    {
+        get
+        {
+            return localizacaoField;
+        }
+
+        set
+        {
+            localizacaoField = value;
+            RaisePropertyChanged("localizacao");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+/// <summary>
+/// Dados da recepção do serviço solicitado
+/// </summary>
+public partial class DadosRecepcao : object, INotifyPropertyChanged
+{
+    private DateTime dhRecepcaoField;
+    private string versaoAplicativoRecepcaoField;
+    private string protocoloEnvioField;
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public DateTime dhRecepcao
+    {
+        get
+        {
+            return dhRecepcaoField;
+        }
+
+        set
+        {
+            dhRecepcaoField = value;
+            RaisePropertyChanged("dhRecepcao");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public string versaoAplicativoRecepcao
+    {
+        get
+        {
+            return versaoAplicativoRecepcaoField;
+        }
+
+        set
+        {
+            versaoAplicativoRecepcaoField = value;
+            RaisePropertyChanged("versaoAplicativoRecepcao");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public string protocoloEnvio
+    {
+        get
+        {
+            return protocoloEnvioField;
+        }
+
+        set
+        {
+            protocoloEnvioField = value;
+            RaisePropertyChanged("protocoloEnvio");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+/// <summary>
+/// Dados da recepção do serviço solicitado informado em RetornoEvento
+/// </summary>
+public partial class DadosRecepcaoRetornoEvento : object, INotifyPropertyChanged
+{
+    private Ambiente tpAmbField = Ambiente.Producao;
+    private DateTime dhRecepcaoField;
+    private string versaoAplicativoRecepcaoField;
+    private string protocoloEnvioField;
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public Ambiente tpAmb
+    {
+        get
+        {
+            return tpAmbField;
+        }
+
+        set
+        {
+            tpAmbField = value;
+            RaisePropertyChanged("tpAmb");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public DateTime dhRecepcao
+    {
+        get
+        {
+            return dhRecepcaoField;
+        }
+
+        set
+        {
+            dhRecepcaoField = value;
+            RaisePropertyChanged("dhRecepcao");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public string versaoAppRecepcao
+    {
+        get
+        {
+            return versaoAplicativoRecepcaoField;
+        }
+
+        set
+        {
+            versaoAplicativoRecepcaoField = value;
+            RaisePropertyChanged("versaoAppRecepcao");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 3)]
+    public string protocoloEnvioLote
+    {
+        get
+        {
+            return protocoloEnvioField;
+        }
+
+        set
+        {
+            protocoloEnvioField = value;
+            RaisePropertyChanged("protocoloEnvioLote");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+/// <summary>
+/// Dados do processamento informado em RetornoEvento
+/// </summary>
+public partial class ProcessamentoRetornoEvento : object, INotifyPropertyChanged
+{
+    private int cdRespostaField;
+    private string descRespostaField;
+    private string versaoAplicativoRecepcaoField;
+    private DateTime dhRecepcaoField;
+    private List<DetalhamentoOcorrencia> ocorrenciasField = new List<DetalhamentoOcorrencia>();
+
+
+    /// <remarks/>
+    [XmlElement(Order = 0)]
+    public int cdResposta
+    {
+        get
+        {
+            return cdRespostaField;
+        }
+
+        set
+        {
+            cdRespostaField = value;
+            RaisePropertyChanged("cdResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 1)]
+    public string descResposta
+    {
+        get
+        {
+            return descRespostaField;
+        }
+
+        set
+        {
+            descRespostaField = value;
+            RaisePropertyChanged("descResposta");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 2)]
+    public string versaoAppProcessamento
+    {
+        get
+        {
+            return versaoAplicativoRecepcaoField;
+        }
+
+        set
+        {
+            versaoAplicativoRecepcaoField = value;
+            RaisePropertyChanged("versaoAppProcessamento");
+        }
+    }
+
+    /// <remarks/>
+    [XmlElement(Order = 3)]
+    public DateTime dhProcessamento
+    {
+        get
+        {
+            return dhRecepcaoField;
+        }
+
+        set
+        {
+            dhRecepcaoField = value;
+            RaisePropertyChanged("dhProcessamento");
+        }
+    }
+
+    /// <remarks/>
+    [XmlArray("ocorrencias", Order = 4)]
+    [XmlArrayItem("ocorrencia")]
+    public List<DetalhamentoOcorrencia> ocorrencias
+    {
+        get
+        {
+            return ocorrenciasField;
+        }
+
+        set
+        {
+            ocorrenciasField = value;
+            RaisePropertyChanged("ocorrencias");
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        var propertyChanged = PropertyChanged;
+        if (propertyChanged != null)
+        {
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
