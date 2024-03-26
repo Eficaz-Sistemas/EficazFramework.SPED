@@ -4,13 +4,8 @@ namespace EficazFramework.SPED.Schemas.eSocial.CachedData;
 
 public class IndicadoresPrevidenciaSocial : Dictionary<string, string>
 {
-    public static object Instance
-    {
-        get
-        {
-            return new IndicadoresPrevidenciaSocial();
-        }
-    }
+    private static readonly IndicadoresPrevidenciaSocial _instance = [];
+    public static object Instance => _instance;
 
     public IndicadoresPrevidenciaSocial()
     {
@@ -47,13 +42,8 @@ public class IndicadoresPrevidenciaSocial : Dictionary<string, string>
 
 public class IndicadoresIRRF : Dictionary<string, string>
 {
-    public static object Instance
-    {
-        get
-        {
-            return new IndicadoresIRRF();
-        }
-    }
+    private static readonly IndicadoresIRRF _instance = [];
+    public static object Instance => _instance;
 
     public IndicadoresIRRF()
     {
@@ -141,13 +131,8 @@ public class IndicadoresIRRF : Dictionary<string, string>
 
 public class IndicadoresFGTS : Dictionary<string, string>
 {
-    public static object Instance
-    {
-        get
-        {
-            return new IndicadoresFGTS();
-        }
-    }
+    private static readonly IndicadoresFGTS _instance = [];
+    public static object Instance => _instance;
 
     public IndicadoresFGTS()
     {
@@ -163,13 +148,8 @@ public class IndicadoresFGTS : Dictionary<string, string>
 
 public class IndicadoresRPPSMilitar : Dictionary<string, string>
 {
-    public static object Instance
-    {
-        get
-        {
-            return new IndicadoresRPPSMilitar();
-        }
-    }
+    private static readonly IndicadoresRPPSMilitar _instance = [];
+    public static object Instance => _instance;
 
     public IndicadoresRPPSMilitar()
     {
@@ -184,13 +164,8 @@ public class IndicadoresRPPSMilitar : Dictionary<string, string>
 
 public class IndicadoresContrSindical : Dictionary<string, string>
 {
-    public static object Instance
-    {
-        get
-        {
-            return new IndicadoresContrSindical();
-        }
-    }
+    private static readonly IndicadoresContrSindical _instance = [];
+    public static object Instance => _instance;
 
     public IndicadoresContrSindical()
     {
