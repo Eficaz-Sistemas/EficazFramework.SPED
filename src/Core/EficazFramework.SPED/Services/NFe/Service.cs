@@ -134,7 +134,7 @@ public class NFeService : SoapServiceBase
     /// Consulta a situação de funcionamento dos serviços da NF-e e NFC-e
     /// </summary>
     /// <param name="uf">Unidade Federativa para verificação</param>
-    /// <param name="modelo">55 para NF-e ou 65 para NFC-e/param>
+    /// <param name="modelo">55 para NF-e ou 65 para NFC-e</param>
     /// <param name="ambiente">Produção ou Homologação</param>
     public async Task<Schemas.NFe.RetornoConsultaStatusServicoNFe> ConsultaStatusServicoAsync(
         Schemas.NFe.OrgaoIBGE uf,
@@ -265,4 +265,67 @@ public class NFeService : SoapServiceBase
         request.nfeDadosMsg = dadosXml.DocumentElement;
         return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request); ;
     }
+
+
+
+    /// <summary>
+    /// Efetua a inutilização de uma faixa de numeração de NF-e / NFC-e.
+    /// </summary>
+    /// <param name="cnpj">CNPJ do emitente</param>
+    /// <param name="uf">UF do emitente</param>
+    /// <param name="modelo">55 para NF-e ou 65 para NFC-e</param>
+    /// <param name="serie">55 para NF-e ou 65 para NFC-e</param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<Schemas.NFe.InutilizacaoRetorno> InutilizaAsync(
+        string cnpj,
+        Schemas.NFe.OrgaoIBGE uf,
+        long[] numeracao,
+        int serie,
+        string justificativa,
+        Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        //! validações iniciais:
+        if (numeracao.Length != 2)
+            throw new ArgumentException("A faixa de numeração deve contém dois elementos, onde o primeiro corresponde ao número inicial e o último ao número final da faixa que deve ser inutilizada.");
+
+        if (string.IsNullOrEmpty(justificativa))
+            throw new ArgumentException("A justificativa é obrigatória para este serviço.");
+
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! Assinatura
+        XmlDocument inutXml = new();
+        inutXml.LoadXml(new Schemas.NFe.InutilizacaoNFe()
+        {
+            InformacoesInutilizacao = new()
+            {
+                Ambiente = ambiente,
+                cUF =  uf,   
+                ano = DateTime.Now.Year,
+                CNPJ = cnpj,
+                Modelo = modelo,
+                serie = serie.ToString("000"),
+                NumeroNFInicial = numeracao[0],
+                NumeroNFFinal = numeracao[1],
+                Justificativa = justificativa,
+                Id = $"ID{(int)uf}{DateTime.Now.Year}{cnpj}{(int)modelo}{serie:000}{numeracao[0]:000000000}{numeracao[1]:000000000}"
+
+            }
+        }.Serialize().RemoveW3CNamespaces());
+        Certificado.SignXml(inutXml, "inutNFe", "infInut", false, false);
+
+
+        //! execução:
+        var request = new Contracts.nfeInutilizacaoRequest()
+        {
+            nfeDadosMsg = inutXml.DocumentElement
+        };
+
+        var result = await ExecuteAsync<SoapClients.NFeInutilizacaoSoapClient, Schemas.NFe.InutilizacaoRetorno>(request, uf.ToString(), modelo.ToString(), ambiente.ToString());
+        return result;
+    }
+
 }
