@@ -1,4 +1,5 @@
 ﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.CTe;
 using EficazFramework.SPED.Services.Primitives;
 using EficazFramework.SPED.Utilities.XML;
 using System.Net;
@@ -125,6 +126,39 @@ public class NFeService : SoapServiceBase
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
         return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo); ;
+    }
+
+
+
+    /// <summary>
+    /// Consulta a situação de funcionamento dos serviços da NF-e e NFC-e
+    /// </summary>
+    /// <param name="uf">Unidade Federativa para verificação</param>
+    /// <param name="modelo">55 para NF-e ou 65 para NFC-e/param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<Schemas.NFe.RetornoConsultaStatusServicoNFe> ConsultaStatusServicoAsync(
+        Schemas.NFe.OrgaoIBGE uf,
+        string modelo = "55",
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        //! validações iniciais:
+        if (modelo != "55" && modelo != "65")
+            throw new ArgumentNullException("Modelo", "O modelo de documento informado não é válido.");
+
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! execução:
+        var request = new Contracts.nfeStatusServicoRequest();
+        var dados = new Schemas.NFe.PedidoConsultaStatusServicoNFe()
+        {
+            Ambiente = ambiente,
+            UF = uf,
+            Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
+        };
+        request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
+        return await ExecuteAsync<SoapClients.NFeStatusServicoSoapClient, Schemas.NFe.RetornoConsultaStatusServicoNFe>(request, uf.ToString(), modelo); ;
     }
 
 
