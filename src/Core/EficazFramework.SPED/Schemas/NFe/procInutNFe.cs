@@ -306,6 +306,10 @@ public partial class ProcessoInutilizacaoNFe : INotifyPropertyChanged, IXmlSpedD
     }
 }
 
+
+[Serializable()]
+[XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
+[XmlRoot("inutNFe", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
 public partial class InutilizacaoNFe : INotifyPropertyChanged
 {
     private InformacoesInutilizacaoNFe infInutField;
@@ -351,435 +355,167 @@ public partial class InutilizacaoNFe : INotifyPropertyChanged
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
     protected void RaisePropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+
+    private static XmlSerializer sSerializer;
+    private static XmlSerializer Serializer
+    {
+        get
+        {
+            sSerializer ??= new XmlSerializer(typeof(InutilizacaoNFe));
+            return sSerializer;
+        }
+    }
+    /// <summary>
+    /// Serializes current TNfeProc object into an XML document
+    /// </summary>
+    /// <returns>string XML value</returns>
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null;
+        System.IO.MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            Serializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
 }
 
-public partial class InformacoesInutilizacaoNFe : INotifyPropertyChanged
+
+[Serializable()]
+[XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
+[XmlRoot("retInutNFe", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
+public partial class InutilizacaoRetorno
 {
-    private Ambiente tpAmbField;
-    private string xServField = "INUTILIZAR";
-    private OrgaoIBGE cUFField;
-    private string anoField;
-    private string cNPJField;
-    private ModeloDocumento modField;
-    private string serieField;
-    private string nNFIniField;
-    private string nNFFinField;
-    private string xJustField;
-    private string idField;
-
-    /// <remarks/>
-    [XmlElement(ElementName = "tpAmb", Order = 0)]
-    public Ambiente Ambiente
-    {
-        get => tpAmbField;
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged(nameof(Ambiente));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 1)]
-    public string xServ
-    {
-        get => xServField;
-        set
-        {
-            xServField = value;
-            RaisePropertyChanged(nameof(xServ));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 2)]
-    public OrgaoIBGE cUF
-    {
-        get => cUFField;
-        set
-        {
-            cUFField = value;
-            RaisePropertyChanged(nameof(cUF));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 3)]
-    public string ano
-    {
-        get => anoField;
-        set
-        {
-            anoField = value;
-            RaisePropertyChanged(nameof(ano));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 4)]
-    public string CNPJ
-    {
-        get => cNPJField;
-        set
-        {
-            cNPJField = value;
-            RaisePropertyChanged(nameof(CNPJ));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(ElementName = "mod", Order = 5)]
-    public ModeloDocumento Modelo
-    {
-        get => modField;
-        set
-        {
-            modField = value;
-            RaisePropertyChanged(nameof(Modelo));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(Order = 6)]
-    public string serie
-    {
-        get => serieField;
-        set
-        {
-            serieField = value;
-            RaisePropertyChanged(nameof(serie));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(ElementName = "nNFIni", Order = 7)]
-    public string NumeroNFInicial
-    {
-        get => nNFIniField;
-        set
-        {
-            nNFIniField = value;
-            RaisePropertyChanged(nameof(NumeroNFInicial));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(ElementName = "nNFFin", Order = 8)]
-    public string NumeroNFFinal
-    {
-        get => nNFFinField;
-        set
-        {
-            nNFFinField = value;
-            RaisePropertyChanged(nameof(NumeroNFFinal));
-        }
-    }
-
-    /// <remarks/>
-    [XmlElement(ElementName = "xJust", Order = 9)]
-    public string Justificativa
-    {
-        get => xJustField;
-        set
-        {
-            xJustField = value;
-            RaisePropertyChanged(nameof(Justificativa));
-        }
-    }
-
-    /// <remarks/>
-    [XmlAttribute("Id")]
-    public string Id
-    {
-        get => idField;
-        set
-        {
-            idField = value;
-            RaisePropertyChanged(nameof(Id));
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-}
-
-public partial class InutilizacaoRetorno : INotifyPropertyChanged
-{
-    private TRetInutNFeInfInut infInutField;
-    private SignatureType signatureField;
-    private string versaoField;
-
-    /// <remarks/>
     [XmlElement(Order = 0)]
-    public TRetInutNFeInfInut infInut
-    {
-        get => infInutField;
-        set
-        {
-            infInutField = value;
-            RaisePropertyChanged(nameof(infInut));
-        }
-    }
+    public InutilizacaoRetornoInformacoes infInut { get; set; }
 
-    /// <remarks/>
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-    public SignatureType Signature
-    {
-        get => signatureField;
-        set
-        {
-            signatureField = value;
-            RaisePropertyChanged(nameof(Signature));
-        }
-    }
+    public SignatureType Signature { get; set; }
 
-    /// <remarks/>
     [XmlAttribute("token")]
-    public string versao
+    public string versao { get; set; }
+
+
+    private static XmlSerializer sSerializer;
+    private static XmlSerializer Serializer
     {
-        get => versaoField;
-        set
+        get
         {
-            versaoField = value;
-            RaisePropertyChanged(nameof(versao));
+            sSerializer ??= new XmlSerializer(typeof(InutilizacaoRetorno));
+            return sSerializer;
         }
     }
 
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+    public static InutilizacaoRetorno Deserialize(string xml)
+    {
+        System.IO.StringReader stringReader = null;
+        try
+        {
+            stringReader = new System.IO.StringReader(xml);
+            return (InutilizacaoRetorno)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+        }
+        finally
+        {
+            stringReader?.Dispose();
+        }
+    }
 
-    protected void RaisePropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    public static InutilizacaoRetorno Deserialize(System.IO.Stream s) => (InutilizacaoRetorno)Serializer.Deserialize(s);
+
 }
 
-public partial class TRetInutNFeInfInut : INotifyPropertyChanged
+
+public partial class InformacoesInutilizacaoNFe
 {
-    private Ambiente tpAmbField;
-    private string verAplicField;
-    private string cStatField;
-    private string xMotivoField;
-    private OrgaoIBGE cUFField;
-    private string anoField;
-    private string cNPJField;
-    private ModeloDocumento modField;
-    private bool modFieldSpecified;
-    private string serieField;
-    private string nNFIniField;
-    private string nNFFinField;
-    private DateTime? dhRecbtoField;
-    private string nProtField;
-    private string idField;
+    [XmlElement(ElementName = "tpAmb", Order = 0)]
+    public Ambiente Ambiente { get; set; }
 
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public Ambiente tpAmb
-    {
-        get => tpAmbField;
-        set
-        {
-            tpAmbField = value;
-            RaisePropertyChanged(nameof(tpAmb));
-        }
-    }
-
-    /// <remarks/>
     [XmlElement(Order = 1)]
-    public string verAplic
-    {
-        get => verAplicField;
-        set
-        {
-            verAplicField = value;
-            RaisePropertyChanged(nameof(verAplic));
-        }
-    }
+    public string xServ { get; set; } = "INUTILIZAR";
 
-    /// <remarks/>
     [XmlElement(Order = 2)]
-    public string cStat
-    {
-        get => cStatField;
-        set
-        {
-            cStatField = value;
-            RaisePropertyChanged(nameof(cStat));
-        }
-    }
+    public OrgaoIBGE cUF { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 3)]
-    public string xMotivo
-    {
-        get => xMotivoField;
-        set
-        {
-            xMotivoField = value;
-            RaisePropertyChanged(nameof(xMotivo));
-        }
-    }
+    public int ano { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 4)]
-    public OrgaoIBGE cUF
-    {
-        get => cUFField;
-        set
-        {
-            cUFField = value;
-            RaisePropertyChanged(nameof(cUF));
-        }
-    }
+    public string CNPJ { get; set; }
 
-    /// <remarks/>
-    [XmlElement(Order = 5)]
-    public string ano
-    {
-        get => anoField;
-        set
-        {
-            anoField = value;
-            RaisePropertyChanged(nameof(ano));
-        }
-    }
+    [XmlElement(ElementName = "mod", Order = 5)]
+    public ModeloDocumento Modelo { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 6)]
-    public string CNPJ
-    {
-        get => cNPJField;
-        set
-        {
-            cNPJField = value;
-            RaisePropertyChanged(nameof(CNPJ));
-        }
-    }
+    public string serie { get; set; }
 
-    /// <remarks/>
+    [XmlElement(ElementName = "nNFIni", Order = 7)]
+    public long NumeroNFInicial { get; set; }
+
+    [XmlElement(ElementName = "nNFFin", Order = 8)]
+    public long NumeroNFFinal { get; set; }
+
+    [XmlElement(ElementName = "xJust", Order = 9)]
+    public string Justificativa { get; set; }
+
+    [XmlAttribute("Id")]
+    public string Id { get; set; }
+}
+
+public partial class InutilizacaoRetornoInformacoes
+{
+    [XmlElement(Order = 0)]
+    public Ambiente tpAmb { get; set; }
+
+    [XmlElement(Order = 1)]
+    public string verAplic { get; set; }
+
+    [XmlElement(Order = 2)]
+    public string cStat { get; set; }
+
+    [XmlElement(Order = 3)]
+    public string xMotivo { get; set; }
+
+    [XmlElement(Order = 4)]
+    public OrgaoIBGE cUF { get; set; }
+
+    [XmlElement(Order = 5)]
+    public string ano { get; set; }
+
+    [XmlElement(Order = 6)]
+    public string CNPJ { get; set; }
+
     [XmlElement(Order = 7)]
-    public ModeloDocumento mod
-    {
-        get => modField;
-        set
-        {
-            modField = value;
-            RaisePropertyChanged(nameof(mod));
-        }
-    }
+    public ModeloDocumento mod { get; set; }
 
-    /// <remarks/>
     [XmlIgnore()]
-    public bool modSpecified
-    {
-        get => modFieldSpecified;
-        set
-        {
-            modFieldSpecified = value;
-            RaisePropertyChanged(nameof(modSpecified));
-        }
-    }
+    public bool modSpecified { get; set; } = true;
 
-    /// <remarks/>
     [XmlElement(Order = 8)]
-    public string serie
-    {
-        get => serieField;
-        set
-        {
-            serieField = value;
-            RaisePropertyChanged(nameof(serie));
-        }
-    }
+    public string serie { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 9)]
-    public string nNFIni
-    {
-        get => nNFIniField;
-        set
-        {
-            nNFIniField = value;
-            RaisePropertyChanged(nameof(nNFIni));
-        }
-    }
+    public string nNFIni { get; set; }
 
-    /// <remarks/>
     [XmlElement(Order = 10)]
-    public string nNFFin
-    {
-        get => nNFFinField;
-        set
-        {
-            nNFFinField = value;
-            RaisePropertyChanged(nameof(nNFFin));
-        }
-    }
-
-    // '''<remarks/>
-    // <System.Xml.Serialization.XmlElementAttribute(Order:=11)>
-    // Public Property dhRecbto() As String
-    // Get
-    // If Me.DataRecebimento.HasValue = True Then
-    // Return String.Format("{0:yyyy-MM-dd}", Me.DataRecebimento)
-    // Else
-    // Return Me.dhRecbtoField
-    // End If
-    // 'Return Me.dhRecbtoField
-    // End Get
-    // Set(value As String)
-    // If ((Me.dhRecbtoField Is Nothing) OrElse (dhRecbtoField.Equals(value) <> True)) Then
-    // If value IsNot Nothing Then
-    // Dim dt() As String = value.Split("-")
-    // Me.dhEmiField = New Date(CInt(dt(0)), CInt(dt(1)), CInt(dt(2).Substring(0, 2)))
-    // Else
-    // Me.dhEmiField = Nothing
-    // End If
-    // Me.dhRecbtoField = value
-    // End If
-    // Me.RaisePropertyChanged("dhRecbto")
-    // End Set
-    // End Property
+    public string nNFFin { get; set; }
 
     [XmlElement(ElementName = "dhRecbto", Order = 11)]
-    public DateTime? DataRecebimento
-    {
-        get => dhRecbtoField;
-        set
-        {
-            if (dhRecbtoField is null || dhRecbtoField.Equals(value) != true)
-            {
-                dhRecbtoField = value;
-                RaisePropertyChanged(nameof(DataRecebimento));
-            }
-        }
-    }
+    public DateTime? DataRecebimento { get; set; }
 
-    public bool ShouldSerializeDataEmissaoXML() => dhRecbtoField.HasValue;
+    public bool ShouldSerializeDataRecebimento() => DataRecebimento.HasValue;
 
-
-    /// <remarks/>
     [XmlElement(Order = 12)]
-    public string nProt
-    {
-        get => nProtField;
-        set
-        {
-            nProtField = value;
-            RaisePropertyChanged(nameof(nProt));
-        }
-    }
+    public string nProt { get; set; }
 
-    /// <remarks/>
     [XmlAttribute("Id")]
-    public string Id
-    {
-        get => idField;
-        set
-        {
-            idField = value;
-            RaisePropertyChanged(nameof(Id));
-        }
-    }
-
-    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    public string Id { get; set; }
 }
