@@ -8,7 +8,10 @@ namespace EficazFramework.SPED.Services.NFe.SoapClients;
 
 public partial class NFeInutilizacaoSoapClient(Binding binding, EndpointAddress remoteAddress) : ClientBase<INFeInutilizacaoSoap>(binding, remoteAddress), INFeInutilizacaoSoap, ISoapClient
 {
-    public static NFeInutilizacaoSoapClient Create(Schemas.NFe.OrgaoIBGE uf, Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe, Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    public static NFeInutilizacaoSoapClient Create(
+        Schemas.NFe.OrgaoIBGE uf,
+        Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe, 
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
         => new(ConfigureBinding(), new(ConfigureUrl(uf, modelo, ambiente)));
 
 
@@ -70,7 +73,7 @@ public partial class NFeInutilizacaoSoapClient(Binding binding, EndpointAddress 
                 Schemas.NFe.OrgaoIBGE.SefazNacional_SVCSP => "",
                 _ => ""
             },
-            Schemas.NFe.ModeloDocumento.NFeAv => uf switch
+            Schemas.NFe.ModeloDocumento.NFCe => uf switch
             {
                 Schemas.NFe.OrgaoIBGE.AC => "",
                 Schemas.NFe.OrgaoIBGE.AL => "",
@@ -146,7 +149,7 @@ public partial class NFeInutilizacaoSoapClient(Binding binding, EndpointAddress 
             Schemas.NFe.OrgaoIBGE.SefazNacional_SVCSP => "",
             _ => ""
         },
-        Schemas.NFe.ModeloDocumento.NFeAv => uf switch
+        Schemas.NFe.ModeloDocumento.NFCe => uf switch
         {
             Schemas.NFe.OrgaoIBGE.AC => "",
             Schemas.NFe.OrgaoIBGE.AL => "",
