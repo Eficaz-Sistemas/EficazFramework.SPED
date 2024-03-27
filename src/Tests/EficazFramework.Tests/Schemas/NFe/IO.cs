@@ -18,7 +18,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.UF.Should().Be(OrgaoIBGE.MG);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Chave.Should().Be("10066067");
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.NaturezaOperacao.Should().Be("VENDA");
-        instance.NFe.InformacoesNFe.IdentificacaoOperacao.Modelo.Should().Be(ModeloDocumento.NFeAv);
+        instance.NFe.InformacoesNFe.IdentificacaoOperacao.Modelo.Should().Be(ModeloDocumento.NFCe);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Serie.Should().Be(4);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Numero.Should().Be(93850);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.DataHoraEmissao.Should().BeSameDateAs(new(2023,11,1));

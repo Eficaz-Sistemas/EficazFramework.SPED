@@ -29,7 +29,7 @@ public sealed class NFeService : SoapServiceBase
 
         //! montagem dos argumentos:
         string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(nfe.Chave[..2])).ToString();
-        string modelo = nfe.Chave[20..22];
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(nfe.Chave[20..22]);
 
 
         //! Assinatura
@@ -52,7 +52,7 @@ public sealed class NFeService : SoapServiceBase
 
         request.nfeDadosMsg = dadosXml.DocumentElement;
 
-        var result =  await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo, ambiente.ToString());
+        var result =  await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo.ToString(), ambiente.ToString());
         return result;
     }
 
@@ -114,7 +114,7 @@ public sealed class NFeService : SoapServiceBase
 
         //! montagem dos argumentos:
         string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2])).ToString();
-        string modelo = chave[20..22];
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(chave[20..22]);
 
 
         //! execução:
@@ -126,7 +126,7 @@ public sealed class NFeService : SoapServiceBase
             Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-        return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo); ;
+        return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo.ToString(), ambiente.ToString()); ;
     }
 
 
@@ -139,13 +139,10 @@ public sealed class NFeService : SoapServiceBase
     /// <param name="ambiente">Produção ou Homologação</param>
     public async Task<Schemas.NFe.RetornoConsultaStatusServicoNFe> ConsultaStatusServicoAsync(
         Schemas.NFe.OrgaoIBGE uf,
-        string modelo = "55",
+        Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe,
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
-        if (modelo != "55" && modelo != "65")
-            throw new ArgumentNullException("Modelo", "O modelo de documento informado não é válido.");
-
         if (!ValidaCertificado())
             throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
 
@@ -159,7 +156,7 @@ public sealed class NFeService : SoapServiceBase
             Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-        return await ExecuteAsync<SoapClients.NFeStatusServicoSoapClient, Schemas.NFe.RetornoConsultaStatusServicoNFe>(request, uf.ToString(), modelo); ;
+        return await ExecuteAsync<SoapClients.NFeStatusServicoSoapClient, Schemas.NFe.RetornoConsultaStatusServicoNFe>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
     }
 
 

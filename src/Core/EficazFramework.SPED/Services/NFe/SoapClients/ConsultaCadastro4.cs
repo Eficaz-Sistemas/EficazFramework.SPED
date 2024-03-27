@@ -28,7 +28,7 @@ public partial class CadConsultaCadastro4SoapClient(System.ServiceModel.Channels
         {
             Schemas.NFe.Ambiente.Producao => ConfigureUrlProducao(uf),
             Schemas.NFe.Ambiente.Homologacao => ConfigureUrlHomologacao(uf),
-            _ => ConfigureUrlProducao(uf)
+            _ => ConfigureUrlHomologacao(uf)
         };
 
     private static string ConfigureUrlProducao(Schemas.NFe.OrgaoIBGE uf)

@@ -368,7 +368,7 @@ public enum ModeloDocumento
     NFe = 55,
     [System.ComponentModel.Description("Enum_ModeloDocumento_65")]
     [System.Xml.Serialization.XmlEnum("65")]
-    NFeAv = 65
+    NFCe = 65
 }
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
