@@ -6,7 +6,7 @@ using System.Net;
 
 namespace EficazFramework.SPED.Services.NFe;
 
-public class NFeService : SoapServiceBase
+public sealed class NFeService : SoapServiceBase
 {
     /// <summary>
     /// Efetua a transmissão de NF-e / NFC-e na versão 4.00 para autorização.
@@ -67,7 +67,8 @@ public class NFeService : SoapServiceBase
     public async Task<Schemas.NFe.RetornoConsultaCadastro> ConsultaCadastro4Async(
         string cnpjCpfIe,
         Schemas.NFe.TipoPesquisaCadastro documento,
-        Schemas.NFe.OrgaoIBGE uf)
+        Schemas.NFe.OrgaoIBGE uf,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
         if (!cnpjCpfIe.IsValidCNPJ() && !cnpjCpfIe.IsValidCPF())
@@ -89,7 +90,7 @@ public class NFeService : SoapServiceBase
             }
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-        return await ExecuteAsync<SoapClients.CadConsultaCadastro4SoapClient, Schemas.NFe.RetornoConsultaCadastro>(request, uf.ToString()); ;
+        return await ExecuteAsync<SoapClients.CadConsultaCadastro4SoapClient, Schemas.NFe.RetornoConsultaCadastro>(request, uf.ToString(), ambiente.ToString()); ;
     }
 
 
