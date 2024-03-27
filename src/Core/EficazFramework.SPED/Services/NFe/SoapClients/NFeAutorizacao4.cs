@@ -181,6 +181,9 @@ public partial class NFeAutorizacao4SoapClient(Binding binding, EndpointAddress 
             _ => ""
         };
 
+
+
+
     private static Binding ConfigureBinding()
     {
         var binding = new CustomBinding
