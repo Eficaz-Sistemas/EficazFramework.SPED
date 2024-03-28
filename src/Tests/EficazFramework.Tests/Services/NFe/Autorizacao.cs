@@ -134,9 +134,9 @@ public class AutorizacaoTests : BaseNFeTests
     [TestCase(Schemas.NFe.OrgaoIBGE.SP, Schemas.NFe.ModeloDocumento.NFCe, Schemas.NFe.Ambiente.Producao, ExpectedResult = "https://nfce.fazenda.sp.gov.br/ws/NFeAutorizacao4.asmx")]
     [TestCase(Schemas.NFe.OrgaoIBGE.TO, Schemas.NFe.ModeloDocumento.NFCe, Schemas.NFe.Ambiente.Producao, ExpectedResult = "https://nfce.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx")]
     public string VerificaUrls(
-    Schemas.NFe.OrgaoIBGE uf,
-    Schemas.NFe.ModeloDocumento modelo,
-    Schemas.NFe.Ambiente ambiente)
+        Schemas.NFe.OrgaoIBGE uf,
+        Schemas.NFe.ModeloDocumento modelo,
+        Schemas.NFe.Ambiente ambiente)
     {
         var client = CreateClient<SoapClients.NFeAutorizacao4SoapClient>(uf.ToString(), modelo.ToString(), ambiente.ToString());
         return client.Endpoint.Address.Uri.AbsoluteUri;
