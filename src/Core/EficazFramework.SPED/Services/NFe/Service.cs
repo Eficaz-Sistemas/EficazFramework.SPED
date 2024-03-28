@@ -177,7 +177,7 @@ public sealed class NFeService : SoapServiceBase
         string chave = null)
     {
         //! validações iniciais:
-        if (chave?.Length != 44)
+        if (chave?.Length != 44 && !string.IsNullOrEmpty(chave))
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
