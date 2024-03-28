@@ -254,7 +254,7 @@ public sealed class NFeService : SoapServiceBase
                 EventoCodigo = tpEvento,
                 EventoData = DateTime.Now,
                 EventoNumeroSequencial = "1",
-                Orgao = Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS,
+                Orgao = uf == Schemas.NFe.OrgaoIBGE.SefazNacional_AN ? Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS : uf,
                 EventoVersao = "1.00",
             },
             Versao = "1.00"
