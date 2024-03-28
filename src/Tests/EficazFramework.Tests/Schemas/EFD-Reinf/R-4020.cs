@@ -104,12 +104,13 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoIsento-PgAssociacoesFilantropicas
     internal static void PreencheCamposRendimentoisento(R4020 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -140,7 +141,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                             {
                                 new R4020InfoPagtoPj()
                                 {
-                                    DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                    DataFatoGerador = dtbase,
                                     vlrBruto = 152725.25M.ToString("f2"),
                                     retencoes = null 
                                     // rendimento isento não possui renteção
@@ -225,12 +226,13 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoTributado
     internal static void PreencheCamposRendimentoTributado(R4020 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -261,7 +263,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                         {
                             new R4020InfoPagtoPj()
                             {
-                                DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                DataFatoGerador = dtbase,
                                 vlrBruto = 152725.25M.ToString("f2"),
                                 retencoes = new R4020InfoPagtoRetencoes()
                                 {
@@ -385,12 +387,13 @@ public class R4020Test : BaseEfdReinfTest<R4020>
     #region RendimentoTributadoAgregado
     internal static void PreencheCamposRendimentoTributadoAgregado(R4020 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetPJ = new R4020EventoRetencaoPj()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -421,7 +424,7 @@ public class R4020Test : BaseEfdReinfTest<R4020>
                         {
                             new R4020InfoPagtoPj()
                             {
-                                DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                DataFatoGerador = dtbase,
                                 vlrBruto = 152725.25M.ToString("f2"),
                                 retencoes = new R4020InfoPagtoRetencoes()
                                 {

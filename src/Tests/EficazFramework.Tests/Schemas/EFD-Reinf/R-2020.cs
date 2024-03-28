@@ -33,6 +33,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
 
     public static void PreencheCamposR2020(R2020 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtServPrest = new R2020EventoServicoPrestado()
         {
             ideContri = new IdentificacaoContribuinte()
@@ -43,7 +44,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 procEmi = EmissorEvento.AppContribuinte,
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 verProc = "2.2"
@@ -68,7 +69,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
                             {
                                 serie = "0",
                                 numDocto = "719",
-                                dtEmissaoNF = new DateTime(DateTime.Now.Year, DateTime.Now.Date.AddMonths(-1).Month, 2),
+                                dtEmissaoNF = dtbase,
                                 vlrBruto = "600,00",
                                 infoTpServ = new List<R2010eR2020InformacaoServico>()
                                 {
@@ -115,7 +116,7 @@ public class R2020Test : BaseEfdReinfTest<R2020>
         int iDetAquis = 0;
         instanciaXml.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs.ForEach(ev =>
         {
-            ev.dtEmissaoNF.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].dtEmissaoNF);
+            ev.dtEmissaoNF.Should().BeSameDateAs(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].dtEmissaoNF);
             ev.vlrBruto.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].vlrBruto); ;
             ev.serie.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].serie);
             ev.numDocto.Should().Be(instanciaPopulada.evtServPrest.infoServPrest.ideEstabPrest.ideTomador.nfs[iDetAquis].numDocto);

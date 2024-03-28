@@ -61,6 +61,78 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
+        ///&lt;!-- PL_009  alterações de esquema decorrentes da - NT2016.002 v1.20 - 31/05/2017 13:14hs--&gt;
+        ///&lt;!-- PL_008g  alterações de esquema decorrentes da - NT2015.002  - 15/07/2015 --&gt;
+        ///&lt;!-- PL_008h  alterações de esquema decorrentes da - NT2015.003 - 17/09/2015 --&gt;
+        ///&lt;!-- PL_008i --&gt;
+        ///&lt;!-- PL_009-v4  alterações de esquema decorrentes da - NT2016.002 - 10/2017 --&gt;
+        ///&lt;!-- PL_ [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string leiauteNFe_v4_00 {
+            get {
+                return ResourceManager.GetString("leiauteNFe_v4.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe Id=&quot;NFe31231120855151000139650040000938509100660678&quot; versao=&quot;4.00&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;31&lt;/cUF&gt;
+        ///                &lt;cNF&gt;10066067&lt;/cNF&gt;
+        ///                &lt;natOp&gt;VENDA&lt;/natOp&gt;
+        ///                &lt;mod&gt;65&lt;/mod&gt;
+        ///                &lt;serie&gt;4&lt;/serie&gt;
+        ///                &lt;nNF&gt;93850&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2023-11-01T01:14:2 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFCeNt2023_001 {
+            get {
+                return ResourceManager.GetString("NFCeNt2023_001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///	&lt;xs:include schemaLocation=&quot;leiauteNFe_v4.00.xsd&quot;/&gt;
+        ///	&lt;xs:element name=&quot;NFe&quot; type=&quot;TNFe&quot;&gt;
+        ///		&lt;xs:annotation&gt;
+        ///			&lt;xs:documentation&gt;Nota Fiscal Eletrônica&lt;/xs:documentation&gt;
+        ///		&lt;/xs:annotation&gt;
+        ///	&lt;/xs:elemen [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string nfe_v4_00 {
+            get {
+                return ResourceManager.GetString("nfe_v4.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35231000000000000000000000000000000000000000&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;35&lt;/cUF&gt;
+        ///                &lt;cNF&gt;18139565&lt;/cNF&gt;
+        ///                &lt;natOp&gt;DEVOLUCAO DE COMPRA&lt;/natOp&gt;
+        ///                &lt;mod&gt;55&lt;/mod&gt;
+        ///                &lt;serie&gt;1&lt;/serie&gt;
+        ///                &lt;nNF&gt;123&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2023-10-10T00:00:00-03:00&lt;/dhEmi&gt;
+        ///            [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFeIpiDevolvido {
+            get {
+                return ResourceManager.GetString("NFeIpiDevolvido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;!--
         ///&lt;!DOCTYPE schema
@@ -82,6 +154,23 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string Sign {
             get {
                 return ResourceManager.GetString("Sign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- PL_008  - 30/07/2013- NT 2013/005 --&gt;
+        ///&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:nfe=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///	&lt;xs:simpleType name=&quot;TCodUfIBGE&quot;&gt;
+        ///		&lt;xs:annotation&gt;
+        ///			&lt;xs:documentation&gt;Tipo Código da UF da tabela do IBGE&lt;/xs:documentation&gt;
+        ///		&lt;/xs:annotation&gt;
+        ///		&lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        ///			&lt;xs:whiteSpac [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string tiposBasico_v4_00 {
+            get {
+                return ResourceManager.GetString("tiposBasico_v4.00", resourceCulture);
             }
         }
     }

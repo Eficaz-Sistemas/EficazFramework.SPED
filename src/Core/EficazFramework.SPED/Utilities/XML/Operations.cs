@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 namespace EficazFramework.SPED.Utilities.XML;
 
-public partial class Operations
+public static partial class Operations
 {
     /// <summary>
     /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
@@ -228,7 +228,7 @@ public partial class Operations
     }
 
 
-    protected static void ResetStreamOffset(System.IO.Stream source)
+    internal static void ResetStreamOffset(System.IO.Stream source)
     {
         if (source is null)
             return;
@@ -249,6 +249,16 @@ public partial class Operations
         string result = xmlDocumentWithoutNs.ToString();
         return result;
     }
+
+    public static string RemoveW3CNamespaces(this string xmlDocument)
+    {
+        string final = xmlDocument.Replace(" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema-instance\"", string.Empty);
+        final = final.Replace(" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"", string.Empty);
+        final = final.Replace(" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"", string.Empty);
+        final = final.Replace(" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema\"", string.Empty);
+        return final;
+    }
+
 
     private static XElement RemoveAllNamespaces(XElement xmlDocument)
     {

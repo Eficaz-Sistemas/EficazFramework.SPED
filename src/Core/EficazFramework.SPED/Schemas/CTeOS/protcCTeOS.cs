@@ -1,51 +1,33 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using EficazFramework.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 using EficazFramework.SPED.Schemas.CTe;
-using EficazFramework.SPED.Utilities.XML;
 
 namespace EficazFramework.SPED.Schemas.CTeOS;
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
 [Serializable()]
-[DesignerCategory("code")]
 [XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 [XmlRoot("cteOSProc", Namespace = "http://www.portalfiscal.inf.br/cte", IsNullable = false)]
 public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
 {
-
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public ProcessoCTeOS() : base()
     {
         protCTeField = new ProtocoloAutorizacao();
         cTeField = new CTeOS();
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private CTeOS cTeField;
     private ProtocoloAutorizacao protCTeField;
     private string versaoField;
     private static XmlSerializer sSerializer;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public CTeOS CTeOS
     {
-        get
-        {
-            return cTeField;
-        }
-
+        get => cTeField;
         set
         {
             if (cTeField is null || cTeField.Equals(value) != true)
             {
                 cTeField = value;
-                OnPropertyChanged("CTeOS");
+                OnPropertyChanged(nameof(CTeOS));
             }
         }
     }
@@ -53,17 +35,13 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
     [XmlElement("protCTe")]
     public ProtocoloAutorizacao ProtocoloAutorizacao
     {
-        get
-        {
-            return protCTeField;
-        }
-
+        get => protCTeField;
         set
         {
             if (protCTeField is null || protCTeField.Equals(value) != true)
             {
                 protCTeField = value;
-                OnPropertyChanged("ProtocoloAutorizacao");
+                OnPropertyChanged(nameof(ProtocoloAutorizacao));
             }
         }
     }
@@ -71,17 +49,13 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
     [XmlAttribute("versao")]
     public string Versao
     {
-        get
-        {
-            return versaoField;
-        }
-
+        get => versaoField;
         set
         {
             if (versaoField is null || versaoField.Equals(value) != true)
             {
                 versaoField = value;
-                OnPropertyChanged("Versao");
+                OnPropertyChanged(nameof(Versao));
             }
         }
     }
@@ -90,31 +64,15 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
     {
         get
         {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(ProcessoCTeOS));
-            }
-
+            sSerializer ??= new XmlSerializer(typeof(ProcessoCTeOS));
             return sSerializer;
         }
     }
 
-    public XmlDocumentType DocumentType
-    {
-        get
-        {
-            return XmlDocumentType.CTeOSWithProtocol;
-        }
-    }
+    public XmlDocumentType DocumentType => XmlDocumentType.CTeOSWithProtocol;
 
     [XmlIgnore()]
-    public DateTime? DataEmissao
-    {
-        get
-        {
-            return CTeOS.Informacoes.IdentificacaoOperacao.DataEmissao;
-        }
-    }
+    public DateTime? DataEmissao => CTeOS.Informacoes.IdentificacaoOperacao.DataEmissao;
 
     [XmlIgnore()]
     public string Chave
@@ -129,23 +87,10 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     /// <summary>
     /// Serializes current TNfeProc object into an XML document
     /// </summary>
@@ -164,15 +109,8 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
         finally
         {
-            if (streamReader != null)
-            {
-                streamReader.Dispose();
-            }
-
-            if (memoryStream != null)
-            {
-                memoryStream.Dispose();
-            }
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
         }
     }
 
@@ -211,23 +149,15 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             stringReader = new System.IO.StringReader(xml);
-            // stringReader.ReadToEnd() 'TESTING...
             return (ProcessoCTeOS)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
         }
-        // Return CType(Serializer.Deserialize(stringReader), ProcessoCTeOS)
         finally
         {
-            if (stringReader != null)
-            {
-                stringReader.Dispose();
-            }
+            stringReader?.Dispose();
         }
     }
 
-    public static ProcessoCTeOS Deserialize(System.IO.Stream s)
-    {
-        return (ProcessoCTeOS)Serializer.Deserialize(s);
-    }
+    public static ProcessoCTeOS Deserialize(System.IO.Stream s) => (ProcessoCTeOS)Serializer.Deserialize(s);
 
 
     /// <summary>
@@ -259,17 +189,12 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             string xmlString = Serialize();
-            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
-            // streamWriter = xmlFile.CreateText
             streamWriter.WriteLine(xmlString);
             streamWriter.Flush();
         }
         finally
         {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
+            streamWriter?.Dispose();
         }
     }
 
@@ -286,10 +211,7 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
         finally
         {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
+            streamWriter?.Dispose();
         }
     }
 
@@ -330,11 +252,8 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = sr.ReadToEnd();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
@@ -344,10 +263,7 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
                 source.Dispose();
             }
 
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
+            sr?.Dispose();
         }
     }
 
@@ -358,29 +274,14 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
-        // Catch inner_load As Exception
-        // #If DEBUG Then
-        // Debug.WriteLine(inner_load.ToString)
-        // #End If
-        // Return Nothing
         finally
         {
-            if (source != null)
-            {
-                source.Dispose();
-            }
-
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
+            source?.Dispose();
+            sr?.Dispose();
         }
     }
 
@@ -391,7 +292,6 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
             if (xmlString.Contains("<retCTeConsultaDFe"))
@@ -401,15 +301,11 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
                 xmlString = "<?xml version=" + '"' + "1.0" + '"' + "?>" + '\n' + xmlString.Substring(startindex, length).Replace("</procCTe>", "</cteProc>").Replace("<procCTe", "<cteProc xmlns=" + '"' + "http://www.portalfiscal.inf.br/cte" + '"');
                 xmlString = xmlString.Replace("</cteProc><", "</cteProc>");
             }
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         catch (Exception inner_load)
         {
-            /* TODO ERROR: Skipped IfDirectiveTrivia */
             Debug.WriteLine(inner_load.ToString());
-            /* TODO ERROR: Skipped EndIfDirectiveTrivia */
             return null;
         }
         finally
@@ -420,47 +316,34 @@ public partial class ProcessoCTeOS : INotifyPropertyChanged, IXmlSpedDocument
             }
         }
     }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
 [Serializable()]
-[DesignerCategory("code")]
 [XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 [XmlRoot("CTe", Namespace = "http://www.portalfiscal.inf.br/cte", IsNullable = false)]
 public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
 {
 
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public CTeOS() : base()
     {
         signatureField = new SignatureType();
         infCteField = new InformacoesCTe();
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private InformacoesCTe infCteField;
     private SignatureType signatureField;
     private static XmlSerializer sSerializer;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     [XmlElement("infCte")]
     public InformacoesCTe Informacoes
     {
-        get
-        {
-            return infCteField;
-        }
-
+        get => infCteField;
         set
         {
             if (infCteField is null || infCteField.Equals(value) != true)
             {
                 infCteField = value;
-                OnPropertyChanged("Informacoes");
+                OnPropertyChanged(nameof(Informacoes));
             }
         }
     }
@@ -468,17 +351,13 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
     [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
-        get
-        {
-            return signatureField;
-        }
-
+        get => signatureField;
         set
         {
             if (signatureField is null || signatureField.Equals(value) != true)
             {
                 signatureField = value;
-                OnPropertyChanged("Signature");
+                OnPropertyChanged(nameof(Signature));
             }
         }
     }
@@ -487,38 +366,21 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
     {
         get
         {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(CTeOS));
-            }
-
+            sSerializer ??= new XmlSerializer(typeof(CTeOS));
             return sSerializer;
         }
     }
 
-    public XmlDocumentType DocumentType
-    {
-        get
-        {
-            return XmlDocumentType.CTeOSWithoutProtocol;
-        }
-    }
+    public XmlDocumentType DocumentType => XmlDocumentType.CTeOSWithoutProtocol;
 
     [XmlIgnore()]
-    public DateTime? DataEmissao
-    {
-        get
-        {
-            return Informacoes.IdentificacaoOperacao.DataEmissao;
-        }
-    }
+    public DateTime? DataEmissao => Informacoes.IdentificacaoOperacao.DataEmissao;
 
     [XmlIgnore()]
     public string Chave
     {
         get
         {
-            // Return Me.Informacoes.IdentificacaoOperacao.Chave
             if (Informacoes.Id != null)
                 return System.Text.RegularExpressions.Regex.Replace(Informacoes.Id, "[^0-9]", "");
             else
@@ -526,23 +388,10 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public event PropertyChangedEventHandler PropertyChanged;
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     /// <summary>
     /// Serializes current TNfeProc object into an XML document
     /// </summary>
@@ -561,15 +410,8 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
         finally
         {
-            if (streamReader != null)
-            {
-                streamReader.Dispose();
-            }
-
-            if (memoryStream != null)
-            {
-                memoryStream.Dispose();
-            }
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
         }
     }
 
@@ -608,23 +450,15 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             stringReader = new System.IO.StringReader(xml);
-            // stringReader.ReadToEnd() 'TESTING...
             return (CTeOS)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
         }
-        // Return CType(Serializer.Deserialize(stringReader), CTe)
         finally
         {
-            if (stringReader != null)
-            {
-                stringReader.Dispose();
-            }
+            stringReader?.Dispose();
         }
     }
 
-    public static CTeOS Deserialize(System.IO.Stream s)
-    {
-        return (CTeOS)Serializer.Deserialize(s);
-    }
+    public static CTeOS Deserialize(System.IO.Stream s) => (CTeOS)Serializer.Deserialize(s);
 
 
     /// <summary>
@@ -656,17 +490,12 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         try
         {
             string xmlString = Serialize();
-            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
-            // streamWriter = xmlFile.CreateText
             streamWriter.WriteLine(xmlString);
             streamWriter.Flush();
         }
         finally
         {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
+            streamWriter?.Dispose();
         }
     }
 
@@ -683,10 +512,7 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         }
         finally
         {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
+            streamWriter?.Dispose();
         }
     }
 
@@ -727,11 +553,8 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = sr.ReadToEnd();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
@@ -741,10 +564,7 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
                 source.Dispose();
             }
 
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
+            sr?.Dispose();
         }
     }
 
@@ -755,24 +575,15 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
         finally
         {
-            if (source != null)
-            {
-                source.Dispose();
-            }
+            source?.Dispose();
 
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
+            sr?.Dispose();
         }
     }
 
@@ -783,18 +594,10 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
         System.IO.StreamReader sr = null;
         try
         {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
             sr = new System.IO.StreamReader(source);
             string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
             return Deserialize(xmlString);
         }
-        // Catch inner_load As Exception
-        // #If DEBUG Then
-        // Debug.WriteLine(inner_load.ToString)
-        // #End If
-        // Return Nothing
         finally
         {
             if (sr != null & close_stream == true)
@@ -803,14 +606,8 @@ public partial class CTeOS : INotifyPropertyChanged, IXmlSpedDocument
             }
         }
     }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
-[System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]
-[Serializable()]
-[DesignerCategory("code")]
-[XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 public partial class Tomador : INotifyPropertyChanged
 {
     private string itemField;
@@ -821,7 +618,6 @@ public partial class Tomador : INotifyPropertyChanged
     private string foneField;
     private Endereco enderTomaField;
     private string emailField;
-    private static XmlSerializer sSerializer;
 
     public Tomador() : base()
     {
@@ -831,15 +627,8 @@ public partial class Tomador : INotifyPropertyChanged
     [XmlIgnore()]
     public PersonalidadeJuridica7 ItemElementName
     {
-        get
-        {
-            return itemElementNameField;
-        }
-
-        set
-        {
-            itemElementNameField = value;
-        }
+        get => itemElementNameField;
+        set => itemElementNameField = value;
     }
 
     [XmlElement("CNPJ", typeof(string))]
@@ -847,17 +636,13 @@ public partial class Tomador : INotifyPropertyChanged
     [XmlChoiceIdentifier("ItemElementName")]
     public string CNPJ_CPF
     {
-        get
-        {
-            return itemField;
-        }
-
+        get => itemField;
         set
         {
             if (itemField is null || itemField.Equals(value) != true)
             {
                 itemField = value;
-                OnPropertyChanged("CNPJ_CPF");
+                OnPropertyChanged(nameof(CNPJ_CPF));
             }
         }
     }
@@ -880,68 +665,52 @@ public partial class Tomador : INotifyPropertyChanged
 
     public string IE
     {
-        get
-        {
-            return ieField;
-        }
-
+        get => ieField;
         set
         {
             if (ieField is null || ieField.Equals(value) != true)
             {
                 ieField = value;
-                OnPropertyChanged("IE");
+                OnPropertyChanged(nameof(IE));
             }
         }
     }
 
     public string xNome
     {
-        get
-        {
-            return xNomeField;
-        }
-
+        get => xNomeField;
         set
         {
             if (xNomeField is null || xNomeField.Equals(value) != true)
             {
                 xNomeField = value;
-                OnPropertyChanged("xNome");
+                OnPropertyChanged(nameof(xNome));
             }
         }
     }
 
     public string xFant
     {
-        get
-        {
-            return xFantField;
-        }
-
+        get => xFantField;
         set
         {
             if (xFantField is null || xFantField.Equals(value) != true)
             {
                 xFantField = value;
-                OnPropertyChanged("xFant");
+                OnPropertyChanged(nameof(xFant));
             }
         }
     }
 
     public string fone
     {
-        get
-        {
-            return foneField;
-        }
-
+        get => foneField;
         set
         {
             if (foneField is null || foneField.Equals(value) != true)
             {
                 foneField = value;
-                OnPropertyChanged("fone");
+                OnPropertyChanged(nameof(fone));
             }
         }
     }
@@ -949,59 +718,31 @@ public partial class Tomador : INotifyPropertyChanged
     [XmlElement("enderToma")]
     public Endereco Endereco
     {
-        get
-        {
-            return enderTomaField;
-        }
-
+        get => enderTomaField;
         set
         {
             if (enderTomaField is null || enderTomaField.Equals(value) != true)
             {
                 enderTomaField = value;
-                OnPropertyChanged("Endereco");
+                OnPropertyChanged(nameof(Endereco));
             }
         }
     }
 
     public string email
     {
-        get
-        {
-            return emailField;
-        }
-
+        get => emailField;
         set
         {
             if (emailField is null || emailField.Equals(value) != true)
             {
                 emailField = value;
-                OnPropertyChanged("email");
+                OnPropertyChanged(nameof(email));
             }
-        }
-    }
-
-    private static XmlSerializer Serializer
-    {
-        get
-        {
-            if (sSerializer is null)
-            {
-                sSerializer = new XmlSerializer(typeof(Tomador));
-            }
-
-            return sSerializer;
         }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public virtual void OnPropertyChanged(string propertyName)
-    {
-        var handler = PropertyChanged;
-        if (handler != null)
-        {
-            handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }

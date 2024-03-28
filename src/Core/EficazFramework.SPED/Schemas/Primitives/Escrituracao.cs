@@ -82,6 +82,11 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </summary>
     public string RegistroAtual { get; private set; } = null;
 
+    /// <summary>
+    /// Obtém ou define se a leitura da linha do arquivo deve iniciar com carectere pipe ("|")
+    /// </summary>
+    public bool ValidaPipeInicial { get; set; } = true;
+
     internal HeaderPosition HeaderPosition { get; } = new HeaderPosition();
 
     /// <summary>
@@ -170,8 +175,13 @@ public abstract class Escrituracao : INotifyPropertyChanged
                 if (_mustStop == true)
                     break;
                 string linha = await reader.ReadLineAsync();
+
                 if (linha.Length < HeaderPosition.Index + HeaderPosition.Lenght)
                     continue; // 02/04/2018: anti blank-line exception
+
+                if (ValidaPipeInicial && (!linha.StartsWith("|")))
+                    continue;
+
                 string reg = linha.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
                 if ((reg ?? "") != (RegistroAtual ?? ""))
                 {

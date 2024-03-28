@@ -29,12 +29,13 @@ public class R4080Test : BaseEfdReinfTest<R4080>
 
     internal static void PreencheCamposServices(R4080 evento, string cnpjCpf)
     {
+        DateTime dtbase = DateTime.Now.AddMonths(-1);
         evento.evtRetRec = new R4080EventoRetRecebimento()
         {
             ideEvento = new IdentificacaoEventoPeriodico()
             {
                 indRetif = IndicadorRetificacao.Original,
-                perApur = $"{DateTime.Now.AddMonths(-1):yyyy-MM}",
+                perApur = $"{dtbase:yyyy-MM}",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppContribuinte,
                 verProc = "6.0"
@@ -63,7 +64,7 @@ public class R4080Test : BaseEfdReinfTest<R4080>
                             {
                                 new R4080InfoRecebimento()
                                 {
-                                    DataFatoGerador = DateTime.Now.AddMonths(-1),
+                                    DataFatoGerador = dtbase,
                                     vlrBruto = 152725.25M.ToString("f2"),
                                     vlrBaseIR = 152725.25M.ToString("f2"),
                                     vlrIR = 2290.88M.ToString("f2")
