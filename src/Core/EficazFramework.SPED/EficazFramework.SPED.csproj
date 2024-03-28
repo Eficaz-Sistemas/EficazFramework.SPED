@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
-    <Version>6.2.1</Version>
-	<AssemblyVersion>6.2.1.0</AssemblyVersion>
-	<FileVersion>6.2.1.0</FileVersion>
+    <Version>6.2.2</Version>
+	<AssemblyVersion>6.2.2.0</AssemblyVersion>
+	<FileVersion>6.2.2.0</FileVersion>
 	<LangVersion>12.0</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
