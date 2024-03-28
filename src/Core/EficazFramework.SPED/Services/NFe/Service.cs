@@ -20,7 +20,7 @@ public sealed class NFeService : SoapServiceBase
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
-        if (nfe.Chave.Length != 44)
+        if (nfe.Chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -105,7 +105,7 @@ public sealed class NFeService : SoapServiceBase
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
-        if (chave.Length != 44)
+        if (chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -177,7 +177,7 @@ public sealed class NFeService : SoapServiceBase
         string chave = null)
     {
         //! validações iniciais:
-        if (!string.IsNullOrEmpty(chave) && chave.Length != 44)
+        if (chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -217,11 +217,23 @@ public sealed class NFeService : SoapServiceBase
         string justificativa = null)
     {
         //! validações iniciais:
-        if (!string.IsNullOrEmpty(chave) && chave.Length != 44)
+        if (chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
             throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! montagem dos argumentos:
+        var uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2]));
+
+        if (tpEvento == Schemas.NFe.CodigoEvento.Confirmacao ||
+            tpEvento == Schemas.NFe.CodigoEvento.Ciencia ||
+            tpEvento == Schemas.NFe.CodigoEvento.Desconhecimento ||
+            tpEvento == Schemas.NFe.CodigoEvento.NaoRealizada)
+            uf = Schemas.NFe.OrgaoIBGE.SefazNacional_AN;
+
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(chave[20..22]);
 
 
         //! execução
@@ -261,7 +273,7 @@ public sealed class NFeService : SoapServiceBase
         dadosXml.GetElementsByTagName("envEvento").Item(0).AppendChild(dadosXml.ImportNode(eventoXml.DocumentElement, true));
 
         request.nfeDadosMsg = dadosXml.DocumentElement;
-        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request); ;
+        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
     }
 
 
