@@ -197,7 +197,7 @@ public sealed class NFeService : SoapServiceBase
             consChNFe = !string.IsNullOrEmpty(chave) ? new Schemas.NFe.distDFeIntconsChNFe { chNFe = chave } : null
         };
         request.nfeDistDFeInteresse = new() { nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement };
-        return await ExecuteAsync<SoapClients.NFeDistribuicaoDFeSoapClient, Schemas.NFe.RetornoDistribuicaoDFe>(request); ;
+        return await ExecuteAsync<SoapClients.NFeDistribuicaoDFeSoapClient, Schemas.NFe.RetornoDistribuicaoDFe>(request, [ambiente.ToString()]); ;
     }
 
 

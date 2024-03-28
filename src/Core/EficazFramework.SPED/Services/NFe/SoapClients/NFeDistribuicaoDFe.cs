@@ -8,8 +8,11 @@ namespace EficazFramework.SPED.Services.NFe.SoapClients;
 
 internal class NFeDistribuicaoDFeSoapClient(Binding binding, EndpointAddress remoteAddress) : ClientBase<INFeDistribuicaoDFeSoap>(binding, remoteAddress), INFeDistribuicaoDFeSoap, ISoapClient
 {
-    public static NFeDistribuicaoDFeSoapClient Create()
-        => new(ConfigureBinding(), new("https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx"));
+    public static NFeDistribuicaoDFeSoapClient Create(Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+        => new(ConfigureBinding(), 
+            ambiente == Schemas.NFe.Ambiente.Producao ? 
+                new("https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx") : 
+                new("https://hom1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx"));
 
 
     public NFeDistribuicaoDFeResponse nfeDistDFeInteresse(NFeDistribuicaoDFeRequest request)
@@ -40,7 +43,7 @@ internal class NFeDistribuicaoDFeSoapClient(Binding binding, EndpointAddress rem
 
     static ISoapClient ISoapClient.Create(params string[] args)
     {
-        var client = Create();
+        var client = Create(Enum.Parse<Schemas.NFe.Ambiente>(args[0]));
 #if DEBUG
         client.Endpoint.EndpointBehaviors.Add(new Utilities.WCF.SoapInspectorBehavior());
 #endif
