@@ -136,6 +136,10 @@ internal class RecepcaoEvento4SoapClient(System.ServiceModel.Channels.Binding bi
     async Task<ISoapResponse<TMessage>> ISoapClient.ExecuteAsync<TMessage>(ISoapRequest request, IcpBrasilX509Certificate2 certificate)
     {
         ClientCredentials.ClientCertificate.Certificate = certificate.PrivateInstance;
+        ClientCredentials.ServiceCertificate.SslCertificateAuthentication = new()
+        {
+            CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None
+        };
         return (ISoapResponse<TMessage>)await Channel.nfeRecepcaoEventoNFAsync(request as RecepcaoEvento4Request);
     }
 }
