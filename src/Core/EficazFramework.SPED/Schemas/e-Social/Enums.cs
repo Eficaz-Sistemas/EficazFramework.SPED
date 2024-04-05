@@ -1,6 +1,14 @@
 ﻿
 namespace EficazFramework.SPED.Schemas.eSocial;
 
+/// <summary>
+/// Versão do schema
+/// </summary>
+public enum Versao
+{
+    v02_05_00 = 0,
+}
+
 public enum Ambiente
 {
     [System.Xml.Serialization.XmlEnum("1")]
