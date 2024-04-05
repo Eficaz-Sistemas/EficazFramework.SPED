@@ -20,7 +20,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Configurations>Debug;Release</Configurations>
 	<NeutralLanguage>pt-BR</NeutralLanguage>
-	<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<DefaultDocumentationFolder>..\..\..\Docs\Api</DefaultDocumentationFolder>
 	<DefaultDocumentationAssemblyPageName>EficazFramework SPED</DefaultDocumentationAssemblyPageName>
 	<DefaultDocumentationGeneratedPages>Assembly, Namespaces, Classes, Enums, Methods</DefaultDocumentationGeneratedPages>

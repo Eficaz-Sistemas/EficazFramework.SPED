@@ -9,7 +9,3 @@
 | InformacoesProtocolo | `InformacoesProtocoloConsSitNFe` |  |
 | Signature | `SignatureType` |  |
 | versao | `String` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ProtocoloRecebimentoConsSitNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ProtocoloRecebimentoConsSitNFe.OnPropertyChanged(string)') | |

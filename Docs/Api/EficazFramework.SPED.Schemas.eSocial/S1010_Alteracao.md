@@ -8,4 +8,4 @@
 | :--- | :---: | :--- |
 | ideRubrica | `TIdeRubrica` |  |
 | dadosRubrica | `TDadosRubrica` |  |
-| novaValidade | `TIdePeriodo` |  |
+| novaValidade | `IdePeriodo` |  |

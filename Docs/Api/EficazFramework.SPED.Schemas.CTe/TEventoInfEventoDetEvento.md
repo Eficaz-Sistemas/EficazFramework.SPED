@@ -8,7 +8,3 @@
 | :--- | :---: | :--- |
 | Any | `XElement` |  |
 | versaoEvento | `String` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TEventoInfEventoDetEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TEventoInfEventoDetEvento.OnPropertyChanged(string)') | |

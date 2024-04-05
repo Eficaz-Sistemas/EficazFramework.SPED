@@ -12,7 +12,7 @@ Complemento da Operação
 | :--- | :---: | :--- |
 | CSTCofins | `String` |  |
 | VrTotalItens | `Nullable<Double>` |  |
-| NatBcCalculo | `String` |  |
+| NatBcCalculo | `NaturezaBaseCalculo` |  |
 | VrBCCofins | `Nullable<Double>` |  |
 | AliquotaCofins | `Nullable<Double>` |  |
 | VrCofins | `Nullable<Double>` |  |

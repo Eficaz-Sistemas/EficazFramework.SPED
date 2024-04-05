@@ -12,66 +12,82 @@ public enum Tributacao_ICMS_Identifier
 
 `ICMS00` 0
 
+<a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS02'></a>
+
+`ICMS02` 1
+
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS10'></a>
 
-`ICMS10` 1
+`ICMS10` 2
+
+<a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS15'></a>
+
+`ICMS15` 3
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS20'></a>
 
-`ICMS20` 2
+`ICMS20` 4
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS30'></a>
 
-`ICMS30` 3
+`ICMS30` 5
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS40'></a>
 
-`ICMS40` 4
+`ICMS40` 6
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS51'></a>
 
-`ICMS51` 5
+`ICMS51` 7
+
+<a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS53'></a>
+
+`ICMS53` 8
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS60'></a>
 
-`ICMS60` 6
+`ICMS60` 9
+
+<a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS61'></a>
+
+`ICMS61` 10
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS70'></a>
 
-`ICMS70` 7
+`ICMS70` 11
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMS90'></a>
 
-`ICMS90` 8
+`ICMS90` 12
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSPart'></a>
 
-`ICMSPart` 9
+`ICMSPart` 13
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN101'></a>
 
-`ICMSSN101` 10
+`ICMSSN101` 14
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN102'></a>
 
-`ICMSSN102` 11
+`ICMSSN102` 15
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN201'></a>
 
-`ICMSSN201` 12
+`ICMSSN201` 16
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN202'></a>
 
-`ICMSSN202` 13
+`ICMSSN202` 17
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN500'></a>
 
-`ICMSSN500` 14
+`ICMSSN500` 18
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSSN900'></a>
 
-`ICMSSN900` 15
+`ICMSSN900` 19
 
 <a name='EficazFramework.SPED.Schemas.NFe.Tributacao_ICMS_Identifier.ICMSST'></a>
 
-`ICMSST` 16
+`ICMSST` 20

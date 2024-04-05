@@ -8,10 +8,8 @@ em uma instância de XmlDocument, agilizando o processo de assinatura
 digital dos eventos.
 
 ```csharp
-public virtual System.Xml.Linq.XDocument SerializeToXMLDocument();
+public virtual System.Xml.XmlDocument SerializeToXMLDocument();
 ```
 
 #### Returns
-[System.Xml.Linq.XDocument](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.Linq.XDocument 'System.Xml.Linq.XDocument')
-
-### Remarks
+[System.Xml.XmlDocument](https://docs.microsoft.com/en-us/dotnet/api/System.Xml.XmlDocument 'System.Xml.XmlDocument')

@@ -38,17 +38,17 @@
 | e-Ressarcimento portaria CAT 42/18     |                                                                                                                                                            |          |
 | ECD                                    |                                                                                                                                                            |          |
 | ECF                                    |                                                                                                                                                            |          |
-| EFD ICMS / IPI                         | [![Static Badge](https://img.shields.io/badge/consultar-orange?style=flat-square)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                 |          |
+| EFD ICMS / IPI                         | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                                    |          |
 | EFD Contribuições                      |                                                                                                                                                            |          |
-| EFD Reinf                              | [![Static Badge](https://img.shields.io/badge/consultar-orange?style=flat-square)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                    |          |
-| e-Social                               |                                                                                                                                                            |          |
+| EFD Reinf                              | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                                       |          |
+| e-Social                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.eSocial.md)                                         |          |
 | GIA (SP)                               |                                                                                                                                                            |          |
 | GNRE                                   |                                                                                                                                                            |          |
 | GIA (SP)                               |                                                                                                                                                            |          |
 | NF-e / NFC-e                           |                                                                                                                                                            |          |
 | NFS-e                                  |                                                                                                                                                            |          |
-| Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-orange?style=flat-square)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                        |          |
-| Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-greenyellow?style=flat-square)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple?style=flat-square)](/Docs/Api/EficazFramework.SPED.Extensions.md) |          |
+| Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          |
+| Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) |          |
 
 ## Exemplos de Uso
 

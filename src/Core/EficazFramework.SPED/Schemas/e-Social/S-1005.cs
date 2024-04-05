@@ -52,6 +52,7 @@ public partial class S1005 : Evento
         new(typeof(S1005), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabEstab/{Versao}", IsNullable = false });
 }
 
+/// <exclude />
 public partial class S1005TabelaEstabelecimento : ESocialBindableObject
 {
     private IdentificacaoCadastro ideEventoField;
@@ -104,6 +105,7 @@ public partial class S1005TabelaEstabelecimento : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoEstabelecimento : ESocialBindableObject
 {
     private object itemField;
@@ -123,7 +125,7 @@ public partial class S1005InfoEstabelecimento : ESocialBindableObject
 }
 
 
-
+/// <exclude />
 public partial class S1005Inclusao : ESocialBindableObject
 {
     private S1005IdentificacaoEstabelecimento ideEstabField;
@@ -152,6 +154,7 @@ public partial class S1005Inclusao : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005Alteracao : ESocialBindableObject
 {
     private S1005IdentificacaoEstabelecimento ideEstabField;
@@ -192,6 +195,7 @@ public partial class S1005Alteracao : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005Exclusao : ESocialBindableObject
 {
     private S1005IdentificacaoEstabelecimento ideEstabField;
@@ -209,7 +213,7 @@ public partial class S1005Exclusao : ESocialBindableObject
 }
 
 
-
+/// <exclude />
 public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
 {
     private TipoInscricao tpInscField = TipoInscricao.CNPJ;
@@ -262,6 +266,7 @@ public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005DadosEstabelecimento : ESocialBindableObject
 {
     private string cnaePrepField;
@@ -338,6 +343,7 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005AliquotaGilRat : ESocialBindableObject
 {
     private int? aliqRatField;
@@ -403,6 +409,7 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoCaePF : ESocialBindableObject
 {
     private TipoCAEPF tpCaepfField = TipoCAEPF.ProdRural;
@@ -419,6 +426,7 @@ public partial class S1005InfoCaePF : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoObra : ESocialBindableObject
 {
     private IndicadorSubstPatronalObra indSubstPatrObraField = IndicadorSubstPatronalObra.NaoSubstituida;
@@ -435,6 +443,7 @@ public partial class S1005InfoObra : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoTrabalhistas : ESocialBindableObject
 {
     private S1005InfoAprendiz infoAprField;
@@ -463,6 +472,7 @@ public partial class S1005InfoTrabalhistas : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoAprendiz : ESocialBindableObject
 {
     private string nrProcJudField;
@@ -491,6 +501,7 @@ public partial class S1005InfoAprendiz : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoEntidadeEduc : ESocialBindableObject
 {
     private string nrInscField;
@@ -507,6 +518,7 @@ public partial class S1005InfoEntidadeEduc : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1005InfoPcd : ESocialBindableObject
 {
     private string nrProcJudField;

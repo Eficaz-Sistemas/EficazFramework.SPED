@@ -7,9 +7,9 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | Id | `String` |  |
-| ideEmpregador | `TEmpregador` |  |
-| recepcao | `TDadosRecepcaoRetornoEvento` |  |
-| processamento | `TProcessamentoRetornoEvento` |  |
+| ideEmpregador | `Empregador` |  |
+| recepcao | `DadosRecepcaoRetornoEvento` |  |
+| processamento | `ProcessamentoRetornoEvento` |  |
 | recibo | `eSocialRetornoEventoRecibo` |  |
 
 | Methods | |

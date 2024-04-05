@@ -7,7 +7,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | ValorTotalTributos | `Nullable<Double>` |  |
-| DemaisImpostos | `List<Object>` |  |
+| EstaduaisMunicipais | `List<Object>` |  |
 | PIS | `DetalhamentoPIS` |  |
 | PISST | `DetalhamentoPISST` |  |
 | COFINS | `DetalhamentoCOFINS` |  |

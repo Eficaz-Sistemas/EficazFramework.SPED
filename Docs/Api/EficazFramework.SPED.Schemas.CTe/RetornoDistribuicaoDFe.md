@@ -2,8 +2,6 @@
 ### [EficazFramework.SPED.Schemas.CTe](EficazFramework.SPED.Schemas.CTe.md 'EficazFramework.SPED.Schemas.CTe')
 
 ## RetornoDistribuicaoDFe Class
-
-### Remarks
 ### Properties
 
 | Name | Type | |

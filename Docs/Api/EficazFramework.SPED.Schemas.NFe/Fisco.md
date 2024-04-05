@@ -4,8 +4,6 @@
 ## Fisco Class
 
 Informações do fisco emitente, grupo de uso exclusivo do fisco.
-
-### Remarks
 ### Properties
 
 | Name | Type | |

@@ -6,4 +6,4 @@
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| evento | `List<TArquivoEsocial>` |  |
+| evento | `List<ArquivoEsocial>` |  |

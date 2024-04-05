@@ -24,5 +24,6 @@
 
 | Methods | |
 | :--- | :--- |
+| [Serialize()](EficazFramework.SPED.Schemas.CTe/EventoConfEntregaCTe/Serialize().md 'EficazFramework.SPED.Schemas.CTe.EventoConfEntregaCTe.Serialize()') | |
 | [ShouldSerializelatitude()](EficazFramework.SPED.Schemas.CTe/EventoConfEntregaCTe/ShouldSerializelatitude().md 'EficazFramework.SPED.Schemas.CTe.EventoConfEntregaCTe.ShouldSerializelatitude()') | |
 | [ShouldSerializelongitude()](EficazFramework.SPED.Schemas.CTe/EventoConfEntregaCTe/ShouldSerializelongitude().md 'EficazFramework.SPED.Schemas.CTe.EventoConfEntregaCTe.ShouldSerializelongitude()') | |
