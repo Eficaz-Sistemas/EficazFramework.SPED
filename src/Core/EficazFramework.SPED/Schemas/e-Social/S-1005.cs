@@ -348,8 +348,8 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
 {
     private int? aliqRatField;
     private decimal? fapField;
-    private ProcessoAdministrativo procAdmJudRatField;
-    private ProcessoAdministrativo procAdmJudFapField;
+    private ProcessoAdmOuJud procAdmJudRatField;
+    private ProcessoAdmOuJud procAdmJudFapField;
 
     /// <summary>
     /// Valores válidos: 1, 2 ou 3
@@ -387,7 +387,7 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
 
 
     [XmlElement(Order = 3)]
-    public ProcessoAdministrativo procAdmJudRat
+    public ProcessoAdmOuJud procAdmJudRat
     {
         get => procAdmJudRatField;
         set
@@ -398,7 +398,7 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
     }
 
     [XmlElement(Order = 4)]
-    public ProcessoAdministrativo procAdmJudFap
+    public ProcessoAdmOuJud procAdmJudFap
     {
         get => procAdmJudFapField;
         set
