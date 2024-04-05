@@ -1,8836 +1,3962 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace EficazFramework.SPED.Schemas.eSocial
+namespace EficazFramework.SPED.Schemas.eSocial;
+
+[Serializable()]
+[XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
+[XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00", IsNullable = false)]
+public partial class S1020 : IeSocialEvt, INotifyPropertyChanged
 {
+    private eSocialEvtTabLotacao evtTabLotacaoField;
+    private SignatureType signatureField;
 
-
-
+    public eSocialEvtTabLotacao evtTabLotacao
+    {
+        get => evtTabLotacaoField;
+        set
+        {
+            evtTabLotacaoField = value;
+            RaisePropertyChanged(nameof(evtTabLotacao));
+        }
+    }
 
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
+        {
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
+        }
+    }
 
+    public event PropertyChangedEventHandler PropertyChanged;
 
+    public override void GeraEventoID()
+    {
+        evtTabLotacaoField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabLotacaoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabLotacaoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+    }
 
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(S1020));
+    }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00", IsNullable = false)]
-    public partial class S1020 : IeSocialEvt, INotifyPropertyChanged
+    public override object GetEventoID()
     {
-        private eSocialEvtTabLotacao evtTabLotacaoField;
-        private SignatureType signatureField;
+        return evtTabLotacaoField.Id;
+    }
 
-        public eSocialEvtTabLotacao evtTabLotacao
-        {
-            get
-            {
-                return evtTabLotacaoField;
-            }
+    public override string ContribuinteCNPJ()
+    {
+        return evtTabLotacaoField.ideEmpregador.nrInsc;
+    }
+}
 
-            set
-            {
-                evtTabLotacaoField = value;
-                RaisePropertyChanged("evtTabLotacao");
-            }
-        }
+public partial class eSocialEvtTabLotacao : ESocialBindableObject
+{
+    private IdentificacaoCadastro ideEventoField;
+    private Empregador ideEmpregadorField;
+    private eSocialEvtTabLotacaoInfoLotacao infoLotacaoField;
+    private string idField;
 
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
+    public IdentificacaoCadastro ideEvento
+    {
+        get => ideEventoField;
+        set
         {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        public override void GeraEventoID()
+    public Empregador ideEmpregador
+    {
+        get => ideEmpregadorField;
+        set
         {
-            evtTabLotacaoField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabLotacaoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabLotacaoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public eSocialEvtTabLotacaoInfoLotacao infoLotacao
+    {
+        get => infoLotacaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            infoLotacaoField = value;
+            RaisePropertyChanged(nameof(infoLotacao));
         }
+    }
 
-        public override XmlSerializer DefineSerializer()
+    [XmlAttribute(DataType = "ID")]
+    public string Id
+    {
+        get => idField;
+        set
         {
-            return new XmlSerializer(typeof(S1020));
+            idField = value;
+            RaisePropertyChanged(nameof(Id));
         }
+    }
+}
 
-        public override object GetEventoID()
-        {
-            return evtTabLotacaoField.Id;
-        }
+public partial class eSocialEvtTabLotacaoInfoLotacao : ESocialBindableObject
+{
+    private object itemField;
 
-        public override string ContribuinteCNPJ()
+    [XmlElement("alteracao", typeof(S1020_Alteracao))]
+    [XmlElement("exclusao", typeof(S1020_Exclusao))]
+    [XmlElement("inclusao", typeof(S1020_Inclusao))]
+    public object Item
+    {
+        get => itemField;
+        set
         {
-            return evtTabLotacaoField.ideEmpregador.nrInsc;
+            itemField = value;
+            RaisePropertyChanged(nameof(Item));
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class eSocialEvtTabLotacao : ESocialBindableObject
-    {
-        private IdentificacaoCadastro ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtTabLotacaoInfoLotacao infoLotacaoField;
-        private string idField;
+}
 
-        public IdentificacaoCadastro ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
+public partial class TIdeLotacao : ESocialBindableObject
+{
+    private string codLotacaoField;
+    private string iniValidField;
+    private string fimValidField;
 
-        public Empregador ideEmpregador
+    public string codLotacao
+    {
+        get => codLotacaoField;
+        set
         {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
+            codLotacaoField = value;
+            RaisePropertyChanged(nameof(codLotacao));
         }
+    }
 
-        public eSocialEvtTabLotacaoInfoLotacao infoLotacao
+    public string iniValid
+    {
+        get => iniValidField;
+        set
         {
-            get
-            {
-                return infoLotacaoField;
-            }
-
-            set
-            {
-                infoLotacaoField = value;
-                RaisePropertyChanged("infoLotacao");
-            }
+            iniValidField = value;
+            RaisePropertyChanged(nameof(iniValid));
         }
+    }
 
-        [XmlAttribute(DataType = "ID")]
-        public string Id
+    public string fimValid
+    {
+        get => fimValidField;
+        set
         {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
+            fimValidField = value;
+            RaisePropertyChanged(nameof(fimValid));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TDadosLotacao : ESocialBindableObject
+{
+    private string tpLotacaoField;
+    private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
+    private bool tpInscFieldSpecified;
+    private string nrInscField;
+    private TDadosLotacaoFpasLotacao fpasLotacaoField;
+    private TDadosLotacaoInfoEmprParcial infoEmprParcialField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string tpLotacao
+    {
+        get => tpLotacaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpLotacaoField = value;
+            RaisePropertyChanged(nameof(tpLotacao));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class eSocialEvtTabLotacaoInfoLotacao : ESocialBindableObject
+    public PersonalidadeJuridica tpInsc
     {
-        private object itemField;
-
-        [XmlElement("alteracao", typeof(S1020_Alteracao))]
-        [XmlElement("exclusao", typeof(S1020_Exclusao))]
-        [XmlElement("inclusao", typeof(S1020_Inclusao))]
-        public object Item
+        get => tpInscField;
+        set
         {
-            get
-            {
-                return itemField;
-            }
-
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlIgnore()]
+    public bool tpInscSpecified
+    {
+        get => tpInscFieldSpecified;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpInscFieldSpecified = value;
+            RaisePropertyChanged(nameof(tpInscSpecified));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class TIdeLotacao : ESocialBindableObject
+    public string nrInsc
     {
-        private string codLotacaoField;
-        private string iniValidField;
-        private string fimValidField;
-
-        public string codLotacao
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return codLotacaoField;
-            }
-
-            set
-            {
-                codLotacaoField = value;
-                RaisePropertyChanged("codLotacao");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
+    }
 
-        public string iniValid
+    public TDadosLotacaoFpasLotacao fpasLotacao
+    {
+        get => fpasLotacaoField;
+        set
         {
-            get
-            {
-                return iniValidField;
-            }
-
-            set
-            {
-                iniValidField = value;
-                RaisePropertyChanged("iniValid");
-            }
+            fpasLotacaoField = value;
+            RaisePropertyChanged(nameof(fpasLotacao));
         }
+    }
 
-        public string fimValid
+    public TDadosLotacaoInfoEmprParcial infoEmprParcial
+    {
+        get => infoEmprParcialField;
+        set
         {
-            get
-            {
-                return fimValidField;
-            }
-
-            set
-            {
-                fimValidField = value;
-                RaisePropertyChanged("fimValid");
-            }
+            infoEmprParcialField = value;
+            RaisePropertyChanged(nameof(infoEmprParcial));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TDadosLotacaoFpasLotacao : ESocialBindableObject
+{
+    private string fpasField;
+    private string codTercsField;
+    private string codTercsSuspField;
+    private TDadosLotacaoFpasLotacaoProcJudTerceiro[] infoProcJudTerceirosField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "integer")]
+    public string fpas
+    {
+        get => fpasField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            fpasField = value;
+            RaisePropertyChanged(nameof(fpas));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class TDadosLotacao : ESocialBindableObject
+    public string codTercs
     {
-        private string tpLotacaoField;
-        private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
-        private bool tpInscFieldSpecified;
-        private string nrInscField;
-        private TDadosLotacaoFpasLotacao fpasLotacaoField;
-        private TDadosLotacaoInfoEmprParcial infoEmprParcialField;
-
-        public string tpLotacao
+        get => codTercsField;
+        set
         {
-            get
-            {
-                return tpLotacaoField;
-            }
-
-            set
-            {
-                tpLotacaoField = value;
-                RaisePropertyChanged("tpLotacao");
-            }
+            codTercsField = value;
+            RaisePropertyChanged(nameof(codTercs));
         }
+    }
 
-        public PersonalidadeJuridica tpInsc
+    public string codTercsSusp
+    {
+        get => codTercsSuspField;
+        set
         {
-            get
-            {
-                return tpInscField;
-            }
-
-            set
-            {
-                tpInscField = value;
-                RaisePropertyChanged("tpInsc");
-            }
+            codTercsSuspField = value;
+            RaisePropertyChanged(nameof(codTercsSusp));
         }
+    }
 
-        [XmlIgnore()]
-        public bool tpInscSpecified
+    [XmlArrayItem("procJudTerceiro", IsNullable = false)]
+    public TDadosLotacaoFpasLotacaoProcJudTerceiro[] infoProcJudTerceiros
+    {
+        get => infoProcJudTerceirosField;
+        set
         {
-            get
-            {
-                return tpInscFieldSpecified;
-            }
-
-            set
-            {
-                tpInscFieldSpecified = value;
-                RaisePropertyChanged("tpInscSpecified");
-            }
+            infoProcJudTerceirosField = value;
+            RaisePropertyChanged(nameof(infoProcJudTerceiros));
         }
+    }
+}
 
-        public string nrInsc
-        {
-            get
-            {
-                return nrInscField;
-            }
+public partial class TDadosLotacaoFpasLotacaoProcJudTerceiro : ESocialBindableObject
+{
+    private string codTercField;
+    private string nrProcJudField;
+    private string codSuspField;
 
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
+    public string codTerc
+    {
+        get => codTercField;
+        set
+        {
+            codTercField = value;
+            RaisePropertyChanged(nameof(codTerc));
         }
+    }
 
-        public TDadosLotacaoFpasLotacao fpasLotacao
+    public string nrProcJud
+    {
+        get => nrProcJudField;
+        set
         {
-            get
-            {
-                return fpasLotacaoField;
-            }
-
-            set
-            {
-                fpasLotacaoField = value;
-                RaisePropertyChanged("fpasLotacao");
-            }
+            nrProcJudField = value;
+            RaisePropertyChanged(nameof(nrProcJud));
         }
+    }
 
-        public TDadosLotacaoInfoEmprParcial infoEmprParcial
+    [XmlElement(DataType = "integer")]
+    public string codSusp
+    {
+        get => codSuspField;
+        set
         {
-            get
-            {
-                return infoEmprParcialField;
-            }
-
-            set
-            {
-                infoEmprParcialField = value;
-                RaisePropertyChanged("infoEmprParcial");
-            }
+            codSuspField = value;
+            RaisePropertyChanged(nameof(codSusp));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TDadosLotacaoInfoEmprParcial : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscContratField = PersonalidadeJuridica.CNPJ;
+    private string nrInscContratField;
+    private PersonalidadeJuridica tpInscPropField = PersonalidadeJuridica.CNPJ;
+    private string nrInscPropField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public PersonalidadeJuridica tpInscContrat
+    {
+        get => tpInscContratField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpInscContratField = value;
+            RaisePropertyChanged(nameof(tpInscContrat));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class TDadosLotacaoFpasLotacao : ESocialBindableObject
+    public string nrInscContrat
     {
-        private string fpasField;
-        private string codTercsField;
-        private string codTercsSuspField;
-        private TDadosLotacaoFpasLotacaoProcJudTerceiro[] infoProcJudTerceirosField;
-
-        [XmlElement(DataType = "integer")]
-        public string fpas
+        get => nrInscContratField;
+        set
         {
-            get
-            {
-                return fpasField;
-            }
-
-            set
-            {
-                fpasField = value;
-                RaisePropertyChanged("fpas");
-            }
+            nrInscContratField = value;
+            RaisePropertyChanged(nameof(nrInscContrat));
         }
+    }
 
-        public string codTercs
+    public PersonalidadeJuridica tpInscProp
+    {
+        get => tpInscPropField;
+        set
         {
-            get
-            {
-                return codTercsField;
-            }
-
-            set
-            {
-                codTercsField = value;
-                RaisePropertyChanged("codTercs");
-            }
+            tpInscPropField = value;
+            RaisePropertyChanged(nameof(tpInscProp));
         }
+    }
 
-        public string codTercsSusp
+    public string nrInscProp
+    {
+        get => nrInscPropField;
+        set
         {
-            get
-            {
-                return codTercsSuspField;
-            }
-
-            set
-            {
-                codTercsSuspField = value;
-                RaisePropertyChanged("codTercsSusp");
-            }
+            nrInscPropField = value;
+            RaisePropertyChanged(nameof(nrInscProp));
         }
+    }
+}
 
-        [XmlArrayItem("procJudTerceiro", IsNullable = false)]
-        public TDadosLotacaoFpasLotacaoProcJudTerceiro[] infoProcJudTerceiros
-        {
-            get
-            {
-                return infoProcJudTerceirosField;
-            }
+public partial class S1020_Exclusao : ESocialBindableObject
+{
+    private TIdeLotacao ideLotacaoField;
 
-            set
-            {
-                infoProcJudTerceirosField = value;
-                RaisePropertyChanged("infoProcJudTerceiros");
-            }
+    public TIdeLotacao ideLotacao
+    {
+        get => ideLotacaoField;
+        set
+        {
+            ideLotacaoField = value;
+            RaisePropertyChanged(nameof(ideLotacao));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class S1020_Inclusao : ESocialBindableObject
+{
+    private TIdeLotacao ideLotacaoField;
+    private TDadosLotacao dadosLotacaoField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TIdeLotacao ideLotacao
+    {
+        get => ideLotacaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ideLotacaoField = value;
+            RaisePropertyChanged(nameof(ideLotacao));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class TDadosLotacaoFpasLotacaoProcJudTerceiro : ESocialBindableObject
+    public TDadosLotacao dadosLotacao
     {
-        private string codTercField;
-        private string nrProcJudField;
-        private string codSuspField;
-
-        public string codTerc
+        get => dadosLotacaoField;
+        set
         {
-            get
-            {
-                return codTercField;
-            }
-
-            set
-            {
-                codTercField = value;
-                RaisePropertyChanged("codTerc");
-            }
+            dadosLotacaoField = value;
+            RaisePropertyChanged(nameof(dadosLotacao));
         }
-
-        public string nrProcJud
-        {
-            get
-            {
-                return nrProcJudField;
-            }
+    }
+}
 
-            set
-            {
-                nrProcJudField = value;
-                RaisePropertyChanged("nrProcJud");
-            }
-        }
+public partial class S1020_Alteracao : ESocialBindableObject
+{
+    private TIdeLotacao ideLotacaoField;
+    private TDadosLotacao dadosLotacaoField;
+    private IdePeriodo novaValidadeField;
 
-        [XmlElement(DataType = "integer")]
-        public string codSusp
+    public TIdeLotacao ideLotacao
+    {
+        get => ideLotacaoField;
+        set
         {
-            get
-            {
-                return codSuspField;
-            }
-
-            set
-            {
-                codSuspField = value;
-                RaisePropertyChanged("codSusp");
-            }
+            ideLotacaoField = value;
+            RaisePropertyChanged(nameof(ideLotacao));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TDadosLotacao dadosLotacao
+    {
+        get => dadosLotacaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dadosLotacaoField = value;
+            RaisePropertyChanged(nameof(dadosLotacao));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class TDadosLotacaoInfoEmprParcial : ESocialBindableObject
+    public IdePeriodo novaValidade
     {
-        private PersonalidadeJuridica tpInscContratField = PersonalidadeJuridica.CNPJ;
-        private string nrInscContratField;
-        private PersonalidadeJuridica tpInscPropField = PersonalidadeJuridica.CNPJ;
-        private string nrInscPropField;
-
-        public PersonalidadeJuridica tpInscContrat
+        get => novaValidadeField;
+        set
         {
-            get
-            {
-                return tpInscContratField;
-            }
-
-            set
-            {
-                tpInscContratField = value;
-                RaisePropertyChanged("tpInscContrat");
-            }
+            novaValidadeField = value;
+            RaisePropertyChanged(nameof(novaValidade));
         }
+    }
+}
 
-        public string nrInscContrat
-        {
-            get
-            {
-                return nrInscContratField;
-            }
 
-            set
-            {
-                nrInscContratField = value;
-                RaisePropertyChanged("nrInscContrat");
-            }
-        }
+[Serializable()]
+[XmlType(AnonymousType = true)]
+[XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtComProd/v02_05_00", IsNullable = false)]
+public partial class S1260 : IeSocialEvt, INotifyPropertyChanged
+{
+    private eSocialEvtComProd evtComProdField;
+    private SignatureType signatureField;
 
-        public PersonalidadeJuridica tpInscProp
+    [XmlElement(Order = 0)]
+    public eSocialEvtComProd evtComProd
+    {
+        get => evtComProdField;
+        set
         {
-            get
-            {
-                return tpInscPropField;
-            }
-
-            set
-            {
-                tpInscPropField = value;
-                RaisePropertyChanged("tpInscProp");
-            }
+            evtComProdField = value;
+            RaisePropertyChanged(nameof(evtComProd));
         }
+    }
 
-        public string nrInscProp
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
         {
-            get
-            {
-                return nrInscPropField;
-            }
-
-            set
-            {
-                nrInscPropField = value;
-                RaisePropertyChanged("nrInscProp");
-            }
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
+    }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(S1260));
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+    public override void GeraEventoID()
+    {
+        evtComProdField.Id = string.Format("ID{0}{1}{2}", (int)(evtComProdField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtComProdField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
     }
 
-    // Exclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class S1020_Exclusao : ESocialBindableObject
+    public override object GetEventoID()
     {
-        private TIdeLotacao ideLotacaoField;
+        return evtComProdField.Id;
+    }
 
-        public TIdeLotacao ideLotacao
-        {
-            get
-            {
-                return ideLotacaoField;
-            }
+    public override string ContribuinteCNPJ()
+    {
+        return evtComProdField.ideEmpregador.nrInsc;
+    }
 
-            set
-            {
-                ideLotacaoField = value;
-                RaisePropertyChanged("ideLotacao");
-            }
-        }
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtComProd : ESocialBindableObject
+{
+    private IdeEventoPeriodico ideEventoField;
+    private Empregador ideEmpregadorField;
+    private eSocialEvtComProdInfoComProd infoComProdField;
+    private string idField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public IdeEventoPeriodico ideEvento
+    {
+        get => ideEventoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
-    // Inclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class S1020_Inclusao : ESocialBindableObject
+    [XmlElement(Order = 1)]
+    public Empregador ideEmpregador
     {
-        private TIdeLotacao ideLotacaoField;
-        private TDadosLotacao dadosLotacaoField;
-
-        public TIdeLotacao ideLotacao
+        get => ideEmpregadorField;
+        set
         {
-            get
-            {
-                return ideLotacaoField;
-            }
-
-            set
-            {
-                ideLotacaoField = value;
-                RaisePropertyChanged("ideLotacao");
-            }
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
+    }
 
-        public TDadosLotacao dadosLotacao
+    [XmlElement(Order = 2)]
+    public eSocialEvtComProdInfoComProd infoComProd
+    {
+        get => infoComProdField;
+        set
         {
-            get
-            {
-                return dadosLotacaoField;
-            }
-
-            set
-            {
-                dadosLotacaoField = value;
-                RaisePropertyChanged("dadosLotacao");
-            }
+            infoComProdField = value;
+            RaisePropertyChanged(nameof(infoComProd));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlAttribute(DataType = "ID")]
+    public string Id
+    {
+        get => idField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            idField = value;
+            RaisePropertyChanged(nameof(Id));
         }
     }
+}
 
-    // Alteração
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabLotacao/v02_05_00")]
-    public partial class S1020_Alteracao : ESocialBindableObject
-    {
-        private TIdeLotacao ideLotacaoField;
-        private TDadosLotacao dadosLotacaoField;
-        private IdePeriodo novaValidadeField;
+public partial class eSocialEvtComProdInfoComProd : ESocialBindableObject
+{
+    private eSocialEvtComProdInfoComProdIdeEstabel ideEstabelField;
 
-        public TIdeLotacao ideLotacao
+    [XmlElement(Order = 0)]
+    public eSocialEvtComProdInfoComProdIdeEstabel ideEstabel
+    {
+        get => ideEstabelField;
+        set
         {
-            get
-            {
-                return ideLotacaoField;
-            }
-
-            set
-            {
-                ideLotacaoField = value;
-                RaisePropertyChanged("ideLotacao");
-            }
+            ideEstabelField = value;
+            RaisePropertyChanged(nameof(ideEstabel));
         }
+    }
+}
 
-        public TDadosLotacao dadosLotacao
-        {
-            get
-            {
-                return dadosLotacaoField;
-            }
+public partial class eSocialEvtComProdInfoComProdIdeEstabel : ESocialBindableObject
+{
+    private string nrInscEstabRuralField;
+    private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc> tpComercField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc>();
 
-            set
-            {
-                dadosLotacaoField = value;
-                RaisePropertyChanged("dadosLotacao");
-            }
+    /// <summary>
+    /// CAEPF (substituiu o CEI)
+    /// </summary>
+    /// <returns></returns>
+    [XmlElement(Order = 0)]
+    public string nrInscEstabRural
+    {
+        get => nrInscEstabRuralField;
+        set
+        {
+            nrInscEstabRuralField = value;
+            RaisePropertyChanged(nameof(nrInscEstabRural));
         }
+    }
 
-        public IdePeriodo novaValidade
+    [XmlElement("tpComerc", Order = 1)]
+    public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc> tpComerc
+    {
+        get => tpComercField;
+        set
         {
-            get
-            {
-                return novaValidadeField;
-            }
-
-            set
-            {
-                novaValidadeField = value;
-                RaisePropertyChanged("novaValidade");
-            }
+            tpComercField = value;
+            RaisePropertyChanged(nameof(tpComerc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComerc : ESocialBindableObject
+{
+    private IndicadorComercializacaoS1260 indComercField = IndicadorComercializacaoS1260.Vendas_a_PJ;
+    private decimal vrTotComField;
+    private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir> ideAdquirField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir>();
+    private eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[] infoProcJudField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public IndicadorComercializacaoS1260 indComerc
+    {
+        get => indComercField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            indComercField = value;
+            RaisePropertyChanged(nameof(indComerc));
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00", IsNullable = false)]
-    public partial class S1030 : IeSocialEvt, INotifyPropertyChanged
+    [XmlElement(Order = 1)]
+    public decimal vrTotCom
     {
-        private eSocialEvtTabCargo evtTabCargoField;
-        private SignatureType signatureField;
-
-        public eSocialEvtTabCargo evtTabCargo
+        get => vrTotComField;
+        set
         {
-            get
-            {
-                return evtTabCargoField;
-            }
-
-            set
-            {
-                evtTabCargoField = value;
-                RaisePropertyChanged("evtTabCargo");
-            }
+            vrTotComField = value;
+            RaisePropertyChanged(nameof(vrTotCom));
         }
+    }
 
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
+    [XmlIgnore()]
+    public decimal vrCPDesc
+    {
+        get
         {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
+            return ideAdquirField.Sum(f => f.vrCPDesc);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        public override void GeraEventoID()
+    [XmlIgnore()]
+    public decimal vrRatDescPR
+    {
+        get
         {
-            evtTabCargoField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabCargoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabCargoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+            return ideAdquirField.Sum(f => f.vrRatDescPR);
         }
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlIgnore()]
+    public decimal vrSenarDesc
+    {
+        get
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            return ideAdquirField.Sum(f => f.vrSenarDesc);
         }
+    }
 
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S1030));
-        }
 
-        public override object GetEventoID()
+    [XmlElement("ideAdquir", Order = 2)]
+    public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir> ideAdquir
+    {
+        get => ideAdquirField;
+        set
         {
-            return evtTabCargoField.Id;
+            ideAdquirField = value;
+            RaisePropertyChanged(nameof(ideAdquir));
         }
+    }
 
-        public override string ContribuinteCNPJ()
+    [XmlElement("infoProcJud", Order = 3)]
+    public eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[] infoProcJud
+    {
+        get => infoProcJudField;
+        set
         {
-            return evtTabCargoField.ideEmpregador.nrInsc;
+            infoProcJudField = value;
+            RaisePropertyChanged(nameof(infoProcJud));
         }
     }
+}
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class eSocialEvtTabCargo : ESocialBindableObject
-    {
-        private IdentificacaoCadastro ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtTabCargoInfoCargo infoCargoField;
-        private string idField;
+public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
+    private string nrInscField;
+    private decimal vrComercField;
+    private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs> nfsField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs>();
 
-        public IdentificacaoCadastro ideEvento
+    [XmlElement(Order = 0)]
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
         {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
+    }
 
-        public Empregador ideEmpregador
+    [XmlElement(Order = 1)]
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
+    }
 
-        public eSocialEvtTabCargoInfoCargo infoCargo
+    [XmlElement(Order = 2)]
+    public decimal vrComerc
+    {
+        get => vrComercField;
+        set
         {
-            get
-            {
-                return infoCargoField;
-            }
-
-            set
-            {
-                infoCargoField = value;
-                RaisePropertyChanged("infoCargo");
-            }
+            vrComercField = value;
+            RaisePropertyChanged(nameof(vrComerc));
         }
+    }
 
-        [XmlAttribute(DataType = "ID")]
-        public string Id
+    [XmlIgnore()]
+    public decimal vrCPDesc
+    {
+        get
         {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
+            return nfs.Sum(f => f.vrCPDescPR);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlIgnore()]
+    public decimal vrRatDescPR
+    {
+        get
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            return nfs.Sum(f => f.vrRatDescPR);
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class eSocialEvtTabCargoInfoCargo : ESocialBindableObject
+    [XmlIgnore()]
+    public decimal vrSenarDesc
     {
-        private object itemField;
-
-        [XmlElement("alteracao", typeof(S1030_Alteracao))]
-        [XmlElement("exclusao", typeof(S1030_Exclusao))]
-        [XmlElement("inclusao", typeof(S1030_Inclusao))]
-        public object Item
+        get
         {
-            get
-            {
-                return itemField;
-            }
-
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
+            return nfs.Sum(f => f.vrSenarDesc);
         }
+    }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement("nfs", Order = 3)]
+    public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs> nfs
+    {
+        get => nfsField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nfsField = value;
+            RaisePropertyChanged(nameof(nfs));
         }
     }
+}
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class TideCargo : ESocialBindableObject
-    {
-        private string codCargoField;
-        private string iniValidField;
-        private string fimValidField;
+public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs : ESocialBindableObject
+{
+    private string serieField;
+    private string nrDoctoField;
+    private DateTime dtEmisNFField;
+    private decimal vlrBrutoField;
+    private decimal vrCPDescPRField;
+    private decimal vrRatDescPRField;
+    private decimal vrSenarDescField;
 
-        public string codCargo
+    [XmlElement(Order = 0)]
+    public string serie
+    {
+        get => serieField;
+        set
         {
-            get
-            {
-                return codCargoField;
-            }
-
-            set
-            {
-                codCargoField = value;
-                RaisePropertyChanged("codCargo");
-            }
+            serieField = value;
+            RaisePropertyChanged(nameof(serie));
         }
+    }
 
-        public string iniValid
+    [XmlElement(Order = 1)]
+    public string nrDocto
+    {
+        get => nrDoctoField;
+        set
         {
-            get
-            {
-                return iniValidField;
-            }
-
-            set
-            {
-                iniValidField = value;
-                RaisePropertyChanged("iniValid");
-            }
+            nrDoctoField = value;
+            RaisePropertyChanged(nameof(nrDocto));
         }
+    }
 
-        public string fimValid
+    [XmlElement(DataType = "date", Order = 2)]
+    public DateTime dtEmisNF
+    {
+        get => dtEmisNFField;
+        set
         {
-            get
-            {
-                return fimValidField;
-            }
-
-            set
-            {
-                fimValidField = value;
-                RaisePropertyChanged("fimValid");
-            }
+            dtEmisNFField = value;
+            RaisePropertyChanged(nameof(dtEmisNF));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 3)]
+    public decimal vlrBruto
+    {
+        get => vlrBrutoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            vlrBrutoField = value;
+            RaisePropertyChanged(nameof(vlrBruto));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class TDadosCargo : ESocialBindableObject
+    [XmlElement(Order = 4)]
+    public decimal vrCPDescPR
     {
-        private string nmCargoField;
-        private string codCBOField;
-        private TDadosCargoCargoPublico cargoPublicoField;
-
-        public string nmCargo
+        get => vrCPDescPRField;
+        set
         {
-            get
-            {
-                return nmCargoField;
-            }
-
-            set
-            {
-                nmCargoField = value;
-                RaisePropertyChanged("nmCargo");
-            }
+            vrCPDescPRField = value;
+            RaisePropertyChanged(nameof(vrCPDescPR));
         }
+    }
 
-        public string codCBO
+    [XmlElement(Order = 5)]
+    public decimal vrRatDescPR
+    {
+        get => vrRatDescPRField;
+        set
         {
-            get
-            {
-                return codCBOField;
-            }
-
-            set
-            {
-                codCBOField = value;
-                RaisePropertyChanged("codCBO");
-            }
+            vrRatDescPRField = value;
+            RaisePropertyChanged(nameof(vrRatDescPR));
         }
+    }
 
-        public TDadosCargoCargoPublico cargoPublico
+    [XmlElement(Order = 6)]
+    public decimal vrSenarDesc
+    {
+        get => vrSenarDescField;
+        set
         {
-            get
-            {
-                return cargoPublicoField;
-            }
-
-            set
-            {
-                cargoPublicoField = value;
-                RaisePropertyChanged("cargoPublico");
-            }
+            vrSenarDescField = value;
+            RaisePropertyChanged(nameof(vrSenarDesc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud : ESocialBindableObject
+{
+    private sbyte tpProcField;
+    private string nrProcField;
+    private string codSuspField;
+    private decimal vrCPSuspField;
+    private bool vrCPSuspFieldSpecified;
+    private decimal vrRatSuspField;
+    private bool vrRatSuspFieldSpecified;
+    private decimal vrSenarSuspField;
+    private bool vrSenarSuspFieldSpecified;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public sbyte tpProc
+    {
+        get => tpProcField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpProcField = value;
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class TDadosCargoCargoPublico : ESocialBindableObject
+    [XmlElement(Order = 1)]
+    public string nrProc
     {
-        private AcumuladorCargo acumCargoField = AcumuladorCargo.NaoAcumulavel;
-        private ContagemEspecialCargo contagemEspField = ContagemEspecialCargo.Nao;
-        private string dedicExclField;
-        private TDadosCargoCargoPublicoLeiCargo leiCargoField;
-
-        public AcumuladorCargo acumCargo
+        get => nrProcField;
+        set
         {
-            get
-            {
-                return acumCargoField;
-            }
-
-            set
-            {
-                acumCargoField = value;
-                RaisePropertyChanged("acumCargo");
-            }
+            nrProcField = value;
+            RaisePropertyChanged(nameof(nrProc));
         }
+    }
 
-        public ContagemEspecialCargo contagemEsp
+    [XmlElement(DataType = "integer", Order = 2)]
+    public string codSusp
+    {
+        get => codSuspField;
+        set
         {
-            get
-            {
-                return contagemEspField;
-            }
-
-            set
-            {
-                contagemEspField = value;
-                RaisePropertyChanged("contagemEsp");
-            }
+            codSuspField = value;
+            RaisePropertyChanged(nameof(codSusp));
         }
+    }
 
-        public string dedicExcl
+    [XmlElement(Order = 3)]
+    public decimal vrCPSusp
+    {
+        get => vrCPSuspField;
+        set
         {
-            get
-            {
-                return dedicExclField;
-            }
-
-            set
-            {
-                dedicExclField = value;
-                RaisePropertyChanged("dedicExcl");
-            }
+            vrCPSuspField = value;
+            RaisePropertyChanged(nameof(vrCPSusp));
         }
+    }
 
-        public TDadosCargoCargoPublicoLeiCargo leiCargo
+    [XmlIgnore()]
+    public bool vrCPSuspSpecified
+    {
+        get => vrCPSuspFieldSpecified;
+        set
         {
-            get
-            {
-                return leiCargoField;
-            }
-
-            set
-            {
-                leiCargoField = value;
-                RaisePropertyChanged("leiCargo");
-            }
+            vrCPSuspFieldSpecified = value;
+            RaisePropertyChanged(nameof(vrCPSuspSpecified));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 4)]
+    public decimal vrRatSusp
+    {
+        get => vrRatSuspField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            vrRatSuspField = value;
+            RaisePropertyChanged(nameof(vrRatSusp));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class TDadosCargoCargoPublicoLeiCargo : ESocialBindableObject
+    [XmlIgnore()]
+    public bool vrRatSuspSpecified
     {
-        private string nrLeiField;
-        private DateTime dtLeiField;
-        private SituacaoCargoPublico sitCargoField = SituacaoCargoPublico.Criacao;
-
-        public string nrLei
+        get => vrRatSuspFieldSpecified;
+        set
         {
-            get
-            {
-                return nrLeiField;
-            }
-
-            set
-            {
-                nrLeiField = value;
-                RaisePropertyChanged("nrLei");
-            }
+            vrRatSuspFieldSpecified = value;
+            RaisePropertyChanged(nameof(vrRatSuspSpecified));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtLei
+    [XmlElement(Order = 5)]
+    public decimal vrSenarSusp
+    {
+        get => vrSenarSuspField;
+        set
         {
-            get
-            {
-                return dtLeiField;
-            }
-
-            set
-            {
-                dtLeiField = value;
-                RaisePropertyChanged("dtLei");
-            }
+            vrSenarSuspField = value;
+            RaisePropertyChanged(nameof(vrSenarSusp));
         }
+    }
 
-        public SituacaoCargoPublico sitCargo
+    [XmlIgnore()]
+    public bool vrSenarSuspSpecified
+    {
+        get => vrSenarSuspFieldSpecified;
+        set
         {
-            get
-            {
-                return sitCargoField;
-            }
-
-            set
-            {
-                sitCargoField = value;
-                RaisePropertyChanged("sitCargo");
-            }
+            vrSenarSuspFieldSpecified = value;
+            RaisePropertyChanged(nameof(vrSenarSuspSpecified));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+[Serializable()]
+[XmlType(AnonymousType = true)]
+[XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v02_05_00", IsNullable = false)]
+public partial class S1298 : IeSocialEvt
+{
+    private eSocialEvtReabreEvPer evtReabreEvPerField;
+    private SignatureType signatureField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public eSocialEvtReabreEvPer evtReabreEvPer
+    {
+        get => evtReabreEvPerField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            evtReabreEvPerField = value;
+            RaisePropertyChanged(nameof(evtReabreEvPer));
         }
     }
 
-    // Alteração
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class S1030_Alteracao : ESocialBindableObject
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    public SignatureType Signature
     {
-        private TideCargo ideCargoField;
-        private TDadosCargo dadosCargoField;
-        private IdePeriodo novaValidadeField;
-
-        public TideCargo ideCargo
+        get => signatureField;
+        set
         {
-            get
-            {
-                return ideCargoField;
-            }
-
-            set
-            {
-                ideCargoField = value;
-                RaisePropertyChanged("ideCargo");
-            }
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
+    }
 
-        public TDadosCargo dadosCargo
-        {
-            get
-            {
-                return dadosCargoField;
-            }
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(S1298));
+    }
 
-            set
-            {
-                dadosCargoField = value;
-                RaisePropertyChanged("dadosCargo");
-            }
-        }
+    public override void GeraEventoID()
+    {
+        evtReabreEvPerField.Id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPerField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPerField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+    }
 
-        public IdePeriodo novaValidade
-        {
-            get
-            {
-                return novaValidadeField;
-            }
+    public override object GetEventoID()
+    {
+        return evtReabreEvPerField.Id;
+    }
 
-            set
-            {
-                novaValidadeField = value;
-                RaisePropertyChanged("novaValidade");
-            }
-        }
+    public override string ContribuinteCNPJ()
+    {
+        return evtReabreEvPerField.ideEmpregador.nrInsc;
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtReabreEvPer : ESocialBindableObject
+{
+    private eSocialEvtReabreEvPerIdeEvento ideEventoField;
+    private Empregador ideEmpregadorField;
+    private string idField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public eSocialEvtReabreEvPerIdeEvento ideEvento
+    {
+        get => ideEventoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
     }
 
-    // Exclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class S1030_Exclusao : ESocialBindableObject
+    [XmlElement(Order = 1)]
+    public Empregador ideEmpregador
     {
-        private TideCargo ideCargoField;
-
-        public TideCargo ideCargo
+        get => ideEmpregadorField;
+        set
         {
-            get
-            {
-                return ideCargoField;
-            }
-
-            set
-            {
-                ideCargoField = value;
-                RaisePropertyChanged("ideCargo");
-            }
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlAttribute(DataType = "ID")]
+    public string Id
+    {
+        get => idField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            idField = value;
+            RaisePropertyChanged(nameof(Id));
         }
     }
+}
 
-    // Inclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabCargo/v02_05_00")]
-    public partial class S1030_Inclusao : ESocialBindableObject
-    {
-        private TideCargo ideCargoField;
-        private TDadosCargo dadosCargoField;
+public partial class eSocialEvtReabreEvPerIdeEvento : ESocialBindableObject
+{
+    private IndicadorApuracao indApuracaoField = IndicadorApuracao.Mensal;
+    private string perApurField;
+    private Ambiente tpAmbField = Ambiente.Producao;
+    private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
+    private string verProcField;
 
-        public TideCargo ideCargo
+    [XmlElement(Order = 0)]
+    public IndicadorApuracao indApuracao
+    {
+        get => indApuracaoField;
+        set
         {
-            get
-            {
-                return ideCargoField;
-            }
-
-            set
-            {
-                ideCargoField = value;
-                RaisePropertyChanged("ideCargo");
-            }
+            indApuracaoField = value;
+            RaisePropertyChanged(nameof(indApuracao));
         }
+    }
 
-        public TDadosCargo dadosCargo
+    [XmlElement(Order = 1)]
+    public string perApur
+    {
+        get => perApurField;
+        set
         {
-            get
-            {
-                return dadosCargoField;
-            }
-
-            set
-            {
-                dadosCargoField = value;
-                RaisePropertyChanged("dadosCargo");
-            }
+            perApurField = value;
+            RaisePropertyChanged(nameof(perApur));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 2)]
+    public Ambiente tpAmb
+    {
+        get => tpAmbField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpAmbField = value;
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00", IsNullable = false)]
-    public partial class S1040 : IeSocialEvt, INotifyPropertyChanged
+    [XmlElement(Order = 3)]
+    public EmissorEvento procEmi
     {
-        private eSocialEvtTabFuncao evtTabFuncaoField;
-        private SignatureType signatureField;
-
-        public eSocialEvtTabFuncao evtTabFuncao
+        get => procEmiField;
+        set
         {
-            get
-            {
-                return evtTabFuncaoField;
-            }
-
-            set
-            {
-                evtTabFuncaoField = value;
-                RaisePropertyChanged("evtTabFuncao");
-            }
+            procEmiField = value;
+            RaisePropertyChanged(nameof(procEmi));
         }
+    }
 
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
+    [XmlElement(Order = 4)]
+    public string verProc
+    {
+        get => verProcField;
+        set
         {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
+            verProcField = value;
+            RaisePropertyChanged(nameof(verProc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+[Serializable()]
+[XmlType(AnonymousType = true)]
+[XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v02_05_00", IsNullable = false)]
+public partial class S1299 : IeSocialEvt
+{
+    private eSocialEvtFechaEvPer evtFechaEvPerField;
+    private SignatureType signatureField;
 
-        public override void GeraEventoID()
+    [XmlElement(Order = 0)]
+    public eSocialEvtFechaEvPer evtFechaEvPer
+    {
+        get => evtFechaEvPerField;
+        set
         {
-            evtTabFuncaoField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabFuncaoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabFuncaoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+            evtFechaEvPerField = value;
+            RaisePropertyChanged(nameof(evtFechaEvPer));
         }
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
+    }
 
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S1040));
-        }
+    public override XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(S1299));
+    }
 
-        public override object GetEventoID()
-        {
-            return evtTabFuncaoField.Id;
-        }
+    public override void GeraEventoID()
+    {
+        evtFechaEvPerField.Id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+    }
 
-        public override string ContribuinteCNPJ()
-        {
-            return evtTabFuncaoField.ideEmpregador.nrInsc;
-        }
+    public override object GetEventoID()
+    {
+        return evtFechaEvPerField.Id;
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class eSocialEvtTabFuncao : ESocialBindableObject
+    public override string ContribuinteCNPJ()
     {
-        private IdentificacaoCadastro ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtTabFuncaoInfoFuncao infoFuncaoField;
-        private string idField;
+        return evtFechaEvPerField.ideEmpregador.nrInsc;
+    }
 
-        public IdentificacaoCadastro ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
+    public event PropertyChangedEventHandler PropertyChanged;
 
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
+}
 
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
-        }
+public partial class eSocialEvtFechaEvPer : ESocialBindableObject
+{
+    private eSocialEvtFechaEvPerIdeEvento ideEventoField;
+    private Empregador ideEmpregadorField;
+    private eSocialEvtFechaEvPerIdeRespInf ideRespInfField;
+    private eSocialEvtFechaEvPerInfoFech infoFechField;
+    private string idField;
 
-        public eSocialEvtTabFuncaoInfoFuncao infoFuncao
+    [XmlElement(Order = 0)]
+    public eSocialEvtFechaEvPerIdeEvento ideEvento
+    {
+        get => ideEventoField;
+        set
         {
-            get
-            {
-                return infoFuncaoField;
-            }
-
-            set
-            {
-                infoFuncaoField = value;
-                RaisePropertyChanged("infoFuncao");
-            }
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
+    }
 
-        [XmlAttribute(DataType = "ID")]
-        public string Id
+    [XmlElement(Order = 1)]
+    public Empregador ideEmpregador
+    {
+        get => ideEmpregadorField;
+        set
         {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 2)]
+    public eSocialEvtFechaEvPerIdeRespInf ideRespInf
+    {
+        get => ideRespInfField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ideRespInfField = value;
+            RaisePropertyChanged(nameof(ideRespInf));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class eSocialEvtTabFuncaoInfoFuncao : ESocialBindableObject
+    [XmlElement(Order = 3)]
+    public eSocialEvtFechaEvPerInfoFech infoFech
     {
-        private object itemField;
-
-        [XmlElement("alteracao", typeof(S1040_Alteracao))]
-        [XmlElement("exclusao", typeof(S1040_Exclusao))]
-        [XmlElement("inclusao", typeof(S1040_Inclusao))]
-        public object Item
+        get => infoFechField;
+        set
         {
-            get
-            {
-                return itemField;
-            }
+            infoFechField = value;
+            RaisePropertyChanged(nameof(infoFech));
+        }
+    }
 
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
+    [XmlAttribute(DataType = "ID")]
+    public string Id
+    {
+        get => idField;
+        set
+        {
+            idField = value;
+            RaisePropertyChanged(nameof(Id));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtFechaEvPerIdeEvento : ESocialBindableObject
+{
+    private IndicadorApuracao indApuracaoField = IndicadorApuracao.Mensal;
+    private string perApurField;
+    private Ambiente tpAmbField = Ambiente.Producao;
+    private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
+    private string verProcField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public IndicadorApuracao indApuracao
+    {
+        get => indApuracaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            indApuracaoField = value;
+            RaisePropertyChanged(nameof(indApuracao));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class TIdeFuncao : ESocialBindableObject
+    [XmlElement(Order = 1)]
+    public string perApur
     {
-        private string codFuncaoField;
-        private string iniValidField;
-        private string fimValidField;
-
-        public string codFuncao
+        get => perApurField;
+        set
         {
-            get
-            {
-                return codFuncaoField;
-            }
-
-            set
-            {
-                codFuncaoField = value;
-                RaisePropertyChanged("codFuncao");
-            }
+            perApurField = value;
+            RaisePropertyChanged(nameof(perApur));
         }
+    }
 
-        public string iniValid
+    [XmlElement(Order = 2)]
+    public Ambiente tpAmb
+    {
+        get => tpAmbField;
+        set
         {
-            get
-            {
-                return iniValidField;
-            }
-
-            set
-            {
-                iniValidField = value;
-                RaisePropertyChanged("iniValid");
-            }
+            tpAmbField = value;
+            RaisePropertyChanged(nameof(tpAmb));
         }
+    }
 
-        public string fimValid
+    [XmlElement(Order = 3)]
+    public EmissorEvento procEmi
+    {
+        get => procEmiField;
+        set
         {
-            get
-            {
-                return fimValidField;
-            }
+            procEmiField = value;
+            RaisePropertyChanged(nameof(procEmi));
+        }
+    }
 
-            set
-            {
-                fimValidField = value;
-                RaisePropertyChanged("fimValid");
-            }
+    [XmlElement(Order = 4)]
+    public string verProc
+    {
+        get => verProcField;
+        set
+        {
+            verProcField = value;
+            RaisePropertyChanged(nameof(verProc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtFechaEvPerIdeRespInf : ESocialBindableObject
+{
+    private string nmRespField;
+    private string cpfRespField;
+    private string telefoneField;
+    private string emailField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 0)]
+    public string nmResp
+    {
+        get => nmRespField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nmRespField = value;
+            RaisePropertyChanged(nameof(nmResp));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class TDadosFuncao : ESocialBindableObject
+    [XmlElement(Order = 1)]
+    public string cpfResp
     {
-        private string dscFuncaoField;
-        private string codCBOField;
-
-        public string dscFuncao
+        get => cpfRespField;
+        set
         {
-            get
-            {
-                return dscFuncaoField;
-            }
-
-            set
-            {
-                dscFuncaoField = value;
-                RaisePropertyChanged("dscFuncao");
-            }
+            cpfRespField = value;
+            RaisePropertyChanged(nameof(cpfResp));
         }
+    }
 
-        public string codCBO
+    [XmlElement(Order = 2)]
+    public string telefone
+    {
+        get => telefoneField;
+        set
         {
-            get
-            {
-                return codCBOField;
-            }
-
-            set
-            {
-                codCBOField = value;
-                RaisePropertyChanged("codCBO");
-            }
+            telefoneField = value;
+            RaisePropertyChanged(nameof(telefone));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 3)]
+    public string email
+    {
+        get => emailField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            emailField = value;
+            RaisePropertyChanged(nameof(email));
         }
     }
+}
 
-    // Alteração
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class S1040_Alteracao : ESocialBindableObject
-    {
-        private TIdeFuncao ideFuncaoField;
-        private TDadosFuncao dadosFuncaoField;
-        private IdePeriodo novaValidadeField;
+public partial class eSocialEvtFechaEvPerInfoFech : ESocialBindableObject
+{
+    private SimNaoString evtRemunField = SimNaoString.Nao;
+    private SimNaoString evtPgtosField = SimNaoString.Nao;
+    private SimNaoString evtAqProdField = SimNaoString.Nao;
+    private SimNaoString evtComProdField = SimNaoString.Nao;
+    private SimNaoString evtContratAvNPField = SimNaoString.Nao;
+    private SimNaoString evtInfoComplPerField = SimNaoString.Nao;
+    private string compSemMovtoField;
 
-        public TIdeFuncao ideFuncao
+    [XmlElement(Order = 0)]
+    public SimNaoString evtRemun
+    {
+        get => evtRemunField;
+        set
         {
-            get
-            {
-                return ideFuncaoField;
-            }
-
-            set
-            {
-                ideFuncaoField = value;
-                RaisePropertyChanged("ideFuncao");
-            }
+            evtRemunField = value;
+            RaisePropertyChanged(nameof(evtRemun));
         }
+    }
 
-        public TDadosFuncao dadosFuncao
+    [XmlElement(Order = 1)]
+    public SimNaoString evtPgtos
+    {
+        get => evtPgtosField;
+        set
         {
-            get
-            {
-                return dadosFuncaoField;
-            }
-
-            set
-            {
-                dadosFuncaoField = value;
-                RaisePropertyChanged("dadosFuncao");
-            }
+            evtPgtosField = value;
+            RaisePropertyChanged(nameof(evtPgtos));
         }
+    }
 
-        public IdePeriodo novaValidade
+    [XmlElement(Order = 2)]
+    public SimNaoString evtAqProd
+    {
+        get => evtAqProdField;
+        set
         {
-            get
-            {
-                return novaValidadeField;
-            }
-
-            set
-            {
-                novaValidadeField = value;
-                RaisePropertyChanged("novaValidade");
-            }
+            evtAqProdField = value;
+            RaisePropertyChanged(nameof(evtAqProd));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 3)]
+    public SimNaoString evtComProd
+    {
+        get => evtComProdField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            evtComProdField = value;
+            RaisePropertyChanged(nameof(evtComProd));
         }
     }
 
-    // Exclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class S1040_Exclusao : ESocialBindableObject
+    [XmlElement(Order = 4)]
+    public SimNaoString evtContratAvNP
     {
-        private TIdeFuncao ideFuncaoField;
-
-        public TIdeFuncao ideFuncao
+        get => evtContratAvNPField;
+        set
         {
-            get
-            {
-                return ideFuncaoField;
-            }
-
-            set
-            {
-                ideFuncaoField = value;
-                RaisePropertyChanged("ideFuncao");
-            }
+            evtContratAvNPField = value;
+            RaisePropertyChanged(nameof(evtContratAvNP));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 5)]
+    public SimNaoString evtInfoComplPer
+    {
+        get => evtInfoComplPerField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            evtInfoComplPerField = value;
+            RaisePropertyChanged(nameof(evtInfoComplPer));
         }
     }
 
-    // Inclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabFuncao/v02_05_00")]
-    public partial class S1040_Inclusao : ESocialBindableObject
+    [XmlElement(Order = 6)]
+    public string compSemMovto
     {
-        private TIdeFuncao ideFuncaoField;
-        private TDadosFuncao dadosFuncaoField;
-
-        public TIdeFuncao ideFuncao
+        get => compSemMovtoField;
+        set
         {
-            get
-            {
-                return ideFuncaoField;
-            }
-
-            set
-            {
-                ideFuncaoField = value;
-                RaisePropertyChanged("ideFuncao");
-            }
+            compSemMovtoField = value;
+            RaisePropertyChanged(nameof(compSemMovto));
         }
+    }
+}
 
-        public TDadosFuncao dadosFuncao
-        {
-            get
-            {
-                return dadosFuncaoField;
-            }
+[Serializable()]
+[XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
+[XmlRoot(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00", IsNullable = false)]
+public partial class S2200 : IeSocialEvt
+{
+    private eSocialEvtAdmissao evtAdmissaoField;
+    private SignatureType signatureField;
 
-            set
-            {
-                dadosFuncaoField = value;
-                RaisePropertyChanged("dadosFuncao");
-            }
+    public eSocialEvtAdmissao evtAdmissao
+    {
+        get => evtAdmissaoField;
+        set
+        {
+            evtAdmissaoField = value;
+            RaisePropertyChanged(nameof(evtAdmissao));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public SignatureType Signature
+    {
+        get => signatureField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            signatureField = value;
+            RaisePropertyChanged(nameof(Signature));
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00", IsNullable = false)]
-    public partial class S1050 : IeSocialEvt, INotifyPropertyChanged
+    public override XmlSerializer DefineSerializer()
     {
-        private eSocialEvtTabHorTur evtTabHorTurField;
-        private SignatureType signatureField;
+        return new XmlSerializer(typeof(S2200));
+    }
 
-        public eSocialEvtTabHorTur evtTabHorTur
-        {
-            get
-            {
-                return evtTabHorTurField;
-            }
+    public override void GeraEventoID()
+    {
+        evtAdmissaoField.Id = string.Format("ID{0}{1}{2}", (int)(evtAdmissaoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAdmissaoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+    }
 
-            set
-            {
-                evtTabHorTurField = value;
-                RaisePropertyChanged("evtTabHorTur");
-            }
-        }
+    public override object GetEventoID()
+    {
+        return evtAdmissaoField.Id;
+    }
 
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
-        {
-            get
-            {
-                return signatureField;
-            }
+    public override string ContribuinteCNPJ()
+    {
+        return evtAdmissaoField.ideEmpregador.nrInsc;
+    }
 
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
-        }
+    public event PropertyChangedEventHandler PropertyChanged;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+    protected void RaisePropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
 
-        public override void GeraEventoID()
-        {
-            evtTabHorTurField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabHorTurField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabHorTurField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
-        }
+public partial class eSocialEvtAdmissao : ESocialBindableObject
+{
+    private IdeEventoNaoPeriodico ideEventoField;
+    private Empregador ideEmpregadorField;
+    private eSocialEvtAdmissaoTrabalhador trabalhadorField;
+    private eSocialEvtAdmissaoVinculo vinculoField;
+    private string idField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public IdeEventoNaoPeriodico ideEvento
+    {
+        get => ideEventoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ideEventoField = value;
+            RaisePropertyChanged(nameof(ideEvento));
         }
+    }
 
-        public override XmlSerializer DefineSerializer()
+    public Empregador ideEmpregador
+    {
+        get => ideEmpregadorField;
+        set
         {
-            return new XmlSerializer(typeof(S1050));
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
+    }
 
-        public override object GetEventoID()
+    public eSocialEvtAdmissaoTrabalhador trabalhador
+    {
+        get => trabalhadorField;
+        set
         {
-            return evtTabHorTurField.Id;
+            trabalhadorField = value;
+            RaisePropertyChanged(nameof(trabalhador));
         }
+    }
 
-        public override string ContribuinteCNPJ()
+    public eSocialEvtAdmissaoVinculo vinculo
+    {
+        get => vinculoField;
+        set
         {
-            return evtTabHorTurField.ideEmpregador.nrInsc;
+            vinculoField = value;
+            RaisePropertyChanged(nameof(vinculo));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class eSocialEvtTabHorTur : ESocialBindableObject
+    [XmlAttribute(DataType = "ID")]
+    public string Id
     {
-        private IdentificacaoCadastro ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtTabHorTurInfoHorContratual infoHorContratualField;
-        private string idField;
-
-        public IdentificacaoCadastro ideEvento
+        get => idField;
+        set
         {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
+            idField = value;
+            RaisePropertyChanged(nameof(Id));
         }
+    }
+}
 
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
+public partial class eSocialEvtAdmissaoTrabalhador : ESocialBindableObject
+{
+    private string cpfTrabField;
+    private string nisTrabField;
+    private string nmTrabField;
+    private string sexoField;
+    private RacaCor racaCorField = RacaCor.NaoInformado;
+    private EstadoCivil estCivField = EstadoCivil.Solteiro;
+    private bool estCivFieldSpecified;
+    private GrauInstrucao grauInstrField = GrauInstrucao.Analfabeto;
+    private SimNaoString indPriEmprField = SimNaoString.Nao;
+    private string nmSocField;
+    private eSocialEvtAdmissaoTrabalhadorNascimento nascimentoField;
+    private eSocialEvtAdmissaoTrabalhadorDocumentos documentosField;
+    private eSocialEvtAdmissaoTrabalhadorEndereco enderecoField;
+    private TTrabEstrang trabEstrangeiroField;
+    private eSocialEvtAdmissaoTrabalhadorInfoDeficiencia infoDeficienciaField;
+    private List<TDependente> dependenteField = new List<TDependente>();
+    private eSocialEvtAdmissaoTrabalhadorAposentadoria aposentadoriaField;
+    private TContato contatoField;
 
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
+    public string cpfTrab
+    {
+        get => cpfTrabField;
+        set
+        {
+            cpfTrabField = value;
+            RaisePropertyChanged(nameof(cpfTrab));
         }
+    }
 
-        public eSocialEvtTabHorTurInfoHorContratual infoHorContratual
+    public string nisTrab
+    {
+        get => nisTrabField;
+        set
         {
-            get
-            {
-                return infoHorContratualField;
-            }
-
-            set
-            {
-                infoHorContratualField = value;
-                RaisePropertyChanged("infoHorContratual");
-            }
+            nisTrabField = value;
+            RaisePropertyChanged(nameof(nisTrab));
         }
+    }
 
-        [XmlAttribute(DataType = "ID")]
-        public string Id
+    public string nmTrab
+    {
+        get => nmTrabField;
+        set
         {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
+            nmTrabField = value;
+            RaisePropertyChanged(nameof(nmTrab));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string sexo
+    {
+        get => sexoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            sexoField = value;
+            RaisePropertyChanged(nameof(sexo));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class eSocialEvtTabHorTurInfoHorContratual : ESocialBindableObject
+    public RacaCor racaCor
     {
-        private object itemField;
-
-        [XmlElement("alteracao", typeof(S1050_Alteracao))]
-        [XmlElement("exclusao", typeof(S1050_Exclusao))]
-        [XmlElement("inclusao", typeof(S1050_Inclusao))]
-        public object Item
+        get => racaCorField;
+        set
         {
-            get
-            {
-                return itemField;
-            }
-
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
+            racaCorField = value;
+            RaisePropertyChanged(nameof(racaCor));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public EstadoCivil estCiv
+    {
+        get => estCivField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            estCivField = value;
+            RaisePropertyChanged(nameof(estCiv));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class TIdeHorContratual : ESocialBindableObject
+    [XmlIgnore()]
+    public bool estCivSpecified
     {
-        private string codHorContratField;
-        private string iniValidField;
-        private string fimValidField;
-
-        public string codHorContrat
+        get => estCivFieldSpecified;
+        set
         {
-            get
-            {
-                return codHorContratField;
-            }
-
-            set
-            {
-                codHorContratField = value;
-                RaisePropertyChanged("codHorContrat");
-            }
+            estCivFieldSpecified = value;
+            RaisePropertyChanged(nameof(estCivSpecified));
         }
+    }
 
-        public string iniValid
+    public GrauInstrucao grauInstr
+    {
+        get => grauInstrField;
+        set
         {
-            get
-            {
-                return iniValidField;
-            }
-
-            set
-            {
-                iniValidField = value;
-                RaisePropertyChanged("iniValid");
-            }
+            grauInstrField = value;
+            RaisePropertyChanged(nameof(grauInstr));
         }
+    }
 
-        public string fimValid
+    public SimNaoString indPriEmpr
+    {
+        get => indPriEmprField;
+        set
         {
-            get
-            {
-                return fimValidField;
-            }
-
-            set
-            {
-                fimValidField = value;
-                RaisePropertyChanged("fimValid");
-            }
+            indPriEmprField = value;
+            RaisePropertyChanged(nameof(indPriEmpr));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nmSoc
+    {
+        get => nmSocField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nmSocField = value;
+            RaisePropertyChanged(nameof(nmSoc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class TDadosHorContratual : ESocialBindableObject
+    public eSocialEvtAdmissaoTrabalhadorNascimento nascimento
     {
-        private string hrEntrField;
-        private string hrSaidaField;
-        private string durJornadaField;
-        private string perHorFlexivelField;
-        private TDadosHorContratualHorarioIntervalo[] horarioIntervaloField;
-
-        public string hrEntr
+        get => nascimentoField;
+        set
         {
-            get
-            {
-                return hrEntrField;
-            }
-
-            set
-            {
-                hrEntrField = value;
-                RaisePropertyChanged("hrEntr");
-            }
+            nascimentoField = value;
+            RaisePropertyChanged(nameof(nascimento));
         }
+    }
 
-        public string hrSaida
+    public eSocialEvtAdmissaoTrabalhadorDocumentos documentos
+    {
+        get => documentosField;
+        set
         {
-            get
-            {
-                return hrSaidaField;
-            }
-
-            set
-            {
-                hrSaidaField = value;
-                RaisePropertyChanged("hrSaida");
-            }
+            documentosField = value;
+            RaisePropertyChanged(nameof(documentos));
         }
+    }
 
-        [XmlElement(DataType = "integer")]
-        public string durJornada
+    public eSocialEvtAdmissaoTrabalhadorEndereco endereco
+    {
+        get => enderecoField;
+        set
         {
-            get
-            {
-                return durJornadaField;
-            }
-
-            set
-            {
-                durJornadaField = value;
-                RaisePropertyChanged("durJornada");
-            }
+            enderecoField = value;
+            RaisePropertyChanged(nameof(endereco));
         }
+    }
 
-        public string perHorFlexivel
+    public TTrabEstrang trabEstrangeiro
+    {
+        get => trabEstrangeiroField;
+        set
         {
-            get
-            {
-                return perHorFlexivelField;
-            }
-
-            set
-            {
-                perHorFlexivelField = value;
-                RaisePropertyChanged("perHorFlexivel");
-            }
+            trabEstrangeiroField = value;
+            RaisePropertyChanged(nameof(trabEstrangeiro));
         }
+    }
 
-        [XmlElement("horarioIntervalo")]
-        public TDadosHorContratualHorarioIntervalo[] horarioIntervalo
+    public eSocialEvtAdmissaoTrabalhadorInfoDeficiencia infoDeficiencia
+    {
+        get => infoDeficienciaField;
+        set
         {
-            get
-            {
-                return horarioIntervaloField;
-            }
-
-            set
-            {
-                horarioIntervaloField = value;
-                RaisePropertyChanged("horarioIntervalo");
-            }
+            infoDeficienciaField = value;
+            RaisePropertyChanged(nameof(infoDeficiencia));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement("dependente")]
+    public List<TDependente> dependente
+    {
+        get => dependenteField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dependenteField = value;
+            RaisePropertyChanged(nameof(dependente));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class TDadosHorContratualHorarioIntervalo : ESocialBindableObject
+    public eSocialEvtAdmissaoTrabalhadorAposentadoria aposentadoria
     {
-        private int tpIntervField;
-        private string durIntervField;
-        private string iniIntervField;
-        private string termIntervField;
-
-        public int tpInterv
+        get => aposentadoriaField;
+        set
         {
-            get
-            {
-                return tpIntervField;
-            }
-
-            set
-            {
-                tpIntervField = value;
-                RaisePropertyChanged("tpInterv");
-            }
+            aposentadoriaField = value;
+            RaisePropertyChanged(nameof(aposentadoria));
         }
+    }
 
-        [XmlElement(DataType = "integer")]
-        public string durInterv
+    public TContato contato
+    {
+        get => contatoField;
+        set
         {
-            get
-            {
-                return durIntervField;
-            }
-
-            set
-            {
-                durIntervField = value;
-                RaisePropertyChanged("durInterv");
-            }
+            contatoField = value;
+            RaisePropertyChanged(nameof(contato));
         }
+    }
+}
 
-        public string iniInterv
-        {
-            get
-            {
-                return iniIntervField;
-            }
+public partial class eSocialEvtAdmissaoTrabalhadorNascimento : ESocialBindableObject
+{
+    private DateTime dtNasctoField;
+    private string codMunicField;
+    private UFCadastro ufField;
+    private bool ufFieldSpecified;
+    private string paisNasctoField;
+    private string paisNacField;
+    private string nmMaeField;
+    private string nmPaiField;
 
-            set
-            {
-                iniIntervField = value;
-                RaisePropertyChanged("iniInterv");
-            }
+    [XmlElement(DataType = "date")]
+    public DateTime dtNascto
+    {
+        get => dtNasctoField;
+        set
+        {
+            dtNasctoField = value;
+            RaisePropertyChanged(nameof(dtNascto));
         }
+    }
 
-        public string termInterv
+    [XmlElement(DataType = "integer")]
+    public string codMunic
+    {
+        get => codMunicField;
+        set
         {
-            get
-            {
-                return termIntervField;
-            }
-
-            set
-            {
-                termIntervField = value;
-                RaisePropertyChanged("termInterv");
-            }
+            codMunicField = value;
+            RaisePropertyChanged(nameof(codMunic));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public UFCadastro uf
+    {
+        get => ufField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            ufField = value;
+            RaisePropertyChanged(nameof(uf));
         }
     }
 
-    // Alteração
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class S1050_Alteracao : ESocialBindableObject
+    [XmlIgnore()]
+    public bool ufSpecified
     {
-        private TIdeHorContratual ideHorContratualField;
-        private TDadosHorContratual dadosHorContratualField;
-        private IdePeriodo novaValidadeField;
-
-        public TIdeHorContratual ideHorContratual
+        get => ufFieldSpecified;
+        set
         {
-            get
-            {
-                return ideHorContratualField;
-            }
-
-            set
-            {
-                ideHorContratualField = value;
-                RaisePropertyChanged("ideHorContratual");
-            }
+            ufFieldSpecified = value;
+            RaisePropertyChanged(nameof(ufSpecified));
         }
+    }
 
-        public TDadosHorContratual dadosHorContratual
+    public string paisNascto
+    {
+        get => paisNasctoField;
+        set
         {
-            get
-            {
-                return dadosHorContratualField;
-            }
-
-            set
-            {
-                dadosHorContratualField = value;
-                RaisePropertyChanged("dadosHorContratual");
-            }
+            paisNasctoField = value;
+            RaisePropertyChanged(nameof(paisNascto));
         }
+    }
 
-        public IdePeriodo novaValidade
+    public string paisNac
+    {
+        get => paisNacField;
+        set
         {
-            get
-            {
-                return novaValidadeField;
-            }
-
-            set
-            {
-                novaValidadeField = value;
-                RaisePropertyChanged("novaValidade");
-            }
+            paisNacField = value;
+            RaisePropertyChanged(nameof(paisNac));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nmMae
+    {
+        get => nmMaeField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nmMaeField = value;
+            RaisePropertyChanged(nameof(nmMae));
         }
     }
 
-    // Exclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class S1050_Exclusao : ESocialBindableObject
+    public string nmPai
     {
-        private TIdeHorContratual ideHorContratualField;
-
-        public TIdeHorContratual ideHorContratual
+        get => nmPaiField;
+        set
         {
-            get
-            {
-                return ideHorContratualField;
-            }
-
-            set
-            {
-                ideHorContratualField = value;
-                RaisePropertyChanged("ideHorContratual");
-            }
+            nmPaiField = value;
+            RaisePropertyChanged(nameof(nmPai));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoTrabalhadorDocumentos : ESocialBindableObject
+{
+    private TCtps cTPSField;
+    private TRic rICField;
+    private TRg rgField;
+    private TRne rNEField;
+    private TOc ocField;
+    private TCnh cNHField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TCtps CTPS
+    {
+        get => cTPSField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            cTPSField = value;
+            RaisePropertyChanged(nameof(CTPS));
         }
     }
 
-    // Inclusão
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtTabHorTur/v02_05_00")]
-    public partial class S1050_Inclusao : ESocialBindableObject
+    public TRic RIC
     {
-        private TIdeHorContratual ideHorContratualField;
-        private TDadosHorContratual dadosHorContratualField;
-
-        public TIdeHorContratual ideHorContratual
+        get => rICField;
+        set
         {
-            get
-            {
-                return ideHorContratualField;
-            }
-
-            set
-            {
-                ideHorContratualField = value;
-                RaisePropertyChanged("ideHorContratual");
-            }
+            rICField = value;
+            RaisePropertyChanged(nameof(RIC));
         }
+    }
 
-        public TDadosHorContratual dadosHorContratual
+    public TRg RG
+    {
+        get => rgField;
+        set
         {
-            get
-            {
-                return dadosHorContratualField;
-            }
-
-            set
-            {
-                dadosHorContratualField = value;
-                RaisePropertyChanged("dadosHorContratual");
-            }
+            rgField = value;
+            RaisePropertyChanged(nameof(RG));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TRne RNE
+    {
+        get => rNEField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            rNEField = value;
+            RaisePropertyChanged(nameof(RNE));
         }
     }
 
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtAqProd/v02_05_00", IsNullable = false)]
-    public partial class S1250 : IeSocialEvt, INotifyPropertyChanged
+    public TOc OC
     {
-        private eSocialEvtAqProd evtAqProdField;
-        private SignatureType signatureField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtAqProd evtAqProd
+        get => ocField;
+        set
         {
-            get
-            {
-                return evtAqProdField;
-            }
-
-            set
-            {
-                evtAqProdField = value;
-                RaisePropertyChanged("evtAqProd");
-            }
+            ocField = value;
+            RaisePropertyChanged(nameof(OC));
         }
+    }
 
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-        public SignatureType Signature
+    public TCnh CNH
+    {
+        get => cNHField;
+        set
         {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
+            cNHField = value;
+            RaisePropertyChanged(nameof(CNH));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TCtps : ESocialBindableObject
+{
+    private string nrCtpsField;
+    private string serieCtpsField;
+    private UFCadastro ufCtpsField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nrCtps
+    {
+        get => nrCtpsField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nrCtpsField = value;
+            RaisePropertyChanged(nameof(nrCtps));
         }
+    }
 
-        public override XmlSerializer DefineSerializer()
+    public string serieCtps
+    {
+        get => serieCtpsField;
+        set
         {
-            return new XmlSerializer(typeof(S1250));
+            serieCtpsField = value;
+            RaisePropertyChanged(nameof(serieCtps));
         }
+    }
 
-        public override void GeraEventoID()
+    public UFCadastro ufCtps
+    {
+        get => ufCtpsField;
+        set
         {
-            evtAqProd.Id = string.Format("ID{0}{1}{2}", (int)(evtAqProd?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAqProd?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
+            ufCtpsField = value;
+            RaisePropertyChanged(nameof(ufCtps));
         }
+    }
+}
+
+public partial class TRic : ESocialBindableObject
+{
+    private string nrRicField;
+    private string orgaoEmissorField;
+    private DateTime dtExpedField;
+    private bool dtExpedFieldSpecified;
 
-        public override object GetEventoID()
+    public string nrRic
+    {
+        get => nrRicField;
+        set
         {
-            return evtAqProd.Id;
+            nrRicField = value;
+            RaisePropertyChanged(nameof(nrRic));
         }
+    }
 
-        public override string ContribuinteCNPJ()
+    public string orgaoEmissor
+    {
+        get => orgaoEmissorField;
+        set
         {
-            return evtAqProd.ideEmpregador.nrInsc;
+            orgaoEmissorField = value;
+            RaisePropertyChanged(nameof(orgaoEmissor));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProd : ESocialBindableObject
+    [XmlElement(DataType = "date")]
+    public DateTime dtExped
     {
-        private IdeEventoPeriodico ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtAqProdInfoAquisProd infoAquisProdField;
-        private string idField;
-
-        [XmlElement(Order = 0)]
-        public IdeEventoPeriodico ideEvento
+        get => dtExpedField;
+        set
         {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
+            dtExpedField = value;
+            RaisePropertyChanged(nameof(dtExped));
         }
+    }
 
-        [XmlElement(Order = 1)]
-        public Empregador ideEmpregador
+    [XmlIgnore()]
+    public bool dtExpedSpecified
+    {
+        get => dtExpedFieldSpecified;
+        set
         {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
+            dtExpedFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtExpedSpecified));
         }
+    }
+}
 
-        [XmlElement(Order = 2)]
-        public eSocialEvtAqProdInfoAquisProd infoAquisProd
-        {
-            get
-            {
-                return infoAquisProdField;
-            }
+public partial class TRg : ESocialBindableObject
+{
+    private string nrRgField;
+    private string orgaoEmissorField;
+    private DateTime dtExpedField;
+    private bool dtExpedFieldSpecified;
 
-            set
-            {
-                infoAquisProdField = value;
-                RaisePropertyChanged("infoAquisProd");
-            }
+    public string nrRg
+    {
+        get => nrRgField;
+        set
+        {
+            nrRgField = value;
+            RaisePropertyChanged(nameof(nrRg));
         }
+    }
 
-        [XmlAttribute(DataType = "ID")]
-        public string Id
+    public string orgaoEmissor
+    {
+        get => orgaoEmissorField;
+        set
         {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
+            orgaoEmissorField = value;
+            RaisePropertyChanged(nameof(orgaoEmissor));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtExped
+    {
+        get => dtExpedField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtExpedField = value;
+            RaisePropertyChanged(nameof(dtExped));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProd : ESocialBindableObject
+    [XmlIgnore()]
+    public bool dtExpedSpecified
     {
-        private eSocialEvtAqProdInfoAquisProdIdeEstabAdquir ideEstabAdquirField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtAqProdInfoAquisProdIdeEstabAdquir ideEstabAdquir
+        get => dtExpedFieldSpecified;
+        set
         {
-            get
-            {
-                return ideEstabAdquirField;
-            }
-
-            set
-            {
-                ideEstabAdquirField = value;
-                RaisePropertyChanged("ideEstabAdquir");
-            }
+            dtExpedFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtExpedSpecified));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TRne : ESocialBindableObject
+{
+    private string nrRneField;
+    private string orgaoEmissorField;
+    private DateTime dtExpedField;
+    private bool dtExpedFieldSpecified;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nrRne
+    {
+        get => nrRneField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nrRneField = value;
+            RaisePropertyChanged(nameof(nrRne));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquir : ESocialBindableObject
+    public string orgaoEmissor
     {
-        private PersonalidadeJuridica tpInscAdqField;
-        private string nrInscAdqField;
-        private eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquis[] tpAquisField;
-
-        [XmlElement(Order = 0)]
-        public PersonalidadeJuridica tpInscAdq
+        get => orgaoEmissorField;
+        set
         {
-            get
-            {
-                return tpInscAdqField;
-            }
-
-            set
-            {
-                tpInscAdqField = value;
-                RaisePropertyChanged("tpInscAdq");
-            }
+            orgaoEmissorField = value;
+            RaisePropertyChanged(nameof(orgaoEmissor));
         }
+    }
 
-        [XmlElement(Order = 1)]
-        public string nrInscAdq
+    [XmlElement(DataType = "date")]
+    public DateTime dtExped
+    {
+        get => dtExpedField;
+        set
         {
-            get
-            {
-                return nrInscAdqField;
-            }
-
-            set
-            {
-                nrInscAdqField = value;
-                RaisePropertyChanged("nrInscAdq");
-            }
+            dtExpedField = value;
+            RaisePropertyChanged(nameof(dtExped));
         }
+    }
 
-        [XmlElement("tpAquis", Order = 2)]
-        public eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquis[] tpAquis
+    [XmlIgnore()]
+    public bool dtExpedSpecified
+    {
+        get => dtExpedFieldSpecified;
+        set
         {
-            get
-            {
-                return tpAquisField;
-            }
-
-            set
-            {
-                tpAquisField = value;
-                RaisePropertyChanged("tpAquis");
-            }
+            dtExpedFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtExpedSpecified));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TOc : ESocialBindableObject
+{
+    private string nrOcField;
+    private string orgaoEmissorField;
+    private DateTime dtExpedField;
+    private bool dtExpedFieldSpecified;
+    private DateTime dtValidField;
+    private bool dtValidFieldSpecified;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nrOc
+    {
+        get => nrOcField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nrOcField = value;
+            RaisePropertyChanged(nameof(nrOc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquis : ESocialBindableObject
+    public string orgaoEmissor
     {
-        private List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor> ideProdutorField = new List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor>();
-        private eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisInfoProcJ[] infoProcJField;
-        private IndicadorAquisicaoS1250 indAquisField = IndicadorAquisicaoS1250.ProdRuralPF;
-        private decimal vlrTotAquisField;
-
-        [XmlElement("ideProdutor", Order = 0)]
-        public List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor> ideProdutor
+        get => orgaoEmissorField;
+        set
         {
-            get
-            {
-                return ideProdutorField;
-            }
-
-            set
-            {
-                ideProdutorField = value;
-                RaisePropertyChanged("ideProdutor");
-            }
-        }
-
-        [XmlElement("infoProcJ", Order = 1)]
-        public eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisInfoProcJ[] infoProcJ
-        {
-            get
-            {
-                return infoProcJField;
-            }
-
-            set
-            {
-                infoProcJField = value;
-                RaisePropertyChanged("infoProcJ");
-            }
-        }
-
-        [XmlAttribute()]
-        public IndicadorAquisicaoS1250 indAquis
-        {
-            get
-            {
-                return indAquisField;
-            }
-
-            set
-            {
-                indAquisField = value;
-                RaisePropertyChanged("indAquis");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vlrTotAquis
-        {
-            get
-            {
-                return vlrTotAquisField;
-            }
-
-            set
-            {
-                vlrTotAquisField = value;
-                RaisePropertyChanged("vlrTotAquis");
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrCPDesc
-        {
-            get
-            {
-                return ideProdutor.Sum(f => f.vrCPDescPR);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return ideProdutor.Sum(f => f.vrRatDescPR);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return ideProdutor.Sum(f => f.vrSenarDesc);
-            }
-        }
-
-        public void InvokePropertyChanged(string propName)
-        {
-            RaisePropertyChanged(propName);
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutor : ESocialBindableObject
-    {
-        private List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs> nfsField = new List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs>();
-        private eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorInfoProcJud[] infoProcJudField;
-        private PersonalidadeJuridica tpInscProdField;
-        private string nrInscProdField;
-        private decimal vlrBrutoField;
-        private decimal vrCPDescPRField;
-        private decimal vrRatDescPRField;
-        private decimal vrSenarDescField;
-        private OpcaoTributacaoPrevidenciaria indOpcCPField = OpcaoTributacaoPrevidenciaria.Comercializacao;
-
-        [XmlElement("nfs", Order = 0)]
-        public List<eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs> nfs
-        {
-            get
-            {
-                return nfsField;
-            }
-
-            set
-            {
-                nfsField = value;
-                RaisePropertyChanged("nfs");
-            }
-        }
-
-        [XmlElement("infoProcJud", Order = 1)]
-        public eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorInfoProcJud[] infoProcJud
-        {
-            get
-            {
-                return infoProcJudField;
-            }
-
-            set
-            {
-                infoProcJudField = value;
-                RaisePropertyChanged("infoProcJud");
-            }
-        }
-
-        [XmlAttribute()]
-        public PersonalidadeJuridica tpInscProd
-        {
-            get
-            {
-                return tpInscProdField;
-            }
-
-            set
-            {
-                tpInscProdField = value;
-                RaisePropertyChanged("tpInscProd");
-            }
-        }
-
-        [XmlAttribute()]
-        public string nrInscProd
-        {
-            get
-            {
-                return nrInscProdField;
-            }
-
-            set
-            {
-                nrInscProdField = value;
-                RaisePropertyChanged("nrInscProd");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vlrBruto
-        {
-            get
-            {
-                return vlrBrutoField;
-            }
-
-            set
-            {
-                vlrBrutoField = value;
-                RaisePropertyChanged("vlrBruto");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrCPDescPR
-        {
-            get
-            {
-                return vrCPDescPRField;
-            }
-
-            set
-            {
-                vrCPDescPRField = value;
-                RaisePropertyChanged("vrCPDescPR");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return vrRatDescPRField;
-            }
-
-            set
-            {
-                vrRatDescPRField = value;
-                RaisePropertyChanged("vrRatDescPR");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return vrSenarDescField;
-            }
-
-            set
-            {
-                vrSenarDescField = value;
-                RaisePropertyChanged("vrSenarDesc");
-            }
-        }
-
-        [XmlAttribute()]
-        public OpcaoTributacaoPrevidenciaria indOpcCP
-        {
-            get
-            {
-                return indOpcCPField;
-            }
-
-            set
-            {
-                indOpcCPField = value;
-                RaisePropertyChanged("indOpcCP");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorNfs : ESocialBindableObject
-    {
-        private string serieField;
-        private string nrDoctoField;
-        private DateTime dtEmisNFField;
-        private decimal vlrBrutoField;
-        private decimal vrCPDescPRField;
-        private decimal vrRatDescPRField;
-        private decimal vrSenarDescField;
-
-        [XmlAttribute()]
-        public string serie
-        {
-            get
-            {
-                return serieField;
-            }
-
-            set
-            {
-                serieField = value;
-                RaisePropertyChanged("serie");
-            }
-        }
-
-        [XmlAttribute()]
-        public string nrDocto
-        {
-            get
-            {
-                return nrDoctoField;
-            }
-
-            set
-            {
-                nrDoctoField = value;
-                RaisePropertyChanged("nrDocto");
-            }
-        }
-
-        [XmlAttribute(DataType = "date")]
-        public DateTime dtEmisNF
-        {
-            get
-            {
-                return dtEmisNFField;
-            }
-
-            set
-            {
-                dtEmisNFField = value;
-                RaisePropertyChanged("dtEmisNF");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vlrBruto
-        {
-            get
-            {
-                return vlrBrutoField;
-            }
-
-            set
-            {
-                vlrBrutoField = value;
-                RaisePropertyChanged("vlrBruto");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrCPDescPR
-        {
-            get
-            {
-                return vrCPDescPRField;
-            }
-
-            set
-            {
-                vrCPDescPRField = value;
-                RaisePropertyChanged("vrCPDescPR");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return vrRatDescPRField;
-            }
-
-            set
-            {
-                vrRatDescPRField = value;
-                RaisePropertyChanged("vrRatDescPR");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return vrSenarDescField;
-            }
-
-            set
-            {
-                vrSenarDescField = value;
-                RaisePropertyChanged("vrSenarDesc");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisIdeProdutorInfoProcJud : ESocialBindableObject
-    {
-        private string nrProcJudField;
-        private string codSuspField;
-        private decimal vrCPNRetField;
-        private decimal vrRatNRetField;
-        private decimal vrSenarNRetField;
-
-        [XmlAttribute()]
-        public string nrProcJud
-        {
-            get
-            {
-                return nrProcJudField;
-            }
-
-            set
-            {
-                nrProcJudField = value;
-                RaisePropertyChanged("nrProcJud");
-            }
-        }
-
-        [XmlAttribute(DataType = "integer")]
-        public string codSusp
-        {
-            get
-            {
-                return codSuspField;
-            }
-
-            set
-            {
-                codSuspField = value;
-                RaisePropertyChanged("codSusp");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrCPNRet
-        {
-            get
-            {
-                return vrCPNRetField;
-            }
-
-            set
-            {
-                vrCPNRetField = value;
-                RaisePropertyChanged("vrCPNRet");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrRatNRet
-        {
-            get
-            {
-                return vrRatNRetField;
-            }
-
-            set
-            {
-                vrRatNRetField = value;
-                RaisePropertyChanged("vrRatNRet");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrSenarNRet
-        {
-            get
-            {
-                return vrSenarNRetField;
-            }
-
-            set
-            {
-                vrSenarNRetField = value;
-                RaisePropertyChanged("vrSenarNRet");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtAqProdInfoAquisProdIdeEstabAdquirTpAquisInfoProcJ : ESocialBindableObject
-    {
-        private string nrProcJudField;
-        private string codSuspField;
-        private decimal vrCPNRetField;
-        private decimal vrRatNRetField;
-        private decimal vrSenarNRetField;
-
-        [XmlAttribute()]
-        public string nrProcJud
-        {
-            get
-            {
-                return nrProcJudField;
-            }
-
-            set
-            {
-                nrProcJudField = value;
-                RaisePropertyChanged("nrProcJud");
-            }
-        }
-
-        [XmlAttribute(DataType = "integer")]
-        public string codSusp
-        {
-            get
-            {
-                return codSuspField;
-            }
-
-            set
-            {
-                codSuspField = value;
-                RaisePropertyChanged("codSusp");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrCPNRet
-        {
-            get
-            {
-                return vrCPNRetField;
-            }
-
-            set
-            {
-                vrCPNRetField = value;
-                RaisePropertyChanged("vrCPNRet");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrRatNRet
-        {
-            get
-            {
-                return vrRatNRetField;
-            }
-
-            set
-            {
-                vrRatNRetField = value;
-                RaisePropertyChanged("vrRatNRet");
-            }
-        }
-
-        [XmlAttribute()]
-        public decimal vrSenarNRet
-        {
-            get
-            {
-                return vrSenarNRetField;
-            }
-
-            set
-            {
-                vrSenarNRetField = value;
-                RaisePropertyChanged("vrSenarNRet");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtComProd/v02_05_00", IsNullable = false)]
-    public partial class S1260 : IeSocialEvt, INotifyPropertyChanged
-    {
-        private eSocialEvtComProd evtComProdField;
-        private SignatureType signatureField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtComProd evtComProd
-        {
-            get
-            {
-                return evtComProdField;
-            }
-
-            set
-            {
-                evtComProdField = value;
-                RaisePropertyChanged("evtComProd");
-            }
-        }
-
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S1260));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtComProdField.Id = string.Format("ID{0}{1}{2}", (int)(evtComProdField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtComProdField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override object GetEventoID()
-        {
-            return evtComProdField.Id;
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtComProdField.ideEmpregador.nrInsc;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProd : ESocialBindableObject
-    {
-        private IdeEventoPeriodico ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtComProdInfoComProd infoComProdField;
-        private string idField;
-
-        [XmlElement(Order = 0)]
-        public IdeEventoPeriodico ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public eSocialEvtComProdInfoComProd infoComProd
-        {
-            get
-            {
-                return infoComProdField;
-            }
-
-            set
-            {
-                infoComProdField = value;
-                RaisePropertyChanged("infoComProd");
-            }
-        }
-
-        [XmlAttribute(DataType = "ID")]
-        public string Id
-        {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProd : ESocialBindableObject
-    {
-        private eSocialEvtComProdInfoComProdIdeEstabel ideEstabelField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtComProdInfoComProdIdeEstabel ideEstabel
-        {
-            get
-            {
-                return ideEstabelField;
-            }
-
-            set
-            {
-                ideEstabelField = value;
-                RaisePropertyChanged("ideEstabel");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProdIdeEstabel : ESocialBindableObject
-    {
-        private string nrInscEstabRuralField;
-        private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc> tpComercField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc>();
-
-        /// <summary>
-        /// CAEPF (substituiu o CEI)
-        /// </summary>
-        /// <returns></returns>
-        [XmlElement(Order = 0)]
-        public string nrInscEstabRural
-        {
-            get
-            {
-                return nrInscEstabRuralField;
-            }
-
-            set
-            {
-                nrInscEstabRuralField = value;
-                RaisePropertyChanged("nrInscEstabRural");
-            }
-        }
-
-        [XmlElement("tpComerc", Order = 1)]
-        public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComerc> tpComerc
-        {
-            get
-            {
-                return tpComercField;
-            }
-
-            set
-            {
-                tpComercField = value;
-                RaisePropertyChanged("tpComerc");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComerc : ESocialBindableObject
-    {
-        private IndicadorComercializacaoS1260 indComercField = IndicadorComercializacaoS1260.Vendas_a_PJ;
-        private decimal vrTotComField;
-        private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir> ideAdquirField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir>();
-        private eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[] infoProcJudField;
-
-        [XmlElement(Order = 0)]
-        public IndicadorComercializacaoS1260 indComerc
-        {
-            get
-            {
-                return indComercField;
-            }
-
-            set
-            {
-                indComercField = value;
-                RaisePropertyChanged("indComerc");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public decimal vrTotCom
-        {
-            get
-            {
-                return vrTotComField;
-            }
-
-            set
-            {
-                vrTotComField = value;
-                RaisePropertyChanged("vrTotCom");
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrCPDesc
-        {
-            get
-            {
-                return ideAdquirField.Sum(f => f.vrCPDesc);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return ideAdquirField.Sum(f => f.vrRatDescPR);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return ideAdquirField.Sum(f => f.vrSenarDesc);
-            }
-        }
-
-
-        [XmlElement("ideAdquir", Order = 2)]
-        public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir> ideAdquir
-        {
-            get
-            {
-                return ideAdquirField;
-            }
-
-            set
-            {
-                ideAdquirField = value;
-                RaisePropertyChanged("ideAdquir");
-            }
-        }
-
-        [XmlElement("infoProcJud", Order = 3)]
-        public eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud[] infoProcJud
-        {
-            get
-            {
-                return infoProcJudField;
-            }
-
-            set
-            {
-                infoProcJudField = value;
-                RaisePropertyChanged("infoProcJud");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir : ESocialBindableObject
-    {
-        private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
-        private string nrInscField;
-        private decimal vrComercField;
-        private ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs> nfsField = new ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs>();
-
-        [XmlElement(Order = 0)]
-        public PersonalidadeJuridica tpInsc
-        {
-            get
-            {
-                return tpInscField;
-            }
-
-            set
-            {
-                tpInscField = value;
-                RaisePropertyChanged("tpInsc");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string nrInsc
-        {
-            get
-            {
-                return nrInscField;
-            }
-
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public decimal vrComerc
-        {
-            get
-            {
-                return vrComercField;
-            }
-
-            set
-            {
-                vrComercField = value;
-                RaisePropertyChanged("vrComerc");
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrCPDesc
-        {
-            get
-            {
-                return nfs.Sum(f => f.vrCPDescPR);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return nfs.Sum(f => f.vrRatDescPR);
-            }
-        }
-
-        [XmlIgnore()]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return nfs.Sum(f => f.vrSenarDesc);
-            }
-        }
-
-
-        [XmlElement("nfs", Order = 3)]
-        public ObservableCollection<eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs> nfs
-        {
-            get
-            {
-                return nfsField;
-            }
-
-            set
-            {
-                nfsField = value;
-                RaisePropertyChanged("nfs");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquirNfs : ESocialBindableObject
-    {
-        private string serieField;
-        private string nrDoctoField;
-        private DateTime dtEmisNFField;
-        private decimal vlrBrutoField;
-        private decimal vrCPDescPRField;
-        private decimal vrRatDescPRField;
-        private decimal vrSenarDescField;
-
-        [XmlElement(Order = 0)]
-        public string serie
-        {
-            get
-            {
-                return serieField;
-            }
-
-            set
-            {
-                serieField = value;
-                RaisePropertyChanged("serie");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string nrDocto
-        {
-            get
-            {
-                return nrDoctoField;
-            }
-
-            set
-            {
-                nrDoctoField = value;
-                RaisePropertyChanged("nrDocto");
-            }
-        }
-
-        [XmlElement(DataType = "date", Order = 2)]
-        public DateTime dtEmisNF
-        {
-            get
-            {
-                return dtEmisNFField;
-            }
-
-            set
-            {
-                dtEmisNFField = value;
-                RaisePropertyChanged("dtEmisNF");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public decimal vlrBruto
-        {
-            get
-            {
-                return vlrBrutoField;
-            }
-
-            set
-            {
-                vlrBrutoField = value;
-                RaisePropertyChanged("vlrBruto");
-            }
-        }
-
-        [XmlElement(Order = 4)]
-        public decimal vrCPDescPR
-        {
-            get
-            {
-                return vrCPDescPRField;
-            }
-
-            set
-            {
-                vrCPDescPRField = value;
-                RaisePropertyChanged("vrCPDescPR");
-            }
-        }
-
-        [XmlElement(Order = 5)]
-        public decimal vrRatDescPR
-        {
-            get
-            {
-                return vrRatDescPRField;
-            }
-
-            set
-            {
-                vrRatDescPRField = value;
-                RaisePropertyChanged("vrRatDescPR");
-            }
-        }
-
-        [XmlElement(Order = 6)]
-        public decimal vrSenarDesc
-        {
-            get
-            {
-                return vrSenarDescField;
-            }
-
-            set
-            {
-                vrSenarDescField = value;
-                RaisePropertyChanged("vrSenarDesc");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercInfoProcJud : ESocialBindableObject
-    {
-        private sbyte tpProcField;
-        private string nrProcField;
-        private string codSuspField;
-        private decimal vrCPSuspField;
-        private bool vrCPSuspFieldSpecified;
-        private decimal vrRatSuspField;
-        private bool vrRatSuspFieldSpecified;
-        private decimal vrSenarSuspField;
-        private bool vrSenarSuspFieldSpecified;
-
-        [XmlElement(Order = 0)]
-        public sbyte tpProc
-        {
-            get
-            {
-                return tpProcField;
-            }
-
-            set
-            {
-                tpProcField = value;
-                RaisePropertyChanged("tpProc");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string nrProc
-        {
-            get
-            {
-                return nrProcField;
-            }
-
-            set
-            {
-                nrProcField = value;
-                RaisePropertyChanged("nrProc");
-            }
-        }
-
-        [XmlElement(DataType = "integer", Order = 2)]
-        public string codSusp
-        {
-            get
-            {
-                return codSuspField;
-            }
-
-            set
-            {
-                codSuspField = value;
-                RaisePropertyChanged("codSusp");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public decimal vrCPSusp
-        {
-            get
-            {
-                return vrCPSuspField;
-            }
-
-            set
-            {
-                vrCPSuspField = value;
-                RaisePropertyChanged("vrCPSusp");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool vrCPSuspSpecified
-        {
-            get
-            {
-                return vrCPSuspFieldSpecified;
-            }
-
-            set
-            {
-                vrCPSuspFieldSpecified = value;
-                RaisePropertyChanged("vrCPSuspSpecified");
-            }
-        }
-
-        [XmlElement(Order = 4)]
-        public decimal vrRatSusp
-        {
-            get
-            {
-                return vrRatSuspField;
-            }
-
-            set
-            {
-                vrRatSuspField = value;
-                RaisePropertyChanged("vrRatSusp");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool vrRatSuspSpecified
-        {
-            get
-            {
-                return vrRatSuspFieldSpecified;
-            }
-
-            set
-            {
-                vrRatSuspFieldSpecified = value;
-                RaisePropertyChanged("vrRatSuspSpecified");
-            }
-        }
-
-        [XmlElement(Order = 5)]
-        public decimal vrSenarSusp
-        {
-            get
-            {
-                return vrSenarSuspField;
-            }
-
-            set
-            {
-                vrSenarSuspField = value;
-                RaisePropertyChanged("vrSenarSusp");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool vrSenarSuspSpecified
-        {
-            get
-            {
-                return vrSenarSuspFieldSpecified;
-            }
-
-            set
-            {
-                vrSenarSuspFieldSpecified = value;
-                RaisePropertyChanged("vrSenarSuspSpecified");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v02_05_00", IsNullable = false)]
-    public partial class S1298 : IeSocialEvt, INotifyPropertyChanged
-    {
-        private eSocialEvtReabreEvPer evtReabreEvPerField;
-        private SignatureType signatureField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtReabreEvPer evtReabreEvPer
-        {
-            get
-            {
-                return evtReabreEvPerField;
-            }
-
-            set
-            {
-                evtReabreEvPerField = value;
-                RaisePropertyChanged("evtReabreEvPer");
-            }
-        }
-
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S1298));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtReabreEvPerField.Id = string.Format("ID{0}{1}{2}", (int)(evtReabreEvPerField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtReabreEvPerField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override object GetEventoID()
-        {
-            return evtReabreEvPerField.Id;
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtReabreEvPerField.ideEmpregador.nrInsc;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtReabreEvPer : ESocialBindableObject
-    {
-        private eSocialEvtReabreEvPerIdeEvento ideEventoField;
-        private Empregador ideEmpregadorField;
-        private string idField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtReabreEvPerIdeEvento ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
-        }
-
-        [XmlAttribute(DataType = "ID")]
-        public string Id
-        {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtReabreEvPerIdeEvento : ESocialBindableObject
-    {
-        private IndicadorApuracao indApuracaoField = IndicadorApuracao.Mensal;
-        private string perApurField;
-        private Ambiente tpAmbField = Ambiente.Producao;
-        private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
-        private string verProcField;
-
-        [XmlElement(Order = 0)]
-        public IndicadorApuracao indApuracao
-        {
-            get
-            {
-                return indApuracaoField;
-            }
-
-            set
-            {
-                indApuracaoField = value;
-                RaisePropertyChanged("indApuracao");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string perApur
-        {
-            get
-            {
-                return perApurField;
-            }
-
-            set
-            {
-                perApurField = value;
-                RaisePropertyChanged("perApur");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public Ambiente tpAmb
-        {
-            get
-            {
-                return tpAmbField;
-            }
-
-            set
-            {
-                tpAmbField = value;
-                RaisePropertyChanged("tpAmb");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public EmissorEvento procEmi
-        {
-            get
-            {
-                return procEmiField;
-            }
-
-            set
-            {
-                procEmiField = value;
-                RaisePropertyChanged("procEmi");
-            }
-        }
-
-        [XmlElement(Order = 4)]
-        public string verProc
-        {
-            get
-            {
-                return verProcField;
-            }
-
-            set
-            {
-                verProcField = value;
-                RaisePropertyChanged("verProc");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot("eSocial", Namespace = "http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v02_05_00", IsNullable = false)]
-    public partial class S1299 : IeSocialEvt, INotifyPropertyChanged
-    {
-        private eSocialEvtFechaEvPer evtFechaEvPerField;
-        private SignatureType signatureField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtFechaEvPer evtFechaEvPer
-        {
-            get
-            {
-                return evtFechaEvPerField;
-            }
-
-            set
-            {
-                evtFechaEvPerField = value;
-                RaisePropertyChanged("evtFechaEvPer");
-            }
-        }
-
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S1299));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtFechaEvPerField.Id = string.Format("ID{0}{1}{2}", (int)(evtFechaEvPerField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtFechaEvPerField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override object GetEventoID()
-        {
-            return evtFechaEvPerField.Id;
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtFechaEvPerField.ideEmpregador.nrInsc;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtFechaEvPer : ESocialBindableObject
-    {
-        private eSocialEvtFechaEvPerIdeEvento ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtFechaEvPerIdeRespInf ideRespInfField;
-        private eSocialEvtFechaEvPerInfoFech infoFechField;
-        private string idField;
-
-        [XmlElement(Order = 0)]
-        public eSocialEvtFechaEvPerIdeEvento ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public eSocialEvtFechaEvPerIdeRespInf ideRespInf
-        {
-            get
-            {
-                return ideRespInfField;
-            }
-
-            set
-            {
-                ideRespInfField = value;
-                RaisePropertyChanged("ideRespInf");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public eSocialEvtFechaEvPerInfoFech infoFech
-        {
-            get
-            {
-                return infoFechField;
-            }
-
-            set
-            {
-                infoFechField = value;
-                RaisePropertyChanged("infoFech");
-            }
-        }
-
-        [XmlAttribute(DataType = "ID")]
-        public string Id
-        {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtFechaEvPerIdeEvento : ESocialBindableObject
-    {
-        private IndicadorApuracao indApuracaoField = IndicadorApuracao.Mensal;
-        private string perApurField;
-        private Ambiente tpAmbField = Ambiente.Producao;
-        private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
-        private string verProcField;
-
-        [XmlElement(Order = 0)]
-        public IndicadorApuracao indApuracao
-        {
-            get
-            {
-                return indApuracaoField;
-            }
-
-            set
-            {
-                indApuracaoField = value;
-                RaisePropertyChanged("indApuracao");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string perApur
-        {
-            get
-            {
-                return perApurField;
-            }
-
-            set
-            {
-                perApurField = value;
-                RaisePropertyChanged("perApur");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public Ambiente tpAmb
-        {
-            get
-            {
-                return tpAmbField;
-            }
-
-            set
-            {
-                tpAmbField = value;
-                RaisePropertyChanged("tpAmb");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public EmissorEvento procEmi
-        {
-            get
-            {
-                return procEmiField;
-            }
-
-            set
-            {
-                procEmiField = value;
-                RaisePropertyChanged("procEmi");
-            }
-        }
-
-        [XmlElement(Order = 4)]
-        public string verProc
-        {
-            get
-            {
-                return verProcField;
-            }
-
-            set
-            {
-                verProcField = value;
-                RaisePropertyChanged("verProc");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtFechaEvPerIdeRespInf : ESocialBindableObject
-    {
-        private string nmRespField;
-        private string cpfRespField;
-        private string telefoneField;
-        private string emailField;
-
-        [XmlElement(Order = 0)]
-        public string nmResp
-        {
-            get
-            {
-                return nmRespField;
-            }
-
-            set
-            {
-                nmRespField = value;
-                RaisePropertyChanged("nmResp");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public string cpfResp
-        {
-            get
-            {
-                return cpfRespField;
-            }
-
-            set
-            {
-                cpfRespField = value;
-                RaisePropertyChanged("cpfResp");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public string telefone
-        {
-            get
-            {
-                return telefoneField;
-            }
-
-            set
-            {
-                telefoneField = value;
-                RaisePropertyChanged("telefone");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public string email
-        {
-            get
-            {
-                return emailField;
-            }
-
-            set
-            {
-                emailField = value;
-                RaisePropertyChanged("email");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true)]
-    public partial class eSocialEvtFechaEvPerInfoFech : ESocialBindableObject
-    {
-        private SimNaoString evtRemunField = SimNaoString.Nao;
-        private SimNaoString evtPgtosField = SimNaoString.Nao;
-        private SimNaoString evtAqProdField = SimNaoString.Nao;
-        private SimNaoString evtComProdField = SimNaoString.Nao;
-        private SimNaoString evtContratAvNPField = SimNaoString.Nao;
-        private SimNaoString evtInfoComplPerField = SimNaoString.Nao;
-        private string compSemMovtoField;
-
-        [XmlElement(Order = 0)]
-        public SimNaoString evtRemun
-        {
-            get
-            {
-                return evtRemunField;
-            }
-
-            set
-            {
-                evtRemunField = value;
-                RaisePropertyChanged("evtRemun");
-            }
-        }
-
-        [XmlElement(Order = 1)]
-        public SimNaoString evtPgtos
-        {
-            get
-            {
-                return evtPgtosField;
-            }
-
-            set
-            {
-                evtPgtosField = value;
-                RaisePropertyChanged("evtPgtos");
-            }
-        }
-
-        [XmlElement(Order = 2)]
-        public SimNaoString evtAqProd
-        {
-            get
-            {
-                return evtAqProdField;
-            }
-
-            set
-            {
-                evtAqProdField = value;
-                RaisePropertyChanged("evtAqProd");
-            }
-        }
-
-        [XmlElement(Order = 3)]
-        public SimNaoString evtComProd
-        {
-            get
-            {
-                return evtComProdField;
-            }
-
-            set
-            {
-                evtComProdField = value;
-                RaisePropertyChanged("evtComProd");
-            }
-        }
-
-        [XmlElement(Order = 4)]
-        public SimNaoString evtContratAvNP
-        {
-            get
-            {
-                return evtContratAvNPField;
-            }
-
-            set
-            {
-                evtContratAvNPField = value;
-                RaisePropertyChanged("evtContratAvNP");
-            }
-        }
-
-        [XmlElement(Order = 5)]
-        public SimNaoString evtInfoComplPer
-        {
-            get
-            {
-                return evtInfoComplPerField;
-            }
-
-            set
-            {
-                evtInfoComplPerField = value;
-                RaisePropertyChanged("evtInfoComplPer");
-            }
-        }
-
-        [XmlElement(Order = 6)]
-        public string compSemMovto
-        {
-            get
-            {
-                return compSemMovtoField;
-            }
-
-            set
-            {
-                compSemMovtoField = value;
-                RaisePropertyChanged("compSemMovto");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    [XmlRoot(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00", IsNullable = false)]
-    public partial class S2200 : IeSocialEvt, INotifyPropertyChanged
-    {
-        private eSocialEvtAdmissao evtAdmissaoField;
-        private SignatureType signatureField;
-
-        public eSocialEvtAdmissao evtAdmissao
-        {
-            get
-            {
-                return evtAdmissaoField;
-            }
-
-            set
-            {
-                evtAdmissaoField = value;
-                RaisePropertyChanged("evtAdmissao");
-            }
-        }
-
-        [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
-        {
-            get
-            {
-                return signatureField;
-            }
-
-            set
-            {
-                signatureField = value;
-                RaisePropertyChanged("Signature");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        public override XmlSerializer DefineSerializer()
-        {
-            return new XmlSerializer(typeof(S2200));
-        }
-
-        public override void GeraEventoID()
-        {
-            evtAdmissaoField.Id = string.Format("ID{0}{1}{2}", (int)(evtAdmissaoField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtAdmissaoField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
-        }
-
-        public override object GetEventoID()
-        {
-            return evtAdmissaoField.Id;
-        }
-
-        public override string ContribuinteCNPJ()
-        {
-            return evtAdmissaoField.ideEmpregador.nrInsc;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissao : ESocialBindableObject
-    {
-        private IdeEventoNaoPeriodico ideEventoField;
-        private Empregador ideEmpregadorField;
-        private eSocialEvtAdmissaoTrabalhador trabalhadorField;
-        private eSocialEvtAdmissaoVinculo vinculoField;
-        private string idField;
-
-        public IdeEventoNaoPeriodico ideEvento
-        {
-            get
-            {
-                return ideEventoField;
-            }
-
-            set
-            {
-                ideEventoField = value;
-                RaisePropertyChanged("ideEvento");
-            }
-        }
-
-        public Empregador ideEmpregador
-        {
-            get
-            {
-                return ideEmpregadorField;
-            }
-
-            set
-            {
-                ideEmpregadorField = value;
-                RaisePropertyChanged("ideEmpregador");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhador trabalhador
-        {
-            get
-            {
-                return trabalhadorField;
-            }
-
-            set
-            {
-                trabalhadorField = value;
-                RaisePropertyChanged("trabalhador");
-            }
-        }
-
-        public eSocialEvtAdmissaoVinculo vinculo
-        {
-            get
-            {
-                return vinculoField;
-            }
-
-            set
-            {
-                vinculoField = value;
-                RaisePropertyChanged("vinculo");
-            }
-        }
-
-        [XmlAttribute(DataType = "ID")]
-        public string Id
-        {
-            get
-            {
-                return idField;
-            }
-
-            set
-            {
-                idField = value;
-                RaisePropertyChanged("Id");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhador : ESocialBindableObject
-    {
-        private string cpfTrabField;
-        private string nisTrabField;
-        private string nmTrabField;
-        private string sexoField;
-        private RacaCor racaCorField = RacaCor.NaoInformado;
-        private EstadoCivil estCivField = EstadoCivil.Solteiro;
-        private bool estCivFieldSpecified;
-        private GrauInstrucao grauInstrField = GrauInstrucao.Analfabeto;
-        private SimNaoString indPriEmprField = SimNaoString.Nao;
-        private string nmSocField;
-        private eSocialEvtAdmissaoTrabalhadorNascimento nascimentoField;
-        private eSocialEvtAdmissaoTrabalhadorDocumentos documentosField;
-        private eSocialEvtAdmissaoTrabalhadorEndereco enderecoField;
-        private TTrabEstrang trabEstrangeiroField;
-        private eSocialEvtAdmissaoTrabalhadorInfoDeficiencia infoDeficienciaField;
-        private List<TDependente> dependenteField = new List<TDependente>();
-        private eSocialEvtAdmissaoTrabalhadorAposentadoria aposentadoriaField;
-        private TContato contatoField;
-
-        public string cpfTrab
-        {
-            get
-            {
-                return cpfTrabField;
-            }
-
-            set
-            {
-                cpfTrabField = value;
-                RaisePropertyChanged("cpfTrab");
-            }
-        }
-
-        public string nisTrab
-        {
-            get
-            {
-                return nisTrabField;
-            }
-
-            set
-            {
-                nisTrabField = value;
-                RaisePropertyChanged("nisTrab");
-            }
-        }
-
-        public string nmTrab
-        {
-            get
-            {
-                return nmTrabField;
-            }
-
-            set
-            {
-                nmTrabField = value;
-                RaisePropertyChanged("nmTrab");
-            }
-        }
-
-        public string sexo
-        {
-            get
-            {
-                return sexoField;
-            }
-
-            set
-            {
-                sexoField = value;
-                RaisePropertyChanged("sexo");
-            }
-        }
-
-        public RacaCor racaCor
-        {
-            get
-            {
-                return racaCorField;
-            }
-
-            set
-            {
-                racaCorField = value;
-                RaisePropertyChanged("racaCor");
-            }
-        }
-
-        public EstadoCivil estCiv
-        {
-            get
-            {
-                return estCivField;
-            }
-
-            set
-            {
-                estCivField = value;
-                RaisePropertyChanged("estCiv");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool estCivSpecified
-        {
-            get
-            {
-                return estCivFieldSpecified;
-            }
-
-            set
-            {
-                estCivFieldSpecified = value;
-                RaisePropertyChanged("estCivSpecified");
-            }
-        }
-
-        public GrauInstrucao grauInstr
-        {
-            get
-            {
-                return grauInstrField;
-            }
-
-            set
-            {
-                grauInstrField = value;
-                RaisePropertyChanged("grauInstr");
-            }
-        }
-
-        public SimNaoString indPriEmpr
-        {
-            get
-            {
-                return indPriEmprField;
-            }
-
-            set
-            {
-                indPriEmprField = value;
-                RaisePropertyChanged("indPriEmpr");
-            }
-        }
-
-        public string nmSoc
-        {
-            get
-            {
-                return nmSocField;
-            }
-
-            set
-            {
-                nmSocField = value;
-                RaisePropertyChanged("nmSoc");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhadorNascimento nascimento
-        {
-            get
-            {
-                return nascimentoField;
-            }
-
-            set
-            {
-                nascimentoField = value;
-                RaisePropertyChanged("nascimento");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhadorDocumentos documentos
-        {
-            get
-            {
-                return documentosField;
-            }
-
-            set
-            {
-                documentosField = value;
-                RaisePropertyChanged("documentos");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhadorEndereco endereco
-        {
-            get
-            {
-                return enderecoField;
-            }
-
-            set
-            {
-                enderecoField = value;
-                RaisePropertyChanged("endereco");
-            }
-        }
-
-        public TTrabEstrang trabEstrangeiro
-        {
-            get
-            {
-                return trabEstrangeiroField;
-            }
-
-            set
-            {
-                trabEstrangeiroField = value;
-                RaisePropertyChanged("trabEstrangeiro");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhadorInfoDeficiencia infoDeficiencia
-        {
-            get
-            {
-                return infoDeficienciaField;
-            }
-
-            set
-            {
-                infoDeficienciaField = value;
-                RaisePropertyChanged("infoDeficiencia");
-            }
-        }
-
-        [XmlElement("dependente")]
-        public List<TDependente> dependente
-        {
-            get
-            {
-                return dependenteField;
-            }
-
-            set
-            {
-                dependenteField = value;
-                RaisePropertyChanged("dependente");
-            }
-        }
-
-        public eSocialEvtAdmissaoTrabalhadorAposentadoria aposentadoria
-        {
-            get
-            {
-                return aposentadoriaField;
-            }
-
-            set
-            {
-                aposentadoriaField = value;
-                RaisePropertyChanged("aposentadoria");
-            }
-        }
-
-        public TContato contato
-        {
-            get
-            {
-                return contatoField;
-            }
-
-            set
-            {
-                contatoField = value;
-                RaisePropertyChanged("contato");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhadorNascimento : ESocialBindableObject
-    {
-        private DateTime dtNasctoField;
-        private string codMunicField;
-        private UFCadastro ufField;
-        private bool ufFieldSpecified;
-        private string paisNasctoField;
-        private string paisNacField;
-        private string nmMaeField;
-        private string nmPaiField;
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtNascto
-        {
-            get
-            {
-                return dtNasctoField;
-            }
-
-            set
-            {
-                dtNasctoField = value;
-                RaisePropertyChanged("dtNascto");
-            }
-        }
-
-        [XmlElement(DataType = "integer")]
-        public string codMunic
-        {
-            get
-            {
-                return codMunicField;
-            }
-
-            set
-            {
-                codMunicField = value;
-                RaisePropertyChanged("codMunic");
-            }
-        }
-
-        public UFCadastro uf
-        {
-            get
-            {
-                return ufField;
-            }
-
-            set
-            {
-                ufField = value;
-                RaisePropertyChanged("uf");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool ufSpecified
-        {
-            get
-            {
-                return ufFieldSpecified;
-            }
-
-            set
-            {
-                ufFieldSpecified = value;
-                RaisePropertyChanged("ufSpecified");
-            }
-        }
-
-        public string paisNascto
-        {
-            get
-            {
-                return paisNasctoField;
-            }
-
-            set
-            {
-                paisNasctoField = value;
-                RaisePropertyChanged("paisNascto");
-            }
-        }
-
-        public string paisNac
-        {
-            get
-            {
-                return paisNacField;
-            }
-
-            set
-            {
-                paisNacField = value;
-                RaisePropertyChanged("paisNac");
-            }
-        }
-
-        public string nmMae
-        {
-            get
-            {
-                return nmMaeField;
-            }
-
-            set
-            {
-                nmMaeField = value;
-                RaisePropertyChanged("nmMae");
-            }
-        }
-
-        public string nmPai
-        {
-            get
-            {
-                return nmPaiField;
-            }
-
-            set
-            {
-                nmPaiField = value;
-                RaisePropertyChanged("nmPai");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhadorDocumentos : ESocialBindableObject
-    {
-        private TCtps cTPSField;
-        private TRic rICField;
-        private TRg rgField;
-        private TRne rNEField;
-        private TOc ocField;
-        private TCnh cNHField;
-
-        public TCtps CTPS
-        {
-            get
-            {
-                return cTPSField;
-            }
-
-            set
-            {
-                cTPSField = value;
-                RaisePropertyChanged("CTPS");
-            }
-        }
-
-        public TRic RIC
-        {
-            get
-            {
-                return rICField;
-            }
-
-            set
-            {
-                rICField = value;
-                RaisePropertyChanged("RIC");
-            }
-        }
-
-        public TRg RG
-        {
-            get
-            {
-                return rgField;
-            }
-
-            set
-            {
-                rgField = value;
-                RaisePropertyChanged("RG");
-            }
-        }
-
-        public TRne RNE
-        {
-            get
-            {
-                return rNEField;
-            }
-
-            set
-            {
-                rNEField = value;
-                RaisePropertyChanged("RNE");
-            }
-        }
-
-        public TOc OC
-        {
-            get
-            {
-                return ocField;
-            }
-
-            set
-            {
-                ocField = value;
-                RaisePropertyChanged("OC");
-            }
-        }
-
-        public TCnh CNH
-        {
-            get
-            {
-                return cNHField;
-            }
-
-            set
-            {
-                cNHField = value;
-                RaisePropertyChanged("CNH");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TCtps : ESocialBindableObject
-    {
-        private string nrCtpsField;
-        private string serieCtpsField;
-        private UFCadastro ufCtpsField;
-
-        public string nrCtps
-        {
-            get
-            {
-                return nrCtpsField;
-            }
-
-            set
-            {
-                nrCtpsField = value;
-                RaisePropertyChanged("nrCtps");
-            }
-        }
-
-        public string serieCtps
-        {
-            get
-            {
-                return serieCtpsField;
-            }
-
-            set
-            {
-                serieCtpsField = value;
-                RaisePropertyChanged("serieCtps");
-            }
-        }
-
-        public UFCadastro ufCtps
-        {
-            get
-            {
-                return ufCtpsField;
-            }
-
-            set
-            {
-                ufCtpsField = value;
-                RaisePropertyChanged("ufCtps");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TRic : ESocialBindableObject
-    {
-        private string nrRicField;
-        private string orgaoEmissorField;
-        private DateTime dtExpedField;
-        private bool dtExpedFieldSpecified;
-
-        public string nrRic
-        {
-            get
-            {
-                return nrRicField;
-            }
-
-            set
-            {
-                nrRicField = value;
-                RaisePropertyChanged("nrRic");
-            }
-        }
-
-        public string orgaoEmissor
-        {
-            get
-            {
-                return orgaoEmissorField;
-            }
-
-            set
-            {
-                orgaoEmissorField = value;
-                RaisePropertyChanged("orgaoEmissor");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtExped
-        {
-            get
-            {
-                return dtExpedField;
-            }
-
-            set
-            {
-                dtExpedField = value;
-                RaisePropertyChanged("dtExped");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtExpedSpecified
-        {
-            get
-            {
-                return dtExpedFieldSpecified;
-            }
-
-            set
-            {
-                dtExpedFieldSpecified = value;
-                RaisePropertyChanged("dtExpedSpecified");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TRg : ESocialBindableObject
-    {
-        private string nrRgField;
-        private string orgaoEmissorField;
-        private DateTime dtExpedField;
-        private bool dtExpedFieldSpecified;
-
-        public string nrRg
-        {
-            get
-            {
-                return nrRgField;
-            }
-
-            set
-            {
-                nrRgField = value;
-                RaisePropertyChanged("nrRg");
-            }
-        }
-
-        public string orgaoEmissor
-        {
-            get
-            {
-                return orgaoEmissorField;
-            }
-
-            set
-            {
-                orgaoEmissorField = value;
-                RaisePropertyChanged("orgaoEmissor");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtExped
-        {
-            get
-            {
-                return dtExpedField;
-            }
-
-            set
-            {
-                dtExpedField = value;
-                RaisePropertyChanged("dtExped");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtExpedSpecified
-        {
-            get
-            {
-                return dtExpedFieldSpecified;
-            }
-
-            set
-            {
-                dtExpedFieldSpecified = value;
-                RaisePropertyChanged("dtExpedSpecified");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TRne : ESocialBindableObject
-    {
-        private string nrRneField;
-        private string orgaoEmissorField;
-        private DateTime dtExpedField;
-        private bool dtExpedFieldSpecified;
-
-        public string nrRne
-        {
-            get
-            {
-                return nrRneField;
-            }
-
-            set
-            {
-                nrRneField = value;
-                RaisePropertyChanged("nrRne");
-            }
-        }
-
-        public string orgaoEmissor
-        {
-            get
-            {
-                return orgaoEmissorField;
-            }
-
-            set
-            {
-                orgaoEmissorField = value;
-                RaisePropertyChanged("orgaoEmissor");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtExped
-        {
-            get
-            {
-                return dtExpedField;
-            }
-
-            set
-            {
-                dtExpedField = value;
-                RaisePropertyChanged("dtExped");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtExpedSpecified
-        {
-            get
-            {
-                return dtExpedFieldSpecified;
-            }
-
-            set
-            {
-                dtExpedFieldSpecified = value;
-                RaisePropertyChanged("dtExpedSpecified");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TOc : ESocialBindableObject
-    {
-        private string nrOcField;
-        private string orgaoEmissorField;
-        private DateTime dtExpedField;
-        private bool dtExpedFieldSpecified;
-        private DateTime dtValidField;
-        private bool dtValidFieldSpecified;
-
-        public string nrOc
-        {
-            get
-            {
-                return nrOcField;
-            }
-
-            set
-            {
-                nrOcField = value;
-                RaisePropertyChanged("nrOc");
-            }
-        }
-
-        public string orgaoEmissor
-        {
-            get
-            {
-                return orgaoEmissorField;
-            }
-
-            set
-            {
-                orgaoEmissorField = value;
-                RaisePropertyChanged("orgaoEmissor");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtExped
-        {
-            get
-            {
-                return dtExpedField;
-            }
-
-            set
-            {
-                dtExpedField = value;
-                RaisePropertyChanged("dtExped");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtExpedSpecified
-        {
-            get
-            {
-                return dtExpedFieldSpecified;
-            }
-
-            set
-            {
-                dtExpedFieldSpecified = value;
-                RaisePropertyChanged("dtExpedSpecified");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtValid
-        {
-            get
-            {
-                return dtValidField;
-            }
-
-            set
-            {
-                dtValidField = value;
-                RaisePropertyChanged("dtValid");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtValidSpecified
-        {
-            get
-            {
-                return dtValidFieldSpecified;
-            }
-
-            set
-            {
-                dtValidFieldSpecified = value;
-                RaisePropertyChanged("dtValidSpecified");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TCnh : ESocialBindableObject
-    {
-        private string nrRegCnhField;
-        private DateTime dtExpedField;
-        private bool dtExpedFieldSpecified;
-        private UFCadastro ufCnhField;
-        private DateTime dtValidField;
-        private DateTime dtPriHabField;
-        private bool dtPriHabFieldSpecified;
-        private string categoriaCnhField;
-
-        public string nrRegCnh
-        {
-            get
-            {
-                return nrRegCnhField;
-            }
-
-            set
-            {
-                nrRegCnhField = value;
-                RaisePropertyChanged("nrRegCnh");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtExped
-        {
-            get
-            {
-                return dtExpedField;
-            }
-
-            set
-            {
-                dtExpedField = value;
-                RaisePropertyChanged("dtExped");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtExpedSpecified
-        {
-            get
-            {
-                return dtExpedFieldSpecified;
-            }
-
-            set
-            {
-                dtExpedFieldSpecified = value;
-                RaisePropertyChanged("dtExpedSpecified");
-            }
-        }
-
-        public UFCadastro ufCnh
-        {
-            get
-            {
-                return ufCnhField;
-            }
-
-            set
-            {
-                ufCnhField = value;
-                RaisePropertyChanged("ufCnh");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtValid
-        {
-            get
-            {
-                return dtValidField;
-            }
-
-            set
-            {
-                dtValidField = value;
-                RaisePropertyChanged("dtValid");
-            }
-        }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtPriHab
-        {
-            get
-            {
-                return dtPriHabField;
-            }
-
-            set
-            {
-                dtPriHabField = value;
-                RaisePropertyChanged("dtPriHab");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtPriHabSpecified
-        {
-            get
-            {
-                return dtPriHabFieldSpecified;
-            }
-
-            set
-            {
-                dtPriHabFieldSpecified = value;
-                RaisePropertyChanged("dtPriHabSpecified");
-            }
-        }
-
-        public string categoriaCnh
-        {
-            get
-            {
-                return categoriaCnhField;
-            }
-
-            set
-            {
-                categoriaCnhField = value;
-                RaisePropertyChanged("categoriaCnh");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            orgaoEmissorField = value;
+            RaisePropertyChanged(nameof(orgaoEmissor));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhadorEndereco : ESocialBindableObject
+    [XmlElement(DataType = "date")]
+    public DateTime dtExped
     {
-        private object itemField;
-
-        [XmlElement("brasil", typeof(EnderecoBrasileiro))]
-        [XmlElement("exterior", typeof(TEnderecoExterior))]
-        public object Item
-        {
-            get
-            {
-                return itemField;
-            }
-
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
+        get => dtExpedField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtExpedField = value;
+            RaisePropertyChanged(nameof(dtExped));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TEnderecoExterior : ESocialBindableObject
+    [XmlIgnore()]
+    public bool dtExpedSpecified
     {
-        private string paisResidField;
-        private string dscLogradField;
-        private string nrLogradField;
-        private string complementoField;
-        private string bairroField;
-        private string nmCidField;
-        private string codPostalField;
-
-        public string paisResid
-        {
-            get
-            {
-                return paisResidField;
-            }
-
-            set
-            {
-                paisResidField = value;
-                RaisePropertyChanged("paisResid");
-            }
-        }
-
-        public string dscLograd
-        {
-            get
-            {
-                return dscLogradField;
-            }
-
-            set
-            {
-                dscLogradField = value;
-                RaisePropertyChanged("dscLograd");
-            }
-        }
-
-        public string nrLograd
-        {
-            get
-            {
-                return nrLogradField;
-            }
-
-            set
-            {
-                nrLogradField = value;
-                RaisePropertyChanged("nrLograd");
-            }
-        }
-
-        public string complemento
-        {
-            get
-            {
-                return complementoField;
-            }
-
-            set
-            {
-                complementoField = value;
-                RaisePropertyChanged("complemento");
-            }
-        }
-
-        public string bairro
+        get => dtExpedFieldSpecified;
+        set
         {
-            get
-            {
-                return bairroField;
-            }
-
-            set
-            {
-                bairroField = value;
-                RaisePropertyChanged("bairro");
-            }
+            dtExpedFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtExpedSpecified));
         }
+    }
 
-        public string nmCid
+    [XmlElement(DataType = "date")]
+    public DateTime dtValid
+    {
+        get => dtValidField;
+        set
         {
-            get
-            {
-                return nmCidField;
-            }
-
-            set
-            {
-                nmCidField = value;
-                RaisePropertyChanged("nmCid");
-            }
+            dtValidField = value;
+            RaisePropertyChanged(nameof(dtValid));
         }
+    }
 
-        public string codPostal
+    [XmlIgnore()]
+    public bool dtValidSpecified
+    {
+        get => dtValidFieldSpecified;
+        set
         {
-            get
-            {
-                return codPostalField;
-            }
-
-            set
-            {
-                codPostalField = value;
-                RaisePropertyChanged("codPostal");
-            }
+            dtValidFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtValidSpecified));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TCnh : ESocialBindableObject
+{
+    private string nrRegCnhField;
+    private DateTime dtExpedField;
+    private bool dtExpedFieldSpecified;
+    private UFCadastro ufCnhField;
+    private DateTime dtValidField;
+    private DateTime dtPriHabField;
+    private bool dtPriHabFieldSpecified;
+    private string categoriaCnhField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string nrRegCnh
+    {
+        get => nrRegCnhField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            nrRegCnhField = value;
+            RaisePropertyChanged(nameof(nrRegCnh));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TTrabEstrang : ESocialBindableObject
+    [XmlElement(DataType = "date")]
+    public DateTime dtExped
     {
-        private DateTime dtChegadaField;
-        private bool dtChegadaFieldSpecified;
-        private ClasseTrabEstrangeiro classTrabEstrangField = ClasseTrabEstrangeiro.VistoPermanente;
-        private SimNaoString casadoBrField = SimNaoString.Nao;
-        private SimNaoString filhosBrField = SimNaoString.Nao;
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtChegada
-        {
-            get
-            {
-                return dtChegadaField;
-            }
-
-            set
-            {
-                dtChegadaField = value;
-                RaisePropertyChanged("dtChegada");
-            }
-        }
-
-        [XmlIgnore()]
-        public bool dtChegadaSpecified
+        get => dtExpedField;
+        set
         {
-            get
-            {
-                return dtChegadaFieldSpecified;
-            }
-
-            set
-            {
-                dtChegadaFieldSpecified = value;
-                RaisePropertyChanged("dtChegadaSpecified");
-            }
+            dtExpedField = value;
+            RaisePropertyChanged(nameof(dtExped));
         }
+    }
 
-        public ClasseTrabEstrangeiro classTrabEstrang
+    [XmlIgnore()]
+    public bool dtExpedSpecified
+    {
+        get => dtExpedFieldSpecified;
+        set
         {
-            get
-            {
-                return classTrabEstrangField;
-            }
-
-            set
-            {
-                classTrabEstrangField = value;
-                RaisePropertyChanged("classTrabEstrang");
-            }
+            dtExpedFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtExpedSpecified));
         }
+    }
 
-        public SimNaoString casadoBr
+    public UFCadastro ufCnh
+    {
+        get => ufCnhField;
+        set
         {
-            get
-            {
-                return casadoBrField;
-            }
-
-            set
-            {
-                casadoBrField = value;
-                RaisePropertyChanged("casadoBr");
-            }
+            ufCnhField = value;
+            RaisePropertyChanged(nameof(ufCnh));
         }
+    }
 
-        public SimNaoString filhosBr
+    [XmlElement(DataType = "date")]
+    public DateTime dtValid
+    {
+        get => dtValidField;
+        set
         {
-            get
-            {
-                return filhosBrField;
-            }
-
-            set
-            {
-                filhosBrField = value;
-                RaisePropertyChanged("filhosBr");
-            }
+            dtValidField = value;
+            RaisePropertyChanged(nameof(dtValid));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtPriHab
+    {
+        get => dtPriHabField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtPriHabField = value;
+            RaisePropertyChanged(nameof(dtPriHab));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhadorInfoDeficiencia : ESocialBindableObject
+    [XmlIgnore()]
+    public bool dtPriHabSpecified
     {
-        private SimNaoString defFisicaField = SimNaoString.Nao;
-        private SimNaoString defVisualField = SimNaoString.Nao;
-        private SimNaoString defAuditivaField = SimNaoString.Nao;
-        private SimNaoString defMentalField = SimNaoString.Nao;
-        private SimNaoString defIntelectualField = SimNaoString.Nao;
-        private SimNaoString reabReadapField = SimNaoString.Nao;
-        private SimNaoString infoCotaField = SimNaoString.Nao;
-        private string observacaoField;
-
-        public SimNaoString defFisica
+        get => dtPriHabFieldSpecified;
+        set
         {
-            get
-            {
-                return defFisicaField;
-            }
-
-            set
-            {
-                defFisicaField = value;
-                RaisePropertyChanged("defFisica");
-            }
+            dtPriHabFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtPriHabSpecified));
         }
+    }
 
-        public SimNaoString defVisual
+    public string categoriaCnh
+    {
+        get => categoriaCnhField;
+        set
         {
-            get
-            {
-                return defVisualField;
-            }
-
-            set
-            {
-                defVisualField = value;
-                RaisePropertyChanged("defVisual");
-            }
+            categoriaCnhField = value;
+            RaisePropertyChanged(nameof(categoriaCnh));
         }
-
-        public SimNaoString defAuditiva
-        {
-            get
-            {
-                return defAuditivaField;
-            }
+    }
+}
 
-            set
-            {
-                defAuditivaField = value;
-                RaisePropertyChanged("defAuditiva");
-            }
-        }
+public partial class eSocialEvtAdmissaoTrabalhadorEndereco : ESocialBindableObject
+{
+    private object itemField;
 
-        public SimNaoString defMental
+    [XmlElement("brasil", typeof(EnderecoBrasileiro))]
+    [XmlElement("exterior", typeof(TEnderecoExterior))]
+    public object Item
+    {
+        get => itemField;
+        set
         {
-            get
-            {
-                return defMentalField;
-            }
-
-            set
-            {
-                defMentalField = value;
-                RaisePropertyChanged("defMental");
-            }
+            itemField = value;
+            RaisePropertyChanged(nameof(Item));
         }
-
-        public SimNaoString defIntelectual
-        {
-            get
-            {
-                return defIntelectualField;
-            }
+    }
+}
 
-            set
-            {
-                defIntelectualField = value;
-                RaisePropertyChanged("defIntelectual");
-            }
-        }
+public partial class TEnderecoExterior : ESocialBindableObject
+{
+    private string paisResidField;
+    private string dscLogradField;
+    private string nrLogradField;
+    private string complementoField;
+    private string bairroField;
+    private string nmCidField;
+    private string codPostalField;
 
-        public SimNaoString reabReadap
+    public string paisResid
+    {
+        get => paisResidField;
+        set
         {
-            get
-            {
-                return reabReadapField;
-            }
-
-            set
-            {
-                reabReadapField = value;
-                RaisePropertyChanged("reabReadap");
-            }
+            paisResidField = value;
+            RaisePropertyChanged(nameof(paisResid));
         }
+    }
 
-        public SimNaoString infoCota
+    public string dscLograd
+    {
+        get => dscLogradField;
+        set
         {
-            get
-            {
-                return infoCotaField;
-            }
-
-            set
-            {
-                infoCotaField = value;
-                RaisePropertyChanged("infoCota");
-            }
+            dscLogradField = value;
+            RaisePropertyChanged(nameof(dscLograd));
         }
+    }
 
-        public string observacao
+    public string nrLograd
+    {
+        get => nrLogradField;
+        set
         {
-            get
-            {
-                return observacaoField;
-            }
-
-            set
-            {
-                observacaoField = value;
-                RaisePropertyChanged("observacao");
-            }
+            nrLogradField = value;
+            RaisePropertyChanged(nameof(nrLograd));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string complemento
+    {
+        get => complementoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            complementoField = value;
+            RaisePropertyChanged(nameof(complemento));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TDependente : ESocialBindableObject
+    public string bairro
     {
-        private string tpDepField;
-        private string nmDepField;
-        private DateTime dtNasctoField;
-        private string cpfDepField;
-        private SimNaoString depIRRFField = SimNaoString.Nao;
-        private SimNaoString depSFField = SimNaoString.Nao;
-        private SimNaoString incTrabField = SimNaoString.Nao;
-
-        public string tpDep
+        get => bairroField;
+        set
         {
-            get
-            {
-                return tpDepField;
-            }
-
-            set
-            {
-                tpDepField = value;
-                RaisePropertyChanged("tpDep");
-            }
+            bairroField = value;
+            RaisePropertyChanged(nameof(bairro));
         }
+    }
 
-        public string nmDep
+    public string nmCid
+    {
+        get => nmCidField;
+        set
         {
-            get
-            {
-                return nmDepField;
-            }
-
-            set
-            {
-                nmDepField = value;
-                RaisePropertyChanged("nmDep");
-            }
+            nmCidField = value;
+            RaisePropertyChanged(nameof(nmCid));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtNascto
+    public string codPostal
+    {
+        get => codPostalField;
+        set
         {
-            get
-            {
-                return dtNasctoField;
-            }
-
-            set
-            {
-                dtNasctoField = value;
-                RaisePropertyChanged("dtNascto");
-            }
+            codPostalField = value;
+            RaisePropertyChanged(nameof(codPostal));
         }
-
-        public string cpfDep
-        {
-            get
-            {
-                return cpfDepField;
-            }
+    }
+}
 
-            set
-            {
-                cpfDepField = value;
-                RaisePropertyChanged("cpfDep");
-            }
-        }
+public partial class TTrabEstrang : ESocialBindableObject
+{
+    private DateTime dtChegadaField;
+    private bool dtChegadaFieldSpecified;
+    private ClasseTrabEstrangeiro classTrabEstrangField = ClasseTrabEstrangeiro.VistoPermanente;
+    private SimNaoString casadoBrField = SimNaoString.Nao;
+    private SimNaoString filhosBrField = SimNaoString.Nao;
 
-        public SimNaoString depIRRF
+    [XmlElement(DataType = "date")]
+    public DateTime dtChegada
+    {
+        get => dtChegadaField;
+        set
         {
-            get
-            {
-                return depIRRFField;
-            }
-
-            set
-            {
-                depIRRFField = value;
-                RaisePropertyChanged("depIRRF");
-            }
+            dtChegadaField = value;
+            RaisePropertyChanged(nameof(dtChegada));
         }
+    }
 
-        public SimNaoString depSF
+    [XmlIgnore()]
+    public bool dtChegadaSpecified
+    {
+        get => dtChegadaFieldSpecified;
+        set
         {
-            get
-            {
-                return depSFField;
-            }
-
-            set
-            {
-                depSFField = value;
-                RaisePropertyChanged("depSF");
-            }
+            dtChegadaFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtChegadaSpecified));
         }
+    }
 
-        public SimNaoString incTrab
+    public ClasseTrabEstrangeiro classTrabEstrang
+    {
+        get => classTrabEstrangField;
+        set
         {
-            get
-            {
-                return incTrabField;
-            }
-
-            set
-            {
-                incTrabField = value;
-                RaisePropertyChanged("incTrab");
-            }
+            classTrabEstrangField = value;
+            RaisePropertyChanged(nameof(classTrabEstrang));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public SimNaoString casadoBr
+    {
+        get => casadoBrField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            casadoBrField = value;
+            RaisePropertyChanged(nameof(casadoBr));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoTrabalhadorAposentadoria : ESocialBindableObject
+    public SimNaoString filhosBr
     {
-        private SimNaoString trabAposentField = SimNaoString.Nao;
-
-        public SimNaoString trabAposent
+        get => filhosBrField;
+        set
         {
-            get
-            {
-                return trabAposentField;
-            }
-
-            set
-            {
-                trabAposentField = value;
-                RaisePropertyChanged("trabAposent");
-            }
+            filhosBrField = value;
+            RaisePropertyChanged(nameof(filhosBr));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoTrabalhadorInfoDeficiencia : ESocialBindableObject
+{
+    private SimNaoString defFisicaField = SimNaoString.Nao;
+    private SimNaoString defVisualField = SimNaoString.Nao;
+    private SimNaoString defAuditivaField = SimNaoString.Nao;
+    private SimNaoString defMentalField = SimNaoString.Nao;
+    private SimNaoString defIntelectualField = SimNaoString.Nao;
+    private SimNaoString reabReadapField = SimNaoString.Nao;
+    private SimNaoString infoCotaField = SimNaoString.Nao;
+    private string observacaoField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public SimNaoString defFisica
+    {
+        get => defFisicaField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            defFisicaField = value;
+            RaisePropertyChanged(nameof(defFisica));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TContato : ESocialBindableObject
+    public SimNaoString defVisual
     {
-        private string fonePrincField;
-        private string foneAlternatField;
-        private string emailPrincField;
-        private string emailAlternatField;
-
-        public string fonePrinc
+        get => defVisualField;
+        set
         {
-            get
-            {
-                return fonePrincField;
-            }
-
-            set
-            {
-                fonePrincField = value;
-                RaisePropertyChanged("fonePrinc");
-            }
+            defVisualField = value;
+            RaisePropertyChanged(nameof(defVisual));
         }
+    }
 
-        public string foneAlternat
+    public SimNaoString defAuditiva
+    {
+        get => defAuditivaField;
+        set
         {
-            get
-            {
-                return foneAlternatField;
-            }
-
-            set
-            {
-                foneAlternatField = value;
-                RaisePropertyChanged("foneAlternat");
-            }
+            defAuditivaField = value;
+            RaisePropertyChanged(nameof(defAuditiva));
         }
+    }
 
-        public string emailPrinc
+    public SimNaoString defMental
+    {
+        get => defMentalField;
+        set
         {
-            get
-            {
-                return emailPrincField;
-            }
-
-            set
-            {
-                emailPrincField = value;
-                RaisePropertyChanged("emailPrinc");
-            }
+            defMentalField = value;
+            RaisePropertyChanged(nameof(defMental));
         }
+    }
 
-        public string emailAlternat
+    public SimNaoString defIntelectual
+    {
+        get => defIntelectualField;
+        set
         {
-            get
-            {
-                return emailAlternatField;
-            }
-
-            set
-            {
-                emailAlternatField = value;
-                RaisePropertyChanged("emailAlternat");
-            }
+            defIntelectualField = value;
+            RaisePropertyChanged(nameof(defIntelectual));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public SimNaoString reabReadap
+    {
+        get => reabReadapField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            reabReadapField = value;
+            RaisePropertyChanged(nameof(reabReadap));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculo : ESocialBindableObject
+    public SimNaoString infoCota
     {
-        private string matriculaField;
-        private VinculoTrabalhista tpRegTrabField = VinculoTrabalhista.CLT;
-        private RegimePrevidenciario tpRegPrevField = RegimePrevidenciario.RGPS;
-        private string nrRecInfPrelimField;
-        private SimNaoString cadIniField = SimNaoString.Nao;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrab infoRegimeTrabField;
-        private eSocialEvtAdmissaoVinculoInfoContrato infoContratoField;
-        private eSocialEvtAdmissaoVinculoSucessaoVinc sucessaoVincField;
-        private eSocialEvtAdmissaoVinculoTransfDom transfDomField;
-        private eSocialEvtAdmissaoVinculoMudancaCPF mudancaCPFField;
-        private eSocialEvtAdmissaoVinculoAfastamento afastamentoField;
-        private eSocialEvtAdmissaoVinculoDesligamento desligamentoField;
-
-        public string matricula
+        get => infoCotaField;
+        set
         {
-            get
-            {
-                return matriculaField;
-            }
-
-            set
-            {
-                matriculaField = value;
-                RaisePropertyChanged("matricula");
-            }
+            infoCotaField = value;
+            RaisePropertyChanged(nameof(infoCota));
         }
+    }
 
-        public VinculoTrabalhista tpRegTrab
+    public string observacao
+    {
+        get => observacaoField;
+        set
         {
-            get
-            {
-                return tpRegTrabField;
-            }
-
-            set
-            {
-                tpRegTrabField = value;
-                RaisePropertyChanged("tpRegTrab");
-            }
+            observacaoField = value;
+            RaisePropertyChanged(nameof(observacao));
         }
-
-        public RegimePrevidenciario tpRegPrev
-        {
-            get
-            {
-                return tpRegPrevField;
-            }
+    }
+}
 
-            set
-            {
-                tpRegPrevField = value;
-                RaisePropertyChanged("tpRegPrev");
-            }
-        }
+public partial class TDependente : ESocialBindableObject
+{
+    private string tpDepField;
+    private string nmDepField;
+    private DateTime dtNasctoField;
+    private string cpfDepField;
+    private SimNaoString depIRRFField = SimNaoString.Nao;
+    private SimNaoString depSFField = SimNaoString.Nao;
+    private SimNaoString incTrabField = SimNaoString.Nao;
 
-        public string nrRecInfPrelim
+    public string tpDep
+    {
+        get => tpDepField;
+        set
         {
-            get
-            {
-                return nrRecInfPrelimField;
-            }
-
-            set
-            {
-                nrRecInfPrelimField = value;
-                RaisePropertyChanged("nrRecInfPrelim");
-            }
+            tpDepField = value;
+            RaisePropertyChanged(nameof(tpDep));
         }
+    }
 
-        public SimNaoString cadIni
+    public string nmDep
+    {
+        get => nmDepField;
+        set
         {
-            get
-            {
-                return cadIniField;
-            }
-
-            set
-            {
-                cadIniField = value;
-                RaisePropertyChanged("cadIni");
-            }
+            nmDepField = value;
+            RaisePropertyChanged(nameof(nmDep));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrab infoRegimeTrab
+    [XmlElement(DataType = "date")]
+    public DateTime dtNascto
+    {
+        get => dtNasctoField;
+        set
         {
-            get
-            {
-                return infoRegimeTrabField;
-            }
-
-            set
-            {
-                infoRegimeTrabField = value;
-                RaisePropertyChanged("infoRegimeTrab");
-            }
+            dtNasctoField = value;
+            RaisePropertyChanged(nameof(dtNascto));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoContrato infoContrato
+    public string cpfDep
+    {
+        get => cpfDepField;
+        set
         {
-            get
-            {
-                return infoContratoField;
-            }
-
-            set
-            {
-                infoContratoField = value;
-                RaisePropertyChanged("infoContrato");
-            }
+            cpfDepField = value;
+            RaisePropertyChanged(nameof(cpfDep));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoSucessaoVinc sucessaoVinc
+    public SimNaoString depIRRF
+    {
+        get => depIRRFField;
+        set
         {
-            get
-            {
-                return sucessaoVincField;
-            }
-
-            set
-            {
-                sucessaoVincField = value;
-                RaisePropertyChanged("sucessaoVinc");
-            }
+            depIRRFField = value;
+            RaisePropertyChanged(nameof(depIRRF));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoTransfDom transfDom
+    public SimNaoString depSF
+    {
+        get => depSFField;
+        set
         {
-            get
-            {
-                return transfDomField;
-            }
-
-            set
-            {
-                transfDomField = value;
-                RaisePropertyChanged("transfDom");
-            }
+            depSFField = value;
+            RaisePropertyChanged(nameof(depSF));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoMudancaCPF mudancaCPF
+    public SimNaoString incTrab
+    {
+        get => incTrabField;
+        set
         {
-            get
-            {
-                return mudancaCPFField;
-            }
-
-            set
-            {
-                mudancaCPFField = value;
-                RaisePropertyChanged("mudancaCPF");
-            }
+            incTrabField = value;
+            RaisePropertyChanged(nameof(incTrab));
         }
-
-        public eSocialEvtAdmissaoVinculoAfastamento afastamento
-        {
-            get
-            {
-                return afastamentoField;
-            }
+    }
+}
 
-            set
-            {
-                afastamentoField = value;
-                RaisePropertyChanged("afastamento");
-            }
-        }
+public partial class eSocialEvtAdmissaoTrabalhadorAposentadoria : ESocialBindableObject
+{
+    private SimNaoString trabAposentField = SimNaoString.Nao;
 
-        public eSocialEvtAdmissaoVinculoDesligamento desligamento
+    public SimNaoString trabAposent
+    {
+        get => trabAposentField;
+        set
         {
-            get
-            {
-                return desligamentoField;
-            }
-
-            set
-            {
-                desligamentoField = value;
-                RaisePropertyChanged("desligamento");
-            }
+            trabAposentField = value;
+            RaisePropertyChanged(nameof(trabAposent));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TContato : ESocialBindableObject
+{
+    private string fonePrincField;
+    private string foneAlternatField;
+    private string emailPrincField;
+    private string emailAlternatField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string fonePrinc
+    {
+        get => fonePrincField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            fonePrincField = value;
+            RaisePropertyChanged(nameof(fonePrinc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrab : ESocialBindableObject
+    public string foneAlternat
     {
-        private object itemField;
-
-        [XmlElement("infoCeletista", typeof(eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletista))]
-        [XmlElement("infoEstatutario", typeof(eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutario))]
-        public object Item
-        {
-            get
-            {
-                return itemField;
-            }
-
-            set
-            {
-                itemField = value;
-                RaisePropertyChanged("Item");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
+        get => foneAlternatField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            foneAlternatField = value;
+            RaisePropertyChanged(nameof(foneAlternat));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletista : ESocialBindableObject
+    public string emailPrinc
     {
-        private DateTime dtAdmField;
-        private TipoAdmissaoCLT tpAdmissaoField = TipoAdmissaoCLT.Admissao;
-        private IndicadorAdmissao indAdmissaoField = IndicadorAdmissao.Normal;
-        private VinculoRegimeJornada tpRegJorField = VinculoRegimeJornada.SubHorarioTrabalho;
-        private NaturezaAtividade natAtividadeField = NaturezaAtividade.Urbano;
-        private int dtBaseField;
-        private bool dtBaseFieldSpecified;
-        private string cnpjSindCategProfField;
-        private TFgts fGTSField;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario trabTemporarioField;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend aprendField;
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtAdm
-        {
-            get
-            {
-                return dtAdmField;
-            }
-
-            set
-            {
-                dtAdmField = value;
-                RaisePropertyChanged("dtAdm");
-            }
-        }
-
-        public TipoAdmissaoCLT tpAdmissao
-        {
-            get
-            {
-                return tpAdmissaoField;
-            }
-
-            set
-            {
-                tpAdmissaoField = value;
-                RaisePropertyChanged("tpAdmissao");
-            }
-        }
-
-        public IndicadorAdmissao indAdmissao
+        get => emailPrincField;
+        set
         {
-            get
-            {
-                return indAdmissaoField;
-            }
-
-            set
-            {
-                indAdmissaoField = value;
-                RaisePropertyChanged("indAdmissao");
-            }
+            emailPrincField = value;
+            RaisePropertyChanged(nameof(emailPrinc));
         }
+    }
 
-        public VinculoRegimeJornada tpRegJor
+    public string emailAlternat
+    {
+        get => emailAlternatField;
+        set
         {
-            get
-            {
-                return tpRegJorField;
-            }
-
-            set
-            {
-                tpRegJorField = value;
-                RaisePropertyChanged("tpRegJor");
-            }
+            emailAlternatField = value;
+            RaisePropertyChanged(nameof(emailAlternat));
         }
-
-        public NaturezaAtividade natAtividade
-        {
-            get
-            {
-                return natAtividadeField;
-            }
+    }
+}
 
-            set
-            {
-                natAtividadeField = value;
-                RaisePropertyChanged("natAtividade");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculo : ESocialBindableObject
+{
+    private string matriculaField;
+    private VinculoTrabalhista tpRegTrabField = VinculoTrabalhista.CLT;
+    private RegimePrevidenciario tpRegPrevField = RegimePrevidenciario.RGPS;
+    private string nrRecInfPrelimField;
+    private SimNaoString cadIniField = SimNaoString.Nao;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrab infoRegimeTrabField;
+    private eSocialEvtAdmissaoVinculoInfoContrato infoContratoField;
+    private eSocialEvtAdmissaoVinculoSucessaoVinc sucessaoVincField;
+    private eSocialEvtAdmissaoVinculoTransfDom transfDomField;
+    private eSocialEvtAdmissaoVinculoMudancaCPF mudancaCPFField;
+    private eSocialEvtAdmissaoVinculoAfastamento afastamentoField;
+    private eSocialEvtAdmissaoVinculoDesligamento desligamentoField;
 
-        public sbyte dtBase
+    public string matricula
+    {
+        get => matriculaField;
+        set
         {
-            get
-            {
-                return (sbyte)dtBaseField;
-            }
-
-            set
-            {
-                dtBaseField = value;
-                RaisePropertyChanged("dtBase");
-            }
+            matriculaField = value;
+            RaisePropertyChanged(nameof(matricula));
         }
+    }
 
-        [XmlIgnore()]
-        public bool dtBaseSpecified
+    public VinculoTrabalhista tpRegTrab
+    {
+        get => tpRegTrabField;
+        set
         {
-            get
-            {
-                return dtBaseFieldSpecified;
-            }
-
-            set
-            {
-                dtBaseFieldSpecified = value;
-                RaisePropertyChanged("dtBaseSpecified");
-            }
+            tpRegTrabField = value;
+            RaisePropertyChanged(nameof(tpRegTrab));
         }
+    }
 
-        public string cnpjSindCategProf
+    public RegimePrevidenciario tpRegPrev
+    {
+        get => tpRegPrevField;
+        set
         {
-            get
-            {
-                return cnpjSindCategProfField;
-            }
-
-            set
-            {
-                cnpjSindCategProfField = value;
-                RaisePropertyChanged("cnpjSindCategProf");
-            }
+            tpRegPrevField = value;
+            RaisePropertyChanged(nameof(tpRegPrev));
         }
+    }
 
-        public TFgts FGTS
+    public string nrRecInfPrelim
+    {
+        get => nrRecInfPrelimField;
+        set
         {
-            get
-            {
-                return fGTSField;
-            }
-
-            set
-            {
-                fGTSField = value;
-                RaisePropertyChanged("FGTS");
-            }
+            nrRecInfPrelimField = value;
+            RaisePropertyChanged(nameof(nrRecInfPrelim));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario trabTemporario
+    public SimNaoString cadIni
+    {
+        get => cadIniField;
+        set
         {
-            get
-            {
-                return trabTemporarioField;
-            }
-
-            set
-            {
-                trabTemporarioField = value;
-                RaisePropertyChanged("trabTemporario");
-            }
+            cadIniField = value;
+            RaisePropertyChanged(nameof(cadIni));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend aprend
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrab infoRegimeTrab
+    {
+        get => infoRegimeTrabField;
+        set
         {
-            get
-            {
-                return aprendField;
-            }
-
-            set
-            {
-                aprendField = value;
-                RaisePropertyChanged("aprend");
-            }
+            infoRegimeTrabField = value;
+            RaisePropertyChanged(nameof(infoRegimeTrab));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public eSocialEvtAdmissaoVinculoInfoContrato infoContrato
+    {
+        get => infoContratoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            infoContratoField = value;
+            RaisePropertyChanged(nameof(infoContrato));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TFgts : ESocialBindableObject
+    public eSocialEvtAdmissaoVinculoSucessaoVinc sucessaoVinc
     {
-        private OpcaoFGTS opcFGTSField = OpcaoFGTS.Optante;
-        private DateTime dtOpcFGTSField;
-        private bool dtOpcFGTSFieldSpecified;
-
-        public OpcaoFGTS opcFGTS
+        get => sucessaoVincField;
+        set
         {
-            get
-            {
-                return opcFGTSField;
-            }
-
-            set
-            {
-                opcFGTSField = value;
-                RaisePropertyChanged("opcFGTS");
-            }
+            sucessaoVincField = value;
+            RaisePropertyChanged(nameof(sucessaoVinc));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtOpcFGTS
+    public eSocialEvtAdmissaoVinculoTransfDom transfDom
+    {
+        get => transfDomField;
+        set
         {
-            get
-            {
-                return dtOpcFGTSField;
-            }
-
-            set
-            {
-                dtOpcFGTSField = value;
-                RaisePropertyChanged("dtOpcFGTS");
-            }
+            transfDomField = value;
+            RaisePropertyChanged(nameof(transfDom));
         }
+    }
 
-        [XmlIgnore()]
-        public bool dtOpcFGTSSpecified
+    public eSocialEvtAdmissaoVinculoMudancaCPF mudancaCPF
+    {
+        get => mudancaCPFField;
+        set
         {
-            get
-            {
-                return dtOpcFGTSFieldSpecified;
-            }
-
-            set
-            {
-                dtOpcFGTSFieldSpecified = value;
-                RaisePropertyChanged("dtOpcFGTSSpecified");
-            }
+            mudancaCPFField = value;
+            RaisePropertyChanged(nameof(mudancaCPF));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public eSocialEvtAdmissaoVinculoAfastamento afastamento
+    {
+        get => afastamentoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            afastamentoField = value;
+            RaisePropertyChanged(nameof(afastamento));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario : ESocialBindableObject
+    public eSocialEvtAdmissaoVinculoDesligamento desligamento
     {
-        private TrabTemporarioHipotese hipLegField = TrabTemporarioHipotese.DemandaComplementar;
-        private string justContrField;
-        private TrabTemporarioTpInclusao tpInclContrField = TrabTemporarioTpInclusao.Superior3Meses;
-        private bool tpInclContrFieldSpecified;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ ideTomadorServField;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[] ideTrabSubstituidoField;
-
-        public TrabTemporarioHipotese hipLeg
+        get => desligamentoField;
+        set
         {
-            get
-            {
-                return hipLegField;
-            }
-
-            set
-            {
-                hipLegField = value;
-                RaisePropertyChanged("hipLeg");
-            }
+            desligamentoField = value;
+            RaisePropertyChanged(nameof(desligamento));
         }
-
-        public string justContr
-        {
-            get
-            {
-                return justContrField;
-            }
+    }
+}
 
-            set
-            {
-                justContrField = value;
-                RaisePropertyChanged("justContr");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrab : ESocialBindableObject
+{
+    private object itemField;
 
-        public TrabTemporarioTpInclusao tpInclContr
+    [XmlElement("infoCeletista", typeof(eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletista))]
+    [XmlElement("infoEstatutario", typeof(eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutario))]
+    public object Item
+    {
+        get => itemField;
+        set
         {
-            get
-            {
-                return tpInclContrField;
-            }
-
-            set
-            {
-                tpInclContrField = value;
-                RaisePropertyChanged("tpInclContr");
-            }
+            itemField = value;
+            RaisePropertyChanged(nameof(Item));
         }
-
-        [XmlIgnore()]
-        public bool tpInclContrSpecified
-        {
-            get
-            {
-                return tpInclContrFieldSpecified;
-            }
+    }
+}
 
-            set
-            {
-                tpInclContrFieldSpecified = value;
-                RaisePropertyChanged("tpInclContrSpecified");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletista : ESocialBindableObject
+{
+    private DateTime dtAdmField;
+    private TipoAdmissaoCLT tpAdmissaoField = TipoAdmissaoCLT.Admissao;
+    private IndicadorAdmissao indAdmissaoField = IndicadorAdmissao.Normal;
+    private VinculoRegimeJornada tpRegJorField = VinculoRegimeJornada.SubHorarioTrabalho;
+    private NaturezaAtividade natAtividadeField = NaturezaAtividade.Urbano;
+    private int dtBaseField;
+    private bool dtBaseFieldSpecified;
+    private string cnpjSindCategProfField;
+    private TFgts fGTSField;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario trabTemporarioField;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend aprendField;
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ ideTomadorServ
+    [XmlElement(DataType = "date")]
+    public DateTime dtAdm
+    {
+        get => dtAdmField;
+        set
         {
-            get
-            {
-                return ideTomadorServField;
-            }
-
-            set
-            {
-                ideTomadorServField = value;
-                RaisePropertyChanged("ideTomadorServ");
-            }
+            dtAdmField = value;
+            RaisePropertyChanged(nameof(dtAdm));
         }
+    }
 
-        [XmlElement("ideTrabSubstituido")]
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[] ideTrabSubstituido
+    public TipoAdmissaoCLT tpAdmissao
+    {
+        get => tpAdmissaoField;
+        set
         {
-            get
-            {
-                return ideTrabSubstituidoField;
-            }
-
-            set
-            {
-                ideTrabSubstituidoField = value;
-                RaisePropertyChanged("ideTrabSubstituido");
-            }
+            tpAdmissaoField = value;
+            RaisePropertyChanged(nameof(tpAdmissao));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public IndicadorAdmissao indAdmissao
+    {
+        get => indAdmissaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            indAdmissaoField = value;
+            RaisePropertyChanged(nameof(indAdmissao));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ : ESocialBindableObject
+    public VinculoRegimeJornada tpRegJor
     {
-        private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
-        private string nrInscField;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVincField;
-
-        public PersonalidadeJuridica tpInsc
+        get => tpRegJorField;
+        set
         {
-            get
-            {
-                return tpInscField;
-            }
-
-            set
-            {
-                tpInscField = value;
-                RaisePropertyChanged("tpInsc");
-            }
+            tpRegJorField = value;
+            RaisePropertyChanged(nameof(tpRegJor));
         }
+    }
 
-        public string nrInsc
+    public NaturezaAtividade natAtividade
+    {
+        get => natAtividadeField;
+        set
         {
-            get
-            {
-                return nrInscField;
-            }
-
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
+            natAtividadeField = value;
+            RaisePropertyChanged(nameof(natAtividade));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVinc
+    public sbyte dtBase
+    {
+        get => (sbyte)dtBaseField;
+        set
         {
-            get
-            {
-                return ideEstabVincField;
-            }
-
-            set
-            {
-                ideEstabVincField = value;
-                RaisePropertyChanged("ideEstabVinc");
-            }
+            dtBaseField = value;
+            RaisePropertyChanged(nameof(dtBase));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlIgnore()]
+    public bool dtBaseSpecified
+    {
+        get => dtBaseFieldSpecified;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtBaseFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtBaseSpecified));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc : ESocialBindableObject
+    public string cnpjSindCategProf
     {
-        private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
-        private string nrInscField;
-
-        public PersonalidadeJuridica tpInsc
+        get => cnpjSindCategProfField;
+        set
         {
-            get
-            {
-                return tpInscField;
-            }
-
-            set
-            {
-                tpInscField = value;
-                RaisePropertyChanged("tpInsc");
-            }
+            cnpjSindCategProfField = value;
+            RaisePropertyChanged(nameof(cnpjSindCategProf));
         }
+    }
 
-        public string nrInsc
+    public TFgts FGTS
+    {
+        get => fGTSField;
+        set
         {
-            get
-            {
-                return nrInscField;
-            }
-
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
+            fGTSField = value;
+            RaisePropertyChanged(nameof(FGTS));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario trabTemporario
+    {
+        get => trabTemporarioField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            trabTemporarioField = value;
+            RaisePropertyChanged(nameof(trabTemporario));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido : ESocialBindableObject
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend aprend
     {
-        private string cpfTrabSubstField;
-
-        public string cpfTrabSubst
+        get => aprendField;
+        set
         {
-            get
-            {
-                return cpfTrabSubstField;
-            }
-
-            set
-            {
-                cpfTrabSubstField = value;
-                RaisePropertyChanged("cpfTrabSubst");
-            }
+            aprendField = value;
+            RaisePropertyChanged(nameof(aprend));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TFgts : ESocialBindableObject
+{
+    private OpcaoFGTS opcFGTSField = OpcaoFGTS.Optante;
+    private DateTime dtOpcFGTSField;
+    private bool dtOpcFGTSFieldSpecified;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public OpcaoFGTS opcFGTS
+    {
+        get => opcFGTSField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            opcFGTSField = value;
+            RaisePropertyChanged(nameof(opcFGTS));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend : ESocialBindableObject
+    [XmlElement(DataType = "date")]
+    public DateTime dtOpcFGTS
     {
-        private PersonalidadeJuridica tpInscField;
-        private string nrInscField;
-
-        public PersonalidadeJuridica tpInsc
+        get => dtOpcFGTSField;
+        set
         {
-            get
-            {
-                return tpInscField;
-            }
-
-            set
-            {
-                tpInscField = value;
-                RaisePropertyChanged("tpInsc");
-            }
+            dtOpcFGTSField = value;
+            RaisePropertyChanged(nameof(dtOpcFGTS));
         }
+    }
 
-        public string nrInsc
+    [XmlIgnore()]
+    public bool dtOpcFGTSSpecified
+    {
+        get => dtOpcFGTSFieldSpecified;
+        set
         {
-            get
-            {
-                return nrInscField;
-            }
-
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
+            dtOpcFGTSFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtOpcFGTSSpecified));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporario : ESocialBindableObject
+{
+    private TrabTemporarioHipotese hipLegField = TrabTemporarioHipotese.DemandaComplementar;
+    private string justContrField;
+    private TrabTemporarioTpInclusao tpInclContrField = TrabTemporarioTpInclusao.Superior3Meses;
+    private bool tpInclContrFieldSpecified;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ ideTomadorServField;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[] ideTrabSubstituidoField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TrabTemporarioHipotese hipLeg
+    {
+        get => hipLegField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            hipLegField = value;
+            RaisePropertyChanged(nameof(hipLeg));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutario : ESocialBindableObject
+    public string justContr
     {
-        private IndicadorAdmissaoEstatutario indProvimField = IndicadorAdmissaoEstatutario.Normal;
-        private TipoProvimentoEstatutario tpProvField = TipoProvimentoEstatutario.NomeacaoEfetivo;
-        private DateTime dtNomeacaoField;
-        private DateTime dtPosseField;
-        private DateTime dtExercicioField;
-        private PlanoSegregacaoMassa tpPlanRPField = PlanoSegregacaoMassa.PrevUnico;
-        private bool tpPlanRPFieldSpecified;
-        private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud infoDecJudField;
-
-        public IndicadorAdmissaoEstatutario indProvim
+        get => justContrField;
+        set
         {
-            get
-            {
-                return indProvimField;
-            }
-
-            set
-            {
-                indProvimField = value;
-                RaisePropertyChanged("indProvim");
-            }
+            justContrField = value;
+            RaisePropertyChanged(nameof(justContr));
         }
+    }
 
-        public TipoProvimentoEstatutario tpProv
+    public TrabTemporarioTpInclusao tpInclContr
+    {
+        get => tpInclContrField;
+        set
         {
-            get
-            {
-                return tpProvField;
-            }
-
-            set
-            {
-                tpProvField = value;
-                RaisePropertyChanged("tpProv");
-            }
+            tpInclContrField = value;
+            RaisePropertyChanged(nameof(tpInclContr));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtNomeacao
+    [XmlIgnore()]
+    public bool tpInclContrSpecified
+    {
+        get => tpInclContrFieldSpecified;
+        set
         {
-            get
-            {
-                return dtNomeacaoField;
-            }
-
-            set
-            {
-                dtNomeacaoField = value;
-                RaisePropertyChanged("dtNomeacao");
-            }
+            tpInclContrFieldSpecified = value;
+            RaisePropertyChanged(nameof(tpInclContrSpecified));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtPosse
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ ideTomadorServ
+    {
+        get => ideTomadorServField;
+        set
         {
-            get
-            {
-                return dtPosseField;
-            }
-
-            set
-            {
-                dtPosseField = value;
-                RaisePropertyChanged("dtPosse");
-            }
+            ideTomadorServField = value;
+            RaisePropertyChanged(nameof(ideTomadorServ));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtExercicio
+    [XmlElement("ideTrabSubstituido")]
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido[] ideTrabSubstituido
+    {
+        get => ideTrabSubstituidoField;
+        set
         {
-            get
-            {
-                return dtExercicioField;
-            }
-
-            set
-            {
-                dtExercicioField = value;
-                RaisePropertyChanged("dtExercicio");
-            }
+            ideTrabSubstituidoField = value;
+            RaisePropertyChanged(nameof(ideTrabSubstituido));
         }
+    }
+}
 
-        public PlanoSegregacaoMassa tpPlanRP
-        {
-            get
-            {
-                return tpPlanRPField;
-            }
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServ : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
+    private string nrInscField;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVincField;
 
-            set
-            {
-                tpPlanRPField = value;
-                RaisePropertyChanged("tpPlanRP");
-            }
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
+    }
 
-        [XmlIgnore()]
-        public bool tpPlanRPSpecified
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return tpPlanRPFieldSpecified;
-            }
-
-            set
-            {
-                tpPlanRPFieldSpecified = value;
-                RaisePropertyChanged("tpPlanRPSpecified");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud infoDecJud
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVinc
+    {
+        get => ideEstabVincField;
+        set
         {
-            get
-            {
-                return infoDecJudField;
-            }
-
-            set
-            {
-                infoDecJudField = value;
-                RaisePropertyChanged("infoDecJud");
-            }
+            ideEstabVincField = value;
+            RaisePropertyChanged(nameof(ideEstabVinc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
+    private string nrInscField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud : ESocialBindableObject
+    public string nrInsc
     {
-        private string nrProcJudField;
-
-        public string nrProcJud
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return nrProcJudField;
-            }
-
-            set
-            {
-                nrProcJudField = value;
-                RaisePropertyChanged("nrProcJud");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTrabSubstituido : ESocialBindableObject
+{
+    private string cpfTrabSubstField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string cpfTrabSubst
+    {
+        get => cpfTrabSubstField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            cpfTrabSubstField = value;
+            RaisePropertyChanged(nameof(cpfTrabSubst));
         }
     }
+}
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContrato : ESocialBindableObject
-    {
-        private string codCargoField;
-        private string codFuncaoField;
-        private string codCategField;
-        private string codCarreiraField;
-        private DateTime dtIngrCarrField;
-        private bool dtIngrCarrFieldSpecified;
-        private TRemun remuneracaoField;
-        private eSocialEvtAdmissaoVinculoInfoContratoDuracao duracaoField;
-        private eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho localTrabalhoField;
-        private eSocialEvtAdmissaoVinculoInfoContratoHorContratual horContratualField;
-        private eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical[] filiacaoSindicalField;
-        private eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial alvaraJudicialField;
-        private eSocialEvtAdmissaoVinculoInfoContratoObservacoes[] observacoesField;
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaAprend : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
 
-        public string codCargo
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
         {
-            get
-            {
-                return codCargoField;
-            }
-
-            set
-            {
-                codCargoField = value;
-                RaisePropertyChanged("codCargo");
-            }
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
+    }
 
-        public string codFuncao
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return codFuncaoField;
-            }
-
-            set
-            {
-                codFuncaoField = value;
-                RaisePropertyChanged("codFuncao");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
-
-        [XmlElement(DataType = "integer")]
-        public string codCateg
-        {
-            get
-            {
-                return codCategField;
-            }
+    }
+}
 
-            set
-            {
-                codCategField = value;
-                RaisePropertyChanged("codCateg");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutario : ESocialBindableObject
+{
+    private IndicadorAdmissaoEstatutario indProvimField = IndicadorAdmissaoEstatutario.Normal;
+    private TipoProvimentoEstatutario tpProvField = TipoProvimentoEstatutario.NomeacaoEfetivo;
+    private DateTime dtNomeacaoField;
+    private DateTime dtPosseField;
+    private DateTime dtExercicioField;
+    private PlanoSegregacaoMassa tpPlanRPField = PlanoSegregacaoMassa.PrevUnico;
+    private bool tpPlanRPFieldSpecified;
+    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud infoDecJudField;
 
-        public string codCarreira
+    public IndicadorAdmissaoEstatutario indProvim
+    {
+        get => indProvimField;
+        set
         {
-            get
-            {
-                return codCarreiraField;
-            }
-
-            set
-            {
-                codCarreiraField = value;
-                RaisePropertyChanged("codCarreira");
-            }
+            indProvimField = value;
+            RaisePropertyChanged(nameof(indProvim));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtIngrCarr
+    public TipoProvimentoEstatutario tpProv
+    {
+        get => tpProvField;
+        set
         {
-            get
-            {
-                return dtIngrCarrField;
-            }
-
-            set
-            {
-                dtIngrCarrField = value;
-                RaisePropertyChanged("dtIngrCarr");
-            }
+            tpProvField = value;
+            RaisePropertyChanged(nameof(tpProv));
         }
+    }
 
-        [XmlIgnore()]
-        public bool dtIngrCarrSpecified
+    [XmlElement(DataType = "date")]
+    public DateTime dtNomeacao
+    {
+        get => dtNomeacaoField;
+        set
         {
-            get
-            {
-                return dtIngrCarrFieldSpecified;
-            }
-
-            set
-            {
-                dtIngrCarrFieldSpecified = value;
-                RaisePropertyChanged("dtIngrCarrSpecified");
-            }
+            dtNomeacaoField = value;
+            RaisePropertyChanged(nameof(dtNomeacao));
         }
+    }
 
-        public TRemun remuneracao
+    [XmlElement(DataType = "date")]
+    public DateTime dtPosse
+    {
+        get => dtPosseField;
+        set
         {
-            get
-            {
-                return remuneracaoField;
-            }
-
-            set
-            {
-                remuneracaoField = value;
-                RaisePropertyChanged("remuneracao");
-            }
+            dtPosseField = value;
+            RaisePropertyChanged(nameof(dtPosse));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoContratoDuracao duracao
+    [XmlElement(DataType = "date")]
+    public DateTime dtExercicio
+    {
+        get => dtExercicioField;
+        set
         {
-            get
-            {
-                return duracaoField;
-            }
-
-            set
-            {
-                duracaoField = value;
-                RaisePropertyChanged("duracao");
-            }
+            dtExercicioField = value;
+            RaisePropertyChanged(nameof(dtExercicio));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho localTrabalho
+    public PlanoSegregacaoMassa tpPlanRP
+    {
+        get => tpPlanRPField;
+        set
         {
-            get
-            {
-                return localTrabalhoField;
-            }
-
-            set
-            {
-                localTrabalhoField = value;
-                RaisePropertyChanged("localTrabalho");
-            }
+            tpPlanRPField = value;
+            RaisePropertyChanged(nameof(tpPlanRP));
         }
+    }
 
-        public eSocialEvtAdmissaoVinculoInfoContratoHorContratual horContratual
+    [XmlIgnore()]
+    public bool tpPlanRPSpecified
+    {
+        get => tpPlanRPFieldSpecified;
+        set
         {
-            get
-            {
-                return horContratualField;
-            }
-
-            set
-            {
-                horContratualField = value;
-                RaisePropertyChanged("horContratual");
-            }
+            tpPlanRPFieldSpecified = value;
+            RaisePropertyChanged(nameof(tpPlanRPSpecified));
         }
+    }
 
-        [XmlElement("filiacaoSindical")]
-        public eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical[] filiacaoSindical
+    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud infoDecJud
+    {
+        get => infoDecJudField;
+        set
         {
-            get
-            {
-                return filiacaoSindicalField;
-            }
-
-            set
-            {
-                filiacaoSindicalField = value;
-                RaisePropertyChanged("filiacaoSindical");
-            }
+            infoDecJudField = value;
+            RaisePropertyChanged(nameof(infoDecJud));
         }
-
-        public eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial alvaraJudicial
-        {
-            get
-            {
-                return alvaraJudicialField;
-            }
+    }
+}
 
-            set
-            {
-                alvaraJudicialField = value;
-                RaisePropertyChanged("alvaraJudicial");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoEstatutarioInfoDecJud : ESocialBindableObject
+{
+    private string nrProcJudField;
 
-        [XmlElement("observacoes")]
-        public eSocialEvtAdmissaoVinculoInfoContratoObservacoes[] observacoes
+    public string nrProcJud
+    {
+        get => nrProcJudField;
+        set
         {
-            get
-            {
-                return observacoesField;
-            }
-
-            set
-            {
-                observacoesField = value;
-                RaisePropertyChanged("observacoes");
-            }
+            nrProcJudField = value;
+            RaisePropertyChanged(nameof(nrProcJud));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoContrato : ESocialBindableObject
+{
+    private string codCargoField;
+    private string codFuncaoField;
+    private string codCategField;
+    private string codCarreiraField;
+    private DateTime dtIngrCarrField;
+    private bool dtIngrCarrFieldSpecified;
+    private TRemun remuneracaoField;
+    private eSocialEvtAdmissaoVinculoInfoContratoDuracao duracaoField;
+    private eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho localTrabalhoField;
+    private eSocialEvtAdmissaoVinculoInfoContratoHorContratual horContratualField;
+    private eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical[] filiacaoSindicalField;
+    private eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial alvaraJudicialField;
+    private eSocialEvtAdmissaoVinculoInfoContratoObservacoes[] observacoesField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string codCargo
+    {
+        get => codCargoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            codCargoField = value;
+            RaisePropertyChanged(nameof(codCargo));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TRemun : ESocialBindableObject
+    public string codFuncao
     {
-        private decimal vrSalFxField;
-        private UnidadeSalarial undSalFixoField = UnidadeSalarial.Mes;
-        private string dscSalVarField;
-
-        public decimal vrSalFx
-        {
-            get
-            {
-                return vrSalFxField;
-            }
-
-            set
-            {
-                vrSalFxField = value;
-                RaisePropertyChanged("vrSalFx");
-            }
-        }
-
-        public UnidadeSalarial undSalFixo
+        get => codFuncaoField;
+        set
         {
-            get
-            {
-                return undSalFixoField;
-            }
-
-            set
-            {
-                undSalFixoField = value;
-                RaisePropertyChanged("undSalFixo");
-            }
+            codFuncaoField = value;
+            RaisePropertyChanged(nameof(codFuncao));
         }
+    }
 
-        public string dscSalVar
+    [XmlElement(DataType = "integer")]
+    public string codCateg
+    {
+        get => codCategField;
+        set
         {
-            get
-            {
-                return dscSalVarField;
-            }
-
-            set
-            {
-                dscSalVarField = value;
-                RaisePropertyChanged("dscSalVar");
-            }
+            codCategField = value;
+            RaisePropertyChanged(nameof(codCateg));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string codCarreira
+    {
+        get => codCarreiraField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            codCarreiraField = value;
+            RaisePropertyChanged(nameof(codCarreira));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoDuracao : ESocialBindableObject
+    [XmlElement(DataType = "date")]
+    public DateTime dtIngrCarr
     {
-        private TipoContrato tpContrField = TipoContrato.Indeterminado;
-        private DateTime dtTermField;
-        private bool dtTermFieldSpecified;
-        private SimNaoString clauAssecField = SimNaoString.Nao;
-        private bool clauAssecFieldSpecified = false;
-        private string objDetField;
-
-        public sbyte tpContr
+        get => dtIngrCarrField;
+        set
         {
-            get
-            {
-                return (sbyte)tpContrField;
-            }
-
-            set
-            {
-                tpContrField = (TipoContrato)value;
-                RaisePropertyChanged("tpContr");
-            }
+            dtIngrCarrField = value;
+            RaisePropertyChanged(nameof(dtIngrCarr));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtTerm
+    [XmlIgnore()]
+    public bool dtIngrCarrSpecified
+    {
+        get => dtIngrCarrFieldSpecified;
+        set
         {
-            get
-            {
-                return dtTermField;
-            }
-
-            set
-            {
-                dtTermField = value;
-                RaisePropertyChanged("dtTerm");
-            }
+            dtIngrCarrFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtIngrCarrSpecified));
         }
+    }
 
-        [XmlIgnore()]
-        public bool dtTermSpecified
+    public TRemun remuneracao
+    {
+        get => remuneracaoField;
+        set
         {
-            get
-            {
-                return dtTermFieldSpecified;
-            }
-
-            set
-            {
-                dtTermFieldSpecified = value;
-                RaisePropertyChanged("dtTermSpecified");
-            }
+            remuneracaoField = value;
+            RaisePropertyChanged(nameof(remuneracao));
         }
+    }
 
-        public SimNaoString clauAssec
+    public eSocialEvtAdmissaoVinculoInfoContratoDuracao duracao
+    {
+        get => duracaoField;
+        set
         {
-            get
-            {
-                return clauAssecField;
-            }
-
-            set
-            {
-                clauAssecField = value;
-                RaisePropertyChanged("clauAssec");
-            }
+            duracaoField = value;
+            RaisePropertyChanged(nameof(duracao));
         }
+    }
 
-        [XmlIgnore()]
-        public bool clauAssecSpecified
+    public eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho localTrabalho
+    {
+        get => localTrabalhoField;
+        set
         {
-            get
-            {
-                return clauAssecFieldSpecified;
-            }
-
-            set
-            {
-                clauAssecFieldSpecified = value;
-                RaisePropertyChanged("clauAssecSpecified");
-            }
+            localTrabalhoField = value;
+            RaisePropertyChanged(nameof(localTrabalho));
         }
-
+    }
 
-        public string objDet
+    public eSocialEvtAdmissaoVinculoInfoContratoHorContratual horContratual
+    {
+        get => horContratualField;
+        set
         {
-            get
-            {
-                return objDetField;
-            }
-
-            set
-            {
-                objDetField = value;
-                RaisePropertyChanged("objDet");
-            }
+            horContratualField = value;
+            RaisePropertyChanged(nameof(horContratual));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement("filiacaoSindical")]
+    public eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical[] filiacaoSindical
+    {
+        get => filiacaoSindicalField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            filiacaoSindicalField = value;
+            RaisePropertyChanged(nameof(filiacaoSindical));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho : ESocialBindableObject
+    public eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial alvaraJudicial
     {
-        private TLocalTrab localTrabGeralField;
-        private EnderecoBrasileiro localTrabDomField;
-
-        public TLocalTrab localTrabGeral
+        get => alvaraJudicialField;
+        set
         {
-            get
-            {
-                return localTrabGeralField;
-            }
-
-            set
-            {
-                localTrabGeralField = value;
-                RaisePropertyChanged("localTrabGeral");
-            }
+            alvaraJudicialField = value;
+            RaisePropertyChanged(nameof(alvaraJudicial));
         }
+    }
 
-        public EnderecoBrasileiro localTrabDom
+    [XmlElement("observacoes")]
+    public eSocialEvtAdmissaoVinculoInfoContratoObservacoes[] observacoes
+    {
+        get => observacoesField;
+        set
         {
-            get
-            {
-                return localTrabDomField;
-            }
-
-            set
-            {
-                localTrabDomField = value;
-                RaisePropertyChanged("localTrabDom");
-            }
+            observacoesField = value;
+            RaisePropertyChanged(nameof(observacoes));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TRemun : ESocialBindableObject
+{
+    private decimal vrSalFxField;
+    private UnidadeSalarial undSalFixoField = UnidadeSalarial.Mes;
+    private string dscSalVarField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public decimal vrSalFx
+    {
+        get => vrSalFxField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            vrSalFxField = value;
+            RaisePropertyChanged(nameof(vrSalFx));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class TLocalTrab : ESocialBindableObject
+    public UnidadeSalarial undSalFixo
     {
-        private TipoInscricao tpInscField = TipoInscricao.CNPJ;
-        private string nrInscField;
-        private string descCompField;
-
-        public sbyte tpInsc
+        get => undSalFixoField;
+        set
         {
-            get
-            {
-                return (sbyte)tpInscField;
-            }
-
-            set
-            {
-                tpInscField = (TipoInscricao)value;
-                RaisePropertyChanged("tpInsc");
-            }
+            undSalFixoField = value;
+            RaisePropertyChanged(nameof(undSalFixo));
         }
+    }
 
-        public string nrInsc
+    public string dscSalVar
+    {
+        get => dscSalVarField;
+        set
         {
-            get
-            {
-                return nrInscField;
-            }
-
-            set
-            {
-                nrInscField = value;
-                RaisePropertyChanged("nrInsc");
-            }
+            dscSalVarField = value;
+            RaisePropertyChanged(nameof(dscSalVar));
         }
+    }
+}
 
-        public string descComp
-        {
-            get
-            {
-                return descCompField;
-            }
+public partial class eSocialEvtAdmissaoVinculoInfoContratoDuracao : ESocialBindableObject
+{
+    private TipoContrato tpContrField = TipoContrato.Indeterminado;
+    private DateTime dtTermField;
+    private bool dtTermFieldSpecified;
+    private SimNaoString clauAssecField = SimNaoString.Nao;
+    private bool clauAssecFieldSpecified = false;
+    private string objDetField;
 
-            set
-            {
-                descCompField = value;
-                RaisePropertyChanged("descComp");
-            }
+    public sbyte tpContr
+    {
+        get => (sbyte)tpContrField;
+        set
+        {
+            tpContrField = (TipoContrato)value;
+            RaisePropertyChanged(nameof(tpContr));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtTerm
+    {
+        get => dtTermField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtTermField = value;
+            RaisePropertyChanged(nameof(dtTerm));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoHorContratual : ESocialBindableObject
+    [XmlIgnore()]
+    public bool dtTermSpecified
     {
-        private decimal qtdHrsSemField;
-        private bool qtdHrsSemFieldSpecified;
-        private TipoJornada tpJornadaField = TipoJornada.HorarioFixoFolgaFixa_Dom;
-        private string dscTpJornField;
-        private sbyte tmpParcField;
-        private THorario[] horarioField;
-
-        public decimal qtdHrsSem
+        get => dtTermFieldSpecified;
+        set
         {
-            get
-            {
-                return qtdHrsSemField;
-            }
-
-            set
-            {
-                qtdHrsSemField = value;
-                RaisePropertyChanged("qtdHrsSem");
-            }
+            dtTermFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtTermSpecified));
         }
+    }
 
-        [XmlIgnore()]
-        public bool qtdHrsSemSpecified
+    public SimNaoString clauAssec
+    {
+        get => clauAssecField;
+        set
         {
-            get
-            {
-                return qtdHrsSemFieldSpecified;
-            }
-
-            set
-            {
-                qtdHrsSemFieldSpecified = value;
-                RaisePropertyChanged("qtdHrsSemSpecified");
-            }
+            clauAssecField = value;
+            RaisePropertyChanged(nameof(clauAssec));
         }
+    }
 
-        public TipoJornada tpJornada
+    [XmlIgnore()]
+    public bool clauAssecSpecified
+    {
+        get => clauAssecFieldSpecified;
+        set
         {
-            get
-            {
-                return tpJornadaField;
-            }
-
-            set
-            {
-                tpJornadaField = value;
-                RaisePropertyChanged("tpJornada");
-            }
+            clauAssecFieldSpecified = value;
+            RaisePropertyChanged(nameof(clauAssecSpecified));
         }
+    }
 
-        public string dscTpJorn
-        {
-            get
-            {
-                return dscTpJornField;
-            }
 
-            set
-            {
-                dscTpJornField = value;
-                RaisePropertyChanged("dscTpJorn");
-            }
+    public string objDet
+    {
+        get => objDetField;
+        set
+        {
+            objDetField = value;
+            RaisePropertyChanged(nameof(objDet));
         }
+    }
+}
 
-        public sbyte tmpParc
-        {
-            get
-            {
-                return tmpParcField;
-            }
+public partial class eSocialEvtAdmissaoVinculoInfoContratoLocalTrabalho : ESocialBindableObject
+{
+    private TLocalTrab localTrabGeralField;
+    private EnderecoBrasileiro localTrabDomField;
 
-            set
-            {
-                tmpParcField = value;
-                RaisePropertyChanged("tmpParc");
-            }
+    public TLocalTrab localTrabGeral
+    {
+        get => localTrabGeralField;
+        set
+        {
+            localTrabGeralField = value;
+            RaisePropertyChanged(nameof(localTrabGeral));
         }
+    }
 
-        [XmlElement("horario")]
-        public THorario[] horario
+    public EnderecoBrasileiro localTrabDom
+    {
+        get => localTrabDomField;
+        set
         {
-            get
-            {
-                return horarioField;
-            }
-
-            set
-            {
-                horarioField = value;
-                RaisePropertyChanged("horario");
-            }
+            localTrabDomField = value;
+            RaisePropertyChanged(nameof(localTrabDom));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class TLocalTrab : ESocialBindableObject
+{
+    private TipoInscricao tpInscField = TipoInscricao.CNPJ;
+    private string nrInscField;
+    private string descCompField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public sbyte tpInsc
+    {
+        get => (sbyte)tpInscField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpInscField = (TipoInscricao)value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class THorario : ESocialBindableObject
+    public string nrInsc
     {
-        private sbyte diaField;
-        private string codHorContratField;
-
-        public sbyte dia
+        get => nrInscField;
+        set
         {
-            get
-            {
-                return diaField;
-            }
-
-            set
-            {
-                diaField = value;
-                RaisePropertyChanged("dia");
-            }
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
         }
+    }
 
-        public string codHorContrat
+    public string descComp
+    {
+        get => descCompField;
+        set
         {
-            get
-            {
-                return codHorContratField;
-            }
-
-            set
-            {
-                codHorContratField = value;
-                RaisePropertyChanged("codHorContrat");
-            }
+            descCompField = value;
+            RaisePropertyChanged(nameof(descComp));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoContratoHorContratual : ESocialBindableObject
+{
+    private decimal qtdHrsSemField;
+    private bool qtdHrsSemFieldSpecified;
+    private TipoJornada tpJornadaField = TipoJornada.HorarioFixoFolgaFixa_Dom;
+    private string dscTpJornField;
+    private sbyte tmpParcField;
+    private THorario[] horarioField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public decimal qtdHrsSem
+    {
+        get => qtdHrsSemField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            qtdHrsSemField = value;
+            RaisePropertyChanged(nameof(qtdHrsSem));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical : ESocialBindableObject
+    [XmlIgnore()]
+    public bool qtdHrsSemSpecified
     {
-        private string cnpjSindTrabField;
-
-        public string cnpjSindTrab
+        get => qtdHrsSemFieldSpecified;
+        set
         {
-            get
-            {
-                return cnpjSindTrabField;
-            }
-
-            set
-            {
-                cnpjSindTrabField = value;
-                RaisePropertyChanged("cnpjSindTrab");
-            }
+            qtdHrsSemFieldSpecified = value;
+            RaisePropertyChanged(nameof(qtdHrsSemSpecified));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public TipoJornada tpJornada
+    {
+        get => tpJornadaField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tpJornadaField = value;
+            RaisePropertyChanged(nameof(tpJornada));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial : ESocialBindableObject
+    public string dscTpJorn
     {
-        private string nrProcJudField;
-
-        public string nrProcJud
+        get => dscTpJornField;
+        set
         {
-            get
-            {
-                return nrProcJudField;
-            }
-
-            set
-            {
-                nrProcJudField = value;
-                RaisePropertyChanged("nrProcJud");
-            }
+            dscTpJornField = value;
+            RaisePropertyChanged(nameof(dscTpJorn));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    public sbyte tmpParc
+    {
+        get => tmpParcField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            tmpParcField = value;
+            RaisePropertyChanged(nameof(tmpParc));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoInfoContratoObservacoes : ESocialBindableObject
+    [XmlElement("horario")]
+    public THorario[] horario
     {
-        private string observacaoField;
-
-        public string observacao
+        get => horarioField;
+        set
         {
-            get
-            {
-                return observacaoField;
-            }
-
-            set
-            {
-                observacaoField = value;
-                RaisePropertyChanged("observacao");
-            }
+            horarioField = value;
+            RaisePropertyChanged(nameof(horario));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class THorario : ESocialBindableObject
+{
+    private sbyte diaField;
+    private string codHorContratField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public sbyte dia
+    {
+        get => diaField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            diaField = value;
+            RaisePropertyChanged(nameof(dia));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoSucessaoVinc : ESocialBindableObject
+    public string codHorContrat
     {
-        private VinculoSucecssaoAnteriorTipo tpInscAntField = VinculoSucecssaoAnteriorTipo.CNPJ;
-        private string cnpjEmpregAntField;
-        private string matricAntField;
-        private DateTime dtTransfField;
-        private string observacaoField;
-
-        public VinculoSucecssaoAnteriorTipo tpInscAnt
+        get => codHorContratField;
+        set
         {
-            get
-            {
-                return tpInscAntField;
-            }
-
-            set
-            {
-                tpInscAntField = value;
-                RaisePropertyChanged("tpInscAnt");
-            }
+            codHorContratField = value;
+            RaisePropertyChanged(nameof(codHorContrat));
         }
-
-        public string cnpjEmpregAnt
-        {
-            get
-            {
-                return cnpjEmpregAntField;
-            }
+    }
+}
 
-            set
-            {
-                cnpjEmpregAntField = value;
-                RaisePropertyChanged("cnpjEmpregAnt");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoContratoFiliacaoSindical : ESocialBindableObject
+{
+    private string cnpjSindTrabField;
 
-        public string matricAnt
+    public string cnpjSindTrab
+    {
+        get => cnpjSindTrabField;
+        set
         {
-            get
-            {
-                return matricAntField;
-            }
-
-            set
-            {
-                matricAntField = value;
-                RaisePropertyChanged("matricAnt");
-            }
+            cnpjSindTrabField = value;
+            RaisePropertyChanged(nameof(cnpjSindTrab));
         }
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtTransf
-        {
-            get
-            {
-                return dtTransfField;
-            }
+    }
+}
 
-            set
-            {
-                dtTransfField = value;
-                RaisePropertyChanged("dtTransf");
-            }
-        }
+public partial class eSocialEvtAdmissaoVinculoInfoContratoAlvaraJudicial : ESocialBindableObject
+{
+    private string nrProcJudField;
 
-        public string observacao
+    public string nrProcJud
+    {
+        get => nrProcJudField;
+        set
         {
-            get
-            {
-                return observacaoField;
-            }
-
-            set
-            {
-                observacaoField = value;
-                RaisePropertyChanged("observacao");
-            }
+            nrProcJudField = value;
+            RaisePropertyChanged(nameof(nrProcJud));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoInfoContratoObservacoes : ESocialBindableObject
+{
+    private string observacaoField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string observacao
+    {
+        get => observacaoField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            observacaoField = value;
+            RaisePropertyChanged(nameof(observacao));
         }
     }
+}
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoTransfDom : ESocialBindableObject
-    {
-        private string cpfSubstituidoField;
-        private string matricAntField;
-        private DateTime dtTransfField;
+public partial class eSocialEvtAdmissaoVinculoSucessaoVinc : ESocialBindableObject
+{
+    private VinculoSucecssaoAnteriorTipo tpInscAntField = VinculoSucecssaoAnteriorTipo.CNPJ;
+    private string cnpjEmpregAntField;
+    private string matricAntField;
+    private DateTime dtTransfField;
+    private string observacaoField;
 
-        public string cpfSubstituido
+    public VinculoSucecssaoAnteriorTipo tpInscAnt
+    {
+        get => tpInscAntField;
+        set
         {
-            get
-            {
-                return cpfSubstituidoField;
-            }
-
-            set
-            {
-                cpfSubstituidoField = value;
-                RaisePropertyChanged("cpfSubstituido");
-            }
+            tpInscAntField = value;
+            RaisePropertyChanged(nameof(tpInscAnt));
         }
+    }
 
-        public string matricAnt
+    public string cnpjEmpregAnt
+    {
+        get => cnpjEmpregAntField;
+        set
         {
-            get
-            {
-                return matricAntField;
-            }
-
-            set
-            {
-                matricAntField = value;
-                RaisePropertyChanged("matricAnt");
-            }
+            cnpjEmpregAntField = value;
+            RaisePropertyChanged(nameof(cnpjEmpregAnt));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtTransf
+    public string matricAnt
+    {
+        get => matricAntField;
+        set
         {
-            get
-            {
-                return dtTransfField;
-            }
-
-            set
-            {
-                dtTransfField = value;
-                RaisePropertyChanged("dtTransf");
-            }
+            matricAntField = value;
+            RaisePropertyChanged(nameof(matricAnt));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtTransf
+    {
+        get => dtTransfField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtTransfField = value;
+            RaisePropertyChanged(nameof(dtTransf));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoMudancaCPF : ESocialBindableObject
+    public string observacao
     {
-        private string cpfAntField;
-        private string matricAntField;
-        private DateTime dtAltCPFField;
-        private string observacaoField;
-
-        public string cpfAnt
+        get => observacaoField;
+        set
         {
-            get
-            {
-                return cpfAntField;
-            }
-
-            set
-            {
-                cpfAntField = value;
-                RaisePropertyChanged("cpfAnt");
-            }
+            observacaoField = value;
+            RaisePropertyChanged(nameof(observacao));
         }
+    }
+}
 
-        public string matricAnt
-        {
-            get
-            {
-                return matricAntField;
-            }
+public partial class eSocialEvtAdmissaoVinculoTransfDom : ESocialBindableObject
+{
+    private string cpfSubstituidoField;
+    private string matricAntField;
+    private DateTime dtTransfField;
 
-            set
-            {
-                matricAntField = value;
-                RaisePropertyChanged("matricAnt");
-            }
+    public string cpfSubstituido
+    {
+        get => cpfSubstituidoField;
+        set
+        {
+            cpfSubstituidoField = value;
+            RaisePropertyChanged(nameof(cpfSubstituido));
         }
+    }
 
-        [XmlElement(DataType = "date")]
-        public DateTime dtAltCPF
+    public string matricAnt
+    {
+        get => matricAntField;
+        set
         {
-            get
-            {
-                return dtAltCPFField;
-            }
-
-            set
-            {
-                dtAltCPFField = value;
-                RaisePropertyChanged("dtAltCPF");
-            }
+            matricAntField = value;
+            RaisePropertyChanged(nameof(matricAnt));
         }
+    }
 
-        public string observacao
+    [XmlElement(DataType = "date")]
+    public DateTime dtTransf
+    {
+        get => dtTransfField;
+        set
         {
-            get
-            {
-                return observacaoField;
-            }
-
-            set
-            {
-                observacaoField = value;
-                RaisePropertyChanged("observacao");
-            }
+            dtTransfField = value;
+            RaisePropertyChanged(nameof(dtTransf));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoMudancaCPF : ESocialBindableObject
+{
+    private string cpfAntField;
+    private string matricAntField;
+    private DateTime dtAltCPFField;
+    private string observacaoField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    public string cpfAnt
+    {
+        get => cpfAntField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            cpfAntField = value;
+            RaisePropertyChanged(nameof(cpfAnt));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoAfastamento : ESocialBindableObject
+    public string matricAnt
     {
-        private DateTime dtIniAfastField;
-        private string codMotAfastField;
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtIniAfast
+        get => matricAntField;
+        set
         {
-            get
-            {
-                return dtIniAfastField;
-            }
-
-            set
-            {
-                dtIniAfastField = value;
-                RaisePropertyChanged("dtIniAfast");
-            }
+            matricAntField = value;
+            RaisePropertyChanged(nameof(matricAnt));
         }
+    }
 
-        public string codMotAfast
+    [XmlElement(DataType = "date")]
+    public DateTime dtAltCPF
+    {
+        get => dtAltCPFField;
+        set
         {
-            get
-            {
-                return codMotAfastField;
-            }
+            dtAltCPFField = value;
+            RaisePropertyChanged(nameof(dtAltCPF));
+        }
+    }
 
-            set
-            {
-                codMotAfastField = value;
-                RaisePropertyChanged("codMotAfast");
-            }
+    public string observacao
+    {
+        get => observacaoField;
+        set
+        {
+            observacaoField = value;
+            RaisePropertyChanged(nameof(observacao));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoAfastamento : ESocialBindableObject
+{
+    private DateTime dtIniAfastField;
+    private string codMotAfastField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtIniAfast
+    {
+        get => dtIniAfastField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtIniAfastField = value;
+            RaisePropertyChanged(nameof(dtIniAfast));
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("xsd", "4.6.1055.0")]
-    [Serializable()]
-    [DebuggerStepThrough()]
-    [DesignerCategory("code")]
-    [XmlType(AnonymousType = true, Namespace = "http://www.esocial.gov.br/schema/evt/evtAdmissao/v02_05_00")]
-    public partial class eSocialEvtAdmissaoVinculoDesligamento : ESocialBindableObject
+    public string codMotAfast
     {
-        private DateTime dtDesligField;
-
-        [XmlElement(DataType = "date")]
-        public DateTime dtDeslig
+        get => codMotAfastField;
+        set
         {
-            get
-            {
-                return dtDesligField;
-            }
-
-            set
-            {
-                dtDesligField = value;
-                RaisePropertyChanged("dtDeslig");
-            }
+            codMotAfastField = value;
+            RaisePropertyChanged(nameof(codMotAfast));
         }
+    }
+}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+public partial class eSocialEvtAdmissaoVinculoDesligamento : ESocialBindableObject
+{
+    private DateTime dtDesligField;
 
-        protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(DataType = "date")]
+    public DateTime dtDeslig
+    {
+        get => dtDesligField;
+        set
         {
-            var propertyChanged = PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            dtDesligField = value;
+            RaisePropertyChanged(nameof(dtDeslig));
         }
     }
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
