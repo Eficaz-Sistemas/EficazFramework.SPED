@@ -21,7 +21,14 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 
 | Classes | |
 | :--- | :--- |
+| [ApuracaoTributoR4000](EficazFramework.SPED.Schemas.EFD_Reinf/ApuracaoTributoR4000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ApuracaoTributoR4000') | Apuracao e retencao dos tributos com periodo de apuracao da série R-4000 |
+| [ApuracaoTributoR4000Fechamento](EficazFramework.SPED.Schemas.EFD_Reinf/ApuracaoTributoR4000Fechamento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ApuracaoTributoR4000Fechamento') | Retornado no evento R-9015 |
 | [Evento](EficazFramework.SPED.Schemas.EFD_Reinf/Evento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.Evento') | Abstração padrão para implementação em todos os eventos da escrituração. |
+| [EventoRetorno](EficazFramework.SPED.Schemas.EFD_Reinf/EventoRetorno.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EventoRetorno') | Abstração padrão para implementação em todos os eventos de retorno (R-9001, R-9005, R-9011 e R-9015). |
+| [EventoTotalDadosProcessamento](EficazFramework.SPED.Schemas.EFD_Reinf/EventoTotalDadosProcessamento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EventoTotalDadosProcessamento') | |
+| [EventoTotalReciboRetorno](EficazFramework.SPED.Schemas.EFD_Reinf/EventoTotalReciboRetorno.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EventoTotalReciboRetorno') | Status de retorno dos eventos enviados |
+| [EventoTotalRegistroOcorrencias](EficazFramework.SPED.Schemas.EFD_Reinf/EventoTotalRegistroOcorrencias.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EventoTotalRegistroOcorrencias') | |
+| [EventoTotalStatusRetorno](EficazFramework.SPED.Schemas.EFD_Reinf/EventoTotalStatusRetorno.md 'EficazFramework.SPED.Schemas.EFD_Reinf.EventoTotalStatusRetorno') | Detalhamento do status de retorno dos eventos enviados |
 | [R1000](EficazFramework.SPED.Schemas.EFD_Reinf/R1000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1000') | Informações do contribuinte |
 | [R1070](EficazFramework.SPED.Schemas.EFD_Reinf/R1070.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R1070') | Tabela de processos administrativos/judiciais |
 | [R2010](EficazFramework.SPED.Schemas.EFD_Reinf/R2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R2010') | Retenção de contribuição previdenciária - serviços tomados |
@@ -39,7 +46,33 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | [R4040](EficazFramework.SPED.Schemas.EFD_Reinf/R4040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4040') | Pagamentos/créditos a beneficiários não identificados |
 | [R4080](EficazFramework.SPED.Schemas.EFD_Reinf/R4080.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4080') | Retenção no recebimento |
 | [R4099](EficazFramework.SPED.Schemas.EFD_Reinf/R4099.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R4099') | Fechamento/reabertura dos eventos da série R-4000 |
+| [R9000](EficazFramework.SPED.Schemas.EFD_Reinf/R9000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9000') | Exclusão de eventos |
+| [R9001](EficazFramework.SPED.Schemas.EFD_Reinf/R9001.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9001') | Informações de bases e tributos por evento. Retorno da série R-2000. |
+| [R9001EventoRetornoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9001EventoRetornoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9001EventoRetornoTotal') | Evento Totalizador - Retorno dos eventos da série R-2000, exceto pelo fechamento e/ou reabertura (R-2099 e R-2098) |
+| [R9001IdentificacaoEstabelecimento](EficazFramework.SPED.Schemas.EFD_Reinf/R9001IdentificacaoEstabelecimento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9001IdentificacaoEstabelecimento') | Identificação do Estabelecimento do Evento Totalizador, série R-2000 |
+| [R9001InfoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9001InfoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9001InfoTotal') | |
+| [R9005](EficazFramework.SPED.Schemas.EFD_Reinf/R9005.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9005') | Informações de bases e tributos por evento. Retorno da série R-4000. |
+| [R9005EventoRetornoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9005EventoRetornoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9005EventoRetornoTotal') | Evento Totalizador - Retorno dos eventos da série R-4000, exceto pelo fechamento e/ou reabertura (R-4099) |
+| [R9005IdentificacaoEstabelecimento](EficazFramework.SPED.Schemas.EFD_Reinf/R9005IdentificacaoEstabelecimento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9005IdentificacaoEstabelecimento') | Identificação do Estabelecimento do Evento Totalizador, série R-4000 |
+| [R9005InfoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9005InfoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9005InfoTotal') | |
+| [R9011](EficazFramework.SPED.Schemas.EFD_Reinf/R9011.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9011') | Evento totalizador por contribuinte. Retorno do fechamento da série R-2000. |
+| [R9011EventoRetornoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9011EventoRetornoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9011EventoRetornoTotal') | Evento Totalizador - Retorno dos eventos da série R-2000, exceto pelo fechamento e/ou reabertura (R-2099 e R-2098) |
+| [R9011InfoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9011InfoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9011InfoTotal') | |
+| [R9015](EficazFramework.SPED.Schemas.EFD_Reinf/R9015.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9015') | Evento totalizador por contribuinte. Retorno do fechamento da série R-4000. |
+| [R9015EventoRetornoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9015EventoRetornoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9015EventoRetornoTotal') | Evento Totalizador - Retorno dos eventos da série R-4000, exceto pelo fechamento e/ou reabertura (R-4099) |
+| [R9015InfoTotal](EficazFramework.SPED.Schemas.EFD_Reinf/R9015InfoTotal.md 'EficazFramework.SPED.Schemas.EFD_Reinf.R9015InfoTotal') | |
 | [ReinfTimeStampUtils](EficazFramework.SPED.Schemas.EFD_Reinf/ReinfTimeStampUtils.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ReinfTimeStampUtils') | Utilitário para geração do identificador único de evento, para sua transmissão. |
+| [TotalizadorR2010](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2010') | Totalizador do evento R-2010 |
+| [TotalizadorR2010InfoRetencoes](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2010InfoRetencoes.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2010InfoRetencoes') | |
+| [TotalizadorR2020](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2020.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2020') | Totalizador do evento R-2020 |
+| [TotalizadorR2030eR2040](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2030eR2040.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2030eR2040') | Totalizador dos eventos R-2030 e R-2040 |
+| [TotalizadorR2050](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2050.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2050') | Totalizador do evento R-2050 |
+| [TotalizadorR2055](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2055.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2055') | Totalizador do evento R-2055 |
+| [TotalizadorR2060](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR2060.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR2060') | Totalizador do evento R-2060 |
+| [TotalizadorR3010](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR3010.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR3010') | Totalizador do evento R-3010 |
+| [TotalizadorR4000](EficazFramework.SPED.Schemas.EFD_Reinf/TotalizadorR4000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalizadorR4000') | Bases e tributos com periodo de apuracao da série R-4000 |
+| [TotalSerieR2000](EficazFramework.SPED.Schemas.EFD_Reinf/TotalSerieR2000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalSerieR2000') | Identificacao do estabelecimento com seus totais |
+| [TotalSerieR4000](EficazFramework.SPED.Schemas.EFD_Reinf/TotalSerieR4000.md 'EficazFramework.SPED.Schemas.EFD_Reinf.TotalSerieR4000') | Identificacao do estabelecimento com seus totais |
 
 | Enums | |
 | :--- | :--- |
@@ -61,6 +94,11 @@ Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de
 | [IndicadorRetificacao](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorRetificacao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorRetificacao') | |
 | [IndicadorTipoDeducaoPrevidenciaria](EficazFramework.SPED.Schemas.EFD_Reinf/IndicadorTipoDeducaoPrevidenciaria.md 'EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorTipoDeducaoPrevidenciaria') | |
 | [ObrigatoriedadeECD](EficazFramework.SPED.Schemas.EFD_Reinf/ObrigatoriedadeECD.md 'EficazFramework.SPED.Schemas.EFD_Reinf.ObrigatoriedadeECD') | |
+| [PeriodoR9005Apuracao](EficazFramework.SPED.Schemas.EFD_Reinf/PeriodoR9005Apuracao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PeriodoR9005Apuracao') | |
+| [PeriodoR9005BaseCR](EficazFramework.SPED.Schemas.EFD_Reinf/PeriodoR9005BaseCR.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PeriodoR9005BaseCR') | |
+| [PeriodoR9005CodigoRecolhimento](EficazFramework.SPED.Schemas.EFD_Reinf/PeriodoR9005CodigoRecolhimento.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PeriodoR9005CodigoRecolhimento') | |
+| [PeriodoR9005Fracao](EficazFramework.SPED.Schemas.EFD_Reinf/PeriodoR9005Fracao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PeriodoR9005Fracao') | |
+| [PeriodoR9005VlrCR](EficazFramework.SPED.Schemas.EFD_Reinf/PeriodoR9005VlrCR.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PeriodoR9005VlrCR') | |
 | [PersonalidadeJuridica](EficazFramework.SPED.Schemas.EFD_Reinf/PersonalidadeJuridica.md 'EficazFramework.SPED.Schemas.EFD_Reinf.PersonalidadeJuridica') | Personalidade Jurídica do Contribuinte, Estabelecimento ou Participante |
 | [RelacaoDependencia](EficazFramework.SPED.Schemas.EFD_Reinf/RelacaoDependencia.md 'EficazFramework.SPED.Schemas.EFD_Reinf.RelacaoDependencia') | |
 | [SimNao](EficazFramework.SPED.Schemas.EFD_Reinf/SimNao.md 'EficazFramework.SPED.Schemas.EFD_Reinf.SimNao') | |

@@ -6,7 +6,7 @@
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| ideEvento | `TIdeCadastro` |  |
-| ideEmpregador | `TEmpregador` |  |
+| ideEvento | `IdentificacaoCadastro` |  |
+| ideEmpregador | `Empregador` |  |
 | infoLotacao | `eSocialEvtTabLotacaoInfoLotacao` |  |
 | Id | `String` |  |

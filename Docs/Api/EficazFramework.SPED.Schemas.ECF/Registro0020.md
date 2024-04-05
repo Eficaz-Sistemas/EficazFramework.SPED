@@ -16,7 +16,7 @@ Parâmetros de Tributação
 | ParticipacoesConsorcios | `Boolean` |  |
 | OperacoesExterior | `Boolean` |  |
 | OperacoesVinculadas | `Boolean` |  |
-| EnquadramentoArts48ou49_IN_1312_12 | `Boolean` |  |
+| EnquadramentoArts48ou49_IN_1312_12 | `Boolean` | PJ Enquadrada nos artigos 48 ou 49 da Instrução Normativa RFB nº 1.312/2012 |
 | ParticipacoesExterior | `Boolean` |  |
 | AtividadeRural | `Boolean` |  |
 | LucroExploracao | `Boolean` |  |
@@ -42,6 +42,7 @@ Parâmetros de Tributação
 | AreaLivreComercio | `Boolean` |  |
 | IntegranteMultinacional | `Boolean` |  |
 | DEREX | `Boolean` |  |
+| OpcaoLei14956_2023 | `Boolean` | Opção pelas novas regras de preços de transferência no ano-calendário 2023 (Lei nº 14.956/2023) |
 
 | Methods | |
 | :--- | :--- |

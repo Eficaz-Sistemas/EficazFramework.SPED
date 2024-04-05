@@ -8,7 +8,7 @@ Retorno á consulta de lote de eventos
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| retornoProcessamentoLoteEventos | `eSocialRetornoProcessamentoLoteEventos` |  |
+| retornoProcessamentoLoteEventos | `RetornoProcessamentoLoteEventos` |  |
 
 | Methods | |
 | :--- | :--- |

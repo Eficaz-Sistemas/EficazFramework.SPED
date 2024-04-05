@@ -15,7 +15,3 @@
 | StatusNFeCodigo | `String` |  |
 | StatusNfeMotivo | `String` |  |
 | Id | `String` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacoesProtocoloConsSitNFe/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacoesProtocoloConsSitNFe.OnPropertyChanged(string)') | |

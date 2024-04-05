@@ -21,7 +21,6 @@
 | [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.Deserialize(System.IO.Stream)') | |
 | [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.LoadFrom(System.IO.Stream, bool)') | |
 | [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.LoadFromAsync(System.IO.Stream, bool)') | |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.OnPropertyChanged(string)') | |
 | [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.SaveTo(System.IO.Stream)') | |
 | [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.SaveToAsync(System.IO.Stream)') | |
 | [Serialize()](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento/Serialize().md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento.Serialize()') | Serializes current TEnvEvento object into an XML document |

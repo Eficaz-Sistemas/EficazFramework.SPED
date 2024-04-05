@@ -7,7 +7,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | ideEvento | `eSocialEvtFechaEvPerIdeEvento` |  |
-| ideEmpregador | `TEmpregador` |  |
+| ideEmpregador | `Empregador` |  |
 | ideRespInf | `eSocialEvtFechaEvPerIdeRespInf` |  |
 | infoFech | `eSocialEvtFechaEvPerInfoFech` |  |
 | Id | `String` |  |

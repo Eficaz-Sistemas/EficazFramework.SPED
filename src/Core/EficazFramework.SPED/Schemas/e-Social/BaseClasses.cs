@@ -131,21 +131,29 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
 
 
 /// <summary>
-/// # Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais<br/>
+/// # e-SOCIAL<br/>
 /// ## Publico Alvo<br/>
 ///  - Pessoas Físicas e Jurídicas;<br/>
-///  - Ocorrência de valores de tributos ou contribuições previdenciárias retidos.<br/>
 /// ## Guia<br/>
-/// Obrigação acessória que deve ser enviada mensalmente (ou a cada competência Janeiro, havendo a persistência da situação 'Sem Movimento'), para compor os valores de tributos ou contribuições previdenciárias retidas (substituídas) na DCTF-Web, 
-/// de forma permitir o cálculo mensal das obrigações do contribuinte por meio deste.
+/// O eSocial estabelece a forma com que passam a ser prestadas as informações trabalhistas, 
+/// previdenciárias, tributárias e fiscais relativas à contratação e utilização de mão de obra onerosa, com
+/// ou sem vínculo empregatício, e de produção rural.Portanto, não se trata de uma nova obrigação
+/// tributária acessória, mas uma nova forma de cumprir obrigações trabalhistas, previdenciárias e
+/// tributárias já existentes.Com isso, ele não altera as legislações específicas de cada área, mas apenas
+/// cria uma forma única e mais simplificada de atendê-las.<br/>
 /// ## Objetivo<br/>
-/// Tem por objeto a escrituração de rendimentos pagos e retenções de Imposto de Renda, Contribuição Social do contribuinte exceto aquelas relacionadas ao trabalho e informações sobre a receita bruta para a apuração das contribuições previdenciárias substituídas.<br/>
+/// Tem por objetivo desenvolver um sistema de coleta de informações trabalhistas, previdenciárias e tributárias, 
+/// armazenando-as em um Ambiente Nacional Virtual, a fim de possibilitar aos órgãos participantes do projeto, 
+/// na medida da pertinência temática de cada um, a utilização de tais informações para fins trabalhistas, 
+/// previdenciários, fiscais e para a apuração de tributos e da contribuição para o FGTS.<br/>
 /// ## Links Úteis<br/>
-/// - [Manual de Orientação ao Usuário, v2.1.2.1](http://sped.rfb.gov.br/arquivo/show/7261)<br/>
-/// - [Manual de Orientação ao Desenvolvedor, v2.3](http://sped.rfb.gov.br/arquivo/show/7258)<br/>
-/// - [Layout, v2.1.2](http://sped.rfb.gov.br/pasta/show/7184)<br/>
-/// - [Schemas XSD, v.2.1.2](http://sped.rfb.gov.br/item/show/7196)<br/>
-/// - [Perguntas e Respostas](http://sped.rfb.gov.br/pastaperguntas/show/1497)<br/>
+/// - [Página do Projeto](https://www.gov.br/esocial/pt-br)<br/>
+/// - [Manual de Orientação](https://www.gov.br/esocial/pt-br/documentacao-tecnica/manuais/mos-s-1-2-consolidada-ate-a-no-s-1-2-052023-com-marcacoes.pdf)<br/>
+/// - [Portal do e-Social](https://login.esocial.gov.br/Login.aspx)<br/>
+/// - [Documentação Técnica](https://www.gov.br/esocial/pt-br/documentacao-tecnica/documentacao-tecnica)<br/>
+/// - [Layout, v.S-1.2](https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-v-s-1-2-cons-nt-02-2024-rev-29-02-2024/index.html)<br/>
+/// - [Schemas XSD, v.S-1.2](https://www.gov.br/esocial/pt-br/documentacao-tecnica/manuais/2024-01-04_esquemas_xsd_v_s_01_02_00.zip/)<br/>
+/// - [Perguntas e Respostas](https://www.gov.br/esocial/pt-br/empresas/perguntas-frequentes/perguntas-frequentes)<br/>
 /// ## Implementação<br/>
 /// </summary>
 internal class NamespaceDoc { }

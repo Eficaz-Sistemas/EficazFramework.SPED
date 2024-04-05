@@ -12,7 +12,7 @@ Complemento da Operação
 | :--- | :---: | :--- |
 | CstPis | `String` |  |
 | VrTotalItens | `Nullable<Double>` |  |
-| NatBaseCalculo | `String` |  |
+| NatBaseCalculo | `NaturezaBaseCalculo` |  |
 | VrBaseCalculoPis | `Double` |  |
 | AliquotaPis | `Nullable<Double>` |  |
 | VrPis | `Nullable<Double>` |  |

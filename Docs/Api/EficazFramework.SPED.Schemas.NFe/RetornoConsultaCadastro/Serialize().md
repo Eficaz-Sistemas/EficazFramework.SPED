@@ -3,12 +3,9 @@
 
 ## RetornoConsultaCadastro.Serialize() Method
 
-Serializes current TEnvEvento object into an XML document
-
 ```csharp
 public virtual string Serialize();
 ```
 
 #### Returns
-[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
-string XML value
+[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
