@@ -329,7 +329,7 @@ public enum TipoProcesso
     Judicial = 2
 }
 
-public enum DescisaoSentenca
+public enum DescisaoSentencaCP
 {
     [System.Xml.Serialization.XmlEnum("1")]
     CPP = 1,

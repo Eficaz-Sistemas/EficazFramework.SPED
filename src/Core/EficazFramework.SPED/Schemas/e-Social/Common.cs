@@ -471,9 +471,9 @@ public partial class EnderecoBrasileiro : ESocialBindableObject
 }
 
 
-public partial class ProcessoAdministrativo : ESocialBindableObject
+public partial class ProcessoAdmOuJud : ESocialBindableObject
 {
-    private sbyte tpProcField;
+    private sbyte tpProcField = -1;
     private string nrProcField;
     private string codSuspField;
 
@@ -488,6 +488,9 @@ public partial class ProcessoAdministrativo : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializetpProc()
+        => tpProc >= 0;
+
     [XmlElement(Order = 1)]
     public string nrProc
     {
@@ -499,7 +502,7 @@ public partial class ProcessoAdministrativo : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "integer", Order = 2)]
+    [XmlElement(DataType = "integer", Order = 99)]
     public string codSusp
     {
         get => codSuspField;
