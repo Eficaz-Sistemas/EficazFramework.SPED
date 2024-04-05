@@ -135,17 +135,9 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
 /// ## Publico Alvo<br/>
 ///  - Pessoas Físicas e Jurídicas;<br/>
 /// ## Guia<br/>
-/// O eSocial estabelece a forma com que passam a ser prestadas as informações trabalhistas, 
-/// previdenciárias, tributárias e fiscais relativas à contratação e utilização de mão de obra onerosa, com
-/// ou sem vínculo empregatício, e de produção rural.Portanto, não se trata de uma nova obrigação
-/// tributária acessória, mas uma nova forma de cumprir obrigações trabalhistas, previdenciárias e
-/// tributárias já existentes.Com isso, ele não altera as legislações específicas de cada área, mas apenas
-/// cria uma forma única e mais simplificada de atendê-las.<br/>
+/// O eSocial estabelece a forma com que passam a ser prestadas as informações trabalhistas, previdenciárias, tributárias e fiscais relativas à contratação e utilização de mão de obra onerosa, com ou sem vínculo empregatício, e de produção rural.Portanto, não se trata de uma nova obrigação tributária acessória, mas uma nova forma de cumprir obrigações trabalhistas, previdenciárias e tributárias já existentes.Com isso, ele não altera as legislações específicas de cada área, mas apenas cria uma forma única e mais simplificada de atendê-las.<br/>
 /// ## Objetivo<br/>
-/// Tem por objetivo desenvolver um sistema de coleta de informações trabalhistas, previdenciárias e tributárias, 
-/// armazenando-as em um Ambiente Nacional Virtual, a fim de possibilitar aos órgãos participantes do projeto, 
-/// na medida da pertinência temática de cada um, a utilização de tais informações para fins trabalhistas, 
-/// previdenciários, fiscais e para a apuração de tributos e da contribuição para o FGTS.<br/>
+/// Tem por objetivo desenvolver um sistema de coleta de informações trabalhistas, previdenciárias e tributárias, armazenando-as em um Ambiente Nacional Virtual, a fim de possibilitar aos órgãos participantes do projeto, na medida da pertinência temática de cada um, a utilização de tais informações para fins trabalhistas, previdenciários, fiscais e para a apuração de tributos e da contribuição para o FGTS.<br/>
 /// ## Links Úteis<br/>
 /// - [Página do Projeto](https://www.gov.br/esocial/pt-br)<br/>
 /// - [Manual de Orientação](https://www.gov.br/esocial/pt-br/documentacao-tecnica/manuais/mos-s-1-2-consolidada-ate-a-no-s-1-2-052023-com-marcacoes.pdf)<br/>
