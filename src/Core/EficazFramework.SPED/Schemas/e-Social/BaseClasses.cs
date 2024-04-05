@@ -22,7 +22,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita
     /// </summary>
     [XmlIgnore]
-    public Versao Versao { get; set; } = Versao.v02_05_00;
+    public Versao Versao { get; set; } = Versao.v_S_01_02_00;
 
     // Base Members
     private XmlSerializer sSerializer;

@@ -8,9 +8,9 @@ public class eSocialTimeStampUtils
     {
         int ID = 1;
         string timeString = string.Format("{0:yyyyMMddHHmmss}", DateTime.Now);
-        if (TimestampDict.ContainsKey(timeString))
+        if (TimestampDict.TryGetValue(timeString, out int value))
         {
-            ID = TimestampDict[timeString] + 1;
+            ID = value + 1;
             TimestampDict[timeString] = ID;
         }
         else
@@ -50,15 +50,9 @@ public abstract class IeSocialEvt
         }
         finally
         {
-            if (streamReader != null)
-            {
-                streamReader.Dispose();
-            }
+            streamReader?.Dispose();
 
-            if (memoryStream != null)
-            {
-                memoryStream.Dispose();
-            }
+            memoryStream?.Dispose();
         }
     }
 
@@ -75,10 +69,7 @@ public abstract class IeSocialEvt
         }
         finally
         {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
+            streamWriter?.Dispose();
         }
     }
 }
@@ -86,40 +77,30 @@ public abstract class IeSocialEvt
 /// <summary>
 /// Identificação do Empregador, titular do Evento
 /// </summary>
-public partial class Empregador : object, INotifyPropertyChanged
+public partial class Empregador : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
-
+        get => tpInscField;
         set
         {
             tpInscField = value;
-            RaisePropertyChanged("tpInsc");
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
-
+        get => nrInscField;
         set
         {
             nrInscField = value;
-            RaisePropertyChanged("nrInsc");
+            RaisePropertyChanged(nameof(nrInsc));
         }
     }
 
@@ -132,84 +113,47 @@ public partial class Empregador : object, INotifyPropertyChanged
             inscrFinal = inscrFinal.Substring(0, 8);
         return Extensions.String.ToFixedLenghtString(inscrFinal, 14, Extensions.Alignment.Right, "0");
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 }
 
 /// <summary>
 /// Identificação do Evento, com Ambiente, Processo Emissor e Versão
 /// </summary>
-public partial class IdentificacaoCadastro : object, INotifyPropertyChanged
+public partial class IdentificacaoCadastro : ESocialBindableObject
 {
     private Ambiente tpAmbField = Ambiente.Producao;
     private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
     private string verProcField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 2)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -217,7 +161,7 @@ public partial class IdentificacaoCadastro : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação do Evento Períodico
 /// </summary>
-public partial class IdeEventoPeriodico : object, INotifyPropertyChanged
+public partial class IdeEventoPeriodico : ESocialBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
@@ -227,126 +171,80 @@ public partial class IdeEventoPeriodico : object, INotifyPropertyChanged
     private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
     private string verProcField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
-
+        get => indRetifField;
         set
         {
             indRetifField = value;
-            RaisePropertyChanged("indRetif");
+            RaisePropertyChanged(nameof(indRetif));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
-
+        get => nrReciboField;
         set
         {
             nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
+            RaisePropertyChanged(nameof(nrRecibo));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 2)]
     public IndicadorApuracao indApuracao
     {
-        get
-        {
-            return indApuracaoField;
-        }
-
+        get => indApuracaoField;
         set
         {
             indApuracaoField = value;
-            RaisePropertyChanged("indApuracao");
+            RaisePropertyChanged(nameof(indApuracao));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 3)]
     public string perApur
     {
-        get
-        {
-            return perApurField;
-        }
-
+        get => perApurField;
         set
         {
             perApurField = value;
-            RaisePropertyChanged("perApur");
+            RaisePropertyChanged(nameof(perApur));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 4)]
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 5)]
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 6)]
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -354,7 +252,7 @@ public partial class IdeEventoPeriodico : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação do Evento Não Períodico
 /// </summary>
-public partial class IdeEventoNaoPeriodico : object, INotifyPropertyChanged
+public partial class IdeEventoNaoPeriodico : ESocialBindableObject
 {
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
@@ -362,89 +260,53 @@ public partial class IdeEventoNaoPeriodico : object, INotifyPropertyChanged
     private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
     private string verProcField;
 
-    /// <remarks/>
     public IndicadorRetificacao indRetif
     {
-        get
-        {
-            return indRetifField;
-        }
-
+        get => indRetifField;
         set
         {
             indRetifField = value;
-            RaisePropertyChanged("indRetif");
+            RaisePropertyChanged(nameof(indRetif));
         }
     }
 
-    /// <remarks/>
     public string nrRecibo
     {
-        get
-        {
-            return nrReciboField;
-        }
-
+        get => nrReciboField;
         set
         {
             nrReciboField = value;
-            RaisePropertyChanged("nrRecibo");
+            RaisePropertyChanged(nameof(nrRecibo));
         }
     }
 
-    /// <remarks/>
     public Ambiente tpAmb
     {
-        get
-        {
-            return tpAmbField;
-        }
-
+        get => tpAmbField;
         set
         {
             tpAmbField = value;
-            RaisePropertyChanged("tpAmb");
+            RaisePropertyChanged(nameof(tpAmb));
         }
     }
 
-    /// <remarks/>
     public EmissorEvento procEmi
     {
-        get
-        {
-            return procEmiField;
-        }
-
+        get => procEmiField;
         set
         {
             procEmiField = value;
-            RaisePropertyChanged("procEmi");
+            RaisePropertyChanged(nameof(procEmi));
         }
     }
 
-    /// <remarks/>
     public string verProc
     {
-        get
-        {
-            return verProcField;
-        }
-
+        get => verProcField;
         set
         {
             verProcField = value;
-            RaisePropertyChanged("verProc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }
@@ -453,51 +315,30 @@ public partial class IdeEventoNaoPeriodico : object, INotifyPropertyChanged
 /// <summary>
 /// Informação do Período (inicial e final, formato AAAA-MM)
 /// </summary>
-public partial class IdePeriodo : object, INotifyPropertyChanged
+public partial class IdePeriodo : ESocialBindableObject
 {
     private string iniValidField;
     private string fimValidField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public string iniValid
     {
-        get
-        {
-            return iniValidField;
-        }
-
+        get => iniValidField;
         set
         {
             iniValidField = value;
-            RaisePropertyChanged("iniValid");
+            RaisePropertyChanged(nameof(iniValid));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
     public string fimValid
     {
-        get
-        {
-            return fimValidField;
-        }
-
+        get => fimValidField;
         set
         {
             fimValidField = value;
-            RaisePropertyChanged("fimValid");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(fimValid));
         }
     }
 }
@@ -505,51 +346,30 @@ public partial class IdePeriodo : object, INotifyPropertyChanged
 /// <summary>
 /// Identificação do Transmissor
 /// </summary>
-public partial class IdeTransmissor : object, INotifyPropertyChanged
+public partial class IdeTransmissor : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
     public PersonalidadeJuridica tpInsc
     {
-        get
-        {
-            return tpInscField;
-        }
-
+        get => tpInscField;
         set
         {
             tpInscField = value;
-            RaisePropertyChanged("tpInsc");
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
     public string nrInsc
     {
-        get
-        {
-            return nrInscField;
-        }
-
+        get => nrInscField;
         set
         {
             nrInscField = value;
-            RaisePropertyChanged("nrInsc");
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
-    {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
-        {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(nameof(nrInsc));
         }
     }
 }
@@ -557,7 +377,7 @@ public partial class IdeTransmissor : object, INotifyPropertyChanged
 /// <summary>
 /// Endereço no Brasil
 /// </summary>
-public partial class EnderecoBrasileiro : object, INotifyPropertyChanged
+public partial class EnderecoBrasileiro : ESocialBindableObject
 {
     private string tpLogradField;
     private string dscLogradField;
@@ -568,135 +388,125 @@ public partial class EnderecoBrasileiro : object, INotifyPropertyChanged
     private string codMunicField;
     private UFCadastro ufField;
 
-    /// <remarks/>
     public string tpLograd
     {
-        get
-        {
-            return tpLogradField;
-        }
-
+        get => tpLogradField;
         set
         {
             tpLogradField = value;
-            RaisePropertyChanged("tpLograd");
+            RaisePropertyChanged(nameof(tpLograd));
         }
     }
 
-    /// <remarks/>
     public string dscLograd
     {
-        get
-        {
-            return dscLogradField;
-        }
-
+        get => dscLogradField;
         set
         {
             dscLogradField = value;
-            RaisePropertyChanged("dscLograd");
+            RaisePropertyChanged(nameof(dscLograd));
         }
     }
 
-    /// <remarks/>
     public string nrLograd
     {
-        get
-        {
-            return nrLogradField;
-        }
-
+        get => nrLogradField;
         set
         {
             nrLogradField = value;
-            RaisePropertyChanged("nrLograd");
+            RaisePropertyChanged(nameof(nrLograd));
         }
     }
 
-    /// <remarks/>
     public string complemento
     {
-        get
-        {
-            return complementoField;
-        }
-
+        get => complementoField;
         set
         {
             complementoField = value;
-            RaisePropertyChanged("complemento");
+            RaisePropertyChanged(nameof(complemento));
         }
     }
 
-    /// <remarks/>
     public string bairro
     {
-        get
-        {
-            return bairroField;
-        }
-
+        get => bairroField;
         set
         {
             bairroField = value;
-            RaisePropertyChanged("bairro");
+            RaisePropertyChanged(nameof(bairro));
         }
     }
 
-    /// <remarks/>
     public string cep
     {
-        get
-        {
-            return cepField;
-        }
-
+        get => cepField;
         set
         {
             cepField = value;
-            RaisePropertyChanged("cep");
+            RaisePropertyChanged(nameof(cep));
         }
     }
 
-    /// <remarks/>
     [XmlElement(DataType = "integer")]
     public string codMunic
     {
-        get
-        {
-            return codMunicField;
-        }
-
+        get => codMunicField;
         set
         {
             codMunicField = value;
-            RaisePropertyChanged("codMunic");
+            RaisePropertyChanged(nameof(codMunic));
         }
     }
 
-    /// <remarks/>
     public UFCadastro uf
     {
-        get
-        {
-            return ufField;
-        }
-
+        get => ufField;
         set
         {
             ufField = value;
-            RaisePropertyChanged("uf");
+            RaisePropertyChanged(nameof(uf));
+        }
+    }
+}
+
+
+public partial class ProcessoAdministrativo : ESocialBindableObject
+{
+    private sbyte tpProcField;
+    private string nrProcField;
+    private string codSuspField;
+
+    [XmlElement(Order = 0)]
+    public sbyte tpProc
+    {
+        get => tpProcField;
+        set
+        {
+            tpProcField = value;
+            RaisePropertyChanged(nameof(tpProc));
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void RaisePropertyChanged(string propertyName)
+    [XmlElement(Order = 1)]
+    public string nrProc
     {
-        var propertyChanged = PropertyChanged;
-        if (propertyChanged != null)
+        get => nrProcField;
+        set
         {
-            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            nrProcField = value;
+            RaisePropertyChanged(nameof(nrProc));
+        }
+    }
+
+    [XmlElement(DataType = "integer", Order = 2)]
+    public string codSusp
+    {
+        get => codSuspField;
+        set
+        {
+            codSuspField = value;
+            RaisePropertyChanged(nameof(codSusp));
         }
     }
 }

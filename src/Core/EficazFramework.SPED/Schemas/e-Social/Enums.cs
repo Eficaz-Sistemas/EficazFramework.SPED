@@ -6,7 +6,7 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 /// </summary>
 public enum Versao
 {
-    v02_05_00 = 0,
+    v_S_01_02_00 = 0,
 }
 
 public enum Ambiente
