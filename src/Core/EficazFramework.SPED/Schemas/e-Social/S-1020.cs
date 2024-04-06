@@ -4,10 +4,10 @@
 [Serializable()]
 public partial class S1020 : Evento
 {
-    private eSocialEvtTabLotacao evtTabLotacaoField;
+    private S1020TabelaLotacao evtTabLotacaoField;
     private SignatureType signatureField;
 
-    public eSocialEvtTabLotacao evtTabLotacao
+    public S1020TabelaLotacao evtTabLotacao
     {
         get => evtTabLotacaoField;
         set
@@ -61,7 +61,8 @@ public partial class S1020 : Evento
 
 }
 
-public partial class eSocialEvtTabLotacao : ESocialBindableObject
+/// <exclude/>
+public partial class S1020TabelaLotacao : ESocialBindableObject
 {
     private IdentificacaoCadastro ideEventoField;
     private Empregador ideEmpregadorField;
@@ -110,6 +111,7 @@ public partial class eSocialEvtTabLotacao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020InfoLotacao : ESocialBindableObject
 {
     private object itemField;
@@ -128,7 +130,7 @@ public partial class S1020InfoLotacao : ESocialBindableObject
     }
 }
 
-
+/// <exclude/>
 public partial class S1020Inclusao : ESocialBindableObject
 {
     private S1020IdentificacaoLotacao ideLotacaoField;
@@ -155,6 +157,7 @@ public partial class S1020Inclusao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020Alteracao : ESocialBindableObject
 {
     private S1020IdentificacaoLotacao ideLotacaoField;
@@ -192,6 +195,7 @@ public partial class S1020Alteracao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020Exclusao : ESocialBindableObject
 {
     private S1020IdentificacaoLotacao ideLotacaoField;
@@ -207,7 +211,7 @@ public partial class S1020Exclusao : ESocialBindableObject
     }
 }
 
-
+/// <exclude/>
 public partial class S1020IdentificacaoLotacao : ESocialBindableObject
 {
     private string codLotacaoField;
@@ -245,6 +249,7 @@ public partial class S1020IdentificacaoLotacao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020DadosLotacao : ESocialBindableObject
 {
     private string tpLotacaoField;
@@ -327,6 +332,7 @@ public partial class S1020DadosLotacao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020FpasLotacao : ESocialBindableObject
 {
     private int fpasField;
@@ -377,6 +383,7 @@ public partial class S1020FpasLotacao : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020FpasLotacaoProcJudTerceiro : ESocialBindableObject
 {
     private string codTercField;
@@ -415,6 +422,7 @@ public partial class S1020FpasLotacaoProcJudTerceiro : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020InfoEmprParcial : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscContratField = PersonalidadeJuridica.CNPJ;
@@ -463,6 +471,7 @@ public partial class S1020InfoEmprParcial : ESocialBindableObject
     }
 }
 
+/// <exclude/>
 public partial class S1020DadosOpPortuario : ESocialBindableObject
 {
     private int? aliqRatField;
