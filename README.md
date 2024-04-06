@@ -30,25 +30,25 @@
 
 - [Sumário](/Docs/Api/EficazFrameworkSPED.md) 
 
-| Área                                   | Schema                                                                                                                                                     | Serviços |
-|:---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| CT-e e CT-eOS                          |                                                                                                                                                            |          |
-| DAPI (MG)                              |                                                                                                                                                            |          |
-| e-CredAc, portarias CAT 83/09 e 207/09 |                                                                                                                                                            |          |
-| e-Ressarcimento portaria CAT 42/18     |                                                                                                                                                            |          |
-| ECD                                    |                                                                                                                                                            |          |
-| ECF                                    |                                                                                                                                                            |          |
-| EFD ICMS / IPI                         | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                                    |          |
-| EFD Contribuições                      |                                                                                                                                                            |          |
-| EFD Reinf                              | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                                       |          |
-| e-Social                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.eSocial.md)                                         |          |
-| GIA (SP)                               |                                                                                                                                                            |          |
-| GNRE                                   |                                                                                                                                                            |          |
-| GIA (SP)                               |                                                                                                                                                            |          |
-| NF-e / NFC-e                           |                                                                                                                                                            |          |
-| NFS-e                                  |                                                                                                                                                            |          |
-| Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          |
-| Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) |          |
+| Área                                   | Schema                                                                                                                                                     | Serviços | Uso em Produção|
+|:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|----------|:--------------:|
+| CT-e e CT-eOS                          |                                                                                                                                                            |          | ✅ |
+| DAPI (MG)                              |                                                                                                                                                            |          | ✅ |
+| e-CredAc, portarias CAT 83/09 e 207/09 |                                                                                                                                                            |          | ✅ |
+| e-Ressarcimento portaria CAT 42/18     |                                                                                                                                                            |          | ✅ |
+| ECD                                    |                                                                                                                                                            |          | ✅ |
+| ECF                                    |                                                                                                                                                            |          | ✅ |
+| EFD ICMS / IPI                         | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                                    |          | ✅ |
+| EFD Contribuições                      |                                                                                                                                                            |          | ✅ |
+| EFD Reinf                              | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                                       |          | ✅ |
+| e-Social                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.eSocial.md)                                         |          | [⚠️](https://github.com/Eficaz-Sistemas/EficazFramework.SPED/pull/50 "Em desenvolvimento. Pull Request #50") |
+| GIA (SP)                               |                                                                                                                                                            |          | ✅ |
+| GNRE                                   |                                                                                                                                                            |          | ✅ |
+| GIA (SP)                               |                                                                                                                                                            |          | ✅ |
+| NF-e / NFC-e                           |                                                                                                                                                            |          | ✅ |
+| NFS-e                                  |                                                                                                                                                            |          | [⚠️](## "Apenas alguns municípios. TODO: Implementar modelo nacional") |
+| Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          | ✅ |
+| Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) | | N/A |       
 
 ## Exemplos de Uso
 
