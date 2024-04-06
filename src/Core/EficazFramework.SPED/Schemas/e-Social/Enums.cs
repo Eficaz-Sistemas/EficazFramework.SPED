@@ -1,6 +1,14 @@
 ﻿
 namespace EficazFramework.SPED.Schemas.eSocial;
 
+/// <summary>
+/// Versão do schema
+/// </summary>
+public enum Versao
+{
+    v_S_01_02_00 = 0,
+}
+
 public enum Ambiente
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -321,7 +329,7 @@ public enum TipoProcesso
     Judicial = 2
 }
 
-public enum DescisaoSentenca
+public enum DescisaoSentencaCP
 {
     [System.Xml.Serialization.XmlEnum("1")]
     CPP = 1,

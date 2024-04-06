@@ -8,7 +8,7 @@ Clase genérica para tratamento das tributações de ICMS.
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| orig | `OrigemMercadoria` |  |
+| Origem | `OrigemMercadoria` |  |
 | CST | `CST_ICMS` |  |
 | CSOSN | `CSOSN_ICMS` |  |
 | CSTFinal | `Int32` |  |
@@ -25,6 +25,8 @@ Clase genérica para tratamento das tributações de ICMS.
 | modBC51 | `DetalhamentoICMS_CST51_ModBC` |  |
 | vBCSTRet | `Nullable<Double>` |  |
 | vBCSTRet_XML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'vBCSTRet' (Double?) para trabalho. Ambos estarão            automaticamente em sincronia |
+| pST | `Nullable<Double>` |  |
+| pST_XML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'pST' (Double?) para trabalho. Ambos estarão            automaticamente em sincronia |
 | vICMSSTRet | `Nullable<Double>` |  |
 | vICMSSTRet_XML | `String` | Campo em formato string para escrita do XML no padrão exigido pela NF-e            Utilize o campo 'vICMSSTRet' (Double?) para trabalho. Ambos estarão            automaticamente em sincronia |
 | modBC70 | `DetalhamentoICMS_CST70_ModBC` |  |
@@ -68,12 +70,16 @@ Clase genérica para tratamento das tributações de ICMS.
 | modBCSpecified | `Boolean` |  |
 | modBCST | `Nullable<Int32>` | Propriedade genérica apenas para compatibilidade com Parser XML.            Para correto funcionamento, utilizar as propriedades modBCXXXX.            A sincronização das demais para com esta, no ato da escrita do arquivo XML deve ser feita manualmente. |
 | modBCSTSpecified | `Boolean` |  |
+| qBCMonoRet | `Nullable<Double>` |  |
+| adRemICMSRet | `Nullable<Double>` |  |
+| vICMSMonoRet | `Nullable<Double>` |  |
 
 | Methods | |
 | :--- | :--- |
 | [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.OnPropertyChanged(string)') | |
+| [ShouldSerializeadRemICMSRet()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeadRemICMSRet().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeadRemICMSRet()') | |
 | [ShouldSerializeCSOSN()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeCSOSN().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeCSOSN()') | |
-| [ShouldSerializeCSTNormal()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeCSTNormal().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeCSTNormal()') | |
+| [ShouldSerializeCST()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeCST().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeCST()') | |
 | [ShouldSerializemodBC()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializemodBC().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializemodBC()') | |
 | [ShouldSerializemodBCST()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializemodBCST().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializemodBCST()') | |
 | [ShouldSerializemotDesICMS()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializemotDesICMS().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializemotDesICMS()') | |
@@ -86,6 +92,8 @@ Clase genérica para tratamento das tributações de ICMS.
 | [ShouldSerializepMVAST()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializepMVAST().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializepMVAST()') | |
 | [ShouldSerializepRedBC()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializepRedBC().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializepRedBC()') | |
 | [ShouldSerializepRedBCST()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializepRedBCST().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializepRedBCST()') | |
+| [ShouldSerializepST_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializepST_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializepST_XML()') | |
+| [ShouldSerializeqBCMonoRet()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeqBCMonoRet().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeqBCMonoRet()') | |
 | [ShouldSerializeUFST()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializeUFST().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializeUFST()') | |
 | [ShouldSerializevBC_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevBC_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevBC_XML()') | |
 | [ShouldSerializevBCEfet()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevBCEfet().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevBCEfet()') | |
@@ -93,11 +101,13 @@ Clase genérica para tratamento das tributações de ICMS.
 | [ShouldSerializevBCST_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevBCST_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevBCST_XML()') | |
 | [ShouldSerializevBCSTDest_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevBCSTDest_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevBCSTDest_XML()') | |
 | [ShouldSerializevBCSTRet_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevBCSTRet_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevBCSTRet_XML()') | |
+| [ShouldSerializevCredICMSSN()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevCredICMSSN().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevCredICMSSN()') | |
 | [ShouldSerializevCredICMSSN_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevCredICMSSN_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevCredICMSSN_XML()') | |
 | [ShouldSerializevFCPST_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevFCPST_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevFCPST_XML()') | |
 | [ShouldSerializevICMS_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMS_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMS_XML()') | |
 | [ShouldSerializevICMSDeson()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSDeson().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSDeson()') | |
 | [ShouldSerializevICMSEfet()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSEfet().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSEfet()') | |
+| [ShouldSerializevICMSMonoRet()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSMonoRet().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSMonoRet()') | |
 | [ShouldSerializevICMSST_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSST_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSST_XML()') | |
 | [ShouldSerializevICMSSTDest_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSSTDest_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSSTDest_XML()') | |
 | [ShouldSerializevICMSSTRet_XML()](EficazFramework.SPED.Schemas.NFe/DetalhamentoICMS_Tributacao/ShouldSerializevICMSSTRet_XML().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoICMS_Tributacao.ShouldSerializevICMSSTRet_XML()') | |

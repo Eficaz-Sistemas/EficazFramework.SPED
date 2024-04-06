@@ -9,6 +9,8 @@ Serializes current TEnvEvento object into an XML document
 public virtual string Serialize();
 ```
 
+Implements [Serialize()](EficazFramework.SPED.Schemas/IXmlSpedDocument/Serialize().md 'EficazFramework.SPED.Schemas.IXmlSpedDocument.Serialize()')
+
 #### Returns
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
 string XML value

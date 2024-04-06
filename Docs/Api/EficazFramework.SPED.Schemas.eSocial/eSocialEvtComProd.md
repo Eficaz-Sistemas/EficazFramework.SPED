@@ -6,7 +6,7 @@
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| ideEvento | `TIdeEveFopagMensal` |  |
-| ideEmpregador | `TEmpregador` |  |
+| ideEvento | `IdeEventoPeriodico` |  |
+| ideEmpregador | `Empregador` |  |
 | infoComProd | `eSocialEvtComProdInfoComProd` |  |
 | Id | `String` |  |

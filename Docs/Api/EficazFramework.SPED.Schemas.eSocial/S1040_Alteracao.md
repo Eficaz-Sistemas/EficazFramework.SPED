@@ -8,4 +8,4 @@
 | :--- | :---: | :--- |
 | ideFuncao | `TIdeFuncao` |  |
 | dadosFuncao | `TDadosFuncao` |  |
-| novaValidade | `TIdePeriodo` |  |
+| novaValidade | `IdePeriodo` |  |

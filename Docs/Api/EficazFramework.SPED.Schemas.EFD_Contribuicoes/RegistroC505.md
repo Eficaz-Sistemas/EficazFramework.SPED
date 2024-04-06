@@ -12,7 +12,7 @@ Complemento da operação
 | :--- | :---: | :--- |
 | CstCofins | `String` |  |
 | VrTotalItens | `Nullable<Double>` |  |
-| NatBaseCalculo | `String` |  |
+| NatBaseCalculo | `NaturezaBaseCalculo` |  |
 | VrBaseCalculoCofins | `Double` |  |
 | AliquotaCofins | `Nullable<Double>` |  |
 | VrCofins | `Nullable<Double>` |  |

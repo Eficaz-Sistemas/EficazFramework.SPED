@@ -3,6 +3,8 @@
 
 ## Operations.OpenAsync(Stream) Method
 
+Efetua a leitura e parsing de um documento [IXmlSpedDocument](EficazFramework.SPED.Schemas.md#EficazFramework.SPED.Schemas.IXmlSpedDocument 'EficazFramework.SPED.Schemas.IXmlSpedDocument')
+
 ```csharp
 public static System.Threading.Tasks.Task<EficazFramework.SPED.Schemas.IXmlSpedDocument> OpenAsync(System.IO.Stream source);
 ```

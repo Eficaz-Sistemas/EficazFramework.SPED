@@ -23,7 +23,7 @@ Demais documentos e operações geradoras de contribuições e créditos
 | VrBcCofins | `Nullable<Double>` |  |
 | AliqCofins | `Nullable<Double>` |  |
 | VrCofins | `Nullable<Double>` |  |
-| NatBcCredito | `String` |  |
+| NatBcCredito | `NaturezaBaseCalculo` |  |
 | IndicadorOrigemCredito | `IndicadorOrigemCredito` |  |
 | CodigoContaContabil | `String` |  |
 | CodigoCentroCustos | `String` |  |

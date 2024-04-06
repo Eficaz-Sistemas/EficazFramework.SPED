@@ -7,4 +7,4 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | localTrabGeral | `TLocalTrab` |  |
-| localTrabDom | `TEnderecoBrasil` |  |
+| localTrabDom | `EnderecoBrasileiro` |  |

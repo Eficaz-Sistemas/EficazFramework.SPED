@@ -26,6 +26,16 @@ Parâmetros de Identificação dos Tipos de Programa ¬¬
 | REPNBL_REDES | `Boolean` |  |
 | REIF | `Boolean` |  |
 | Olimpiadas | `Boolean` |  |
+| SuspensaoOleoBunker | `Boolean` |  |
+| REPORTO | `Boolean` |  |
+| RetII | `Boolean` |  |
+| RETPMCMV | `Boolean` |  |
+| RetEEI | `Boolean` |  |
+| IndEBAS | `Boolean` |  |
+| REPETROIND | `Boolean` |  |
+| REPETRONAC | `Boolean` |  |
+| REPETROPERM | `Boolean` |  |
+| REPETROTEMP | `Boolean` |  |
 
 | Methods | |
 | :--- | :--- |

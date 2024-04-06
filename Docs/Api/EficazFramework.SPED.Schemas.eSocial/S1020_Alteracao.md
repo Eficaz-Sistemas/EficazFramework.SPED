@@ -8,4 +8,4 @@
 | :--- | :---: | :--- |
 | ideLotacao | `TIdeLotacao` |  |
 | dadosLotacao | `TDadosLotacao` |  |
-| novaValidade | `TIdePeriodo` |  |
+| novaValidade | `IdePeriodo` |  |
