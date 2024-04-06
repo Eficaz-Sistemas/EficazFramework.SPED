@@ -58,6 +58,7 @@ public partial class S1010 : Evento
         new(typeof(S1010), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{Versao}", IsNullable = false });
 }
 
+/// <exclude />
 public partial class S1010Rubrica : ESocialBindableObject
 {
     private IdentificacaoCadastro ideEventoField;
@@ -107,6 +108,7 @@ public partial class S1010Rubrica : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1010InfoRubrica : ESocialBindableObject
 {
     private object itemField;
@@ -125,7 +127,7 @@ public partial class S1010InfoRubrica : ESocialBindableObject
     }
 }
 
-
+/// <exclude />
 public partial class S1010Inclusao : ESocialBindableObject
 {
     private S1010IdentificacaoRubrica ideRubricaField;
@@ -152,6 +154,7 @@ public partial class S1010Inclusao : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1010Alteracao : ESocialBindableObject
 {
     private S1010IdentificacaoRubrica ideRubricaField;
@@ -189,6 +192,7 @@ public partial class S1010Alteracao : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1010Exclusao : ESocialBindableObject
 {
     private S1010IdentificacaoRubrica ideRubricaField;
@@ -204,7 +208,7 @@ public partial class S1010Exclusao : ESocialBindableObject
     }
 }
 
-
+/// <exclude />
 public partial class S1010IdentificacaoRubrica : ESocialBindableObject
 {
     private string codRubrField;
@@ -253,6 +257,7 @@ public partial class S1010IdentificacaoRubrica : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1010DadosRubrica : ESocialBindableObject
 {
     private string dscRubrField;
@@ -396,6 +401,7 @@ public partial class S1010DadosRubrica : ESocialBindableObject
     }
 }
 
+/// <exclude />
 public partial class S1010ProcessoCP : ProcessoAdmOuJud
 {
     private DescisaoSentencaCP extDecisaoField = DescisaoSentencaCP.CPP;

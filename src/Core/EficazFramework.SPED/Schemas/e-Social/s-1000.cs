@@ -1,6 +1,61 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+﻿using System.Diagnostics;
 
+namespace EficazFramework.SPED.Schemas.eSocial;
 
+/// <summary>
+/// Informações do Empregador/Contribuinte/Órgão Público
+/// </summary>
+/// <example>
+/// ```csharp
+///  evento.evtInfoEmpregador = new S1000InfoEmpregador()
+///  {
+///      ideEvento = new IdentificacaoCadastro()
+///      {
+///          tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///          procEmi = EmissorEvento.AppEmpregador,
+///          verProc = "2.2"
+///      },
+///      ideEmpregador = new ()
+///      {
+///          tpInsc = PersonalidadeJuridica.CNPJ,
+///          nrInsc = cnpjCpf.Substring(0, 8)
+///      },
+///      infoEmpregador = new S1000InfoEmpregadorAcao()
+///      {
+///          Item = new S1000Inclusao() // S1000Alteracao() ou S1000Exclusao()
+///          {
+///              idePeriodo = new IdePeriodo()
+///              {
+///                  iniValid = $"{DateTime.Now.AddMonths(-1):yyyy-MM}"
+///              },
+///              infoCadastro = new S1000InfoCadastro()
+///              {
+///                  classTrib = "99",
+///                  indCoop = IndicadorCooperativa.Nao,
+///                  indCoopSpecified = true,
+///                  indConstr = SimNaoByte.Nao,
+///                  indConstrSpecified = true,
+///                  indDesFolha = SimNaoByte.Nao,
+///                  indOpcCP = OpcaoTributacaoPrevidenciaria.FolhaPagto,
+///                  indOpcCPSpecified = true,
+///                  indPorte = SimNaoString.Sim,
+///                  indOptRegEletron = SimNaoByte.Nao,
+///                  indTribFolhaPisCofins = SimNaoString.Nao,
+///                  dadosIsencao = new S1000DadosIsencao()
+///                  {
+///                      ideMinLei = "MTE",
+///                      nrCertif = "abc",
+///                      dtEmisCertif = DateTime.Now.AddYears(-1),
+///                      dtVencCertif = DateTime.Now.AddYears(5),
+///                      dtDou = DateTime.Now.AddYears(-1),
+///                      pagDou = 1234
+///                  }
+///              }
+///          }
+///      }
+///  };
+/// ```
+/// </example>
 [Serializable()]
 public partial class S1000 : Evento
 {
