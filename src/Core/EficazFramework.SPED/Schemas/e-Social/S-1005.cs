@@ -28,9 +28,11 @@ public partial class S1005 : Evento
         }
     }
 
+    /// <exclude/>
     public override void GeraEventoID() 
         => evtTabEstabField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabEstabField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabEstabField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
 
+    /// <exclude/>
     public override string ContribuinteCNPJ()
         => evtTabEstabField.ideEmpregador.nrInsc;
 
