@@ -35,6 +35,7 @@ public partial class S1010 : Evento
         evtTabRubricaField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabRubricaField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabRubricaField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
     }
 
+    /// <exclude/>
     public override string ContribuinteCNPJ()
     {
         return evtTabRubricaField.ideEmpregador.nrInsc;
