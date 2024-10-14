@@ -1,7 +1,4 @@
-﻿using EficazFramework.SPED.Schemas.eSocial;
-using EficazFramework.SPED.Schemas.NFe;
-
-namespace EficazFramework.SPED.Schemas.eSocial;
+﻿namespace EficazFramework.SPED.Schemas.eSocial;
 
 [Serializable()]
 public partial class S2200 : Evento
@@ -134,12 +131,22 @@ public partial class S2200Trabalhador : ESocialBindableObject
     private SimNaoString indPriEmprField = SimNaoString.Nao;
     private string nmSocField;
     private S2200TrabalhadorDadosNascimento nascimentoField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200TrabalhadorDocumentos documentosField;
+
     private S2200TrabalhadorEndereco enderecoField;
+    private S2200TrabalhadorImigrante trabImigField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200TrabalhadorEstrangeiro trabEstrangeiroField;
+
     private S2200TrabalhadorInfoDeficiencia infoDeficienciaField;
     private List<S2200Dependente> dependenteField = [];
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200TrabalhadorDadosAposentadoria aposentadoriaField;
+
     private S2200Contato contatoField;
 
     public string cpfTrab
@@ -152,6 +159,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string nisTrab
     {
         get => nisTrabField;
@@ -226,6 +234,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public SimNaoString indPriEmpr
     {
         get => indPriEmprField;
@@ -259,6 +268,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200TrabalhadorDocumentos documentos
     {
         get => documentosField;
@@ -279,6 +289,18 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    public S2200TrabalhadorImigrante trabImig
+    {
+        get => trabImigField;
+        set
+        {
+            trabImigField = value;
+            RaisePropertyChanged(nameof(trabImig));
+        }
+    }
+
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200TrabalhadorEstrangeiro trabEstrangeiro
     {
         get => trabEstrangeiroField;
@@ -310,6 +332,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200TrabalhadorDadosAposentadoria aposentadoria
     {
         get => aposentadoriaField;
@@ -354,6 +377,7 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "integer")]
     public string codMunic
     {
@@ -365,6 +389,7 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public UFCadastro uf
     {
         get => ufField;
@@ -375,6 +400,7 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlIgnore()]
     public bool ufSpecified
     {
@@ -406,6 +432,7 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string nmMae
     {
         get => nmMaeField;
@@ -416,6 +443,7 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string nmPai
     {
         get => nmPaiField;
@@ -428,15 +456,23 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
 {
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoCtps cTPSField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoRic rICField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoRg rgField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoRne rNEField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoOc ocField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200DocumentoCnh cNHField;
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoCtps CTPS
     {
         get => cTPSField;
@@ -447,6 +483,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoRic RIC
     {
         get => rICField;
@@ -457,6 +494,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoRg RG
     {
         get => rgField;
@@ -467,6 +505,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoRne RNE
     {
         get => rNEField;
@@ -477,6 +516,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoOc OC
     {
         get => ocField;
@@ -487,6 +527,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200DocumentoCnh CNH
     {
         get => cNHField;
@@ -499,6 +540,7 @@ public partial class S2200TrabalhadorDocumentos : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoCtps : ESocialBindableObject
 {
     private string nrCtpsField;
@@ -537,6 +579,7 @@ public partial class S2200DocumentoCtps : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoRic : ESocialBindableObject
 {
     private string nrRicField;
@@ -588,6 +631,7 @@ public partial class S2200DocumentoRic : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoRg : ESocialBindableObject
 {
     private string nrRgField;
@@ -639,6 +683,7 @@ public partial class S2200DocumentoRg : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoRne : ESocialBindableObject
 {
     private string nrRneField;
@@ -690,6 +735,7 @@ public partial class S2200DocumentoRne : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoOc : ESocialBindableObject
 {
     private string nrOcField;
@@ -765,6 +811,7 @@ public partial class S2200DocumentoOc : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200DocumentoCnh : ESocialBindableObject
 {
     private string nrRegCnhField;
@@ -880,6 +927,49 @@ public object Item
 }
 }
 
+public partial class S2200TrabalhadorImigrante : ESocialBindableObject
+{
+    private ImigranteTempoResidencia tmpResidField = ImigranteTempoResidencia.NA;
+    private ImigranteCondicao condIngField = ImigranteCondicao.NA;
+
+    public ImigranteTempoResidencia tmpResid
+    {
+        get => tmpResidField;
+        set
+        {
+            tmpResidField = value;
+            RaisePropertyChanged(nameof(tmpResid));
+        }
+    }
+
+    private bool tmpResidSpecifiedField ;
+
+    [XmlIgnore()]
+    public bool tmpResidSpecified
+    {
+        get => tmpResidField != ImigranteTempoResidencia.NA;
+        set { }
+    }
+
+    public ImigranteCondicao condIng
+    {
+        get => condIngField;
+        set 
+        {
+            condIngField = value;
+            RaisePropertyChanged(nameof(condIng));
+        }
+    }
+
+    [XmlIgnore()]
+    public bool condIngSpecified
+    {
+        get => condIngField != ImigranteCondicao.NA;
+        set { }
+    }
+
+}
+
 /// <exclude />
 public partial class S2200TrabalhadorEnderecoExterior : ESocialBindableObject
 {
@@ -963,6 +1053,7 @@ public partial class S2200TrabalhadorEnderecoExterior : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200TrabalhadorEstrangeiro : ESocialBindableObject
 {
     private DateTime dtChegadaField;
@@ -1127,6 +1218,8 @@ public partial class S2200Dependente : ESocialBindableObject
     private SimNaoString depIRRFField = SimNaoString.Nao;
     private SimNaoString depSFField = SimNaoString.Nao;
     private SimNaoString incTrabField = SimNaoString.Nao;
+    private string sexoDepField;
+    private string descrDepField;
 
     public string tpDep
     {
@@ -1169,6 +1262,16 @@ public partial class S2200Dependente : ESocialBindableObject
         }
     }
 
+    public string sexoDep
+    {
+        get => sexoDepField;
+        set 
+        {
+            sexoDepField = value;
+            RaisePropertyChanged(nameof(sexoDep));
+        }
+    }
+
     public SimNaoString depIRRF
     {
         get => depIRRFField;
@@ -1198,9 +1301,21 @@ public partial class S2200Dependente : ESocialBindableObject
             RaisePropertyChanged(nameof(incTrab));
         }
     }
+
+    public string descrDep
+    {
+        get => descrDepField;
+        set 
+        {
+            descrDepField = value;
+            RaisePropertyChanged(nameof(descrDep));
+        }
+    }
+
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200TrabalhadorDadosAposentadoria : ESocialBindableObject
 {
     private SimNaoString trabAposentField = SimNaoString.Nao;
@@ -1220,8 +1335,10 @@ public partial class S2200TrabalhadorDadosAposentadoria : ESocialBindableObject
 public partial class S2200Contato : ESocialBindableObject
 {
     private string fonePrincField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string foneAlternatField;
     private string emailPrincField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string emailAlternatField;
 
     public string fonePrinc
@@ -1234,6 +1351,7 @@ public partial class S2200Contato : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string foneAlternat
     {
         get => foneAlternatField;
@@ -1254,6 +1372,7 @@ public partial class S2200Contato : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string emailAlternat
     {
         get => emailAlternatField;
@@ -1271,7 +1390,10 @@ public partial class S2200Vinculo : ESocialBindableObject
     private string matriculaField;
     private VinculoTrabalhista tpRegTrabField = VinculoTrabalhista.CLT;
     private RegimePrevidenciario tpRegPrevField = RegimePrevidenciario.RGPS;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string nrRecInfPrelimField;
+
     private SimNaoString cadIniField = SimNaoString.Nao;
     private S2200VinculoInfoRegimeTrab infoRegimeTrabField;
     private S2200VinculoInfoContrato infoContratoField;
@@ -1311,6 +1433,7 @@ public partial class S2200Vinculo : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string nrRecInfPrelim
     {
         get => nrRecInfPrelimField;
@@ -1426,6 +1549,7 @@ public partial class S2200InfoRegimeTrabInfoCeletista : ESocialBindableObject
     private DateTime dtAdmField;
     private TipoAdmissaoCLT tpAdmissaoField = TipoAdmissaoCLT.Admissao;
     private IndicadorAdmissao indAdmissaoField = IndicadorAdmissao.Normal;
+    private string nrProcTrabField;
     private VinculoRegimeJornada tpRegJorField = VinculoRegimeJornada.SubHorarioTrabalho;
     private NaturezaAtividade natAtividadeField = NaturezaAtividade.Urbano;
     private int dtBaseField;
@@ -1463,6 +1587,16 @@ public partial class S2200InfoRegimeTrabInfoCeletista : ESocialBindableObject
         {
             indAdmissaoField = value;
             RaisePropertyChanged(nameof(indAdmissao));
+        }
+    }
+
+    public string nrProcTrab
+    {
+        get => nrProcTrabField;
+        set
+        { 
+            nrProcTrabField = value; 
+            RaisePropertyChanged(nameof(nrProcTrab));
         }
     }
 
@@ -1517,6 +1651,18 @@ public partial class S2200InfoRegimeTrabInfoCeletista : ESocialBindableObject
         }
     }
 
+    private string matAnotJudField;
+
+    public string matAnotJud
+    {
+        get => matAnotJudField;
+        set 
+        {
+            matAnotJudField = value;
+            RaisePropertyChanged(nameof(matAnotJud));
+        }
+    }
+
     public S2200Fgts FGTS
     {
         get => fGTSField;
@@ -1551,10 +1697,16 @@ public partial class S2200InfoRegimeTrabInfoCeletista : ESocialBindableObject
 /// <exclude />
 public partial class S2200Fgts : ESocialBindableObject
 {
+
+    private bool opcFGTSFieldSpecified = false;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private OpcaoFGTS opcFGTSField = OpcaoFGTS.Optante;
+
     private DateTime dtOpcFGTSField;
     private bool dtOpcFGTSFieldSpecified;
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public OpcaoFGTS opcFGTS
     {
         get => opcFGTSField;
@@ -1564,6 +1716,18 @@ public partial class S2200Fgts : ESocialBindableObject
             RaisePropertyChanged(nameof(opcFGTS));
         }
     }
+
+    [XmlIgnore()]
+    public bool opcFGTSSpecified
+    {
+        get => opcFGTSFieldSpecified;
+        set
+        {
+            opcFGTSFieldSpecified = value;
+            RaisePropertyChanged(nameof(opcFGTSSpecified));
+        }
+    }
+
 
     [XmlElement(DataType = "date")]
     public DateTime dtOpcFGTS
@@ -1593,8 +1757,13 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
 {
     private TrabTemporarioHipotese hipLegField = TrabTemporarioHipotese.DemandaComplementar;
     private string justContrField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private TrabTemporarioTpInclusao tpInclContrField = TrabTemporarioTpInclusao.Superior3Meses;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private bool tpInclContrFieldSpecified;
+
     private S2200TrabTemporarioTomadorServ ideTomadorServField;
     private S2200TrabTemporarioTrabSubstituido[] ideTrabSubstituidoField;
 
@@ -1618,6 +1787,7 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public TrabTemporarioTpInclusao tpInclContr
     {
         get => tpInclContrField;
@@ -1629,6 +1799,7 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
     }
 
     [XmlIgnore()]
+    [Obsolete("Descontinuado na versão S-1.02")]
     public bool tpInclContrSpecified
     {
         get => tpInclContrFieldSpecified;
@@ -1639,13 +1810,13 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
         }
     }
 
-    public S2200TrabTemporarioTomadorServ ideTomadorServ
+    public S2200TrabTemporarioTomadorServ ideEstabVinc
     {
         get => ideTomadorServField;
         set
         {
             ideTomadorServField = value;
-            RaisePropertyChanged(nameof(ideTomadorServ));
+            RaisePropertyChanged(nameof(ideEstabVinc));
         }
     }
 
@@ -1666,7 +1837,9 @@ public partial class S2200TrabTemporarioTomadorServ : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
     private string nrInscField;
-    private eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVincField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
+    private S2200IdentificacaoEstabelecimentoVinculoTemporario ideEstabVincField;
 
     public PersonalidadeJuridica tpInsc
     {
@@ -1688,7 +1861,8 @@ public partial class S2200TrabTemporarioTomadorServ : ESocialBindableObject
         }
     }
 
-    public eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc ideEstabVinc
+    [Obsolete("Descontinuado na versão S-1.02")]
+    public S2200IdentificacaoEstabelecimentoVinculoTemporario ideEstabVinc
     {
         get => ideEstabVincField;
         set
@@ -1700,7 +1874,8 @@ public partial class S2200TrabTemporarioTomadorServ : ESocialBindableObject
 }
 
 /// <exclude />
-public partial class eSocialEvtAdmissaoVinculoInfoRegimeTrabInfoCeletistaTrabTemporarioIdeTomadorServIdeEstabVinc : ESocialBindableObject
+[Obsolete("Descontinuado na versão S-1.02")]
+public partial class S2200IdentificacaoEstabelecimentoVinculoTemporario : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscField = PersonalidadeJuridica.CNPJ;
     private string nrInscField;
