@@ -135,6 +135,18 @@ public class IO : BaseXmlTest<ProcessoNFe>
     }
 
     [Test]
+    public async Task ReadAvulsaSiareAsync()
+    {
+        ProcessoNFe instance = await ReadAsync(Resources.Schemas.XML.nfe_siare);
+        instance.Should().NotBeNull();
+
+        instance.Chave.Should().Be("31240916907746000113558900451784171747469034");
+        instance.NFe.InformacoesNFe.Id.Should().Be("NFe31240916907746000113558900451784171747469034");
+        instance.NFe.InformacoesNFe.Versao.Should().Be("4.00");
+    }
+
+
+    [Test]
     public void ValidaPreenchimentoGeral()
     {
         NFe instance = Mock.NFe.PreencheNFeFake();
