@@ -191,31 +191,13 @@ public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComerc : ESocialBin
     }
 
     [XmlIgnore()]
-    public decimal vrCPDesc
-    {
-        get
-        {
-            return ideAdquirField.Sum(f => f.vrCPDesc);
-        }
-    }
+    public decimal vrCPDesc => ideAdquirField.Sum(f => f.vrCPDesc);
 
     [XmlIgnore()]
-    public decimal vrRatDescPR
-    {
-        get
-        {
-            return ideAdquirField.Sum(f => f.vrRatDescPR);
-        }
-    }
+    public decimal vrRatDescPR => ideAdquirField.Sum(f => f.vrRatDescPR);
 
     [XmlIgnore()]
-    public decimal vrSenarDesc
-    {
-        get
-        {
-            return ideAdquirField.Sum(f => f.vrSenarDesc);
-        }
-    }
+    public decimal vrSenarDesc => ideAdquirField.Sum(f => f.vrSenarDesc);
 
 
     [XmlElement("ideAdquir", Order = 2)]
@@ -282,31 +264,13 @@ public partial class eSocialEvtComProdInfoComProdIdeEstabelTpComercIdeAdquir : E
     }
 
     [XmlIgnore()]
-    public decimal vrCPDesc
-    {
-        get
-        {
-            return nfs.Sum(f => f.vrCPDescPR);
-        }
-    }
+    public decimal vrCPDesc => nfs.Sum(f => f.vrCPDescPR);
 
     [XmlIgnore()]
-    public decimal vrRatDescPR
-    {
-        get
-        {
-            return nfs.Sum(f => f.vrRatDescPR);
-        }
-    }
+    public decimal vrRatDescPR => nfs.Sum(f => f.vrRatDescPR);
 
     [XmlIgnore()]
-    public decimal vrSenarDesc
-    {
-        get
-        {
-            return nfs.Sum(f => f.vrSenarDesc);
-        }
-    }
+    public decimal vrSenarDesc => nfs.Sum(f => f.vrSenarDesc);
 
 
     [XmlElement("nfs", Order = 3)]

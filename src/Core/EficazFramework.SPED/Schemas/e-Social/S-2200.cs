@@ -942,8 +942,6 @@ public partial class S2200TrabalhadorImigrante : ESocialBindableObject
         }
     }
 
-    private bool tmpResidSpecifiedField ;
-
     [XmlIgnore()]
     public bool tmpResidSpecified
     {
@@ -1920,8 +1918,33 @@ public partial class S2200TrabTemporarioTrabSubstituido : ESocialBindableObject
 /// <exclude />
 public partial class S2200InfoCeletistaAprend : ESocialBindableObject
 {
+    private IndicadorAprendiz indAprendField = IndicadorAprendiz.NA;
+    private string cnpjEntQualFIeld;
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
+
+    public IndicadorAprendiz indAprend
+    {
+        get => indAprendField;
+        set
+        { 
+            indAprendField = value; 
+            RaisePropertyChanged(nameof(indAprend));
+        }
+    }
+
+    /// <summary>
+    /// Informar o número de inscrição no CNPJ da entidade qualificadora, no caso de contratação direta.
+    /// </summary>
+    public string cnpjEntQual
+    {
+        get =>cnpjEntQualFIeld;
+        set 
+        { 
+            cnpjEntQualFIeld = value;
+            RaisePropertyChanged(nameof(cnpjEntQual));
+        }
+    }
 
     public PersonalidadeJuridica tpInsc
     {
@@ -1942,20 +1965,50 @@ public partial class S2200InfoCeletistaAprend : ESocialBindableObject
             RaisePropertyChanged(nameof(nrInsc));
         }
     }
+
+    private string cnpjPratField;
+
+    /// <summary>
+    /// Informar o número de inscrição no CNPJ do estabelecimento onde estão sendo realizadas as atividades práticas, quando ocorrer uma das seguintes situações: </br>
+    /// a) Modalidade alternativa de cumprimento de cota de aprendizagem (neste caso, informar o CNPJ da entidade concedente da parte prática); </br>
+    /// b) Realização das atividades práticas na empresa contratante do serviço terceirizado; </br>
+    /// ) Centralização das atividades práticas em estabelecimento da própria empresa, diverso do estabelecimento responsável pelo cumprimento da cota.
+    /// </summary>
+    public string cnpjPrat
+    {
+        get => cnpjPratField; 
+        set 
+        {
+            cnpjPratField = value; 
+            RaisePropertyChanged(nameof(cnpjPrat));
+        }
+    }
 }
 
 /// <exclude />
 public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
 {
+    [Obsolete("Descontinuado na versão S-1.02")]
     private IndicadorAdmissaoEstatutario indProvimField = IndicadorAdmissaoEstatutario.Normal;
+
     private TipoProvimentoEstatutario tpProvField = TipoProvimentoEstatutario.NomeacaoEfetivo;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private DateTime dtNomeacaoField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private DateTime dtPosseField;
+
     private DateTime dtExercicioField;
     private PlanoSegregacaoMassa tpPlanRPField = PlanoSegregacaoMassa.PrevUnico;
     private bool tpPlanRPFieldSpecified;
+    private SimNaoString indTetoRGPSField;
+    private SimNaoString indAbonoPermField;
+    private DateTime dtIniAbonoField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private S2200bInfoEstatutarioInfoDecJud infoDecJudField;
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public IndicadorAdmissaoEstatutario indProvim
     {
         get => indProvimField;
@@ -1976,6 +2029,7 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "date")]
     public DateTime dtNomeacao
     {
@@ -1987,6 +2041,7 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "date")]
     public DateTime dtPosse
     {
@@ -1997,6 +2052,7 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
             RaisePropertyChanged(nameof(dtPosse));
         }
     }
+
 
     [XmlElement(DataType = "date")]
     public DateTime dtExercicio
@@ -2030,6 +2086,7 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public S2200bInfoEstatutarioInfoDecJud infoDecJud
     {
         get => infoDecJudField;
@@ -2039,9 +2096,48 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
             RaisePropertyChanged(nameof(infoDecJud));
         }
     }
+
+    public SimNaoString indTetoRGPS
+    {
+        get => indTetoRGPSField;
+        set
+        {
+            indTetoRGPSField = value;
+            RaisePropertyChanged(nameof(indTetoRGPS));
+        }
+    }
+
+    public SimNaoString indAbonoPerm
+    {
+        get => indAbonoPermField;
+        set
+        {
+            indAbonoPermField = value;
+            RaisePropertyChanged(nameof(indAbonoPerm));
+        }
+    }
+
+    [XmlElement(DataType = "date")]
+    public DateTime dtIniAbono
+    {
+        get => dtIniAbonoField;
+        set
+        {
+            dtIniAbonoField = value;
+            RaisePropertyChanged(nameof(dtIniAbono));
+        }
+    }
+
+    [XmlIgnore]
+    public bool dtIniAbonoSpecified
+    {
+        get => indAbonoPerm == SimNaoString.Sim;
+        set { }
+    }
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200bInfoEstatutarioInfoDecJud : ESocialBindableObject
 {
     private string nrProcJudField;
@@ -2060,12 +2156,23 @@ public partial class S2200bInfoEstatutarioInfoDecJud : ESocialBindableObject
 /// <exclude />
 public partial class S2200VinculoInfoContrato : ESocialBindableObject
 {
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string codCargoField;
+
+    private string nmCargooField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string codFuncaoField;
+
     private string codCategField;
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     private string codCarreiraField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private DateTime dtIngrCarrField;
+    [Obsolete("Descontinuado na versão S-1.02")]
     private bool dtIngrCarrFieldSpecified;
+
     private S2200Remuneracao remuneracaoField;
     private S2200InfoContratoDuracao duracaoField;
     private S2200InfoContratoLocalTrabalho localTrabalhoField;
@@ -2074,6 +2181,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
     private S2200AlvaraJudicial alvaraJudicialField;
     private S2200InfoContratoObservacoes[] observacoesField;
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string codCargo
     {
         get => codCargoField;
@@ -2084,6 +2192,17 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public string nmCargo
+    {
+        get => nmCargooField;
+        set
+        {
+            nmCargooField = value;
+            RaisePropertyChanged(nameof(nmCargo));
+        }
+    }
+
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string codFuncao
     {
         get => codFuncaoField;
@@ -2105,6 +2224,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     public string codCarreira
     {
         get => codCarreiraField;
@@ -2115,6 +2235,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "date")]
     public DateTime dtIngrCarr
     {
@@ -2126,6 +2247,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    [Obsolete("Descontinuado na versão S-1.02")]
     [XmlIgnore()]
     public bool dtIngrCarrSpecified
     {
