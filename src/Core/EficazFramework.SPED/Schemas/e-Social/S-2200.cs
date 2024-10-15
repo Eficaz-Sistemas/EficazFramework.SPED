@@ -2161,10 +2161,10 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
 
     private string nmCargooField;
 
+    private string CBOCargoField;
+
     [Obsolete("Descontinuado na versão S-1.02")]
     private string codFuncaoField;
-
-    private string codCategField;
 
     [Obsolete("Descontinuado na versão S-1.02")]
     private string codCarreiraField;
@@ -2172,6 +2172,12 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
     private DateTime dtIngrCarrField;
     [Obsolete("Descontinuado na versão S-1.02")]
     private bool dtIngrCarrFieldSpecified;
+
+    private DateTime dtIngrCargoField;
+    private string nmFuncaoField;
+    private string CBOFuncaoField;
+    private SimNaoString acumCargoField;
+    private string codCategField;
 
     private S2200Remuneracao remuneracaoField;
     private S2200InfoContratoDuracao duracaoField;
@@ -2202,6 +2208,16 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public string CBOCargo
+    {
+        get => CBOCargoField;
+        set
+        {
+            CBOCargoField = value;
+            RaisePropertyChanged(nameof(CBOCargo));
+        }
+    }
+
     [Obsolete("Descontinuado na versão S-1.02")]
     public string codFuncao
     {
@@ -2213,16 +2229,6 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "integer")]
-    public string codCateg
-    {
-        get => codCategField;
-        set
-        {
-            codCategField = value;
-            RaisePropertyChanged(nameof(codCateg));
-        }
-    }
 
     [Obsolete("Descontinuado na versão S-1.02")]
     public string codCarreira
@@ -2256,6 +2262,57 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         {
             dtIngrCarrFieldSpecified = value;
             RaisePropertyChanged(nameof(dtIngrCarrSpecified));
+        }
+    }
+
+    public DateTime dtIngrCargo
+    {
+        get => dtIngrCargoField;
+        set
+        {
+            dtIngrCargoField = value;
+            RaisePropertyChanged(nameof(dtIngrCargo));
+        }
+    }
+
+    public string nmFuncao
+    {
+        get => nmFuncaoField;
+        set
+        {
+            nmFuncaoField = value;
+            RaisePropertyChanged(nameof(nmFuncao));
+        }
+    }
+
+    public string CBOFuncao
+    {
+        get => CBOFuncaoField;
+        set
+        {
+            CBOFuncaoField = value; 
+            RaisePropertyChanged(nameof(CBOFuncao));
+        }
+    }
+
+    public SimNaoString acumCargo
+    {
+        get => acumCargoField;
+        set
+        {
+            acumCargoField = value;
+            RaisePropertyChanged(nameof(acumCargo));
+        }
+    }
+
+    [XmlElement(DataType = "integer")]
+    public string codCateg
+    {
+        get => codCategField;
+        set
+        {
+            codCategField = value;
+            RaisePropertyChanged(nameof(codCateg));
         }
     }
 
