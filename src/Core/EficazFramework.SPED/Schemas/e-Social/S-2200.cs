@@ -2183,7 +2183,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
     private S2200InfoContratoDuracao duracaoField;
     private S2200InfoContratoLocalTrabalho localTrabalhoField;
     private S2200ContratoHorContratual horContratualField;
-    private S2200FiliacaoSindical[] filiacaoSindicalField;
+	[Obsolete("Descontinuado na versão S-1.02")]
+	private S2200FiliacaoSindical[] filiacaoSindicalField;
     private S2200AlvaraJudicial alvaraJudicialField;
     private S2200InfoContratoObservacoes[] observacoesField;
 
@@ -2357,7 +2358,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
     }
 
     [XmlElement("filiacaoSindical")]
-    public S2200FiliacaoSindical[] filiacaoSindical
+	[Obsolete("Descontinuado na versão S-1.02")]
+	public S2200FiliacaoSindical[] filiacaoSindical
     {
         get => filiacaoSindicalField;
         set
@@ -2659,7 +2661,7 @@ public partial class S2200ContratoHorContratual : ESocialBindableObject
 [Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200Horario : ESocialBindableObject
 {
-    private sbyte diaField;
+    private sbyte diaField; 
     private string codHorContratField;
 
     public sbyte dia
@@ -2684,6 +2686,7 @@ public partial class S2200Horario : ESocialBindableObject
 }
 
 /// <exclude />
+[Obsolete("Descontinuado na versão S-1.02")]
 public partial class S2200FiliacaoSindical : ESocialBindableObject
 {
     private string cnpjSindTrabField;
@@ -2731,12 +2734,28 @@ public partial class S2200InfoContratoObservacoes : ESocialBindableObject
     }
 }
 
+public partial class S2200TreiCap : ESocialBindableObject
+{
+	private string codTreiCapField;
+
+	public string codTreiCap
+	{
+		get => codTreiCapField;
+		set
+		{
+			codTreiCapField = value;
+			RaisePropertyChanged(nameof(codTreiCapField));
+		}
+	}
+}
+
 /// <exclude />
 public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
 {
     private VinculoSucecssaoAnteriorTipo tpInscAntField = VinculoSucecssaoAnteriorTipo.CNPJ;
     private string cnpjEmpregAntField;
-    private string matricAntField;
+	private string nlrInscField;
+	private string matricAntField;
     private DateTime dtTransfField;
     private string observacaoField;
 
@@ -2749,8 +2768,8 @@ public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
             RaisePropertyChanged(nameof(tpInscAnt));
         }
     }
-
-    public string cnpjEmpregAnt
+	[Obsolete("Descontinuado na versão S-1.02")]
+	public string cnpjEmpregAnt
     {
         get => cnpjEmpregAntField;
         set
@@ -2760,7 +2779,19 @@ public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
         }
     }
 
-    public string matricAnt
+	
+
+	public string nlrInsc
+	{
+		get => nlrInscField;
+		set
+		{
+			nlrInscField = value;
+			RaisePropertyChanged(nameof(nlrInsc));
+		}
+	}
+
+	public string matricAnt
     {
         get => matricAntField;
         set
@@ -2924,4 +2955,20 @@ public partial class S2200VinculoDesligamento : ESocialBindableObject
             RaisePropertyChanged(nameof(dtDeslig));
         }
     }
+}
+
+public partial class S2200Vinculocessao : ESocialBindableObject
+{
+	private DateTime dtIniCessaoField;
+
+	[XmlElement(DataType = "date")]
+	public DateTime dtIniCessao
+	{
+		get => dtIniCessaoField;
+		set
+		{
+			dtIniCessaoField = value;
+			RaisePropertyChanged(nameof(dtIniCessao));
+		}
+	}
 }
