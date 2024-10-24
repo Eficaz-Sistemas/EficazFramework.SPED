@@ -1521,6 +1521,19 @@ public partial class S2200Vinculo : ESocialBindableObject
             RaisePropertyChanged(nameof(desligamento));
         }
     }
+
+    private S2200VinculoCessao dtIniCessaoField;
+
+    public S2200VinculoCessao dtIniCessao
+    {
+        get => dtIniCessaoField;
+        set 
+        { 
+            dtIniCessaoField = value;
+            RaisePropertyChanged(nameof(dtIniCessao));
+        }
+    }
+
 }
 
 /// <exclude />
@@ -2187,6 +2200,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
 	private S2200FiliacaoSindical[] filiacaoSindicalField;
     private S2200AlvaraJudicial alvaraJudicialField;
     private S2200InfoContratoObservacoes[] observacoesField;
+    private S2200TreiCap treiCapField;
 
     [Obsolete("Descontinuado na versão S-1.02")]
     public string codCargo
@@ -2389,6 +2403,17 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
             RaisePropertyChanged(nameof(observacoes));
         }
     }
+
+    public S2200TreiCap treiCap
+    {
+        get => treiCapField;
+        set
+        { 
+            treiCap = value;
+            RaisePropertyChanged(nameof(treiCap));
+        }
+    }
+
 }
 
 /// <exclude />
@@ -2752,22 +2777,23 @@ public partial class S2200TreiCap : ESocialBindableObject
 /// <exclude />
 public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
 {
-    private VinculoSucecssaoAnteriorTipo tpInscAntField = VinculoSucecssaoAnteriorTipo.CNPJ;
+    private VinculoSucecssaoAnteriorTipo tpInscField = VinculoSucecssaoAnteriorTipo.CNPJ;
     private string cnpjEmpregAntField;
 	private string nlrInscField;
 	private string matricAntField;
     private DateTime dtTransfField;
     private string observacaoField;
 
-    public VinculoSucecssaoAnteriorTipo tpInscAnt
+    public VinculoSucecssaoAnteriorTipo tpInsc
     {
-        get => tpInscAntField;
+        get => tpInscField;
         set
         {
-            tpInscAntField = value;
-            RaisePropertyChanged(nameof(tpInscAnt));
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
         }
     }
+
 	[Obsolete("Descontinuado na versão S-1.02")]
 	public string cnpjEmpregAnt
     {
@@ -2957,7 +2983,7 @@ public partial class S2200VinculoDesligamento : ESocialBindableObject
     }
 }
 
-public partial class S2200Vinculocessao : ESocialBindableObject
+public partial class S2200VinculoCessao : ESocialBindableObject
 {
 	private DateTime dtIniCessaoField;
 
