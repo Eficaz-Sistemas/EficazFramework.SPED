@@ -8,4 +8,4 @@
 | :--- | :---: | :--- |
 | ideCargo | `TideCargo` |  |
 | dadosCargo | `TDadosCargo` |  |
-| novaValidade | `TIdePeriodo` |  |
+| novaValidade | `IdePeriodo` |  |

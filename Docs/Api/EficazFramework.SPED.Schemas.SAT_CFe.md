@@ -5,7 +5,7 @@
 | Classes | |
 | :--- | :--- |
 | [CancelamentoCFe](EficazFramework.SPED.Schemas.SAT_CFe/CancelamentoCFe.md 'EficazFramework.SPED.Schemas.SAT_CFe.CancelamentoCFe') | Classe Principal contendo lote de CF-e's cancelados |
-| [certifica](EficazFramework.SPED.Schemas.SAT_CFe/certifica.md 'EficazFramework.SPED.Schemas.SAT_CFe.certifica') | |
+| [Certifica](EficazFramework.SPED.Schemas.SAT_CFe/Certifica.md 'EficazFramework.SPED.Schemas.SAT_CFe.Certifica') | |
 | [CFe](EficazFramework.SPED.Schemas.SAT_CFe/CFe.md 'EficazFramework.SPED.Schemas.SAT_CFe.CFe') | Classe Principal do CF-e |
 | [CFeCancelado](EficazFramework.SPED.Schemas.SAT_CFe/CFeCancelado.md 'EficazFramework.SPED.Schemas.SAT_CFe.CFeCancelado') | |
 | [CFeCanceladoInformacoes](EficazFramework.SPED.Schemas.SAT_CFe/CFeCanceladoInformacoes.md 'EficazFramework.SPED.Schemas.SAT_CFe.CFeCanceladoInformacoes') | |

@@ -23,6 +23,7 @@ Nota Fiscal Energia Elétrica
 | CodigoInfoComplementar | `String` |  |
 | VrPis | `Nullable<Double>` |  |
 | VrCofins | `Nullable<Double>` |  |
+| ChaveDocEletronico | `String` |  |
 
 | Methods | |
 | :--- | :--- |

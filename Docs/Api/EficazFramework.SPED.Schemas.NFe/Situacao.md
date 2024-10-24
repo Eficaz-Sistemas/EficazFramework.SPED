@@ -12,10 +12,6 @@ public enum Situacao
 
 `Habilitado` 1
 
-### Remarks
-
 <a name='EficazFramework.SPED.Schemas.NFe.Situacao.NaoHabilitado'></a>
 
 `NaoHabilitado` 0
-
-### Remarks

@@ -13,8 +13,10 @@
 | CodigoEnquadramento | `String` |  |
 | Tributacao | `DetalhamentoIPI_Tributacao` |  |
 | TributacaoIndentifier | `Tributacao_IPI_Identifier` |  |
+| vIPIDevol | `Nullable<Double>` |  |
 
 | Methods | |
 | :--- | :--- |
 | [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI.OnPropertyChanged(string)') | |
 | [ShouldSerializeSeloQuantidade()](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI/ShouldSerializeSeloQuantidade().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI.ShouldSerializeSeloQuantidade()') | |
+| [ShouldSerializevIPIDevol()](EficazFramework.SPED.Schemas.NFe/DetalhamentoIPI/ShouldSerializevIPIDevol().md 'EficazFramework.SPED.Schemas.NFe.DetalhamentoIPI.ShouldSerializevIPIDevol()') | |

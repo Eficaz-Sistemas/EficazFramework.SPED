@@ -14,6 +14,12 @@ public enum IndicadorTipoDeducaoPrevidenciaria
 
 ### Remarks
 
+<a name='EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorTipoDeducaoPrevidenciaria.DescontoSimplMensal'></a>
+
+`DescontoSimplMensal` 8
+
+### Remarks
+
 <a name='EficazFramework.SPED.Schemas.EFD_Reinf.IndicadorTipoDeducaoPrevidenciaria.Fapi'></a>
 
 `Fapi` 3

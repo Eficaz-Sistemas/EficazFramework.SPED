@@ -8,4 +8,4 @@
 | :--- | :---: | :--- |
 | ideHorContratual | `TIdeHorContratual` |  |
 | dadosHorContratual | `TDadosHorContratual` |  |
-| novaValidade | `TIdePeriodo` |  |
+| novaValidade | `IdePeriodo` |  |

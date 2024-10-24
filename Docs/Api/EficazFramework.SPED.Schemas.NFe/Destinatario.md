@@ -12,6 +12,7 @@
 | idEstrangeiro | `String` |  |
 | RazaoSocial | `String` |  |
 | Endereco | `Endereco` |  |
+| IndicadorInscricaoEstDestinatorio | `IndicadorIeDestinatario` |  |
 | InscricaoEstadual | `String` |  |
 | IEFormatado | `String` |  |
 | InscricaoSuframa | `String` |  |

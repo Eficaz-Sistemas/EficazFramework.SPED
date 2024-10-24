@@ -15,7 +15,3 @@
 | nSeqEvento | `String` |  |
 | detEvento | `TEventoInfEventoDetEvento` |  |
 | Id | `String` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TEventoInfEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TEventoInfEvento.OnPropertyChanged(string)') | |

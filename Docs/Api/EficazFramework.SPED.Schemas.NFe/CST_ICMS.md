@@ -12,9 +12,17 @@ public enum CST_ICMS
 
 `CST_00` 0
 
+<a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_02'></a>
+
+`CST_02` 2
+
 <a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_10'></a>
 
 `CST_10` 10
+
+<a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_15'></a>
+
+`CST_15` 15
 
 <a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_20'></a>
 
@@ -40,9 +48,17 @@ public enum CST_ICMS
 
 `CST_51` 51
 
+<a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_53'></a>
+
+`CST_53` 53
+
 <a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_60'></a>
 
 `CST_60` 60
+
+<a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_61'></a>
+
+`CST_61` 61
 
 <a name='EficazFramework.SPED.Schemas.NFe.CST_ICMS.CST_70'></a>
 
