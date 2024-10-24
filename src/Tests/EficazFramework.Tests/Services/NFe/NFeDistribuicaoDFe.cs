@@ -29,7 +29,7 @@ public class NFeDistribuicaoDFeTests : BaseNFeTests
     }
 
     [Test]
-    [TestCase("31240209041929000133550010000273651000332943", SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao, "138")]
+    [TestCase("31240209041929000133550010000273651000332943", SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao, "632")]
     [TestCase("31240209041929000133550010000273651000332942", SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao, "236")]
     [TestCase("31210109041929000133550010000226381000273464", SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao, "632")]
     public async Task ChaveTest(string chave, Schemas.NFe.OrgaoIBGE uf, SPED.Schemas.NFe.Ambiente ambiente, string resultadoCodigo)

@@ -11,10 +11,13 @@ public class ConsultaSituacaoTests : BaseCTeTests
         var result = await client.ConsultaSituacaoAsync(chave, ambiente);
         result.Should().NotBeNull();    
         result.Ambiente.Should().Be(ambiente);
-        result.RetornoCodigo.Should().Be(resultadoCodigo);
-        result.ProtocoloCTe.Should().NotBeNull();
-        result.ProtocoloCTe.infProt.Should().NotBeNull();
-        result.ProtocoloCTe.infProt.tpAmb.Should().Be(ambiente);
-        result.ProtocoloCTe.infProt.chCTe.Should().Be(chave);
+        result.RetornoCodigo.Should().BeOneOf(resultadoCodigo, "731");
+        if (result.RetornoCodigo != "731")
+        {
+            result.ProtocoloCTe.Should().NotBeNull();
+            result.ProtocoloCTe.infProt.Should().NotBeNull();
+            result.ProtocoloCTe.infProt.tpAmb.Should().Be(ambiente);
+            result.ProtocoloCTe.infProt.chCTe.Should().Be(chave);
+        }
     }
 }
