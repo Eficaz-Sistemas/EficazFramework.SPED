@@ -3,6 +3,7 @@
 public class NFeDistribuicaoDFeTests : BaseNFeTests
 {
     [Test]
+    [TestCase(SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Homologacao)]
     [TestCase(SPED.Schemas.NFe.OrgaoIBGE.MG, SPED.Schemas.NFe.Ambiente.Producao)]
     public async Task NsuTest(Schemas.NFe.OrgaoIBGE uf, SPED.Schemas.NFe.Ambiente ambiente)
     {
@@ -19,7 +20,7 @@ public class NFeDistribuicaoDFeTests : BaseNFeTests
         }
 
         if (result.cStat == "137")
-            result.loteDistDFeInt.docZip.Should().HaveCount(0);
+            result.loteDistDFeInt?.docZip.Should().HaveCount(0);
 
         if (result.cStat == "138")
         {
@@ -51,4 +52,15 @@ public class NFeDistribuicaoDFeTests : BaseNFeTests
         }
     }
 
+
+
+    [Test]
+    [TestCase(Schemas.NFe.Ambiente.Homologacao, ExpectedResult = "https://hom1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx")]
+    [TestCase(Schemas.NFe.Ambiente.Producao, ExpectedResult = "https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx")]
+
+    public string VerificaUrls(Schemas.NFe.Ambiente ambiente)
+    {
+        var client = CreateClient<SoapClients.NFeDistribuicaoDFeSoapClient>(ambiente.ToString());
+        return client.Endpoint.Address.Uri.AbsoluteUri;
+    }
 }

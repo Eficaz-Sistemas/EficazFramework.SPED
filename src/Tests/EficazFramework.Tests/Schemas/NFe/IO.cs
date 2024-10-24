@@ -18,7 +18,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.UF.Should().Be(OrgaoIBGE.MG);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Chave.Should().Be("10066067");
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.NaturezaOperacao.Should().Be("VENDA");
-        instance.NFe.InformacoesNFe.IdentificacaoOperacao.Modelo.Should().Be(ModeloDocumento.NFeAv);
+        instance.NFe.InformacoesNFe.IdentificacaoOperacao.Modelo.Should().Be(ModeloDocumento.NFCe);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Serie.Should().Be(4);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.Numero.Should().Be(93850);
         instance.NFe.InformacoesNFe.IdentificacaoOperacao.DataHoraEmissao.Should().BeSameDateAs(new(2023,11,1));
@@ -133,6 +133,18 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.ProtocoloAutorizacao.InformacoesProtocolo.StatusNFeCodigo.Should().Be("100");
         instance.ProtocoloAutorizacao.InformacoesProtocolo.StatusNfeMotivo.Should().Be("Autorizado o uso da NF-e");
     }
+
+    [Test]
+    public async Task ReadAvulsaSiareAsync()
+    {
+        ProcessoNFe instance = await ReadAsync(Resources.Schemas.XML.nfe_siare);
+        instance.Should().NotBeNull();
+
+        instance.Chave.Should().Be("31240916907746000113558900451784171747469034");
+        instance.NFe.InformacoesNFe.Id.Should().Be("NFe31240916907746000113558900451784171747469034");
+        instance.NFe.InformacoesNFe.Versao.Should().Be("4.00");
+    }
+
 
     [Test]
     public void ValidaPreenchimentoGeral()
