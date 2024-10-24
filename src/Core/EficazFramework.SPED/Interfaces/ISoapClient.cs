@@ -2,7 +2,7 @@
 
 namespace EficazFramework.SPED.Services;
 
-internal interface ISoapClient
+public interface ISoapClient
 {
     internal abstract static ISoapClient Create(params string[] args);
 

@@ -31,7 +31,11 @@ public partial class RecepcaoEvento4Response : ISoapResponse<Schemas.NFe.Retorno
     [XmlElement(IsNullable = true)]
     public XmlNode nfeRecepcaoEventoNFResult;
 
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://www.portalfiscal.inf.br/nfe/wsdl/NFeRecepcaoEvento4")]
+    [XmlElement(IsNullable = true)]
+    public XmlNode nfeResultMsg;
+
 
     public RetornoEnvioEvento UnWrap()
-        => Schemas.NFe.RetornoEnvioEvento.Deserialize(nfeRecepcaoEventoNFResult?.OuterXml);
+        => Schemas.NFe.RetornoEnvioEvento.Deserialize(nfeRecepcaoEventoNFResult?.OuterXml ?? nfeResultMsg?.OuterXml);
 }

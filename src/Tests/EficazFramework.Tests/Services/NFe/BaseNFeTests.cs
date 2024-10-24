@@ -23,4 +23,11 @@ public class BaseNFeTests : Tests.BaseTest
         return new Utilities.IcpBrasilX509Certificate2(Resources.Certificados.WayneEnterprisesInc, "1234");
     };
 
+
+    internal static TClient CreateClient<TClient>(params string[] args)
+        where TClient : ISoapClient
+    {
+        ISoapClient client = TClient.Create(args);
+        return (TClient)client;
+    }
 }

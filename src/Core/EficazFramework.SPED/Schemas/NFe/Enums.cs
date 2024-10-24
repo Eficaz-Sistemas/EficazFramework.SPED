@@ -368,7 +368,7 @@ public enum ModeloDocumento
     NFe = 55,
     [System.ComponentModel.Description("Enum_ModeloDocumento_65")]
     [System.Xml.Serialization.XmlEnum("65")]
-    NFeAv = 65
+    NFCe = 65
 }
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]
@@ -472,7 +472,11 @@ public enum RegimeTributario
     SimplesNacionalExcesso = 2,
     [System.ComponentModel.Description("Enum_RegimeTributario_Normal")]
     [System.Xml.Serialization.XmlEnum("3")]
-    RegimeNormal = 3
+    RegimeNormal = 3,
+    [System.ComponentModel.Description("Enum_RegimeTributario_Mei")]
+    [System.Xml.Serialization.XmlEnum("4")]
+    Mei = 4
+
 }
 [Serializable()]
 [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/nfe")]

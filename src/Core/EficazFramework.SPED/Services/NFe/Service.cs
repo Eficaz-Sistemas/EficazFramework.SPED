@@ -1,11 +1,12 @@
 ﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Schemas.CTe;
 using EficazFramework.SPED.Services.Primitives;
 using EficazFramework.SPED.Utilities.XML;
 using System.Net;
 
 namespace EficazFramework.SPED.Services.NFe;
 
-public class NFeService : SoapServiceBase
+public sealed class NFeService : SoapServiceBase
 {
     /// <summary>
     /// Efetua a transmissão de NF-e / NFC-e na versão 4.00 para autorização.
@@ -19,7 +20,7 @@ public class NFeService : SoapServiceBase
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
-        if (nfe.Chave.Length != 44)
+        if (nfe.Chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -28,7 +29,7 @@ public class NFeService : SoapServiceBase
 
         //! montagem dos argumentos:
         string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(nfe.Chave[..2])).ToString();
-        string modelo = nfe.Chave[20..22];
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(nfe.Chave[20..22]);
 
 
         //! Assinatura
@@ -51,7 +52,7 @@ public class NFeService : SoapServiceBase
 
         request.nfeDadosMsg = dadosXml.DocumentElement;
 
-        var result =  await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo, ambiente.ToString());
+        var result =  await ExecuteAsync<SoapClients.NFeAutorizacao4SoapClient, Schemas.NFe.RetornoAutorizacaoNFe>(request, uf, modelo.ToString(), ambiente.ToString());
         return result;
     }
 
@@ -66,7 +67,8 @@ public class NFeService : SoapServiceBase
     public async Task<Schemas.NFe.RetornoConsultaCadastro> ConsultaCadastro4Async(
         string cnpjCpfIe,
         Schemas.NFe.TipoPesquisaCadastro documento,
-        Schemas.NFe.OrgaoIBGE uf)
+        Schemas.NFe.OrgaoIBGE uf,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
         if (!cnpjCpfIe.IsValidCNPJ() && !cnpjCpfIe.IsValidCPF())
@@ -88,7 +90,7 @@ public class NFeService : SoapServiceBase
             }
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-        return await ExecuteAsync<SoapClients.CadConsultaCadastro4SoapClient, Schemas.NFe.RetornoConsultaCadastro>(request, uf.ToString()); ;
+        return await ExecuteAsync<SoapClients.CadConsultaCadastro4SoapClient, Schemas.NFe.RetornoConsultaCadastro>(request, uf.ToString(), ambiente.ToString()); ;
     }
 
 
@@ -103,7 +105,7 @@ public class NFeService : SoapServiceBase
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
     {
         //! validações iniciais:
-        if (chave.Length != 44)
+        if (chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -112,7 +114,7 @@ public class NFeService : SoapServiceBase
 
         //! montagem dos argumentos:
         string uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2])).ToString();
-        string modelo = chave[20..22];
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(chave[20..22]);
 
 
         //! execução:
@@ -124,7 +126,37 @@ public class NFeService : SoapServiceBase
             Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
         };
         request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
-        return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo); ;
+        return await ExecuteAsync<SoapClients.NFeConsultaProtocolo4SoapClient, Schemas.NFe.RetornoConsultaSituacaoNFe>(request, uf, modelo.ToString(), ambiente.ToString()); ;
+    }
+
+
+
+    /// <summary>
+    /// Consulta a situação de funcionamento dos serviços da NF-e e NFC-e
+    /// </summary>
+    /// <param name="uf">Unidade Federativa para verificação</param>
+    /// <param name="modelo">55 para NF-e ou 65 para NFC-e</param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<Schemas.NFe.RetornoConsultaStatusServicoNFe> ConsultaStatusServicoAsync(
+        Schemas.NFe.OrgaoIBGE uf,
+        Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        //! validações iniciais:
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! execução:
+        var request = new Contracts.nfeStatusServicoRequest();
+        var dados = new Schemas.NFe.PedidoConsultaStatusServicoNFe()
+        {
+            Ambiente = ambiente,
+            UF = uf,
+            Versao = Schemas.NFe.VersaoServicoConsSitNFe.Versao_4_00
+        };
+        request.nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement;
+        return await ExecuteAsync<SoapClients.NFeStatusServicoSoapClient, Schemas.NFe.RetornoConsultaStatusServicoNFe>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
     }
 
 
@@ -145,7 +177,7 @@ public class NFeService : SoapServiceBase
         string chave = null)
     {
         //! validações iniciais:
-        if (!string.IsNullOrEmpty(chave) && chave.Length != 44)
+        if (chave?.Length != 44 && !string.IsNullOrEmpty(chave))
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
@@ -165,7 +197,7 @@ public class NFeService : SoapServiceBase
             consChNFe = !string.IsNullOrEmpty(chave) ? new Schemas.NFe.distDFeIntconsChNFe { chNFe = chave } : null
         };
         request.nfeDistDFeInteresse = new() { nfeDadosMsg = dados.SerializeToXMLDocument().DocumentElement };
-        return await ExecuteAsync<SoapClients.NFeDistribuicaoDFeSoapClient, Schemas.NFe.RetornoDistribuicaoDFe>(request); ;
+        return await ExecuteAsync<SoapClients.NFeDistribuicaoDFeSoapClient, Schemas.NFe.RetornoDistribuicaoDFe>(request, [ambiente.ToString()]); ;
     }
 
 
@@ -185,11 +217,23 @@ public class NFeService : SoapServiceBase
         string justificativa = null)
     {
         //! validações iniciais:
-        if (!string.IsNullOrEmpty(chave) && chave.Length != 44)
+        if (chave?.Length != 44)
             throw new ArgumentException("A chave informada não é válida");
 
         if (!ValidaCertificado())
             throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! montagem dos argumentos:
+        var uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2]));
+
+        if (tpEvento == Schemas.NFe.CodigoEvento.Confirmacao ||
+            tpEvento == Schemas.NFe.CodigoEvento.Ciencia ||
+            tpEvento == Schemas.NFe.CodigoEvento.Desconhecimento ||
+            tpEvento == Schemas.NFe.CodigoEvento.NaoRealizada)
+            uf = Schemas.NFe.OrgaoIBGE.SefazNacional_AN;
+
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(chave[20..22]);
 
 
         //! execução
@@ -210,7 +254,7 @@ public class NFeService : SoapServiceBase
                 EventoCodigo = tpEvento,
                 EventoData = DateTime.Now,
                 EventoNumeroSequencial = "1",
-                Orgao = Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS,
+                Orgao = uf == Schemas.NFe.OrgaoIBGE.SefazNacional_AN ? Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS : uf,
                 EventoVersao = "1.00",
             },
             Versao = "1.00"
@@ -229,6 +273,69 @@ public class NFeService : SoapServiceBase
         dadosXml.GetElementsByTagName("envEvento").Item(0).AppendChild(dadosXml.ImportNode(eventoXml.DocumentElement, true));
 
         request.nfeDadosMsg = dadosXml.DocumentElement;
-        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request); ;
+        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
     }
+
+
+
+    /// <summary>
+    /// Efetua a inutilização de uma faixa de numeração de NF-e / NFC-e.
+    /// </summary>
+    /// <param name="cnpj">CNPJ do emitente</param>
+    /// <param name="uf">UF do emitente</param>
+    /// <param name="modelo">55 para NF-e ou 65 para NFC-e</param>
+    /// <param name="serie">55 para NF-e ou 65 para NFC-e</param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<Schemas.NFe.InutilizacaoRetorno> InutilizaAsync(
+        string cnpj,
+        Schemas.NFe.OrgaoIBGE uf,
+        long[] numeracao,
+        int serie,
+        string justificativa,
+        Schemas.NFe.ModeloDocumento modelo = Schemas.NFe.ModeloDocumento.NFe,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        //! validações iniciais:
+        if (numeracao.Length != 2)
+            throw new ArgumentException("A faixa de numeração deve contém dois elementos, onde o primeiro corresponde ao número inicial e o último ao número final da faixa que deve ser inutilizada.");
+
+        if (string.IsNullOrEmpty(justificativa))
+            throw new ArgumentException("A justificativa é obrigatória para este serviço.");
+
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+
+        //! Assinatura
+        XmlDocument inutXml = new();
+        inutXml.LoadXml(new Schemas.NFe.InutilizacaoNFe()
+        {
+            InformacoesInutilizacao = new()
+            {
+                Ambiente = ambiente,
+                cUF =  uf,   
+                ano = DateTime.Now.Year,
+                CNPJ = cnpj,
+                Modelo = modelo,
+                serie = serie.ToString("000"),
+                NumeroNFInicial = numeracao[0],
+                NumeroNFFinal = numeracao[1],
+                Justificativa = justificativa,
+                Id = $"ID{(int)uf}{DateTime.Now.Year}{cnpj}{(int)modelo}{serie:000}{numeracao[0]:000000000}{numeracao[1]:000000000}"
+
+            }
+        }.Serialize().RemoveW3CNamespaces());
+        Certificado.SignXml(inutXml, "inutNFe", "infInut", false, false);
+
+
+        //! execução:
+        var request = new Contracts.nfeInutilizacaoRequest()
+        {
+            nfeDadosMsg = inutXml.DocumentElement
+        };
+
+        var result = await ExecuteAsync<SoapClients.NFeInutilizacaoSoapClient, Schemas.NFe.InutilizacaoRetorno>(request, uf.ToString(), modelo.ToString(), ambiente.ToString());
+        return result;
+    }
+
 }
