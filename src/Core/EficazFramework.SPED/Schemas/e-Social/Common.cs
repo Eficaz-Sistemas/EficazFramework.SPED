@@ -167,11 +167,11 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
     private string nrReciboField;
     private IndicadorApuracao indApuracaoField = IndicadorApuracao.Mensal;
     private string perApurField;
+    private IndicadorGuia indGuiaField = IndicadorGuia.DAE;
     private Ambiente tpAmbField = Ambiente.Producao;
     private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
     private string verProcField;
 
-    [XmlElement(Order = 0)]
     public IndicadorRetificacao indRetif
     {
         get => indRetifField;
@@ -182,7 +182,6 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public string nrRecibo
     {
         get => nrReciboField;
@@ -193,18 +192,6 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
-    public IndicadorApuracao indApuracao
-    {
-        get => indApuracaoField;
-        set
-        {
-            indApuracaoField = value;
-            RaisePropertyChanged(nameof(indApuracao));
-        }
-    }
-
-    [XmlElement(Order = 3)]
     public string perApur
     {
         get => perApurField;
@@ -215,7 +202,16 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 4)]
+    public IndicadorGuia indGuia
+    {
+        get =>indGuiaField;
+        set 
+        { 
+            indGuiaField = value;
+            RaisePropertyChanged(nameof(indGuia));
+        }
+    }
+
     public Ambiente tpAmb
     {
         get => tpAmbField;
@@ -226,7 +222,6 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 5)]
     public EmissorEvento procEmi
     {
         get => procEmiField;
@@ -237,7 +232,6 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 6)]
     public string verProc
     {
         get => verProcField;

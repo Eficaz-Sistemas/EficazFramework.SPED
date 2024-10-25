@@ -42,6 +42,13 @@ public enum IndicadorApuracao
     Mensal = 1
 }
 
+public enum IndicadorGuia
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    DAE = 1
+}
+
+
 public enum PersonalidadeJuridica
 {
     [System.Xml.Serialization.XmlEnum("1")]
