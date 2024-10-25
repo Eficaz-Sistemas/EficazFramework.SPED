@@ -12,11 +12,7 @@
 | cStat | `String` |  |
 | xMotivo | `String` |  |
 | chCTe | `String` |  |
-| dhRecbto | `DateTime` |  |
+| dhRecbto | `Nullable<DateTime>` |  |
 | dhRecbtoSpecified | `Boolean` |  |
 | nProt | `String` |  |
 | Id | `String` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.CTe/TRetCancCTeInfCanc/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.CTe.TRetCancCTeInfCanc.OnPropertyChanged(string)') | |

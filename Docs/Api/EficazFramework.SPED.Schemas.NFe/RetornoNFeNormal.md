@@ -32,4 +32,5 @@ Objeto de retorno do tipo Cancelamento de Nota Fiscal (Autorizada ou Denegada).
 | [Deserialize(string)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.Deserialize(string)') | |
 | [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.LoadFrom(System.IO.Stream, bool)') | |
 | [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.LoadFromAsync(System.IO.Stream, bool)') | |
+| [Serialize()](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/Serialize().md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.Serialize()') | |
 | [ToString()](EficazFramework.SPED.Schemas.NFe/RetornoNFeNormal/ToString().md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeNormal.ToString()') | |

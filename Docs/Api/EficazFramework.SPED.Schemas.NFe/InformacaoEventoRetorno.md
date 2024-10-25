@@ -21,6 +21,5 @@
 
 | Methods | |
 | :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacaoEventoRetorno/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacaoEventoRetorno.OnPropertyChanged(string)') | |
 | [Regenerate_ID()](EficazFramework.SPED.Schemas.NFe/InformacaoEventoRetorno/Regenerate_ID().md 'EficazFramework.SPED.Schemas.NFe.InformacaoEventoRetorno.Regenerate_ID()') | |
 | [ToString()](EficazFramework.SPED.Schemas.NFe/InformacaoEventoRetorno/ToString().md 'EficazFramework.SPED.Schemas.NFe.InformacaoEventoRetorno.ToString()') | |

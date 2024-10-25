@@ -7,6 +7,7 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | InformacaoEvento | `InformacaoEvento` |  |
+| Signature | `SignatureType` |  |
 | Versao | `String` |  |
 
 | Methods | |
@@ -24,4 +25,4 @@
 | [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFe/Evento/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFe.Evento.SaveTo(System.IO.Stream)') | |
 | [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFe/Evento/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.Evento.SaveToAsync(System.IO.Stream)') | |
 | [Serialize()](EficazFramework.SPED.Schemas.NFe/Evento/Serialize().md 'EficazFramework.SPED.Schemas.NFe.Evento.Serialize()') | Serializes current TEnvEvento object into an XML document |
-| [SerializeToXDocument()](EficazFramework.SPED.Schemas.NFe/Evento/SerializeToXDocument().md 'EficazFramework.SPED.Schemas.NFe.Evento.SerializeToXDocument()') | Semelhante À Function Serialize, porém já retorna o resultado<br/>em uma instância de XmlDocument, agilizando o processo de assinatura<br/>digital dos eventos. |
+| [SerializeToXMLDocument()](EficazFramework.SPED.Schemas.NFe/Evento/SerializeToXMLDocument().md 'EficazFramework.SPED.Schemas.NFe.Evento.SerializeToXMLDocument()') | Semelhante À Function Serialize, porém já retorna o resultado<br/>em uma instância de XmlDocument, agilizando o processo de assinatura<br/>digital dos eventos. |

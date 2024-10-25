@@ -3,6 +3,8 @@
 
 ## Operations.Open(Stream) Method
 
+Efetua a leitura e parsing de um documento [IXmlSpedDocument](EficazFramework.SPED.Schemas.md#EficazFramework.SPED.Schemas.IXmlSpedDocument 'EficazFramework.SPED.Schemas.IXmlSpedDocument')
+
 ```csharp
 public static EficazFramework.SPED.Schemas.IXmlSpedDocument Open(System.IO.Stream source);
 ```

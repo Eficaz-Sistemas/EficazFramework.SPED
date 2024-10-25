@@ -23,3 +23,7 @@ public enum VersaoServicoConsulta
 <a name='EficazFramework.SPED.Schemas.CTe.VersaoServicoConsulta.Versao_3_00'></a>
 
 `Versao_3_00` 3
+
+<a name='EficazFramework.SPED.Schemas.CTe.VersaoServicoConsulta.Versao_4_00'></a>
+
+`Versao_4_00` 4

@@ -6,7 +6,7 @@
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| ideEmpregador | `TEmpregador` |  |
-| ideTransmissor | `TIdeTransmissor` |  |
+| ideEmpregador | `Empregador` |  |
+| ideTransmissor | `IdeTransmissor` |  |
 | eventos | `eSocialEnvioLoteEventosEventos` |  |
 | grupo | `Int32` |  |

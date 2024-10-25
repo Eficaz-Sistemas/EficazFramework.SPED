@@ -4,14 +4,13 @@
 ## Item Class
 
 Grupo de detalhamento de Produtos e Serviços da NF-e
-
-### Remarks
 ### Properties
 
 | Name | Type | |
 | :--- | :---: | :--- |
 | Dados | `Produto` |  |
 | Imposto | `Tributacao` |  |
+| ImpostoDevolvido | `TributacaoDevolucao` |  |
 | InformacoesAdicionais | `String` |  |
 | PossuiInformacoesAdicionais | `Boolean` |  |
 | NumeroSequencial | `String` |  |

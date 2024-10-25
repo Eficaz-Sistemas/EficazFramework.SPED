@@ -20,6 +20,10 @@ public enum IndicadorAliquotaCSLL2015
 
 `NovePorcento` 1
 
+<a name='EficazFramework.SPED.Schemas.ECF.IndicadorAliquotaCSLL2015.QuinzePorCento'></a>
+
+`QuinzePorCento` 4
+
 <a name='EficazFramework.SPED.Schemas.ECF.IndicadorAliquotaCSLL2015.VintePorcento'></a>
 
 `VintePorcento` 3
