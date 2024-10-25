@@ -9,3 +9,7 @@
 | InformacoesInutilizacao | `InformacoesInutilizacaoNFe` |  |
 | Signature | `SignatureType` |  |
 | versao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [Serialize()](EficazFramework.SPED.Schemas.NFe/InutilizacaoNFe/Serialize().md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoNFe.Serialize()') | Serializes current TNfeProc object into an XML document |

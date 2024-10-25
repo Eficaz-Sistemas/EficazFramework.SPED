@@ -14,5 +14,9 @@
 | [NFeDistribuicaoDFeRequestBody](EficazFramework.SPED.Services.NFe.Contracts/NFeDistribuicaoDFeRequestBody.md 'EficazFramework.SPED.Services.NFe.Contracts.NFeDistribuicaoDFeRequestBody') | |
 | [NFeDistribuicaoDFeResponse](EficazFramework.SPED.Services.NFe.Contracts/NFeDistribuicaoDFeResponse.md 'EficazFramework.SPED.Services.NFe.Contracts.NFeDistribuicaoDFeResponse') | |
 | [NFeDistribuicaoDFeResponseBody](EficazFramework.SPED.Services.NFe.Contracts/NFeDistribuicaoDFeResponseBody.md 'EficazFramework.SPED.Services.NFe.Contracts.NFeDistribuicaoDFeResponseBody') | |
+| [nfeInutilizacaoRequest](EficazFramework.SPED.Services.NFe.Contracts/nfeInutilizacaoRequest.md 'EficazFramework.SPED.Services.NFe.Contracts.nfeInutilizacaoRequest') | |
+| [nfeInutilizacaoResponse](EficazFramework.SPED.Services.NFe.Contracts/nfeInutilizacaoResponse.md 'EficazFramework.SPED.Services.NFe.Contracts.nfeInutilizacaoResponse') | |
+| [nfeStatusServicoRequest](EficazFramework.SPED.Services.NFe.Contracts/nfeStatusServicoRequest.md 'EficazFramework.SPED.Services.NFe.Contracts.nfeStatusServicoRequest') | |
+| [nfeStatusServicoResponse](EficazFramework.SPED.Services.NFe.Contracts/nfeStatusServicoResponse.md 'EficazFramework.SPED.Services.NFe.Contracts.nfeStatusServicoResponse') | |
 | [RecepcaoEvento4Request](EficazFramework.SPED.Services.NFe.Contracts/RecepcaoEvento4Request.md 'EficazFramework.SPED.Services.NFe.Contracts.RecepcaoEvento4Request') | |
 | [RecepcaoEvento4Response](EficazFramework.SPED.Services.NFe.Contracts/RecepcaoEvento4Response.md 'EficazFramework.SPED.Services.NFe.Contracts.RecepcaoEvento4Response') | |

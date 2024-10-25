@@ -10,8 +10,8 @@ Identificação do Evento Períodico
 | :--- | :---: | :--- |
 | indRetif | `IndicadorRetificacao` |  |
 | nrRecibo | `String` |  |
-| indApuracao | `IndicadorApuracao` |  |
 | perApur | `String` |  |
+| indGuia | `IndicadorGuia` |  |
 | tpAmb | `Ambiente` |  |
 | procEmi | `EmissorEvento` |  |
 | verProc | `String` |  |

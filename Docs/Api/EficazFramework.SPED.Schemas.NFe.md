@@ -61,6 +61,7 @@
 | [InformacoesTransporte](EficazFramework.SPED.Schemas.NFe/InformacoesTransporte.md 'EficazFramework.SPED.Schemas.NFe.InformacoesTransporte') | |
 | [InutilizacaoNFe](EficazFramework.SPED.Schemas.NFe/InutilizacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoNFe') | |
 | [InutilizacaoRetorno](EficazFramework.SPED.Schemas.NFe/InutilizacaoRetorno.md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoRetorno') | |
+| [InutilizacaoRetornoInformacoes](EficazFramework.SPED.Schemas.NFe/InutilizacaoRetornoInformacoes.md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoRetornoInformacoes') | |
 | [Item](EficazFramework.SPED.Schemas.NFe/Item.md 'EficazFramework.SPED.Schemas.NFe.Item') | Grupo de detalhamento de Produtos e Serviços da NF-e |
 | [KeyInfoType](EficazFramework.SPED.Schemas.NFe/KeyInfoType.md 'EficazFramework.SPED.Schemas.NFe.KeyInfoType') | |
 | [Local](EficazFramework.SPED.Schemas.NFe/Local.md 'EficazFramework.SPED.Schemas.NFe.Local') | |
@@ -71,6 +72,7 @@
 | [PedidoConsultaCadastro](EficazFramework.SPED.Schemas.NFe/PedidoConsultaCadastro.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsultaCadastro') | |
 | [PedidoConsultaCadContribInfo](EficazFramework.SPED.Schemas.NFe/PedidoConsultaCadContribInfo.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsultaCadContribInfo') | |
 | [PedidoConsultaSituacaoNFe](EficazFramework.SPED.Schemas.NFe/PedidoConsultaSituacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsultaSituacaoNFe') | |
+| [PedidoConsultaStatusServicoNFe](EficazFramework.SPED.Schemas.NFe/PedidoConsultaStatusServicoNFe.md 'EficazFramework.SPED.Schemas.NFe.PedidoConsultaStatusServicoNFe') | |
 | [PedidoDistribuicaoDFe](EficazFramework.SPED.Schemas.NFe/PedidoDistribuicaoDFe.md 'EficazFramework.SPED.Schemas.NFe.PedidoDistribuicaoDFe') | |
 | [PedidoEnvioEvento](EficazFramework.SPED.Schemas.NFe/PedidoEnvioEvento.md 'EficazFramework.SPED.Schemas.NFe.PedidoEnvioEvento') | |
 | [ProcessoEvento](EficazFramework.SPED.Schemas.NFe/ProcessoEvento.md 'EficazFramework.SPED.Schemas.NFe.ProcessoEvento') | Esta classe representa o retorno de Cancelamento da NF-e por meio de Evento. |
@@ -97,6 +99,7 @@
 | [RetornoConsultaCadastroInfo](EficazFramework.SPED.Schemas.NFe/RetornoConsultaCadastroInfo.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaCadastroInfo') | |
 | [RetornoConsultaCadastroInfoCadastro](EficazFramework.SPED.Schemas.NFe/RetornoConsultaCadastroInfoCadastro.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaCadastroInfoCadastro') | |
 | [RetornoConsultaSituacaoNFe](EficazFramework.SPED.Schemas.NFe/RetornoConsultaSituacaoNFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaSituacaoNFe') | |
+| [RetornoConsultaStatusServicoNFe](EficazFramework.SPED.Schemas.NFe/RetornoConsultaStatusServicoNFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoConsultaStatusServicoNFe') | |
 | [RetornoDistribuicaoDFe](EficazFramework.SPED.Schemas.NFe/RetornoDistribuicaoDFe.md 'EficazFramework.SPED.Schemas.NFe.RetornoDistribuicaoDFe') | |
 | [RetornoEnvioEvento](EficazFramework.SPED.Schemas.NFe/RetornoEnvioEvento.md 'EficazFramework.SPED.Schemas.NFe.RetornoEnvioEvento') | |
 | [RetornoNFeCancelada](EficazFramework.SPED.Schemas.NFe/RetornoNFeCancelada.md 'EficazFramework.SPED.Schemas.NFe.RetornoNFeCancelada') | Objeto de retorno do tipo Cancelamento de Nota Fiscal Eletrônica. |
@@ -113,7 +116,6 @@
 | [TransformType](EficazFramework.SPED.Schemas.NFe/TransformType.md 'EficazFramework.SPED.Schemas.NFe.TransformType') | |
 | [Transportadora](EficazFramework.SPED.Schemas.NFe/Transportadora.md 'EficazFramework.SPED.Schemas.NFe.Transportadora') | |
 | [TransporteRetencaoICMS](EficazFramework.SPED.Schemas.NFe/TransporteRetencaoICMS.md 'EficazFramework.SPED.Schemas.NFe.TransporteRetencaoICMS') | |
-| [TRetInutNFeInfInut](EficazFramework.SPED.Schemas.NFe/TRetInutNFeInfInut.md 'EficazFramework.SPED.Schemas.NFe.TRetInutNFeInfInut') | |
 | [Tributacao](EficazFramework.SPED.Schemas.NFe/Tributacao.md 'EficazFramework.SPED.Schemas.NFe.Tributacao') | |
 | [TributacaoDevolucao](EficazFramework.SPED.Schemas.NFe/TributacaoDevolucao.md 'EficazFramework.SPED.Schemas.NFe.TributacaoDevolucao') | |
 | [Veiculo](EficazFramework.SPED.Schemas.NFe/Veiculo.md 'EficazFramework.SPED.Schemas.NFe.Veiculo') | |
