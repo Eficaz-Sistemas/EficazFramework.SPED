@@ -10,7 +10,3 @@
 | Justificativa | `String` | Utilizar este campo apenas quando o evento for "Operação não Realizada". |
 | Correcao | `String` |  |
 | Versao | `VersaoServicoEvento` |  |
-
-| Methods | |
-| :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/DetalheEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.DetalheEvento.OnPropertyChanged(string)') | |

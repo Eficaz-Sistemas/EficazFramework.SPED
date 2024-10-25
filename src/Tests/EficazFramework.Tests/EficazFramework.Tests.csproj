@@ -63,6 +63,11 @@
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>EFD_ICMS_IPI.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Schemas\eSocial.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>eSocial.resx</DependentUpon>
 	  </Compile>   
 	  <Compile Update="Resources\Schemas\LCDPR.Designer.cs">
       <DependentUpon>LCDPR.resx</DependentUpon>
@@ -101,6 +106,11 @@
 		  <Generator>PublicResXFileCodeGenerator</Generator>
 		  <LastGenOutput>EFD-Reinf.Designer.cs</LastGenOutput>
 		  <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Schemas\eSocial.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>eSocial.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\Schemas\LCDPR.resx">
       <CustomToolNamespace>EficazFramework.SPED.Resources.Schemas</CustomToolNamespace>

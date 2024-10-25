@@ -21,5 +21,4 @@
 
 | Methods | |
 | :--- | :--- |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/InformacaoEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.InformacaoEvento.OnPropertyChanged(string)') | |
 | [Regenerate_ID()](EficazFramework.SPED.Schemas.NFe/InformacaoEvento/Regenerate_ID().md 'EficazFramework.SPED.Schemas.NFe.InformacaoEvento.Regenerate_ID()') | |

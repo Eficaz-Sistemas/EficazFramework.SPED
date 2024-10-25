@@ -6,8 +6,8 @@
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| ideEvento | `TIdeEveTrab` |  |
-| ideEmpregador | `TEmpregador` |  |
+| ideEvento | `IdeEventoNaoPeriodico` |  |
+| ideEmpregador | `Empregador` |  |
 | trabalhador | `eSocialEvtAdmissaoTrabalhador` |  |
 | vinculo | `eSocialEvtAdmissaoVinculo` |  |
 | Id | `String` |  |

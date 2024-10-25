@@ -7,5 +7,5 @@
 | Name | Type | |
 | :--- | :---: | :--- |
 | ideEvento | `eSocialEvtReabreEvPerIdeEvento` |  |
-| ideEmpregador | `TEmpregador` |  |
+| ideEmpregador | `Empregador` |  |
 | Id | `String` |  |

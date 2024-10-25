@@ -2,8 +2,6 @@
 ### [EficazFramework.SPED.Schemas.NFe](EficazFramework.SPED.Schemas.NFe.md 'EficazFramework.SPED.Schemas.NFe')
 
 ## distDFeIntconsChNFe Class
-
-### Remarks
 ### Properties
 
 | Name | Type | |

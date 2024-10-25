@@ -2,8 +2,6 @@
 ### [EficazFramework.SPED.Schemas.NFe](EficazFramework.SPED.Schemas.NFe.md 'EficazFramework.SPED.Schemas.NFe')
 
 ## TRetInutNFeInfInut Class
-
-### Remarks
 ### Properties
 
 | Name | Type | |

@@ -30,7 +30,6 @@
 | [InformacoesCteNormal](EficazFramework.SPED.Schemas.CTe/InformacoesCteNormal.md 'EficazFramework.SPED.Schemas.CTe.InformacoesCteNormal') | |
 | [InftributosFederais](EficazFramework.SPED.Schemas.CTe/InftributosFederais.md 'EficazFramework.SPED.Schemas.CTe.InftributosFederais') | |
 | [KeyInfoType](EficazFramework.SPED.Schemas.CTe/KeyInfoType.md 'EficazFramework.SPED.Schemas.CTe.KeyInfoType') | |
-| [ListaDFe](EficazFramework.SPED.Schemas.CTe/ListaDFe.md 'EficazFramework.SPED.Schemas.CTe.ListaDFe') | Frankson Fix |
 | [LoteCte](EficazFramework.SPED.Schemas.CTe/LoteCte.md 'EficazFramework.SPED.Schemas.CTe.LoteCte') | |
 | [PedidoConsultaSituacaoCTe](EficazFramework.SPED.Schemas.CTe/PedidoConsultaSituacaoCTe.md 'EficazFramework.SPED.Schemas.CTe.PedidoConsultaSituacaoCTe') | |
 | [PedidoDistribuicaoDFe](EficazFramework.SPED.Schemas.CTe/PedidoDistribuicaoDFe.md 'EficazFramework.SPED.Schemas.CTe.PedidoDistribuicaoDFe') | |
