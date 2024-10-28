@@ -12,7 +12,7 @@ Complemento da Operação
 | :--- | :---: | :--- |
 | CSTPis | `String` |  |
 | VrTotalItens | `Nullable<Double>` |  |
-| NatBcCalculo | `String` |  |
+| NatBcCalculo | `NaturezaBaseCalculo` |  |
 | VrBCPis | `Nullable<Double>` |  |
 | AliquotaPis | `Nullable<Double>` |  |
 | VrPis | `Nullable<Double>` |  |

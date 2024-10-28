@@ -9,7 +9,7 @@ Retorno ao chamado de envio dos eventos
 | Name | Type | |
 | :--- | :---: | :--- |
 | DadosEnvio | `EnvioLoteEventos` |  |
-| retornoEnvioLoteEventos | `eSocialRetornoEnvioLoteEventos` |  |
+| retornoEnvioLoteEventos | `RetornoEnvioLoteEventos` |  |
 
 | Methods | |
 | :--- | :--- |

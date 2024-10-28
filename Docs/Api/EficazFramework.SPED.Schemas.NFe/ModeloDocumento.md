@@ -8,10 +8,10 @@ public enum ModeloDocumento
 ```
 ### Fields
 
+<a name='EficazFramework.SPED.Schemas.NFe.ModeloDocumento.NFCe'></a>
+
+`NFCe` 65
+
 <a name='EficazFramework.SPED.Schemas.NFe.ModeloDocumento.NFe'></a>
 
 `NFe` 55
-
-<a name='EficazFramework.SPED.Schemas.NFe.ModeloDocumento.NFeAv'></a>
-
-`NFeAv` 65

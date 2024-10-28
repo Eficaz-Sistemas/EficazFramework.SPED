@@ -2,8 +2,6 @@
 ### [EficazFramework.SPED.Schemas.NFe](EficazFramework.SPED.Schemas.NFe.md 'EficazFramework.SPED.Schemas.NFe')
 
 ## ResumoEvento Class
-
-### Remarks
 ### Properties
 
 | Name | Type | |
@@ -31,7 +29,6 @@
 | [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.Deserialize(System.IO.Stream)') | |
 | [LoadFrom(Stream, bool)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/LoadFrom(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.LoadFrom(System.IO.Stream, bool)') | |
 | [LoadFromAsync(Stream, bool)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/LoadFromAsync(Stream,bool).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.LoadFromAsync(System.IO.Stream, bool)') | |
-| [OnPropertyChanged(string)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/OnPropertyChanged(string).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.OnPropertyChanged(string)') | |
 | [SaveTo(Stream)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/SaveTo(Stream).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.SaveTo(System.IO.Stream)') | |
 | [SaveToAsync(Stream)](EficazFramework.SPED.Schemas.NFe/ResumoEvento/SaveToAsync(Stream).md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.SaveToAsync(System.IO.Stream)') | |
 | [Serialize()](EficazFramework.SPED.Schemas.NFe/ResumoEvento/Serialize().md 'EficazFramework.SPED.Schemas.NFe.ResumoEvento.Serialize()') | Serializes current TEnvEvento object into an XML document |

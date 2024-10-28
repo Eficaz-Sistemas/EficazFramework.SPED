@@ -128,6 +128,10 @@ public enum OrgaoIBGE
 
 `SefazNacional_SVCRS` 91
 
+<a name='EficazFramework.SPED.Schemas.NFe.OrgaoIBGE.SefazNacional_SVCSP'></a>
+
+`SefazNacional_SVCSP` 93
+
 <a name='EficazFramework.SPED.Schemas.NFe.OrgaoIBGE.SP'></a>
 
 `SP` 35

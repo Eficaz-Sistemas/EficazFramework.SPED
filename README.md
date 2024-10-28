@@ -8,7 +8,7 @@
 ![Azure DevOps coverage](https://eficazshields.azurewebsites.net/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
 ![Licence](https://img.shields.io/static/v1?label=licence&message=MIT&color=blue&style=flat-square&logo=github&logoColor=white)
 [![Discord](https://eficazshields.azurewebsites.net/discord/846078359498653706?color=purple&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/UrVkCB2Jms)
-[![Twitter Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&label=twitter&logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
+[![Twitter Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&logo=x&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
 ![EFD ICMS/IPI](https://eficazshields.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v017-red?style=flat-square)
 ![EFD Contribuições](https://eficazshields.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
 ![EFD-Reinf](https://eficazshields.azurewebsites.net/badge/EFD%20Reinf-v2.1.2.B-ff69b4?style=flat-square)
@@ -25,30 +25,29 @@
    Esta versão conta atualmente com uma quantidade maior de instruções sem plataforma específica, e foi estruturada para utilização dos recursos de Implantação e Entrega Contínua de aplicações (Azure DevOps).
 
 
-## Documentação
+## [Documentação](/Docs/Api/EficazFrameworkSPED.md) 
 ![docs](https://eficazshields.azurewebsites.net/badge/docs-em%20construção-orange?style=flat-square)
 
-   - [Sumário](/Docs/Api/EficazFrameworkSPED.md) 
-     - Schemas
-       - CT-e e CT-eOS
-       - DAPI (MG)
-       - e-CredAc, portarias CAT 83/09 e 207/09
-       - e-Ressarcimento portaria CAT 42/18
-       - ECD
-       - ECF
-       - [EFD ICMS / IPI](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)
-       - EFD Contribuições
-       - [EFD Reinf](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)
-       - e-Social (em desenvolvimento)
-       - GIA (SP)
-       - GNRE
-       - NF-e, a partir da versão 2.00
-       - NFS-e   
-       - [Livro Caixa Digital do Produtor Rural](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)
-     - Classes complementares
-       - [Abstrações](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)
-       - [Extensões](/Docs/Api/EficazFramework.SPED.Extensions.md)
-       
+|                                        | Schema                                                                                                                                                     | Serviços | Uso em Produção| WebServices |
+|:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|----------|:--------------:|:-----------:|
+| CT-e e CT-eOS                          |                                                                                                                                                            |          | ✅ | [⚠️](## "Apenas CTeDistribuicaoDFe e ConsultaProtocolo") |
+| DAPI (MG)                              |                                                                                                                                                            |          | ✅ | N/A |
+| e-CredAc, portarias CAT 83/09 e 207/09 |                                                                                                                                                            |          | ✅ | N/A |
+| e-Ressarcimento portaria CAT 42/18     |                                                                                                                                                            |          | ✅ | N/A |
+| ECD                                    |                                                                                                                                                            |          | ✅ | N/A |
+| ECF                                    |                                                                                                                                                            |          | ✅ | N/A |
+| EFD ICMS / IPI                         | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                                    |          | ✅ | N/A |
+| EFD Contribuições                      |                                                                                                                                                            |          | ✅ | N/A |
+| EFD Reinf                              | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                                       |          | ✅ | ✅ |
+| e-Social                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.eSocial.md)                                         |          | [⚠️](https://github.com/Eficaz-Sistemas/EficazFramework.SPED/pull/50 "Em desenvolvimento. Pull Request #50") | [⚠️](## "A ser desenvolvido") |
+| GIA (SP)                               |                                                                                                                                                            |          | ✅ | N/A |
+| GNRE                                   |                                                                                                                                                            |          | ✅ | [⚠️](## "A ser desenvolvido") |
+| GIA (SP)                               |                                                                                                                                                            |          | ✅ | N/A |
+| NF-e / NFC-e                           |                                                                                                                                                            |          | ✅ | ✅ |
+| NFS-e                                  |                                                                                                                                                            |          | [⚠️](## "Apenas alguns municípios. TODO: Implementar modelo nacional") |  [⚠️](## "A ser desenvolvido") |
+| Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          | ✅ | N/A |
+| Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) | | N/A |  N/A |      
+
 ## Exemplos de Uso
 
 ### Layouts baseados em arquivos de Texto (txt):

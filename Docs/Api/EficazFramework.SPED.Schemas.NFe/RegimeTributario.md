@@ -8,6 +8,10 @@ public enum RegimeTributario
 ```
 ### Fields
 
+<a name='EficazFramework.SPED.Schemas.NFe.RegimeTributario.Mei'></a>
+
+`Mei` 4
+
 <a name='EficazFramework.SPED.Schemas.NFe.RegimeTributario.RegimeNormal'></a>
 
 `RegimeNormal` 3

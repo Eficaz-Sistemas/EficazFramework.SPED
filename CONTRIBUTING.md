@@ -2,7 +2,7 @@
    Agradecemos pelo interesse em ajudar para que este projeto seja ainda melhor e seja útil para todos que precisam de alguma forma, gerar ou obter informações acerca dos arquivos eletrônicos envolvidos pelos projetos SPED, NF-e, CT-e, e-Social e afins.   
 
 ## Requisitos Mínimos para Compilar o Código-Fonte
- - [.NET 6.0 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) (Pode ser atualizado visando acompanhar a evolução do .NET)
+ - [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.401-windows-x64-installer) (Pode ser atualizado visando acompanhar a evolução do .NET)
 
 ## Pull Requests
  - Solicitamos que cada Pull Request aborde apenas um assunto/tópico, para que sua solicitação não corra risco de quebrar outras partes do código. Preferimos muitas PR's ao invés de uma única com muitas mudanças em várias partes diferentes.

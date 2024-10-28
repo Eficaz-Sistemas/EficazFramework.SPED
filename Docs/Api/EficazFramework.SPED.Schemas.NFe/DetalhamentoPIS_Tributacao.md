@@ -4,8 +4,6 @@
 ## DetalhamentoPIS_Tributacao Class
 
 Clase genérica para tratamento das tributações de PIS (sem ST).
-
-### Remarks
 ### Properties
 
 | Name | Type | |

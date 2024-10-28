@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
-    <Version>6.2.2</Version>
-	<AssemblyVersion>6.2.2.0</AssemblyVersion>
-	<FileVersion>6.2.2.0</FileVersion>
+    <Version>6.2.3</Version>
+	<AssemblyVersion>6.2.3.0</AssemblyVersion>
+	<FileVersion>6.2.3.0</FileVersion>
 	<LangVersion>12.0</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
-    <Copyright>Copyright ©  2023. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+    <Copyright>Copyright ©  2024. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
     <RepositoryUrl>https://eficazcs.visualstudio.com/_git/EficazFramework</RepositoryUrl>
@@ -78,7 +78,7 @@
   </ItemGroup>
   
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     <PackageReference Include="System.ServiceModel.Http" Version="8.0.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="8.0.0" />
   </ItemGroup>

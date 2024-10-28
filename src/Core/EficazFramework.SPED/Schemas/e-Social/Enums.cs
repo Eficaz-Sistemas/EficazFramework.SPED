@@ -1,6 +1,14 @@
 ﻿
 namespace EficazFramework.SPED.Schemas.eSocial;
 
+/// <summary>
+/// Versão do schema
+/// </summary>
+public enum Versao
+{
+    v_S_01_02_00 = 0,
+}
+
 public enum Ambiente
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -33,6 +41,13 @@ public enum IndicadorApuracao
     [System.Xml.Serialization.XmlEnum("1")]
     Mensal = 1
 }
+
+public enum IndicadorGuia
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    DAE = 1
+}
+
 
 public enum PersonalidadeJuridica
 {
@@ -286,6 +301,22 @@ public enum IndicadorContratAprendiz
     // De nada
 }
 
+public enum IndicadorAprendiz
+{
+    [System.Xml.Serialization.XmlEnum("0")]
+    NA = 0,
+    /// <summary>
+    /// Contratação direta: contratação do aprendiz efetivada pelo estabelecimento cumpridor da cota de aprendizagem
+    /// </summary>
+    [System.Xml.Serialization.XmlEnum("1")]
+    ContratacaoDireta = 1,
+    /// <summary>
+    /// Contratação indireta: contratação do aprendiz efetivada por entidades sem fins lucrativos ou por entidades de prática desportiva a serviço do estabelecimento cumpridor da cota
+    /// </summary>
+    [System.Xml.Serialization.XmlEnum("2")]
+    ContratacaoIndireta = 2
+}
+
 public enum IndicadorContratPCD
 {
     [System.Xml.Serialization.XmlEnum("0")]
@@ -321,7 +352,7 @@ public enum TipoProcesso
     Judicial = 2
 }
 
-public enum DescisaoSentenca
+public enum DescisaoSentencaCP
 {
     [System.Xml.Serialization.XmlEnum("1")]
     CPP = 1,

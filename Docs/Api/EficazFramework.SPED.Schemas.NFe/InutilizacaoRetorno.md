@@ -2,12 +2,15 @@
 ### [EficazFramework.SPED.Schemas.NFe](EficazFramework.SPED.Schemas.NFe.md 'EficazFramework.SPED.Schemas.NFe')
 
 ## InutilizacaoRetorno Class
-
-### Remarks
 ### Properties
 
 | Name | Type | |
 | :--- | :---: | :--- |
-| infInut | `TRetInutNFeInfInut` |  |
+| infInut | `InutilizacaoRetornoInformacoes` |  |
 | Signature | `SignatureType` |  |
 | versao | `String` |  |
+
+| Methods | |
+| :--- | :--- |
+| [Deserialize(string)](EficazFramework.SPED.Schemas.NFe/InutilizacaoRetorno/Deserialize(string).md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoRetorno.Deserialize(string)') | |
+| [Deserialize(Stream)](EficazFramework.SPED.Schemas.NFe/InutilizacaoRetorno/Deserialize(Stream).md 'EficazFramework.SPED.Schemas.NFe.InutilizacaoRetorno.Deserialize(System.IO.Stream)') | |

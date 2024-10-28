@@ -15,6 +15,7 @@ Contém a instrumentação básica para leitura (desserialização) e escrita (s
 | RegistrosIgnorados | `List<String>` | Listagem de regitros que devem ser desconsiderados durante a leitura (desserialização) da escrituração |
 | IsLoading | `Boolean` | Obtém ou define se a instância está em estado de trabalho de leitura (desserialização) / escrita (serialização). |
 | RegistroAtual | `String` | Obtém o registro que está em análise no momento da leitura (desserialização). |
+| ValidaPipeInicial | `Boolean` | Obtém ou define se a leitura da linha do arquivo deve iniciar com carectere pipe ("|") |
 | BlocoTotalizador | `String` | Obtém ou define o código do Bloco Totalizador da Escrituração implementada, para cálculo automatizado dos registros de totalização. |
 | RegistroTotalizadorCodigo | `String` | Obtém ou define o código do Registro Totalizador da Escrituração implementada, para cálculo automatizado de totalização. |
 | RegistroTotalizadorStringFormat | `String` | Obtém ou define o formato do registro totalizador da escrituração. |
