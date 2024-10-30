@@ -97,27 +97,20 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35240729302348000468550050000068201676523481&quot;&gt;&lt;ide&gt;&lt;cUF&gt;35&lt;/cUF&gt;&lt;cNF&gt;67652348&lt;/cNF&gt;&lt;natOp&gt;Lancamento efetuado em decorrencia de emissao de NFCe&lt;/natOp&gt;&lt;mod&gt;55&lt;/mod&gt;&lt;serie&gt;5&lt;/serie&gt;&lt;nNF&gt;6820&lt;/nNF&gt;&lt;dhEmi&gt;2024-07-23T11:55:17-03:00&lt;/dhEmi&gt;&lt;dhSaiEnt&gt;2024-07-23T11:55:17-03:00&lt;/dhSaiEnt&gt;&lt;tpNF&gt;1&lt;/tpNF&gt;&lt;idDest&gt;1&lt;/idDest&gt;&lt;cMunFG&gt;3516200&lt;/cMunFG&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmi [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFe_IN2024002 {
+            get {
+                return ResourceManager.GetString("NFe_IN2024002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe31240916907746000113558900451784171747469034&quot;&gt;&lt;ide&gt;&lt;cUF&gt;31&lt;/cUF&gt;&lt;cNF&gt;74746903&lt;/cNF&gt;&lt;natOp&gt;VENDA&lt;/natOp&gt;&lt;mod&gt;55&lt;/mod&gt;&lt;serie&gt;890&lt;/serie&gt;&lt;nNF&gt;45178417&lt;/nNF&gt;&lt;dhEmi&gt;2024-09-19T11:07:46-03:00&lt;/dhEmi&gt;&lt;dhSaiEnt&gt;2024-09-19T11:07:46-03:00&lt;/dhSaiEnt&gt;&lt;tpNF&gt;1&lt;/tpNF&gt;&lt;idDest&gt;1&lt;/idDest&gt;&lt;cMunFG&gt;3143302&lt;/cMunFG&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmis&gt;&lt;cDV&gt;4&lt;/cDV&gt;&lt;tpAmb&gt;1&lt;/tpAmb&gt;&lt;finNFe&gt;1&lt;/f [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string nfe_siare {
             get {
                 return ResourceManager.GetString("nfe_siare", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
-        ///	&lt;xs:include schemaLocation=&quot;leiauteNFe_v4.00.xsd&quot;/&gt;
-        ///	&lt;xs:element name=&quot;NFe&quot; type=&quot;TNFe&quot;&gt;
-        ///		&lt;xs:annotation&gt;
-        ///			&lt;xs:documentation&gt;Nota Fiscal Eletrônica&lt;/xs:documentation&gt;
-        ///		&lt;/xs:annotation&gt;
-        ///	&lt;/xs:elemen [o restante da cadeia de caracteres foi truncado]&quot;;.
-        /// </summary>
-        internal static string nfe_v4_00 {
-            get {
-                return ResourceManager.GetString("nfe_v4.00", resourceCulture);
             }
         }
         

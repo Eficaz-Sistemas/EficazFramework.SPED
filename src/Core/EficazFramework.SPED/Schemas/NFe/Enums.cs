@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace EficazFramework.SPED.Schemas.NFe;
 
@@ -2196,15 +2195,24 @@ public enum FormaPagamento
     [System.ComponentModel.Description("Depósito Bancário")]
     [System.Xml.Serialization.XmlEnum("16")]
     DepositoBancario = 16,
-    [System.ComponentModel.Description("Pagamento Instantâneo (PIX)")]
+    [System.ComponentModel.Description("Pagamento Instantâneo (PIX) - Dinâmico")]
     [System.Xml.Serialization.XmlEnum("17")]
-    PIX = 17,
+    PixDinamico = 17,
     [System.ComponentModel.Description("Transferência bancária, Carteira Digital")]
     [System.Xml.Serialization.XmlEnum("18")]
     CarteiraDigital = 18,
     [System.ComponentModel.Description("Programa de fidelidade, Cashback, Crédito Virtual")]
     [System.Xml.Serialization.XmlEnum("19")]
     Fidelidade_Cashback_CredVirtual = 19,
+    [System.ComponentModel.Description("Pagamento Instantâneo (PIX) - Estático")]
+    [System.Xml.Serialization.XmlEnum("20")]
+    PixEstatico = 20,
+    [System.ComponentModel.Description("Crédito em Loja decorrente de valor pago anteriormente. Ex: Por devolução")]
+    [System.Xml.Serialization.XmlEnum("21")]
+    CreditoLojaDevolucao = 21,
+    [System.ComponentModel.Description("Pagamento Eletrônico Não Informado - falha de hardware do sistema emissor")]
+    [System.Xml.Serialization.XmlEnum("22")]
+    PagtoEletronicoNaoInformado = 22,
     [System.ComponentModel.Description("Sem Pagamento")]
     [System.Xml.Serialization.XmlEnum("90")]
     SemPagto = 90,
