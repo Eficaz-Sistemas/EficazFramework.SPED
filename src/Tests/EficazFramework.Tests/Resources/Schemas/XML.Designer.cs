@@ -115,6 +115,22 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///	&lt;xs:include schemaLocation=&quot;leiauteNFe_v4.00.xsd&quot;/&gt;
+        ///	&lt;xs:element name=&quot;NFe&quot; type=&quot;TNFe&quot;&gt;
+        ///		&lt;xs:annotation&gt;
+        ///			&lt;xs:documentation&gt;Nota Fiscal Eletrônica&lt;/xs:documentation&gt;
+        ///		&lt;/xs:annotation&gt;
+        ///	&lt;/xs:elemen [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string nfe_v4_00 {
+            get {
+                return ResourceManager.GetString("nfe_v4.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
         ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
         ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35231000000000000000000000000000000000000000&quot;&gt;

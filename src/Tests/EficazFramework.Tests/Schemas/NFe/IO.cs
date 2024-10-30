@@ -170,7 +170,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
                 "http://www.portalfiscal.inf.br/nfe"
             ],
             [
-                Resources.Schemas.XML.NFe_IN2024002,
+                Resources.Schemas.XML.nfe_v4_00,
                 Resources.Schemas.XML.leiauteNFe_v4_00,
                 Resources.Schemas.XML.tiposBasico_v4_00
             ],
