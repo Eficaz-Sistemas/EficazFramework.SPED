@@ -1,21 +1,22 @@
 # <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=7.0%20%7C%208.0&color=blueviolet&style=flat-square&logo=dotnet)
+![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=8.0%20%7C%209.0&color=blueviolet&style=flat-square&logo=dotnet)
 ![Nuget](https://eficazshields.azurewebsites.net/nuget/v/EficazFramework.SPED?style=flat-square)
 ![Azure DevOps builds](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21?&logo=azurepipelines&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
 ![Azure DevOps coverage](https://eficazshields.azurewebsites.net/azure-devops/coverage/eficazcs/EficazFramework/21?logo=codecov&logoColor=white&style=flat-square)
 ![Licence](https://img.shields.io/static/v1?label=licence&message=MIT&color=blue&style=flat-square&logo=github&logoColor=white)
 [![Discord](https://eficazshields.azurewebsites.net/discord/846078359498653706?color=purple&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/UrVkCB2Jms)
-[![Twitter Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&logo=x&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
+[![X Follow](https://eficazshields.azurewebsites.net/twitter/follow/EficazCS?color=blue&logo=x&logoColor=white&style=flat-square)](https://twitter.com/EficazCS)
 ![EFD ICMS/IPI](https://eficazshields.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v017-red?style=flat-square)
 ![EFD Contribuições](https://eficazshields.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
 ![EFD-Reinf](https://eficazshields.azurewebsites.net/badge/EFD%20Reinf-v2.1.2.B-ff69b4?style=flat-square)
 ![ECD](https://eficazshields.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square) 
 ![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square) 
+![e-Social](https://eficazshields.azurewebsites.net/badge/eSocial-vS_01_02_00-yellow?style=flat-square)
 ![LCDPR](https://eficazshields.azurewebsites.net/badge/LCDPR-v0013-greenyellow?style=flat-square)
-   
+
    Bem vindo ao projeto EficazFramework.SPED.
    
    Este projeto tem por finalidade facilitar as tarefas de leitura, auditoria e escrita das mais diversas escriturações e arquivos eletrônicos governamentais.
@@ -168,7 +169,8 @@ using (var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8
 ## Pré-Requisitos
 | Versão | Versão do .NET | Suporte |
 | :--- | :--- | :---: |
-| 6.2.x| [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :white_check_mark:|
+| 6.3.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :white_check_mark:|
+| 6.2.x| [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :x:|
 | 6.1.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :x:|
 | 6.0.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) | :x: |
 
