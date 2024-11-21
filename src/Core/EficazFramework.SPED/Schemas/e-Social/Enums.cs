@@ -605,6 +605,7 @@ public enum RegimePrevidenciario
 
 public enum TipoAdmissaoCLT
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     [System.ComponentModel.Description("1 - Admissão")]
     Admissao = 1,
     [System.Xml.Serialization.XmlEnum("2")]
@@ -645,6 +646,7 @@ public enum IndicadorAdmissao
 
 public enum VinculoRegimeJornada
 {
+    [System.Xml.Serialization.XmlEnum("1")]
     [System.ComponentModel.Description("1 - Submetidos a Horário de Trabalho (Cap. II da CLT)")]
     SubHorarioTrabalho = 1,
     [System.Xml.Serialization.XmlEnum("2")]
