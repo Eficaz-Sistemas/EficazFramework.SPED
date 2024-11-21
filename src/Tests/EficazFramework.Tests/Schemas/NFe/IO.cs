@@ -145,6 +145,17 @@ public class IO : BaseXmlTest<ProcessoNFe>
         instance.NFe.InformacoesNFe.Versao.Should().Be("4.00");
     }
 
+    [Test]
+    public async Task ReadIn2024002()
+    {
+        ProcessoNFe instance = await ReadAsync(Resources.Schemas.XML.NFe_IN2024002);
+        instance.Should().NotBeNull();
+
+        instance.Chave.Should().Be("35240729302348000468550050000068201676523481");
+        instance.NFe.InformacoesNFe.Id.Should().Be("NFe35240729302348000468550050000068201676523481");
+        instance.NFe.InformacoesNFe.Versao.Should().Be("4.00");
+    }
+
 
     [Test]
     public void ValidaPreenchimentoGeral()

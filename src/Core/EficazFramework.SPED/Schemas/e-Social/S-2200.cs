@@ -16,7 +16,6 @@ public partial class S2200 : Evento
         }
     }
 
-    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
     public SignatureType Signature
     {
         get => signatureField;
@@ -2184,9 +2183,11 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
     [Obsolete("Descontinuado na versão S-1.02")]
     private DateTime dtIngrCarrField;
     [Obsolete("Descontinuado na versão S-1.02")]
-    private bool dtIngrCarrFieldSpecified;
+    private bool dtIngrCarrFieldSpecified = false;
 
     private DateTime dtIngrCargoField;
+    private bool dtIngrCargoFieldSpecified = false;
+
     private string nmFuncaoField;
     private string CBOFuncaoField;
     private SimNaoString acumCargoField;
@@ -2289,6 +2290,19 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
             RaisePropertyChanged(nameof(dtIngrCargo));
         }
     }
+
+    [Obsolete("Descontinuado na versão S-1.02")]
+    [XmlIgnore()]
+    public bool dtIngrCargoSpecified
+    {
+        get => dtIngrCargoFieldSpecified;
+        set
+        {
+            dtIngrCargoFieldSpecified = value;
+            RaisePropertyChanged(nameof(dtIngrCargoSpecified));
+        }
+    }
+
 
     public string nmFuncao
     {
