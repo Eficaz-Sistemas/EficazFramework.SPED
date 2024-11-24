@@ -481,7 +481,6 @@ public partial class S1020DadosOpPortuario : ESocialBindableObject
     private int? aliqRatField;
     private decimal? fapField;
 
-    [XmlElement(Order = 0)]
     public int? aliqRat
     {
         get => aliqRatField;
@@ -500,7 +499,6 @@ public partial class S1020DadosOpPortuario : ESocialBindableObject
     /// <summary>
     /// Intervalo válido: de 0.5 a 2.0
     /// </summary>
-    [XmlElement(Order = 1)]
     public decimal? fap
     {
         get => fapField;

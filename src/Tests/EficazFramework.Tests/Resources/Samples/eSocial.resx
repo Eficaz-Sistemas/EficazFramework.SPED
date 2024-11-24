@@ -120,7 +120,7 @@
   <data name="S1000_v02_04_02" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
 &lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v02_04_02"&gt;
- &lt;evtInfoEmpregador Id="ID1112116920000002018092508301200001"&gt;
+ &lt;evtInfoEmpregador Id="ID1123456780000002018092508301200001"&gt;
   &lt;ideEvento&gt;
    &lt;tpAmb&gt;1&lt;/tpAmb&gt;
    &lt;procEmi&gt;1&lt;/procEmi&gt;
@@ -128,7 +128,7 @@
   &lt;/ideEvento&gt;
   &lt;ideEmpregador&gt;
    &lt;tpInsc&gt;1&lt;/tpInsc&gt;
-   &lt;nrInsc&gt;11211692&lt;/nrInsc&gt;
+   &lt;nrInsc&gt;12345678&lt;/nrInsc&gt;
   &lt;/ideEmpregador&gt;
   &lt;infoEmpregador&gt;
    &lt;inclusao&gt;
@@ -136,7 +136,7 @@
      &lt;iniValid&gt;2018-07&lt;/iniValid&gt;
     &lt;/idePeriodo&gt;
     &lt;infoCadastro&gt;
-     &lt;nmRazao&gt;COOPERATIVA DOS CAFEICULTORES E AGROPECUARISTAS DO SUDOESTE MINEIRO LTDA  COCASUL&lt;/nmRazao&gt;
+     &lt;nmRazao&gt;COOPERATIVA&lt;/nmRazao&gt;
      &lt;classTrib&gt;99&lt;/classTrib&gt;
      &lt;natJurid&gt;2143&lt;/natJurid&gt;
      &lt;indCoop&gt;3&lt;/indCoop&gt;
@@ -174,7 +174,7 @@
   <data name="S1000_v_S_01_01_01" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
 &lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_01_00"&gt;
- &lt;evtInfoEmpregador Id="ID1509750310000002023061909493500001"&gt;
+ &lt;evtInfoEmpregador Id="ID1123456780000002023061909493500001"&gt;
   &lt;ideEvento&gt;
    &lt;tpAmb&gt;1&lt;/tpAmb&gt;
    &lt;procEmi&gt;1&lt;/procEmi&gt;
@@ -182,7 +182,7 @@
   &lt;/ideEvento&gt;
   &lt;ideEmpregador&gt;
    &lt;tpInsc&gt;1&lt;/tpInsc&gt;
-   &lt;nrInsc&gt;50975031&lt;/nrInsc&gt;
+   &lt;nrInsc&gt;12345678&lt;/nrInsc&gt;
   &lt;/ideEmpregador&gt;
   &lt;infoEmpregador&gt;
    &lt;inclusao&gt;

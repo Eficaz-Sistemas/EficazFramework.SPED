@@ -25,14 +25,7 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
     /// </summary>
     public string ValidationSchema { get; set; }
 
-    /// <summary>
-    /// Action executada quando uma nova instância de <see cref="T"/>
-    /// é criada pela leitura do arquivo XML do evento que está sendo lido / testado.
-    /// </summary>
-    /// <returns></returns>
-    public Action<T> InstanciaDesserializada { get; set; }
-
-    internal void TestaEvento()
+    internal async Task TestaEvento()
     {
         // criação da instância e alimentação dos campos
         T instancia = CriaInstanciaEvento();
@@ -44,9 +37,7 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
         ValidaSchemaXsd(doc, instancia);
 
         // deserialização para nova instância (leitura de xml)
-        T novaInstancia = Activator.CreateInstance<T>();
-        InstanciaDesserializada?.Invoke(novaInstancia);
-        novaInstancia = (T)novaInstancia.Read(doc.OuterXml);
+        T novaInstancia = (T)(await Evento.ReadAsync(doc.OuterXml));
 
         // comparação entre as duas instâncias
         ValidaInstanciasLeituraEscrita(instancia, novaInstancia);

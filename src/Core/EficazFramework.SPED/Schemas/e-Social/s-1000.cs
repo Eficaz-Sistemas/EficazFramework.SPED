@@ -63,7 +63,6 @@ public partial class S1000 : Evento
     private SignatureType signatureField;
 
     /// <remarks/>
-    [XmlElement(Order = 0)]
     public S1000InfoEmpregador evtInfoEmpregador
     {
         get => evtInfoEmpregadorField;
@@ -75,7 +74,7 @@ public partial class S1000 : Evento
     }
 
     /// <remarks/>
-    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
         get => signatureField;
@@ -128,8 +127,6 @@ public partial class S1000InfoEmpregador : ESocialBindableObject
     private S1000InfoEmpregadorAcao infoEmpregadorField;
     private string idField;
 
-    /// <remarks/>
-    [XmlElement(Order = 0)]
     public IdentificacaoCadastro ideEvento
     {
         get => ideEventoField;
@@ -140,8 +137,6 @@ public partial class S1000InfoEmpregador : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
-    [XmlElement(Order = 1)]
     public Empregador ideEmpregador
     {
         get => ideEmpregadorField;
@@ -152,8 +147,6 @@ public partial class S1000InfoEmpregador : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
-    [XmlElement(Order = 2)]
     public S1000InfoEmpregadorAcao infoEmpregador
     {
         get => infoEmpregadorField;
@@ -164,7 +157,6 @@ public partial class S1000InfoEmpregador : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
@@ -182,10 +174,9 @@ public partial class S1000InfoEmpregadorAcao : ESocialBindableObject
 {
     private object itemField;
 
-    /// <remarks/>
-    [XmlElement("alteracao", typeof(S1000Alteracao), Order = 0)]
-    [XmlElement("exclusao", typeof(S1000Exclusao), Order = 0)]
-    [XmlElement("inclusao", typeof(S1000Inclusao), Order = 0)]
+    [XmlElement("alteracao", typeof(S1000Alteracao))]
+    [XmlElement("exclusao", typeof(S1000Exclusao))]
+    [XmlElement("inclusao", typeof(S1000Inclusao))]
     public object Item
     {
         get => itemField;
@@ -203,8 +194,6 @@ public partial class S1000Inclusao : ESocialBindableObject
     private IdePeriodo idePeriodoField;
     private S1000InfoCadastro infoCadastroField;
 
-    /// <remarks/>
-    [XmlElement(Order = 0)]
     public IdePeriodo idePeriodo
     {
         get => idePeriodoField;
@@ -215,8 +204,6 @@ public partial class S1000Inclusao : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
-    [XmlElement(Order = 1)]
     public S1000InfoCadastro infoCadastro
     {
         get => infoCadastroField;
@@ -235,8 +222,6 @@ public partial class S1000Alteracao : ESocialBindableObject
     private S1000InfoCadastro infoCadastroField;
     private IdePeriodo novaValidadeField;
 
-    /// <remarks/>
-    [XmlElement(Order = 0)]
     public IdePeriodo idePeriodo
     {
         get => idePeriodoField;
@@ -247,8 +232,6 @@ public partial class S1000Alteracao : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
-    [XmlElement(Order = 1)]
     public S1000InfoCadastro infoCadastro
     {
         get => infoCadastroField;
@@ -259,8 +242,6 @@ public partial class S1000Alteracao : ESocialBindableObject
         }
     }
 
-    /// <remarks/>
-    [XmlElement(Order = 2)]
     public IdePeriodo novaValidade
     {
         get => novaValidadeField;
@@ -277,9 +258,7 @@ public partial class S1000Exclusao : ESocialBindableObject
 {
     private IdePeriodo idePeriodoField;
 
-    /// <remarks/>
-    [XmlElement(Order = 0)]
-    public IdePeriodo idePeriodo
+   public IdePeriodo idePeriodo
     {
         get => idePeriodoField;
         set
@@ -309,7 +288,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     private S1000DadosIsencao dadosIsencaoField;
     private S1000InfoOrgInternacional infoOrgInternacionalField;
 
-    [XmlElement(Order = 0)]
     public string classTrib
     {
         get => classTribField;
@@ -320,7 +298,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public IndicadorCooperativa indCoop
     {
         get => indCoopField;
@@ -342,7 +319,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
     public SimNaoByte indConstr
     {
         get => indConstrField;
@@ -364,7 +340,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 3)]
     public SimNaoByte indDesFolha
     {
         get => indDesFolhaField;
@@ -378,7 +353,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     /// <summary>
     /// Indicativo da opção pelo produtor rural pela forma de tributação da contribuição previdenciária
     /// </summary>
-    [XmlElement(Order = 4)]
     public OpcaoTributacaoPrevidenciaria indOpcCP
     {
         get => indOpcCPField;
@@ -403,7 +377,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     /// <summary>
     /// Indicativo de microempresa - ME ou empresa de pequeno porte - EPP
     /// </summary>
-    [XmlElement(Order = 5)]
     public SimNaoString indPorte
     {
         get => indPorteField;
@@ -417,7 +390,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     public bool ShouldSerializeindPorte()
         => indPorte == SimNaoString.Sim;
 
-    [XmlElement(Order = 6)]
     public SimNaoByte indOptRegEletron
     {
         get => indOptRegEletronField;
@@ -428,7 +400,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 7)]
     public string cnpjEFR
     {
         get => cnpjEFTField;
@@ -439,7 +410,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 8)]
     public DateTime? dtTrans11096
     { 
         get => dtTrans11096Field;
@@ -453,7 +423,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     public bool ShouldSerializedtTrans11096()
         => dtTrans11096.HasValue;
 
-    [XmlElement(Order = 9)]
     public SimNaoString indTribFolhaPisCofins
     {
         get => indTribFolhaPisCofinsField;
@@ -467,7 +436,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
     public bool ShouldSerializeindTribFolhaPisCofins()
         => indTribFolhaPisCofins == SimNaoString.Sim;
 
-    [XmlElement(Order = 10)]
     public S1000DadosIsencao dadosIsencao
     {
         get => dadosIsencaoField;
@@ -478,8 +446,6 @@ public partial class S1000InfoCadastro : ESocialBindableObject
         }
     }
 
-
-    [XmlElement(Order = 11)]
     public S1000InfoOrgInternacional infoOrgInternacional
     {
         get => infoOrgInternacionalField;
@@ -503,7 +469,6 @@ public partial class S1000DadosIsencao : ESocialBindableObject
     private DateTime? dtDouField;
     private int? pagDouField;
 
-    [XmlElement(Order = 0)]
     public string ideMinLei
     {
         get => ideMinLeiField;
@@ -514,7 +479,6 @@ public partial class S1000DadosIsencao : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public string nrCertif
     {
         get => nrCertifField;
@@ -525,7 +489,7 @@ public partial class S1000DadosIsencao : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "date", Order = 2)]
+    [XmlElement(DataType = "date")]
     public DateTime dtEmisCertif
     {
         get => dtEmisCertifField;
@@ -536,7 +500,7 @@ public partial class S1000DadosIsencao : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "date", Order = 3)]
+    [XmlElement(DataType = "date")]
     public DateTime dtVencCertif
     {
         get => dtVencCertifField;
@@ -547,7 +511,6 @@ public partial class S1000DadosIsencao : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 4)]
     public string nrProtRenov
     {
         get => nrProtRenovField;
@@ -558,7 +521,7 @@ public partial class S1000DadosIsencao : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "date", Order = 5)]
+    [XmlElement(DataType = "date")]
     public DateTime? dtProtRenov
     {
         get => dtProtRenovField;
@@ -572,7 +535,7 @@ public partial class S1000DadosIsencao : ESocialBindableObject
     public bool ShouldSerializedtProtRenov()
         => dtProtRenov.HasValue;
 
-    [XmlElement(DataType = "date", Order = 6)]
+    [XmlElement(DataType = "date")]
     public DateTime? dtDou
     {
         get => dtDouField;
@@ -586,7 +549,6 @@ public partial class S1000DadosIsencao : ESocialBindableObject
     public bool ShouldSerializedtDou()
         => dtDou.HasValue;
 
-    [XmlElement(Order = 7)]
     public int? pagDou
     {
         get => pagDouField;
@@ -606,7 +568,6 @@ public partial class S1000InfoOrgInternacional : ESocialBindableObject
 {
     private sbyte indAcordoIsenMultaField;
 
-    [XmlElement(Order = 0)]
     public sbyte indAcordoIsenMulta
     {
         get => indAcordoIsenMultaField;

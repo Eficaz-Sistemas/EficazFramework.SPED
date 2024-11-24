@@ -63,7 +63,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot;?&gt;
         ///&lt;eSocial xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_01_00&quot;&gt;
-        /// &lt;evtInfoEmpregador Id=&quot;ID1509750310000002023061909493500001&quot;&gt;
+        /// &lt;evtInfoEmpregador Id=&quot;ID1123456780000002023061909493500001&quot;&gt;
         ///  &lt;ideEvento&gt;
         ///   &lt;tpAmb&gt;1&lt;/tpAmb&gt;
         ///   &lt;procEmi&gt;1&lt;/procEmi&gt;
@@ -71,7 +71,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///  &lt;/ideEvento&gt;
         ///  &lt;ideEmpregador&gt;
         ///   &lt;tpInsc&gt;1&lt;/tpInsc&gt;
-        ///   &lt;nrInsc&gt;50975031&lt;/nrInsc&gt;
+        ///   &lt;nrInsc&gt;12345678&lt;/nrInsc&gt;
         ///  &lt;/ideEmpregador&gt;
         ///  &lt;infoEmpregador&gt;
         ///   &lt;inclusao&gt;
@@ -88,7 +88,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot;?&gt;
         ///&lt;eSocial xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v02_04_02&quot;&gt;
-        /// &lt;evtInfoEmpregador Id=&quot;ID1112116920000002018092508301200001&quot;&gt;
+        /// &lt;evtInfoEmpregador Id=&quot;ID1123456780000002018092508301200001&quot;&gt;
         ///  &lt;ideEvento&gt;
         ///   &lt;tpAmb&gt;1&lt;/tpAmb&gt;
         ///   &lt;procEmi&gt;1&lt;/procEmi&gt;
@@ -96,7 +96,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///  &lt;/ideEvento&gt;
         ///  &lt;ideEmpregador&gt;
         ///   &lt;tpInsc&gt;1&lt;/tpInsc&gt;
-        ///   &lt;nrInsc&gt;11211692&lt;/nrInsc&gt;
+        ///   &lt;nrInsc&gt;12345678&lt;/nrInsc&gt;
         ///  &lt;/ideEmpregador&gt;
         ///  &lt;infoEmpregador&gt;
         ///   &lt;inclusao&gt;
