@@ -6,17 +6,16 @@ public class S2200Test : BaseESocialTest<S2200>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void Valida(Versao versao)
+    public async Task Valida(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
-        InstanciaDesserializada = (S2200 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtAdmissao/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S2200_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 

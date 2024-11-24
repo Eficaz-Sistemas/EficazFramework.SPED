@@ -6,7 +6,6 @@ public partial class S1005 : Evento
     private S1005TabelaEstabelecimento evtTabEstabField;
     private SignatureType signatureField;
 
-    [XmlElement(Order = 0)]
     public S1005TabelaEstabelecimento evtTabEstab
     {
         get => evtTabEstabField;
@@ -17,7 +16,7 @@ public partial class S1005 : Evento
         }
     }
 
-    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
         get => signatureField;
@@ -29,7 +28,7 @@ public partial class S1005 : Evento
     }
 
     /// <exclude/>
-    public override void GeraEventoID() 
+    public override void GeraEventoID()
         => evtTabEstabField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabEstabField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabEstabField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
 
     /// <exclude/>
@@ -50,8 +49,13 @@ public partial class S1005 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1005), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabEstab/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new(typeof(S1005), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabEstab/{Versao}", IsNullable = false });
+
+    //    return new(typeof(S1005), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}
 }
 
 /// <exclude />
@@ -62,7 +66,6 @@ public partial class S1005TabelaEstabelecimento : ESocialBindableObject
     private S1005InfoEstabelecimento infoEstabField;
     private string idField;
 
-    [XmlElement(Order = 0)]
     public IdentificacaoCadastro ideEvento
     {
         get => ideEventoField;
@@ -73,7 +76,6 @@ public partial class S1005TabelaEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public Empregador ideEmpregador
     {
         get => ideEmpregadorField;
@@ -84,7 +86,6 @@ public partial class S1005TabelaEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
     public S1005InfoEstabelecimento infoEstab
     {
         get => infoEstabField;
@@ -112,9 +113,9 @@ public partial class S1005InfoEstabelecimento : ESocialBindableObject
 {
     private object itemField;
 
-    [XmlElement("alteracao", typeof(S1005Alteracao), Order = 0)]
-    [XmlElement("exclusao", typeof(S1005Exclusao), Order = 0)]
-    [XmlElement("inclusao", typeof(S1005Inclusao), Order = 0)]
+    [XmlElement("alteracao", typeof(S1005Alteracao))]
+    [XmlElement("exclusao", typeof(S1005Exclusao))]
+    [XmlElement("inclusao", typeof(S1005Inclusao))]
     public object Item
     {
         get => itemField;
@@ -133,7 +134,6 @@ public partial class S1005Inclusao : ESocialBindableObject
     private S1005IdentificacaoEstabelecimento ideEstabField;
     private S1005DadosEstabelecimento dadosEstabField;
 
-    [XmlElement(Order = 0)]
     public S1005IdentificacaoEstabelecimento ideEstab
     {
         get => ideEstabField;
@@ -144,7 +144,6 @@ public partial class S1005Inclusao : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public S1005DadosEstabelecimento dadosEstab
     {
         get => dadosEstabField;
@@ -163,7 +162,6 @@ public partial class S1005Alteracao : ESocialBindableObject
     private S1005DadosEstabelecimento dadosEstabField;
     private IdePeriodo novaValidadeField;
 
-    [XmlElement(Order = 0)]
     public S1005IdentificacaoEstabelecimento ideEstab
     {
         get => ideEstabField;
@@ -174,7 +172,6 @@ public partial class S1005Alteracao : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public S1005DadosEstabelecimento dadosEstab
     {
         get => dadosEstabField;
@@ -185,7 +182,6 @@ public partial class S1005Alteracao : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
     public IdePeriodo novaValidade
     {
         get => novaValidadeField;
@@ -202,7 +198,6 @@ public partial class S1005Exclusao : ESocialBindableObject
 {
     private S1005IdentificacaoEstabelecimento ideEstabField;
 
-    [XmlElement(Order = 0)]
     public S1005IdentificacaoEstabelecimento ideEstab
     {
         get => ideEstabField;
@@ -223,7 +218,6 @@ public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
     private string iniValidField;
     private string fimValidField;
 
-    [XmlElement(Order = 0)]
     public TipoInscricao tpInsc
     {
         get => tpInscField;
@@ -234,7 +228,6 @@ public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public string nrInsc
     {
         get => nrInscField;
@@ -245,7 +238,6 @@ public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
     public string iniValid
     {
         get => iniValidField;
@@ -256,7 +248,6 @@ public partial class S1005IdentificacaoEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 3)]
     public string fimValid
     {
         get => fimValidField;
@@ -278,7 +269,7 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
     private S1005InfoObra infoObraField;
     private S1005InfoTrabalhistas infoTrabField;
 
-    [XmlElement(DataType = "integer", Order = 0)]
+    [XmlElement(DataType = "integer")]
     public string cnaePrep
     {
         get => cnaePrepField;
@@ -289,7 +280,6 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public string cnpjResp
     {
         get => cnpjRespField;
@@ -300,7 +290,6 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 2)]
     public S1005AliquotaGilRat aliqGilrat
     {
         get => aliqGilratField;
@@ -311,7 +300,6 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 3)]
     public S1005InfoCaePF infoCaepf
     {
         get => infoCaepfField;
@@ -322,7 +310,6 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 4)]
     public S1005InfoObra infoObra
     {
         get => infoObraField;
@@ -333,7 +320,6 @@ public partial class S1005DadosEstabelecimento : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 5)]
     public S1005InfoTrabalhistas infoTrab
     {
         get => infoTrabField;
@@ -356,7 +342,6 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
     /// <summary>
     /// Valores válidos: 1, 2 ou 3
     /// </summary>
-    [XmlElement(Order = 0)]
     public int? aliqRat
     {
         get => aliqRatField;
@@ -373,7 +358,6 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
     /// <summary>
     /// Intervalo válido: de 0.5 a 2.0
     /// </summary>
-    [XmlElement(Order = 1)]
     public decimal? fap
     {
         get => fapField;
@@ -388,7 +372,6 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
         => fap.HasValue;
 
 
-    [XmlElement(Order = 3)]
     public ProcessoAdmOuJud procAdmJudRat
     {
         get => procAdmJudRatField;
@@ -399,7 +382,6 @@ public partial class S1005AliquotaGilRat : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 4)]
     public ProcessoAdmOuJud procAdmJudFap
     {
         get => procAdmJudFapField;
@@ -416,7 +398,6 @@ public partial class S1005InfoCaePF : ESocialBindableObject
 {
     private TipoCAEPF tpCaepfField = TipoCAEPF.ProdRural;
 
-    [XmlElement(Order = 0)]
     public TipoCAEPF tpCaepf
     {
         get => tpCaepfField;
@@ -433,7 +414,6 @@ public partial class S1005InfoObra : ESocialBindableObject
 {
     private IndicadorSubstPatronalObra indSubstPatrObraField = IndicadorSubstPatronalObra.NaoSubstituida;
 
-    [XmlElement(Order = 0)]
     public IndicadorSubstPatronalObra indSubstPatrObra
     {
         get => indSubstPatrObraField;
@@ -451,7 +431,6 @@ public partial class S1005InfoTrabalhistas : ESocialBindableObject
     private S1005InfoAprendiz infoAprField;
     private S1005InfoPcd infoPCDField;
 
-    [XmlElement(Order = 0)]
     public S1005InfoAprendiz infoApr
     {
         get => infoAprField;
@@ -462,7 +441,6 @@ public partial class S1005InfoTrabalhistas : ESocialBindableObject
         }
     }
 
-    [XmlElement(Order = 1)]
     public S1005InfoPcd infoPCD
     {
         get => infoPCDField;
@@ -480,7 +458,6 @@ public partial class S1005InfoAprendiz : ESocialBindableObject
     private string nrProcJudField;
     private List<S1005InfoEntidadeEduc> infoEntEducField;
 
-    [XmlElement(Order = 0)]
     public string nrProcJud
     {
         get => nrProcJudField;
@@ -491,7 +468,7 @@ public partial class S1005InfoAprendiz : ESocialBindableObject
         }
     }
 
-    [XmlElement("infoEntEduc", Order = 1)]
+    [XmlElement("infoEntEduc")]
     public List<S1005InfoEntidadeEduc> infoEntEduc
     {
         get => infoEntEducField;
@@ -508,7 +485,6 @@ public partial class S1005InfoEntidadeEduc : ESocialBindableObject
 {
     private string nrInscField;
 
-    [XmlElement(Order = 0)]
     public string nrInsc
     {
         get => nrInscField;
@@ -525,7 +501,6 @@ public partial class S1005InfoPcd : ESocialBindableObject
 {
     private string nrProcJudField;
 
-    [XmlElement(Order = 0)]
     public string nrProcJud
     {
         get => nrProcJudField;
