@@ -29,7 +29,7 @@ public partial class S1005 : Evento
     }
 
     /// <exclude/>
-    public override void GeraEventoID() 
+    public override void GeraEventoID()
         => evtTabEstabField.Id = string.Format("ID{0}{1}{2}", (int)(evtTabEstabField?.ideEmpregador?.tpInsc ?? PersonalidadeJuridica.CNPJ), evtTabEstabField?.ideEmpregador?.NumeroInscricaoTag() ?? "00000000000000", eSocialTimeStampUtils.GetTimeStampIDForEvent());
 
     /// <exclude/>
@@ -50,8 +50,13 @@ public partial class S1005 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1005), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabEstab/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new(typeof(S1005), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabEstab/{Versao}", IsNullable = false });
+
+    //    return new(typeof(S1005), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}
 }
 
 /// <exclude />

@@ -50,8 +50,8 @@ public partial class S2200 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S2200), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtAdmissao/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer() =>
+    //    new(typeof(S2200), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtAdmissao/{Versao}", IsNullable = false });
 
 }
 

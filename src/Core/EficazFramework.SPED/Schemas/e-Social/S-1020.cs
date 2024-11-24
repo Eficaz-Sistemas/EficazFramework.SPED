@@ -54,11 +54,15 @@ public partial class S1020 : Evento
     public override bool SignAsSHA256 => true;
 
 
-    // Serialization Members
-    /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1020), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{Versao}", IsNullable = false });
+    //// Serialization Members
+    ///// <exclude/>
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new(typeof(S1020), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{Versao}", IsNullable = false });
 
+    //    return new(typeof(S1020), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}
 }
 
 /// <exclude/>
