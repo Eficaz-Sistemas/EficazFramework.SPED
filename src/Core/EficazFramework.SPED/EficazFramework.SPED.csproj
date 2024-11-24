@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-    <Version>6.3.1</Version>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+	<Version>6.3.1</Version>
 	<AssemblyVersion>6.3.1.0</AssemblyVersion>
 	<FileVersion>6.3.1.0</FileVersion>
 	<LangVersion>latest</LangVersion>

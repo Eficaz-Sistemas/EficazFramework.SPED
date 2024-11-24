@@ -55,8 +55,13 @@ public partial class S1010 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1010), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new (typeof(S1010), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{Versao}", IsNullable = false });
+
+    //    return new (typeof(S1010), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}        
 }
 
 /// <exclude />
@@ -406,8 +411,6 @@ public partial class S1010DadosRubrica : ESocialBindableObject
 public partial class S1010ProcessoCP : ProcessoAdmOuJud
 {
     private DescisaoSentencaCP extDecisaoField = DescisaoSentencaCP.CPP;
-
-    [XmlElement(Order = 2)]
     public DescisaoSentencaCP extDecisao
     {
         get => extDecisaoField;

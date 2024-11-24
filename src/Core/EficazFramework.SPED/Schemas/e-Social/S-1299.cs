@@ -51,8 +51,8 @@ public partial class S1299 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1299), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtFechaEvPer/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer() =>
+    //    new(typeof(S1299), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtFechaEvPer/{Versao}", IsNullable = false });
 }
 
 public partial class S1299EvPer : ESocialBindableObject
