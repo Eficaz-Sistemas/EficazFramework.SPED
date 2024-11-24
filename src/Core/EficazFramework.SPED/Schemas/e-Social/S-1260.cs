@@ -189,7 +189,7 @@ public partial class S1260TipoComercializacao : ESocialBindableObject
     public decimal vrSenarDesc => ideAdquirField.Sum(f => f.vrSenarDesc);
 
 
-    [XmlElement("ideAdquir", Order = 2)]
+    [XmlElement("ideAdquir")]
     public ObservableCollection<S1260TpComercIdeAdquirente> ideAdquir
     {
         get => ideAdquirField;
@@ -200,7 +200,7 @@ public partial class S1260TipoComercializacao : ESocialBindableObject
         }
     }
 
-    [XmlElement("infoProcJud", Order = 3)]
+    [XmlElement("infoProcJud")]
     public ObservableCollection<S1260TipoComercializacaoInfoProcJudicial> infoProcJud
     {
         get => infoProcJudField;

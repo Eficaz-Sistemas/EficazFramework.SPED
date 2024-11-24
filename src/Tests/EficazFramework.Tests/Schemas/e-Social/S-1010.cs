@@ -6,49 +6,46 @@ public class S1010Test : BaseESocialTest<S1010>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaInclusao(Versao versao)
+    public async Task ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
-        InstanciaDesserializada = (S1010 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaAlteracao(Versao versao)
+    public async Task ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
-        InstanciaDesserializada = (S1010 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaExclusao(Versao versao)
+    public async Task ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
         _versao = versao;
-        InstanciaDesserializada = (S1010 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 

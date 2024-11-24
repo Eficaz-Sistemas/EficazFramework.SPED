@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Reflection.Metadata;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
 
@@ -28,7 +29,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     private XmlSerializer sSerializer;
 
     /// <summary>
-    /// Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando <see cref="Evento"/>
+    /// Retorna uma nova instância de XmlSerializer(T) para leitura/escrita do <see cref="Evento"/>
     /// </summary>
     public virtual XmlSerializer DefineSerializer(bool includeNamespace = true)
     {
@@ -37,6 +38,36 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
 
         return new(GetType(), new XmlRootAttribute(Evento.root) { IsNullable = false });
     }
+
+    /// <summary>
+    /// Retorna uma nova instância de XmlSerializer(T) para leitura/escrita do <see cref="Evento"/>
+    /// </summary>
+    internal static XmlSerializer DefineSerializer(XDocument document)
+    {
+        var root = document.Elements().First();
+        Versao v = root?.ToString() switch
+        {
+            var ss when ss!.Contains("v02_04_02") => Versao.v02_04_02,
+            var ss when ss!.Contains("v_S_01_01_00") => Versao.v_S_01_01_00,
+            var ss when ss!.Contains("v_S_01_02_00") => Versao.v_S_01_02_00,
+            _ => Versao.v_S_01_02_00
+        };
+        string evt = root?.Elements().First()?.Name.LocalName;
+        var targetType = evt switch
+        {
+            "evtInfoEmpregador" => typeof(S1000),
+            "evtTabEstab" => typeof(S1005),
+            "evtTabRubrica" => typeof(S1010),
+            "evtTabLotacao" => typeof(S1020),
+            "evtComProd" => typeof(S1260),
+            "evtReabreEvPerv" => typeof(S1298),
+            "evtFechaEvPer" => typeof(S1299),
+            "evtAdmissao" => typeof(S2200),
+            _ => default
+        };
+        return new (targetType, new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/{evt}/{v}", IsNullable = false });
+    }
+
 
     /// <summary>
     /// Gera uma ID única para o Evento a ser enviado para o portal do SPED.
@@ -118,19 +149,28 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public Evento Read(string xmlContent) =>
-        Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
+    public static async Task<Evento> ReadAsync(string xmlContent) =>
+        await ReadAsync(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
 
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public Evento Read(System.IO.Stream xmlStream)
+    public static async Task<Evento> ReadAsync(System.IO.Stream xmlStream)
     {
-        XmlSerializer sSerializer = DefineSerializer();
+        var doc = await XDocument.LoadAsync(xmlStream, LoadOptions.None, default);
+        XmlSerializer sSerializer = DefineSerializer(doc);
+        xmlStream.Position = 0;
         var result = sSerializer.Deserialize(xmlStream);
-        return result as Evento;
+        Evento evt = result as Evento;
+        evt.Versao = doc.Root?.ToString() switch
+        {
+            var ss when ss!.Contains("v02_04_02") => Versao.v02_04_02,
+            var ss when ss!.Contains("v_S_01_01_00") => Versao.v_S_01_01_00,
+            var ss when ss!.Contains("v_S_01_02_00") => Versao.v_S_01_02_00,
+            _ => Versao.v_S_01_02_00
+        };
+        return evt;
     }
-
 }
 
 

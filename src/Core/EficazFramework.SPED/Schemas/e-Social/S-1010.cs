@@ -411,8 +411,6 @@ public partial class S1010DadosRubrica : ESocialBindableObject
 public partial class S1010ProcessoCP : ProcessoAdmOuJud
 {
     private DescisaoSentencaCP extDecisaoField = DescisaoSentencaCP.CPP;
-
-    [XmlElement(Order = 2)]
     public DescisaoSentencaCP extDecisao
     {
         get => extDecisaoField;

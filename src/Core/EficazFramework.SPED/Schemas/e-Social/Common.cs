@@ -471,7 +471,6 @@ public partial class ProcessoAdmOuJud : ESocialBindableObject
     private string nrProcField;
     private string codSuspField;
 
-    [XmlElement(Order = 0)]
     public sbyte tpProc
     {
         get => tpProcField;
@@ -485,7 +484,6 @@ public partial class ProcessoAdmOuJud : ESocialBindableObject
     public bool ShouldSerializetpProc()
         => tpProc >= 0;
 
-    [XmlElement(Order = 1)]
     public string nrProc
     {
         get => nrProcField;
@@ -496,7 +494,7 @@ public partial class ProcessoAdmOuJud : ESocialBindableObject
         }
     }
 
-    [XmlElement(DataType = "integer", Order = 99)]
+    [XmlElement(DataType = "integer")]
     public string codSusp
     {
         get => codSuspField;
