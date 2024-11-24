@@ -52,6 +52,20 @@ public class S1000Test : BaseESocialTest<S1000>
     }
 
 
+    [Test]
+    public void Read()
+    {
+        S1000 reader = new();
+        reader.Versao = Versao.v_S_01_01_00;
+        var evento = reader.Read(Resources.Samples.eSocial.S1000_v_S_01_01_01);
+        evento.Should().NotBeNull();
+        //evento.Versao.Should().Be(Versao.v_S_01_01_00);
+        var evtAdmissao = evento as S1000;
+        evtAdmissao.Should().NotBeNull();
+        evtAdmissao.evtInfoEmpregador.Id.Should().Be("ID1509750310000002023061909493500001");
+    }
+
+
     // BaseESocialTest overrides
     public override void PreencheCampos(S1000 evento)
     {

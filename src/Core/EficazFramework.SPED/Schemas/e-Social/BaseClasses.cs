@@ -30,7 +30,13 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     /// <summary>
     /// Retorna uma nova instância de XmlSerializer(T) onde T representa a classe que está herdando <see cref="Evento"/>
     /// </summary>
-    public abstract XmlSerializer DefineSerializer();
+    public virtual XmlSerializer DefineSerializer(bool includeNamespace = true)
+    {
+        if (includeNamespace)
+            return new(GetType(), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/{TagId}/{Versao}", IsNullable = false });
+
+        return new(GetType(), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    }
 
     /// <summary>
     /// Gera uma ID única para o Evento a ser enviado para o portal do SPED.
@@ -56,6 +62,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     /// Retorna a ID do evento, criada pelo método <see cref="GeraEventoID"/>
     /// </summary>
     public abstract string TagId { get; }
+
 
     /// <summary>
     /// Informa se a Uri de referência da Tag assinada deve ser vazia, ou se deve ser formada conforme especificações do Manual Técnico.
@@ -111,18 +118,15 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
-    public Evento Read(string xmlContent)
-    {
-        sSerializer = DefineSerializer();
-        return Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
-    }
+    public Evento Read(string xmlContent) =>
+        Read(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(xmlContent))) as Evento;
 
     /// <summary>
     /// Efetua a leitura do evento em XML e retorna uma instância do Evento/> 
     /// </summary>
     public Evento Read(System.IO.Stream xmlStream)
     {
-        sSerializer = DefineSerializer();
+        XmlSerializer sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
         return result as Evento;
     }

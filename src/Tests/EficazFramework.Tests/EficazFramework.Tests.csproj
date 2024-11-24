@@ -54,6 +54,11 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Certificados.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\Samples\eSocial.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>eSocial.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Schemas\EFD-Reinf.Designer.cs">
 		  <DesignTime>True</DesignTime>
 		  <AutoGen>True</AutoGen>
@@ -101,6 +106,11 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>Certificados.Designer.cs</LastGenOutput>
 	    <CustomToolNamespace>EficazFramework.SPED.Resources</CustomToolNamespace>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Samples\eSocial.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>eSocial.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>EficazFramework.SPED.Resources.Samples</CustomToolNamespace>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\Schemas\EFD-Reinf.resx">
 		  <Generator>PublicResXFileCodeGenerator</Generator>

@@ -53,8 +53,8 @@ public partial class S1260 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1260), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtComProd/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer() =>
+    //    new(typeof(S1260), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtComProd/{Versao}", IsNullable = false });
 }
 
 public partial class S1260ComercializacaoProd : ESocialBindableObject

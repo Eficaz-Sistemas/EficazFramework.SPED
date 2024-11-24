@@ -100,8 +100,8 @@ public partial class S1000 : Evento
     // IXmlSignableDocument Members
     /// <exclude/>
     public override string TagToSign => Evento.root;
-    /// <exclude/>
-    public override string TagId => "evtInfoEmpregador";
+   /// <exclude/>
+    public override string TagId => nameof(evtInfoEmpregador);
     /// <exclude/>
     public override bool EmptyURI => true;
     /// <exclude/>
@@ -110,8 +110,13 @@ public partial class S1000 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1000), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new(typeof(S1000), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{Versao}", IsNullable = false });
+
+    //    return new(typeof(S1000), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}
 }
 
 
