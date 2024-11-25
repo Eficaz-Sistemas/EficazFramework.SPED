@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <Version>6.3.1</Version>
+    <Version>6.3.2</Version>
 
     <Description>Biblioteca de testes da Eficaz Framework Core.</Description>
 
