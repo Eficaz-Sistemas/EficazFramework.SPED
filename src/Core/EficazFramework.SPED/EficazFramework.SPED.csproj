@@ -2,11 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<Nullable>disable</Nullable>
-	<Version>6.3.1</Version>
-	<AssemblyVersion>6.3.1.0</AssemblyVersion>
-	<FileVersion>6.3.1.0</FileVersion>
+    <Version>6.3.2</Version>
+	<AssemblyVersion>6.3.2.0</AssemblyVersion>
+	<FileVersion>6.3.2.0</FileVersion>
 	<LangVersion>latest</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
@@ -14,7 +12,7 @@
     <Copyright>Copyright ©  2024. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
-    <RepositoryUrl>https://eficazcs.visualstudio.com/_git/EficazFramework</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>SPED, DF-e, B2B, B2G, Financeiro</PackageTags>
     <SignAssembly>true</SignAssembly>
