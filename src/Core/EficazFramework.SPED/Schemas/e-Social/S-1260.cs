@@ -53,8 +53,8 @@ public partial class S1260 : Evento
 
     // Serialization Members
     /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1260), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtComProd/{Versao}", IsNullable = false });
+    //public override XmlSerializer DefineSerializer() =>
+    //    new(typeof(S1260), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtComProd/{Versao}", IsNullable = false });
 }
 
 public partial class S1260ComercializacaoProd : ESocialBindableObject
@@ -189,7 +189,7 @@ public partial class S1260TipoComercializacao : ESocialBindableObject
     public decimal vrSenarDesc => ideAdquirField.Sum(f => f.vrSenarDesc);
 
 
-    [XmlElement("ideAdquir", Order = 2)]
+    [XmlElement("ideAdquir")]
     public ObservableCollection<S1260TpComercIdeAdquirente> ideAdquir
     {
         get => ideAdquirField;
@@ -200,7 +200,7 @@ public partial class S1260TipoComercializacao : ESocialBindableObject
         }
     }
 
-    [XmlElement("infoProcJud", Order = 3)]
+    [XmlElement("infoProcJud")]
     public ObservableCollection<S1260TipoComercializacaoInfoProcJudicial> infoProcJud
     {
         get => infoProcJudField;

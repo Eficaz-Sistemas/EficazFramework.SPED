@@ -169,7 +169,7 @@ using (var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8
 ## Pré-Requisitos
 | Versão | Versão do .NET | Suporte |
 | :--- | :--- | :---: |
-| 6.3.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :white_check_mark:|
+| 6.3.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) | :white_check_mark:|
 | 6.2.x| [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :x:|
 | 6.1.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :x:|
 | 6.0.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) | :x: |

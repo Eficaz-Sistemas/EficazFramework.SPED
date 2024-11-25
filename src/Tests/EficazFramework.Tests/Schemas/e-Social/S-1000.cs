@@ -6,49 +6,87 @@ public class S1000Test : BaseESocialTest<S1000>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaInclusao(Versao versao)
+    public async Task ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
         _versao = versao;
-        InstanciaDesserializada = (S1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaAlteracao(Versao versao)
+    public async Task ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
         _versao = versao;
-        InstanciaDesserializada = (S1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
     }
 
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
-    public void ValidaExclusao(Versao versao)
+    public async Task ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
         _versao = versao;
-        InstanciaDesserializada = (S1000 e) => e.Versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
-        TestaEvento();
+        await TestaEvento();
+    }
+
+
+    [Test]
+    public async Task Read_v_S_01_01_01()
+    {
+        var evento = await Evento.ReadAsync(Resources.Samples.eSocial.S1000_v_S_01_01_01);
+        evento.Should().NotBeNull();
+        evento.Versao.Should().Be(Versao.v_S_01_01_00);
+        var evtAdmissao = evento as S1000;
+        evtAdmissao.Should().NotBeNull();
+        evtAdmissao.evtInfoEmpregador.Id.Should().Be("ID1123456780000002023061909493500001");
+        var inclusao = evtAdmissao.evtInfoEmpregador.infoEmpregador.Item as S1000Inclusao;
+        inclusao.Should().NotBeNull();
+        inclusao.idePeriodo.iniValid.Should().Be("2023-06");
+        inclusao.infoCadastro.classTrib.Should().Be("99");
+        inclusao.infoCadastro.indCoop.Should().Be(IndicadorCooperativa.Nao);
+        inclusao.infoCadastro.indConstrSpecified.Should().BeTrue();
+        inclusao.infoCadastro.indConstr.Should().Be(SimNaoByte.Nao);
+        inclusao.infoCadastro.indDesFolha.Should().Be(SimNaoByte.Nao);
+        inclusao.infoCadastro.indOptRegEletron.Should().Be(SimNaoByte.Sim);
+    }
+
+    [Test]
+    public async Task Read_v_02_04_02()
+    {
+        var evento = await Evento.ReadAsync(Resources.Samples.eSocial.S1000_v02_04_02);
+        evento.Should().NotBeNull();
+        evento.Versao.Should().Be(Versao.v02_04_02);
+        var evtAdmissao = evento as S1000;
+        evtAdmissao.Should().NotBeNull();
+        evtAdmissao.evtInfoEmpregador.Id.Should().Be("ID1123456780000002018092508301200001");
+        var inclusao = evtAdmissao.evtInfoEmpregador.infoEmpregador.Item as S1000Inclusao;
+        inclusao.Should().NotBeNull();
+        inclusao.idePeriodo.iniValid.Should().Be("2018-07");
+        inclusao.infoCadastro.classTrib.Should().Be("99");
+        inclusao.infoCadastro.indCoop.Should().Be(IndicadorCooperativa.OutrasCoops);
+        inclusao.infoCadastro.indConstrSpecified.Should().BeTrue();
+        inclusao.infoCadastro.indConstr.Should().Be(SimNaoByte.Nao);
+        inclusao.infoCadastro.indDesFolha.Should().Be(SimNaoByte.Nao);
+        inclusao.infoCadastro.indOptRegEletron.Should().Be(SimNaoByte.Nao);
     }
 
 

@@ -54,11 +54,15 @@ public partial class S1020 : Evento
     public override bool SignAsSHA256 => true;
 
 
-    // Serialization Members
-    /// <exclude/>
-    public override XmlSerializer DefineSerializer() =>
-        new(typeof(S1020), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{Versao}", IsNullable = false });
+    //// Serialization Members
+    ///// <exclude/>
+    //public override XmlSerializer DefineSerializer(bool includeNamespace = true)
+    //{
+    //    if (includeNamespace)
+    //        return new(typeof(S1020), new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{Versao}", IsNullable = false });
 
+    //    return new(typeof(S1020), new XmlRootAttribute(Evento.root) { IsNullable = false });
+    //}
 }
 
 /// <exclude/>
@@ -477,7 +481,6 @@ public partial class S1020DadosOpPortuario : ESocialBindableObject
     private int? aliqRatField;
     private decimal? fapField;
 
-    [XmlElement(Order = 0)]
     public int? aliqRat
     {
         get => aliqRatField;
@@ -496,7 +499,6 @@ public partial class S1020DadosOpPortuario : ESocialBindableObject
     /// <summary>
     /// Intervalo válido: de 0.5 a 2.0
     /// </summary>
-    [XmlElement(Order = 1)]
     public decimal? fap
     {
         get => fapField;
