@@ -52,6 +52,11 @@ public class RegistroD700 : Primitives.Registro
         writer.Append(NumeroDocReferenciado + "|"); // 29
         writer.Append(DataEmissao.ToSintegraString(DateFormat.MMAAAA) + "|"); // 30
         writer.Append(CodigoIbgeDestinatario + "|"); // 31
+        if (int.Parse(Versao) >= 19)
+        {
+            writer.Append(string.Format("{0:0.##}", Deducoes) + "|"); // 32
+        }
+
         return writer.ToString();
     }
 
@@ -87,6 +92,12 @@ public class RegistroD700 : Primitives.Registro
         NumeroDocReferenciado = data[29].ToNullableInteger();
         CompetenciaDocReferenciado = data[30].ToDate(DateFormat.MMAAAA);
         CodigoIbgeDestinatario = data[31];
+        if (int.Parse(Versao) >= 19)
+        {
+            Deducoes = data[32].ToNullableDouble();
+        }
+
+
     }
 
     public IndicadorOperacao Operacao { get; set; } = IndicadorOperacao.Entrada; // 2
@@ -122,6 +133,7 @@ public class RegistroD700 : Primitives.Registro
     /// </summary>
     public DateTime? CompetenciaDocReferenciado { get; set; } = default; // 30
     public string CodigoIbgeDestinatario { get; set; } = null; // 31
+    public double? Deducoes { get; set; } // 32
 
     // Registros Filhos
     public List<RegistroD730> RegistrosD730 { get; set; } = new List<RegistroD730>();
