@@ -41,6 +41,7 @@ public class RegistroD500 : Primitives.Registro
     public string CodigoInfoComplementar { get; set; } = null;
     public double? VrPis { get; set; }
     public double? VrCofins { get; set; }
+    public string ChaveDocumentoEletronico { get; set; }
 
     public override string EscreveLinha()
     {
@@ -67,6 +68,10 @@ public class RegistroD500 : Primitives.Registro
         writer.Append(CodigoInfoComplementar + "|");
         writer.Append(string.Format("{0:0.##}", VrPis) + "|");
         writer.Append(string.Format("{0:0.##}", VrCofins) + "|");
+        if ((DataEmissaoDocFiscal ?? DateTime.MinValue) >= new DateTime(2025, 4, 1))
+        {
+            writer.Append(ChaveDocumentoEletronico + "|");
+        }
         return writer.ToString();
     }
 
@@ -93,5 +98,10 @@ public class RegistroD500 : Primitives.Registro
         CodigoInfoComplementar = Conversions.ToString(data[20].ToNullableDouble());
         VrPis = data[21].ToNullableDouble();
         VrCofins = data[22].ToNullableDouble();
+        if (data.Length >= 25)
+        {
+            ChaveDocumentoEletronico = data[23];
+        }
+
     }
 }
