@@ -39,6 +39,11 @@ public class RegistroD750 : Primitives.Registro
         writer.Append(string.Format("{0:0.##}", ValorICMS) + "|"); // 14
         writer.Append(string.Format("{0:0.##}", ValorPIS) + "|"); // 15
         writer.Append(string.Format("{0:0.##}", ValorCofins) + "|"); // 16
+        if (int.Parse(Versao) >= 19)
+        {
+            writer.Append(string.Format("{0:0.##}", Deducoes) + "|"); // 17
+        }
+
         return writer.ToString();
     }
 
@@ -59,6 +64,10 @@ public class RegistroD750 : Primitives.Registro
         ValorICMS = data[14].ToNullableDouble();
         ValorPIS = data[15].ToNullableDouble();
         ValorCofins = data[16].ToNullableDouble();
+        if (int.Parse(Versao) >= 19)
+        {
+            Deducoes = data[17].ToNullableDouble();
+        }
     }
 
     public string EspecieDocumento { get; set; } = null; // 2
@@ -76,5 +85,6 @@ public class RegistroD750 : Primitives.Registro
     public double? ValorICMS { get; set; } = default; // 14
     public double? ValorPIS { get; set; } = default; // 15
     public double? ValorCofins { get; set; } = default; // 16
+    public double? Deducoes { get; set; } // 17
 
 }
