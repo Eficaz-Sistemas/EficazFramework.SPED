@@ -6,6 +6,7 @@ public class S1000Test : BaseESocialTest<S1000>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
@@ -13,6 +14,7 @@ public class S1000Test : BaseESocialTest<S1000>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1000_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
         await TestaEvento();
@@ -21,6 +23,7 @@ public class S1000Test : BaseESocialTest<S1000>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
@@ -28,6 +31,7 @@ public class S1000Test : BaseESocialTest<S1000>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1000_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
         await TestaEvento();
@@ -36,6 +40,7 @@ public class S1000Test : BaseESocialTest<S1000>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
@@ -43,6 +48,7 @@ public class S1000Test : BaseESocialTest<S1000>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1000_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1000_v_S_01_02_00
         };
         await TestaEvento();
