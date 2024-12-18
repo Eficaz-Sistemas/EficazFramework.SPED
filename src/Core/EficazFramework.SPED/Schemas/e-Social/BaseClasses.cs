@@ -50,6 +50,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             var ss when ss!.Contains("v02_04_02") => Versao.v02_04_02,
             var ss when ss!.Contains("v_S_01_01_00") => Versao.v_S_01_01_00,
             var ss when ss!.Contains("v_S_01_02_00") => Versao.v_S_01_02_00,
+            var ss when ss!.Contains("v_S_01_03_00") => Versao.v_S_01_03_00,
             _ => Versao.v_S_01_02_00
         };
         string evt = root?.Elements().First()?.Name.LocalName;
@@ -167,6 +168,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             var ss when ss!.Contains("v02_04_02") => Versao.v02_04_02,
             var ss when ss!.Contains("v_S_01_01_00") => Versao.v_S_01_01_00,
             var ss when ss!.Contains("v_S_01_02_00") => Versao.v_S_01_02_00,
+            var ss when ss!.Contains("v_S_01_03_00") => Versao.v_S_01_03_00,
             _ => Versao.v_S_01_02_00
         };
         return evt;
