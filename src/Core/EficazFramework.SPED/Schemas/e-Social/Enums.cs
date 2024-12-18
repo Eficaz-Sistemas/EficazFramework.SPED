@@ -9,6 +9,7 @@ public enum Versao
     v02_04_02 = -2,
     v_S_01_01_00 = -1,
     v_S_01_02_00 = 0,
+    v_S_01_03_00 = 1
 }
 
 public enum Ambiente
