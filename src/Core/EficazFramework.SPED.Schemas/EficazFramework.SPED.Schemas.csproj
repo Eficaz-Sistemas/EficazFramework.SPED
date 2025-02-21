@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EficazFramework.SPED.Abstractions\EficazFramework.SPED.Abstractions.csproj"  PrivateAssets="all" />
+    <ProjectReference Include="..\EficazFramework.SPED.Abstractions\EficazFramework.SPED.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
