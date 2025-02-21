@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+	<Version>6.4.0</Version>
+	<AssemblyVersion>6.4.0.0</AssemblyVersion>
+	<FileVersion>6.4.0.0</FileVersion>
+	<LangVersion>latest</LangVersion>
+	<Authors>Eficaz Sistemas; Henrique Clausing</Authors>
+	<Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
+	<Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
+	<Copyright>Copyright ©  2025. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+	<RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<NeutralLanguage>pt-BR</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Assets\logo.png" Link="logo.png">
+    </None>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.2" />
+		<PackageReference Include="System.Formats.Asn1" Version="9.0.2" />
+	</ItemGroup>
+
+</Project>
