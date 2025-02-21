@@ -19,7 +19,7 @@ public static class Xml
 
         XmlDocument tmp_doc = new();
         tmp_doc.Load(source.CreateReader());
-        XmlElement result = tmp_doc.DocumentElement;
+        XmlElement result = tmp_doc.DocumentElement!;
         return result;
     }
 

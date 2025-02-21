@@ -1,0 +1,28 @@
+{
+  "Sections": [
+    "Header",
+    "Default"
+  ],
+  "NamespaceDocItem": {
+    "Sections": [
+      "Header",
+      "Title",
+      "summary",
+      "remarks",
+      "Classes",
+      "Enums"
+    ]
+  },
+  "ClassDocItem": {
+    "Sections": [
+      "Header",
+      "Title",
+      "summary",
+      "remarks",
+      "PropertiesTable",
+      "Methods",
+      "example"
+    ],
+    "Markdown.TableOfContentsModes": "Grouped,IncludeSummary"
+  }
+}

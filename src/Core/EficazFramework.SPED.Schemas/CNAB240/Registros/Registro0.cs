@@ -1,5 +1,4 @@
-﻿using System;
-using EficazFramework.SPED.Extensions;
+﻿using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.CNAB240;
 
