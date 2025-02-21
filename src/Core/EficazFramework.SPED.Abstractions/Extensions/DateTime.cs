@@ -222,7 +222,7 @@ public static class Date
     }
 }
 
-static class Timespan
+public static class Timespan
 {
     public static string ToSintegraString(this TimeSpan? field, TimeFormat format)
     {
