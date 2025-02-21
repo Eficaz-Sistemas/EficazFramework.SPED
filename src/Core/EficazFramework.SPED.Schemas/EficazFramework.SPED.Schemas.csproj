@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+	<Version>6.4.0</Version>
+	<AssemblyVersion>6.4.0.0</AssemblyVersion>
+	<FileVersion>6.4.0.0</FileVersion>
+	<LangVersion>latest</LangVersion>
+	<Authors>Eficaz Sistemas; Henrique Clausing</Authors>
+	<Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
+	<Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
+	<Copyright>Copyright ©  2025. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+	<PackageIcon>logo.png</PackageIcon>
+	<PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
+	<RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>SPED, DF-e, B2B, B2G, Financeiro</PackageTags>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<NeutralLanguage>pt-BR</NeutralLanguage>
+	<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	<DefaultDocumentationFolder>..\..\..\Docs\Api</DefaultDocumentationFolder>
+	<DefaultDocumentationAssemblyPageName>EficazFramework SPED</DefaultDocumentationAssemblyPageName>
+	<DefaultDocumentationGeneratedPages>Assembly, Namespaces, Classes, Enums, Methods</DefaultDocumentationGeneratedPages>
+	<DefaultDocumentationFileNameFactory>Folder</DefaultDocumentationFileNameFactory>
+	<DefaultDocumentationIncludeUndocumentedItems>true</DefaultDocumentationIncludeUndocumentedItems>
+	<DefaultDocumentationGeneratedAccessModifiers>Public</DefaultDocumentationGeneratedAccessModifiers>
+	<DefaultDocumentationLogLevel>Trace</DefaultDocumentationLogLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Estaduais\SP\eCredac\CAT83\" />
+    <Folder Include="NFSe\GINFES\WS Classes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Assets\logo.png" Link="logo.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EficazFramework.SPED.Abstractions\EficazFramework.SPED.Abstractions.csproj"  PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

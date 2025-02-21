@@ -1,5 +1,4 @@
 ﻿using EficazFramework.SPED.Schemas;
-using System.IO;
 using System.Text.RegularExpressions;
 namespace EficazFramework.SPED.Utilities.XML;
 

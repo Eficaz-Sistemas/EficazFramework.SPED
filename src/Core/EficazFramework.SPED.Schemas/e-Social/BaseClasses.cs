@@ -17,7 +17,7 @@ public abstract class ESocialBindableObject : INotifyPropertyChanged
 [XmlRoot("eSocial")]
 public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
 {
-    internal const string root = "eSocial";
+    public const string root = "eSocial";
 
     /// <summary>
     /// <see cref="EficazFramework.SPED.Schemas.EFD_Reinf.Versao"/> do schema para leitura / escrita

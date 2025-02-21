@@ -28,7 +28,7 @@ public class Registro01 : Primitives.Registro
                                                                                                             // writer.Append(Me.Versao.ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")) '6
         if (TotalRegistros05.HasValue == false)
             TotalRegistros05 = 0;
-        writer.Append(TotalRegistros05.ToString().ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 7
+        writer.Append(TotalRegistros05?.ToString().ToFixedLenghtString(4, Escrituracao._builder, Alignment.Left, "0")); // 7
         return writer.ToString();
     }
 
