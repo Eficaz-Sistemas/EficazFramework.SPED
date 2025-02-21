@@ -10,8 +10,11 @@
 	<Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
 	<Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
 	<Copyright>Copyright ©  2025. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+	<PackageIcon>logo.png</PackageIcon>
+	<PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
 	<RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
+	<PackageTags>SPED, DF-e, B2B, B2G, Financeiro</PackageTags>
 	<SignAssembly>true</SignAssembly>
 	<AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -20,10 +23,12 @@
 	<NeutralLanguage>pt-BR</NeutralLanguage>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\Assets\logo.png" Link="logo.png">
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\Assets\logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
