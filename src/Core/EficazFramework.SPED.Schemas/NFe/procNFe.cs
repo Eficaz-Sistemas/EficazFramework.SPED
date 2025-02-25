@@ -1357,7 +1357,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     [XmlElement("dhEmi")]
     public string DataHoraEmissaoXml
     {
-        get => $"{dhEmiField:yyyy-MM-ddThh:mm:ssK}";
+        get => $"{dhEmiField:yyyy-MM-ddTHH:mm:ssK}";
         set
         {
             var parsedValue = DateTime.Parse(value);
@@ -1509,7 +1509,7 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     [XmlElement("dhSaiEnt")]
     public string DataHoraSaidaEntradaXml
     {
-        get => $"{dhSaiEntField:yyyy-MM-ddThh:mm:ssK}";
+        get => $"{dhSaiEntField:yyyy-MM-ddTHH:mm:ssK}";
         set
         {
             var parsedValue = DateTime.Parse(value);

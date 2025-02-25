@@ -22,7 +22,7 @@ public class Escrituracao : Primitives.Escrituracao
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public override void ProcessaLinha(string linha)
+    public override void ProcessaLinha(string linha, CancellationToken cancelationToken = default)
     {
         Primitives.Registro reg = null;
         switch (linha[..2] ?? "")
@@ -182,7 +182,7 @@ public class Escrituracao : Primitives.Escrituracao
         }
     }
 
-    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
+    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream, CancellationToken cancelationToken = default)
     {
         string cnpj = string.Empty;
         using (var reader = new System.IO.StreamReader(stream, Encoding))
