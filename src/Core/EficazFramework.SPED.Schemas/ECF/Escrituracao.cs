@@ -31,9 +31,10 @@ public class Escrituracao : Primitives.Escrituracao
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public override void ProcessaLinha(string linha)
+    public override void ProcessaLinha(string linha, CancellationToken cancelationToken = default)
     {
-        Registro reg = null;
+        Registro? reg = null;
+        var source = CancellationTokenSource.CreateLinkedTokenSource(cancelationToken);
         switch (linha.Substring(1, 4) ?? "")
         {
             case "0000":
@@ -510,7 +511,7 @@ public class Escrituracao : Primitives.Escrituracao
 
             case "9999":
                 {
-                    _mustStop = true;
+                    source.Cancel();
                     break;
                 }
         }
@@ -524,7 +525,7 @@ public class Escrituracao : Primitives.Escrituracao
         }
     }
 
-    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
+    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream, CancellationToken cancelationToken = default)
     {
         string cnpj = null;
         using (var reader = new System.IO.StreamReader(stream, Encoding))
