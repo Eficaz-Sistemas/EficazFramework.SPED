@@ -54,9 +54,10 @@ public class Escrituracao : Primitives.Escrituracao
     }
     
     /// <exclude/>
-    public override void ProcessaLinha(string linha)
+    public override void ProcessaLinha(string linha, CancellationToken cancelationToken = default)
     {
-        Primitives.Registro reg = null;
+        Primitives.Registro? reg = null;
+        var source = CancellationTokenSource.CreateLinkedTokenSource(cancelationToken);
         switch (linha.Substring(1, 4) ?? "")
         {
             case "0000":
@@ -69,14 +70,14 @@ public class Escrituracao : Primitives.Escrituracao
 
             case "9999":
                 {
-                    _mustStop = true;
+                    source.Cancel();
                     break;
                 }
 
             default:
                 {
                     string registro = linha.Substring(0, 4);
-                    reg = Activator.CreateInstance(Type.GetType($"EficazFramework.SPED.Schemas.LCDPR.Registro{registro}", true), new[] { linha, Versao }) as Primitives.Registro;
+                    reg = Activator.CreateInstance(Type.GetType($"EficazFramework.SPED.Schemas.LCDPR.Registro{registro}", true)!, new[] { linha, Versao }) as Primitives.Registro;
                     Blocos[registro.Substring(0,1)].Registros.Add(reg);
                     break;
                 }
@@ -92,7 +93,7 @@ public class Escrituracao : Primitives.Escrituracao
     /// <summary>
     /// Obtém o valor do campo CPF do <see cref="Registro0000"/> do escrituração fornecida no parâmetro <paramref name="stream"/>
     /// </summary>
-    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
+    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream, CancellationToken cancelationToken = default)
     {
         string cnpj = null;
         using (var reader = new System.IO.StreamReader(stream, Encoding))
