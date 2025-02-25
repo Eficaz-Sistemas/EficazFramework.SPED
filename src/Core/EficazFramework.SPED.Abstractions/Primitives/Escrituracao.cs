@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿global using System.Threading;
 
 namespace EficazFramework.SPED.Schemas.Primitives;
 
@@ -18,19 +14,17 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// </summary>
     /// <param name="name">Nome da Escrituração a ser implementada</param>
     /// <remarks></remarks>
-    public Escrituracao(string name)
+    public Escrituracao(string? name)
     {
         _RegistroTotalizadorStringFormat = "|" + RegistroTotalizadorCodigo + "|{0}|{1}|";
-        if (string.IsNullOrEmpty(name) & string.IsNullOrWhiteSpace(name))
-        {
-            throw new ArgumentException("O nome da escrituraçao não pode ser nulo.");
-        }
+        ArgumentNullException.ThrowIfNullOrEmpty(name, nameof(name));
+        ArgumentNullException.ThrowIfNullOrWhiteSpace(name, nameof(name));
         Name = name;
     }
 
-    private readonly string Name = null;
+    private readonly string Name = string.Empty;
     private bool _isWorking = false;
-    internal bool _mustStop = false;
+    //internal bool _mustStop = false;
     private string _blocoTotalizador = "9";
     private string _codigoRegTotalizador = "9900";
     private string _RegistroTotalizadorStringFormat;
@@ -46,7 +40,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// escrituracao.Blocos["C"].Registros
     /// ```
     /// </example>
-    public Dictionary<string, Bloco> Blocos { get; } = new();
+    public Dictionary<string, Bloco> Blocos { get; } = [];
 
     /// <summary>
     /// Versão para leitura (desserialização) / escrita (serialização) da escrituração.
@@ -61,7 +55,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// <summary>
     /// Listagem de regitros que devem ser desconsiderados durante a leitura (desserialização) da escrituração
     /// </summary>
-    public List<string> RegistrosIgnorados { get; } = new List<string>();
+    public List<string> RegistrosIgnorados { get; } = [];
 
     /// <summary>
     /// Obtém ou define se a instância está em estado de trabalho de leitura (desserialização) / escrita (serialização).
@@ -69,7 +63,6 @@ public abstract class Escrituracao : INotifyPropertyChanged
     public bool IsLoading
     {
         get => _isWorking;
-
         set
         {
             _isWorking = value;
@@ -80,14 +73,14 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// <summary>
     /// Obtém o registro que está em análise no momento da leitura (desserialização).
     /// </summary>
-    public string RegistroAtual { get; private set; } = null;
+    public string? RegistroAtual { get; private set; } = null;
 
     /// <summary>
     /// Obtém ou define se a leitura da linha do arquivo deve iniciar com carectere pipe ("|")
     /// </summary>
     public bool ValidaPipeInicial { get; set; } = true;
 
-    internal HeaderPosition HeaderPosition { get; } = new HeaderPosition();
+    public HeaderPosition HeaderPosition { get; } = new HeaderPosition();
 
     /// <summary>
     /// Obtém ou define o código do Bloco Totalizador da Escrituração implementada, para cálculo automatizado dos registros de totalização.
@@ -100,7 +93,6 @@ public abstract class Escrituracao : INotifyPropertyChanged
     public string BlocoTotalizador
     {
         get => _blocoTotalizador;
-
         set
         {
             _blocoTotalizador = value;
@@ -119,7 +111,6 @@ public abstract class Escrituracao : INotifyPropertyChanged
     public string RegistroTotalizadorCodigo
     {
         get => _codigoRegTotalizador;
-
         set
         {
             _codigoRegTotalizador = value;
@@ -138,7 +129,6 @@ public abstract class Escrituracao : INotifyPropertyChanged
     public string RegistroTotalizadorStringFormat
     {
         get => _RegistroTotalizadorStringFormat;
-
         set
         {
             _RegistroTotalizadorStringFormat = value;
@@ -164,7 +154,9 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// Método principal para leitura (desserialização) da escrituração.
     /// </summary>
     /// <param name="stream">Origem para leitura dos dados.</param>
-    public async Task LeArquivo(System.IO.Stream stream)
+    public async Task LeArquivo(
+        System.IO.Stream stream,
+        CancellationToken cancelationToken = default)
     {
         // Try
         IsLoading = true;
@@ -172,9 +164,13 @@ public abstract class Escrituracao : INotifyPropertyChanged
         {
             while (!reader.EndOfStream)
             {
-                if (_mustStop == true)
+                if (cancelationToken.IsCancellationRequested == true)
                     break;
-                string linha = await reader.ReadLineAsync();
+
+                string? linha = await reader.ReadLineAsync();
+
+                if (linha == null)
+                    continue;
 
                 if (linha.Length < HeaderPosition.Index + HeaderPosition.Lenght)
                     continue; // 02/04/2018: anti blank-line exception
@@ -182,11 +178,14 @@ public abstract class Escrituracao : INotifyPropertyChanged
                 if (ValidaPipeInicial && (!linha.StartsWith("|")))
                     continue;
 
-                string reg = linha.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
+                string? reg = linha.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
                 if ((reg ?? "") != (RegistroAtual ?? ""))
                 {
                     SetCurrent(reg);
                 }
+
+                if (reg == null)
+                    continue;
 
                 if (!RegistrosIgnorados.Contains(reg))
                 {
@@ -215,7 +214,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Progresso)));
     }
 
-    private void SetCurrent(string reg)
+    private void SetCurrent(string? reg)
     {
         RegistroAtual = reg;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegistroAtual)));
@@ -227,32 +226,57 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// <param name="stream">Stream destino para gravação dos dados.</param>
     /// <exception cref="ArgumentException">Uma <see cref="ArgumentException"/> pode ser disparada quando a propriedade 
     /// <see cref="BlocoTotalizador"/> se referir a algum bloco não mapeado na escrituração.</exception>
-    public async Task EscreveArquivo(System.IO.Stream stream) // As String
+    public async Task EscreveArquivo(System.IO.Stream stream,
+        CancellationToken cancelationToken = default) // As String
     {
         SetPercent(0);
         int i = 0;
         using (var writer = new System.IO.StreamWriter(stream, Encoding))
         {
-
-            // ## Geração Automátiva dos Registros Totalizadores
+            // ## Geração Automática dos Registros Totalizadores
             if (BlocoTotalizador != null)
             {
                 if (!Blocos.ContainsKey(BlocoTotalizador))
                     throw new ArgumentException(string.Format("O Bloco {0} não foi adicionado à escrituração.", BlocoTotalizador));
                 foreach (var preReg in PrefixoBlocoEncerramento())
                     Blocos[BlocoTotalizador].Registros.Add(preReg);
+
+                if (cancelationToken.IsCancellationRequested == true)
+                {
+                    SetCurrent(null);
+                    SetPercent(0);
+                    await writer.DisposeAsync();
+                    return;
+                }
+
                 foreach (var bl in Blocos)
                 {
                     if ((bl.Key ?? "") == (BlocoTotalizador ?? ""))
                         continue;
                     var results = bl.Value.GeraRegistrosTotalizadores(RegistroTotalizadorCodigo, RegistroTotalizadorStringFormat);
                     foreach (var tot in results)
-                        Blocos[BlocoTotalizador].Registros.Add(tot);
+                        Blocos[BlocoTotalizador ?? ""].Registros.Add(tot);
+
+                    if (cancelationToken.IsCancellationRequested == true)
+                    {
+                        SetCurrent(null);
+                        SetPercent(0);
+                        await writer.DisposeAsync();
+                        return;
+                    }
                 }
 
                 foreach (var postReg in SufixoBlocoEncerramento())
-                    Blocos[BlocoTotalizador].Registros.Add(postReg);
+                    Blocos[BlocoTotalizador ?? ""].Registros.Add(postReg);
             };
+
+            if (cancelationToken.IsCancellationRequested == true)
+            {
+                SetCurrent(null);
+                SetPercent(0);
+                await writer.DisposeAsync();
+                return;
+            }
 
             // ## Obtenção do total de registros para progress bar:
             long total_registros = Blocos.Values.Select(v => v.Registros.Count).Sum();
@@ -263,6 +287,14 @@ public abstract class Escrituracao : INotifyPropertyChanged
             {
                 foreach (var o in bl.Registros)
                 {
+                    if (cancelationToken.IsCancellationRequested == true)
+                    {
+                        SetCurrent(null);
+                        SetPercent(0);
+                        await writer.DisposeAsync();
+                        return;
+                    }
+
                     i += 1;
                     o.OverrideVersao(Versao);
                     await writer.WriteLineAsync(o.EscreveLinha());
@@ -271,6 +303,13 @@ public abstract class Escrituracao : INotifyPropertyChanged
             }
 
             // '## Escrita personalizada final
+            if (cancelationToken.IsCancellationRequested == true)
+            {
+                SetCurrent(null);
+                SetPercent(0);
+                await writer.DisposeAsync();
+                return;
+            }
             await EncerraArquivo(writer);
 
             // ## Liberação de recursos
@@ -291,7 +330,7 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// Quando implementado, executa custom actions para geração de registros totalizadores no rodapé do bloco de encerramento do arquivo.
     /// </summary>
     /// <returns><see cref="IEnumerable{Registro}"/></returns>
-    public virtual Registro[] SufixoBlocoEncerramento()
+    public virtual Registro[] SufixoBlocoEncerramento() 
     {
         return null;
     }
@@ -312,13 +351,17 @@ public abstract class Escrituracao : INotifyPropertyChanged
     /// hierárquica de Blocos e Registros.
     /// </summary>
     /// <param name="linha">Conteúdo da linha atualmente lida.</param>
-    public abstract void ProcessaLinha(string linha);
+    public abstract void ProcessaLinha(
+        string linha,
+        CancellationToken cancelationToken = default);
 
     /// <summary>
     /// Retorna o CNPJ do informante do arquivo.
     /// </summary>
     /// <param name="stream">Origem para leitura dos dados.</param>
-    public abstract Task<string> LeEmpresaArquivo(System.IO.Stream stream);
+    public abstract Task<string> LeEmpresaArquivo(
+        System.IO.Stream stream,
+        CancellationToken cancelationToken = default);
 
     /// <summary>
     /// Por padrão, este override do método .ToString() irá retornar a representação escrita (serializada) 
@@ -333,8 +376,8 @@ public abstract class Escrituracao : INotifyPropertyChanged
         return writer.ToString();
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-    public event ContagemRegistroEventHandler ContagemRegistroConcluida;
+    public event PropertyChangedEventHandler? PropertyChanged;
+    public event ContagemRegistroEventHandler? ContagemRegistroConcluida;
 }
 
 public class HeaderPosition

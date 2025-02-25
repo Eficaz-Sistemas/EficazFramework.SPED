@@ -65,9 +65,10 @@ public class Escrituracao : Primitives.Escrituracao
     }
 
     /// <exclude/>
-    public override void ProcessaLinha(string linha)
+    public override void ProcessaLinha(string linha, CancellationToken cancelationToken = default)
     {
-        Registro reg = null;
+        Registro? reg = null;
+        var source = CancellationTokenSource.CreateLinkedTokenSource(cancelationToken);
         switch (linha.Substring(1, 4) ?? "")
         {
             case "0000":
@@ -1086,35 +1087,32 @@ public class Escrituracao : Primitives.Escrituracao
 
             case "9999":
                 {
-                    _mustStop = true;
+                    source.Cancel();
                     break;
                 }
         }
 
         if (string.IsNullOrEmpty(linha) == false & string.IsNullOrWhiteSpace(linha) == false)
         {
-            if (reg != null)
-            {
-                reg.LeParametros(linha.Split("|"));
-            }
+            reg?.LeParametros(linha.Split("|"));
         }
     }
 
     /// <summary>
     /// Obtém o valor do campo CNPJ do <see cref="Registro0000"/> do escrituração fornecida no parâmetro <paramref name="stream"/>
     /// </summary>
-    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
+    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream, CancellationToken cancelationToken = default)
     {
-        string cnpj = null;
+        string? cnpj = null;
         using (var reader = new System.IO.StreamReader(stream, Encoding))
         {
             while (!reader.EndOfStream)
             {
-                string linha = await reader.ReadLineAsync();
-                Versao = linha.Substring(6, 3);
-                string reg = linha.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
-                var reg0000 = new Registro0000(linha, Versao);
-                reg0000.LeParametros(linha.Split("|"));
+                string? linha = await reader.ReadLineAsync();
+                Versao = linha?.Substring(6, 3) ?? "";
+                string? reg = linha?.Substring(HeaderPosition.Index, HeaderPosition.Lenght);
+                var reg0000 = new Registro0000(linha ?? "", Versao);
+                reg0000.LeParametros(linha?.Split("|") ?? []);
                 cnpj = reg0000.CNPJ;
                 break;
             }
@@ -1122,7 +1120,7 @@ public class Escrituracao : Primitives.Escrituracao
             reader.Dispose();
         }
 
-        return cnpj;
+        return cnpj ?? "";
     }
 
     /// <summary>

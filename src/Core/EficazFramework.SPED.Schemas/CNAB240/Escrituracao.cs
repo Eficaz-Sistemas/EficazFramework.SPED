@@ -24,9 +24,9 @@ public class Escrituracao : Primitives.Escrituracao
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
     private Registro3O last3O_Pai = null;
 
-    public override void ProcessaLinha(string linha)
+    public override void ProcessaLinha(string linha, CancellationToken cancelationToken = default)
     {
-        Primitives.Registro reg = null;
+        Primitives.Registro? reg = null;
         switch (linha.Substring(7, 1) ?? "")
         {
             case "0":
@@ -122,7 +122,7 @@ public class Escrituracao : Primitives.Escrituracao
         }
     }
 
-    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream)
+    public override async Task<string> LeEmpresaArquivo(System.IO.Stream stream, CancellationToken cancelationToken = default)
     {
         string cnpj = null;
         using (var reader = new System.IO.StreamReader(stream, Encoding))
