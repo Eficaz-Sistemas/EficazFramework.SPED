@@ -12,6 +12,7 @@
 ![EFD ICMS/IPI](https://eficazshields.azurewebsites.net/badge/EFD%20ICMS%2FIPI-v019-red?style=flat-square)
 ![EFD Contribuições](https://eficazshields.azurewebsites.net/badge/EFD%20Contribuições-v006-blue?style=flat-square)
 ![EFD-Reinf](https://eficazshields.azurewebsites.net/badge/EFD%20Reinf-v2.1.2.B-ff69b4?style=flat-square)
+![MIT](https://eficazshields.azurewebsites.net/badge/MIT-v1.0-lightblue?style=flat-square)
 ![ECD](https://eficazshields.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square) 
 ![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square) 
 ![e-Social](https://eficazshields.azurewebsites.net/badge/eSocial-vS_01_03_00-yellow?style=flat-square)
@@ -169,7 +170,8 @@ using (var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8
 ## Pré-Requisitos
 | Versão | Versão do .NET | Suporte |
 | :--- | :--- | :---: |
-| 6.3.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) | :white_check_mark:|
+| 6.4.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) | :white_check_mark:|
+| 6.3.x| [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0); [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) | :x:|
 | 6.2.x| [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0); [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | :x:|
 | 6.1.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0); [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) | :x:|
 | 6.0.x| [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) | :x: |
