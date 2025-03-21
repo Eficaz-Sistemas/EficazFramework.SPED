@@ -61,6 +61,15 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;cteOSProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/cte&quot;&gt;&lt;CTeOS xmlns=&quot;http://www.portalfiscal.inf.br/cte&quot; versao=&quot;4.00&quot;&gt;&lt;infCte versao=&quot;4.00&quot; Id=&quot;CTe35250243035146001076673100000518541035270862&quot;&gt;&lt;ide&gt;&lt;cUF&gt;35&lt;/cUF&gt;&lt;cCT&gt;03527086&lt;/cCT&gt;&lt;CFOP&gt;5353&lt;/CFOP&gt;&lt;natOp&gt;Prestacao de servico&lt;/natOp&gt;&lt;mod&gt;67&lt;/mod&gt;&lt;serie&gt;310&lt;/serie&gt;&lt;nCT&gt;51854&lt;/nCT&gt;&lt;dhEmi&gt;2025-02-28T10:11:36-02:00&lt;/dhEmi&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmis&gt;&lt;cDV&gt;2&lt;/cDV&gt;&lt;tpAmb&gt;1&lt;/tpAmb&gt;&lt;tpCTe&gt;0&lt;/tpCTe&gt;&lt;procEmi&gt;0&lt;/procEmi&gt;&lt;verProc&gt;Protege-Bnfx v1.0&lt;/ver [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string CTeOS {
+            get {
+                return ResourceManager.GetString("CTeOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
         ///&lt;!-- PL_009  alterações de esquema decorrentes da - NT2016.002 v1.20 - 31/05/2017 13:14hs--&gt;
