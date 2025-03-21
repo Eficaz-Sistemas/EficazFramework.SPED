@@ -106,6 +106,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+        ///&lt;ConsultarNfseResposta xmlns=&quot;http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd&quot;&gt;
+        ///    &lt;ListaNfse&gt;
+        ///        &lt;CompNfse&gt;
+        ///            &lt;Nfse&gt;
+        ///                &lt;InfNfse id=&quot;2567&quot;&gt;
+        ///                    &lt;Numero&gt;2567&lt;/Numero&gt;
+        ///                    &lt;CodigoVerificacao&gt;ERMR-CJMI&lt;/CodigoVerificacao&gt;
+        ///                    &lt;DataEmissao&gt;2024-08-05T00:00:00&lt;/DataEmissao&gt;
+        ///                    &lt;IdentificacaoRps&gt;
+        ///                        &lt;Numero /&gt;
+        ///                        &lt;Serie&gt;7&lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFe_Abrasf_New {
+            get {
+                return ResourceManager.GetString("NFe_Abrasf_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35240729302348000468550050000068201676523481&quot;&gt;&lt;ide&gt;&lt;cUF&gt;35&lt;/cUF&gt;&lt;cNF&gt;67652348&lt;/cNF&gt;&lt;natOp&gt;Lancamento efetuado em decorrencia de emissao de NFCe&lt;/natOp&gt;&lt;mod&gt;55&lt;/mod&gt;&lt;serie&gt;5&lt;/serie&gt;&lt;nNF&gt;6820&lt;/nNF&gt;&lt;dhEmi&gt;2024-07-23T11:55:17-03:00&lt;/dhEmi&gt;&lt;dhSaiEnt&gt;2024-07-23T11:55:17-03:00&lt;/dhSaiEnt&gt;&lt;tpNF&gt;1&lt;/tpNF&gt;&lt;idDest&gt;1&lt;/idDest&gt;&lt;cMunFG&gt;3516200&lt;/cMunFG&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmi [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string NFe_IN2024002 {
@@ -156,6 +176,35 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string NFeIpiDevolvido {
             get {
                 return ResourceManager.GetString("NFeIpiDevolvido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+        ///&lt;ConsultarNfseServicoPrestadoResposta xmlns=&quot;http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd&quot;&gt;
+        ///    &lt;ListaNfse&gt;
+        ///        &lt;CompNfse&gt;
+        ///            &lt;Nfse versao=&quot;2.04&quot;&gt;
+        ///                &lt;InfNfse&gt;
+        ///                    &lt;Numero&gt;211&lt;/Numero&gt;
+        ///                    &lt;CodigoVerificacao&gt;MMHJ-FSJY&lt;/CodigoVerificacao&gt;
+        ///                    &lt;DataEmissao&gt;2024-08-05T00:00:00&lt;/DataEmissao&gt;
+        ///                    &lt;OutrasInformacoes /&gt;
+        ///                    &lt;ValoresNfse&gt;
+        ///              [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFse_Abrasf_lote {
+            get {
+                return ResourceManager.GetString("NFse_Abrasf_lote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;CompNfse&gt;&lt;Nfse&gt;&lt;InfNfse&gt;&lt;Numero&gt;4347&lt;/Numero&gt;&lt;CodigoVerificacao&gt;XWXK-LEDO&lt;/CodigoVerificacao&gt;&lt;DataEmissao&gt;2025-02-26T00:00:00&lt;/DataEmissao&gt;&lt;ValoresNfse&gt;&lt;BaseCalculo&gt;51615.88&lt;/BaseCalculo&gt;&lt;Aliquota&gt;3.00&lt;/Aliquota&gt;&lt;ValorIss&gt;1548.48&lt;/ValorIss&gt;&lt;ValorLiquidoNfse&gt;48441.50&lt;/ValorLiquidoNfse&gt;&lt;/ValoresNfse&gt;&lt;PrestadorServico&gt;&lt;IdentificacaoPrestador&gt;&lt;CpfCnpj&gt;&lt;Cnpj&gt;12.398.333/0001-08&lt;/Cnpj&gt;&lt;/CpfCnpj&gt;&lt;InscricaoMunicipal&gt;0&lt;/InscricaoMunicipal&gt;&lt;/IdentificacaoPrestador&gt;&lt;RazaoSocial&gt;CODEBIT DESENVOLVIMENTO DE SOFTWARES CUS [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFSe_Common {
+            get {
+                return ResourceManager.GetString("NFSe_Common", resourceCulture);
             }
         }
         

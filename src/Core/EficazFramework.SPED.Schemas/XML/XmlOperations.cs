@@ -46,185 +46,59 @@ public static partial class Operations
         // ResetStreamOffset(source)
 
         // ## Detecting root tag:
-        IXmlSpedDocument? resultobj = null;
         try
         {
-            switch (xdoc.Root?.Name.LocalName ?? "")
+            IXmlSpedDocument? resultobj = (xdoc.Root?.Name.LocalName ?? "") switch
             {
-                case "procNFe":
-                    {
-                        resultobj = await Schemas.NFe.ProcessoNFeBase.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "nfeProc":
-                    {
-                        resultobj = await Schemas.NFe.ProcessoNFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "NFe":
-                    {
-                        resultobj = await Schemas.NFe.NFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "cteProc":
-                    {
-                        resultobj = await Schemas.CTe.ProcessoCTe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "cteOSProc":
-                    {
-                        resultobj = await Schemas.CTeOS.ProcessoCTeOS.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "CTeOS":
-                    {
-                        resultobj = await Schemas.CTeOS.CTeOS.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "CTe":
-                    {
-                        resultobj = await Schemas.CTe.CTe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "procEventoNFe":
-                    {
-                        resultobj = await Schemas.NFe.ProcessoEvento.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "retEnvEvento":
-                    {
-                        resultobj = await Schemas.NFe.RetornoEnvioEvento.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "ProcInutNFe":
-                    {
-                        resultobj = await Schemas.NFe.ProcessoInutilizacaoNFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "procEventoCTe":
-                    {
-                        resultobj = await Schemas.CTe.ProcessoEvento.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "eventoCTe":
-                    {
-                        resultobj = await Schemas.CTe.Evento.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "enviCTe":
-                    {
-                        resultobj = await Schemas.CTe.LoteCte.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "resEvento":
-                    {
-                        resultobj = await Schemas.NFe.ResumoEvento.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "CompNfse":
-                    {
-                        resultobj = await Schemas.NFSe.Common.tcCompNfse.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "ComplNfse":
-                    {
-                        resultobj = await Schemas.NFSe.Common.tcComplNfse.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "ConsultarNfseRpsResposta":
-                    {
-                        if (objString.Contains("ginfes"))
-                        {
-                            resultobj = await Schemas.NFSe.GINFES.tcListaNfse.LoadFromAsync(fixedstream, false);
-                        }
-
-                        break;
-                    }
-                // TODO: tentar abrasf num futuro...
-
-
-                case "ConsultarLoteRpsResposta": // GINFES 
-                    {
-                        // TODO: tentar abrasf num futuro...
-                        resultobj = await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "NFSE": // GINFES 
-                    {
-                        resultobj = await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta2.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "EnviarLoteRpsEnvio": // GINFES 
-                    {
-                        resultobj = await Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "ConsultarNfseResposta": // BETHA 
-                    {
-                        resultobj = await Schemas.NFSe.BETHA.ConsultarRpsResposta.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "CFe": // SAT CF-e
-                    {
-                        resultobj = await Schemas.SAT_CFe.CFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "envCFe": // SAT CF-e Lote
-                    {
-                        resultobj = await Schemas.SAT_CFe.envCFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                case "cancCFe": // SAT CF-e Cancelamento
-                    {
-                        resultobj = await Schemas.SAT_CFe.CancelamentoCFe.LoadFromAsync(fixedstream, false);
-                        break;
-                    }
-
-                default:
-                    {
-                        if (xdoc.Root?.Name.LocalName.ToLower() == "nfse")
-                        {
-                            resultobj = await Schemas.NFSe.Common.NFSe.LoadFromAsync(fixedstream, false);
-                        }
-                        else if (xdoc.Root?.Name.LocalName.ToLower().Contains("nfse") ?? false)
-                        {
-                            resultobj = await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false); // ABRASF
-                        }
-
-                        break;
-                    }
-            }
+                "procNFe" => await Schemas.NFe.ProcessoNFeBase.LoadFromAsync(fixedstream, false),
+                "nfeProc" => await Schemas.NFe.ProcessoNFe.LoadFromAsync(fixedstream, false),
+                "NFe" => await Schemas.NFe.NFe.LoadFromAsync(fixedstream, false),
+                "cteProc" => await Schemas.CTe.ProcessoCTe.LoadFromAsync(fixedstream, false),
+                "cteOSProc" => await Schemas.CTeOS.ProcessoCTeOS.LoadFromAsync(fixedstream, false),
+                "CTeOS" => await Schemas.CTeOS.CTeOS.LoadFromAsync(fixedstream, false),
+                "CTe" => await Schemas.CTe.CTe.LoadFromAsync(fixedstream, false),
+                "procEventoNFe" => await Schemas.NFe.ProcessoEvento.LoadFromAsync(fixedstream, false),
+                "retEnvEvento" => await Schemas.NFe.RetornoEnvioEvento.LoadFromAsync(fixedstream, false),
+                "ProcInutNFe" => await Schemas.NFe.ProcessoInutilizacaoNFe.LoadFromAsync(fixedstream, false),
+                "procEventoCTe" => await Schemas.CTe.ProcessoEvento.LoadFromAsync(fixedstream, false),
+                "eventoCTe" => await Schemas.CTe.Evento.LoadFromAsync(fixedstream, false),
+                "enviCTe" => await Schemas.CTe.LoteCte.LoadFromAsync(fixedstream, false),
+                "resEvento" => await Schemas.NFe.ResumoEvento.LoadFromAsync(fixedstream, false),
+                "CompNfse" => await Schemas.NFSe.ABRASF.tcCompNfse.LoadFromAsync(fixedstream, false),
+                "CompNfe" => await Schemas.NFSe.Common.tcCompNfse.LoadFromAsync(fixedstream, false),
+                "ComplNfse" => await Schemas.NFSe.Common.tcComplNfse.LoadFromAsync(fixedstream, false),
+                "ConsultarNfseRpsResposta" => objString.Contains("ginfes") ? 
+                    await Schemas.NFSe.GINFES.tcListaNfse.LoadFromAsync(fixedstream, false) : 
+                    null,
+                "ConsultarLoteRpsResposta" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta.LoadFromAsync(fixedstream, false),
+                "NFSE" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta2.LoadFromAsync(fixedstream, false),
+                "EnviarLoteRpsEnvio" => await Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFromAsync(fixedstream, false),
+                "ConsultarNfseResposta" => xdoc.Root?.ToString().Contains("http://www.abrasf.org.br/nfse.xsd") ?? false ?
+                    await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false, "http://www.abrasf.org.br/nfse.xsd") :
+                    await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false),
+                "ConsultarNfseServicoPrestadoResposta" => xdoc.Root?.ToString().Contains("http://www.abrasf.org.br/nfse.xsd") ?? false ?
+                    await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false, "http://www.abrasf.org.br/nfse.xsd") :
+                    await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false),
+                "CFe" => await Schemas.SAT_CFe.CFe.LoadFromAsync(fixedstream, false),
+                "envCFe" => await Schemas.SAT_CFe.envCFe.LoadFromAsync(fixedstream, false),
+                "cancCFe" => await Schemas.SAT_CFe.CancelamentoCFe.LoadFromAsync(fixedstream, false),
+                _ => xdoc.Root?.Name.LocalName.ToLower() == "nfse" ?
+                        await Schemas.NFSe.Common.NFSe.LoadFromAsync(fixedstream, false) :
+                        (xdoc.Root?.Name.LocalName.Contains("nfse", StringComparison.CurrentCultureIgnoreCase) ?? false) ?
+                            await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false) : null,
+            };
+            return resultobj;
         }
-        catch (Exception outer_ex)
+        catch (Exception ex)
         {
-            Debug.WriteLine(outer_ex.ToString());
+            Console.WriteLine(ex.ToString());
+            return null;
         }
-
-        fixedstream.Dispose();
-        reader.Dispose();
-        return resultobj;
+        finally
+        {
+            fixedstream.Dispose();
+            reader.Dispose();
+        }
     }
 
 

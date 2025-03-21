@@ -3307,7 +3307,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
         private string numeroField;
         private string complementoField;
         private string bairroField;
-        private int? codigoMunicipioField;
+        private string codigoMunicipioField;
         private string ufField;
         private string cepField;
 
@@ -3379,23 +3379,16 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public int CodigoMunicipio
+        public string CodigoMunicipio
         {
             get
             {
-                if (codigoMunicipioField.HasValue)
-                {
-                    return codigoMunicipioField.Value;
-                }
-                else
-                {
-                    return Conversions.ToInteger(default);
-                }
+                return codigoMunicipioField;
             }
 
             set
             {
-                if (codigoMunicipioField.Equals(value) != true)
+                if (codigoMunicipioField is null || codigoMunicipioField.Equals(value) != true)
                 {
                     codigoMunicipioField = value;
                     OnPropertyChanged("CodigoMunicipio");
@@ -3403,43 +3396,19 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public int Cidade
+        public string Cidade
         {
             get
             {
-                if (codigoMunicipioField.HasValue)
-                {
-                    return codigoMunicipioField.Value;
-                }
-                else
-                {
-                    return Conversions.ToInteger(default);
-                }
+                return codigoMunicipioField;
             }
 
             set
             {
-                if (codigoMunicipioField.Equals(value) != true)
+                if (codigoMunicipioField is null || codigoMunicipioField.Equals(value) != true)
                 {
                     codigoMunicipioField = value;
                     OnPropertyChanged("Cidade");
-                }
-            }
-        }
-
-        [XmlIgnore()]
-        public bool CodigoMunicipioSpecified
-        {
-            get
-            {
-                return codigoMunicipioField.HasValue;
-            }
-
-            set
-            {
-                if (value == false)
-                {
-                    codigoMunicipioField = default;
                 }
             }
         }
@@ -4048,7 +4017,10 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorDeducoes
+        [XmlElement("ValorDeducoes")]
+        public string ValorDeducoes_Raw;
+        [XmlIgnore()]
+        public decimal? ValorDeducoes
         {
             get
             {
@@ -4089,7 +4061,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorPis
+        public decimal? ValorPis
         {
             get
             {
@@ -4130,7 +4102,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorCofins
+        public decimal? ValorCofins
         {
             get
             {
@@ -4171,7 +4143,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorInss
+        public decimal? ValorInss
         {
             get
             {
@@ -4212,7 +4184,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorIr
+        public decimal? ValorIr
         {
             get
             {
@@ -4253,7 +4225,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorCsll
+        public decimal? ValorCsll
         {
             get
             {
@@ -4311,7 +4283,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorIss
+        public decimal? ValorIss
         {
             get
             {
@@ -4352,7 +4324,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorIssRetido
+        public decimal? ValorIssRetido
         {
             get
             {
@@ -4393,7 +4365,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal OutrasRetencoes
+        public decimal? OutrasRetencoes
         {
             get
             {
@@ -4434,7 +4406,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal BaseCalculo
+        public decimal? BaseCalculo
         {
             get
             {
@@ -4475,7 +4447,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal Aliquota
+        public decimal? Aliquota
         {
             get
             {
@@ -4516,7 +4488,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal ValorLiquidoNfse
+        public decimal? ValorLiquidoNfse
         {
             get
             {
@@ -4557,7 +4529,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal DescontoIncondicionado
+        public decimal? DescontoIncondicionado
         {
             get
             {
@@ -4598,7 +4570,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
             }
         }
 
-        public decimal DescontoCondicionado
+        public decimal? DescontoCondicionado
         {
             get
             {
@@ -4892,6 +4864,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
     [XmlRoot(IsNullable = true)]
     public partial class tcDadosPrestador : INotifyPropertyChanged
     {
+        private tcCpfCnpj cpfCnpjField;
         private tcIdentificacaoPrestador identificacaoPrestadorField;
         private string razaoSocialField;
         private string nomeFantasiaField;
@@ -4918,6 +4891,23 @@ namespace EficazFramework.SPED.Schemas.NFSe.Common
                 {
                     identificacaoPrestadorField = value;
                     OnPropertyChanged("IdentificacaoPrestador");
+                }
+            }
+        }
+
+        public tcCpfCnpj CpfCnpj
+        {
+            get
+            {
+                return cpfCnpjField;
+            }
+
+            set
+            {
+                if (cpfCnpjField is null || cpfCnpjField.Equals(value) != true)
+                {
+                    cpfCnpjField = value;
+                    OnPropertyChanged("CpfCnpj");
                 }
             }
         }
