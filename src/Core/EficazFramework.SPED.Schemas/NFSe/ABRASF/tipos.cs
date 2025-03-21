@@ -156,7 +156,9 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
             return CanDeserialize(xml, ref obj, ref exception);
         }
 
-        public static ConsultarNFseResposta Deserialize(string xml)
+        public static ConsultarNFseResposta Deserialize(
+            string xml,
+            string alias = "http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd")
         {
             System.IO.StringReader stringReader = null;
             try
@@ -166,13 +168,14 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
                 var tmpreader = new System.IO.StringReader(xml);
                 var po = XDocument.Load(tmpreader);
                 string rootName = po.Root.Name.LocalName;
-                sSerializer = new XmlSerializer(typeof(ConsultarNFseResposta), new XmlRootAttribute(rootName) { Namespace = "http://www.abrasf.org.br/nfse.xsd" });
+                sSerializer = new System.Xml.Serialization.XmlSerializer(typeof(ConsultarNFseResposta), null, null, new XmlRootAttribute(rootName), alias);
+                
                 po = null;
                 tmpreader.Dispose();
                 stringReader = new System.IO.StringReader(xml);
                 // stringReader.ReadToEnd() 'TESTING...
 
-                return (ConsultarNFseResposta)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+                return (ConsultarNFseResposta)sSerializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
             }
             // Return CType(Serializer.Deserialize(stringReader), ConsultarLoteRpsResposta)
             finally
@@ -311,7 +314,10 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
             }
         }
 
-        public static async Task<ConsultarNFseResposta> LoadFromAsync(System.IO.Stream source, bool close_stream = true)
+        public static async Task<ConsultarNFseResposta> LoadFromAsync(
+            System.IO.Stream source, 
+            bool close_stream = true, 
+            string alias = "http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd")
         {
             if (source is null)
                 throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
@@ -1235,7 +1241,7 @@ namespace EficazFramework.SPED.Schemas.NFSe.ABRASF
     {
         private tcInfNfse _inf = new tcInfNfse();
 
-        [XmlElement("InfDeclaracaoPrestacaoServico", Namespace = "http://www.abrasf.org.br/nfse.xsd")]
+        [XmlElement("InfDeclaracaoPrestacaoServico")]
         public tcInfNfse InfNfse
         {
             get
