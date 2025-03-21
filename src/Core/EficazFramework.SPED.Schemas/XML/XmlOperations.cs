@@ -7,14 +7,14 @@ public static partial class Operations
     /// <summary>
     /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
     /// </summary>
-    public static IXmlSpedDocument Open(System.IO.Stream source) =>
+    public static IXmlSpedDocument? Open(System.IO.Stream source) =>
         Task.Run(() => OpenAsync(source)).Result;
 
 
     /// <summary>
     /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
     /// </summary>
-    public static async Task<IXmlSpedDocument> OpenAsync(System.IO.Stream source)
+    public static async Task<IXmlSpedDocument?> OpenAsync(System.IO.Stream source)
     {
         string objString;
         XDocument xdoc;
@@ -46,10 +46,10 @@ public static partial class Operations
         // ResetStreamOffset(source)
 
         // ## Detecting root tag:
-        IXmlSpedDocument resultobj = null;
+        IXmlSpedDocument? resultobj = null;
         try
         {
-            switch (xdoc.Root.Name.LocalName ?? "")
+            switch (xdoc.Root?.Name.LocalName ?? "")
             {
                 case "procNFe":
                     {
@@ -204,11 +204,11 @@ public static partial class Operations
 
                 default:
                     {
-                        if (xdoc.Root.Name.LocalName.ToLower() == "nfse")
+                        if (xdoc.Root?.Name.LocalName.ToLower() == "nfse")
                         {
                             resultobj = await Schemas.NFSe.Common.NFSe.LoadFromAsync(fixedstream, false);
                         }
-                        else if (xdoc.Root.Name.LocalName.ToLower().Contains("nfse"))
+                        else if (xdoc.Root?.Name.LocalName.ToLower().Contains("nfse") ?? false)
                         {
                             resultobj = await Schemas.NFSe.ABRASF.ConsultarNFseResposta.LoadFromAsync(fixedstream, false); // ABRASF
                         }
