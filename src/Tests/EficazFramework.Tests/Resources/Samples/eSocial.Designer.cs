@@ -109,5 +109,55 @@ namespace EficazFramework.SPED.Resources.Samples {
                 return ResourceManager.GetString("S1000_v02_04_02", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot;?&gt;
+        ///&lt;eSocial xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_03_00&quot;&gt;
+        ///	&lt;evtRemun Id=&quot;ID1345571090000002025030512433500003&quot;&gt;
+        ///		&lt;ideEvento&gt;
+        ///			&lt;indRetif&gt;1&lt;/indRetif&gt;
+        ///			&lt;indApuracao&gt;1&lt;/indApuracao&gt;
+        ///			&lt;perApur&gt;2025-02&lt;/perApur&gt;
+        ///			&lt;tpAmb&gt;1&lt;/tpAmb&gt;
+        ///			&lt;procEmi&gt;1&lt;/procEmi&gt;
+        ///			&lt;verProc&gt;v_S_01_03_00&lt;/verProc&gt;
+        ///		&lt;/ideEvento&gt;
+        ///		&lt;ideEmpregador&gt;
+        ///			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
+        ///		&lt;/ideEmpregador&gt;
+        ///		&lt;ideTrabalhador&gt;
+        ///		 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1200_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1200_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; standalone=&quot;no&quot;?&gt;
+        ///&lt;eSocial xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot;&gt;
+        ///	&lt;evtPgtos Id=&quot;ID1345571090000002025030512521100001&quot;&gt;
+        ///		&lt;ideEvento&gt;
+        ///			&lt;indRetif&gt;1&lt;/indRetif&gt;
+        ///			&lt;perApur&gt;2025-02&lt;/perApur&gt;
+        ///			&lt;tpAmb&gt;1&lt;/tpAmb&gt;
+        ///			&lt;procEmi&gt;1&lt;/procEmi&gt;
+        ///			&lt;verProc&gt;v_S_01_03_00&lt;/verProc&gt;
+        ///		&lt;/ideEvento&gt;
+        ///		&lt;ideEmpregador&gt;
+        ///			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
+        ///		&lt;/ideEmpregador&gt;
+        ///		&lt;ideBenef&gt;
+        ///			&lt;cpfBenef&gt;15273627877&lt;/cpfBenef&gt;
+        ///			&lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1210_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1210_v_S_01_03_00", resourceCulture);
+            }
+        }
     }
 }
