@@ -42,7 +42,9 @@ public enum EmissorEvento
 public enum IndicadorApuracao
 {
     [System.Xml.Serialization.XmlEnum("1")]
-    Mensal = 1
+    Mensal = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
+    AnualDecimoTerceiroSalario = 2
 }
 
 public enum IndicadorGuia
