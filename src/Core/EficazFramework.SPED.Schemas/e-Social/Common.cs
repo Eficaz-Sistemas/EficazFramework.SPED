@@ -119,7 +119,7 @@ public partial class Empregador : ESocialBindableObject
 public class Trabalhador : ESocialBindableObject
 {
     private string cpfTrab;
-    private InfoMV infoMV;
+    private InfoMultiplosVinculos infoMV;
     private InfoComplem infoComplem;
     private List<TProcJudTrab> procJudTrab;
     private List<TInfoInterm> infoInterm;
@@ -136,7 +136,7 @@ public class Trabalhador : ESocialBindableObject
     }
 
     [XmlElement(ElementName = "infoMV")]
-    public InfoMV InfoMV
+    public InfoMultiplosVinculos InfoMV
     {
         get => infoMV;
         set
