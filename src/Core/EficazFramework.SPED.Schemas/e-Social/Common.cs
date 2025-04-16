@@ -116,71 +116,6 @@ public partial class Empregador : ESocialBindableObject
 }
 
 
-public class Trabalhador : ESocialBindableObject
-{
-    private string cpfTrab;
-    private InfoMultiplosVinculos infoMV;
-    private InfoComplem infoComplem;
-    private List<TProcJudTrab> procJudTrab;
-    private List<TInfoInterm> infoInterm;
-
-    [XmlElement(ElementName = "cpfTrab")]
-    public string CpfTrab
-    {
-        get => cpfTrab;
-        set
-        {
-            cpfTrab = value;
-            RaisePropertyChanged(nameof(CpfTrab));
-        }
-    }
-
-    [XmlElement(ElementName = "infoMV")]
-    public InfoMultiplosVinculos InfoMV
-    {
-        get => infoMV;
-        set
-        {
-            infoMV = value;
-            RaisePropertyChanged(nameof(InfoMV));
-        }
-    }
-
-    [XmlElement(ElementName = "infoComplem")]
-    public InfoComplem InfoComplem
-    {
-        get => infoComplem;
-        set
-        {
-            infoComplem = value;
-            RaisePropertyChanged(nameof(InfoComplem));
-        }
-    }
-
-    [XmlElement(ElementName = "procJudTrab")]
-    public List<TProcJudTrab> ProcJudTrab
-    {
-        get => procJudTrab;
-        set
-        {
-            procJudTrab = value;
-            RaisePropertyChanged(nameof(ProcJudTrab));
-        }
-    }
-
-    [XmlElement(ElementName = "infoInterm")]
-    public List<TInfoInterm> InfoInterm
-    {
-        get => infoInterm;
-        set
-        {
-            infoInterm = value;
-            RaisePropertyChanged(nameof(InfoInterm));
-        }
-    }
-}
-
-
 /// <summary>
 /// Identificação do Evento, com Ambiente, Processo Emissor e Versão
 /// </summary>
@@ -583,4 +518,108 @@ public partial class ProcessoAdmOuJud : ESocialBindableObject
     }
 }
 
+public partial class ProcessoJudTrabalhista : ESocialBindableObject
+{
+    private TributoProcessoJud tpProcField;
+    private string nrProcField;
+    private string codSuspField;
 
+    public TributoProcessoJud tpProc
+    {
+        get => tpProcField;
+        set
+        {
+            tpProcField = value;
+            RaisePropertyChanged(nameof(tpProc));
+        }
+    }
+
+    public string nrProc
+    {
+        get => nrProcField;
+        set
+        {
+            nrProcField = value;
+            RaisePropertyChanged(nameof(nrProc));
+        }
+    }
+
+    [XmlElement(DataType = "integer")]
+    public string codSusp
+    {
+        get => codSuspField;
+        set
+        {
+            codSuspField = value;
+            RaisePropertyChanged(nameof(codSusp));
+        }
+    }
+}
+
+/// <summary>
+/// Detalhamento das Despesas Judiciais
+/// </summary>
+public partial class DetalhamentoDespJud : ESocialBindableObject
+{
+    private decimal vlrDespCustasField;
+    private decimal vlrDespAdvogadosField;
+
+    [XmlElement]
+    public decimal vlrDespCustas
+    {
+        get => vlrDespCustasField;
+        set
+        {
+            vlrDespCustasField = value;
+            RaisePropertyChanged(nameof(vlrDespCustas));
+        }
+    }
+
+    [XmlElement]
+    public decimal vlrDespAdvogados
+    {
+        get => vlrDespAdvogadosField;
+        set
+        {
+            vlrDespAdvogadosField = value;
+            RaisePropertyChanged(nameof(vlrDespAdvogados));
+        }
+    }
+}
+
+public class Advogado : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+    private decimal vlrAdvField;
+
+    public PersonalidadeJuridica tpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged(nameof(tpInsc));
+        }
+    }
+
+    public string nrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged(nameof(nrInsc));
+        }
+    }
+
+    public decimal vlrAdv
+    {
+        get => vlrAdvField;
+        set
+        {
+            vlrAdvField = value;
+            RaisePropertyChanged(nameof(vlrAdv));
+        }
+    }
+}

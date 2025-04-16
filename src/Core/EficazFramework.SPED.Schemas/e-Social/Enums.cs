@@ -897,3 +897,93 @@ public enum ImigranteCondicao
     [System.ComponentModel.Description("Não se Aplica")]
     NA = 9999
 }
+
+public enum TributoProcessoJud
+{
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("1 - IRRF")]
+    IRRF = 1,
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("2 - Contribuições sociais do trabalhador")]
+    ContribuicoesSociais = 2
+}
+
+public enum IndicadorSubstSimples
+{
+    [System.Xml.Serialization.XmlEnum("0")]
+    [System.ComponentModel.Description("0 - Não aplicável")]
+    NA = 0,
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 - Contribuição substituída tntegralmente")]
+    Substituida = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("2 - Contribuição não substituída")]
+    NaoSubstituida = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("3 - Contribuição não substituída concomitante com contribuição substituída")]
+    Concomitante = 3,
+}
+
+public enum TipoDescontoFolha
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 - e-Consignado")]
+    eConsignado = 1
+}
+public enum GrauExposicao
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Não ensejador de aposentadoria especial")]
+    NaoEnsejador = 1,
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Ensejador de aposentadoria especial - FAE15_12% (15 anos de contribuição e alíquota de 12%)")]
+    FAE15_12 = 2,
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Ensejador de aposentadoria especial - FAE20_09% (20 anos de contribuição e alíquota de 9%)")]
+    FAE20_09 = 3,
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("Ensejador de aposentadoria especial - FAE25_06% (25 anos de contribuição e alíquota de 6%)")]
+    FAE25_06 = 4
+}
+public enum TipoAcordoColetivo
+{
+    [System.Xml.Serialization.XmlEnum("A")]
+    [System.ComponentModel.Description("Acordo Coletivo de Trabalho")]
+    AcordoColetivoTrabalho = 0,
+
+    [System.Xml.Serialization.XmlEnum("B")]
+    [System.ComponentModel.Description("Legislação federal, estadual, municipal ou distrital")]
+    LegislacaoFederalEstadualMunicipalDistrital = 1,
+
+    [System.Xml.Serialization.XmlEnum("C")]
+    [System.ComponentModel.Description("Convenção Coletiva de Trabalho")]
+    ConvencaoColetivaTrabalho = 2,
+
+    [System.Xml.Serialization.XmlEnum("D")]
+    [System.ComponentModel.Description("Sentença normativa - Dissídio")]
+    SentencaNormativaDissidio = 3,
+
+    [System.Xml.Serialization.XmlEnum("E")]
+    [System.ComponentModel.Description("Conversão de licença saúde em acidente de trabalho")]
+    ConversaoLicencaSaudeAcidenteTrabalho = 4,
+
+    [System.Xml.Serialization.XmlEnum("F")]
+    [System.ComponentModel.Description("Outras verbas de natureza salarial ou não salarial devidas após o desligamento")]
+    OutrasVerbasNaturezaSalarialNaoSalarialAposDesligamento = 5,
+
+    [System.Xml.Serialization.XmlEnum("G")]
+    [System.ComponentModel.Description("Antecipação de diferenças de acordo, convenção ou dissídio coletivo")]
+    AntecipacaoDiferencasAcordoConvencaoDissidioColetivo = 6,
+
+    [System.Xml.Serialization.XmlEnum("H")]
+    [System.ComponentModel.Description("Declaração de base de cálculo de FGTS anterior ao início do FGTS Digital")]
+    DeclaracaoBaseCalculoFGTSAnteriorInicioFGTSDigital = 7,
+
+    [System.Xml.Serialization.XmlEnum("I")]
+    [System.ComponentModel.Description("Sentença judicial (exceto reclamatória trabalhista)")]
+    SentencaJudicialExcetoReclamatoriaTrabalhista = 8,
+
+    [System.Xml.Serialization.XmlEnum("J")]
+    [System.ComponentModel.Description("Parcelas complementares conhecidas após o fechamento da folha")]
+    ParcelasComplementaresConhecidasAposFechamentoFolha = 9
+}
