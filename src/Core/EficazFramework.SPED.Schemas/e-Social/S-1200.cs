@@ -45,7 +45,7 @@ public class S1200 : Evento
     /// <exclude/>
     public override string TagToSign => Evento.root;
     /// <exclude/>
-    public override string TagId { get; }
+    public override string TagId { get; } = nameof(evtRemun);
     /// <exclude/>
     public override bool EmptyURI => true;
     /// <exclude/>
@@ -93,6 +93,7 @@ public class EvtRemun : ESocialBindableObject
     /// <summary>
     /// Identificação de cada um dos demonstrativos de valores devidos ao trabalhador.
     /// </summary>
+    [XmlElement("dmDev")]
     public List<DemonstracaoValorDevido> dmDev
     {
         get => dmDevField;
@@ -593,19 +594,19 @@ public class InfoPerApur : ESocialBindableObject
 
 public class IdeEstabelecimentoLotacao : ESocialBindableObject
 {
-    private PersonalidadeJuridica tpInsc;
-    private string nrInsc;
-    private string codLotacao;
-    private int qtdDiasAv = -1;
-    private List<RemuneracaoPeriodoApuracao> remunPerApur;
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+    private string codLotacaoField;
+    private int qtdDiasAvField = -1;
+    private List<RemuneracaoPeriodoApuracao> remunPerApurField;
 
     [XmlElement(ElementName = "tpInsc")]
     public PersonalidadeJuridica TpInsc
     {
-        get => tpInsc;
+        get => tpInscField;
         set
         {
-            tpInsc = value;
+            tpInscField = value;
             RaisePropertyChanged(nameof(TpInsc));
         }
     }
@@ -613,10 +614,10 @@ public class IdeEstabelecimentoLotacao : ESocialBindableObject
     [XmlElement(ElementName = "nrInsc")]
     public string NrInsc
     {
-        get => nrInsc;
+        get => nrInscField;
         set
         {
-            nrInsc = value;
+            nrInscField = value;
             RaisePropertyChanged(nameof(NrInsc));
         }
     }
@@ -624,10 +625,10 @@ public class IdeEstabelecimentoLotacao : ESocialBindableObject
     [XmlElement(ElementName = "codLotacao")]
     public string CodLotacao
     {
-        get => codLotacao;
+        get => codLotacaoField;
         set
         {
-            codLotacao = value;
+            codLotacaoField = value;
             RaisePropertyChanged(nameof(CodLotacao));
         }
     }
@@ -635,10 +636,10 @@ public class IdeEstabelecimentoLotacao : ESocialBindableObject
     [XmlElement(ElementName = "qtdDiasAv")]
     public int QtdDiasAv
     {
-        get => qtdDiasAv;
+        get => qtdDiasAvField;
         set
         {
-            qtdDiasAv = value;
+            qtdDiasAvField = value;
             RaisePropertyChanged(nameof(QtdDiasAv));
         }
     }
@@ -650,10 +651,10 @@ public class IdeEstabelecimentoLotacao : ESocialBindableObject
     [XmlElement(ElementName = "remunPerApur")]
     public List<RemuneracaoPeriodoApuracao> RemunPerApur
     {
-        get => remunPerApur;
+        get => remunPerApurField;
         set
         {
-            remunPerApur = value;
+            remunPerApurField = value;
             RaisePropertyChanged(nameof(RemunPerApur));
         }
     }
@@ -719,8 +720,8 @@ public class ItensRemuneracao : ESocialBindableObject
 {
     private string codRubr;
     private string ideTabRubr;
-    private decimal qtdRubr;
-    private decimal fatorRubr;
+    private decimal? qtdRubr;
+    private decimal? fatorRubr;
     private decimal vrRubr;
     private int indApurIR;
     private DescontoRemuneracao descFolhaField;
@@ -748,7 +749,7 @@ public class ItensRemuneracao : ESocialBindableObject
     }
 
     [XmlElement(ElementName = "qtdRubr")]
-    public decimal QtdRubr
+    public decimal? QtdRubr
     {
         get => qtdRubr;
         set
@@ -758,8 +759,11 @@ public class ItensRemuneracao : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializeQtdRubr() =>
+        qtdRubr.HasValue;
+
     [XmlElement(ElementName = "fatorRubr")]
-    public decimal FatorRubr
+    public decimal? FatorRubr
     {
         get => fatorRubr;
         set
@@ -768,6 +772,9 @@ public class ItensRemuneracao : ESocialBindableObject
             RaisePropertyChanged(nameof(FatorRubr));
         }
     }
+
+    public bool ShouldSerializeFatorRubr() =>
+        fatorRubr.HasValue;
 
     [XmlElement(ElementName = "vrRubr")]
     public decimal VrRubr
@@ -780,11 +787,6 @@ public class ItensRemuneracao : ESocialBindableObject
         }
     }
 
-    /// <summary>
-    /// <b>Valores válidos:</b><br/><br/>
-    /// 0 - Normal(apuração sob a folha de pagamento declarada no eSocial)<br/>
-    /// 1 - Situação especial de apuração de IR
-    /// </summary>
     [XmlElement(ElementName = "indApurIR")]
     public int IndApurIR
     {
@@ -796,20 +798,18 @@ public class ItensRemuneracao : ESocialBindableObject
         }
     }
 
-    public bool ShouldSerializeIndApurIR() => 
+    public bool ShouldSerializeIndApurIR() =>
         indApurIR == 0 || indApurIR == 1;
-
 
     public DescontoRemuneracao descFolha
     {
         get => descFolhaField;
-        set 
+        set
         {
             descFolhaField = value;
             RaisePropertyChanged(nameof(descFolha));
         }
     }
-
 }
 
 public class DescontoRemuneracao : ESocialBindableObject
