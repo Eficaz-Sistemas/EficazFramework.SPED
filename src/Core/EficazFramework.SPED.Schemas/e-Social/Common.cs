@@ -115,6 +115,72 @@ public partial class Empregador : ESocialBindableObject
     }
 }
 
+
+public class Trabalhador : ESocialBindableObject
+{
+    private string cpfTrab;
+    private InfoMV infoMV;
+    private InfoComplem infoComplem;
+    private List<TProcJudTrab> procJudTrab;
+    private List<TInfoInterm> infoInterm;
+
+    [XmlElement(ElementName = "cpfTrab")]
+    public string CpfTrab
+    {
+        get => cpfTrab;
+        set
+        {
+            cpfTrab = value;
+            RaisePropertyChanged(nameof(CpfTrab));
+        }
+    }
+
+    [XmlElement(ElementName = "infoMV")]
+    public InfoMV InfoMV
+    {
+        get => infoMV;
+        set
+        {
+            infoMV = value;
+            RaisePropertyChanged(nameof(InfoMV));
+        }
+    }
+
+    [XmlElement(ElementName = "infoComplem")]
+    public InfoComplem InfoComplem
+    {
+        get => infoComplem;
+        set
+        {
+            infoComplem = value;
+            RaisePropertyChanged(nameof(InfoComplem));
+        }
+    }
+
+    [XmlElement(ElementName = "procJudTrab")]
+    public List<TProcJudTrab> ProcJudTrab
+    {
+        get => procJudTrab;
+        set
+        {
+            procJudTrab = value;
+            RaisePropertyChanged(nameof(ProcJudTrab));
+        }
+    }
+
+    [XmlElement(ElementName = "infoInterm")]
+    public List<TInfoInterm> InfoInterm
+    {
+        get => infoInterm;
+        set
+        {
+            infoInterm = value;
+            RaisePropertyChanged(nameof(InfoInterm));
+        }
+    }
+}
+
+
 /// <summary>
 /// Identificação do Evento, com Ambiente, Processo Emissor e Versão
 /// </summary>
@@ -158,6 +224,7 @@ public partial class IdentificacaoCadastro : ESocialBindableObject
     }
 }
 
+
 /// <summary>
 /// Identificação do Evento Períodico
 /// </summary>
@@ -192,6 +259,16 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
         }
     }
 
+    public IndicadorApuracao indApuracao
+    {
+        get => indApuracaoField;
+        set
+        {
+            indApuracaoField = value;
+            RaisePropertyChanged(nameof(indApuracao));
+        }
+    }
+
     public string perApur
     {
         get => perApurField;
@@ -204,9 +281,9 @@ public partial class IdeEventoPeriodico : ESocialBindableObject
 
     public IndicadorGuia indGuia
     {
-        get =>indGuiaField;
-        set 
-        { 
+        get => indGuiaField;
+        set
+        {
             indGuiaField = value;
             RaisePropertyChanged(nameof(indGuia));
         }
@@ -505,3 +582,5 @@ public partial class ProcessoAdmOuJud : ESocialBindableObject
         }
     }
 }
+
+
