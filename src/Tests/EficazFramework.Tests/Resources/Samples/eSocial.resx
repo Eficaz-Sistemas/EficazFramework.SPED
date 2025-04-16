@@ -203,4 +203,83 @@
 </value>
     <comment>S-1000, versão S-01.01.01</comment>
   </data>
+  <data name="S1200_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_03_00"&gt;
+	&lt;evtRemun Id="ID1345571090000002025030512433500003"&gt;
+		&lt;ideEvento&gt;
+			&lt;indRetif&gt;1&lt;/indRetif&gt;
+			&lt;indApuracao&gt;1&lt;/indApuracao&gt;
+			&lt;perApur&gt;2025-02&lt;/perApur&gt;
+			&lt;tpAmb&gt;1&lt;/tpAmb&gt;
+			&lt;procEmi&gt;1&lt;/procEmi&gt;
+			&lt;verProc&gt;v_S_01_03_00&lt;/verProc&gt;
+		&lt;/ideEvento&gt;
+		&lt;ideEmpregador&gt;
+			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
+		&lt;/ideEmpregador&gt;
+		&lt;ideTrabalhador&gt;
+			&lt;cpfTrab&gt;15273627877&lt;/cpfTrab&gt;
+		&lt;/ideTrabalhador&gt;
+		&lt;dmDev&gt;
+			&lt;ideDmDev&gt;022025MENSAL14022025155159&lt;/ideDmDev&gt;
+			&lt;codCateg&gt;722&lt;/codCateg&gt;
+			&lt;infoPerApur&gt;
+				&lt;ideEstabLot&gt;
+					&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+					&lt;nrInsc&gt;34557109000146&lt;/nrInsc&gt;
+					&lt;codLotacao&gt;1&lt;/codLotacao&gt;
+					&lt;remunPerApur&gt;
+						&lt;matricula&gt;1&lt;/matricula&gt;
+						&lt;itensRemun&gt;
+							&lt;codRubr&gt;100&lt;/codRubr&gt;
+							&lt;ideTabRubr&gt;0001&lt;/ideTabRubr&gt;
+							&lt;qtdRubr&gt;220.00&lt;/qtdRubr&gt;
+							&lt;vrRubr&gt;1518.00&lt;/vrRubr&gt;
+							&lt;indApurIR&gt;0&lt;/indApurIR&gt;
+						&lt;/itensRemun&gt;
+						&lt;itensRemun&gt;
+							&lt;codRubr&gt;843&lt;/codRubr&gt;
+							&lt;ideTabRubr&gt;0001&lt;/ideTabRubr&gt;
+							&lt;vrRubr&gt;166.98&lt;/vrRubr&gt;
+							&lt;indApurIR&gt;0&lt;/indApurIR&gt;
+						&lt;/itensRemun&gt;
+					&lt;/remunPerApur&gt;
+				&lt;/ideEstabLot&gt;
+			&lt;/infoPerApur&gt;
+		&lt;/dmDev&gt;
+	&lt;/evtRemun&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-1200, versão S-01.03.01</comment>
+  </data>
+  <data name="S1210_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00"&gt;
+	&lt;evtPgtos Id="ID1345571090000002025030512521100001"&gt;
+		&lt;ideEvento&gt;
+			&lt;indRetif&gt;1&lt;/indRetif&gt;
+			&lt;perApur&gt;2025-02&lt;/perApur&gt;
+			&lt;tpAmb&gt;1&lt;/tpAmb&gt;
+			&lt;procEmi&gt;1&lt;/procEmi&gt;
+			&lt;verProc&gt;v_S_01_03_00&lt;/verProc&gt;
+		&lt;/ideEvento&gt;
+		&lt;ideEmpregador&gt;
+			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
+		&lt;/ideEmpregador&gt;
+		&lt;ideBenef&gt;
+			&lt;cpfBenef&gt;15273627877&lt;/cpfBenef&gt;
+			&lt;infoPgto&gt;
+				&lt;dtPgto&gt;2025-02-28&lt;/dtPgto&gt;
+				&lt;tpPgto&gt;1&lt;/tpPgto&gt;
+				&lt;perRef&gt;2025-02&lt;/perRef&gt;
+				&lt;ideDmDev&gt;022025MENSAL14022025155159&lt;/ideDmDev&gt;
+				&lt;vrLiq&gt;1351.02&lt;/vrLiq&gt;
+			&lt;/infoPgto&gt;
+		&lt;/ideBenef&gt;
+	&lt;/evtPgtos&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-1210, versão S-01.03.01</comment>
+  </data>
 </root>
