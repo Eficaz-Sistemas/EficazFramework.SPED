@@ -930,6 +930,7 @@ public enum TipoDescontoFolha
     [System.ComponentModel.Description("1 - e-Consignado")]
     eConsignado = 1
 }
+
 public enum GrauExposicao
 {
     [System.Xml.Serialization.XmlEnum("1")]
@@ -945,6 +946,7 @@ public enum GrauExposicao
     [System.ComponentModel.Description("Ensejador de aposentadoria especial - FAE25_06% (25 anos de contribuição e alíquota de 6%)")]
     FAE25_06 = 4
 }
+
 public enum TipoAcordoColetivo
 {
     [System.Xml.Serialization.XmlEnum("A")]
@@ -986,4 +988,111 @@ public enum TipoAcordoColetivo
     [System.Xml.Serialization.XmlEnum("J")]
     [System.ComponentModel.Description("Parcelas complementares conhecidas após o fechamento da folha")]
     ParcelasComplementaresConhecidasAposFechamentoFolha = 9
+}
+
+public enum TipoPagamento
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 - Pagamento de remuneração, conforme apurado em S-1200")]
+    RemuneracaoS1200 = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("2 - Pagamento de verbas rescisórias conforme apurado em S-2299")]
+    VerbasRescisoriasS2299 = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("3 - Pagamento de verbas rescisórias conforme apurado em S-2399")]
+    VerbasRescisoriasS2399 = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("4 - Pagamento de remuneração conforme apurado em S-1202")]
+    RemuneracaoS1202 = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("5 - Pagamento de benefícios previdenciários, conforme apurado em S-1207")]
+    BeneficiosPrevidenciariosS1207 = 5
+}
+
+public enum IndicativoNIF
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 - Beneficiário com NIF")]
+    BeneficiarioComNIF = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("2 - Beneficiário dispensado do NIF")]
+    BeneficiarioDispensadoNIF = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("3 - País não exige NIF")]
+    PaisNaoExigeNIF = 3
+}
+
+public enum TipoRendimento
+{
+    [System.Xml.Serialization.XmlEnum("11")]
+    [System.ComponentModel.Description("11 - Remuneração mensal")]
+    RemuneracaoMensal = 11,
+
+    [System.Xml.Serialization.XmlEnum("12")]
+    [System.ComponentModel.Description("12 - 13º salário")]
+    DecimoTerceiroSalario = 12,
+
+    [System.Xml.Serialization.XmlEnum("13")]
+    [System.ComponentModel.Description("13 - Férias")]
+    Ferias = 13,
+
+    [System.Xml.Serialization.XmlEnum("14")]
+    [System.ComponentModel.Description("14 - PLR")]
+    PLR = 14,
+
+    [System.Xml.Serialization.XmlEnum("18")]
+    [System.ComponentModel.Description("18 - RRA")]
+    RRA = 18,
+
+    [System.Xml.Serialization.XmlEnum("79")]
+    [System.ComponentModel.Description("79 - Rendimento isento ou não tributável")]
+    RendimentoIsentoNaoTributavel = 79
+}
+
+public enum TipoPrevidenciaComplementar
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Privada: codIncIRRF em S-1010 = [46, 47, 48]")]
+    Privada = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("FAPI: codIncIRRF em S-1010 = [61, 62, 66]")]
+    FAPI = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Funpresp: codIncIRRF em S-1010 = [63, 64, 65]")]
+    Funpresp = 3
+}
+
+public enum TipoDeducao
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("1 - Previdência oficial")]
+    PrevidenciaOficial = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("2 - Previdência privada")]
+    PrevidenciaPrivada = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("3 - Fundo de Aposentadoria Programada Individual - FAPI")]
+    FAPI = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("4 - Fundação de Previdência Complementar do Servidor Público - Funpresp")]
+    Funpresp = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("5 - Pensão alimentícia")]
+    PensaoAlimenticia = 5,
+
+    [System.Xml.Serialization.XmlEnum("7")]
+    [System.ComponentModel.Description("7 - Dependentes")]
+    Dependentes = 7
 }

@@ -623,3 +623,103 @@ public class Advogado : ESocialBindableObject
         }
     }
 }
+
+public class EnderecoExterior : ESocialBindableObject
+{
+    private string endDscLogradField;
+    private string endNrLogradField;
+    private string endComplemField;
+    private string endBairroField;
+    private string endCidadeField;
+    private string endEstadoField;
+    private string endCodPostalField;
+    private string telefField;
+
+    [XmlElement(ElementName = "endDscLograd")]
+    public string EndDscLograd
+    {
+        get => endDscLogradField;
+        set
+        {
+            endDscLogradField = value;
+            RaisePropertyChanged(nameof(EndDscLograd));
+        }
+    }
+
+    [XmlElement(ElementName = "endNrLograd")]
+    public string EndNrLograd
+    {
+        get => endNrLogradField;
+        set
+        {
+            endNrLogradField = value;
+            RaisePropertyChanged(nameof(EndNrLograd));
+        }
+    }
+
+    [XmlElement(ElementName = "endComplem")]
+    public string EndComplem
+    {
+        get => endComplemField;
+        set
+        {
+            endComplemField = value;
+            RaisePropertyChanged(nameof(EndComplem));
+        }
+    }
+
+    [XmlElement(ElementName = "endBairro")]
+    public string EndBairro
+    {
+        get => endBairroField;
+        set
+        {
+            endBairroField = value;
+            RaisePropertyChanged(nameof(EndBairro));
+        }
+    }
+
+    [XmlElement(ElementName = "endCidade")]
+    public string EndCidade
+    {
+        get => endCidadeField;
+        set
+        {
+            endCidadeField = value;
+            RaisePropertyChanged(nameof(EndCidade));
+        }
+    }
+
+    [XmlElement(ElementName = "endEstado")]
+    public string EndEstado
+    {
+        get => endEstadoField;
+        set
+        {
+            endEstadoField = value;
+            RaisePropertyChanged(nameof(EndEstado));
+        }
+    }
+
+    [XmlElement(ElementName = "endCodPostal")]
+    public string EndCodPostal
+    {
+        get => endCodPostalField;
+        set
+        {
+            endCodPostalField = value;
+            RaisePropertyChanged(nameof(EndCodPostal));
+        }
+    }
+
+    [XmlElement(ElementName = "telef")]
+    public string Telef
+    {
+        get => telefField;
+        set
+        {
+            telefField = value;
+            RaisePropertyChanged(nameof(Telef));
+        }
+    }
+}
