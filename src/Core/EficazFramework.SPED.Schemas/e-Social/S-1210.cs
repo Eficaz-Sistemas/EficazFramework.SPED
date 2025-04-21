@@ -301,6 +301,8 @@ public class InfoIRetencao : ESocialBindableObject
     private PeriodoAnteriorS1210 perAntField;
     private List<InfoDependente> infoDepField;
     private List<InfoIRCR> infoIRCRField;
+    private List<PlanoSaude> planSaudeField;
+    private List<InfoReembolsoMedico> infoReembMedField;
 
     [XmlElement(ElementName = "dtLaudo")]
     public DateTime? DtLaudo
@@ -352,6 +354,28 @@ public class InfoIRetencao : ESocialBindableObject
         {
             infoIRCRField = value;
             RaisePropertyChanged(nameof(InfoIRCR));
+        }
+    }
+
+    [XmlElement(ElementName = "planSaude")]
+    public List<PlanoSaude> PlanSaude
+    {
+        get => planSaudeField;
+        set
+        {
+            planSaudeField = value;
+            RaisePropertyChanged(nameof(PlanSaude));
+        }
+    }
+
+    [XmlElement(ElementName = "infoReembMed")]
+    public List<InfoReembolsoMedico> InfoReembMed
+    {
+        get => planSaudeField;
+        set
+        {
+            planSaudeField = value;
+            RaisePropertyChanged(nameof(InfoReembMed));
         }
     }
 
@@ -950,6 +974,230 @@ public class BeneficiarioPensao : ESocialBindableObject
         {
             vlrDepenSuspField = value;
             RaisePropertyChanged(nameof(VlrDepenSusp));
+        }
+    }
+}
+
+public class PlanoSaude : ESocialBindableObject
+{
+    private string cnpjOperField;
+    private string regANSField;
+    private decimal vlrSaudeTitField;
+    private List<InfoDepSau> infoDepSauField;
+
+    [XmlElement(ElementName = "cnpjOper")]
+    public string CnpjOper
+    {
+        get => cnpjOperField;
+        set
+        {
+            cnpjOperField = value;
+            RaisePropertyChanged(nameof(CnpjOper));
+        }
+    }
+
+    [XmlElement(ElementName = "regANS")]
+    public string RegANS
+    {
+        get => regANSField;
+        set
+        {
+            regANSField = value;
+            RaisePropertyChanged(nameof(RegANS));
+        }
+    }
+
+    [XmlElement(ElementName = "vlrSaudeTit")]
+    public decimal VlrSaudeTit
+    {
+        get => vlrSaudeTitField;
+        set
+        {
+            vlrSaudeTitField = value;
+            RaisePropertyChanged(nameof(VlrSaudeTit));
+        }
+    }
+
+    [XmlElement(ElementName = "infoDepSau")]
+    public List<InfoDepSau> InfoDepSau
+    {
+        get => infoDepSauField;
+        set
+        {
+            infoDepSauField = value;
+            RaisePropertyChanged(nameof(InfoDepSau));
+        }
+    }
+}
+
+public class InfoDepSau : ESocialBindableObject
+{
+    private string cpfDepField;
+    private decimal vlrSaudeDepField;
+
+    [XmlElement(ElementName = "cpfDep")]
+    public string CpfDep
+    {
+        get => cpfDepField;
+        set
+        {
+            cpfDepField = value;
+            RaisePropertyChanged(nameof(CpfDep));
+        }
+    }
+
+    [XmlElement(ElementName = "vlrSaudeDep")]
+    public decimal VlrSaudeDep
+    {
+        get => vlrSaudeDepField;
+        set
+        {
+            vlrSaudeDepField = value;
+            RaisePropertyChanged(nameof(VlrSaudeDep));
+        }
+    }
+}
+
+public class InfoReembolsoMedico : ESocialBindableObject
+{
+    private string indOrgReembField;
+    private string cnpjOperField;
+    private string regANSField;
+    private List<DetalhamentoReembolsoMedico> detReembTitField;
+    private List<InfoReembDep> infoReembDepField;
+
+    [XmlElement(ElementName = "indOrgReemb")]
+    public string IndOrgReemb
+    {
+        get => indOrgReembField;
+        set
+        {
+            indOrgReembField = value;
+            RaisePropertyChanged(nameof(IndOrgReemb));
+        }
+    }
+
+    [XmlElement(ElementName = "cnpjOper")]
+    public string CnpjOper
+    {
+        get => cnpjOperField;
+        set
+        {
+            cnpjOperField = value;
+            RaisePropertyChanged(nameof(CnpjOper));
+        }
+    }
+
+    [XmlElement(ElementName = "regANS")]
+    public string RegANS
+    {
+        get => regANSField;
+        set
+        {
+            regANSField = value;
+            RaisePropertyChanged(nameof(RegANS));
+        }
+    }
+
+    [XmlElement(ElementName = "detReembTit")]
+    public List<DetalhamentoReembolsoMedico> DetReembTit
+    {
+        get => detReembTitField;
+        set
+        {
+            detReembTitField = value;
+            RaisePropertyChanged(nameof(DetReembTit));
+        }
+    }
+
+    [XmlElement(ElementName = "infoReembDep")]
+    public List<InfoReembDep> InfoReembDep
+    {
+        get => infoReembDepField;
+        set
+        {
+            infoReembDepField = value;
+            RaisePropertyChanged(nameof(InfoReembDep));
+        }
+    }
+}
+
+public class InfoReembDep : ESocialBindableObject
+{
+    private string cpfBenefField;
+    private List<DetalhamentoReembolsoMedico> detReembDepField;
+
+    [XmlElement(ElementName = "cpfBenef")]
+    public string CpfBenef
+    {
+        get => cpfBenefField;
+        set
+        {
+            cpfBenefField = value;
+            RaisePropertyChanged(nameof(CpfBenef));
+        }
+    }
+
+    [XmlElement(ElementName = "detReembDep")]
+    public List<DetalhamentoReembolsoMedico> DetReembDep
+    {
+        get => detReembDepField;
+        set
+        {
+            detReembDepField = value;
+            RaisePropertyChanged(nameof(DetReembDep));
+        }
+    }
+}
+
+public class DetalhamentoReembolsoMedico : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+    private decimal vlrReembField;
+    private decimal vlrReembAntField;
+
+    [XmlElement(ElementName = "tpInsc")]
+    public PersonalidadeJuridica TpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged(nameof(TpInsc));
+        }
+    }
+
+    [XmlElement(ElementName = "nrInsc")]
+    public string NrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged(nameof(NrInsc));
+        }
+    }
+
+    [XmlElement(ElementName = "vlrReemb")]
+    public decimal VlrReemb
+    {
+        get => vlrReembField;
+        set
+        {
+            vlrReembField = value;
+            RaisePropertyChanged(nameof(VlrReemb));
+        }
+    }
+
+    [XmlElement(ElementName = "vlrReembAnt")]
+    public decimal VlrReembAnt
+    {
+        get => vlrReembAntField;
+        set
+        {
+            vlrReembAntField = value;
+            RaisePropertyChanged(nameof(VlrReembAnt));
         }
     }
 }
