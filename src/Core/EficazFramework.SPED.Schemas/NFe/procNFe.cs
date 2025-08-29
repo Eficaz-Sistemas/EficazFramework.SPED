@@ -3316,7 +3316,7 @@ public partial class Totais : INotifyPropertyChanged
     /// <summary>
     /// Valores totais da NF com IBS / CBS
     /// </summary>
-    [XmlElement("ISTot")]
+    [XmlElement("IBSCBSTot")]
     public DFeBase.TIBSCBSMonoTot IBSCBSTot
     {
         get => ibsCbsMonotField;
@@ -3346,6 +3346,9 @@ public partial class Totais : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializevNFTot() => vNFTot.HasValue;
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 
