@@ -5471,6 +5471,8 @@ public partial class Impostos : INotifyPropertyChanged
     private InftributosFederais federaisField;
     private double? vTotTribField;
     private string infAdFiscoField;
+    private DFeBase.TTribCTe ibsCbsField = null!;
+    private decimal? vTotDFeField = 0.0M;
 
     public Impostos() : base()
     {
@@ -5531,8 +5533,44 @@ public partial class Impostos : INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    /// <summary>
+    /// Grupo de informações do IBS e CBS
+    /// </summary>
+    [XmlElement("IBSCBS")]
+    public DFeBase.TIBSCBSMonoTot IBSCBS
+    {
+        get => ibsCbsField;
+        set
+        {
+            if (ibsCbsField is null || ibsCbsField.Equals(value) != true)
+            {
+                ibsCbsField = value;
+                OnPropertyChanged(nameof(IBSCBS));
+            }
+        }
+    }
 
+    /// <summary>
+    /// Valor total do documento fiscal (vTPrest + total do IBS + total da CBS) 
+    /// </summary>
+    [XmlElement("vTotDFe")]
+    public decimal? vTotDFe
+    {
+        get => vTotDFeField;
+        set
+        {
+            if (vTotDFeField is null || vTotDFeField.Equals(value) != true)
+            {
+                vTotDFeField = value;
+                OnPropertyChanged(nameof(vTotDFe));
+            }
+        }
+    }
+
+    public bool ShouldSerializevTotDFe() => vTotDFeField.HasValue;
+
+
+    public event PropertyChangedEventHandler PropertyChanged;
     public virtual void OnPropertyChanged(string propertyName) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
@@ -7632,4 +7670,77 @@ public enum PersonalidadeJuridica79
 
     /// <remarks/>
     CPF
+}
+
+public class CteTotal : INotifyPropertyChanged
+{
+    private decimal? vTPrestField = 0.0M;
+    private decimal? vTRecField = 0.0M;
+    private decimal? vTotDFeField = 0.0M;
+
+
+    /// <summary>
+    /// Valor Total da Prestação do Serviço <br />
+    /// Pode conter zeros quando o CT-e for de complemento de ICMS
+    /// </summary>
+    [XmlElement("vTPrest")]
+    public decimal? vTPrest
+    {
+        get => vTPrestField;
+        set
+        {
+            if (vTPrestField is null || vTPrestField.Equals(value) != true)
+            {
+                vTPrestField = value;
+                OnPropertyChanged(nameof(vTPrest));
+            }
+        }
+    }
+
+    public bool ShouldSerializevTPrest() => vTPrestField.HasValue;
+
+
+    /// <summary>
+    /// Valor total a Receber
+    /// </summary>
+    [XmlElement("vTRec")]
+    public decimal? vTRec
+    {
+        get => vTRecField;
+        set
+        {
+            if (vTRecField is null || vTRecField.Equals(value) != true)
+            {
+                vTRecField = value;
+                OnPropertyChanged(nameof(vTRec));
+            }
+        }
+    }
+
+    public bool ShouldSerializevTRec() => vTRecField.HasValue;
+
+
+    /// <summary>
+    /// Valor total do documento fiscal (vTPrest + total do IBS + total da CBS) 
+    /// </summary>
+    [XmlElement("vTotDFe")]
+    public decimal? vTotDFe
+    {
+        get => vTotDFeField;
+        set
+        {
+            if (vTotDFeField is null || vTotDFeField.Equals(value) != true)
+            {
+                vTotDFeField = value;
+                OnPropertyChanged(nameof(vTotDFe));
+            }
+        }
+    }
+
+    public bool ShouldSerializevTotDFe() => vTotDFeField.HasValue;
+
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    public virtual void OnPropertyChanged(string propertyName) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
