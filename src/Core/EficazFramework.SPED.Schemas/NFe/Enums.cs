@@ -2494,3 +2494,67 @@ public enum VersaoServicoDistribuicaoDF
     [System.Xml.Serialization.XmlEnum("1.01")]
     Versao1_01
 }
+
+
+/// <summary>
+/// Tipo de Nota de Débito
+/// </summary>
+public enum TipoNfDebito
+{
+    [EnumMember(Value = "01")]
+    [System.Xml.Serialization.XmlEnum("01")]
+    [System.ComponentModel.Description("01 - Transferência de créditos para Cooperativas")]
+    TransfCredCooperativas = 1,
+
+    [EnumMember(Value = "02")]
+    [System.Xml.Serialization.XmlEnum("02")]
+    [System.ComponentModel.Description("02 - Anulação de Crédito por Saídas Imunes/Isentas")]
+    AnulacaoCredSaidasImuneIsentas = 2,
+
+    [EnumMember(Value = "03")]
+    [System.Xml.Serialization.XmlEnum("03")]
+    [System.ComponentModel.Description("03 - Débitos de notas fiscais não processadas na apuração")]
+    DebitoNfNaoProcessadasApuracao = 3,
+
+    [EnumMember(Value = "04")]
+    [System.Xml.Serialization.XmlEnum("04")]
+    [System.ComponentModel.Description("04 - Multa e juros")]
+    MultasJuros = 4,
+
+    [EnumMember(Value = "05")]
+    [System.Xml.Serialization.XmlEnum("05")]
+    [System.ComponentModel.Description("05 - Transferência de crédito de sucessão")]
+    TransfCredSucessao = 5,
+
+    [EnumMember(Value = "06")]
+    [System.Xml.Serialization.XmlEnum("06")]
+    [System.ComponentModel.Description("Pagamento antecipado")]
+    PagamentoAntecipado = 6,
+
+    [EnumMember(Value = "07")]
+    [System.Xml.Serialization.XmlEnum("07")]
+    [System.ComponentModel.Description("Perda em estoqueS")]
+    PerdaEstoque = 7
+
+}
+
+/// <summary>
+/// Tipo de Nota de Crédito
+/// </summary>
+public enum TipoNfCredito
+{
+    [EnumMember(Value = "01")]
+    [System.Xml.Serialization.XmlEnum("01")]
+    [System.ComponentModel.Description("01 - Multa e juros")]
+    MultasJuros = 1,
+
+    [EnumMember(Value = "02")]
+    [System.Xml.Serialization.XmlEnum("02")]
+    [System.ComponentModel.Description("02 - Apropriação de crédito presumido de IBS sobre o saldo devedor na ZFM (art. 450, § 1º, LC 214/25)")]
+    CredPresumidoIbsZFM = 2,
+
+    [EnumMember(Value = "03")]
+    [System.Xml.Serialization.XmlEnum("03")]
+    [System.ComponentModel.Description("03 - Retorno")]
+    Retorno = 3
+}

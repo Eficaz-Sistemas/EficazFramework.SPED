@@ -9,7 +9,7 @@ namespace EficazFramework.SPED.Schemas.DFeBase;
 /// <summary>
 /// Classe base para notificação de mudanças nas propriedades.
 /// </summary>
-public abstract class DFeBase : INotifyPropertyChanged
+public abstract class IbsCbsBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string propertyName = null!)
@@ -84,7 +84,7 @@ public enum TTpCredPresIBSZFM
 
 // Tipos Complexos
 
-public class TTribNFCom : DFeBase
+public class TTribNFCom : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -95,7 +95,7 @@ public class TTribNFCom : DFeBase
     public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribNF3e : DFeBase
+public class TTribNF3e : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -106,7 +106,7 @@ public class TTribNF3e : DFeBase
     public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribCTe : DFeBase
+public class TTribCTe : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -117,7 +117,7 @@ public class TTribCTe : DFeBase
     public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribBPe : DFeBase
+public class TTribBPe : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -128,7 +128,7 @@ public class TTribBPe : DFeBase
     public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribNFCe : DFeBase
+public class TTribNFCe : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -141,7 +141,7 @@ public class TTribNFCe : DFeBase
     public TMonofasia? gIBSCBSMono { get => _gIBSCBSMono; set { _gIBSCBSMono = value; OnPropertyChanged(); } }
 }
 
-public class TTribNFe : DFeBase
+public class TTribNFe : IbsCbsBase
 {
     private TCST _cst;
     private string? _cClassTrib;
@@ -158,7 +158,7 @@ public class TTribNFe : DFeBase
     public TCredPresIBSZFM? gCredPresIBSZFM { get => _gCredPresIBSZFM; set { _gCredPresIBSZFM = value; OnPropertyChanged(); } }
 }
 
-public class TIS : DFeBase
+public class TIS : IbsCbsBase
 {
     private TCST _cstis;
     private string? _cClassTribIS;
@@ -179,13 +179,13 @@ public class TIS : DFeBase
     public decimal vIS { get => _vIS; set { _vIS = value; OnPropertyChanged(); } }
 }
 
-public class TISTot : DFeBase
+public class TISTot : IbsCbsBase
 {
     private decimal _vIS;
     public decimal vIS { get => _vIS; set { _vIS = value; OnPropertyChanged(); } }
 }
 
-public class TIBSCBSTot : DFeBase
+public class TIBSCBSTot : IbsCbsBase
 {
     private decimal _vBCIBSCBS;
     private TIBS? _gIBS;
@@ -196,7 +196,7 @@ public class TIBSCBSTot : DFeBase
     public TCBS? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
 }
 
-public class TIBSCBSMonoTot : DFeBase
+public class TIBSCBSMonoTot : IbsCbsBase
 {
     private decimal _vBCIBSCBS;
     private TIBS? _gIBS;
@@ -209,7 +209,7 @@ public class TIBSCBSMonoTot : DFeBase
     public TMono? gMono { get => _gMono; set { _gMono = value; OnPropertyChanged(); } }
 }
 
-public class TMono : DFeBase
+public class TMono : IbsCbsBase
 {
     private decimal _vIBSMono;
     private decimal _vCBSMono;
@@ -226,7 +226,7 @@ public class TMono : DFeBase
     public decimal vCBSMonoRet { get => _vCBSMonoRet; set { _vCBSMonoRet = value; OnPropertyChanged(); } }
 }
 
-public class TIBS : DFeBase
+public class TIBS : IbsCbsBase
 {
     private TIBSUF? _gIBSUF;
     private TIBSMun? _gIBSMun;
@@ -241,7 +241,7 @@ public class TIBS : DFeBase
     public decimal vCredPresCondSus { get => _vCredPresCondSus; set { _vCredPresCondSus = value; OnPropertyChanged(); } }
 }
 
-public class TIBSUF : DFeBase
+public class TIBSUF : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -252,7 +252,7 @@ public class TIBSUF : DFeBase
     public decimal vIBSUF { get => _vIBSUF; set { _vIBSUF = value; OnPropertyChanged(); } }
 }
 
-public class TIBSMun : DFeBase
+public class TIBSMun : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -263,7 +263,7 @@ public class TIBSMun : DFeBase
     public decimal vIBSMun { get => _vIBSMun; set { _vIBSMun = value; OnPropertyChanged(); } }
 }
 
-public class TCBS : DFeBase
+public class TCBS : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -278,7 +278,7 @@ public class TCBS : DFeBase
     public decimal vCredPresCondSus { get => _vCredPresCondSus; set { _vCredPresCondSus = value; OnPropertyChanged(); } }
 }
 
-public class TMonofasia : DFeBase
+public class TMonofasia : IbsCbsBase
 {
     private decimal? _qBCMono;
     private decimal? _adRemIBS;
@@ -325,7 +325,7 @@ public class TMonofasia : DFeBase
     public decimal vTotCBSMonoItem { get => _vTotCBSMonoItem; set { _vTotCBSMonoItem = value; OnPropertyChanged(); } }
 }
 
-public class TCIBS : DFeBase
+public class TCIBS : IbsCbsBase
 {
     private decimal _vBC;
     private TCIBSUF? _gIBSUF;
@@ -346,7 +346,7 @@ public class TCIBS : DFeBase
     public TTribCompraGov? gTribCompraGov { get => _gTribCompraGov; set { _gTribCompraGov = value; OnPropertyChanged(); } }
 }
 
-public class TCIBSUF : DFeBase
+public class TCIBSUF : IbsCbsBase
 {
     private decimal _pIBSUF;
     private TDif? _gDif;
@@ -361,7 +361,7 @@ public class TCIBSUF : DFeBase
     public decimal vIBSUF { get => _vIBSUF; set { _vIBSUF = value; OnPropertyChanged(); } }
 }
 
-public class TCIBSMun : DFeBase
+public class TCIBSMun : IbsCbsBase
 {
     private decimal _pIBSMun;
     private TDif? _gDif;
@@ -376,7 +376,7 @@ public class TCIBSMun : DFeBase
     public decimal vIBSMun { get => _vIBSMun; set { _vIBSMun = value; OnPropertyChanged(); } }
 }
 
-public class TTribCBS : DFeBase
+public class TTribCBS : IbsCbsBase
 {
     private decimal _pCBS;
     private TDif? _gDif;
@@ -391,7 +391,7 @@ public class TTribCBS : DFeBase
     public decimal vCBS { get => _vCBS; set { _vCBS = value; OnPropertyChanged(); } }
 }
 
-public class TRed : DFeBase
+public class TRed : IbsCbsBase
 {
     private decimal _pRedAliq;
     private decimal _pAliqEfet;
@@ -400,7 +400,7 @@ public class TRed : DFeBase
     public decimal pAliqEfet { get => _pAliqEfet; set { _pAliqEfet = value; OnPropertyChanged(); } }
 }
 
-public class TCredPres : DFeBase
+public class TCredPres : IbsCbsBase
 {
     private string? _cCredPres;
     private decimal _pCredPres;
@@ -413,7 +413,7 @@ public class TCredPres : DFeBase
     public decimal? vCredPresCondSus { get => _vCredPresCondSus; set { _vCredPresCondSus = value; OnPropertyChanged(); } }
 }
 
-public class TDif : DFeBase
+public class TDif : IbsCbsBase
 {
     private decimal _pDif;
     private decimal _vDif;
@@ -422,13 +422,13 @@ public class TDif : DFeBase
     public decimal vDif { get => _vDif; set { _vDif = value; OnPropertyChanged(); } }
 }
 
-public class TDevTrib : DFeBase
+public class TDevTrib : IbsCbsBase
 {
     private decimal _vDevTrib;
     public decimal vDevTrib { get => _vDevTrib; set { _vDevTrib = value; OnPropertyChanged(); } }
 }
 
-public class TTribRegular : DFeBase
+public class TTribRegular : IbsCbsBase
 {
     private TCST _cstReg;
     private string? _cClassTribReg;
@@ -449,7 +449,7 @@ public class TTribRegular : DFeBase
     public decimal vTribRegCBS { get => _vTribRegCBS; set { _vTribRegCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribCompraGov : DFeBase
+public class TTribCompraGov : IbsCbsBase
 {
     private decimal _pAliqIBSUF;
     private decimal _vTribIBSUF;
@@ -466,7 +466,7 @@ public class TTribCompraGov : DFeBase
     public decimal vTribCBS { get => _vTribCBS; set { _vTribCBS = value; OnPropertyChanged(); } }
 }
 
-public class TCompraGovReduzido : DFeBase
+public class TCompraGovReduzido : IbsCbsBase
 {
     private TEnteGov _tpEnteGov;
     private decimal _pRedutor;
@@ -475,7 +475,7 @@ public class TCompraGovReduzido : DFeBase
     public decimal pRedutor { get => _pRedutor; set { _pRedutor = value; OnPropertyChanged(); } }
 }
 
-public class TCompraGov : DFeBase
+public class TCompraGov : IbsCbsBase
 {
     private TEnteGov _tpEnteGov;
     private decimal _pRedutor;
@@ -486,7 +486,7 @@ public class TCompraGov : DFeBase
     public TOperCompraGov tpOperGov { get => _tpOperGov; set { _tpOperGov = value; OnPropertyChanged(); } }
 }
 
-public class TTransfCred : DFeBase
+public class TTransfCred : IbsCbsBase
 {
     private decimal _vIBS;
     private decimal _vCBS;
@@ -495,7 +495,7 @@ public class TTransfCred : DFeBase
     public decimal vCBS { get => _vCBS; set { _vCBS = value; OnPropertyChanged(); } }
 }
 
-public class TCredPresIBSZFM : DFeBase
+public class TCredPresIBSZFM : IbsCbsBase
 {
     private TTpCredPresIBSZFM _tpCredPresIBSZFM;
     private decimal? _vCredPresIBSZFM;

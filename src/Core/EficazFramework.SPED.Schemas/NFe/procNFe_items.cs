@@ -783,6 +783,8 @@ public partial class Tributacao : INotifyPropertyChanged
     private DetalhamentoPISST pISSTField;
     private DetalhamentoCOFINS cOFINSField;
     private DetalhamentoCOFINSST cOFINSSTField;
+    private DFeBase.TIS isField;
+    private DFeBase.TTribNFe ibsCbsField;
 
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -969,15 +971,41 @@ public partial class Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Grupo de informações do Imposto Seletivo
+    /// </summary>
+    public DFeBase.TIS IS
+    {
+        get => isField;
+        set
+        {
+            if (isField is null || isField.Equals(value) != true)
+            {
+                isField = value;
+                OnPropertyChanged(nameof(IS));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Grupo de informações dos tributos IBS, CBS e Imposto Seletivo
+    /// </summary>
+    public DFeBase.TTribNFe IBSCBS
+    {
+        get => ibsCbsField;
+        set
+        {
+            if (ibsCbsField is null || ibsCbsField.Equals(value) != true)
+            {
+                ibsCbsField = value;
+                OnPropertyChanged(nameof(IBSCBS));
+            }
+        }
+    }
+
+
     public event PropertyChangedEventHandler PropertyChanged;
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
     public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
 public partial class TributacaoDevolucao : System.ComponentModel.INotifyPropertyChanged
