@@ -30,6 +30,10 @@ public class Registro1310 : Primitives.Registro
         writer.Append(string.Format("{0:0.###}", AjustesPerda) + "|");  // 8
         writer.Append(string.Format("{0:0.###}", AjustesGanho) + "|"); // 9
         writer.Append(string.Format("{0:0.###}", EstoqueFechamento) + "|");  // 10
+        if (int.Parse(Versao) >= 20)
+        {
+            writer.Append(string.Format("{0:0.######}", CapacidadeTanque) + "|");  // 11
+        }
         return writer.ToString();
     }
 
@@ -44,6 +48,10 @@ public class Registro1310 : Primitives.Registro
         AjustesPerda = data[8].ToNullableDouble();
         AjustesGanho = data[9].ToNullableDouble();
         EstoqueFechamento = data[10].ToNullableDouble();
+        if (int.Parse(Versao) >= 20)
+        {
+            CapacidadeTanque = data[11].ToNullableDouble();
+        }
     }
 
     public string NumeroTanque { get; set; } = null; // 2
@@ -61,6 +69,7 @@ public class Registro1310 : Primitives.Registro
     public double? AjustesPerda { get; set; } = default; // 8
     public double? AjustesGanho { get; set; } = default; // 9
     public double? EstoqueFechamento { get; set; } = default; // 10
+    public double? CapacidadeTanque { get; set; } = default; // 11e
 
 
     // Registros Filhos
