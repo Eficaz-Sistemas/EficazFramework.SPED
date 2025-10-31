@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Imobilização de Item
 /// </summary>
+[XmlType("ev211130", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211130 : IbsCbsEventoBase
 {
     /// <summary>

@@ -3,6 +3,7 @@
 /// <summary>
 /// Carta de Correção Eletrônica
 /// </summary>
+[XmlType("ev110110", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev110110 : DetalheEvento
 {
     [XmlElement("xCorrecao")]

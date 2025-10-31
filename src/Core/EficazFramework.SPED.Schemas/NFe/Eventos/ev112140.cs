@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Fornecimento não realizado com pagamento antecipado
 /// </summary>
+[XmlType("ev112140", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev112140 : IbsCbsEventoBase
 {
     /// <summary>

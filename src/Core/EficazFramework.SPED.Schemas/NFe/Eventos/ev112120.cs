@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Importação em ALC/ZFM não convertida em isenção
 /// </summary>
+[XmlType("ev112120", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev112120 : IbsCbsEventoBase
 {
     public ConsumoImob? gConsumo { get; set; }
