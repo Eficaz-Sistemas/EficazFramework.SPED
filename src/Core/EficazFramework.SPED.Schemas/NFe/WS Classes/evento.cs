@@ -594,25 +594,33 @@ public partial class InformacaoEvento
         get => tpEventoField;
         set
         {
-            if (tpEventoField.Equals(value) != true)
+            tpEventoField = value;
+            EventoTipoChoice = value switch
             {
-                tpEventoField = value;
-
-                if (EventoDetalhes is not null)
-                {
-                    EventoDetalhes.EventoDescricao = value switch
-                    {
-                        CodigoEvento.Confirmacao => "Confirmacao da Operacao",
-                        CodigoEvento.NaoRealizada => "Operacao nao Realizada",
-                        CodigoEvento.Desconhecimento => "Desconhecimento da Operacao",
-                        CodigoEvento.Ciencia => "Ciencia da Operacao",
-                        _ => "Não Aplicável"
-                    };
-                    Regenerate_ID();
-                }
-            }
+                CodigoEvento.Correcao => TipoEventoChoice.ev110110,
+                CodigoEvento.Cancelamento => TipoEventoChoice.ev110111,
+                CodigoEvento.EfetivoPgLiberacaoCredPresAdq => TipoEventoChoice.ev112110,
+                CodigoEvento.ImportacaoALCZFMNaoConvertidaIsencao => TipoEventoChoice.ev112120,
+                CodigoEvento.PerecimentoPerdaRouboFurtoTransporteFornecedor => TipoEventoChoice.ev112130,
+                CodigoEvento.FornecimentoNaoRealizadoPagamentoAntecipado => TipoEventoChoice.ev112140,
+                CodigoEvento.AtualizacaoDataPrevisaoEntrega => TipoEventoChoice.ev112150,
+                CodigoEvento.SolicitacaoApropriacaoCreditoPresumido => TipoEventoChoice.ev211110,
+                CodigoEvento.DestinacaoItemConsumoPessoal => TipoEventoChoice.ev211120,
+                CodigoEvento.PerecimentoPerdaRouboFurtoTransporteAdquirente => TipoEventoChoice.ev211124,
+                CodigoEvento.AceiteDebitoApuracaoNotaCredito => TipoEventoChoice.ev211128,
+                CodigoEvento.ImobilizacaoItem => TipoEventoChoice.ev211130,
+                CodigoEvento.SolicitacaoApropriacaoCreditoCombustivel => TipoEventoChoice.ev211140,
+                CodigoEvento.SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente => TipoEventoChoice.ev211150,
+                _ => TipoEventoChoice.DetalheEventoNaoMapeado
+            };
         }
     }
+
+    // Propriedade auxiliar usada como discriminador
+    [XmlIgnore]
+    public TipoEventoChoice EventoTipoChoice { get; private set; }
+
+
 
     /// <summary>
     /// Sequencial do evento. INFORMAR 1.
@@ -635,10 +643,25 @@ public partial class InformacaoEvento
     }
 
     [XmlElement("verEvento")]
-    public string EventoVersao { get; set; }
+    public string EventoVersao { get; set; } = "1.00";
 
-    [XmlElement("detEvento")]
-    public DetalheEvento EventoDetalhes { get; set; }
+    [XmlElement("detEvento", typeof(ev110110))]
+    [XmlElement("detEvento", typeof(ev110111))]
+    [XmlElement("detEvento", typeof(ev112110))]
+    [XmlElement("detEvento", typeof(ev112120))]
+    [XmlElement("detEvento", typeof(ev112130))]
+    [XmlElement("detEvento", typeof(ev112140))]
+    [XmlElement("detEvento", typeof(ev112150))]
+    [XmlElement("detEvento", typeof(ev211110))]
+    [XmlElement("detEvento", typeof(ev211120))]
+    [XmlElement("detEvento", typeof(ev211124))]
+    [XmlElement("detEvento", typeof(ev211128))]
+    [XmlElement("detEvento", typeof(ev211130))]
+    [XmlElement("detEvento", typeof(ev211140))]
+    [XmlElement("detEvento", typeof(ev211150))]
+    [XmlElement("detEvento", typeof(DetalheEventoNaoMapeado))]
+    [XmlChoiceIdentifier("EventoTipoChoice")]
+    public DetalheEvento? EventoDetalhes { get; set; }
 
     /// <summary>
     /// Identificador da TAG a ser assinada.
@@ -650,7 +673,7 @@ public partial class InformacaoEvento
     /// <returns></returns>
     /// <remarks></remarks>
     [XmlAttribute(DataType = "ID")]
-    public string Id { get; set; }
+    public string Id { get; set; } = "";
 
 
     public void Regenerate_ID()
@@ -667,26 +690,6 @@ public partial class InformacaoEvento
     }
 }
 
-public partial class DetalheEvento
-{
-    [XmlElement("descEvento")]
-    public string EventoDescricao { get; set; }
-
-    /// <summary>
-    /// Utilizar este campo apenas quando o evento for "Operação não Realizada".
-    /// </summary>
-    /// <value></value>
-    /// <returns></returns>
-    /// <remarks></remarks>
-    [XmlElement("xJust")]
-    public string Justificativa { get; set; }
-
-    [XmlElement("xCorrecao")]
-    public string Correcao { get; set; }
-
-    [XmlAttribute(AttributeName = "versao")]
-    public VersaoServicoEvento Versao { get; set; }
-}
 
 // # Retorno #
 
@@ -1058,4 +1061,23 @@ public partial class InformacaoEventoRetorno
         buider.Append("01");
         Id = buider.ToString();
     }
+}
+
+public enum TipoEventoChoice
+{
+    ev110110,
+    ev110111, 
+    ev112110,
+    ev112120,
+    ev112130,
+    ev112140,
+    ev112150,
+    ev211110,
+    ev211120,
+    ev211124,
+    ev211128,
+    ev211130,
+    ev211140,
+    ev211150,
+    DetalheEventoNaoMapeado
 }

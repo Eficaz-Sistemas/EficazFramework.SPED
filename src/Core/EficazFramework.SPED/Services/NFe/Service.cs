@@ -246,10 +246,23 @@ public sealed class NFeService : SoapServiceBase
                 ChaveNFe = chave,
                 CNPJ_CPF = cnpjCpf,
                 PersonalidadeJuridica = cnpjCpf.IsValidCNPJ() ? Schemas.NFe.PersonalidadeJuridica.CNPJ : Schemas.NFe.PersonalidadeJuridica.CPF,
-                EventoDetalhes = new()
+                EventoDetalhes = tpEvento switch
                 {
-                    Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
-                    Justificativa = justificativa
+                    Schemas.NFe.CodigoEvento.Cancelamento => new Schemas.NFe.ev110111
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Justificativa = justificativa
+                    },
+                    Schemas.NFe.CodigoEvento.Ciencia => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        EventoDescricao = "Ciência da Operação"
+                    },
+                    _ => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        EventoDescricao = "Evento não mapeado pelo Eficaz Framework"
+                    }
                 },
                 EventoCodigo = tpEvento,
                 EventoData = DateTime.Now,
