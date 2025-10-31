@@ -783,8 +783,8 @@ public partial class Tributacao : INotifyPropertyChanged
     private DetalhamentoPISST pISSTField;
     private DetalhamentoCOFINS cOFINSField;
     private DetalhamentoCOFINSST cOFINSSTField;
-    private DFeBase.TIS isField;
-    private DFeBase.TTribNFe ibsCbsField;
+    private DFeBase.ImpostoSeletivo isField;
+    private DFeBase.TributacaoNfe ibsCbsField;
 
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -974,7 +974,7 @@ public partial class Tributacao : INotifyPropertyChanged
     /// <summary>
     /// Grupo de informações do Imposto Seletivo
     /// </summary>
-    public DFeBase.TIS IS
+    public DFeBase.ImpostoSeletivo IS
     {
         get => isField;
         set
@@ -990,7 +990,7 @@ public partial class Tributacao : INotifyPropertyChanged
     /// <summary>
     /// Grupo de informações dos tributos IBS, CBS e Imposto Seletivo
     /// </summary>
-    public DFeBase.TTribNFe IBSCBS
+    public DFeBase.TributacaoNfe IBSCBS
     {
         get => ibsCbsField;
         set

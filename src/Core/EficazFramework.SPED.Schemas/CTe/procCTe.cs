@@ -5471,7 +5471,7 @@ public partial class Impostos : INotifyPropertyChanged
     private InftributosFederais federaisField;
     private double? vTotTribField;
     private string infAdFiscoField;
-    private DFeBase.TTribCTe ibsCbsField = null!;
+    private DFeBase.TributacaoCte ibsCbsField = null!;
     private decimal? vTotDFeField = 0.0M;
 
     public Impostos() : base()
@@ -5537,7 +5537,7 @@ public partial class Impostos : INotifyPropertyChanged
     /// Grupo de informações do IBS e CBS
     /// </summary>
     [XmlElement("IBSCBS")]
-    public DFeBase.TIBSCBSMonoTot IBSCBS
+    public DFeBase.TributacaoCte IBSCBS
     {
         get => ibsCbsField;
         set

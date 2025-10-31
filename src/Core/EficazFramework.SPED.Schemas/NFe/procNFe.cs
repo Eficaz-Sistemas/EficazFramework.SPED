@@ -3250,8 +3250,8 @@ public partial class Totais : INotifyPropertyChanged
     private TotalICMS iCMSTotField = null!;
     private TotalISSQN iSSQNtotField = null!;
     private TotalRetencaoTributos retTribField = null!;
-    private DFeBase.TISTot isTotField = null!;
-    private DFeBase.TIBSCBSMonoTot ibsCbsMonotField = null!;
+    private DFeBase.TotaisImpostoSeletivo isTotField = null!;
+    private DFeBase.TotaisIbsCbsMonofasico ibsCbsMonotField = null!;
     private decimal? vNFTotField = 0.0M;
 
     [XmlElement("ICMSTot")]
@@ -3300,7 +3300,7 @@ public partial class Totais : INotifyPropertyChanged
     /// Valores totais da NF com Imposto Seletivo
     /// </summary>
     [XmlElement("ISTot")]
-    public DFeBase.TISTot IS
+    public DFeBase.TotaisImpostoSeletivo IS
     {
         get => isTotField;
         set
@@ -3317,7 +3317,7 @@ public partial class Totais : INotifyPropertyChanged
     /// Valores totais da NF com IBS / CBS
     /// </summary>
     [XmlElement("IBSCBSTot")]
-    public DFeBase.TIBSCBSMonoTot IBSCBSTot
+    public DFeBase.TotaisIbsCbsMonofasico IBSCBSTot
     {
         get => ibsCbsMonotField;
         set

@@ -23,7 +23,7 @@ public abstract class IbsCbsBase : INotifyPropertyChanged
 /// <summary>
 /// Código Situação Tributária do IBS/CBS
 /// </summary>
-public enum TCST
+public enum Cst
 {
     [XmlEnum("000")]
     CST_000,
@@ -48,7 +48,7 @@ public enum TCST
     // Adicione outros conforme necessário
 }
 
-public enum TOperCompraGov
+public enum TipoOperacaoCompraGov
 {
     [XmlEnum("1")]
     Fornecimento = 1,
@@ -56,7 +56,7 @@ public enum TOperCompraGov
     RecebimentoPagamento = 2
 }
 
-public enum TEnteGov
+public enum EnteGovernamental
 {
     [XmlEnum("1")]
     Uniao = 1,
@@ -68,7 +68,7 @@ public enum TEnteGov
     Municipio = 4
 }
 
-public enum TTpCredPresIBSZFM
+public enum TipoCreditoPresIbsZfm
 {
     [XmlEnum("0")]
     SemCreditoPresumido = 0,
@@ -84,83 +84,83 @@ public enum TTpCredPresIBSZFM
 
 // Tipos Complexos
 
-public class TTribNFCom : IbsCbsBase
+public class TributacaoNfCom : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribNF3e : IbsCbsBase
+public class TributacaoNf3e : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribCTe : IbsCbsBase
+public class TributacaoCte : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribBPe : IbsCbsBase
+public class TributacaoBpe : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribNFCe : IbsCbsBase
+public class TributacaoNfce : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
     private TMonofasia? _gIBSCBSMono;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
     public TMonofasia? gIBSCBSMono { get => _gIBSCBSMono; set { _gIBSCBSMono = value; OnPropertyChanged(); } }
 }
 
-public class TTribNFe : IbsCbsBase
+public class TributacaoNfe : IbsCbsBase
 {
-    private TCST _cst;
+    private Cst _cst;
     private string? _cClassTrib;
-    private TCIBS? _gIBSCBS;
+    private IbsCbs? _gIBSCBS;
     private TMonofasia? _gIBSCBSMono;
-    private TTransfCred? _gTransfCred;
-    private TCredPresIBSZFM? _gCredPresIBSZFM;
+    private TransferenciaCredito? _gTransfCred;
+    private CreditoPresIbsZfm? _gCredPresIBSZFM;
 
-    public TCST CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
+    public Cst CST { get => _cst; set { _cst = value; OnPropertyChanged(); } }
     public string? cClassTrib { get => _cClassTrib; set { _cClassTrib = value; OnPropertyChanged(); } }
-    public TCIBS? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
+    public IbsCbs? gIBSCBS { get => _gIBSCBS; set { _gIBSCBS = value; OnPropertyChanged(); } }
     public TMonofasia? gIBSCBSMono { get => _gIBSCBSMono; set { _gIBSCBSMono = value; OnPropertyChanged(); } }
-    public TTransfCred? gTransfCred { get => _gTransfCred; set { _gTransfCred = value; OnPropertyChanged(); } }
-    public TCredPresIBSZFM? gCredPresIBSZFM { get => _gCredPresIBSZFM; set { _gCredPresIBSZFM = value; OnPropertyChanged(); } }
+    public TransferenciaCredito? gTransfCred { get => _gTransfCred; set { _gTransfCred = value; OnPropertyChanged(); } }
+    public CreditoPresIbsZfm? gCredPresIBSZFM { get => _gCredPresIBSZFM; set { _gCredPresIBSZFM = value; OnPropertyChanged(); } }
 }
 
-public class TIS : IbsCbsBase
+public class ImpostoSeletivo : IbsCbsBase
 {
-    private TCST _cstis;
+    private Cst _cstis;
     private string? _cClassTribIS;
     private decimal _vBCIS;
     private decimal _pIS;
@@ -169,7 +169,7 @@ public class TIS : IbsCbsBase
     private decimal? _qTrib;
     private decimal _vIS;
 
-    public TCST CSTIS { get => _cstis; set { _cstis = value; OnPropertyChanged(); } }
+    public Cst CSTIS { get => _cstis; set { _cstis = value; OnPropertyChanged(); } }
     public string? cClassTribIS { get => _cClassTribIS; set { _cClassTribIS = value; OnPropertyChanged(); } }
     public decimal vBCIS { get => _vBCIS; set { _vBCIS = value; OnPropertyChanged(); } }
     public decimal pIS { get => _pIS; set { _pIS = value; OnPropertyChanged(); } }
@@ -179,37 +179,37 @@ public class TIS : IbsCbsBase
     public decimal vIS { get => _vIS; set { _vIS = value; OnPropertyChanged(); } }
 }
 
-public class TISTot : IbsCbsBase
+public class TotaisImpostoSeletivo : IbsCbsBase
 {
     private decimal _vIS;
     public decimal vIS { get => _vIS; set { _vIS = value; OnPropertyChanged(); } }
 }
 
-public class TIBSCBSTot : IbsCbsBase
+public class TotaisIbsCbs : IbsCbsBase
 {
     private decimal _vBCIBSCBS;
-    private TIBS? _gIBS;
-    private TCBS? _gCBS;
+    private TotalIbs? _gIBS;
+    private TotalCbs? _gCBS;
 
     public decimal vBCIBSCBS { get => _vBCIBSCBS; set { _vBCIBSCBS = value; OnPropertyChanged(); } }
-    public TIBS? gIBS { get => _gIBS; set { _gIBS = value; OnPropertyChanged(); } }
-    public TCBS? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
+    public TotalIbs? gIBS { get => _gIBS; set { _gIBS = value; OnPropertyChanged(); } }
+    public TotalCbs? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
 }
 
-public class TIBSCBSMonoTot : IbsCbsBase
+public class TotaisIbsCbsMonofasico : IbsCbsBase
 {
     private decimal _vBCIBSCBS;
-    private TIBS? _gIBS;
-    private TCBS? _gCBS;
-    private TMono? _gMono;
+    private TotalIbs? _gIBS;
+    private TotalCbs? _gCBS;
+    private Monofasico? _gMono;
 
     public decimal vBCIBSCBS { get => _vBCIBSCBS; set { _vBCIBSCBS = value; OnPropertyChanged(); } }
-    public TIBS? gIBS { get => _gIBS; set { _gIBS = value; OnPropertyChanged(); } }
-    public TCBS? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
-    public TMono? gMono { get => _gMono; set { _gMono = value; OnPropertyChanged(); } }
+    public TotalIbs? gIBS { get => _gIBS; set { _gIBS = value; OnPropertyChanged(); } }
+    public TotalCbs? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
+    public Monofasico? gMono { get => _gMono; set { _gMono = value; OnPropertyChanged(); } }
 }
 
-public class TMono : IbsCbsBase
+public class Monofasico : IbsCbsBase
 {
     private decimal _vIBSMono;
     private decimal _vCBSMono;
@@ -226,22 +226,22 @@ public class TMono : IbsCbsBase
     public decimal vCBSMonoRet { get => _vCBSMonoRet; set { _vCBSMonoRet = value; OnPropertyChanged(); } }
 }
 
-public class TIBS : IbsCbsBase
+public class TotalIbs : IbsCbsBase
 {
-    private TIBSUF? _gIBSUF;
-    private TIBSMun? _gIBSMun;
+    private TotalIbsEstadual? _gIBSUF;
+    private TotalIbsMunicipal? _gIBSMun;
     private decimal _vIBS;
     private decimal _vCredPres;
     private decimal _vCredPresCondSus;
 
-    public TIBSUF? gIBSUF { get => _gIBSUF; set { _gIBSUF = value; OnPropertyChanged(); } }
-    public TIBSMun? gIBSMun { get => _gIBSMun; set { _gIBSMun = value; OnPropertyChanged(); } }
+    public TotalIbsEstadual? gIBSUF { get => _gIBSUF; set { _gIBSUF = value; OnPropertyChanged(); } }
+    public TotalIbsMunicipal? gIBSMun { get => _gIBSMun; set { _gIBSMun = value; OnPropertyChanged(); } }
     public decimal vIBS { get => _vIBS; set { _vIBS = value; OnPropertyChanged(); } }
     public decimal vCredPres { get => _vCredPres; set { _vCredPres = value; OnPropertyChanged(); } }
     public decimal vCredPresCondSus { get => _vCredPresCondSus; set { _vCredPresCondSus = value; OnPropertyChanged(); } }
 }
 
-public class TIBSUF : IbsCbsBase
+public class TotalIbsEstadual : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -252,7 +252,7 @@ public class TIBSUF : IbsCbsBase
     public decimal vIBSUF { get => _vIBSUF; set { _vIBSUF = value; OnPropertyChanged(); } }
 }
 
-public class TIBSMun : IbsCbsBase
+public class TotalIbsMunicipal : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -263,7 +263,7 @@ public class TIBSMun : IbsCbsBase
     public decimal vIBSMun { get => _vIBSMun; set { _vIBSMun = value; OnPropertyChanged(); } }
 }
 
-public class TCBS : IbsCbsBase
+public class TotalCbs : IbsCbsBase
 {
     private decimal _vDif;
     private decimal _vDevTrib;
@@ -325,73 +325,73 @@ public class TMonofasia : IbsCbsBase
     public decimal vTotCBSMonoItem { get => _vTotCBSMonoItem; set { _vTotCBSMonoItem = value; OnPropertyChanged(); } }
 }
 
-public class TCIBS : IbsCbsBase
+public class IbsCbs : IbsCbsBase
 {
     private decimal _vBC;
-    private TCIBSUF? _gIBSUF;
-    private TCIBSMun? _gIBSMun;
-    private TTribCBS? _gCBS;
-    private TTribRegular? _gTribRegular;
-    private TCredPres? _gIBSCredPres;
-    private TCredPres? _gCBSCredPres;
-    private TTribCompraGov? _gTribCompraGov;
+    private IbsEstadual? _gIBSUF;
+    private IbsMunicipal? _gIBSMun;
+    private Cbs? _gCBS;
+    private TributacaoRegular? _gTribRegular;
+    private CreditoPresumido? _gIBSCredPres;
+    private CreditoPresumido? _gCBSCredPres;
+    private TributacaoCompraGov? _gTribCompraGov;
 
     public decimal vBC { get => _vBC; set { _vBC = value; OnPropertyChanged(); } }
-    public TCIBSUF? gIBSUF { get => _gIBSUF; set { _gIBSUF = value; OnPropertyChanged(); } }
-    public TCIBSMun? gIBSMun { get => _gIBSMun; set { _gIBSMun = value; OnPropertyChanged(); } }
-    public TTribCBS? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
-    public TTribRegular? gTribRegular { get => _gTribRegular; set { _gTribRegular = value; OnPropertyChanged(); } }
-    public TCredPres? gIBSCredPres { get => _gIBSCredPres; set { _gIBSCredPres = value; OnPropertyChanged(); } }
-    public TCredPres? gCBSCredPres { get => _gCBSCredPres; set { _gCBSCredPres = value; OnPropertyChanged(); } }
-    public TTribCompraGov? gTribCompraGov { get => _gTribCompraGov; set { _gTribCompraGov = value; OnPropertyChanged(); } }
+    public IbsEstadual? gIBSUF { get => _gIBSUF; set { _gIBSUF = value; OnPropertyChanged(); } }
+    public IbsMunicipal? gIBSMun { get => _gIBSMun; set { _gIBSMun = value; OnPropertyChanged(); } }
+    public Cbs? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
+    public TributacaoRegular? gTribRegular { get => _gTribRegular; set { _gTribRegular = value; OnPropertyChanged(); } }
+    public CreditoPresumido? gIBSCredPres { get => _gIBSCredPres; set { _gIBSCredPres = value; OnPropertyChanged(); } }
+    public CreditoPresumido? gCBSCredPres { get => _gCBSCredPres; set { _gCBSCredPres = value; OnPropertyChanged(); } }
+    public TributacaoCompraGov? gTribCompraGov { get => _gTribCompraGov; set { _gTribCompraGov = value; OnPropertyChanged(); } }
 }
 
-public class TCIBSUF : IbsCbsBase
+public class IbsEstadual : IbsCbsBase
 {
     private decimal _pIBSUF;
-    private TDif? _gDif;
+    private Diferimento? _gDif;
     private TDevTrib? _gDevTrib;
-    private TRed? _gRed;
+    private ReducaoAliquota? _gRed;
     private decimal _vIBSUF;
 
     public decimal pIBSUF { get => _pIBSUF; set { _pIBSUF = value; OnPropertyChanged(); } }
-    public TDif? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
+    public Diferimento? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
     public TDevTrib? gDevTrib { get => _gDevTrib; set { _gDevTrib = value; OnPropertyChanged(); } }
-    public TRed? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
+    public ReducaoAliquota? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
     public decimal vIBSUF { get => _vIBSUF; set { _vIBSUF = value; OnPropertyChanged(); } }
 }
 
-public class TCIBSMun : IbsCbsBase
+public class IbsMunicipal : IbsCbsBase
 {
     private decimal _pIBSMun;
-    private TDif? _gDif;
+    private Diferimento? _gDif;
     private TDevTrib? _gDevTrib;
-    private TRed? _gRed;
+    private ReducaoAliquota? _gRed;
     private decimal _vIBSMun;
 
     public decimal pIBSMun { get => _pIBSMun; set { _pIBSMun = value; OnPropertyChanged(); } }
-    public TDif? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
+    public Diferimento? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
     public TDevTrib? gDevTrib { get => _gDevTrib; set { _gDevTrib = value; OnPropertyChanged(); } }
-    public TRed? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
+    public ReducaoAliquota? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
     public decimal vIBSMun { get => _vIBSMun; set { _vIBSMun = value; OnPropertyChanged(); } }
 }
 
-public class TTribCBS : IbsCbsBase
+public class Cbs : IbsCbsBase
 {
     private decimal _pCBS;
-    private TDif? _gDif;
+    private Diferimento? _gDif;
     private TDevTrib? _gDevTrib;
-    private TRed? _gRed;
+    private ReducaoAliquota? _gRed;
     private decimal _vCBS;
 
     public decimal pCBS { get => _pCBS; set { _pCBS = value; OnPropertyChanged(); } }
-    public TDif? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
+    public Diferimento? gDif { get => _gDif; set { _gDif = value; OnPropertyChanged(); } }
     public TDevTrib? gDevTrib { get => _gDevTrib; set { _gDevTrib = value; OnPropertyChanged(); } }
-    public TRed? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
+    public ReducaoAliquota? gRed { get => _gRed; set { _gRed = value; OnPropertyChanged(); } }
     public decimal vCBS { get => _vCBS; set { _vCBS = value; OnPropertyChanged(); } }
 }
 
-public class TRed : IbsCbsBase
+public class ReducaoAliquota : IbsCbsBase
 {
     private decimal _pRedAliq;
     private decimal _pAliqEfet;
@@ -400,7 +400,7 @@ public class TRed : IbsCbsBase
     public decimal pAliqEfet { get => _pAliqEfet; set { _pAliqEfet = value; OnPropertyChanged(); } }
 }
 
-public class TCredPres : IbsCbsBase
+public class CreditoPresumido : IbsCbsBase
 {
     private string? _cCredPres;
     private decimal _pCredPres;
@@ -413,7 +413,7 @@ public class TCredPres : IbsCbsBase
     public decimal? vCredPresCondSus { get => _vCredPresCondSus; set { _vCredPresCondSus = value; OnPropertyChanged(); } }
 }
 
-public class TDif : IbsCbsBase
+public class Diferimento : IbsCbsBase
 {
     private decimal _pDif;
     private decimal _vDif;
@@ -428,9 +428,9 @@ public class TDevTrib : IbsCbsBase
     public decimal vDevTrib { get => _vDevTrib; set { _vDevTrib = value; OnPropertyChanged(); } }
 }
 
-public class TTribRegular : IbsCbsBase
+public class TributacaoRegular : IbsCbsBase
 {
-    private TCST _cstReg;
+    private Cst _cstReg;
     private string? _cClassTribReg;
     private decimal _pAliqEfetRegIBSUF;
     private decimal _vTribRegIBSUF;
@@ -439,7 +439,7 @@ public class TTribRegular : IbsCbsBase
     private decimal _pAliqEfetRegCBS;
     private decimal _vTribRegCBS;
 
-    public TCST CSTReg { get => _cstReg; set { _cstReg = value; OnPropertyChanged(); } }
+    public Cst CSTReg { get => _cstReg; set { _cstReg = value; OnPropertyChanged(); } }
     public string? cClassTribReg { get => _cClassTribReg; set { _cClassTribReg = value; OnPropertyChanged(); } }
     public decimal pAliqEfetRegIBSUF { get => _pAliqEfetRegIBSUF; set { _pAliqEfetRegIBSUF = value; OnPropertyChanged(); } }
     public decimal vTribRegIBSUF { get => _vTribRegIBSUF; set { _vTribRegIBSUF = value; OnPropertyChanged(); } }
@@ -449,7 +449,7 @@ public class TTribRegular : IbsCbsBase
     public decimal vTribRegCBS { get => _vTribRegCBS; set { _vTribRegCBS = value; OnPropertyChanged(); } }
 }
 
-public class TTribCompraGov : IbsCbsBase
+public class TributacaoCompraGov : IbsCbsBase
 {
     private decimal _pAliqIBSUF;
     private decimal _vTribIBSUF;
@@ -466,27 +466,27 @@ public class TTribCompraGov : IbsCbsBase
     public decimal vTribCBS { get => _vTribCBS; set { _vTribCBS = value; OnPropertyChanged(); } }
 }
 
-public class TCompraGovReduzido : IbsCbsBase
+public class TributacaoCompraGovReduzido : IbsCbsBase
 {
-    private TEnteGov _tpEnteGov;
+    private EnteGovernamental _tpEnteGov;
     private decimal _pRedutor;
 
-    public TEnteGov tpEnteGov { get => _tpEnteGov; set { _tpEnteGov = value; OnPropertyChanged(); } }
+    public EnteGovernamental tpEnteGov { get => _tpEnteGov; set { _tpEnteGov = value; OnPropertyChanged(); } }
     public decimal pRedutor { get => _pRedutor; set { _pRedutor = value; OnPropertyChanged(); } }
 }
 
-public class TCompraGov : IbsCbsBase
+public class CompraGov : IbsCbsBase
 {
-    private TEnteGov _tpEnteGov;
+    private EnteGovernamental _tpEnteGov;
     private decimal _pRedutor;
-    private TOperCompraGov _tpOperGov;
+    private TipoOperacaoCompraGov _tpOperGov;
 
-    public TEnteGov tpEnteGov { get => _tpEnteGov; set { _tpEnteGov = value; OnPropertyChanged(); } }
+    public EnteGovernamental tpEnteGov { get => _tpEnteGov; set { _tpEnteGov = value; OnPropertyChanged(); } }
     public decimal pRedutor { get => _pRedutor; set { _pRedutor = value; OnPropertyChanged(); } }
-    public TOperCompraGov tpOperGov { get => _tpOperGov; set { _tpOperGov = value; OnPropertyChanged(); } }
+    public TipoOperacaoCompraGov tpOperGov { get => _tpOperGov; set { _tpOperGov = value; OnPropertyChanged(); } }
 }
 
-public class TTransfCred : IbsCbsBase
+public class TransferenciaCredito : IbsCbsBase
 {
     private decimal _vIBS;
     private decimal _vCBS;
@@ -495,11 +495,11 @@ public class TTransfCred : IbsCbsBase
     public decimal vCBS { get => _vCBS; set { _vCBS = value; OnPropertyChanged(); } }
 }
 
-public class TCredPresIBSZFM : IbsCbsBase
+public class CreditoPresIbsZfm : IbsCbsBase
 {
-    private TTpCredPresIBSZFM _tpCredPresIBSZFM;
+    private TipoCreditoPresIbsZfm _tpCredPresIBSZFM;
     private decimal? _vCredPresIBSZFM;
 
-    public TTpCredPresIBSZFM tpCredPresIBSZFM { get => _tpCredPresIBSZFM; set { _tpCredPresIBSZFM = value; OnPropertyChanged(); } }
+    public TipoCreditoPresIbsZfm tpCredPresIBSZFM { get => _tpCredPresIBSZFM; set { _tpCredPresIBSZFM = value; OnPropertyChanged(); } }
     public decimal? vCredPresIBSZFM { get => _vCredPresIBSZFM; set { _vCredPresIBSZFM = value; OnPropertyChanged(); } }
 }
