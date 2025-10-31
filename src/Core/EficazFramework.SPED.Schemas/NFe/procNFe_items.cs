@@ -48,6 +48,11 @@ public partial class Item : INotifyPropertyChanged
         }
     }
 
+
+    [XmlElement("vItem")]
+    public decimal? ValorItem { get; set; }
+
+
     [XmlElement("impostoDevol")]
     public TributacaoDevolucao ImpostoDevolvido
     {

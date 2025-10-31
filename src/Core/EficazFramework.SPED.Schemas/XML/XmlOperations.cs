@@ -38,7 +38,7 @@ public static partial class Operations
             xdoc.Save(fixedstream);
             ResetStreamOffset(fixedstream);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             Debug.WriteLine(objString);
             return null;
