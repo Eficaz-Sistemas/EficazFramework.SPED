@@ -611,6 +611,10 @@ public partial class InformacaoEvento
                 CodigoEvento.ImobilizacaoItem => TipoEventoChoice.ev211130,
                 CodigoEvento.SolicitacaoApropriacaoCreditoCombustivel => TipoEventoChoice.ev211140,
                 CodigoEvento.SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente => TipoEventoChoice.ev211150,
+                CodigoEvento.ManifestacaoTransferenciaCreditoIBSSucessao => TipoEventoChoice.ev212110,
+                CodigoEvento.ManifestacaoTransferenciaCreditoCBSSucessao => TipoEventoChoice.ev212120,
+                CodigoEvento.ManifestacaoFiscoTransferenciaCreditoIBSSucessao => TipoEventoChoice.ev412120,
+                CodigoEvento.ManifestacaoFiscoTransferenciaCreditoCBSSucessao => TipoEventoChoice.ev412130,
                 _ => TipoEventoChoice.DetalheEventoNaoMapeado
             };
         }
@@ -659,6 +663,10 @@ public partial class InformacaoEvento
     [XmlElement("detEvento", typeof(ev211130))]
     [XmlElement("detEvento", typeof(ev211140))]
     [XmlElement("detEvento", typeof(ev211150))]
+    [XmlElement("detEvento", typeof(ev212110))]
+    [XmlElement("detEvento", typeof(ev212120))]
+    [XmlElement("detEvento", typeof(ev412120))]
+    [XmlElement("detEvento", typeof(ev412130))]
     [XmlElement("detEvento", typeof(DetalheEventoNaoMapeado))]
     [XmlChoiceIdentifier("EventoTipoChoice")]
     public DetalheEvento? EventoDetalhes { get; set; }
@@ -1079,5 +1087,9 @@ public enum TipoEventoChoice
     ev211130,
     ev211140,
     ev211150,
+    ev212110,
+    ev212120,
+    ev412120,
+    ev412130,
     DetalheEventoNaoMapeado
 }
