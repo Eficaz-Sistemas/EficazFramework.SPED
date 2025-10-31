@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Manifestação sobre Pedido de Transferência de Crédito de IBS em Operação de Sucessão
 /// </summary>
+[XmlType("ev412120", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev412120 : IbsCbsEventoBase
 {
     [XmlElement("indDeferimento")]

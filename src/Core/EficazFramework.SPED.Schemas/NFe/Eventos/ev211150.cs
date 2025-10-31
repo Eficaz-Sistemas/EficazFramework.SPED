@@ -6,6 +6,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Solicitação de Apropriação de Crédito para bens e serviços que dependem de atividade do adquirente
 /// </summary>
+[XmlType("ev211150", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211150 : IbsCbsEventoBase
 {
     [XmlElement("gCredito")]

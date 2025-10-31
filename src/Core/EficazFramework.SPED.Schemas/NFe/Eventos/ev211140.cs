@@ -6,6 +6,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Solicitação de Apropriação de Crédito de Combustível
 /// </summary>
+[XmlType("ev211140", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211140 : IbsCbsEventoBase
 {
     /// <summary>

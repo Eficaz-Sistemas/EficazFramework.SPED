@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Cancelamento de evento
 /// </summary>
+[XmlType("ev110001", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev110001 : IbsCbsEventoBase
 {
     /// <summary>

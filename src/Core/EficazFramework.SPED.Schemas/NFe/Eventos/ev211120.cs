@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Destinação de item para consumo pessoal
 /// </summary>
+[XmlType("ev211120", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211120 : IbsCbsEventoBase
 {
     /// <summary>

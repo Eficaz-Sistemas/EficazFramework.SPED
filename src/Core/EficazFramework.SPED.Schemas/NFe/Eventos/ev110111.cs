@@ -3,6 +3,7 @@
 /// <summary>
 /// Cancelamento
 /// </summary>
+[XmlType("ev110111", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev110111 : DetalheEvento
 {
     [XmlElement("nProt")]

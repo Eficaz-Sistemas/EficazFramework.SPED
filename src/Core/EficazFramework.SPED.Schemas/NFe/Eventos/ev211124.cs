@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Perecimento, perda, roubo ou furto durante o transporte contratado pelo adquirente
 /// </summary>
+[XmlType("ev211124", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211124 : IbsCbsEventoBase
 {
     [XmlElement("gPerecimento")]

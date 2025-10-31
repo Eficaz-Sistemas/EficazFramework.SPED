@@ -5,6 +5,7 @@ namespace EficazFramework.SPED.Schemas.NFe;
 /// <summary>
 /// Informações do Evento de Aceite de débito na apuração por emissão de nota de crédito
 /// </summary>
+[XmlType("ev211128", Namespace = "http://www.portalfiscal.inf.br/nfe")]
 public class ev211128 : IbsCbsEventoBase
 {
     [XmlElement("indAceitacao")]
