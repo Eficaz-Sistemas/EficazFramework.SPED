@@ -19,7 +19,7 @@ namespace EficazFramework.SPED.Resources.Schemas {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class XML {
@@ -156,6 +156,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string nfe_v4_00 {
             get {
                 return ResourceManager.GetString("nfe_v4.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35251029302348000387550010007218381277304769&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;35&lt;/cUF&gt;
+        ///                &lt;cNF&gt;27730476&lt;/cNF&gt;
+        ///                &lt;natOp&gt;VENDA P/NAO CONTRIBUINTE-ST&lt;/natOp&gt;
+        ///                &lt;mod&gt;55&lt;/mod&gt;
+        ///                &lt;serie&gt;1&lt;/serie&gt;
+        ///                &lt;nNF&gt;721838&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2025-10-20T00:00:00-03:00&lt;/dhEmi&gt;
+        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFeIbsCbs_202510 {
+            get {
+                return ResourceManager.GetString("NFeIbsCbs_202510", resourceCulture);
             }
         }
         
