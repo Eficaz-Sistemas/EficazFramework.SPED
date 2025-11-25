@@ -13,8 +13,11 @@
 
   <ItemGroup>
     <Compile Remove="Coverage\**" />
+    <Compile Remove="Resources\Schemas\IbsCbs\**" />
     <EmbeddedResource Remove="Coverage\**" />
+    <EmbeddedResource Remove="Resources\Schemas\IbsCbs\**" />
     <None Remove="Coverage\**" />
+    <None Remove="Resources\Schemas\IbsCbs\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -156,6 +159,36 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Certificados\WayneEnterprisesInc.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\001.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\002.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\003.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\004.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\005.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\006.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\007.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\008.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\009.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Samples\IbsCbs\010.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
