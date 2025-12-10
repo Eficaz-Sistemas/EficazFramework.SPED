@@ -49,8 +49,12 @@ internal class IbsCbs
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS Mun %: {item.Imposto.IBSCBS.gIBSCBS.gIBSMun.pIBSMun}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS Mun: {item.Imposto.IBSCBS.gIBSCBS.gIBSMun.vIBSMun}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS UF %: {item.Imposto.IBSCBS.gIBSCBS.gIBSUF.pIBSUF}");
+            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS UF % Red: {item.Imposto.IBSCBS.gIBSCBS.gIBSUF.gRed?.pRedAliq}");
+            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS UF % Efetivo: {item.Imposto.IBSCBS.gIBSCBS.gIBSUF.gRed?.pAliqEfet}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: IBS UF: {item.Imposto.IBSCBS.gIBSCBS.gIBSUF.vIBSUF}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: CBS %: {item.Imposto.IBSCBS.gIBSCBS.gCBS.pCBS}");
+            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: CBS UF % Red: {item.Imposto.IBSCBS.gIBSCBS.gCBS.gRed?.pRedAliq}");
+            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: CBS UF % Efetivo: {item.Imposto.IBSCBS.gIBSCBS.gCBS.gRed?.pAliqEfet}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: CBS: {item.Imposto.IBSCBS.gIBSCBS.gCBS.vCBS}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: BC Monofásico: {item.Imposto.IBSCBS.gIBSCBSMono?.qBCMono?.ToString("n2") ?? "n/d"}");
             Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: Créd. Presumido / ZFM: {item.Imposto.IBSCBS.gCredPresIBSZFM?.vCredPresIBSZFM?.ToString("n2") ?? "n/d"}");
