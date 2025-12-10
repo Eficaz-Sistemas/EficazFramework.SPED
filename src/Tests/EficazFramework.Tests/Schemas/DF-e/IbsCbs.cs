@@ -1,5 +1,6 @@
-﻿using System;
+﻿using EficazFramework.SPED.Schemas.NFe;
 using EficazFramework.SPED.Tests;
+using System;
 
 namespace EficazFramework.SPED.Schemas.DFe.RTC;
 
@@ -24,6 +25,7 @@ internal class IbsCbs
                 {
                     XmlDocumentType.NFeWithProtocol => (Action)(() => ParseNFe(doc as EficazFramework.SPED.Schemas.NFe.ProcessoNFe)),
                     XmlDocumentType.NFeWithoutProtocol => (Action)(() => ParseNFe(new() { NFe = doc as EficazFramework.SPED.Schemas.NFe.NFe })),
+                    XmlDocumentType.CTeWithProtocol => (Action)(() => ParseCTe(doc as EficazFramework.SPED.Schemas.CTe.ProcessoCTe)),
                     object other => () => Assert.Fail($"Unexpected document type: {doc.DocumentType}")
                 };
                 action();
@@ -61,6 +63,27 @@ internal class IbsCbs
             Console.WriteLine($"***");
         }
     }
+
+    private void ParseCTe(EficazFramework.SPED.Schemas.CTe.ProcessoCTe doc)
+    {
+        Console.WriteLine($"🛍️ Valor Prestação = {doc.CTe.Informacoes.Valores.vTPrest}");
+        doc.CTe.Informacoes.Impostos.IBSCBS.Should().NotBeNull($"🛍️ IBS/CBS tag group is null");
+        doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSMun.Should().NotBeNull($"🛍️ IBS Mun tag group is null");
+        doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSUF.Should().NotBeNull($"🛍️ IBS UF tag group is null");
+        Console.WriteLine($"🛍️ BC IBS/CBS: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.vBC}");
+        Console.WriteLine($"🛍️ IBS Mun %: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSMun.pIBSMun}");
+        Console.WriteLine($"🛍️ IBS Mun: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSMun.vIBSMun}");
+        Console.WriteLine($"🛍️ IBS UF %: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSUF.pIBSUF}");
+        Console.WriteLine($"🛍️ IBS UF % Red: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSUF.gRed?.pRedAliq}");
+        Console.WriteLine($"🛍️ IBS UF % Efetivo: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSUF.gRed?.pAliqEfet}");
+        Console.WriteLine($"🛍️ IBS UF: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gIBSUF.vIBSUF}");
+        Console.WriteLine($"🛍️ CBS %: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.pCBS}");
+        Console.WriteLine($"🛍️ CBS UF % Red: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.gRed?.pRedAliq}");
+        Console.WriteLine($"🛍️ CBS UF % Efetivo: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.gRed?.pAliqEfet}");
+        Console.WriteLine($"🛍️ CBS: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.vCBS}");
+        Console.WriteLine($"***");
+    }
+
 
 
     /// <summary>
