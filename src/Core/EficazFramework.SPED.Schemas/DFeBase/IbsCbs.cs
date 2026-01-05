@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
 
 // REFERE-SE AOS TIPOS BÁSICOS COMUNS PARA TODOS OS SCHEMAS DO SPED
 // RELATIVOS AOS TRIBUTOS DA REFORMA TRIBUTÁRIA: IBS, CBS E IS
@@ -27,24 +29,44 @@ public enum Cst
 {
     [XmlEnum("000")]
     CST_000,
+    [XmlEnum("010")]
+    CST_010,
+    [XmlEnum("011")]
+    CST_011,
     [XmlEnum("100")]
     CST_100,
     [XmlEnum("200")]
     CST_200,
+    [XmlEnum("220")]
+    CST_220,
+    [XmlEnum("221")]
+    CST_221,
+    [XmlEnum("222")]
+    CST_222,
     [XmlEnum("300")]
     CST_300,
     [XmlEnum("400")]
     CST_400,
+    [XmlEnum("410")]
+    CST_410,
     [XmlEnum("500")]
     CST_500,
-    [XmlEnum("600")]
-    CST_600,
-    [XmlEnum("700")]
-    CST_700,
+    [XmlEnum("515")]
+    CST_515,
+    [XmlEnum("550")]
+    CST_550,
+    [XmlEnum("620")]
+    CST_620,
     [XmlEnum("800")]
     CST_800,
-    [XmlEnum("900")]
-    CST_900
+    [XmlEnum("810")]
+    CST_810,
+    [XmlEnum("811")]
+    CST_811,
+    [XmlEnum("820")]
+    CST_820,
+    [XmlEnum("830")]
+    CST_830
     // Adicione outros conforme necessário
 }
 
