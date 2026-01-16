@@ -1,8 +1,4 @@
-using System;
-using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace EficazFramework.SPED.Schemas.NFSe.Nacional;
 
@@ -24,9 +20,9 @@ public abstract class NFSeNacionalBase : INotifyPropertyChanged
 }
 
 /// <summary>
-/// Tipo Versão da NFSe - 1.01 (conforme XSD `TVerNFSe`).
+/// Tipo Versão da NFSe - 1.01 (conforme XSD `Versao`).
 /// </summary>
-public enum TVerNFSe
+public enum Versao
 {
     [XmlEnum("1.01")]
     V1_01
@@ -35,7 +31,7 @@ public enum TVerNFSe
 /// <summary>
 /// Tipos de ambiente do Sistema Nacional NFS-e: 1 - Produção; 2 - Homologação.
 /// </summary>
-public enum TSTipoAmbiente
+public enum Ambiente
 {
     [XmlEnum("1")]
     Producao = 1,
@@ -46,7 +42,7 @@ public enum TSTipoAmbiente
 /// <summary>
 /// Tipo Ambiente Gerador de NFS-e: 1 - Prefeitura; 2 - Sistema Nacional da NFS-e.
 /// </summary>
-public enum TSAmbGeradorNFSe
+public enum AmbienteGerador
 {
     [XmlEnum("1")]
     Prefeitura = 1,
@@ -57,7 +53,7 @@ public enum TSAmbGeradorNFSe
 /// <summary>
 /// Tipo de emissão da NFS-e: 1 - Emissão normal; 2 - Emissão original em leiaute próprio do município.
 /// </summary>
-public enum TSTipoEmissao
+public enum TipoEmissao
 {
     [XmlEnum("1")]
     Normal = 1,
@@ -68,7 +64,7 @@ public enum TSTipoEmissao
 /// <summary>
 /// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - Intermediário.
 /// </summary>
-public enum TSEmitenteDPS
+public enum EmitenteDps
 {
     [XmlEnum("1")]
     Prestador = 1,
@@ -82,9 +78,9 @@ public enum TSEmitenteDPS
 /// Elemento raiz NFSe (schema `NFSe`, namespace http://www.sped.fazenda.gov.br/nfse).
 /// </summary>
 [XmlRoot("NFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class NFSe : NFSeNacionalBase
+public class NFSe : NFSeNacionalBase, IXmlSpedDocument
 {
-    private TCInfNFSe? _infNFSe;
+    private InformacoesNfse? _infNFSe;
     private XmlElement? _signature;
     private string? _versao;
 
@@ -92,7 +88,7 @@ public class NFSe : NFSeNacionalBase
     /// Grupo de informações da NFS-e.
     /// </summary>
     [XmlElement("infNFSe")]
-    public TCInfNFSe? InfNFSe
+    public InformacoesNfse? InfNFSe
     {
         get => _infNFSe;
         set { _infNFSe = value; OnPropertyChanged(); }
@@ -117,34 +113,43 @@ public class NFSe : NFSeNacionalBase
         get => _versao;
         set { _versao = value; OnPropertyChanged(); }
     }
+
+    public XmlDocumentType DocumentType => XmlDocumentType.NFS_e_Nacional;
+    public DateTime? DataEmissao => InfNFSe?.dhProc.DateTime;
+    public string Chave => InfNFSe?.Id ?? string.Empty;
+
+    public string Serialize()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 /// <summary>
-/// Grupo de informações da NFS-e (tipo `TCInfNFSe`).
+/// Grupo de informações da NFS-e (tipo `InformacoesNfse`).
 /// </summary>
 [XmlType("TCInfNFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfNFSe : NFSeNacionalBase
+public class InformacoesNfse : NFSeNacionalBase
 {
     private string? _xLocEmi;
     private string? _xLocPrestacao;
-    private string? _nNFSe;
+    private int _nNFSe;
     private string? _cLocIncid;
     private string? _xLocIncid;
     private string? _xTribNac;
     private string? _xTribMun;
     private string? _xNBS;
     private string? _verAplic;
-    private TSAmbGeradorNFSe _ambGer;
-    private TSTipoEmissao _tpEmis;
+    private AmbienteGerador _ambGer;
+    private TipoEmissao _tpEmis;
     private string? _procEmi;
     private string? _cStat;
-    private string? _dhProc;
+    private DateTimeOffset _dhProc;
     private string? _nDFSe;
-    private TCEmitente? _emit;
+    private Emitente? _emit;
     private string? _xOutInf;
-    private TCValoresNFSe? _valores;
-    private TCRTCIBSCBS? _iBSCBS;
-    private TCDPS? _dps;
+    private Valores? _valores;
+    private IbsCbs? _iBSCBS;
+    private DeclaracaoPrestacaoServico? _dps;
     private string? _id;
 
     /// <summary>
@@ -171,7 +176,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Número sequencial por tipo de emitente da NFS-e.
     /// </summary>
     [XmlElement("nNFSe")]
-    public string? nNFSe
+    public int nNFSe
     {
         get => _nNFSe;
         set { _nNFSe = value; OnPropertyChanged(); }
@@ -241,7 +246,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Ambiente gerador da NFS-e.
     /// </summary>
     [XmlElement("ambGer")]
-    public TSAmbGeradorNFSe ambGer
+    public AmbienteGerador ambGer
     {
         get => _ambGer;
         set { _ambGer = value; OnPropertyChanged(); }
@@ -251,7 +256,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Processo de Emissão da DPS.
     /// </summary>
     [XmlElement("tpEmis")]
-    public TSTipoEmissao tpEmis
+    public TipoEmissao tpEmis
     {
         get => _tpEmis;
         set { _tpEmis = value; OnPropertyChanged(); }
@@ -281,7 +286,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Data/Hora da validação da DPS e geração da NFS-e (UTC).
     /// </summary>
     [XmlElement("dhProc")]
-    public string? dhProc
+    public DateTimeOffset dhProc
     {
         get => _dhProc;
         set { _dhProc = value; OnPropertyChanged(); }
@@ -301,7 +306,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Grupo de informações do emitente da NFS-e.
     /// </summary>
     [XmlElement("emit")]
-    public TCEmitente? emit
+    public Emitente? emit
     {
         get => _emit;
         set { _emit = value; OnPropertyChanged(); }
@@ -321,7 +326,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Grupo de valores referentes ao Serviço Prestado.
     /// </summary>
     [XmlElement("valores")]
-    public TCValoresNFSe? valores
+    public Valores? valores
     {
         get => _valores;
         set { _valores = value; OnPropertyChanged(); }
@@ -331,7 +336,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Grupo de informações geradas pelo sistema referentes ao IBS e à CBS - opcional.
     /// </summary>
     [XmlElement("IBSCBS")]
-    public TCRTCIBSCBS? IBSCBS
+    public IbsCbs? IBSCBS
     {
         get => _iBSCBS;
         set { _iBSCBS = value; OnPropertyChanged(); }
@@ -341,7 +346,7 @@ public class TCInfNFSe : NFSeNacionalBase
     /// Grupo de informações da DPS relativas ao serviço prestado.
     /// </summary>
     [XmlElement("DPS")]
-    public TCDPS? DPS
+    public DeclaracaoPrestacaoServico? DPS
     {
         get => _dps;
         set { _dps = value; OnPropertyChanged(); }
@@ -359,17 +364,17 @@ public class TCInfNFSe : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo do emitente da NFS-e (`TCEmitente`).
+/// Tipo complexo do emitente da NFS-e (`Emitente`).
 /// </summary>
 [XmlType("TCEmitente", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCEmitente : NFSeNacionalBase
+public class Emitente : NFSeNacionalBase
 {
     private string? _cNPJ;
     private string? _cPF;
     private string? _iM;
     private string? _xNome;
     private string? _xFant;
-    private TCEnderecoEmitente? _enderNac;
+    private EnderecoNacional? _enderNac;
     private string? _fone;
     private string? _email;
 
@@ -427,7 +432,7 @@ public class TCEmitente : NFSeNacionalBase
     /// Grupo de informações do endereço nacional do Emitente da NFS-e.
     /// </summary>
     [XmlElement("enderNac")]
-    public TCEnderecoEmitente? enderNac
+    public EnderecoNacional? enderNac
     {
         get => _enderNac;
         set { _enderNac = value; OnPropertyChanged(); }
@@ -455,611 +460,10 @@ public class TCEmitente : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo dos valores da NFS-e (`TCValoresNFSe`).
+/// Tipo complexo para endereço do emitente (`EnderecoEmitente`).
 /// </summary>
-[XmlType("TCValoresNFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCValoresNFSe : NFSeNacionalBase
-{
-    private string? _vCalcDR;
-    private string? _tpBM;
-    private string? _vCalcBM;
-    private string? _vBC;
-    private string? _pAliqAplic;
-    private string? _vISSQN;
-    private string? _vTotalRet;
-    private string? _vLiq;
-
-    /// <summary>
-    /// Valor monetário (R$) de dedução/redução da base de cálculo (BC) do ISSQN - opcional.
-    /// </summary>
-    [XmlElement("vCalcDR")]
-    public string? vCalcDR
-    {
-        get => _vCalcDR;
-        set { _vCalcDR = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Tipo Benefício Municipal (BM) - opcional.
-    /// </summary>
-    [XmlElement("tpBM")]
-    public string? tpBM
-    {
-        get => _tpBM;
-        set { _tpBM = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Valor monetário do percentual de redução da base de cálculo (BC) do ISSQN devido a um benefício municipal (BM) - opcional.
-    /// </summary>
-    [XmlElement("vCalcBM")]
-    public string? vCalcBM
-    {
-        get => _vCalcBM;
-        set { _vCalcBM = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Valor da Base de Cálculo do ISSQN (R$) - opcional.
-    /// </summary>
-    [XmlElement("vBC")]
-    public string? vBC
-    {
-        get => _vBC;
-        set { _vBC = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Alíquota aplicada sobre a base de cálculo para apuração do ISSQN - opcional.
-    /// </summary>
-    [XmlElement("pAliqAplic")]
-    public string? pAliqAplic
-    {
-        get => _pAliqAplic;
-        set { _pAliqAplic = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Valor do ISSQN (R$) - opcional.
-    /// </summary>
-    [XmlElement("vISSQN")]
-    public string? vISSQN
-    {
-        get => _vISSQN;
-        set { _vISSQN = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Valor total de retenções - opcional.
-    /// </summary>
-    [XmlElement("vTotalRet")]
-    public string? vTotalRet
-    {
-        get => _vTotalRet;
-        set { _vTotalRet = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Valor líquido = Valor do serviço - Desconto condicionado - Desconto incondicionado - Valores retidos.
-    /// </summary>
-    [XmlElement("vLiq")]
-    public string? vLiq
-    {
-        get => _vLiq;
-        set { _vLiq = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo DPS (`TCDPS`).
-/// </summary>
-[XmlType("TCDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCDPS : NFSeNacionalBase
-{
-    private TCInfDPS? _infDPS;
-    private XmlElement? _signature;
-    private string? _versao;
-
-    /// <summary>
-    /// Informações da DPS.
-    /// </summary>
-    [XmlElement("infDPS")]
-    public TCInfDPS? infDPS
-    {
-        get => _infDPS;
-        set { _infDPS = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Assinatura XML (opcional).
-    /// </summary>
-    [XmlElement("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-    public XmlElement? Signature
-    {
-        get => _signature;
-        set { _signature = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Versão do documento (atributo obrigatório).
-    /// </summary>
-    [XmlAttribute("versao")]
-    public string? versao
-    {
-        get => _versao;
-        set { _versao = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações da DPS (`TCInfDPS`).
-/// </summary>
-[XmlType("TCInfDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfDPS : NFSeNacionalBase
-{
-    private TSTipoAmbiente _tpAmb;
-    private string? _dhEmi;
-    private string? _verAplic;
-    private string? _serie;
-    private string? _nDPS;
-    private string? _dCompet;
-    private TSEmitenteDPS _tpEmit;
-    private string? _cMotivoEmisTI;
-    private string? _chNFSeRej;
-    private string? _cLocEmi;
-    private TCSubstituicao? _subst;
-    private TCInfoPrestador? _prest;
-    private TCInfoPessoa? _toma;
-    private TCInfoPessoa? _interm;
-    private TCServ? _serv;
-    private TCInfoValores? _valores;
-    private TCRTCInfoIBSCBS? _iBSCBS;
-    private string? _id;
-
-    /// <summary>
-    /// Identificação do Ambiente: 1 - Produção; 2 - Homologação.
-    /// </summary>
-    [XmlElement("tpAmb")]
-    public TSTipoAmbiente tpAmb
-    {
-        get => _tpAmb;
-        set { _tpAmb = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Data e hora da emissão do DPS (UTC).
-    /// </summary>
-    [XmlElement("dhEmi")]
-    public string? dhEmi
-    {
-        get => _dhEmi;
-        set { _dhEmi = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Versão do aplicativo que gerou o DPS.
-    /// </summary>
-    [XmlElement("verAplic")]
-    public string? verAplic
-    {
-        get => _verAplic;
-        set { _verAplic = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Número do equipamento emissor do DPS ou série do DPS.
-    /// </summary>
-    [XmlElement("serie")]
-    public string? serie
-    {
-        get => _serie;
-        set { _serie = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Número do DPS.
-    /// </summary>
-    [XmlElement("nDPS")]
-    public string? nDPS
-    {
-        get => _nDPS;
-        set { _nDPS = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Data em que se iniciou a prestação do serviço (AAAA-MM-DD).
-    /// </summary>
-    [XmlElement("dCompet")]
-    public string? dCompet
-    {
-        get => _dCompet;
-        set { _dCompet = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - Intermediário.
-    /// </summary>
-    [XmlElement("tpEmit")]
-    public TSEmitenteDPS tpEmit
-    {
-        get => _tpEmit;
-        set { _tpEmit = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Motivo da Emissão da DPS pelo Tomador/Intermediário - opcional.
-    /// </summary>
-    [XmlElement("cMotivoEmisTI")]
-    public string? cMotivoEmisTI
-    {
-        get => _cMotivoEmisTI;
-        set { _cMotivoEmisTI = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário - opcional.
-    /// </summary>
-    [XmlElement("chNFSeRej")]
-    public string? chNFSeRej
-    {
-        get => _chNFSeRej;
-        set { _chNFSeRej = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Código do município emissor do DPS (IBGE).
-    /// </summary>
-    [XmlElement("cLocEmi")]
-    public string? cLocEmi
-    {
-        get => _cLocEmi;
-        set { _cLocEmi = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Dados da NFS-e a ser substituída - opcional.
-    /// </summary>
-    [XmlElement("subst")]
-    public TCSubstituicao? subst
-    {
-        get => _subst;
-        set { _subst = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações do DPS relativas ao Prestador de Serviços.
-    /// </summary>
-    [XmlElement("prest")]
-    public TCInfoPrestador? prest
-    {
-        get => _prest;
-        set { _prest = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações do DPS relativas ao Tomador de Serviços - opcional.
-    /// </summary>
-    [XmlElement("toma")]
-    public TCInfoPessoa? toma
-    {
-        get => _toma;
-        set { _toma = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações do DPS relativas ao Intermediário de Serviços - opcional.
-    /// </summary>
-    [XmlElement("interm")]
-    public TCInfoPessoa? interm
-    {
-        get => _interm;
-        set { _interm = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações do DPS relativas ao Serviço Prestado.
-    /// </summary>
-    [XmlElement("serv")]
-    public TCServ? serv
-    {
-        get => _serv;
-        set { _serv = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações relativas à valores do serviço prestado.
-    /// </summary>
-    [XmlElement("valores")]
-    public TCInfoValores? valores
-    {
-        get => _valores;
-        set { _valores = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Grupo de informações declaradas pelo emitente referentes ao IBS e à CBS - opcional.
-    /// </summary>
-    [XmlElement("IBSCBS")]
-    public TCRTCInfoIBSCBS? IBSCBS
-    {
-        get => _iBSCBS;
-        set { _iBSCBS = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Identificador do elemento (atributo Id) - obrigatório.
-    /// </summary>
-    [XmlAttribute("Id")]
-    public string? Id
-    {
-        get => _id;
-        set { _id = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações de substituição de NFS-e (`TCSubstituicao`).
-/// </summary>
-[XmlType("TCSubstituicao", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCSubstituicao : NFSeNacionalBase
-{
-    private string? _chSubstda;
-    private string? _cMotivo;
-    private string? _xMotivo;
-
-    /// <summary>
-    /// Chave de acesso da NFS-e a ser substituída.
-    /// </summary>
-    [XmlElement("chSubstda")]
-    public string? chSubstda
-    {
-        get => _chSubstda;
-        set { _chSubstda = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Código de justificativa para substituição de NFS-e.
-    /// </summary>
-    [XmlElement("cMotivo")]
-    public string? cMotivo
-    {
-        get => _cMotivo;
-        set { _cMotivo = value; OnPropertyChanged(); }
-    }
-
-    /// <summary>
-    /// Descrição do motivo da substituição da NFS-e - opcional.
-    /// </summary>
-    [XmlElement("xMotivo")]
-    public string? xMotivo
-    {
-        get => _xMotivo;
-        set { _xMotivo = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações do Prestador da NFS-e (TCInfoPrestador).
-/// </summary>
-[XmlType("TCInfoPrestador", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoPrestador : NFSeNacionalBase
-{
-    private string? _cNPJ;
-    private string? _cPF;
-    private string? _nIF;
-    private string? _cNaoNIF;
-    private string? _cAEPF;
-    private string? _iM;
-    private string? _xNome;
-    private TCEndereco? _end;
-    private string? _fone;
-    private string? _email;
-    private TCRegTrib? _regTrib;
-
-    [XmlElement("CNPJ")]
-    public string? CNPJ
-    {
-        get => _cNPJ;
-        set { _cNPJ = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("CPF")]
-    public string? CPF
-    {
-        get => _cPF;
-        set { _cPF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("NIF")]
-    public string? NIF
-    {
-        get => _nIF;
-        set { _nIF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("cNaoNIF")]
-    public string? cNaoNIF
-    {
-        get => _cNaoNIF;
-        set { _cNaoNIF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("CAEPF")]
-    public string? CAEPF
-    {
-        get => _cAEPF;
-        set { _cAEPF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("IM")]
-    public string? IM
-    {
-        get => _iM;
-        set { _iM = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("xNome")]
-    public string? xNome
-    {
-        get => _xNome;
-        set { _xNome = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("end")]
-    public TCEndereco? end
-    {
-        get => _end;
-        set { _end = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("fone")]
-    public string? fone
-    {
-        get => _fone;
-        set { _fone = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("email")]
-    public string? email
-    {
-        get => _email;
-        set { _email = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("regTrib")]
-    public TCRegTrib? regTrib
-    {
-        get => _regTrib;
-        set { _regTrib = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações de regimes de tributação (`TCRegTrib`).
-/// </summary>
-[XmlType("TCRegTrib", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCRegTrib : NFSeNacionalBase
-{
-    private string? _opSimpNac;
-    private string? _regApTribSN;
-    private string? _regEspTrib;
-
-    [XmlElement("opSimpNac")]
-    public string? opSimpNac
-    {
-        get => _opSimpNac;
-        set { _opSimpNac = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("regApTribSN")]
-    public string? regApTribSN
-    {
-        get => _regApTribSN;
-        set { _regApTribSN = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("regEspTrib")]
-    public string? regEspTrib
-    {
-        get => _regEspTrib;
-        set { _regEspTrib = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações de pessoa (`TCInfoPessoa`).
-/// (Utilizado para tomador/intermediário)
-/// </summary>
-[XmlType("TCInfoPessoa", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoPessoa : NFSeNacionalBase
-{
-    private string? _cNPJ;
-    private string? _cPF;
-    private string? _nIF;
-    private string? _cNaoNIF;
-    private string? _cAEPF;
-    private string? _iM;
-    private string? _xNome;
-    private TCEndereco? _end;
-    private string? _fone;
-    private string? _email;
-
-    [XmlElement("CNPJ")]
-    public string? CNPJ
-    {
-        get => _cNPJ;
-        set { _cNPJ = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("CPF")]
-    public string? CPF
-    {
-        get => _cPF;
-        set { _cPF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("NIF")]
-    public string? NIF
-    {
-        get => _nIF;
-        set { _nIF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("cNaoNIF")]
-    public string? cNaoNIF
-    {
-        get => _cNaoNIF;
-        set { _cNaoNIF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("CAEPF")]
-    public string? CAEPF
-    {
-        get => _cAEPF;
-        set { _cAEPF = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("IM")]
-    public string? IM
-    {
-        get => _iM;
-        set { _iM = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("xNome")]
-    public string? xNome
-    {
-        get => _xNome;
-        set { _xNome = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("end")]
-    public TCEndereco? end
-    {
-        get => _end;
-        set { _end = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("fone")]
-    public string? fone
-    {
-        get => _fone;
-        set { _fone = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("email")]
-    public string? email
-    {
-        get => _email;
-        set { _email = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para endereço do emitente (`TCEnderecoEmitente`).
-/// </summary>
-[XmlType("TCEnderecoEmitente", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCEnderecoEmitente : NFSeNacionalBase
+[XmlType("TenderNac", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class EnderecoNacional : NFSeNacionalBase
 {
     private string? _xLgr;
     private string? _nro;
@@ -1120,27 +524,628 @@ public class TCEnderecoEmitente : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo simples de endereço (`TCEndereco`) utilizado em várias estruturas.
+/// Tipo complexo dos valores da NFS-e (`Valores`).
+/// </summary>
+[XmlType("TCValoresNFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class Valores : NFSeNacionalBase
+{
+    private decimal? _vCalcDR;
+    private string? _tpBM;
+    private decimal? _vCalcBM;
+    private decimal? _vBC;
+    private decimal? _pAliqAplic;
+    private decimal? _vISSQN;
+    private decimal? _vTotalRet;
+    private decimal? _vLiq;
+
+    /// <summary>
+    /// Valor monetário (R$) de dedução/redução da base de cálculo (BC) do ISSQN - opcional.
+    /// </summary>
+    [XmlElement("vCalcDR")]
+    public decimal? vCalcDR
+    {
+        get => _vCalcDR;
+        set { _vCalcDR = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Tipo Benefício Municipal (BM) - opcional.
+    /// </summary>
+    [XmlElement("tpBM")]
+    public string? tpBM
+    {
+        get => _tpBM;
+        set { _tpBM = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Valor monetário do percentual de redução da base de cálculo (BC) do ISSQN devido a um benefício municipal (BM) - opcional.
+    /// </summary>
+    [XmlElement("vCalcBM")]
+    public decimal? vCalcBM
+    {
+        get => _vCalcBM;
+        set { _vCalcBM = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Valor da Base de Cálculo do ISSQN (R$) - opcional.
+    /// </summary>
+    [XmlElement("vBC")]
+    public decimal? vBC
+    {
+        get => _vBC;
+        set { _vBC = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Alíquota aplicada sobre a base de cálculo para apuração do ISSQN - opcional.
+    /// </summary>
+    [XmlElement("pAliqAplic")]
+    public decimal? pAliqAplic
+    {
+        get => _pAliqAplic;
+        set { _pAliqAplic = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Valor do ISSQN (R$) - opcional.
+    /// </summary>
+    [XmlElement("vISSQN")]
+    public decimal? vISSQN
+    {
+        get => _vISSQN;
+        set { _vISSQN = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Valor total de retenções - opcional.
+    /// </summary>
+    [XmlElement("vTotalRet")]
+    public decimal? vTotalRet
+    {
+        get => _vTotalRet;
+        set { _vTotalRet = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Valor líquido = Valor do serviço - Desconto condicionado - Desconto incondicionado - Valores retidos.
+    /// </summary>
+    [XmlElement("vLiq")]
+    public decimal? vLiq
+    {
+        get => _vLiq;
+        set { _vLiq = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo DPS (`DeclaracaoPrestacaoServico`).
+/// </summary>
+[XmlType("TCDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class DeclaracaoPrestacaoServico : NFSeNacionalBase
+{
+    private InformacoesDps? _infDPS;
+    private XmlElement? _signature;
+    private string? _versao;
+
+    /// <summary>
+    /// Informações da DPS.
+    /// </summary>
+    [XmlElement("infDPS")]
+    public InformacoesDps? infDPS
+    {
+        get => _infDPS;
+        set { _infDPS = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Assinatura XML (opcional).
+    /// </summary>
+    [XmlElement("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public XmlElement? Signature
+    {
+        get => _signature;
+        set { _signature = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Versão do documento (atributo obrigatório).
+    /// </summary>
+    [XmlAttribute("versao")]
+    public string? versao
+    {
+        get => _versao;
+        set { _versao = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo para informações da DPS (`InformacoesDps`).
+/// </summary>
+[XmlType("TCInfDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class InformacoesDps : NFSeNacionalBase
+{
+    private Ambiente _tpAmb;
+    private DateTimeOffset? _dhEmi;
+    private string? _verAplic;
+    private string? _serie;
+    private int _nDPS;
+    private string? _dCompet;
+    private EmitenteDps _tpEmit;
+    private string? _cMotivoEmisTI;
+    private string? _chNFSeRej;
+    private string? _cLocEmi;
+    private TCSubstituicao? _subst;
+    private InfoDpsPrestador? _prest;
+    private InfoDpsTomadorOuIntermediario? _toma;
+    private InfoDpsTomadorOuIntermediario? _interm;
+    private Servico? _serv;
+    private TotalValores? _valores;
+    private TotalIBsCbs? _iBSCBS;
+    private string? _id;
+
+    /// <summary>
+    /// Identificação do Ambiente: 1 - Produção; 2 - Homologação.
+    /// </summary>
+    [XmlElement("tpAmb")]
+    public Ambiente tpAmb
+    {
+        get => _tpAmb;
+        set { _tpAmb = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Data e hora da emissão do DPS (UTC).
+    /// </summary>
+    [XmlElement("dhEmi")]
+    public DateTimeOffset? dhEmi
+    {
+        get => _dhEmi;
+        set { _dhEmi = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Versão do aplicativo que gerou o DPS.
+    /// </summary>
+    [XmlElement("verAplic")]
+    public string? verAplic
+    {
+        get => _verAplic;
+        set { _verAplic = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Número do equipamento emissor do DPS ou série do DPS.
+    /// </summary>
+    [XmlElement("serie")]
+    public string? serie
+    {
+        get => _serie;
+        set { _serie = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Número do DPS.
+    /// </summary>
+    [XmlElement("nDPS")]
+    public int nDPS
+    {
+        get => _nDPS;
+        set { _nDPS = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Data em que se iniciou a prestação do serviço (AAAA-MM-DD).
+    /// </summary>
+    [XmlElement("dCompet")]
+    public string? dCompet
+    {
+        get => _dCompet;
+        set { _dCompet = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - Intermediário.
+    /// </summary>
+    [XmlElement("tpEmit")]
+    public EmitenteDps tpEmit
+    {
+        get => _tpEmit;
+        set { _tpEmit = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Motivo da Emissão da DPS pelo Tomador/Intermediário - opcional.
+    /// </summary>
+    [XmlElement("cMotivoEmisTI")]
+    public string? cMotivoEmisTI
+    {
+        get => _cMotivoEmisTI;
+        set { _cMotivoEmisTI = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário - opcional.
+    /// </summary>
+    [XmlElement("chNFSeRej")]
+    public string? chNFSeRej
+    {
+        get => _chNFSeRej;
+        set { _chNFSeRej = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Código do município emissor do DPS (IBGE).
+    /// </summary>
+    [XmlElement("cLocEmi")]
+    public string? cLocEmi
+    {
+        get => _cLocEmi;
+        set { _cLocEmi = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Dados da NFS-e a ser substituída - opcional.
+    /// </summary>
+    [XmlElement("subst")]
+    public TCSubstituicao? subst
+    {
+        get => _subst;
+        set { _subst = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações do DPS relativas ao Prestador de Serviços.
+    /// </summary>
+    [XmlElement("prest")]
+    public InfoDpsPrestador? prest
+    {
+        get => _prest;
+        set { _prest = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações do DPS relativas ao Tomador de Serviços - opcional.
+    /// </summary>
+    [XmlElement("toma")]
+    public InfoDpsTomadorOuIntermediario? toma
+    {
+        get => _toma;
+        set { _toma = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações do DPS relativas ao Intermediário de Serviços - opcional.
+    /// </summary>
+    [XmlElement("interm")]
+    public InfoDpsTomadorOuIntermediario? interm
+    {
+        get => _interm;
+        set { _interm = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações do DPS relativas ao Serviço Prestado.
+    /// </summary>
+    [XmlElement("serv")]
+    public Servico? serv
+    {
+        get => _serv;
+        set { _serv = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações relativas à valores do serviço prestado.
+    /// </summary>
+    [XmlElement("valores")]
+    public TotalValores? valores
+    {
+        get => _valores;
+        set { _valores = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Grupo de informações declaradas pelo emitente referentes ao IBS e à CBS - opcional.
+    /// </summary>
+    [XmlElement("IBSCBS")]
+    public TotalIBsCbs? IBSCBS
+    {
+        get => _iBSCBS;
+        set { _iBSCBS = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Identificador do elemento (atributo Id) - obrigatório.
+    /// </summary>
+    [XmlAttribute("Id")]
+    public string? Id
+    {
+        get => _id;
+        set { _id = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo para informações de substituição de NFS-e (`TCSubstituicao`).
+/// </summary>
+[XmlType("TCSubstituicao", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class TCSubstituicao : NFSeNacionalBase
+{
+    private string? _chSubstda;
+    private string? _cMotivo;
+    private string? _xMotivo;
+
+    /// <summary>
+    /// Chave de acesso da NFS-e a ser substituída.
+    /// </summary>
+    [XmlElement("chSubstda")]
+    public string? chSubstda
+    {
+        get => _chSubstda;
+        set { _chSubstda = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Código de justificativa para substituição de NFS-e.
+    /// </summary>
+    [XmlElement("cMotivo")]
+    public string? cMotivo
+    {
+        get => _cMotivo;
+        set { _cMotivo = value; OnPropertyChanged(); }
+    }
+
+    /// <summary>
+    /// Descrição do motivo da substituição da NFS-e - opcional.
+    /// </summary>
+    [XmlElement("xMotivo")]
+    public string? xMotivo
+    {
+        get => _xMotivo;
+        set { _xMotivo = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo para informações do Prestador da NFS-e (InfoDpsPrestador).
+/// </summary>
+[XmlType("TCInfoPrestador", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class InfoDpsPrestador : NFSeNacionalBase
+{
+    private string? _cNPJ;
+    private string? _cPF;
+    private string? _nIF;
+    private string? _cNaoNIF;
+    private string? _cAEPF;
+    private string? _iM;
+    private string? _xNome;
+    private Endereco? _end;
+    private string? _fone;
+    private string? _email;
+    private RegimeTributario? _regTrib;
+
+    [XmlElement("CNPJ")]
+    public string? CNPJ
+    {
+        get => _cNPJ;
+        set { _cNPJ = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("CPF")]
+    public string? CPF
+    {
+        get => _cPF;
+        set { _cPF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("NIF")]
+    public string? NIF
+    {
+        get => _nIF;
+        set { _nIF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("cNaoNIF")]
+    public string? cNaoNIF
+    {
+        get => _cNaoNIF;
+        set { _cNaoNIF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("CAEPF")]
+    public string? CAEPF
+    {
+        get => _cAEPF;
+        set { _cAEPF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("IM")]
+    public string? IM
+    {
+        get => _iM;
+        set { _iM = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("xNome")]
+    public string? xNome
+    {
+        get => _xNome;
+        set { _xNome = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("end")]
+    public Endereco? end
+    {
+        get => _end;
+        set { _end = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("fone")]
+    public string? fone
+    {
+        get => _fone;
+        set { _fone = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("email")]
+    public string? email
+    {
+        get => _email;
+        set { _email = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("regTrib")]
+    public RegimeTributario? regTrib
+    {
+        get => _regTrib;
+        set { _regTrib = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo para informações de regimes de tributação (`RegimeTributario`).
+/// </summary>
+[XmlType("TCRegTrib", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class RegimeTributario : NFSeNacionalBase
+{
+    private int? _opSimpNac;
+    private int? _regApTribSN;
+    private int? _regEspTrib;
+
+    [XmlElement("opSimpNac")]
+    public int? opSimpNac
+    {
+        get => _opSimpNac;
+        set { _opSimpNac = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("regApTribSN")]
+    public int? regApTribSN
+    {
+        get => _regApTribSN;
+        set { _regApTribSN = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("regEspTrib")]
+    public int? regEspTrib
+    {
+        get => _regEspTrib;
+        set { _regEspTrib = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo para informações de pessoa (`InfoDpsTomadorOuIntermediario`).
+/// (Utilizado para tomador/intermediário)
+/// </summary>
+[XmlType("TCInfoPessoa", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
+public class InfoDpsTomadorOuIntermediario : NFSeNacionalBase
+{
+    private string? _cNPJ;
+    private string? _cPF;
+    private string? _nIF;
+    private string? _cNaoNIF;
+    private string? _cAEPF;
+    private string? _iM;
+    private string? _xNome;
+    private Endereco? _end;
+    private string? _fone;
+    private string? _email;
+
+    [XmlElement("CNPJ")]
+    public string? CNPJ
+    {
+        get => _cNPJ;
+        set { _cNPJ = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("CPF")]
+    public string? CPF
+    {
+        get => _cPF;
+        set { _cPF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("NIF")]
+    public string? NIF
+    {
+        get => _nIF;
+        set { _nIF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("cNaoNIF")]
+    public string? cNaoNIF
+    {
+        get => _cNaoNIF;
+        set { _cNaoNIF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("CAEPF")]
+    public string? CAEPF
+    {
+        get => _cAEPF;
+        set { _cAEPF = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("IM")]
+    public string? IM
+    {
+        get => _iM;
+        set { _iM = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("xNome")]
+    public string? xNome
+    {
+        get => _xNome;
+        set { _xNome = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("end")]
+    public Endereco? end
+    {
+        get => _end;
+        set { _end = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("fone")]
+    public string? fone
+    {
+        get => _fone;
+        set { _fone = value; OnPropertyChanged(); }
+    }
+
+    [XmlElement("email")]
+    public string? email
+    {
+        get => _email;
+        set { _email = value; OnPropertyChanged(); }
+    }
+}
+
+/// <summary>
+/// Tipo complexo simples de endereço (`Endereco`) utilizado em várias estruturas.
 /// </summary>
 [XmlType("TCEndereco", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCEndereco : NFSeNacionalBase
+public class Endereco : NFSeNacionalBase
 {
-    private TCEnderNac? _endNac;
-    private TCEnderExt? _endExt;
+    private EnderecoNacional? _endNac;
+    private EnderecoExterior? _endExt;
     private string? _xLgr;
     private string? _nro;
     private string? _xCpl;
     private string? _xBairro;
 
     [XmlElement("endNac")]
-    public TCEnderNac? endNac
+    public EnderecoNacional? endNac
     {
         get => _endNac;
         set { _endNac = value; OnPropertyChanged(); }
     }
 
     [XmlElement("endExt")]
-    public TCEnderExt? endExt
+    public EnderecoExterior? endExt
     {
         get => _endExt;
         set { _endExt = value; OnPropertyChanged(); }
@@ -1176,34 +1181,10 @@ public class TCEndereco : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo para campos específicos de endereço nacional (`TCEnderNac`).
-/// </summary>
-[XmlType("TCEnderNac", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCEnderNac : NFSeNacionalBase
-{
-    private string? _cMun;
-    private string? _cEP;
-
-    [XmlElement("cMun")]
-    public string? cMun
-    {
-        get => _cMun;
-        set { _cMun = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("CEP")]
-    public string? CEP
-    {
-        get => _cEP;
-        set { _cEP = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo para campos específicos de endereço no exterior (`TCEnderExt`).
+/// Tipo para campos específicos de endereço no exterior (`EnderecoExterior`).
 /// </summary>
 [XmlType("TCEnderExt", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCEnderExt : NFSeNacionalBase
+public class EnderecoExterior : NFSeNacionalBase
 {
     private string? _cPais;
     private string? _cEndPost;
@@ -1240,95 +1221,63 @@ public class TCEnderExt : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de regimes de tributação (`TCRegTrib`).
-/// </summary>
-[XmlType("TCRegTrib", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCRegTrib : NFSeNacionalBase
-{
-    private string? _opSimpNac;
-    private string? _regApTribSN;
-    private string? _regEspTrib;
-
-    [XmlElement("opSimpNac")]
-    public string? opSimpNac
-    {
-        get => _opSimpNac;
-        set { _opSimpNac = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("regApTribSN")]
-    public string? regApTribSN
-    {
-        get => _regApTribSN;
-        set { _regApTribSN = value; OnPropertyChanged(); }
-    }
-
-    [XmlElement("regEspTrib")]
-    public string? regEspTrib
-    {
-        get => _regEspTrib;
-        set { _regEspTrib = value; OnPropertyChanged(); }
-    }
-}
-
-/// <summary>
-/// Tipo complexo para informações do serviço prestado (`TCServ`).
+/// Tipo complexo para informações do serviço prestado (`Servico`).
 /// </summary>
 [XmlType("TCServ", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCServ : NFSeNacionalBase
+public class Servico : NFSeNacionalBase
 {
-    private TCLocPrest? _locPrest;
-    private TCCServ? _cServ;
-    private TCComExterior? _comExt;
-    private TCInfoObra? _obra;
-    private TCAtvEvento? _atvEvento;
-    private TCExploracaoRodoviaria? _explRod;
-    private TCInfoCompl? _infoCompl;
+    private LocalPrestacaoServico? _locPrest;
+    private InfoServico? _cServ;
+    private InfoComercioExterior? _comExt;
+    private InfoObra? _obra;
+    private InfoAtvEvento? _atvEvento;
+    //private TCExploracaoRodoviaria? _explRod;
+    private InformacoesComplementares? _infoCompl;
 
     [XmlElement("locPrest")]
-    public TCLocPrest? locPrest
+    public LocalPrestacaoServico? locPrest
     {
         get => _locPrest;
         set { _locPrest = value; OnPropertyChanged(); }
     }
 
     [XmlElement("cServ")]
-    public TCCServ? cServ
+    public InfoServico? cServ
     {
         get => _cServ;
         set { _cServ = value; OnPropertyChanged(); }
     }
 
     [XmlElement("comExt")]
-    public TCComExterior? comExt
+    public InfoComercioExterior? comExt
     {
         get => _comExt;
         set { _comExt = value; OnPropertyChanged(); }
     }
 
     [XmlElement("obra")]
-    public TCInfoObra? obra
+    public InfoObra? obra
     {
         get => _obra;
         set { _obra = value; OnPropertyChanged(); }
     }
 
     [XmlElement("atvEvento")]
-    public TCAtvEvento? atvEvento
+    public InfoAtvEvento? atvEvento
     {
         get => _atvEvento;
         set { _atvEvento = value; OnPropertyChanged(); }
     }
 
-    [XmlElement("explRod")]
-    public TCExploracaoRodoviaria? explRod
-    {
-        get => _explRod;
-        set { _explRod = value; OnPropertyChanged(); }
-    }
+    //[XmlElement("explRod")]
+    //public TCExploracaoRodoviaria? explRod
+    //{
+    //    get => _explRod;
+    //    set { _explRod = value; OnPropertyChanged(); }
+    //}
 
     [XmlElement("infoCompl")]
-    public TCInfoCompl? infoCompl
+    public InformacoesComplementares? infoCompl
     {
         get => _infoCompl;
         set { _infoCompl = value; OnPropertyChanged(); }
@@ -1336,14 +1285,17 @@ public class TCServ : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para o local da prestação (`TCLocPrest`).
+/// Tipo complexo para o local da prestação (`LocalPrestacaoServico`).
 /// </summary>
 [XmlType("TCLocPrest", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCLocPrest : NFSeNacionalBase
+public class LocalPrestacaoServico : NFSeNacionalBase
 {
     private string? _cLocPrestacao;
     private string? _cPaisPrestacao;
 
+    /// <summary>
+    /// Código do município onde o serviço foi prestado (IBGE).
+    /// </summary>
     [XmlElement("cLocPrestacao")]
     public string? cLocPrestacao
     {
@@ -1351,6 +1303,9 @@ public class TCLocPrest : NFSeNacionalBase
         set { _cLocPrestacao = value; OnPropertyChanged(); }
     }
 
+    /// <summary>
+    /// Código do país onde o serviço foi prestado (código do país conforme a tabela do IBGE).
+    /// </summary>
     [XmlElement("cPaisPrestacao")]
     public string? cPaisPrestacao
     {
@@ -1360,10 +1315,10 @@ public class TCLocPrest : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para código do serviço (`TCCServ`).
+/// Tipo complexo para código do serviço (`InfoServico`).
 /// </summary>
 [XmlType("TCCServ", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCCServ : NFSeNacionalBase
+public class InfoServico : NFSeNacionalBase
 {
     private string? _cTribNac;
     private string? _cTribMun;
@@ -1408,10 +1363,10 @@ public class TCCServ : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de comércio exterior (`TCComExterior`).
+/// Tipo complexo para informações de comércio exterior (`InfoComercioExterior`).
 /// </summary>
 [XmlType("TCComExterior", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCComExterior : NFSeNacionalBase
+public class InfoComercioExterior : NFSeNacionalBase
 {
     private string? _mdPrestacao;
     private string? _vincPrest;
@@ -1496,10 +1451,10 @@ public class TCComExterior : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de atividade de evento (`TCAtvEvento`).
+/// Tipo complexo para informações de atividade de evento (`InfoAtvEvento`).
 /// </summary>
 [XmlType("TCAtvEvento", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCAtvEvento : NFSeNacionalBase
+public class InfoAtvEvento : NFSeNacionalBase
 {
     private string? _xNome;
     private string? _dtIni;
@@ -1544,10 +1499,10 @@ public class TCAtvEvento : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de obra (`TCInfoObra`).
+/// Tipo complexo para informações de obra (`InfoObra`).
 /// </summary>
 [XmlType("TCInfoObra", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoObra : NFSeNacionalBase
+public class InfoObra : NFSeNacionalBase
 {
     private string? _inscImobFisc;
     private string? _cObra;
@@ -1584,10 +1539,10 @@ public class TCInfoObra : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações complementares do serviço prestado (`TCInfoCompl`).
+/// Tipo complexo para informações complementares do serviço prestado (`InformacoesComplementares`).
 /// </summary>
 [XmlType("TCInfoCompl", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoCompl : NFSeNacionalBase
+public class InformacoesComplementares : NFSeNacionalBase
 {
     private string? _idDocTec;
     private string? _docRef;
@@ -1648,39 +1603,39 @@ public class TCInfoItemPed : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações relativas aos valores do serviço prestado (`TCInfoValores`).
+/// Tipo complexo para informações relativas aos valores do serviço prestado (`TotalValores`).
 /// </summary>
 [XmlType("TCInfoValores", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoValores : NFSeNacionalBase
+public class TotalValores : NFSeNacionalBase
 {
-    private TCVServPrest? _vServPrest;
-    private TCVDescCondIncond? _vDescCondIncond;
-    private TCInfoDedRed? _vDedRed;
-    private TCInfoTributacao? _trib;
+    private ValorServicoPrestado? _vServPrest;
+    private DescontosIncondicionais? _vDescCondIncond;
+    private DeducoesReducoes? _vDedRed;
+    private InfoTributacao? _trib;
 
     [XmlElement("vServPrest")]
-    public TCVServPrest? vServPrest
+    public ValorServicoPrestado? vServPrest
     {
         get => _vServPrest;
         set { _vServPrest = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vDescCondIncond")]
-    public TCVDescCondIncond? vDescCondIncond
+    public DescontosIncondicionais? vDescCondIncond
     {
         get => _vDescCondIncond;
         set { _vDescCondIncond = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vDedRed")]
-    public TCInfoDedRed? vDedRed
+    public DeducoesReducoes? vDedRed
     {
         get => _vDedRed;
         set { _vDedRed = value; OnPropertyChanged(); }
     }
 
     [XmlElement("trib")]
-    public TCInfoTributacao? trib
+    public InfoTributacao? trib
     {
         get => _trib;
         set { _trib = value; OnPropertyChanged(); }
@@ -1688,23 +1643,23 @@ public class TCInfoValores : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações relativas aos valores do serviço prestado (`TCVServPrest`).
+/// Grupo de informações relativas aos valores do serviço prestado (`ValorServicoPrestado`).
 /// </summary>
 [XmlType("TCVServPrest", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCVServPrest : NFSeNacionalBase
+public class ValorServicoPrestado : NFSeNacionalBase
 {
-    private string? _vReceb;
-    private string? _vServ;
+    private decimal? _vReceb;
+    private decimal? _vServ;
 
     [XmlElement("vReceb")]
-    public string? vReceb
+    public decimal? vReceb
     {
         get => _vReceb;
         set { _vReceb = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vServ")]
-    public string? vServ
+    public decimal? vServ
     {
         get => _vServ;
         set { _vServ = value; OnPropertyChanged(); }
@@ -1712,23 +1667,23 @@ public class TCVServPrest : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações relativas aos descontos (`TCVDescCondIncond`).
+/// Grupo de informações relativas aos descontos (`DescontosIncondicionais`).
 /// </summary>
 [XmlType("TCVDescCondIncond", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCVDescCondIncond : NFSeNacionalBase
+public class DescontosIncondicionais : NFSeNacionalBase
 {
-    private string? _vDescIncond;
-    private string? _vDescCond;
+    private decimal? _vDescIncond;
+    private decimal? _vDescCond;
 
     [XmlElement("vDescIncond")]
-    public string? vDescIncond
+    public decimal? vDescIncond
     {
         get => _vDescIncond;
         set { _vDescIncond = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vDescCond")]
-    public string? vDescCond
+    public decimal? vDescCond
     {
         get => _vDescCond;
         set { _vDescCond = value; OnPropertyChanged(); }
@@ -1736,24 +1691,24 @@ public class TCVDescCondIncond : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de dedução/redução (`TCInfoDedRed`).
+/// Tipo complexo para informações de dedução/redução (`DeducoesReducoes`).
 /// </summary>
 [XmlType("TCInfoDedRed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoDedRed : NFSeNacionalBase
+public class DeducoesReducoes : NFSeNacionalBase
 {
-    private string? _pDR;
-    private string? _vDR;
+    private decimal? _pDR;
+    private decimal? _vDR;
     private TCListaDocDedRed? _documentos;
 
     [XmlElement("pDR")]
-    public string? pDR
+    public decimal? pDR
     {
         get => _pDR;
         set { _pDR = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vDR")]
-    public string? vDR
+    public decimal? vDR
     {
         get => _vDR;
         set { _vDR = value; OnPropertyChanged(); }
@@ -1793,14 +1748,14 @@ public class TCDocDedRed : NFSeNacionalBase
     private string? _chNFe;
     private TCDocOutNFSe? _nFSeMun;
     private TCDocNFNFS? _nFNFS;
-    private string? _nDocFisc;
+    private int? _nDocFisc;
     private string? _nDoc;
     private string? _tpDedRed;
     private string? _xDescOutDed;
     private DateTime? _dtEmiDoc;
-    private string? _vDedutivelRedutivel;
-    private string? _vDeducaoReducao;
-    private TCInfoPessoa? _fornec;
+    private decimal? _vDedutivelRedutivel;
+    private decimal? _vDeducaoReducao;
+    private InfoDpsTomadorOuIntermediario? _fornec;
 
     [XmlElement("chNFSe")]
     public string? chNFSe
@@ -1831,7 +1786,7 @@ public class TCDocDedRed : NFSeNacionalBase
     }
 
     [XmlElement("nDocFisc")]
-    public string? nDocFisc
+    public int? nDocFisc
     {
         get => _nDocFisc;
         set { _nDocFisc = value; OnPropertyChanged(); }
@@ -1866,21 +1821,21 @@ public class TCDocDedRed : NFSeNacionalBase
     }
 
     [XmlElement("vDedutivelRedutivel")]
-    public string? vDedutivelRedutivel
+    public decimal? vDedutivelRedutivel
     {
         get => _vDedutivelRedutivel;
         set { _vDedutivelRedutivel = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vDeducaoReducao")]
-    public string? vDeducaoReducao
+    public decimal? vDeducaoReducao
     {
         get => _vDeducaoReducao;
         set { _vDeducaoReducao = value; OnPropertyChanged(); }
     }
 
     [XmlElement("fornec")]
-    public TCInfoPessoa? fornec
+    public InfoDpsTomadorOuIntermediario? fornec
     {
         get => _fornec;
         set { _fornec = value; OnPropertyChanged(); }
@@ -1952,31 +1907,31 @@ public class TCDocNFNFS : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de tributação (`TCInfoTributacao`).
+/// Tipo complexo para informações de tributação (`InfoTributacao`).
 /// </summary>
 [XmlType("TCInfoTributacao", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCInfoTributacao : NFSeNacionalBase
+public class InfoTributacao : NFSeNacionalBase
 {
-    private TCTribMunicipal? _tribMun;
-    private TCTribFederal? _tribFed;
-    private TCTribTotal? _totTrib;
+    private TributacaoMunicipal? _tribMun;
+    private TributacaoFederal? _tribFed;
+    private TributacaoTotal? _totTrib;
 
     [XmlElement("tribMun")]
-    public TCTribMunicipal? tribMun
+    public TributacaoMunicipal? tribMun
     {
         get => _tribMun;
         set { _tribMun = value; OnPropertyChanged(); }
     }
 
     [XmlElement("tribFed")]
-    public TCTribFederal? tribFed
+    public TributacaoFederal? tribFed
     {
         get => _tribFed;
         set { _tribFed = value; OnPropertyChanged(); }
     }
 
     [XmlElement("totTrib")]
-    public TCTribTotal? totTrib
+    public TributacaoTotal? totTrib
     {
         get => _totTrib;
         set { _totTrib = value; OnPropertyChanged(); }
@@ -1984,10 +1939,10 @@ public class TCInfoTributacao : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para tributação municipal (`TCTribMunicipal`).
+/// Tipo complexo para tributação municipal (`TributacaoMunicipal`).
 /// </summary>
 [XmlType("TCTribMunicipal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribMunicipal : NFSeNacionalBase
+public class TributacaoMunicipal : NFSeNacionalBase
 {
     private string? _tribISSQN;
     private string? _cPaisResult;
@@ -2104,18 +2059,18 @@ public class TCExigSuspensa : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para tributação federal (`TCTribFederal`).
+/// Tipo complexo para tributação federal (`TributacaoFederal`).
 /// </summary>
 [XmlType("TCTribFederal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribFederal : NFSeNacionalBase
+public class TributacaoFederal : NFSeNacionalBase
 {
-    private TCTribOutrosPisCofins? _piscofins;
+    private TributacaoFedPisCofins? _piscofins;
     private string? _vRetCP;
     private string? _vRetIRRF;
     private string? _vRetCSLL;
 
     [XmlElement("piscofins")]
-    public TCTribOutrosPisCofins? piscofins
+    public TributacaoFedPisCofins? piscofins
     {
         get => _piscofins;
         set { _piscofins = value; OnPropertyChanged(); }
@@ -2144,17 +2099,17 @@ public class TCTribFederal : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações do PIS/COFINS (`TCTribOutrosPisCofins`).
+/// Tipo complexo para informações do PIS/COFINS (`TributacaoFedPisCofins`).
 /// </summary>
 [XmlType("TCTribOutrosPisCofins", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribOutrosPisCofins : NFSeNacionalBase
+public class TributacaoFedPisCofins : NFSeNacionalBase
 {
     private string? _CST;
-    private string? _vBCPisCofins;
-    private string? _pAliqPis;
-    private string? _pAliqCofins;
-    private string? _vPis;
-    private string? _vCofins;
+    private decimal? _vBCPisCofins;
+    private decimal? _pAliqPis;
+    private decimal? _pAliqCofins;
+    private decimal? _vPis;
+    private decimal? _vCofins;
     private string? _tpRetPisCofins;
 
     [XmlElement("CST")]
@@ -2165,35 +2120,35 @@ public class TCTribOutrosPisCofins : NFSeNacionalBase
     }
 
     [XmlElement("vBCPisCofins")]
-    public string? vBCPisCofins
+    public decimal? vBCPisCofins
     {
         get => _vBCPisCofins;
         set { _vBCPisCofins = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pAliqPis")]
-    public string? pAliqPis
+    public decimal? pAliqPis
     {
         get => _pAliqPis;
         set { _pAliqPis = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pAliqCofins")]
-    public string? pAliqCofins
+    public decimal? pAliqCofins
     {
         get => _pAliqCofins;
         set { _pAliqCofins = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vPis")]
-    public string? vPis
+    public decimal? vPis
     {
         get => _vPis;
         set { _vPis = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vCofins")]
-    public string? vCofins
+    public decimal? vCofins
     {
         get => _vCofins;
         set { _vCofins = value; OnPropertyChanged(); }
@@ -2208,25 +2163,25 @@ public class TCTribOutrosPisCofins : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para total aproximado de tributos (`TCTribTotal`).
+/// Tipo complexo para total aproximado de tributos (`TributacaoTotal`).
 /// </summary>
 [XmlType("TCTribTotal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribTotal : NFSeNacionalBase
+public class TributacaoTotal : NFSeNacionalBase
 {
-    private TCTribTotalMonet? _vTotTrib;
-    private TCTribTotalPercent? _pTotTrib;
+    private TributacaoTotalMoeda? _vTotTrib;
+    private TributacaoTotalPercentual? _pTotTrib;
     private string? _indTotTrib;
     private string? _pTotTribSN;
 
     [XmlElement("vTotTrib")]
-    public TCTribTotalMonet? vTotTrib
+    public TributacaoTotalMoeda? vTotTrib
     {
         get => _vTotTrib;
         set { _vTotTrib = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pTotTrib")]
-    public TCTribTotalPercent? pTotTrib
+    public TributacaoTotalPercentual? pTotTrib
     {
         get => _pTotTrib;
         set { _pTotTrib = value; OnPropertyChanged(); }
@@ -2248,31 +2203,31 @@ public class TCTribTotal : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo para valores monetários totais dos tributos (`TCTribTotalMonet`).
+/// Tipo para valores monetários totais dos tributos (`TributacaoTotalMoeda`).
 /// </summary>
 [XmlType("TCTribTotalMonet", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribTotalMonet : NFSeNacionalBase
+public class TributacaoTotalMoeda : NFSeNacionalBase
 {
-    private string? _vTotTribFed;
-    private string? _vTotTribEst;
-    private string? _vTotTribMun;
+    private decimal? _vTotTribFed;
+    private decimal? _vTotTribEst;
+    private decimal? _vTotTribMun;
 
     [XmlElement("vTotTribFed")]
-    public string? vTotTribFed
+    public decimal? vTotTribFed
     {
         get => _vTotTribFed;
         set { _vTotTribFed = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vTotTribEst")]
-    public string? vTotTribEst
+    public decimal? vTotTribEst
     {
         get => _vTotTribEst;
         set { _vTotTribEst = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vTotTribMun")]
-    public string? vTotTribMun
+    public decimal? vTotTribMun
     {
         get => _vTotTribMun;
         set { _vTotTribMun = value; OnPropertyChanged(); }
@@ -2280,10 +2235,10 @@ public class TCTribTotalMonet : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo para valores percentuais totais dos tributos (`TCTribTotalPercent`).
+/// Tipo para valores percentuais totais dos tributos (`TributacaoTotalPercentual`).
 /// </summary>
 [XmlType("TCTribTotalPercent", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCTribTotalPercent : NFSeNacionalBase
+public class TributacaoTotalPercentual : NFSeNacionalBase
 {
     private string? _pTotTribFed;
     private string? _pTotTribEst;
@@ -2314,10 +2269,10 @@ public class TCTribTotalPercent : NFSeNacionalBase
 /* ----------------------------- TIPOS RELACIONADOS A IBS/CBS (TCRTC*) ----------------------------- */
 
 /// <summary>
-/// Tipo complexo IBSCBS (TCRTCIBSCBS).
+/// Tipo complexo IBSCBS (IbsCbs).
 /// </summary>
 [XmlType("TCRTCIBSCBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCRTCIBSCBS : NFSeNacionalBase
+public class IbsCbs : NFSeNacionalBase
 {
     private string? _cLocalidadeIncid;
     private string? _xLocalidadeIncid;
@@ -2801,10 +2756,10 @@ public class TCRTCTotalTribCompraGov : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações declaradas referentes a IBS/CBS (`TCRTCInfoIBSCBS`).
+/// Tipo complexo para informações declaradas referentes a IBS/CBS (`TotalIBsCbs`).
 /// </summary>
 [XmlType("TCRTCInfoIBSCBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class TCRTCInfoIBSCBS : NFSeNacionalBase
+public class TotalIBsCbs : NFSeNacionalBase
 {
     private string? _finNFSe;
     private string? _indFinal;
@@ -2915,7 +2870,7 @@ public class TCRTCInfoDest : NFSeNacionalBase
     private string? _nIF;
     private string? _cNaoNIF;
     private string? _xNome;
-    private TCEndereco? _end;
+    private Endereco? _end;
     private string? _fone;
     private string? _email;
 
@@ -2955,7 +2910,7 @@ public class TCRTCInfoDest : NFSeNacionalBase
     }
 
     [XmlElement("end")]
-    public TCEndereco? end
+    public Endereco? end
     {
         get => _end;
         set { _end = value; OnPropertyChanged(); }
