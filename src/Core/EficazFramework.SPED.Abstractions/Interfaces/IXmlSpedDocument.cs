@@ -128,7 +128,10 @@ public enum XmlDocumentType
     /// </summary>
     NFSe_BETHA_LoteRPS = 32,
 
-
+    /// <summary>
+    /// EficazFramework.SPED.Schemas.NFSe.Nacional.NFSe
+    /// </summary>
+    NFS_e_Nacional = 34,
 
     /// <summary>
     /// EficazFramework.SPED.Schemas.NFSe.ABRASF

@@ -229,6 +229,20 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://www.sped.fazenda.gov.br/nfse&quot; xmlns=&quot;http://www.sped.fazenda.gov.br/nfse&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        ///  &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot;/&gt;
+        ///  &lt;xs:include schemaLocation=&quot;tiposSimples_v1.01.xsd&quot;/&gt;
+        ///  &lt;!--TIPO COMPLEXO NFS-e--&gt;
+        ///  &lt;xs:complexT [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFSe_Nacional_1_0_1 {
+            get {
+                return ResourceManager.GetString("NFSe_Nacional_1.0.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;!--
         ///&lt;!DOCTYPE schema
