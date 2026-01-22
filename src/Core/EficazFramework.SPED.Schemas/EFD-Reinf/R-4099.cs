@@ -28,7 +28,7 @@
 ///             nmResp = "Pierre de Fermat",
 ///             cpfResp = "47363361886",
 ///             telefone = "11999990000",
-///             EMail = "contato@eficazcs.com.br",
+///             email = "contato@eficazcs.com.br",
 ///         },
 ///         infoFech = new R4099InformacaoFechamReabertura()
 ///         {
@@ -60,7 +60,7 @@
 ///             nmResp = "Pierre de Fermat",
 ///             cpfResp = "47363361886",
 ///             telefone = "11999990000",
-///             EMail = "contato@eficazcs.com.br",
+///             email = "contato@eficazcs.com.br",
 ///         },
 ///         infoFech = new R4099InformacaoFechamReabertura()
 ///         {

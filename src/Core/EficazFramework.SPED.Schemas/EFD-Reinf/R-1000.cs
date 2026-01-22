@@ -42,7 +42,7 @@
 ///                         nmCtt = "Pierre de Fermat",
 ///                         cpfCtt = "47363361886",
 ///                         foneFixo = "3535441234",
-///                         EMail = "suporte@eficazcs.com.br"
+///                         email = "suporte@eficazcs.com.br"
 ///                     },
 ///                     softHouse = new R1000InfoCadastroSoftwareHouse()
 ///                 }
@@ -200,7 +200,7 @@ public partial class R1000EventoInfoContribuinte : EfdReinfBindableObject
     ///                 nmCtt = "Pierre de Fermat",
     ///                 cpfCtt = "47363361886",
     ///                 foneFixo = "3535441234",
-    ///                 EMail = "suporte@eficazcs.com.br"
+    ///                 email = "suporte@eficazcs.com.br"
     ///             },
     ///             softHouse = new R1000_InfoCadastro_SoftwareHouse()
     ///         }

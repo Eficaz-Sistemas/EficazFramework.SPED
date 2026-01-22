@@ -88,7 +88,7 @@ public class Registro0005 : Primitives.Registro
     /// </summary>
     public string Bairro { get; set; } = null;
     /// <summary>
-    /// Número do telefone (ddd+Telefone)
+    /// Número do telefone (ddd+fone)
     /// </summary>
     public string Fone { get; set; } = null;
     /// <summary>
