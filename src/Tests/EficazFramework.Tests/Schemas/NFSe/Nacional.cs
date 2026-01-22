@@ -13,32 +13,32 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         instance.Should().NotBeNull();
 
         instance.Chave.Should().Be("NFS3510000004900099000019700000000000006010200049010");
-        instance.InfNFSe.xLocEmi.Should().Be("FRANCA");
-        instance.InfNFSe.xLocPrestacao.Should().Be("Franca");
-        instance.InfNFSe.nNFSe.Should().Be(113);
-        instance.InfNFSe.cLocIncid.Should().Be("3516200");
-        instance.InfNFSe.xLocIncid.Should().Be("Franca");
-        instance.InfNFSe.xTribNac.Should().Be("Contabilidade, inclusive serviços técnicos e auxiliares.");
-        instance.InfNFSe.verAplic.Should().Be("SilTecnologia_v1.00");
+        instance.InfNFSe.LocalEmissao.Should().Be("FRANCA");
+        instance.InfNFSe.LocalPrestacao.Should().Be("Franca");
+        instance.InfNFSe.Numero.Should().Be(113);
+        instance.InfNFSe.LocalIncidenciaCodigo.Should().Be("3516200");
+        instance.InfNFSe.LocalIncidenciaNome.Should().Be("Franca");
+        instance.InfNFSe.TributacaoNacional.Should().Be("Contabilidade, inclusive serviços técnicos e auxiliares.");
+        instance.InfNFSe.VersaoAplicativoGerador.Should().Be("SilTecnologia_v1.00");
         instance.InfNFSe.ambGer.Should().Be(AmbienteGerador.Prefeitura);
         instance.InfNFSe.tpEmis.Should().Be(TipoEmissao.LeiauteMunicipal);
         instance.InfNFSe.cStat.Should().Be("100");
-        instance.InfNFSe.dhProc.Should().Be(new DateTimeOffset(new DateTime(2026, 01, 10)));
-        instance.InfNFSe.nDFSe.Should().Be("27644971");
+        instance.InfNFSe.DataHoraProcessamento.Should().Be(new DateTimeOffset(new DateTime(2026, 01, 10)));
+        instance.InfNFSe.NumeroSequencial.Should().Be("27644971");
         
         instance.InfNFSe.Emitente.Should().NotBeNull();
         instance.InfNFSe.Emitente.CNPJ.Should().Be("11222333000144");
-        instance.InfNFSe.Emitente.IM.Should().Be("117915");
-        instance.InfNFSe.Emitente.xNome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
+        instance.InfNFSe.Emitente.InscricaoMunicipal.Should().Be("117915");
+        instance.InfNFSe.Emitente.RazaoSocialNome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
         instance.InfNFSe.Emitente.EnderecoNacional.Should().NotBeNull();
-        instance.InfNFSe.Emitente.EnderecoNacional.xLgr.Should().Be("14400-000 - Rua da Nota, 1215   SALA 80");
-        instance.InfNFSe.Emitente.EnderecoNacional.nro.Should().Be("0");
-        instance.InfNFSe.Emitente.EnderecoNacional.xBairro.Should().Be("Centro");
-        instance.InfNFSe.Emitente.EnderecoNacional.cMun.Should().Be("3516200");
+        instance.InfNFSe.Emitente.EnderecoNacional.Logradouro.Should().Be("14400-000 - Rua da Nota, 1215   SALA 80");
+        instance.InfNFSe.Emitente.EnderecoNacional.Numero.Should().Be("0");
+        instance.InfNFSe.Emitente.EnderecoNacional.Bairro.Should().Be("Centro");
+        instance.InfNFSe.Emitente.EnderecoNacional.MunicipioCodigo.Should().Be("3516200");
         instance.InfNFSe.Emitente.EnderecoNacional.UF.Should().Be("SP");
         instance.InfNFSe.Emitente.EnderecoNacional.CEP.Should().Be("14400000");
-        instance.InfNFSe.Emitente.fone.Should().Be("9912345678");
-        instance.InfNFSe.Emitente.email.Should().Be("admin@fakemail.com");
+        instance.InfNFSe.Emitente.Telefone.Should().Be("9912345678");
+        instance.InfNFSe.Emitente.EMail.Should().Be("admin@fakemail.com");
 
     }
 

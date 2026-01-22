@@ -116,7 +116,7 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
     }
 
     public XmlDocumentType DocumentType => XmlDocumentType.NFS_e_Nacional;
-    public DateTime? DataEmissao => InfNFSe?.dhProc.DateTime;
+    public DateTime? DataEmissao => InfNFSe?.DataHoraProcessamento.DateTime;
     public string Chave => InfNFSe?.Id ?? string.Empty;
 
     private static XmlSerializer sSerializer = null!;
@@ -378,7 +378,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Descrição do código do IBGE do município emissor da NFS-e.
     /// </summary>
     [XmlElement("xLocEmi")]
-    public string? xLocEmi
+    public string? LocalEmissao
     {
         get => _xLocEmi;
         set { _xLocEmi = value; OnPropertyChanged(); }
@@ -388,7 +388,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Descrição do local da prestação do serviço.
     /// </summary>
     [XmlElement("xLocPrestacao")]
-    public string? xLocPrestacao
+    public string? LocalPrestacao
     {
         get => _xLocPrestacao;
         set { _xLocPrestacao = value; OnPropertyChanged(); }
@@ -398,7 +398,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Número sequencial por tipo de emitente da NFS-e.
     /// </summary>
     [XmlElement("nNFSe")]
-    public int nNFSe
+    public int Numero
     {
         get => _nNFSe;
         set { _nNFSe = value; OnPropertyChanged(); }
@@ -408,7 +408,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Código do município de incidência (IBGE) - opcional.
     /// </summary>
     [XmlElement("cLocIncid")]
-    public string? cLocIncid
+    public string? LocalIncidenciaCodigo
     {
         get => _cLocIncid;
         set { _cLocIncid = value; OnPropertyChanged(); }
@@ -418,7 +418,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Descrição do município de incidência - opcional.
     /// </summary>
     [XmlElement("xLocIncid")]
-    public string? xLocIncid
+    public string? LocalIncidenciaNome
     {
         get => _xLocIncid;
         set { _xLocIncid = value; OnPropertyChanged(); }
@@ -428,7 +428,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Descrição do código de tributação nacional do ISSQN.
     /// </summary>
     [XmlElement("xTribNac")]
-    public string? xTribNac
+    public string? TributacaoNacional
     {
         get => _xTribNac;
         set { _xTribNac = value; OnPropertyChanged(); }
@@ -458,7 +458,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Versão do aplicativo que gerou a NFS-e.
     /// </summary>
     [XmlElement("verAplic")]
-    public string? verAplic
+    public string? VersaoAplicativoGerador
     {
         get => _verAplic;
         set { _verAplic = value; OnPropertyChanged(); }
@@ -508,7 +508,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Data/Hora da validação da DPS e geração da NFS-e (UTC).
     /// </summary>
     [XmlElement("dhProc")]
-    public DateTimeOffset dhProc
+    public DateTimeOffset DataHoraProcessamento
     {
         get => _dhProc;
         set { _dhProc = value; OnPropertyChanged(); }
@@ -518,7 +518,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Número sequencial do documento gerado por ambiente gerador de DFSe do município.
     /// </summary>
     [XmlElement("nDFSe")]
-    public string? nDFSe
+    public string? NumeroSequencial
     {
         get => _nDFSe;
         set { _nDFSe = value; OnPropertyChanged(); }
@@ -624,7 +624,7 @@ public class Emitente : NFSeNacionalBase
     /// Número da inscrição municipal - opcional.
     /// </summary>
     [XmlElement("IM")]
-    public string? IM
+    public string? InscricaoMunicipal
     {
         get => _iM;
         set { _iM = value; OnPropertyChanged(); }
@@ -634,7 +634,7 @@ public class Emitente : NFSeNacionalBase
     /// Nome / Razão Social do emitente.
     /// </summary>
     [XmlElement("xNome")]
-    public string? xNome
+    public string? RazaoSocialNome
     {
         get => _xNome;
         set { _xNome = value; OnPropertyChanged(); }
@@ -664,7 +664,7 @@ public class Emitente : NFSeNacionalBase
     /// Número do telefone do emitente - opcional.
     /// </summary>
     [XmlElement("fone")]
-    public string? fone
+    public string? Telefone
     {
         get => _fone;
         set { _fone = value; OnPropertyChanged(); }
@@ -674,7 +674,7 @@ public class Emitente : NFSeNacionalBase
     /// E-mail do emitente - opcional.
     /// </summary>
     [XmlElement("email")]
-    public string? email
+    public string? EMail
     {
         get => _email;
         set { _email = value; OnPropertyChanged(); }
@@ -696,14 +696,14 @@ public class EnderecoNacional : NFSeNacionalBase
     private string? _cEP;
 
     [XmlElement("xLgr")]
-    public string? xLgr
+    public string? Logradouro
     {
         get => _xLgr;
         set { _xLgr = value; OnPropertyChanged(); }
     }
 
     [XmlElement("nro")]
-    public string? nro
+    public string? Numero
     {
         get => _nro;
         set { _nro = value; OnPropertyChanged(); }
@@ -717,14 +717,14 @@ public class EnderecoNacional : NFSeNacionalBase
     }
 
     [XmlElement("xBairro")]
-    public string? xBairro
+    public string? Bairro
     {
         get => _xBairro;
         set { _xBairro = value; OnPropertyChanged(); }
     }
 
     [XmlElement("cMun")]
-    public string? cMun
+    public string? MunicipioCodigo
     {
         get => _cMun;
         set { _cMun = value; OnPropertyChanged(); }

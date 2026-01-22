@@ -232,13 +232,13 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;NFSe xmlns=&quot;http://www.sped.fazenda.gov.br/nfse&quot; versao=&quot;1.00&quot;&gt;
         ///  &lt;infNFSe Id=&quot;NFS3510000004900099000019700000000000006010200049010&quot;&gt;
-        ///    &lt;xLocEmi&gt;FRANCA&lt;/xLocEmi&gt;
-        ///    &lt;xLocPrestacao&gt;Franca&lt;/xLocPrestacao&gt;
-        ///    &lt;nNFSe&gt;113&lt;/nNFSe&gt;
-        ///    &lt;cLocIncid&gt;3516200&lt;/cLocIncid&gt;
-        ///    &lt;xLocIncid&gt;Franca&lt;/xLocIncid&gt;
-        ///    &lt;xTribNac&gt;Contabilidade, inclusive serviços técnicos e auxiliares.&lt;/xTribNac&gt;
-        ///    &lt;verAplic&gt;SilTecnologia_v1.00&lt;/verAplic&gt;
+        ///    &lt;LocalEmissao&gt;FRANCA&lt;/LocalEmissao&gt;
+        ///    &lt;LocalPrestacao&gt;Franca&lt;/LocalPrestacao&gt;
+        ///    &lt;Numero&gt;113&lt;/Numero&gt;
+        ///    &lt;LocalIncidenciaCodigo&gt;3516200&lt;/LocalIncidenciaCodigo&gt;
+        ///    &lt;LocalIncidenciaNome&gt;Franca&lt;/LocalIncidenciaNome&gt;
+        ///    &lt;TributacaoNacional&gt;Contabilidade, inclusive serviços técnicos e auxiliares.&lt;/TributacaoNacional&gt;
+        ///    &lt;VersaoAplicativoGerador&gt;SilTecnologia_v1.00&lt;/VersaoAplicativoGerador&gt;
         ///    &lt;ambGer&gt;1&lt;/ambGer&gt;
         ///    &lt;tpEmis&gt;2 [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
