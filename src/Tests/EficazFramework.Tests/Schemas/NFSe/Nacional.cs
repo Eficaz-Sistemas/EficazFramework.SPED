@@ -26,19 +26,19 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         instance.InfNFSe.dhProc.Should().Be(new DateTimeOffset(new DateTime(2026, 01, 10)));
         instance.InfNFSe.nDFSe.Should().Be("27644971");
         
-        instance.InfNFSe.emit.Should().NotBeNull();
-        instance.InfNFSe.emit.CNPJ.Should().Be("11222333000144");
-        instance.InfNFSe.emit.IM.Should().Be("117915");
-        instance.InfNFSe.emit.xNome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
-        instance.InfNFSe.emit.enderNac.Should().NotBeNull();
-        instance.InfNFSe.emit.enderNac.xLgr.Should().Be("14400-000 - Rua da Nota, 1215   SALA 80");
-        instance.InfNFSe.emit.enderNac.nro.Should().Be("0");
-        instance.InfNFSe.emit.enderNac.xBairro.Should().Be("Centro");
-        instance.InfNFSe.emit.enderNac.cMun.Should().Be("3516200");
-        instance.InfNFSe.emit.enderNac.UF.Should().Be("SP");
-        instance.InfNFSe.emit.enderNac.CEP.Should().Be("14400000");
-        instance.InfNFSe.emit.fone.Should().Be("9912345678");
-        instance.InfNFSe.emit.email.Should().Be("admin@fakemail.com");
+        instance.InfNFSe.Emitente.Should().NotBeNull();
+        instance.InfNFSe.Emitente.CNPJ.Should().Be("11222333000144");
+        instance.InfNFSe.Emitente.IM.Should().Be("117915");
+        instance.InfNFSe.Emitente.xNome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
+        instance.InfNFSe.Emitente.EnderecoNacional.Should().NotBeNull();
+        instance.InfNFSe.Emitente.EnderecoNacional.xLgr.Should().Be("14400-000 - Rua da Nota, 1215   SALA 80");
+        instance.InfNFSe.Emitente.EnderecoNacional.nro.Should().Be("0");
+        instance.InfNFSe.Emitente.EnderecoNacional.xBairro.Should().Be("Centro");
+        instance.InfNFSe.Emitente.EnderecoNacional.cMun.Should().Be("3516200");
+        instance.InfNFSe.Emitente.EnderecoNacional.UF.Should().Be("SP");
+        instance.InfNFSe.Emitente.EnderecoNacional.CEP.Should().Be("14400000");
+        instance.InfNFSe.Emitente.fone.Should().Be("9912345678");
+        instance.InfNFSe.Emitente.email.Should().Be("admin@fakemail.com");
 
     }
 

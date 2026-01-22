@@ -528,7 +528,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Grupo de informações do emitente da NFS-e.
     /// </summary>
     [XmlElement("emit")]
-    public Emitente? emit
+    public Emitente? Emitente
     {
         get => _emit;
         set { _emit = value; OnPropertyChanged(); }
@@ -654,7 +654,7 @@ public class Emitente : NFSeNacionalBase
     /// Grupo de informações do endereço nacional do Emitente da NFS-e.
     /// </summary>
     [XmlElement("enderNac")]
-    public EnderecoNacional? enderNac
+    public EnderecoNacional? EnderecoNacional
     {
         get => _enderNac;
         set { _enderNac = value; OnPropertyChanged(); }
