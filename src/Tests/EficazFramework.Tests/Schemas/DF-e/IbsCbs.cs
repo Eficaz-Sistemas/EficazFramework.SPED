@@ -1,4 +1,5 @@
 ﻿using EficazFramework.SPED.Schemas.NFe;
+using EficazFramework.SPED.Schemas.SAT_CFe;
 using EficazFramework.SPED.Tests;
 using System;
 
@@ -26,6 +27,7 @@ internal class IbsCbs
                     XmlDocumentType.NFeWithProtocol => (Action)(() => ParseNFe(doc as EficazFramework.SPED.Schemas.NFe.ProcessoNFe)),
                     XmlDocumentType.NFeWithoutProtocol => (Action)(() => ParseNFe(new() { NFe = doc as EficazFramework.SPED.Schemas.NFe.NFe })),
                     XmlDocumentType.CTeWithProtocol => (Action)(() => ParseCTe(doc as EficazFramework.SPED.Schemas.CTe.ProcessoCTe)),
+                    XmlDocumentType.NFS_e_Nacional => (Action)(() => ParseNFSeNacional(doc as EficazFramework.SPED.Schemas.NFSe.Nacional.NFSe)),
                     object other => () => Assert.Fail($"Unexpected document type: {doc.DocumentType}")
                 };
                 action();
@@ -84,6 +86,16 @@ internal class IbsCbs
         Console.WriteLine($"🛍️ CBS UF % Efetivo: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.gRed?.pAliqEfet}");
         Console.WriteLine($"🛍️ CBS: {doc.CTe.Informacoes.Impostos.IBSCBS.gIBSCBS.gCBS.vCBS}");
         Console.WriteLine($"***");
+    }
+
+    private void ParseNFSeNacional(EficazFramework.SPED.Schemas.NFSe.Nacional.NFSe doc)
+    {
+        if (doc.InfNFSe.DPS.infDPS.IBSCBS != null)
+        {
+            Console.WriteLine($"🛍️ CST: {doc.InfNFSe.DPS.infDPS.IBSCBS.valores?.trib?.gIBSCBS?.CST}");
+            Console.WriteLine($"🛍️ cClassTrib: {doc.InfNFSe.DPS.infDPS.IBSCBS.valores?.trib?.gIBSCBS?.cClassTrib}");
+            Console.WriteLine($"***");
+        }
     }
 
 

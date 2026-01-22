@@ -83,8 +83,8 @@ public partial class ProcessoNFeBase : INotifyPropertyChanged, IXmlSpedDocument
     /// <returns>string XML value</returns>
     public virtual string Serialize()
     {
-        System.IO.StreamReader streamReader = null;
-        System.IO.MemoryStream memoryStream = null;
+        System.IO.StreamReader streamReader = null!;
+        System.IO.MemoryStream memoryStream = null!;
         try
         {
             memoryStream = new System.IO.MemoryStream();

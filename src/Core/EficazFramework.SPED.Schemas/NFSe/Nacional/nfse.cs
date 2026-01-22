@@ -1,3 +1,4 @@
+using EficazFramework.SPED.Utilities.XML;
 using System.Runtime.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.NFSe.Nacional;
@@ -118,9 +119,230 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
     public DateTime? DataEmissao => InfNFSe?.dhProc.DateTime;
     public string Chave => InfNFSe?.Id ?? string.Empty;
 
-    public string Serialize()
+    private static XmlSerializer sSerializer = null!;
+    private static XmlSerializer Serializer
     {
-        throw new NotImplementedException();
+        get
+        {
+            sSerializer ??= new XmlSerializer(typeof(NFSe));
+            return sSerializer;
+        }
+    }
+
+
+    /// <summary>
+    /// Serializes current TNfeProc object into an XML document
+    /// </summary>
+    /// <returns>string XML value</returns>
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null!;
+        System.IO.MemoryStream memoryStream = null!;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            Serializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
+    /// <summary>
+    /// Deserializes workflow markup into an TNfeProc object
+    /// </summary>
+    /// <param name="xml">string workflow markup to deserialize</param>
+    /// <param name="obj">Output TNfeProc object</param>
+    /// <param name="exception">output Exception value if deserialize failed</param>
+    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+    public static bool CanDeserialize(string xml, ref NFSe obj, ref Exception exception)
+    {
+        exception = null;
+        obj = default;
+        try
+        {
+            obj = Deserialize(xml);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+            return false;
+        }
+    }
+
+    public static bool CanDeserialize(string xml, ref NFSe obj)
+    {
+        Exception exception = null;
+        return CanDeserialize(xml, ref obj, ref exception);
+    }
+
+    public static NFSe Deserialize(string xml)
+    {
+        System.IO.StringReader stringReader = null!;
+        try
+        {
+            stringReader = new System.IO.StringReader(xml);
+            // stringReader.ReadToEnd() 'TESTING...
+            return (NFSe)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+        }
+        // Return CType(Serializer.Deserialize(stringReader), ConsultarLoteRpsResposta2)
+        finally
+        {
+            stringReader?.Dispose();
+        }
+    }
+
+    public static NFSe Deserialize(System.IO.Stream s) => (NFSe)Serializer.Deserialize(s);
+
+
+    /// <summary>
+    /// Serializes current TNfeProc object into file
+    /// </summary>
+    /// <param name="target">target stream of outupt xml file</param>
+    /// <param name="exception">output Exception value if failed</param>
+    /// <returns>true if can serialize and save into file; otherwise, false</returns>
+    public virtual bool CanSaveToFile(System.IO.Stream target, ref Exception exception)
+    {
+        exception = null;
+        try
+        {
+            SaveTo(target);
+            return true;
+        }
+        catch (Exception e)
+        {
+            exception = e;
+            return false;
+        }
+    }
+
+    public virtual void SaveTo(System.IO.Stream target)
+    {
+        if (target is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
+        var streamWriter = new System.IO.StreamWriter(target);
+        try
+        {
+            string xmlString = Serialize();
+            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
+            // streamWriter = xmlFile.CreateText
+            streamWriter.WriteLine(xmlString);
+            streamWriter.Flush();
+        }
+        finally
+        {
+            if (streamWriter != null)
+            {
+                streamWriter.Dispose();
+            }
+        }
+    }
+
+    public virtual async void SaveToAsync(System.IO.Stream target)
+    {
+        if (target is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
+        var streamWriter = new System.IO.StreamWriter(target);
+        try
+        {
+            string xmlString = Serialize();
+            await streamWriter.WriteLineAsync(xmlString);
+            await streamWriter.FlushAsync();
+        }
+        finally
+        {
+            if (streamWriter != null)
+            {
+                streamWriter.Dispose();
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// Deserializes xml markup from file into an TNfeProc object
+    /// </summary>
+    /// <param name="source">target stream of outupt xml file</param>
+    /// <param name="obj">Output TNfeProc object</param>
+    /// <param name="exception">output Exception value if deserialize failed</param>
+    /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+    public static bool CanLoadFrom(System.IO.Stream source, ref NFSe obj, ref Exception exception)
+    {
+        exception = null;
+        obj = default;
+        try
+        {
+            obj = LoadFrom(source);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+            return false;
+        }
+    }
+
+    public static bool CanLoadFrom(System.IO.Stream source, ref NFSe obj)
+    {
+        Exception exception = null;
+        return CanLoadFrom(source, ref obj, ref exception);
+    }
+
+    public static NFSe LoadFrom(System.IO.Stream source)
+    {
+        if (source is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
+        System.IO.StreamReader sr = null;
+        try
+        {
+            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
+            sr = new System.IO.StreamReader(source);
+            string xmlString = sr.ReadToEnd();
+            // sr.Close()
+            // file.Close()
+            return Deserialize(xmlString);
+        }
+        finally
+        {
+            if (source != null)
+            {
+                source.Dispose();
+            }
+
+            if (sr != null)
+            {
+                sr.Dispose();
+            }
+        }
+    }
+
+    public static async Task<NFSe> LoadFromAsync(System.IO.Stream source, bool close_stream = true)
+    {
+        if (source is null)
+            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
+        System.IO.StreamReader sr = null;
+        try
+        {
+            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
+            sr = new System.IO.StreamReader(source);
+            string xmlString = await sr.ReadToEndAsync();
+            // sr.Close()
+            // file.Close()
+            return Deserialize(xmlString);
+        }
+        finally
+        {
+            if (sr != null & close_stream == true)
+            {
+                sr.Dispose();
+            }
+        }
     }
 }
 
