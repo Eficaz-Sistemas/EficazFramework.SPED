@@ -27,7 +27,7 @@
 ///             nmResp = "Teste",
 ///             cpfResp = "07448448609",
 ///             telefone = "3535441511",
-///             EMail = "contato@eficazctb.com.br"
+///             email = "contato@eficazctb.com.br"
 ///         },
 ///         infoFech = new EficazFramework.SPED.Schemas.EFD_Reinf.R2099InformacoesFechamento()
 ///         {
