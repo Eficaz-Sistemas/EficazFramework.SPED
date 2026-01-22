@@ -90,10 +90,10 @@ internal class IbsCbs
 
     private void ParseNFSeNacional(EficazFramework.SPED.Schemas.NFSe.Nacional.NFSe doc)
     {
-        if (doc.InfNFSe.DPS.infDPS.IBSCBS != null)
+        if (doc.InfNFSe.DPS.InfDPS.IBSCBS != null)
         {
-            Console.WriteLine($"🛍️ CST: {doc.InfNFSe.DPS.infDPS.IBSCBS.valores?.trib?.gIBSCBS?.CST}");
-            Console.WriteLine($"🛍️ cClassTrib: {doc.InfNFSe.DPS.infDPS.IBSCBS.valores?.trib?.gIBSCBS?.cClassTrib}");
+            Console.WriteLine($"🛍️ CST: {doc.InfNFSe.DPS.InfDPS.IBSCBS.valores?.trib?.gIBSCBS?.CST}");
+            Console.WriteLine($"🛍️ cClassTrib: {doc.InfNFSe.DPS.InfDPS.IBSCBS.valores?.trib?.gIBSCBS?.cClassTrib}");
             Console.WriteLine($"***");
         }
     }
