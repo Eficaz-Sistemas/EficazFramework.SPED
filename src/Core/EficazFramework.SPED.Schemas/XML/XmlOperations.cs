@@ -71,6 +71,7 @@ public static partial class Operations
                     await Schemas.NFSe.GINFES.tcListaNfse.LoadFromAsync(fixedstream, false) : 
                     null,
                 "ConsultarLoteRpsResposta" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta.LoadFromAsync(fixedstream, false),
+                "NFSe" => await Schemas.NFSe.Nacional.NFSe.LoadFromAsync(fixedstream, false),
                 "NFSE" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta2.LoadFromAsync(fixedstream, false),
                 "EnviarLoteRpsEnvio" => await Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFromAsync(fixedstream, false),
                 "ConsultarNfseResposta" => xdoc.Root?.ToString().Contains("http://www.abrasf.org.br/nfse.xsd") ?? false ?
