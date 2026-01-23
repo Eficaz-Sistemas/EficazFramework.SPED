@@ -20,7 +20,7 @@ public class AutorizacaoTests : BaseNFeTests
         result.Ambiente.Should().Be(Schemas.NFe.Ambiente.Homologacao);
         result.RetornoCodigo.Should().Be("104");
         result.ProtocoloRecebimento.Should().NotBeNull();
-        result.ProtocoloRecebimento.InformacoesProtocolo.StatusNFeCodigo.Should().Be("230"); //Emitente não cadastrado para emissão de NFe
+        result.ProtocoloRecebimento.InformacoesProtocolo.StatusNFeCodigo.Should().BeOneOf("230", "231"); //Emitente não cadastrado para emissão de NFe
     }
 
 

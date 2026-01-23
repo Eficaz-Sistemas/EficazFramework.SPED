@@ -352,6 +352,7 @@ public class IbsCbs : IbsCbsBase
     private decimal _vBC;
     private IbsEstadual? _gIBSUF;
     private IbsMunicipal? _gIBSMun;
+    private decimal _vIBS;
     private Cbs? _gCBS;
     private TributacaoRegular? _gTribRegular;
     private CreditoPresumido? _gIBSCredPres;
@@ -361,6 +362,8 @@ public class IbsCbs : IbsCbsBase
     public decimal vBC { get => _vBC; set { _vBC = value; OnPropertyChanged(); } }
     public IbsEstadual? gIBSUF { get => _gIBSUF; set { _gIBSUF = value; OnPropertyChanged(); } }
     public IbsMunicipal? gIBSMun { get => _gIBSMun; set { _gIBSMun = value; OnPropertyChanged(); } }
+    public decimal vIBS { get => _vIBS; set { _vIBS = value; OnPropertyChanged(); } }
+
     public Cbs? gCBS { get => _gCBS; set { _gCBS = value; OnPropertyChanged(); } }
     public TributacaoRegular? gTribRegular { get => _gTribRegular; set { _gTribRegular = value; OnPropertyChanged(); } }
     public CreditoPresumido? gIBSCredPres { get => _gIBSCredPres; set { _gIBSCredPres = value; OnPropertyChanged(); } }

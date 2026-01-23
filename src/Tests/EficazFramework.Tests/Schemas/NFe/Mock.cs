@@ -142,18 +142,48 @@ internal static class NFe
                                     vBC = 0.0,
                                     vCOFINS = 0.0
                                 }
+                            },
+                            IBSCBS = new()
+                            {
+                                CST = DFeBase.Cst.CST_000,
+                                cClassTrib = "000001",
+                                gIBSCBS = new()
+                                {
+                                    vBC = 80M,
+                                    gIBSUF = new()
+                                    {
+                                        pIBSUF = 0.10M,
+                                        vIBSUF = 0.08M  
+                                    },
+                                    gIBSMun = new()
+                                    {
+                                        pIBSMun = 0.00M,
+                                        vIBSMun = 0.00M
+                                    },
+                                    vIBS = 0.08m,
+                                    gCBS = new()
+                                    {
+                                        pCBS = 0.90M,
+                                        vCBS = 0.72M
+                                    }
+                                }
                             }
                         }
                     }
                 ],
                 Totais = new()
                 {
+                    vNFTot = 80.80M,
                     ICMS = new()
                     {
                         Produtos = 89.91,
                         Desconto = 9.91,
                         TotalNF = 80,
                         TotalTributos = 6.28
+                    },
+                    IBSCBSTot = new()
+                    {
+                        vBCIBSCBS = 0.80M
                     }
                 },
                 Transporte = new()

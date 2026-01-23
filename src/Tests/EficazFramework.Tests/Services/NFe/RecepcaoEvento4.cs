@@ -23,7 +23,7 @@ public class RecepcaoEvento4Tests : BaseNFeTests
     public async Task CancelamentoTest(string chave)
     {
         var client = CreateClient();
-        var result = await client.EnvioEventoAsync(Configuration["SSL:NFE:CertificateCnpjCpf"], chave, Schemas.NFe.CodigoEvento.Cancelamento, Schemas.NFe.Ambiente.Homologacao, null);
+        var result = await client.EnvioEventoAsync(Configuration["SSL:NFE:CertificateCnpjCpf"], chave, Schemas.NFe.CodigoEvento.Cancelamento, Schemas.NFe.Ambiente.Homologacao, "teste");
         result.Should().NotBeNull();
         // o documento não existe em homologação, mas ao menos asseguramos conformidade ao schema do XML formado,
         // além de verificar que a tag cOrgao em fato utilizou o código da UF do emitente do documento fiscal.
