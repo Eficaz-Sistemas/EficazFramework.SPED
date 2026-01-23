@@ -45,7 +45,7 @@ internal class IbsCbs
     {
         foreach(var item in doc.NFe.InformacoesNFe.Items)
         {
-            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: Valor Mercadoria = {item.ValorItem}");
+            Console.WriteLine($"🛍️ Item {item.NumeroSequencial}: Valor Mercadorias = {item.ValorItem}");
             item.Imposto.IBSCBS.Should().NotBeNull($"🛍️ Item {item.NumeroSequencial}: IBS/CBS tag group is null");
             //item.Imposto.IBSCBS.gIBSCBS.gIBSMun.Should().NotBeNull($"🛍️ Item {item.NumeroSequencial}: IBS Mun tag group is null");
             //item.Imposto.IBSCBS.gIBSCBS.gIBSUF.Should().NotBeNull($"🛍️ Item {item.NumeroSequencial}: IBS UF tag group is null");
@@ -90,12 +90,29 @@ internal class IbsCbs
 
     private void ParseNFSeNacional(EficazFramework.SPED.Schemas.NFSe.Nacional.NFSe doc)
     {
+        Console.WriteLine($"🛍️ Valor Serviço = {doc.InfNFSe.DPS.InfDPS.Valores.ValoresPrestacao.ValorServico}");
         if (doc.InfNFSe.DPS.InfDPS.IBSCBS != null)
         {
-            Console.WriteLine($"🛍️ CST: {doc.InfNFSe.DPS.InfDPS.IBSCBS.valores?.trib?.gIBSCBS?.CST}");
-            Console.WriteLine($"🛍️ cClassTrib: {doc.InfNFSe.DPS.InfDPS.IBSCBS.valores?.trib?.gIBSCBS?.cClassTrib}");
-            Console.WriteLine($"***");
+            Console.WriteLine($"🛍️ CST: {doc.InfNFSe.DPS.InfDPS.IBSCBS?.valores?.trib?.gIBSCBS?.CST}");
+            Console.WriteLine($"🛍️ cClassTrib: {doc.InfNFSe.DPS.InfDPS.IBSCBS?.valores?.trib?.gIBSCBS?.cClassTrib}");
+            Console.WriteLine($"🛍️ BC IBS/CBS: {doc.InfNFSe.IBSCBS?.valores?.vBC}");
+            Console.WriteLine($"🛍️ IBS Mun %: {doc.InfNFSe.IBSCBS?.valores?.mun?.pIBSMun}");
+            Console.WriteLine($"🛍️ IBS Mun: {doc.InfNFSe.IBSCBS?.totCIBS?.gIBS?.gIBSMunTot?.vIBSMun}");
+            Console.WriteLine($"🛍️ IBS UF %: {doc.InfNFSe.IBSCBS?.valores?.uf?.pIBSUF}");
+            Console.WriteLine($"🛍️ IBS UF % Red: {doc.InfNFSe.IBSCBS?.valores?.uf?.pRedAliqUF}");
+            Console.WriteLine($"🛍️ IBS UF % Efetivo: {doc.InfNFSe.IBSCBS?.valores?.uf?.pAliqEfetUF}");
+            Console.WriteLine($"🛍️ IBS UF: {doc.InfNFSe.IBSCBS?.totCIBS?.gIBS?.gIBSUFTot?.vIBSUF}");
+            Console.WriteLine($"🛍️ CBS %: {doc.InfNFSe.IBSCBS?.valores?.fed?.pCBS}");
+            Console.WriteLine($"🛍️ CBS UF % Red: {doc.InfNFSe.IBSCBS?.valores?.fed ?.pRedAliqCBS}");
+            Console.WriteLine($"🛍️ CBS UF % Efetivo: {doc.InfNFSe.IBSCBS?.valores?.fed?.pAliqEfetCBS}");
+            Console.WriteLine($"🛍️ CBS: {doc.InfNFSe.IBSCBS?.totCIBS?.gCBS?.vCBS}");
         }
+        else
+        {
+            Console.WriteLine("IBS/CBS tag group is null");
+        }
+        Console.WriteLine($"***");
+
     }
 
 

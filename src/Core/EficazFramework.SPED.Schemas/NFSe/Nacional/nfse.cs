@@ -2544,21 +2544,21 @@ public class IbsCbs : NFSeNacionalBase
 [XmlType("TCRTCValoresIBSCBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCValoresIBSCBS : NFSeNacionalBase
 {
-    private string? _vBC;
-    private string? _vCalcReeRepRes;
+    private decimal? _vBC;
+    private decimal? _vCalcReeRepRes;
     private TCRTCValoresIBSCBSUF? _uf;
     private TCRTCValoresIBSCBSMun? _mun;
     private TCRTCValoresIBSCBSFed? _fed;
 
     [XmlElement("vBC")]
-    public string? vBC
+    public decimal? vBC
     {
         get => _vBC;
         set { _vBC = value; OnPropertyChanged(); }
     }
 
     [XmlElement("vCalcReeRepRes")]
-    public string? vCalcReeRepRes
+    public decimal? vCalcReeRepRes
     {
         get => _vCalcReeRepRes;
         set { _vCalcReeRepRes = value; OnPropertyChanged(); }
@@ -2589,26 +2589,26 @@ public class TCRTCValoresIBSCBS : NFSeNacionalBase
 [XmlType("TCRTCValoresIBSCBSUF", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCValoresIBSCBSUF : NFSeNacionalBase
 {
-    private string? _pIBSUF;
-    private string? _pRedAliqUF;
-    private string? _pAliqEfetUF;
+    private decimal? _pIBSUF;
+    private decimal? _pRedAliqUF;
+    private decimal? _pAliqEfetUF;
 
     [XmlElement("pIBSUF")]
-    public string? pIBSUF
+    public decimal? pIBSUF
     {
         get => _pIBSUF;
         set { _pIBSUF = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pRedAliqUF")]
-    public string? pRedAliqUF
+    public decimal? pRedAliqUF
     {
         get => _pRedAliqUF;
         set { _pRedAliqUF = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pAliqEfetUF")]
-    public string? pAliqEfetUF
+    public decimal? pAliqEfetUF
     {
         get => _pAliqEfetUF;
         set { _pAliqEfetUF = value; OnPropertyChanged(); }
@@ -2618,26 +2618,26 @@ public class TCRTCValoresIBSCBSUF : NFSeNacionalBase
 [XmlType("TCRTCValoresIBSCBSMun", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCValoresIBSCBSMun : NFSeNacionalBase
 {
-    private string? _pIBSMun;
-    private string? _pRedAliqMun;
-    private string? _pAliqEfetMun;
+    private decimal? _pIBSMun;
+    private decimal? _pRedAliqMun;
+    private decimal? _pAliqEfetMun;
 
     [XmlElement("pIBSMun")]
-    public string? pIBSMun
+    public decimal? pIBSMun
     {
         get => _pIBSMun;
         set { _pIBSMun = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pRedAliqMun")]
-    public string? pRedAliqMun
+    public decimal? pRedAliqMun
     {
         get => _pRedAliqMun;
         set { _pRedAliqMun = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pAliqEfetMun")]
-    public string? pAliqEfetMun
+    public decimal? pAliqEfetMun
     {
         get => _pAliqEfetMun;
         set { _pAliqEfetMun = value; OnPropertyChanged(); }
@@ -2647,26 +2647,26 @@ public class TCRTCValoresIBSCBSMun : NFSeNacionalBase
 [XmlType("TCRTCValoresIBSCBSFed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCValoresIBSCBSFed : NFSeNacionalBase
 {
-    private string? _pCBS;
-    private string? _pRedAliqCBS;
-    private string? _pAliqEfetCBS;
+    private decimal? _pCBS;
+    private decimal? _pRedAliqCBS;
+    private decimal? _pAliqEfetCBS;
 
     [XmlElement("pCBS")]
-    public string? pCBS
+    public decimal? pCBS
     {
         get => _pCBS;
         set { _pCBS = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pRedAliqCBS")]
-    public string? pRedAliqCBS
+    public decimal? pRedAliqCBS
     {
         get => _pRedAliqCBS;
         set { _pRedAliqCBS = value; OnPropertyChanged(); }
     }
 
     [XmlElement("pAliqEfetCBS")]
-    public string? pAliqEfetCBS
+    public decimal? pAliqEfetCBS
     {
         get => _pAliqEfetCBS;
         set { _pAliqEfetCBS = value; OnPropertyChanged(); }
@@ -2679,14 +2679,14 @@ public class TCRTCValoresIBSCBSFed : NFSeNacionalBase
 [XmlType("TCRTCTotalCIBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCTotalCIBS : NFSeNacionalBase
 {
-    private string? _vTotNF;
+    private decimal? _vTotNF;
     private TCRTCTotalIBS? _gIBS;
     private TCRTCTotalCBS? _gCBS;
     private TCRTCTotalTribRegular? _gTribRegular;
     private TCRTCTotalTribCompraGov? _gTribCompraGov;
 
     [XmlElement("vTotNF")]
-    public string? vTotNF
+    public decimal? vTotNF
     {
         get => _vTotNF;
         set { _vTotNF = value; OnPropertyChanged(); }
@@ -2724,13 +2724,13 @@ public class TCRTCTotalCIBS : NFSeNacionalBase
 [XmlType("TCRTCTotalIBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCTotalIBS : NFSeNacionalBase
 {
-    private string? _vIBSTot;
+    private decimal? _vIBSTot;
     private TCRTCTotalIBSCredPres? _gIBSCredPres;
     private TCRTCTotalIBSUF? _gIBSUFTot;
     private TCRTCTotalIBSMun? _gIBSMunTot;
 
     [XmlElement("vIBSTot")]
-    public string? vIBSTot
+    public decimal? vIBSTot
     {
         get => _vIBSTot;
         set { _vIBSTot = value; OnPropertyChanged(); }
