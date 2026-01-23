@@ -126,4 +126,62 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         //    }
         //}
     }
+
+
+    [Test]
+    public async Task ParseLote()
+    {
+        var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        var folder = Path.Combine(TestContext.CurrentContext.TestDirectory, "Resources", "Samples", "NFseNacional");
+        if (Directory.Exists(folder))
+        {
+            var files = Directory.GetFiles(folder, "*.xml");
+            foreach (var file in files)
+            {
+                Console.WriteLine($"Processing file: {file}");
+                var doc = await ReadAsync(File.ReadAllText(file));
+                doc.Should().NotBeNull();
+                doc.Should().BeOfType<Nacional.NFSe>();
+
+                var nfse = doc as Nacional.NFSe;
+
+                Console.WriteLine($"✅ Parsed document type: {nfse.DocumentType}. Chave: {nfse.Chave}");
+                Console.WriteLine($"*** Dados da NFSe Nacional ***");
+                Console.WriteLine($"🛍️ Chave = {nfse.Chave}");
+                Console.WriteLine($"🛍️ Número = {nfse.InfNFSe.Numero}");
+                Console.WriteLine($"🛍️ Emitente = {nfse.InfNFSe.Emitente.Nome}, {nfse.InfNFSe.Emitente.Cnpj ?? nfse.InfNFSe.Emitente.CPF}");
+                Console.WriteLine($"🛍️ Tomador = {nfse.InfNFSe.DPS.InfDPS.Tomador.xNome}, {nfse.InfNFSe.DPS.InfDPS.Tomador.CNPJ ?? nfse.InfNFSe.DPS.InfDPS.Tomador.CPF}");
+                Console.WriteLine($"🛍️ Valor Serviço = {nfse.InfNFSe.DPS.InfDPS.Valores.ValoresPrestacao.ValorServico}");
+                if (nfse.InfNFSe.DPS.InfDPS.IBSCBS != null)
+                {
+                    Console.WriteLine($"🛍️ CST: {nfse.InfNFSe.DPS.InfDPS.IBSCBS?.valores?.trib?.gIBSCBS?.CST}");
+                    Console.WriteLine($"🛍️ cClassTrib: {nfse.InfNFSe.DPS.InfDPS.IBSCBS?.valores?.trib?.gIBSCBS?.cClassTrib}");
+                    Console.WriteLine($"🛍️ BC IBS/CBS: {nfse.InfNFSe.IBSCBS?.valores?.vBC}");
+                    Console.WriteLine($"🛍️ IBS Mun %: {nfse.InfNFSe.IBSCBS?.valores?.mun?.pIBSMun}");
+                    Console.WriteLine($"🛍️ IBS Mun: {nfse.InfNFSe.IBSCBS?.totCIBS?.gIBS?.gIBSMunTot?.vIBSMun}");
+                    Console.WriteLine($"🛍️ IBS UF %: {nfse.InfNFSe.IBSCBS?.valores?.uf?.pIBSUF}");
+                    Console.WriteLine($"🛍️ IBS UF % Red: {nfse.InfNFSe.IBSCBS?.valores?.uf?.pRedAliqUF}");
+                    Console.WriteLine($"🛍️ IBS UF % Efetivo: {nfse.InfNFSe.IBSCBS?.valores?.uf?.pAliqEfetUF}");
+                    Console.WriteLine($"🛍️ IBS UF: {nfse.InfNFSe.IBSCBS?.totCIBS?.gIBS?.gIBSUFTot?.vIBSUF}");
+                    Console.WriteLine($"🛍️ CBS %: {nfse.InfNFSe.IBSCBS?.valores?.fed?.pCBS}");
+                    Console.WriteLine($"🛍️ CBS UF % Red: {nfse.InfNFSe.IBSCBS?.valores?.fed?.pRedAliqCBS}");
+                    Console.WriteLine($"🛍️ CBS UF % Efetivo: {nfse.InfNFSe.IBSCBS?.valores?.fed?.pAliqEfetCBS}");
+                    Console.WriteLine($"🛍️ CBS: {nfse.InfNFSe.IBSCBS?.totCIBS?.gCBS?.vCBS}");
+                }
+                else
+                {
+                    Console.WriteLine("IBS/CBS tag group is null");
+                }
+                Console.WriteLine($"***");
+                Console.WriteLine("=============================================");
+            }
+        }
+        else
+        {
+            Assert.Fail($"Test folder does not exist: {folder}");
+        }
+    }
+
+
+
 }
