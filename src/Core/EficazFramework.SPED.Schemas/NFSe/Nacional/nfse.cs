@@ -354,7 +354,7 @@ public class InformacoesNfse : NFSeNacionalBase
 {
     private string? _xLocEmi;
     private string? _xLocPrestacao;
-    private int _nNFSe;
+    private long _nNFSe;
     private string? _cLocIncid;
     private string? _xLocIncid;
     private string? _xTribNac;
@@ -398,7 +398,7 @@ public class InformacoesNfse : NFSeNacionalBase
     /// Número sequencial por tipo de emitente da NFS-e.
     /// </summary>
     [XmlElement("nNFSe")]
-    public int Numero
+    public long Numero
     {
         get => _nNFSe;
         set { _nNFSe = value; OnPropertyChanged(); }
@@ -892,7 +892,7 @@ public class InformacoesDps : NFSeNacionalBase
     private DateTimeOffset? _dhEmi;
     private string? _verAplic;
     private string? _serie;
-    private int _nDPS;
+    private long _nDPS;
     private string? _dCompet;
     private EmitenteDps _tpEmit;
     private string? _cMotivoEmisTI;
@@ -951,7 +951,7 @@ public class InformacoesDps : NFSeNacionalBase
     /// Número do DPS.
     /// </summary>
     [XmlElement("nDPS")]
-    public int Numero
+    public long Numero
     {
         get => _nDPS;
         set { _nDPS = value; OnPropertyChanged(); }
