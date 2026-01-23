@@ -51,6 +51,9 @@ public partial class Item : INotifyPropertyChanged
 
     [XmlElement("vItem")]
     public decimal? ValorItem { get; set; }
+    public bool ShouldSerializeValorItem() => ValorItem.HasValue;
+
+
 
 
     [XmlElement("impostoDevol")]

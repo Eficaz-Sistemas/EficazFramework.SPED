@@ -1,4 +1,6 @@
-﻿namespace EficazFramework.SPED.Schemas.NFe;
+﻿using System.Xml.Schema;
+
+namespace EficazFramework.SPED.Schemas.NFe;
 
 [Serializable()]
 [XmlType(TypeName = "envEvento", Namespace = "http://www.portalfiscal.inf.br/nfe")]
@@ -534,7 +536,8 @@ public partial class Evento
     }
 }
 
-public partial class InformacaoEvento
+public partial class InformacaoEvento : IXmlSerializable
+
 {
     private string chNFeField;
     private CodigoEvento tpEventoField;
@@ -595,36 +598,30 @@ public partial class InformacaoEvento
         set
         {
             tpEventoField = value;
-            EventoTipoChoice = value switch
-            {
-                CodigoEvento.Correcao => TipoEventoChoice.ev110110,
-                CodigoEvento.Cancelamento => TipoEventoChoice.ev110111,
-                CodigoEvento.EfetivoPgLiberacaoCredPresAdq => TipoEventoChoice.ev112110,
-                CodigoEvento.ImportacaoALCZFMNaoConvertidaIsencao => TipoEventoChoice.ev112120,
-                CodigoEvento.PerecimentoPerdaRouboFurtoTransporteFornecedor => TipoEventoChoice.ev112130,
-                CodigoEvento.FornecimentoNaoRealizadoPagamentoAntecipado => TipoEventoChoice.ev112140,
-                CodigoEvento.AtualizacaoDataPrevisaoEntrega => TipoEventoChoice.ev112150,
-                CodigoEvento.SolicitacaoApropriacaoCreditoPresumido => TipoEventoChoice.ev211110,
-                CodigoEvento.DestinacaoItemConsumoPessoal => TipoEventoChoice.ev211120,
-                CodigoEvento.PerecimentoPerdaRouboFurtoTransporteAdquirente => TipoEventoChoice.ev211124,
-                CodigoEvento.AceiteDebitoApuracaoNotaCredito => TipoEventoChoice.ev211128,
-                CodigoEvento.ImobilizacaoItem => TipoEventoChoice.ev211130,
-                CodigoEvento.SolicitacaoApropriacaoCreditoCombustivel => TipoEventoChoice.ev211140,
-                CodigoEvento.SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente => TipoEventoChoice.ev211150,
-                CodigoEvento.ManifestacaoTransferenciaCreditoIBSSucessao => TipoEventoChoice.ev212110,
-                CodigoEvento.ManifestacaoTransferenciaCreditoCBSSucessao => TipoEventoChoice.ev212120,
-                CodigoEvento.ManifestacaoFiscoTransferenciaCreditoIBSSucessao => TipoEventoChoice.ev412120,
-                CodigoEvento.ManifestacaoFiscoTransferenciaCreditoCBSSucessao => TipoEventoChoice.ev412130,
-                _ => TipoEventoChoice.DetalheEventoNaoMapeado
-            };
+            //EventoTipoChoice = value switch
+            //{
+            //    CodigoEvento.Correcao => [TipoEventoChoice.ev110110],
+            //    CodigoEvento.Cancelamento => [TipoEventoChoice.ev110111],
+            //    CodigoEvento.EfetivoPgLiberacaoCredPresAdq => [TipoEventoChoice.ev112110],
+            //    CodigoEvento.ImportacaoALCZFMNaoConvertidaIsencao => [TipoEventoChoice.ev112120],
+            //    CodigoEvento.PerecimentoPerdaRouboFurtoTransporteFornecedor => [TipoEventoChoice.ev112130],
+            //    CodigoEvento.FornecimentoNaoRealizadoPagamentoAntecipado => [TipoEventoChoice.ev112140],
+            //    CodigoEvento.AtualizacaoDataPrevisaoEntrega => [TipoEventoChoice.ev112150],
+            //    CodigoEvento.SolicitacaoApropriacaoCreditoPresumido => [TipoEventoChoice.ev211110],
+            //    CodigoEvento.DestinacaoItemConsumoPessoal => [TipoEventoChoice.ev211120],
+            //    CodigoEvento.PerecimentoPerdaRouboFurtoTransporteAdquirente => [TipoEventoChoice.ev211124],
+            //    CodigoEvento.AceiteDebitoApuracaoNotaCredito => [TipoEventoChoice.ev211128],
+            //    CodigoEvento.ImobilizacaoItem => [TipoEventoChoice.ev211130],
+            //    CodigoEvento.SolicitacaoApropriacaoCreditoCombustivel => [TipoEventoChoice.ev211140],
+            //    CodigoEvento.SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente => [TipoEventoChoice.ev211150],
+            //    CodigoEvento.ManifestacaoTransferenciaCreditoIBSSucessao => [TipoEventoChoice.ev212110],
+            //    CodigoEvento.ManifestacaoTransferenciaCreditoCBSSucessao => [TipoEventoChoice.ev212120],
+            //    CodigoEvento.ManifestacaoFiscoTransferenciaCreditoIBSSucessao => [TipoEventoChoice.ev412120],
+            //    CodigoEvento.ManifestacaoFiscoTransferenciaCreditoCBSSucessao => [TipoEventoChoice.ev412130],
+            //    _ => [TipoEventoChoice.DetalheEventoNaoMapeado]
+            //};
         }
     }
-
-    // Propriedade auxiliar usada como discriminador
-    [XmlIgnore]
-    public TipoEventoChoice EventoTipoChoice { get; private set; }
-
-
 
     /// <summary>
     /// Sequencial do evento. INFORMAR 1.
@@ -649,28 +646,12 @@ public partial class InformacaoEvento
     [XmlElement("verEvento")]
     public string EventoVersao { get; set; } = "1.00";
 
-    //[XmlElement("detEvento", typeof(ev110110))]
-    //[XmlElement("detEvento", typeof(ev110111))]
-    //[XmlElement("detEvento", typeof(ev112110))]
-    //[XmlElement("detEvento", typeof(ev112120))]
-    //[XmlElement("detEvento", typeof(ev112130))]
-    //[XmlElement("detEvento", typeof(ev112140))]
-    //[XmlElement("detEvento", typeof(ev112150))]
-    //[XmlElement("detEvento", typeof(ev211110))]
-    //[XmlElement("detEvento", typeof(ev211120))]
-    //[XmlElement("detEvento", typeof(ev211124))]
-    //[XmlElement("detEvento", typeof(ev211128))]
-    //[XmlElement("detEvento", typeof(ev211130))]
-    //[XmlElement("detEvento", typeof(ev211140))]
-    //[XmlElement("detEvento", typeof(ev211150))]
-    //[XmlElement("detEvento", typeof(ev212110))]
-    //[XmlElement("detEvento", typeof(ev212120))]
-    //[XmlElement("detEvento", typeof(ev412120))]
-    //[XmlElement("detEvento", typeof(ev412130))]
-    //[XmlElement("detEvento", typeof(DetalheEventoNaoMapeado))]
-    //[XmlChoiceIdentifier("EventoTipoChoice")]
-    [XmlElement("detEvento", Namespace = "http://www.portalfiscal.inf.br/nfe")]
-    public DetalheEvento? EventoDetalhes { get; set; }
+    [XmlAnyElement("detEvento")]
+    public XmlElement? EventoDetalheXml { get; set; }
+
+    [XmlIgnore]
+    public DetalheEvento? EventoDetalhe { get; set; }
+
 
     /// <summary>
     /// Identificador da TAG a ser assinada.
@@ -697,6 +678,203 @@ public partial class InformacaoEvento
         buider.Append("01");
         Id = buider.ToString();
     }
+
+    // ---------------- IXmlSerializable ----------------
+    private const string Ns = "http://www.portalfiscal.inf.br/nfe";
+
+    public XmlSchema? GetSchema() => null;
+
+    public void WriteXml(XmlWriter writer)
+    {
+        // escrever atributo Id no elemento infEvento
+        if (!string.IsNullOrEmpty(Id))
+            writer.WriteAttributeString("Id", Id);
+
+        // cOrgao
+        writer.WriteElementString("cOrgao", Ns, ((int)Orgao).ToString());
+
+        // tpAmb
+        writer.WriteElementString("tpAmb", Ns, ((int)Ambiente).ToString());
+
+        // CNPJ ou CPF conforme PersonalidadeJuridica
+        if (!string.IsNullOrEmpty(CNPJ_CPF))
+        {
+            if (PersonalidadeJuridica == PersonalidadeJuridica.CNPJ)
+                writer.WriteElementString("CNPJ", Ns, CNPJ_CPF);
+            else
+                writer.WriteElementString("CPF", Ns, CNPJ_CPF);
+        }
+
+        // chNFe
+        if (!string.IsNullOrEmpty(ChaveNFe))
+            writer.WriteElementString("chNFe", Ns, ChaveNFe);
+
+        // dhEvento
+        writer.WriteElementString("dhEvento", Ns, EventoDataString);
+
+        // tpEvento
+        writer.WriteElementString("tpEvento", Ns, ((int)EventoCodigo).ToString());
+
+        // nSeqEvento
+        writer.WriteElementString("nSeqEvento", Ns, EventoNumeroSequencial);
+
+        // verEvento
+        writer.WriteElementString("verEvento", Ns, EventoVersao);
+
+        // detEvento: se temos objeto forte, serializa-o forçando root "detEvento"
+        if (EventoDetalhe != null)
+        {
+            var root = new XmlRootAttribute("detEvento") { Namespace = Ns };
+            var ser = new XmlSerializer(EventoDetalhe.GetType(), root);
+
+            var ns = new XmlSerializerNamespaces();
+            ns.Add(string.Empty, Ns); // namespace padrão; NÃO adicionar xsi
+
+            // serializa diretamente no writer
+            ser.Serialize(writer, EventoDetalhe, ns);
+        }
+        else if (EventoDetalheXml != null)
+        {
+            // se já temos XmlElement pronto, escreve-o
+            EventoDetalheXml.WriteTo(writer);
+        }
+    }
+
+    public void ReadXml(XmlReader reader)
+    {
+        // reader está posicionado em <infEvento ...>
+        // ler atributo Id
+        if (reader.MoveToAttribute("Id"))
+        {
+            Id = reader.Value;
+        }
+        reader.MoveToElement();
+
+        if (reader.IsEmptyElement)
+        {
+            reader.ReadStartElement(); // sai do infEvento vazio
+            return;
+        }
+
+        reader.ReadStartElement(); // entra em infEvento
+
+        while (reader.NodeType == XmlNodeType.Whitespace) reader.Read();
+
+        // ler elementos filhos na ordem que aparecerem
+        while (reader.NodeType == XmlNodeType.Element)
+        {
+            var local = reader.LocalName;
+            switch (local)
+            {
+                case "cOrgao":
+                    var org = reader.ReadElementContentAsString();
+                    if (int.TryParse(org, out var orgInt))
+                        Orgao = (OrgaoIBGE)orgInt;
+                    break;
+
+                case "tpAmb":
+                    var amb = reader.ReadElementContentAsString();
+                    if (int.TryParse(amb, out var ambInt))
+                        Ambiente = (Ambiente)ambInt;
+                    break;
+
+                case "CNPJ":
+                    CNPJ_CPF = reader.ReadElementContentAsString();
+                    PersonalidadeJuridica = PersonalidadeJuridica.CNPJ;
+                    break;
+
+                case "CPF":
+                    CNPJ_CPF = reader.ReadElementContentAsString();
+                    PersonalidadeJuridica = PersonalidadeJuridica.CPF;
+                    break;
+
+                case "chNFe":
+                    ChaveNFe = reader.ReadElementContentAsString();
+                    break;
+
+                case "dhEvento":
+                    EventoDataString = reader.ReadElementContentAsString();
+                    break;
+
+                case "tpEvento":
+                    var tp = reader.ReadElementContentAsString();
+                    if (int.TryParse(tp, out var tpInt))
+                        EventoCodigo = (CodigoEvento)tpInt;
+                    break;
+
+                case "nSeqEvento":
+                    EventoNumeroSequencial = reader.ReadElementContentAsString();
+                    break;
+
+                case "verEvento":
+                    EventoVersao = reader.ReadElementContentAsString();
+                    break;
+
+                case "detEvento":
+                    // capturar o XmlElement bruto
+                    var doc = new XmlDocument();
+                    var subtree = reader.ReadSubtree();
+                    subtree.MoveToContent();
+                    doc.Load(subtree);
+                    EventoDetalheXml = doc.DocumentElement;
+                    if (EventoDetalheXml is null)
+                        break;
+
+                    // desserializar para tipo concreto baseado em tpEvento
+                    var targetType = MapCodigoParaTipo(EventoCodigo) ?? typeof(DetalheEvento);
+                    var root = new XmlRootAttribute("detEvento") { Namespace = Ns };
+                    var ser = new XmlSerializer(targetType, root);
+                    using (var nodeReader = new XmlNodeReader(EventoDetalheXml!))
+                    {
+                        EventoDetalhe = (DetalheEvento?)ser.Deserialize(nodeReader);
+                    }
+
+                    // posiciona reader após o end element detEvento
+                    reader.ReadEndElement();
+                    break;
+
+                default:
+                    // pular elementos desconhecidos
+                    reader.Skip();
+                    break;
+            }
+
+            while (reader.NodeType == XmlNodeType.Whitespace) reader.Read();
+        }
+
+        // sair do infEvento
+        if (reader.NodeType == XmlNodeType.EndElement)
+            reader.ReadEndElement();
+    }
+
+    // Mapeie todos os CodigoEvento para os tipos concretos correspondentes
+    private static Type? MapCodigoParaTipo(CodigoEvento codigo)
+    {
+        return codigo switch
+        {
+            CodigoEvento.Correcao => typeof(ev110110),
+            CodigoEvento.Cancelamento => typeof(ev110111),
+            CodigoEvento.EfetivoPgLiberacaoCredPresAdq => typeof(ev112110),
+            CodigoEvento.ImportacaoALCZFMNaoConvertidaIsencao => typeof(ev112120),
+            CodigoEvento.PerecimentoPerdaRouboFurtoTransporteFornecedor => typeof(ev112130),
+            CodigoEvento.FornecimentoNaoRealizadoPagamentoAntecipado => typeof(ev112140),
+            CodigoEvento.AtualizacaoDataPrevisaoEntrega => typeof(ev112150),
+            CodigoEvento.SolicitacaoApropriacaoCreditoPresumido => typeof(ev211110),
+            CodigoEvento.DestinacaoItemConsumoPessoal => typeof(ev211120),
+            CodigoEvento.PerecimentoPerdaRouboFurtoTransporteAdquirente => typeof(ev211124),
+            CodigoEvento.AceiteDebitoApuracaoNotaCredito => typeof(ev211128),
+            CodigoEvento.ImobilizacaoItem => typeof(ev211130),
+            CodigoEvento.SolicitacaoApropriacaoCreditoCombustivel => typeof(ev211140),
+            CodigoEvento.SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente => typeof(ev211150),
+            CodigoEvento.ManifestacaoTransferenciaCreditoIBSSucessao => typeof(ev212110),
+            CodigoEvento.ManifestacaoTransferenciaCreditoCBSSucessao => typeof(ev212120),
+            CodigoEvento.ManifestacaoFiscoTransferenciaCreditoIBSSucessao => typeof(ev412120),
+            CodigoEvento.ManifestacaoFiscoTransferenciaCreditoCBSSucessao => typeof(ev412130),
+            _ => typeof(DetalheEventoNaoMapeado)
+        };
+    }
+
+
 }
 
 

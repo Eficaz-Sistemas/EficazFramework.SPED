@@ -167,12 +167,14 @@ public class IO : BaseXmlTest<ProcessoNFe>
             [ 
                 "http://www.portalfiscal.inf.br/nfe",
                 "http://www.portalfiscal.inf.br/nfe",
+                "http://www.portalfiscal.inf.br/nfe",
                 "http://www.portalfiscal.inf.br/nfe"
             ],
             [
                 Resources.Schemas.XML.nfe_v4_00,
                 Resources.Schemas.XML.leiauteNFe_v4_00,
-                Resources.Schemas.XML.tiposBasico_v4_00
+                Resources.Schemas.XML.tiposBasico_v4_00,
+                Resources.Schemas.XML.DFeTiposBasicos_v1_00
             ],
             "infNFe");
         Console.Write(instance.Serialize());

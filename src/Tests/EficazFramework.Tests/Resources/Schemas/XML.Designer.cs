@@ -71,13 +71,29 @@ namespace EficazFramework.SPED.Resources.Schemas {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
+        ///&lt;!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by PROCERGS (Procergs - Centro de Tecnologia da Informação e Comunicação do Estado do Rio Grande do Sul S.A.) --&gt;
+        ///&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;
+        /// &lt;xs:simpleType name=&quot;TStringRTC&quot;&gt;
+        ///  &lt;xs:annotation&gt;
+        ///   &lt;xs:documentation&gt; Tipo string genérico&lt;/xs:documentation&gt;
+        ///  &lt;/xs:annotation&gt;
+        ///  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        ///   &lt;xs:whiteSpace value=&quot;p [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string DFeTiposBasicos_v1_00 {
+            get {
+                return ResourceManager.GetString("DFeTiposBasicos_v1.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by PROCERGS (Procergs - Centro de Tecnologia da Informação e Comunicação do Estado do Rio Grande do Sul S.A.) --&gt;
         ///&lt;!-- PL_009  alterações de esquema decorrentes da - NT2016.002 v1.20 - 31/05/2017 13:14hs--&gt;
         ///&lt;!-- PL_008g  alterações de esquema decorrentes da - NT2015.002  - 15/07/2015 --&gt;
         ///&lt;!-- PL_008h  alterações de esquema decorrentes da - NT2015.003 - 17/09/2015 --&gt;
         ///&lt;!-- PL_008i --&gt;
-        ///&lt;!-- PL_009-v4  alterações de esquema decorrentes da - NT2016.002 - 10/2017 --&gt;
-        ///&lt;!-- PL_ [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///&lt;!-- PL_009- [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string leiauteNFe_v4_00 {
             get {
@@ -145,13 +161,11 @@ namespace EficazFramework.SPED.Resources.Schemas {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
         ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///	&lt;xs:include schemaLocation=&quot;leiauteNFe_v4.00.xsd&quot;/&gt;
         ///	&lt;xs:element name=&quot;NFe&quot; type=&quot;TNFe&quot;&gt;
-        ///		&lt;xs:annotation&gt;
-        ///			&lt;xs:documentation&gt;Nota Fiscal Eletrônica&lt;/xs:documentation&gt;
-        ///		&lt;/xs:annotation&gt;
-        ///	&lt;/xs:elemen [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///		&lt;xs:ann [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string nfe_v4_00 {
             get {

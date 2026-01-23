@@ -3252,7 +3252,7 @@ public partial class Totais : INotifyPropertyChanged
     private TotalRetencaoTributos retTribField = null!;
     private DFeBase.TotaisImpostoSeletivo isTotField = null!;
     private DFeBase.TotaisIbsCbsMonofasico ibsCbsMonotField = null!;
-    private decimal? vNFTotField = 0.0M;
+    private decimal? vNFTotField = 0M;
 
     [XmlElement("ICMSTot")]
     public TotalICMS ICMS
@@ -3347,7 +3347,7 @@ public partial class Totais : INotifyPropertyChanged
         }
     }
 
-    public bool ShouldSerializevNFTot() => vNFTot.HasValue;
+    public bool ShouldSerializevNFTot() => vNFTotField.HasValue && vNFTotField > 0.0M;
 
 
     public event PropertyChangedEventHandler PropertyChanged;
