@@ -46,7 +46,7 @@
 | GNRE                                   |                                                                                                                                                            |          | ✅ | [⚠️](## "A ser desenvolvido") |
 | GIA (SP)                               |                                                                                                                                                            |          | ✅ | N/A |
 | NF-e / NFC-e                           |                                                                                                                                                            |          | ✅ | ✅ |
-| NFS-e                                  |                                                                                                                                                            |          | [⚠️](## "Apenas alguns municípios. TODO: Implementar modelo nacional") |  [⚠️](## "A ser desenvolvido") |
+| NFS-e (Nacional)                       |                                                                                                                                                            |          | ✅ | [⚠️](## "A ser desenvolvido") |
 | Livro Caixa Digital do Produtor Rural  | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          | ✅ | N/A |
 | Classes complementares                 | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) | | N/A |  N/A |      
 
