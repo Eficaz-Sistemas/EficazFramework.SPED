@@ -2216,6 +2216,9 @@ public enum FormaPagamento
     [System.ComponentModel.Description("Sem Pagamento")]
     [System.Xml.Serialization.XmlEnum("90")]
     SemPagto = 90,
+    [System.ComponentModel.Description("Pagamento Posterior")]
+    [System.Xml.Serialization.XmlEnum("91")]
+    Posterior = 91,
     [System.ComponentModel.Description("Outros")]
     [System.Xml.Serialization.XmlEnum("99")]
     Outros = 99
