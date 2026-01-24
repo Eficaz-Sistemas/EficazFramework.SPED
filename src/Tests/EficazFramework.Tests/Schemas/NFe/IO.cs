@@ -180,4 +180,41 @@ public class IO : BaseXmlTest<ProcessoNFe>
         Console.Write(instance.Serialize());
         result.Should().HaveCountLessThanOrEqualTo(0);
     }
+
+
+    [Test]
+    public async Task ParseLote()
+    {
+        var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        var folder = Path.Combine(TestContext.CurrentContext.TestDirectory, "Resources", "Samples", "NFe");
+        if (Directory.Exists(folder))
+        {
+            var files = Directory.GetFiles(folder, "*.xml");
+            foreach (var file in files)
+            {
+                Console.WriteLine($"Processing file: {file}");
+                var doc = await ReadAsync(File.ReadAllText(file));
+                doc.Should().NotBeNull();
+                doc.Should().BeOfType<ProcessoNFe>();
+
+                var nfe = doc as ProcessoNFe;
+
+                Console.WriteLine($"✅ Parsed document type: {nfe.DocumentType}. Chave: {nfe.Chave}");
+                Console.WriteLine($"*** Dados da NF-e ***");
+                Console.WriteLine($"🛍️ Chave = {nfe.Chave}");
+                Console.WriteLine($"🛍️ Número = {nfe.NFe.InformacoesNFe.IdentificacaoOperacao.Numero}");
+                Console.WriteLine($"🛍️ Emitente = {nfe.NFe.InformacoesNFe.Emitente.RazaoSocial}, {nfe.NFe.InformacoesNFe.Emitente.CNPJ_CPF}");
+                Console.WriteLine($"🛍️ Destinatário/Remetente = {nfe.NFe.InformacoesNFe.Destinatario.RazaoSocial}, {nfe.NFe.InformacoesNFe.Destinatario.CNPJ_CPF}");
+                Console.WriteLine($"🛍️ Valor Total da NFe = {nfe.NFe.InformacoesNFe.Totais.ICMS.TotalNF}");
+                Console.WriteLine($"***");
+                Console.WriteLine("=============================================");
+            }
+        }
+        else
+        {
+            Assert.Fail($"Test folder does not exist: {folder}");
+        }
+    }
+
+
 }
