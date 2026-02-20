@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-	<Version>6.4.0</Version>
-	<AssemblyVersion>6.4.0.0</AssemblyVersion>
-	<FileVersion>6.4.0.0</FileVersion>
+	<TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+	<Version>6.5.0</Version>
+	<AssemblyVersion>6.5.0.0</AssemblyVersion>
+	<FileVersion>6.5.0.0</FileVersion>
 	<LangVersion>latest</LangVersion>
 	<Authors>Eficaz Sistemas; Henrique Clausing</Authors>
 	<Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
 	<Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
-	<Copyright>Copyright ©  2025. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+	<Copyright>Copyright ©  2026. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
 	<PackageIcon>logo.png</PackageIcon>
 	<PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
 	<RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
@@ -35,12 +35,12 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.9" />
-		<PackageReference Include="System.Formats.Asn1" Version="9.0.9" />
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.13" />
+		<PackageReference Include="System.Formats.Asn1" Version="9.0.13" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="8.0.1" />
-		<PackageReference Include="System.Formats.Asn1" Version="8.0.2" />
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net10.0' ">
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.3" />
+		<PackageReference Include="System.Formats.Asn1" Version="10.0.3" />
 	</ItemGroup>
 </Project>

@@ -127,7 +127,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
     private EstadoCivil estCivField = EstadoCivil.Solteiro;
     private bool estCivFieldSpecified;
     private GrauInstrucao grauInstrField = GrauInstrucao.Analfabeto;
-    private SimNaoString indPriEmprField = SimNaoString.Nao;
+    private SimNaoString? indPriEmprField;
     private string nmSocField;
     private S2200TrabalhadorDadosNascimento nascimentoField;
 
@@ -234,7 +234,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
     }
 
     [Obsolete("Descontinuado na versão S-1.02")]
-    public SimNaoString indPriEmpr
+    public SimNaoString? indPriEmpr
     {
         get => indPriEmprField;
         set
@@ -243,6 +243,9 @@ public partial class S2200Trabalhador : ESocialBindableObject
             RaisePropertyChanged(nameof(indPriEmpr));
         }
     }
+
+    public bool ShouldSerializeindPriEmpr() => indPriEmprField.HasValue;
+
 
     /// <summary>
     /// Nome Social
