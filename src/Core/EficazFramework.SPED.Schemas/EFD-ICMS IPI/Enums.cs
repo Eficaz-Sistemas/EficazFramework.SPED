@@ -350,7 +350,9 @@ public enum DocumentoImportacao
     [System.ComponentModel.Description("0 - Declaração de Importação")]
     Declaracao_Importacao = 0,
     [System.ComponentModel.Description("1 - Declaração Simplificada de Importação")]
-    Declar_Simp_Importacao = 1
+    Declar_Simp_Importacao = 1,
+    [System.ComponentModel.Description("2 - Declaração Única de Importação (DUIMP) ")]
+    Duimp = 2
 }
 
 public enum IndicadorTituloCredito

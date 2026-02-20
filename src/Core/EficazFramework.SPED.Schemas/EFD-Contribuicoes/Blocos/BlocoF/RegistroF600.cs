@@ -34,8 +34,8 @@ public class RegistroF600 : Primitives.Registro
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|F600|");
-        writer.Append(((int)IndicadorNatRetFonte).ToString() + "|");
-        writer.Append(DataRetencao + "|");
+        writer.Append(string.Format("{0:00}", (int)IndicadorNatRetFonte) + "|");
+        writer.Append(DataRetencao.ToSpedString() + "|");
         writer.Append(VrBcRetencao + "|");
         writer.Append(VrTotalRetidoFonte + "|");
         writer.Append(CodigoReceita + "|");
