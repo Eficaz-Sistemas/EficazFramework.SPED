@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
-using FluentAssertions;
+using AwesomeAssertions;
 
 namespace EficazFramework.SPED.Schemas.LCDPR.BaseTests;
 
