@@ -152,7 +152,15 @@ public enum TiposServico
     Servico_Vinculado_MultiModal = 4,
     [System.ComponentModel.Description("Enum_CTe_TipoServico_CTeOS")]
     [System.Xml.Serialization.XmlEnum("6")]
-    ServicoCTeOS = 6
+    ServicoCTeOS = 6,
+    [System.ComponentModel.Description("Enum_CTe_TipoServico_CTeOS_Valores")]
+    [System.Xml.Serialization.XmlEnum("7")]
+    TransporteValores = 7,
+    [System.ComponentModel.Description("Enum_CTe_TipoServico_CTeOS_Excesso")]
+    [System.Xml.Serialization.XmlEnum("8")]
+    ExcessoBagagem = 8
+
+
 }
 
 [System.CodeDom.Compiler.GeneratedCode("System.Xml", "4.0.30319.18053")]

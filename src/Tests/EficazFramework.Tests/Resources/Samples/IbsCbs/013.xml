@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+  <infNFSe Id="NFS3510000004900099000019700000000000006010200049010">
+    <xLocEmi>FRANCA</xLocEmi>
+    <xLocPrestacao>Franca</xLocPrestacao>
+    <nNFSe>113</nNFSe>
+    <cLocIncid>3516200</cLocIncid>
+    <xLocIncid>Franca</xLocIncid>
+    <xTribNac>Contabilidade, inclusive serviços técnicos e auxiliares.</xTribNac>
+    <verAplic>SilTecnologia_v1.00</verAplic>
+    <ambGer>1</ambGer>
+    <tpEmis>2</tpEmis>
+    <cStat>100</cStat>
+    <dhProc>2026-01-10T00:00:00-03:00</dhProc>
+    <nDFSe>27644971</nDFSe>
+    <emit>
+      <CNPJ>11222333000144</CNPJ>
+      <IM>117915</IM>
+      <xNome>ORGANIZAÇÃO CONTÁBIL</xNome>
+      <enderNac>
+        <xLgr>14400-000 - Rua da Nota, 1215   SALA 80</xLgr>
+        <nro>0</nro>
+        <xBairro>Centro</xBairro>
+        <cMun>3516200</cMun>
+        <UF>SP</UF>
+        <CEP>14400000</CEP>
+      </enderNac>
+      <fone>9912345678</fone>
+      <email>admin@fakemail.com</email>
+    </emit>
+    <valores>
+      <vBC>5000.00</vBC>
+      <pAliqAplic>2.00</pAliqAplic>
+      <vISSQN>100.00</vISSQN>
+      <vLiq>5000.00</vLiq>
+    </valores>
+    <DPS versao="1.00">
+      <infDPS Id="DPS351620024973699600019749999000000000000113">
+        <tpAmb>1</tpAmb>
+        <dhEmi>2026-01-10T00:00:00-03:00</dhEmi>
+        <verAplic>SilTecnologia_v1.00</verAplic>
+        <serie>49999</serie>
+        <nDPS>113</nDPS>
+        <dCompet>2026-01-01</dCompet>
+        <tpEmit>1</tpEmit>
+        <cLocEmi>3516200</cLocEmi>
+        <prest>
+          <CNPJ>49736996000197</CNPJ>
+          <IM>117915</IM>
+          <fone>1681282669</fone>
+          <email>DANIEL8304@GMAIL.COM</email>
+          <regTrib>
+            <opSimpNac>3</opSimpNac>
+            <regApTribSN>2</regApTribSN>
+            <regEspTrib>0</regEspTrib>
+          </regTrib>
+        </prest>
+        <toma>
+          <CNPJ>07170885000116</CNPJ>
+          <xNome>Ataide Marcelino Advogados</xNome>
+          <end>
+            <endNac>
+              <cMun>3516200</cMun>
+              <CEP>14406022</CEP>
+            </endNac>
+            <xLgr>Avenida das Seringueiras</xLgr>
+            <nro>1000</nro>
+            <xBairro>Residencial Amazonas</xBairro>
+          </end>
+        </toma>
+        <serv>
+          <locPrest>
+            <cLocPrestacao>3516200</cLocPrestacao>
+          </locPrest>
+          <cServ>
+            <cTribNac>171901</cTribNac>
+            <xDescServ>Honorários Contábeis - Serviços de Consultoria Tributária - Mês 12/2025</xDescServ>
+            <cNBS>113022100</cNBS>
+          </cServ>
+        </serv>
+        <valores>
+          <vServPrest>
+            <vServ>5000.00</vServ>
+          </vServPrest>
+          <trib>
+            <tribMun>
+              <tribISSQN>1</tribISSQN>
+              <tpRetISSQN>1</tpRetISSQN>
+            </tribMun>
+            <tribFed/>
+            <totTrib>
+              <vTotTrib>
+                <vTotTribFed>0.00</vTotTribFed>
+                <vTotTribEst>0.00</vTotTribEst>
+                <vTotTribMun>100.00</vTotTribMun>
+              </vTotTrib>
+            </totTrib>
+          </trib>
+        </valores>
+      </infDPS>
+    </DPS>
+  </infNFSe>
+</NFSe>

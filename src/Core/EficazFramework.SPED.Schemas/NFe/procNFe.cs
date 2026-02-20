@@ -83,8 +83,8 @@ public partial class ProcessoNFeBase : INotifyPropertyChanged, IXmlSpedDocument
     /// <returns>string XML value</returns>
     public virtual string Serialize()
     {
-        System.IO.StreamReader streamReader = null;
-        System.IO.MemoryStream memoryStream = null;
+        System.IO.StreamReader streamReader = null!;
+        System.IO.MemoryStream memoryStream = null!;
         try
         {
             memoryStream = new System.IO.MemoryStream();
@@ -1153,12 +1153,17 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
     private TimeSpan? hSaiEntField;
     private OperacaoNFe tpNFField;
     private string cMunFGField;
+    private string cMunFGIBSField;
     private List<ReferenciaDocFiscal> nFrefField;
     private TipoImpressao tpImpField;
     private FormaEmissao tpEmisField;
     private string cDVField;
     private Ambiente tpAmbField;
     private FinalidadeEmissao finNFeField;
+
+    private TipoNfDebito? tpNFDebitoField;
+    private TipoNfCredito? tpNFCreditoField;
+
     private ProcessoEmissao procEmiField;
     private string verProcField;
     private DateTime? dhContField;
@@ -1614,6 +1619,26 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    /// Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS. <br/>
+    /// Campo preenchido somente quando <b><i>“indPres = 5 (Operação presencial, fora do estabelecimento)”</i></b>, 
+    /// e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).
+    /// </summary>
+    [XmlElement("cMunFGIBS")]
+    public string CodigoMunicipioIbs
+    {
+        get => cMunFGIBSField;
+        set
+        {
+            if (cMunFGIBSField is null || cMunFGIBSField.Equals(value) != true)
+            {
+                cMunFGIBSField = value;
+                OnPropertyChanged(nameof(CodigoMunicipioIbs));
+            }
+        }
+    }
+
+
     [XmlElement("NFref")]
     public List<ReferenciaDocFiscal> NotasFiscaisReferenciadas
     {
@@ -1697,6 +1722,38 @@ public partial class IdentificacaoNFe : INotifyPropertyChanged
             }
         }
     }
+
+    [XmlElement("tpNFDebito")]
+    public TipoNfDebito? tpNFDebito
+    {
+        get => tpNFDebitoField;
+        set
+        {
+            if (tpNFDebitoField.Equals(value) != true)
+            {
+                tpNFDebitoField = value;
+                OnPropertyChanged(nameof(tpNFDebito));
+            }
+        }
+    }
+
+    [XmlElement("tpNFCredito")]
+    public TipoNfCredito? tpNFCredito
+    {
+        get => tpNFCreditoField;
+        set
+        {
+            if (tpNFCreditoField.Equals(value) != true)
+            {
+                tpNFCreditoField = value;
+                OnPropertyChanged(nameof(tpNFCredito));
+            }
+        }
+    }
+
+    public bool ShouldSerializetpNFDebito() => tpNFDebitoField.HasValue;
+    public bool ShouldSerializetpNFCredito() => tpNFCreditoField.HasValue;
+
 
     [XmlElement("indFinal")]
     public IndicadorConsumidorFinal ConsumidorFinal // NEW!!! 15/12/2016
@@ -3183,16 +3240,19 @@ public partial class ProdutoDeclaracaoImportacao : INotifyPropertyChanged
 
 public partial class Totais : INotifyPropertyChanged
 {
-    public Totais() : base()
-    {
-        // Me.retTribField = New TNFeInfNFeTotalRetTrib()
-        // Me.iSSQNtotField = New TNFeInfNFeTotalISSQNtot()
-        // Me.iCMSTotField = New TotalICMS()
-    }
+    //public Totais() : base()
+    //{
+    //      Me.retTribField = New TNFeInfNFeTotalRetTrib()
+    //      Me.iSSQNtotField = New TNFeInfNFeTotalISSQNtot()
+    //      Me.iCMSTotField = New TotalICMS()
+    //}
 
-    private TotalICMS iCMSTotField;
-    private TotalISSQN iSSQNtotField;
-    private TotalRetencaoTributos retTribField;
+    private TotalICMS iCMSTotField = null!;
+    private TotalISSQN iSSQNtotField = null!;
+    private TotalRetencaoTributos retTribField = null!;
+    private DFeBase.TotaisImpostoSeletivo isTotField = null!;
+    private DFeBase.TotaisIbsCbsMonofasico ibsCbsMonotField = null!;
+    private decimal? vNFTotField = 0M;
 
     [XmlElement("ICMSTot")]
     public TotalICMS ICMS
@@ -3235,6 +3295,60 @@ public partial class Totais : INotifyPropertyChanged
             }
         }
     }
+
+    /// <summary>
+    /// Valores totais da NF com Imposto Seletivo
+    /// </summary>
+    [XmlElement("ISTot")]
+    public DFeBase.TotaisImpostoSeletivo IS
+    {
+        get => isTotField;
+        set
+        {
+            if (isTotField is null || isTotField.Equals(value) != true)
+            {
+                isTotField = value;
+                OnPropertyChanged(nameof(IS));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Valores totais da NF com IBS / CBS
+    /// </summary>
+    [XmlElement("IBSCBSTot")]
+    public DFeBase.TotaisIbsCbsMonofasico IBSCBSTot
+    {
+        get => ibsCbsMonotField;
+        set
+        {
+            if (ibsCbsMonotField is null || ibsCbsMonotField.Equals(value) != true)
+            {
+                ibsCbsMonotField = value;
+                OnPropertyChanged(nameof(IBSCBSTot));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Valor Total da NF considerando os impostos por fora IBS, CBS e IS
+    /// </summary>
+    [XmlElement("vNFTot")]
+    public decimal? vNFTot
+    {
+        get => vNFTotField;
+        set
+        {
+            if (vNFTotField is null || vNFTotField.Equals(value) != true)
+            {
+                vNFTotField = value;
+                OnPropertyChanged(nameof(vNFTot));
+            }
+        }
+    }
+
+    public bool ShouldSerializevNFTot() => vNFTotField.HasValue && vNFTotField > 0.0M;
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 

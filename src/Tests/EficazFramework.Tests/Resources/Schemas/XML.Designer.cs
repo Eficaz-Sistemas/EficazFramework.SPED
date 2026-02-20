@@ -19,7 +19,7 @@ namespace EficazFramework.SPED.Resources.Schemas {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class XML {
@@ -61,14 +61,39 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;cteOSProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/cte&quot;&gt;&lt;CTeOS xmlns=&quot;http://www.portalfiscal.inf.br/cte&quot; versao=&quot;4.00&quot;&gt;&lt;infCte versao=&quot;4.00&quot; Id=&quot;CTe35250243035146001076673100000518541035270862&quot;&gt;&lt;ide&gt;&lt;cUF&gt;35&lt;/cUF&gt;&lt;cCT&gt;03527086&lt;/cCT&gt;&lt;CFOP&gt;5353&lt;/CFOP&gt;&lt;natOp&gt;Prestacao de servico&lt;/natOp&gt;&lt;mod&gt;67&lt;/mod&gt;&lt;serie&gt;310&lt;/serie&gt;&lt;nCT&gt;51854&lt;/nCT&gt;&lt;dhEmi&gt;2025-02-28T10:11:36-02:00&lt;/dhEmi&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmis&gt;&lt;cDV&gt;2&lt;/cDV&gt;&lt;tpAmb&gt;1&lt;/tpAmb&gt;&lt;tpCTe&gt;0&lt;/tpCTe&gt;&lt;procEmi&gt;0&lt;/procEmi&gt;&lt;verProc&gt;Protege-Bnfx v1.0&lt;/ver [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string CTeOS {
+            get {
+                return ResourceManager.GetString("CTeOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
+        ///&lt;!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by PROCERGS (Procergs - Centro de Tecnologia da Informação e Comunicação do Estado do Rio Grande do Sul S.A.) --&gt;
+        ///&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;
+        /// &lt;xs:simpleType name=&quot;TStringRTC&quot;&gt;
+        ///  &lt;xs:annotation&gt;
+        ///   &lt;xs:documentation&gt; Tipo string genérico&lt;/xs:documentation&gt;
+        ///  &lt;/xs:annotation&gt;
+        ///  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        ///   &lt;xs:whiteSpace value=&quot;p [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string DFeTiposBasicos_v1_00 {
+            get {
+                return ResourceManager.GetString("DFeTiposBasicos_v1.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by PROCERGS (Procergs - Centro de Tecnologia da Informação e Comunicação do Estado do Rio Grande do Sul S.A.) --&gt;
         ///&lt;!-- PL_009  alterações de esquema decorrentes da - NT2016.002 v1.20 - 31/05/2017 13:14hs--&gt;
         ///&lt;!-- PL_008g  alterações de esquema decorrentes da - NT2015.002  - 15/07/2015 --&gt;
         ///&lt;!-- PL_008h  alterações de esquema decorrentes da - NT2015.003 - 17/09/2015 --&gt;
         ///&lt;!-- PL_008i --&gt;
-        ///&lt;!-- PL_009-v4  alterações de esquema decorrentes da - NT2016.002 - 10/2017 --&gt;
-        ///&lt;!-- PL_ [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///&lt;!-- PL_009- [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string leiauteNFe_v4_00 {
             get {
@@ -97,6 +122,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+        ///&lt;ConsultarNfseResposta xmlns=&quot;http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd&quot;&gt;
+        ///    &lt;ListaNfse&gt;
+        ///        &lt;CompNfse&gt;
+        ///            &lt;Nfse&gt;
+        ///                &lt;InfNfse id=&quot;2567&quot;&gt;
+        ///                    &lt;Numero&gt;2567&lt;/Numero&gt;
+        ///                    &lt;CodigoVerificacao&gt;ERMR-CJMI&lt;/CodigoVerificacao&gt;
+        ///                    &lt;DataEmissao&gt;2024-08-05T00:00:00&lt;/DataEmissao&gt;
+        ///                    &lt;IdentificacaoRps&gt;
+        ///                        &lt;Numero /&gt;
+        ///                        &lt;Serie&gt;7&lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFe_Abrasf_New {
+            get {
+                return ResourceManager.GetString("NFe_Abrasf_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;&lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35240729302348000468550050000068201676523481&quot;&gt;&lt;ide&gt;&lt;cUF&gt;35&lt;/cUF&gt;&lt;cNF&gt;67652348&lt;/cNF&gt;&lt;natOp&gt;Lancamento efetuado em decorrencia de emissao de NFCe&lt;/natOp&gt;&lt;mod&gt;55&lt;/mod&gt;&lt;serie&gt;5&lt;/serie&gt;&lt;nNF&gt;6820&lt;/nNF&gt;&lt;dhEmi&gt;2024-07-23T11:55:17-03:00&lt;/dhEmi&gt;&lt;dhSaiEnt&gt;2024-07-23T11:55:17-03:00&lt;/dhSaiEnt&gt;&lt;tpNF&gt;1&lt;/tpNF&gt;&lt;idDest&gt;1&lt;/idDest&gt;&lt;cMunFG&gt;3516200&lt;/cMunFG&gt;&lt;tpImp&gt;1&lt;/tpImp&gt;&lt;tpEmis&gt;1&lt;/tpEmi [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string NFe_IN2024002 {
@@ -116,17 +161,35 @@ namespace EficazFramework.SPED.Resources.Schemas {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- edited with XMLSpy v2008 (http://www.altova.com) by sas-softwares@procergs.rs.gov.br (PROCERGS) --&gt;
         ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot; targetNamespace=&quot;http://www.portalfiscal.inf.br/nfe&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///	&lt;xs:include schemaLocation=&quot;leiauteNFe_v4.00.xsd&quot;/&gt;
         ///	&lt;xs:element name=&quot;NFe&quot; type=&quot;TNFe&quot;&gt;
-        ///		&lt;xs:annotation&gt;
-        ///			&lt;xs:documentation&gt;Nota Fiscal Eletrônica&lt;/xs:documentation&gt;
-        ///		&lt;/xs:annotation&gt;
-        ///	&lt;/xs:elemen [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///		&lt;xs:ann [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string nfe_v4_00 {
             get {
                 return ResourceManager.GetString("nfe_v4.00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;nfeProc versao=&quot;4.00&quot; xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///    &lt;NFe xmlns=&quot;http://www.portalfiscal.inf.br/nfe&quot;&gt;
+        ///        &lt;infNFe versao=&quot;4.00&quot; Id=&quot;NFe35251029302348000387550010007218381277304769&quot;&gt;
+        ///            &lt;ide&gt;
+        ///                &lt;cUF&gt;35&lt;/cUF&gt;
+        ///                &lt;cNF&gt;27730476&lt;/cNF&gt;
+        ///                &lt;natOp&gt;VENDA P/NAO CONTRIBUINTE-ST&lt;/natOp&gt;
+        ///                &lt;mod&gt;55&lt;/mod&gt;
+        ///                &lt;serie&gt;1&lt;/serie&gt;
+        ///                &lt;nNF&gt;721838&lt;/nNF&gt;
+        ///                &lt;dhEmi&gt;2025-10-20T00:00:00-03:00&lt;/dhEmi&gt;
+        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFeIbsCbs_202510 {
+            get {
+                return ResourceManager.GetString("NFeIbsCbs_202510", resourceCulture);
             }
         }
         
@@ -147,6 +210,55 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string NFeIpiDevolvido {
             get {
                 return ResourceManager.GetString("NFeIpiDevolvido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+        ///&lt;ConsultarNfseServicoPrestadoResposta xmlns=&quot;http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd&quot;&gt;
+        ///    &lt;ListaNfse&gt;
+        ///        &lt;CompNfse&gt;
+        ///            &lt;Nfse versao=&quot;2.04&quot;&gt;
+        ///                &lt;InfNfse&gt;
+        ///                    &lt;Numero&gt;211&lt;/Numero&gt;
+        ///                    &lt;CodigoVerificacao&gt;MMHJ-FSJY&lt;/CodigoVerificacao&gt;
+        ///                    &lt;DataEmissao&gt;2024-08-05T00:00:00&lt;/DataEmissao&gt;
+        ///                    &lt;OutrasInformacoes /&gt;
+        ///                    &lt;ValoresNfse&gt;
+        ///              [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFse_Abrasf_lote {
+            get {
+                return ResourceManager.GetString("NFse_Abrasf_lote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;CompNfse&gt;&lt;Nfse&gt;&lt;InfNfse&gt;&lt;Numero&gt;4347&lt;/Numero&gt;&lt;CodigoVerificacao&gt;XWXK-LEDO&lt;/CodigoVerificacao&gt;&lt;DataEmissao&gt;2025-02-26T00:00:00&lt;/DataEmissao&gt;&lt;ValoresNfse&gt;&lt;BaseCalculo&gt;51615.88&lt;/BaseCalculo&gt;&lt;Aliquota&gt;3.00&lt;/Aliquota&gt;&lt;ValorIss&gt;1548.48&lt;/ValorIss&gt;&lt;ValorLiquidoNfse&gt;48441.50&lt;/ValorLiquidoNfse&gt;&lt;/ValoresNfse&gt;&lt;PrestadorServico&gt;&lt;IdentificacaoPrestador&gt;&lt;CpfCnpj&gt;&lt;Cnpj&gt;12.398.333/0001-08&lt;/Cnpj&gt;&lt;/CpfCnpj&gt;&lt;InscricaoMunicipal&gt;0&lt;/InscricaoMunicipal&gt;&lt;/IdentificacaoPrestador&gt;&lt;RazaoSocial&gt;CODEBIT DESENVOLVIMENTO DE SOFTWARES CUS [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFSe_Common {
+            get {
+                return ResourceManager.GetString("NFSe_Common", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;NFSe xmlns=&quot;http://www.sped.fazenda.gov.br/nfse&quot; versao=&quot;1.00&quot;&gt;
+        ///  &lt;infNFSe Id=&quot;NFS3510000004900099000019700000000000006010200049010&quot;&gt;
+        ///    &lt;xLocEmi&gt;FRANCA&lt;/xLocEmi&gt;
+        ///    &lt;xLocPrestacao&gt;Franca&lt;/xLocPrestacao&gt;
+        ///    &lt;nNFSe&gt;113&lt;/nNFSe&gt;
+        ///    &lt;cLocIncid&gt;3516200&lt;/cLocIncid&gt;
+        ///    &lt;xLocIncid&gt;Franca&lt;/xLocIncid&gt;
+        ///    &lt;xTribNac&gt;Contabilidade, inclusive serviços técnicos e auxiliares.&lt;/xTribNac&gt;
+        ///    &lt;verAplic&gt;SilTecnologia_v1.00&lt;/verAplic&gt;
+        ///    &lt;ambGer&gt;1&lt;/ambGer&gt;
+        ///    &lt;tpEmis&gt;2 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string NFSe_Nacional_1_0_1 {
+            get {
+                return ResourceManager.GetString("NFSe_Nacional_1.0.1", resourceCulture);
             }
         }
         

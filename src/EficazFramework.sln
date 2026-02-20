@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.31911.260
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64E9A101-EA8E-41FB-9022-DDD601ACB847}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,6 +22,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EficazFramework.SPED.Schemas", "Core\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj", "{D28B2AB6-D608-4C71-B84C-4FB58D9C3FDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EficazFramework.SPED.Abstractions", "Core\EficazFramework.SPED.Abstractions\EficazFramework.SPED.Abstractions.csproj", "{643FB166-E17C-44A4-A128-F70A74F61E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{2625E962-BDBD-4613-84A9-49569C67E6E2}"
+	ProjectSection(SolutionItems) = preProject
+		Utilities\CompareXsdWorkspace.cs = Utilities\CompareXsdWorkspace.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

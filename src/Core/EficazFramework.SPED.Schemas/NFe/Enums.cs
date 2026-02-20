@@ -2216,6 +2216,9 @@ public enum FormaPagamento
     [System.ComponentModel.Description("Sem Pagamento")]
     [System.Xml.Serialization.XmlEnum("90")]
     SemPagto = 90,
+    [System.ComponentModel.Description("Pagamento Posterior")]
+    [System.Xml.Serialization.XmlEnum("91")]
+    Posterior = 91,
     [System.ComponentModel.Description("Outros")]
     [System.Xml.Serialization.XmlEnum("99")]
     Outros = 99
@@ -2355,7 +2358,61 @@ public enum CodigoEvento
     VistoriaSuframa = 990900,
     [System.ComponentModel.Description("Internalização Suframa")] // , False)>
     [System.Xml.Serialization.XmlEnum("990910")]
-    IntarnalizacaoSuframa = 990910
+    IntarnalizacaoSuframa = 990910,
+
+    //RTC:
+    [System.ComponentModel.Description("Informação de efetivo pagamento integral para liberar crédito presumido do adquirente")]
+    [System.Xml.Serialization.XmlEnum("112110")]
+    EfetivoPgLiberacaoCredPresAdq = 112110,
+    [System.ComponentModel.Description("Importação em ALC/ZFM não convertida em isenção")]
+    [System.Xml.Serialization.XmlEnum("112120")]
+    ImportacaoALCZFMNaoConvertidaIsencao = 112120,
+    [System.ComponentModel.Description("Perecimento, perda, roubo ou furto durante o transporte contratado pelo fornecedor")]
+    [System.Xml.Serialization.XmlEnum("112130")]
+    PerecimentoPerdaRouboFurtoTransporteFornecedor = 112130,
+    [System.ComponentModel.Description("Fornecimento não realizado com pagamento antecipado")]
+    [System.Xml.Serialization.XmlEnum("112140")]
+    FornecimentoNaoRealizadoPagamentoAntecipado = 112140,
+    [System.ComponentModel.Description("Atualização da Data de Previsão de Entrega")]
+    [System.Xml.Serialization.XmlEnum("112150")]
+    AtualizacaoDataPrevisaoEntrega = 112150,
+    [System.ComponentModel.Description("Solicitação de Apropriação de crédito presumido")]
+    [System.Xml.Serialization.XmlEnum("211110")]
+    SolicitacaoApropriacaoCreditoPresumido = 211110,
+    [System.ComponentModel.Description("Destinação de item para consumo pessoal")]
+    [System.Xml.Serialization.XmlEnum("211120")]
+    DestinacaoItemConsumoPessoal = 211120,
+    [System.ComponentModel.Description("Perecimento, perda, roubo ou furto durante o transporte contratado pelo adquirente")]
+    [System.Xml.Serialization.XmlEnum("211124")]
+    PerecimentoPerdaRouboFurtoTransporteAdquirente = 211124,
+    [System.ComponentModel.Description("Aceite de débito na apuração por emissão de nota de crédito")]
+    [System.Xml.Serialization.XmlEnum("211128")]
+    AceiteDebitoApuracaoNotaCredito = 211128,
+    [System.ComponentModel.Description("Imobilização de Item")]
+    [System.Xml.Serialization.XmlEnum("211130")]
+    ImobilizacaoItem = 211130,
+
+    [System.ComponentModel.Description("Solicitação de Apropriação de Crédito de Combustível")]
+    [System.Xml.Serialization.XmlEnum("211140")]
+    SolicitacaoApropriacaoCreditoCombustivel = 211140,
+    [System.ComponentModel.Description("Solicitação de Apropriação de Crédito para bens e serviços que dependem de atividade do adquirente")]
+    [System.Xml.Serialization.XmlEnum("211150")]
+    SolicitacaoApropriacaoCreditoBensServicosAtividadeAdquirente = 211150,
+    [System.ComponentModel.Description("Manifestação sobre Pedido de Transferência de Crédito de IBS em Operações de Sucessão")]
+    [System.Xml.Serialization.XmlEnum("212110")]
+    ManifestacaoTransferenciaCreditoIBSSucessao = 212110,
+    [System.ComponentModel.Description("Manifestação sobre Pedido de Transferência de Crédito de CBS em Operações de Sucessão")]
+    [System.Xml.Serialization.XmlEnum("212120")]
+    ManifestacaoTransferenciaCreditoCBSSucessao = 212120,
+    [System.ComponentModel.Description("Manifestação do Fisco sobre Pedido de Transferência de Crédito de IBS em Operações de Sucessão")]
+    [System.Xml.Serialization.XmlEnum("412120")]
+    ManifestacaoFiscoTransferenciaCreditoIBSSucessao = 412120,
+    [System.ComponentModel.Description("Manifestação do Fisco sobre Pedido de Transferência de Crédito de CBS em Operações de Sucessão")]
+    [System.Xml.Serialization.XmlEnum("412130")]
+    ManifestacaoFiscoTransferenciaCreditoCBSSucessao = 412130,
+    [System.ComponentModel.Description("Cancelamento de Evento")]
+    [System.Xml.Serialization.XmlEnum("110001")]
+    CancelamentoEvento = 110001
 }
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
@@ -2493,4 +2550,68 @@ public enum VersaoServicoDistribuicaoDF
     /// <remarks/>
     [System.Xml.Serialization.XmlEnum("1.01")]
     Versao1_01
+}
+
+
+/// <summary>
+/// Tipo de Nota de Débito
+/// </summary>
+public enum TipoNfDebito
+{
+    [EnumMember(Value = "01")]
+    [System.Xml.Serialization.XmlEnum("01")]
+    [System.ComponentModel.Description("01 - Transferência de créditos para Cooperativas")]
+    TransfCredCooperativas = 1,
+
+    [EnumMember(Value = "02")]
+    [System.Xml.Serialization.XmlEnum("02")]
+    [System.ComponentModel.Description("02 - Anulação de Crédito por Saídas Imunes/Isentas")]
+    AnulacaoCredSaidasImuneIsentas = 2,
+
+    [EnumMember(Value = "03")]
+    [System.Xml.Serialization.XmlEnum("03")]
+    [System.ComponentModel.Description("03 - Débitos de notas fiscais não processadas na apuração")]
+    DebitoNfNaoProcessadasApuracao = 3,
+
+    [EnumMember(Value = "04")]
+    [System.Xml.Serialization.XmlEnum("04")]
+    [System.ComponentModel.Description("04 - Multa e juros")]
+    MultasJuros = 4,
+
+    [EnumMember(Value = "05")]
+    [System.Xml.Serialization.XmlEnum("05")]
+    [System.ComponentModel.Description("05 - Transferência de crédito de sucessão")]
+    TransfCredSucessao = 5,
+
+    [EnumMember(Value = "06")]
+    [System.Xml.Serialization.XmlEnum("06")]
+    [System.ComponentModel.Description("Pagamento antecipado")]
+    PagamentoAntecipado = 6,
+
+    [EnumMember(Value = "07")]
+    [System.Xml.Serialization.XmlEnum("07")]
+    [System.ComponentModel.Description("Perda em estoqueS")]
+    PerdaEstoque = 7
+
+}
+
+/// <summary>
+/// Tipo de Nota de Crédito
+/// </summary>
+public enum TipoNfCredito
+{
+    [EnumMember(Value = "01")]
+    [System.Xml.Serialization.XmlEnum("01")]
+    [System.ComponentModel.Description("01 - Multa e juros")]
+    MultasJuros = 1,
+
+    [EnumMember(Value = "02")]
+    [System.Xml.Serialization.XmlEnum("02")]
+    [System.ComponentModel.Description("02 - Apropriação de crédito presumido de IBS sobre o saldo devedor na ZFM (art. 450, § 1º, LC 214/25)")]
+    CredPresumidoIbsZFM = 2,
+
+    [EnumMember(Value = "03")]
+    [System.Xml.Serialization.XmlEnum("03")]
+    [System.ComponentModel.Description("03 - Retorno")]
+    Retorno = 3
 }

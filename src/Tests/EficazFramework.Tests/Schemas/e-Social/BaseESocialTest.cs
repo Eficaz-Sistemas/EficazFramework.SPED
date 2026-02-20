@@ -78,7 +78,9 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
 
 
     private int _errorCount = 0;
-    private void ValidaSchemaXsd(XmlDocument doc, T evento)
+    private void ValidaSchemaXsd(
+        XmlDocument doc, 
+        T evento)
     {
         // zerando contador de erros
         _errorCount = 0;
@@ -92,7 +94,6 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
         doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
         doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos)));
         doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
-
         // executando a validação
         doc.Validate(eventHandler);
         _errorCount.Should().Be(0);
