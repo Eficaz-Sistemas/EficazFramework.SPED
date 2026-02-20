@@ -3,8 +3,8 @@
 public class ConsultaCadastroTests : BaseNFeTests
 {
     [Test]
-    [TestCase("10608025000126", Schemas.NFe.TipoPesquisaCadastro.CNPJ, Schemas.NFe.OrgaoIBGE.MG, Schemas.NFe.Ambiente.Homologacao, "111")]
-    [TestCase("00073030000128", Schemas.NFe.TipoPesquisaCadastro.CNPJ, Schemas.NFe.OrgaoIBGE.MG, Schemas.NFe.Ambiente.Homologacao, "259")]
+    [TestCase("10608025000126", Schemas.NFe.TipoPesquisaCadastro.CNPJ, Schemas.NFe.OrgaoIBGE.MG, Schemas.NFe.Ambiente.Homologacao, "257")]
+    [TestCase("00073030000128", Schemas.NFe.TipoPesquisaCadastro.CNPJ, Schemas.NFe.OrgaoIBGE.MG, Schemas.NFe.Ambiente.Homologacao, "257")]
     public async Task ConsultaCadastroAsync(
         string cnpjCPF,
         Schemas.NFe.TipoPesquisaCadastro tpPesquisa, 
