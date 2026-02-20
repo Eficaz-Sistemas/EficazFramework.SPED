@@ -238,6 +238,7 @@ public sealed class NFeService : SoapServiceBase
 
         //! execução
         var request = new Contracts.RecepcaoEvento4Request();
+
         Schemas.NFe.Evento evento = new()
         {
             InformacaoEvento = new()
@@ -246,10 +247,39 @@ public sealed class NFeService : SoapServiceBase
                 ChaveNFe = chave,
                 CNPJ_CPF = cnpjCpf,
                 PersonalidadeJuridica = cnpjCpf.IsValidCNPJ() ? Schemas.NFe.PersonalidadeJuridica.CNPJ : Schemas.NFe.PersonalidadeJuridica.CPF,
-                EventoDetalhes = new()
+                EventoDetalhe = tpEvento switch
                 {
-                    Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
-                    Justificativa = justificativa
+                    Schemas.NFe.CodigoEvento.Cancelamento => new Schemas.NFe.ev110111
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Justificativa = justificativa
+                    },
+                    Schemas.NFe.CodigoEvento.Ciencia => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Ciencia da Operacao"
+                    },
+                    Schemas.NFe.CodigoEvento.Confirmacao => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Confirmacao da Operacao"
+                    },
+                    Schemas.NFe.CodigoEvento.Desconhecimento => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Desconhecimento da Operacao"
+                    },
+                    Schemas.NFe.CodigoEvento.NaoRealizada => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Operacao nao Realizada",
+                        Justificativa = justificativa
+                    },
+                    _ => new Schemas.NFe.DetalheEventoNaoMapeado
+                    {
+                        Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Evento não mapeado pelo Eficaz Framework"
+                    }
                 },
                 EventoCodigo = tpEvento,
                 EventoData = DateTime.Now,
@@ -259,6 +289,10 @@ public sealed class NFeService : SoapServiceBase
             },
             Versao = "1.00"
         };
+
+
+
+        Console.WriteLine(evento.Serialize());
         XmlDocument eventoXml = new();
         eventoXml.LoadXml(evento.Serialize().RemoveW3CNamespaces());
         Certificado.SignXml(eventoXml, "evento", "infEvento", false, false);
@@ -276,6 +310,74 @@ public sealed class NFeService : SoapServiceBase
         return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
     }
 
+
+    /// <summary>
+    /// Executa a chamada ao WebService de envio de eventos da RTC para uma NF-e
+    /// </summary>
+    /// <param name="cnpjCpf">CNPJ ou CPF do Autor do Evento</param>
+    /// <param name="chave">Informar chave da NF-e</param>
+    /// <param name="tpEvento">Código do Evento</param>
+    /// <param name="evento">Conteúdo do evento (instância)</param>
+    public async Task<Schemas.NFe.RetornoEnvioEvento> EnvioEventoRtcAsync(
+        string cnpjCpf,
+        string chave,
+        Schemas.NFe.CodigoEvento tpEvento,
+        Schemas.DFeBase.IbsCbsEventoBase evento,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao,
+        string justificativa = null)
+    {
+        //! validações iniciais:
+        if (chave?.Length != 44)
+            throw new ArgumentException("A chave informada não é válida");
+
+        if (!ValidaCertificado())
+            throw new ArgumentNullException("Certificado", "Nenhum certificado digital foi fornecido para a requisição.");
+
+        //! montagem dos argumentos:
+        var uf = ((Schemas.NFe.OrgaoIBGE)int.Parse(chave[..2]));
+        var modelo = Enum.Parse<Schemas.NFe.ModeloDocumento>(chave[20..22]);
+
+
+        //! execução
+        var request = new Contracts.RecepcaoEvento4Request();
+
+        Schemas.NFe.Evento evt = new()
+        {
+            InformacaoEvento = new()
+            {
+                Ambiente = ambiente,
+                ChaveNFe = chave,
+                CNPJ_CPF = cnpjCpf,
+                PersonalidadeJuridica = cnpjCpf.IsValidCNPJ() ? Schemas.NFe.PersonalidadeJuridica.CNPJ : Schemas.NFe.PersonalidadeJuridica.CPF,
+                EventoDetalhe = evento,
+                EventoCodigo = tpEvento,
+                EventoData = DateTime.Now,
+                EventoNumeroSequencial = "1",
+                Orgao = uf == Schemas.NFe.OrgaoIBGE.SefazNacional_AN ? Schemas.NFe.OrgaoIBGE.SefazNacional_SVCRS : uf,
+                EventoVersao = "1.00",
+            },
+            Versao = "1.00"
+        };
+
+
+
+        Console.WriteLine(evt.Serialize());
+        XmlDocument eventoXml = new();
+        eventoXml.LoadXml(evt.Serialize().RemoveW3CNamespaces());
+        Certificado.SignXml(eventoXml, "evento", "infEvento", false, false);
+
+        Schemas.NFe.PedidoEnvioEvento dados = new()
+        {
+            Lote = "000000000000001",
+            Versao = "1.00"
+        };
+        XmlDocument dadosXml = new();
+        dadosXml.LoadXml(dados.Serialize().RemoveW3CNamespaces());
+        dadosXml.GetElementsByTagName("envEvento").Item(0).AppendChild(dadosXml.ImportNode(eventoXml.DocumentElement, true));
+
+        request.nfeDadosMsg = dadosXml.DocumentElement;
+        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
+    }
 
 
     /// <summary>

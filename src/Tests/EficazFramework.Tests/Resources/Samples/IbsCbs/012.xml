@@ -1,0 +1,240 @@
+<cteProc versao="4.00" ipTransmissor="35.199.123.66" xmlns="http://www.portalfiscal.inf.br/cte">
+	<CTe xmlns="http://www.portalfiscal.inf.br/cte">
+		<infCte Id="CTe35251124230747094670570010001524441528025950" versao="4.00">
+			<ide>
+				<cUF>35</cUF>
+				<cCT>52802595</cCT>
+				<CFOP>5353</CFOP>
+				<natOp>TRANSPORTE RODOVIARIO DE CARGAS</natOp>
+				<mod>57</mod>
+				<serie>1</serie>
+				<nCT>152444</nCT>
+				<dhEmi>2025-11-26T17:03:43-03:00</dhEmi>
+				<tpImp>1</tpImp>
+				<tpEmis>1</tpEmis>
+				<cDV>0</cDV>
+				<tpAmb>1</tpAmb>
+				<tpCTe>0</tpCTe>
+				<procEmi>0</procEmi>
+				<verProc>Sinclog 2.14.0</verProc>
+				<cMunEnv>3550308</cMunEnv>
+				<xMunEnv>SAO PAULO</xMunEnv>
+				<UFEnv>SP</UFEnv>
+				<modal>01</modal>
+				<tpServ>0</tpServ>
+				<cMunIni>3509205</cMunIni>
+				<xMunIni>Cajamar</xMunIni>
+				<UFIni>SP</UFIni>
+				<cMunFim>3523107</cMunFim>
+				<xMunFim>Itaquaquecetuba</xMunFim>
+				<UFFim>SP</UFFim>
+				<retira>1</retira>
+				<indIEToma>1</indIEToma>
+				<toma3>
+					<toma>0</toma>
+				</toma3>
+			</ide>
+			<compl>
+				<xCaracAd>VENDA</xCaracAd>
+				<xCaracSer>ENTREGA</xCaracSer>
+				<xEmi>Sistema</xEmi>
+				<Entrega>
+					<comData>
+						<tpPer>2</tpPer>
+						<dProg>2025-12-02</dProg>
+					</comData>
+					<semHora>
+						<tpHor>0</tpHor>
+					</semHora>
+				</Entrega>
+				<xObs>Teste reforma prod|NFes: 48104/52.</xObs>
+			</compl>
+			<emit>
+				<CNPJ>24230747094670</CNPJ>
+				<IE>120577509118</IE>
+				<xNome>M</xNome>
+				<xFant>M</xFant>
+				<enderEmit>
+					<xLgr>AVENIDA</xLgr>
+					<nro>5</nro>
+					<xBairro>Q</xBairro>
+					<cMun>3534401</cMun>
+					<xMun>Osasco</xMun>
+					<CEP>06186260</CEP>
+					<UF>SP</UF>
+				</enderEmit>
+				<CRT>3</CRT>
+			</emit>
+			<rem>
+				<CNPJ>12123456000100</CNPJ>
+				<IE>379000111111</IE>
+				<xNome>S.A</xNome>
+				<xFant>S.A</xFant>
+				<fone>1632000000</fone>
+				<enderReme>
+					<xLgr>VIA</xLgr>
+					<nro>S/N</nro>
+					<xBairro>J</xBairro>
+					<cMun>3509205</cMun>
+					<xMun>Cajamar</xMun>
+					<CEP>07789100</CEP>
+					<UF>SP</UF>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+				</enderReme>
+				<email>loja@loja.com.br</email>
+			</rem>
+			<dest>
+				<CNPJ>12123456000100</CNPJ>
+				<IE>379000111111</IE>
+				<xNome>LM</xNome>
+				<enderDest>
+					<xLgr>AVENIDA INDUSTRIAL </xLgr>
+					<nro>S/N</nro>
+					<xBairro>P</xBairro>
+					<cMun>3523107</cMun>
+					<xMun>Itaquaquecetuba</xMun>
+					<CEP>08586150</CEP>
+					<UF>SP</UF>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+				</enderDest>
+			</dest>
+			<vPrest>
+				<vTPrest>12.50</vTPrest>
+				<vRec>12.50</vRec>
+				<Comp>
+					<xNome>FRETE PESO</xNome>
+					<vComp>10.00</vComp>
+				</Comp>
+				<Comp>
+					<xNome>AD VALOREM</xNome>
+					<vComp>0.50</vComp>
+				</Comp>
+				<Comp>
+					<xNome>VALOR GRIS</xNome>
+					<vComp>0.50</vComp>
+				</Comp>
+				<Comp>
+					<xNome>ICMS</xNome>
+					<vComp>1.50</vComp>
+				</Comp>
+			</vPrest>
+			<imp>
+				<ICMS>
+					<ICMS00>
+						<CST>00</CST>
+						<vBC>12.50</vBC>
+						<pICMS>12.00</pICMS>
+						<vICMS>1.50</vICMS>
+					</ICMS00>
+				</ICMS>
+				<vTotTrib>1.50</vTotTrib>
+				<IBSCBS>
+					<CST>000</CST>
+					<cClassTrib>000001</cClassTrib>
+					<gIBSCBS>
+						<vBC>11.00</vBC>
+						<gIBSUF>
+							<pIBSUF>0.10</pIBSUF>
+							<vIBSUF>0.01</vIBSUF>
+						</gIBSUF>
+						<gIBSMun>
+							<pIBSMun>0.00</pIBSMun>
+							<vIBSMun>0.00</vIBSMun>
+						</gIBSMun>
+						<vIBS>0.01</vIBS>
+						<gCBS>
+							<pCBS>0.90</pCBS>
+							<vCBS>0.10</vCBS>
+						</gCBS>
+					</gIBSCBS>
+				</IBSCBS>
+				<vTotDFe>11.00</vTotDFe>
+			</imp>
+			<infCTeNorm>
+				<infCarga>
+					<vCarga>155.58</vCarga>
+					<proPred>DIVERSOS</proPred>
+					<xOutCat>CARGA SECA</xOutCat>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO BASE DE CALCULO</tpMed>
+						<qCarga>1.5600</qCarga>
+					</infQ>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO REAL</tpMed>
+						<qCarga>1.5600</qCarga>
+					</infQ>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO AFERIDO</tpMed>
+						<qCarga>0.0000</qCarga>
+					</infQ>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO INFORMADO</tpMed>
+						<qCarga>1.5600</qCarga>
+					</infQ>
+					<infQ>
+						<cUnid>01</cUnid>
+						<tpMed>PESO CUBADO</tpMed>
+						<qCarga>0.0100</qCarga>
+					</infQ>
+					<infQ>
+						<cUnid>03</cUnid>
+						<tpMed>UNIDADE</tpMed>
+						<qCarga>1.0000</qCarga>
+					</infQ>
+				</infCarga>
+				<infDoc>
+					<infNFe>
+						<chave>35251124000000000000000010001524441528025950</chave>
+						<dPrev>2025-12-02</dPrev>
+					</infNFe>
+				</infDoc>
+				<infModal versaoModal="4.00">
+					<rodo>
+						<RNTRC>50312822</RNTRC>
+					</rodo>
+				</infModal>
+			</infCTeNorm>
+		</infCte>
+		<infCTeSupl>
+			<qrCodCTe><![CDATA[https://nfe.fazenda.sp.gov.br/CTeConsulta/qrCode?chCTe=35251124230747094670570010001524441528025950&tpAmb=1]]></qrCodCTe>
+		</infCTeSupl>
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+				<Reference URI="#CTe35251124230747094670570010001524441528025950">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+					<DigestValue>8tkLiq4AOOQX7uEwnDIfXc8auXE=</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>bOtQRvikCW5jbehdTm4ulXSBtO0l6sHzyiR+WWEQTeKHeT3ecgpNwxKTQVit3QlpkxsLaQRhl2q1RfuEmChhR2XOWZjcySh5Pvq8Mez4B40BC560SIdIt3PV4vMYEA/2rOdT0p6qVsrcVVDwgWhvw9MmXR7o8yrhJKoYMlLNfjPWZdoEeMP1UzRGodyAaXWBEIZBqNT4t7BhV8h0G6qt+Gdnv7cWe7Rs9LhD1wal1yxRyvorcFRV9dAhFVDy1S0oLc78IIOk9ahzovwGCT9KsyCgURCS/MKoYF9mY2v+a318mCUdMD/AcFUz/gXDaj1gDTrr/ne0A5xq6ChnMJajVQ==</SignatureValue>
+			<KeyInfo>
+				<X509Data>
+					<X509Certificate>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</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</Signature>
+	</CTe>
+	<protCTe versao="4.00">
+		<infProt>
+			<tpAmb>1</tpAmb>
+			<verAplic>SP-CTe-2025-11-03-1</verAplic>
+			<chCTe>35251124000000000000000010001524441528025950</chCTe>
+			<dhRecbto>2025-11-26T17:03:45-03:00</dhRecbto>
+			<nProt>135253971668483</nProt>
+			<digVal>8tkLiq4AOOQX7uEwnDIfXc8auXE=</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso do CT-e.</xMotivo>
+		</infProt>
+	</protCTe>
+</cteProc>

@@ -48,6 +48,14 @@ public partial class Item : INotifyPropertyChanged
         }
     }
 
+
+    [XmlElement("vItem")]
+    public decimal? ValorItem { get; set; }
+    public bool ShouldSerializeValorItem() => ValorItem.HasValue;
+
+
+
+
     [XmlElement("impostoDevol")]
     public TributacaoDevolucao ImpostoDevolvido
     {
@@ -783,6 +791,8 @@ public partial class Tributacao : INotifyPropertyChanged
     private DetalhamentoPISST pISSTField;
     private DetalhamentoCOFINS cOFINSField;
     private DetalhamentoCOFINSST cOFINSSTField;
+    private DFeBase.ImpostoSeletivo isField;
+    private DFeBase.TributacaoNfe ibsCbsField;
 
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
@@ -969,15 +979,41 @@ public partial class Tributacao : INotifyPropertyChanged
         }
     }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
-    public event PropertyChangedEventHandler PropertyChanged;
+    /// <summary>
+    /// Grupo de informações do Imposto Seletivo
+    /// </summary>
+    public DFeBase.ImpostoSeletivo IS
+    {
+        get => isField;
+        set
+        {
+            if (isField is null || isField.Equals(value) != true)
+            {
+                isField = value;
+                OnPropertyChanged(nameof(IS));
+            }
+        }
+    }
 
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-    /* TODO ERROR: Skipped RegionDirectiveTrivia */
+    /// <summary>
+    /// Grupo de informações dos tributos IBS, CBS e Imposto Seletivo
+    /// </summary>
+    public DFeBase.TributacaoNfe IBSCBS
+    {
+        get => ibsCbsField;
+        set
+        {
+            if (ibsCbsField is null || ibsCbsField.Equals(value) != true)
+            {
+                ibsCbsField = value;
+                OnPropertyChanged(nameof(IBSCBS));
+            }
+        }
+    }
+
+
+    public event PropertyChangedEventHandler? PropertyChanged;
     public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-    /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
 }
 
 public partial class TributacaoDevolucao : System.ComponentModel.INotifyPropertyChanged

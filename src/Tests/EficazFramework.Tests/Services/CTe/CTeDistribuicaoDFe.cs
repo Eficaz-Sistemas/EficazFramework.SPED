@@ -21,7 +21,7 @@ public class CTeDistribuicaoDF : BaseCTeTests
         }
 
         if (result.cStat == "137")
-            result.loteDistDFeInt.DocZip.Should().HaveCount(0);
+            result.loteDistDFeInt?.DocZip.Should().HaveCount(0);
 
         if (result.cStat == "138")
         {
