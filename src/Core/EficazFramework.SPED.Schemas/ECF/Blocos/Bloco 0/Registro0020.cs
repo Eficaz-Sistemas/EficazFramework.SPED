@@ -60,6 +60,8 @@ public class Registro0020 : Primitives.Registro
     /// Opção pelas novas regras de preços de transferência no ano-calendário 2023 (Lei nº 14.956/2023)
     /// </summary>
     public bool OpcaoLei14956_2023 { get; set; } = false;
+    public bool? PossuiCebas { get; set; } = null;
+    public string NumeroCebas { get; set; } = default!;
 
     public override string EscreveLinha()
     {
@@ -110,8 +112,16 @@ public class Registro0020 : Primitives.Registro
         writer.Append(IntegranteMultinacional ? "S|" : "N|"); // 29
         writer.Append(DEREX ? "S|" : "N|"); // 30
 
-        if (int.Parse(Versao) >= 10)
-            writer.Append(OpcaoLei14956_2023 ? "S|" : "N|"); // 31
+        if (int.Parse(Versao) == 11)
+            writer.Append(OpcaoLei14956_2023 ? "S|" : "N|"); // 31 layout 11
+
+        if (int.Parse(Versao) >= 12)
+        {
+            string valorCebas = PossuiCebas.HasValue ? (PossuiCebas.Value ? "S" : "N") : "";
+            writer.Append($"{valorCebas}|"); // 31 layout 12
+            writer.Append($"{NumeroCebas}|"); // 32
+        }
+
 
         return writer.ToString();
     }
