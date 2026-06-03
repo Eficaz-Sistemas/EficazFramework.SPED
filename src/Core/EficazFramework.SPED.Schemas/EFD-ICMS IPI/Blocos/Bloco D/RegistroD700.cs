@@ -45,6 +45,7 @@ public class RegistroD700 : Primitives.Registro
         writer.Append(string.Format("{0:0.##}", ValorCofins) + "|"); // 21
         writer.Append(ChaveDocEletronico + "|"); // 22
         writer.Append(((int)FinalidadeEmissao).ToString() + "|"); // 23
+        writer.Append(((int)TipoFaturamento).ToString() + "|"); // 24
         writer.Append(EspecieDocReferenciado + "|"); // 25
         writer.Append(ChaveDocReferenciado + "|"); // 26
         writer.Append(HashDocReferenciado + "|"); // 27
