@@ -33,7 +33,7 @@ public class Registro0990 : Tests.BaseTest
     public void Leitura(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0990("", versao);
-        reg.QuantidadeLinhas.Should().Be(0);
+        reg.QuantidadeLinhas.Should().BeNull();
 
         reg.LeParametros(linha.Split('|'));
         InternalRead(reg, versao);

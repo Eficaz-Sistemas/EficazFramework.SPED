@@ -43,7 +43,6 @@ public class Registro0005 : Tests.BaseTest
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0005("", versao);
         reg.NomeFantasia.Should().Be(null);
         reg.CEP.Should().Be(null);
-
         reg.LeParametros(linha.Split('|'));
         InternalRead(reg, versao);
     }

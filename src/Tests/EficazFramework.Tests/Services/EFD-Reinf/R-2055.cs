@@ -12,8 +12,8 @@ public class R2055Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2055>
         var totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
         totalEstabelecimento.RAquis.Should().HaveCountGreaterThan(0);
-        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().Be(15.0D);
         Console.WriteLine($"R-2055, Código de Recolhimento Retornado: {string.Join(", ", totalEstabelecimento.RAquis.GroupBy(gp => gp.CRAquis).Select(s => s.Key))}");
+        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().BeApproximately(16.3D, 0.01D);
     
     }
 
@@ -29,8 +29,8 @@ public class R2055Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2055>
         var totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
         totalEstabelecimento.RAquis.Should().HaveCountGreaterThan(0);
-        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().Be(15.0D);
         Console.WriteLine($"R-2055, Código de Recolhimento Retornado: {string.Join(", ", totalEstabelecimento.RAquis.GroupBy(gp => gp.CRAquis).Select(s => s.Key))}");
+        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().BeApproximately(16.3D, 0.01D);
 
         //! Evento 2: 40794791077 | 2500,00 | 2 nfs 
         retorno = result.retornoLoteEventosAssincrono.retornoEventos.evento.LastOrDefault();
@@ -38,8 +38,8 @@ public class R2055Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2055>
         totalEstabelecimento = retorno.retornoEventoInfo.evtTotal.infoTotal.ideEstab;
         totalEstabelecimento.Should().NotBeNull();
         totalEstabelecimento.RAquis.Should().HaveCountGreaterThan(0);
-        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().Be(52.5D);
         Console.WriteLine($"R-2055, Código de Recolhimento Retornado: {string.Join(", ", totalEstabelecimento.RAquis.GroupBy(gp => gp.CRAquis).Select(s => s.Key))}");
+        totalEstabelecimento.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().BeApproximately(57.05D, 0.03D);
     }
 
 
@@ -54,18 +54,18 @@ public class R2055Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2055>
             {
                 indAquis = Schemas.EFD_Reinf.IndicadorAquisProd.PF,
                 vlrBruto = $"{2250D:#0.00}",
-                vlrCPDescPR = $"{33.75D:#0.00}",
-                vlrRatDescPR = $"{4.50D:#0.00}",
-                vlrSenarDesc = $"{2.25D:#0.00}",
+                vlrCPDescPR = $"{29.70D:#0.00}",
+                vlrRatDescPR = $"{2.48D:#0.00}",
+                vlrSenarDesc = $"{4.50D:#0.00}",
                 infoProcJud = null
             });
             evento.evtAqProd.infoAquisProd.ideEstabAdquir.ideProdutor.detAquis.Add(new Schemas.EFD_Reinf.R2055DetalhamentoAquisicao()
             {
                 indAquis = Schemas.EFD_Reinf.IndicadorAquisProd.PF,
                 vlrBruto = $"{250.00D:#0.00}",
-                vlrCPDescPR = $"{3.75D:#0.00}",
-                vlrRatDescPR = $"{0.50D:#0.00}",
-                vlrSenarDesc = $"{0.25D:#0.00}",
+                vlrCPDescPR = $"{3.30D:#0.00}",
+                vlrRatDescPR = $"{0.28D:#0.00}",
+                vlrSenarDesc = $"{0.50D:#0.00}",
                 infoProcJud = null
             });
         }

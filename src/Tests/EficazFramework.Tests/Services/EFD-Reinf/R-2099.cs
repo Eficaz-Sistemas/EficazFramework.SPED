@@ -63,7 +63,7 @@
                 totais.RPrest.Single().vlrTotalRetPrinc.Should().Be("66,00");
                 //! R-2055
                 totais.RAquis.Should().HaveCountGreaterThan(0);
-                totais.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().Be(15.0D);
+                totais.RAquis.Sum(s => double.Parse(!string.IsNullOrEmpty(s.vlrCRAquis) ? s.vlrCRAquis : "0")).Should().Be(16.3D);
             });
         }
 

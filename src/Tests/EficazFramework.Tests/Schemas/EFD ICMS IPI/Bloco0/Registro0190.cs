@@ -24,7 +24,7 @@ public class Registro0190 : Tests.BaseTest
     [TestCase("|0190|L|Litro|", "016")]
     public void Escrita(string result, string versao = "016")
     {
-        var unidade = result.Contains("KG") ? "KG" : (result.Contains("L") ? "L" : "UN");
+        var unidade = result.Contains("KG") ? "KG" : (result.Contains('L') ? "L" : "UN");
         var descricao = result.Contains("Quilograma") ? "Quilograma" : (result.Contains("Litro") ? "Litro" : "Unidade");
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0190("", versao)
         {

@@ -35,10 +35,8 @@ public class Registro0001 : Tests.BaseTest
     public void Leitura(string linha, string versao = "016", Primitives.IndicadorMovimento indicadorMovimento = Primitives.IndicadorMovimento.ComDados)
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0001("", versao);
-        reg.IndicadorMovimento.Should().Be(indicadorMovimento);
-
         reg.LeParametros(linha.Split('|'));
-        InternalRead(reg, versao);
+        InternalRead(reg, versao, indicadorMovimento);
     }
 
     private void InternalRead(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0001 reg, string versao = "016", Primitives.IndicadorMovimento indicadorMovimento = Primitives.IndicadorMovimento.ComDados)

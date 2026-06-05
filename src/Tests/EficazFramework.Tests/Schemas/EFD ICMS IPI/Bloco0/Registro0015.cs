@@ -16,7 +16,7 @@ public class Registro0015 : Tests.BaseTest
     public void Construtor(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0015(linha, versao);
-        InternalRead(reg, versao);
+        InternalRead(reg, versao, "0010001112233");
     }
 
     [TestCase("|0015|MG|0010001112233|", "016")]
@@ -41,10 +41,10 @@ public class Registro0015 : Tests.BaseTest
         reg.InscricaoEstadual.Should().Be(null);
 
         reg.LeParametros(linha.Split('|'));
-        InternalRead(reg, versao);
+        InternalRead(reg, versao, "0010001112233");
     }
 
-    private void InternalRead(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0015 reg, string versao = "016")
+    private void InternalRead(EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0015 reg, string versao = "016", string inscricaoEstadual = "")
     {
         reg.Codigo.Should().Be("0015");
         reg.Versao.Should().Be(versao);

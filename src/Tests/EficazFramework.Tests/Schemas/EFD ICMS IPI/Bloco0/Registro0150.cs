@@ -12,14 +12,14 @@ public class Registro0150 : Tests.BaseTest
         reg.Codigo.Should().Be("0150");
     }
 
-    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100|||||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
+    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100||001001|3129707||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
     public void Construtor(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150(linha, versao);
         InternalRead(reg, versao);
     }
 
-    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100|||||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
+    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100||001001|3129707||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
     public void Escrita(string result, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150("", versao)
@@ -29,8 +29,8 @@ public class Registro0150 : Tests.BaseTest
             CodigoPais = "1058",
             CNPJ = "12345678000100",
             CPF = "",
-            InscricaoEstadual = "",
-            CodigoMunicipio = "",
+            InscricaoEstadual = "001001",
+            CodigoMunicipio = "3129707",
             Suframa = "",
             Endereco = "Rua Fornecedor",
             Numero = "500",
@@ -40,7 +40,7 @@ public class Registro0150 : Tests.BaseTest
         reg.ToString().Should().Be(result);
     }
 
-    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100|||||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
+    [TestCase("|0150|001|Fornecedor ABC Ltda|1058|12345678000100||001001|3129707||Rua Fornecedor|500|Galpão A|Zona Industrial|", "016")]
     public void Leitura(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0150("", versao);
@@ -59,6 +59,9 @@ public class Registro0150 : Tests.BaseTest
         reg.Nome.Should().Be("Fornecedor ABC Ltda");
         reg.CodigoPais.Should().Be("1058");
         reg.CNPJ.Should().Be("12345678000100");
+        reg.CPF.Should().BeNullOrEmpty();
+        reg.InscricaoEstadual.Should().Be("001001");
+        reg.CodigoMunicipio.Should().Be("3129707");
         reg.Endereco.Should().Be("Rua Fornecedor");
     }
 }
