@@ -62,9 +62,9 @@ public class R2055Test : BaseEfdReinfTest<R2055>
                             {
                                 indAquis = IndicadorAquisProd.PF,
                                 vlrBruto = $"{1000.01D:#0.00}",
-                                vlrCPDescPR = $"{15.02:#0.00}",
-                                vlrRatDescPR = $"{2.01:#0.00}",
-                                vlrSenarDesc = $"{1.01:#0.00}",
+                                vlrCPDescPR = $"{13.20D:#0.00}",
+                                vlrRatDescPR = $"{1.10D:#0.00}",
+                                vlrSenarDesc = $"{2.00D:#0.00}",
                                 infoProcJud = null
                             }
                         }
