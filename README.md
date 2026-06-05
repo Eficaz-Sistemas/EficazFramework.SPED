@@ -1,7 +1,7 @@
 # <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=8.0%20%7C%209.0&color=blueviolet&style=flat-square&logo=dotnet)
+![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=9.0%20%7C%2010.0&color=blueviolet&style=flat-square&logo=dotnet)
 ![Nuget](https://eficazshields.azurewebsites.net/nuget/v/EficazFramework.SPED?style=flat-square)
 ![Azure DevOps builds](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21?&logo=azurepipelines&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
