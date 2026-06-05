@@ -14,7 +14,7 @@ public class Registro0020 : Tests.BaseTest
 
     
     [TestCase("|0020|1||N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|", "00009")]
-    [TestCase("|0020|1||N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|", "00010")]
+    [TestCase("|0020|1||N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|||", "00012")]
     public void Escrita(string result, string versao = "00010")
     {
         var reg = new EficazFramework.SPED.Schemas.ECF.Registro0020("", versao) { };

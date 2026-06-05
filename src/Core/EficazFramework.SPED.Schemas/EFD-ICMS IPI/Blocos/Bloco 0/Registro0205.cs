@@ -23,8 +23,8 @@ public class Registro0205 : Primitives.Registro
         var writer = new System.Text.StringBuilder();
         writer.Append("|0205|"); // 1
         writer.Append(DescrAnteriorItem + "|"); // 2
-        writer.Append(DataInicialUtilizacaoItem + "|"); // 3
-        writer.Append(DataFinalUtilizacaoItem + "|"); // 4
+        writer.Append(DataInicialUtilizacaoItem.ToSpedString() + "|"); // 3
+        writer.Append(DataFinalUtilizacaoItem.ToSpedString() + "|"); // 4
         writer.Append(CodAnteriorItem + "|"); // 5
         return writer.ToString();
     }
