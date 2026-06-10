@@ -17,6 +17,7 @@ public class Registro0002 : Tests.BaseTest
     public void Construtor(string linha, string versao = "016")
     {
         var reg = new EficazFramework.SPED.Schemas.EFD_ICMS_IPI.Registro0002(linha, versao);
+        reg.ClassificacaoEstabelecimento = TipoDeAtividade.Industrial_Montagem;
         InternalRead(reg, versao);
     }
 

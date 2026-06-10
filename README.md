@@ -1,7 +1,7 @@
 # <p align="center"> ![EficazFramework.SPED](Assets/GitHub-HeaderReadme.png)
 # EficazFramework.SPED
 
-![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=8.0%20%7C%209.0&color=blueviolet&style=flat-square&logo=dotnet)
+![DotNet Versions](https://img.shields.io/static/v1?label=dotnet&message=9.0%20%7C%2010.0&color=blueviolet&style=flat-square&logo=dotnet)
 ![Nuget](https://eficazshields.azurewebsites.net/nuget/v/EficazFramework.SPED?style=flat-square)
 ![Azure DevOps builds](https://eficazshields.azurewebsites.net/azure-devops/build/eficazcs/EficazFramework/21?&logo=azurepipelines&logoColor=white&style=flat-square)
 ![Azure DevOps tests (compact)](https://eficazshields.azurewebsites.net/azure-devops/tests/eficazcs/EficazFramework/21?compact_message&logo=azuredevops&logoColor=white&style=flat-square)
@@ -14,7 +14,7 @@
 ![EFD-Reinf](https://eficazshields.azurewebsites.net/badge/EFD%20Reinf-v2.1.2.B-ff69b4?style=flat-square)
 ![MIT](https://eficazshields.azurewebsites.net/badge/MIT-v1.0-lightblue?style=flat-square)
 ![ECD](https://eficazshields.azurewebsites.net/badge/ECD-v9.00-brightgreen?style=flat-square) 
-![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0007-orange?style=flat-square) 
+![ECF](https://eficazshields.azurewebsites.net/badge/ECF-v0012-orange?style=flat-square) 
 ![e-Social](https://eficazshields.azurewebsites.net/badge/eSocial-vS_01_03_00-yellow?style=flat-square)
 ![LCDPR](https://eficazshields.azurewebsites.net/badge/LCDPR-v0013-greenyellow?style=flat-square)
 

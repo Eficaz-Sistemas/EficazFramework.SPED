@@ -25,7 +25,7 @@ public class Registro0175 : Primitives.Registro
         writer.Append(DataAlteracao.ToSpedString() + "|"); // 2
         writer.Append(string.Format("{0:00}", (int)CampoAlterado) + "|"); // 3
         writer.Append(ConteudoAnterior + "|"); // 4
-        writer.Append(IDAnterior + "|"); // 5
+        //writer.Append(IDAnterior + "|"); // 5
         return writer.ToString();
     }
 
@@ -34,7 +34,7 @@ public class Registro0175 : Primitives.Registro
         DataAlteracao = data[2].ToDate();
         CampoAlterado = (CampoAlterado)Conversions.ToInteger(Conversions.ToInteger(data[3]));
         ConteudoAnterior = data[4];
-        IDAnterior = data[5];
+        //IDAnterior = data[5];
     }
 
     public DateTime? DataAlteracao { get; set; } = default;
@@ -46,5 +46,5 @@ public class Registro0175 : Primitives.Registro
     /// <value></value>
     /// <returns></returns>
     /// <remarks></remarks>
-    public string IDAnterior { get; set; } = null;
+    //public string IDAnterior { get; set; } = null;
 }

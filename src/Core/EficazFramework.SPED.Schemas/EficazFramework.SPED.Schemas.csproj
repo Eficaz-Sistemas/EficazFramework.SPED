@@ -2,9 +2,9 @@
 
   <PropertyGroup>
 	<TargetFrameworks>net9.0;net10.0</TargetFrameworks>
-	<Version>6.5.0</Version>
-	<AssemblyVersion>6.5.0.0</AssemblyVersion>
-	<FileVersion>6.5.0.0</FileVersion>
+	<Version>6.5.1</Version>
+	<AssemblyVersion>6.5.1.0</AssemblyVersion>
+	<FileVersion>6.5.1.0</FileVersion>
 	<LangVersion>latest</LangVersion>
 	<Authors>Eficaz Sistemas; Henrique Clausing</Authors>
 	<Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
