@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 [Serializable()]
 public partial class S1005 : Evento
@@ -430,6 +430,7 @@ public partial class S1005InfoTrabalhistas : ESocialBindableObject
 {
     private S1005InfoAprendiz infoAprField;
     private S1005InfoPcd infoPCDField;
+    private S1005InfoRegPonto infoRegPontoField;
 
     public S1005InfoAprendiz infoApr
     {
@@ -450,13 +451,36 @@ public partial class S1005InfoTrabalhistas : ESocialBindableObject
             RaisePropertyChanged(nameof(infoPCD));
         }
     }
+
+    public S1005InfoRegPonto infoRegPonto
+    {
+        get => infoRegPontoField;
+        set
+        {
+            infoRegPontoField = value;
+            RaisePropertyChanged(nameof(infoRegPonto));
+        }
+    }
 }
 
 /// <exclude />
 public partial class S1005InfoAprendiz : ESocialBindableObject
 {
+    private IndicadorContratAprendiz? indContratAprendizField;
     private string nrProcJudField;
     private List<S1005InfoEntidadeEduc> infoEntEducField;
+
+    public IndicadorContratAprendiz? indContratAprendiz
+    {
+        get => indContratAprendizField;
+        set
+        {
+            indContratAprendizField = value;
+            RaisePropertyChanged(nameof(indContratAprendiz));
+        }
+    }
+
+    public bool ShouldSerializeindContratAprendiz() => indContratAprendiz.HasValue;
 
     public string nrProcJud
     {
@@ -499,7 +523,20 @@ public partial class S1005InfoEntidadeEduc : ESocialBindableObject
 /// <exclude />
 public partial class S1005InfoPcd : ESocialBindableObject
 {
+    private IndicadorContratPCD? indContratPCDField;
     private string nrProcJudField;
+
+    public IndicadorContratPCD? indContratPCD
+    {
+        get => indContratPCDField;
+        set
+        {
+            indContratPCDField = value;
+            RaisePropertyChanged(nameof(indContratPCD));
+        }
+    }
+
+    public bool ShouldSerializeindContratPCD() => indContratPCD.HasValue;
 
     public string nrProcJud
     {
@@ -510,4 +547,22 @@ public partial class S1005InfoPcd : ESocialBindableObject
             RaisePropertyChanged(nameof(nrProcJud));
         }
     }
+}
+
+/// <exclude />
+public partial class S1005InfoRegPonto : ESocialBindableObject
+{
+    private RegistroPonto? tmpRegPontoField;
+
+    public RegistroPonto? tmpRegPonto
+    {
+        get => tmpRegPontoField;
+        set
+        {
+            tmpRegPontoField = value;
+            RaisePropertyChanged(nameof(tmpRegPonto));
+        }
+    }
+
+    public bool ShouldSerializetmpRegPonto() => tmpRegPonto.HasValue;
 }
