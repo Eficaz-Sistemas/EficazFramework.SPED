@@ -1,0 +1,39 @@
+name: Revisão de Evento do e-Social
+description: Use este template para iniciar uma issue do tipo Review para eventos já existentes nos Schemas.
+title: "[<schema>] Evento <evtID>, versão <version>"
+labels: ["product-quality"]
+type: "Task"
+assignees: []
+
+body:
+  - type: markdown
+    attributes: 
+      value: |
+        ### Proposta desta issue:
+
+- type: input
+  id: schema
+  attributes:
+    label: Schema
+    description: "Qual schema esta issue se refere?"
+    placeholder: "EFD-Reinf, e-Social, etc..."
+  validations:
+    required: true
+
+- type: input
+  id: evtID
+  attributes:
+    label: Nome
+    description: "A qual evento esta issue se refere?"
+    placeholder: "S-1000, R-4020, Registro C100, etc"
+  validations:
+    required: true
+
+- type: input
+  id: version
+  attributes:
+    label: Versão
+    description: "Versão do Schema da issue"
+    placeholder: "S-1.3, etc..."
+  validations:
+    required: true
