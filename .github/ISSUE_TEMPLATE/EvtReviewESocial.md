@@ -1,3 +1,4 @@
+---
 name: Revisão de Evento do e-Social
 description: Use este template para iniciar uma issue do tipo Review para eventos já existentes nos Schemas do e-Social.
 title: "[e-Social] Evento <evtID>, versão <version>"
