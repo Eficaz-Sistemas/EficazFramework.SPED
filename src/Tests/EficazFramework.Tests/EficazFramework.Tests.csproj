@@ -21,6 +21,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Samples\IbsCbs\014.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Samples\IbsCbs\014.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Samples\NFe\004.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AwesomeAssertions" Version="9.4.0" />
     <PackageReference Include="coverlet.collector" Version="10.0.1">
       <PrivateAssets>all</PrivateAssets>
