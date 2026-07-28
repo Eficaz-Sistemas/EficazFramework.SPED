@@ -1,17 +1,18 @@
-﻿using System.IO;
+using System.IO;
 
 namespace EficazFramework.SPED.Services.eSocial;
 
 /// <summary>
-/// Classe base utilizada nas requests dos serviços REST (assíncronos) da EFD-Reinf
+/// Classe base utilizada nas requests dos serviços REST (assíncronos) do e-Social
+/// </summary>
 [Serializable()]
 public partial class Request : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
-
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_1;
 
     private EnvioLoteEventos envioLoteEventosField;
+    
     [XmlElement(Order = 0)]
     public EnvioLoteEventos envioLoteEventos
     {
@@ -23,15 +24,14 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
         }
     }
 
-
     private XmlSerializer sSerializer;
 
     // Serialization Members
     private XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(Request), new XmlRootAttribute("Reinf")
+        return new XmlSerializer(typeof(Request), new XmlRootAttribute("eSocial")
         {
-            Namespace = $"http://www.reinf.esocial.gov.br/schemas/envioLoteEventosAssincrono/{Versao}",
+            Namespace = $"http://www.esocial.gov.br/schema/lote/eventos/envio/{Versao}",
             IsNullable = false
         });
     }
@@ -40,7 +40,6 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
     /// <summary>
     /// Escreve o conteúdo da instância no formato XML
     /// </summary>
-    /// <param name="schemaName"></param>
     public string Write()
     {
         StreamReader streamReader = null;
@@ -86,63 +85,69 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
 }
 
 
+/// <exclude />
 public partial class EnvioLoteEventos : Schemas.eSocial.ESocialBindableObject
 {
-    private Schemas.eSocial.IdentificacaoCadastro ideContribuinteField;
-    private LoteEventos loteEventosField;
+    private Schemas.eSocial.Empregador ideEmpregadorField;
+    private Schemas.eSocial.IdeTransmissor ideTransmissorField;
+    private List<TArquivoEsocial> eventosField;
+    private int grupoField;
 
-    /// <remarks/>
     [XmlElement(Order = 0)]
-    public Schemas.eSocial.IdentificacaoCadastro ideContribuinte
+    public Schemas.eSocial.Empregador ideEmpregador
     {
-        get => ideContribuinteField;
+        get => ideEmpregadorField;
         set
         {
-            ideContribuinteField = value;
-            RaisePropertyChanged(nameof(ideContribuinte));
+            ideEmpregadorField = value;
+            RaisePropertyChanged(nameof(ideEmpregador));
         }
     }
 
-    /// <remarks/>
     [XmlElement(Order = 1)]
-    public LoteEventos eventos
+    public Schemas.eSocial.IdeTransmissor ideTransmissor
     {
-        get => loteEventosField;
+        get => ideTransmissorField;
         set
         {
-            loteEventosField = value;
+            ideTransmissorField = value;
+            RaisePropertyChanged(nameof(ideTransmissor));
+        }
+    }
+
+    [XmlArray(Order = 2)]
+    [XmlArrayItem("evento", IsNullable = false)]
+    public List<TArquivoEsocial> eventos
+    {
+        get => eventosField;
+        set
+        {
+            eventosField = value;
             RaisePropertyChanged(nameof(eventos));
+        }
+    }
+
+    [XmlAttribute()]
+    public int grupo
+    {
+        get => grupoField;
+        set
+        {
+            grupoField = value;
+            RaisePropertyChanged(nameof(grupo));
         }
     }
 }
 
 
-public partial class LoteEventos : Schemas.eSocial.ESocialBindableObject
-{
-    private List<ConteudoESocial> eventoField;
 
-    /// <remarks/>
-    [XmlElement("eventos", Order = 0)]
-    public List<ConteudoESocial> eventos
-    {
-        get => eventoField;
-        set
-        {
-            eventoField = value;
-            RaisePropertyChanged(nameof(eventos));
-        }
-    }
-}
-
-
+/// <exclude />
 [Serializable()]
-public partial class ConteudoESocial : Schemas.eSocial.ESocialBindableObject
+public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
 {
-    [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
-
-
     private XElement anyField;
+    private string idField;
+
     [XmlAnyElement(Order = 0)]
     public XElement Any
     {
@@ -154,8 +159,6 @@ public partial class ConteudoESocial : Schemas.eSocial.ESocialBindableObject
         }
     }
 
-
-    private string idField;
     [XmlAttribute(DataType = "ID")]
     public string Id
     {
@@ -165,55 +168,6 @@ public partial class ConteudoESocial : Schemas.eSocial.ESocialBindableObject
             idField = value;
             RaisePropertyChanged(nameof(Id));
         }
-    }
-
-
-    // Serialization Members
-    private XmlSerializer sSerializer;
-    private XmlSerializer DefineSerializer()
-    {
-        return new XmlSerializer(typeof(ConteudoESocial), new XmlRootAttribute("evento")
-        {
-            Namespace = $"http://www.reinf.esocial.gov.br/schemas/envioLoteEventosAssincrono/{Versao}",
-            IsNullable = false
-        });
-    }
-
-
-    public string Write()
-    {
-        StreamReader streamReader = null;
-        MemoryStream memoryStream = null;
-        try
-        {
-            memoryStream = new MemoryStream();
-            sSerializer = DefineSerializer();
-            using (var xmlwriter = System.Xml.XmlWriter.Create(memoryStream, new XmlWriterSettings() { Indent = true }))
-            {
-                sSerializer.Serialize(xmlwriter, this);
-            }
-            memoryStream.Seek(0L, SeekOrigin.Begin);
-            streamReader = new StreamReader(memoryStream);
-            return streamReader.ReadToEnd();
-        }
-        finally
-        {
-            streamReader?.Dispose();
-            memoryStream?.Dispose();
-        }
-    }
-
-    public ConteudoESocial Read(string xmlContent)
-    {
-        sSerializer = DefineSerializer();
-        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as ConteudoESocial;
-    }
-
-    public ConteudoESocial Read(Stream xmlStream)
-    {
-        sSerializer = DefineSerializer();
-        var result = sSerializer.Deserialize(xmlStream);
-        return result as ConteudoESocial;
     }
 }
 

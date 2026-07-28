@@ -61,6 +61,25 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;xs3p.xsl&quot;?&gt;
+        ///&lt;xs:schema version=&quot;1.0.0&quot;
+        ///           xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+        ///           xmlns:esocial=&quot;http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1&quot;
+        ///           targetNamespace=&quot;http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1&quot;
+        ///           elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///
+        ///  &lt;xs:element name=&quot;eSocial&quot;&gt;
+        ///    &lt;xs:annotation&gt;
+        ///      &lt;xs:documentation&gt;Ele [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string EnvioLoteEventos_v1_1_1 {
+            get {
+                return ResourceManager.GetString("EnvioLoteEventos_v1_1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
         ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;

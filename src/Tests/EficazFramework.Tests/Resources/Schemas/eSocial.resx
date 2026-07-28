@@ -9901,4 +9901,140 @@
     &lt;/xs:element&gt;
 &lt;/xs:schema&gt;</value>
   </data>
+  <data name="EnvioLoteEventos_v1_1_1" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="xs3p.xsl"?&gt;
+&lt;xs:schema version="1.0.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:esocial="http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1"
+           targetNamespace="http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;
+
+  &lt;xs:element name="eSocial"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Elemento raiz do eSocial.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="envioLoteEventos"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Representa um lote de eventos.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+
+          &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ideEmpregador" type="esocial:TIdeEmpregador"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation&gt;Identificação do empregador.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+
+              &lt;xs:element name="ideTransmissor"  type="esocial:TIdeTransmissor"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation&gt;Identificação do transmissor.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+
+              &lt;xs:element name="eventos"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation&gt;Contém a relação de eventos que compõe o lote.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+
+                &lt;xs:complexType&gt;
+                  &lt;xs:sequence maxOccurs="unbounded"&gt;
+                    &lt;xs:element name="evento" type="esocial:TArquivoEsocial" /&gt;
+                  &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+              &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+
+            &lt;xs:attribute name="grupo" type="xs:int" use="required"&gt;
+            &lt;/xs:attribute&gt;
+          &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+  &lt;xs:complexType name="TIdeEmpregador"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Define a identificação do empregador.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="tpInsc"&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:restriction base ="xs:byte"&gt;
+            &lt;xs:enumeration value="1" /&gt;
+            &lt;xs:enumeration value="2" /&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="nrInsc"&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Número de Inscrição&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+          &lt;xs:restriction base="xs:string"&gt;
+     &lt;xs:pattern value="[A-Z0-9]{8}|\d{11}|[A-Z0-9]{12}\d{2}" /&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name="TIdeTransmissor"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Define a identificação do transmissor.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="tpInsc"&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:restriction base ="xs:byte"&gt;
+            &lt;xs:enumeration value="1" /&gt;
+            &lt;xs:enumeration value="2" /&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="nrInsc"&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Número de Inscrição&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+          &lt;xs:restriction base="xs:string"&gt;
+     &lt;xs:pattern value="\d{11}|[A-Z0-9]{12}\d{2}" /&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name="TArquivoEsocial"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;
+        Define os dados de um arquivo do eSocial (evento).
+      &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+
+    &lt;xs:sequence&gt;
+      &lt;xs:any processContents="skip"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Contém o xml do evento.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:any&gt;
+    &lt;/xs:sequence&gt;
+
+    &lt;xs:attribute name="Id" use="required" type="xs:ID"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;
+          Contém a chave de acesso do evento contido no elemento xsd:any. É através deste atributo que o empregador conseguirá fazer o mapeamento
+          entre o evento que ele enviou e o resultado do processamento de cada evento.
+        &lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;</value>
+  </data>
 </root>
