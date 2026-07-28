@@ -1,4 +1,4 @@
-﻿
+
 namespace EficazFramework.SPED.Schemas.eSocial;
 
 /// <summary>
@@ -987,3 +987,57 @@ public enum TipoAcordoColetivo
     [System.ComponentModel.Description("Parcelas complementares conhecidas após o fechamento da folha")]
     ParcelasComplementaresConhecidasAposFechamentoFolha = 9
 }
+
+public enum TipoPagamento
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Pagamento de remuneração (S-1200)")]
+    RemuneracaoS1200 = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Pagamento de verbas rescisórias (S-2299)")]
+    VerbasRescisoriasS2299 = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Pagamento de verbas rescisórias (S-2399)")]
+    VerbasRescisoriasS2399 = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("Pagamento de remuneração (S-1202)")]
+    RemuneracaoS1202 = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("Pagamento de benefícios previdenciários (S-1207)")]
+    BeneficiosPrevidenciariosS1207 = 5
+}
+
+public enum IndicadorNIF
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Possui NIF")]
+    PossuiNIF = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Dispensado do NIF")]
+    DispensadoNIF = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Não exigido NIF")]
+    NaoExigidoNIF = 3
+}
+
+public enum TipoPrevidenciaComplementar
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Sociedade de previdência complementar aberta")]
+    SociedadeAberta = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Entidade fechada de previdência complementar")]
+    EntidadeFechada = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Entidade fechada de previdência complementar do servidor público (Funpresp)")]
+    EntidadeFechadaServidorPublico = 3
+}
+

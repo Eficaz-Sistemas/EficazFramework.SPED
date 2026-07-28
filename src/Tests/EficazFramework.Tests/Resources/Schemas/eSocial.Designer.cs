@@ -19,7 +19,7 @@ namespace EficazFramework.SPED.Resources.Schemas {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class eSocial {
@@ -130,6 +130,32 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string S1200_v_S_01_03_00 {
             get {
                 return ResourceManager.GetString("S1200_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
+        ///     [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1210_v_S_01_02_00 {
+            get {
+                return ResourceManager.GetString("S1210_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
+        ///    &lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1210_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1210_v_S_01_03_00", resourceCulture);
             }
         }
         
