@@ -237,7 +237,8 @@ Para gerar a classe C# a partir de um schema XSD, utilize a seguinte estrutura d
 
 ```markdown
 Você é um gerador de código especialista C# para o projeto EficazFramework.SPED.
-Gere a classe C# referente ao evento e-Social do arquivo XSD fornecido a seguir, seguindo rigorosamente os padrões definidos abaixo:
+Carregue o contexto em [esocial_schema_generator_prompt](../../../Core/EficazFramework.SPED.Schemas/e-Social/esocial_schema_generator_prompt.md)
+Gere a classe C# referente ao evento e-Social do evento S-xxxx, seguindo rigorosamente os padrões definidos abaixo:
 
 1. Namespace: `EficazFramework.SPED.Schemas.eSocial`
 2. Classe Principal:
@@ -266,10 +267,11 @@ Gere a classe C# referente ao evento e-Social do arquivo XSD fornecido a seguir,
 ---
 
 ### Documentação técnica, em HTML:
-
-[Layout](https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026-rev-09-04-2026/index.html)
+https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026-rev-09-04-2026/index.html
 Aqui encontram-se regras de validação e preenchimento de cada campo.
 
 ---
 ### XSD DO EVENTO:
-Está disponível em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00
+Está disponível em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00.
+Os tipos básicos estão em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave tipos.
+```

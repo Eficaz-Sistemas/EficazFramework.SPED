@@ -1041,3 +1041,37 @@ public enum TipoPrevidenciaComplementar
     EntidadeFechadaServidorPublico = 3
 }
 
+public enum IndicadorSubstPatronal
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Integralmente substituída")]
+    IntegralmenteSubstituida = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Parcialmente substituída")]
+    ParcialmenteSubstituida = 2
+}
+
+public enum PercentualTransformacao
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("0,2000")]
+    Perc20 = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("0,4000")]
+    Perc40 = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("0,6000")]
+    Perc60 = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("0,8000")]
+    Perc80 = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("1,0000")]
+    Perc100 = 5
+}
+
