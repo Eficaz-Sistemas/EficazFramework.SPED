@@ -7,6 +7,161 @@ using System.Xml.Serialization;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
 
+/// <summary>
+/// Pagamentos de Rendimentos do Trabalho
+/// </summary>
+/// <example>
+/// ```csharp
+///  evento.evtPgtos = new S1210EvtPgtos()
+///  {
+///      ideEvento = new IdeEventoFolhaMensal()
+///      {
+///          indRetif = IndicadorRetificacao.Original,
+///          tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///          procEmi = EmissorEvento.AppEmpregador,
+///          perApur = "2025-02",
+///          verProc = "2.2"
+///      },
+///      ideEmpregador = new Empregador()
+///      {
+///          tpInsc = PersonalidadeJuridica.CNPJ,
+///          nrInsc = "12345678"
+///      },
+///      ideBenef = new S1210IdeBenef()
+///      {
+///          cpfBenef = "15273627877",
+///          infoPgto =
+///          [
+///              new S1210InfoPgto()
+///              {
+///                  dtPgto = new DateTime(2025, 2, 28),
+///                  tpPgto = TipoPagamento.RemuneracaoS1200,
+///                  perRef = "2025-02",
+///                  ideDmDev = "022025MENSAL14022025155159",
+///                  vrLiq = 1351.02m,
+///                  paisResidExt = "031",
+///                  infoPgtoExt = new()
+///                  {
+///                      indNIF = IndicadorNIF.PossuiNIF,
+///                      nifBenef = "123",
+///                      frmTribut = "40",
+///                      endExt = new()
+///                      {
+///                          endDscLograd = "1243 Street",
+///                          endNrLograd = "123",
+///                          endComplem = "não há",
+///                          endBairro = "Center",
+///                          endCidade = "??",
+///                          endEstado = "??",
+///                          endCodPostal = "1A",
+///                          telef = "3535441234"
+///                      }
+///                  }
+///              }
+///          ],
+///          infoIRComplem = 
+///          [
+///              new S1210InfoIRComplem()
+///              {
+///                  dtLaudo = new DateTime(2025, 2, 28),
+///                  perAnt = new()
+///                  {
+///                      perRefAjuste = "2025-02",
+///                      nrRec1210Orig = "1.5.1234567890123456789"
+///                  },
+///                  infoDep =
+///                  [
+///                      new S1210InfoDep()
+///                      {
+///                          cpfDep = "15273627877",
+///                          dtNascto = new DateTime(2020, 1, 1),
+///                          nome = "Filho",
+///                          depIRRF = SimNaoString.Sim,
+///                          tpDep = "03",
+///                          descrDep = "filho",
+///                      }
+///                  ],
+///                  infoIRCR = 
+///                  [
+///                      new S1210InfoIRCR()
+///                      {
+///                          tpCR = "056107",
+///                          dedDepen =
+///                          [
+///                              new S1210DedDepen()
+///                              {
+///                                  tpRend = "11",
+///                                  cpfDep = "15273627877",
+///                                  vlrDedDep = 125.45m
+///                              }
+///                          ],
+///                          penAlim =
+///                          [
+///                              new S1210PenAlim()
+///                              {
+///                                  tpRend = "11",
+///                                  cpfDep = "15273627877",
+///                                  vlrDedPenAlim = 5200.00m
+///                              }
+///                          ],
+///                          previdCompl = 
+///                          [
+///                              new S1210PrevidCompl()
+///                              {
+///                                  tpPrev = TipoPrevidenciaComplementar.EntidadeFechada,
+///                                  cnpjEntidPC = "12456789000100",
+///                                  vlrDedPC = 100.58m,
+///                                  vlrDedPC13 = 1.99m,
+///                                  vlrPatrocFunp = 2.98m,
+///                                  vlrPatrocFunp13 = 1.98m
+///                              }
+///                          ],
+///                          infoProcRet =
+///                          [
+///                              new S1210InfoProcRet()
+///                              {
+///                                  tpRend = "2",
+///                                  nrProc = "12345678901234567890",
+///                                  codSusp = "123456",
+///                                  infoValores =
+///                                  [
+///                                      new S1210InfoValores()
+///                                      {
+///                                          indApuracao = IndicadorApuracao.Mensal,
+///                                          vlrNRetido = 12.34m,
+///                                          vlrDepJud = 56.78m,
+///                                          vlrCmpAnoCal = 90.12m,
+///                                          vlrCmpAnoAnt = 34.56m,
+///                                          vlrRendSusp = 78.90m,
+///                                          dedSusp = 
+///                                          [
+///                                              new S1210DedSusp()
+///                                              {
+///                                                  tpDed = "7",
+///                                                  vlrDedSusp = 67.89m,
+///                                                  cnpjEntidPC = "12456789000100",
+///                                                  benefPen = 
+///                                                  [
+///                                                      new S1210BenefPen()
+///                                                      {
+///                                                          cpfDep = "15273627877",
+///                                                          vlrDepenSusp = 67.89m
+///                                                      }
+///                                                  ]
+///                                              }
+///                                          ]
+///                                      }
+///                                  ]
+///                              }
+///                          ]
+///                      }
+///                  ]
+///              }
+///          ]
+///      }
+///  };
+/// ```
+/// </example>
 [Serializable()]
 public partial class S1210 : Evento
 {
@@ -118,6 +273,7 @@ public partial class IdeEventoFolhaMensal : ESocialBindableObject
     private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
     private string nrReciboField;
     private string perApurField;
+    private IndicadorGuia indGuiaField = IndicadorGuia.DAE;
     private Ambiente tpAmbField = Ambiente.Producao;
     private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
     private string verProcField;
@@ -149,6 +305,16 @@ public partial class IdeEventoFolhaMensal : ESocialBindableObject
         {
             perApurField = value;
             RaisePropertyChanged(nameof(perApur));
+        }
+    }
+
+    public IndicadorGuia indGuia
+    {
+        get => indGuiaField;
+        set
+        {
+            indGuiaField = value;
+            RaisePropertyChanged(nameof(indGuia));
         }
     }
 
@@ -837,13 +1003,9 @@ public partial class S1210InfoProcRet : ESocialBindableObject
     private string tpRendField;
     private string nrProcField;
     private string codSuspField;
-    private decimal? vlrNRetField;
-    private decimal? vlrDepJudField;
-    private decimal? vlrCmpAnoCalField;
-    private decimal? vlrCmpAnoAntField;
-    private decimal? rendSuspField;
-    private List<S1210DedSusp> dedSuspField;
+    private List<S1210InfoValores> infoValoresField;
 
+    [XmlElement("tpProcRet")]
     public string tpRend
     {
         get => tpRendField;
@@ -854,6 +1016,7 @@ public partial class S1210InfoProcRet : ESocialBindableObject
         }
     }
 
+    [XmlElement("nrProcRet")]
     public string nrProc
     {
         get => nrProcField;
@@ -874,18 +1037,51 @@ public partial class S1210InfoProcRet : ESocialBindableObject
         }
     }
 
-    public decimal? vlrNRet
+    [XmlElement("infoValores")]
+    public List<S1210InfoValores> infoValores
     {
-        get => vlrNRetField;
+        get => infoValoresField;
         set
         {
-            vlrNRetField = value;
-            RaisePropertyChanged(nameof(vlrNRet));
+            infoValoresField = value;
+            RaisePropertyChanged(nameof(infoValores));
+        }
+    }
+}
+
+/// <exclude />
+public partial class S1210InfoValores : ESocialBindableObject
+{
+    private IndicadorApuracao indApuracaoField;
+    private decimal? vlrNRetidoField;
+    private decimal? vlrDepJudField;
+    private decimal? vlrCmpAnoCalField;
+    private decimal? vlrCmpAnoAntField;
+    private decimal? vlrRendSuspField;
+    private List<S1210DedSusp> dedSuspField;
+
+    public IndicadorApuracao indApuracao
+    {
+        get => indApuracaoField;
+        set
+        {
+            indApuracaoField = value;
+            RaisePropertyChanged(nameof(indApuracao));
         }
     }
 
-    public bool ShouldSerializevlrNRet()
-        => vlrNRet.HasValue;
+    public decimal? vlrNRetido
+    {
+        get => vlrNRetidoField;
+        set
+        {
+            vlrNRetidoField = value;
+            RaisePropertyChanged(nameof(vlrNRetido));
+        }
+    }
+
+    public bool ShouldSerializevlrNRetido()
+        => vlrNRetido.HasValue;
 
     public decimal? vlrDepJud
     {
@@ -926,18 +1122,19 @@ public partial class S1210InfoProcRet : ESocialBindableObject
     public bool ShouldSerializevlrCmpAnoAnt()
         => vlrCmpAnoAnt.HasValue;
 
-    public decimal? rendSusp
+    [XmlElement("vlrRendSusp")]
+    public decimal? vlrRendSusp
     {
-        get => rendSuspField;
+        get => vlrRendSuspField;
         set
         {
-            rendSuspField = value;
-            RaisePropertyChanged(nameof(rendSusp));
+            vlrRendSuspField = value;
+            RaisePropertyChanged(nameof(vlrRendSusp));
         }
     }
 
-    public bool ShouldSerializerendSusp()
-        => rendSusp.HasValue;
+    public bool ShouldSerializevlrRendSusp()
+        => vlrRendSusp.HasValue;
 
     [XmlElement("dedSusp")]
     public List<S1210DedSusp> dedSusp
@@ -956,8 +1153,10 @@ public partial class S1210DedSusp : ESocialBindableObject
 {
     private string tpDedField;
     private decimal? vlrDedSuspField;
+    private string cnpjEntidPCField;
     private List<S1210BenefPen> benefPenField;
 
+    [XmlElement("indTpDeducao")]
     public string tpDed
     {
         get => tpDedField;
@@ -980,6 +1179,16 @@ public partial class S1210DedSusp : ESocialBindableObject
 
     public bool ShouldSerializevlrDedSusp()
         => vlrDedSusp.HasValue;
+
+    public string cnpjEntidPC
+    {
+        get => cnpjEntidPCField;
+        set
+        {
+            cnpjEntidPCField = value;
+            RaisePropertyChanged(nameof(cnpjEntidPC));
+        }
+    }
 
     [XmlElement("benefPen")]
     public List<S1210BenefPen> benefPen

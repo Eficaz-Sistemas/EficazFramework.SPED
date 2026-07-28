@@ -28,7 +28,7 @@ A classe principal representa a raiz do evento (ex: `S1000`, `S1005`, `S1010`, `
 #### Regras:
 - Deve possuir o atributo `[Serializable()]`.
 - Deve ser `public partial class <NomeDoEvento> : Evento`.
-- **Herança**: Herda obrigatoriamente de `EficazFramework.SPED.Schemas.eSocial.Evento` (definido em [BaseClasses.cs](file:///d:/repos/Eficaz-Sistemas/EficazFramework.SPED/src/Core/EficazFramework.SPED.Schemas/e-Social/BaseClasses.cs)).
+- **Herança**: Herda obrigatoriamente de `EficazFramework.SPED.Schemas.eSocial.Evento` (definido em [BaseClasses.cs](./BaseClasses.cs)).
 - **Docstring**: Deve conter a documentação XML (`<summary>` e `<example>`) descrevendo o evento e fornecendo exemplo de preenchimento dos campos principais.
 
 #### Overrides Obrigatórios na Classe Principal:
@@ -97,7 +97,7 @@ public partial class S1000 : Evento
 Todas as subclasses auxiliares geradas a partir do XSD (ex: seleções de ação, dados cadastrais, tabelas, identificadores) seguem este padrão:
 
 #### Regras:
-- **Herança**: Herda obrigatoriamente de `EficazFramework.SPED.Schemas.eSocial.ESocialBindableObject` (definido em [BaseClasses.cs](file:///d:/repos/Eficaz-Sistemas/EficazFramework.SPED/src/Core/EficazFramework.SPED.Schemas/e-Social/BaseClasses.cs)).
+- **Herança**: Herda obrigatoriamente de `EficazFramework.SPED.Schemas.eSocial.ESocialBindableObject` (definido em [BaseClasses.cs](./BaseClasses.cs)).
 - **Atributo**: Deve incluir a anotação `/// <exclude />` antes da assinatura da classe.
 - Deve ser declarada como `public partial class <NomeDaSubclasse> : ESocialBindableObject`.
 
@@ -187,7 +187,7 @@ public bool ShouldSerializedtDou()
 #### Regras de Implementação:
 1. **Identificação no XSD**: Elementos XSD compostos por `xs:simpleType` com `xs:restriction` (baseados em `xs:byte`, `xs:unsignedByte`, `xs:integer`, `xs:string`, etc.) contendo valores enumerados (`xs:enumeration value="..."`) DEVEM ser implementados como `enum` em C#.
 2. **Verificação de Existência Prévia**:
-   - **CRÍTICO**: Antes de criar qualquer novo `enum`, VERIFICAR se um `enum` equivalente já existe no arquivo [Enums.cs](file:///d:/repos/Eficaz-Sistemas/EficazFramework.SPED/src/Core/EficazFramework.SPED.Schemas/e-Social/Enums.cs) do namespace `EficazFramework.SPED.Schemas.eSocial`.
+   - **CRÍTICO**: Antes de criar qualquer novo `enum`, VERIFICAR se um `enum` equivalente já existe no arquivo [Enums.cs](./Enums.cs) do namespace `EficazFramework.SPED.Schemas.eSocial`.
    - *Principais Enums Pré-existentes no Framework*:
      - `Ambiente` (1 = Producao, 2 = ProducaoRestrita_DadosReais)
      - `EmissorEvento` (1 = AppEmpregador, 2 = AppGovernamentalDomestico, etc.)
@@ -217,6 +217,20 @@ public enum TipoExemplo
 
 ---
 
+### 7. Cobertura de Campos (Mapeamento do XSD)
+Na geração da classe do evento a partir do esquema XSD, é obrigatório conferir se todos os elementos, atributos e campos definidos no XSD original foram devidamente mapeados na classe principal ou em uma de suas subclasses. Nenhum campo do XSD deve ser omitido na modelagem C#.
+
+### 8. Escrita de Testes Unitários de Validação
+- **Projeto de Testes**: Todos os eventos devem ter seus testes unitários escritos no projeto [EficazFramework.Tests.csproj](../../../Tests/EficazFramework.Tests/EficazFramework.Tests.csproj).
+- **Padrão de Implementação**: O padrão de nomenclatura e estrutura dos testes deve seguir exatamente o adotado no arquivo [S-1000.cs](../../../Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
+- **Preenchimento de Campos**: No método `PreencheCampos()`, preencher, se possível, todos os campos da classe gerada para garantir a validação rigorosa contra o schema XSD (inclusive sub-propriedades e opções opcionais de validação).
+
+### 9. Documentação e Exemplo de Preenchimento
+- **Regra**: Na classe principal do evento, utilize a tag XML `<example>` para incluir um exemplo real de preenchimento dos campos.
+- **Padrão**: O exemplo fornecido na tag `<example>` deve corresponder fielmente ao conteúdo do método `PreencheCampos()` escrito no teste do respectivo evento, mantendo o padrão demonstrado no arquivo [s-1000.cs](./s-1000.cs).
+
+---
+
 ## 🎯 Modelo de Prompt para Geração de Novo Evento e-Social
 
 Para gerar a classe C# a partir de um schema XSD, utilize a seguinte estrutura de prompt:
@@ -241,10 +255,21 @@ Gere a classe C# referente ao evento e-Social do arquivo XSD fornecido a seguir,
 5. Enumerações (`xs:restriction` -> `xs:enumeration`):
    - Mapear em `enum` com `[XmlEnum("...")]`.
    - Verificar se o Enum já existe em `EficazFramework.SPED.Schemas.eSocial` antes de declarar um novo. Se já existir (ex: `SimNaoByte`, `SimNaoString`, `Ambiente`, `PersonalidadeJuridica`, `TipoInscricao`, etc.), reutilizá-lo.
+6. Cobertura do XSD:
+   - Conferir se absolutamente todos os campos do XSD original ficaram devidamente mapeados na classe ou em uma de suas subclasses.
+7. Exemplo de Preenchimento:
+   - Na classe principal do evento, preencher a documentação XML na tag `<example>` com o exemplo do código de preenchimento de campos (copiado do método `PreencheCampos()` da classe de teste unitário), seguindo o exemplo de [s-1000.cs](./s-1000.cs).
+8. Testes Unitários de Validação:
+   - Escrever testes no projeto [EficazFramework.Tests.csproj](../../../Tests/EficazFramework.Tests/EficazFramework.Tests.csproj), seguindo o padrão de [S-1000.cs](../../../Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
+   - Preencher se possível todos os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD.
+
+---
+
+### Documentação técnica, em HTML:
+
+[Layout](https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026-rev-09-04-2026/index.html)
+Aqui encontram-se regras de validação e preenchimento de cada campo.
 
 ---
 ### XSD DO EVENTO:
-```xml
-<INSIRA_O_CONTEUDO_DO_XSD_AQUI>
-```
-```
+Está disponível em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00
