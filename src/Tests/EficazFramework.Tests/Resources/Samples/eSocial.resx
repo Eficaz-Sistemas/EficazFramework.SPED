@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -281,5 +281,112 @@
 	&lt;/evtPgtos&gt;
 &lt;/eSocial&gt;</value>
     <comment>S-1210, versão S-01.03.01</comment>
+  </data>
+  <data name="S1280_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtInfoComplPer/v_S_01_03_00"&gt;
+	&lt;evtInfoComplPer Id="ID1345571090000002025030512521100001"&gt;
+		&lt;ideEvento&gt;
+			&lt;indRetif&gt;1&lt;/indRetif&gt;
+			&lt;indApuracao&gt;1&lt;/indApuracao&gt;
+			&lt;perApur&gt;2025-02&lt;/perApur&gt;
+			&lt;indGuia&gt;1&lt;/indGuia&gt;
+			&lt;tpAmb&gt;1&lt;/tpAmb&gt;
+			&lt;procEmi&gt;1&lt;/procEmi&gt;
+			&lt;verProc&gt;v_S_01_03_00&lt;/verProc&gt;
+		&lt;/ideEvento&gt;
+		&lt;ideEmpregador&gt;
+			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
+		&lt;/ideEmpregador&gt;
+		&lt;infoSubstPatr&gt;
+			&lt;indSubstPatr&gt;2&lt;/indSubstPatr&gt;
+			&lt;percRedContrib&gt;50.5&lt;/percRedContrib&gt;
+		&lt;/infoSubstPatr&gt;
+		&lt;infoSubstPatrOpPort&gt;
+			&lt;codLotacao&gt;L01&lt;/codLotacao&gt;
+		&lt;/infoSubstPatrOpPort&gt;
+		&lt;infoAtivConcom&gt;
+			&lt;fatorMes&gt;1.2&lt;/fatorMes&gt;
+			&lt;fator13&gt;1.5&lt;/fator13&gt;
+		&lt;/infoAtivConcom&gt;
+		&lt;infoPercTransf11096&gt;
+			&lt;percTransf&gt;1&lt;/percTransf&gt;
+		&lt;/infoPercTransf11096&gt;
+	&lt;/evtInfoComplPer&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-1280, versão S-01.03.00</comment>
+  </data>
+  <data name="S2205_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtAltCadastral/v_S_01_03_00"&gt;
+	&lt;evtAltCadastral Id="ID1106080250000002026072813090200002"&gt;
+		&lt;ideEvento&gt;
+			&lt;indRetif&gt;1&lt;/indRetif&gt;
+			&lt;tpAmb&gt;2&lt;/tpAmb&gt;
+			&lt;procEmi&gt;1&lt;/procEmi&gt;
+			&lt;verProc&gt;2.2&lt;/verProc&gt;
+		&lt;/ideEvento&gt;
+		&lt;ideEmpregador&gt;
+			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
+			&lt;nrInsc&gt;10608025&lt;/nrInsc&gt;
+		&lt;/ideEmpregador&gt;
+		&lt;ideTrabalhador&gt;
+			&lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
+		&lt;/ideTrabalhador&gt;
+		&lt;alteracao&gt;
+			&lt;dtAlteracao&gt;2023-10-01&lt;/dtAlteracao&gt;
+			&lt;dadosTrabalhador&gt;
+				&lt;nmTrab&gt;Joao da Silva&lt;/nmTrab&gt;
+				&lt;sexo&gt;M&lt;/sexo&gt;
+				&lt;racaCor&gt;6&lt;/racaCor&gt;
+				&lt;estCiv&gt;1&lt;/estCiv&gt;
+				&lt;grauInstr&gt;07&lt;/grauInstr&gt;
+				&lt;nmSoc&gt;Joao&lt;/nmSoc&gt;
+				&lt;paisNac&gt;105&lt;/paisNac&gt;
+				&lt;endereco&gt;
+					&lt;brasil&gt;
+						&lt;tpLograd&gt;Rua&lt;/tpLograd&gt;
+						&lt;dscLograd&gt;1&lt;/dscLograd&gt;
+						&lt;nrLograd&gt;123&lt;/nrLograd&gt;
+						&lt;complemento&gt;Apt 1&lt;/complemento&gt;
+						&lt;bairro&gt;Centro&lt;/bairro&gt;
+						&lt;cep&gt;12345678&lt;/cep&gt;
+						&lt;codMunic&gt;1234567&lt;/codMunic&gt;
+						&lt;uf&gt;SP&lt;/uf&gt;
+					&lt;/brasil&gt;
+				&lt;/endereco&gt;
+				&lt;trabImig&gt;
+					&lt;tmpResid&gt;1&lt;/tmpResid&gt;
+					&lt;condIng&gt;1&lt;/condIng&gt;
+				&lt;/trabImig&gt;
+				&lt;infoDeficiencia&gt;
+					&lt;defFisica&gt;N&lt;/defFisica&gt;
+					&lt;defVisual&gt;N&lt;/defVisual&gt;
+					&lt;defAuditiva&gt;N&lt;/defAuditiva&gt;
+					&lt;defMental&gt;N&lt;/defMental&gt;
+					&lt;defIntelectual&gt;N&lt;/defIntelectual&gt;
+					&lt;reabReadap&gt;N&lt;/reabReadap&gt;
+					&lt;observacao&gt;Nenhuma&lt;/observacao&gt;
+				&lt;/infoDeficiencia&gt;
+				&lt;dependente&gt;
+					&lt;tpDep&gt;01&lt;/tpDep&gt;
+					&lt;nmDep&gt;Filho&lt;/nmDep&gt;
+					&lt;dtNascto&gt;2013-10-01&lt;/dtNascto&gt;
+					&lt;cpfDep&gt;12345678901&lt;/cpfDep&gt;
+					&lt;sexoDep&gt;M&lt;/sexoDep&gt;
+					&lt;depIRRF&gt;S&lt;/depIRRF&gt;
+					&lt;depSF&gt;S&lt;/depSF&gt;
+					&lt;descrDep&gt;Filho&lt;/descrDep&gt;
+				&lt;/dependente&gt;
+				&lt;contato&gt;
+					&lt;fonePrinc&gt;11999999999&lt;/fonePrinc&gt;
+					&lt;emailPrinc&gt;joao@email.com&lt;/emailPrinc>
+				&lt;/contato&gt;
+			&lt;/dadosTrabalhador&gt;
+		&lt;/alteracao&gt;
+	&lt;/evtAltCadastral&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-2205, versão S-01.03.00</comment>
   </data>
 </root>

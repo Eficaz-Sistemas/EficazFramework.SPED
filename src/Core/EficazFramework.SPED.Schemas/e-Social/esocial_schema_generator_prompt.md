@@ -224,6 +224,8 @@ Na geração da classe do evento a partir do esquema XSD, é obrigatório confer
 - **Projeto de Testes**: Todos os eventos devem ter seus testes unitários escritos no projeto [EficazFramework.Tests.csproj](../../../Tests/EficazFramework.Tests/EficazFramework.Tests.csproj).
 - **Padrão de Implementação**: O padrão de nomenclatura e estrutura dos testes deve seguir exatamente o adotado no arquivo [S-1000.cs](../../../Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
 - **Preenchimento de Campos**: No método `PreencheCampos()`, preencher, se possível, todos os campos da classe gerada para garantir a validação rigorosa contra o schema XSD (inclusive sub-propriedades e opções opcionais de validação).
+- Utiliza a bilbioteca **AwesomeAssertions**, já com `global using` declarado; Não inclua `using FluentAssertions`.
+- Crie a string do XML para o método `Read_v_S_01_03_00()` serializando a instância de `PreencheCampos()` e armazene no devido resx (Samples).
 
 ### 9. Documentação e Exemplo de Preenchimento
 - **Regra**: Na classe principal do evento, utilize a tag XML `<example>` para incluir um exemplo real de preenchimento dos campos.
@@ -237,8 +239,8 @@ Para gerar a classe C# a partir de um schema XSD, utilize a seguinte estrutura d
 
 ```markdown
 Você é um gerador de código especialista C# para o projeto EficazFramework.SPED.
-Carregue o contexto em [esocial_schema_generator_prompt](../../../Core/EficazFramework.SPED.Schemas/e-Social/esocial_schema_generator_prompt.md)
-Gere a classe C# referente ao evento e-Social do evento S-xxxx, seguindo rigorosamente os padrões definidos abaixo:
+Carregue o contexto em [esocial_schema_generator_prompt.md](file;file:///c:/repos/Eficaz-Sistemas/EficazFramework.SPED/src/Core/EficazFramework.SPED.Schemas/e-Social/esocial_schema_generator_prompt.md) 
+Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo rigorosamente os padrões definidos abaixo:
 
 1. Namespace: `EficazFramework.SPED.Schemas.eSocial`
 2. Classe Principal:

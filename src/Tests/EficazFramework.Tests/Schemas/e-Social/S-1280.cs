@@ -20,6 +20,49 @@ public class S1280Test : BaseESocialTest<S1280>
         await TestaEvento();
     }
 
+    [Test]
+    public async Task Read_v_S_01_03_00()
+    {
+        var evento = await Evento.ReadAsync(Resources.Samples.eSocial.S1280_v_S_01_03_00);
+        evento.Should().NotBeNull();
+        evento.Versao.Should().Be(Versao.v_S_01_03_00);
+
+        var evtCompl = evento as S1280;
+        evtCompl.Should().NotBeNull();
+        evtCompl.evtInfoComplPer.Id.Should().Be("ID1345571090000002025030512521100001");
+
+        // ideEvento
+        evtCompl.evtInfoComplPer.ideEvento.indRetif.Should().Be(IndicadorRetificacao.Original);
+        evtCompl.evtInfoComplPer.ideEvento.indApuracao.Should().Be(IndicadorApuracao.Mensal);
+        evtCompl.evtInfoComplPer.ideEvento.perApur.Should().Be("2025-02");
+        evtCompl.evtInfoComplPer.ideEvento.indGuia.Should().Be(IndicadorGuia.DAE);
+        evtCompl.evtInfoComplPer.ideEvento.tpAmb.Should().Be(Ambiente.Producao);
+        evtCompl.evtInfoComplPer.ideEvento.procEmi.Should().Be(EmissorEvento.AppEmpregador);
+        evtCompl.evtInfoComplPer.ideEvento.verProc.Should().Be("v_S_01_03_00");
+
+        // ideEmpregador
+        evtCompl.evtInfoComplPer.ideEmpregador.tpInsc.Should().Be(PersonalidadeJuridica.CNPJ);
+        evtCompl.evtInfoComplPer.ideEmpregador.nrInsc.Should().Be("34557109");
+
+        // infoSubstPatr
+        evtCompl.evtInfoComplPer.infoSubstPatr.Should().NotBeNull();
+        evtCompl.evtInfoComplPer.infoSubstPatr.indSubstPatr.Should().Be(IndicadorSubstPatronal.ParcialmenteSubstituida);
+        evtCompl.evtInfoComplPer.infoSubstPatr.percRedContrib.Should().Be(50.5m);
+
+        // infoSubstPatrOpPort
+        evtCompl.evtInfoComplPer.infoSubstPatrOpPort.Should().NotBeNull().And.HaveCount(1);
+        evtCompl.evtInfoComplPer.infoSubstPatrOpPort[0].codLotacao.Should().Be("L01");
+
+        // infoAtivConcom
+        evtCompl.evtInfoComplPer.infoAtivConcom.Should().NotBeNull();
+        evtCompl.evtInfoComplPer.infoAtivConcom.fatorMes.Should().Be(1.2m);
+        evtCompl.evtInfoComplPer.infoAtivConcom.fator13.Should().Be(1.5m);
+
+        // infoPercTransf11096
+        evtCompl.evtInfoComplPer.infoPercTransf11096.Should().NotBeNull();
+        evtCompl.evtInfoComplPer.infoPercTransf11096.percTransf.Should().Be(PercentualTransformacao.Perc20);
+    }
+
     // BaseESocialTest overrides
     public override void PreencheCampos(S1280 evento)
     {
