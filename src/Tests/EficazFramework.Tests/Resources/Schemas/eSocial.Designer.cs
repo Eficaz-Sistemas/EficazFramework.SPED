@@ -107,7 +107,19 @@ namespace EficazFramework.SPED.Resources.Schemas {
                 return ResourceManager.GetString("S1010_v_S_01_02_00", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTabRubrica/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtTabRubrica/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-sch [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1010_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1010_v_S_01_03_00", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
         ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
