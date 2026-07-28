@@ -142,7 +142,17 @@ public class S1010Test : BaseESocialTest<S1010>
                         codIncFGTS = "00",
                         codIncCPRP = "00",
                         // codIncPisPasep e ideProcessoPisPasep: novas tags introduzidas na versão S-1.3 (NT 06/2026)
-                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "00" : null,
+                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "91" : null,
+                        ideProcessoPisPasep = versao == Versao.v_S_01_03_00
+                            ? new List<ProcessoAdmOuJud>
+                            {
+                                new()
+                                {
+                                    nrProc = "12345678901234567890",
+                                    codSusp = "1"
+                                }
+                            }
+                            : null,
                         tetoRemun = SimNaoString.Nao
                     }
                 }
@@ -173,6 +183,18 @@ public class S1010Test : BaseESocialTest<S1010>
         itemXml.dadosRubrica.codIncCPRP.Should().Be(itemPopulado.dadosRubrica.codIncCPRP);
         itemXml.dadosRubrica.codIncPisPasep.Should().Be(itemPopulado.dadosRubrica.codIncPisPasep);
         itemXml.dadosRubrica.tetoRemun.Should().Be(itemPopulado.dadosRubrica.tetoRemun);
+
+        // ideProcessoPisPasep
+        // Nota: o XmlSerializer sempre materializa uma List<T> vazia (nunca null) ao desserializar
+        // uma coleção sem elementos correspondentes no XML, por isso a comparação é feita por contagem.
+        var processosPopulados = itemPopulado.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        var processosXml = itemXml.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        processosXml.Should().HaveCount(processosPopulados.Count);
+        if (processosPopulados.Count > 0)
+        {
+            processosXml[0].nrProc.Should().Be(processosPopulados[0].nrProc);
+            processosXml[0].codSusp.Should().Be(processosPopulados[0].codSusp);
+        }
     }
     #endregion
 
@@ -212,7 +234,17 @@ public class S1010Test : BaseESocialTest<S1010>
                         codIncFGTS = "00",
                         codIncCPRP = "00",
                         // codIncPisPasep e ideProcessoPisPasep: novas tags introduzidas na versão S-1.3 (NT 06/2026)
-                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "00" : null,
+                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "91" : null,
+                        ideProcessoPisPasep = versao == Versao.v_S_01_03_00
+                            ? new List<ProcessoAdmOuJud>
+                            {
+                                new()
+                                {
+                                    nrProc = "12345678901234567890",
+                                    codSusp = "1"
+                                }
+                            }
+                            : null,
                         tetoRemun = SimNaoString.Nao
                     },
                     novaValidade = new IdePeriodo()
@@ -247,6 +279,18 @@ public class S1010Test : BaseESocialTest<S1010>
         itemXml.dadosRubrica.codIncCPRP.Should().Be(itemPopulado.dadosRubrica.codIncCPRP);
         itemXml.dadosRubrica.codIncPisPasep.Should().Be(itemPopulado.dadosRubrica.codIncPisPasep);
         itemXml.dadosRubrica.tetoRemun.Should().Be(itemPopulado.dadosRubrica.tetoRemun);
+
+        // ideProcessoPisPasep
+        // Nota: o XmlSerializer sempre materializa uma List<T> vazia (nunca null) ao desserializar
+        // uma coleção sem elementos correspondentes no XML, por isso a comparação é feita por contagem.
+        var processosPopulados = itemPopulado.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        var processosXml = itemXml.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        processosXml.Should().HaveCount(processosPopulados.Count);
+        if (processosPopulados.Count > 0)
+        {
+            processosXml[0].nrProc.Should().Be(processosPopulados[0].nrProc);
+            processosXml[0].codSusp.Should().Be(processosPopulados[0].codSusp);
+        }
 
         // novaValidade
         itemXml.novaValidade.iniValid.Should().Be(itemPopulado.novaValidade.iniValid);
