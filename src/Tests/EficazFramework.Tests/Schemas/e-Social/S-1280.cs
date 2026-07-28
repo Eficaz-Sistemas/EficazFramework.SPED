@@ -89,10 +89,10 @@ public class S1280Test : BaseESocialTest<S1280>
                 indSubstPatr = IndicadorSubstPatronal.ParcialmenteSubstituida,
                 percRedContrib = 50.5m
             },
-            infoSubstPatrOpPort = new List<S1280InfoSubstPatrOpPort>()
-            {
+            infoSubstPatrOpPort =
+            [
                 new S1280InfoSubstPatrOpPort() { codLotacao = "L01" }
-            },
+            ],
             infoAtivConcom = new S1280InfoAtivConcom()
             {
                 fatorMes = 1.2m,

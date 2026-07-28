@@ -137,15 +137,15 @@ public class S2206Test : BaseESocialTest<S2206>
                         {
                             nrProcJud = "12345678901234567890"
                         },
-                        observacoes = new List<S2206Observacao>()
-                        {
+                        observacoes =
+                        [
                             new S2206Observacao() { observacao = "Observação 1" },
                             new S2206Observacao() { observacao = "Observação 2" }
-                        },
-                        treiCap = new List<S2206TreiCap>()
-                        {
+                        ],
+                        treiCap =
+                        [
                             new S2206TreiCap() { codTreiCap = "1234" }
-                        }
+                        ]
                     }
                 }
             }
