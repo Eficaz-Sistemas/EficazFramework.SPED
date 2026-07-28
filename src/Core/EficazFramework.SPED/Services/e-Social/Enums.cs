@@ -2,5 +2,5 @@
 
 public enum VersaoRest
 {
-    v1_00_00 = 0
+    v1_3_0 = 0
 }

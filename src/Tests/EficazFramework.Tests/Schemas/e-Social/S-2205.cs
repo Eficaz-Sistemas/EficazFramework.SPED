@@ -8,7 +8,7 @@ public class S2205Test : BaseESocialTest<S2205>
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
     [TestCase(Versao.v_S_01_03_00)]
-    public async System.Threading.Tasks.Task ValidaAlteracao(Versao versao)
+    public async System.Threading.Tasks.Task Valida(Versao versao)
     {
         _versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtAltCadastral/{versao}";
@@ -30,9 +30,72 @@ public class S2205Test : BaseESocialTest<S2205>
         var evtAlt = evento as S2205;
         evtAlt.Should().NotBeNull();
         evtAlt.evtAltCadastral.Id.Should().Be("ID1106080250000002026072813090200002");
-        
+
+        // ideEvento
+        evtAlt.evtAltCadastral.ideEvento.indRetif.Should().Be(IndicadorRetificacao.Original);
+        evtAlt.evtAltCadastral.ideEvento.tpAmb.Should().Be(Ambiente.ProducaoRestrita_DadosReais);
+        evtAlt.evtAltCadastral.ideEvento.procEmi.Should().Be(EmissorEvento.AppEmpregador);
+        evtAlt.evtAltCadastral.ideEvento.verProc.Should().Be("2.2");
+
+        // ideEmpregador
+        evtAlt.evtAltCadastral.ideEmpregador.tpInsc.Should().Be(PersonalidadeJuridica.CNPJ);
+        evtAlt.evtAltCadastral.ideEmpregador.nrInsc.Should().Be("10608025");
+
+        // ideTrabalhador
         evtAlt.evtAltCadastral.ideTrabalhador.cpfTrab.Should().Be("12345678901");
-        evtAlt.evtAltCadastral.alteracao.dadosTrabalhador.nmTrab.Should().Be("Joao da Silva");
+
+        // alteracao
+        evtAlt.evtAltCadastral.alteracao.dtAlteracao.Should().Be(new DateTime(2023, 10, 1));
+
+        // dadosTrabalhador
+        var dados = evtAlt.evtAltCadastral.alteracao.dadosTrabalhador;
+        dados.nmTrab.Should().Be("Joao da Silva");
+        dados.sexo.Should().Be(Sexo.Masculino);
+        dados.racaCor.Should().Be(RacaCor.NaoInformado);
+        dados.estCiv.Should().Be(EstadoCivil.Solteiro);
+        dados.grauInstr.Should().Be(GrauInstrucao.MedioCompleto);
+        dados.nmSoc.Should().Be("Joao");
+        dados.paisNac.Should().Be("105");
+
+        // endereco (brasil)
+        var endBrasil = dados.endereco.Item as EnderecoBrasileiro;
+        endBrasil.Should().NotBeNull();
+        endBrasil.tpLograd.Should().Be("Rua");
+        endBrasil.dscLograd.Should().Be("1");
+        endBrasil.nrLograd.Should().Be("123");
+        endBrasil.complemento.Should().Be("Apt 1");
+        endBrasil.bairro.Should().Be("Centro");
+        endBrasil.cep.Should().Be("12345678");
+        endBrasil.codMunic.Should().Be("1234567");
+        endBrasil.uf.Should().Be(UFCadastro.SP);
+
+        // trabImig
+        dados.trabImig.tmpResid.Should().Be(ImigranteTempoResidencia.Indeterminado);
+        dados.trabImig.condIng.Should().Be(ImigranteCondicao.Refugidao);
+
+        // infoDeficiencia
+        dados.infoDeficiencia.defFisica.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.defVisual.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.defAuditiva.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.defMental.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.defIntelectual.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.reabReadap.Should().Be(SimNaoString.Nao);
+        dados.infoDeficiencia.observacao.Should().Be("Nenhuma");
+
+        // dependente
+        dados.dependente.Should().HaveCount(1);
+        dados.dependente[0].tpDep.Should().Be("01");
+        dados.dependente[0].nmDep.Should().Be("Filho");
+        dados.dependente[0].dtNascto.Should().Be(new DateTime(2013, 10, 1));
+        dados.dependente[0].cpfDep.Should().Be("12345678901");
+        dados.dependente[0].sexoDep.Should().Be(Sexo.Masculino);
+        dados.dependente[0].depIRRF.Should().Be(SimNaoString.Sim);
+        dados.dependente[0].depSF.Should().Be(SimNaoString.Sim);
+        dados.dependente[0].descrDep.Should().Be("Filho");
+
+        // contato
+        dados.contato.fonePrinc.Should().Be("11999999999");
+        dados.contato.emailPrinc.Should().Be("joao@email.com");
     }
 
     public override void PreencheCampos(S2205 evento)

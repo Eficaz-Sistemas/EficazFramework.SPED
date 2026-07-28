@@ -8,7 +8,7 @@ namespace EficazFramework.SPED.Services.eSocial;
 public partial class Request : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_00_00;
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
 
 
     private EnvioLoteEventos envioLoteEventosField;
@@ -139,7 +139,7 @@ public partial class LoteEventos : Schemas.eSocial.ESocialBindableObject
 public partial class ConteudoESocial : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_00_00;
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
 
 
     private XElement anyField;
@@ -224,7 +224,7 @@ public partial class ConteudoESocial : Schemas.eSocial.ESocialBindableObject
 public partial class Response : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_00_00;
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
 
 
     private RetornoLoteEventos retornoLoteEventosAssincronoField;
