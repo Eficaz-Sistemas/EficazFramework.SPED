@@ -53,7 +53,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             var ss when ss!.Contains("v_S_01_03_00") => Versao.v_S_01_03_00,
             _ => Versao.v_S_01_02_00
         };
-        string evt = root?.Elements().First()?.Name.LocalName;
+        string? evt = root?.Elements().First()?.Name.LocalName;
         var targetType = evt switch
         {
             "evtInfoEmpregador" => typeof(S1000),
@@ -70,7 +70,8 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtAltCadastral" => typeof(S2205),
             "evtAltContratual" => typeof(S2206),
             "evtCAT" => typeof(S2210),
-            _ => default
+            "evtAfastTemp" => typeof(S2230),
+            _ => typeof(Evento)
         };
         return new (targetType, new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/{evt}/{v}", IsNullable = false });
     }

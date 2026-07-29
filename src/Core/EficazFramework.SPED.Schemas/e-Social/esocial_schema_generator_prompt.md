@@ -265,6 +265,7 @@ Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo r
 8. Testes Unitários de Validação:
    - Escrever testes no projeto [EficazFramework.Tests.csproj](/src/Tests/EficazFramework.Tests/EficazFramework.Tests.csproj), seguindo o padrão de [S-1000.cs](/src/Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
    - Preencher se possível todos os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD.
+   - Teste `Valida()` deve testar as versões S_01_03_00 e S_01_02_00.
 
 ---
 
