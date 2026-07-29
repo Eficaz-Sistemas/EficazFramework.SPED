@@ -76,51 +76,6 @@ public class S2230Test : BaseESocialTest<S2230>
     public override void PreencheCampos(S2230 evento)
     {
         evento.Versao = _versao;
-        PreencheCampos(evento, CnpjCpf);
-    }
-
-
-    public override void ValidaInstanciasLeituraEscrita(S2230 instanciaPopulada, S2230 instanciaXml)
-    {
-        instanciaXml.evtAfastTemp.ideEvento.indRetif.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.indRetif);
-        instanciaXml.evtAfastTemp.ideEvento.tpAmb.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.tpAmb);
-        instanciaXml.evtAfastTemp.ideEvento.procEmi.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.procEmi);
-        instanciaXml.evtAfastTemp.ideEvento.verProc.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.verProc);
-
-        instanciaXml.evtAfastTemp.ideEmpregador.tpInsc.Should().Be(instanciaPopulada.evtAfastTemp.ideEmpregador.tpInsc);
-        instanciaXml.evtAfastTemp.ideEmpregador.nrInsc.Should().Be(instanciaPopulada.evtAfastTemp.ideEmpregador.nrInsc);
-
-        instanciaXml.evtAfastTemp.ideVinculo.cpfTrab.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.cpfTrab);
-        instanciaXml.evtAfastTemp.ideVinculo.matricula.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.matricula);
-        instanciaXml.evtAfastTemp.ideVinculo.codCateg.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.codCateg);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.dtIniAfast.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.dtIniAfast);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.codMotAfast.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.codMotAfast);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMesmoMtv.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMesmoMtv);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.tpAcidTransito.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.tpAcidTransito);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.observacao.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.observacao);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtInicio.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtInicio);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtFim.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtFim.Value);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.cnpjCess.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.cnpjCess);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.infOnus.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.infOnus);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.cnpjSind.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.cnpjSind);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet);
-        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.indRemunCargo.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.indRemunCargo);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.origRetif.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.origRetif);
-        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.tpProc.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.tpProc);
-        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.nrProc.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.nrProc);
-
-        instanciaXml.evtAfastTemp.infoAfastamento.fimAfastamento.dtTermAfast.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.fimAfastamento.dtTermAfast);
-    }
-
-    internal static void PreencheCampos(S2230 evento, string cnpjCpf)
-    {
         evento.evtAfastTemp = new S2230EvtAfastTemp()
         {
             ideEvento = new IdeEventoNaoPeriodico()
@@ -188,4 +143,46 @@ public class S2230Test : BaseESocialTest<S2230>
             }
         };
     }
+
+
+    public override void ValidaInstanciasLeituraEscrita(S2230 instanciaPopulada, S2230 instanciaXml)
+    {
+        instanciaXml.evtAfastTemp.ideEvento.indRetif.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.indRetif);
+        instanciaXml.evtAfastTemp.ideEvento.tpAmb.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.tpAmb);
+        instanciaXml.evtAfastTemp.ideEvento.procEmi.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.procEmi);
+        instanciaXml.evtAfastTemp.ideEvento.verProc.Should().Be(instanciaPopulada.evtAfastTemp.ideEvento.verProc);
+
+        instanciaXml.evtAfastTemp.ideEmpregador.tpInsc.Should().Be(instanciaPopulada.evtAfastTemp.ideEmpregador.tpInsc);
+        instanciaXml.evtAfastTemp.ideEmpregador.nrInsc.Should().Be(instanciaPopulada.evtAfastTemp.ideEmpregador.nrInsc);
+
+        instanciaXml.evtAfastTemp.ideVinculo.cpfTrab.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.cpfTrab);
+        instanciaXml.evtAfastTemp.ideVinculo.matricula.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.matricula);
+        instanciaXml.evtAfastTemp.ideVinculo.codCateg.Should().Be(instanciaPopulada.evtAfastTemp.ideVinculo.codCateg);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.dtIniAfast.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.dtIniAfast);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.codMotAfast.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.codMotAfast);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMesmoMtv.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMesmoMtv);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.tpAcidTransito.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.tpAcidTransito);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.observacao.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.observacao);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtInicio.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtInicio);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtFim.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.perAquis.dtFim.Value);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.cnpjCess.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.cnpjCess);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.infOnus.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoCessao.infOnus);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.cnpjSind.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.cnpjSind);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet);
+        instanciaXml.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.indRemunCargo.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.iniAfastamento.infoMandElet.indRemunCargo);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.origRetif.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.origRetif);
+        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.tpProc.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.tpProc);
+        instanciaXml.evtAfastTemp.infoAfastamento.infoRetif.nrProc.Should().Be(instanciaPopulada.evtAfastTemp.infoAfastamento.infoRetif.nrProc);
+
+        instanciaXml.evtAfastTemp.infoAfastamento.fimAfastamento.dtTermAfast.Should().BeSameDateAs(instanciaPopulada.evtAfastTemp.infoAfastamento.fimAfastamento.dtTermAfast);
+    }
+
+
 }

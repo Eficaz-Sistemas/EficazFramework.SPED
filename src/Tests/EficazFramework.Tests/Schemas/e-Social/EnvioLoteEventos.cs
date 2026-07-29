@@ -134,7 +134,13 @@ public class EnvioLoteEventosTest
         // Adicionando schema do evento e assinatura, pois o xs:any pode tentar validar o evento S-1000 se processContents="lax" ou "strict"
         string eventoNamespace = "http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_03_00";
         doc.Schemas.Add(eventoNamespace, System.Xml.XmlReader.Create(new System.IO.StringReader(Resources.Schemas.eSocial.S1000_v_S_01_03_00)));
-        doc.Schemas.Add(eventoNamespace, System.Xml.XmlReader.Create(new System.IO.StringReader(Resources.Schemas.eSocial.tipos)));
+
+        if (s1000.Versao == Versao.v_S_01_03_00)
+            doc.Schemas.Add(eventoNamespace, System.Xml.XmlReader.Create(new System.IO.StringReader(Resources.Schemas.eSocial.tipos_v_S_01_03_00)));
+
+        if (s1000.Versao == Versao.v_S_01_02_00)
+            doc.Schemas.Add(eventoNamespace, System.Xml.XmlReader.Create(new System.IO.StringReader(Resources.Schemas.eSocial.tipos_v_S_01_02_00)));
+
         doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", System.Xml.XmlReader.Create(new System.IO.StringReader(Resources.Schemas.XML.Sign)));
 
         doc.Validate(eventHandler);

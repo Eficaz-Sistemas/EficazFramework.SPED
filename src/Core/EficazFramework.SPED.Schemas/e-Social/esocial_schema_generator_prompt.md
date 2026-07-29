@@ -223,7 +223,7 @@ Na geração da classe do evento a partir do esquema XSD, é obrigatório confer
 ### 8. Escrita de Testes Unitários de Validação
 - **Projeto de Testes**: Todos os eventos devem ter seus testes unitários escritos no projeto [EficazFramework.Tests.csproj](../../../Tests/EficazFramework.Tests/EficazFramework.Tests.csproj).
 - **Padrão de Implementação**: O padrão de nomenclatura e estrutura dos testes deve seguir exatamente o adotado no arquivo [S-1000.cs](../../../Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
-- **Preenchimento de Campos**: No método `PreencheCampos()`, preencher, se possível, todos os campos da classe gerada para garantir a validação rigorosa contra o schema XSD (inclusive sub-propriedades e opções opcionais de validação).
+- **Preenchimento de Campos**: O método sobrescrito `public override void PreencheCampos(<Evento> evento)` deve conter todo o preenchimento dos campos diretamente em seu corpo. **NÃO CRIE** um segundo método `internal static void PreencheCampos(<Evento> evento, string cnpjCpf)`. Utilize a propriedade `CnpjCpf` da classe base diretamente no método sobrescrito para preencher o que for necessário. Preencha o máximo possível ou todos os campos da classe gerada para garantir a validação rigorosa contra o schema XSD.
 - Utiliza a bilbioteca **AwesomeAssertions**, já com `global using` declarado; Não inclua `using FluentAssertions`.
 - Crie a string do XML para o método `Read_v_S_01_03_00()` serializando a instância de `PreencheCampos()` e armazene no devido resx (Samples), e crie este teste.
 
@@ -264,7 +264,8 @@ Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo r
    - Na classe principal do evento, preencher a documentação XML na tag `<example>` com o exemplo do código de preenchimento de campos (copiado do método `PreencheCampos()` da classe de teste unitário), seguindo o exemplo de [s-1000.cs](/src/Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
 8. Testes Unitários de Validação:
    - Escrever testes no projeto [EficazFramework.Tests.csproj](/src/Tests/EficazFramework.Tests/EficazFramework.Tests.csproj), seguindo o padrão de [S-1000.cs](/src/Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
-   - Preencher se possível todos os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD.
+   - O preenchimento dos dados deve ser feito inteiramente dentro do `public override void PreencheCampos(<Evento> evento)` usando a propriedade base `CnpjCpf`. **NÃO CRIE** um método secundário para receber o CNPJ por parâmetro.
+   - Preencher o máximo possível (idealmente todos) os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD de forma completa.
    - Teste `Valida()` deve testar as versões S_01_03_00 e S_01_02_00.
 
 ---

@@ -105,87 +105,6 @@ public class S2210Test : BaseESocialTest<S2210>
     public override void PreencheCampos(S2210 evento)
     {
         evento.Versao = _versao;
-        PreencheCampos(evento, CnpjCpf);
-    }
-
-    public override void ValidaInstanciasLeituraEscrita(S2210 instanciaPopulada, S2210 instanciaXml)
-    {
-        // ideEvento
-        instanciaXml.evtCAT.ideEvento.tpAmb.Should().Be(instanciaPopulada.evtCAT.ideEvento.tpAmb);
-        instanciaXml.evtCAT.ideEvento.procEmi.Should().Be(instanciaPopulada.evtCAT.ideEvento.procEmi);
-        instanciaXml.evtCAT.ideEvento.verProc.Should().Be(instanciaPopulada.evtCAT.ideEvento.verProc);
-
-        // ideEmpregador
-        instanciaXml.evtCAT.ideEmpregador.tpInsc.Should().Be(instanciaPopulada.evtCAT.ideEmpregador.tpInsc);
-        instanciaXml.evtCAT.ideEmpregador.nrInsc.Should().Be(instanciaPopulada.evtCAT.ideEmpregador.nrInsc);
-
-        // ideVinculo
-        instanciaXml.evtCAT.ideVinculo.cpfTrab.Should().Be(instanciaPopulada.evtCAT.ideVinculo.cpfTrab);
-        instanciaXml.evtCAT.ideVinculo.matricula.Should().Be(instanciaPopulada.evtCAT.ideVinculo.matricula);
-        instanciaXml.evtCAT.ideVinculo.codCateg.Should().Be(instanciaPopulada.evtCAT.ideVinculo.codCateg);
-
-        // cat
-        instanciaXml.evtCAT.cat.dtAcid.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.dtAcid);
-        instanciaXml.evtCAT.cat.tpAcid.Should().Be(instanciaPopulada.evtCAT.cat.tpAcid);
-        instanciaXml.evtCAT.cat.hrAcid.Should().Be(instanciaPopulada.evtCAT.cat.hrAcid);
-        instanciaXml.evtCAT.cat.hrsTrabAntesAcid.Should().Be(instanciaPopulada.evtCAT.cat.hrsTrabAntesAcid);
-        instanciaXml.evtCAT.cat.tpCat.Should().Be(instanciaPopulada.evtCAT.cat.tpCat);
-        instanciaXml.evtCAT.cat.indCatObito.Should().Be(instanciaPopulada.evtCAT.cat.indCatObito);
-        instanciaXml.evtCAT.cat.dtObito.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.dtObito.Value);
-        instanciaXml.evtCAT.cat.indComunPolicia.Should().Be(instanciaPopulada.evtCAT.cat.indComunPolicia);
-        instanciaXml.evtCAT.cat.codSitGeradora.Should().Be(instanciaPopulada.evtCAT.cat.codSitGeradora);
-        instanciaXml.evtCAT.cat.iniciatCAT.Should().Be(instanciaPopulada.evtCAT.cat.iniciatCAT);
-        instanciaXml.evtCAT.cat.obsCAT.Should().Be(instanciaPopulada.evtCAT.cat.obsCAT);
-        instanciaXml.evtCAT.cat.ultDiaTrab.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.ultDiaTrab.Value);
-        instanciaXml.evtCAT.cat.houveAfast.Should().Be(instanciaPopulada.evtCAT.cat.houveAfast);
-
-        // localAcidente
-        instanciaXml.evtCAT.cat.localAcidente.tpLocal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.tpLocal);
-        instanciaXml.evtCAT.cat.localAcidente.dscLocal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.dscLocal);
-        instanciaXml.evtCAT.cat.localAcidente.tpLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.tpLograd);
-        instanciaXml.evtCAT.cat.localAcidente.dscLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.dscLograd);
-        instanciaXml.evtCAT.cat.localAcidente.nrLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.nrLograd);
-        instanciaXml.evtCAT.cat.localAcidente.complemento.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.complemento);
-        instanciaXml.evtCAT.cat.localAcidente.bairro.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.bairro);
-        instanciaXml.evtCAT.cat.localAcidente.cep.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.cep);
-        instanciaXml.evtCAT.cat.localAcidente.codMunic.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.codMunic);
-        instanciaXml.evtCAT.cat.localAcidente.uf.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.uf);
-        instanciaXml.evtCAT.cat.localAcidente.pais.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.pais);
-        instanciaXml.evtCAT.cat.localAcidente.codPostal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.codPostal);
-        instanciaXml.evtCAT.cat.localAcidente.ideLocalAcid.tpInsc.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.ideLocalAcid.tpInsc);
-        instanciaXml.evtCAT.cat.localAcidente.ideLocalAcid.nrInsc.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.ideLocalAcid.nrInsc);
-
-        // parteAtingida
-        instanciaXml.evtCAT.cat.parteAtingida.codParteAting.Should().Be(instanciaPopulada.evtCAT.cat.parteAtingida.codParteAting);
-        instanciaXml.evtCAT.cat.parteAtingida.lateralidade.Should().Be(instanciaPopulada.evtCAT.cat.parteAtingida.lateralidade);
-
-        // agenteCausador
-        instanciaXml.evtCAT.cat.agenteCausador.codAgntCausador.Should().Be(instanciaPopulada.evtCAT.cat.agenteCausador.codAgntCausador);
-
-        // atestado
-        instanciaXml.evtCAT.cat.atestado.dtAtendimento.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.atestado.dtAtendimento);
-        instanciaXml.evtCAT.cat.atestado.hrAtendimento.Should().Be(instanciaPopulada.evtCAT.cat.atestado.hrAtendimento);
-        instanciaXml.evtCAT.cat.atestado.indInternacao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.indInternacao);
-        instanciaXml.evtCAT.cat.atestado.durTrat.Should().Be(instanciaPopulada.evtCAT.cat.atestado.durTrat);
-        instanciaXml.evtCAT.cat.atestado.indAfast.Should().Be(instanciaPopulada.evtCAT.cat.atestado.indAfast);
-        instanciaXml.evtCAT.cat.atestado.dscLesao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.dscLesao);
-        instanciaXml.evtCAT.cat.atestado.dscCompLesao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.dscCompLesao);
-        instanciaXml.evtCAT.cat.atestado.diagProvavel.Should().Be(instanciaPopulada.evtCAT.cat.atestado.diagProvavel);
-        instanciaXml.evtCAT.cat.atestado.codCID.Should().Be(instanciaPopulada.evtCAT.cat.atestado.codCID);
-        instanciaXml.evtCAT.cat.atestado.observacao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.observacao);
-
-        // emitente
-        instanciaXml.evtCAT.cat.atestado.emitente.nmEmit.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.nmEmit);
-        instanciaXml.evtCAT.cat.atestado.emitente.ideOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.ideOC);
-        instanciaXml.evtCAT.cat.atestado.emitente.nrOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.nrOC);
-        instanciaXml.evtCAT.cat.atestado.emitente.ufOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.ufOC);
-
-        // catOrigem
-        instanciaXml.evtCAT.cat.catOrigem.nrRecCatOrig.Should().Be(instanciaPopulada.evtCAT.cat.catOrigem.nrRecCatOrig);
-    }
-
-    internal static void PreencheCampos(S2210 evento, string cnpjCpf)
-    {
         evento.evtCAT = new S2210EvtCAT()
         {
             ideEvento = new IdeEventoNaoPeriodico()
@@ -198,7 +117,7 @@ public class S2210Test : BaseESocialTest<S2210>
             ideEmpregador = new Empregador()
             {
                 tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = cnpjCpf.Substring(0, 8)
+                nrInsc = CnpjCpf.Substring(0, 8)
             },
             ideVinculo = new S2210IdeVinculo()
             {
@@ -276,5 +195,81 @@ public class S2210Test : BaseESocialTest<S2210>
                 }
             }
         };
+    }
+
+    public override void ValidaInstanciasLeituraEscrita(S2210 instanciaPopulada, S2210 instanciaXml)
+    {
+        // ideEvento
+        instanciaXml.evtCAT.ideEvento.tpAmb.Should().Be(instanciaPopulada.evtCAT.ideEvento.tpAmb);
+        instanciaXml.evtCAT.ideEvento.procEmi.Should().Be(instanciaPopulada.evtCAT.ideEvento.procEmi);
+        instanciaXml.evtCAT.ideEvento.verProc.Should().Be(instanciaPopulada.evtCAT.ideEvento.verProc);
+
+        // ideEmpregador
+        instanciaXml.evtCAT.ideEmpregador.tpInsc.Should().Be(instanciaPopulada.evtCAT.ideEmpregador.tpInsc);
+        instanciaXml.evtCAT.ideEmpregador.nrInsc.Should().Be(instanciaPopulada.evtCAT.ideEmpregador.nrInsc);
+
+        // ideVinculo
+        instanciaXml.evtCAT.ideVinculo.cpfTrab.Should().Be(instanciaPopulada.evtCAT.ideVinculo.cpfTrab);
+        instanciaXml.evtCAT.ideVinculo.matricula.Should().Be(instanciaPopulada.evtCAT.ideVinculo.matricula);
+        instanciaXml.evtCAT.ideVinculo.codCateg.Should().Be(instanciaPopulada.evtCAT.ideVinculo.codCateg);
+
+        // cat
+        instanciaXml.evtCAT.cat.dtAcid.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.dtAcid);
+        instanciaXml.evtCAT.cat.tpAcid.Should().Be(instanciaPopulada.evtCAT.cat.tpAcid);
+        instanciaXml.evtCAT.cat.hrAcid.Should().Be(instanciaPopulada.evtCAT.cat.hrAcid);
+        instanciaXml.evtCAT.cat.hrsTrabAntesAcid.Should().Be(instanciaPopulada.evtCAT.cat.hrsTrabAntesAcid);
+        instanciaXml.evtCAT.cat.tpCat.Should().Be(instanciaPopulada.evtCAT.cat.tpCat);
+        instanciaXml.evtCAT.cat.indCatObito.Should().Be(instanciaPopulada.evtCAT.cat.indCatObito);
+        instanciaXml.evtCAT.cat.dtObito.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.dtObito.Value);
+        instanciaXml.evtCAT.cat.indComunPolicia.Should().Be(instanciaPopulada.evtCAT.cat.indComunPolicia);
+        instanciaXml.evtCAT.cat.codSitGeradora.Should().Be(instanciaPopulada.evtCAT.cat.codSitGeradora);
+        instanciaXml.evtCAT.cat.iniciatCAT.Should().Be(instanciaPopulada.evtCAT.cat.iniciatCAT);
+        instanciaXml.evtCAT.cat.obsCAT.Should().Be(instanciaPopulada.evtCAT.cat.obsCAT);
+        instanciaXml.evtCAT.cat.ultDiaTrab.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.ultDiaTrab.Value);
+        instanciaXml.evtCAT.cat.houveAfast.Should().Be(instanciaPopulada.evtCAT.cat.houveAfast);
+
+        // localAcidente
+        instanciaXml.evtCAT.cat.localAcidente.tpLocal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.tpLocal);
+        instanciaXml.evtCAT.cat.localAcidente.dscLocal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.dscLocal);
+        instanciaXml.evtCAT.cat.localAcidente.tpLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.tpLograd);
+        instanciaXml.evtCAT.cat.localAcidente.dscLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.dscLograd);
+        instanciaXml.evtCAT.cat.localAcidente.nrLograd.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.nrLograd);
+        instanciaXml.evtCAT.cat.localAcidente.complemento.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.complemento);
+        instanciaXml.evtCAT.cat.localAcidente.bairro.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.bairro);
+        instanciaXml.evtCAT.cat.localAcidente.cep.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.cep);
+        instanciaXml.evtCAT.cat.localAcidente.codMunic.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.codMunic);
+        instanciaXml.evtCAT.cat.localAcidente.uf.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.uf);
+        instanciaXml.evtCAT.cat.localAcidente.pais.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.pais);
+        instanciaXml.evtCAT.cat.localAcidente.codPostal.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.codPostal);
+        instanciaXml.evtCAT.cat.localAcidente.ideLocalAcid.tpInsc.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.ideLocalAcid.tpInsc);
+        instanciaXml.evtCAT.cat.localAcidente.ideLocalAcid.nrInsc.Should().Be(instanciaPopulada.evtCAT.cat.localAcidente.ideLocalAcid.nrInsc);
+
+        // parteAtingida
+        instanciaXml.evtCAT.cat.parteAtingida.codParteAting.Should().Be(instanciaPopulada.evtCAT.cat.parteAtingida.codParteAting);
+        instanciaXml.evtCAT.cat.parteAtingida.lateralidade.Should().Be(instanciaPopulada.evtCAT.cat.parteAtingida.lateralidade);
+
+        // agenteCausador
+        instanciaXml.evtCAT.cat.agenteCausador.codAgntCausador.Should().Be(instanciaPopulada.evtCAT.cat.agenteCausador.codAgntCausador);
+
+        // atestado
+        instanciaXml.evtCAT.cat.atestado.dtAtendimento.Should().BeSameDateAs(instanciaPopulada.evtCAT.cat.atestado.dtAtendimento);
+        instanciaXml.evtCAT.cat.atestado.hrAtendimento.Should().Be(instanciaPopulada.evtCAT.cat.atestado.hrAtendimento);
+        instanciaXml.evtCAT.cat.atestado.indInternacao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.indInternacao);
+        instanciaXml.evtCAT.cat.atestado.durTrat.Should().Be(instanciaPopulada.evtCAT.cat.atestado.durTrat);
+        instanciaXml.evtCAT.cat.atestado.indAfast.Should().Be(instanciaPopulada.evtCAT.cat.atestado.indAfast);
+        instanciaXml.evtCAT.cat.atestado.dscLesao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.dscLesao);
+        instanciaXml.evtCAT.cat.atestado.dscCompLesao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.dscCompLesao);
+        instanciaXml.evtCAT.cat.atestado.diagProvavel.Should().Be(instanciaPopulada.evtCAT.cat.atestado.diagProvavel);
+        instanciaXml.evtCAT.cat.atestado.codCID.Should().Be(instanciaPopulada.evtCAT.cat.atestado.codCID);
+        instanciaXml.evtCAT.cat.atestado.observacao.Should().Be(instanciaPopulada.evtCAT.cat.atestado.observacao);
+
+        // emitente
+        instanciaXml.evtCAT.cat.atestado.emitente.nmEmit.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.nmEmit);
+        instanciaXml.evtCAT.cat.atestado.emitente.ideOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.ideOC);
+        instanciaXml.evtCAT.cat.atestado.emitente.nrOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.nrOC);
+        instanciaXml.evtCAT.cat.atestado.emitente.ufOC.Should().Be(instanciaPopulada.evtCAT.cat.atestado.emitente.ufOC);
+
+        // catOrigem
+        instanciaXml.evtCAT.cat.catOrigem.nrRecCatOrig.Should().Be(instanciaPopulada.evtCAT.cat.catOrigem.nrRecCatOrig);
     }
 }

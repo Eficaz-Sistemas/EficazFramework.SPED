@@ -92,7 +92,14 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
         // adicionando os schemas para validação do documento XML
         ValidationEventHandler eventHandler = new(ValidationEventHandler);
         doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
-        doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos)));
+
+        if(_versao == Versao.v_S_01_03_00)
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos_v_S_01_03_00)));
+
+        if (_versao == Versao.v_S_01_02_00)
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos_v_S_01_02_00)));
+
+
         doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
         // executando a validação
         doc.Validate(eventHandler);
