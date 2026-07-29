@@ -2,7 +2,7 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 
 
 /// <summary>
-/// S-1020 - Tabela de Lotações Tributárias
+/// S-1020 - Tabela de (Lotações Tributárias)
 /// </summary>
 /// <remarks>
 /// Este evento identifica a lotação tributária do empregador/contribuinte, definindo o enquadramento de FPAS, Código de Terceiros e regras de tributação da folha de pagamento.
