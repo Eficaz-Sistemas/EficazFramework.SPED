@@ -368,9 +368,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2399_v_S_01_02_01 {
+        internal static string S2399_v_S_01_02_00 {
             get {
-                return ResourceManager.GetString("S2399_v_S_01_02_01", resourceCulture);
+                return ResourceManager.GetString("S2399_v_S_01_02_00", resourceCulture);
             }
         }
         
@@ -380,9 +380,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2399_v_S_01_03_01 {
+        internal static string S2399_v_S_01_03_00 {
             get {
-                return ResourceManager.GetString("S2399_v_S_01_03_01", resourceCulture);
+                return ResourceManager.GetString("S2399_v_S_01_03_00", resourceCulture);
             }
         }
         

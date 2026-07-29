@@ -1075,3 +1075,162 @@ public enum PercentualTransformacao
     Perc100 = 5
 }
 
+
+public enum TipoAcidenteTrabalho
+{
+    [XmlEnum("1")]
+    [Description("Típico")]
+    Tipico = 1,
+    [XmlEnum("2")]
+    [Description("Doença")]
+    Doenca = 2,
+    [XmlEnum("3")]
+    [Description("Trajeto")]
+    Trajeto = 3
+}
+
+public enum TipoCAT
+{
+    [XmlEnum("1")]
+    [Description("Inicial")]
+    Inicial = 1,
+    [XmlEnum("2")]
+    [Description("Reabertura")]
+    Reabertura = 2,
+    [XmlEnum("3")]
+    [Description("Comunicação de óbito")]
+    ComunicacaoObito = 3
+}
+
+public enum IniciativaCAT
+{
+    [XmlEnum("1")]
+    [Description("Empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Ordem judicial")]
+    OrdemJudicial = 2,
+    [XmlEnum("3")]
+    [Description("Determinação de órgão fiscalizador")]
+    DeterminacaoOrgaoFiscalizador = 3
+}
+
+public enum TipoLocalAcidente
+{
+    [XmlEnum("1")]
+    [Description("Estabelecimento do empregador no Brasil")]
+    EmpregadorBrasil = 1,
+    [XmlEnum("2")]
+    [Description("Estabelecimento do empregador no exterior")]
+    EmpregadorExterior = 2,
+    [XmlEnum("3")]
+    [Description("Estabelecimento de terceiros onde o empregador presta serviços")]
+    Terceiros = 3,
+    [XmlEnum("4")]
+    [Description("Via pública")]
+    ViaPublica = 4,
+    [XmlEnum("5")]
+    [Description("Área rural")]
+    AreaRural = 5,
+    [XmlEnum("6")]
+    [Description("Embarcação")]
+    Embarcacao = 6,
+    [XmlEnum("9")]
+    [Description("Outros")]
+    Outros = 9
+}
+
+public enum Lateralidade
+{
+    [XmlEnum("0")]
+    [Description("Não aplicável")]
+    NaoAplicavel = 0,
+    [XmlEnum("1")]
+    [Description("Esquerda")]
+    Esquerda = 1,
+    [XmlEnum("2")]
+    [Description("Direita")]
+    Direita = 2,
+    [XmlEnum("3")]
+    [Description("Ambas")]
+    Ambas = 3
+}
+
+public enum OrgaoClasseSaude
+{
+    [XmlEnum("1")]
+    [Description("Conselho Regional de Medicina - CRM")]
+    CRM = 1,
+    [XmlEnum("2")]
+    [Description("Conselho Regional de Odontologia - CRO")]
+    CRO = 2,
+    [XmlEnum("3")]
+    [Description("Registro do Ministério da Saúde - RMS")]
+    RMS = 3
+}
+
+
+public enum TipoAcidenteTransito
+{
+    [XmlEnum("1")]
+    [Description("Atropelamento")]
+    Atropelamento = 1,
+    [XmlEnum("2")]
+    [Description("Colisão")]
+    Colisao = 2,
+    [XmlEnum("3")]
+    [Description("Outros")]
+    Outros = 3
+}
+
+public enum OnusCessao
+{
+    [XmlEnum("1")]
+    [Description("Ônus do cedente")]
+    Cedente = 1,
+    [XmlEnum("2")]
+    [Description("Ônus do cessionário")]
+    Cessionario = 2,
+    [XmlEnum("3")]
+    [Description("Ônus do cedente e cessionário")]
+    CedenteCessionario = 3
+}
+
+public enum OnusRemuneracao
+{
+    [XmlEnum("1")]
+    [Description("Apenas do empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Apenas do sindicato")]
+    Sindicato = 2,
+    [XmlEnum("3")]
+    [Description("Parte do empregador, sendo a diferença e/ou complementação salarial paga pelo sindicato")]
+    EmpregadorSindicato = 3
+}
+
+public enum OrigemRetificacao
+{
+    [XmlEnum("1")]
+    [Description("Por iniciativa do empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Revisão administrativa")]
+    RevisaoAdministrativa = 2,
+    [XmlEnum("3")]
+    [Description("Determinação judicial")]
+    DeterminacaoJudicial = 3
+}
+
+public enum TipoProcessoRetificacao
+{
+    [XmlEnum("1")]
+    [Description("Administrativo")]
+    Administrativo = 1,
+    [XmlEnum("2")]
+    [Description("Judicial")]
+    Judicial = 2,
+    [XmlEnum("3")]
+    [Description("Número de Benefício - NB do INSS")]
+    NumeroBeneficioINSS = 3
+}
