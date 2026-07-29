@@ -277,6 +277,6 @@ Aqui encontram-se regras de validação e preenchimento de cada campo.
 ---
 ### XSD DO EVENTO:
 Está disponível em [eSocial.resx](/src/Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00.
-Os tipos básicos estão em [eSocial.resx](/src/Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave tipos.
+Os tipos básicos estão em [eSocial.resx](/src/Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave tipos_S_01_03_00 e tipos_S_01_02_00.
 ```
 
