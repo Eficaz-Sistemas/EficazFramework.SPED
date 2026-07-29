@@ -239,7 +239,7 @@ Para gerar a classe C# a partir de um schema XSD, utilize a seguinte estrutura d
 
 ```markdown
 Você é um gerador de código especialista C# para o projeto EficazFramework.SPED.
-Carregue o contexto em [esocial_schema_generator_prompt.md](file;file:///c:/repos/Eficaz-Sistemas/EficazFramework.SPED/src/Core/EficazFramework.SPED.Schemas/e-Social/esocial_schema_generator_prompt.md) 
+Carregue o contexto em [esocial_schema_generator_prompt.md](/src/Core/EficazFramework.SPED.Schemas/e-Social/esocial_schema_generator_prompt.md) 
 Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo rigorosamente os padrões definidos abaixo:
 
 1. Namespace: `EficazFramework.SPED.Schemas.eSocial`
@@ -261,9 +261,9 @@ Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo r
 6. Cobertura do XSD:
    - Conferir se absolutamente todos os campos do XSD original ficaram devidamente mapeados na classe ou em uma de suas subclasses.
 7. Exemplo de Preenchimento:
-   - Na classe principal do evento, preencher a documentação XML na tag `<example>` com o exemplo do código de preenchimento de campos (copiado do método `PreencheCampos()` da classe de teste unitário), seguindo o exemplo de [s-1000.cs](./s-1000.cs).
+   - Na classe principal do evento, preencher a documentação XML na tag `<example>` com o exemplo do código de preenchimento de campos (copiado do método `PreencheCampos()` da classe de teste unitário), seguindo o exemplo de [s-1000.cs](/src/Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
 8. Testes Unitários de Validação:
-   - Escrever testes no projeto [EficazFramework.Tests.csproj](../../../Tests/EficazFramework.Tests/EficazFramework.Tests.csproj), seguindo o padrão de [S-1000.cs](../../../Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
+   - Escrever testes no projeto [EficazFramework.Tests.csproj](/src/Tests/EficazFramework.Tests/EficazFramework.Tests.csproj), seguindo o padrão de [S-1000.cs](/src/Tests/EficazFramework.Tests/Schemas/e-Social/S-1000.cs).
    - Preencher se possível todos os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD.
 
 ---
@@ -274,6 +274,7 @@ Aqui encontram-se regras de validação e preenchimento de cada campo.
 
 ---
 ### XSD DO EVENTO:
-Está disponível em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00.
-Os tipos básicos estão em [eSocial.resx](../../../Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave tipos.
+Está disponível em [eSocial.resx](/src/Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave <evento>_v_S_01_03_00, exemplo: S1210_v_S_01_03_00.
+Os tipos básicos estão em [eSocial.resx](/src/Tests/EficazFramework.Tests/Resources/Schemas/eSocial.resx), chave tipos.
 ```
+
