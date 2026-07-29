@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
 {

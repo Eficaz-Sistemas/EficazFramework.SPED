@@ -9,90 +9,190 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 /// </summary>
 /// <example>
 /// ```csharp
-/// var evento = new S2300()
+/// var evento = new S2300();
+/// evento.Versao = Versao.v_S_01_03_00;
+/// evento.evtTSVInicio = new S2300EvtTSVInicio()
 /// {
-///     Versao = Versao.v_S_01_03_00,
-///     evtTSVInicio = new S2300EvtTSVInicio()
+///     ideEvento = new IdeEventoNaoPeriodico()
 ///     {
-///         ideEvento = new IdentificacaoCadastro()
+///         indRetif = IndicadorRetificacao.Original,
+///         tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///         procEmi = EmissorEvento.AppEmpregador,
+///         verProc = "2.2"
+///     },
+///     ideEmpregador = new Empregador()
+///     {
+///         tpInsc = PersonalidadeJuridica.CNPJ,
+///         nrInsc = "12345678"
+///     },
+///     trabalhador = new S2300Trabalhador()
+///     {
+///         cpfTrab = "12345678901",
+///         nmTrab = "Fulano de Tal",
+///         sexo = Sexo.Masculino,
+///         racaCor = RacaCor.Branca,
+///         estCiv = EstadoCivil.Solteiro,
+///         grauInstr = GrauInstrucao.Analfabeto,
+///         nmSoc = "Fulano",
+///         nascimento = new S2300Nascimento()
 ///         {
-///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
-///             procEmi = EmissorEvento.AppEmpregador,
-///             verProc = "2.2"
+///             dtNascto = new DateTime(1980, 1, 1),
+///             paisNascto = "105",
+///             paisNac = "105"
 ///         },
-///         ideEmpregador = new Empregador()
+///         endereco = new S2300Endereco()
 ///         {
-///             tpInsc = PersonalidadeJuridica.CNPJ,
-///             nrInsc = "12345678"
-///         },
-///         trabalhador = new S2300Trabalhador()
-///         {
-///             cpfTrab = "12345678901",
-///             nmTrab = "Fulano de Tal",
-///             sexo = Sexo.Masculino,
-///             racaCor = RacaCor.Branca,
-///             estCiv = EstadoCivil.Casado,
-///             grauInstr = GrauInstrucao.SupCompleto,
-///             nmSoc = "Fulano",
-///             nascimento = new S2300Nascimento()
+///             brasil = new EnderecoBrasileiro()
 ///             {
-///                 dtNascto = new DateTime(1980, 1, 1),
-///                 paisNascto = "105",
-///                 paisNac = "105"
+///                 tpLograd = "Rua",
+///                 dscLograd = "Rua de Teste",
+///                 nrLograd = "123",
+///                 bairro = "Centro",
+///                 cep = "12345678",
+///                 codMunic = "1234567",
+///                 uf = UFCadastro.SP
+///             }
+///         },
+///         trabImig = new S2300TrabImig()
+///         {
+///             tmpResid = 1,
+///             condIng = 2
+///         },
+///         infoDeficiencia = new S2300InfoDeficiencia()
+///         {
+///             defFisica = SimNaoString.Nao,
+///             defVisual = SimNaoString.Nao,
+///             defAuditiva = SimNaoString.Nao,
+///             defMental = SimNaoString.Nao,
+///             defIntelectual = SimNaoString.Nao,
+///             reabReadap = SimNaoString.Nao,
+///             observacao = "Obs"
+///         },
+///         dependente = new System.Collections.Generic.List<S2300Dependente>()
+///         {
+///             new S2300Dependente()
+///             {
+///                 tpDep = "01",
+///                 nmDep = "Dependente 1",
+///                 dtNascto = new DateTime(2010, 1, 1),
+///                 cpfDep = "09876543210",
+///                 depIRRF = SimNaoString.Sim,
+///                 depSF = SimNaoString.Sim,
+///                 incTrab = SimNaoString.Nao,
+///                 descrDep = "Descricao"
+///             }
+///         },
+///         contato = new S2300Contato()
+///         {
+///             fonePrinc = "11999999999",
+///             emailPrinc = "teste@teste.com"
+///         }
+///     },
+///     infoTSVInicio = new S2300InfoTSVInicio()
+///     {
+///         cadIni = SimNaoString.Sim,
+///         matricula = "12345",
+///         codCateg = "721",
+///         dtInicio = new DateTime(2023, 1, 1),
+///         nrProcTrab = "12345678901234567890",
+///         natAtividade = NaturezaAtividade.Urbano,
+///         infoComplementares = new S2300InfoComplementares()
+///         {
+///             cargoFuncao = new S2300CargoFuncao()
+///             {
+///                 nmCargo = "Diretor",
+///                 CBOCargo = "123456",
+///                 nmFuncao = "Diretor Financeiro",
+///                 CBOFuncao = "123456"
 ///             },
-///             endereco = new S2300Endereco()
+///             remuneracao = new S2300Remuneracao()
 ///             {
-///                 brasil = new EnderecoBrasileiro()
+///                 vrSalFx = 10000.00m,
+///                 undSalFixo = 5,
+///                 dscSalVar = "Bonus"
+///             },
+///             FGTS = new S2300FGTS()
+///             {
+///                 dtOpcFGTS = new DateTime(2023, 1, 1)
+///             },
+///             infoDirigenteSindical = new S2300InfoDirigenteSindical()
+///             {
+///                 categOrig = "101",
+///                 tpInsc = 1,
+///                 nrInsc = "12345678000123",
+///                 dtAdmOrig = new DateTime(2020, 1, 1),
+///                 matricOrig = "123",
+///                 tpRegTrab = VinculoTrabalhista.CLT,
+///                 tpRegPrev = RegimePrevidenciario.RGPS
+///             },
+///             infoTrabCedido = new S2300InfoTrabCedido()
+///             {
+///                 categOrig = "101",
+///                 cnpjCednt = "12345678000123",
+///                 matricCed = "123",
+///                 dtAdmCed = new DateTime(2020, 1, 1),
+///                 tpRegTrab = VinculoTrabalhista.CLT,
+///                 tpRegPrev = RegimePrevidenciario.RGPS
+///             },
+///             infoMandElet = new S2300InfoMandElet()
+///             {
+///                 categOrig = "101",
+///                 cnpjOrig = "12345678000123",
+///                 matricOrig = "123",
+///                 dtExercOrig = new DateTime(2020, 1, 1),
+///                 indRemunCargo = SimNaoString.Sim,
+///                 tpRegTrab = VinculoTrabalhista.CLT,
+///                 tpRegPrev = RegimePrevidenciario.RGPS
+///             },
+///             infoEstagiario = new S2300InfoEstagiario()
+///             {
+///                 natEstagio = "O",
+///                 nivEstagio = 1,
+///                 areaAtuacao = "TI",
+///                 nrApol = "12345",
+///                 dtPrevTerm = new DateTime(2024, 1, 1),
+///                 instEnsino = new S2300InstEnsino()
 ///                 {
-///                     tpLograd = "Rua",
-///                     dscLograd = "Rua de Teste",
+///                     cnpjInstEnsino = "12345678000123",
+///                     nmRazao = "Inst Ensino",
+///                     dscLograd = "Rua",
 ///                     nrLograd = "123",
 ///                     bairro = "Centro",
 ///                     cep = "12345678",
 ///                     codMunic = "1234567",
-///                     uf = UFCadastro.SP
+///                     uf = "SP"
+///                 },
+///                 ageIntegracao = new S2300AgeIntegracao()
+///                 {
+///                     cnpjAgntInteg = "12345678000123"
+///                 },
+///                 supervisorEstagio = new S2300SupervisorEstagio()
+///                 {
+///                     cpfSupervisor = "12345678901"
 ///                 }
 ///             },
-///             infoDeficiencia = new S2300InfoDeficiencia()
+///             localTrabGeral = new S2300LocalTrabalho()
 ///             {
-///                 defFisica = SimNaoString.Nao,
-///                 defVisual = SimNaoString.Nao,
-///                 defAuditiva = SimNaoString.Nao,
-///                 defMental = SimNaoString.Nao,
-///                 defIntelectual = SimNaoString.Nao,
-///                 reabReadap = SimNaoString.Nao
-///             },
-///             contato = new S2300Contato()
-///             {
-///                 fonePrinc = "11999999999",
-///                 emailPrinc = "teste@teste.com"
+///                 tpInsc = 1,
+///                 nrInsc = "12345678000123",
+///                 descComp = "Local 1"
 ///             }
 ///         },
-///         infoTSVInicio = new S2300InfoTSVInicio()
+///         mudancaCPF = new S2300MudancaCPF()
 ///         {
-///             cadIni = SimNaoString.Sim,
-///             matricula = "12345",
-///             codCateg = "721",
-///             dtInicio = new DateTime(2023, 1, 1),
-///             natAtividade = NaturezaAtividade.Urbano,
-///             infoComplementares = new S2300InfoComplementares()
-///             {
-///                 cargoFuncao = new S2300CargoFuncao()
-///                 {
-///                     nmCargo = "Diretor",
-///                     CBOCargo = "123456"
-///                 },
-///                 remuneracao = new S2300Remuneracao()
-///                 {
-///                     vrSalFx = 10000.00m,
-///                     undSalFixo = 5,
-///                     dscSalVar = "Bonus"
-///                 },
-///                 FGTS = new S2300FGTS()
-///                 {
-///                     dtOpcFGTS = new DateTime(2023, 1, 1)
-///                 }
-///             }
+///             cpfAnt = "12345678901",
+///             matricAnt = "12345",
+///             dtAltCPF = new DateTime(2023, 1, 1),
+///             observacao = "Obs"
+///         },
+///         afastamento = new S2300Afastamento()
+///         {
+///             dtIniAfast = new DateTime(2023, 1, 1),
+///             codMotAfast = "01"
+///         },
+///         termino = new S2300Termino()
+///         {
+///             dtTerm = new DateTime(2023, 12, 31)
 ///         }
 ///     }
 /// };
