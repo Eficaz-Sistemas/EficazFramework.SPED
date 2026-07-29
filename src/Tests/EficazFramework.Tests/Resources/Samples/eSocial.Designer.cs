@@ -77,7 +77,8 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///   &lt;inclusao&gt;
         ///    &lt;idePeriodo&gt;
         ///     &lt;iniValid&gt;2023-06&lt;/iniValid&gt;
-        ///    &lt;/i [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///    &lt;/idePeriodo&gt;
+        ///    &lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1000_v_S_01_01_01 {
             get {
@@ -102,7 +103,8 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///   &lt;inclusao&gt;
         ///    &lt;idePeriodo&gt;
         ///     &lt;iniValid&gt;2018-07&lt;/iniValid&gt;
-        ///    &lt;/idePeri [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///    &lt;/idePeriodo&gt;
+        ///    &lt;infoCa [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1000_v02_04_02 {
             get {
@@ -127,7 +129,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
         ///		&lt;/ideEmpregador&gt;
         ///		&lt;ideTrabalhador&gt;
-        ///		 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///			&lt;cpfTrab&gt;152736 [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1200_v_S_01_03_00 {
             get {
@@ -152,7 +154,8 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///		&lt;/ideEmpregador&gt;
         ///		&lt;ideBenef&gt;
         ///			&lt;cpfBenef&gt;15273627877&lt;/cpfBenef&gt;
-        ///			&lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///			&lt;infoPgto&gt;
+        ///				&lt;d [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1210_v_S_01_03_00 {
             get {
@@ -176,7 +179,7 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///		&lt;ideEmpregador&gt;
         ///			&lt;tpInsc&gt;1&lt;/tpInsc&gt;
         ///			&lt;nrInsc&gt;34557109&lt;/nrInsc&gt;
-        ///		&lt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///		&lt;/ideEmpregador&gt; [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1280_v_S_01_03_00 {
             get {
@@ -201,7 +204,8 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///		&lt;ideTrabalhador&gt;
         ///			&lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
         ///		&lt;/ideTrabalhador&gt;
-        ///		&lt;al [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///		&lt;alteracao&gt;
+        ///			&lt;dtA [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S2205_v_S_01_03_00 {
             get {
@@ -225,11 +229,34 @@ namespace EficazFramework.SPED.Resources.Samples {
         ///		&lt;/ideEmpregador&gt;
         ///		&lt;ideVinculo&gt;
         ///			&lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
-        ///			&lt;matricula&gt;123456&lt;/matricula&gt;        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///			&lt;matricula&gt;123456&lt;/matricula&gt;
+        ///		&lt;/ideVinculo&gt; [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S2206_v_S_01_03_00 {
             get {
                 return ResourceManager.GetString("S2206_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;eSocial xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtCAT/v_S_01_03_00&quot;&gt;
+        ///  &lt;evtCAT Id=&quot;ID1123456780001232024010100000000001&quot;&gt;
+        ///    &lt;ideEvento&gt;
+        ///      &lt;indRetif&gt;1&lt;/indRetif&gt;
+        ///      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+        ///      &lt;procEmi&gt;1&lt;/procEmi&gt;
+        ///      &lt;verProc&gt;2.2&lt;/verProc&gt;
+        ///    &lt;/ideEvento&gt;
+        ///    &lt;ideEmpregador&gt;
+        ///      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///      &lt;nrInsc&gt;12345678&lt;/nrInsc&gt;
+        ///    &lt;/ideEmpregador&gt;
+        ///    &lt;id [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S2210_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S2210_v_S_01_03_00", resourceCulture);
             }
         }
     }
