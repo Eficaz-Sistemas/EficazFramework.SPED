@@ -19,8 +19,8 @@ public class S2210Test : BaseESocialTest<S2210>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtCAT/{versao}";
         ValidationSchema = versao switch
         {
-            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2010_v_01_03_01,
-            _ => Resources.Schemas.eSocial.S2010_v_01_02_01
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2010_v_S_01_03_01,
+            _ => Resources.Schemas.eSocial.S2010_v_S_01_02_01
         };
         await TestaEvento();
     }

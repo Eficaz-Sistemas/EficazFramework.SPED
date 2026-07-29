@@ -208,9 +208,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2005_v_01_02_01 {
+        internal static string S2005_v_S_01_02_01 {
             get {
-                return ResourceManager.GetString("S2005_v_01_02_01", resourceCulture);
+                return ResourceManager.GetString("S2005_v_S_01_02_01", resourceCulture);
             }
         }
         
@@ -220,9 +220,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2005_v_01_03_01 {
+        internal static string S2005_v_S_01_03_01 {
             get {
-                return ResourceManager.GetString("S2005_v_01_03_01", resourceCulture);
+                return ResourceManager.GetString("S2005_v_S_01_03_01", resourceCulture);
             }
         }
         
@@ -232,9 +232,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-sche [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2006_v_01_02_01 {
+        internal static string S2006_v_S_01_02_01 {
             get {
-                return ResourceManager.GetString("S2006_v_01_02_01", resourceCulture);
+                return ResourceManager.GetString("S2006_v_S_01_02_01", resourceCulture);
             }
         }
         
@@ -244,9 +244,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-sche [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2006_v_01_03_01 {
+        internal static string S2006_v_S_01_03_01 {
             get {
-                return ResourceManager.GetString("S2006_v_01_03_01", resourceCulture);
+                return ResourceManager.GetString("S2006_v_S_01_03_01", resourceCulture);
             }
         }
         
@@ -257,9 +257,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
         ///    &lt;xs: [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2010_v_01_02_01 {
+        internal static string S2010_v_S_01_02_01 {
             get {
-                return ResourceManager.GetString("S2010_v_01_02_01", resourceCulture);
+                return ResourceManager.GetString("S2010_v_S_01_02_01", resourceCulture);
             }
         }
         
@@ -270,9 +270,9 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
         ///    &lt;xs: [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        internal static string S2010_v_01_03_01 {
+        internal static string S2010_v_S_01_03_01 {
             get {
-                return ResourceManager.GetString("S2010_v_01_03_01", resourceCulture);
+                return ResourceManager.GetString("S2010_v_S_01_03_01", resourceCulture);
             }
         }
         

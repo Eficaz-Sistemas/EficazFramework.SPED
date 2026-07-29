@@ -14,8 +14,8 @@ public class S2205Test : BaseESocialTest<S2205>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtAltCadastral/{versao}";
         ValidationSchema = versao switch
         {
-            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2005_v_01_03_01,
-            _ => Resources.Schemas.eSocial.S2005_v_01_02_01
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2005_v_S_01_03_01,
+            _ => Resources.Schemas.eSocial.S2005_v_S_01_02_01
         };
         await TestaEvento();
     }

@@ -12,8 +12,8 @@ public class S2206Test : BaseESocialTest<S2206>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtAltContratual/{versao}";
         ValidationSchema = versao switch
         {
-            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2006_v_01_03_01,
-            _ => Resources.Schemas.eSocial.S2006_v_01_02_01
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S2006_v_S_01_03_01,
+            _ => Resources.Schemas.eSocial.S2006_v_S_01_02_01
         };
         await TestaEvento();
     }
