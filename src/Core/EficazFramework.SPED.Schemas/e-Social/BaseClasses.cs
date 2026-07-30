@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Reflection.Metadata;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
@@ -62,7 +62,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtTabLotacao" => typeof(S1020),
             "evtRemun" => typeof(S1200),
             "evtComProd" => typeof(S1260),
-            "evtReabreEvPerv" => typeof(S1298),
+            "evtReabreEvPer" => typeof(S1298),
             "evtFechaEvPer" => typeof(S1299),
             "evtAdmissao" => typeof(S2200),
             _ => default

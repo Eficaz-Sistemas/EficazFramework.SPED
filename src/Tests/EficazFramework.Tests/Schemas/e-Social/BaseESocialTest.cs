@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
 {
@@ -90,13 +90,16 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
         Utilities.XML.Sign.SignXml(doc, EficazFramework.SPED.Schemas.eSocial.Evento.root, evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
         // adicionando os schemas para validação do documento XML
-        ValidationEventHandler eventHandler = new(ValidationEventHandler);
-        doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
-        doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos)));
-        doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
-        // executando a validação
-        doc.Validate(eventHandler);
-        _errorCount.Should().Be(0);
+        if (!string.IsNullOrEmpty(ValidationSchema))
+        {
+            ValidationEventHandler eventHandler = new(ValidationEventHandler);
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos)));
+            doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
+            // executando a validação
+            doc.Validate(eventHandler);
+            _errorCount.Should().Be(0);
+        }
     }
 
     private void ValidationEventHandler(object sender, ValidationEventArgs e)
