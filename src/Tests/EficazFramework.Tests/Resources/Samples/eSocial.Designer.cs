@@ -295,5 +295,14 @@ namespace EficazFramework.SPED.Resources.Samples {
                 return ResourceManager.GetString("S2399_v_S_01_03_00", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a S-3000...
+        /// </summary>
+        internal static string S3000_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S3000_v_S_01_03_00", resourceCulture);
+            }
+        }
     }
 }

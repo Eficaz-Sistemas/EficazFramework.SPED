@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -763,6 +763,33 @@
       &lt;/remunAposTerm&gt;
     &lt;/infoTSVTermino&gt;
   &lt;/evtTSVTermino&gt;
+&lt;/eSocial&gt;</value>
+  </data>
+  <data name="S3000_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;eSocial xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.esocial.gov.br/schema/evt/evtExclusao/v_S_01_03_00"&gt;
+  &lt;evtExclusao Id="ID134785515000166202607300000000001"&gt;
+    &lt;ideEvento&gt;
+      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+      &lt;procEmi&gt;1&lt;/procEmi&gt;
+      &lt;verProc&gt;EficazFramework&lt;/verProc&gt;
+    &lt;/ideEvento&gt;
+    &lt;ideEmpregador&gt;
+      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+      &lt;nrInsc&gt;34785515000166&lt;/nrInsc&gt;
+    &lt;/ideEmpregador&gt;
+    &lt;infoExclusao&gt;
+      &lt;tpEvento&gt;S-1200&lt;/tpEvento&gt;
+      &lt;nrRecEvt&gt;1.1.0000000000000000000&lt;/nrRecEvt&gt;
+      &lt;ideTrabalhador&gt;
+        &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
+      &lt;/ideTrabalhador&gt;
+      &lt;ideFolhaPagto&gt;
+        &lt;indApuracao&gt;1&lt;/indApuracao&gt;
+        &lt;perApur&gt;2023-05&lt;/perApur&gt;
+      &lt;/ideFolhaPagto&gt;
+    &lt;/infoExclusao&gt;
+  &lt;/evtExclusao&gt;
 &lt;/eSocial&gt;</value>
   </data>
 </root>

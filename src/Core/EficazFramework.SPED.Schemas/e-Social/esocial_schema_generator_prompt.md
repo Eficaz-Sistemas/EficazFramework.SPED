@@ -267,6 +267,7 @@ Gere a classe C# referente ao evento e-Social do evento *S-<evento>*, seguindo r
    - O preenchimento dos dados deve ser feito inteiramente dentro do `public override void PreencheCampos(<Evento> evento)` usando a propriedade base `CnpjCpf`. **NÃO CRIE** um método secundário para receber o CNPJ por parâmetro.
    - Preencher o máximo possível (idealmente todos) os campos no método `PreencheCampos()` para validar a serialização contra o schema XSD de forma completa.
    - Teste `Valida()` deve testar as versões S_01_03_00 e S_01_02_00.
+   - **NÃO SE ESQUEÇA** de criar o método `Read_v_S_01_03_00()` que lê o XML de exemplo (armazenado no resx correspondente, ex: `S3000_v_S_01_03_00`) e desserializa a instância, verificando se a desserialização ocorre com sucesso. Isso foi frequentemente esquecido no passado!
 
 ---
 
