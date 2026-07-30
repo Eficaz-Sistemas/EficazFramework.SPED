@@ -77,6 +77,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtExclusao" => typeof(S3000),
             "evtBasesTrab" => typeof(S5001),
             "evtIrrfBenef" => typeof(S5002),
+            "evtBasesFGTS" => typeof(S5003),
             _ => typeof(Evento)
         };
         return new (targetType, new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/{evt}/{v}", IsNullable = false });

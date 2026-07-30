@@ -1310,3 +1310,15 @@ public enum TipoRendimentoPensaoAlimenticia
     [Description("RRA")]
     RRA = 18
 }
+
+public enum IndicadorIncidenciaFGTS
+{
+    [XmlEnum("1")]
+    [Description("Normal (incidência de FGTS)")]
+    Normal = 1,
+
+    [XmlEnum("9")]
+    [Description("Incidência de FGTS suspensa em decorrência de decisão judicial")]
+    SuspensaJudicial = 9
+}
+
