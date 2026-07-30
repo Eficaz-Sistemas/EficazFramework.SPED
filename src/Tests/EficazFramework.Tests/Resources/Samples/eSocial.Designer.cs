@@ -385,6 +385,12 @@ namespace EficazFramework.SPED.Resources.Samples {
                 return ResourceManager.GetString("S5011_v_S_01_03_00", resourceCulture);
             }
         }
+
+        internal static string S5012_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S5012_v_S_01_03_00", resourceCulture);
+            }
+        }
     }
 }
 

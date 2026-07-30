@@ -1352,4 +1352,19 @@ public enum IndicadorIncidenciaCS
     SubstituidaIsenta = 9
 }
 
+public enum IndicadorExistenciaInfoIRRF
+{
+    [XmlEnum("1")]
+    [Description("Há informações de IRRF")]
+    HaInformacoesIRRF = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém não há informações de IRRF")]
+    HaMovimentoSemInformacoesIRRF = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
 
