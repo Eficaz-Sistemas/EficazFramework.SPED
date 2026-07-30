@@ -1234,3 +1234,79 @@ public enum TipoProcessoRetificacao
     [Description("Número de Benefício - NB do INSS")]
     NumeroBeneficioINSS = 3
 }
+
+public enum IndicadorOrigemReembolso
+{
+    [XmlEnum("1")]
+    [Description("Reembolso efetuado pelo empregador no âmbito do plano de saúde")]
+    PlanoSaude = 1,
+
+    [XmlEnum("2")]
+    [Description("Reembolso efetuado pelo empregador como benefício do próprio empregador")]
+    BeneficioEmpregador = 2
+}
+
+public enum IndicadorTipoDeducao
+{
+    [XmlEnum("1")]
+    [Description("Previdência oficial")]
+    PrevidenciaOficial = 1,
+
+    [XmlEnum("2")]
+    [Description("Previdência privada")]
+    PrevidenciaPrivada = 2,
+
+    [XmlEnum("3")]
+    [Description("Fundo de Aposentadoria Programada Individual - FAPI")]
+    FAPI = 3,
+
+    [XmlEnum("4")]
+    [Description("Fundação de Previdência Complementar do Servidor Público - Funpresp")]
+    Funpresp = 4,
+
+    [XmlEnum("5")]
+    [Description("Pensão alimentícia")]
+    PensaoAlimenticia = 5,
+
+    [XmlEnum("7")]
+    [Description("Dependentes")]
+    Dependentes = 7
+}
+
+public enum TipoRendimentoDependente
+{
+    [XmlEnum("11")]
+    [Description("Remuneração mensal")]
+    RemuneracaoMensal = 11,
+
+    [XmlEnum("12")]
+    [Description("13º salário")]
+    DecimoTerceiroSalario = 12,
+
+    [XmlEnum("13")]
+    [Description("Férias")]
+    Ferias = 13
+}
+
+public enum TipoRendimentoPensaoAlimenticia
+{
+    [XmlEnum("11")]
+    [Description("Remuneração mensal")]
+    RemuneracaoMensal = 11,
+
+    [XmlEnum("12")]
+    [Description("13º salário")]
+    DecimoTerceiroSalario = 12,
+
+    [XmlEnum("13")]
+    [Description("Férias")]
+    Ferias = 13,
+
+    [XmlEnum("14")]
+    [Description("PLR")]
+    PLR = 14,
+
+    [XmlEnum("18")]
+    [Description("RRA")]
+    RRA = 18
+}
