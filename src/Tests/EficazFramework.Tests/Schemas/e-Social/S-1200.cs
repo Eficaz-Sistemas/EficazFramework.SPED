@@ -5,6 +5,7 @@ public class S1200Test : BaseESocialTest<S1200>
     private int _testNumber = 0;
 
     [Test]
+    [TestCase(Versao.v_S_01_02_00)]
     [TestCase(Versao.v_S_01_03_00)]
     public async Task Valida(Versao versao)
     {
@@ -13,7 +14,8 @@ public class S1200Test : BaseESocialTest<S1200>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtRemun/{versao}";
         ValidationSchema = versao switch
         {
-            _ => Resources.Schemas.eSocial.S1200_v_S_01_03_00
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1200_v_S_01_03_00,
+            _ => Resources.Schemas.eSocial.S1200_v_S_01_02_00
         };
         await TestaEvento();
     }
