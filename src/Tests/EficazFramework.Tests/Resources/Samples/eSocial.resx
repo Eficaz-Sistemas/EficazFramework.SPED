@@ -1427,10 +1427,42 @@
             &lt;/infoBasePerAntE&gt;
           &lt;/infoBaseFGTS&gt;
         &lt;/ideLotacao&gt;
-      &lt;/ideEstab&gt;
     &lt;/infoFGTS&gt;
   &lt;/evtFGTS&gt;
 &lt;/eSocial&gt;</value>
     <comment>S-5013, versão S-01.03.00</comment>
+  </data>
+  <data name="S2190_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;eSocial xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.esocial.gov.br/schema/evt/evtAdmPrelim/v_S_01_03_00"&gt;
+  &lt;evtAdmPrelim Id="ID1347855150000002024010100000000001"&gt;
+    &lt;ideEvento&gt;
+      &lt;indRetif&gt;1&lt;/indRetif&gt;
+      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+      &lt;procEmi&gt;1&lt;/procEmi&gt;
+      &lt;verProc&gt;2.2&lt;/verProc&gt;
+    &lt;/ideEvento&gt;
+    &lt;ideEmpregador&gt;
+      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+      &lt;nrInsc&gt;34785515&lt;/nrInsc&gt;
+    &lt;/ideEmpregador&gt;
+    &lt;infoRegPrelim&gt;
+      &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
+      &lt;dtNascto&gt;1990-01-01&lt;/dtNascto&gt;
+      &lt;dtAdm&gt;2024-01-01&lt;/dtAdm&gt;
+      &lt;matricula&gt;123456&lt;/matricula&gt;
+      &lt;codCateg&gt;101&lt;/codCateg&gt;
+      &lt;natAtividade&gt;1&lt;/natAtividade&gt;
+      &lt;infoRegCTPS&gt;
+        &lt;CBOCargo&gt;123456&lt;/CBOCargo&gt;
+        &lt;vrSalFx&gt;2500.50&lt;/vrSalFx&gt;
+        &lt;undSalFixo&gt;5&lt;/undSalFixo&gt;
+        &lt;tpContr&gt;1&lt;/tpContr&gt;
+        &lt;dtTerm&gt;2024-12-31&lt;/dtTerm&gt;
+      &lt;/infoRegCTPS&gt;
+    &lt;/infoRegPrelim&gt;
+  &lt;/evtAdmPrelim&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-2190, versão S-01.03.00</comment>
   </data>
 </root>
