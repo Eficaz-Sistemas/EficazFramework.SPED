@@ -1322,3 +1322,34 @@ public enum IndicadorIncidenciaFGTS
     SuspensaJudicial = 9
 }
 
+public enum IndicadorExistenciaInfoCS
+{
+    [XmlEnum("1")]
+    [Description("Há informações com apuração de contribuições sociais")]
+    ComApuracao = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém sem apuração de contribuições sociais")]
+    SemApuracao = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
+public enum IndicadorIncidenciaCS
+{
+    [XmlEnum("1")]
+    [Description("Normal")]
+    Normal = 1,
+
+    [XmlEnum("2")]
+    [Description("Atividade concomitante")]
+    Concomitante = 2,
+
+    [XmlEnum("9")]
+    [Description("Substituída ou isenta")]
+    SubstituidaIsenta = 9
+}
+
+
