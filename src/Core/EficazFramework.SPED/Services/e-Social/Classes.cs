@@ -178,29 +178,29 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
 public partial class Response : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_3_0;
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_0;
 
-
-    private RetornoLoteEventos retornoLoteEventosAssincronoField;
-    public RetornoLoteEventos retornoLoteEventosAssincrono
+    private Schemas.eSocial.RetornoEnvioLoteEventos retornoEnvioLoteEventosField;
+    
+    [XmlElement(Order = 0)]
+    public Schemas.eSocial.RetornoEnvioLoteEventos retornoEnvioLoteEventos
     {
-        get => retornoLoteEventosAssincronoField;
+        get => retornoEnvioLoteEventosField;
         set
         {
-            retornoLoteEventosAssincronoField = value;
-            RaisePropertyChanged(nameof(retornoLoteEventosAssincrono));
+            retornoEnvioLoteEventosField = value;
+            RaisePropertyChanged(nameof(retornoEnvioLoteEventos));
         }
     }
-
 
     private XmlSerializer sSerializer;
 
     // Serialization Members
     private XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(Response), new XmlRootAttribute("Reinf")
+        return new XmlSerializer(typeof(Response), new XmlRootAttribute("eSocial")
         {
-            Namespace = $"http://www.reinf.esocial.gov.br/schemas/retornoLoteEventosAssincrono/{Versao}",
+            Namespace = $"http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/{Versao}",
             IsNullable = false
         });
     }

@@ -1,0 +1,38 @@
+name: Formatar Corpo da Issue via Título
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  format-issue:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'product-quality')
+    steps:
+      - name: Processar Título e Corpo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = context.payload.issue.title;
+            let body = context.payload.issue.body;
+            
+            // Regex para capturar o Evento e a Versão a partir do título preenchido pelo usuário
+            // Exemplo de match para: "[e-Social] Evento S-1000, versão S-1.3"
+            const match = title.match(/Evento\s+([a-zA-Z0-9_-]+),\s+versão\s+([a-zA-Z0-9_\-.]+)/i);
+            
+            if (match) {
+              const evtID = match[1].trim();
+              const version = match[2].trim();
+              
+              // Substitui as variáveis no corpo da issue
+              body = body.replace(/<evtID>/g, evtID);
+              body = body.replace(/<version>/g, version);
+              
+              // Atualiza o corpo da issue no GitHub
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }

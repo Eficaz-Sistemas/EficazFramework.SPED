@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
 
@@ -59,12 +59,12 @@ public partial class S1260 : Evento
 
 public partial class S1260ComercializacaoProd : ESocialBindableObject
 {
-    private IdeEventoPeriodico ideEventoField;
+    private S1260IdentificacaoEvento ideEventoField;
     private Empregador ideEmpregadorField;
     private S1260InfoComProducao infoComProdField;
     private string idField;
 
-    public IdeEventoPeriodico ideEvento
+    public S1260IdentificacaoEvento ideEvento
     {
         get => ideEventoField;
         set
@@ -456,6 +456,87 @@ public partial class S1260TipoComercializacaoInfoProcJudicial : ESocialBindableO
         {
             vrSenarSuspFieldSpecified = value;
             RaisePropertyChanged(nameof(vrSenarSuspSpecified));
+        }
+    }
+}
+
+public partial class S1260IdentificacaoEvento : ESocialBindableObject
+{
+    private IndicadorRetificacao indRetifField = IndicadorRetificacao.Original;
+    private string nrReciboField;
+    private string perApurField;
+    private IndicadorGuia indGuiaField = IndicadorGuia.DAE;
+    private Ambiente tpAmbField = Ambiente.Producao;
+    private EmissorEvento procEmiField = EmissorEvento.AppEmpregador;
+    private string verProcField;
+
+    public IndicadorRetificacao indRetif
+    {
+        get => indRetifField;
+        set
+        {
+            indRetifField = value;
+            RaisePropertyChanged(nameof(indRetif));
+        }
+    }
+
+    public string nrRecibo
+    {
+        get => nrReciboField;
+        set
+        {
+            nrReciboField = value;
+            RaisePropertyChanged(nameof(nrRecibo));
+        }
+    }
+
+    public string perApur
+    {
+        get => perApurField;
+        set
+        {
+            perApurField = value;
+            RaisePropertyChanged(nameof(perApur));
+        }
+    }
+
+    public IndicadorGuia indGuia
+    {
+        get => indGuiaField;
+        set
+        {
+            indGuiaField = value;
+            RaisePropertyChanged(nameof(indGuia));
+        }
+    }
+
+    public Ambiente tpAmb
+    {
+        get => tpAmbField;
+        set
+        {
+            tpAmbField = value;
+            RaisePropertyChanged(nameof(tpAmb));
+        }
+    }
+
+    public EmissorEvento procEmi
+    {
+        get => procEmiField;
+        set
+        {
+            procEmiField = value;
+            RaisePropertyChanged(nameof(procEmi));
+        }
+    }
+
+    public string verProc
+    {
+        get => verProcField;
+        set
+        {
+            verProcField = value;
+            RaisePropertyChanged(nameof(verProc));
         }
     }
 }

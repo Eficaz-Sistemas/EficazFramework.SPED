@@ -30,19 +30,19 @@ public static class Sign
         if (signAsSHA256 == true)
         {
             sxml.SigningKey = certificate.GetRSAPrivateKey();
-            sxml.SignedInfo.SignatureMethod = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
+            sxml.SignedInfo?.SignatureMethod = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
         }
         else
         {
 #pragma warning disable SYSLIB0028
             sxml.SigningKey = certificate.PrivateKey;
-            sxml.SignedInfo.SignatureMethod = "http://www.w3.org/2000/09/xmldsig#rsa-sha1";
+            sxml.SignedInfo?.SignatureMethod = "http://www.w3.org/2000/09/xmldsig#rsa-sha1";
 #pragma warning restore SYSLIB0028
         }
 
         Reference @ref = new();
         if (emptyURI == false)
-            @ref.Uri = "#" + xml.GetElementsByTagName(tagID).Item(0)!.Attributes.Cast<XmlAttribute>().Where(att => att.Name.ToLower() == "id").First().InnerText;
+            @ref.Uri = "#" + xml.GetElementsByTagName(tagID).Item(0)!.Attributes?.Cast<XmlAttribute>().Where(att => att.Name.ToLower() == "id").First().InnerText;
         else
             @ref.Uri = "";
 
@@ -67,7 +67,7 @@ public static class Sign
         XmlElement xmle = sxml.GetXml();
 
         // ## Adiciona o XMLElement assinado ao XMLDocument e faz um clonning para evitar algum problema que eu não entendi
-        tags[0].AppendChild(xml.ImportNode(xmle, true));
+        tags[0]?.AppendChild(xml.ImportNode(xmle, true));
     }
 
 

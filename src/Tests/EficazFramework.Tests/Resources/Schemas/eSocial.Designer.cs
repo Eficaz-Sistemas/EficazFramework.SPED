@@ -80,6 +80,26 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///
+        ///&lt;xs:schema version=&quot;1.0.0&quot;
+        ///           xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+        ///           xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+        ///           xmlns:esocial=&quot;http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/v1_1_0&quot;
+        ///           targetNamespace=&quot;http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/v1_1_0&quot;
+        ///           elementFormDefault=&quot;qualified&quot;
+        ///           attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///
+        ///  &lt;xs:element name=&quot;eSocial&quot;&gt;
+        ///   [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string RetornoEnvioLoteEventos_v1_1_0 {
+            get {
+                return ResourceManager.GetString("RetornoEnvioLoteEventos_v1_1_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
         ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
@@ -128,6 +148,18 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTabRubrica/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtTabRubrica/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1010_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1010_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
         ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
         ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
@@ -136,6 +168,31 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string S1020_v_S_01_02_00 {
             get {
                 return ResourceManager.GetString("S1020_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtTabLotacao/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1020_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1020_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtRemun/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
+        ///     [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1200_v_S_01_02_00 {
+            get {
+                return ResourceManager.GetString("S1200_v_S_01_02_00", resourceCulture);
             }
         }
         
@@ -166,15 +223,43 @@ namespace EficazFramework.SPED.Resources.Schemas {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;        ///
-        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;        ///
-        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;        ///
-        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;        ///
-        ///  [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtPgtos/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string S1210_v_S_01_03_00 {
             get {
                 return ResourceManager.GetString("S1210_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtComProd/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtComProd/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
+        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1260_v_S_01_02_00 {
+            get {
+                return ResourceManager.GetString("S1260_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtComProd/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtComProd/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt;
+        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1260_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1260_v_S_01_03_00", resourceCulture);
             }
         }
         
@@ -199,6 +284,54 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string S1280_v_S_01_03_00 {
             get {
                 return ResourceManager.GetString("S1280_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.x [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1298_v_S_01_02_00 {
+            get {
+                return ResourceManager.GetString("S1298_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtReabreEvPer/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.x [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1298_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1298_v_S_01_03_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v_S_01_02_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v_S_01_02_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1299_v_S_01_02_00 {
+            get {
+                return ResourceManager.GetString("S1299_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtFechaEvPer/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S1299_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S1299_v_S_01_03_00", resourceCulture);
             }
         }
         
@@ -309,6 +442,18 @@ namespace EficazFramework.SPED.Resources.Schemas {
         internal static string S2200_v_S_01_02_00 {
             get {
                 return ResourceManager.GetString("S2200_v_S_01_02_00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        ///&lt;xs:schema xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtAdmissao/v_S_01_03_00&quot; targetNamespace=&quot;http://www.esocial.gov.br/schema/evt/evtAdmissao/v_S_01_03_00&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;
+        ///    &lt;xs:include schemaLocation=&quot;tipos.xsd&quot; /&gt;
+        ///    &lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot; /&gt; [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string S2200_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S2200_v_S_01_03_00", resourceCulture);
             }
         }
         
@@ -592,11 +737,11 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///
         ///    &lt;xs:complexType name=&quot;T_ideEvento_evtTab_inicial&quot;&gt;
         ///        &lt;xs:annotation&gt;
-        ///            &lt;xs:documentation&gt;Informações de identificação do evento.&lt;/xs:documentation&gt;
+        ///            &lt;xs:documentation&gt;InformaÃ§Ãµes de identificaÃ§Ã£o do evento.&lt;/xs:documentation&gt;
         ///        &lt;/xs:annotation&gt;
         ///        &lt;xs:sequence&gt;
         ///            &lt;xs:element name=&quot;tpAmb&quot; type=&quot;TS_tpAmb&quot; /&gt;
-        ///            &lt;xs:element name=&quot;procE [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///            &lt;xs:element name=&quot;p [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string tipos_v_S_01_02_00 {
             get {
@@ -612,11 +757,11 @@ namespace EficazFramework.SPED.Resources.Schemas {
         ///
         ///    &lt;xs:complexType name=&quot;T_ideEvento_evtTab_inicial&quot;&gt;
         ///        &lt;xs:annotation&gt;
-        ///            &lt;xs:documentation&gt;Informações de identificação do evento.&lt;/xs:documentation&gt;
+        ///            &lt;xs:documentation&gt;InformaÃ§Ãµes de identificaÃ§Ã£o do evento.&lt;/xs:documentation&gt;
         ///        &lt;/xs:annotation&gt;
         ///        &lt;xs:sequence&gt;
         ///            &lt;xs:element name=&quot;tpAmb&quot; type=&quot;TS_tpAmb&quot; /&gt;
-        ///            &lt;xs:element name=&quot;procEm [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///            &lt;xs:element name=&quot;pr [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string tipos_v_S_01_03_00 {
             get {

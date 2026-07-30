@@ -900,10 +900,10 @@ public enum ImigranteCondicao
 
 public enum TributoProcessoJud
 {
-    [System.Xml.Serialization.XmlEnum("2")]
+    [System.Xml.Serialization.XmlEnum("1")]
     [System.ComponentModel.Description("1 - IRRF")]
     IRRF = 1,
-    [System.Xml.Serialization.XmlEnum("1")]
+    [System.Xml.Serialization.XmlEnum("2")]
     [System.ComponentModel.Description("2 - Contribuições sociais do trabalhador")]
     ContribuicoesSociais = 2
 }

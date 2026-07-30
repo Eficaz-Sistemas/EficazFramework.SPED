@@ -64,7 +64,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtPgtos" => typeof(S1210),
             "evtComProd" => typeof(S1260),
             "evtInfoComplPer" => typeof(S1280),
-            "evtReabreEvPerv" => typeof(S1298),
+            "evtReabreEvPer" => typeof(S1298),
             "evtFechaEvPer" => typeof(S1299),
             "evtAdmPrelim" => typeof(S2190),
             "evtAdmissao" => typeof(S2200),

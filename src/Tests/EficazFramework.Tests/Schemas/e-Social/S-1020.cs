@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 public class S1020Test : BaseESocialTest<S1020>
 {
@@ -6,6 +6,7 @@ public class S1020Test : BaseESocialTest<S1020>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
@@ -13,6 +14,7 @@ public class S1020Test : BaseESocialTest<S1020>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1020_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1020_v_S_01_02_00
         };
         await TestaEvento();
@@ -21,6 +23,7 @@ public class S1020Test : BaseESocialTest<S1020>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
@@ -28,6 +31,7 @@ public class S1020Test : BaseESocialTest<S1020>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1020_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1020_v_S_01_02_00
         };
         await TestaEvento();
@@ -36,6 +40,7 @@ public class S1020Test : BaseESocialTest<S1020>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
@@ -43,6 +48,7 @@ public class S1020Test : BaseESocialTest<S1020>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabLotacao/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1020_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1020_v_S_01_02_00
         };
         await TestaEvento();
@@ -309,6 +315,30 @@ public class S1020Test : BaseESocialTest<S1020>
         itemXml.ideLotacao.codLotacao.Should().Be(itemPopulado.ideLotacao.codLotacao);
         itemXml.ideLotacao.iniValid.Should().Be(itemPopulado.ideLotacao.iniValid);
         itemXml.ideLotacao.fimValid.Should().Be(itemPopulado.ideLotacao.fimValid);
+    }
+    #endregion
+
+    #region Retrocompatibilidade
+    [Test]
+    [TestCase(Versao.v02_04_02)]
+    [TestCase(Versao.v_S_01_01_00)]
+    [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
+    public async Task ValidaLeituraXmlLegado(Versao versao)
+    {
+        _versao = versao;
+        S1020 evento = new();
+        PreencheCamposInclusao(evento, CnpjCpf);
+        evento.Versao = versao;
+        evento.GeraEventoID();
+
+        string xmlContent = evento.Write();
+        Evento eventoLido = await Evento.ReadAsync(xmlContent);
+
+        eventoLido.Should().NotBeNull();
+        eventoLido.Should().BeOfType<S1020>();
+        eventoLido.Versao.Should().Be(versao);
+        ((S1020)eventoLido).evtTabLotacao.ideEmpregador.nrInsc.Should().Be(evento.evtTabLotacao.ideEmpregador.nrInsc);
     }
     #endregion
 }
