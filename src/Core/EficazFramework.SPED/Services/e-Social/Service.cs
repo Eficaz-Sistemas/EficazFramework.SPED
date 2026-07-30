@@ -5,9 +5,9 @@ using System.Xml;
 using System.Xml.Schema;
 
 namespace EficazFramework.SPED.Services.eSocial;
-public class ESocialServices : RestServiceBase
+public class ESocialServices : SoapServiceBase
 {
-    public ESocialServices() : base(true) { }
+    public ESocialServices() { }
 
 
     /// <summary>
