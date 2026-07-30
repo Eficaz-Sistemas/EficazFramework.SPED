@@ -1383,4 +1383,54 @@
 &lt;/eSocial&gt;</value>
     <comment>S-5012, versão S-01.03.00</comment>
   </data>
+  <data name="S5013_v_S_01_03_00" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;eSocial xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.esocial.gov.br/schema/evt/evtFGTS/v_S_01_03_00"&gt;
+  &lt;evtFGTS Id="ID134785515000166202607300000000001"&gt;
+    &lt;ideEvento&gt;
+      &lt;indApuracao&gt;1&lt;/indApuracao&gt;
+      &lt;perApur&gt;2025-02&lt;/perApur&gt;
+    &lt;/ideEvento&gt;
+    &lt;ideEmpregador&gt;
+      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+      &lt;nrInsc&gt;34785515&lt;/nrInsc&gt;
+    &lt;/ideEmpregador&gt;
+    &lt;infoFGTS&gt;
+      &lt;nrRecArqBase&gt;1.1.0000000000000000000&lt;/nrRecArqBase&gt;
+      &lt;indExistInfo&gt;1&lt;/indExistInfo&gt;
+      &lt;ideEstab&gt;
+        &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        &lt;nrInsc&gt;34785515000166&lt;/nrInsc&gt;
+        &lt;ideLotacao&gt;
+          &lt;codLotacao&gt;LOT01&lt;/codLotacao&gt;
+          &lt;tpLotacao&gt;01&lt;/tpLotacao&gt;
+          &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+          &lt;nrInsc&gt;34785515000166&lt;/nrInsc&gt;
+          &lt;infoBaseFGTS&gt;
+            &lt;basePerApur&gt;
+              &lt;tpValor&gt;11&lt;/tpValor&gt;
+              &lt;indIncid&gt;1&lt;/indIncid&gt;
+              &lt;baseFGTS&gt;5000.00&lt;/baseFGTS&gt;
+              &lt;vrFGTS&gt;400.00&lt;/vrFGTS&gt;
+              &lt;notAFT&gt;123456789&lt;/notAFT&gt;
+              &lt;natRubr&gt;1000&lt;/natRubr&gt;
+            &lt;/basePerApur&gt;
+            &lt;infoBasePerAntE&gt;
+              &lt;perRef&gt;2024-12&lt;/perRef&gt;
+              &lt;tpAcConv&gt;E&lt;/tpAcConv&gt;
+              &lt;basePerAntE&gt;
+                &lt;tpValorE&gt;13&lt;/tpValorE&gt;
+                &lt;indIncidE&gt;1&lt;/indIncidE&gt;
+                &lt;baseFGTSE&gt;2500.00&lt;/baseFGTSE&gt;
+                &lt;vrFGTSE&gt;200.00&lt;/vrFGTSE&gt;
+              &lt;/basePerAntE&gt;
+            &lt;/infoBasePerAntE&gt;
+          &lt;/infoBaseFGTS&gt;
+        &lt;/ideLotacao&gt;
+      &lt;/ideEstab&gt;
+    &lt;/infoFGTS&gt;
+  &lt;/evtFGTS&gt;
+&lt;/eSocial&gt;</value>
+    <comment>S-5013, versão S-01.03.00</comment>
+  </data>
 </root>

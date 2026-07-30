@@ -1367,4 +1367,20 @@ public enum IndicadorExistenciaInfoIRRF
     NaoHaMovimento = 3
 }
 
+public enum IndicadorExistenciaInfoFGTS
+{
+    [XmlEnum("1")]
+    [Description("Há informações de FGTS")]
+    HaInformacoesFGTS = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém não há informações de FGTS")]
+    HaMovimentoSemInformacoesFGTS = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
+
 
