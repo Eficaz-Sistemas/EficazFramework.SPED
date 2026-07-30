@@ -1,3 +1,4 @@
+using EficazFramework.SPED.Services.EFD_Reinf;
 using System.IO;
 
 namespace EficazFramework.SPED.Services.eSocial;
@@ -148,6 +149,8 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
     private XElement anyField;
     private string idField;
 
+    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_0;
+
     [XmlAnyElement(Order = 0)]
     public XElement Any
     {
@@ -169,6 +172,41 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
             RaisePropertyChanged(nameof(Id));
         }
     }
+
+    // Serialization Members
+    private XmlSerializer sSerializer;
+    private XmlSerializer DefineSerializer()
+    {
+        return new XmlSerializer(typeof(TArquivoEsocial), new XmlRootAttribute("evento")
+        {
+            Namespace = $"http://www.esocial.gov.br/schema/lote/eventos/envio/{Versao}",
+            IsNullable = false
+        });
+    }
+
+    public string Write()
+    {
+        StreamReader streamReader = null;
+        MemoryStream memoryStream = null;
+        try
+        {
+            memoryStream = new MemoryStream();
+            sSerializer = DefineSerializer();
+            using (var xmlwriter = System.Xml.XmlWriter.Create(memoryStream, new XmlWriterSettings() { Indent = true }))
+            {
+                sSerializer.Serialize(xmlwriter, this);
+            }
+            memoryStream.Seek(0L, SeekOrigin.Begin);
+            streamReader = new StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
 }
 
 
