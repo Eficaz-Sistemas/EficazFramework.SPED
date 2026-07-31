@@ -1,11 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
-	<Version>6.5.1</Version>
-	<AssemblyVersion>6.5.1.0</AssemblyVersion>
-	<FileVersion>6.5.1.0</FileVersion>
-	<LangVersion>latest</LangVersion>
+    <Version>6.5.2</Version>
+    <AssemblyVersion>6.5.2.0</AssemblyVersion>
+    <FileVersion>6.5.2.0</FileVersion>
+    <LangVersion>latest</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
     <Description>Biblioteca para leitura, auditoria e escrita das obrigações acessórias, documentos e escriturações do projeto SPED (Federal, B2G) e Operações Financeiras (B2B).</Description>
@@ -19,22 +18,21 @@
     <AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Configurations>Debug;Release</Configurations>
-	<NeutralLanguage>pt-BR</NeutralLanguage>
-	<GenerateDocumentationFile>false</GenerateDocumentationFile>
-	<DefaultDocumentationFolder>..\..\..\Docs\Api</DefaultDocumentationFolder>
-	<DefaultDocumentationAssemblyPageName>EficazFramework SPED</DefaultDocumentationAssemblyPageName>
-	<DefaultDocumentationGeneratedPages>Assembly, Namespaces, Classes, Enums, Methods</DefaultDocumentationGeneratedPages>
-	<DefaultDocumentationFileNameFactory>Folder</DefaultDocumentationFileNameFactory>
-	<DefaultDocumentationIncludeUndocumentedItems>true</DefaultDocumentationIncludeUndocumentedItems>
-	<DefaultDocumentationGeneratedAccessModifiers>Public</DefaultDocumentationGeneratedAccessModifiers>
-	<DefaultDocumentationLogLevel>Trace</DefaultDocumentationLogLevel>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DefaultDocumentationFolder>..\..\..\Docs\Api</DefaultDocumentationFolder>
+    <DefaultDocumentationAssemblyPageName>EficazFramework SPED</DefaultDocumentationAssemblyPageName>
+    <DefaultDocumentationGeneratedPages>Assembly, Namespaces, Classes, Enums, Methods</DefaultDocumentationGeneratedPages>
+    <DefaultDocumentationFileNameFactory>Folder</DefaultDocumentationFileNameFactory>
+    <DefaultDocumentationIncludeUndocumentedItems>true</DefaultDocumentationIncludeUndocumentedItems>
+    <DefaultDocumentationGeneratedAccessModifiers>Public</DefaultDocumentationGeneratedAccessModifiers>
+    <DefaultDocumentationLogLevel>Trace</DefaultDocumentationLogLevel>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <NoWarn>1573;1591;1701;1702</NoWarn>
+    <NoWarn>1573;1591;1701;1702</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <NoWarn>1573;1591;1701;1702</NoWarn>
+    <NoWarn>1573;1591;1701;1702</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Schemas\**" />
@@ -44,14 +42,12 @@
   <ItemGroup>
     <Compile Remove="Services\NFe\Contracts\INfeConsultaProtocolo4.cs" />
   </ItemGroup>
-	
   <ItemGroup>
-	  <None Include="..\..\..\Assets\logo.png">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
-	  </None>
+    <None Include="..\..\..\Assets\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="DefaultDocumentation" Version="1.2.5">
       <PrivateAssets>all</PrivateAssets>
@@ -62,28 +58,24 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-	
   <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.18" />
     <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="8.1.2" />
   </ItemGroup>
-  
   <ItemGroup Condition=" '$(TargetFramework)' == 'net10.0' ">
-	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.10" />
-	  <PackageReference Include="System.ServiceModel.Http" Version="10.0.652802" />
-	  <PackageReference Include="System.ServiceModel.NetTcp" Version="10.0.652802" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.10" />
+    <PackageReference Include="System.ServiceModel.Http" Version="10.0.652802" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="10.0.652802" />
   </ItemGroup>
-  
-	<ItemGroup>
-		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-			<_Parameter1>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>
 				EficazFramework.Tests, PublicKey=0024000004800000940000000602000000240000525341310004000001000100d16a73322f95949ad691901229d27abe5dd688e03aa2550ca2a551184e2554b8ddc5416bf8d52a88339e24dd8063cf74e0f5ecd12b5e2927ad604049e29acb4648db2675ac6cb1e31638767731dc1ae90a6432bac0178e5422b7297d946e6fded3fa4addd534d06e75ad983675cf5bae2e41c8915890ec122ed0baef5fc74aad
 			</_Parameter1>
-		</AssemblyAttribute>
-	</ItemGroup>
-  
-	<ItemGroup>
-	  <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
-	</ItemGroup>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
+  </ItemGroup>
 </Project>

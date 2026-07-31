@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64E9A101-EA8E-41FB-9022-DDD601ACB847}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionScripts", "SolutionScripts", "{53069109-23DF-43BC-9E79-61ADBBB98472}"
 	ProjectSection(SolutionItems) = preProject
 		SolutionScripts\Tests.psm1 = SolutionScripts\Tests.psm1
+		SolutionScripts\Version.psm1 = SolutionScripts\Version.psm1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EficazFramework.SPED.Schemas", "Core\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj", "{D28B2AB6-D608-4C71-B84C-4FB58D9C3FDE}"
