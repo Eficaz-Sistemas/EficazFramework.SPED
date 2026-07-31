@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.EFD_Reinf;
+namespace EficazFramework.SPED.Schemas.EFD_Reinf;
 
 /// <summary>
 /// Utilitário para geração do identificador único de evento, para sua transmissão.
@@ -31,6 +31,7 @@ public static class ReinfTimeStampUtils
 
 
 /// <exclude/>
+[Serializable()]
 public abstract class EfdReinfBindableObject : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;

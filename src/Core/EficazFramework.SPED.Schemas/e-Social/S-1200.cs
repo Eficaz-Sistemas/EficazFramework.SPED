@@ -197,7 +197,7 @@ public class TrabalhadorInfoComplem : ESocialBindableObject
         }
     }
 
-    [XmlElement(ElementName = "dtNascto")]
+    [XmlElement(ElementName = "dtNascto", DataType = "date")]
     public DateTime DtNascto
     {
         get => dtNascto;
@@ -261,7 +261,7 @@ public class TrabalhadorSucessaoVinc : ESocialBindableObject
         }
     }
 
-    [XmlElement(ElementName = "dtAdm")]
+    [XmlElement(ElementName = "dtAdm", DataType = "date")]
     public DateTime DtAdm
     {
         get => dtAdm;
@@ -512,7 +512,7 @@ public class InfoRRA : ESocialBindableObject
     private string descRRAField;
     private int qtdMesesRRAField;
     private DetalhamentoDespJud despProcJudField;
-    private Advogado ideAdvField;
+    private List<Advogado> ideAdvField;
 
     public TipoProcesso tpProcRRA
     {
@@ -564,7 +564,11 @@ public class InfoRRA : ESocialBindableObject
         }
     }
 
-    public Advogado ideAdv
+    /// <summary>
+    /// Identificação dos advogados. Grupo repetível (maxOccurs = 99 no leiaute).
+    /// </summary>
+    [XmlElement(ElementName = "ideAdv")]
+    public List<Advogado> ideAdv
     {
         get => ideAdvField;
         set
@@ -801,6 +805,11 @@ public class ItensRemuneracao : ESocialBindableObject
     public bool ShouldSerializeIndApurIR() =>
         indApurIR == 0 || indApurIR == 1;
 
+    /// <remarks>
+    /// Válido apenas quando este item pertence ao período de apuração corrente ({dmDev/infoPerApur}).
+    /// O leiaute não permite {descFolha} nos itens de remuneração de {dmDev/infoPerAnt} (ver
+    /// <see cref="RemuneracaoPeriodoAnterior"/>) — não preencher este campo nesse contexto.
+    /// </remarks>
     public DescontoRemuneracao descFolha
     {
         get => descFolhaField;
@@ -908,7 +917,7 @@ public class IdeAcordoColetivo : ESocialBindableObject
     /// Data da assinatura do acordo, convenção coletiva, sentença normativa ou da conversão da 
     /// licença saúde em acidente de trabalho.
     /// </summary>
-    [XmlElement(ElementName = "dtAcConv")]
+    [XmlElement(ElementName = "dtAcConv", DataType = "date")]
     public DateTime DtAcConv
     {
         get => dtAcConvField;
@@ -967,7 +976,7 @@ public class IdeAcordoColetivo : ESocialBindableObject
 public class IdePeriodoDiferencas : ESocialBindableObject
 {
     private string perRef;
-    private List<IdeEstabelecimentoLotacao> ideEstabLot;
+    private List<IdeEstabelecimentoLotacaoAnterior> ideEstabLot;
 
     /// <summary>
     /// Informar o período ao qual se refere o complemento de remuneração, no formato AAAA-MM.
@@ -984,13 +993,131 @@ public class IdePeriodoDiferencas : ESocialBindableObject
     }
 
     [XmlElement(ElementName = "ideEstabLot")]
-    public List<IdeEstabelecimentoLotacao> IdeEstabLot
+    public List<IdeEstabelecimentoLotacaoAnterior> IdeEstabLot
     {
         get => ideEstabLot;
         set
         {
             ideEstabLot = value;
             RaisePropertyChanged(nameof(IdeEstabLot));
+        }
+    }
+}
+
+/// <summary>
+/// Identificação do estabelecimento e lotação aos quais se referem as diferenças de remuneração
+/// de períodos anteriores (grupo <c>infoPerAnt/ideADC/idePeriodo/ideEstabLot</c>).
+/// </summary>
+/// <remarks>
+/// Diferente do grupo homônimo em <see cref="InfoPerApur"/>, este grupo não possui o campo
+/// {qtdDiasAv} e sua lista de remuneração é publicada na tag {remunPerAnt}, não {remunPerApur}.
+/// </remarks>
+public class IdeEstabelecimentoLotacaoAnterior : ESocialBindableObject
+{
+    private PersonalidadeJuridica tpInscField;
+    private string nrInscField;
+    private string codLotacaoField;
+    private List<RemuneracaoPeriodoAnterior> remunPerAntField;
+
+    [XmlElement(ElementName = "tpInsc")]
+    public PersonalidadeJuridica TpInsc
+    {
+        get => tpInscField;
+        set
+        {
+            tpInscField = value;
+            RaisePropertyChanged(nameof(TpInsc));
+        }
+    }
+
+    [XmlElement(ElementName = "nrInsc")]
+    public string NrInsc
+    {
+        get => nrInscField;
+        set
+        {
+            nrInscField = value;
+            RaisePropertyChanged(nameof(NrInsc));
+        }
+    }
+
+    [XmlElement(ElementName = "codLotacao")]
+    public string CodLotacao
+    {
+        get => codLotacaoField;
+        set
+        {
+            codLotacaoField = value;
+            RaisePropertyChanged(nameof(CodLotacao));
+        }
+    }
+
+    [XmlElement(ElementName = "remunPerAnt")]
+    public List<RemuneracaoPeriodoAnterior> RemunPerAnt
+    {
+        get => remunPerAntField;
+        set
+        {
+            remunPerAntField = value;
+            RaisePropertyChanged(nameof(RemunPerAnt));
+        }
+    }
+}
+
+/// <summary>
+/// Remuneração do trabalhador em períodos anteriores (grupo {remunPerAnt}).
+/// </summary>
+public class RemuneracaoPeriodoAnterior : ESocialBindableObject
+{
+    private string matricula;
+    private IndicadorSubstSimples indSimples;
+    private List<ItensRemuneracao> itensRemun;
+    private InforAgenteNocivo infoAgNocivo;
+
+    [XmlElement(ElementName = "matricula")]
+    public string Matricula
+    {
+        get => matricula;
+        set
+        {
+            matricula = value;
+            RaisePropertyChanged(nameof(Matricula));
+        }
+    }
+
+    [XmlElement(ElementName = "indSimples")]
+    public IndicadorSubstSimples IndSimples
+    {
+        get => indSimples;
+        set
+        {
+            indSimples = value;
+            RaisePropertyChanged(nameof(IndSimples));
+        }
+    }
+
+    public bool ShouldSerializeIndSimples() =>
+        IndSimples != IndicadorSubstSimples.NA;
+
+    [XmlElement(ElementName = "itensRemun")]
+    public List<ItensRemuneracao> ItensRemun
+    {
+        get => itensRemun;
+        set
+        {
+            itensRemun = value;
+            RaisePropertyChanged(nameof(ItensRemun));
+        }
+    }
+
+    [XmlElement(ElementName = "infoAgNocivo")]
+    public InforAgenteNocivo InfoAgNocivo
+    {
+        get => infoAgNocivo;
+        set
+        {
+            infoAgNocivo = value;
+            RaisePropertyChanged(nameof(InfoAgNocivo));
         }
     }
 }
@@ -1022,6 +1149,9 @@ public class InfoComplCont : ESocialBindableObject
             RaisePropertyChanged(nameof(NatAtividade));
         }
     }
+
+    public bool ShouldSerializeNatAtividade() =>
+        natAtividade == NaturezaAtividade.Urbano || natAtividade == NaturezaAtividade.Rural;
 
     [XmlElement(ElementName = "qtdDiasTrab")]
     public int QtdDiasTrab
