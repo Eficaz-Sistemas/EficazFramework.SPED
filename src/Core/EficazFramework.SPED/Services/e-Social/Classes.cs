@@ -6,14 +6,19 @@ namespace EficazFramework.SPED.Services.eSocial;
 /// <summary>
 /// Classe base utilizada nas requests dos serviços REST (assíncronos) do e-Social
 /// </summary>
+[System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
 public partial class Request : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_1;
+    public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_1;
 
     private EnvioLoteEventos envioLoteEventosField;
     
+    [System.ServiceModel.MessageBodyMemberAttribute(
+        Name="EnviarLoteEventos", 
+        Namespace="http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_1", 
+        Order=0)]
     [XmlElement(Order = 0)]
     public EnvioLoteEventos envioLoteEventos
     {
@@ -24,7 +29,7 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
             RaisePropertyChanged(nameof(envioLoteEventos));
         }
     }
-
+    
     private XmlSerializer sSerializer;
 
     // Serialization Members
@@ -149,7 +154,7 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
     private XElement anyField;
     private string idField;
 
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_0;
+    public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_0;
 
     [XmlAnyElement(Order = 0)]
     public XElement Any
@@ -211,12 +216,14 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
 
 
 /// <summary>
-/// Classe base utilizada nas responses dos serviços REST (assíncronos) da EFD-Reinf
+/// Classe base utilizada nas responses dos serviços REST (assíncronos) do e-Social
+/// </summary>
+[System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
 public partial class Response : Schemas.eSocial.ESocialBindableObject
 {
     [XmlIgnore]
-    public VersaoRest Versao { get; set; } = VersaoRest.v1_1_0;
+    public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_0;
 
     private Schemas.eSocial.RetornoEnvioLoteEventos retornoEnvioLoteEventosField;
     

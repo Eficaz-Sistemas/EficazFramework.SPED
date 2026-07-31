@@ -11,7 +11,7 @@ public class ResponseTest
     {
         var response = new Response
         {
-            Versao = VersaoRest.v1_1_0,
+            Versao = VersaoSoap.v1_1_0,
             retornoEnvioLoteEventos = new RetornoEnvioLoteEventos
             {
                 ideEmpregador = new Empregador
@@ -92,7 +92,7 @@ public class ResponseTest
     {
         var response = new Response
         {
-            Versao = VersaoRest.v1_1_0,
+            Versao = VersaoSoap.v1_1_0,
             retornoEnvioLoteEventos = new RetornoEnvioLoteEventos
             {
                 ideEmpregador = new Empregador

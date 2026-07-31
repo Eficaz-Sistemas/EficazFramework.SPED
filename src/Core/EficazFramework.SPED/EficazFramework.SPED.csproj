@@ -86,4 +86,8 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
 	</ItemGroup>
+  
+	<ItemGroup>
+	  <Folder Include="Services\e-Social\SoapClients\" />
+	</ItemGroup>
 </Project>

@@ -22,8 +22,8 @@ public class ESocialServices : SoapServiceBase
     public async Task<Response> EnviaEventosAsync(IList<Schemas.EFD_Reinf.Evento> eventos,
                                                   Schemas.eSocial.Empregador empregador,
                                                   Schemas.eSocial.Ambiente ambiente = Schemas.eSocial.Ambiente.Producao,
-                                                  VersaoRest versao = VersaoRest.v1_1_0,
-                                                  VersaoRest versaoLote = VersaoRest.v1_1_1)
+                                                  VersaoSoap versao = VersaoSoap.v1_1_0,
+                                                  VersaoSoap versaoLote = VersaoSoap.v1_1_1)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -112,7 +112,7 @@ public class ESocialServices : SoapServiceBase
     /// <param name="ambiente">Ambiente de Produção ou Testes</param>
     public async Task<Response> ConsultaLoteAsync(string protocolo,
                                                   Schemas.eSocial.Ambiente ambiente = Schemas.eSocial.Ambiente.Producao,
-                                                  VersaoRest versao = VersaoRest.v1_1_1)
+                                                  VersaoSoap versao = VersaoSoap.v1_1_1)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -173,7 +173,7 @@ public class ESocialServices : SoapServiceBase
 
     private void ProcessaXmlEventosEnvio(IEnumerable<Schemas.EFD_Reinf.Evento> eventos,
                                          XmlDocument xmlBody,
-                                         VersaoRest versao = VersaoRest.v1_1_1)
+                                         VersaoSoap versao = VersaoSoap.v1_1_1)
     {
         int contador = 0;
         foreach (var evento in eventos)

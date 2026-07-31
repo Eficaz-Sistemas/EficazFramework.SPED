@@ -10,7 +10,7 @@ public class EnvioLoteEventosTest
     {
         var request = new Request
         {
-            Versao = VersaoRest.v1_1_1,
+            Versao = VersaoSoap.v1_1_1,
             envioLoteEventos = new EficazFramework.SPED.Services.eSocial.EnvioLoteEventos
             {
                 grupo = 1,
@@ -83,7 +83,7 @@ public class EnvioLoteEventosTest
     {
         var request = new Request
         {
-            Versao = VersaoRest.v1_1_1,
+            Versao = VersaoSoap.v1_1_1,
             envioLoteEventos = new EficazFramework.SPED.Services.eSocial.EnvioLoteEventos
             {
                 grupo = 1,
