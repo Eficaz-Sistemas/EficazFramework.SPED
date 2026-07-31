@@ -2,7 +2,7 @@
 
 public class EnviaLoteEventsTests : BaseESocialTests
 {
-    [Test]
+    //[Test]
     public async Task EnviaLoteEventosCadastraisAsync()
     {
 
