@@ -1,90 +1,86 @@
-﻿namespace EficazFramework.SPED.Services.eSocial.Contracts;
+namespace EficazFramework.SPED.Services.eSocial.Contracts;
 
 /// <summary>
-/// Define o contrato de serviço SOAP para envio de lote de eventos para a plataforma e-Social.
+/// Define o contrato de serviço SOAP para envio de lotes de eventos ao serviço e-Social.
 /// </summary>
 /// <remarks>
-/// Esta interface base fornece assinaturas padrão para operações de envio de lotes de eventos,
-/// com suporte tanto para operações síncronas quanto assíncronas. As implementações herdam
-/// desta interface para manter compatibilidade com diferentes versões do serviço e-Social.
+/// Esta interface representa os pontos de extremidade do serviço e-Social responsáveis pelo processamento
+/// e recebimento de lotes de eventos gerados pela folha de pagamento e outras operações de recursos humanos.
+/// 
+/// Protocolo: SOAP (Simple Object Access Protocol)
+/// Versão: v1.1.0
+/// Entidade: Serviço de Envio de Lote de Eventos - Empregador
+/// 
+/// A interface fornece duas operações equivalentes: uma síncrona e outra assíncrona, permitindo flexibilidade
+/// no padrão de chamada conforme a necessidade da aplicação cliente.
 /// </remarks>
-public interface IServicoEnviarLoteEventosSoap
+[System.ServiceModel.ServiceContract(Namespace = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0", ConfigurationName = "SPED.Services.eSocial.EnviarLoteEventos")]
+public partial interface IServicoEnviarLoteEventosSoap
 {
     /// <summary>
     /// Envia de forma síncrona um lote de eventos para o serviço e-Social.
     /// </summary>
     /// <param name="request">
-    /// Objeto contendo os dados do lote de eventos a ser enviado, incluindo informações
-    /// de identificação e estrutura dos eventos.
+    /// Objeto do tipo <see cref="RequestEnvioLoteEventos"/> contendo os dados do lote de eventos a ser enviado.
+    /// Inclui informações de autenticação, identificação do empregador e estrutura detalhada dos eventos.
+    /// Este parâmetro não pode ser nulo.
     /// </param>
     /// <returns>
-    /// Retorna um objeto <see cref="Response"/> contendo a resposta do serviço e-Social,
-    /// que inclui informações sobre o recebimento e processamento do lote.
+    /// Retorna um objeto <see cref="ResponseEnvioLoteEventos"/> contendo a resposta do serviço e-Social,
+    /// que inclui informações sobre o recebimento e processamento do lote, incluindo ocorrências de validação
+    /// e status de cada evento processado.
     /// </returns>
     /// <remarks>
-    /// Este método fornece uma implementação padrão que retorna <c>null</c> por padrão.
-    /// Implementações específicas devem sobrescrever este método com a lógica adequada
-    /// de chamada ao serviço SOAP do e-Social.
+    /// Esta é uma operação de chamada síncrona que bloqueia a execução até a resposta do servidor.
+    /// A chamada se completa quando o serviço e-Social recebe e processa o lote de eventos.
+    /// 
+    /// Tempo de resposta típico: varia conforme a quantidade e complexidade dos eventos enviados.
     /// </remarks>
-    virtual Response EnviarLoteEventos(Request request) => null;
+    /// <exception cref="System.ServiceModel.FaultException">
+    /// Lançada quando o serviço e-Social retorna uma falha SOAP indicando erro no processamento.
+    /// </exception>
+    /// <exception cref="System.ServiceModel.CommunicationException">
+    /// Lançada quando há problemas de comunicação com o serviço e-Social.
+    /// </exception>
+    [System.ServiceModel.OperationContract(
+        Action = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventos",
+        ReplyAction = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventosResponse")]
+    ResponseEnvioLoteEventos EnviarLoteEventos(RequestEnvioLoteEventos request);
+
 
     /// <summary>
     /// Envia de forma assíncrona um lote de eventos para o serviço e-Social.
     /// </summary>
     /// <param name="request">
-    /// Objeto contendo os dados do lote de eventos a ser enviado, incluindo informações
-    /// de identificação e estrutura dos eventos.
+    /// Objeto do tipo <see cref="RequestEnvioLoteEventos"/> contendo os dados do lote de eventos a ser enviado.
+    /// Inclui informações de autenticação, identificação do empregador e estrutura detalhada dos eventos.
+    /// Este parâmetro não pode ser nulo.
     /// </param>
     /// <returns>
-    /// Retorna uma tarefa assíncrona que representa o resultado da operação, contendo
-    /// um objeto <see cref="Response"/> com a resposta do serviço e-Social.
+    /// Retorna uma tarefa assíncrona (<see cref="System.Threading.Tasks.Task{TResult}"/>) que representa 
+    /// o resultado da operação. Quando completada, contém um objeto <see cref="ResponseEnvioLoteEventos"/> 
+    /// com a resposta do serviço e-Social.
     /// </returns>
     /// <remarks>
-    /// Este método fornece uma implementação padrão que retorna uma tarefa com uma resposta
-    /// vazia. Implementações específicas devem sobrescrever este método com a lógica adequada
-    /// de chamada assíncrona ao serviço SOAP do e-Social, permitindo operações não-bloqueantes.
+    /// Esta é uma operação de chamada assíncrona que não bloqueia a thread de execução.
+    /// Utilize este método em cenários onde a aplicação requer responsividade ou processamento paralelo.
+    /// 
+    /// A tarefa retornada deve ser aguardada usando a palavra-chave <b>await</b> para obter o resultado.
+    /// 
+    /// Recomendado para: aplicações com interface gráfica, processamento em background ou múltiplas 
+    /// chamadas simultâneas ao serviço.
     /// </remarks>
-    virtual async System.Threading.Tasks.Task<Response> EnviarLoteEventosAsync(Request request) =>
-        await Task.FromResult(new Response());
-
-}
-
-/// <summary>
-/// Define o contrato de serviço SOAP para envio de lote de eventos à plataforma e-Social na versão 1.1.0.
-/// </summary>
-/// <remarks>
-/// <para>
-/// Esta interface herda de <see cref="IServicoEnviarLoteEventosSoap"/> e especifica o contrato de serviço WCF/SOAP
-/// para comunicação com o serviço de envio de lotes de eventos do e-Social. Ela implementa operações
-/// SOAP que seguem o padrão de namespace e ações especificadas pela plataforma e-Social.
-/// </para>
-/// <para>
-/// A interface fornece suporte para:
-/// <list type="bullet">
-/// <item><description>Envio síncrono de lotes de eventos via <see cref="EnviarLoteEventos(Request)"/></description></item>
-/// <item><description>Envio assíncrono de lotes de eventos via <see cref="EnviarLoteEventosAsync(Request)"/></description></item>
-/// </list>
-/// </para>
-/// <para>
-/// O namespace do serviço é <c>http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0</c>
-/// e o nome de configuração é <c>SPED.Services.eSocial.Contracts</c>.
-/// </para>
-/// </remarks>
-[System.ServiceModel.ServiceContract(
-    Namespace = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0", 
-    ConfigurationName = "SPED.Services.eSocial.Contracts")]
-public partial interface IServicoEnviarLoteEventosSoap_v1_1_0 : IServicoEnviarLoteEventosSoap
-{
-    /// <inheritdoc />
+    /// <exception cref="System.ServiceModel.FaultException">
+    /// Lançada quando o serviço e-Social retorna uma falha SOAP indicando erro no processamento.
+    /// </exception>
+    /// <exception cref="System.ServiceModel.CommunicationException">
+    /// Lançada quando há problemas de comunicação com o serviço e-Social.
+    /// </exception>
+    /// <exception cref="System.OperationCanceledException">
+    /// Lançada quando a operação assíncrona é cancelada via CancellationToken.
+    /// </exception>
     [System.ServiceModel.OperationContract(
-        Action = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventos", 
+        Action = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventos",
         ReplyAction = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventosResponse")]
-    new Response EnviarLoteEventos(Request request);
-
-
-    /// <inheritdoc />
-    [System.ServiceModel.OperationContract(
-        Action = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventos", 
-        ReplyAction = "http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_0/ServicoEnviarLoteEventos/EnviarLoteEventosResponse")]
-    new System.Threading.Tasks.Task<Response> EnviarLoteEventosAsync(Request request);
+    System.Threading.Tasks.Task<ResponseEnvioLoteEventos> EnviarLoteEventosAsync(RequestEnvioLoteEventos request);
 }

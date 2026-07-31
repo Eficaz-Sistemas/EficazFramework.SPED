@@ -1,14 +1,15 @@
+using EficazFramework.SPED.Schemas.eSocial;
 using EficazFramework.SPED.Services.EFD_Reinf;
 using System.IO;
 
 namespace EficazFramework.SPED.Services.eSocial;
 
 /// <summary>
-/// Classe base utilizada nas requests dos serviços REST (assíncronos) do e-Social
+/// Classe base utilizada nas requests do serviço SOAP WsEnviarLoteEventos do e-Social
 /// </summary>
 [System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
-public partial class Request : Schemas.eSocial.ESocialBindableObject
+public partial class RequestEnvioLoteEventos : Interfaces.ISoapRequest
 {
     [XmlIgnore]
     public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_1;
@@ -19,14 +20,13 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
         Name="EnviarLoteEventos", 
         Namespace="http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_1", 
         Order=0)]
-    [XmlElement(Order = 0)]
+    [XmlElement()]
     public EnvioLoteEventos envioLoteEventos
     {
         get => envioLoteEventosField;
         set
         {
             envioLoteEventosField = value;
-            RaisePropertyChanged(nameof(envioLoteEventos));
         }
     }
     
@@ -35,7 +35,7 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
     // Serialization Members
     private XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(Request), new XmlRootAttribute("eSocial")
+        return new XmlSerializer(typeof(RequestEnvioLoteEventos), new XmlRootAttribute("eSocial")
         {
             Namespace = $"http://www.esocial.gov.br/schema/lote/eventos/envio/{Versao}",
             IsNullable = false
@@ -71,22 +71,22 @@ public partial class Request : Schemas.eSocial.ESocialBindableObject
 
 
     /// <summary>
-    /// Retorna a instância de <see cref="Request"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="RequestEnvioLoteEventos"/> desserializada do conteúdo XML
     /// </summary>
-    public Request Read(string xmlContent)
+    public RequestEnvioLoteEventos Read(string xmlContent)
     {
         sSerializer = DefineSerializer();
-        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as Request;
+        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as RequestEnvioLoteEventos;
     }
 
     /// <summary>
-    /// Retorna a instância de <see cref="Request"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="RequestEnvioLoteEventos"/> desserializada do conteúdo XML
     /// </summary>
-    public Request Read(Stream xmlStream)
+    public RequestEnvioLoteEventos Read(Stream xmlStream)
     {
         sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
-        return result as Request;
+        return result as RequestEnvioLoteEventos;
     }
 }
 
@@ -145,8 +145,6 @@ public partial class EnvioLoteEventos : Schemas.eSocial.ESocialBindableObject
     }
 }
 
-
-
 /// <exclude />
 [Serializable()]
 public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
@@ -154,7 +152,8 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
     private XElement anyField;
     private string idField;
 
-    public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_0;
+    [XmlIgnore]
+    public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_1;
 
     [XmlAnyElement(Order = 0)]
     public XElement Any
@@ -216,11 +215,11 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
 
 
 /// <summary>
-/// Classe base utilizada nas responses dos serviços REST (assíncronos) do e-Social
+/// Classe base utilizada nas responses do serviço SOAP WsEnviarLoteEventos do e-Social
 /// </summary>
 [System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
-public partial class Response : Schemas.eSocial.ESocialBindableObject
+public partial class ResponseEnvioLoteEventos : Interfaces.ISoapResponse<RetornoEnvioLoteEventos>
 {
     [XmlIgnore]
     public VersaoSoap Versao { get; set; } = VersaoSoap.v1_1_0;
@@ -234,7 +233,6 @@ public partial class Response : Schemas.eSocial.ESocialBindableObject
         set
         {
             retornoEnvioLoteEventosField = value;
-            RaisePropertyChanged(nameof(retornoEnvioLoteEventos));
         }
     }
 
@@ -243,7 +241,7 @@ public partial class Response : Schemas.eSocial.ESocialBindableObject
     // Serialization Members
     private XmlSerializer DefineSerializer()
     {
-        return new XmlSerializer(typeof(Response), new XmlRootAttribute("eSocial")
+        return new XmlSerializer(typeof(ResponseEnvioLoteEventos), new XmlRootAttribute("eSocial")
         {
             Namespace = $"http://www.esocial.gov.br/schema/lote/eventos/envio/retornoEnvio/{Versao}",
             IsNullable = false
@@ -280,30 +278,43 @@ public partial class Response : Schemas.eSocial.ESocialBindableObject
 
 
     /// <summary>
-    /// Retorna a instância de <see cref="Response"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="ResponseEnvioLoteEventos"/> desserializada do conteúdo XML
     /// </summary>
-    public Response Read(string xmlContent)
+    public ResponseEnvioLoteEventos Read(string xmlContent)
     {
         sSerializer = DefineSerializer();
-        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as Response;
+        return Read(new MemoryStream(Encoding.UTF8.GetBytes(xmlContent))) as ResponseEnvioLoteEventos;
     }
 
+
     /// <summary>
-    /// Retorna a instância de <see cref="Response"/> desserializada do conteúdo XML
+    /// Retorna a instância de <see cref="ResponseEnvioLoteEventos"/> desserializada do conteúdo XML
     /// </summary>
-    public Response Read(Stream xmlStream)
+    public ResponseEnvioLoteEventos Read(Stream xmlStream)
     {
         sSerializer = DefineSerializer();
         var result = sSerializer.Deserialize(xmlStream);
-        return result as Response;
+        return result as ResponseEnvioLoteEventos;
     }
+
+
+    // Em alguns SoapClients, o retorno é recebido como XmlNode, havendo 
+    // necessidade de implementar este método na Interface.
+    // No caso do e-Social, já temos um retorno fortemente tipado.
+    public Schemas.eSocial.RetornoEnvioLoteEventos UnWrap()
+        => retornoEnvioLoteEventos;
+
 }
 
 
+
+
+
+
 /// <summary>
-/// Retorno (response) dos eventos da API Assíncrona
+/// Classe base utilizada nas responses do serviço SOAP WsConsultarLoteEventos do e-Social
 /// </summary>
-public partial class RetornoLoteEventos : Schemas.eSocial.ESocialBindableObject
+public partial class ResponseRetornoProcessamentoLote : Schemas.eSocial.ESocialBindableObject
 {
     private Schemas.eSocial.IdentificacaoCadastro ideContribuinteField;
     private StatusRetorno statusField;

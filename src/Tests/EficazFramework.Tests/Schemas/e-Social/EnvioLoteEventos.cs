@@ -8,7 +8,7 @@ public class EnvioLoteEventosTest
     [Test]
     public void ValidaSerializacaoEDesserializacaoRequest()
     {
-        var request = new Request
+        var request = new RequestEnvioLoteEventos
         {
             Versao = VersaoSoap.v1_1_1,
             envioLoteEventos = new EficazFramework.SPED.Services.eSocial.EnvioLoteEventos
@@ -54,7 +54,7 @@ public class EnvioLoteEventosTest
         xml.Should().Contain(s1000.evtInfoEmpregador.Id);
 
         // Testar a Desserialização (Leitura)
-        var parsedRequest = new Request().Read(xml);
+        var parsedRequest = new RequestEnvioLoteEventos().Read(xml);
 
         parsedRequest.Should().NotBeNull();
         parsedRequest.envioLoteEventos.Should().NotBeNull();
@@ -81,7 +81,7 @@ public class EnvioLoteEventosTest
     [Test]
     public void ValidaSchemaXsd()
     {
-        var request = new Request
+        var request = new RequestEnvioLoteEventos
         {
             Versao = VersaoSoap.v1_1_1,
             envioLoteEventos = new EficazFramework.SPED.Services.eSocial.EnvioLoteEventos

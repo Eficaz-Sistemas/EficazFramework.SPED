@@ -9,7 +9,7 @@ public class ResponseTest
     [Test]
     public void ValidaSerializacaoEDesserializacaoResponse()
     {
-        var response = new Response
+        var response = new ResponseEnvioLoteEventos
         {
             Versao = VersaoSoap.v1_1_0,
             retornoEnvioLoteEventos = new RetornoEnvioLoteEventos
@@ -64,7 +64,7 @@ public class ResponseTest
         xml.Should().Contain("1.2.202301.123456789");
 
         // Testar a Desserialização (Leitura)
-        var parsedResponse = new Response().Read(xml);
+        var parsedResponse = new ResponseEnvioLoteEventos().Read(xml);
 
         parsedResponse.Should().NotBeNull();
         parsedResponse.retornoEnvioLoteEventos.Should().NotBeNull();
@@ -90,7 +90,7 @@ public class ResponseTest
     [Test]
     public void ValidaSchemaXsd()
     {
-        var response = new Response
+        var response = new ResponseEnvioLoteEventos
         {
             Versao = VersaoSoap.v1_1_0,
             retornoEnvioLoteEventos = new RetornoEnvioLoteEventos

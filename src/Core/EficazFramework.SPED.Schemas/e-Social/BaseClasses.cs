@@ -4,6 +4,7 @@ using System.Reflection.Metadata;
 namespace EficazFramework.SPED.Schemas.eSocial;
 
 /// <exclude/>
+[Serializable()]
 public abstract class ESocialBindableObject : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
