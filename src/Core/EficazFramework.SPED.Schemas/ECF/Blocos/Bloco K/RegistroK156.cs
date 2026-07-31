@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.ECF;
@@ -51,7 +51,7 @@ public class RegistroK156 : Primitives.Registro
         if (Conversions.ToInteger(Versao) >= 5)
         {
             VrSaldoInicialPeriodo = data[3].ToNullableDouble();
-            IndicadorSituacaoSaldoFinal = data[4];
+            IndicadorSituacaoSaldoInicial = data[4];
             VrTotalDebitosPeriodo = data[5].ToNullableDouble();
             VrTotalCreditosPeriodo = data[6].ToNullableDouble();
         }

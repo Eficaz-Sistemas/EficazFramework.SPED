@@ -1,4 +1,4 @@
-﻿
+
 namespace EficazFramework.SPED.Schemas.ECF;
 
 /// <summary>
@@ -31,7 +31,7 @@ public class RegistroJ051 : Primitives.Registro
 
     public override void LeParametros(string[] data)
     {
-        CodCentroCusto = data[3];
-        CodContaReferencial = data[4];
+        CodCentroCusto = data[2];
+        CodContaReferencial = data[3];
     }
 }
