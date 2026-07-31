@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 public class S1005Test : BaseESocialTest<S1005>
 {
@@ -329,4 +329,135 @@ public class S1005Test : BaseESocialTest<S1005>
         itemXml.ideEstab.fimValid.Should().Be(itemPopulado.ideEstab.fimValid);
     }
     #endregion
+
+    [Test]
+    [TestCase(Versao.v_S_01_02_00)]
+    public void ValidaSerializacaoCondicionalNull(Versao versao)
+    {
+        var evento = new S1005
+        {
+            Versao = versao,
+            evtTabEstab = new S1005TabelaEstabelecimento()
+            {
+                ideEvento = new IdentificacaoCadastro() 
+                { 
+                    tpAmb = Ambiente.ProducaoRestrita_DadosReais, 
+                    procEmi = EmissorEvento.AppEmpregador, 
+                    verProc = "2.2" 
+                },
+                ideEmpregador = new Empregador() 
+                { 
+                    tpInsc = PersonalidadeJuridica.CNPJ, 
+                    nrInsc = "12345678" 
+                },
+                infoEstab = new S1005InfoEstabelecimento()
+                {
+                    Item = new S1005Inclusao()
+                    {
+                        ideEstab = new S1005IdentificacaoEstabelecimento() 
+                        { 
+                            tpInsc = TipoInscricao.CNPJ, 
+                            nrInsc = "12345678000190", 
+                            iniValid = "2026-06" 
+                        },
+                        dadosEstab = new S1005DadosEstabelecimento()
+                        {
+                            cnaePrep = "1234567",
+                            aliqGilrat = new S1005AliquotaGilRat() { aliqRat = 1, fap = 1.0m },
+                            infoTrab = new S1005InfoTrabalhistas()
+                            {
+                                infoApr = new S1005InfoAprendiz() { indContratAprendiz = null, infoEntEduc = null },
+                                infoPCD = new S1005InfoPcd() { indContratPCD = null, nrProcJud = null },
+                                infoRegPonto = new S1005InfoRegPonto() { tmpRegPonto = null }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        string xml = evento.Write();
+        xml.Should().NotContain("<indContratAprendiz>");
+        xml.Should().NotContain("<indContratPCD>");
+        xml.Should().NotContain("<infoRegPonto>");
+    }
+
+    [Test]
+    public async Task ValidaNovosCamposS13()
+    {
+        var evento = new S1005
+        {
+            Versao = Versao.v_S_01_03_00,
+            evtTabEstab = new S1005TabelaEstabelecimento()
+            {
+                ideEvento = new IdentificacaoCadastro() 
+                { 
+                    tpAmb = Ambiente.ProducaoRestrita_DadosReais, 
+                    procEmi = EmissorEvento.AppEmpregador, 
+                    verProc = "2.2" 
+                },
+                ideEmpregador = new Empregador() 
+                { 
+                    tpInsc = PersonalidadeJuridica.CNPJ, 
+                    nrInsc = "34785515" 
+                },
+                infoEstab = new S1005InfoEstabelecimento()
+                {
+                    Item = new S1005Inclusao()
+                    {
+                        ideEstab = new S1005IdentificacaoEstabelecimento() 
+                        { 
+                            tpInsc = TipoInscricao.CNPJ, 
+                            nrInsc = "34785515000166", 
+                            iniValid = "2026-06" 
+                        },
+                        dadosEstab = new S1005DadosEstabelecimento()
+                        {
+                            cnaePrep = "1234567",
+                            aliqGilrat = new S1005AliquotaGilRat() { aliqRat = 1, fap = 1.55m },
+                            infoCaepf = new S1005InfoCaePF() { tpCaepf = TipoCAEPF.ContribIndividual },
+                            infoObra = new S1005InfoObra() { indSubstPatrObra = IndicadorSubstPatronalObra.NaoSubstituida },
+                            infoTrab = new S1005InfoTrabalhistas()
+                            {
+                                infoApr = new S1005InfoAprendiz()
+                                {
+                                    indContratAprendiz = IndicadorContratAprendiz.Obrigado,
+                                    infoEntEduc = [
+                                        new S1005InfoEntidadeEduc() { nrInsc = "34785515000166" }
+                                    ]
+                                },
+                                infoPCD = new S1005InfoPcd()
+                                {
+                                    indContratPCD = IndicadorContratPCD.Obrigado,
+                                    nrProcJud = "12345123451234512345"
+                                },
+                                infoRegPonto = new S1005InfoRegPonto()
+                                {
+                                    tmpRegPonto = RegistroPonto.Eletronico_MTE_1510_09
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Escrita (Serialização)
+        string xml = evento.Write();
+        xml.Should().Contain("<indContratAprendiz>2</indContratAprendiz>");
+        xml.Should().Contain("<indContratPCD>3</indContratPCD>");
+        xml.Should().Contain("<tmpRegPonto>3</tmpRegPonto>");
+
+        // Leitura (Desserialização)
+        var novaInstancia = (S1005)(await Evento.ReadAsync(xml));
+        novaInstancia.Should().NotBeNull();
+        
+        var itemXml = novaInstancia.evtTabEstab.infoEstab.Item as S1005Inclusao;
+        var itemOriginal = evento.evtTabEstab.infoEstab.Item as S1005Inclusao;
+        
+        itemXml.dadosEstab.infoTrab.infoApr.indContratAprendiz.Should().Be(itemOriginal.dadosEstab.infoTrab.infoApr.indContratAprendiz);
+        itemXml.dadosEstab.infoTrab.infoPCD.indContratPCD.Should().Be(itemOriginal.dadosEstab.infoTrab.infoPCD.indContratPCD);
+        itemXml.dadosEstab.infoTrab.infoRegPonto.Should().NotBeNull();
+        itemXml.dadosEstab.infoTrab.infoRegPonto.tmpRegPonto.Should().Be(itemOriginal.dadosEstab.infoTrab.infoRegPonto.tmpRegPonto);
+    }
 }

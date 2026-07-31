@@ -79,7 +79,7 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
 
     private int _errorCount = 0;
     private void ValidaSchemaXsd(
-        XmlDocument doc, 
+        XmlDocument doc,
         T evento)
     {
         // zerando contador de erros
@@ -90,16 +90,22 @@ public abstract class BaseESocialTest<T> : Tests.BaseTest where T : Evento
         Utilities.XML.Sign.SignXml(doc, EficazFramework.SPED.Schemas.eSocial.Evento.root, evento.TagToSign, cert, evento.SignAsSHA256, evento.EmptyURI);
 
         // adicionando os schemas para validação do documento XML
+        ValidationEventHandler eventHandler = new(ValidationEventHandler);
         if (!string.IsNullOrEmpty(ValidationSchema))
         {
-            ValidationEventHandler eventHandler = new(ValidationEventHandler);
             doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(ValidationSchema)));
-            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos)));
-            doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
-            // executando a validação
-            doc.Validate(eventHandler);
-            _errorCount.Should().Be(0);
         }
+
+        if (_versao == Versao.v_S_01_03_00)
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos_v_S_01_03_00)));
+
+        if (_versao == Versao.v_S_01_02_00)
+            doc.Schemas.Add(ValidationSchemaNamespace, XmlReader.Create(new StringReader(Resources.Schemas.eSocial.tipos_v_S_01_02_00)));
+
+        doc.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(new StringReader(Resources.Schemas.XML.Sign)));
+        // executando a validação
+        doc.Validate(eventHandler);
+        _errorCount.Should().Be(0);
     }
 
     private void ValidationEventHandler(object sender, ValidationEventArgs e)

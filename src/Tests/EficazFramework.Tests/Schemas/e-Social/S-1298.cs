@@ -9,6 +9,11 @@ public class S1298Test : BaseESocialTest<S1298>
     {
         _versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtReabreEvPer/{versao}";
+        ValidationSchema = versao switch
+        {
+            Versao.v_S_01_02_00 => Resources.Schemas.eSocial.S1298_v_S_01_02_00,
+            _ => Resources.Schemas.eSocial.S1298_v_S_01_03_00
+        };
         await TestaEvento();
     }
 

@@ -1,4 +1,4 @@
-﻿
+
 namespace EficazFramework.SPED.Schemas.eSocial;
 
 /// <summary>
@@ -987,3 +987,400 @@ public enum TipoAcordoColetivo
     [System.ComponentModel.Description("Parcelas complementares conhecidas após o fechamento da folha")]
     ParcelasComplementaresConhecidasAposFechamentoFolha = 9
 }
+
+public enum TipoPagamento
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Pagamento de remuneração (S-1200)")]
+    RemuneracaoS1200 = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Pagamento de verbas rescisórias (S-2299)")]
+    VerbasRescisoriasS2299 = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Pagamento de verbas rescisórias (S-2399)")]
+    VerbasRescisoriasS2399 = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("Pagamento de remuneração (S-1202)")]
+    RemuneracaoS1202 = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("Pagamento de benefícios previdenciários (S-1207)")]
+    BeneficiosPrevidenciariosS1207 = 5
+}
+
+public enum IndicadorNIF
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Possui NIF")]
+    PossuiNIF = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Dispensado do NIF")]
+    DispensadoNIF = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Não exigido NIF")]
+    NaoExigidoNIF = 3
+}
+
+public enum TipoPrevidenciaComplementar
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Sociedade de previdência complementar aberta")]
+    SociedadeAberta = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Entidade fechada de previdência complementar")]
+    EntidadeFechada = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("Entidade fechada de previdência complementar do servidor público (Funpresp)")]
+    EntidadeFechadaServidorPublico = 3
+}
+
+public enum IndicadorSubstPatronal
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("Integralmente substituída")]
+    IntegralmenteSubstituida = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("Parcialmente substituída")]
+    ParcialmenteSubstituida = 2
+}
+
+public enum PercentualTransformacao
+{
+    [System.Xml.Serialization.XmlEnum("1")]
+    [System.ComponentModel.Description("0,2000")]
+    Perc20 = 1,
+
+    [System.Xml.Serialization.XmlEnum("2")]
+    [System.ComponentModel.Description("0,4000")]
+    Perc40 = 2,
+
+    [System.Xml.Serialization.XmlEnum("3")]
+    [System.ComponentModel.Description("0,6000")]
+    Perc60 = 3,
+
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("0,8000")]
+    Perc80 = 4,
+
+    [System.Xml.Serialization.XmlEnum("5")]
+    [System.ComponentModel.Description("1,0000")]
+    Perc100 = 5
+}
+
+
+public enum TipoAcidenteTrabalho
+{
+    [XmlEnum("1")]
+    [Description("Típico")]
+    Tipico = 1,
+    [XmlEnum("2")]
+    [Description("Doença")]
+    Doenca = 2,
+    [XmlEnum("3")]
+    [Description("Trajeto")]
+    Trajeto = 3
+}
+
+public enum TipoCAT
+{
+    [XmlEnum("1")]
+    [Description("Inicial")]
+    Inicial = 1,
+    [XmlEnum("2")]
+    [Description("Reabertura")]
+    Reabertura = 2,
+    [XmlEnum("3")]
+    [Description("Comunicação de óbito")]
+    ComunicacaoObito = 3
+}
+
+public enum IniciativaCAT
+{
+    [XmlEnum("1")]
+    [Description("Empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Ordem judicial")]
+    OrdemJudicial = 2,
+    [XmlEnum("3")]
+    [Description("Determinação de órgão fiscalizador")]
+    DeterminacaoOrgaoFiscalizador = 3
+}
+
+public enum TipoLocalAcidente
+{
+    [XmlEnum("1")]
+    [Description("Estabelecimento do empregador no Brasil")]
+    EmpregadorBrasil = 1,
+    [XmlEnum("2")]
+    [Description("Estabelecimento do empregador no exterior")]
+    EmpregadorExterior = 2,
+    [XmlEnum("3")]
+    [Description("Estabelecimento de terceiros onde o empregador presta serviços")]
+    Terceiros = 3,
+    [XmlEnum("4")]
+    [Description("Via pública")]
+    ViaPublica = 4,
+    [XmlEnum("5")]
+    [Description("Área rural")]
+    AreaRural = 5,
+    [XmlEnum("6")]
+    [Description("Embarcação")]
+    Embarcacao = 6,
+    [XmlEnum("9")]
+    [Description("Outros")]
+    Outros = 9
+}
+
+public enum Lateralidade
+{
+    [XmlEnum("0")]
+    [Description("Não aplicável")]
+    NaoAplicavel = 0,
+    [XmlEnum("1")]
+    [Description("Esquerda")]
+    Esquerda = 1,
+    [XmlEnum("2")]
+    [Description("Direita")]
+    Direita = 2,
+    [XmlEnum("3")]
+    [Description("Ambas")]
+    Ambas = 3
+}
+
+public enum OrgaoClasseSaude
+{
+    [XmlEnum("1")]
+    [Description("Conselho Regional de Medicina - CRM")]
+    CRM = 1,
+    [XmlEnum("2")]
+    [Description("Conselho Regional de Odontologia - CRO")]
+    CRO = 2,
+    [XmlEnum("3")]
+    [Description("Registro do Ministério da Saúde - RMS")]
+    RMS = 3
+}
+
+
+public enum TipoAcidenteTransito
+{
+    [XmlEnum("1")]
+    [Description("Atropelamento")]
+    Atropelamento = 1,
+    [XmlEnum("2")]
+    [Description("Colisão")]
+    Colisao = 2,
+    [XmlEnum("3")]
+    [Description("Outros")]
+    Outros = 3
+}
+
+public enum OnusCessao
+{
+    [XmlEnum("1")]
+    [Description("Ônus do cedente")]
+    Cedente = 1,
+    [XmlEnum("2")]
+    [Description("Ônus do cessionário")]
+    Cessionario = 2,
+    [XmlEnum("3")]
+    [Description("Ônus do cedente e cessionário")]
+    CedenteCessionario = 3
+}
+
+public enum OnusRemuneracao
+{
+    [XmlEnum("1")]
+    [Description("Apenas do empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Apenas do sindicato")]
+    Sindicato = 2,
+    [XmlEnum("3")]
+    [Description("Parte do empregador, sendo a diferença e/ou complementação salarial paga pelo sindicato")]
+    EmpregadorSindicato = 3
+}
+
+public enum OrigemRetificacao
+{
+    [XmlEnum("1")]
+    [Description("Por iniciativa do empregador")]
+    Empregador = 1,
+    [XmlEnum("2")]
+    [Description("Revisão administrativa")]
+    RevisaoAdministrativa = 2,
+    [XmlEnum("3")]
+    [Description("Determinação judicial")]
+    DeterminacaoJudicial = 3
+}
+
+public enum TipoProcessoRetificacao
+{
+    [XmlEnum("1")]
+    [Description("Administrativo")]
+    Administrativo = 1,
+    [XmlEnum("2")]
+    [Description("Judicial")]
+    Judicial = 2,
+    [XmlEnum("3")]
+    [Description("Número de Benefício - NB do INSS")]
+    NumeroBeneficioINSS = 3
+}
+
+public enum IndicadorOrigemReembolso
+{
+    [XmlEnum("1")]
+    [Description("Reembolso efetuado pelo empregador no âmbito do plano de saúde")]
+    PlanoSaude = 1,
+
+    [XmlEnum("2")]
+    [Description("Reembolso efetuado pelo empregador como benefício do próprio empregador")]
+    BeneficioEmpregador = 2
+}
+
+public enum IndicadorTipoDeducao
+{
+    [XmlEnum("1")]
+    [Description("Previdência oficial")]
+    PrevidenciaOficial = 1,
+
+    [XmlEnum("2")]
+    [Description("Previdência privada")]
+    PrevidenciaPrivada = 2,
+
+    [XmlEnum("3")]
+    [Description("Fundo de Aposentadoria Programada Individual - FAPI")]
+    FAPI = 3,
+
+    [XmlEnum("4")]
+    [Description("Fundação de Previdência Complementar do Servidor Público - Funpresp")]
+    Funpresp = 4,
+
+    [XmlEnum("5")]
+    [Description("Pensão alimentícia")]
+    PensaoAlimenticia = 5,
+
+    [XmlEnum("7")]
+    [Description("Dependentes")]
+    Dependentes = 7
+}
+
+public enum TipoRendimentoDependente
+{
+    [XmlEnum("11")]
+    [Description("Remuneração mensal")]
+    RemuneracaoMensal = 11,
+
+    [XmlEnum("12")]
+    [Description("13º salário")]
+    DecimoTerceiroSalario = 12,
+
+    [XmlEnum("13")]
+    [Description("Férias")]
+    Ferias = 13
+}
+
+public enum TipoRendimentoPensaoAlimenticia
+{
+    [XmlEnum("11")]
+    [Description("Remuneração mensal")]
+    RemuneracaoMensal = 11,
+
+    [XmlEnum("12")]
+    [Description("13º salário")]
+    DecimoTerceiroSalario = 12,
+
+    [XmlEnum("13")]
+    [Description("Férias")]
+    Ferias = 13,
+
+    [XmlEnum("14")]
+    [Description("PLR")]
+    PLR = 14,
+
+    [XmlEnum("18")]
+    [Description("RRA")]
+    RRA = 18
+}
+
+public enum IndicadorIncidenciaFGTS
+{
+    [XmlEnum("1")]
+    [Description("Normal (incidência de FGTS)")]
+    Normal = 1,
+
+    [XmlEnum("9")]
+    [Description("Incidência de FGTS suspensa em decorrência de decisão judicial")]
+    SuspensaJudicial = 9
+}
+
+public enum IndicadorExistenciaInfoCS
+{
+    [XmlEnum("1")]
+    [Description("Há informações com apuração de contribuições sociais")]
+    ComApuracao = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém sem apuração de contribuições sociais")]
+    SemApuracao = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
+public enum IndicadorIncidenciaCS
+{
+    [XmlEnum("1")]
+    [Description("Normal")]
+    Normal = 1,
+
+    [XmlEnum("2")]
+    [Description("Atividade concomitante")]
+    Concomitante = 2,
+
+    [XmlEnum("9")]
+    [Description("Substituída ou isenta")]
+    SubstituidaIsenta = 9
+}
+
+public enum IndicadorExistenciaInfoIRRF
+{
+    [XmlEnum("1")]
+    [Description("Há informações de IRRF")]
+    HaInformacoesIRRF = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém não há informações de IRRF")]
+    HaMovimentoSemInformacoesIRRF = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
+public enum IndicadorExistenciaInfoFGTS
+{
+    [XmlEnum("1")]
+    [Description("Há informações de FGTS")]
+    HaInformacoesFGTS = 1,
+
+    [XmlEnum("2")]
+    [Description("Há movimento, porém não há informações de FGTS")]
+    HaMovimentoSemInformacoesFGTS = 2,
+
+    [XmlEnum("3")]
+    [Description("Não há movimento no período informado")]
+    NaoHaMovimento = 3
+}
+
+
+

@@ -9,6 +9,11 @@ public class S1260Test : BaseESocialTest<S1260>
     {
         _versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtComProd/{versao}";
+        ValidationSchema = versao switch
+        {
+            Versao.v_S_01_02_00 => Resources.Schemas.eSocial.S1260_v_S_01_02_00,
+            _ => Resources.Schemas.eSocial.S1260_v_S_01_03_00
+        };
         await TestaEvento();
     }
 
@@ -120,10 +125,9 @@ public class S1260Test : BaseESocialTest<S1260>
         evento.Versao = _versao;
         evento.evtComProd = new S1260ComercializacaoProd
         {
-            ideEvento = new IdeEventoPeriodico
+            ideEvento = new S1260IdentificacaoEvento
             {
                 indRetif = IndicadorRetificacao.Original,
-                indApuracao = IndicadorApuracao.Mensal,
                 perApur = "2025-02",
                 tpAmb = Ambiente.ProducaoRestrita_DadosReais,
                 procEmi = EmissorEvento.AppEmpregador,
@@ -131,8 +135,8 @@ public class S1260Test : BaseESocialTest<S1260>
             },
             ideEmpregador = new Empregador
             {
-                tpInsc = PersonalidadeJuridica.CNPJ,
-                nrInsc = CnpjCpf[..8]
+                tpInsc = PersonalidadeJuridica.CPF,
+                nrInsc = "12345678901"
             },
             infoComProd = new S1260InfoComProducao
             {

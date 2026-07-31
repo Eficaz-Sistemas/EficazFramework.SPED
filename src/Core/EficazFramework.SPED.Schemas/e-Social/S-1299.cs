@@ -95,7 +95,7 @@ public partial class S1299EvPer : ESocialBindableObject
         }
     }
 
-    [XmlElement("infoFechamento")]
+    [XmlElement("infoFech")]
     public S1299InfoFechamento infoFech
     {
         get => infoFechField;
@@ -286,6 +286,8 @@ public partial class S1299InfoFechamento : ESocialBindableObject
             RaisePropertyChanged(nameof(evtAqProd));
         }
     }
+
+    public bool ShouldSerializeevtAqProd() => evtAqProdField.HasValue;
 
     public SimNaoString evtComProd
     {

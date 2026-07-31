@@ -9,6 +9,11 @@ public class S1299Test : BaseESocialTest<S1299>
     {
         _versao = versao;
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtFechaEvPer/{versao}";
+        ValidationSchema = versao switch
+        {
+            Versao.v_S_01_02_00 => Resources.Schemas.eSocial.S1299_v_S_01_02_00,
+            _ => Resources.Schemas.eSocial.S1299_v_S_01_03_00
+        };
         await TestaEvento();
     }
 
@@ -33,7 +38,7 @@ public class S1299Test : BaseESocialTest<S1299>
       <telefone>31999998888</telefone>
       <email>responsavel@empresa.com</email>
     </ideRespInf>
-    <infoFechamento>
+    <infoFech>
       <evtRemun>S</evtRemun>
       <evtPgtos>S</evtPgtos>
       <evtAqProd>N</evtAqProd>
@@ -43,7 +48,7 @@ public class S1299Test : BaseESocialTest<S1299>
       <compSemMovto>2025-01</compSemMovto>
       <transDCTFWeb>S</transDCTFWeb>
       <naoValid>S</naoValid>
-    </infoFechamento>
+    </infoFech>
   </evtFechaEvPer>
 </eSocial>";
 
