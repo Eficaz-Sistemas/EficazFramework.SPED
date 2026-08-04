@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Schemas.NFSe.Nacional;
+using EficazFramework.SPED.Schemas.NFSe.Nacional;
 using EficazFramework.SPED.Tests;
 
 namespace EficazFramework.SPED.Schemas.NFSe;
@@ -182,6 +182,64 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         }
     }
 
+    [Test]
+    public async Task ParseNFSeNacionalSample001()
+    {
+        var folder = Path.Combine(TestContext.CurrentContext.TestDirectory, "Resources", "Samples", "NFseNacional");
+        var path = Path.Combine(folder, "001.xml");
+        var xml = await File.ReadAllTextAsync(path);
+        Nacional.NFSe instance = await ReadAsync(xml);
+        instance.Should().NotBeNull();
 
+        instance.Chave.Should().Be("NFS3510000004900099000019700000000000006010200049010");
+        instance.InfNFSe.LocalEmissao.Should().Be("FRANCA");
+        instance.InfNFSe.LocalPrestacao.Should().Be("Franca");
+        instance.InfNFSe.Numero.Should().Be(113);
+        instance.InfNFSe.LocalIncidenciaCodigo.Should().Be("3516200");
+        instance.InfNFSe.LocalIncidenciaNome.Should().Be("Franca");
+        instance.InfNFSe.TributacaoNacional.Should().Be("Contabilidade, inclusive serviços técnicos e auxiliares.");
+        instance.InfNFSe.VersaoAplicativo.Should().Be("SilTecnologia_v1.00");
+        instance.InfNFSe.AmbienteGerador.Should().Be(AmbienteGerador.Prefeitura);
+        instance.InfNFSe.TipoEmissao.Should().Be(TipoEmissao.LeiauteMunicipal);
+        instance.InfNFSe.CodigoSituacao.Should().Be("100");
+        instance.InfNFSe.DataHoraProcessamento.Should().Be(new DateTimeOffset(2026, 01, 10, 0, 0, 0, TimeSpan.FromHours(-3)));
+        instance.InfNFSe.NumeroSequencial.Should().Be("27644971");
 
+        instance.InfNFSe.Emitente.Should().NotBeNull();
+        instance.InfNFSe.Emitente.Cnpj.Should().Be("11222333000144");
+        instance.InfNFSe.Emitente.InscricaoMunicipal.Should().Be("117915");
+        instance.InfNFSe.Emitente.Nome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
+
+        var dps = instance.InfNFSe.DPS.InfDPS;
+        dps.Id.Should().Be("DPS351620024973699600019749999000000000000113");
+        dps.Ambiente.Should().Be(Nacional.Ambiente.Producao);
+        dps.DataHoraEmissao.Should().Be(new DateTimeOffset(2026, 01, 10, 0, 0, 0, TimeSpan.FromHours(-3)));
+        dps.Serie.Should().Be("49999");
+        dps.Numero.Should().Be(113);
+        dps.Competencia.Should().Be("2026-01-01");
+        dps.TipoEmitente.Should().Be(EmitenteDps.Prestador);
+        dps.LocalEmissaoCodigo.Should().Be("3516200");
+
+        dps.Prestador.Should().NotBeNull();
+        dps.Prestador.Cnpj.Should().Be("49736996000197");
+        dps.Prestador.InscricaoMunicipal.Should().Be("117915");
+
+        dps.Tomador.Should().NotBeNull();
+        dps.Tomador.CNPJ.Should().Be("07170885000116");
+        dps.Tomador.xNome.Should().Be("Ataide Marcelino Advogados");
+
+        dps.Servico.Should().NotBeNull();
+        dps.Servico.LocalPrestacao.Codigo.Should().Be("3516200");
+        dps.Servico.InfoServico.CodigoTribNacional.Should().Be("171901");
+        dps.Servico.InfoServico.Descricao.Should().Be("Honorários Contábeis - Serviços de Consultoria Tributária - Mês 12/2025");
+        dps.Servico.InfoServico.NBS.Should().Be("113022100");
+
+        dps.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+
+        instance.InfNFSe.Valores.Should().NotBeNull();
+        instance.InfNFSe.Valores.IssqnBaseCalculo.Should().Be(5000m);
+        instance.InfNFSe.Valores.IssqnAliquota.Should().Be(2m);
+        instance.InfNFSe.Valores.IssqnValor.Should().Be(100m);
+        instance.InfNFSe.Valores.ValorTotalLiquido.Should().Be(5000m);
+    }
 }
