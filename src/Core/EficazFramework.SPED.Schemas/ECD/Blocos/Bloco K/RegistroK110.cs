@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -27,7 +27,7 @@ public class RegistroK110 : Primitives.Registro
         var writer = new System.Text.StringBuilder();
         writer.Append("|K110|");
         writer.Append(((int)EventoSocietario).ToString() + "|");
-        writer.Append(DataEventoSocietario + "|");
+        writer.Append(DataEventoSocietario.ToSpedString() + "|");
         return writer.ToString();
     }
 

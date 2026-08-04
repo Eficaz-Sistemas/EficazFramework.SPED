@@ -1,16 +1,20 @@
-Ôªøusing System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// Identifica√ß√£o dos Signat√°rios da Escritura√ß√£o
+/// IdentificaÁ„o dos Signat·rios da EscrituraÁ„o
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ930 : Primitives.Registro
 {
     public RegistroJ930() : base("J930")
+    {
+    }
+
+    public RegistroJ930(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -60,3 +64,4 @@ public class RegistroJ930 : Primitives.Registro
         IdentificacaoResponsavel = data[12];
     }
 }
+

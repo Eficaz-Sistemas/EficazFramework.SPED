@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -26,8 +26,8 @@ public class RegistroK030 : Primitives.Registro
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|K030|");
-        writer.Append(DataInicialPeriodoConsolidado + "|");
-        writer.Append(DataFinalPeriodoConsolidado + "|");
+        writer.Append(DataInicialPeriodoConsolidado.ToSpedString() + "|");
+        writer.Append(DataFinalPeriodoConsolidado.ToSpedString() + "|");
         return writer.ToString();
     }
 

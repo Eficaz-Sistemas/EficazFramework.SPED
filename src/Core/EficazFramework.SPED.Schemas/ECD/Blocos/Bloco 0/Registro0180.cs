@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -28,8 +28,8 @@ public class Registro0180 : Primitives.Registro
         var writer = new System.Text.StringBuilder();
         writer.Append("|0180|");
         writer.Append(CodRelacionamentoTabelaSped + "|");
-        writer.Append(DataInicioRelacionamento + "|");
-        writer.Append(DataTerminoRelacionamento + "|");
+        writer.Append(DataInicioRelacionamento.ToSpedString() + "|");
+        writer.Append(DataTerminoRelacionamento.ToSpedString() + "|");
         return writer.ToString();
     }
 

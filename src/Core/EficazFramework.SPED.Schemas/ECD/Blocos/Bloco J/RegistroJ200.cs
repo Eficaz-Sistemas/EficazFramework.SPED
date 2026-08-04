@@ -1,4 +1,4 @@
-﻿
+
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
@@ -9,6 +9,10 @@ namespace EficazFramework.SPED.Schemas.ECD;
 public class RegistroJ200 : Primitives.Registro
 {
     public RegistroJ200() : base("J200")
+    {
+    }
+
+    public RegistroJ200(string linha, string versao) : base(linha, versao)
     {
     }
 

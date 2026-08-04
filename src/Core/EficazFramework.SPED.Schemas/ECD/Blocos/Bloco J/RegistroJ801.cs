@@ -1,14 +1,18 @@
-ï»¿
+
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// Termo de VerificaÃ§Ã£o para Fins de SubstituiÃ§Ã£o da ECD
+/// Termo de Verificação para Fins de Substituição da ECD
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ801 : Primitives.Registro
 {
     public RegistroJ801() : base("J801")
+    {
+    }
+
+    public RegistroJ801(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -38,3 +42,4 @@ public class RegistroJ801 : Primitives.Registro
         SequenciaBytesArquitoRTF = data[5];
     }
 }
+

@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -11,6 +11,10 @@ namespace EficazFramework.SPED.Schemas.ECD;
 public class RegistroJ150 : Primitives.Registro
 {
     public RegistroJ150() : base("J150")
+    {
+    }
+
+    public RegistroJ150(string linha, string versao) : base(linha, versao)
     {
     }
 
