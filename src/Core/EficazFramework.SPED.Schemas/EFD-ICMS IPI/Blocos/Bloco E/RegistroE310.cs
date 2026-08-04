@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
@@ -57,7 +57,7 @@ public class RegistroE310 : Primitives.Registro
         ICMSDifal_Recolher = data[10].ToNullableDouble();
         SaldoCredorATransportar = data[11].ToNullableDouble();
         DebitosExtraApuracao = data[12].ToNullableDouble();
-        SaldoCredorAnterior = data[13].ToNullableDouble();
+        SaldoCredorAnteriorFCP = data[13].ToNullableDouble();
         DebitosFCP = data[14].ToNullableDouble();
         OutrosDebitosFCP = data[15].ToNullableDouble();
         CreditosFCP = data[16].ToNullableDouble();

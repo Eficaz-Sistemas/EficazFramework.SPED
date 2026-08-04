@@ -1,4 +1,4 @@
-﻿using AwesomeAssertions;
+using AwesomeAssertions;
 using NUnit.Framework;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI.BlocoE;

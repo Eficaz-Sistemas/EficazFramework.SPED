@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
@@ -53,13 +53,17 @@ public class RegistroB020 : Primitives.Registro
         if (DocumentoValido())
             writer.Append(string.Format("{0:0.##}", ValorISSIsentoNTrib) + "|");
         else
-            writer.Append('|'); // 16
+            writer.Append('|'); // 15
         if (DocumentoValido())
             writer.Append(string.Format("{0:0.##}", ValorDedBC) + "|");
         else
-            writer.Append('|'); // 17
+            writer.Append('|'); // 16
         if (DocumentoValido())
             writer.Append(string.Format("{0:0.##}", ValorBCISS) + "|");
+        else
+            writer.Append('|'); // 17
+        if (DocumentoValido())
+            writer.Append(string.Format("{0:0.##}", ValorBCRetISS) + "|");
         else
             writer.Append('|'); // 18
         if (DocumentoValido())

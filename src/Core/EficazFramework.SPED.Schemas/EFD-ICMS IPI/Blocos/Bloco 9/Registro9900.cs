@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 
@@ -32,8 +32,8 @@ public class Registro9900 : Primitives.Registro
 
     public override void LeParametros(string[] data)
     {
-        Registro = data[0];
-        TotalLinhas = data[1].ToNullableInteger();
+        Registro = data[2];
+        TotalLinhas = data[3].ToNullableInteger();
     }
 
     /// <summary>
