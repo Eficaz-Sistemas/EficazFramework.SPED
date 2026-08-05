@@ -27,29 +27,28 @@
    Esta versão conta atualmente com uma quantidade maior de instruções sem plataforma específica, e foi estruturada para utilização dos recursos de Implantação e Entrega Contínua de aplicações (Azure DevOps).
 
 
-## [Documentação](/Docs/Api/EficazFrameworkSPED.md) 
+## Documentação
 ![docs](https://eficazshields.azurewebsites.net/badge/docs-em%20construção-orange?style=flat-square)
 
 |                                         | Schema                                                                                                                                                     | Serviços | Uso em Produção| WebServices |
 |:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|----------|:--------------:|:-----------:|
-| CT-e e CT-eOS                           |                                                                                                                                                            |          | ✅ | [⚠️](## "Apenas CTeDistribuicaoDFe e ConsultaProtocolo") |
+| CT-e e CT-eOS                           | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/CTe.md) |          | ✅ | [⚠️](## "Apenas CTeDistribuicaoDFe e ConsultaProtocolo") |
 | DAPI (MG)                               |                                                                                                                                                            |          | ✅ | N/A |
 | e-CredAc, portarias CAT 83/09 e 207/09  |                                                                                                                                                            |          | ✅ | N/A |
 | e-Ressarcimento portaria CAT 42/18      |                                                                                                                                                            |          | ✅ | N/A |
-| ECD                                     |                                                                                                                                                            |          | ✅ | N/A |
-| ECF                                     |                                                                                                                                                            |          | ✅ | N/A |
-| EFD ICMS / IPI                          | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_ICMS_IPI.md)                                    |          | ✅ | N/A |
-| EFD Contribuições                       |                                                                                                                                                            |          | ✅ | N/A |
-| EFD Reinf                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.EFD_Reinf.md)                                       |          | ✅ | ✅ |
-| e-Social                                | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.eSocial.md)                                         |          | [🆕](## "Eventos mais populares disponíveis") | [⚠️](## "em desenvolvimento") |
+| ECD                                     | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/ECD.md) |          | ✅ | N/A |
+| ECF                                     | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/ECF.md) |          | ✅ | N/A |
+| EFD ICMS / IPI                          | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_ICMS_IPI.md)                                    |          | ✅ | N/A |
+| EFD Contribuições                       | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_Contribuicoes.md) |          | ✅ | N/A |
+| EFD Reinf                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_Reinf.md)                                       |          | ✅ | ✅ |
+| e-Social                                | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/eSocial.md)                                         |          | [🆕](## "Eventos mais populares disponíveis") | [⚠️](## "em desenvolvimento") |
 | GIA (SP)                                |                                                                                                                                                            |          | ✅ | N/A |
 | GNRE                                    |                                                                                                                                                            |          | ✅ | [⚠️](## "A ser desenvolvido") |
-| GIA (SP)                                |                                                                                                                                                            |          | ✅ | N/A |
-| NF-e / NFC-e                            |                                                                                                                                                            |          | ✅ | ✅ |
+| NF-e / NFC-e                            | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/NFe.md)                                                                                                                                                            |          | ✅ | ✅ |
 | NFS-e (Nacional)                        |                                                                                                                                                            |          | ✅ | [⚠️](## "A ser desenvolvido") |
-| Livro Caixa Digital do Produtor Rural   | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/Api/EficazFramework.SPED.Schemas.LCDPR.md)                                           |          | ✅ | N/A |
+| Livro Caixa Digital do Produtor Rural   | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/LCDPR.md)                                           |          | ✅ | N/A |
 | ‼️ Schemas IBS/CBS - Reforma Tributária |                                                                                                                                                            |          | ✅ | N/A |
-| Classes complementares                  | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Api/EficazFramework.SPED.Schemas.Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Api/EficazFramework.SPED.Extensions.md) | | N/A |  N/A |      
+| Classes complementares                  | [![Static Badge](https://img.shields.io/badge/primitives-pink)](/Docs/Primitives.md)<br>[![Static Badge](https://img.shields.io/badge/extensions-purple)](/Docs/Extensions.md) | | N/A |  N/A |      
 
 ## Exemplos de Uso
 
