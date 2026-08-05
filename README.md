@@ -41,7 +41,7 @@
 | EFD ICMS / IPI                          | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_ICMS_IPI.md)                                              | ✅ | N/A |
 | EFD Contribuições                       | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_Contribuicoes.md)          | ✅ | N/A |
 | EFD Reinf                               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/EFD_Reinf.md)                                                 | ✅ | ✅ |
-| e-Social                                | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/eSocial.md)                                                   | [🆕](## "Eventos mais populares disponíveis") | [⚠️](## "em desenvolvimento") |
+| e-Social                                | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/eSocial.md)                                                   | [🆕](## "Eventos mais populares disponíveis") | [⏭️](## "em desenvolvimento") |
 | GIA (SP)                                |                                                                                                                                                                      | ✅ | N/A |
 | GNRE                                    |                                                                                                                                                                      | ✅ | [⚠️](## "A ser desenvolvido") |
 | NF-e / NFC-e                            | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/NFe.md)                                                                                        | ✅ | ✅ |
