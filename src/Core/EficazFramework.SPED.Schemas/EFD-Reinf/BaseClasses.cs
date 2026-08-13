@@ -402,7 +402,7 @@ public partial class IdentificacaoContribuinte : EfdReinfBindableObject
     }
 
     public string NumeroInscricaoTag() =>
-        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Left, "0");
+        Extensions.String.ToFixedLenghtString(nrInsc, 14, Extensions.Alignment.Right, "0");
 }
 
 
