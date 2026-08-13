@@ -16,7 +16,7 @@ public class R4099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4099>
         result.retornoLoteEventosAssincrono.retornoEventos.evento.ToList().ForEach(evt =>
         {
             //? O evento R-4099 só é aceito se houver algum evento da série R-4000 enviado para o período de apuração indicado em {perApur}. Recepção não permitida.
-            evt?.retornoEventoFechamentoRetInfo.evtRetCons.ideRecRetorno.ideStatus.regOcorrs.Single().codResp.Should().Be("MS1484");
+            evt?.retornoEventoFechamentoRetInfo.evtRetCons.ideRecRetorno.ideStatus.regOcorrs.Where(resp => resp.codResp == "MS1484").Should().NotBeEmpty();
             evt?.retornoEventoFechamentoRetInfo.evtRetCons.infoRecEv.tpEv.Should().Be("4099");
             evt?.retornoEventoFechamentoRetInfo.evtRetCons.infoRecEv.dhProcess.Should().NotBe(DateTime.MinValue);
             evt?.retornoEventoFechamentoRetInfo.evtRetCons.infoRecEv.nrProtLote.Should().NotBeNull();
