@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <Version>6.5.2</Version>
+    <AssemblyVersion>6.5.2.0</AssemblyVersion>
+    <FileVersion>6.5.2.0</FileVersion>
+    <LangVersion>latest</LangVersion>
+    <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
+    <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
+    <Description>Geração de documentos auxiliares (DANFE, DACTE, DANFSE) em PDF via QuestPDF a partir dos schemas do EficazFramework.SPED.</Description>
+    <Copyright>Copyright ©  2026. Eficaz Sistemas de Gestão e Inteligência Tributária Ltda.</Copyright>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>https://efsuporte.blob.core.windows.net/portal/EficazFramework.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Eficaz-Sistemas/EficazFramework.SPED</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>SPED, DF-e, DANFE, DACTE, DANFSE, PDF, QuestPDF</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EfCore.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\logo.png" Link="logo.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+    <None Include="EfCore.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="2026.8.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
+  </ItemGroup>
+</Project>
