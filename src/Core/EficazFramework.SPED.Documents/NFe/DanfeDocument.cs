@@ -82,35 +82,10 @@ public sealed class DanfeDocument : IDocument
                 col.Item().PaddingTop(2).LineHorizontal(0.5f).LineColor(CorBorda);
             });
 
-            // ── Content: tabela de itens (pagina automaticamente) ────────────
-            page.Content().PaddingTop(3).Element(ComposeProdutos);
+            // ── Content: tabela de itens (ocupa a área restante entre header e footer e pagina) ────
+            page.Content().PaddingVertical(1).Element(ComposeProdutos);
 
-            // ── Footer: rodapé em todas as páginas ───────────────────────────
-            page.Footer().Element(ComposeFooter);
-        });
-
-        // Seções que aparecem apenas UMA VEZ, após os itens (última página)
-        // Implementado como segunda página encadeada
-        container.Page(page =>
-        {
-            if (IsLandscape)
-                page.Size(PageSizes.A4.Landscape());
-            else
-                page.Size(PageSizes.A4);
-
-            page.MarginTop(4, Unit.Millimetre);
-            page.MarginBottom(4, Unit.Millimetre);
-            page.MarginLeft(6, Unit.Millimetre);
-            page.MarginRight(6, Unit.Millimetre);
-            page.DefaultTextStyle(x => x.FontFamily("Arial").FontSize(FonteValor));
-
-            page.Content().Column(col =>
-            {
-                col.Item().Element(ComposeTransporte);
-                col.Item().PaddingTop(2).Element(ComposeTotais);
-                col.Item().PaddingTop(2).Element(ComposeInformacoesAdicionais);
-            });
-
+            // ── Footer: seções abaixo dos itens (repetem em todas as páginas) ─
             page.Footer().Element(ComposeFooter);
         });
     }
@@ -127,17 +102,26 @@ public sealed class DanfeDocument : IDocument
 
             // ── Coluna Central: Título DANFE ───────────────────────────────
             row.RelativeItem(3).BorderLeft(0.5f).BorderColor(CorBorda)
-               .Padding(4).Column(col =>
+               .Padding(3).Column(col =>
                {
                    col.Item().AlignCenter().Text("DANFE")
                       .Bold().FontSize(FonteTitulo).FontColor(CorPrimaria);
                    col.Item().AlignCenter().Text("Documento Auxiliar da Nota Fiscal Eletrônica")
                       .FontSize(FonteRotulo);
 
-                   var tpOp = Ide.TipoOperacao == OperacaoNFe.Entrada ? "ENTRADA" : "SAÍDA";
-                   col.Item().PaddingTop(4).AlignCenter()
+                   var tpOp = Ide.TipoOperacao == OperacaoNFe.Entrada ? "0 - ENTRADA" : "1 - SAÍDA";
+                   col.Item().PaddingTop(2).AlignCenter()
                       .Text($"Nº {Ide.Numero:D9}   Série {Ide.Serie:D3}   {tpOp}")
                       .FontSize(FonteValor).Bold();
+
+                   // Número da folha X/N no Header
+                   col.Item().PaddingTop(1).AlignCenter().Text(text =>
+                   {
+                       text.Span("FOLHA ").FontSize(FonteRotulo).Bold();
+                       text.CurrentPageNumber().FontSize(FonteRotulo).Bold();
+                       text.Span(" / ").FontSize(FonteRotulo).Bold();
+                       text.TotalPages().FontSize(FonteRotulo).Bold();
+                   });
 
                    if (Ide.TipoImpressao == TipoImpressao.Simplificado)
                        col.Item().AlignCenter().Text("DANFE SIMPLIFICADO")
@@ -206,24 +190,24 @@ public sealed class DanfeDocument : IDocument
         c.Border(0.5f).BorderColor(CorBorda).Row(row =>
         {
             // Nome / Fantasia / CNPJ / IE / Endereço
-            row.RelativeItem(5).Padding(3).Column(col =>
+            row.RelativeItem().Padding(0).Column(col =>
             {
                 Rotulo(col, "EMITENTE");
-                col.Item().Text(Emit?.RazaoSocial ?? string.Empty).Bold().FontSize(FonteValor);
+                col.Item().PaddingHorizontal(3).PaddingTop(3).Text(Emit?.RazaoSocial ?? string.Empty).Bold().FontSize(FonteValor);
                 if (!string.IsNullOrEmpty(Emit?.NomeFantasia))
-                    col.Item().Text(Emit.NomeFantasia).FontSize(FonteRotulo);
+                    col.Item().PaddingHorizontal(3).Text(Emit.NomeFantasia).FontSize(FonteRotulo);
 
                 var end = Emit?.Endereco;
                 if (end is not null)
                 {
-                    col.Item().Text(
+                    col.Item().PaddingHorizontal(3).Text(
                         $"{end.Logradouro}, {end.Numero}" +
                         (string.IsNullOrEmpty(end.Complemento) ? "" : $", {end.Complemento}") +
                         $" - {end.Bairro} - {end.MunicipioNome}/{end.UF} - CEP {end.CEPFormatado}")
                         .FontSize(FonteRotulo);
                 }
 
-                col.Item().Text(
+                col.Item().PaddingHorizontal(3).PaddingBottom(3).Text(
                     $"CNPJ: {Emit?.CNPJ_CPFFormatado}  " +
                     $"IE: {Emit?.IEFormatado ?? Emit?.InscricaoEstadual}  " +
                     (string.IsNullOrEmpty(Emit?.InscricaoMunicipal) ? "" : $"IM: {Emit.InscricaoMunicipal}"))
@@ -241,14 +225,14 @@ public sealed class DanfeDocument : IDocument
         {
             CelulaLabel(row.RelativeItem(4), "NATUREZA DA OPERAÇÃO", Ide.NaturezaOperacao);
             row.ConstantItem(0.5f).Background(CorBorda);
-            CelulaLabel(row.RelativeItem(2), "FORMA DE EMISSÃO",
+            CelulaLabel(row.AutoItem().PaddingRight(2), "FORMA DE EMISSÃO",
                 Ide.FormaEmissao == FormaEmissao.Normal ? "1 - Emissão Normal" :
                 $"{(int)Ide.FormaEmissao} - {Ide.FormaEmissao}");
             row.ConstantItem(0.5f).Background(CorBorda);
-            CelulaLabel(row.RelativeItem(2), "DATA/HORA DE EMISSÃO",
+            CelulaLabel(row.AutoItem().PaddingRight(2), "DATA/HORA DE EMISSÃO",
                 (Ide.DataHoraEmissao ?? Ide.DataEmissao)?.ToString("dd/MM/yyyy HH:mm:ss") ?? "-");
             row.ConstantItem(0.5f).Background(CorBorda);
-            CelulaLabel(row.RelativeItem(2), "DATA/HORA SAÍDA/ENTRADA",
+            CelulaLabel(row.AutoItem().PaddingRight(2), "DATA/HORA SAÍDA/ENTRADA",
                 (Ide.DataHoraSaidaEntrada ?? Ide.DataSaidaEntrada)?.ToString("dd/MM/yyyy HH:mm:ss") ?? "-");
         });
     }
@@ -284,7 +268,7 @@ public sealed class DanfeDocument : IDocument
                 row.ConstantItem(0.5f).Background(CorBorda);
                 CelulaLabel(row.RelativeItem(1), "CEP", endDest?.CEPFormatado);
                 row.ConstantItem(0.5f).Background(CorBorda);
-                CelulaLabel(row.RelativeItem(2), "IE DEST.", Dest?.InscricaoEstadual);
+                CelulaLabel(row.RelativeItem(2), "IE DEST.", Dest?.IEFormatado);
             });
         });
     }
@@ -302,17 +286,17 @@ public sealed class DanfeDocument : IDocument
             table.ColumnsDefinition(cols =>
             {
                 cols.ConstantColumn(18);  // #
-                cols.ConstantColumn(35);  // Código
+                cols.ConstantColumn(45);  // Código
                 cols.RelativeColumn(4);   // Descrição
-                cols.ConstantColumn(28);  // NCM
+                cols.ConstantColumn(40);  // NCM
                 if (!IsSimplificado)
                     cols.ConstantColumn(22); // CST/CSOSN
                 cols.ConstantColumn(22);  // CFOP
-                cols.ConstantColumn(22);  // Un.
-                cols.ConstantColumn(30);  // Qtd.
-                cols.ConstantColumn(34);  // V.Unit.
-                cols.ConstantColumn(30);  // V.Desc
-                cols.ConstantColumn(36);  // V.Total
+                cols.ConstantColumn(20);  // Un.
+                cols.ConstantColumn(50);  // Qtd.
+                cols.ConstantColumn(60);  // V.Unit.
+                cols.ConstantColumn(60);  // V.Desc
+                cols.ConstantColumn(60);  // V.Total
             });
 
             // ── Cabeçalho da tabela (repete a cada página) ─────────────
@@ -348,7 +332,7 @@ public sealed class DanfeDocument : IDocument
                 CelulaTabela(table, prod?.CFOP, bg, AlinhamentoTexto.Centro);
                 CelulaTabela(table, prod?.UnidadeComercial, bg, AlinhamentoTexto.Centro);
                 CelulaTabela(table, $"{prod?.QuantidadeComercial:N4}", bg, AlinhamentoTexto.Direita);
-                CelulaTabela(table, $"{prod?.ValorUnitarioComercial:N4}", bg, AlinhamentoTexto.Direita);
+                CelulaTabela(table, $"{prod?.ValorUnitarioComercial:N2}", bg, AlinhamentoTexto.Direita);
                 CelulaTabela(table, $"{prod?.ValorDesconto:N2}", bg, AlinhamentoTexto.Direita);
                 CelulaTabela(table, $"{prod?.ValorTotalBruto:N2}", bg, AlinhamentoTexto.Direita);
             }
@@ -366,12 +350,12 @@ public sealed class DanfeDocument : IDocument
             Rotulo(col, "DADOS DO TRANSPORTE");
             col.Item().Row(row =>
             {
-                CelulaLabel(row.RelativeItem(3), "MODALIDADE DO FRETE",
+                CelulaLabel(row.AutoItem().PaddingRight(2), "MODALIDADE DO FRETE",
                     transp?.Modalidade switch
                     {
-                        ModalidadeFrete.Emitente  => "0 - Contratação por conta do Emitente (CIF)",
-                        ModalidadeFrete.Destinatario => "1 - Contratação por conta do Destinatário (FOB)",
-                        ModalidadeFrete.Outros  => "2 - Contratação por conta de Terceiros",
+                        ModalidadeFrete.Emitente  => "0 - Contratação p/ conta do Emitente (CIF)",
+                        ModalidadeFrete.Destinatario => "1 - Contratação p/ conta do Destinatário (FOB)",
+                        ModalidadeFrete.Outros  => "2 - Contratação p/ conta de Terceiros",
                         ModalidadeFrete.ProprioRemetente => "3 - Transporte Próprio do Remetente",
                         ModalidadeFrete.ProprioDestinatario => "4 - Transporte Próprio do Destinatário",
                         ModalidadeFrete.SemFrete        => "9 - Sem Frete",
@@ -380,9 +364,9 @@ public sealed class DanfeDocument : IDocument
                 row.ConstantItem(0.5f).Background(CorBorda);
                 CelulaLabel(row.RelativeItem(4), "TRANSPORTADOR", transp?.Transportadora?.RazaoSocial);
                 row.ConstantItem(0.5f).Background(CorBorda);
-                CelulaLabel(row.RelativeItem(2), "CNPJ / CPF", transp?.Transportadora?.CNPJ_CPFFormatado);
+                CelulaLabel(row.AutoItem().PaddingRight(2), rotulo: "CNPJ / CPF", transp?.Transportadora?.CNPJ_CPFFormatado);
                 row.ConstantItem(0.5f).Background(CorBorda);
-                CelulaLabel(row.RelativeItem(1), "IE", transp?.Transportadora?.InscricaoEstadual);
+                CelulaLabel(row.AutoItem().PaddingRight(2), "IE", transp?.Transportadora?.IEFormatado);
             });
         });
     }
@@ -464,7 +448,7 @@ public sealed class DanfeDocument : IDocument
                 // Tributos totais aproximados (Lei 12.741)
                 if (ICMSTot?.TotalTributos > 0)
                 {
-                    col.Item().PaddingTop(1).Text(
+                    col.Item().PaddingVertical(1).PaddingHorizontal(2).Text(
                         $"Valor aprox. dos tributos: R$ {ICMSTot.TotalTributos:N2} (fonte: IBPT)")
                         .FontSize(FonteRotulo).Italic();
                 }
@@ -480,44 +464,38 @@ public sealed class DanfeDocument : IDocument
         var infAdic = Info.InformacoesAdicionais;
         c.Border(0.5f).BorderColor(CorBorda).Row(row =>
         {
-            row.RelativeItem(3).Padding(3).Column(col =>
+            row.RelativeItem(3).Padding(0).Column(col =>
             {
                 Rotulo(col, "INFORMAÇÕES COMPLEMENTARES");
-                col.Item().Text(infAdic?.infCpl ?? string.Empty)
+                col.Item().Padding(2).Text(infAdic?.infCpl ?? string.Empty)
                    .FontSize(FonteRotulo).BreakAnywhere();
             });
             row.ConstantItem(0.5f).Background(CorBorda);
-            row.RelativeItem(2).Padding(3).Column(col =>
+            row.RelativeItem(2).Padding(0).Column(col =>
             {
                 Rotulo(col, "INFORMAÇÕES DE INTERESSE DO FISCO");
-                col.Item().Text(infAdic?.infAdFisco ?? string.Empty)
+                col.Item().Padding(2).Text(infAdic?.infAdFisco ?? string.Empty)
                    .FontSize(FonteRotulo).BreakAnywhere();
             });
         });
     }
 
     // =========================================================================
-    // FOOTER
+    // FOOTER: seções abaixo dos itens (repetem em todas as páginas)
     // =========================================================================
     private void ComposeFooter(IContainer c)
     {
-        c.Row(row =>
+        c.Column(col =>
         {
-            row.RelativeItem().Column(col =>
+            col.Item().Element(ComposeTransporte);
+            col.Item().PaddingTop(1).Element(ComposeTotais);
+            col.Item().PaddingTop(1).Element(ComposeInformacoesAdicionais);
+
+            if (!string.IsNullOrEmpty(_options.MensagemRodape))
             {
-                if (!string.IsNullOrEmpty(_options.MensagemRodape))
-                    col.Item().Text(_options.MensagemRodape).FontSize(FonteRotulo).Italic();
-            });
-            row.ConstantItem(60).AlignRight().Column(col =>
-            {
-                col.Item().Text(ctx =>
-                {
-                    ctx.Span("Folha ").FontSize(FonteRotulo);
-                    ctx.CurrentPageNumber().FontSize(FonteRotulo).Bold();
-                    ctx.Span(" / ").FontSize(FonteRotulo);
-                    ctx.TotalPages().FontSize(FonteRotulo).Bold();
-                });
-            });
+                col.Item().PaddingTop(1).Text(_options.MensagemRodape)
+                   .FontSize(FonteRotulo).Italic();
+            }
         });
     }
 
@@ -577,8 +555,8 @@ public sealed class DanfeDocument : IDocument
         {
             var icms = item.Imposto?.ICMS?.Tributacao;
             if (icms is null) return null;
-            var cst = icms.GetType().GetProperty("CST")?.GetValue(icms);
-            return cst?.ToString();
+            var cst = (int)icms.CST;
+            return $"{(int)icms.Origem}{cst}";
         }
         catch { return null; }
     }

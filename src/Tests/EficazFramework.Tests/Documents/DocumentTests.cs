@@ -89,6 +89,37 @@ public class DocumentTests : BaseTest
         System.Text.Encoding.ASCII.GetString(pdf[..4]).Should().Be("%PDF");
     }
 
+    [Test]
+    public async Task GerarDanfeComMuitosItensDeveRepetirHeaderFooterEIncrementarFolhaNoHeader()
+    {
+        var nfe = await ObterNFeAsync("001.xml");
+        nfe.Should().NotBeNull();
+
+        // Duplica itens para forçar paginação (ex: 80 itens)
+        var itemBase = nfe.NFe.InformacoesNFe.Items[0];
+        for (int i = 0; i < 80; i++)
+        {
+            nfe.NFe.InformacoesNFe.Items.Add(itemBase);
+        }
+
+        byte[] pdf = nfe.GerarDanfe();
+        pdf.Should().NotBeNull();
+
+        using var pdfDoc = UglyToad.PdfPig.PdfDocument.Open(pdf);
+        pdfDoc.NumberOfPages.Should().BeGreaterThanOrEqualTo(2);
+
+        // Verifica que no Header de cada página aparece "FOLHA {page} / {total}"
+        for (int p = 1; p <= pdfDoc.NumberOfPages; p++)
+        {
+            var page = pdfDoc.GetPage(p);
+            var text = page.Text;
+            text.Should().Contain($"FOLHA {p} / {pdfDoc.NumberOfPages}");
+            // E o Footer também está presente em todas as páginas (Transporte / Totais)
+            text.Should().Contain("DADOS DO TRANSPORTE");
+            text.Should().Contain("CÁLCULO DO IMPOSTO");
+        }
+    }
+
     // =========================================================================
     // DANFSE (NFS-e Nacional)
     // =========================================================================
