@@ -63,6 +63,10 @@ public class DocumentTests : BaseTest
 
         // Verifica magic number PDF (%PDF)
         System.Text.Encoding.ASCII.GetString(pdf[..4]).Should().Be("%PDF");
+
+        using var pdfDoc = UglyToad.PdfPig.PdfDocument.Open(pdf);
+        var pageText = pdfDoc.GetPage(1).Text;
+        pageText.Should().Contain("DADOS DOS PRODUTOS / SERVIÇOS");
     }
 
     [Test]

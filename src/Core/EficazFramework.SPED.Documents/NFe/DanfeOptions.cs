@@ -20,5 +20,5 @@ public class DanfeOptions
     /// <summary>
     /// Texto personalizado exibido no rodapé do documento. Opcional.
     /// </summary>
-    public string? MensagemRodape { get; set; }
+    public Action<IContainer>? MensagemRodape { get; set; }
 }

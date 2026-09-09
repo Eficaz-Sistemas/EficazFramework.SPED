@@ -280,62 +280,86 @@ public sealed class DanfeDocument : IDocument
     {
         var itens = Info.Items ?? [];
 
-        c.Table(table =>
+        c.ExtendVertical().Border(0.5f).BorderColor(CorBorda).Column(col =>
         {
-            // ── Definição de colunas ──────────────────────────────────────
-            table.ColumnsDefinition(cols =>
+            col.Item().Table(table =>
             {
-                cols.ConstantColumn(18);  // #
-                cols.ConstantColumn(45);  // Código
-                cols.RelativeColumn(4);   // Descrição
-                cols.ConstantColumn(40);  // NCM
-                if (!IsSimplificado)
-                    cols.ConstantColumn(22); // CST/CSOSN
-                cols.ConstantColumn(22);  // CFOP
-                cols.ConstantColumn(20);  // Un.
-                cols.ConstantColumn(50);  // Qtd.
-                cols.ConstantColumn(60);  // V.Unit.
-                cols.ConstantColumn(60);  // V.Desc
-                cols.ConstantColumn(60);  // V.Total
+                // ── Definição de colunas ──────────────────────────────────────
+                table.ColumnsDefinition(cols =>
+                {
+                    cols.ConstantColumn(18);  // #
+                    cols.ConstantColumn(45);  // Código
+                    cols.RelativeColumn(4);   // Descrição
+                    cols.ConstantColumn(40);  // NCM
+                    if (!IsSimplificado)
+                        cols.ConstantColumn(25); // CST/CSOSN
+                    cols.ConstantColumn(22);  // CFOP
+                    cols.ConstantColumn(20);  // Un.
+                    cols.ConstantColumn(50);  // Qtd.
+                    cols.ConstantColumn(60);  // V.Unit.
+                    cols.ConstantColumn(60);  // V.Desc
+                    cols.ConstantColumn(60);  // V.Total
+                });
+
+                // ── Cabeçalho da tabela (repete a cada página) ─────────────
+                table.Header(header =>
+                {
+                    header.Cell().ColumnSpan((uint)(IsSimplificado ? 10 : 11))
+                          .Background(CorCabecalhoTabela).Padding(1).PaddingLeft(3)
+                          .Text("DADOS DOS PRODUTOS / SERVIÇOS").FontSize(FonteRotulo).Bold().FontColor(CorPrimaria);
+
+                    CabecalhoTabela(header.Cell(), "#");
+                    CabecalhoTabela(header.Cell(), "CÓDIGO");
+                    CabecalhoTabela(header.Cell(), "DESCRIÇÃO DO PRODUTO/SERVIÇO");
+                    CabecalhoTabela(header.Cell(), "NCM/SH");
+                    if (!IsSimplificado)
+                        CabecalhoTabela(header.Cell(), "CST");
+                    CabecalhoTabela(header.Cell(), "CFOP");
+                    CabecalhoTabela(header.Cell(), "UN");
+                    CabecalhoTabela(header.Cell(), "QTD.");
+                    CabecalhoTabela(header.Cell(), "V.UNIT.");
+                    CabecalhoTabela(header.Cell(), "V.DESC.");
+                    CabecalhoTabela(header.Cell(), "V.TOTAL");
+                });
+
+                // ── Linhas de dados com alternância de background ──────────
+                for (int i = 0; i < itens.Count; i++)
+                {
+                    var item = itens[i];
+                    var prod = item.Dados;
+                    var bg = i % 2 == 0 ? CorLinhaPar : CorLinhaImpar;
+
+                    CelulaTabela(table, (i + 1).ToString(), bg, AlinhamentoTexto.Centro);
+                    CelulaTabela(table, prod?.Codigo, bg);
+                    CelulaTabela(table, prod?.Descricao, bg);
+                    CelulaTabela(table, prod?.NCM, bg, AlinhamentoTexto.Centro);
+                    if (!IsSimplificado)
+                        CelulaTabela(table, ObterCst(item), bg, AlinhamentoTexto.Centro);
+                    CelulaTabela(table, prod?.CFOP, bg, AlinhamentoTexto.Centro);
+                    CelulaTabela(table, prod?.UnidadeComercial, bg, AlinhamentoTexto.Centro);
+                    CelulaTabela(table, $"{prod?.QuantidadeComercial:N4}", bg, AlinhamentoTexto.Direita);
+                    CelulaTabela(table, $"{prod?.ValorUnitarioComercial:N2}", bg, AlinhamentoTexto.Direita);
+                    CelulaTabela(table, $"{prod?.ValorDesconto:N2}", bg, AlinhamentoTexto.Direita);
+                    CelulaTabela(table, $"{prod?.ValorTotalBruto:N2}", bg, AlinhamentoTexto.Direita);
+                }
             });
 
-            // ── Cabeçalho da tabela (repete a cada página) ─────────────
-            table.Header(header =>
+            // ── Extensão vertical das colunas até a borda inferior ────────
+            col.Item().ExtendVertical().Row(emptyRow =>
             {
-                CabecalhoTabela(header.Cell(), "#");
-                CabecalhoTabela(header.Cell(), "CÓDIGO");
-                CabecalhoTabela(header.Cell(), "DESCRIÇÃO DO PRODUTO/SERVIÇO");
-                CabecalhoTabela(header.Cell(), "NCM/SH");
+                emptyRow.ConstantItem(18).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(45).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.RelativeItem(4).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(40).BorderRight(0.3f).BorderColor(CorBorda);
                 if (!IsSimplificado)
-                    CabecalhoTabela(header.Cell(), "CST");
-                CabecalhoTabela(header.Cell(), "CFOP");
-                CabecalhoTabela(header.Cell(), "UN");
-                CabecalhoTabela(header.Cell(), "QTD.");
-                CabecalhoTabela(header.Cell(), "V.UNIT.");
-                CabecalhoTabela(header.Cell(), "V.DESC.");
-                CabecalhoTabela(header.Cell(), "V.TOTAL");
+                    emptyRow.ConstantItem(25).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(22).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(20).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(50).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(60).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(60).BorderRight(0.3f).BorderColor(CorBorda);
+                emptyRow.ConstantItem(60);
             });
-
-            // ── Linhas de dados com alternância de background ──────────
-            for (int i = 0; i < itens.Count; i++)
-            {
-                var item = itens[i];
-                var prod = item.Dados;
-                var bg = i % 2 == 0 ? CorLinhaPar : CorLinhaImpar;
-
-                CelulaTabela(table, (i + 1).ToString(), bg, AlinhamentoTexto.Centro);
-                CelulaTabela(table, prod?.Codigo, bg);
-                CelulaTabela(table, prod?.Descricao, bg);
-                CelulaTabela(table, prod?.NCM, bg, AlinhamentoTexto.Centro);
-                if (!IsSimplificado)
-                    CelulaTabela(table, ObterCst(item), bg, AlinhamentoTexto.Centro);
-                CelulaTabela(table, prod?.CFOP, bg, AlinhamentoTexto.Centro);
-                CelulaTabela(table, prod?.UnidadeComercial, bg, AlinhamentoTexto.Centro);
-                CelulaTabela(table, $"{prod?.QuantidadeComercial:N4}", bg, AlinhamentoTexto.Direita);
-                CelulaTabela(table, $"{prod?.ValorUnitarioComercial:N2}", bg, AlinhamentoTexto.Direita);
-                CelulaTabela(table, $"{prod?.ValorDesconto:N2}", bg, AlinhamentoTexto.Direita);
-                CelulaTabela(table, $"{prod?.ValorTotalBruto:N2}", bg, AlinhamentoTexto.Direita);
-            }
         });
     }
 
@@ -490,12 +514,7 @@ public sealed class DanfeDocument : IDocument
             col.Item().Element(ComposeTransporte);
             col.Item().PaddingTop(1).Element(ComposeTotais);
             col.Item().PaddingTop(1).Element(ComposeInformacoesAdicionais);
-
-            if (!string.IsNullOrEmpty(_options.MensagemRodape))
-            {
-                col.Item().PaddingTop(1).Text(_options.MensagemRodape)
-                   .FontSize(FonteRotulo).Italic();
-            }
+            _options.MensagemRodape?.Invoke(col.Item());
         });
     }
 
