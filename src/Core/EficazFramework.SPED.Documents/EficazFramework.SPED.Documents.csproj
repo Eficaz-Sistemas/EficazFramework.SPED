@@ -30,6 +30,7 @@
     <None Include="EfCore.snk" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="PdfPig" Version="0.1.16" />
     <PackageReference Include="QuestPDF" Version="2026.8.0" />
   </ItemGroup>
   <ItemGroup>

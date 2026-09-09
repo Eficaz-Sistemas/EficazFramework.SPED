@@ -1,0 +1,299 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+	<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+		<infNFe Id="NFe99999999999999999999999999999999999999999999" versao="4.00">
+			<ide>
+				<cUF>35</cUF>
+				<cNF>12345678</cNF>
+				<natOp>VENDA DE MERCADORIA</natOp>
+				<mod>55</mod>
+				<serie>1</serie>
+				<nNF>99999</nNF>
+				<dhEmi>2025-12-16T09:46:08-03:00</dhEmi>
+				<tpNF>1</tpNF>
+				<idDest>1</idDest>
+				<cMunFG>3543907</cMunFG>
+				<tpImp>1</tpImp>
+				<tpEmis>1</tpEmis>
+				<cDV>5</cDV>
+				<tpAmb>1</tpAmb>
+				<finNFe>1</finNFe>
+				<indFinal>0</indFinal>
+				<indPres>9</indPres>
+				<indIntermed>0</indIntermed>
+				<procEmi>0</procEmi>
+				<verProc>SISTEMA FAKE DEMO</verProc>
+			</ide>
+			<emit>
+				<CNPJ>11111111000111</CNPJ>
+				<xNome>EMPRESA FAKE LTDA</xNome>
+				<xFant>EMPRESA DEMO</xFant>
+				<enderEmit>
+					<xLgr>AVENIDA FICTÍCIA</xLgr>
+					<nro>1234</nro>
+					<xCpl>SALA 101</xCpl>
+					<xBairro>CENTRO</xBairro>
+					<cMun>3543907</cMun>
+					<xMun>CIDADE DEMO</xMun>
+					<UF>SP</UF>
+					<CEP>00000000</CEP>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+					<fone>1100000000</fone>
+				</enderEmit>
+				<IE>000000000000</IE>
+				<IM>00000</IM>
+				<CNAE>0000000</CNAE>
+				<CRT>3</CRT>
+			</emit>
+			<dest>
+				<CNPJ>22222222000222</CNPJ>
+				<xNome>CLIENTE FAKE S.A.</xNome>
+				<enderDest>
+					<xLgr>RUA EXEMPLO</xLgr>
+					<nro>S/N</nro>
+					<xCpl>BLOCO B</xCpl>
+					<xBairro>BAIRRO DEMO</xBairro>
+					<cMun>3509205</cMun>
+					<xMun>CIDADE TESTE</xMun>
+					<UF>SP</UF>
+					<CEP>11111111</CEP>
+					<cPais>1058</cPais>
+					<xPais>BRASIL</xPais>
+					<fone>1199999999</fone>
+				</enderDest>
+				<indIEDest>1</indIEDest>
+				<IE>000000000000</IE>
+				<email>contato@cliente-fake.com</email>
+			</dest>
+			<entrega>
+				<CNPJ>22222222000222</CNPJ>
+				<xLgr>RUA EXEMPLO, S/N - BLOCO B</xLgr>
+				<nro>0</nro>
+				<xBairro>BAIRRO DEMO</xBairro>
+				<cMun>3509205</cMun>
+				<xMun>CIDADE TESTE</xMun>
+				<UF>SP</UF>
+				<CEP>11111111</CEP>
+				<cPais>1058</cPais>
+				<xPais>BRASIL</xPais>
+				<fone>1199999999</fone>
+			</entrega>
+			<det nItem="1">
+				<prod>
+					<cProd>11882</cProd>
+					<cEAN>7898744791017</cEAN>
+					<xProd>SH LIXADEIRA PAREDE E TETO SUPER LEVE TURBO C/ COLETOR 1200W 900B</xProd>
+					<NCM>84659310</NCM>
+					<CFOP>5102</CFOP>
+					<uCom>UN</uCom>
+					<qCom>2.0000</qCom>
+					<vUnCom>1990.00</vUnCom>
+					<vProd>3980.00</vProd>
+					<cEANTrib>7898744791017</cEANTrib>
+					<uTrib>UN</uTrib>
+					<qTrib>2.0000</qTrib>
+					<vUnTrib>1990.00</vUnTrib>
+					<indTot>1</indTot>
+				</prod>
+				<imposto>
+					<vTotTrib>736.30</vTotTrib>
+					<ICMS>
+						<ICMS20>
+							<orig>2</orig>
+							<CST>20</CST>
+							<modBC>3</modBC>
+							<pRedBC>51.11</pRedBC>
+							<vBC>1945.82</vBC>
+							<pICMS>18.00</pICMS>
+							<vICMS>350.25</vICMS>
+						</ICMS20>
+					</ICMS>
+					<IPI>
+						<cEnq>999</cEnq>
+						<IPINT>
+							<CST>53</CST>
+						</IPINT>
+					</IPI>
+					<PIS>
+						<PISAliq>
+							<CST>01</CST>
+							<vBC>3629.75</vBC>
+							<pPIS>1.6500</pPIS>
+							<vPIS>59.89</vPIS>
+						</PISAliq>
+					</PIS>
+					<COFINS>
+						<COFINSAliq>
+							<CST>01</CST>
+							<vBC>3629.75</vBC>
+							<pCOFINS>7.6000</pCOFINS>
+							<vCOFINS>275.86</vCOFINS>
+						</COFINSAliq>
+					</COFINS>
+					<IBSCBS>
+						<CST>000</CST>
+						<cClassTrib>000001</cClassTrib>
+						<gIBSCBS>
+							<vBC>3294.00</vBC>
+							<gIBSUF>
+								<pIBSUF>0.1000</pIBSUF>
+								<vIBSUF>3.29</vIBSUF>
+							</gIBSUF>
+							<gIBSMun>
+								<pIBSMun>0.0000</pIBSMun>
+								<vIBSMun>0.00</vIBSMun>
+							</gIBSMun>
+							<vIBS>3.29</vIBS>
+							<gCBS>
+								<pCBS>0.9000</pCBS>
+								<vCBS>29.65</vCBS>
+							</gCBS>
+						</gIBSCBS>
+					</IBSCBS>
+				</imposto>
+				<vItem>3980.00</vItem>
+			</det>
+			<total>
+				<ICMSTot>
+					<vBC>1945.82</vBC>
+					<vICMS>350.25</vICMS>
+					<vICMSDeson>0.00</vICMSDeson>
+					<vFCPUFDest>0.00</vFCPUFDest>
+					<vICMSUFDest>0.00</vICMSUFDest>
+					<vICMSUFRemet>0.00</vICMSUFRemet>
+					<vFCP>0.00</vFCP>
+					<vBCST>0.00</vBCST>
+					<vST>0.00</vST>
+					<vFCPST>0.00</vFCPST>
+					<vFCPSTRet>0.00</vFCPSTRet>
+					<vProd>3980.00</vProd>
+					<vFrete>0.00</vFrete>
+					<vSeg>0.00</vSeg>
+					<vDesc>0.00</vDesc>
+					<vII>0.00</vII>
+					<vIPI>0.00</vIPI>
+					<vIPIDevol>0.00</vIPIDevol>
+					<vPIS>59.89</vPIS>
+					<vCOFINS>275.86</vCOFINS>
+					<vOutro>0.00</vOutro>
+					<vNF>3980.00</vNF>
+					<vTotTrib>736.30</vTotTrib>
+				</ICMSTot>
+				<IBSCBSTot>
+					<vBCIBSCBS>3294.00</vBCIBSCBS>
+					<gIBS>
+						<gIBSUF>
+							<vDif>0.00</vDif>
+							<vDevTrib>0.00</vDevTrib>
+							<vIBSUF>3.29</vIBSUF>
+						</gIBSUF>
+						<gIBSMun>
+							<vDif>0.00</vDif>
+							<vDevTrib>0.00</vDevTrib>
+							<vIBSMun>0.00</vIBSMun>
+						</gIBSMun>
+						<vIBS>3.29</vIBS>
+						<vCredPres>0.00</vCredPres>
+						<vCredPresCondSus>0.00</vCredPresCondSus>
+					</gIBS>
+					<gCBS>
+						<vDif>0.00</vDif>
+						<vDevTrib>0.00</vDevTrib>
+						<vCBS>29.65</vCBS>
+						<vCredPres>0.00</vCredPres>
+						<vCredPresCondSus>0.00</vCredPresCondSus>
+					</gCBS>
+				</IBSCBSTot>
+				<vNFTot>3980.00</vNFTot>
+			</total>
+			<transp>
+				<modFrete>0</modFrete>
+				<transporta>
+					<CNPJ>33333333000333</CNPJ>
+					<xNome>TRANSPORTADORA FAKE LTDA</xNome>
+					<IE>000000000000</IE>
+					<xEnder>AVENIDA DEMONSTRAÇÃO, 1000</xEnder>
+					<xMun>PIRACICABA</xMun>
+					<UF>SP</UF>
+				</transporta>
+				<vol>
+					<qVol>2</qVol>
+					<esp>CX</esp>
+					<pesoL>7.200</pesoL>
+					<pesoB>8.000</pesoB>
+				</vol>
+			</transp>
+			<cobr>
+				<fat>
+					<nFat>000000018291</nFat>
+					<vOrig>3980.00</vOrig>
+					<vDesc>0.00</vDesc>
+					<vLiq>3980.00</vLiq>
+				</fat>
+				<dup>
+					<nDup>001</nDup>
+					<dVenc>2026-03-16</dVenc>
+					<vDup>3980.00</vDup>
+				</dup>
+			</cobr>
+			<pag>
+				<detPag>
+					<indPag>1</indPag>
+					<tPag>91</tPag>
+					<vPag>0.00</vPag>
+				</detPag>
+			</pag>
+			<infAdic>
+				<infAdFisco>Vlr Aprox dos Tributos: R$ 386,06 Federal  / R$ 350,24 Estadual - Fonte: IBPT</infAdFisco>
+				<infCpl>
+					Vendedor: 124 - REPRESENTANTE FAKE
+					Digitador: 007 - USUARIO DEMO
+					Cond.Pag: 01090 - DEPOSITO 90 DIAS
+					Decl. que os produtos, considerados perigosos sao embalados adequadamente p/ suportar os riscos normais de carregamento, descarregamento, transbordo e transporte que atende a regulamentacao em vigor.
+					TIPO DE VENDA: ENTREGA
+					END.ENTREGA: RUA EXEMPLO, S/N - BLOCO B - BAIRRO DEMO - CIDADE TESTE - SP - 11111111
+					OC: 571483
+					DADOS P/DEPOSITO BANCO FAKE AG: 0000-0 C/C 00000-0
+				</infCpl>
+			</infAdic>
+			<infRespTec>
+				<CNPJ>44444444000444</CNPJ>
+				<xContato>EMPRESA DE SISTEMAS FAKE LTDA</xContato>
+				<email>suporte@fake-sistemas.com</email>
+				<fone>1100000000</fone>
+			</infRespTec>
+		</infNFe>
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="#NFe99999999999999999999999999999999999999999999">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue>FAKEHASHVALUE==</DigestValue>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue>FAKESIGNATUREVALUE==</SignatureValue>
+			<KeyInfo>
+				<X509Data>
+					<X509Certificate>FAKECERTIFICATEVALUE==</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</Signature>
+	</NFe>
+	<protNFe versao="4.00">
+		<infProt Id="Id999999999999999">
+			<tpAmb>1</tpAmb>
+			<verAplic>SP_NFE_PL009_V4</verAplic>
+			<chNFe>35259999999999999999999999999999999999999999</chNFe>
+			<dhRecbto>2025-12-16T09:46:30-03:00</dhRecbto>
+			<nProt>999999999999999</nProt>
+			<digVal>FAKEDIGESTVALUEEXAMPLE==</digVal>
+			<cStat>100</cStat>
+			<xMotivo>Autorizado o uso da NF-e</xMotivo>
+		</infProt>
+	</protNFe>
+</nfeProc>
