@@ -1,4 +1,5 @@
-﻿using EficazFramework.SPED.Schemas.NFSe.Nacional;
+using EficazFramework.SPED.Schemas.NFSe.Nacional;
+using EficazFramework.SPED.Services.NFSe.Nacional;
 using EficazFramework.SPED.Tests;
 
 namespace EficazFramework.SPED.Schemas.NFSe;
@@ -182,6 +183,81 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         }
     }
 
+    [Test]
+    public async Task DpsSerializationAndDeserialization()
+    {
+        Nacional.NFSe nfse = await ReadAsync(Resources.Schemas.XML.NFSe_Nacional_1_0_1);
+        nfse.Should().NotBeNull();
+        nfse.InfNFSe.DPS.Should().NotBeNull();
 
+        DeclaracaoPrestacaoServico dps = nfse.InfNFSe.DPS;
+        dps.DocumentType.Should().Be(XmlDocumentType.NFS_e_Nacional_DPS);
+        dps.Chave.Should().Be("DPS351620024973699600019749999000000000000113");
 
+        string xmlSerialized = dps.Serialize();
+        xmlSerialized.Should().NotBeNullOrWhiteSpace();
+        xmlSerialized.Should().Contain("<DPS");
+        xmlSerialized.Should().Contain("http://www.sped.fazenda.gov.br/nfse");
+        xmlSerialized.Should().Contain("<infDPS");
+
+        DeclaracaoPrestacaoServico dpsDeserialized = DeclaracaoPrestacaoServico.Deserialize(xmlSerialized);
+        dpsDeserialized.Should().NotBeNull();
+        dpsDeserialized.Chave.Should().Be(dps.Chave);
+        dpsDeserialized.InfDPS.Serie.Should().Be(dps.InfDPS.Serie);
+        dpsDeserialized.InfDPS.Numero.Should().Be(dps.InfDPS.Numero);
+    }
+
+    [Test]
+    public async Task DpsDigitalSignatureAndCompression()
+    {
+        Nacional.NFSe nfse = await ReadAsync(Resources.Schemas.XML.NFSe_Nacional_1_0_1);
+        DeclaracaoPrestacaoServico dps = nfse.InfNFSe.DPS;
+
+        var certPath = $"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx";
+        var cert = new Utilities.IcpBrasilX509Certificate2(certPath, "1234");
+        cert.Should().NotBeNull();
+
+        var service = new NfseNacionalService
+        {
+            SelecionaCertificado = () => cert
+        };
+
+        var docAssinado = service.AssinarDps(dps);
+        docAssinado.Should().NotBeNull();
+
+        var signatureNode = docAssinado.GetElementsByTagName("Signature");
+        signatureNode.Count.Should().Be(1);
+
+        var signatureMethod = docAssinado.GetElementsByTagName("SignatureMethod")[0]?.Attributes?["Algorithm"]?.Value;
+        signatureMethod.Should().Be("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256");
+
+        var xmlAssinado = docAssinado.OuterXml;
+        var gzipB64 = NfseNacionalCompression.CompressToGZipBase64(xmlAssinado);
+        gzipB64.Should().NotBeNullOrWhiteSpace();
+
+        var decompressed = NfseNacionalCompression.DecompressFromGZipBase64(gzipB64);
+        decompressed.Should().Be(xmlAssinado);
+    }
+
+    [Test]
+    public void NfseNacionalServiceCanonicalEnvironmentTest()
+    {
+        var service = new NfseNacionalService();
+        service.UrlHomologacao.ToString().Should().Contain("hom-nfse");
+        service.UrlProducao.ToString().Should().Contain("sefin.nfse.gov.br");
+
+        // Canonical environment verification
+        TipoAmbienteEnum.HOMOLOGACAO.ToString().Should().Be("HOMOLOGACAO");
+    }
+
+    [Test]
+    public void EnsureNoCorruptedCharactersInSchemas()
+    {
+        var path = Path.GetFullPath(Path.Combine(TestContext.CurrentContext.TestDirectory, "../../../../Core/EficazFramework.SPED.Schemas/NFSe/Nacional/nfse.cs"));
+        if (!File.Exists(path))
+            path = @"C:\repos\Eficaz-Sistemas\EficazFramework.SPED\src\Core\EficazFramework.SPED.Schemas\NFSe\Nacional\nfse.cs";
+        File.Exists(path).Should().BeTrue();
+        var text = File.ReadAllText(path, System.Text.Encoding.UTF8);
+        text.Should().NotContain("\uFFFD");
+    }
 }

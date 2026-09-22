@@ -21,7 +21,7 @@ public abstract class NFSeNacionalBase : INotifyPropertyChanged
 }
 
 /// <summary>
-/// Tipo Versão da NFSe - 1.01 (conforme XSD `Versao`).
+/// Tipo VersÃ£o da NFSe - 1.01 (conforme XSD `Versao`).
 /// </summary>
 public enum Versao
 {
@@ -30,7 +30,7 @@ public enum Versao
 }
 
 /// <summary>
-/// Tipos de ambiente do Sistema Nacional NFS-e: 1 - Produção; 2 - Homologação.
+/// Tipos de ambiente do Sistema Nacional NFS-e: 1 - ProduÃ§Ã£o; 2 - HomologaÃ§Ã£o.
 /// </summary>
 public enum Ambiente
 {
@@ -52,7 +52,7 @@ public enum AmbienteGerador
 }
 
 /// <summary>
-/// Tipo de emissão da NFS-e: 1 - Emissão normal; 2 - Emissão original em leiaute próprio do município.
+/// Tipo de emissÃ£o da NFS-e: 1 - EmissÃ£o normal; 2 - EmissÃ£o original em leiaute prÃ³prio do municÃ­pio.
 /// </summary>
 public enum TipoEmissao
 {
@@ -63,7 +63,7 @@ public enum TipoEmissao
 }
 
 /// <summary>
-/// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - Intermediário.
+/// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - IntermediÃ¡rio.
 /// </summary>
 public enum EmitenteDps
 {
@@ -86,7 +86,7 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
     private string? _versao;
 
     /// <summary>
-    /// Grupo de informações da NFS-e.
+    /// Grupo de informaÃ§Ãµes da NFS-e.
     /// </summary>
     [XmlElement("infNFSe")]
     public InformacoesNfse? InfNFSe
@@ -106,7 +106,7 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
     }
 
     /// <summary>
-    /// Versão do documento (atributo obrigatório).
+    /// VersÃ£o do documento (atributo obrigatÃ³rio).
     /// </summary>
     [XmlAttribute("versao")]
     public string? versao
@@ -347,7 +347,7 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
 }
 
 /// <summary>
-/// Grupo de informações da NFS-e (tipo `InformacoesNfse`).
+/// Grupo de informaÃ§Ãµes da NFS-e (tipo `InformacoesNfse`).
 /// </summary>
 [XmlType("TCInfNFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InformacoesNfse : NFSeNacionalBase
@@ -375,7 +375,7 @@ public class InformacoesNfse : NFSeNacionalBase
     private string? _id;
 
     /// <summary>
-    /// Descrição do código do IBGE do município emissor da NFS-e.
+    /// DescriÃ§Ã£o do cÃ³digo do IBGE do municÃ­pio emissor da NFS-e.
     /// </summary>
     [XmlElement("xLocEmi")]
     public string? LocalEmissao
@@ -385,7 +385,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do local da prestação do serviço.
+    /// DescriÃ§Ã£o do local da prestaÃ§Ã£o do serviÃ§o.
     /// </summary>
     [XmlElement("xLocPrestacao")]
     public string? LocalPrestacao
@@ -395,7 +395,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número sequencial por tipo de emitente da NFS-e.
+    /// NÃºmero sequencial por tipo de emitente da NFS-e.
     /// </summary>
     [XmlElement("nNFSe")]
     public long Numero
@@ -405,7 +405,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Código do município de incidência (IBGE) - opcional.
+    /// CÃ³digo do municÃ­pio de incidÃªncia (IBGE) - opcional.
     /// </summary>
     [XmlElement("cLocIncid")]
     public string? LocalIncidenciaCodigo
@@ -415,7 +415,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do município de incidência - opcional.
+    /// DescriÃ§Ã£o do municÃ­pio de incidÃªncia - opcional.
     /// </summary>
     [XmlElement("xLocIncid")]
     public string? LocalIncidenciaNome
@@ -425,7 +425,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do código de tributação nacional do ISSQN.
+    /// DescriÃ§Ã£o do cÃ³digo de tributaÃ§Ã£o nacional do ISSQN.
     /// </summary>
     [XmlElement("xTribNac")]
     public string? TributacaoNacional
@@ -435,7 +435,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do código de tributação municipal do ISSQN - opcional.
+    /// DescriÃ§Ã£o do cÃ³digo de tributaÃ§Ã£o municipal do ISSQN - opcional.
     /// </summary>
     [XmlElement("xTribMun")]
     public string? xTribMun
@@ -445,7 +445,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do código da NBS - opcional.
+    /// DescriÃ§Ã£o do cÃ³digo da NBS - opcional.
     /// </summary>
     [XmlElement("xNBS")]
     public string? xNBS
@@ -455,7 +455,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Versão do aplicativo que gerou a NFS-e.
+    /// VersÃ£o do aplicativo que gerou a NFS-e.
     /// </summary>
     [XmlElement("verAplic")]
     public string? VersaoAplicativo
@@ -475,7 +475,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Processo de Emissão da DPS.
+    /// Processo de EmissÃ£o da DPS.
     /// </summary>
     [XmlElement("tpEmis")]
     public TipoEmissao TipoEmissao
@@ -485,7 +485,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Processo de Emissão da DPS - opcional.
+    /// Processo de EmissÃ£o da DPS - opcional.
     /// </summary>
     [XmlElement("procEmi")]
     public string? procEmi
@@ -495,7 +495,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Código do Status da mensagem.
+    /// CÃ³digo do Status da mensagem.
     /// </summary>
     [XmlElement("cStat")]
     public string? CodigoSituacao
@@ -505,7 +505,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Data/Hora da validação da DPS e geração da NFS-e (UTC).
+    /// Data/Hora da validaÃ§Ã£o da DPS e geraÃ§Ã£o da NFS-e (UTC).
     /// </summary>
     [XmlElement("dhProc")]
     public DateTimeOffset DataHoraProcessamento
@@ -515,7 +515,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número sequencial do documento gerado por ambiente gerador de DFSe do município.
+    /// NÃºmero sequencial do documento gerado por ambiente gerador de DFSe do municÃ­pio.
     /// </summary>
     [XmlElement("nDFSe")]
     public string? NumeroSequencial
@@ -525,7 +525,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do emitente da NFS-e.
+    /// Grupo de informaÃ§Ãµes do emitente da NFS-e.
     /// </summary>
     [XmlElement("emit")]
     public Emitente? Emitente
@@ -535,7 +535,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Uso da Administração Tributária Municipal - opcional.
+    /// Uso da AdministraÃ§Ã£o TributÃ¡ria Municipal - opcional.
     /// </summary>
     [XmlElement("xOutInf")]
     public string? xOutInf
@@ -545,7 +545,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de valores referentes ao Serviço Prestado.
+    /// Grupo de valores referentes ao ServiÃ§o Prestado.
     /// </summary>
     [XmlElement("valores")]
     public Valores? Valores
@@ -555,7 +555,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações geradas pelo sistema referentes ao IBS e à CBS - opcional.
+    /// Grupo de informaÃ§Ãµes geradas pelo sistema referentes ao IBS e Ã  CBS - opcional.
     /// </summary>
     [XmlElement("IBSCBS")]
     public IbsCbs? IBSCBS
@@ -565,7 +565,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações da DPS relativas ao serviço prestado.
+    /// Grupo de informaÃ§Ãµes da DPS relativas ao serviÃ§o prestado.
     /// </summary>
     [XmlElement("DPS")]
     public DeclaracaoPrestacaoServico? DPS
@@ -575,7 +575,7 @@ public class InformacoesNfse : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Identificador do elemento (atributo Id) - obrigatório.
+    /// Identificador do elemento (atributo Id) - obrigatÃ³rio.
     /// </summary>
     [XmlAttribute("Id")]
     public string? Id
@@ -601,7 +601,7 @@ public class Emitente : NFSeNacionalBase
     private string? _email;
 
     /// <summary>
-    /// Número do CNPJ do emitente da NFS-e.
+    /// NÃºmero do CNPJ do emitente da NFS-e.
     /// </summary>
     [XmlElement("CNPJ")]
     public string? Cnpj
@@ -611,7 +611,7 @@ public class Emitente : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número do CPF do emitente da NFS-e.
+    /// NÃºmero do CPF do emitente da NFS-e.
     /// </summary>
     [XmlElement("CPF")]
     public string? CPF
@@ -621,7 +621,7 @@ public class Emitente : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número da inscrição municipal - opcional.
+    /// NÃºmero da inscriÃ§Ã£o municipal - opcional.
     /// </summary>
     [XmlElement("IM")]
     public string? InscricaoMunicipal
@@ -631,7 +631,7 @@ public class Emitente : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Nome / Razão Social do emitente.
+    /// Nome / RazÃ£o Social do emitente.
     /// </summary>
     [XmlElement("xNome")]
     public string? Nome
@@ -651,7 +651,7 @@ public class Emitente : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do endereço nacional do Emitente da NFS-e.
+    /// Grupo de informaÃ§Ãµes do endereÃ§o nacional do Emitente da NFS-e.
     /// </summary>
     [XmlElement("enderNac")]
     public EnderecoNacional? EnderecoNacional
@@ -661,7 +661,7 @@ public class Emitente : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número do telefone do emitente - opcional.
+    /// NÃºmero do telefone do emitente - opcional.
     /// </summary>
     [XmlElement("fone")]
     public string? Telefone
@@ -682,7 +682,7 @@ public class Emitente : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para endereço do emitente (`EnderecoEmitente`).
+/// Tipo complexo para endereÃ§o do emitente (`EnderecoEmitente`).
 /// </summary>
 [XmlType("TenderNac", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class EnderecoNacional : NFSeNacionalBase
@@ -761,7 +761,7 @@ public class Valores : NFSeNacionalBase
     private decimal? _vLiq;
 
     /// <summary>
-    /// Valor monetário (R$) de dedução/redução da base de cálculo (BC) do ISSQN - opcional.
+    /// Valor monetÃ¡rio (R$) de deduÃ§Ã£o/reduÃ§Ã£o da base de cÃ¡lculo (BC) do ISSQN - opcional.
     /// </summary>
     [XmlElement("vCalcDR")]
     public decimal? vCalcDR
@@ -771,7 +771,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Tipo Benefício Municipal (BM) - opcional.
+    /// Tipo BenefÃ­cio Municipal (BM) - opcional.
     /// </summary>
     [XmlElement("tpBM")]
     public string? tpBM
@@ -781,7 +781,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Valor monetário do percentual de redução da base de cálculo (BC) do ISSQN devido a um benefício municipal (BM) - opcional.
+    /// Valor monetÃ¡rio do percentual de reduÃ§Ã£o da base de cÃ¡lculo (BC) do ISSQN devido a um benefÃ­cio municipal (BM) - opcional.
     /// </summary>
     [XmlElement("vCalcBM")]
     public decimal? vCalcBM
@@ -791,7 +791,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Valor da Base de Cálculo do ISSQN (R$) - opcional.
+    /// Valor da Base de CÃ¡lculo do ISSQN (R$) - opcional.
     /// </summary>
     [XmlElement("vBC")]
     public decimal? IssqnBaseCalculo
@@ -801,7 +801,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Alíquota aplicada sobre a base de cálculo para apuração do ISSQN - opcional.
+    /// AlÃ­quota aplicada sobre a base de cÃ¡lculo para apuraÃ§Ã£o do ISSQN - opcional.
     /// </summary>
     [XmlElement("pAliqAplic")]
     public decimal? IssqnAliquota
@@ -821,7 +821,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Valor total de retenções - opcional.
+    /// Valor total de retenÃ§Ãµes - opcional.
     /// </summary>
     [XmlElement("vTotalRet")]
     public decimal? ValorTotalRetencoes
@@ -831,7 +831,7 @@ public class Valores : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Valor líquido = Valor do serviço - Desconto condicionado - Desconto incondicionado - Valores retidos.
+    /// Valor lÃ­quido = Valor do serviÃ§o - Desconto condicionado - Desconto incondicionado - Valores retidos.
     /// </summary>
     [XmlElement("vLiq")]
     public decimal? ValorTotalLiquido
@@ -844,15 +844,16 @@ public class Valores : NFSeNacionalBase
 /// <summary>
 /// Tipo complexo DPS (`DeclaracaoPrestacaoServico`).
 /// </summary>
+[XmlRoot("DPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 [XmlType("TCDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
-public class DeclaracaoPrestacaoServico : NFSeNacionalBase
+public class DeclaracaoPrestacaoServico : NFSeNacionalBase, IXmlSpedDocument
 {
     private InformacoesDps? _infDPS;
     private XmlElement? _signature;
     private string? _versao;
 
     /// <summary>
-    /// Informações da DPS.
+    /// InformaÃ§Ãµes da DPS.
     /// </summary>
     [XmlElement("infDPS")]
     public InformacoesDps? InfDPS
@@ -872,7 +873,7 @@ public class DeclaracaoPrestacaoServico : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Versão do documento (atributo obrigatório).
+    /// VersÃ£o do documento (atributo obrigatÃ³rio).
     /// </summary>
     [XmlAttribute("versao")]
     public string? versao
@@ -880,10 +881,84 @@ public class DeclaracaoPrestacaoServico : NFSeNacionalBase
         get => _versao;
         set { _versao = value; OnPropertyChanged(); }
     }
+
+    public XmlDocumentType DocumentType => XmlDocumentType.NFS_e_Nacional_DPS;
+    public DateTime? DataEmissao => InfDPS?.DataHoraEmissao?.DateTime;
+    public string Chave => InfDPS?.Id ?? string.Empty;
+
+    private static XmlSerializer sSerializer = null!;
+    private static XmlSerializer Serializer
+    {
+        get
+        {
+            sSerializer ??= new XmlSerializer(typeof(DeclaracaoPrestacaoServico));
+            return sSerializer;
+        }
+    }
+
+    /// <summary>
+    /// Serializa a instÃ¢ncia atual da DPS em uma string XML.
+    /// </summary>
+    public virtual string Serialize()
+    {
+        System.IO.StreamReader streamReader = null!;
+        System.IO.MemoryStream memoryStream = null!;
+        try
+        {
+            memoryStream = new System.IO.MemoryStream();
+            Serializer.Serialize(memoryStream, this);
+            memoryStream.Seek(0L, System.IO.SeekOrigin.Begin);
+            streamReader = new System.IO.StreamReader(memoryStream);
+            return streamReader.ReadToEnd();
+        }
+        finally
+        {
+            streamReader?.Dispose();
+            memoryStream?.Dispose();
+        }
+    }
+
+    public static bool CanDeserialize(string xml, ref DeclaracaoPrestacaoServico obj, ref Exception exception)
+    {
+        exception = null;
+        obj = default;
+        try
+        {
+            obj = Deserialize(xml);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            exception = ex;
+            return false;
+        }
+    }
+
+    public static bool CanDeserialize(string xml, ref DeclaracaoPrestacaoServico obj)
+    {
+        Exception exception = null;
+        return CanDeserialize(xml, ref obj, ref exception);
+    }
+
+    public static DeclaracaoPrestacaoServico Deserialize(string xml)
+    {
+        System.IO.StringReader stringReader = null!;
+        try
+        {
+            stringReader = new System.IO.StringReader(xml);
+            return (DeclaracaoPrestacaoServico)Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader));
+        }
+        finally
+        {
+            stringReader?.Dispose();
+        }
+    }
+
+    public static DeclaracaoPrestacaoServico Deserialize(System.IO.Stream s) => (DeclaracaoPrestacaoServico)Serializer.Deserialize(s);
 }
 
 /// <summary>
-/// Tipo complexo para informações da DPS (`InformacoesDps`).
+/// Tipo complexo para informaÃ§Ãµes da DPS (`InformacoesDps`).
 /// </summary>
 [XmlType("TCInfDPS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InformacoesDps : NFSeNacionalBase
@@ -908,7 +983,7 @@ public class InformacoesDps : NFSeNacionalBase
     private string? _id;
 
     /// <summary>
-    /// Identificação do Ambiente: 1 - Produção; 2 - Homologação.
+    /// IdentificaÃ§Ã£o do Ambiente: 1 - ProduÃ§Ã£o; 2 - HomologaÃ§Ã£o.
     /// </summary>
     [XmlElement("tpAmb")]
     public Ambiente Ambiente
@@ -918,7 +993,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Data e hora da emissão do DPS (UTC).
+    /// Data e hora da emissÃ£o do DPS (UTC).
     /// </summary>
     [XmlElement("dhEmi")]
     public DateTimeOffset? DataHoraEmissao
@@ -928,7 +1003,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Versão do aplicativo que gerou o DPS.
+    /// VersÃ£o do aplicativo que gerou o DPS.
     /// </summary>
     [XmlElement("verAplic")]
     public string? VersaoAplicativo
@@ -938,7 +1013,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número do equipamento emissor do DPS ou série do DPS.
+    /// NÃºmero do equipamento emissor do DPS ou sÃ©rie do DPS.
     /// </summary>
     [XmlElement("serie")]
     public string? Serie
@@ -948,7 +1023,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Número do DPS.
+    /// NÃºmero do DPS.
     /// </summary>
     [XmlElement("nDPS")]
     public long Numero
@@ -958,7 +1033,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Data em que se iniciou a prestação do serviço (AAAA-MM-DD).
+    /// Data em que se iniciou a prestaÃ§Ã£o do serviÃ§o (AAAA-MM-DD).
     /// </summary>
     [XmlElement("dCompet")]
     public string? Competencia
@@ -968,7 +1043,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - Intermediário.
+    /// Emitente da DPS: 1 - Prestador; 2 - Tomador; 3 - IntermediÃ¡rio.
     /// </summary>
     [XmlElement("tpEmit")]
     public EmitenteDps TipoEmitente
@@ -978,7 +1053,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Motivo da Emissão da DPS pelo Tomador/Intermediário - opcional.
+    /// Motivo da EmissÃ£o da DPS pelo Tomador/IntermediÃ¡rio - opcional.
     /// </summary>
     [XmlElement("cMotivoEmisTI")]
     public string? cMotivoEmisTI
@@ -988,7 +1063,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário - opcional.
+    /// Chave de Acesso da NFS-e rejeitada pelo Tomador/IntermediÃ¡rio - opcional.
     /// </summary>
     [XmlElement("chNFSeRej")]
     public string? chNFSeRej
@@ -998,7 +1073,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Código do município emissor do DPS (IBGE).
+    /// CÃ³digo do municÃ­pio emissor do DPS (IBGE).
     /// </summary>
     [XmlElement("cLocEmi")]
     public string? LocalEmissaoCodigo
@@ -1008,7 +1083,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Dados da NFS-e a ser substituída - opcional.
+    /// Dados da NFS-e a ser substituÃ­da - opcional.
     /// </summary>
     [XmlElement("subst")]
     public TCSubstituicao? subst
@@ -1018,7 +1093,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do DPS relativas ao Prestador de Serviços.
+    /// Grupo de informaÃ§Ãµes do DPS relativas ao Prestador de ServiÃ§os.
     /// </summary>
     [XmlElement("prest")]
     public InfoDpsPrestador? Prestador
@@ -1028,7 +1103,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do DPS relativas ao Tomador de Serviços - opcional.
+    /// Grupo de informaÃ§Ãµes do DPS relativas ao Tomador de ServiÃ§os - opcional.
     /// </summary>
     [XmlElement("toma")]
     public InfoDpsTomadorOuIntermediario? Tomador
@@ -1038,7 +1113,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do DPS relativas ao Intermediário de Serviços - opcional.
+    /// Grupo de informaÃ§Ãµes do DPS relativas ao IntermediÃ¡rio de ServiÃ§os - opcional.
     /// </summary>
     [XmlElement("interm")]
     public InfoDpsTomadorOuIntermediario? interm
@@ -1048,7 +1123,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações do DPS relativas ao Serviço Prestado.
+    /// Grupo de informaÃ§Ãµes do DPS relativas ao ServiÃ§o Prestado.
     /// </summary>
     [XmlElement("serv")]
     public Servico? Servico
@@ -1058,7 +1133,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações relativas à valores do serviço prestado.
+    /// Grupo de informaÃ§Ãµes relativas a valores do serviÃ§o prestado.
     /// </summary>
     [XmlElement("valores")]
     public TotalValores? Valores
@@ -1068,7 +1143,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Grupo de informações declaradas pelo emitente referentes ao IBS e à CBS - opcional.
+    /// Grupo de informaÃ§Ãµes declaradas pelo emitente referentes ao IBS e Ã  CBS - opcional.
     /// </summary>
     [XmlElement("IBSCBS")]
     public TotalIBsCbs? IBSCBS
@@ -1078,7 +1153,7 @@ public class InformacoesDps : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Identificador do elemento (atributo Id) - obrigatório.
+    /// Identificador do elemento (atributo Id) - obrigatÃ³rio.
     /// </summary>
     [XmlAttribute("Id")]
     public string? Id
@@ -1089,7 +1164,7 @@ public class InformacoesDps : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de substituição de NFS-e (`TCSubstituicao`).
+/// Tipo complexo para informaÃ§Ãµes de substituiÃ§Ã£o de NFS-e (`TCSubstituicao`).
 /// </summary>
 [XmlType("TCSubstituicao", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCSubstituicao : NFSeNacionalBase
@@ -1099,7 +1174,7 @@ public class TCSubstituicao : NFSeNacionalBase
     private string? _xMotivo;
 
     /// <summary>
-    /// Chave de acesso da NFS-e a ser substituída.
+    /// Chave de acesso da NFS-e a ser substituÃ­da.
     /// </summary>
     [XmlElement("chSubstda")]
     public string? chSubstda
@@ -1109,7 +1184,7 @@ public class TCSubstituicao : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Código de justificativa para substituição de NFS-e.
+    /// CÃ³digo de justificativa para substituiÃ§Ã£o de NFS-e.
     /// </summary>
     [XmlElement("cMotivo")]
     public string? cMotivo
@@ -1119,7 +1194,7 @@ public class TCSubstituicao : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Descrição do motivo da substituição da NFS-e - opcional.
+    /// DescriÃ§Ã£o do motivo da substituiÃ§Ã£o da NFS-e - opcional.
     /// </summary>
     [XmlElement("xMotivo")]
     public string? xMotivo
@@ -1130,7 +1205,7 @@ public class TCSubstituicao : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações do Prestador da NFS-e (InfoDpsPrestador).
+/// Tipo complexo para informaÃ§Ãµes do Prestador da NFS-e (InfoDpsPrestador).
 /// </summary>
 [XmlType("TCInfoPrestador", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoDpsPrestador : NFSeNacionalBase
@@ -1226,7 +1301,7 @@ public class InfoDpsPrestador : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de regimes de tributação (`RegimeTributario`).
+/// Tipo complexo para informaÃ§Ãµes de regimes de tributaÃ§Ã£o (`RegimeTributario`).
 /// </summary>
 [XmlType("TCRegTrib", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class RegimeTributario : NFSeNacionalBase
@@ -1258,8 +1333,8 @@ public class RegimeTributario : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de pessoa (`InfoDpsTomadorOuIntermediario`).
-/// (Utilizado para tomador/intermediário)
+/// Tipo complexo para informaÃ§Ãµes de pessoa (`InfoDpsTomadorOuIntermediario`).
+/// (Utilizado para tomador/intermediÃ¡rio)
 /// </summary>
 [XmlType("TCInfoPessoa", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoDpsTomadorOuIntermediario : NFSeNacionalBase
@@ -1347,7 +1422,7 @@ public class InfoDpsTomadorOuIntermediario : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo simples de endereço (`Endereco`) utilizado em várias estruturas.
+/// Tipo complexo simples de endereÃ§o (`Endereco`) utilizado em vÃ¡rias estruturas.
 /// </summary>
 [XmlType("TCEndereco", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class Endereco : NFSeNacionalBase
@@ -1403,7 +1478,7 @@ public class Endereco : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo para campos específicos de endereço no exterior (`EnderecoExterior`).
+/// Tipo para campos especÃ­ficos de endereÃ§o no exterior (`EnderecoExterior`).
 /// </summary>
 [XmlType("TCEnderExt", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class EnderecoExterior : NFSeNacionalBase
@@ -1443,7 +1518,7 @@ public class EnderecoExterior : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações do serviço prestado (`Servico`).
+/// Tipo complexo para informaÃ§Ãµes do serviÃ§o prestado (`Servico`).
 /// </summary>
 [XmlType("TCServ", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class Servico : NFSeNacionalBase
@@ -1507,7 +1582,7 @@ public class Servico : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para o local da prestação (`LocalPrestacaoServico`).
+/// Tipo complexo para o local da prestaÃ§Ã£o (`LocalPrestacaoServico`).
 /// </summary>
 [XmlType("TCLocPrest", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class LocalPrestacaoServico : NFSeNacionalBase
@@ -1516,7 +1591,7 @@ public class LocalPrestacaoServico : NFSeNacionalBase
     private string? _cPaisPrestacao;
 
     /// <summary>
-    /// Código do município onde o serviço foi prestado (IBGE).
+    /// CÃ³digo do municÃ­pio onde o serviÃ§o foi prestado (IBGE).
     /// </summary>
     [XmlElement("cLocPrestacao")]
     public string? Codigo
@@ -1526,7 +1601,7 @@ public class LocalPrestacaoServico : NFSeNacionalBase
     }
 
     /// <summary>
-    /// Código do país onde o serviço foi prestado (código do país conforme a tabela do IBGE).
+    /// CÃ³digo do paÃ­s onde o serviÃ§o foi prestado (cÃ³digo do paÃ­s conforme a tabela do IBGE).
     /// </summary>
     [XmlElement("cPaisPrestacao")]
     public string? cPaisPrestacao
@@ -1537,7 +1612,7 @@ public class LocalPrestacaoServico : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para código do serviço (`InfoServico`).
+/// Tipo complexo para cÃ³digo do serviÃ§o (`InfoServico`).
 /// </summary>
 [XmlType("TCCServ", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoServico : NFSeNacionalBase
@@ -1585,7 +1660,7 @@ public class InfoServico : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de comércio exterior (`InfoComercioExterior`).
+/// Tipo complexo para informaÃ§Ãµes de comÃ©rcio exterior (`InfoComercioExterior`).
 /// </summary>
 [XmlType("TCComExterior", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoComercioExterior : NFSeNacionalBase
@@ -1673,7 +1748,7 @@ public class InfoComercioExterior : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de atividade de evento (`InfoAtvEvento`).
+/// Tipo complexo para informaÃ§Ãµes de atividade de evento (`InfoAtvEvento`).
 /// </summary>
 [XmlType("TCAtvEvento", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoAtvEvento : NFSeNacionalBase
@@ -1721,7 +1796,7 @@ public class InfoAtvEvento : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de obra (`InfoObra`).
+/// Tipo complexo para informaÃ§Ãµes de obra (`InfoObra`).
 /// </summary>
 [XmlType("TCInfoObra", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoObra : NFSeNacionalBase
@@ -1761,7 +1836,7 @@ public class InfoObra : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações complementares do serviço prestado (`InformacoesComplementares`).
+/// Tipo complexo para informaÃ§Ãµes complementares do serviÃ§o prestado (`InformacoesComplementares`).
 /// </summary>
 [XmlType("TCInfoCompl", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InformacoesComplementares : NFSeNacionalBase
@@ -1825,7 +1900,7 @@ public class TCInfoItemPed : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações relativas aos valores do serviço prestado (`TotalValores`).
+/// Tipo complexo para informaÃ§Ãµes relativas aos valores do serviÃ§o prestado (`TotalValores`).
 /// </summary>
 [XmlType("TCInfoValores", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TotalValores : NFSeNacionalBase
@@ -1865,7 +1940,7 @@ public class TotalValores : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações relativas aos valores do serviço prestado (`ValorServicoPrestado`).
+/// Grupo de informaÃ§Ãµes relativas aos valores do serviÃ§o prestado (`ValorServicoPrestado`).
 /// </summary>
 [XmlType("TCVServPrest", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class ValorServicoPrestado : NFSeNacionalBase
@@ -1889,7 +1964,7 @@ public class ValorServicoPrestado : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações relativas aos descontos (`DescontosIncondicionais`).
+/// Grupo de informaÃ§Ãµes relativas aos descontos (`DescontosIncondicionais`).
 /// </summary>
 [XmlType("TCVDescCondIncond", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class DescontosIncondicionais : NFSeNacionalBase
@@ -1913,7 +1988,7 @@ public class DescontosIncondicionais : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de dedução/redução (`DeducoesReducoes`).
+/// Tipo complexo para informaÃ§Ãµes de deduÃ§Ã£o/reduÃ§Ã£o (`DeducoesReducoes`).
 /// </summary>
 [XmlType("TCInfoDedRed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class DeducoesReducoes : NFSeNacionalBase
@@ -1945,7 +2020,7 @@ public class DeducoesReducoes : NFSeNacionalBase
 }
 
 /// <summary>
-/// Lista de documentos usados para dedução/redução (`TCListaDocDedRed`).
+/// Lista de documentos usados para deduÃ§Ã£o/reduÃ§Ã£o (`TCListaDocDedRed`).
 /// </summary>
 [XmlType("TCListaDocDedRed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCListaDocDedRed : NFSeNacionalBase
@@ -1961,7 +2036,7 @@ public class TCListaDocDedRed : NFSeNacionalBase
 }
 
 /// <summary>
-/// Documento usado para dedução/redução (`TCDocDedRed`).
+/// Documento usado para deduÃ§Ã£o/reduÃ§Ã£o (`TCDocDedRed`).
 /// </summary>
 [XmlType("TCDocDedRed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCDocDedRed : NFSeNacionalBase
@@ -2065,7 +2140,7 @@ public class TCDocDedRed : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações de outras NFS-e (prévia municipal) (`TCDocOutNFSe`).
+/// Grupo de informaÃ§Ãµes de outras NFS-e (prÃ©via municipal) (`TCDocOutNFSe`).
 /// </summary>
 [XmlType("TCDocOutNFSe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCDocOutNFSe : NFSeNacionalBase
@@ -2097,7 +2172,7 @@ public class TCDocOutNFSe : NFSeNacionalBase
 }
 
 /// <summary>
-/// Grupo de informações de NF ou NFS (modelo não eletrônico) (`TCDocNFNFS`).
+/// Grupo de informaÃ§Ãµes de NF ou NFS (modelo nÃ£o eletrÃ´nico) (`TCDocNFNFS`).
 /// </summary>
 [XmlType("TCDocNFNFS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCDocNFNFS : NFSeNacionalBase
@@ -2129,7 +2204,7 @@ public class TCDocNFNFS : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações de tributação (`InfoTributacao`).
+/// Tipo complexo para informaÃ§Ãµes de tributaÃ§Ã£o (`InfoTributacao`).
 /// </summary>
 [XmlType("TCInfoTributacao", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class InfoTributacao : NFSeNacionalBase
@@ -2161,7 +2236,7 @@ public class InfoTributacao : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para tributação municipal (`TributacaoMunicipal`).
+/// Tipo complexo para tributaÃ§Ã£o municipal (`TributacaoMunicipal`).
 /// </summary>
 [XmlType("TCTribMunicipal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TributacaoMunicipal : NFSeNacionalBase
@@ -2225,7 +2300,7 @@ public class TributacaoMunicipal : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para benefício municipal (`TCBeneficioMunicipal`).
+/// Tipo complexo para benefÃ­cio municipal (`TCBeneficioMunicipal`).
 /// </summary>
 [XmlType("TCBeneficioMunicipal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCBeneficioMunicipal : NFSeNacionalBase
@@ -2281,7 +2356,7 @@ public class TCExigSuspensa : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para tributação federal (`TributacaoFederal`).
+/// Tipo complexo para tributaÃ§Ã£o federal (`TributacaoFederal`).
 /// </summary>
 [XmlType("TCTribFederal", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TributacaoFederal : NFSeNacionalBase
@@ -2321,7 +2396,7 @@ public class TributacaoFederal : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações do PIS/COFINS (`TributacaoFedPisCofins`).
+/// Tipo complexo para informaÃ§Ãµes do PIS/COFINS (`TributacaoFedPisCofins`).
 /// </summary>
 [XmlType("TCTribOutrosPisCofins", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TributacaoFedPisCofins : NFSeNacionalBase
@@ -2425,7 +2500,7 @@ public class TributacaoTotal : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo para valores monetários totais dos tributos (`TributacaoTotalMoeda`).
+/// Tipo para valores monetÃ¡rios totais dos tributos (`TributacaoTotalMoeda`).
 /// </summary>
 [XmlType("TCTribTotalMonet", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TributacaoTotalMoeda : NFSeNacionalBase
@@ -2978,7 +3053,7 @@ public class TCRTCTotalTribCompraGov : NFSeNacionalBase
 }
 
 /// <summary>
-/// Tipo complexo para informações declaradas referentes a IBS/CBS (`TotalIBsCbs`).
+/// Tipo complexo para informaÃ§Ãµes declaradas referentes a IBS/CBS (`TotalIBsCbs`).
 /// </summary>
 [XmlType("TCRTCInfoIBSCBS", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TotalIBsCbs : NFSeNacionalBase
@@ -3082,7 +3157,7 @@ public class TCInfoRefNFSe : NFSeNacionalBase
 }
 
 /// <summary>
-/// Informações relativas ao destinatário do IBS/CBS (`TCRTCInfoDest`).
+/// InformaÃ§Ãµes relativas ao destinatÃ¡rio do IBS/CBS (`TCRTCInfoDest`).
 /// </summary>
 [XmlType("TCRTCInfoDest", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCInfoDest : NFSeNacionalBase
@@ -3154,7 +3229,7 @@ public class TCRTCInfoDest : NFSeNacionalBase
 }
 
 /// <summary>
-/// Informações relativas a bens imóveis IBSCBS (`TCRTCInfoImovel`).
+/// InformaÃ§Ãµes relativas a bens imÃ³veis IBSCBS (`TCRTCInfoImovel`).
 /// </summary>
 [XmlType("TCRTCInfoImovel", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCInfoImovel : NFSeNacionalBase
@@ -3242,7 +3317,7 @@ public class TCRTCInfoTributosIBSCBS : NFSeNacionalBase
 }
 
 /// <summary>
-/// Lista genérica de documentos para reembolso/repasse (`TCRTCListaDoc`).
+/// Lista genÃ©rica de documentos para reembolso/repasse (`TCRTCListaDoc`).
 /// </summary>
 [XmlType("TCRTCListaDoc", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCListaDoc : NFSeNacionalBase
@@ -3322,7 +3397,7 @@ public class TCRTCListaDoc : NFSeNacionalBase
 }
 
 /// <summary>
-/// Documento eletrônico no repositório nacional (`TCRTCListaDocDFe`).
+/// Documento eletrÃ´nico no repositÃ³rio nacional (`TCRTCListaDocDFe`).
 /// </summary>
 [XmlType("TCRTCListaDocDFe", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCListaDocDFe : NFSeNacionalBase
@@ -3354,7 +3429,7 @@ public class TCRTCListaDocDFe : NFSeNacionalBase
 }
 
 /// <summary>
-/// Documento fiscal que não está no repositório nacional (`TCRTCListaDocFiscalOutro`).
+/// Documento fiscal que nÃ£o estÃ¡ no repositÃ³rio nacional (`TCRTCListaDocFiscalOutro`).
 /// </summary>
 [XmlType("TCRTCListaDocFiscalOutro", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCListaDocFiscalOutro : NFSeNacionalBase
@@ -3386,7 +3461,7 @@ public class TCRTCListaDocFiscalOutro : NFSeNacionalBase
 }
 
 /// <summary>
-/// Documento não fiscal (`TCRTCListaDocOutro`).
+/// Documento nÃ£o fiscal (`TCRTCListaDocOutro`).
 /// </summary>
 [XmlType("TCRTCListaDocOutro", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCListaDocOutro : NFSeNacionalBase
@@ -3458,7 +3533,7 @@ public class TCRTCListaDocFornec : NFSeNacionalBase
 }
 
 /// <summary>
-/// Informações de situação e classificação dos tributos IBS/CBS (`TCRTCInfoTributosSitClas`).
+/// InformaÃ§Ãµes de situaÃ§Ã£o e classificaÃ§Ã£o dos tributos IBS/CBS (`TCRTCInfoTributosSitClas`).
 /// </summary>
 [XmlType("TCRTCInfoTributosSitClas", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
 public class TCRTCInfoTributosSitClas : NFSeNacionalBase
@@ -3692,11 +3767,11 @@ public class TCEnderExtSimples : NFSeNacionalBase
     }
 }
 
-/* ----------------------------- OBSERVAÇÕES FINAIS -----------------------------
+/* ----------------------------- OBSERVAÃ‡Ã•ES FINAIS -----------------------------
    - Cobri um conjunto abrangente de tipos complexos referenciados nos XSDs fornecidos.
    - Para preservar a legibilidade e manter compatibilidade XML, propriedades foram nomeadas conforme os elementos XSD.
    - Se desejar, posso:
-     1) transformar simplesTypes específicos em enums com [XmlEnum] (atualmente mantive muitos como string para evitar ambiguidade);
+     1) transformar simplesTypes especÃ­ficos em enums com [XmlEnum] (atualmente mantive muitos como string para evitar ambiguidade);
      2) reduzir/expandir tipos gerados;
-     3) executar validação de serialização/deserialize com exemplos XML.
+     3) executar validaÃ§Ã£o de serializaÃ§Ã£o/deserialize com exemplos XML.
 -------------------------------------------------------------------------------- */
