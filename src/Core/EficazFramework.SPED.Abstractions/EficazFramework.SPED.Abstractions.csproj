@@ -28,11 +28,11 @@
     </None>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.18" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.18" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.20" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.20" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net10.0' ">
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.10" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.10" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.12" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.12" />
   </ItemGroup>
 </Project>

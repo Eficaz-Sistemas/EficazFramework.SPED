@@ -30,7 +30,7 @@
     <None Include="EfCore.snk" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="QuestPDF" Version="2026.8.0" />
+    <PackageReference Include="QuestPDF" Version="2026.9.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
