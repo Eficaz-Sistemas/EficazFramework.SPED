@@ -23,10 +23,15 @@ public class NfseNacionalService : RestServiceBase
     /// </summary>
     public Uri UrlProducao { get; set; } = new("https://sefin.nfse.gov.br/");
 
+
+    public Uri UrlDistribuicaoProducao { get; set; } = new("https://adn.nfse.gov.br/");
+
     /// <summary>
     /// URL base para o ambiente de Homologação / Produção Restrita do ADN.
     /// </summary>
     public Uri UrlHomologacao { get; set; } = new("https://sefin.producaorestrita.nfse.gov.br/SefinNacional/");
+
+    public Uri UrlDistribuicaoHomologacao { get; set; } = new("https://adn.producaorestrita.nfse.gov.br/");
 
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -38,7 +43,9 @@ public class NfseNacionalService : RestServiceBase
     /// <summary>
     /// Configura o certificado digital no HttpClientHandler e define a BaseAddress de acordo com o ambiente.
     /// </summary>
-    protected virtual void PrepareClient(Schemas.NFSe.Nacional.Ambiente  ambiente)
+    protected virtual void PrepareClient(
+        Schemas.NFSe.Nacional.Ambiente  ambiente,
+        bool distribuicao = false)
     {
         if (!ValidaCertificado())
             throw new ArgumentNullException(nameof(Certificado), "Nenhum certificado digital ICP-Brasil válido foi fornecido para a requisição.");
@@ -46,7 +53,9 @@ public class NfseNacionalService : RestServiceBase
         HttpClientHandler.ClientCertificates.Clear();
         HttpClientHandler.ClientCertificates.Add(Certificado);
 
-        HttpClient.BaseAddress = ambiente == Ambiente.Producao ? UrlProducao : UrlHomologacao;
+        HttpClient.BaseAddress = ambiente == Ambiente.Producao ? 
+                                             !distribuicao ? UrlProducao : UrlDistribuicaoProducao : 
+                                             !distribuicao ? UrlHomologacao : UrlDistribuicaoHomologacao;
 
         HttpClient.DefaultRequestHeaders.Clear();
         HttpClient.DefaultRequestHeaders.Accept.Clear();
@@ -203,12 +212,12 @@ public class NfseNacionalService : RestServiceBase
         Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
-        PrepareClient(ambiente);
+        PrepareClient(ambiente, true);
 
         var queryParams = new List<string>();
         if (!string.IsNullOrWhiteSpace(cnpjConsulta))
             queryParams.Add($"cnpjConsulta={Uri.EscapeDataString(cnpjConsulta)}");
-        if (lote.HasValue)
+        if (lote.HasValue && lote == false)
             queryParams.Add($"lote={lote.Value.ToString().ToLowerInvariant()}");
 
         var queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : string.Empty;

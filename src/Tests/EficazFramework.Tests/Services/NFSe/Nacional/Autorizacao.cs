@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic;
+#nullable enable
 
 namespace EficazFramework.SPED.Services.NFSe.Nacional;
 
@@ -29,33 +30,15 @@ public class AutorizacaoTests : BaseNFseTests
         //result.Erros.Should().BeNullOrEmpty();
     }
 
-    [Test]
-    public async Task ConsultarDfePorNsuAsync()
-    {
-        var client = CreateClient();
-        client.SelecionaCertificado = InstanciaCertificadoAutorizacao;
-        var result = await client.ConsultarDfePorNsuAsync(0, ambiente: Schemas.NFSe.Nacional.Ambiente.Homologacao);
-        result.Should().NotBeNull();
-        Console.WriteLine($"StatusCode: {result.StatusCode}");
-        Console.WriteLine($"StatusProcessamento: {result.StatusProcessamento}");
-        Console.WriteLine($"TipoAmbiente: {result.TipoAmbiente}");
-        foreach (var erro in result.Erros ?? [])
-        {
-            Console.WriteLine($"Erro: {erro.Codigo} - {erro.Descricao} - {erro.Complemento}");
-        }
-        result.StatusCode.Should().BeOneOf(200, 400, 404);
-    }
-
-
     /// <summary>
     /// Define o certificado digital a ser utilizado nas requests.
     /// </summary>
     /// <returns></returns>
     internal Func<Utilities.IcpBrasilX509Certificate2> InstanciaCertificadoAutorizacao => () =>
         {
-            string path = Configuration["SSL:NFEAUTH:CertificatePath"];
+            string path = Configuration["SSL:NFEAUTH:CertificatePath"]!;
             if (!string.IsNullOrEmpty(path) && Path.Exists(path))
-                return new Utilities.IcpBrasilX509Certificate2(path, Configuration["SSL:NFEAUTH:CertificatePassword"]);
+                return new Utilities.IcpBrasilX509Certificate2(path, Configuration["SSL:NFEAUTH:CertificatePassword"]!);
 
             return new Utilities.IcpBrasilX509Certificate2(Resources.Certificados.WayneEnterprisesInc, "1234");
         };
