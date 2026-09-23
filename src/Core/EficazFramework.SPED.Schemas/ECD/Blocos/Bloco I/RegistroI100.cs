@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -27,7 +27,7 @@ public class RegistroI100 : Primitives.Registro
     {
         var writer = new System.Text.StringBuilder();
         writer.Append("|I100|");
-        writer.Append(DataInclusaoAlteracao + "|");
+        writer.Append(DataInclusaoAlteracao.ToSpedString() + "|");
         writer.Append(CodCentroCusto + "|");
         writer.Append(NomeCentroCusto + "|");
         return writer.ToString();

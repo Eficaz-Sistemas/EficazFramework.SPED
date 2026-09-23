@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -40,8 +40,8 @@ public class RegistroK100 : Primitives.Registro
         writer.Append(PercentualPartConglomerado + "|");
         writer.Append(EventoSocietarioOcorrido + "|");
         writer.Append(PercentualPartConglomerado + "|");
-        writer.Append(DataInicialEscrituracaoEmpresaConsolidada + "|");
-        writer.Append(DataFinalEscrituracaoEmpresaConsolidada + "|");
+        writer.Append(DataInicialEscrituracaoEmpresaConsolidada.ToSpedString() + "|");
+        writer.Append(DataFinalEscrituracaoEmpresaConsolidada.ToSpedString() + "|");
         return writer.ToString();
     }
 

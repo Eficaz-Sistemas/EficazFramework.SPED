@@ -1,16 +1,20 @@
-Ôªøusing System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// Signat√°rios do Termo de Verifica√ß√£o para Fins de Substitui√ß√£o da ECD
+/// Signat·rios do Termo de VerificaÁ„o para Fins de SubstituiÁ„o da ECD
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ932 : Primitives.Registro
 {
     public RegistroJ932() : base("J932")
+    {
+    }
+
+    public RegistroJ932(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -57,3 +61,4 @@ public class RegistroJ932 : Primitives.Registro
         DataValidCRC = data[11].ToDate();
     }
 }
+

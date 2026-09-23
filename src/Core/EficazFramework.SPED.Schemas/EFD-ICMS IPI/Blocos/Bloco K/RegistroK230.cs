@@ -1,4 +1,4 @@
-﻿// NOTA: Este registro nunca sofreu alteração desde o primeiro ano da escrituração.
+// NOTA: Este registro nunca sofreu alteração desde o primeiro ano da escrituração.
 // Não será preciso avaliar qual é a versão do arquivo para diferenciar a forma
 // de escrita/leitura.
 
@@ -12,9 +12,9 @@ namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 /// Itens Produzidos
 /// </summary>
 /// <remarks></remarks>
-public class Registrok230 : Primitives.Registro
+public class RegistroK230 : Primitives.Registro
 {
-    public Registrok230(string linha, string versao) : base(linha, versao)
+    public RegistroK230(string linha, string versao) : base(linha, versao)
     {
     }
 

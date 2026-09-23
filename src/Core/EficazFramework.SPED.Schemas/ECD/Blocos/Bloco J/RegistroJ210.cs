@@ -14,6 +14,10 @@ public class RegistroJ210 : Primitives.Registro
     {
     }
 
+    public RegistroJ210(string linha, string versao) : base(linha, versao)
+    {
+    }
+
     // Campos'
     public IndicadorTipoDemonst IndicadorTipoDemonst { get; set; } = IndicadorTipoDemonst.DLPA;
     public string CodAglutinacao { get; set; } = null;
@@ -55,9 +59,20 @@ public class RegistroJ210 : Primitives.Registro
         IndicadorTipoDemonst = (IndicadorTipoDemonst)data[2].ToEnum<IndicadorTipoDemonst>(IndicadorTipoDemonst.DLPA);
         CodAglutinacao = data[3];
         DescCodAglutinacao = data[4];
-        SaldoFinalCodAglutinacao = data[5].ToNullableDouble();
-        IndicadorSitSaldoInformado = data[6];
-        SaldoInicialCodAglutinacao = data[7].ToNullableDouble();
-        IndicadorSitSaldoInformadoInicial = data[8];
+        if (Conversions.ToInteger(Versao) / 100d >= 7d)
+        {
+            SaldoInicialCodAglutinacao = data[5].ToNullableDouble();
+            IndicadorSitSaldoInformadoInicial = data[6];
+            SaldoFinalCodAglutinacao = data[7].ToNullableDouble();
+            IndicadorSitSaldoInformado = data[8];
+        }
+        else
+        {
+            SaldoFinalCodAglutinacao = data[5].ToNullableDouble();
+            IndicadorSitSaldoInformado = data[6];
+            SaldoInicialCodAglutinacao = data[7].ToNullableDouble();
+            IndicadorSitSaldoInformadoInicial = data[8];
+        }
     }
 }
+

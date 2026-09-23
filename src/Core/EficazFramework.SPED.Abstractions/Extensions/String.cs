@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic.CompilerServices;
 
@@ -161,29 +161,35 @@ public static class String
 
     public static double? ToNullableDouble(this string SPED_String, int decimais = 0)
     {
-        if (SPED_String.Length > 0)
+        if (string.IsNullOrEmpty(SPED_String))
+            return default;
+
+        string normalized = SPED_String.Trim();
+        if (normalized.Length == 0)
+            return default;
+
+        var ptBr = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
+        double parsedValue;
+        bool success = double.TryParse(normalized, System.Globalization.NumberStyles.Any, ptBr, out parsedValue);
+        if (!success)
         {
-            if (SPED_String.IsNumeric())
+            success = double.TryParse(normalized, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out parsedValue);
+        }
+
+        if (success)
+        {
+            if (decimais == 0 || normalized.Contains(",") || normalized.Contains("."))
             {
-                if (decimais == 0)
-                {
-                    return Conversions.ToDouble(SPED_String);
-                }
-                else
-                {
-                    int divisor = (int)Math.Pow(10d, decimais);
-                    return Conversions.ToDouble(SPED_String) / divisor;
-                }
+                return parsedValue;
             }
             else
             {
-                return default;
+                int divisor = (int)Math.Pow(10d, decimais);
+                return parsedValue / divisor;
             }
         }
-        else
-        {
-            return default;
-        }
+
+        return default;
     }
 
     public static long? ToNullableLong(this string SPED_String)

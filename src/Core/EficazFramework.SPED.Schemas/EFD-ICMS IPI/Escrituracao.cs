@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EficazFramework.SPED.Schemas.Primitives;
@@ -985,7 +985,7 @@ public class Escrituracao : Primitives.Escrituracao
 
             case "K230":
                 {
-                    reg = new Registrok230(linha, Versao);
+                    reg = new RegistroK230(linha, Versao);
                     Blocos["K"].Registros.Add(reg);
                     break;
                 }

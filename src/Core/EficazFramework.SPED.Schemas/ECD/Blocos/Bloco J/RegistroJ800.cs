@@ -1,14 +1,18 @@
-ï»¿
+
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// Outras InformaÃ§Ãµes
+/// Outras Informações
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ800 : Primitives.Registro
 {
     public RegistroJ800() : base("J800")
+    {
+    }
+
+    public RegistroJ800(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -29,3 +33,4 @@ public class RegistroJ800 : Primitives.Registro
         SequenciaBytesArquitoRTF = data[2];
     }
 }
+

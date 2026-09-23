@@ -1,15 +1,19 @@
-ï»¿using Microsoft.VisualBasic.CompilerServices;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// IdentificaÃ§Ã£o dos Auditores Independentes
+/// Identificação dos Auditores Independentes
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ935 : Primitives.Registro
 {
     public RegistroJ935() : base("J935")
+    {
+    }
+
+    public RegistroJ935(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -47,3 +51,4 @@ public class RegistroJ935 : Primitives.Registro
         }
     }
 }
+

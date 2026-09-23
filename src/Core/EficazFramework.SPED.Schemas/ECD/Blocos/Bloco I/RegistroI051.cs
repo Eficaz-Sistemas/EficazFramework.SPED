@@ -35,8 +35,17 @@ public class RegistroI051 : Primitives.Registro
 
     public override void LeParametros(string[] data)
     {
-        CodInstRespPlanoContasRef = data[2];
-        CodCentroCusto = data[3];
-        CodContaReferencial = data[4];
+        if (Conversions.ToInteger(Versao) / 100d == 7d)
+        {
+            CodInstRespPlanoContasRef = data[2];
+            CodCentroCusto = data[3];
+            CodContaReferencial = data[4];
+        }
+        else
+        {
+            CodInstRespPlanoContasRef = null;
+            CodCentroCusto = data[2];
+            CodContaReferencial = data[3];
+        }
     }
 }

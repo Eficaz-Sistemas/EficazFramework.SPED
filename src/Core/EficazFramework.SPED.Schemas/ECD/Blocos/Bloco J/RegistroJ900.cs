@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECD;
@@ -11,6 +11,10 @@ namespace EficazFramework.SPED.Schemas.ECD;
 public class RegistroJ900 : Primitives.Registro
 {
     public RegistroJ900() : base("J900")
+    {
+    }
+
+    public RegistroJ900(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -45,3 +49,4 @@ public class RegistroJ900 : Primitives.Registro
         DataTerminoEscrituracao = data[8].ToDate();
     }
 }
+

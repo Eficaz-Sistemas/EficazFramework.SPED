@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Services.Primitives;
+using EficazFramework.SPED.Services.Primitives;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.ServiceModel;
@@ -31,7 +31,8 @@ public class ESocialServices : SoapServiceBase
         IList<Schemas.eSocial.Evento> eventos,
         Schemas.eSocial.Empregador empregador,
         Schemas.eSocial.Ambiente ambiente = Schemas.eSocial.Ambiente.Producao,
-        VersaoSoap versaoLote = VersaoSoap.v1_1_1)
+        VersaoSoap versaoLote = VersaoSoap.v1_1_1,
+        Schemas.eSocial.IdeTransmissor transmissor = null)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -49,13 +50,41 @@ public class ESocialServices : SoapServiceBase
 #pragma warning restore CA2208 // Instanciar exceções de argumentos corretamente
 
 
+        int grupo = eventos.First().GetType().Name.StartsWith("S10") ? 1 : (eventos.First().GetType().Name.StartsWith("S12") ? 3 : 2);
+
+        if (transmissor == null)
+        {
+            var doc = Certificado?.CNPJ_CPF?.Trim();
+            if (string.IsNullOrEmpty(doc))
+                doc = empregador.nrInsc;
+
+            doc = new string((doc ?? "").Where(char.IsDigit).ToArray());
+
+            transmissor = new Schemas.eSocial.IdeTransmissor
+            {
+                nrInsc = doc,
+                tpInsc = doc.Length == 11 ? Schemas.eSocial.PersonalidadeJuridica.CPF : Schemas.eSocial.PersonalidadeJuridica.CNPJ
+            };
+        }
+        else if (!string.IsNullOrEmpty(transmissor.nrInsc))
+        {
+            transmissor.nrInsc = new string(transmissor.nrInsc.Where(char.IsDigit).ToArray());
+        }
+
+        if (empregador != null && !string.IsNullOrEmpty(empregador.nrInsc))
+        {
+            empregador.nrInsc = new string(empregador.nrInsc.Where(char.IsDigit).ToArray());
+        }
+
         // montando body
         var request = new RequestEnvioLoteEventos
         {
             Versao = versaoLote,
             envioLoteEventos = new()
             {
+                grupo = grupo,
                 ideEmpregador = empregador,
+                ideTransmissor = transmissor,
                 eventos = []
             }
         };
@@ -68,12 +97,12 @@ public class ESocialServices : SoapServiceBase
         //! efetua a assinatura digital e
         //! anexa o evento em xmlBody
         ProcessaXmlEventosEnvio(eventos, xmlBody, versaoLote);
-        request = request.Read(xmlBody.OuterXml);
         Logger?.LogDebug($"e-Social Services: Request{Environment.NewLine}{xmlBody.OuterXml}");
 
+        var soapRequest = new Contracts.EnviarLoteEventosRequest(xmlBody.DocumentElement);
 
         //! execução:
-        var result = await ExecuteAsync<SoapClients.EnviarLoteEventosSoapClient, ResponseEnvioLoteEventos>(request, ambiente.ToString());
+        var result = await ExecuteAsync<SoapClients.EnviarLoteEventosSoapClient, ResponseEnvioLoteEventos>(soapRequest, ambiente.ToString());
 
 
         if (result == null)
@@ -170,12 +199,15 @@ public class ESocialServices : SoapServiceBase
             xmlEvento.LoadXml(evento.Write());
             Certificado.SignXml(xmlEvento, evento.TagToSign, evento.TagId, true);
 
+            string eventoId = xmlEvento.GetElementsByTagName(evento.TagId).Item(0)?.Attributes?["Id"]?.Value 
+                ?? xmlEvento.DocumentElement?.FirstChild?.Attributes?["Id"]?.Value 
+                ?? $"ID{contador}";
 
             //! instanciando estrutura necessária para anexar ao body
             TArquivoEsocial root = new()
             {
                 Any = (XElement)Utilities.XML.Operations.ToXElement(xmlEvento.DocumentElement),
-                Id = $"ID{contador}",
+                Id = eventoId,
                 Versao = versao
             };
             xmlEvento.LoadXml(root.Write());

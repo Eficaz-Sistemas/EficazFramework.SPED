@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace EficazFramework.SPED.Extensions;
 
@@ -14,6 +14,11 @@ public static class Date
         {
             return null;
         }
+    }
+
+    public static string ToSpedString(this DateTime field)
+    {
+        return string.Format("{0:ddMMyyyy}", field);
     }
 
     public static string ToSintegraString(this DateTime? field, DateFormat format)

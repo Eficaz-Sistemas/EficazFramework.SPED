@@ -1,16 +1,20 @@
-Ôªøusing EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace EficazFramework.SPED.Schemas.ECD;
 
 /// <summary>
-/// Fato Cont√°bil que Altera a Conta Lucros Acumulados ou a Conta Preju√≠zos Acumulados ou Todo o Patrim√¥nio L√≠quido
+/// Fato Cont·bil que Altera a Conta Lucros Acumulados ou a Conta PrejuÌzos Acumulados ou Todo o PatrimÙnio LÌquido
 /// </summary>
 /// <remarks></remarks>
 
 public class RegistroJ215 : Primitives.Registro
 {
     public RegistroJ215() : base("J215")
+    {
+    }
+
+    public RegistroJ215(string linha, string versao) : base(linha, versao)
     {
     }
 
@@ -49,3 +53,4 @@ public class RegistroJ215 : Primitives.Registro
         }
     }
 }
+
