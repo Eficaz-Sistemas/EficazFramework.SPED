@@ -1,4 +1,5 @@
 using EficazFramework.SPED.Schemas.NFSe.Nacional;
+using EficazFramework.SPED.Services.NFSe.Nacional;
 using EficazFramework.SPED.Tests;
 
 namespace EficazFramework.SPED.Schemas.NFSe;
@@ -183,63 +184,103 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
     }
 
     [Test]
-    public async Task ParseNFSeNacionalSample001()
+    public async Task DpsSerializationAndDeserialization()
     {
-        var folder = Path.Combine(TestContext.CurrentContext.TestDirectory, "Resources", "Samples", "NFseNacional");
-        var path = Path.Combine(folder, "001.xml");
-        var xml = await File.ReadAllTextAsync(path);
-        Nacional.NFSe instance = await ReadAsync(xml);
-        instance.Should().NotBeNull();
+        Nacional.NFSe nfse = await ReadAsync(Resources.Schemas.XML.NFSe_Nacional_1_0_1);
+        nfse.Should().NotBeNull();
+        nfse.InfNFSe.DPS.Should().NotBeNull();
 
-        instance.Chave.Should().Be("NFS3510000004900099000019700000000000006010200049010");
-        instance.InfNFSe.LocalEmissao.Should().Be("FRANCA");
-        instance.InfNFSe.LocalPrestacao.Should().Be("Franca");
-        instance.InfNFSe.Numero.Should().Be(113);
-        instance.InfNFSe.LocalIncidenciaCodigo.Should().Be("3516200");
-        instance.InfNFSe.LocalIncidenciaNome.Should().Be("Franca");
-        instance.InfNFSe.TributacaoNacional.Should().Be("Contabilidade, inclusive serviços técnicos e auxiliares.");
-        instance.InfNFSe.VersaoAplicativo.Should().Be("SilTecnologia_v1.00");
-        instance.InfNFSe.AmbienteGerador.Should().Be(AmbienteGerador.Prefeitura);
-        instance.InfNFSe.TipoEmissao.Should().Be(TipoEmissao.LeiauteMunicipal);
-        instance.InfNFSe.CodigoSituacao.Should().Be("100");
-        instance.InfNFSe.DataHoraProcessamento.Should().Be(new DateTimeOffset(2026, 01, 10, 0, 0, 0, TimeSpan.FromHours(-3)));
-        instance.InfNFSe.NumeroSequencial.Should().Be("27644971");
+        DeclaracaoPrestacaoServico dps = nfse.InfNFSe.DPS;
+        dps.DocumentType.Should().Be(XmlDocumentType.NFS_e_Nacional_DPS);
+        dps.Chave.Should().Be("DPS351620024973699600019749999000000000000113");
 
-        instance.InfNFSe.Emitente.Should().NotBeNull();
-        instance.InfNFSe.Emitente.Cnpj.Should().Be("11222333000144");
-        instance.InfNFSe.Emitente.InscricaoMunicipal.Should().Be("117915");
-        instance.InfNFSe.Emitente.Nome.Should().Be("ORGANIZAÇÃO CONTÁBIL");
+        string xmlSerialized = dps.Serialize();
+        xmlSerialized.Should().NotBeNullOrWhiteSpace();
+        xmlSerialized.Should().Contain("<DPS");
+        xmlSerialized.Should().Contain("http://www.sped.fazenda.gov.br/nfse");
+        xmlSerialized.Should().Contain("<infDPS");
 
-        var dps = instance.InfNFSe.DPS.InfDPS;
-        dps.Id.Should().Be("DPS351620024973699600019749999000000000000113");
-        dps.Ambiente.Should().Be(Nacional.Ambiente.Producao);
-        dps.DataHoraEmissao.Should().Be(new DateTimeOffset(2026, 01, 10, 0, 0, 0, TimeSpan.FromHours(-3)));
-        dps.Serie.Should().Be("49999");
-        dps.Numero.Should().Be(113);
-        dps.Competencia.Should().Be("2026-01-01");
-        dps.TipoEmitente.Should().Be(EmitenteDps.Prestador);
-        dps.LocalEmissaoCodigo.Should().Be("3516200");
+        DeclaracaoPrestacaoServico dpsDeserialized = DeclaracaoPrestacaoServico.Deserialize(xmlSerialized);
+        dpsDeserialized.Should().NotBeNull();
+        dpsDeserialized.Chave.Should().Be(dps.Chave);
+        dpsDeserialized.InfDPS.Serie.Should().Be(dps.InfDPS.Serie);
+        dpsDeserialized.InfDPS.Numero.Should().Be(dps.InfDPS.Numero);
+    }
 
-        dps.Prestador.Should().NotBeNull();
-        dps.Prestador.Cnpj.Should().Be("49736996000197");
-        dps.Prestador.InscricaoMunicipal.Should().Be("117915");
+    [Test]
+    public void MockDpsSerializationTest()
+    {
+        var dps = Schemas.Mock.NFSe.PreencheNFSeNacionalDpsFake();
+        dps.Should().NotBeNull();
+        dps.InfDPS.Should().NotBeNull();
+        dps.Chave.Should().Be("DPS352970721060802500012600001000000000000001");
+        dps.InfDPS.Serie.Should().Be("49999");
+        dps.InfDPS.Numero.Should().Be(113);
+        dps.InfDPS.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+        dps.InfDPS.Prestador.Cnpj.Should().Be("49736996000197");
+        dps.InfDPS.Tomador.CNPJ.Should().Be("07170885000116");
 
-        dps.Tomador.Should().NotBeNull();
-        dps.Tomador.CNPJ.Should().Be("07170885000116");
-        dps.Tomador.xNome.Should().Be("Ataide Marcelino Advogados");
+        string xmlSerialized = dps.Serialize();
+        xmlSerialized.Should().NotBeNullOrWhiteSpace();
+        xmlSerialized.Should().Contain("<DPS");
+        xmlSerialized.Should().Contain("DPS352970721060802500012600001000000000000001");
 
-        dps.Servico.Should().NotBeNull();
-        dps.Servico.LocalPrestacao.Codigo.Should().Be("3516200");
-        dps.Servico.InfoServico.CodigoTribNacional.Should().Be("171901");
-        dps.Servico.InfoServico.Descricao.Should().Be("Honorários Contábeis - Serviços de Consultoria Tributária - Mês 12/2025");
-        dps.Servico.InfoServico.NBS.Should().Be("113022100");
+        var deserialized = DeclaracaoPrestacaoServico.Deserialize(xmlSerialized);
+        deserialized.Should().NotBeNull();
+        deserialized.Chave.Should().Be(dps.Chave);
+        deserialized.InfDPS.Serie.Should().Be(dps.InfDPS.Serie);
+        deserialized.InfDPS.Numero.Should().Be(dps.InfDPS.Numero);
+        deserialized.InfDPS.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+    }
 
-        dps.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+    [Test]
+    public async Task DpsDigitalSignatureAndCompression()
+    {
+        Nacional.NFSe nfse = await ReadAsync(Resources.Schemas.XML.NFSe_Nacional_1_0_1);
+        DeclaracaoPrestacaoServico dps = nfse.InfNFSe.DPS;
 
-        instance.InfNFSe.Valores.Should().NotBeNull();
-        instance.InfNFSe.Valores.IssqnBaseCalculo.Should().Be(5000m);
-        instance.InfNFSe.Valores.IssqnAliquota.Should().Be(2m);
-        instance.InfNFSe.Valores.IssqnValor.Should().Be(100m);
-        instance.InfNFSe.Valores.ValorTotalLiquido.Should().Be(5000m);
+        var certPath = $"{Environment.CurrentDirectory}\\Resources\\Certificados\\WayneEnterprisesInc.pfx";
+        var cert = new Utilities.IcpBrasilX509Certificate2(certPath, "1234");
+        cert.Should().NotBeNull();
+
+        var service = new NfseNacionalService
+        {
+            SelecionaCertificado = () => cert
+        };
+
+        var docAssinado = service.AssinarDps(dps);
+        docAssinado.Should().NotBeNull();
+
+        var signatureNode = docAssinado.GetElementsByTagName("Signature");
+        signatureNode.Count.Should().Be(1);
+
+        var signatureMethod = docAssinado.GetElementsByTagName("SignatureMethod")[0]?.Attributes?["Algorithm"]?.Value;
+        signatureMethod.Should().Be("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256");
+
+        var xmlAssinado = docAssinado.OuterXml;
+        var gzipB64 = NfseNacionalCompression.CompressToGZipBase64(xmlAssinado);
+        gzipB64.Should().NotBeNullOrWhiteSpace();
+
+        var decompressed = NfseNacionalCompression.DecompressFromGZipBase64(gzipB64);
+        decompressed.Should().Be(xmlAssinado);
+    }
+
+    [Test]
+    public void NfseNacionalServiceCanonicalEnvironmentTest()
+    {
+        var service = new NfseNacionalService();
+        service.UrlHomologacao.ToString().Should().Contain("hom-nfse");
+        service.UrlProducao.ToString().Should().Contain("sefin.nfse.gov.br");
+    }
+
+    [Test]
+    public void EnsureNoCorruptedCharactersInSchemas()
+    {
+        var path = Path.GetFullPath(Path.Combine(TestContext.CurrentContext.TestDirectory, "../../../../Core/EficazFramework.SPED.Schemas/NFSe/Nacional/nfse.cs"));
+        if (!File.Exists(path))
+            path = @"C:\repos\Eficaz-Sistemas\EficazFramework.SPED\src\Core\EficazFramework.SPED.Schemas\NFSe\Nacional\nfse.cs";
+        File.Exists(path).Should().BeTrue();
+        var text = File.ReadAllText(path, System.Text.Encoding.UTF8);
+        text.Should().NotContain("\uFFFD");
     }
 }

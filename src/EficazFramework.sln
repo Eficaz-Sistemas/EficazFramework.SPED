@@ -31,6 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EficazFramework.SPED.Documents", "Core\EficazFramework.SPED.Documents\EficazFramework.SPED.Documents.csproj", "{385347EC-255B-4F48-8184-E5351D5D4773}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{182BB9EC-46CD-4E81-849C-D7385F66A500}"
+	ProjectSection(SolutionItems) = preProject
+		NFsNacionaServices.md = NFsNacionaServices.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
