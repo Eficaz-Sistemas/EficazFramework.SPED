@@ -25,6 +25,7 @@ A documentação detalhada dos endpoints, payloads e contratos de resposta está
 | `POST` | `/nfse` | Recepciona a DPS síncrona e gera a NFS-e | Sim (ICP-Brasil) |
 | `GET` | `/nfse/{chaveAcesso}` | Retorna a NFS-e autorizada pela chave de acesso (50 dígitos) | Sim (ICP-Brasil) |
 | `GET` | `/dps/{id}` | Retorna a chave de acesso da NFS-e vinculada ao Id da DPS | Sim (ICP-Brasil) |
+| `GET` | `/DFe/{NSU}` | Retorna o Documento Fiscal de Serviço correspondente ao NSU informado | Sim (ICP-Brasil) |
 | `GET` | `/danfse/{chaveAcesso}` | Download do PDF do DANFSE gerado pelo ADN | Sim (ICP-Brasil) |
 
 ---
@@ -83,6 +84,21 @@ O arquivo [Classes.cs](../../../src/Core/EficazFramework.SPED/Services/NFSe/Naci
   - `versaoAplicativo`: string
   - `dataHoraProcessamento`: DateTime
   - `erro`: Objeto contendo `codigo`, `descricao`, `complemento`
+
+### 3.4. Consulta de DFe por NSU (`GET /DFe/{NSU}`)
+- **Path Parameters:**
+  - `NSU`: long (obrigatório)
+- **Query Parameters (opcionais):**
+  - `cnpjConsulta`: string
+  - `lote`: bool
+- **Response (HTTP 200, 400, 404):**
+  - `StatusProcessamento`: enum/string (`REJEICAO`, `NENHUM_DOCUMENTO_LOCALIZADO`, `DOCUMENTOS_LOCALIZADOS`)
+  - `LoteDFe`: Lista de itens (`NSU`, `ChaveAcesso`, `TipoDocumento`, `TipoEvento`, `ArquivoXml`, `DataHoraGeracao`, helper `XmlDocumento` descompactado)
+  - `Alertas`: Lista de mensagens (`Mensagem`, `Parametros`, `Codigo`, `Descricao`, `Complemento`)
+  - `Erros`: Lista de mensagens (`Mensagem`, `Parametros`, `Codigo`, `Descricao`, `Complemento`)
+  - `TipoAmbiente`: enum/string (`PRODUCAO`, `HOMOLOGACAO`)
+  - `VersaoAplicativo`: string
+  - `DataHoraProcessamento`: DateTime
 
 ---
 

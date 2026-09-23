@@ -103,6 +103,82 @@ public record RetornoConsultaDps : RespostaBaseNfseNacional
 }
 
 /// <summary>
+/// Status do processamento retornado na consulta de DFe.
+/// </summary>
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum StatusProcessamentoDfeEnum
+{
+    REJEICAO,
+    NENHUM_DOCUMENTO_LOCALIZADO,
+    DOCUMENTOS_LOCALIZADOS
+}
+
+/// <summary>
+/// Item do lote de Documentos Fiscais de Serviço (DFe) retornado pelo ADN.
+/// </summary>
+public record ItemLoteDFe
+{
+    [JsonPropertyName("NSU")]
+    public long NSU { get; init; }
+
+    [JsonPropertyName("ChaveAcesso")]
+    public string? ChaveAcesso { get; init; }
+
+    [JsonPropertyName("TipoDocumento")]
+    public string? TipoDocumento { get; init; }
+
+    [JsonPropertyName("TipoEvento")]
+    public string? TipoEvento { get; init; }
+
+    [JsonPropertyName("ArquivoXml")]
+    public string? ArquivoXml { get; init; }
+
+    [JsonPropertyName("DataHoraGeracao")]
+    public DateTime? DataHoraGeracao { get; init; }
+
+    /// <summary>
+    /// Retorna o XML do documento descompactado a partir de <see cref="ArquivoXml"/>.
+    /// </summary>
+    [JsonIgnore]
+    public string? XmlDocumento => NfseNacionalCompression.DecompressFromGZipBase64(ArquivoXml);
+}
+
+/// <summary>
+/// Resposta da consulta de Documento Fiscal de Serviço por NSU (GET /DFe/{NSU}).
+/// Retornos esperados: 200, 400, 404.
+/// </summary>
+public record RetornoConsultaDfe
+{
+    [JsonPropertyName("StatusProcessamento")]
+    public StatusProcessamentoDfeEnum? StatusProcessamento { get; init; }
+
+    [JsonPropertyName("LoteDFe")]
+    public List<ItemLoteDFe>? LoteDFe { get; init; }
+
+    [JsonPropertyName("Alertas")]
+    public List<MensagemProcessamento>? Alertas { get; init; }
+
+    [JsonPropertyName("Erros")]
+    public List<MensagemProcessamento>? Erros { get; init; }
+
+    [JsonPropertyName("TipoAmbiente")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public Schemas.NFSe.Nacional.Ambiente? TipoAmbiente { get; init; }
+
+    [JsonPropertyName("VersaoAplicativo")]
+    public string? VersaoAplicativo { get; init; }
+
+    [JsonPropertyName("DataHoraProcessamento")]
+    public DateTime? DataHoraProcessamento { get; init; }
+
+    [JsonIgnore]
+    public int? StatusCode { get; internal set; }
+
+    [JsonIgnore]
+    public bool Sucesso => StatusCode is >= 200 and < 300;
+}
+
+/// <summary>
 /// Payload para recepção da DPS compactada (POST /nfse).
 /// </summary>
 public record PedidoEnvioDps(

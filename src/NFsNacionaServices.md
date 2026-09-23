@@ -232,3 +232,170 @@ Não foi gerada uma NFS-e com o identificador de DPS informado
 }
 ```
 
+
+
+---
+
+# Retorna o Documento Fiscal de Serviço correspondenente ao NSU informado
+
+## `GET` /DFe/{NSU}
+
+## Path Parameters
+| Campo | Tipo | Required | Descrição |
+|---|---|:---:|---|
+| NSU | `string` | ✅ | Número de Sequência Única do Documento Fiscal de Serviço |
+
+## Query Parameters
+| Campo | Tipo | Descrição |
+|---|:---:|---|
+| cnpjConsulta | `string` | CNPJ da empresa consultada |
+| lote | `boolean` | Indica se a consulta é para um lote de documentos |
+
+
+## Response samples
+### 200
+```json
+{
+  "StatusProcessamento": "REJEICAO",
+  "LoteDFe": [
+    {
+      "NSU": 0,
+      "ChaveAcesso": "string",
+      "TipoDocumento": "NENHUM",
+      "TipoEvento": "CANCELAMENTO",
+      "ArquivoXml": "string",
+      "DataHoraGeracao": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "Alertas": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "Erros": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "TipoAmbiente": "PRODUCAO",
+  "VersaoAplicativo": "string",
+  "DataHoraProcessamento": "2019-08-24T14:15:22Z"
+}
+```
+
+### 400 
+Identificador de DPS inválido
+```json
+{
+  "tipoAmbiente": 1,
+  "versaoAplicativo": "string",
+  "dataHoraProcessamento": "2026-09-23T09:25:15.5845456-03:00",
+  "erro": {
+    "codigo": "string",
+    "descricao": "string",
+    "complemento": "string"
+  }
+}
+```
+
+### 400
+```json
+{
+  "StatusProcessamento": "REJEICAO",
+  "LoteDFe": [
+    {
+      "NSU": 0,
+      "ChaveAcesso": "string",
+      "TipoDocumento": "NENHUM",
+      "TipoEvento": "CANCELAMENTO",
+      "ArquivoXml": "string",
+      "DataHoraGeracao": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "Alertas": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "Erros": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "TipoAmbiente": "PRODUCAO",
+  "VersaoAplicativo": "string",
+  "DataHoraProcessamento": "2019-08-24T14:15:22Z"
+}
+```
+
+
+
+
+### 404
+```json
+{
+  "StatusProcessamento": "REJEICAO",
+  "LoteDFe": [
+    {
+      "NSU": 0,
+      "ChaveAcesso": "string",
+      "TipoDocumento": "NENHUM",
+      "TipoEvento": "CANCELAMENTO",
+      "ArquivoXml": "string",
+      "DataHoraGeracao": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "Alertas": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "Erros": [
+    {
+      "Mensagem": {},
+      "Parametros": [
+        "string"
+      ],
+      "Codigo": "string",
+      "Descricao": "string",
+      "Complemento": "string"
+    }
+  ],
+  "TipoAmbiente": "PRODUCAO",
+  "VersaoAplicativo": "string",
+  "DataHoraProcessamento": "2019-08-24T14:15:22Z"
+}
+```
+
+
+

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 
 namespace EficazFramework.SPED.Services.NFSe.Nacional;
 
@@ -27,6 +27,23 @@ public class AutorizacaoTests : BaseNFseTests
         //result.StatusCode.Should().Be(201);
         //result.ChaveAcesso.Should().NotBeNull();
         //result.Erros.Should().BeNullOrEmpty();
+    }
+
+    [Test]
+    public async Task ConsultarDfePorNsuAsync()
+    {
+        var client = CreateClient();
+        client.SelecionaCertificado = InstanciaCertificadoAutorizacao;
+        var result = await client.ConsultarDfePorNsuAsync(0, ambiente: Schemas.NFSe.Nacional.Ambiente.Homologacao);
+        result.Should().NotBeNull();
+        Console.WriteLine($"StatusCode: {result.StatusCode}");
+        Console.WriteLine($"StatusProcessamento: {result.StatusProcessamento}");
+        Console.WriteLine($"TipoAmbiente: {result.TipoAmbiente}");
+        foreach (var erro in result.Erros ?? [])
+        {
+            Console.WriteLine($"Erro: {erro.Codigo} - {erro.Descricao} - {erro.Complemento}");
+        }
+        result.StatusCode.Should().BeOneOf(200, 400, 404);
     }
 
 

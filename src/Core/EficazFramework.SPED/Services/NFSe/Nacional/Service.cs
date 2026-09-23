@@ -186,4 +186,53 @@ public class NfseNacionalService : RestServiceBase
         retorno.StatusCode = (int)response.StatusCode;
         return retorno;
     }
+
+    /// <summary>
+    /// Retorna o Documento Fiscal de Serviço correspondente ao NSU informado (GET /DFe/{NSU}).
+    /// </summary>
+    /// <param name="nsu">Número de Sequência Única do Documento Fiscal de Serviço.</param>
+    /// <param name="cnpjConsulta">CNPJ da empresa consultada (opcional).</param>
+    /// <param name="lote">Indica se a consulta é para um lote de documentos (opcional).</param>
+    /// <param name="ambiente">Ambiente de destino (Produção ou Homologação).</param>
+    /// <param name="ct">Token de cancelamento.</param>
+    /// <returns>Resultado da consulta contendo os itens do lote de DFe, alertas e erros.</returns>
+    public virtual async Task<RetornoConsultaDfe> ConsultarDfePorNsuAsync(
+        long nsu,
+        string? cnpjConsulta = null,
+        bool? lote = null,
+        Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
+        CancellationToken ct = default)
+    {
+        PrepareClient(ambiente);
+
+        var queryParams = new List<string>();
+        if (!string.IsNullOrWhiteSpace(cnpjConsulta))
+            queryParams.Add($"cnpjConsulta={Uri.EscapeDataString(cnpjConsulta)}");
+        if (lote.HasValue)
+            queryParams.Add($"lote={lote.Value.ToString().ToLowerInvariant()}");
+
+        var queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : string.Empty;
+        var requestUri = $"DFe/{nsu}{queryString}";
+
+        var response = await HttpClient.GetAsync(requestUri, ct);
+        var responseJson = await response.Content.ReadAsStringAsync(ct);
+
+        RetornoConsultaDfe retorno;
+        try
+        {
+            retorno = JsonSerializer.Deserialize<RetornoConsultaDfe>(responseJson, JsonOptions) ?? new RetornoConsultaDfe();
+        }
+        catch (JsonException)
+        {
+            retorno = new RetornoConsultaDfe
+            {
+                TipoAmbiente = ambiente,
+                DataHoraProcessamento = DateTime.UtcNow,
+                Erros = [new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)]
+            };
+        }
+
+        retorno.StatusCode = (int)response.StatusCode;
+        return retorno;
+    }
 }
