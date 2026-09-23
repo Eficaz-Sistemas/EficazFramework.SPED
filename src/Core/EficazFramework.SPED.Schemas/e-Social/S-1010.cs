@@ -273,11 +273,13 @@ public partial class S1010DadosRubrica : ESocialBindableObject
     private string codIncIRRFField;
     private string codIncFGTSField;
     private string codIncCPRPField;
+    private string codIncPisPasepField;
     private SimNaoString tetoRemunField = SimNaoString.Nao;
     private string observacaoField;
     private List<S1010ProcessoCP> ideProcessoCPField;
     private List<ProcessoAdmOuJud> ideProcessoIRRFField;
     private List<ProcessoAdmOuJud> ideProcessoFGTSField;
+    private List<ProcessoAdmOuJud> ideProcessoPisPasepField;
 
     public string dscRubr
     {
@@ -353,6 +355,20 @@ public partial class S1010DadosRubrica : ESocialBindableObject
         }
     }
 
+    /// <summary>
+    /// Código de incidência da rubrica para o PIS/PASEP sobre a folha de salários, a ser utilizado quando
+    /// indTribFolhaPisPasep = [S] em S-1000. Disponível a partir da versão S-1.3 (NT 06/2026).
+    /// </summary>
+    public string codIncPisPasep
+    {
+        get => codIncPisPasepField;
+        set
+        {
+            codIncPisPasepField = value;
+            RaisePropertyChanged(nameof(codIncPisPasep));
+        }
+    }
+
     public SimNaoString tetoRemun
     {
         get => tetoRemunField;
@@ -403,6 +419,20 @@ public partial class S1010DadosRubrica : ESocialBindableObject
         {
             ideProcessoFGTSField = value;
             RaisePropertyChanged(nameof(ideProcessoFGTS));
+        }
+    }
+
+    /// <summary>
+    /// Identificação de processo - Incidência para o PIS/PASEP. Disponível a partir da versão S-1.3 (NT 06/2026).
+    /// </summary>
+    [XmlElement("ideProcessoPisPasep")]
+    public List<ProcessoAdmOuJud> ideProcessoPisPasep
+    {
+        get => ideProcessoPisPasepField;
+        set
+        {
+            ideProcessoPisPasepField = value;
+            RaisePropertyChanged(nameof(ideProcessoPisPasep));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECF;
 
@@ -51,6 +51,6 @@ public class RegistroK155 : Primitives.Registro
         VrTotalDebitosPeriodo = data[6].ToNullableDouble();
         VrTotalCreditosPeriodo = data[7].ToNullableDouble();
         VrSaldoFinalPeriodo = data[8].ToNullableDouble();
-        IndicadorSituacaoSaldoInicial = data[9];
+        IndicadorSituacaoSaldoFinal = data[9];
     }
 }

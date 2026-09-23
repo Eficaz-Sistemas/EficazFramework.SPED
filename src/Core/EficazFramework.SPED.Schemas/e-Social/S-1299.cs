@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 [Serializable()]
 public partial class S1299 : Evento
@@ -95,6 +95,7 @@ public partial class S1299EvPer : ESocialBindableObject
         }
     }
 
+    [XmlElement("infoFech")]
     public S1299InfoFechamento infoFech
     {
         get => infoFechField;
@@ -242,7 +243,7 @@ public partial class S1299InfoFechamento : ESocialBindableObject
     private SimNaoString evtPgtosField = SimNaoString.Nao;
 
     [Obsolete("Descontinuado na versão S-1.02")]
-    private SimNaoString evtAqProdField = SimNaoString.Nao;
+    private SimNaoString? evtAqProdField;
 
     private SimNaoString evtComProdField = SimNaoString.Nao;
     private SimNaoString evtContratAvNPField = SimNaoString.Nao;
@@ -276,7 +277,7 @@ public partial class S1299InfoFechamento : ESocialBindableObject
     }
 
     [Obsolete("Descontinuado na versão S-1.02")]
-    public SimNaoString evtAqProd
+    public SimNaoString? evtAqProd
     {
         get => evtAqProdField;
         set
@@ -285,6 +286,8 @@ public partial class S1299InfoFechamento : ESocialBindableObject
             RaisePropertyChanged(nameof(evtAqProd));
         }
     }
+
+    public bool ShouldSerializeevtAqProd() => evtAqProdField.HasValue;
 
     public SimNaoString evtComProd
     {

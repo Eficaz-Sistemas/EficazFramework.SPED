@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Extensions;
+using EficazFramework.SPED.Extensions;
 
 namespace EficazFramework.SPED.Schemas.ECF;
 
@@ -35,7 +35,7 @@ public class RegistroK356 : Primitives.Registro
     public override void LeParametros(string[] data)
     {
         CodigoContaReferencial = data[2];
-        VrSaldoFinalPeriodo = data[8].ToNullableDouble();
-        IndicadorSituacaoSaldoFinal = data[9];
+        VrSaldoFinalPeriodo = data[3].ToNullableDouble();
+        IndicadorSituacaoSaldoFinal = data[4];
     }
 }

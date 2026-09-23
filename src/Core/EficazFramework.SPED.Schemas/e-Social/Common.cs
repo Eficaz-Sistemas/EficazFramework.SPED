@@ -108,7 +108,7 @@ public partial class Empregador : ESocialBindableObject
     {
         string inscrFinal = nrInsc;
         if (inscrFinal.Length < 8)
-            inscrFinal = Extensions.String.ToFixedLenghtString(inscrFinal, 8, Extensions.Alignment.Left, "0");
+            inscrFinal = Extensions.String.ToFixedLenghtString(inscrFinal, 8, Extensions.Alignment.Right, "0");
         if (tpInsc == PersonalidadeJuridica.CNPJ)
             inscrFinal = inscrFinal.Substring(0, 8);
         return Extensions.String.ToFixedLenghtString(inscrFinal, 14, Extensions.Alignment.Right, "0");
@@ -524,6 +524,7 @@ public partial class ProcessoJudTrabalhista : ESocialBindableObject
     private string nrProcField;
     private string codSuspField;
 
+    [XmlElement(ElementName = "tpTrib")]
     public TributoProcessoJud tpProc
     {
         get => tpProcField;
@@ -534,6 +535,7 @@ public partial class ProcessoJudTrabalhista : ESocialBindableObject
         }
     }
 
+    [XmlElement(ElementName = "nrProcJud")]
     public string nrProc
     {
         get => nrProcField;
@@ -591,7 +593,7 @@ public class Advogado : ESocialBindableObject
 {
     private PersonalidadeJuridica tpInscField;
     private string nrInscField;
-    private decimal vlrAdvField;
+    private decimal? vlrAdvField;
 
     public PersonalidadeJuridica tpInsc
     {
@@ -613,7 +615,7 @@ public class Advogado : ESocialBindableObject
         }
     }
 
-    public decimal vlrAdv
+    public decimal? vlrAdv
     {
         get => vlrAdvField;
         set
@@ -622,4 +624,7 @@ public class Advogado : ESocialBindableObject
             RaisePropertyChanged(nameof(vlrAdv));
         }
     }
+
+    public bool ShouldSerializevlrAdv() =>
+        vlrAdvField.HasValue;
 }

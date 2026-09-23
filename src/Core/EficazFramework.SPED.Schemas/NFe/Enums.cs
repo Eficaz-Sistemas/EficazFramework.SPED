@@ -440,7 +440,13 @@ public enum FinalidadeEmissao
     Ajuste = 3,
     [System.ComponentModel.Description("Enum_FinalidadeEmissao_Devolucao")]
     [System.Xml.Serialization.XmlEnum("4")]
-    Devolucao = 4
+    Devolucao = 4,
+    [System.ComponentModel.Description("Enum_FinalidadeEmissao_NFCredito")]
+    [System.Xml.Serialization.XmlEnum("5")]
+    NotaCredito = 5,
+    [System.ComponentModel.Description("Enum_FinalidadeEmissao_NFDebito")]
+    [System.Xml.Serialization.XmlEnum("6")]
+    NotaDebito = 6
 }
 [Serializable()]
 [System.Xml.Serialization.XmlType(Namespace = "http://www.portalfiscal.inf.br/nfe")]
@@ -2585,14 +2591,18 @@ public enum TipoNfDebito
 
     [EnumMember(Value = "06")]
     [System.Xml.Serialization.XmlEnum("06")]
-    [System.ComponentModel.Description("Pagamento antecipado")]
+    [System.ComponentModel.Description("06 - Pagamento antecipado")]
     PagamentoAntecipado = 6,
 
     [EnumMember(Value = "07")]
     [System.Xml.Serialization.XmlEnum("07")]
-    [System.ComponentModel.Description("Perda em estoqueS")]
-    PerdaEstoque = 7
+    [System.ComponentModel.Description("07 - Perda em estoques")]
+    PerdaEstoque = 7,
 
+    [EnumMember(Value = "08")]
+    [System.Xml.Serialization.XmlEnum("08")]
+    [System.ComponentModel.Description("08 - Desenquadramento do SN")]
+    DesenquadramentoSN = 8
 }
 
 /// <summary>
@@ -2613,5 +2623,15 @@ public enum TipoNfCredito
     [EnumMember(Value = "03")]
     [System.Xml.Serialization.XmlEnum("03")]
     [System.ComponentModel.Description("03 - Retorno")]
-    Retorno = 3
+    Retorno = 3,
+
+    [EnumMember(Value = "04")]
+    [System.Xml.Serialization.XmlEnum("04")]
+    [System.ComponentModel.Description("04 - Redução de Valores")]
+    ReducaoValores = 4,
+
+    [EnumMember(Value = "05")]
+    [System.Xml.Serialization.XmlEnum("05")]
+    [System.ComponentModel.Description("05 - Transferência de crédito de sucessão")]
+    TransfCredSucessao = 5
 }

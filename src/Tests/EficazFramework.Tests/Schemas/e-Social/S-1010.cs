@@ -6,6 +6,7 @@ public class S1010Test : BaseESocialTest<S1010>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaInclusao(Versao versao)
     {
         _testNumber = 0;
@@ -13,6 +14,7 @@ public class S1010Test : BaseESocialTest<S1010>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1010_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
         await TestaEvento();
@@ -21,6 +23,7 @@ public class S1010Test : BaseESocialTest<S1010>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaAlteracao(Versao versao)
     {
         _testNumber = 1;
@@ -28,6 +31,7 @@ public class S1010Test : BaseESocialTest<S1010>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1010_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
         await TestaEvento();
@@ -36,6 +40,7 @@ public class S1010Test : BaseESocialTest<S1010>
 
     [Test]
     [TestCase(Versao.v_S_01_02_00)]
+    [TestCase(Versao.v_S_01_03_00)]
     public async Task ValidaExclusao(Versao versao)
     {
         _testNumber = 2;
@@ -43,6 +48,7 @@ public class S1010Test : BaseESocialTest<S1010>
         ValidationSchemaNamespace = $"http://www.esocial.gov.br/schema/evt/evtTabRubrica/{versao}";
         ValidationSchema = versao switch
         {
+            Versao.v_S_01_03_00 => Resources.Schemas.eSocial.S1010_v_S_01_03_00,
             _ => Resources.Schemas.eSocial.S1010_v_S_01_02_00
         };
         await TestaEvento();
@@ -56,10 +62,10 @@ public class S1010Test : BaseESocialTest<S1010>
         switch (_testNumber)
         {
             case 0:
-                PreencheCamposInclusao(evento, CnpjCpf);
+                PreencheCamposInclusao(evento, CnpjCpf, _versao);
                 break;
             case 1:
-                PreencheCamposAlteracao(evento, CnpjCpf);
+                PreencheCamposAlteracao(evento, CnpjCpf, _versao);
                 break;
             case 2:
                 PreencheCamposExclusao(evento, CnpjCpf);
@@ -101,7 +107,7 @@ public class S1010Test : BaseESocialTest<S1010>
 
     // Preenchimento e validação por tipo de teste
     #region Inclusao
-    internal static void PreencheCamposInclusao(S1010 evento, string cnpjCpf)
+    internal static void PreencheCamposInclusao(S1010 evento, string cnpjCpf, Versao versao = Versao.v_S_01_02_00)
     {
         evento.evtTabRubrica = new S1010Rubrica()
         {
@@ -135,6 +141,18 @@ public class S1010Test : BaseESocialTest<S1010>
                         codIncIRRF = "11",
                         codIncFGTS = "00",
                         codIncCPRP = "00",
+                        // codIncPisPasep e ideProcessoPisPasep: novas tags introduzidas na versão S-1.3 (NT 06/2026)
+                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "91" : null,
+                        ideProcessoPisPasep = versao == Versao.v_S_01_03_00
+                            ? new List<ProcessoAdmOuJud>
+                            {
+                                new()
+                                {
+                                    nrProc = "12345678901234567890",
+                                    codSusp = "1"
+                                }
+                            }
+                            : null,
                         tetoRemun = SimNaoString.Nao
                     }
                 }
@@ -163,12 +181,25 @@ public class S1010Test : BaseESocialTest<S1010>
         itemXml.dadosRubrica.codIncIRRF.Should().Be(itemPopulado.dadosRubrica.codIncIRRF);
         itemXml.dadosRubrica.codIncFGTS.Should().Be(itemPopulado.dadosRubrica.codIncFGTS);
         itemXml.dadosRubrica.codIncCPRP.Should().Be(itemPopulado.dadosRubrica.codIncCPRP);
+        itemXml.dadosRubrica.codIncPisPasep.Should().Be(itemPopulado.dadosRubrica.codIncPisPasep);
         itemXml.dadosRubrica.tetoRemun.Should().Be(itemPopulado.dadosRubrica.tetoRemun);
+
+        // ideProcessoPisPasep
+        // Nota: o XmlSerializer sempre materializa uma List<T> vazia (nunca null) ao desserializar
+        // uma coleção sem elementos correspondentes no XML, por isso a comparação é feita por contagem.
+        var processosPopulados = itemPopulado.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        var processosXml = itemXml.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        processosXml.Should().HaveCount(processosPopulados.Count);
+        if (processosPopulados.Count > 0)
+        {
+            processosXml[0].nrProc.Should().Be(processosPopulados[0].nrProc);
+            processosXml[0].codSusp.Should().Be(processosPopulados[0].codSusp);
+        }
     }
     #endregion
 
     #region Alteracao
-    internal static void PreencheCamposAlteracao(S1010 evento, string cnpjCpf)
+    internal static void PreencheCamposAlteracao(S1010 evento, string cnpjCpf, Versao versao = Versao.v_S_01_02_00)
     {
         evento.evtTabRubrica = new S1010Rubrica()
         {
@@ -202,6 +233,18 @@ public class S1010Test : BaseESocialTest<S1010>
                         codIncIRRF = "11",
                         codIncFGTS = "00",
                         codIncCPRP = "00",
+                        // codIncPisPasep e ideProcessoPisPasep: novas tags introduzidas na versão S-1.3 (NT 06/2026)
+                        codIncPisPasep = versao == Versao.v_S_01_03_00 ? "91" : null,
+                        ideProcessoPisPasep = versao == Versao.v_S_01_03_00
+                            ? new List<ProcessoAdmOuJud>
+                            {
+                                new()
+                                {
+                                    nrProc = "12345678901234567890",
+                                    codSusp = "1"
+                                }
+                            }
+                            : null,
                         tetoRemun = SimNaoString.Nao
                     },
                     novaValidade = new IdePeriodo()
@@ -234,7 +277,20 @@ public class S1010Test : BaseESocialTest<S1010>
         itemXml.dadosRubrica.codIncIRRF.Should().Be(itemPopulado.dadosRubrica.codIncIRRF);
         itemXml.dadosRubrica.codIncFGTS.Should().Be(itemPopulado.dadosRubrica.codIncFGTS);
         itemXml.dadosRubrica.codIncCPRP.Should().Be(itemPopulado.dadosRubrica.codIncCPRP);
+        itemXml.dadosRubrica.codIncPisPasep.Should().Be(itemPopulado.dadosRubrica.codIncPisPasep);
         itemXml.dadosRubrica.tetoRemun.Should().Be(itemPopulado.dadosRubrica.tetoRemun);
+
+        // ideProcessoPisPasep
+        // Nota: o XmlSerializer sempre materializa uma List<T> vazia (nunca null) ao desserializar
+        // uma coleção sem elementos correspondentes no XML, por isso a comparação é feita por contagem.
+        var processosPopulados = itemPopulado.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        var processosXml = itemXml.dadosRubrica.ideProcessoPisPasep ?? new List<ProcessoAdmOuJud>();
+        processosXml.Should().HaveCount(processosPopulados.Count);
+        if (processosPopulados.Count > 0)
+        {
+            processosXml[0].nrProc.Should().Be(processosPopulados[0].nrProc);
+            processosXml[0].codSusp.Should().Be(processosPopulados[0].codSusp);
+        }
 
         // novaValidade
         itemXml.novaValidade.iniValid.Should().Be(itemPopulado.novaValidade.iniValid);

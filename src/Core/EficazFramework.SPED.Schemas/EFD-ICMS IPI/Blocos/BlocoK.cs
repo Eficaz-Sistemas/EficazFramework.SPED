@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
@@ -17,11 +17,11 @@ public class BlocoK : Primitives.Bloco
         }
     }
 
-    public List<Registrok230> RegistrosK230
+    public List<RegistroK230> RegistrosK230
     {
         get
         {
-            return Registros.Where(r => r.Codigo == "K230").Cast<Registrok230>().ToList();
+            return Registros.Where(r => r.Codigo == "K230").Cast<RegistroK230>().ToList();
         }
     }
 

@@ -46,6 +46,7 @@ public class RegistroJ100 : Primitives.Registro
                 writer.Append("A|");
             else
                 writer.Append("P|");
+
         }
         else
         {
@@ -59,6 +60,7 @@ public class RegistroJ100 : Primitives.Registro
             writer.Append(IndicadorSitSaldoInicial + "|");
             writer.Append(string.Format("{0:F2}", VrTotalCodAglut) + "|");
             writer.Append(IndicadorSitSaldo + "|");
+            writer.Append(NotaExplicativa + "|");
         }
         else
         {
@@ -68,7 +70,6 @@ public class RegistroJ100 : Primitives.Registro
             writer.Append(IndicadorSitSaldoInicial + "|");
         }
 
-        writer.Append(NotaExplicativa + "|");
         return writer.ToString();
     }
 
@@ -94,6 +95,7 @@ public class RegistroJ100 : Primitives.Registro
             IndicadorSitSaldoInicial = data[9];
             VrTotalCodAglut = data[10].ToNullableDouble();
             IndicadorSitSaldo = data[11];
+            NotaExplicativa = data[12];
         }
         else
         {

@@ -203,6 +203,7 @@ public class IO : BaseXmlTest<ProcessoNFe>
                 Console.WriteLine($"*** Dados da NF-e ***");
                 Console.WriteLine($"🛍️ Chave = {nfe.Chave}");
                 Console.WriteLine($"🛍️ Número = {nfe.NFe.InformacoesNFe.IdentificacaoOperacao.Numero}");
+                Console.WriteLine($"🛍️ Finalidade = {nfe.NFe.InformacoesNFe.IdentificacaoOperacao.Finalidade}");
                 Console.WriteLine($"🛍️ Emitente = {nfe.NFe.InformacoesNFe.Emitente.RazaoSocial}, {nfe.NFe.InformacoesNFe.Emitente.CNPJ_CPF}");
                 Console.WriteLine($"🛍️ Destinatário/Remetente = {nfe.NFe.InformacoesNFe.Destinatario.RazaoSocial}, {nfe.NFe.InformacoesNFe.Destinatario.CNPJ_CPF}");
                 Console.WriteLine($"🛍️ Valor Total da NFe = {nfe.NFe.InformacoesNFe.Totais.ICMS.TotalNF}");

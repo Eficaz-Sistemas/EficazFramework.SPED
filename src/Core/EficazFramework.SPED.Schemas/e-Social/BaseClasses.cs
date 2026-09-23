@@ -1,9 +1,10 @@
-﻿using System.IO;
+using System.IO;
 using System.Reflection.Metadata;
 
 namespace EficazFramework.SPED.Schemas.eSocial;
 
 /// <exclude/>
+[Serializable()]
 public abstract class ESocialBindableObject : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
@@ -53,7 +54,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             var ss when ss!.Contains("v_S_01_03_00") => Versao.v_S_01_03_00,
             _ => Versao.v_S_01_02_00
         };
-        string evt = root?.Elements().First()?.Name.LocalName;
+        string? evt = root?.Elements().First()?.Name.LocalName;
         var targetType = evt switch
         {
             "evtInfoEmpregador" => typeof(S1000),
@@ -61,11 +62,28 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtTabRubrica" => typeof(S1010),
             "evtTabLotacao" => typeof(S1020),
             "evtRemun" => typeof(S1200),
+            "evtPgtos" => typeof(S1210),
             "evtComProd" => typeof(S1260),
-            "evtReabreEvPerv" => typeof(S1298),
+            "evtInfoComplPer" => typeof(S1280),
+            "evtReabreEvPer" => typeof(S1298),
             "evtFechaEvPer" => typeof(S1299),
+            "evtAdmPrelim" => typeof(S2190),
             "evtAdmissao" => typeof(S2200),
-            _ => default
+            "evtAltCadastral" => typeof(S2205),
+            "evtAltContratual" => typeof(S2206),
+            "evtCAT" => typeof(S2210),
+            "evtAfastTemp" => typeof(S2230),
+            "evtDeslig" => typeof(S2299),
+            "evtTSVInicio" => typeof(S2300),
+            "evtTSVTermino" => typeof(S2399),
+            "evtExclusao" => typeof(S3000),
+            "evtBasesTrab" => typeof(S5001),
+            "evtIrrfBenef" => typeof(S5002),
+            "evtBasesFGTS" => typeof(S5003),
+            "evtCS" => typeof(S5011),
+            "evtIrrf" => typeof(S5012),
+            "evtFGTS" => typeof(S5013),
+            _ => typeof(Evento)
         };
         return new (targetType, new XmlRootAttribute(Evento.root) { Namespace = $"http://www.esocial.gov.br/schema/evt/{evt}/{v}", IsNullable = false });
     }

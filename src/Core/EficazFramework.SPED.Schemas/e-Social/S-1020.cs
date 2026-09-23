@@ -1,6 +1,54 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 
+/// <summary>
+/// S-1020 - Tabela de (Lotações Tributárias)
+/// </summary>
+/// <remarks>
+/// Este evento identifica a lotação tributária do empregador/contribuinte, definindo o enquadramento de FPAS, Código de Terceiros e regras de tributação da folha de pagamento.
+/// </remarks>
+/// <example>
+/// ```csharp
+/// var evento = new S1020()
+/// {
+///     evtTabLotacao = new S1020TabelaLotacao()
+///     {
+///         ideEvento = new IdentificacaoCadastro()
+///         {
+///             tpAmb = Ambiente.ProducaoRestrita_DadosReais,
+///             procEmi = EmissorEvento.AppEmpregador,
+///             verProc = "2.2"
+///         },
+///         ideEmpregador = new Empregador()
+///         {
+///             tpInsc = PersonalidadeJuridica.CNPJ,
+///             nrInsc = "12345678"
+///         },
+///         infoLotacao = new S1020InfoLotacao()
+///         {
+///             Item = new S1020Inclusao()
+///             {
+///                 ideLotacao = new S1020IdentificacaoLotacao()
+///                 {
+///                     codLotacao = "10",
+///                     iniValid = $"{DateTime.Now:yyyy-MM}"
+///                 },
+///                 dadosLotacao = new S1020DadosLotacao()
+///                 {
+///                     tpLotacao = "01",
+///                     fpasLotacao = new S1020FpasLotacao()
+///                     {
+///                         fpas = 507,
+///                         codTercs = "0079",
+///                         codTercsSusp = "0000"
+///                     }
+///                 }
+///             }
+///         }
+///     }
+/// };
+/// ```
+/// </example>
 [Serializable()]
 public partial class S1020 : Evento
 {
@@ -432,6 +480,7 @@ public partial class S1020InfoEmprParcial : ESocialBindableObject
     private PersonalidadeJuridica tpInscContratField = PersonalidadeJuridica.CNPJ;
     private string nrInscContratField;
     private PersonalidadeJuridica tpInscPropField = PersonalidadeJuridica.CNPJ;
+    private bool tpInscPropFieldSpecified;
     private string nrInscPropField;
 
     public PersonalidadeJuridica tpInscContrat
@@ -461,6 +510,17 @@ public partial class S1020InfoEmprParcial : ESocialBindableObject
         {
             tpInscPropField = value;
             RaisePropertyChanged(nameof(tpInscProp));
+        }
+    }
+
+    [XmlIgnore()]
+    public bool tpInscPropSpecified
+    {
+        get => tpInscPropFieldSpecified;
+        set
+        {
+            tpInscPropFieldSpecified = value;
+            RaisePropertyChanged(nameof(tpInscPropSpecified));
         }
     }
 
@@ -508,4 +568,7 @@ public partial class S1020DadosOpPortuario : ESocialBindableObject
             RaisePropertyChanged(nameof(fap));
         }
     }
+
+    public bool ShouldSerializefap()
+        => fap.HasValue;
 }

@@ -1,10 +1,15 @@
-﻿namespace EficazFramework.SPED.Schemas.eSocial;
+namespace EficazFramework.SPED.Schemas.eSocial;
 
 [Serializable()]
 public partial class S2200 : Evento
 {
     private S2200Admissao evtAdmissaoField;
     private SignatureType signatureField;
+
+    public S2200()
+    {
+        Versao = Versao.v_S_01_03_00;
+    }
 
     public S2200Admissao evtAdmissao
     {
@@ -16,6 +21,7 @@ public partial class S2200 : Evento
         }
     }
 
+    [XmlElement(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     public SignatureType Signature
     {
         get => signatureField;
@@ -169,6 +175,8 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializenisTrab() => false;
+
     /// <summary>
     /// Nome do Trabalhador
     /// </summary>
@@ -244,7 +252,7 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
-    public bool ShouldSerializeindPriEmpr() => indPriEmprField.HasValue;
+    public bool ShouldSerializeindPriEmpr() => false;
 
 
     /// <summary>
@@ -259,6 +267,8 @@ public partial class S2200Trabalhador : ESocialBindableObject
             RaisePropertyChanged(nameof(nmSoc));
         }
     }
+
+    public bool ShouldSerializenmSoc() => !string.IsNullOrWhiteSpace(nmSoc);
 
     public S2200TrabalhadorDadosNascimento nascimento
     {
@@ -280,6 +290,8 @@ public partial class S2200Trabalhador : ESocialBindableObject
             RaisePropertyChanged(nameof(documentos));
         }
     }
+
+    public bool ShouldSerializedocumentos() => false;
 
     public S2200TrabalhadorEndereco endereco
     {
@@ -313,6 +325,8 @@ public partial class S2200Trabalhador : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializetrabEstrangeiro() => false;
+
     public S2200TrabalhadorInfoDeficiencia infoDeficiencia
     {
         get => infoDeficienciaField;
@@ -344,6 +358,8 @@ public partial class S2200Trabalhador : ESocialBindableObject
             RaisePropertyChanged(nameof(aposentadoria));
         }
     }
+
+    public bool ShouldSerializeaposentadoria() => false;
 
     public S2200Contato contato
     {
@@ -391,6 +407,8 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializecodMunic() => false;
+
     [Obsolete("Descontinuado na versão S-1.02")]
     public UFCadastro uf
     {
@@ -401,6 +419,8 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
             RaisePropertyChanged(nameof(uf));
         }
     }
+
+    public bool ShouldSerializeuf() => false;
 
     [Obsolete("Descontinuado na versão S-1.02")]
     [XmlIgnore()]
@@ -445,6 +465,8 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializenmMae() => false;
+
     [Obsolete("Descontinuado na versão S-1.02")]
     public string nmPai
     {
@@ -455,6 +477,8 @@ public partial class S2200TrabalhadorDadosNascimento : ESocialBindableObject
             RaisePropertyChanged(nameof(nmPai));
         }
     }
+
+    public bool ShouldSerializenmPai() => false;
 }
 
 /// <exclude />
@@ -1351,6 +1375,8 @@ public partial class S2200Contato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializefonePrinc() => !string.IsNullOrWhiteSpace(fonePrinc);
+
     [Obsolete("Descontinuado na versão S-1.02")]
     public string foneAlternat
     {
@@ -1362,6 +1388,8 @@ public partial class S2200Contato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializefoneAlternat() => false;
+
     public string emailPrinc
     {
         get => emailPrincField;
@@ -1371,6 +1399,8 @@ public partial class S2200Contato : ESocialBindableObject
             RaisePropertyChanged(nameof(emailPrinc));
         }
     }
+
+    public bool ShouldSerializeemailPrinc() => !string.IsNullOrWhiteSpace(emailPrinc);
 
     [Obsolete("Descontinuado na versão S-1.02")]
     public string emailAlternat
@@ -1382,6 +1412,8 @@ public partial class S2200Contato : ESocialBindableObject
             RaisePropertyChanged(nameof(emailAlternat));
         }
     }
+
+    public bool ShouldSerializeemailAlternat() => false;
 }
 
 /// <exclude />
@@ -1443,6 +1475,8 @@ public partial class S2200Vinculo : ESocialBindableObject
             RaisePropertyChanged(nameof(nrRecInfPrelim));
         }
     }
+
+    public bool ShouldSerializenrRecInfPrelim() => false;
 
     public SimNaoString cadIni
     {
@@ -1730,6 +1764,8 @@ public partial class S2200Fgts : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializeopcFGTS() => false;
+
     [XmlIgnore()]
     public bool opcFGTSSpecified
     {
@@ -1800,6 +1836,8 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializejustContr() => !string.IsNullOrWhiteSpace(justContr);
+
     [Obsolete("Descontinuado na versão S-1.02")]
     public TrabTemporarioTpInclusao tpInclContr
     {
@@ -1810,6 +1848,8 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
             RaisePropertyChanged(nameof(tpInclContr));
         }
     }
+
+    public bool ShouldSerializetpInclContr() => false;
 
     [XmlIgnore()]
     [Obsolete("Descontinuado na versão S-1.02")]
@@ -1843,6 +1883,8 @@ public partial class S2200InfoCeletistaTrabTemporario : ESocialBindableObject
             RaisePropertyChanged(nameof(ideTrabSubstituido));
         }
     }
+
+    public bool ShouldSerializeideTrabSubstituido() => ideTrabSubstituidoField != null && ideTrabSubstituidoField.Length > 0;
 }
 
 /// <exclude />
@@ -1884,6 +1926,8 @@ public partial class S2200TrabTemporarioTomadorServ : ESocialBindableObject
             RaisePropertyChanged(nameof(ideEstabVinc));
         }
     }
+
+    public bool ShouldSerializeideEstabVinc() => false;
 }
 
 /// <exclude />
@@ -2034,6 +2078,8 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializeindProvim() => false;
+
     public TipoProvimentoEstatutario tpProv
     {
         get => tpProvField;
@@ -2056,6 +2102,8 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializedtNomeacao() => false;
+
     [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "date")]
     public DateTime dtPosse
@@ -2067,6 +2115,8 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
             RaisePropertyChanged(nameof(dtPosse));
         }
     }
+
+    public bool ShouldSerializedtPosse() => false;
 
 
     [XmlElement(DataType = "date")]
@@ -2111,6 +2161,8 @@ public partial class S2200InfoRegimeTrabInfoEstatutario : ESocialBindableObject
             RaisePropertyChanged(nameof(infoDecJud));
         }
     }
+
+    public bool ShouldSerializeinfoDecJud() => false;
 
     public SimNaoString indTetoRGPS
     {
@@ -2217,6 +2269,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializecodCargo() => false;
+
     public string nmCargo
     {
         get => nmCargooField;
@@ -2248,6 +2302,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializecodFuncao() => false;
 
     [Obsolete("Descontinuado na versão S-1.02")]
     public string codCarreira
@@ -2260,6 +2315,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializecodCarreira() => false;
+
     [Obsolete("Descontinuado na versão S-1.02")]
     [XmlElement(DataType = "date")]
     public DateTime dtIngrCarr
@@ -2271,6 +2328,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
             RaisePropertyChanged(nameof(dtIngrCarr));
         }
     }
+
+    public bool ShouldSerializedtIngrCarr() => false;
 
     [Obsolete("Descontinuado na versão S-1.02")]
     [XmlIgnore()]
@@ -2317,6 +2376,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializenmFuncao() => !string.IsNullOrWhiteSpace(nmFuncao);
+
     public string CBOFuncao
     {
         get => CBOFuncaoField;
@@ -2326,6 +2387,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
             RaisePropertyChanged(nameof(CBOFuncao));
         }
     }
+
+    public bool ShouldSerializeCBOFuncao() => !string.IsNullOrWhiteSpace(CBOFuncao);
 
     public SimNaoString acumCargo
     {
@@ -2400,6 +2463,8 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializefiliacaoSindical() => false;
+
     public S2200AlvaraJudicial alvaraJudicial
     {
         get => alvaraJudicialField;
@@ -2426,7 +2491,7 @@ public partial class S2200VinculoInfoContrato : ESocialBindableObject
         get => treiCapField;
         set
         { 
-            treiCap = value;
+            treiCapField = value;
             RaisePropertyChanged(nameof(treiCap));
         }
     }
@@ -2677,6 +2742,8 @@ public partial class S2200ContratoHorContratual : ESocialBindableObject
         }
     }
 
+    public bool ShouldSerializehorario() => false;
+
     public SimNaoString horNoturno
     {
         get => horNoturnoField;
@@ -2687,6 +2754,7 @@ public partial class S2200ContratoHorContratual : ESocialBindableObject
         }
     }
 
+    [XmlElement("dscJorn")]
     public string dscTpJorn
     {
         get => dscTpJornField;
@@ -2696,6 +2764,8 @@ public partial class S2200ContratoHorContratual : ESocialBindableObject
             RaisePropertyChanged(nameof(dscTpJorn));
         }
     }
+
+    public bool ShouldSerializedscTpJorn() => !string.IsNullOrWhiteSpace(dscTpJorn);
 
 }
 
@@ -2789,6 +2859,8 @@ public partial class S2200TreiCap : ESocialBindableObject
 			RaisePropertyChanged(nameof(codTreiCapField));
 		}
 	}
+
+    public bool ShouldSerializecodTreiCap() => !string.IsNullOrWhiteSpace(codTreiCap);
 }
 
 /// <exclude />
@@ -2822,8 +2894,9 @@ public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
         }
     }
 
-	
+    public bool ShouldSerializecnpjEmpregAnt() => false;
 
+	[XmlElement("nrInsc")]
 	public string nlrInsc
 	{
 		get => nlrInscField;
@@ -2833,6 +2906,8 @@ public partial class S2200VinculoSucessaoVinc : ESocialBindableObject
 			RaisePropertyChanged(nameof(nlrInsc));
 		}
 	}
+
+    public bool ShouldSerializenlrInsc() => !string.IsNullOrWhiteSpace(nlrInsc);
 
 	public string matricAnt
     {
