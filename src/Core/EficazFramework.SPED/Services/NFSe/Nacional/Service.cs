@@ -1,22 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
+using EficazFramework.SPED.Schemas.NFSe.Nacional;
+using EficazFramework.SPED.Services.Primitives;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Xml;
-using EficazFramework.SPED.Schemas.NFSe.Nacional;
-using EficazFramework.SPED.Services.Primitives;
 
 namespace EficazFramework.SPED.Services.NFSe.Nacional;
 
+#nullable enable
+
 /// <summary>
 /// Serviço de comunicação REST com o Ambiente de Dados Nacional (ADN) da NFS-e (Sefin Nacional / Receita Federal / Serpro).
-/// Suporta emissão de DPS com assinatura digital XMLDSig RSA-SHA256, consulta de NFS-e, download de DANFSE e eventos de cancelamento.
+/// Suporta emissão síncrona de DPS com assinatura digital XMLDSig RSA-SHA256, consulta de NFS-e por chave de acesso e consulta por identificador do DPS.
 /// </summary>
 public class NfseNacionalService : RestServiceBase
 {
@@ -30,7 +26,7 @@ public class NfseNacionalService : RestServiceBase
     /// <summary>
     /// URL base para o ambiente de Homologação / Produção Restrita do ADN.
     /// </summary>
-    public Uri UrlHomologacao { get; set; } = new("https://hom-nfse.receita.fazenda.gov.br/");
+    public Uri UrlHomologacao { get; set; } = new("https://sefin.producaorestrita.nfse.gov.br/SefinNacional/");
 
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -42,7 +38,7 @@ public class NfseNacionalService : RestServiceBase
     /// <summary>
     /// Configura o certificado digital no HttpClientHandler e define a BaseAddress de acordo com o ambiente.
     /// </summary>
-    protected virtual void PrepareClient(TipoAmbienteEnum ambiente)
+    protected virtual void PrepareClient(Schemas.NFSe.Nacional.Ambiente  ambiente)
     {
         if (!ValidaCertificado())
             throw new ArgumentNullException(nameof(Certificado), "Nenhum certificado digital ICP-Brasil válido foi fornecido para a requisição.");
@@ -50,7 +46,7 @@ public class NfseNacionalService : RestServiceBase
         HttpClientHandler.ClientCertificates.Clear();
         HttpClientHandler.ClientCertificates.Add(Certificado);
 
-        HttpClient.BaseAddress = ambiente == TipoAmbienteEnum.PRODUCAO ? UrlProducao : UrlHomologacao;
+        HttpClient.BaseAddress = ambiente == Ambiente.Producao ? UrlProducao : UrlHomologacao;
 
         HttpClient.DefaultRequestHeaders.Clear();
         HttpClient.DefaultRequestHeaders.Accept.Clear();
@@ -80,12 +76,12 @@ public class NfseNacionalService : RestServiceBase
     }
 
     /// <summary>
-    /// Emite uma Declaração de Prestação de Serviço (DPS) enviando-a assinada e comprimida (GZip Base64) ao ADN.
+    /// Recepciona a DPS e gera a NFS-e de forma síncrona (POST /nfse).
     /// Padrão canônico de segurança: HOMOLOGAÇÃO.
     /// </summary>
-    public virtual async Task<RetornoProcessamento> EmitirDpsAsync(
+    public virtual async Task<RetornoEnvioDps> EmitirDpsAsync(
         DeclaracaoPrestacaoServico dps,
-        TipoAmbienteEnum ambiente = TipoAmbienteEnum.HOMOLOGACAO,
+        Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
         PrepareClient(ambiente);
@@ -99,147 +95,95 @@ public class NfseNacionalService : RestServiceBase
         var jsonString = JsonSerializer.Serialize(payload, JsonOptions);
         using var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-        var response = await HttpClient.PostAsync("dps", content, ct);
+        var response = await HttpClient.PostAsync("nfse", content, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
-        RetornoProcessamento? retorno = null;
+        RetornoEnvioDps retorno;
         try
         {
-            retorno = JsonSerializer.Deserialize<RetornoProcessamento>(responseJson, JsonOptions);
+            retorno = JsonSerializer.Deserialize<RetornoEnvioDps>(responseJson, JsonOptions) ?? new RetornoEnvioDps();
         }
         catch (JsonException)
         {
-            // Se o retorno não for o JSON esperado (ex: erro HTTP puro)
-            retorno = new RetornoProcessamento(
-                StatusProcessamento: StatusProcessamentoEnum.REJEICAO,
-                LoteDFe: [],
-                Alertas: [],
-                Erros: [new MensagemProcessamento(responseJson, [], response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", "")],
-                TipoAmbiente: ambiente,
-                VersaoAplicativo: "1.0",
-                DataHoraProcessamento: DateTime.UtcNow
-            );
-        }
-
-        if (retorno?.LoteDFe != null)
-        {
-            for (int i = 0; i < retorno.LoteDFe.Count; i++)
+            retorno = new RetornoEnvioDps
             {
-                var item = retorno.LoteDFe[i];
-                var xmlDecomp = NfseNacionalCompression.DecompressFromGZipBase64(item.ArquivoXml);
-                retorno.LoteDFe[i] = item with { ArquivoXml = xmlDecomp };
-            }
+                TipoAmbiente = ambiente,
+                DataHoraProcessamento = DateTime.UtcNow,
+                Erros = [new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)]
+            };
         }
 
-        return retorno!;
+        retorno.StatusCode = (int)response.StatusCode;
+        return retorno;
     }
 
     /// <summary>
-    /// Consulta uma NFS-e autorizada no ADN pela Chave de Acesso (50 dígitos).
+    /// Consulta uma NFS-e autorizada no ADN pela Chave de Acesso de 50 dígitos (GET /nfse/{chaveAcesso}).
     /// </summary>
-    public virtual async Task<RetornoProcessamento> ConsultarNfsePorChaveAsync(
+    public virtual async Task<RetornoConsultaNfse> ConsultarNfsePorChaveAsync(
         string chaveAcesso,
-        TipoAmbienteEnum ambiente = TipoAmbienteEnum.HOMOLOGACAO,
+        Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
+        if (string.IsNullOrWhiteSpace(chaveAcesso))
+            throw new ArgumentNullException(nameof(chaveAcesso), "A chave de acesso deve ser informada.");
+
         PrepareClient(ambiente);
 
         var response = await HttpClient.GetAsync($"nfse/{chaveAcesso}", ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
-        RetornoProcessamento? retorno = null;
+        RetornoConsultaNfse retorno;
         try
         {
-            retorno = JsonSerializer.Deserialize<RetornoProcessamento>(responseJson, JsonOptions);
+            retorno = JsonSerializer.Deserialize<RetornoConsultaNfse>(responseJson, JsonOptions) ?? new RetornoConsultaNfse();
         }
         catch (JsonException)
         {
-            retorno = new RetornoProcessamento(
-                StatusProcessamento: StatusProcessamentoEnum.NENHUM_DOCUMENTO_LOCALIZADO,
-                LoteDFe: [],
-                Alertas: [],
-                Erros: [new MensagemProcessamento(responseJson, [], response.StatusCode.ToString(), response.ReasonPhrase ?? "Documento não localizado", "")],
-                TipoAmbiente: ambiente,
-                VersaoAplicativo: "1.0",
-                DataHoraProcessamento: DateTime.UtcNow
-            );
-        }
-
-        if (retorno?.LoteDFe != null)
-        {
-            for (int i = 0; i < retorno.LoteDFe.Count; i++)
+            retorno = new RetornoConsultaNfse
             {
-                var item = retorno.LoteDFe[i];
-                var xmlDecomp = NfseNacionalCompression.DecompressFromGZipBase64(item.ArquivoXml);
-                retorno.LoteDFe[i] = item with { ArquivoXml = xmlDecomp };
-            }
+                TipoAmbiente = ambiente,
+                DataHoraProcessamento = DateTime.UtcNow,
+                Erro = new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)
+            };
         }
 
-        return retorno!;
+        retorno.StatusCode = (int)response.StatusCode;
+        return retorno;
     }
 
     /// <summary>
-    /// Efetua o download do arquivo binário PDF do DANFSE gerado pelo ADN para uma NFS-e autorizada.
+    /// Consulta a chave de acesso da NFS-e a partir do identificador da DPS (GET /dps/{id}).
     /// </summary>
-    public virtual async Task<byte[]> ObterDanfseAsync(
-        string chaveAcesso,
-        TipoAmbienteEnum ambiente = TipoAmbienteEnum.HOMOLOGACAO,
+    public virtual async Task<RetornoConsultaDps> ConsultarNfsePorDpsAsync(
+        string idDps,
+        Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
+        if (string.IsNullOrWhiteSpace(idDps))
+            throw new ArgumentNullException(nameof(idDps), "O identificador da DPS deve ser informado.");
+
         PrepareClient(ambiente);
 
-        HttpClient.DefaultRequestHeaders.Accept.Clear();
-        HttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
-
-        var response = await HttpClient.GetAsync($"danfse/{chaveAcesso}", ct);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadAsByteArrayAsync(ct);
-    }
-
-    /// <summary>
-    /// Envia um pedido de cancelamento de NFS-e ao ADN.
-    /// </summary>
-    public virtual async Task<RetornoProcessamento> CancelarNfseAsync(
-        string chaveAcesso,
-        string codigoMotivo,
-        string justificativa,
-        TipoAmbienteEnum ambiente = TipoAmbienteEnum.HOMOLOGACAO,
-        CancellationToken ct = default)
-    {
-        PrepareClient(ambiente);
-
-        var payload = new
-        {
-            chaveAcesso,
-            codigoMotivo,
-            justificativa
-        };
-
-        var jsonString = JsonSerializer.Serialize(payload, JsonOptions);
-        using var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-
-        var response = await HttpClient.PostAsync($"nfse/{chaveAcesso}/eventos", content, ct);
+        var response = await HttpClient.GetAsync($"dps/{idDps}", ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
-        RetornoProcessamento? retorno = null;
+        RetornoConsultaDps retorno;
         try
         {
-            retorno = JsonSerializer.Deserialize<RetornoProcessamento>(responseJson, JsonOptions);
+            retorno = JsonSerializer.Deserialize<RetornoConsultaDps>(responseJson, JsonOptions) ?? new RetornoConsultaDps();
         }
         catch (JsonException)
         {
-            retorno = new RetornoProcessamento(
-                StatusProcessamento: StatusProcessamentoEnum.REJEICAO,
-                LoteDFe: [],
-                Alertas: [],
-                Erros: [new MensagemProcessamento(responseJson, [], response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro ao cancelar", "")],
-                TipoAmbiente: ambiente,
-                VersaoAplicativo: "1.0",
-                DataHoraProcessamento: DateTime.UtcNow
-            );
+            retorno = new RetornoConsultaDps
+            {
+                TipoAmbiente = ambiente,
+                DataHoraProcessamento = DateTime.UtcNow,
+                Erro = new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)
+            };
         }
 
-        return retorno!;
+        retorno.StatusCode = (int)response.StatusCode;
+        return retorno;
     }
 }

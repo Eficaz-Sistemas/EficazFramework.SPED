@@ -1955,12 +1955,19 @@ public class ValorServicoPrestado : NFSeNacionalBase
         set { _vReceb = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevReceb() =>
+        vReceb.HasValue;
+
     [XmlElement("vServ")]
     public decimal? ValorServico
     {
         get => _vServ;
         set { _vServ = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeValorServico() =>
+        ValorServico.HasValue;
+
 }
 
 /// <summary>

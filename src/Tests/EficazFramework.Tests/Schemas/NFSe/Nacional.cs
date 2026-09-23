@@ -208,6 +208,32 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
     }
 
     [Test]
+    public void MockDpsSerializationTest()
+    {
+        var dps = Schemas.Mock.NFSe.PreencheNFSeNacionalDpsFake();
+        dps.Should().NotBeNull();
+        dps.InfDPS.Should().NotBeNull();
+        dps.Chave.Should().Be("DPS352970721060802500012600001000000000000001");
+        dps.InfDPS.Serie.Should().Be("49999");
+        dps.InfDPS.Numero.Should().Be(113);
+        dps.InfDPS.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+        dps.InfDPS.Prestador.Cnpj.Should().Be("49736996000197");
+        dps.InfDPS.Tomador.CNPJ.Should().Be("07170885000116");
+
+        string xmlSerialized = dps.Serialize();
+        xmlSerialized.Should().NotBeNullOrWhiteSpace();
+        xmlSerialized.Should().Contain("<DPS");
+        xmlSerialized.Should().Contain("DPS352970721060802500012600001000000000000001");
+
+        var deserialized = DeclaracaoPrestacaoServico.Deserialize(xmlSerialized);
+        deserialized.Should().NotBeNull();
+        deserialized.Chave.Should().Be(dps.Chave);
+        deserialized.InfDPS.Serie.Should().Be(dps.InfDPS.Serie);
+        deserialized.InfDPS.Numero.Should().Be(dps.InfDPS.Numero);
+        deserialized.InfDPS.Valores.ValoresPrestacao.ValorServico.Should().Be(5000.00m);
+    }
+
+    [Test]
     public async Task DpsDigitalSignatureAndCompression()
     {
         Nacional.NFSe nfse = await ReadAsync(Resources.Schemas.XML.NFSe_Nacional_1_0_1);
@@ -245,9 +271,6 @@ public class NFSeNacional : BaseXmlTest<Nacional.NFSe>
         var service = new NfseNacionalService();
         service.UrlHomologacao.ToString().Should().Contain("hom-nfse");
         service.UrlProducao.ToString().Should().Contain("sefin.nfse.gov.br");
-
-        // Canonical environment verification
-        TipoAmbienteEnum.HOMOLOGACAO.ToString().Should().Be("HOMOLOGACAO");
     }
 
     [Test]
