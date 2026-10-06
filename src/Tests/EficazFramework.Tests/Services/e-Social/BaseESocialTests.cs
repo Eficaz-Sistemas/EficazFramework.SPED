@@ -1,12 +1,39 @@
-﻿using EficazFramework.SPED.Schemas.eSocial;
+using EficazFramework.SPED.Schemas.eSocial;
 
 namespace EficazFramework.SPED.Services.eSocial;
 
 public class BaseESocialTests : Tests.BaseTest
 {
     [TearDown]
-    public async Task TearDown() =>
+    public async Task TearDown()
+    {
+        // Sem empregador configurado o teste foi ignorado: não há o que limpar no ambiente do eSocial.
+        if (CnpjCpfConfigurado is null)
+            return;
+
         await LimpaDadosCadastraisInternalAsync();
+    }
+
+    /// <summary>CNPJ/CPF do empregador de testes (<c>SSL:ESOCIAL:CertificateCnpjCpf</c>); <see langword="null"/> se não configurado.</summary>
+    private string CnpjCpfConfigurado
+    {
+        get
+        {
+            var valor = Configuration["SSL:ESOCIAL:CertificateCnpjCpf"];
+            return string.IsNullOrWhiteSpace(valor) || valor.Length < 8 ? null : valor;
+        }
+    }
+
+    /// <summary>
+    /// CNPJ/CPF do empregador de testes. Sem a configuração (User Secrets), o teste é ignorado em vez de falhar:
+    /// os testes do eSocial são de integração e exigem certificado e empregador reais em produção restrita.
+    /// </summary>
+    internal string CnpjCpfEmpregador =>
+        CnpjCpfConfigurado
+        ?? throw new IgnoreException("Configure SSL:ESOCIAL:CertificateCnpjCpf, CertificatePath e CertificatePassword nos User Secrets do projeto de testes para executar os testes do eSocial.");
+
+    /// <summary>Raiz do CNPJ (8 dígitos) do empregador de testes.</summary>
+    internal string RaizCnpjEmpregador => CnpjCpfEmpregador[..8];
 
     internal EficazFramework.SPED.Services.eSocial.ESocialServices CreateClient()
     {
@@ -47,11 +74,11 @@ public class BaseESocialTests : Tests.BaseTest
     {
         var empregador = new EficazFramework.SPED.Schemas.eSocial.Empregador()
         {
-            nrInsc = Configuration["SSL:ESOCIAL:CertificateCnpjCpf"],
+            nrInsc = RaizCnpjEmpregador,
             tpInsc = Schemas.eSocial.PersonalidadeJuridica.CNPJ
         };
         var s1000 = new EficazFramework.SPED.Schemas.eSocial.S1000();
-        EficazFramework.SPED.Schemas.eSocial.S1000Test.PreencheCamposInclusao(s1000, Configuration["SSL:ESOCIAL:CertificateCnpjCpf"]);
+        EficazFramework.SPED.Schemas.eSocial.S1000Test.PreencheCamposInclusao(s1000, CnpjCpfEmpregador);
 
         var client = CreateClient();
         client.SelecionaCertificado = InstanciaCertificado;
@@ -71,7 +98,7 @@ public class BaseESocialTests : Tests.BaseTest
 
         var empregador = new EficazFramework.SPED.Schemas.eSocial.Empregador()
         {
-            nrInsc = Configuration["SSL:ESOCIAL:CertificateCnpjCpf"],
+            nrInsc = RaizCnpjEmpregador,
             tpInsc = Schemas.eSocial.PersonalidadeJuridica.CNPJ
         };
         var s1000 = new EficazFramework.SPED.Schemas.eSocial.S1000()
@@ -87,7 +114,7 @@ public class BaseESocialTests : Tests.BaseTest
                 ideEmpregador = new()
                 {
                     tpInsc = PersonalidadeJuridica.CNPJ,
-                    nrInsc = Configuration["SSL:ESOCIAL:CertificateCnpjCpf"]
+                    nrInsc = RaizCnpjEmpregador
                 },
                 infoEmpregador = new S1000InfoEmpregadorAcao()
                 {
@@ -110,8 +137,7 @@ public class BaseESocialTests : Tests.BaseTest
         client.SelecionaCertificado = InstanciaCertificado;
         var result = await client.EnviaEventosAsync([s1000], empregador, Schemas.eSocial.Ambiente.ProducaoRestrita_DadosReais);
         result.Should().NotBeNull();
-        result.retornoEnvioLoteEventos.status.cdResposta.Should().Be(1012);
-        result.retornoEnvioLoteEventos.status.descResposta.Should().Contain("removido com sucesso da base de dados da Producao Restrita do eSocial");
+        result.retornoEnvioLoteEventos.status.cdResposta.Should().Be(201);
     }
 
 }

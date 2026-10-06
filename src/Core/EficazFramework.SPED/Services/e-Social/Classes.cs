@@ -7,7 +7,6 @@ namespace EficazFramework.SPED.Services.eSocial;
 /// <summary>
 /// Classe base utilizada nas requests do serviço SOAP WsEnviarLoteEventos do e-Social
 /// </summary>
-[System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
 public partial class RequestEnvioLoteEventos : Interfaces.ISoapRequest
 {
@@ -16,10 +15,6 @@ public partial class RequestEnvioLoteEventos : Interfaces.ISoapRequest
 
     private EnvioLoteEventos envioLoteEventosField;
     
-    [System.ServiceModel.MessageBodyMemberAttribute(
-        Name="EnviarLoteEventos", 
-        Namespace="http://www.esocial.gov.br/servicos/empregador/lote/eventos/envio/v1_1_1", 
-        Order=0)]
     [XmlElement()]
     public EnvioLoteEventos envioLoteEventos
     {
@@ -217,7 +212,6 @@ public partial class TArquivoEsocial : Schemas.eSocial.ESocialBindableObject
 /// <summary>
 /// Classe base utilizada nas responses do serviço SOAP WsEnviarLoteEventos do e-Social
 /// </summary>
-[System.ServiceModel.MessageContract(IsWrapped = false)]
 [Serializable()]
 public partial class ResponseEnvioLoteEventos : Interfaces.ISoapResponse<RetornoEnvioLoteEventos>
 {

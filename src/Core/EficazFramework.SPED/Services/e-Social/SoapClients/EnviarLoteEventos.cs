@@ -60,12 +60,13 @@ public partial class EnviarLoteEventosSoapClient(Binding binding, EndpointAddres
     }
 
 
+    /// <summary>
     /// Envia um lote de eventos de forma síncrona para o servidor e-Social.
     /// </summary>
     /// <param name="request">A requisição contendo os eventos a serem processados.</param>
     /// <returns>A resposta do servidor com o resultado do processamento.</returns>
     /// <exception cref="System.ServiceModel.FaultException">Lançada quando ocorre erro na comunicação ou validação do servidor.</exception>
-    ResponseEnvioLoteEventos IServicoEnviarLoteEventosSoap.EnviarLoteEventos(RequestEnvioLoteEventos request) =>
+    EnviarLoteEventosResponse IServicoEnviarLoteEventosSoap.EnviarLoteEventos(EnviarLoteEventosRequest request) =>
         Channel.EnviarLoteEventos(request);
 
 
@@ -77,7 +78,7 @@ public partial class EnviarLoteEventosSoapClient(Binding binding, EndpointAddres
     /// <remarks>
     /// Este método é recomendado para aplicações de alta performance ou que processam múltiplos lotes simultaneamente.
     /// </remarks>
-    async Task<ResponseEnvioLoteEventos> IServicoEnviarLoteEventosSoap.EnviarLoteEventosAsync(RequestEnvioLoteEventos request) =>
+    async Task<EnviarLoteEventosResponse> IServicoEnviarLoteEventosSoap.EnviarLoteEventosAsync(EnviarLoteEventosRequest request) =>
         await Channel.EnviarLoteEventosAsync(request);
 
 
@@ -99,17 +100,14 @@ public partial class EnviarLoteEventosSoapClient(Binding binding, EndpointAddres
         {
             CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.None
         };
-        return (ISoapResponse<TMessage>)await Channel.EnviarLoteEventosAsync(request as RequestEnvioLoteEventos);
+        return (ISoapResponse<TMessage>)await Channel.EnviarLoteEventosAsync(request as EnviarLoteEventosRequest);
     }
 
 
     /// <summary>
-    /// Configura o binding SOAP 1.2 com HTTPS para comunicação segura com o servidor e-Social.
+    /// Configura o binding SOAP 1.1 com HTTPS para comunicação segura com o servidor e-Social.
     /// </summary>
     /// <returns>Um <see cref="CustomBinding"/> configurado com as especificações necessárias.</returns>
-    /// <remarks>
-    /// Utiliza SOAP 1.1 sem suporte a WS-Addressing, requer certificado de cliente e limita o tamanho da mensagem recebida a 64KB.
-    /// </remarks>
     private static Binding ConfigureBinding()
     {
         var binding = new CustomBinding
@@ -123,7 +121,7 @@ public partial class EnviarLoteEventosSoapClient(Binding binding, EndpointAddres
         binding.Elements.Add((BindingElement)new HttpsTransportBindingElement
         {
             RequireClientCertificate = true,
-            MaxReceivedMessageSize = 65536,
+            MaxReceivedMessageSize = 6553600,
         });
         return binding;
     }
@@ -134,15 +132,10 @@ public partial class EnviarLoteEventosSoapClient(Binding binding, EndpointAddres
     /// </summary>
     /// <param name="ambiente">O ambiente desejado (padrão: Produção).</param>
     /// <returns>A URL base do serviço e-Social para o ambiente especificado.</returns>
-    /// <remarks>
-    /// - Produção: http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1
-    /// - Produção Restrita (Dados Reais): http://www.hom.esocial.gov.br/schema/lote/eventos/envio/v1_1_1
-    /// Ambientes não reconhecidos retornam uma string vazia.
-    /// </remarks>
     private static string ConfigureUrl(Schemas.eSocial.Ambiente ambiente = Schemas.eSocial.Ambiente.Producao)
         => ambiente switch
         {
-            Schemas.eSocial.Ambiente.Producao => "https://webservices.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc",
+            Schemas.eSocial.Ambiente.Producao => "https://webservices.envio.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc",
             Schemas.eSocial.Ambiente.ProducaoRestrita_DadosReais => "https://webservices.producaorestrita.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc",
             _ => ""
         };
