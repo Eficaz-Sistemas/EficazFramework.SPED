@@ -8,11 +8,11 @@ public class EnviaLoteEventsTests : BaseESocialTests
 
         var empregador = new EficazFramework.SPED.Schemas.eSocial.Empregador()
         {
-            nrInsc = Configuration["SSL:ESOCIAL:CertificateCnpjCpf"][..8],
+            nrInsc = RaizCnpjEmpregador,
             tpInsc = Schemas.eSocial.PersonalidadeJuridica.CNPJ
         };
         var s1000 = new EficazFramework.SPED.Schemas.eSocial.S1000();
-        EficazFramework.SPED.Schemas.eSocial.S1000Test.PreencheCamposInclusao(s1000, Configuration["SSL:ESOCIAL:CertificateCnpjCpf"]);
+        EficazFramework.SPED.Schemas.eSocial.S1000Test.PreencheCamposInclusao(s1000, CnpjCpfEmpregador);
 
         var client = CreateClient();
         client.SelecionaCertificado = InstanciaCertificado;

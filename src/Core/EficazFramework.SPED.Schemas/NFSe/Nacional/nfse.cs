@@ -222,47 +222,11 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
         }
     }
 
-    public virtual void SaveTo(System.IO.Stream target)
-    {
-        if (target is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
-        var streamWriter = new System.IO.StreamWriter(target);
-        try
-        {
-            string xmlString = Serialize();
-            // Dim xmlFile As System.IO.FileInfo = New System.IO.FileInfo(fileName)
-            // streamWriter = xmlFile.CreateText
-            streamWriter.WriteLine(xmlString);
-            streamWriter.Flush();
-        }
-        finally
-        {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
-        }
-    }
+    /// <summary>Grava o XML da NFS-e no stream informado (o stream é fechado ao final, como nos demais documentos).</summary>
+    public virtual void SaveTo(System.IO.Stream target) => NFSeNacionalXml.SaveTo(target, Serialize());
 
-    public virtual async void SaveToAsync(System.IO.Stream target)
-    {
-        if (target is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
-        var streamWriter = new System.IO.StreamWriter(target);
-        try
-        {
-            string xmlString = Serialize();
-            await streamWriter.WriteLineAsync(xmlString);
-            await streamWriter.FlushAsync();
-        }
-        finally
-        {
-            if (streamWriter != null)
-            {
-                streamWriter.Dispose();
-            }
-        }
-    }
+    /// <summary>Grava o XML da NFS-e no stream informado (o stream é fechado ao final, como nos demais documentos).</summary>
+    public virtual Task SaveToAsync(System.IO.Stream target) => NFSeNacionalXml.SaveToAsync(target, Serialize());
 
 
     /// <summary>
@@ -294,56 +258,10 @@ public class NFSe : NFSeNacionalBase, IXmlSpedDocument
         return CanLoadFrom(source, ref obj, ref exception);
     }
 
-    public static NFSe LoadFrom(System.IO.Stream source)
-    {
-        if (source is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
-        System.IO.StreamReader sr = null;
-        try
-        {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
-            sr = new System.IO.StreamReader(source);
-            string xmlString = sr.ReadToEnd();
-            // sr.Close()
-            // file.Close()
-            return Deserialize(xmlString);
-        }
-        finally
-        {
-            if (source != null)
-            {
-                source.Dispose();
-            }
+    public static NFSe LoadFrom(System.IO.Stream source) => Deserialize(NFSeNacionalXml.Read(source, closeStream: true));
 
-            if (sr != null)
-            {
-                sr.Dispose();
-            }
-        }
-    }
-
-    public static async Task<NFSe> LoadFromAsync(System.IO.Stream source, bool close_stream = true)
-    {
-        if (source is null)
-            throw new ArgumentException(Resources.Strings.Validation.Classes_Load_NullStreamExceptionMessage);
-        System.IO.StreamReader sr = null;
-        try
-        {
-            // file = New System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read)
-            sr = new System.IO.StreamReader(source);
-            string xmlString = await sr.ReadToEndAsync();
-            // sr.Close()
-            // file.Close()
-            return Deserialize(xmlString);
-        }
-        finally
-        {
-            if (sr != null & close_stream == true)
-            {
-                sr.Dispose();
-            }
-        }
-    }
+    public static async Task<NFSe> LoadFromAsync(System.IO.Stream source, bool close_stream = true) =>
+        Deserialize(await NFSeNacionalXml.ReadAsync(source, close_stream));
 }
 
 /// <summary>
@@ -955,6 +873,17 @@ public class DeclaracaoPrestacaoServico : NFSeNacionalBase, IXmlSpedDocument
     }
 
     public static DeclaracaoPrestacaoServico Deserialize(System.IO.Stream s) => (DeclaracaoPrestacaoServico)Serializer.Deserialize(s);
+
+    /// <summary>Grava o XML da DPS no stream informado (o stream é fechado ao final, como nos demais documentos).</summary>
+    public virtual void SaveTo(System.IO.Stream target) => NFSeNacionalXml.SaveTo(target, Serialize());
+
+    /// <summary>Grava o XML da DPS no stream informado (o stream é fechado ao final, como nos demais documentos).</summary>
+    public virtual Task SaveToAsync(System.IO.Stream target) => NFSeNacionalXml.SaveToAsync(target, Serialize());
+
+    public static DeclaracaoPrestacaoServico LoadFrom(System.IO.Stream source) => Deserialize(NFSeNacionalXml.Read(source, closeStream: true));
+
+    public static async Task<DeclaracaoPrestacaoServico> LoadFromAsync(System.IO.Stream source, bool close_stream = true) =>
+        Deserialize(await NFSeNacionalXml.ReadAsync(source, close_stream));
 }
 
 /// <summary>

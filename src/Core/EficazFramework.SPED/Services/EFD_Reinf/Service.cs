@@ -1,13 +1,30 @@
 ﻿using EficazFramework.SPED.Services.Primitives;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
+using System.Threading;
 using System.Xml;
 using System.Xml.Schema;
 
 namespace EficazFramework.SPED.Services.EFD_Reinf;
+/// <remarks>
+/// Use uma instância por certificado e descarte-a ao terminar (<see cref="RestServiceBase.Dispose()"/>): o cliente HTTP
+/// é criado na primeira requisição e reutilizado (URLs completas, sem <c>BaseAddress</c>).
+/// </remarks>
 public class EfdReinfServices : RestServiceBase
 {
-    public EfdReinfServices() : base(true) { }
+    /// <summary>Cria o serviço; o certificado é obtido por <see cref="ServiceBase.SelecionaCertificado"/> na primeira requisição.</summary>
+    public EfdReinfServices() : base() { }
+
+    /// <summary>Cria o serviço com um handler HTTP próprio (testes, proxy); o certificado não é anexado ao handler.</summary>
+    /// <param name="handler">Handler usado pelo cliente HTTP (não é descartado pelo serviço).</param>
+    public EfdReinfServices(HttpMessageHandler handler) : base(handler) { }
+
+    /// <summary>URL do ambiente: Produção Restrita (dados reais) ou Produção.</summary>
+    private static Uri UrlBase(Schemas.EFD_Reinf.Ambiente ambiente) => ambiente switch
+    {
+        Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais => new Uri("https://pre-reinf.receita.economia.gov.br/"),
+        _ => new Uri("https://reinf.receita.economia.gov.br/")
+    };
 
 
     /// <summary>
@@ -22,7 +39,8 @@ public class EfdReinfServices : RestServiceBase
     public async Task<Response> EnviaEventosAsync(IList<Schemas.EFD_Reinf.Evento> eventos,
                                                   Schemas.EFD_Reinf.IdentificacaoContribuinte contribuinte,
                                                   Schemas.EFD_Reinf.Ambiente ambiente = Schemas.EFD_Reinf.Ambiente.Producao,
-                                                  VersaoRest versao = VersaoRest.v1_00_00)
+                                                  VersaoRest versao = VersaoRest.v1_00_00,
+                                                  CancellationToken ct = default)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -36,19 +54,6 @@ public class EfdReinfServices : RestServiceBase
 
         if (eventos.Count > 50)
             throw new ArgumentOutOfRangeException("Eventos", "Favor não ultrapassar o limite de 50 eventos por lote de envio.");
-
-
-        //! definindo o Certificado Digitral no HttpClientHandler:
-        HttpClientHandler.ClientCertificates.Clear();
-        HttpClientHandler.ClientCertificates.Add(Certificado);
-
-
-        //! definindo o EndPoint conforme ambiente:
-        HttpClient.BaseAddress = ambiente switch
-        {
-            Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais => new Uri("https://pre-reinf.receita.economia.gov.br/"),
-            _ => new Uri("https://reinf.receita.economia.gov.br/")
-        };
 
 
         //! definindo o body da request
@@ -73,8 +78,9 @@ public class EfdReinfServices : RestServiceBase
 
 
         //! post
-        var post = await HttpClient.PostAsync("recepcao/lotes", new StringContent(xmlBody.OuterXml, Encoding.UTF8, "application/xml"));
-        var resultString = await post.Content.ReadAsStringAsync();
+        using var conteudo = new StringContent(xmlBody.OuterXml, Encoding.UTF8, "application/xml");
+        using var post = await ObterHttpClient().PostAsync(new Uri(UrlBase(ambiente), "recepcao/lotes"), conteudo, ct);
+        var resultString = await post.Content.ReadAsStringAsync(ct);
 
         if (string.IsNullOrEmpty(resultString))
             resultString = post.ReasonPhrase;
@@ -115,7 +121,8 @@ public class EfdReinfServices : RestServiceBase
     /// <param name="ambiente">Ambiente de Produção ou Testes</param>
     public async Task<Response> ConsultaLoteAsync(string protocolo,
                                                   Schemas.EFD_Reinf.Ambiente ambiente = Schemas.EFD_Reinf.Ambiente.Producao,
-                                                  VersaoRest versao = VersaoRest.v1_00_00)
+                                                  VersaoRest versao = VersaoRest.v1_00_00,
+                                                  CancellationToken ct = default)
     {
         //! validações iniciais:
         if (!ValidaCertificado())
@@ -125,22 +132,9 @@ public class EfdReinfServices : RestServiceBase
             throw new ArgumentOutOfRangeException("Protocolo", "O Número do Protocolo para consulta não foi devidamente informado.");
 
 
-        //! definindo o Certificado Digitral no HttpClientHandler:
-        HttpClientHandler.ClientCertificates.Clear();
-        HttpClientHandler.ClientCertificates.Add(Certificado);
-
-
-        //! definindo o EndPoint conforme ambiente:
-        HttpClient.BaseAddress = ambiente switch
-        {
-            Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais => new Uri("https://pre-reinf.receita.economia.gov.br/"),
-            _ => new Uri("https://reinf.receita.economia.gov.br/")
-        };
-
-
         //! post
-        var post = await HttpClient.GetAsync($"consulta/lotes/{protocolo}");
-        var resultString = await post.Content.ReadAsStringAsync();
+        using var post = await ObterHttpClient().GetAsync(new Uri(UrlBase(ambiente), $"consulta/lotes/{protocolo}"), ct);
+        var resultString = await post.Content.ReadAsStringAsync(ct);
 
         if (string.IsNullOrEmpty(resultString))
             resultString = post.ReasonPhrase;
