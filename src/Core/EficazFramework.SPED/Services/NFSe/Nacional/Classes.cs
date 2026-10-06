@@ -179,6 +179,24 @@ public record RetornoConsultaDfe
 }
 
 /// <summary>
+/// Resposta do download do DANFSe (GET /danfse/{chaveAcesso} no ADN).
+/// </summary>
+public record RetornoDanfse
+{
+    /// <summary>PDF do DANFSe; nulo se o ADN não devolveu um PDF.</summary>
+    public byte[]? Pdf { get; init; }
+
+    /// <summary>Código HTTP da resposta.</summary>
+    public int StatusCode { get; init; }
+
+    /// <summary>Conteúdo da resposta quando não é um PDF (mensagem de erro do ADN), para diagnóstico.</summary>
+    public string? ConteudoErro { get; init; }
+
+    /// <summary>Resposta 2xx com um PDF válido (cabeçalho <c>%PDF</c>).</summary>
+    public bool Sucesso => StatusCode is >= 200 and < 300 && Pdf is { Length: > 0 };
+}
+
+/// <summary>
 /// Payload para recepção da DPS compactada (POST /nfse).
 /// </summary>
 public record PedidoEnvioDps(
