@@ -4,6 +4,9 @@ namespace EficazFramework.SPED.Utilities.XML;
 
 public static partial class Operations
 {
+    /// <summary>Namespace dos leiautes da NFS-e Nacional (DPS, NFSe, pedRegEvento, evento).</summary>
+    private const string NamespaceNFSeNacional = "http://www.sped.fazenda.gov.br/nfse";
+
     /// <summary>
     /// Efetua a leitura e parsing de um documento <see cref="IXmlSpedDocument"/>
     /// </summary>
@@ -72,6 +75,9 @@ public static partial class Operations
                     null,
                 "ConsultarLoteRpsResposta" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta.LoadFromAsync(fixedstream, false),
                 "NFSe" => await Schemas.NFSe.Nacional.NFSe.LoadFromAsync(fixedstream, false),
+                "DPS" when xdoc.Root?.Name.NamespaceName == NamespaceNFSeNacional => await Schemas.NFSe.Nacional.DeclaracaoPrestacaoServico.LoadFromAsync(fixedstream, false),
+                "pedRegEvento" when xdoc.Root?.Name.NamespaceName == NamespaceNFSeNacional => await Schemas.NFSe.Nacional.PedidoRegistroEvento.LoadFromAsync(fixedstream, false),
+                "evento" when xdoc.Root?.Name.NamespaceName == NamespaceNFSeNacional => await Schemas.NFSe.Nacional.EventoNfse.LoadFromAsync(fixedstream, false),
                 "NFSE" => await Schemas.NFSe.GINFES.ConsultarLoteRpsResposta2.LoadFromAsync(fixedstream, false),
                 "EnviarLoteRpsEnvio" => await Schemas.NFSe.GINFES.EnviarLoteRpsEnvio.LoadFromAsync(fixedstream, false),
                 "ConsultarNfseResposta" => xdoc.Root?.ToString().Contains("http://www.abrasf.org.br/nfse.xsd") ?? false ?

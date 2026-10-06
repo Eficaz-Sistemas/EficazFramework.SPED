@@ -136,6 +136,14 @@ public enum XmlDocumentType
     /// EficazFramework.SPED.Schemas.NFSe.Nacional.DeclaracaoPrestacaoServico
     /// </summary>
     NFS_e_Nacional_DPS = 35,
+    /// <summary>
+    /// EficazFramework.SPED.Schemas.NFSe.Nacional.PedidoRegistroEvento (pedRegEvento)
+    /// </summary>
+    NFS_e_Nacional_PedidoEvento = 36,
+    /// <summary>
+    /// EficazFramework.SPED.Schemas.NFSe.Nacional.EventoNfse (evento)
+    /// </summary>
+    NFS_e_Nacional_Evento = 37,
 
     /// <summary>
     /// EficazFramework.SPED.Schemas.NFSe.ABRASF

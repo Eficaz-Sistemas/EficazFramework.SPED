@@ -27,6 +27,15 @@ A documentação detalhada dos endpoints, payloads e contratos de resposta está
 | `GET` | `/dps/{id}` | Retorna a chave de acesso da NFS-e vinculada ao Id da DPS | Sim (ICP-Brasil) |
 | `GET` | `/DFe/{NSU}` | Retorna o Documento Fiscal de Serviço correspondente ao NSU informado | Sim (ICP-Brasil) |
 | `GET` | `/danfse/{chaveAcesso}` | Download do PDF do DANFSE gerado pelo ADN | Sim (ICP-Brasil) |
+| `POST` | `/nfse/{chaveAcesso}/eventos` | Registra evento (ex.: cancelamento e101101). Corpo: `{ "pedidoRegistroEventoXmlGZipB64" }` | Sim (ICP-Brasil) |
+| `GET` | `/nfse/{chaveAcesso}/eventos[/{tipoEvento}[/{numSeqEvento}]]` | Consulta os eventos da NFS-e | Sim (ICP-Brasil) |
+
+Eventos (leiaute `pedRegEvento`/`evento` v1.01, XSDs em `src/Tests/EficazFramework.Tests/Resources/Schemas/NFSe/Nacional`):
+- Schemas (`EficazFramework.SPED.Schemas/NFSe/Nacional/eventos.cs`, padrão `IXmlSpedDocument` como `NFSe`/`DPS`): `PedidoRegistroEvento` (raiz `pedRegEvento`, `XmlDocumentType.NFS_e_Nacional_PedidoEvento`) e `EventoNfse` (raiz `evento`, `NFS_e_Nacional_Evento`), com `Serialize`/`Deserialize`/`LoadFromAsync`, reconhecidos por `Operations.OpenAsync` (namespace da NFS-e); grupos `TE*` como subclasses de `DetalheEventoNfse`; enums `TipoEventoNfse`, `MotivoCancelamentoNfse`, `AmbienteGeradorEvento`.
+- Serviço (`Services/NFSe/Nacional/Eventos.cs`): `EventosNfseNacional.MontarPedido`/`MontarPedidoCancelamento` (devolvem `PedidoRegistroEvento`), `LerEvento`, leitura tolerante do JSON.
+- `Id` do `infPedReg`: `PRE` + chave (50) + código do evento (6) — `TSIdPedRegEvt`; `Id` do `infEvento`: `EVT` + chave + código + nº sequencial (3).
+- Assinatura: `Certificado.SignXml(pedido, "pedRegEvento", "infPedReg", signAsSHA256: true)`.
+- `Service.Eventos.cs`: `AssinarPedidoEvento`, `CancelarNfseAsync`, `RegistrarEventoAsync`, `ConsultarEventosAsync`. A leitura das respostas é tolerante (`erro`/`erros`, qualquer `*XmlGZipB64`); confirmar os nomes JSON em homologação.
 
 ---
 
@@ -105,8 +114,10 @@ O arquivo [Classes.cs](../../../src/Core/EficazFramework.SPED/Services/NFSe/Naci
 ## 4. Diretrizes de Implementação no `Service.cs`
 
 1. **Herança e Certificado:**
-   - A classe `NfseNacionalService` herda de `RestServiceBase(requerCertificado: true)`.
-   - Utilizar mTLS anexando `Certificado` em `HttpClientHandler.ClientCertificates`.
+   - A classe `NfseNacionalService` herda de `RestServiceBase` (todo serviço REST usa certificado no mTLS).
+   - O `RestServiceBase` cria um único `HttpClient` por instância, na primeira requisição, com `Certificado.PrivateInstance` em `SocketsHttpHandler.SslOptions.ClientCertificates`.
+   - Nunca usar `BaseAddress` nem `DefaultRequestHeaders`: montar a URL completa com `Endereco(ambiente, caminho, distribuicao)` e enviar por `EnviarAsync` (cabeçalhos por requisição).
+   - O serviço é `IDisposable`: uma instância por certificado, descartada ao final.
 
 2. **Endpoints Base:**
    - Produção: `https://sefin.nfse.gov.br/` (ou caminho base aplicável)

@@ -14,9 +14,18 @@ namespace EficazFramework.SPED.Services.NFSe.Nacional;
 /// Serviço de comunicação REST com o Ambiente de Dados Nacional (ADN) da NFS-e (Sefin Nacional / Receita Federal / Serpro).
 /// Suporta emissão síncrona de DPS com assinatura digital XMLDSig RSA-SHA256, consulta de NFS-e por chave de acesso e consulta por identificador do DPS.
 /// </summary>
-public class NfseNacionalService : RestServiceBase
+/// <remarks>
+/// Use uma instância por certificado e descarte-a ao terminar (<see cref="RestServiceBase.Dispose()"/>): o cliente HTTP
+/// é criado na primeira requisição e reutilizado por todos os métodos e ambientes (URLs completas, sem <c>BaseAddress</c>).
+/// </remarks>
+public partial class NfseNacionalService : RestServiceBase
 {
-    public NfseNacionalService() : base(requerCertificado: true) { }
+    /// <summary>Cria o serviço; o certificado é obtido por <see cref="ServiceBase.SelecionaCertificado"/> na primeira requisição.</summary>
+    public NfseNacionalService() : base() { }
+
+    /// <summary>Cria o serviço com um handler HTTP próprio (testes, proxy); o certificado não é anexado ao handler.</summary>
+    /// <param name="handler">Handler usado pelo cliente HTTP (não é descartado pelo serviço).</param>
+    public NfseNacionalService(HttpMessageHandler handler) : base(handler) { }
 
     /// <summary>
     /// URL base para o ambiente de Produção do ADN.
@@ -41,25 +50,35 @@ public class NfseNacionalService : RestServiceBase
     };
 
     /// <summary>
-    /// Configura o certificado digital no HttpClientHandler e define a BaseAddress de acordo com o ambiente.
+    /// URL completa do endpoint no ambiente: Sefin Nacional (emissão, consultas, eventos) ou ADN (distribuição).
     /// </summary>
-    protected virtual void PrepareClient(
-        Schemas.NFSe.Nacional.Ambiente  ambiente,
+    /// <param name="ambiente">Produção ou Homologação (Produção Restrita).</param>
+    /// <param name="caminho">Caminho relativo do endpoint (ex.: <c>nfse/{chave}</c>).</param>
+    /// <param name="distribuicao">Usa a URL do ADN (distribuição de DF-e) em vez da Sefin Nacional.</param>
+    protected virtual Uri Endereco(
+        Schemas.NFSe.Nacional.Ambiente ambiente,
+        string caminho,
         bool distribuicao = false)
     {
-        if (!ValidaCertificado())
-            throw new ArgumentNullException(nameof(Certificado), "Nenhum certificado digital ICP-Brasil válido foi fornecido para a requisição.");
+        var baseUri = ambiente == Ambiente.Producao
+            ? (distribuicao ? UrlDistribuicaoProducao : UrlProducao)
+            : (distribuicao ? UrlDistribuicaoHomologacao : UrlHomologacao);
+        return new Uri(baseUri, caminho);
+    }
 
-        HttpClientHandler.ClientCertificates.Clear();
-        HttpClientHandler.ClientCertificates.Add(Certificado);
-
-        HttpClient.BaseAddress = ambiente == Ambiente.Producao ? 
-                                             !distribuicao ? UrlProducao : UrlDistribuicaoProducao : 
-                                             !distribuicao ? UrlHomologacao : UrlDistribuicaoHomologacao;
-
-        HttpClient.DefaultRequestHeaders.Clear();
-        HttpClient.DefaultRequestHeaders.Accept.Clear();
-        HttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    /// <summary>
+    /// Envia a requisição pelo cliente HTTP do serviço (certificado no mTLS), aceitando JSON.
+    /// </summary>
+    /// <exception cref="ArgumentNullException">Nenhum certificado digital ICP-Brasil foi fornecido.</exception>
+    protected async Task<HttpResponseMessage> EnviarAsync(
+        HttpMethod metodo,
+        Uri endereco,
+        HttpContent? conteudo,
+        CancellationToken ct)
+    {
+        using var request = new HttpRequestMessage(metodo, endereco) { Content = conteudo };
+        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        return await ObterHttpClient().SendAsync(request, ct);
     }
 
     /// <summary>
@@ -93,8 +112,6 @@ public class NfseNacionalService : RestServiceBase
         Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
-        PrepareClient(ambiente);
-
         var xmlDocAssinado = AssinarDps(dps);
         var xmlAssinadoString = xmlDocAssinado.OuterXml;
 
@@ -104,7 +121,7 @@ public class NfseNacionalService : RestServiceBase
         var jsonString = JsonSerializer.Serialize(payload, JsonOptions);
         using var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-        var response = await HttpClient.PostAsync("nfse", content, ct);
+        using var response = await EnviarAsync(HttpMethod.Post, Endereco(ambiente, "nfse"), content, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
         RetornoEnvioDps retorno;
@@ -137,9 +154,7 @@ public class NfseNacionalService : RestServiceBase
         if (string.IsNullOrWhiteSpace(chaveAcesso))
             throw new ArgumentNullException(nameof(chaveAcesso), "A chave de acesso deve ser informada.");
 
-        PrepareClient(ambiente);
-
-        var response = await HttpClient.GetAsync($"nfse/{chaveAcesso}", ct);
+        using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, $"nfse/{chaveAcesso}"), null, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
         RetornoConsultaNfse retorno;
@@ -172,9 +187,7 @@ public class NfseNacionalService : RestServiceBase
         if (string.IsNullOrWhiteSpace(idDps))
             throw new ArgumentNullException(nameof(idDps), "O identificador da DPS deve ser informado.");
 
-        PrepareClient(ambiente);
-
-        var response = await HttpClient.GetAsync($"dps/{idDps}", ct);
+        using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, $"dps/{idDps}"), null, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
         RetornoConsultaDps retorno;
@@ -212,8 +225,6 @@ public class NfseNacionalService : RestServiceBase
         Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
     {
-        PrepareClient(ambiente, true);
-
         var queryParams = new List<string>();
         if (!string.IsNullOrWhiteSpace(cnpjConsulta))
             queryParams.Add($"cnpjConsulta={Uri.EscapeDataString(cnpjConsulta)}");
@@ -223,7 +234,7 @@ public class NfseNacionalService : RestServiceBase
         var queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : string.Empty;
         var requestUri = $"DFe/{nsu}{queryString}";
 
-        var response = await HttpClient.GetAsync(requestUri, ct);
+        using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, requestUri, distribuicao: true), null, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
         RetornoConsultaDfe retorno;

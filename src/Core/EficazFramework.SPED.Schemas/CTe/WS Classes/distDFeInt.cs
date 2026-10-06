@@ -178,7 +178,7 @@ public partial class PedidoDistribuicaoDFe
         }
     }
 
-    public virtual async void SaveToAsync(System.IO.Stream target)
+    public virtual async Task SaveToAsync(System.IO.Stream target)
     {
         if (target is null)
             throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
@@ -461,7 +461,7 @@ public partial class RetornoDistribuicaoDFe
         }
     }
 
-    public virtual async void SaveToAsync(System.IO.Stream target)
+    public virtual async Task SaveToAsync(System.IO.Stream target)
     {
         if (target is null)
             throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);

@@ -237,7 +237,7 @@ namespace EficazFramework.SPED.Schemas.GNRE.V1
             }
         }
 
-        public virtual async void SaveToAsync(Stream target)
+        public virtual async Task SaveToAsync(Stream target)
         {
             if (target is null)
                 throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
@@ -565,7 +565,7 @@ namespace EficazFramework.SPED.Schemas.GNRE.V1
             }
         }
 
-        public virtual async void SaveToAsync(Stream target)
+        public virtual async Task SaveToAsync(Stream target)
         {
             if (target is null)
                 throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
@@ -911,7 +911,7 @@ namespace EficazFramework.SPED.Schemas.GNRE.V1
             }
         }
 
-        public virtual async void SaveToAsync(Stream target)
+        public virtual async Task SaveToAsync(Stream target)
         {
             if (target is null)
                 throw new ArgumentException(Resources.Strings.Validation.Classes_Save_NullStreamExceptionMessage);
