@@ -37,6 +37,8 @@ Eventos (leiaute `pedRegEvento`/`evento` v1.01, XSDs em `src/Tests/EficazFramewo
 - Assinatura: `Certificado.SignXml(pedido, "pedRegEvento", "infPedReg", signAsSHA256: true)`.
 - `Service.Eventos.cs`: `AssinarPedidoEvento`, `CancelarNfseAsync`, `RegistrarEventoAsync`, `ConsultarEventosAsync`. A leitura das respostas é tolerante (`erro`/`erros`, qualquer `*XmlGZipB64`); confirmar os nomes JSON em homologação.
 
+DANFSe: `ObterDanfseAsync(chave, ambiente)` faz `GET` na URL de distribuição (ADN) + `CaminhoDanfse` (padrão `danfse/{0}`), com `Accept: application/pdf`, e devolve `RetornoDanfse` (`Pdf` só quando o conteúdo começa com `%PDF`; senão `ConteudoErro`). O caminho é configurável porque a documentação oficial não o detalha — confirmar em produção restrita.
+
 ---
 
 ## 3. Contratos de Dados (DTOs / Models)
