@@ -31,7 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="PdfPig" Version="0.1.16" />
-    <PackageReference Include="QuestPDF" Version="2026.8.0" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="QuestPDF" Version="2026.9.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />

@@ -151,6 +151,35 @@ public class DocumentTests : BaseTest
         System.Text.Encoding.ASCII.GetString(ms.ToArray()[..4]).Should().Be("%PDF");
     }
 
+    [Test]
+    public async Task GerarDanfseNacional_DeveSeguirOsBlocosDaNt008EmUmaPagina()
+    {
+        var nfse = await ObterNFSeAsync();
+
+        byte[] pdf = nfse.GerarDanfse(new DanfseOptions { Situacao = SituacaoDanfse.Cancelada, ExibirCanhoto = true });
+
+        using var pdfDoc = UglyToad.PdfPig.PdfDocument.Open(pdf);
+        pdfDoc.NumberOfPages.Should().Be(1);
+        var pagina = pdfDoc.GetPage(1);
+        var palavras = string.Join(" ", pagina.GetWords().Select(w => w.Text));
+        var letras = string.Concat(pagina.Letters.Select(l => l.Value));
+
+        palavras.Should().Contain("DANFSe v2.0")
+            .And.Contain("PRESTADOR / FORNECEDOR")
+            .And.Contain("SERVIÇO PRESTADO")
+            .And.Contain("TRIBUTAÇÃO IBS / CBS")
+            .And.Contain("VALOR TOTAL DA NFS-E")
+            .And.Contain("Totais Aproximados dos Tributos");
+        letras.Should().Contain("CANCELADA");
+    }
+
+    [Test]
+    public void GerarDanfseNacional_XmlVazio_DeveLancar()
+    {
+        FluentActions.Invoking(() => DanfseExtensions.GerarDanfse(" "))
+            .Should().Throw<System.ArgumentException>();
+    }
+
     // =========================================================================
     // DACTE (CT-e)
     // =========================================================================

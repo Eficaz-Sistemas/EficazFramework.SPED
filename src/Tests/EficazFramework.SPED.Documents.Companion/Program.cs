@@ -4,6 +4,10 @@ using QuestPDF.Fluent;
 using System.Diagnostics;
 
 
+// DANFSe NACIONAL v2.0 (NT 008)
+// var nfse = await Helper.ObterNFSeNacionalAsync("001.xml");
+// await new EficazFramework.SPED.Documents.NFSe.DanfseDocument(nfse!, new() { ExibirCanhoto = true }).ShowInCompanionAsync();
+
 // DANFE SIMPLIFICADO
 // var nfe = await Helper.ObterNFeAsync("001.xml");
 

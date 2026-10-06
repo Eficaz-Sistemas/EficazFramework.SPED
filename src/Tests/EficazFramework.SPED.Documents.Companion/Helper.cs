@@ -30,6 +30,13 @@ internal static class Helper
         return null;
     }
 
+    internal static async Task<NFSe?> ObterNFSeNacionalAsync(string fileName = "001.xml")
+    {
+        var path = Path.Combine(AppContext.BaseDirectory, "Samples", "NFseNacional", fileName);
+        var xml = await File.ReadAllTextAsync(path);
+        return NFSe.Deserialize(xml);
+    }
+
     internal static async Task<ProcessoCTe?> ObterCTeAsync()
     {
         var folder = Path.Combine(AppContext.BaseDirectory, "Samples", "IbsCbs");
