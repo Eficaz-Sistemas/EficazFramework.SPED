@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
-    <Version>6.5.4</Version>
-    <AssemblyVersion>6.5.4.0</AssemblyVersion>
-    <FileVersion>6.5.4.0</FileVersion>
+    <Version>6.5.5</Version>
+    <AssemblyVersion>6.5.5.0</AssemblyVersion>
+    <FileVersion>6.5.5.0</FileVersion>
     <LangVersion>latest</LangVersion>
     <Authors>Eficaz Sistemas; Henrique Clausing</Authors>
     <Company>Eficaz Sistemas de Gestão e Inteligência Tributária</Company>
@@ -36,5 +36,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EficazFramework.SPED.Schemas\EficazFramework.SPED.Schemas.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Logos.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Logos.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Logos.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Logos.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EficazFramework.SPED.Resources</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

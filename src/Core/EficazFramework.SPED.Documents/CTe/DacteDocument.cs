@@ -54,7 +54,7 @@ public sealed class DacteDocument : IDocument
             page.MarginBottom(4, Unit.Millimetre);
             page.MarginLeft(6, Unit.Millimetre);
             page.MarginRight(6, Unit.Millimetre);
-            page.DefaultTextStyle(x => x.FontFamily(Fonts.Lato).FontSize(FonteValor));
+            page.DefaultTextStyle(x => x.FontFamily("Lato").FontSize(FonteValor));
 
             page.Header().Column(col =>
             {
@@ -116,7 +116,7 @@ public sealed class DacteDocument : IDocument
                 col.Item().Text("CHAVE DE ACESSO").FontSize(FonteRotulo).FontColor(CorSecundaria).Bold();
                 var chave = Prot?.ChaveCTeFormatada ?? FormatarChave(Prot?.chCTe ?? string.Empty);
                 col.Item().PaddingTop(1).Text(chave)
-                   .FontSize(FonteRotulo + 1).FontFamily(Fonts.Lato);
+                   .FontSize(FonteRotulo + 1).FontFamily("Lato");
 
                 col.Item().PaddingTop(3).Text("PROTOCOLO DE AUTORIZAÇÃO").FontSize(FonteRotulo).Bold().FontColor(CorSecundaria);
                 col.Item().Text(

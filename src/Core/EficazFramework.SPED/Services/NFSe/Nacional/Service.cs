@@ -42,11 +42,6 @@ public partial class NfseNacionalService : RestServiceBase
 
     public Uri UrlDistribuicaoHomologacao { get; set; } = new("https://adn.producaorestrita.nfse.gov.br/");
 
-    /// <summary>
-    /// Caminho do DANFSe no ADN, relativo à URL de distribuição; <c>{0}</c> é a chave de acesso.
-    /// </summary>
-    public string CaminhoDanfse { get; set; } = "danfse/{0}";
-
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNameCaseInsensitive = true,
@@ -212,36 +207,6 @@ public partial class NfseNacionalService : RestServiceBase
 
         retorno.StatusCode = (int)response.StatusCode;
         return retorno;
-    }
-
-    /// <summary>
-    /// Baixa o DANFSe (PDF) da NFS-e no ADN (GET /danfse/{chaveAcesso}, ver <see cref="CaminhoDanfse"/>).
-    /// </summary>
-    /// <param name="chaveAcesso">Chave de acesso da NFS-e (50 dígitos).</param>
-    /// <param name="ambiente">Ambiente de destino. Padrão canônico de segurança: HOMOLOGAÇÃO.</param>
-    /// <param name="ct">Token de cancelamento.</param>
-    /// <returns>O PDF quando o ADN o devolve; senão o código HTTP e o conteúdo da resposta.</returns>
-    /// <exception cref="ArgumentException">Chave ausente ou com tamanho diferente de 50 dígitos.</exception>
-    public virtual async Task<RetornoDanfse> ObterDanfseAsync(
-        string chaveAcesso,
-        Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
-        CancellationToken ct = default)
-    {
-        var chave = ChaveValida(chaveAcesso);
-        var caminho = string.Format(System.Globalization.CultureInfo.InvariantCulture, CaminhoDanfse, chave);
-
-        using var request = new HttpRequestMessage(HttpMethod.Get, Endereco(ambiente, caminho, distribuicao: true));
-        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
-        using var response = await ObterHttpClient().SendAsync(request, ct);
-        var bytes = await response.Content.ReadAsByteArrayAsync(ct);
-
-        var ehPdf = bytes.Length > 4 && bytes[0] == (byte)'%' && bytes[1] == (byte)'P' && bytes[2] == (byte)'D' && bytes[3] == (byte)'F';
-        return new RetornoDanfse
-        {
-            StatusCode = (int)response.StatusCode,
-            Pdf = ehPdf ? bytes : null,
-            ConteudoErro = ehPdf ? null : Encoding.UTF8.GetString(bytes)
-        };
     }
 
     /// <summary>

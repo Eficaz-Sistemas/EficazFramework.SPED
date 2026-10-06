@@ -12,6 +12,7 @@ Param (
     Get-ProjectReleaseStatus -Projectname "EficazFramework.SPED" -SubFolder "\Core"
     Get-ProjectReleaseStatus -Projectname "EficazFramework.SPED.Abstractions" -SubFolder "\Core"
     Get-ProjectReleaseStatus -Projectname "EficazFramework.SPED.Schemas" -SubFolder "\Core"
+    Get-ProjectReleaseStatus -Projectname "EficazFramework.SPED.Documents" -SubFolder "\Core"
    }
 }
 
@@ -27,6 +28,7 @@ Function Set-Versions {
     Set-Version -Projectname "EficazFramework.SPED" -SubFolder "\Core"
     Set-Version -Projectname "EficazFramework.SPED.Abstractions" -SubFolder "\Core"
     Set-Version -Projectname "EficazFramework.SPED.Schemas" -SubFolder "\Core"
+    Set-Version -Projectname "EficazFramework.SPED.Documents" -SubFolder "\Core"
 
     [string]$commitMessage = 'RELEASE ' + [string]$new_version
     [string]$commitTag = [string]'v' + [string]$new_version

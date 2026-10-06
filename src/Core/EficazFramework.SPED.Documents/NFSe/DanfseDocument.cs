@@ -18,7 +18,7 @@ public sealed class DanfseDocument : IDocument
     /// <summary>URL da consulta pública usada no QR Code (seguida da chave de acesso).</summary>
     public const string UrlConsultaPublica = "https://www.nfse.gov.br/ConsultaPublica/?tpc=1&chave=";
 
-    private const string Fonte = Fonts.Lato;
+    private const string Fonte = "Lato";
     private const string CinzaClaro = "#F2F2F2";   // 5% de densidade
     private const string CinzaMarcaDagua = "#A6A6A6"; // K35
     private const string Vermelho = "#FF0000";     // M100/Y100
@@ -101,42 +101,51 @@ public sealed class DanfseDocument : IDocument
                     .FontColor(CinzaMarcaDagua);
             }
 
-            page.Content().Column(col =>
+            // Moldura da página inteira; o canhoto (opcional) fica no rodapé, dentro da moldura.
+            page.Content().Layers(layers =>
             {
-                col.Item().Element(ComposeCabecalho);
-                col.Item().Element(ComposeDadosNfse);
-                col.Item().Element(ComposePrestador);
-                col.Item().Element(ComposeTomador);
-                col.Item().Element(ComposeDestinatario);
-                col.Item().Element(ComposeIntermediario);
-                col.Item().Element(ComposeServico);
-                col.Item().Element(ComposeTributacaoMunicipal);
-                col.Item().Element(ComposeTributacaoFederal);
-                col.Item().Element(ComposeTributacaoIbsCbs);
-                col.Item().Element(ComposeTotais);
-                col.Item().Element(ComposeInformacoesComplementares);
+                layers.PrimaryLayer().Border(BordaExterna).ExtendVertical().Column(col =>
+                {
+                    col.Item().Element(ComposeCabecalho);
+                    col.Item().Element(ComposeDadosNfse);
+                    col.Item().Element(ComposePrestador);
+                    col.Item().Element(ComposeTomador);
+                    col.Item().Element(ComposeDestinatario);
+                    col.Item().Element(ComposeIntermediario);
+                    col.Item().Element(ComposeServico);
+                    col.Item().Element(ComposeTributacaoMunicipal);
+                    col.Item().Element(ComposeTributacaoFederal);
+                    col.Item().Element(ComposeTributacaoIbsCbs);
+                    col.Item().Element(ComposeTotais);
+                    col.Item().Element(ComposeInformacoesComplementares);
+                    if (_options.ExibirCanhoto)
+                        col.Item().Height(AlturaCanhoto, Unit.Centimetre); // reserva o espaço do canhoto
+                });
+
                 if (_options.ExibirCanhoto)
-                    col.Item().PaddingTop(0.3f, Unit.Centimetre).Element(ComposeCanhoto);
+                    layers.Layer().AlignBottom().Padding(0.3f, Unit.Centimetre).Element(ComposeCanhoto);
             });
         });
     }
 
+    private const float AlturaCanhoto = 1.3f;
+
     // =========================================================================
-    // 1. Cabeçalho
+    // Cabeçalho
     // =========================================================================
     private void ComposeCabecalho(IContainer c)
     {
         var homologacao = Dps?.Ambiente == Ambiente.Homologacao;
 
-        c.Border(BordaExterna).Background(CinzaClaro).MinHeight(1.16f, Unit.Centimetre).Padding(3).Row(row =>
+        c.BorderBottom(BordaExterna).Background(CinzaClaro).MinHeight(1.16f, Unit.Centimetre).Padding(3).Row(row =>
         {
-            row.ConstantItem(4f, Unit.Centimetre).AlignMiddle().Element(logo =>
+            row.RelativeItem(1).AlignMiddle().Element(logo =>
             {
                 if (_options.LogoNfse is { Length: > 0 })
-                    logo.Height(0.85f, Unit.Centimetre).Image(_options.LogoNfse).FitArea();
+                    logo.Height(0.85f, Unit.Centimetre).AlignLeft().Image(_options.LogoNfse).FitArea();
             });
 
-            row.RelativeItem().AlignMiddle().Column(titulo =>
+            row.RelativeItem(2).AlignMiddle().Column(titulo =>
             {
                 titulo.Item().AlignCenter().Text("DANFSe v2.0").FontSize(9).Bold();
                 titulo.Item().AlignCenter().Text("Documento Auxiliar da NFS-e").FontSize(9).Bold();
@@ -144,54 +153,56 @@ public sealed class DanfseDocument : IDocument
                     titulo.Item().AlignCenter().Text("NFS-e SEM VALIDADE JURÍDICA").FontSize(9).Bold().FontColor(Vermelho);
             });
 
-            row.ConstantItem(5f, Unit.Centimetre).AlignMiddle().Column(amb =>
+            row.RelativeItem(1).AlignMiddle().Column(amb =>
             {
-                amb.Item().AlignRight().Text(MunicipioUf(Dps?.LocalEmissaoCodigo, Info?.LocalEmissao)).FontSize(FonteRotulo).Bold();
-                amb.Item().AlignRight().Text($"Ambiente Gerador: {DescricaoAmbienteGerador(Info?.AmbienteGerador)}").FontSize(FonteRotulo);
-                amb.Item().AlignRight().Text($"Tipo de Ambiente: {DescricaoTipoAmbiente(Dps?.Ambiente)}").FontSize(FonteRotulo);
+                var uf = UfDoMunicipio(Dps?.LocalEmissaoCodigo);
+                var municipio = string.IsNullOrWhiteSpace(Info?.LocalEmissao) ? Traco : Info.LocalEmissao.Trim();
+                amb.Item().Text($"Município: {municipio} - {uf ?? Traco}").FontSize(FonteTituloBloco);
+                amb.Item().Text($"Ambiente Gerador: {DescricaoAmbienteGerador(Info?.AmbienteGerador)}").FontSize(FonteRotulo);
+                amb.Item().Text($"Tipo de Ambiente: {DescricaoTipoAmbiente(Dps?.Ambiente)}").FontSize(FonteRotulo);
             });
         });
     }
 
     // =========================================================================
-    // 2. Dados da NFS-e (com QR Code)
+    // Dados da NFS-e (3 colunas + QR Code)
     // =========================================================================
     private void ComposeDadosNfse(IContainer c)
     {
         var chave = ChaveAcesso();
 
-        c.BorderLeft(BordaExterna).BorderRight(BordaExterna).BorderBottom(BordaExterna).Row(row =>
+        c.Row(row =>
         {
-            row.RelativeItem().Column(col =>
+            row.RelativeItem(3).Column(col =>
             {
-                Linha(col, true, Campo("CHAVE DE ACESSO DA NFS-e", chave, 1, rotuloIdentificacao: true));
-                Linha(col, false,
-                    Campo("NÚMERO DA NFS-e", Info?.Numero > 0 ? Info.Numero.ToString(CultureInfo.InvariantCulture) : null, 1, rotuloIdentificacao: true),
-                    Campo("COMPETÊNCIA DA NFS-e", DataIso(Dps?.Competencia), 1, rotuloIdentificacao: true),
-                    Campo("DATA E HORA DA EMISSÃO DA NFS-e", DataHora(Info?.DataHoraProcessamento), 1, rotuloIdentificacao: true));
-                Linha(col, false,
-                    Campo("NÚMERO DA DPS", Dps?.Numero > 0 ? Dps.Numero.ToString(CultureInfo.InvariantCulture) : null, 1, rotuloIdentificacao: true),
-                    Campo("SÉRIE DA DPS", Dps?.Serie, 1, rotuloIdentificacao: true),
-                    Campo("DATA E HORA DA EMISSÃO DA DPS", DataHora(Dps?.DataHoraEmissao), 1, rotuloIdentificacao: true));
-                Linha(col, false,
-                    Campo("EMITENTE DA NFS-e", DescricaoTipoEmitente(Dps?.TipoEmitente), 1, rotuloIdentificacao: true, destaque: true),
-                    Campo("SITUAÇÃO DA NFS-e", Truncar(DescricaoSituacao(Info?.CodigoSituacao), 37), 1, rotuloIdentificacao: true),
-                    Campo("FINALIDADE", Truncar(DescricaoFinalidade(IbsCbsDps?.finNFSe), 37), 1, rotuloIdentificacao: true));
+                Linha(col, 3, Celula.Identificacao("CHAVE DE ACESSO DA NFS-E", chave, 3));
+                Linha(col, 3,
+                    Celula.Identificacao("NÚMERO DA NFS-E", Info?.Numero > 0 ? Info.Numero.ToString(CultureInfo.InvariantCulture) : null),
+                    Celula.Identificacao("COMPETÊNCIA DA NFS-E", DataIso(Dps?.Competencia)),
+                    Celula.Identificacao("DATA E HORA DA EMISSÃO DA NFS-E", DataHora(Info?.DataHoraProcessamento)));
+                Linha(col, 3,
+                    Celula.Identificacao("NÚMERO DA DPS", Dps?.Numero > 0 ? Dps.Numero.ToString(CultureInfo.InvariantCulture) : null),
+                    Celula.Identificacao("SÉRIE DA DPS", Dps?.Serie),
+                    Celula.Identificacao("DATA E HORA DA EMISSÃO DA DPS", DataHora(Dps?.DataHoraEmissao)));
+                Linha(col, 3,
+                    Celula.Identificacao("EMITENTE DA NFS-e", DescricaoTipoEmitente(Dps?.TipoEmitente), destaque: true),
+                    Celula.Identificacao("SITUAÇÃO DA NFS-e", Truncar(DescricaoSituacao(Info?.CodigoSituacao), 37)),
+                    Celula.Identificacao("FINALIDADE", Truncar(DescricaoFinalidade(IbsCbsDps?.finNFSe), 37)));
             });
 
-            row.ConstantItem(3.2f, Unit.Centimetre).BorderLeft(BordaInterna).Padding(3).Column(qr =>
+            row.RelativeItem(1).Padding(3).Column(qr =>
             {
                 if (chave != null)
                     qr.Item().AlignCenter().Width(1.9f, Unit.Centimetre).Height(1.9f, Unit.Centimetre).Image(GerarQrCode(UrlConsultaPublica + chave)).FitArea();
-                qr.Item().PaddingTop(2).AlignCenter().Text(
+                qr.Item().PaddingTop(2).Text(
                     "A autenticidade desta NFS-e pode ser verificada pela leitura deste código QR ou pela consulta da chave de acesso no portal nacional da NFS-e")
-                    .FontSize(FonteRotulo).AlignCenter();
+                    .FontSize(FonteRotulo);
             });
         });
     }
 
     // =========================================================================
-    // 3 a 6. Partes da operação
+    // Partes da operação
     // =========================================================================
     private void ComposePrestador(IContainer c)
     {
@@ -199,32 +210,32 @@ public sealed class DanfseDocument : IDocument
         var endEmit = Emit?.EnderecoNacional;
 
         var cMun = end?.Nacional?.MunicipioCodigo ?? endEmit?.MunicipioCodigo;
-        var ufEmit = endEmit?.UF;
         var municipio = end?.endExt != null
             ? CidadeExterior(end.endExt)
-            : MunicipioUf(cMun, NomeMunicipio(cMun), ufEmit);
+            : MunicipioUf(cMun, NomeMunicipio(cMun), endEmit?.UF);
         var cep = end?.endExt?.cEndPost ?? end?.Nacional?.CEP ?? endEmit?.CEP;
         var endereco = end != null
             ? MontarEndereco(end.Logradouro, end.Numero, end.xCpl, end.Bairro)
             : MontarEndereco(endEmit?.Logradouro, endEmit?.Numero, endEmit?.xCpl, endEmit?.Bairro);
         var email = Prest?.Email ?? Emit?.Email;
 
-        Bloco(c, "PRESTADOR / FORNECEDOR", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("CNPJ / CPF / NIF", Documento(Prest?.Cnpj ?? Emit?.Cnpj, Prest?.CPF ?? Emit?.CPF, Prest?.NIF), 2),
-                Campo("Inscrição Municipal", Prest?.InscricaoMunicipal ?? Emit?.InscricaoMunicipal, 1),
-                Campo("Telefone", Telefone(Prest?.Telefone ?? Emit?.Telefone), 1));
-            Linha(col, false, Campo("Nome / Nome Empresarial", Truncar(Prest?.xNome ?? Emit?.Nome, 77), 1));
-            Linha(col, false,
-                Campo("Município / Sigla UF", Truncar(municipio, 37), 2),
-                Campo("Código IBGE / CEP", CodigoIbgeCep(cMun, cep, end?.endExt != null), 2));
-            Linha(col, false,
-                Campo("Endereço", Truncar(endereco, 77), 2),
-                _options.ExibirEmails && !string.IsNullOrWhiteSpace(email) ? Campo("E-mail", email, 2) : null);
-            Linha(col, false,
-                Campo("Simples Nacional na Data de Competência", Truncar(DescricaoOpcaoSimples(Prest?.RegimeTributario?.OptanteSimplesNacional), 37), 2),
-                Campo("Regime de Apuração Tributária pelo SN", Truncar(DescricaoRegimeApuracaoSn(Prest?.RegimeTributario?.regApTribSN), 77), 2));
+            Linha(col, 4,
+                Celula.Titulo("PRESTADOR / FORNECEDOR"),
+                Celula.Campo("CNPJ / CPF / NIF", Documento(Prest?.Cnpj ?? Emit?.Cnpj, Prest?.CPF ?? Emit?.CPF, Prest?.NIF)),
+                Celula.Campo("Indicador Municipal (Inscrição)", Prest?.InscricaoMunicipal ?? Emit?.InscricaoMunicipal),
+                Celula.Campo("Telefone", Telefone(Prest?.Telefone ?? Emit?.Telefone)));
+            Linha(col, 4,
+                Celula.Campo("Nome / Nome Empresarial", Truncar(Prest?.xNome ?? Emit?.Nome, 77), 2),
+                Celula.Campo("Município / Sigla UF", Truncar(municipio, 37)),
+                Celula.Campo("Código IBGE / CEP", CodigoIbgeCep(cMun, cep, end?.endExt != null)));
+            Linha(col, 4,
+                Celula.Campo("Endereço", Truncar(endereco, 77), 2),
+                _options.ExibirEmails ? Celula.Campo("E-mail", email, 2) : Celula.Vazia(2));
+            Linha(col, 4,
+                Celula.Campo("Simples Nacional na Data de Competência", Truncar(DescricaoOpcaoSimples(Prest?.RegimeTributario?.OptanteSimplesNacional), 37)),
+                Celula.Campo("Regime de Apuração Tributária pelo SN", Truncar(DescricaoRegimeApuracaoSn(Prest?.RegimeTributario?.regApTribSN), 77), 3));
         });
     }
 
@@ -237,7 +248,7 @@ public sealed class DanfseDocument : IDocument
             return;
         }
 
-        Bloco(c, "TOMADOR / ADQUIRENTE", col => LinhasParte(col, toma.CNPJ, toma.CPF, toma.NIF, toma.IM, toma.fone, toma.xNome, toma.Endereco, toma.email, exibirIm: true));
+        Bloco(c, col => LinhasParte(col, "TOMADOR / ADQUIRENTE", toma.CNPJ, toma.CPF, toma.NIF, toma.IM, toma.fone, toma.xNome, toma.Endereco, toma.email, exibirIm: true));
     }
 
     private void ComposeDestinatario(IContainer c)
@@ -261,7 +272,7 @@ public sealed class DanfseDocument : IDocument
             return;
         }
 
-        Bloco(c, "DESTINATÁRIO DA OPERAÇÃO", col => LinhasParte(col, dest.CNPJ, dest.CPF, dest.NIF, null, dest.fone, dest.xNome, dest.end, dest.email, exibirIm: false));
+        Bloco(c, col => LinhasParte(col, "DESTINATÁRIO DA OPERAÇÃO", dest.CNPJ, dest.CPF, dest.NIF, null, dest.fone, dest.xNome, dest.end, dest.email, exibirIm: false));
     }
 
     private void ComposeIntermediario(IContainer c)
@@ -273,12 +284,13 @@ public sealed class DanfseDocument : IDocument
             return;
         }
 
-        Bloco(c, "INTERMEDIÁRIO DA OPERAÇÃO", col => LinhasParte(col, interm.CNPJ, interm.CPF, interm.NIF, interm.IM, interm.fone, interm.xNome, interm.Endereco, interm.email, exibirIm: true));
+        Bloco(c, col => LinhasParte(col, "INTERMEDIÁRIO DA OPERAÇÃO", interm.CNPJ, interm.CPF, interm.NIF, interm.IM, interm.fone, interm.xNome, interm.Endereco, interm.email, exibirIm: true));
     }
 
     /// <summary>Linhas comuns a tomador, destinatário e intermediário.</summary>
     private void LinhasParte(
         ColumnDescriptor col,
+        string titulo,
         string? cnpj,
         string? cpf,
         string? nif,
@@ -293,21 +305,22 @@ public sealed class DanfseDocument : IDocument
         var municipio = end?.endExt != null ? CidadeExterior(end.endExt) : MunicipioUf(cMun, NomeMunicipio(cMun));
         var cep = end?.endExt?.cEndPost ?? end?.Nacional?.CEP;
 
-        Linha(col, true,
-            Campo("CNPJ / CPF / NIF", Documento(cnpj, cpf, nif), 2),
-            exibirIm ? Campo("Inscrição Municipal", im, 1) : null,
-            Campo("Telefone", Telefone(fone), 1));
-        Linha(col, false, Campo("Nome / Nome Empresarial", Truncar(nome, 77), 1));
-        Linha(col, false,
-            Campo("Município / Sigla UF", Truncar(municipio, 37), 2),
-            Campo("Código IBGE / CEP", CodigoIbgeCep(cMun, cep, end?.endExt != null), 2));
-        Linha(col, false,
-            Campo("Endereço", Truncar(end == null ? null : MontarEndereco(end.Logradouro, end.Numero, end.xCpl, end.Bairro), 77), 2),
-            _options.ExibirEmails && !string.IsNullOrWhiteSpace(email) ? Campo("E-mail", email, 2) : null);
+        Linha(col, 4,
+            Celula.Titulo(titulo),
+            Celula.Campo("CNPJ / CPF / NIF", Documento(cnpj, cpf, nif)),
+            exibirIm ? Celula.Campo("Indicador Municipal (Inscrição)", im) : Celula.Vazia(),
+            Celula.Campo("Telefone", Telefone(fone)));
+        Linha(col, 4,
+            Celula.Campo("Nome / Nome Empresarial", Truncar(nome, 77), 2),
+            Celula.Campo("Município / Sigla UF", Truncar(municipio, 37)),
+            Celula.Campo("Código IBGE / CEP", CodigoIbgeCep(cMun, cep, end?.endExt != null)));
+        Linha(col, 4,
+            Celula.Campo("Endereço", Truncar(end == null ? null : MontarEndereco(end.Logradouro, end.Numero, end.xCpl, end.Bairro), 77), 2),
+            _options.ExibirEmails ? Celula.Campo("E-mail", email, 2) : Celula.Vazia(2));
     }
 
     // =========================================================================
-    // 7. Serviço prestado
+    // Serviço prestado
     // =========================================================================
     private void ComposeServico(IContainer c)
     {
@@ -323,19 +336,29 @@ public sealed class DanfseDocument : IDocument
         if (!string.IsNullOrWhiteSpace(cServ?.cTribMun))
             codigoTrib += $" / {cServ.cTribMun}";
 
-        Bloco(c, "SERVIÇO PRESTADO", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("Código de Tributação Nacional / Municipal", codigoTrib, 1),
-                Campo("Código da NBS", FormatarNbs(cServ?.NBS), 1),
-                Campo("Local da Prestação / Sigla UF / País", Truncar(localPrestacao, 42), 2));
-            Linha(col, false, CampoSemRotulo(Truncar(Info?.xTribMun ?? Info?.TributacaoNacional, 167)));
-            Linha(col, false, Campo("Descrição do Serviço", Truncar(cServ?.Descricao, 1300), 1));
+            Linha(col, 4,
+                Celula.Titulo("SERVIÇO PRESTADO"),
+                Celula.Campo("Código de Tributação Nacional / Municipal", codigoTrib),
+                Celula.Campo("Código da NBS", FormatarNbs(cServ?.NBS)),
+                Celula.Campo("Local da Prestação / Sigla UF / País", Truncar(localPrestacao, 42)));
+
+            // Descrição do código: municipal se houver, senão nacional (sem rótulo, em cinza).
+            col.Item().PaddingHorizontal(2).PaddingVertical(1)
+                .Text(Truncar(Info?.xTribMun ?? Info?.TributacaoNacional, 167) ?? Traco)
+                .FontSize(FonteValor).FontColor(Colors.Grey.Darken1);
+
+            col.Item().MinHeight(2.2f, Unit.Centimetre).PaddingHorizontal(2).PaddingVertical(1).Column(desc =>
+            {
+                desc.Item().Text("Descrição do Serviço").FontSize(FonteRotulo).Bold();
+                desc.Item().Text(Truncar(cServ?.Descricao, 1300) ?? Traco).FontSize(FonteValor);
+            });
         });
     }
 
     // =========================================================================
-    // 8. Tributação municipal (ISSQN)
+    // Tributação municipal (ISSQN)
     // =========================================================================
     private void ComposeTributacaoMunicipal(IContainer c)
     {
@@ -355,40 +378,42 @@ public sealed class DanfseDocument : IDocument
         var deducoes = valores?.vCalcDR ?? ValoresDps?.vDedRed?.vDR;
         var descontoIncond = ValoresDps?.vDescCondIncond?.vDescIncond;
 
-        Bloco(c, "TRIBUTAÇÃO MUNICIPAL (ISSQN)", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("Tipo de Tributação do ISSQN", DescricaoTributacaoIssqn(trib.Issqn), 1),
-                Campo("Município / Sigla UF / País da Incidência do ISSQN", Truncar(incidencia, 42), 2),
-                regimeEspecial is > 0 ? Campo("Regime Especial de Tributação do ISSQN", DescricaoRegimeEspecial(regimeEspecial), 1) : null);
+            Linha(col, 4,
+                Celula.Titulo("TRIBUTAÇÃO MUNICIPAL (ISSQN)"),
+                Celula.Campo("Tipo de Tributação do ISSQN", DescricaoTributacaoIssqn(trib.Issqn)),
+                Celula.Campo("Município / Sigla UF / País de Incidência do ISSQN", Truncar(incidencia, 42), 2));
 
-            if (!string.IsNullOrWhiteSpace(trib.tpImunidade) || trib.exigSusp != null)
+            // Linhas suprimíveis quando não há dado algum no XML.
+            if (regimeEspecial is > 0 || !string.IsNullOrWhiteSpace(trib.tpImunidade) || trib.exigSusp != null)
             {
-                Linha(col, false,
-                    Campo("Tipo de Imunidade do ISSQN", Truncar(DescricaoImunidade(trib.tpImunidade), 37), 1),
-                    Campo("Suspensão da Exigibilidade do ISSQN", Truncar(DescricaoSuspensao(trib.exigSusp?.tpSusp), 37), 1),
-                    Campo("Número Processo Suspensão", trib.exigSusp?.nProcesso, 1));
+                Linha(col, 4,
+                    Celula.Campo("Regime Especial de Tributação do ISSQN", regimeEspecial is > 0 ? DescricaoRegimeEspecial(regimeEspecial) : null),
+                    Celula.Campo("Tipo de Imunidade do ISSQN", Truncar(DescricaoImunidade(trib.tpImunidade), 37)),
+                    Celula.Campo("Suspensão da Exigibilidade do ISSQN", Truncar(DescricaoSuspensao(trib.exigSusp?.tpSusp), 37)),
+                    Celula.Campo("Número Processo Suspensão", trib.exigSusp?.nProcesso));
             }
 
             if (!string.IsNullOrWhiteSpace(valores?.tpBM) || calculoBm.HasValue || deducoes.HasValue || descontoIncond.HasValue)
             {
-                Linha(col, false,
-                    Campo("Benefício Municipal", DescricaoBeneficioMunicipal(valores?.tpBM), 1),
-                    Campo("Cálculo do BM", Moeda(calculoBm), 1),
-                    Campo("Total Deduções/Reduções", Moeda(deducoes), 1),
-                    Campo("Desconto Incondicionado", Moeda(descontoIncond), 1));
+                Linha(col, 4,
+                    Celula.Campo("Benefício Municipal", DescricaoBeneficioMunicipal(valores?.tpBM)),
+                    Celula.Campo("Cálculo do BM", Moeda(calculoBm)),
+                    Celula.Campo("Total Deduções/Reduções", Moeda(deducoes)),
+                    Celula.Campo("Desconto Incondicionado", Moeda(descontoIncond)));
             }
 
-            Linha(col, false,
-                Campo("BC ISSQN", Moeda(valores?.IssqnBaseCalculo), 1),
-                Campo("Alíquota Aplicada", Percentual(valores?.IssqnAliquota), 1),
-                Campo("Retenção do ISSQN", DescricaoRetencaoIssqn(trib.TipoRetencao), 1),
-                Campo("ISSQN Apurado", Moeda(valores?.IssqnValor), 1));
+            Linha(col, 4,
+                Celula.Campo("BC ISSQN", Moeda(valores?.IssqnBaseCalculo)),
+                Celula.Campo("Alíquota Aplicada", Percentual(valores?.IssqnAliquota)),
+                Celula.Campo("Retenção do ISSQN", DescricaoRetencaoIssqn(trib.TipoRetencao)),
+                Celula.Campo("ISSQN Apurado", Moeda(valores?.IssqnValor)));
         });
     }
 
     // =========================================================================
-    // 9. Tributação federal (exceto CBS)
+    // Tributação federal (exceto CBS)
     // =========================================================================
     private void ComposeTributacaoFederal(IContainer c)
     {
@@ -396,27 +421,28 @@ public sealed class DanfseDocument : IDocument
         var pisCofins = fed?.piscofins;
         var ateFimDe2026 = AnoCompetencia() is null or <= 2026;
 
-        Bloco(c, "TRIBUTAÇÃO FEDERAL (EXCETO CBS)", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("IRRF", Moeda(ParseDecimal(fed?.vRetIRRF)), 1),
-                Campo("Contribuição Previdenciária - Retida", Moeda(ParseDecimal(fed?.vRetCP)), 1),
-                Campo("Contribuições Sociais - Retidas", Moeda(ParseDecimal(fed?.vRetCSLL)), 1),
-                Campo("Descrição Contrib. Sociais - Retidas", Truncar(DescricaoRetencaoPisCofins(pisCofins?.tpRetPisCofins), 35), 1));
+            Linha(col, 4,
+                Celula.Titulo("TRIBUTAÇÃO FEDERAL (EXCETO CBS)"),
+                Celula.Campo("IRRF", Moeda(ParseDecimal(fed?.vRetIRRF))),
+                Celula.Campo("Contribuição Previdenciária - Retida", Moeda(ParseDecimal(fed?.vRetCP))),
+                Celula.Campo("Contribuições Sociais - Retidas", Moeda(ParseDecimal(fed?.vRetCSLL))));
 
-            if (ateFimDe2026 && (pisCofins?.vPis.HasValue == true || pisCofins?.vCofins.HasValue == true))
+            // PIS/COFINS de apuração própria: só até o fim de 2026.
+            if (ateFimDe2026)
             {
-                Linha(col, false,
-                    Campo("PIS - Débito Apuração Própria", Moeda(pisCofins?.vPis), 1),
-                    Campo("COFINS - Débito Apuração Própria", Moeda(pisCofins?.vCofins), 1),
-                    null,
-                    null);
+                Linha(col, 4,
+                    Celula.Campo("PIS - Débito Apuração Própria", Moeda(pisCofins?.vPis)),
+                    Celula.Campo("COFINS - Débito Apuração Própria", Moeda(pisCofins?.vCofins)),
+                    Celula.Campo("Descrição Contrib. Sociais - Retidas", Truncar(DescricaoRetencaoPisCofins(pisCofins?.tpRetPisCofins), 35)),
+                    Celula.Vazia());
             }
         });
     }
 
     // =========================================================================
-    // 10. Tributação IBS / CBS
+    // Tributação IBS / CBS
     // =========================================================================
     private void ComposeTributacaoIbsCbs(IContainer c)
     {
@@ -445,36 +471,37 @@ public sealed class DanfseDocument : IDocument
 
         var reducoes = valores?.uf?.pRedAliqUF == null && valores?.mun?.pRedAliqMun == null && valores?.fed?.pRedAliqCBS == null
             ? null
-            : $"{Percentual(valores?.uf?.pRedAliqUF)} / {Percentual(valores?.mun?.pRedAliqMun)} / {Percentual(valores?.fed?.pRedAliqCBS)}";
+            : $"{Percentual(valores?.uf?.pRedAliqUF) ?? Traco} / {Percentual(valores?.mun?.pRedAliqMun) ?? Traco} / {Percentual(valores?.fed?.pRedAliqCBS) ?? Traco}";
         var aliquotasIbs = valores?.uf?.pIBSUF == null && valores?.mun?.pIBSMun == null
             ? null
-            : $"{Percentual(valores?.uf?.pIBSUF)} / {Percentual(valores?.mun?.pIBSMun)}";
+            : $"{Percentual(valores?.uf?.pIBSUF) ?? Traco} / {Percentual(valores?.mun?.pIBSMun) ?? Traco}";
 
-        Bloco(c, "TRIBUTAÇÃO IBS / CBS", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("CST / CCLASSTRIB", cst, 1),
-                Campo("Indicador de Operação / Código IBGE Incidência / Município Incidência / Sigla UF", Truncar(incidencia, 56), 3));
-            Linha(col, false,
-                Campo("Exclusões e Reduções da Base de Cálculo", Moeda(exclusoes), 1),
-                Campo("Base de Cálculo Após Exclusões e Reduções", Moeda(valores?.vBC), 1),
-                Campo("Red. Alíquota IBS / Red. Alíquota CBS", reducoes, 1),
-                Campo("Alíquota - IBS UF / IBS MUN", aliquotasIbs, 1));
-            Linha(col, false,
-                Campo("Alíq. Efetiva Municipal - IBS", Percentual(valores?.mun?.pAliqEfetMun), 1),
-                Campo("Valor Apurado Municipal - IBS", Moeda(ParseDecimal(tot?.gIBS?.gIBSMunTot?.vIBSMun)), 1),
-                Campo("Alíq. Efetiva Estadual - IBS", Percentual(valores?.uf?.pAliqEfetUF), 1),
-                Campo("Valor Apurado Estadual - IBS", Moeda(ParseDecimal(tot?.gIBS?.gIBSUFTot?.vIBSUF)), 1));
-            Linha(col, false,
-                Campo("Valor Total Apurado - IBS", Moeda(tot?.gIBS?.vIBSTot), 1),
-                Campo("Alíquota - CBS", Percentual(valores?.fed?.pCBS), 1),
-                Campo("Alíquota Efetiva - CBS", Percentual(valores?.fed?.pAliqEfetCBS), 1),
-                Campo("Valor Total Apurado - CBS", Moeda(ParseDecimal(tot?.gCBS?.vCBS)), 1));
+            Linha(col, 4,
+                Celula.Titulo("TRIBUTAÇÃO IBS / CBS"),
+                Celula.Campo("CST / cClassTrib", cst),
+                Celula.Campo("Indicador de Operação / Código IBGE Incidência / Município Incidência / Sigla UF", Truncar(incidencia, 56), 2));
+            Linha(col, 4,
+                Celula.Campo("Exclusões e Reduções da Base de Cálculo", Moeda(exclusoes)),
+                Celula.Campo("Base de Cálculo Após Exclusões e Reduções", Moeda(valores?.vBC)),
+                Celula.Campo("Red. Alíquota IBS / Red. Alíquota CBS", reducoes),
+                Celula.Campo("Alíquota – IBS UF / IBS Mun", aliquotasIbs));
+            Linha(col, 4,
+                Celula.Campo("Alíq. Efetiva Municipal – IBS", Percentual(valores?.mun?.pAliqEfetMun)),
+                Celula.Campo("Valor Apurado Municipal – IBS", Moeda(ParseDecimal(tot?.gIBS?.gIBSMunTot?.vIBSMun))),
+                Celula.Campo("Alíq. Efetiva Estadual – IBS", Percentual(valores?.uf?.pAliqEfetUF)),
+                Celula.Campo("Valor Apurado Estadual – IBS", Moeda(ParseDecimal(tot?.gIBS?.gIBSUFTot?.vIBSUF))));
+            Linha(col, 4,
+                Celula.Campo("Valor Total Apurado – IBS", Moeda(tot?.gIBS?.vIBSTot)),
+                Celula.Campo("Alíquota - CBS", Percentual(valores?.fed?.pCBS)),
+                Celula.Campo("Alíquota Efetiva – CBS", Percentual(valores?.fed?.pAliqEfetCBS)),
+                Celula.Campo("Valor Total Apurado – CBS", Moeda(ParseDecimal(tot?.gCBS?.vCBS))));
         });
     }
 
     // =========================================================================
-    // 11. Valor total da NFS-e
+    // Valor total da NFS-e
     // =========================================================================
     private void ComposeTotais(IContainer c)
     {
@@ -483,33 +510,34 @@ public sealed class DanfseDocument : IDocument
         var cbs = ParseDecimal(tot?.gCBS?.vCBS);
         decimal? totalIbsCbs = ibs.HasValue || cbs.HasValue ? (ibs ?? 0m) + (cbs ?? 0m) : null;
 
-        Bloco(c, "VALOR TOTAL DA NFS-E", col =>
+        Bloco(c, col =>
         {
-            Linha(col, true,
-                Campo("Valor da Operação / Serviço", Moeda(ValoresDps?.ValoresPrestacao?.ValorServico), 1),
-                Campo("Desconto Incondicionado", Moeda(ValoresDps?.vDescCondIncond?.vDescIncond), 1),
-                Campo("Desconto Condicionado", Moeda(ValoresDps?.vDescCondIncond?.vDescCond), 1),
-                Campo("Total das Retenções (ISSQN / Federais)", Moeda(Info?.Valores?.ValorTotalRetencoes), 1));
-            Linha(col, false,
-                Campo("Valor Líquido da NFS-e", Moeda(Info?.Valores?.ValorTotalLiquido), 1),
-                Campo("Total do IBS/CBS", Moeda(totalIbsCbs), 1),
-                Campo("Valor Líquido da NFS-e + IBS/CBS", Moeda(tot?.vTotNF), 2, destaque: true));
+            Linha(col, 4,
+                Celula.Titulo("VALOR TOTAL DA NFS-E"),
+                Celula.Principal("VALOR DA OPERAÇÃO / SERVIÇO", Moeda(ValoresDps?.ValoresPrestacao?.ValorServico)),
+                Celula.Campo("Desconto Incondicionado", Moeda(ValoresDps?.vDescCondIncond?.vDescIncond)),
+                Celula.Campo("Desconto Condicionado", Moeda(ValoresDps?.vDescCondIncond?.vDescCond)));
+            Linha(col, 4,
+                Celula.Campo("Total das Retenções (ISSQN / Federais)", Moeda(Info?.Valores?.ValorTotalRetencoes)),
+                Celula.Principal("VALOR LÍQUIDO DA NFS-e", Moeda(Info?.Valores?.ValorTotalLiquido)),
+                Celula.Campo("Total do IBS/CBS", Moeda(totalIbsCbs)),
+                Celula.Principal("VALOR LÍQUIDO DA NFS-e + IBS/CBS", Moeda(tot?.vTotNF), destaque: true));
         });
     }
 
     // =========================================================================
-    // 12. Informações complementares
+    // Informações complementares
     // =========================================================================
     private void ComposeInformacoesComplementares(IContainer c)
     {
         var serv = Dps?.Servico;
         var compl = serv?.infoCompl;
-        var partes = new List<string>();
+        var linhas = new List<string>();
 
         void Adicionar(string rotulo, string? valor)
         {
             if (!string.IsNullOrWhiteSpace(valor))
-                partes.Add($"{rotulo}: {valor.Trim()}");
+                linhas.Add($"{rotulo}: {valor.Trim()}");
         }
 
         Adicionar("Inf. Cont.", compl?.xInfComp);
@@ -523,14 +551,16 @@ public sealed class DanfseDocument : IDocument
         Adicionar("Item Ped.", compl?.gItemPed?.xItemPed is { Length: > 0 } itens ? string.Join(", ", itens) : null);
         Adicionar("Inf. A. T. Mun.", Info?.xOutInf);
 
-        var texto = Truncar(string.Join(" | ", partes), 1997);
+        // Limite da NT: 1997 caracteres, sem contar a linha obrigatória dos tributos aproximados.
+        var texto = Truncar(string.Join(";\n", linhas), 1997);
 
-        Bloco(c, "INFORMAÇÕES COMPLEMENTARES", col =>
+        Bloco(c, col =>
         {
-            col.Item().BorderTop(BordaInterna).Padding(2).Column(info =>
+            col.Item().MinHeight(2f, Unit.Centimetre).PaddingHorizontal(2).PaddingVertical(1).Column(info =>
             {
+                info.Item().Text("INFORMAÇÕES COMPLEMENTARES").FontSize(FonteTituloBloco).Bold();
                 if (!string.IsNullOrWhiteSpace(texto))
-                    info.Item().Text(texto).FontSize(FonteValor);
+                    info.Item().Text(texto + ";").FontSize(FonteValor);
                 info.Item().Text(TotaisAproximados()).FontSize(FonteValor);
             });
         });
@@ -544,118 +574,108 @@ public sealed class DanfseDocument : IDocument
 
         if (tot?.ValorTotalTributos is { } v)
         {
-            fed = Moeda(v.Federais);
-            est = Moeda(v.Estaduais);
-            mun = Moeda(v.Municipais);
+            fed = Moeda(v.Federais) ?? Traco;
+            est = Moeda(v.Estaduais) ?? Traco;
+            mun = Moeda(v.Municipais) ?? Traco;
         }
         else if (tot?.pTotTrib is { } p)
         {
-            fed = Percentual(ParseDecimal(p.pTotTribFed));
-            est = Percentual(ParseDecimal(p.pTotTribEst));
-            mun = Percentual(ParseDecimal(p.pTotTribMun));
+            fed = Percentual(ParseDecimal(p.pTotTribFed)) ?? Traco;
+            est = Percentual(ParseDecimal(p.pTotTribEst)) ?? Traco;
+            mun = Percentual(ParseDecimal(p.pTotTribMun)) ?? Traco;
         }
         else if (ParseDecimal(tot?.pTotTribSN) is { } sn)
         {
-            return $"Totais Aproximados dos Tributos cfe. Lei nº 12.741/2012: Simples Nacional: {Percentual(sn)}";
+            return $"Totais Aproximados dos Tributos cfe. Lei nº 12.741/2012: Simples Nacional: {Percentual(sn)};";
         }
         else
         {
             fed = est = mun = Traco;
         }
 
-        return $"Totais Aproximados dos Tributos cfe. Lei nº 12.741/2012: Federais: {fed} ; Estaduais: {est} ; Municipais: {mun}";
+        return $"Totais Aproximados dos Tributos cfe. Lei nº 12.741/2012: Federais: {fed}; Estaduais: {est}; Municipais: {mun};";
     }
 
     // =========================================================================
-    // 13. Canhoto (opcional)
+    // Canhoto (opcional)
     // =========================================================================
     private void ComposeCanhoto(IContainer c)
     {
         var numeroChave = $"{(Info?.Numero > 0 ? Info.Numero.ToString(CultureInfo.InvariantCulture) : Traco)} / {ChaveAcesso() ?? Traco}";
 
-        c.Column(col =>
+        c.Border(BordaExterna).MinHeight(0.67f, Unit.Centimetre).Row(row =>
         {
-            col.Item().PaddingBottom(2).LineHorizontal(BordaInterna).LineColor(Colors.Grey.Medium);
-            col.Item().Border(BordaExterna).Row(row =>
+            row.RelativeItem(1).Padding(2).Text("DATA CIENTIFICAÇÃO:").FontSize(FonteTituloBloco).Bold();
+            row.RelativeItem(1).BorderLeft(BordaExterna).Padding(2).Text("IDENTIFICAÇÃO E ASSINATURA").FontSize(FonteTituloBloco).Bold();
+            row.RelativeItem(2).BorderLeft(BordaExterna).Padding(2).Column(cel =>
             {
-                row.RelativeItem(1).Padding(2).Column(cel =>
-                {
-                    cel.Item().Text("Data de Cientificação").FontSize(FonteRotulo).Bold();
-                    cel.Item().MinHeight(0.4f, Unit.Centimetre);
-                });
-                row.RelativeItem(2).BorderLeft(BordaInterna).Padding(2).Column(cel =>
-                {
-                    cel.Item().Text("Identificação e Assinatura do Cientificado").FontSize(FonteRotulo).Bold();
-                    cel.Item().MinHeight(0.4f, Unit.Centimetre);
-                });
-                row.RelativeItem(3).BorderLeft(BordaInterna).Padding(2).Column(cel =>
-                {
-                    cel.Item().Text("Número / Chave de Acesso da NFS-e").FontSize(FonteRotulo).Bold();
-                    cel.Item().Text(numeroChave).FontSize(FonteValor);
-                });
+                cel.Item().Text("Nº NFS-e / CHAVE NFS-e").FontSize(FonteTituloBloco).Bold();
+                cel.Item().Text(numeroChave).FontSize(FonteValor);
             });
         });
     }
 
     // =========================================================================
-    // Estrutura: blocos, linhas e campos
+    // Estrutura: grade de 4 colunas
     // =========================================================================
 
-    /// <summary>Campo de uma linha: rótulo, valor e largura relativa.</summary>
-    private sealed record CampoDanfse(string? Rotulo, string? Valor, float Peso, bool RotuloIdentificacao, bool Destaque);
+    private enum TipoCelula { Campo, Titulo, Identificacao, Principal, Vazia }
 
-    private static CampoDanfse Campo(string rotulo, string? valor, float peso, bool rotuloIdentificacao = false, bool destaque = false) =>
-        new(rotulo, valor, peso, rotuloIdentificacao, destaque);
-
-    private static CampoDanfse CampoSemRotulo(string? valor) => new(null, valor, 1, false, false);
-
-    /// <summary>Bloco com título (cinza 5%) e borda externa de 1 pt.</summary>
-    private static void Bloco(IContainer c, string titulo, Action<ColumnDescriptor> conteudo)
+    /// <summary>Célula da grade: ocupa <c>Span</c> colunas.</summary>
+    private sealed record Celula(TipoCelula Tipo, string? Rotulo, string? Valor, int Span, bool Destaque)
     {
-        c.BorderLeft(BordaExterna).BorderRight(BordaExterna).BorderBottom(BordaExterna).Column(col =>
-        {
-            col.Item().Background(CinzaClaro).PaddingHorizontal(2).PaddingVertical(1)
-                .Text(titulo.ToUpperInvariant()).FontSize(FonteTituloBloco).Bold();
-            conteudo(col);
-        });
+        public static Celula Campo(string rotulo, string? valor, int span = 1) => new(TipoCelula.Campo, rotulo, valor, span, false);
+        public static Celula Titulo(string titulo) => new(TipoCelula.Titulo, titulo, null, 1, true);
+        public static Celula Identificacao(string rotulo, string? valor, int span = 1, bool destaque = false) => new(TipoCelula.Identificacao, rotulo, valor, span, destaque);
+        public static Celula Principal(string rotulo, string? valor, bool destaque = false) => new(TipoCelula.Principal, rotulo, valor, 1, destaque);
+        public static Celula Vazia(int span = 1) => new(TipoCelula.Vazia, null, null, span, false);
     }
 
-    /// <summary>Bloco suprimido: só a mensagem, em uma linha.</summary>
+    /// <summary>Bloco separado do anterior por uma linha de 1 pt.</summary>
+    private static void Bloco(IContainer c, Action<ColumnDescriptor> conteudo) =>
+        c.BorderTop(BordaExterna).PaddingBottom(1).Column(conteudo);
+
+    /// <summary>Bloco suprimido: só a mensagem, em uma linha (altura mínima 0,32 cm).</summary>
     private static void BlocoSuprimido(IContainer c, string mensagem)
     {
-        c.BorderLeft(BordaExterna).BorderRight(BordaExterna).BorderBottom(BordaExterna)
-            .Background(CinzaClaro).MinHeight(0.32f, Unit.Centimetre).PaddingHorizontal(2).PaddingVertical(1)
+        c.BorderTop(BordaExterna).MinHeight(0.32f, Unit.Centimetre).PaddingHorizontal(2).PaddingVertical(1)
             .Text(mensagem).FontSize(FonteTituloBloco).Bold();
     }
 
-    /// <summary>Linha de campos; campos nulos são suprimidos e o espaço vai para os demais.</summary>
-    private static void Linha(ColumnDescriptor col, bool primeira, params CampoDanfse?[] campos)
+    /// <summary>Linha da grade; completa com células vazias até <paramref name="colunas"/>.</summary>
+    private static void Linha(ColumnDescriptor col, int colunas, params Celula[] celulas)
     {
-        var visiveis = campos.Where(x => x != null).Cast<CampoDanfse>().ToList();
-        if (visiveis.Count == 0)
-            return;
-
-        col.Item().Element(e => primeira ? e : e.BorderTop(BordaInterna)).Row(row =>
+        var ocupadas = celulas.Sum(x => x.Span);
+        col.Item().Row(row =>
         {
-            for (var i = 0; i < visiveis.Count; i++)
-            {
-                var campo = visiveis[i];
-                var celula = row.RelativeItem(campo.Peso);
-                if (i > 0)
-                    celula = celula.BorderLeft(BordaInterna);
-                if (campo.Destaque)
-                    celula = celula.Background(CinzaClaro);
+            foreach (var celula in celulas)
+                ComposeCelula(row.RelativeItem(celula.Span), celula);
+            if (ocupadas < colunas)
+                row.RelativeItem(colunas - ocupadas);
+        });
+    }
 
-                celula.PaddingHorizontal(2).PaddingVertical(1).Column(cel =>
-                {
-                    if (campo.Rotulo != null)
-                    {
-                        var rotulo = cel.Item().Text(campo.Rotulo).Bold();
-                        rotulo.FontSize(campo.RotuloIdentificacao ? FonteTituloBloco : FonteRotulo);
-                    }
-                    cel.Item().Text(string.IsNullOrWhiteSpace(campo.Valor) ? Traco : campo.Valor).FontSize(FonteValor);
-                });
-            }
+    private static void ComposeCelula(IContainer c, Celula celula)
+    {
+        if (celula.Destaque)
+            c = c.Background(CinzaClaro);
+
+        c = c.PaddingHorizontal(2).PaddingVertical(1.5f);
+
+        switch (celula.Tipo)
+        {
+            case TipoCelula.Vazia:
+                return;
+            case TipoCelula.Titulo:
+                c.Text(celula.Rotulo!).FontSize(FonteTituloBloco).Bold();
+                return;
+        }
+
+        c.Column(cel =>
+        {
+            var rotulo = cel.Item().Text(celula.Rotulo!).Bold();
+            rotulo.FontSize(celula.Tipo is TipoCelula.Identificacao or TipoCelula.Principal ? FonteTituloBloco : FonteRotulo);
+            cel.Item().Text(string.IsNullOrWhiteSpace(celula.Valor) ? Traco : celula.Valor).FontSize(FonteValor);
         });
     }
 

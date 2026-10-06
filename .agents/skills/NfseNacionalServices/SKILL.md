@@ -26,7 +26,6 @@ A documentação detalhada dos endpoints, payloads e contratos de resposta está
 | `GET` | `/nfse/{chaveAcesso}` | Retorna a NFS-e autorizada pela chave de acesso (50 dígitos) | Sim (ICP-Brasil) |
 | `GET` | `/dps/{id}` | Retorna a chave de acesso da NFS-e vinculada ao Id da DPS | Sim (ICP-Brasil) |
 | `GET` | `/DFe/{NSU}` | Retorna o Documento Fiscal de Serviço correspondente ao NSU informado | Sim (ICP-Brasil) |
-| `GET` | `/danfse/{chaveAcesso}` | Download do PDF do DANFSE gerado pelo ADN | Sim (ICP-Brasil) |
 | `POST` | `/nfse/{chaveAcesso}/eventos` | Registra evento (ex.: cancelamento e101101). Corpo: `{ "pedidoRegistroEventoXmlGZipB64" }` | Sim (ICP-Brasil) |
 | `GET` | `/nfse/{chaveAcesso}/eventos[/{tipoEvento}[/{numSeqEvento}]]` | Consulta os eventos da NFS-e | Sim (ICP-Brasil) |
 
@@ -37,7 +36,7 @@ Eventos (leiaute `pedRegEvento`/`evento` v1.01, XSDs em `src/Tests/EficazFramewo
 - Assinatura: `Certificado.SignXml(pedido, "pedRegEvento", "infPedReg", signAsSHA256: true)`.
 - `Service.Eventos.cs`: `AssinarPedidoEvento`, `CancelarNfseAsync`, `RegistrarEventoAsync`, `ConsultarEventosAsync`. A leitura das respostas é tolerante (`erro`/`erros`, qualquer `*XmlGZipB64`); confirmar os nomes JSON em homologação.
 
-DANFSe: `ObterDanfseAsync(chave, ambiente)` faz `GET` na URL de distribuição (ADN) + `CaminhoDanfse` (padrão `danfse/{0}`), com `Accept: application/pdf`, e devolve `RetornoDanfse` (`Pdf` só quando o conteúdo começa com `%PDF`; senão `ConteudoErro`). O caminho é configurável porque a documentação oficial não o detalha — confirmar em produção restrita.
+DANFSe: a API nacional de DANFSe foi desativada (NT 008 SE/CGNFS-e). O PDF é gerado pelo emissor a partir do XML autorizado, com `EficazFramework.SPED.Documents` (`DanfseDocument` / `DanfseExtensions.GerarDanfse`, leiaute DANFSe v2.0).
 
 ---
 

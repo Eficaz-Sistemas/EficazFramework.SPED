@@ -70,7 +70,7 @@ public sealed class DanfeDocument : IDocument
             page.MarginBottom(4, Unit.Millimetre);
             page.MarginLeft(6, Unit.Millimetre);
             page.MarginRight(6, Unit.Millimetre);
-            page.DefaultTextStyle(x => x.FontFamily(Fonts.Lato).FontSize(FonteValor));
+            page.DefaultTextStyle(x => x.FontFamily("Lato").FontSize(FonteValor));
 
             // ── Header: repete em todas as páginas ───────────────────────────
             page.Header().Column(col =>
@@ -136,7 +136,7 @@ public sealed class DanfeDocument : IDocument
                    var chave = Prot?.ChaveNFe ?? Info.Id?.Replace("NFe","") ?? string.Empty;
                    var chaveFormatada = Prot?.ChaveNFeFormatada ?? FormatarChave(chave);
                    col.Item().PaddingTop(1).Text(chaveFormatada)
-                      .FontSize(FonteRotulo + 1).FontFamily(Fonts.Lato);
+                      .FontSize(FonteRotulo + 1).FontFamily("Lato");
 
                    col.Item().PaddingTop(3).Text("PROTOCOLO DE AUTORIZAÇÃO DE USO")
                       .FontSize(FonteRotulo).FontColor(CorSecundaria).Bold();
