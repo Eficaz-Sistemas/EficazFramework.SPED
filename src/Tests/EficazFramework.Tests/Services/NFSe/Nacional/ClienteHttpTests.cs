@@ -47,7 +47,7 @@ public class ClienteHttpTests : BaseNFseTests
         handler.Pedidos.Should().OnlyContain(p => p.Metodo == HttpMethod.Get && p.Accept == "application/json");
 
         porChave.StatusCode.Should().Be(404);
-        porChave.Erro!.Codigo.Should().Be("E404");
+        porChave.Erros!.First().Codigo.Should().Be("E404");
     }
 
     [Test]
