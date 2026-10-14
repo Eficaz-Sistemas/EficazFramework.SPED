@@ -144,9 +144,9 @@ public partial class NfseNacionalService : RestServiceBase
     }
 
     /// <summary>
-    /// Consulta uma NFS-e autorizada no ADN pela Chave de Acesso de 50 dígitos (GET /nfse/{chaveAcesso}).
+    /// Consulta uma NFS-e autorizada no ADN pela Chave de Acesso de 50 dígitos (GET contribuintes/nfse/{chaveAcesso}/eventos).
     /// </summary>
-    public virtual async Task<RetornoConsultaNfse> ConsultarNfsePorChaveAsync(
+    public virtual async Task<RetornoConsultaDfe> ConsultarNfsePorChaveAsync(
         string chaveAcesso,
         Schemas.NFSe.Nacional.Ambiente ambiente = Schemas.NFSe.Nacional.Ambiente.Homologacao,
         CancellationToken ct = default)
@@ -154,21 +154,21 @@ public partial class NfseNacionalService : RestServiceBase
         if (string.IsNullOrWhiteSpace(chaveAcesso))
             throw new ArgumentNullException(nameof(chaveAcesso), "A chave de acesso deve ser informada.");
 
-        using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, $"nfse/{chaveAcesso}"), null, ct);
+        using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, $"contribuintes/nfse/{chaveAcesso}/eventos"), null, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
 
-        RetornoConsultaNfse retorno;
+        RetornoConsultaDfe retorno;
         try
         {
-            retorno = JsonSerializer.Deserialize<RetornoConsultaNfse>(responseJson, JsonOptions) ?? new RetornoConsultaNfse();
+            retorno = JsonSerializer.Deserialize<RetornoConsultaDfe>(responseJson, JsonOptions) ?? new RetornoConsultaDfe();
         }
         catch (JsonException)
         {
-            retorno = new RetornoConsultaNfse
+            retorno = new RetornoConsultaDfe
             {
                 TipoAmbiente = ambiente,
                 DataHoraProcessamento = DateTime.UtcNow,
-                Erro = new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)
+                Erros = [new MensagemProcessamento(response.StatusCode.ToString(), response.ReasonPhrase ?? "Erro HTTP", responseJson)]
             };
         }
 
@@ -210,7 +210,7 @@ public partial class NfseNacionalService : RestServiceBase
     }
 
     /// <summary>
-    /// Retorna o Documento Fiscal de Serviço correspondente ao NSU informado (GET /DFe/{NSU}).
+    /// Retorna o Documento Fiscal de Serviço correspondente ao NSU informado (GET contribuintes/DFe/{NSU}).
     /// </summary>
     /// <param name="nsu">Número de Sequência Única do Documento Fiscal de Serviço.</param>
     /// <param name="cnpjConsulta">CNPJ da empresa consultada (opcional).</param>
@@ -232,7 +232,7 @@ public partial class NfseNacionalService : RestServiceBase
             queryParams.Add($"lote={lote.Value.ToString().ToLowerInvariant()}");
 
         var queryString = queryParams.Count > 0 ? "?" + string.Join("&", queryParams) : string.Empty;
-        var requestUri = $"DFe/{nsu}{queryString}";
+        var requestUri = $"contribuintes/DFe/{nsu}{queryString}";
 
         using var response = await EnviarAsync(HttpMethod.Get, Endereco(ambiente, requestUri, distribuicao: true), null, ct);
         var responseJson = await response.Content.ReadAsStringAsync(ct);
