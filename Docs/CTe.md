@@ -105,3 +105,33 @@ catch (Exception ex)
     Console.WriteLine($"Erro na distribuição de DFe: {ex.Message}");
 }
 ```
+
+---
+
+### 3. Manifestação do Tomador (Prestação do Serviço em Desacordo)
+O tomador do serviço pode registrar discordância com a prestação de transporte por meio do evento **610110** (e cancelá-la com o evento **610111**), enviado ao WebService `CTeRecepcaoEventoV4` do autorizador da UF indicada na chave (SVRS, SVSP, MG, MS, MT ou PR). O certificado digital deve ser do próprio tomador.
+
+```csharp
+using EficazFramework.SPED.Schemas.CTe;
+
+// Registra a manifestação (observação de 15 a 255 caracteres)
+var retorno = await servico.EnvioEventoAsync(
+    cnpjCpf: "12345678000195",
+    chave: chaveCTe,
+    tpEvento: CodigoEvento.PrestacaoServicoDesacordo,
+    ambiente: EficazFramework.SPED.Schemas.NFe.Ambiente.Homologacao,
+    observacao: "Serviço prestado em desacordo com o contratado");
+
+Console.WriteLine($"{retorno.infEvento.cStat} - {retorno.infEvento.xMotivo}");  // 135 = evento registrado
+string protocolo = retorno.infEvento.nProt;
+
+// Cancela a manifestação informando o protocolo do evento 610110
+var cancelamento = await servico.EnvioEventoAsync(
+    "12345678000195", chaveCTe,
+    CodigoEvento.CancelamentoPrestacaoServicoDesacordo,
+    EficazFramework.SPED.Schemas.NFe.Ambiente.Homologacao,
+    protocoloEvento: protocolo,
+    sequencial: 2);
+```
+
+O parâmetro `sequencial` (1 a 999) identifica o evento na chave; use valores distintos ao enviar mais de um evento do mesmo tipo para o mesmo CT-e.

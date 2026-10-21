@@ -143,19 +143,19 @@ public enum SituacaoNFe
 public enum SituacaoManifestacaoDestinatario
 {
     [System.Xml.Serialization.XmlEnum("0")]
-    [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_SemManifesto")]
+    [System.ComponentModel.Description("Sem manifestação")]
     SemManifestacao = 0,
     [System.Xml.Serialization.XmlEnum("1")]
-    [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Confirmada")]
+    [System.ComponentModel.Description("Confirmada")]
     Confirmada = 1,
     [System.Xml.Serialization.XmlEnum("2")]
-    [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Desconhecida")]
+    [System.ComponentModel.Description("Desconhecida")]
     Desconhecida = 2,
     [System.Xml.Serialization.XmlEnum("3")]
-    [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_NaoRealizada")]
+    [System.ComponentModel.Description("Não realizada")]
     NaoRealizada = 3,
     [System.Xml.Serialization.XmlEnum("4")]
-    [System.ComponentModel.Description("Enum_SituacaoManifestacaoDestinatario_Ciencia")]
+    [System.ComponentModel.Description("Ciência")]
     Ciencia = 4
 }
 

@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -23,7 +23,7 @@ public class ClienteHttpTests : BaseNFseTests
             Pedidos.Add((request.Method, request.RequestUri!.ToString(), request.Headers.Accept.FirstOrDefault()?.MediaType));
             return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NotFound)
             {
-                Content = new StringContent("{\"tipoAmbiente\":2,\"erro\":{\"codigo\":\"E404\",\"descricao\":\"Nao encontrado\"}}", Encoding.UTF8, "application/json")
+                Content = new StringContent("{\"tipoAmbiente\":2,\"erros\":[{\"codigo\":\"E404\",\"descricao\":\"Nao encontrado\"}],\"erro\":{\"codigo\":\"E404\",\"descricao\":\"Nao encontrado\"}}", Encoding.UTF8, "application/json")
             });
         }
     }
@@ -40,10 +40,10 @@ public class ClienteHttpTests : BaseNFseTests
         await service.ConsultarNfsePorChaveAsync(Chave, Schemas.NFSe.Nacional.Ambiente.Producao);
 
         handler.Pedidos.Select(p => p.Url).Should().Equal(
-            $"https://sefin.producaorestrita.nfse.gov.br/SefinNacional/nfse/{Chave}",
+            $"https://sefin.producaorestrita.nfse.gov.br/SefinNacional/contribuintes/nfse/{Chave}/eventos",
             "https://sefin.nfse.gov.br/dps/DPS1",
-            "https://adn.producaorestrita.nfse.gov.br/DFe/1",
-            $"https://sefin.nfse.gov.br/nfse/{Chave}");
+            "https://adn.producaorestrita.nfse.gov.br/contribuintes/DFe/1",
+            $"https://sefin.nfse.gov.br/contribuintes/nfse/{Chave}/eventos");
         handler.Pedidos.Should().OnlyContain(p => p.Metodo == HttpMethod.Get && p.Accept == "application/json");
 
         porChave.StatusCode.Should().Be(404);
