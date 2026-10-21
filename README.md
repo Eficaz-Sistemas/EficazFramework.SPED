@@ -32,7 +32,7 @@
 
 |                                         | Documentação                                                                                                                                             | Uso em Produção| WebServices |
 |:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------:|:-----------:|
-| CT-e e CT-eOS                           | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/CTe.md)           | ✅ | [⚠️](## "Apenas CTeDistribuicaoDFe e ConsultaProtocolo") 
+| CT-e e CT-eOS                           | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/CTe.md)           | ✅ | [⚠️](## "Apenas CTeDistribuicaoDFe, ConsultaProtocolo e Manifestação (Prestação de Serviço em Desacordo)") 
 | DAPI (MG)                               |                                                                                                                                                                      | ✅ | N/A |
 | e-CredAc, portarias CAT 83/09 e 207/09  |                                                                                                                                                                      | ✅ | N/A |
 | e-Ressarcimento portaria CAT 42/18      |                                                                                                                                                                      | ✅ | N/A |
