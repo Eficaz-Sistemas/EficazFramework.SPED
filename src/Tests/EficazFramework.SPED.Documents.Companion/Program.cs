@@ -5,17 +5,15 @@ using System.Diagnostics;
 
 
 // DANFSe NACIONAL v2.0 (NT 008)
-var nfse = await Helper.ObterNFSeNacionalAsync("001.xml");
-await new EficazFramework.SPED.Documents.NFSe.DanfseDocument(nfse!, new()
-{ 
-    ExibirCanhoto = true,
-    LogoNfse = EficazFramework.SPED.Resources.Logos.nfse
-}).ShowInCompanionAsync();
+//var nfse = await Helper.ObterNFSeNacionalAsync("001.xml");
+//await new EficazFramework.SPED.Documents.NFSe.DanfseDocument(nfse!, new()
+//{ 
+//    ExibirCanhoto = true,
+//    LogoNfse = EficazFramework.SPED.Resources.Logos.nfse
+//}).ShowInCompanionAsync();
 
-// DANFE SIMPLIFICADO
+//DANFE SIMPLIFICADO
 // var nfe = await Helper.ObterNFeAsync("001.xml");
-
-// DANFE SIMPLIFICADO
 //var nfe = await Helper.ObterNFeAsync("002.xml");
 
 //var document = new EficazFramework.SPED.Documents.NFe.DanfeDocument(nfe!, new()
@@ -29,4 +27,12 @@ await new EficazFramework.SPED.Documents.NFSe.DanfseDocument(nfse!, new()
 //    }
 //});
 //await document.ShowInCompanionAsync();
+
+// DACTE
+var cte = await Helper.ObterCTeAsync();
+await new EficazFramework.SPED.Documents.CTe.DacteDocument(cte!, new()
+{
+    ExibirCanhoto = true,
+}).ShowInCompanionAsync();
+
 Console.ReadKey();
