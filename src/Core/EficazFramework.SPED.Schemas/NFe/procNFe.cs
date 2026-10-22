@@ -583,6 +583,7 @@ public partial class ProcessoNFe : INotifyPropertyChanged, IXmlSpedDocument
 public partial class NFe : INotifyPropertyChanged, IXmlSpedDocument
 {
     private InformacoesNFe infNFeField;
+    private InformacoesSuplementaresNFe infNFeSuplField;
     private SignatureType signatureField;
     private static XmlSerializer sSerializer;
 
@@ -596,6 +597,23 @@ public partial class NFe : INotifyPropertyChanged, IXmlSpedDocument
             {
                 infNFeField = value;
                 OnPropertyChanged(nameof(InformacoesNFe));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Informações suplementares da NF-e (grupo ZX), com o conteúdo do QR Code do DANFE.
+    /// </summary>
+    [XmlElement("infNFeSupl")]
+    public InformacoesSuplementaresNFe InformacoesSuplementares
+    {
+        get => infNFeSuplField;
+        set
+        {
+            if (infNFeSuplField is null || infNFeSuplField.Equals(value) != true)
+            {
+                infNFeSuplField = value;
+                OnPropertyChanged(nameof(InformacoesSuplementares));
             }
         }
     }
@@ -849,6 +867,47 @@ public partial class NFe : INotifyPropertyChanged, IXmlSpedDocument
             }
         }
     }
+}
+
+/// <summary>
+/// Grupo ZX - Informações suplementares da NF-e (QR Code para consulta pública por dispositivo móvel).
+/// </summary>
+public partial class InformacoesSuplementaresNFe : INotifyPropertyChanged
+{
+    private string qrCodeField;
+    private string urlChaveField;
+
+    [XmlElement("qrCode")]
+    public string QrCode
+    {
+        get => qrCodeField;
+        set
+        {
+            if (qrCodeField is null || qrCodeField.Equals(value) != true)
+            {
+                qrCodeField = value;
+                OnPropertyChanged(nameof(QrCode));
+            }
+        }
+    }
+
+    [XmlElement("urlChave")]
+    public string UrlChave
+    {
+        get => urlChaveField;
+        set
+        {
+            if (urlChaveField is null || urlChaveField.Equals(value) != true)
+            {
+                urlChaveField = value;
+                OnPropertyChanged(nameof(UrlChave));
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 
 public partial class InformacoesNFe : INotifyPropertyChanged
@@ -3427,6 +3486,67 @@ public partial class TotalICMS : INotifyPropertyChanged
 
     public bool ShouldSerializeICMSDesonerado() => vICMSDesoneradoField.HasValue;
 
+    private double? vFCPUFDestField;
+    private double? vICMSUFDestField;
+    private double? vICMSUFRemetField;
+    private double? qBCMonoField;
+    private double? vICMSMonoField;
+    private double? qBCMonoRetenField;
+    private double? vICMSMonoRetenField;
+    private double? qBCMonoRetField;
+    private double? vICMSMonoRetField;
+
+    /// <summary>Valor total do ICMS relativo ao Fundo de Combate à Pobreza (FCP) da UF de destino (vFCPUFDest).</summary>
+    [XmlElement("vFCPUFDest")]
+    public double? ICMSFCPUFDestino
+    {
+        get => vFCPUFDestField;
+        set
+        {
+            if (vFCPUFDestField.Equals(value) != true)
+            {
+                vFCPUFDestField = value;
+                OnPropertyChanged(nameof(ICMSFCPUFDestino));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSFCPUFDestino() => vFCPUFDestField.HasValue;
+
+    /// <summary>Valor total do ICMS interestadual para a UF de destino - DIFAL (vICMSUFDest).</summary>
+    [XmlElement("vICMSUFDest")]
+    public double? ICMSUFDestino
+    {
+        get => vICMSUFDestField;
+        set
+        {
+            if (vICMSUFDestField.Equals(value) != true)
+            {
+                vICMSUFDestField = value;
+                OnPropertyChanged(nameof(ICMSUFDestino));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSUFDestino() => vICMSUFDestField.HasValue;
+
+    /// <summary>Valor total do ICMS interestadual para a UF do remetente (vICMSUFRemet).</summary>
+    [XmlElement("vICMSUFRemet")]
+    public double? ICMSUFRemetente
+    {
+        get => vICMSUFRemetField;
+        set
+        {
+            if (vICMSUFRemetField.Equals(value) != true)
+            {
+                vICMSUFRemetField = value;
+                OnPropertyChanged(nameof(ICMSUFRemetente));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSUFRemetente() => vICMSUFRemetField.HasValue;
+
 
     [XmlElement("vFCP")]
     public double? ICMSFCP
@@ -3508,6 +3628,108 @@ public partial class TotalICMS : INotifyPropertyChanged
     }
 
     public bool ShouldSerializeICMSFCPSTRet() => vICMSFcpStRetField.HasValue;
+
+    /// <summary>Total da quantidade tributada do ICMS monofásico próprio (qBCMono).</summary>
+    [XmlElement("qBCMono")]
+    public double? qBCMono
+    {
+        get => qBCMonoField;
+        set
+        {
+            if (qBCMonoField.Equals(value) != true)
+            {
+                qBCMonoField = value;
+                OnPropertyChanged(nameof(qBCMono));
+            }
+        }
+    }
+
+    public bool ShouldSerializeqBCMono() => qBCMonoField.HasValue;
+
+    /// <summary>Valor total do ICMS monofásico próprio (vICMSMono).</summary>
+    [XmlElement("vICMSMono")]
+    public double? ICMSMono
+    {
+        get => vICMSMonoField;
+        set
+        {
+            if (vICMSMonoField.Equals(value) != true)
+            {
+                vICMSMonoField = value;
+                OnPropertyChanged(nameof(ICMSMono));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSMono() => vICMSMonoField.HasValue;
+
+    /// <summary>Total da quantidade tributada do ICMS monofásico sujeito a retenção (qBCMonoReten).</summary>
+    [XmlElement("qBCMonoReten")]
+    public double? qBCMonoReten
+    {
+        get => qBCMonoRetenField;
+        set
+        {
+            if (qBCMonoRetenField.Equals(value) != true)
+            {
+                qBCMonoRetenField = value;
+                OnPropertyChanged(nameof(qBCMonoReten));
+            }
+        }
+    }
+
+    public bool ShouldSerializeqBCMonoReten() => qBCMonoRetenField.HasValue;
+
+    /// <summary>Valor total do ICMS monofásico sujeito a retenção (vICMSMonoReten).</summary>
+    [XmlElement("vICMSMonoReten")]
+    public double? ICMSMonoReten
+    {
+        get => vICMSMonoRetenField;
+        set
+        {
+            if (vICMSMonoRetenField.Equals(value) != true)
+            {
+                vICMSMonoRetenField = value;
+                OnPropertyChanged(nameof(ICMSMonoReten));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSMonoReten() => vICMSMonoRetenField.HasValue;
+
+    /// <summary>Total da quantidade tributada do ICMS monofásico retido anteriormente (qBCMonoRet).</summary>
+    [XmlElement("qBCMonoRet")]
+    public double? qBCMonoRet
+    {
+        get => qBCMonoRetField;
+        set
+        {
+            if (qBCMonoRetField.Equals(value) != true)
+            {
+                qBCMonoRetField = value;
+                OnPropertyChanged(nameof(qBCMonoRet));
+            }
+        }
+    }
+
+    public bool ShouldSerializeqBCMonoRet() => qBCMonoRetField.HasValue;
+
+    /// <summary>Valor total do ICMS monofásico retido anteriormente (vICMSMonoRet).</summary>
+    [XmlElement("vICMSMonoRet")]
+    public double? ICMSMonoRet
+    {
+        get => vICMSMonoRetField;
+        set
+        {
+            if (vICMSMonoRetField.Equals(value) != true)
+            {
+                vICMSMonoRetField = value;
+                OnPropertyChanged(nameof(ICMSMonoRet));
+            }
+        }
+    }
+
+    public bool ShouldSerializeICMSMonoRet() => vICMSMonoRetField.HasValue;
 
     [XmlElement("vProd")]
     public double? Produtos
