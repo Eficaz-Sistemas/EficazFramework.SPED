@@ -12,7 +12,7 @@ using System.Diagnostics;
 //    LogoNfse = EficazFramework.SPED.Resources.Logos.nfse
 //}).ShowInCompanionAsync();
 
-// DANFE SIMPLIFICADO
+//DANFE SIMPLIFICADO
 // var nfe = await Helper.ObterNFeAsync("001.xml");
 //var nfe = await Helper.ObterNFeAsync("002.xml");
 
