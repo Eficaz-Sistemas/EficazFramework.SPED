@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 //DANFE SIMPLIFICADO
 // var nfe = await Helper.ObterNFeAsync("001.xml");
-////var nfe = await Helper.ObterNFeAsync("002.xml");
+//var nfe = await Helper.ObterNFeAsync("002.xml");
 
 //var document = new EficazFramework.SPED.Documents.NFe.DanfeDocument(nfe!, new()
 //{
@@ -30,7 +30,9 @@ using System.Diagnostics;
 
 // DACTE
 var cte = await Helper.ObterCTeAsync();
-await new EficazFramework.SPED.Documents.CTe.DacteDocument(cte!, new()).ShowInCompanionAsync();
-
+await new EficazFramework.SPED.Documents.CTe.DacteDocument(cte!, new()
+{
+    ExibirCanhoto = true,
+}).ShowInCompanionAsync();
 
 Console.ReadKey();

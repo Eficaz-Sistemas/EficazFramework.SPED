@@ -611,6 +611,32 @@ public partial class ProcessoCTe : INotifyPropertyChanged, IXmlSpedDocument
     }
 }
 
+/// <summary>
+/// Informações suplementares do CT-e (infCTeSupl): QR Code para consulta pública.
+/// </summary>
+public partial class InformacoesSuplementaresCTe : INotifyPropertyChanged
+{
+    private string qrCodCTeField;
+
+    [XmlElement("qrCodCTe")]
+    public string QrCode
+    {
+        get => qrCodCTeField;
+        set
+        {
+            if (qrCodCTeField is null || qrCodCTeField.Equals(value) != true)
+            {
+                qrCodCTeField = value;
+                OnPropertyChanged(nameof(QrCode));
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+}
+
 [Serializable()]
 [XmlType(AnonymousType = true, Namespace = "http://www.portalfiscal.inf.br/cte")]
 [XmlRoot("CTe", Namespace = "http://www.portalfiscal.inf.br/cte", IsNullable = false)]
@@ -623,6 +649,7 @@ public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
     }
 
     private InformacoesCTe infCteField;
+    private InformacoesSuplementaresCTe infCTeSuplField;
     private SignatureType signatureField;
     private static XmlSerializer sSerializer;
 
@@ -637,6 +664,23 @@ public partial class CTe : INotifyPropertyChanged, IXmlSpedDocument
             {
                 infCteField = value;
                 OnPropertyChanged(nameof(Informacoes));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Informações suplementares do CT-e (infCTeSupl), com o conteúdo do QR Code do DACTE.
+    /// </summary>
+    [XmlElement("infCTeSupl")]
+    public InformacoesSuplementaresCTe InformacoesSuplementares
+    {
+        get => infCTeSuplField;
+        set
+        {
+            if (infCTeSuplField is null || infCTeSuplField.Equals(value) != true)
+            {
+                infCTeSuplField = value;
+                OnPropertyChanged(nameof(InformacoesSuplementares));
             }
         }
     }
