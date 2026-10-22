@@ -17,6 +17,11 @@ public class DacteOptions
     public bool MostrarMarcaDagua { get; set; } = false;
 
     /// <summary>
+    /// Quando true (padrão), imprime o canhoto de recebimento no topo da primeira folha, como no modelo do DACTE.
+    /// </summary>
+    public bool ExibirCanhoto { get; set; } = true;
+
+    /// <summary>
     /// Texto personalizado exibido no rodapé do documento. Opcional.
     /// </summary>
     public string? MensagemRodape { get; set; }
