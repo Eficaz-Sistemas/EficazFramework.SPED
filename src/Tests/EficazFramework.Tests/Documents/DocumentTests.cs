@@ -112,15 +112,16 @@ public class DocumentTests : BaseTest
         using var pdfDoc = UglyToad.PdfPig.PdfDocument.Open(pdf);
         pdfDoc.NumberOfPages.Should().BeGreaterThanOrEqualTo(2);
 
-        // Verifica que no Header de cada página aparece "FOLHA {page} / {total}"
+        // Retrato: os quadros acima dos itens e os Dados Adicionais se repetem em cada folha,
+        // e a numeração "FOLHA {página}/{total}" aparece no cabeçalho de todas as páginas.
         for (int p = 1; p <= pdfDoc.NumberOfPages; p++)
         {
             var page = pdfDoc.GetPage(p);
             var text = page.Text;
-            text.Should().Contain($"FOLHA {p} / {pdfDoc.NumberOfPages}");
-            // E o Footer também está presente em todas as páginas (Transporte / Totais)
-            text.Should().Contain("DADOS DO TRANSPORTE");
-            text.Should().Contain("CÁLCULO DO IMPOSTO");
+            text.Should().Contain($"FOLHA {p}/{pdfDoc.NumberOfPages}");
+            text.Should().Contain("TOTAL DO ICMS / IPI");
+            text.Should().Contain("DESCRIÇÃO DO PRODUTO / SERVIÇO"); // cabeçalho da tabela repetido
+            text.Should().Contain("DADOS ADICIONAIS");
         }
     }
 
