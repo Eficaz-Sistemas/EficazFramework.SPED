@@ -605,7 +605,10 @@ public enum RegimePrevidenciario
     [System.ComponentModel.Description("2 - Regime Próprio de Previdência Social - RPPS")]
     RPPS = 2,
     [System.ComponentModel.Description("3 - Regime de Previdência Social no Exterior")]
-    Exterior = 3
+    Exterior = 3,
+    [System.Xml.Serialization.XmlEnum("4")]
+    [System.ComponentModel.Description("4 - Sistema de Proteção Social dos Militares das Forças Armadas - SPSMFA")]
+    SPSMFA = 4
 }
 
 public enum TipoAdmissaoCLT

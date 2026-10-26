@@ -75,6 +75,7 @@ public abstract class Evento : ESocialBindableObject, IXmlSignableDocument
             "evtAfastTemp" => typeof(S2230),
             "evtDeslig" => typeof(S2299),
             "evtTSVInicio" => typeof(S2300),
+            "evtTSVAltContr" => typeof(S2306),
             "evtTSVTermino" => typeof(S2399),
             "evtExclusao" => typeof(S3000),
             "evtBasesTrab" => typeof(S5001),
