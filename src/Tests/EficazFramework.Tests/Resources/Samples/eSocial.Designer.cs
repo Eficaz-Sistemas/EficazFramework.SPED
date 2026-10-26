@@ -301,6 +301,27 @@ namespace EficazFramework.SPED.Resources.Samples {
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;eSocial xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtReintegr/v_S_01_03_00&quot;&gt;
+        ///  &lt;evtReintegr&gt;
+        ///    &lt;ideEvento&gt;
+        ///      &lt;indRetif&gt;1&lt;/indRetif&gt;
+        ///      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+        ///      &lt;procEmi&gt;1&lt;/procEmi&gt;
+        ///      &lt;verProc&gt;EficazFramework&lt;/verProc&gt;
+        ///    &lt;/ideEvento&gt;
+        ///    &lt;ideEmpregador&gt;
+        ///      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///      &lt;nrInsc&gt;34785515000166&lt;/nrInsc&gt;
+        ///    &lt;/ideEmpregador&gt;
+        ///    &lt;ideVinculo&gt;
+        ///      &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt; [o restante da cadeia de caracteres foi truncado]&quot;;.        /// </summary>
+        internal static string S2298_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S2298_v_S_01_03_00", resourceCulture);
+            }
+        }
+                /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;eSocial xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtDeslig/v_S_01_03_00&quot;&gt;
         ///  &lt;evtDeslig Id=&quot;ID1106080250000002026072911381600001&quot;&gt;
         ///    &lt;ideEvento&gt;
@@ -330,6 +351,26 @@ namespace EficazFramework.SPED.Resources.Samples {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;eSocial xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTSVAltContr/v_S_01_03_00&quot;&gt;
+        ///  &lt;evtTSVAltContr&gt;
+        ///    &lt;ideEvento&gt;
+        ///      &lt;indRetif&gt;1&lt;/indRetif&gt;
+        ///      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+        ///      &lt;procEmi&gt;1&lt;/procEmi&gt;
+        ///      &lt;verProc&gt;EficazFramework&lt;/verProc&gt;
+        ///    &lt;/ideEvento&gt;
+        ///    &lt;ideEmpregador&gt;
+        ///      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+        ///      &lt;nrInsc&gt;34785515000166&lt;/nrInsc&gt;
+        ///    &lt;/ideEmpregador&gt;
+        ///    &lt;ideTrabSemVinculo [o restante da cadeia de caracteres foi truncado]&quot;;.        /// </summary>
+        internal static string S2306_v_S_01_03_00 {
+            get {
+                return ResourceManager.GetString("S2306_v_S_01_03_00", resourceCulture);
+            }
+        }
+                /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;eSocial xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.esocial.gov.br/schema/evt/evtTSVTermino/v_S_01_03_00&quot;&gt;
         ///  &lt;evtTSVTermino&gt;

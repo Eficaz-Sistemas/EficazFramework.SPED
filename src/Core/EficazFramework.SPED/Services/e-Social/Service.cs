@@ -50,7 +50,7 @@ public class ESocialServices : SoapServiceBase
 #pragma warning restore CA2208 // Instanciar exceções de argumentos corretamente
 
 
-        int grupo = eventos.First().GetType().Name.StartsWith("S10") ? 1 : (eventos.First().GetType().Name.StartsWith("S12") ? 3 : 2);
+        int grupo = DefineGrupo(eventos.First());
 
         if (transmissor == null)
         {
@@ -181,6 +181,13 @@ public class ESocialServices : SoapServiceBase
 
 
     // AUXILIARES
+
+    // Grupo do lote: 1 = tabelas (S-10xx), 3 = periódicos (S-12xx), 2 = não periódicos (demais).
+    internal static int DefineGrupo(Schemas.eSocial.Evento evento)
+    {
+        string nome = evento.GetType().Name;
+        return nome.StartsWith("S10") ? 1 : (nome.StartsWith("S12") ? 3 : 2);
+    }
 
     private void ProcessaXmlEventosEnvio(IEnumerable<Schemas.eSocial.Evento> eventos,
                                          XmlDocument xmlBody,
