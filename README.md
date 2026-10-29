@@ -44,7 +44,7 @@
 | e-Social                                | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/eSocial.md)                                                   | [🆕](## "Eventos mais populares disponíveis") | ✅ |
 | GIA (SP)                                |                                                                                                                                                                      | ✅ | N/A |
 | GNRE                                    |                                                                                                                                                                      | ✅ | [⚠️](## "A ser desenvolvido") |
-| Integra Contador (SERPRO)               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/IntegraContador.md)                                           | N/A | ✅ |
+| Integra Contador (SERPRO)               | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/IntegraContador.md)                                           | ✅ | ✅ |
 | NF-e / NFC-e                            | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/NFe.md)                                                                                        | ✅ | ✅ |
 | NFS-e (Nacional)                        |                                                                                                                                                                      | ✅ | [⏭️](## "A ser desenvolvido") |
 | Livro Caixa Digital do Produtor Rural   | [![Static Badge](https://img.shields.io/badge/consultar-green)](/Docs/LCDPR.md)                                                     | ✅ | N/A |
