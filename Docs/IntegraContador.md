@@ -121,19 +121,27 @@ Console.WriteLine($"Token válido até {autenticacao.Retorno?.DataHoraExpiracao}
 
 ## 🗂️ Serviços disponíveis
 
-| Solução | Sistemas |
-|:--|:--|
-| Integra-SN | PGDASD, REGIMEAPURACAO, DEFIS |
-| Integra-MEI | PGMEI, CCMEI |
-| Integra-DCTFWeb | DCTFWEB, MIT |
-| Integra-Procurações | PROCURACOES |
-| Integra-Sicalc | SICALC |
-| Integra-CaixaPostal | CAIXAPOSTAL, DTE |
-| Integra-Pagamento | PAGTOWEB |
-| Integra-SITFIS | SITFIS |
-| Integra-Parcelamento | PARCSN, PARCSN-ESP, PERTSN, RELPSN, PARCMEI, PARCMEI-ESP, PERTMEI, RELPMEI |
-| Integra-Contador-Gerenciador | AUTENTICAPROCURADOR, EVENTOSATUALIZACAO |
-| Integra-Redesim | PNRCONTADOR |
-| Integra-e-Processo | EPROCESSO |
+Cada sistema tem uma página com exemplos preenchidos de chamada, os dados enviados e o retorno (fictício):
+
+| Solução | Sistema | Descrição | Exemplos |
+|:--|:--|:--|:--:|
+| Integra-SN | PGDASD | DAS e declaração mensal do Simples Nacional | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Pgdasd.md) |
+| Integra-SN | REGIMEAPURACAO | Opção pelo regime de caixa / competência | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/RegimeApuracao.md) |
+| Integra-SN | DEFIS | Declaração de Informações Socioeconômicas e Fiscais | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Defis.md) |
+| Integra-MEI | PGMEI | DAS do MEI, benefícios e dívida ativa | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Pgmei.md) |
+| Integra-MEI | CCMEI | Certificado da Condição de MEI | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Ccmei.md) |
+| Integra-DCTFWeb | DCTFWEB | Guias, recibos, declaração e transmissão da DCTFWeb | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/DctfWeb.md) |
+| Integra-DCTFWeb | MIT | Módulo de Inclusão de Tributos | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Mit.md) |
+| Integra-Procurações | PROCURACOES | Procurações eletrônicas | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Procuracoes.md) |
+| Integra-Sicalc | SICALC | Consolidação e emissão de DARF | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Sicalc.md) |
+| Integra-CaixaPostal | CAIXAPOSTAL | Mensagens da Caixa Postal do e-CAC | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/CaixaPostal.md) |
+| Integra-CaixaPostal | DTE | Domicílio Tributário Eletrônico | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Dte.md) |
+| Integra-Pagamento | PAGTOWEB | Pagamentos e comprovantes de arrecadação | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/PagtoWeb.md) |
+| Integra-SITFIS | SITFIS | Relatório de Situação Fiscal | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Sitfis.md) |
+| Integra-Parcelamento | PARCSN, PARCSN-ESP, PERTSN, RELPSN, PARCMEI, PARCMEI-ESP, PERTMEI, RELPMEI | Parcelamentos do Simples Nacional e do MEI | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/Parcelamento.md) |
+| Integra-Contador-Gerenciador | AUTENTICAPROCURADOR | Termo de autorização e token do procurador | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/AutenticaProcurador.md) |
+| Integra-Contador-Gerenciador | EVENTOSATUALIZACAO | Eventos de atualização de PF e PJ | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/EventosAtualizacao.md) |
+| Integra-Redesim | PNRCONTADOR | Vínculos e renúncia de responsabilidade contábil | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/PnrContador.md) |
+| Integra-e-Processo | EPROCESSO | Processos por interessado | [![Static Badge](https://img.shields.io/badge/consultar-green)](IntegraContador/EProcesso.md) |
 
 Os identificadores (`idSistema`, `idServico`, `versaoSistema` e endpoint) de cada serviço estão na classe estática `Catalogo`.
