@@ -258,7 +258,7 @@ public sealed class ReceitaSicalc
 {
     /// <summary>Código da receita informado na chamada.</summary>
     [JsonPropertyName("codigoReceita")]
-    [JsonConverter(typeof(TextoOuNumeroSicalcJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoReceita { get; set; }
 
     /// <summary>Nome descritivo do código de receita.</summary>
@@ -394,7 +394,7 @@ public sealed class InformacoesReceita
 
     /// <summary>Extensão da receita.</summary>
     [JsonPropertyName("codigoReceitaExtensao")]
-    [JsonConverter(typeof(TextoOuNumeroSicalcJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoReceitaExtensao { get; set; }
 
     /// <summary>Data de criação da receita.</summary>
@@ -443,37 +443,6 @@ public sealed class InformacoesReceita
 
 
 // CONVERSORES
-
-/// <summary>
-/// Lê texto ou número como <see cref="string"/> (a documentação alterna entre os dois formatos).
-/// </summary>
-internal sealed class TextoOuNumeroSicalcJsonConverter : JsonConverter<string?>
-{
-    public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-        reader.TokenType switch
-        {
-            JsonTokenType.Null => null,
-            JsonTokenType.String => reader.GetString(),
-            JsonTokenType.Number => LerNumero(ref reader),
-            JsonTokenType.True => "true",
-            JsonTokenType.False => "false",
-            _ => throw new JsonException($"Valor inesperado ({reader.TokenType}) para um campo de texto.")
-        };
-
-    public override void Write(Utf8JsonWriter writer, string? value, JsonSerializerOptions options)
-    {
-        if (value is null)
-            writer.WriteNullValue();
-        else
-            writer.WriteStringValue(value);
-    }
-
-    private static string LerNumero(ref Utf8JsonReader reader)
-    {
-        using var doc = JsonDocument.ParseValue(ref reader);
-        return doc.RootElement.GetRawText();
-    }
-}
 
 /// <summary>
 /// Data e hora no formato ISO 8601 sem fuso (aaaa-MM-ddTHH:mm:ss), como nos exemplos da documentação.

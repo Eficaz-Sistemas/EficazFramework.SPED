@@ -213,38 +213,3 @@ public sealed class DiscriminacaoDebito
     public string? EnteFederadoDestino { get; set; }
 }
 
-/// <summary>
-/// Lê um campo texto que pode vir como string ou como número (a documentação diverge entre modalidades,
-/// ex.: <c>geradoEm</c> "Texto" em umas e "Número" em outras); números são mantidos com o texto original.
-/// </summary>
-public sealed class TextoOuNumeroJsonConverter : JsonConverter<string?>
-{
-    /// <inheritdoc/>
-    public override bool HandleNull => true;
-
-    /// <inheritdoc/>
-    public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        switch (reader.TokenType)
-        {
-            case JsonTokenType.Null:
-                return null;
-            case JsonTokenType.String:
-                return reader.GetString();
-            case JsonTokenType.Number:
-                return System.Text.Encoding.UTF8.GetString(reader.HasValueSequence ? reader.ValueSequence.ToArray() : reader.ValueSpan.ToArray());
-            default:
-                using (var doc = JsonDocument.ParseValue(ref reader))
-                    return doc.RootElement.GetRawText();
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Write(Utf8JsonWriter writer, string? value, JsonSerializerOptions options)
-    {
-        if (value is null)
-            writer.WriteNullValue();
-        else
-            writer.WriteStringValue(value);
-    }
-}

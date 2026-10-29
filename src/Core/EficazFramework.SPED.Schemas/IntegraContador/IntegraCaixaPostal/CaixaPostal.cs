@@ -75,7 +75,7 @@ public sealed class ListarMensagens
     /// 2 - Não lida <br/>
     /// </summary>
     [JsonPropertyName("statusLeitura")]
-    [JsonConverter(typeof(EnumNumericoCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(EnumNumericoJsonConverter))]
     public StatusLeitura StatusLeitura { get; set; } = StatusLeitura.NaoSeAplica;
 
     /// <summary>
@@ -84,7 +84,7 @@ public sealed class ListarMensagens
     /// 1 - Favorita <br/>
     /// </summary>
     [JsonPropertyName("indicadorFavorito")]
-    [JsonConverter(typeof(EnumNumericoCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(EnumNumericoJsonConverter))]
     public IndicadorFavorito? IndicadorFavorito { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public sealed class ListarMensagens
     /// 1 - Página não inicial <br/>
     /// </summary>
     [JsonPropertyName("indicadorPagina")]
-    [JsonConverter(typeof(EnumNumericoCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(EnumNumericoJsonConverter))]
     public IndicadorPagina IndicadorPagina { get; set; } = IndicadorPagina.Inicial;
 
     /// <summary>
@@ -120,7 +120,7 @@ public sealed class RetornoListaMensagens
 {
     /// <summary>Código do resultado da requisição (ex.: 00 - sucesso).</summary>
     [JsonPropertyName("codigo")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Codigo { get; set; }
 
     /// <summary>Páginas de mensagens retornadas (normalmente uma).</summary>
@@ -147,17 +147,17 @@ public sealed class PaginaMensagens
 
     /// <summary>Ponteiro da página retornada.</summary>
     [JsonPropertyName("ponteiroPaginaRetornada")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? PonteiroPaginaRetornada { get; set; }
 
     /// <summary>Ponteiro da próxima página (informar em <see cref="ListarMensagens.PonteiroPagina"/>).</summary>
     [JsonPropertyName("ponteiroProximaPagina")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? PonteiroProximaPagina { get; set; }
 
     /// <summary>CNPJ do contribuinte pessoa jurídica (matriz).</summary>
     [JsonPropertyName("cnpjMatriz")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CnpjMatriz { get; set; }
 
     /// <summary>Mensagens da página.</summary>
@@ -173,22 +173,22 @@ public abstract class MensagemCaixaPostalBase
 {
     /// <summary>Código do sistema remetente.</summary>
     [JsonPropertyName("codigoSistemaRemetente")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoSistemaRemetente { get; set; }
 
     /// <summary>Código do modelo da mensagem.</summary>
     [JsonPropertyName("codigoModelo")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoModelo { get; set; }
 
     /// <summary>Data do envio (AAAAMMDD).</summary>
     [JsonPropertyName("dataEnvio")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataEnvio { get; set; }
 
     /// <summary>Hora do envio (HHMMSS).</summary>
     [JsonPropertyName("horaEnvio")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? HoraEnvio { get; set; }
 
     /// <summary>Número de controle da mensagem (AAAA/999999999999999).</summary>
@@ -197,27 +197,27 @@ public abstract class MensagemCaixaPostalBase
 
     /// <summary>Data da primeira leitura (AAAAMMDD).</summary>
     [JsonPropertyName("dataLeitura")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataLeitura { get; set; }
 
     /// <summary>Hora da primeira leitura (HHMMSS).</summary>
     [JsonPropertyName("horaLeitura")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? HoraLeitura { get; set; }
 
     /// <summary>Data da exclusão (AAAAMMDD).</summary>
     [JsonPropertyName("dataExclusao")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataExclusao { get; set; }
 
     /// <summary>Hora da exclusão (HHMMSS).</summary>
     [JsonPropertyName("horaExclusao")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? HoraExclusao { get; set; }
 
     /// <summary>Data da ciência (AAAAMMDD).</summary>
     [JsonPropertyName("dataCiencia")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataCiencia { get; set; }
 
     /// <summary>Assunto do modelo da mensagem; o texto <c>++VARIAVEL++</c> é substituído por <see cref="ValorParametroAssunto"/>.</summary>
@@ -226,7 +226,7 @@ public abstract class MensagemCaixaPostalBase
 
     /// <summary>Origem do modelo da mensagem: 1 - Sistema remetente, 2 - RFB.</summary>
     [JsonPropertyName("origemModelo")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? OrigemModelo { get; set; }
 
     /// <summary>Valor do parâmetro do assunto.</summary>
@@ -235,17 +235,17 @@ public abstract class MensagemCaixaPostalBase
 
     /// <summary>Relevância do modelo da mensagem: 1 - Sem relevância, 2 - Com relevância.</summary>
     [JsonPropertyName("relevancia")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Relevancia { get; set; }
 
     /// <summary>Identificador único da mensagem do contribuinte (usado no MSGDETALHAMENTO62).</summary>
     [JsonPropertyName("isn")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Isn { get; set; }
 
     /// <summary>Tipo de origem da mensagem: 1 - Receita, 2 - Estado, 3 - Município.</summary>
     [JsonPropertyName("tipoOrigem")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? TipoOrigem { get; set; }
 
     /// <summary>Descrição da origem (nome da UA, do estado ou do município).</summary>
@@ -264,17 +264,17 @@ public sealed class MensagemCaixaPostal : MensagemCaixaPostalBase
 {
     /// <summary>Indicador de leitura: 0 - Não lida, 1 - Lida.</summary>
     [JsonPropertyName("indicadorLeitura")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? IndicadorLeitura { get; set; }
 
     /// <summary>Indicador de favorita: 0 - Não favorita, 1 - Favorita.</summary>
     [JsonPropertyName("indicadorFavorito")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? IndicadorFavorito { get; set; }
 
     /// <summary>Data de validade da mensagem (AAAAMMDD).</summary>
     [JsonPropertyName("dataValidade")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataValidade { get; set; }
 }
 
@@ -285,7 +285,7 @@ public sealed class RetornoDetalheMensagem
 {
     /// <summary>Código do resultado da requisição (ex.: 00 - sucesso).</summary>
     [JsonPropertyName("codigo")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Codigo { get; set; }
 
     /// <summary>Mensagens encontradas.</summary>
@@ -300,12 +300,12 @@ public sealed class DetalheMensagemCaixaPostal : MensagemCaixaPostalBase
 {
     /// <summary>Indicador de favorita: 0 - Não favorita, 1 - Favorita.</summary>
     [JsonPropertyName("indFavorito")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? IndicadorFavorito { get; set; }
 
     /// <summary>Data de expiração da mensagem (AAAAMMDD).</summary>
     [JsonPropertyName("dataExpiracao")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataExpiracao { get; set; }
 
     /// <summary>Texto (HTML) do corpo do modelo; os parâmetros <c>++1++</c>, <c>++2++</c>... são substituídos por <see cref="Variaveis"/>.</summary>
@@ -318,27 +318,27 @@ public sealed class DetalheMensagemCaixaPostal : MensagemCaixaPostalBase
 
     /// <summary>Enquadramento.</summary>
     [JsonPropertyName("enquadramento")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Enquadramento { get; set; }
 
     /// <summary>Data do acesso externo (AAAAMMDD).</summary>
     [JsonPropertyName("dataAcessoExterno")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? DataAcessoExterno { get; set; }
 
     /// <summary>Hora do acesso externo (HHMMSS).</summary>
     [JsonPropertyName("horaAcessoExterno")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? HoraAcessoExterno { get; set; }
 
     /// <summary>Tipo de autenticação do usuário.</summary>
     [JsonPropertyName("tipoAutenticacaoUsuario")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? TipoAutenticacaoUsuario { get; set; }
 
     /// <summary>Código de acesso.</summary>
     [JsonPropertyName("codigoAcesso")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoAcesso { get; set; }
 
     /// <summary>Número de série do certificado digital.</summary>
@@ -351,22 +351,22 @@ public sealed class DetalheMensagemCaixaPostal : MensagemCaixaPostalBase
 
     /// <summary>Tipo do usuário.</summary>
     [JsonPropertyName("tipoUsuario")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? TipoUsuario { get; set; }
 
     /// <summary>NI (CPF/CNPJ) do usuário.</summary>
     [JsonPropertyName("niUsuario")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? NiUsuario { get; set; }
 
     /// <summary>Papel do usuário.</summary>
     [JsonPropertyName("papelUsuario")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? PapelUsuario { get; set; }
 
     /// <summary>Código da aplicação.</summary>
     [JsonPropertyName("codigoAplicacao")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? CodigoAplicacao { get; set; }
 
     /// <summary>Corpo da mensagem com os parâmetros <c>++n++</c> substituídos pelos valores de <see cref="Variaveis"/>.</summary>
@@ -387,7 +387,7 @@ public sealed class RetornoIndicadorNovasMensagens
 {
     /// <summary>Código do resultado da requisição (ex.: 00 - sucesso).</summary>
     [JsonPropertyName("codigo")]
-    [JsonConverter(typeof(TextoOuNumeroCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(TextoOuNumeroJsonConverter))]
     public string? Codigo { get; set; }
 
     /// <summary>Conteúdo do retorno (um item com o indicador).</summary>
@@ -411,104 +411,8 @@ public sealed class IndicadorNovasMensagens
     /// 2 - Possui mensagens novas <br/>
     /// </summary>
     [JsonPropertyName("indicadorMensagensNovas")]
-    [JsonConverter(typeof(EnumNumericoCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(EnumNumericoJsonConverter))]
     public IndicadorMensagensNovas? IndicadorMensagensNovas { get; set; }
 }
 
 
-// CONVERSORES
-
-/// <summary>
-/// Lê texto ou número como <see cref="string"/> (campos documentados como numéricos, mas retornados como texto com zeros à esquerda).
-/// </summary>
-internal sealed class TextoOuNumeroCaixaPostalJsonConverter : JsonConverter<string?>
-{
-    public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        switch (reader.TokenType)
-        {
-            case JsonTokenType.Null:
-                return null;
-            case JsonTokenType.String:
-                return reader.GetString();
-            case JsonTokenType.Number:
-                using (var doc = JsonDocument.ParseValue(ref reader))
-                    return doc.RootElement.GetRawText();
-            default:
-                throw new JsonException($"Valor inesperado ({reader.TokenType}) para um campo de texto.");
-        }
-    }
-
-    public override void Write(Utf8JsonWriter writer, string? value, JsonSerializerOptions options)
-    {
-        if (value is null)
-            writer.WriteNullValue();
-        else
-            writer.WriteStringValue(value);
-    }
-}
-
-/// <summary>
-/// Enum com valor numérico escrito como texto (ex.: <c>"0"</c>) e lido de número ou texto (texto vazio é nulo).
-/// </summary>
-internal sealed class EnumNumericoCaixaPostalJsonConverter : JsonConverterFactory
-{
-    public override bool CanConvert(Type typeToConvert) => (Nullable.GetUnderlyingType(typeToConvert) ?? typeToConvert).IsEnum;
-
-    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-    {
-        var subjacente = Nullable.GetUnderlyingType(typeToConvert);
-        var tipo = subjacente is null
-            ? typeof(Conversor<>).MakeGenericType(typeToConvert)
-            : typeof(ConversorNulavel<>).MakeGenericType(subjacente);
-        return (JsonConverter)Activator.CreateInstance(tipo)!;
-    }
-
-    private static TEnum? Ler<TEnum>(ref Utf8JsonReader reader) where TEnum : struct, Enum
-    {
-        long valor;
-        switch (reader.TokenType)
-        {
-            case JsonTokenType.Null:
-                return null;
-            case JsonTokenType.Number:
-                valor = reader.GetInt64();
-                break;
-            case JsonTokenType.String:
-                var texto = reader.GetString();
-                if (string.IsNullOrWhiteSpace(texto))
-                    return null;
-                if (!long.TryParse(texto, NumberStyles.Integer, CultureInfo.InvariantCulture, out valor))
-                    return Enum.TryParse<TEnum>(texto, true, out var nome) ? nome : throw new JsonException($"Valor '{texto}' inválido para {typeof(TEnum).Name}.");
-                break;
-            default:
-                throw new JsonException($"Valor inesperado ({reader.TokenType}) para {typeof(TEnum).Name}.");
-        }
-        return (TEnum)Enum.ToObject(typeof(TEnum), valor);
-    }
-
-    private static void Escrever<TEnum>(Utf8JsonWriter writer, TEnum valor) where TEnum : struct, Enum =>
-        writer.WriteStringValue(Convert.ToInt64(valor, CultureInfo.InvariantCulture).ToString(CultureInfo.InvariantCulture));
-
-    private sealed class Conversor<TEnum> : JsonConverter<TEnum> where TEnum : struct, Enum
-    {
-        public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-            Ler<TEnum>(ref reader) ?? default;
-
-        public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options) => Escrever(writer, value);
-    }
-
-    private sealed class ConversorNulavel<TEnum> : JsonConverter<TEnum?> where TEnum : struct, Enum
-    {
-        public override TEnum? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-            Ler<TEnum>(ref reader);
-
-        public override void Write(Utf8JsonWriter writer, TEnum? value, JsonSerializerOptions options)
-        {
-            if (value is null)
-                writer.WriteNullValue();
-            else
-                Escrever(writer, value.Value);
-        }
-    }
-}

@@ -34,7 +34,7 @@ public sealed class RetornoSituacaoDte
     /// 2 - NI optante DTE e Simples <br/>
     /// </summary>
     [JsonPropertyName("indicadorEnquadramento")]
-    [JsonConverter(typeof(EnumNumericoCaixaPostalJsonConverter))]
+    [JsonConverter(typeof(EnumNumericoJsonConverter))]
     public IndicadorEnquadramentoDte? IndicadorEnquadramento { get; set; }
 
     /// <summary>Texto do status de enquadramento do NI consultado.</summary>

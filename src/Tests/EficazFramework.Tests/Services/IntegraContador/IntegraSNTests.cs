@@ -1,3 +1,4 @@
+using EficazFramework.SPED.Schemas.IntegraContador;
 using EficazFramework.SPED.Schemas.IntegraContador.IntegraSN;
 using System.Text.Json;
 
@@ -152,29 +153,32 @@ public class IntegraSNTests : BaseIntegraContadorTests
         var das = resposta.Retorno.Should().ContainSingle().Subject;
         das.Pdf.Should().Be(PdfBase64);
         das.CnpjCompleto.Should().Be("00000000000100");
-        das.Detalhamento!.PeriodoApuracao.Should().Be("201801");
-        das.Detalhamento.NumeroDocumento.Should().Be("00000000000000000");
-        das.Detalhamento.DataVencimento.Should().Be("20180220");
-        das.Detalhamento.DataLimiteAcolhimento.Should().Be("20220831");
-        das.Detalhamento.Valores!.Principal.Should().Be(40m);
-        das.Detalhamento.Valores.Multa.Should().Be(8m);
-        das.Detalhamento.Valores.Juros.Should().Be(10.15m);
-        das.Detalhamento.Valores.Total.Should().Be(58.15m);
-        das.Detalhamento.Observacao1.Should().StartWith("Esta empresa");
-        das.Detalhamento.Composicao.Should().HaveCount(2);
-        das.Detalhamento.Composicao![1].Codigo.Should().Be("1007");
-        das.Detalhamento.Composicao[1].Denominacao.Should().Be("SP - 01/2018");
-        das.Detalhamento.Composicao[1].Valores!.Total.Should().Be(19.77m);
+        das.Detalhamento![0].PeriodoApuracao.Should().Be("201801");
+        das.Detalhamento![0].NumeroDocumento.Should().Be("00000000000000000");
+        das.Detalhamento![0].DataVencimento.Should().Be("20180220");
+        das.Detalhamento![0].DataLimiteAcolhimento.Should().Be("20220831");
+        das.Detalhamento![0].Valores!.Principal.Should().Be(40m);
+        das.Detalhamento![0].Valores.Multa.Should().Be(8m);
+        das.Detalhamento![0].Valores.Juros.Should().Be(10.15m);
+        das.Detalhamento![0].Valores.Total.Should().Be(58.15m);
+        das.Detalhamento![0].Observacao1.Should().StartWith("Esta empresa");
+        das.Detalhamento![0].Composicao.Should().HaveCount(2);
+        das.Detalhamento![0].Composicao![1].Codigo.Should().Be("1007");
+        das.Detalhamento![0].Composicao[1].Denominacao.Should().Be("SP - 01/2018");
+        das.Detalhamento![0].Composicao[1].Valores!.Total.Should().Be(19.77m);
     }
 
     [Test]
-    public void Pgdasd_Das_DeveAceitarChaveDetalhamento()
+    public void Pgdasd_Das_DeveAceitarChavesDetalhamentoEDetalhamentoDas()
     {
         var das = JsonSerializer.Deserialize<Das>("{\"pdf\":\"x\",\"detalhamento\":{\"numeroDocumento\":\"07202408201918950\"}}")!;
-        das.Detalhamento!.NumeroDocumento.Should().Be("07202408201918950");
+        das.Detalhamento![0].NumeroDocumento.Should().Be("07202408201918950");
+
+        var dasLista = JsonSerializer.Deserialize<Das>("{\"pdf\":\"x\",\"detalhamentoDas\":[{\"numeroDocumento\":\"1\"},{\"numeroDocumento\":\"2\"}]}")!;
+        dasLista.Detalhamento!.Select(d => d.NumeroDocumento).Should().Equal("1", "2");
 
         var json = JsonSerializer.Serialize(das);
-        json.Should().Contain("\"detalhamentoDas\"").And.NotContain("\"detalhamento\"");
+        json.Should().Contain("\"detalhamento\"").And.NotContain("\"detalhamentoDas\"");
     }
 
     [Test]
@@ -315,9 +319,9 @@ public class IntegraSNTests : BaseIntegraContadorTests
         VerificarPedido(handler, "Emitir", "PGDASD", "GERARDASCOBRANCA17");
         handler.Chamadas.Last().Requisicao.PedidoDados.Dados.Should().Be("{\"periodoApuracao\":\"202301\"}");
         resposta.Retorno!.Pdf.Should().Be(PdfBase64);
-        resposta.Retorno.Detalhamento!.Valores!.Total.Should().Be(2047.34m);
-        resposta.Retorno.Detalhamento.Observacao1.Should().BeNull();
-        resposta.Retorno.Detalhamento.Composicao![0].Valores!.Multa.Should().Be(17.59m);
+        resposta.Retorno.Detalhamento![0].Valores!.Total.Should().Be(2047.34m);
+        resposta.Retorno.Detalhamento![0].Observacao1.Should().BeNull();
+        resposta.Retorno.Detalhamento![0].Composicao![0].Valores!.Multa.Should().Be(17.59m);
     }
 
     [Test]
@@ -339,9 +343,9 @@ public class IntegraSNTests : BaseIntegraContadorTests
 
         VerificarPedido(handler, "Emitir", "PGDASD", "GERARDASPROCESSO18");
         handler.Chamadas.Last().Requisicao.PedidoDados.Dados.Should().Be("{\"numeroProcesso\":\"00000000000000000\"}");
-        resposta.Retorno!.Detalhamento!.Observacao1.Should().Be("Nrº Processo: 00000.000.000/0000-00");
-        resposta.Retorno.Detalhamento.Composicao.Should().HaveCount(2);
-        resposta.Retorno.Detalhamento.Valores!.Juros.Should().Be(5.59m);
+        resposta.Retorno!.Detalhamento![0].Observacao1.Should().Be("Nrº Processo: 00000.000.000/0000-00");
+        resposta.Retorno.Detalhamento![0].Composicao.Should().HaveCount(2);
+        resposta.Retorno.Detalhamento![0].Valores!.Juros.Should().Be(5.59m);
     }
 
     [Test]
@@ -377,8 +381,8 @@ public class IntegraSNTests : BaseIntegraContadorTests
         Nomes(dados.GetProperty("listaTributos")[1]).Should().Equal("codigo", "valor");
 
         resposta.Retorno!.CnpjCompleto.Should().Be("00000333000110");
-        resposta.Retorno.Detalhamento!.NumeroDocumento.Should().Be("07202408201918950");
-        resposta.Retorno.Detalhamento.Composicao![0].Denominacao.Should().Be("ABEL FIGUEIREDO (PA) - 01/2024");
+        resposta.Retorno.Detalhamento![0].NumeroDocumento.Should().Be("07202408201918950");
+        resposta.Retorno.Detalhamento![0].Composicao![0].Denominacao.Should().Be("ABEL FIGUEIREDO (PA) - 01/2024");
     }
 
     [Test]

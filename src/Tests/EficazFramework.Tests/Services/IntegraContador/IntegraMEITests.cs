@@ -87,7 +87,7 @@ public class IntegraMEITests : BaseIntegraContadorTests
         detalhe.Observacao3.Should().Be("PGMEI(Versao:3.8.0)");
         detalhe.CodigoDeBarras.Should().BeNull();
         detalhe.Composicao.Should().HaveCount(3);
-        detalhe.Composicao![0].PeriodoApuracao.Should().Be(201901);
+        detalhe.Composicao![0].PeriodoApuracao.Should().Be("201901");
         detalhe.Composicao[0].Codigo.Should().Be("0151");
         detalhe.Composicao[0].Denominacao.Should().StartWith("INSS");
         detalhe.Composicao[0].Valores!.Total.Should().Be(69.44m);
@@ -130,7 +130,7 @@ public class IntegraMEITests : BaseIntegraContadorTests
 
         var detalhe = resposta.Retorno!.Single().Detalhamento!.Single();
         detalhe.PeriodoApuracao.Should().Be("Diversos");
-        detalhe.Composicao!.Single().PeriodoApuracao.Should().Be(201902);
+        detalhe.Composicao!.Single().PeriodoApuracao.Should().Be("201902");
     }
 
     [Test]
