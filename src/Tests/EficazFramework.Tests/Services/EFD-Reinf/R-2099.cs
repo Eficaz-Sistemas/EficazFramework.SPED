@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Services.EFD_Reinf
+namespace EficazFramework.SPED.Services.EFD_Reinf
 {
     public class R2099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2099>
     {
@@ -16,7 +16,7 @@
                 ReciclaDadosCadastrais = false,
                 CnpjCpf = CnpjCpf
             };
-            r2010Test.Contribuinte.nrInsc = CnpjCpf;
+            r2010Test.Contribuinte.nrInsc = CnpjCpf[..8];
             await r2010Test.TestaEvento(versao);
 
             //? Envio de R-2020
@@ -26,7 +26,7 @@
                 ReciclaDadosCadastrais = false ,
                 CnpjCpf = CnpjCpf
             };
-            r2020Test.Contribuinte.nrInsc = CnpjCpf;
+            r2020Test.Contribuinte.nrInsc = CnpjCpf[..8];
             await r2020Test.TestaEvento(versao);
 
             //? Envio de R-2055
@@ -36,7 +36,7 @@
                 ReciclaDadosCadastrais = false,
                 CnpjCpf = CnpjCpf
             };
-            r2055Test.Contribuinte.nrInsc = CnpjCpf;
+            r2055Test.Contribuinte.nrInsc = CnpjCpf[..8];
             await r2055Test.TestaEvento(versao);
 
             //? Encerra com R-2099

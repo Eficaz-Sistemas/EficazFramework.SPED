@@ -1,4 +1,4 @@
-﻿using EficazFramework.SPED.Schemas.EFD_Reinf;
+using EficazFramework.SPED.Schemas.EFD_Reinf;
 
 namespace EficazFramework.SPED.Services.EFD_Reinf;
 
@@ -41,7 +41,7 @@ public class R4099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4099>
             ReciclaDadosCadastrais = false,
             CnpjCpf = CnpjCpf
         };
-        r4010Test.Contribuinte.nrInsc = CnpjCpf;
+        r4010Test.Contribuinte.nrInsc = CnpjCpf[..8];
         await r4010Test.EnviaMovimentoRendimentosIsentos(versao);
 
         //? Envio de R-4020
@@ -51,7 +51,7 @@ public class R4099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4099>
             ReciclaDadosCadastrais = false,
             CnpjCpf = CnpjCpf
         };
-        r4020Test.Contribuinte.nrInsc = CnpjCpf;
+        r4020Test.Contribuinte.nrInsc = CnpjCpf[..8];
         await r4020Test.EnviaMovimentoRendimentosIsentos(versao);
 
         ////? Envio de R-4080
@@ -99,7 +99,7 @@ public class R4099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4099>
             ReciclaDadosCadastrais = false,
             CnpjCpf = CnpjCpf
         };
-        r4010Test.Contribuinte.nrInsc = CnpjCpf;
+        r4010Test.Contribuinte.nrInsc = CnpjCpf[..8];
         await r4010Test.EnviaMovimentoRendimentosTributados(versao);
 
         //? Envio de R-4020
@@ -109,7 +109,7 @@ public class R4099Test : MovEfdReinfTest<Schemas.EFD_Reinf.R4099>
             ReciclaDadosCadastrais = false,
             CnpjCpf = CnpjCpf
         };
-        r4020Test.Contribuinte.nrInsc = CnpjCpf;
+        r4020Test.Contribuinte.nrInsc = CnpjCpf[..8];
         await r4020Test.EnviaMovimentoRendimentosTributados(versao);
 
         ////? Envio de R-4080

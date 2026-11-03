@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace EficazFramework.SPED.Services.EFD_Reinf;
 
@@ -21,7 +21,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
         if (!string.IsNullOrEmpty(_cnpj))
         {
             CnpjCpf = _cnpj;
-            Contribuinte.nrInsc = _cnpj;
+            Contribuinte.nrInsc = _cnpj[..8];
         }
     }
 
@@ -37,7 +37,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
             LogToConsole = false,
             CnpjCpf = CnpjCpf,
         };
-        cad.Contribuinte.nrInsc = CnpjCpf;
+        cad.Contribuinte.nrInsc = CnpjCpf[..8];
         if (GeraDadosCadastrais)
             await cad.Envia01Inclusao(instancia.Versao);
 
@@ -90,7 +90,7 @@ public abstract class MovEfdReinfTest<T> : Tests.BaseTest where T : Schemas.EFD_
             LogToConsole = false,
             CnpjCpf = CnpjCpf
         };
-        cad.Contribuinte.nrInsc = CnpjCpf;
+        cad.Contribuinte.nrInsc = CnpjCpf[..8];
         if (GeraDadosCadastrais)
             await cad.Envia01Inclusao(instancias.First().Versao);
 

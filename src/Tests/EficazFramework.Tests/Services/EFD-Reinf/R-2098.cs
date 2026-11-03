@@ -1,4 +1,4 @@
-﻿namespace EficazFramework.SPED.Services.EFD_Reinf
+namespace EficazFramework.SPED.Services.EFD_Reinf
 {
     public class R2098Test : MovEfdReinfTest<Schemas.EFD_Reinf.R2098>
     {
@@ -12,7 +12,7 @@
                 ReciclaDadosCadastrais = false ,
                 CnpjCpf = CnpjCpf
             };
-            r2099Test.Contribuinte.nrInsc = CnpjCpf;
+            r2099Test.Contribuinte.nrInsc = CnpjCpf[..8];
             await r2099Test.EnviaSemMovimento(versao);
 
             //? Reabre com R-2098
