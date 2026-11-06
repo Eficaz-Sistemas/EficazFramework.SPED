@@ -83,7 +83,11 @@ public class ProcuradorTests : BaseIntegraContadorTests
         requisicao.PedidoDados.IdSistema.Should().Be("AUTENTICAPROCURADOR");
         requisicao.PedidoDados.IdServico.Should().Be("ENVIOXMLASSINADO81");
         requisicao.AutorPedidoDados.Should().Be(Identificacao.Cnpj("00000000000000"));
-        DadosEnviados(handler).GetProperty("xml").GetString().Should().NotBeNullOrEmpty();
+        string base64 = DadosEnviados(handler).GetProperty("xml").GetString()!;
+        base64.Should().NotBeNullOrEmpty();
+        // o Base64 vai literal no texto de dados (sem + no lugar do +): o Serpro o lê sem desfazer escapes (AUTENTICAPROCURADOR-038)
+        base64.Should().Contain("+", "o termo assinado tem + no Base64 (senão o teste não confere o escape)");
+        requisicao.PedidoDados.Dados.Should().Contain(base64).And.NotContain("\\u002B");
 
         resposta.Retorno!.Token.Should().Be(TokenProcurador);
         resposta.Retorno.DataHoraExpiracao.Should().Be(new DateTime(2026, 10, 30, 0, 0, 1));
