@@ -84,9 +84,14 @@ public partial class IntegraContadorService : RestServiceBase
     /// <summary>Tokens temporários atuais (obtidos por <see cref="AutenticarAsync"/>); pode ser atribuído para reaproveitar tokens.</summary>
     public TokenAutenticacao? Token { get; set; }
 
-    /// <summary>Opções JSON para corpo da requisição/resposta e para o conteúdo de <c>dados</c>.</summary>
+    /// <summary>
+    /// Opções JSON para corpo da requisição/resposta e para o conteúdo de <c>dados</c>. Sem escapar caracteres (o padrão do System.Text.Json
+    /// troca o <c>+</c> do Base64 por <c>+</c>): o Serpro lê os conteúdos em Base64 do texto de <c>dados</c> (termo de autorização,
+    /// XML assinado da DCTFWeb) sem desfazer esses escapes e recusa o XML (AUTENTICAPROCURADOR-038).
+    /// </summary>
     protected static readonly JsonSerializerOptions JsonOptions = new()
     {
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         PropertyNameCaseInsensitive = true,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,

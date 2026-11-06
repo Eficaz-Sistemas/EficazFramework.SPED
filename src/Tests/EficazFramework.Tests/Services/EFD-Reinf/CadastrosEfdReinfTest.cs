@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace EficazFramework.SPED.Services.EFD_Reinf;
 
@@ -18,7 +18,7 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         if (!string.IsNullOrEmpty(_cnpj))
         {
             CnpjCpf = _cnpj;
-            Contribuinte.nrInsc = _cnpj;
+            Contribuinte.nrInsc = _cnpj[..8];
         }
     }
 
