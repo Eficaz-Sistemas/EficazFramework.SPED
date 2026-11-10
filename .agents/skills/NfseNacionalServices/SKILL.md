@@ -121,7 +121,7 @@ O arquivo [Classes.cs](../../../src/Core/EficazFramework.SPED/Services/NFSe/Naci
    - O serviço é `IDisposable`: uma instância por certificado, descartada ao final.
 
 2. **Endpoints Base:**
-   - Produção: `https://sefin.nfse.gov.br/` (ou caminho base aplicável)
+   - Produção: `https://sefin.nfse.gov.br/SefinNacional/` (a API fica em `/SefinNacional/`; a raiz responde 404)
    - Homologação: `https://sefin.producaorestrita.nfse.gov.br/SefinNacional/`
 
 3. **Serialização e Naming Policy:**
