@@ -73,10 +73,15 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
         var protocolo = retornoEnvio.retornoLoteEventosAssincrono.dadosRecepcaoLote.protocoloEnvio;
 
         // aguardar o processamento do lote
-        await Task.Delay(150);
+        await Task.Delay(1000);
 
         // consulta do protocolo
         var retornoConsulta = await ConsultaProtocolo(protocolo);
+        while (retornoConsulta.retornoLoteEventosAssincrono.status.cdResposta == "1")
+        {
+            await Task.Delay(500);
+            retornoConsulta = await ConsultaProtocolo(protocolo);
+        }
         foreach (LoteEventoRetornoInfo evt in retornoConsulta.retornoLoteEventosAssincrono.retornoEventos.evento)
             evt.retornoEventoInfo.evtTotal.ideRecRetorno.ideStatus.cdRetorno.Should().BeOneOf(new[] { "2" });
 
@@ -103,12 +108,13 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
     private IList<T> CriaLoteEvento(Schemas.EFD_Reinf.Versao versao, int tamanhoLote)
     {
         var result = new List<T>();
-        for (int i = 0; i <= tamanhoLote; i++)
+        for (int i = 0; i < tamanhoLote; i++)
         {
             T instancia = Activator.CreateInstance<T>();
             instancia.Versao = versao;
             PreencheCampos(instancia, i);
             instancia.GeraEventoID();
+            result.Add(instancia);
         }
         return result;
     }
@@ -120,6 +126,13 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
     /// <param name="evento"></param>
     public abstract void PreencheCampos(T evento, int index = 0);
 
+    private static EfdReinfServices _ws;
+    internal static EfdReinfServices ObterClienteCompartilhado(Func<Utilities.IcpBrasilX509Certificate2> selecionaCertificado) => _ws ??= new EfdReinfServices
+    {
+        SelecionaCertificado = selecionaCertificado
+    };
+    private EfdReinfServices ObterCliente() => CadastrosEfdReinfTest<Schemas.EFD_Reinf.R1000>.ObterClienteCompartilhado(InstanciaCertificado);
+
 
     /// <summary>
     /// Executa a transmissão do evento para ambiente de produção.
@@ -129,11 +142,7 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
     /// <returns></returns>
     public async Task<Response> EnviaEvento(Schemas.EFD_Reinf.Evento evento)
     {
-        var _ws = new EficazFramework.SPED.Services.EFD_Reinf.EfdReinfServices
-        {
-            SelecionaCertificado = InstanciaCertificado
-        };
-        var r = await _ws.EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await ObterCliente().EnviaEventosAsync(new List<Schemas.EFD_Reinf.Evento>() { evento }, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
@@ -147,11 +156,7 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
     /// <returns></returns>
     public async Task<Response> EnviaLoteEvento(IList<Schemas.EFD_Reinf.Evento> eventos)
     {
-        var _ws = new EficazFramework.SPED.Services.EFD_Reinf.EfdReinfServices
-        {
-            SelecionaCertificado = InstanciaCertificado
-        };
-        var r = await _ws.EnviaEventosAsync(eventos, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await ObterCliente().EnviaEventosAsync(eventos, Contribuinte, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
@@ -164,11 +169,7 @@ public abstract class CadastrosEfdReinfTest<T> : Tests.BaseTest where T : Schema
     /// <returns></returns>
     public async Task<Response> ConsultaProtocolo(string protocolo)
     {
-        var _ws = new EficazFramework.SPED.Services.EFD_Reinf.EfdReinfServices
-        {
-            SelecionaCertificado = InstanciaCertificado
-        };
-        var r = await _ws.ConsultaLoteAsync(protocolo, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
+        var r = await ObterCliente().ConsultaLoteAsync(protocolo, Schemas.EFD_Reinf.Ambiente.ProducaoRestrita_DadosReais);
         r.Should().NotBeNull();
         return r;
     }
