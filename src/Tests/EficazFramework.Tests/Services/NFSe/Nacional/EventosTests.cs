@@ -162,7 +162,7 @@ public class EventosTests : BaseNFseTests
 
         var retorno = await service.ConsultarEventosAsync(Chave, Schemas.NFSe.Nacional.Ambiente.Producao);
 
-        handler.Url.Should().Be($"https://sefin.nfse.gov.br/nfse/{Chave}/eventos");
+        handler.Url.Should().Be($"https://sefin.nfse.gov.br/SefinNacional/nfse/{Chave}/eventos");
         retorno.Eventos.Should().HaveCount(2);
         retorno.NfseCancelada.Should().BeTrue();
     }

@@ -30,7 +30,7 @@ public partial class NfseNacionalService : RestServiceBase
     /// <summary>
     /// URL base para o ambiente de Produção do ADN.
     /// </summary>
-    public Uri UrlProducao { get; set; } = new("https://sefin.nfse.gov.br/");
+    public Uri UrlProducao { get; set; } = new("https://sefin.nfse.gov.br/SefinNacional/");
 
 
     public Uri UrlDistribuicaoProducao { get; set; } = new("https://adn.nfse.gov.br/");

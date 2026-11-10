@@ -41,9 +41,9 @@ public class ClienteHttpTests : BaseNFseTests
 
         handler.Pedidos.Select(p => p.Url).Should().Equal(
             $"https://sefin.producaorestrita.nfse.gov.br/SefinNacional/contribuintes/nfse/{Chave}/eventos",
-            "https://sefin.nfse.gov.br/dps/DPS1",
+            "https://sefin.nfse.gov.br/SefinNacional/dps/DPS1",
             "https://adn.producaorestrita.nfse.gov.br/contribuintes/DFe/1",
-            $"https://sefin.nfse.gov.br/contribuintes/nfse/{Chave}/eventos");
+            $"https://sefin.nfse.gov.br/SefinNacional/contribuintes/nfse/{Chave}/eventos");
         handler.Pedidos.Should().OnlyContain(p => p.Metodo == HttpMethod.Get && p.Accept == "application/json");
 
         porChave.StatusCode.Should().Be(404);
