@@ -53,6 +53,16 @@ public enum IndicadorGuia
     DAE = 1
 }
 
+/// <summary>
+/// Indicativo de CPF novo sem CPFs vinculados na base da RFB
+/// </summary>
+public enum IndicadorCpfDesvinculado
+{
+    [System.Xml.Serialization.XmlEnum("9")]
+    [System.ComponentModel.Description("CPF novo não possui CPFs vinculados na base da RFB")]
+    NovoCpfSemCpfsVinculados = 9
+}
+
 
 public enum PersonalidadeJuridica
 {

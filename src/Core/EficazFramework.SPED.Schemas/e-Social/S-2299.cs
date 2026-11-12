@@ -42,7 +42,7 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 ///         indPDV = SimNaoString.Sim,
 ///         infoInterm = new System.Collections.Generic.List<S2299InfoInterm>
 ///         {
-///             new S2299InfoInterm { dia = 10 }
+///             new S2299InfoInterm { dia = 10, hrsTrab = "0830" }
 ///         },
 ///         observacoes = new System.Collections.Generic.List<S2299Observacao>
 ///         {
@@ -60,7 +60,8 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 ///         },
 ///         mudancaCPF = new S2299MudancaCPF
 ///         {
-///             novoCPF = "12345678902"
+///             novoCPF = "12345678902",
+///             indCPFDesvinc = IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados
 ///         },
 ///         remunAposDeslig = new S2299RemunAposDeslig
 ///         {
@@ -574,6 +575,7 @@ public partial class S2299InfoDeslig : ESocialBindableObject
 public partial class S2299InfoInterm : ESocialBindableObject
 {
     private byte diaField;
+    private string hrsTrabField;
 
     public byte dia
     {
@@ -584,6 +586,21 @@ public partial class S2299InfoInterm : ESocialBindableObject
             RaisePropertyChanged(nameof(dia));
         }
     }
+
+    /// <summary>
+    /// Horas trabalhadas no dia (HHMM); obrigatório para categoria 111 em empresa de classificação tributária 22
+    /// </summary>
+    public string hrsTrab
+    {
+        get => hrsTrabField;
+        set
+        {
+            hrsTrabField = value;
+            RaisePropertyChanged(nameof(hrsTrab));
+        }
+    }
+
+    public bool ShouldSerializehrsTrab() => !string.IsNullOrEmpty(hrsTrab);
 }
 
 /// <exclude />
@@ -662,6 +679,7 @@ public partial class S2299TransfTit : ESocialBindableObject
 public partial class S2299MudancaCPF : ESocialBindableObject
 {
     private string novoCPFField;
+    private IndicadorCpfDesvinculado? indCPFDesvincField;
 
     public string novoCPF
     {
@@ -672,6 +690,21 @@ public partial class S2299MudancaCPF : ESocialBindableObject
             RaisePropertyChanged(nameof(novoCPF));
         }
     }
+
+    /// <summary>
+    /// Indica que o novo CPF não possui CPFs vinculados na base da RFB; informar apenas nesse caso
+    /// </summary>
+    public IndicadorCpfDesvinculado? indCPFDesvinc
+    {
+        get => indCPFDesvincField;
+        set
+        {
+            indCPFDesvincField = value;
+            RaisePropertyChanged(nameof(indCPFDesvinc));
+        }
+    }
+
+    public bool ShouldSerializeindCPFDesvinc() => indCPFDesvinc.HasValue;
 }
 
 /// <exclude />
