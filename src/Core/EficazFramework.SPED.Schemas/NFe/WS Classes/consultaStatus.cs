@@ -108,11 +108,17 @@ public partial class RetornoConsultaStatusServicoNFe
     [XmlElement("dhRecbto")]
     public DateTime? DataRecebimento {  get; set; }
 
+    public bool ShouldSerializeDataRecebimento() => DataRecebimento.HasValue;
+
     [XmlElement("tMed")]
     public int? TempoMedioResposta {  get; set; }
 
+    public bool ShouldSerializeTempoMedioResposta() => TempoMedioResposta.HasValue;
+
     [XmlElement("dhRetorno")]
     public DateTime? DataRetorno { get; set; }
+
+    public bool ShouldSerializeDataRetorno() => DataRetorno.HasValue;
 
     [XmlElement("xObs")]
     public string Observacoes { get; set; }

@@ -1504,6 +1504,8 @@ namespace EficazFramework.SPED.Schemas.GNRE.V2
             }
         }
 
+        public bool ShouldSerializetipoGnre() => tipoGnre.HasValue;
+
         public UF? ufFavorecida
         {
             get

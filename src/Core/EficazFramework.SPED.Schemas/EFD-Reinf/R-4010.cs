@@ -1111,6 +1111,8 @@ public partial class R4010InfomacaoRRA : EfdReinfBindableObject
         }
     }
 
+    public bool ShouldSerializeqtdMesesRRA() => qtdMesesRRA.HasValue;
+
     /// <remarks/>
     [XmlElement(Order = 5)]
     public string cnpjOrigRecurso

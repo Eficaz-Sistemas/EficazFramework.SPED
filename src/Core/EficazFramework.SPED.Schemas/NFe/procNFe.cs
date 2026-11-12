@@ -2911,6 +2911,8 @@ public partial class Fisco : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeDataPagamentoDAR() => DataPagamentoDAR.HasValue;
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -3185,6 +3187,8 @@ public partial class DeclaracaoImportacao : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorAFRMM() => ValorAFRMM.HasValue;
 
     public bool ShouldSerializedValorAFRMM() => cAFRMMField.HasValue;
 

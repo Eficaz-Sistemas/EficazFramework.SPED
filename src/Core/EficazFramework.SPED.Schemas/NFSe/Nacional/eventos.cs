@@ -248,6 +248,8 @@ public class InformacoesEvento : NFSeNacionalBase
         set { _dhProc = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeDataHoraProcessamento() => DataHoraProcessamento.HasValue;
+
     /// <summary>Número sequencial do documento gerado pelo ambiente gerador.</summary>
     [XmlElement("nDFSe")]
     public string? NumeroDFSe
@@ -406,6 +408,8 @@ public class InformacoesPedidoRegistroEvento : NFSeNacionalBase
         get => _dhEvento;
         set { _dhEvento = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeDataHoraEvento() => DataHoraEvento.HasValue;
 
     /// <summary>CNPJ do autor do evento (preencher este ou <see cref="CPFAutor"/>).</summary>
     [XmlElement("CNPJAutor")]
