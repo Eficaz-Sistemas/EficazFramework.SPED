@@ -659,6 +659,8 @@ public partial class RetornoCartaCorrecaoEletronica : NFeResultado, INotifyPrope
         }
     }
 
+    public bool ShouldSerializeEventoData() => EventoData.HasValue;
+
     [XmlElement(ElementName = "tpEvento")]
     public string EventoCodigo // TRetConsNFeDestRetResCCeTpEvento (sempre 110110)
     {
@@ -766,6 +768,8 @@ public partial class RetornoCartaCorrecaoEletronica : NFeResultado, INotifyPrope
             }
         }
     }
+
+    public bool ShouldSerializeDataAutorizacaoCorrecao() => DataAutorizacaoCorrecao.HasValue;
 
     [XmlAttribute()]
     public string NSU
@@ -950,6 +954,8 @@ public partial class RetornoNFeCancelada : NFeResultado, INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeDataEmissao() => DataEmissao.HasValue;
+
     [XmlElement(ElementName = "tpNF")]
     public OperacaoNFe Operacao
     {
@@ -986,6 +992,8 @@ public partial class RetornoNFeCancelada : NFeResultado, INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeValorTotal() => ValorTotal.HasValue;
+
     [XmlElement(ElementName = "digVal")]
     public string DigestValue
     {
@@ -1021,6 +1029,8 @@ public partial class RetornoNFeCancelada : NFeResultado, INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeDataCancelamento() => DataCancelamento.HasValue;
 
     [XmlElement(ElementName = "cSitNFe")]
     public SituacaoNFe Situacao
@@ -1245,6 +1255,8 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
         }
     }
 
+    public bool ShouldSerializeEmissaoData() => EmissaoData.HasValue;
+
     [XmlElement("dhEmi")]
     public DateTime? DataEmissao
     {
@@ -1262,6 +1274,8 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
             }
         }
     }
+
+    public bool ShouldSerializeDataEmissao() => DataEmissao.HasValue;
 
     [XmlElement("tpNF")]
     public OperacaoNFe Operacao
@@ -1334,6 +1348,8 @@ public partial class RetornoNFeNormal : NFeResultado, INotifyPropertyChanged, IX
             }
         }
     }
+
+    public bool ShouldSerializeDataAutorizacao() => DataAutorizacao.HasValue;
 
     [XmlElement("cSitNFe")]
     public SituacaoNFe Situacao

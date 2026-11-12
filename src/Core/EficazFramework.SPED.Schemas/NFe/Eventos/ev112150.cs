@@ -13,5 +13,7 @@ public class ev112150 : IbsCbsEventoBase
     /// </summary>
     [System.Xml.Serialization.XmlElement("dPrevEntrega")]
     public DateTime? DataPrevisaoEntrega { get; set; }
+
+    public bool ShouldSerializeDataPrevisaoEntrega() => DataPrevisaoEntrega.HasValue;
 }
 

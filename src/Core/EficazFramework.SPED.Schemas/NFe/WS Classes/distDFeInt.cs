@@ -678,6 +678,8 @@ public partial class ResumoEvento : IXmlSpedDocument
     [XmlElement("dhEvento")]
     public DateTime? DataEmissao { get; set; }
 
+    public bool ShouldSerializeDataEmissao() => DataEmissao.HasValue;
+
     [XmlElement(ElementName = "tpEvento")]
     public CodigoEvento EventoCodigo { get; set; }
 
@@ -689,6 +691,8 @@ public partial class ResumoEvento : IXmlSpedDocument
 
     [XmlElement("dhRecbto")]
     public DateTime? DataAutorizacao { get; set; }
+
+    public bool ShouldSerializeDataAutorizacao() => DataAutorizacao.HasValue;
 
     [XmlElement("nProt")]
     public string Protocolo { get; set; }
