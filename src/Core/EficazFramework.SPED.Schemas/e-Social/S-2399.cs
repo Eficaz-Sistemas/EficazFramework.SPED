@@ -45,7 +45,8 @@ namespace EficazFramework.SPED.Schemas.eSocial;
 ///         
 ///         mudancaCPF = new S2399MudancaCPF
 ///         {
-///             novoCPF = "09876543210"
+///             novoCPF = "09876543210",
+///             indCPFDesvinc = IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados
 ///         },
 ///         
 ///         verbasResc = new S2399VerbasResc
@@ -532,6 +533,7 @@ public partial class S2399InfoTSVTermino : ESocialBindableObject
 public partial class S2399MudancaCPF : ESocialBindableObject
 {
     private string novoCPFField;
+    private IndicadorCpfDesvinculado? indCPFDesvincField;
 
     public string novoCPF
     {
@@ -542,6 +544,21 @@ public partial class S2399MudancaCPF : ESocialBindableObject
             RaisePropertyChanged(nameof(novoCPF));
         }
     }
+
+    /// <summary>
+    /// Indica que o novo CPF não possui CPFs vinculados na base da RFB; informar apenas nesse caso
+    /// </summary>
+    public IndicadorCpfDesvinculado? indCPFDesvinc
+    {
+        get => indCPFDesvincField;
+        set
+        {
+            indCPFDesvincField = value;
+            RaisePropertyChanged(nameof(indCPFDesvinc));
+        }
+    }
+
+    public bool ShouldSerializeindCPFDesvinc() => indCPFDesvinc.HasValue;
 }
 
 /// <exclude />

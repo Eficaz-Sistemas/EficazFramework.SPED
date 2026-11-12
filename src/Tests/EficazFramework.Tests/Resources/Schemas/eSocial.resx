@@ -8982,6 +8982,20 @@
         &lt;/xs:restriction&gt;
     &lt;/xs:simpleType&gt;
 
+    &lt;xs:simpleType name="TS_indCPFDesvinc"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Indicativo de casos especiais de mudança de CPF.&lt;/xs:documentation&gt;
+            &lt;xs:documentation&gt;Validação: Preenchimento obrigatório e exclusivo se o novo CPF não possuir o {}(2299_ideVinculo_cpfTrab) vinculado na base da RFB.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:restriction base="xs:byte"&gt;
+            &lt;xs:enumeration value="9"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;CPF novo não possui CPFs vinculados na base da RFB&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+
     &lt;xs:simpleType name="TS_hora_99"&gt;
         &lt;xs:restriction base="xs:string"&gt;
             &lt;xs:length value="4" /&gt;
@@ -13488,6 +13502,12 @@
                                                         &lt;xs:annotation&gt;
                                                             &lt;xs:documentation&gt;Preencher com o novo CPF do trabalhador.&lt;/xs:documentation&gt;
                                                             &lt;xs:documentation&gt;ValidaÃ§Ã£o: Deve ser um CPF vÃ¡lido e diferente do CPF do empregador e do antigo CPF do trabalhador.&lt;/xs:documentation&gt;
+                                                        &lt;/xs:annotation&gt;
+                                                    &lt;/xs:element&gt;
+                                                    &lt;xs:element name="indCPFDesvinc" minOccurs="0" type="TS_indCPFDesvinc"&gt;
+                                                        &lt;xs:annotation&gt;
+                                                            &lt;xs:documentation&gt;Indicativo de casos especiais de mudança de CPF.&lt;/xs:documentation&gt;
+                                                            &lt;xs:documentation&gt;Validação: Preenchimento obrigatório e exclusivo se o novo CPF não possuir o {}(2299_ideVinculo_cpfTrab) vinculado na base da RFB.&lt;/xs:documentation&gt;
                                                         &lt;/xs:annotation&gt;
                                                     &lt;/xs:element&gt;
                                                 &lt;/xs:sequence&gt;
@@ -19563,6 +19583,12 @@
                                                         &lt;xs:annotation&gt;
                                                             &lt;xs:documentation&gt;Preencher com o novo CPF do trabalhador.&lt;/xs:documentation&gt;
                                                             &lt;xs:documentation&gt;ValidaÃ§Ã£o: Deve ser um CPF vÃ¡lido e diferente do CPF do empregador e do antigo CPF do trabalhador.&lt;/xs:documentation&gt;
+                                                        &lt;/xs:annotation&gt;
+                                                    &lt;/xs:element&gt;
+                                                    &lt;xs:element name="indCPFDesvinc" minOccurs="0" type="TS_indCPFDesvinc"&gt;
+                                                        &lt;xs:annotation&gt;
+                                                            &lt;xs:documentation&gt;Indicativo de casos especiais de mudança de CPF.&lt;/xs:documentation&gt;
+                                                            &lt;xs:documentation&gt;Validação: Preenchimento obrigatório e exclusivo se o novo CPF não possuir o {}(2399_ideTrabSemVinculo_cpfTrab) vinculado na base da RFB.&lt;/xs:documentation&gt;
                                                         &lt;/xs:annotation&gt;
                                                     &lt;/xs:element&gt;
                                                 &lt;/xs:sequence&gt;

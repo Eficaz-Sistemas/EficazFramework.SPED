@@ -60,6 +60,7 @@ public class S2299Test : BaseESocialTest<S2299>
         
         // infoInterm e observacoes
         ev2299.evtDeslig.infoDeslig.infoInterm[0].dia.Should().Be(10);
+        ev2299.evtDeslig.infoDeslig.infoInterm[0].hrsTrab.Should().Be("0830");
         ev2299.evtDeslig.infoDeslig.observacoes[0].Value.Should().Be("Observacao Teste");
         
         // Novos blocos infoDeslig
@@ -70,6 +71,7 @@ public class S2299Test : BaseESocialTest<S2299>
         ev2299.evtDeslig.infoDeslig.transfTit.dtNascto.Should().BeSameDateAs(new DateTime(1980, 1, 1));
         
         ev2299.evtDeslig.infoDeslig.mudancaCPF.novoCPF.Should().Be("12345678902");
+        ev2299.evtDeslig.infoDeslig.mudancaCPF.indCPFDesvinc.Should().Be(IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados);
         
         ev2299.evtDeslig.infoDeslig.remunAposDeslig.indRemun.Should().Be(1);
         ev2299.evtDeslig.infoDeslig.remunAposDeslig.dtFimRemun.Should().BeSameDateAs(new DateTime(2024, 12, 31));
@@ -90,6 +92,37 @@ public class S2299Test : BaseESocialTest<S2299>
         ev2299.evtDeslig.infoDeslig.verbasResc.infoMV.indMV.Should().Be(1);
         ev2299.evtDeslig.infoDeslig.verbasResc.infoMV.remunOutrEmp[0].nrInsc.Should().Be("12345678000199");
         ev2299.evtDeslig.infoDeslig.verbasResc.procCS.nrProcJud.Should().Be("12345678901234567890");
+    }
+
+    [Test]
+    public void CamposOpcionaisNulosNaoSaoSerializados()
+    {
+        _versao = Versao.v_S_01_02_00;
+        var evento = new S2299();
+        PreencheCampos(evento);
+        evento.GeraEventoID();
+
+        evento.evtDeslig.infoDeslig.infoInterm[0].ShouldSerializehrsTrab().Should().BeFalse();
+        evento.evtDeslig.infoDeslig.mudancaCPF.ShouldSerializeindCPFDesvinc().Should().BeFalse();
+
+        var xml = evento.Write();
+        xml.Should().NotContain("<hrsTrab>");
+        xml.Should().NotContain("<indCPFDesvinc>");
+    }
+
+    [Test]
+    public void CamposPreenchidosSaoSerializadosNaOrdemDoLeiaute()
+    {
+        _versao = Versao.v_S_01_03_00;
+        var evento = new S2299();
+        PreencheCampos(evento);
+        evento.GeraEventoID();
+
+        var xml = evento.Write();
+        xml.Should().Contain("<hrsTrab>0830</hrsTrab>");
+        xml.Should().Contain("<indCPFDesvinc>9</indCPFDesvinc>");
+        xml.IndexOf("<dia>").Should().BeLessThan(xml.IndexOf("<hrsTrab>"));
+        xml.IndexOf("<novoCPF>").Should().BeLessThan(xml.IndexOf("<indCPFDesvinc>"));
     }
 
     // BaseESocialTest overrides
@@ -130,7 +163,7 @@ public class S2299Test : BaseESocialTest<S2299>
                 indPDV = SimNaoString.Sim,
                 infoInterm =
                 [
-                    new S2299InfoInterm { dia = 10 }
+                    new S2299InfoInterm { dia = 10, hrsTrab = _versao == Versao.v_S_01_03_00 ? "0830" : null }
                 ],
                 observacoes = new System.Collections.Generic.List<S2299Observacao>
                 {
@@ -148,7 +181,8 @@ public class S2299Test : BaseESocialTest<S2299>
                 },
                 mudancaCPF = new S2299MudancaCPF
                 {
-                    novoCPF = "12345678902"
+                    novoCPF = "12345678902",
+                    indCPFDesvinc = _versao == Versao.v_S_01_03_00 ? IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados : null
                 },
                 remunAposDeslig = new S2299RemunAposDeslig
                 {
@@ -249,6 +283,7 @@ public class S2299Test : BaseESocialTest<S2299>
         instanciaXml.evtDeslig.infoDeslig.nrProcTrab.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.nrProcTrab);
         instanciaXml.evtDeslig.infoDeslig.indPDV.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.indPDV);
         instanciaXml.evtDeslig.infoDeslig.infoInterm[0].dia.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.infoInterm[0].dia);
+        instanciaXml.evtDeslig.infoDeslig.infoInterm[0].hrsTrab.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.infoInterm[0].hrsTrab);
         instanciaXml.evtDeslig.infoDeslig.observacoes[0].Value.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.observacoes[0].Value);
         
         // Novos blocos infoDeslig
@@ -259,6 +294,7 @@ public class S2299Test : BaseESocialTest<S2299>
         instanciaXml.evtDeslig.infoDeslig.transfTit.dtNascto.Should().BeSameDateAs(instanciaPopulada.evtDeslig.infoDeslig.transfTit.dtNascto);
         
         instanciaXml.evtDeslig.infoDeslig.mudancaCPF.novoCPF.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.mudancaCPF.novoCPF);
+        instanciaXml.evtDeslig.infoDeslig.mudancaCPF.indCPFDesvinc.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.mudancaCPF.indCPFDesvinc);
         
         instanciaXml.evtDeslig.infoDeslig.remunAposDeslig.indRemun.Should().Be(instanciaPopulada.evtDeslig.infoDeslig.remunAposDeslig.indRemun);
         instanciaXml.evtDeslig.infoDeslig.remunAposDeslig.dtFimRemun.Should().BeSameDateAs(instanciaPopulada.evtDeslig.infoDeslig.remunAposDeslig.dtFimRemun);

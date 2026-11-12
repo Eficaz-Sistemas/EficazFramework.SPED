@@ -59,6 +59,7 @@ public class S2399Test : BaseESocialTest<S2399>
         
         info.mudancaCPF.Should().NotBeNull();
         info.mudancaCPF.novoCPF.Should().Be("09876543210");
+        info.mudancaCPF.indCPFDesvinc.Should().Be(IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados);
         
         // verbasResc
         info.verbasResc.Should().NotBeNull();
@@ -121,6 +122,31 @@ public class S2399Test : BaseESocialTest<S2399>
         ev2399.evtTSVTermino.infoTSVTermino.remunAposTerm.dtFimRemun.Should().Be(new DateTime(2024, 6, 20));
     }
 
+    [Test]
+    public void CampoOpcionalNuloNaoESerializado()
+    {
+        _versao = Versao.v_S_01_02_00;
+        var evento = new S2399();
+        PreencheCampos(evento);
+        evento.GeraEventoID();
+
+        evento.evtTSVTermino.infoTSVTermino.mudancaCPF.ShouldSerializeindCPFDesvinc().Should().BeFalse();
+        evento.Write().Should().NotContain("<indCPFDesvinc>");
+    }
+
+    [Test]
+    public void CampoPreenchidoESerializadoAposNovoCPF()
+    {
+        _versao = Versao.v_S_01_03_00;
+        var evento = new S2399();
+        PreencheCampos(evento);
+        evento.GeraEventoID();
+
+        var xml = evento.Write();
+        xml.Should().Contain("<indCPFDesvinc>9</indCPFDesvinc>");
+        xml.IndexOf("<novoCPF>").Should().BeLessThan(xml.IndexOf("<indCPFDesvinc>"));
+    }
+
     public override void PreencheCampos(S2399 evento)
     {
         evento.Versao = _versao;
@@ -161,7 +187,8 @@ public class S2399Test : BaseESocialTest<S2399>
                 
                 mudancaCPF = new S2399MudancaCPF
                 {
-                    novoCPF = "09876543210"
+                    novoCPF = "09876543210",
+                    indCPFDesvinc = _versao == Versao.v_S_01_03_00 ? IndicadorCpfDesvinculado.NovoCpfSemCpfsVinculados : null
                 },
                 
                 verbasResc = new S2399VerbasResc
@@ -272,6 +299,7 @@ public class S2399Test : BaseESocialTest<S2399>
         instanciaXml.evtTSVTermino.infoTSVTermino.mtvDesligTSV.Should().Be(instanciaPopulada.evtTSVTermino.infoTSVTermino.mtvDesligTSV);
         
         instanciaXml.evtTSVTermino.infoTSVTermino.mudancaCPF.novoCPF.Should().Be(instanciaPopulada.evtTSVTermino.infoTSVTermino.mudancaCPF.novoCPF);
+        instanciaXml.evtTSVTermino.infoTSVTermino.mudancaCPF.indCPFDesvinc.Should().Be(instanciaPopulada.evtTSVTermino.infoTSVTermino.mudancaCPF.indCPFDesvinc);
         
         instanciaXml.evtTSVTermino.infoTSVTermino.verbasResc.dmDev[0].ideDmDev.Should().Be(instanciaPopulada.evtTSVTermino.infoTSVTermino.verbasResc.dmDev[0].ideDmDev);
         instanciaXml.evtTSVTermino.infoTSVTermino.verbasResc.dmDev[0].indRRA.Should().Be(instanciaPopulada.evtTSVTermino.infoTSVTermino.verbasResc.dmDev[0].indRRA);
