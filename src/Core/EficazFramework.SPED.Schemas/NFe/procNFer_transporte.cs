@@ -536,6 +536,8 @@ public partial class VolumeTransportado : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeqVol() => qVol.HasValue;
+
     public string esp
     {
         get => espField;

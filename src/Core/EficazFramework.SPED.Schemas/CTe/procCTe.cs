@@ -1616,6 +1616,8 @@ public partial class IdentificacaoOperacao : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeNumero() => Numero.HasValue;
+
     [XmlElement("dhEmi")]
     public DateTime? DataEmissao
     {
@@ -5439,6 +5441,8 @@ public partial class ValoresPrestacaoServico : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializevTPrest() => vTPrest.HasValue;
+
     public double? vRec
     {
         get => vRecField;
@@ -5451,6 +5455,8 @@ public partial class ValoresPrestacaoServico : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializevRec() => vRec.HasValue;
 
     [XmlElement("Comp")]
     public ObservableCollection<TCTeInfCteVPrestComp> Comp
@@ -5807,6 +5813,8 @@ public partial class TCTeInfCteInfCTeNormInfCarga : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializevCarga() => vCarga.HasValue;
 
     public string proPred
     {

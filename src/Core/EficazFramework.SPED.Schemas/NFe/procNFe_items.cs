@@ -2773,6 +2773,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeBaseCalculoUFDestino() => BaseCalculoUFDestino.HasValue;
+
     [XmlElement("pFCPUFDest")]
     public double? PercentualICMS_FCP
     {
@@ -2786,6 +2788,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializePercentualICMS_FCP() => PercentualICMS_FCP.HasValue;
 
     [XmlElement("pICMSUFDest")]
     public double? PercentualICMS_UFDestino
@@ -2801,6 +2805,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializePercentualICMS_UFDestino() => PercentualICMS_UFDestino.HasValue;
+
     [XmlElement("pICMSInter")]
     public double? PercentualICMS_Interno
     {
@@ -2814,6 +2820,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializePercentualICMS_Interno() => PercentualICMS_Interno.HasValue;
 
     [XmlElement("pICMSInterPart")]
     public double? PercentualICMS_InternoPartilha
@@ -2829,6 +2837,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializePercentualICMS_InternoPartilha() => PercentualICMS_InternoPartilha.HasValue;
+
     [XmlElement("vFCPUFDest")]
     public double? ValorICMS_FCP
     {
@@ -2842,6 +2852,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorICMS_FCP() => ValorICMS_FCP.HasValue;
 
     [XmlElement("vICMSUFDest")]
     public double? ValorICMS_UFDestinataria
@@ -2857,6 +2869,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeValorICMS_UFDestinataria() => ValorICMS_UFDestinataria.HasValue;
+
     [XmlElement("vICMSUFRemet")]
     public double? ValorICMS_UFRemetente
     {
@@ -2870,6 +2884,8 @@ public partial class DetalhamentoICMS_UF_Destinataria : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorICMS_UFRemetente() => ValorICMS_UFRemetente.HasValue;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -3664,6 +3680,8 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeAliquota() => Aliquota.HasValue;
+
     [XmlElement("qBCProd")]
     public double? QuantidadeVendida
     {
@@ -3677,6 +3695,8 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeQuantidadeVendida() => QuantidadeVendida.HasValue;
 
     /// <summary>
     /// Alíquota do PIS, em moeda (R$).
@@ -3698,6 +3718,8 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeAliquotaMoeda() => AliquotaMoeda.HasValue;
+
     [XmlElement("vBC")]
     public double? BaseDeCalculo
     {
@@ -3712,6 +3734,8 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeBaseDeCalculo() => BaseDeCalculo.HasValue;
+
     [XmlElement("vPIS")]
     public double? ValorPISST
     {
@@ -3725,6 +3749,8 @@ public partial class DetalhamentoPISST : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorPISST() => ValorPISST.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */
@@ -3993,6 +4019,8 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeAliquota() => Aliquota.HasValue;
+
     [XmlElement("qBCProd")]
     public double? QuantidadeVendida
     {
@@ -4006,6 +4034,8 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeQuantidadeVendida() => QuantidadeVendida.HasValue;
 
     /// <summary>
     /// Alíquota do COFINS, em moeda (R$).
@@ -4027,6 +4057,8 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeAliquotaMoeda() => AliquotaMoeda.HasValue;
+
     [XmlElement("vBC")]
     public double? BaseDeCalculo
     {
@@ -4041,6 +4073,8 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
         }
     }
 
+    public bool ShouldSerializeBaseDeCalculo() => BaseDeCalculo.HasValue;
+
     [XmlElement("vCOFINS")]
     public double? ValorCOFINS
     {
@@ -4054,6 +4088,8 @@ public partial class DetalhamentoCOFINSST : INotifyPropertyChanged
             }
         }
     }
+
+    public bool ShouldSerializeValorCOFINS() => ValorCOFINS.HasValue;
 
     /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     /* TODO ERROR: Skipped RegionDirectiveTrivia */

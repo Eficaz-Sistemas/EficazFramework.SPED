@@ -688,6 +688,8 @@ public class Valores : NFSeNacionalBase
         set { _vCalcDR = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevCalcDR() => vCalcDR.HasValue;
+
     /// <summary>
     /// Tipo Benefício Municipal (BM) - opcional.
     /// </summary>
@@ -708,6 +710,8 @@ public class Valores : NFSeNacionalBase
         set { _vCalcBM = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevCalcBM() => vCalcBM.HasValue;
+
     /// <summary>
     /// Valor da Base de Cálculo do ISSQN (R$) - opcional.
     /// </summary>
@@ -717,6 +721,8 @@ public class Valores : NFSeNacionalBase
         get => _vBC;
         set { _vBC = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeIssqnBaseCalculo() => IssqnBaseCalculo.HasValue;
 
     /// <summary>
     /// Alíquota aplicada sobre a base de cálculo para apuração do ISSQN - opcional.
@@ -728,6 +734,8 @@ public class Valores : NFSeNacionalBase
         set { _pAliqAplic = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeIssqnAliquota() => IssqnAliquota.HasValue;
+
     /// <summary>
     /// Valor do ISSQN (R$) - opcional.
     /// </summary>
@@ -737,6 +745,8 @@ public class Valores : NFSeNacionalBase
         get => _vISSQN;
         set { _vISSQN = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeIssqnValor() => IssqnValor.HasValue;
 
     /// <summary>
     /// Valor total de retenções - opcional.
@@ -748,6 +758,8 @@ public class Valores : NFSeNacionalBase
         set { _vTotalRet = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeValorTotalRetencoes() => ValorTotalRetencoes.HasValue;
+
     /// <summary>
     /// Valor líquido = Valor do serviço - Desconto condicionado - Desconto incondicionado - Valores retidos.
     /// </summary>
@@ -757,6 +769,8 @@ public class Valores : NFSeNacionalBase
         get => _vLiq;
         set { _vLiq = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeValorTotalLiquido() => ValorTotalLiquido.HasValue;
 }
 
 /// <summary>
@@ -930,6 +944,8 @@ public class InformacoesDps : NFSeNacionalBase
         get => _dhEmi;
         set { _dhEmi = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeDataHoraEmissao() => DataHoraEmissao.HasValue;
 
     /// <summary>
     /// Versão do aplicativo que gerou o DPS.
@@ -1246,6 +1262,8 @@ public class RegimeTributario : NFSeNacionalBase
         set { _opSimpNac = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeOptanteSimplesNacional() => OptanteSimplesNacional.HasValue;
+
     [XmlElement("regApTribSN")]
     public int? regApTribSN
     {
@@ -1253,12 +1271,16 @@ public class RegimeTributario : NFSeNacionalBase
         set { _regApTribSN = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeregApTribSN() => regApTribSN.HasValue;
+
     [XmlElement("regEspTrib")]
     public int? RegimeEspecial
     {
         get => _regEspTrib;
         set { _regEspTrib = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeRegimeEspecial() => RegimeEspecial.HasValue;
 }
 
 /// <summary>
@@ -1915,12 +1937,16 @@ public class DescontosIncondicionais : NFSeNacionalBase
         set { _vDescIncond = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevDescIncond() => vDescIncond.HasValue;
+
     [XmlElement("vDescCond")]
     public decimal? vDescCond
     {
         get => _vDescCond;
         set { _vDescCond = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevDescCond() => vDescCond.HasValue;
 }
 
 /// <summary>
@@ -1940,12 +1966,16 @@ public class DeducoesReducoes : NFSeNacionalBase
         set { _pDR = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepDR() => pDR.HasValue;
+
     [XmlElement("vDR")]
     public decimal? vDR
     {
         get => _vDR;
         set { _vDR = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevDR() => vDR.HasValue;
 
     [XmlElement("documentos")]
     public TCListaDocDedRed? documentos
@@ -2025,6 +2055,8 @@ public class TCDocDedRed : NFSeNacionalBase
         set { _nDocFisc = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializenDocFisc() => nDocFisc.HasValue;
+
     [XmlElement("nDoc")]
     public string? nDoc
     {
@@ -2053,6 +2085,8 @@ public class TCDocDedRed : NFSeNacionalBase
         set { _dtEmiDoc = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializedtEmiDoc() => dtEmiDoc.HasValue;
+
     [XmlElement("vDedutivelRedutivel")]
     public decimal? vDedutivelRedutivel
     {
@@ -2060,12 +2094,16 @@ public class TCDocDedRed : NFSeNacionalBase
         set { _vDedutivelRedutivel = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevDedutivelRedutivel() => vDedutivelRedutivel.HasValue;
+
     [XmlElement("vDeducaoReducao")]
     public decimal? vDeducaoReducao
     {
         get => _vDeducaoReducao;
         set { _vDeducaoReducao = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevDeducaoReducao() => vDeducaoReducao.HasValue;
 
     [XmlElement("fornec")]
     public InfoDpsTomadorOuIntermediario? fornec
@@ -2359,12 +2397,16 @@ public class TributacaoFedPisCofins : NFSeNacionalBase
         set { _vBCPisCofins = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevBCPisCofins() => vBCPisCofins.HasValue;
+
     [XmlElement("pAliqPis")]
     public decimal? pAliqPis
     {
         get => _pAliqPis;
         set { _pAliqPis = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializepAliqPis() => pAliqPis.HasValue;
 
     [XmlElement("pAliqCofins")]
     public decimal? pAliqCofins
@@ -2373,6 +2415,8 @@ public class TributacaoFedPisCofins : NFSeNacionalBase
         set { _pAliqCofins = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepAliqCofins() => pAliqCofins.HasValue;
+
     [XmlElement("vPis")]
     public decimal? vPis
     {
@@ -2380,12 +2424,16 @@ public class TributacaoFedPisCofins : NFSeNacionalBase
         set { _vPis = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevPis() => vPis.HasValue;
+
     [XmlElement("vCofins")]
     public decimal? vCofins
     {
         get => _vCofins;
         set { _vCofins = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevCofins() => vCofins.HasValue;
 
     [XmlElement("tpRetPisCofins")]
     public string? tpRetPisCofins
@@ -2452,6 +2500,8 @@ public class TributacaoTotalMoeda : NFSeNacionalBase
         set { _vTotTribFed = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeFederais() => Federais.HasValue;
+
     [XmlElement("vTotTribEst")]
     public decimal? Estaduais
     {
@@ -2459,12 +2509,16 @@ public class TributacaoTotalMoeda : NFSeNacionalBase
         set { _vTotTribEst = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializeEstaduais() => Estaduais.HasValue;
+
     [XmlElement("vTotTribMun")]
     public decimal? Municipais
     {
         get => _vTotTribMun;
         set { _vTotTribMun = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializeMunicipais() => Municipais.HasValue;
 }
 
 /// <summary>
@@ -2568,12 +2622,16 @@ public class TCRTCValoresIBSCBS : NFSeNacionalBase
         set { _vBC = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializevBC() => vBC.HasValue;
+
     [XmlElement("vCalcReeRepRes")]
     public decimal? vCalcReeRepRes
     {
         get => _vCalcReeRepRes;
         set { _vCalcReeRepRes = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevCalcReeRepRes() => vCalcReeRepRes.HasValue;
 
     [XmlElement("uf")]
     public TCRTCValoresIBSCBSUF? uf
@@ -2611,6 +2669,8 @@ public class TCRTCValoresIBSCBSUF : NFSeNacionalBase
         set { _pIBSUF = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepIBSUF() => pIBSUF.HasValue;
+
     [XmlElement("pRedAliqUF")]
     public decimal? pRedAliqUF
     {
@@ -2618,12 +2678,16 @@ public class TCRTCValoresIBSCBSUF : NFSeNacionalBase
         set { _pRedAliqUF = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepRedAliqUF() => pRedAliqUF.HasValue;
+
     [XmlElement("pAliqEfetUF")]
     public decimal? pAliqEfetUF
     {
         get => _pAliqEfetUF;
         set { _pAliqEfetUF = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializepAliqEfetUF() => pAliqEfetUF.HasValue;
 }
 
 [XmlType("TCRTCValoresIBSCBSMun", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
@@ -2640,6 +2704,8 @@ public class TCRTCValoresIBSCBSMun : NFSeNacionalBase
         set { _pIBSMun = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepIBSMun() => pIBSMun.HasValue;
+
     [XmlElement("pRedAliqMun")]
     public decimal? pRedAliqMun
     {
@@ -2647,12 +2713,16 @@ public class TCRTCValoresIBSCBSMun : NFSeNacionalBase
         set { _pRedAliqMun = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepRedAliqMun() => pRedAliqMun.HasValue;
+
     [XmlElement("pAliqEfetMun")]
     public decimal? pAliqEfetMun
     {
         get => _pAliqEfetMun;
         set { _pAliqEfetMun = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializepAliqEfetMun() => pAliqEfetMun.HasValue;
 }
 
 [XmlType("TCRTCValoresIBSCBSFed", Namespace = "http://www.sped.fazenda.gov.br/nfse")]
@@ -2669,6 +2739,8 @@ public class TCRTCValoresIBSCBSFed : NFSeNacionalBase
         set { _pCBS = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepCBS() => pCBS.HasValue;
+
     [XmlElement("pRedAliqCBS")]
     public decimal? pRedAliqCBS
     {
@@ -2676,12 +2748,16 @@ public class TCRTCValoresIBSCBSFed : NFSeNacionalBase
         set { _pRedAliqCBS = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializepRedAliqCBS() => pRedAliqCBS.HasValue;
+
     [XmlElement("pAliqEfetCBS")]
     public decimal? pAliqEfetCBS
     {
         get => _pAliqEfetCBS;
         set { _pAliqEfetCBS = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializepAliqEfetCBS() => pAliqEfetCBS.HasValue;
 }
 
 /// <summary>
@@ -2702,6 +2778,8 @@ public class TCRTCTotalCIBS : NFSeNacionalBase
         get => _vTotNF;
         set { _vTotNF = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevTotNF() => vTotNF.HasValue;
 
     [XmlElement("gIBS")]
     public TCRTCTotalIBS? gIBS
@@ -2746,6 +2824,8 @@ public class TCRTCTotalIBS : NFSeNacionalBase
         get => _vIBSTot;
         set { _vIBSTot = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializevIBSTot() => vIBSTot.HasValue;
 
     [XmlElement("gIBSCredPres")]
     public TCRTCTotalIBSCredPres? gIBSCredPres
@@ -3303,12 +3383,16 @@ public class TCRTCListaDoc : NFSeNacionalBase
         set { _dtEmiDoc = value; OnPropertyChanged(); }
     }
 
+    public bool ShouldSerializedtEmiDoc() => dtEmiDoc.HasValue;
+
     [XmlElement("dtCompDoc", DataType = "date")]
     public DateTime? dtCompDoc
     {
         get => _dtCompDoc;
         set { _dtCompDoc = value; OnPropertyChanged(); }
     }
+
+    public bool ShouldSerializedtCompDoc() => dtCompDoc.HasValue;
 
     [XmlElement("tpReeRepRes")]
     public string? tpReeRepRes
