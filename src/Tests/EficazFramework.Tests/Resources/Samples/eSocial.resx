@@ -634,6 +634,7 @@
       &lt;indPDV&gt;S&lt;/indPDV&gt;
       &lt;infoInterm&gt;
         &lt;dia&gt;10&lt;/dia&gt;
+        &lt;hrsTrab&gt;0830&lt;/hrsTrab&gt;
       &lt;/infoInterm&gt;
       &lt;observacoes&gt;
         &lt;observacao&gt;Observacao Teste&lt;/observacao&gt;
@@ -648,6 +649,7 @@
       &lt;/transfTit&gt;
       &lt;mudancaCPF&gt;
         &lt;novoCPF&gt;12345678902&lt;/novoCPF&gt;
+        &lt;indCPFDesvinc&gt;9&lt;/indCPFDesvinc&gt;
       &lt;/mudancaCPF&gt;
       &lt;verbasResc&gt;
         &lt;dmDev&gt;
@@ -812,6 +814,7 @@
       &lt;nrProcTrab&gt;12345678901234567890&lt;/nrProcTrab&gt;
       &lt;mudancaCPF&gt;
         &lt;novoCPF&gt;09876543210&lt;/novoCPF&gt;
+        &lt;indCPFDesvinc&gt;9&lt;/indCPFDesvinc&gt;
       &lt;/mudancaCPF&gt;
       &lt;verbasResc&gt;
         &lt;dmDev&gt;
