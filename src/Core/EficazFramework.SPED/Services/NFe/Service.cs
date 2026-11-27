@@ -209,12 +209,92 @@ public sealed class NFeService : SoapServiceBase
     /// <param name="chave">Informar chave da NF-e</param>
     /// <param name="tpEvento">Cancelamento, Ciência, Confirmação, Recusa, etc.</param>
     /// <param name="justificativa">Utilize este parâmetro para eventos de Cancelamento, Operação Não Realizada, etc</param>
+    /// <param name="protocolo">Cancelamento: número do protocolo de autorização da NF-e (nProt), exigido pela SEFAZ.</param>
     public async Task<Schemas.NFe.RetornoEnvioEvento> EnvioEventoAsync(
         string cnpjCpf,
         string chave,
         Schemas.NFe.CodigoEvento tpEvento,
         Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao,
-        string justificativa = null)
+        string justificativa = null,
+        string protocolo = null)
+    {
+        (Schemas.NFe.RetornoEnvioEvento retorno, _) = await EnvioEventoInternoAsync(cnpjCpf, chave, tpEvento, ambiente, justificativa, protocolo);
+        return retorno;
+    }
+
+    /// <summary>
+    /// Cancela uma NF-e / NFC-e autorizada (evento 110111) e, homologado o evento (cStat 135 ou 155), devolve também o
+    /// <c>procEventoNFe</c> (evento assinado + <c>retEvento</c>), que deve ser guardado junto da NF-e.
+    /// </summary>
+    /// <param name="cnpjCpf">CNPJ ou CPF do emitente (autor do evento)</param>
+    /// <param name="chave">Chave da NF-e</param>
+    /// <param name="protocolo">Número do protocolo de autorização da NF-e (nProt)</param>
+    /// <param name="justificativa">Justificativa do cancelamento (15 a 255 caracteres)</param>
+    /// <param name="ambiente">Produção ou Homologação</param>
+    public async Task<ResultadoCancelamentoNFe> CancelamentoAsync(
+        string cnpjCpf,
+        string chave,
+        string protocolo,
+        string justificativa,
+        Schemas.NFe.Ambiente ambiente = Schemas.NFe.Ambiente.Producao)
+    {
+        if (string.IsNullOrWhiteSpace(protocolo))
+            throw new ArgumentException("Informe o protocolo de autorização da NF-e.", nameof(protocolo));
+
+        int tamanho = justificativa?.Trim().Length ?? 0;
+        if (tamanho < 15 || tamanho > 255)
+            throw new ArgumentException("A justificativa do cancelamento deve ter de 15 a 255 caracteres.", nameof(justificativa));
+
+        (Schemas.NFe.RetornoEnvioEvento retorno, XmlDocument eventoAssinado) = await EnvioEventoInternoAsync(
+            cnpjCpf, chave, Schemas.NFe.CodigoEvento.Cancelamento, ambiente, justificativa.Trim(), protocolo.Trim());
+
+        Schemas.NFe.EventoRetorno resultado = retorno?.ResultadoEventos?.FirstOrDefault();
+        string processo = resultado?.InformacaoEventoRetorno?.RespostaCodigo is "135" or "155"
+            ? ProcessoEventoXml(eventoAssinado.OuterXml, resultado)
+            : null;
+
+        return new ResultadoCancelamentoNFe(retorno, processo);
+    }
+
+    /// <summary>
+    /// Monta o <c>procEventoNFe</c> (versão 1.00) a partir do XML do evento assinado, como enviado, e do <c>retEvento</c> devolvido pela SEFAZ.
+    /// </summary>
+    public static string ProcessoEventoXml(string eventoAssinado, Schemas.NFe.EventoRetorno retorno)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(eventoAssinado);
+        ArgumentNullException.ThrowIfNull(retorno);
+
+        const string ns = "http://www.portalfiscal.inf.br/nfe";
+        XmlDocument doc = new() { PreserveWhitespace = true };
+        XmlElement raiz = doc.CreateElement("procEventoNFe", ns);
+        raiz.SetAttribute("versao", "1.00");
+        doc.AppendChild(raiz);
+
+        // o evento entra exatamente como foi assinado (qualquer alteração invalida a assinatura)
+        XmlDocument evento = new() { PreserveWhitespace = true };
+        evento.LoadXml(eventoAssinado);
+        raiz.AppendChild(doc.ImportNode(evento.DocumentElement!, true));
+
+        System.Xml.Serialization.XmlSerializer serializer = new(typeof(Schemas.NFe.EventoRetorno),
+            new System.Xml.Serialization.XmlRootAttribute("retEvento") { Namespace = ns });
+        System.Xml.Serialization.XmlSerializerNamespaces namespaces = new();
+        namespaces.Add(string.Empty, ns);
+        using System.IO.StringWriter texto = new();
+        serializer.Serialize(texto, retorno, namespaces);
+        XmlDocument retEvento = new();
+        retEvento.LoadXml(texto.ToString().RemoveW3CNamespaces());
+        raiz.AppendChild(doc.ImportNode(retEvento.DocumentElement!, true));
+
+        return doc.OuterXml;
+    }
+
+    private async Task<(Schemas.NFe.RetornoEnvioEvento Retorno, XmlDocument EventoAssinado)> EnvioEventoInternoAsync(
+        string cnpjCpf,
+        string chave,
+        Schemas.NFe.CodigoEvento tpEvento,
+        Schemas.NFe.Ambiente ambiente,
+        string justificativa,
+        string protocolo)
     {
         //! validações iniciais:
         if (chave?.Length != 44)
@@ -252,6 +332,8 @@ public sealed class NFeService : SoapServiceBase
                     Schemas.NFe.CodigoEvento.Cancelamento => new Schemas.NFe.ev110111
                     {
                         Versao = Schemas.NFe.VersaoServicoEvento.Versao_1_00,
+                        Descricao = "Cancelamento",
+                        Protocolo = protocolo,
                         Justificativa = justificativa
                     },
                     Schemas.NFe.CodigoEvento.Ciencia => new Schemas.NFe.DetalheEventoNaoMapeado
@@ -292,7 +374,6 @@ public sealed class NFeService : SoapServiceBase
 
 
 
-        Console.WriteLine(evento.Serialize());
         XmlDocument eventoXml = new();
         eventoXml.LoadXml(evento.Serialize().RemoveW3CNamespaces());
         Certificado.SignXml(eventoXml, "evento", "infEvento", false, false);
@@ -307,7 +388,8 @@ public sealed class NFeService : SoapServiceBase
         dadosXml.GetElementsByTagName("envEvento").Item(0).AppendChild(dadosXml.ImportNode(eventoXml.DocumentElement, true));
 
         request.nfeDadosMsg = dadosXml.DocumentElement;
-        return await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString()); ;
+        Schemas.NFe.RetornoEnvioEvento retorno = await ExecuteAsync<SoapClients.RecepcaoEvento4SoapClient, Schemas.NFe.RetornoEnvioEvento>(request, uf.ToString(), modelo.ToString(), ambiente.ToString());
+        return (retorno, eventoXml);
     }
 
 
@@ -361,7 +443,6 @@ public sealed class NFeService : SoapServiceBase
 
 
 
-        Console.WriteLine(evt.Serialize());
         XmlDocument eventoXml = new();
         eventoXml.LoadXml(evt.Serialize().RemoveW3CNamespaces());
         Certificado.SignXml(eventoXml, "evento", "infEvento", false, false);
