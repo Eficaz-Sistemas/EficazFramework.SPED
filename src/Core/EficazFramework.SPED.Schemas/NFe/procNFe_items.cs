@@ -2218,21 +2218,10 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
 
     public bool ShouldSerializepRedBC() => pRedBC.HasValue == true & (CST == CST_ICMS.CST_20 | CST == CST_ICMS.CST_51 | CST == CST_ICMS.CST_70 | CST == CST_ICMS.CST_90 | CSOSN == CSOSN_ICMS.CST900);
 
-    public DetalhamentoICMS_CST40_MotivoDesoneracao motDesICMS
-    {
-        get => motDesICMSField;
-        set
-        {
-            if (motDesICMSField.Equals(value) != true)
-            {
-                motDesICMSField = value;
-                OnPropertyChanged(nameof(motDesICMS));
-            }
-        }
-    }
+    // ICMS40 (CST 40, 41 e 50): o leiaute traz vICMSDeson e motDesICMS juntos e nessa ordem (sequência opcional). Sem valor
+    // desonerado, nenhum dos dois é gravado; o vICMSDeson vai com 2 decimais pela propriedade string, declarada antes do motivo.
 
-    public bool ShouldSerializemotDesICMS() => CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50;
-
+    [XmlIgnore()]
     public double? vICMSDeson
     {
         get => pvICMSDeson;
@@ -2247,6 +2236,46 @@ public partial class DetalhamentoICMS_Tributacao : INotifyPropertyChanged
     }
 
     public bool ShouldSerializevICMSDeson() => pvICMSDeson.HasValue & (CST == CST_ICMS.CST_40 | CST == CST_ICMS.CST_41 | CST == CST_ICMS.CST_50);
+
+    /// <summary>
+    /// Campo em formato string para escrita do XML no padrão exigido pela NF-e (2 decimais, ponto).
+    /// Utilize o campo 'vICMSDeson' (Double?) para trabalho. Ambos estarão automaticamente em sincronia.
+    /// </summary>
+    [XmlElement("vICMSDeson")]
+    public string vICMSDeson_XML
+    {
+        get => pvICMSDeson.HasValue ? pvICMSDeson.Value.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) : null;
+        set
+        {
+            double? valor = value is not null
+                && double.TryParse(value, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out double lido)
+                ? lido
+                : null;
+            if (pvICMSDeson.Equals(valor) != true)
+            {
+                pvICMSDeson = valor;
+                OnPropertyChanged(nameof(vICMSDeson));
+            }
+        }
+    }
+
+    public bool ShouldSerializevICMSDeson_XML() => ShouldSerializevICMSDeson();
+
+    public DetalhamentoICMS_CST40_MotivoDesoneracao motDesICMS
+    {
+        get => motDesICMSField;
+        set
+        {
+            if (motDesICMSField.Equals(value) != true)
+            {
+                motDesICMSField = value;
+                OnPropertyChanged(nameof(motDesICMS));
+            }
+        }
+    }
+
+    /// <summary>O motivo só acompanha o valor desonerado (o grupo é opcional e os dois vão juntos).</summary>
+    public bool ShouldSerializemotDesICMS() => ShouldSerializevICMSDeson();
 
     public double? pCredSN
     {
