@@ -936,6 +936,7 @@ public partial class InformacoesNFe : INotifyPropertyChanged
     private Destinatario destField;
     private Local retiradaField;
     private Local entregaField;
+    private List<AutorizadoDownloadXml> autXMLField = [];
     private List<Item> detField;
     private Totais totalField;
     private InformacoesTransporte transpField;
@@ -1028,6 +1029,24 @@ public partial class InformacoesNFe : INotifyPropertyChanged
             {
                 entregaField = value;
                 OnPropertyChanged(nameof(LocalEntrega));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Pessoas autorizadas a acessar o XML da NF-e (grupo <c>autXML</c>, até 10 ocorrências): CNPJ ou CPF de quem pode baixar o
+    /// documento no ambiente nacional (ex.: escritório de contabilidade). Lista vazia não gera o grupo.
+    /// </summary>
+    [XmlElement("autXML")]
+    public List<AutorizadoDownloadXml> AutorizadosDownloadXml
+    {
+        get => autXMLField;
+        set
+        {
+            if (autXMLField is null || autXMLField.Equals(value) != true)
+            {
+                autXMLField = value;
+                OnPropertyChanged(nameof(AutorizadosDownloadXml));
             }
         }
     }
@@ -2912,6 +2931,66 @@ public partial class Fisco : INotifyPropertyChanged
     }
 
     public bool ShouldSerializeDataPagamentoDAR() => DataPagamentoDAR.HasValue;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public virtual void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+}
+
+/// <summary>
+/// Pessoa autorizada a acessar o XML da NF-e (<c>autXML</c>): CNPJ (14 dígitos) ou CPF (11 dígitos). Ao informar o documento, o tipo
+/// (elemento CNPJ ou CPF) é definido pela quantidade de dígitos.
+/// </summary>
+public partial class AutorizadoDownloadXml : INotifyPropertyChanged
+{
+    private string itemField;
+    private PersonalidadeJuridica itemElementNameField;
+
+    public AutorizadoDownloadXml() : base()
+    {
+    }
+
+    /// <param name="cnpjCpf">CNPJ ou CPF (com ou sem máscara).</param>
+    public AutorizadoDownloadXml(string cnpjCpf) : this()
+    {
+        CNPJ_CPF = cnpjCpf;
+    }
+
+    [XmlElement("CNPJ", typeof(string))]
+    [XmlElement("CPF", typeof(string))]
+    [XmlChoiceIdentifier("AutorizadoPersonalidadeJuridica")]
+    public string CNPJ_CPF
+    {
+        get => itemField;
+        set
+        {
+            string digitos = value is null ? null : new string([.. value.Where(char.IsDigit)]);
+            if (itemField is null || itemField.Equals(digitos) != true)
+            {
+                itemField = digitos;
+                AutorizadoPersonalidadeJuridica = digitos?.Length == 11 ? PersonalidadeJuridica.CPF : PersonalidadeJuridica.CNPJ;
+                OnPropertyChanged(nameof(CNPJ_CPF));
+            }
+        }
+    }
+
+    [XmlIgnore()]
+    public string CNPJ_CPFFormatado => CNPJ_CPF?.FormatRFBDocument() ?? null;
+
+    /// <summary>Elemento do documento no XML (CNPJ ou CPF).</summary>
+    [XmlIgnore()]
+    public PersonalidadeJuridica AutorizadoPersonalidadeJuridica
+    {
+        get => itemElementNameField;
+        set
+        {
+            if (itemElementNameField.Equals(value) != true)
+            {
+                itemElementNameField = value;
+                OnPropertyChanged(nameof(AutorizadoPersonalidadeJuridica));
+            }
+        }
+    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
